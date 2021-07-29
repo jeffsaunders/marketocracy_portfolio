@@ -1,0 +1,315 @@
+VDMHY
+date:   11/9/15 
+ticker:   VDMHY
+
+yahoo:nothing
+
+quantum:  nothing
+
+oursite:
+ymbol: VDMHY	Name: Van der Moolen	Price: $3.77
+Volume:	Sector: Financials	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs
+symbol changes for VDMHY	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+06 Dec 07	VDM	VDMHY	Change in the ticker (trading) symbol from VDM to VDMHY
+ 	 	 
+left curve	  listing changes for VDMHY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Dec 06, 2007	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that VDMHY trades on from NYSE to OTCBB-OTHER
+ 	 	 
+left curve	  cash dividends paid by VDMHY	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+09 Apr 02	11 Apr 02	 	N/A	$0.97	Dividend amount:0.971 per share.
+11 Apr 03	15 Apr 03	09 May 03	1	$0.77	Dividend amount:0.7745 per share.
+08 Apr 05	12 Apr 05	02 May 05	1	$0.28	Dividend amount:0.2838 per share.
+07 Apr 06	11 Apr 06	28 Apr 06	1	$0.16	Dividend amount:0.156 per share.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VDMHY
+
+check MAdmin
+Stock:Van der Moolen  Symbol:VDMHY
+Date: 11/09/2015
+
+42 users found
+
+1	abusigin	ant	antino	apayne	bhoekman	bkotler	carol_newell	casamhilton	chadcor	chendrix
+2	crossy	dblade	ermartins	gunanaman	henryfrapp	herbt	hugedrive	isledive	johu	kimyoungsub
+3	kpedo	lineh99	mcmcfa	mcoyle3	mdr7u	mfeofanov	monsean	mrwoolf	nsullivan	ocsupertones
+4	rcogburn	rkuli	rosekr3	silhouette	slimmeaap	spongoid	talon	terrklaspian	ttfoster	tv_weber
+5	tweedmadsen	vitaminc6779	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'VDMHY';  
+> Row 1:
+>   STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+select * from mstockalias where stockkey=X'9007095c3c44f9e6c0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2001-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'9008095c3c44f9e6c0a801dc'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2007-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'f3df46c94758b7b3c0a80146'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDMHY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2007-12-06 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'ae3446dc4758b7f0c0a80146'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDMHY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VDMHY'  order by BB_EFFECTIVE;
+nothing useful 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VDMHY
+>>>> dbtool started at 2015-11-09 15:02:24 -0500
+stock: VDMHY
+  PK       : [9007095C3C44F9E6C0A801DC]
+  companyID: [14871]
+  symbol   : [VDMHY]
+  name     : [Van der Moolen]
+  date     : [2007-12-06 00:00:00]
+  status   : [Active]
+stock: VDMHY
+  PK       : [9007095C3C44F9E6C0A801DC]
+  companyID: [14871]
+  symbol   : [VDMHY]
+  name     : [Van der Moolen]
+  date     : [2007-12-06 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-09 15:02:25 -0500
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 14871
+2008-05-05 (Mon) [2681]: O:3.7500 H:3.7500 L:3.7500 C:3.7500 V:0 TSO:46680 A:3.7500 R:1.0000 CA:0.0000
+2008-05-06 (Tue) [2682]: O:3.7500 H:3.8000 L:3.7000 C:3.7000 V:1500 TSO:46680 A:3.7000 R:1.0000 CA:0.0000
+2008-05-07 (Wed) [2683]: O:3.7500 H:3.7500 L:3.7000 C:3.7000 V:5100 TSO:46680 A:3.7000 R:1.0000 CA:0.0000
+2008-05-08 (Thu) [2684]: O:3.7500 H:3.7500 L:3.7000 C:3.7000 V:5100 TSO:46680 A:3.7000 R:1.0000 CA:0.0000
+2008-05-09 (Fri) [2685]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-10 (Sat) [2686]: <WEEKEND>
+2008-05-11 (Sun) [2687]: <WEEKEND>
+2008-05-12 (Mon) [2688]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-13 (Tue) [2689]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-14 (Wed) [2690]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-15 (Thu) [2691]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-16 (Fri) [2692]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-17 (Sat) [2693]: <WEEKEND>
+2008-05-18 (Sun) [2694]: <WEEKEND>
+2008-05-19 (Mon) [2695]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-20 (Tue) [2696]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-21 (Wed) [2697]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-22 (Thu) [2698]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-23 (Fri) [2699]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-24 (Sat) [2700]: <WEEKEND>
+2008-05-25 (Sun) [2701]: <WEEKEND>
+2008-05-26 (Mon) [2702]: <HOLIDAY>
+2008-05-27 (Tue) [2703]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+2008-05-28 (Wed) [2704]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'9007095c3c44f9e6c0a801dc' and shares > 0 order by closed; 
+> Row 716:
+>      ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-11-21 11:22:00.000000'
+>        COMMENT = Bad News|VDM filed to delist itself from the NYSE.
+>     COMMISSION = 478.750000
+>   CURRENTORDER = X'963d1cb1473df387c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eb623e363c1d6a68c0a801e0'
+>       MODIFIED = NULL
+>            NET = 43846.528625
+>         OPENED = TIMESTAMP '2007-11-16 14:46:15.000000'
+>          PRICE = 4.579272
+>     PRIMARYKEY = X'963b1cb1473df387c0a80134'
+>         SECFEE = 1.370000
+>         SHARES = 9575.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9007095c3c44f9e6c0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9007095c3c44f9e6c0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9007095c3c44f9e6c0a801dc'  and totalshares < 0)));
+
+apply the acquis
+there are 42 members who hold this stock
+quantum: nothing 
+last ticket:  2007-11-21  PRICE = 4.579272
+last price:  2008-05-09 (Fri) [2685]: O:3.7700 H:3.7700 L:3.7700 C:3.7700 V:0 TSO:46680 A:3.7700 R:1.0000 CA:0.0000
+xignite 2/26/2010	3.77
+going with 20080509 3.77
+
+/Marketocracy/bin/cahelper -symbol  VDMHY  -effective 20080509 -type ACQUIS -exchange UN -acqType 1 -acqCash 3.77 -acqShare 0 -purchaser VDMHY   >& /Users/build/caout/VDMHY.20151109-DELIST.out 
+VDMHY.20151109-DELIST.out
+stocks1:~/caout build$ tail -f VDMHY.20151109-DELIST.out
+D: (11-09 15:07:43.943) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-09 15:08:42.809) cahelper started on 2015-11-09 15:08:42 -0500
+
+D: (11-09 15:08:43.108) There are [0] open tickets for VDMHY on 20080509
+D: (11-09 15:08:43.560) StockFileLoad Version:4.0
+D: (11-09 15:08:43.560) Loading Stock Data
+D: (11-09 15:10:22.186) Building Lookup Index
+D: (11-09 15:10:36.193) Finished Building Index
+D: (11-09 15:10:46.266) Finished Loading Stock Data
+D: (11-09 15:10:46.315) Connection to 192.168.111.172:6666 succeeded
+D: (11-09 15:10:50.237) {
+    "ACQUIRED_STOCK" = VDMHY; 
+    "ACQUIRING_STOCK" = "VDMHY_FIX"; 
+    AMOUNT = 3.77; 
+    APPLIED = 1; 
+    DATE = 20080509; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VDMHY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-09 15:10:57.438) SUCCESS
+D: (11-09 15:10:57.438) cahelper finished 2015-11-09 15:10:57 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'9007095c3c44f9e6c0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2001-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'9008095c3c44f9e6c0a801dc'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2007-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'f3df46c94758b7b3c0a80146'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDMHY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2007-12-06 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'ae3446dc4758b7f0c0a80146'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDMHY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 921020103
+>           DATE = TIMESTAMP '2008-05-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Van der Moolen
+>     PRIMARYKEY = X'13e41dd85640fd4bc0a86fab'
+>       STOCKKEY = X'9007095c3c44f9e6c0a801dc'
+>         SYMBOL = VDMHY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203020
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'13e41dd85640fd4bc0a86fab' ;
+
+> Row 1:
+>              ALIASKEY = X'13e41dd85640fd4bc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VDMHY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|3.770000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151109:030842
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-05-09 00:00:00.000000'
+>         BB_IDENTIFIER = VDMHY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-05-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VDMHY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-05-09 00:00:00.000000'
+>            PRIMARYKEY = X'13de1dd85640fd4ac0a86fab'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey = X'13de1dd85640fd4ac0a86fab';
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'13de1dd85640fd4ac0a86fab'));
+there are 70 fundkeys, save to CA issues VDMHY fundkeys.txt
+
+For Beta case
+VDMHY no longer trades but is still active on our site - need to delist 
+
+check on 11/10/15   invalidate funds
+check MAdmin  clear
+
+VDMHY has been acquired	right curve
+ 	 	
+Van der Moolen acquired by a private company on 2008-05-09 00:00:00.
+
+invaldiate reprice   close
+
+

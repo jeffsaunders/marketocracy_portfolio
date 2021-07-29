@@ -1,0 +1,314 @@
+date:  8/19/15
+
+Ticket Number:	3553
+Portfolio Username:	sbulwa
+Problem Type:
+Fund Information Incorrect
+Subject:
+APHBD
+Description:
+Hi Can you please correct the holding APHB in SDGIX. There was a reserse split that confused the system. Also the stock is switching to the NYSEon the 21st. Thanks Steve
+
+member sbulwa
+fund  SDGIX
+
+APHBD	click me	$9.10	10,000	$91,000.00	4.88%	-$61,292.50	3.41%	-37.63%	-37.63%	Details 
+Symbol: APHBD	Name: Ampliphi Biosciences Corp	Price: $9.10
+Volume: 24,184	Sector: Health Care	Change: $0.30
+Short Volume: 639,520	Style: Micro Cap : Value	Market Cap: $181,737,600
+Avg Volume: 639,520	 Exchange: OTCBB	Today: 3.41%
+50 Day Ave: $9.03	Year High: $17.00	High: $9.10
+200 Day Ave: $9.74	Year Low: $0.19	Low: $8.60
+CAs
+symbol changes for APHBD	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+11 May 06	TGEN	TGEND	Change in the ticker (trading) symbol from TGEN to TGEND
+12 Jun 06	TGEND	TGEN	Change in the ticker (trading) symbol from TGEND to TGEN
+09 Mar 11	TGEN	APHB	Change in the ticker (trading) symbol from TGEN to APHB
+07 Aug 15	APHB	APHBD	Change in the ticker (trading) symbol from APHB to APHBD
+ 	 	 
+left curve	  CUSIP changes for APHBD	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+11 May 06	87612M108	87612M306	Change in any of identification numbers (CUSIP) of a security from 87612M108 to 87612M306
+09 Mar 11	87612M306	03211P103	Change in any of identification numbers (CUSIP) of a security from 87612M306 to 03211P103
+07 Aug 15	03211P103	03211P202	Change in any of identification numbers (CUSIP) of a security from 03211P103 to 03211P202
+ 	 	 
+left curve	  name changes for APHBD	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+09 Mar 11	Targeted Genetics Corp	Ampliphi Biosciences Corp	Change in the name of issuer from Targeted Genetics Corp to Ampliphi Biosciences Corp
+ 	 	 
+left curve	  listing changes for APHBD	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jan 08, 2003	NASDAQ	UQ	NASDAQ-SMALLCAP	UR	Change in the exchange that TGEN trades on from NASDAQ to NASDAQ-SMALLCAP
+Jan 21, 2010	NASDAQ-SMALLCAP	UR	OTCBB-OTHER	UV	Change in the exchange that TGEN trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+ 	 	 
+left curve	  APHBD had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+11 May 06	1 for 10	Split terms:1 for 10
+07 Aug 15	1 for 50	Split terms:1 for 50
+
+was this a valid split?
+
+check yahoo finance
+
+
+select distinct stockkey from mstockalias where symbol='APHB';
+> Row 1:
+>   STOCKKEY = X'ff920e21390ad00fc0a80116'
+
+select * from mstockalias where STOCKKEY = X'ff920e21390ad00fc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'ff930e21390ad00fc0a80116'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M108
+>           DATE = TIMESTAMP '2003-01-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'763626a33e1ce71ac0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M108
+>           DATE = TIMESTAMP '2006-05-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'df0327604463ed25c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M306
+>           DATE = TIMESTAMP '2006-05-11 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'6ab528734463ed68c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M306
+>           DATE = TIMESTAMP '2006-06-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'b25f1418448e1c92c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M306
+>           DATE = TIMESTAMP '2010-01-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'fa4838e64b58d487c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = TGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M306
+>           DATE = TIMESTAMP '2011-03-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TARGETED GENETICS
+>     PRIMARYKEY = X'518133284d780ea3c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = APHB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87612M306
+>           DATE = TIMESTAMP '2011-03-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ampliphi Biosciences Corp
+>     PRIMARYKEY = X'786d33904d780f09c0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = APHB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03211P103
+>           DATE = TIMESTAMP '2011-03-09 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ampliphi Biosciences Corp
+>     PRIMARYKEY = X'806433974d780f1ec0a80146'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = APHB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03211P103
+>           DATE = TIMESTAMP '2015-08-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ampliphi Biosciences Corp
+>     PRIMARYKEY = X'12af0dac55c539c6c0a86f92'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = APHBD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03211P202
+>           DATE = TIMESTAMP '2015-08-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ampliphi Biosciences Corp
+>     PRIMARYKEY = X'ec120f2855c53a92c0a86f92'
+>       STOCKKEY = X'ff920e21390ad00fc0a80116'
+>         SYMBOL = APHBD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+
+
+yahoo finance
+AmpliPhi Biosciences Corporation (APHBD) -Other OTC
+9.10 Up 0.30(3.41%) 4:00PM EDT
+Add to Portfolio
+Prev Close:	8.80
+Open:	8.80
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	8.60 - 9.10
+52wk Range:	3.50 - 17.00
+Volume:	24,862
+Avg Vol (3m):	15,888
+Market Cap:	52.63M
+P/E (ttm):	3.10
+EPS (ttm):	2.94
+Div & Yield:	N/A (N/A
+
+seems like a vaid stock not sure what he wants?
+
+historical prices on yahoo show when the split hit
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Aug 19, 2015	8.80	9.10	8.60	9.10	24,200	9.10
+Aug 18, 2015	8.61	9.34	8.61	8.80	12,700	8.80
+Aug 17, 2015	9.00	9.54	8.91	8.91	9,000	8.91
+Aug 14, 2015	9.55	9.55	8.85	9.00	13,400	9.00
+Aug 13, 2015	8.65	9.90	8.51	9.25	14,900	9.25
+Aug 12, 2015	8.36	8.80	8.36	8.57	21,700	8.57
+Aug 11, 2015	10.00	10.00	10.00	10.00	0	10.00
+Aug 10, 2015	10.00	10.00	10.00	10.00	0	10.00
+Aug 7, 2015	10.00	10.00	10.00	10.00	0	10.00
+Aug 7, 2015	1: 50 Stock Split
+Aug 6, 2015	0.19	0.21	0.19	0.20	35,500	10.00
+Aug 5, 2015	0.18	0.19	0.18	0.19	18,900	9.50
+Aug 4, 2015	0.15	0.18	0.15	0.18	25,400	9.00
+Aug 3, 2015	0.15	0.16	0.14	0.15	19,800	7.50
+Jul 31, 2015	0.15	0.15	0.15	0.15	30,400	7.50
+
+
+
+sbulwa
+LEDGER
+Date	Start	Change	End	Type
+Dec 23, 2013		100000	100000	Buy
+Jan 17, 2014	100000	100000	200000	Buy
+Jun 30, 2014	200000	-25000	175000	Sell
+Mar 11, 2015	175000	75000	250000	Buy
+Mar 16, 2015	250000	250000	500000	Buy
+Aug 07, 2015	500000	-490000	10000	Corporate Action
+Total: 10,000
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 23, 2013	100,000	$1,714.64	$36,007.44	$0.36
+Jan 17, 2014	100,000	$2,921.99	$61,361.79	$0.61
+Mar 11, 2015	75,000	$716.51	$15,046.76	$0.20
+Mar 16, 2015	250,000	$2,402.86	$50,460.11	$0.20
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 30, 2014	25,000	$556.41	$0.25	$10,571.72	$0.42
+ 	 	 
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Aug 07, 2015	Split terms:1 for 50
+ 	 	 
+ 	 	
+let me reprice this one
+
+/Marketocracy/bin/dbtool lookup fund  sbulwa
+fund: sbulwa
+  PK: [649474223E53CA58C0A80133]
+  symbol: [sdgix]
+  managerKey: [B3791DB6397738E5C0A801E1]
+  loginName: [sbulwa]
+/Marketocracy/bin/fptool invalidateFund 649474223E53CA58C0A80133
+
+reprice on the new site
+
+649474223E53CA58C0A80133 2015-08-07
+
+on the new site
+
+8/6/15 he has 500,000  APHBD
+
+8/7/15 he sold 490,000 and bought 10,000
+and his ledger shows 10,000 which is good
+
+even the latest one 8/18/15 has 10000 in the ledger
+
+stratification has none
+
+member: sbulwa  fund:  sdgix   ticker:  APHBD
+
+his ledger and the stratification do not agree
+
+   
+

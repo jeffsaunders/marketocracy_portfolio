@@ -1,0 +1,411 @@
+date:  12/13/15
+ticker: JAX
+CA issues JAX short because of duplicate.txt
+there appears to be a collision or duplicate  a member was short JAX with no buys.  I looked at his strat
+and he also holds the same number of shares of JAX long.
+
+> Row 11:
+>    LOGINNAME = leverahedge
+>       SYMBOL = CBC
+>   PRIMARYKEY = X'f911483655d4ba6dc0a86fa6'
+
+LONG
+JAX	click me	$10.27	1,209	$12,416.43	1.30%	$12,416.43	-2.00%	0.00%	0.00%	Details 	
+LEDGER
+Date	Start	Change	End	Type
+Sep 28, 2015		1209	1209	Corporate Action
+Total: 1,209
+ 	 	
+BUYS
+You have no Buys for this position
+
+SELLS
+You have no sells for this position
+
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Sep 29, 2015	JAX US spun off from FNFV with terms:.1727 : 1
+
+SHORT
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+JAX	$10.27	-1,209	-$12,416.43	$457.49	-2.00%	0.00%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Dec 03, 2015		-1209	-1209	Sell
+Total: -1,209
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 3, 2015	1,209	$60.45	$0.23	$12,873.95	$10.65
+ 	 	 
+
+ah this was a recent one
+
+select distinct stockkey from mstockalias where symbol='JAX';
+> Row 1:
+>   STOCKKEY = X'18570e21390b12c0c0a80116'
+> Row 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'
+> Row 3:
+>   STOCKKEY = X'1944230d560b188ac0a86fab'
+
+
+there are 3
+************************************************************************
+> JAX 1:
+>   STOCKKEY = X'18570e21390b12c0c0a80116'
+************************************************************************
+select * from mstockalias where stockkey=X'18570e21390b12c0c0a80116' order by "date";
+this one is delisted 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 466096104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = J. ALEXANDER'S CORP
+>     PRIMARYKEY = X'18580e21390b12c0c0a80116'
+>       STOCKKEY = X'18570e21390b12c0c0a80116'
+>         SYMBOL = JAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 466096104
+>           DATE = TIMESTAMP '2008-05-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = J. ALEXANDER'S CORP
+>     PRIMARYKEY = X'27c26dc6483e0ed7c0a80146'
+>       STOCKKEY = X'18570e21390b12c0c0a80116'
+>         SYMBOL = JAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 466096104
+>           DATE = TIMESTAMP '2012-10-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = J. ALEXANDER'S CORP
+>     PRIMARYKEY = X'c2fb476a508f0586c0a80146'
+>       STOCKKEY = X'18570e21390b12c0c0a80116'
+>         SYMBOL = JAXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 466096104
+>           DATE = TIMESTAMP '2012-10-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = J. ALEXANDER'S CORP
+>     PRIMARYKEY = X'896b477f508f05e1c0a80146'
+>       STOCKKEY = X'18570e21390b12c0c0a80116'
+>         SYMBOL = JAXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 466096104
+>           DATE = TIMESTAMP '2013-02-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = J. ALEXANDER'S CORP
+>     PRIMARYKEY = X'a51d037b519d2961c0a80146'
+>       STOCKKEY = X'18570e21390b12c0c0a80116'
+>         SYMBOL = JAXR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XV
+************************************************************************
+> JAX 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'
+listed as JAX-W on 2015-09-18
+companyID 28808
+************************************************************************
+select companyID from mstock where primarykey=X'bba2195f55fc964cc0a86fab';
+> Row 1:
+>   COMPANYID = 28808
+select * from mstockalias where stockkey=X'bba2195f55fc964cc0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = J Alexander's Holdings Inc
+>     PRIMARYKEY = X'bba3195f55fc964cc0a86fab'
+>       STOCKKEY = X'bba2195f55fc964cc0a86fab'
+>         SYMBOL = JAX-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-09-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = J Alexander's Holdings Inc
+>     PRIMARYKEY = X'93b522cb560b1714c0a86fab'
+>       STOCKKEY = X'bba2195f55fc964cc0a86fab'
+>         SYMBOL = JAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select count(*) from mticket where stockkey=X'bba2195f55fc964cc0a86fab';
+> Row 1:
+>   _C001 = 1.000000
+just one ticket, ours .
+************************************************************************
+> JAX 3:
+>   STOCKKEY = X'1944230d560b188ac0a86fab'
+spun off from FNFV on 2015-09-28
+5 mtickets all from the spin off
+COMPANYID = 28883
+************************************************************************
+select companyID from mstock where primarykey=X'1944230d560b188ac0a86fab';
+> Row 1:
+>   COMPANYID = 28883
+select * from mstockalias where stockkey=X'1944230d560b188ac0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-09-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = J Alexander's Holdings Inc
+>     PRIMARYKEY = X'1945230d560b188ac0a86fab'
+>       STOCKKEY = X'1944230d560b188ac0a86fab'
+>         SYMBOL = JAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select count(*) from mticket where STOCKKEY = X'1944230d560b188ac0a86fab';
+> Row 1:
+>   _C001 = 5.000000
+select distinct sourcekey from mticket where STOCKKEY = X'1944230d560b188ac0a86fab';
+> Row 1:
+>   SOURCEKEY = X'1d342293560b16a0c0a86fab'
+there is only this CA
+select * from mcorporateaction where primarykey=X'1d342293560b16a0c0a86fab';
+> Row 1:
+>              ALIASKEY = X'742110ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|J Alexander's Holdings Inc|CP_ID_BB_COMP|42983047|CP_ID_BB_SEC|1000|CP_TERMS|.1727  : 1|CP_RATIO|0.172720|CP_PAY_DT|20150928|CP_RECORD_DT|20150922|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.857252|CP_ADJ_DT|20150929|CP_TKR|JAX US|CP_DUE_BILL_RED_DT|20151001|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007FJZFD0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007FJZF68|CP_SPINOFF_ID_BB_SEC_NUM_DES|JAX|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|Full spin-off rate is 0.17272 for 1.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102858639
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 40863800
+>        BB_COMPANYNAME = FNFV Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-29 00:00:00.000000'
+>         BB_IDENTIFIER = FNFV    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-18 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = FNFV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'1d342293560b16a0c0a86fab'
+>               VERSION = NULL
+
+Assessment FNFV spun off JAX on 20150928
+
+We're going to keep JAX-3 the spin off generated one.  We'll move the JAX-2 single mticket over to
+JAX-X
+> JAX 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'
+
+select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab';
+> Row 1:
+>   PRIMARYKEY = X'a5e000e3565fa3c7c0a86fa6'   <------- ticketkey 
+select managerkey from mticket where stockkey=X'bba2195f55fc964cc0a86fab';
+select loginname from mmanager where primarykey in (select managerkey from mticket where stockkey=X'bba2195f55fc964cc0a86fab');
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab'));
+> Row 1:
+>   FUNDKEY = X'f911483655d4ba6dc0a86fa6'   <---- fundkey to invalidate 
+> Row 1:
+>   LOGINNAME = leverahedge
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab')));
+> Row 1:
+>   SYMBOL = CBC
+Delete the mtrade
+select * from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab');
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'3e886f625660691cc0a86f9c'
+>                 PRIMARYKEY = X'3e876f625660691cc0a86f9c'
+>                     SHARES = 1209.000000
+>                  TICKETKEY = X'a5e000e3565fa3c7c0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-12-03 10:53:07.000000'
+>                      PRICE = 10.648400
+>   CREATEDBYCORPORATEACTION = 0
+
+ok, delete it
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab');
+
+Change the stockkey 
+> JAX 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'  <--- remove 
+> JAX 3:
+>   STOCKKEY = X'1944230d560b188ac0a86fab'  <--  keep
+update mticket set STOCKKEY = X'1944230d560b188ac0a86fab' where STOCKKEY = X'bba2195f55fc964cc0a86fab';
+done
+select count(*) from mticket where stockkey=X'bba2195f55fc964cc0a86fab';
+none  - good
+select count(*) from mticket where stockkey=X'1944230d560b188ac0a86fab';
+> Row 1:
+>   _C001 = 6.000000
+
+Let's delete JAX-2
+> JAX 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'
+listed as JAX-W on 2015-09-18
+companyID 28808
+
+set commit false;
+
+delete from mstock where primarykey=  X'bba2195f55fc964cc0a86fab'; 
+
+delete from mwindowstock where stockkey=X'bba2195f55fc964cc0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'bba2195f55fc964cc0a86fab');
+
+delete from mstockalias where stockkey=X'bba2195f55fc964cc0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'bba2195f55fc964cc0a86fab');   
+
+delete from mposition where stockkey=X'bba2195f55fc964cc0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'bba2195f55fc964cc0a86fab');
+
+delete from mticket where stockkey=X'bba2195f55fc964cc0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'bba2195f55fc964cc0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'bba2195f55fc964cc0a86fab';  
+
+commit;
+
+set commit true;
+
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey a5e000e3565fa3c7c0a86fa6
+>>>> dbtool started at 2015-12-14 00:28:24 -0500
+<<<< dbtool finished at 2015-12-14 00:30:23 -0500
+
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund f911483655d4ba6dc0a86fa6
+
+log back in 
+
+He is good 
+LEDGER
+Date	Start	Change	End	Type
+Sep 28, 2015		1209	1209	Corporate Action
+Dec 03, 2015	1209	-1209		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 3, 2015	1,209	$60.45	$0.23	$12,873.95	$10.65
+ 	 	 
+
+
+not pricing though.
+
+stock came to life on 2015-09-28
+> JAX 2:
+>   STOCKKEY = X'bba2195f55fc964cc0a86fab'
+listed as JAX-W on 2015-09-18
+companyID 28808
+select min(daynumber) from stockprices where companyid=28808;
+> Row 1:
+>   _C001 = 5385
+select max(daynumber) from stockprices where companyid=28808;
+> Row 1:
+>   _C001 = 5457
+
+> JAX 3:
+>   STOCKKEY = X'1944230d560b188ac0a86fab'
+spun off from FNFV on 2015-09-28
+5 mtickets all from the spin off
+COMPANYID = 28883
+select min(daynumber) from stockprices where companyid=28883;
+select max(daynumber) from stockprices where companyid=28883;
+select * from stockprices where companyID=28883;
+
+JAX-3 has no prices  JAX-2 has the prices 
+update stockprices set companyid=28883 where companyid=28808;
+
+JAX-3 is the one we want to keep
+select min(daynumber), max(daynumber) from stockprices where COMPANYID = 28883;
+> Row 1:
+>   _C001 = 5385   9/30/15	5385	Wed
+>   _C002 = 5457   12/11/15	5457	Fri
+
+
+9/28/15	5383	Mon   <-- need this price 
+9/29/15	5384	Tue    <-- need this price 
+9/30/15	5385	Wed
+
+Let's get historical prices from Yahoo finance for these two days  9/28/15 and 9/29/15
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5384,28883,102500,109500,88000,97300,782400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5383,28883,112300,112300,107500,107500,6700);
+
+check
+select min(daynumber), max(daynumber) from stockprices where COMPANYID = 28883;
+> Row 1:
+>   _C001 = 5383  9/28/15	5383	Mon
+>   _C002 = 5457
+
+good
+I think we already have an invaldiation for a date in the request 
+cat /Marketocracy/Logs/StockPriceBuilder.2015-12-13
+D: (14:55:24.184) Invalidate all prices >= 2011-11-04 (3959)
+
+
+This is good.
+check on 12/14/15  look for JAX to be pricing
+
+reprice the member f911483655d4ba6dc0a86fa6 as of 2015-09-28
+
+12/15/15
+the chart is there, it is pricing, too
+two members hold this
+tock:J Alexander's Holdings Inc  Symbol:JAX
+Date: 12/15/2015
+
+2 users found
+
+1	aharon10	theyellowjeep
+
+I am closing this out 
+
+

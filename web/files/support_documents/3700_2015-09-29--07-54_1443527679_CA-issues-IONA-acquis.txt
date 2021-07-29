@@ -1,0 +1,256 @@
+IONA
+date:   9/24/15 
+ticker:   IONA
+
+yahoo:
+
+quantum:
+IONA Technologies plc ADR
+Ticker Symbol: IONA*     CUSIP: 46206P109     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 9/19/08
+
+BUSINESS:  IONA Technologies is the world leader in Making Software Work Together. Their Orbix, provides customers with a standards-based enterprise middleware solution to make diverse software components work together in a reliable, dependable and scalable manner.
+Notes:  Acquisition per the Other OTC on 9/19/2008.
+
+oursite:
+Symbol: IONA	Name: IONA TECHNOLOGIES ADR	Price: $4.04
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+no CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=IONA gets a request error, so this ticker is not valid
+check xitnite historical pricing
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+save to CA issues IONA prices xignite.txt
+last price from xignite:  2/26/10	4.04   ut 0 volume
+9/12/08	4.04  is the last price with volume
+
+found an article:   acquired by Progress Software Corp:
+http://www.businesswire.com/news/home/20080912005724/en/Progress-Software-Corporation-Completes-Acquisition-IONA-Technologies#.VgQigulps3Y
+
+PRGS is the ticker of the acquiring company
+
+ah another article:
+http://www.informationweek.com/services-oriented/progress-software-to-buy-iona-technologies/d/d-id/1069274?
+
+Progress Software is buying Iona Technologies to expand its service-oriented architecture product offerings. It will pay $4.05 per share or $162 million, a 16% premium over Iona's average share price for the past six months. The deal is expected to close in September.
+
+
+check MAdmin
+Stock:IONA TECHNOLOGIES ADR  Symbol:IONA
+Date: 09/24/2015
+
+65 users found
+
+1	abuggert	aebnoether	arourke	bglasgow	billthebull	bluewater	bobbyjose	bulldragon	callen	captlvntr
+2	cbeaulieu3	clifftone	cshanahan	csilk	cwhittington	davybob2	dmelliott22	drodriguez	dsurucu	ehaber
+3	ehodder	eventhorizon	frobozz	fuad	ganga_financial_group	ghughes	gordo	gr8pix	gwalsh	inikitin
+4	investor5707	jehfes	jhaydon	jonbennett	jorgecubah	keno1010	kjiang	kkhachaturyan	kpedo	llacomis
+5	mbalboa1	mbledug	merrisow	michael.keane	missmisc	mphillips3	mwarner	nsultan	philles13	q_tips
+6	redwine	relle	rhubler	richfield	socal	stanglx718	svago	tabbadusky	tankis9	tigris-k
+7	tkolasch	tmages	weedeater	wong_yew_meng	wshamp	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'IONA';  
+> Row 1:
+>   STOCKKEY = X'8a5b10ac390c6d6ac0a8015c'
+select * from mstockalias where stockkey=X'8a5b10ac390c6d6ac0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46206P109
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IONA TECHNOLOGIES ADR
+>     PRIMARYKEY = X'8a5c10ac390c6d6ac0a8015c'
+>       STOCKKEY = X'8a5b10ac390c6d6ac0a8015c'
+>         SYMBOL = IONA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='IONA'  order by BB_EFFECTIVE;
+nothing
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock IONA
+>>>> dbtool started at 2015-09-24 12:11:13 -0400
+stock: IONA
+  PK       : [8A5B10AC390C6D6AC0A8015C]
+  companyID: [8051]
+  symbol   : [IONA]
+  name     : [IONA TECHNOLOGIES ADR]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-24 12:11:14 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8051
+2008-11-10 (Mon) [2870]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-11 (Tue) [2871]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-12 (Wed) [2872]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-13 (Thu) [2873]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-14 (Fri) [2874]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-15 (Sat) [2875]: <WEEKEND>
+2008-11-16 (Sun) [2876]: <WEEKEND>
+2008-11-17 (Mon) [2877]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-18 (Tue) [2878]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-19 (Wed) [2879]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-20 (Thu) [2880]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-21 (Fri) [2881]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+2008-11-22 (Sat) [2882]: <WEEKEND>
+2008-11-23 (Sun) [2883]: <WEEKEND>
+2008-11-24 (Mon) [2884]: O:4.0400 H:4.0400 L:4.0400 C:4.0400 V:0 TSO:36448 A:4.0400 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8a5b10ac390c6d6ac0a8015c' and shares > 0 order by closed; 
+> Row 844:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-07-25 14:37:00.000000'
+>        COMMENT = 
+>     COMMISSION = 3705.000000
+>   CURRENTORDER = X'268d4fd34884fef0c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'908b569941f41d0cc0a80134'
+>       MODIFIED = NULL
+>            NET = 289340.014500
+>         OPENED = TIMESTAMP '2008-07-21 17:26:08.000000'
+>          PRICE = 3.904724
+>     PRIMARYKEY = X'268b4fd34884fef0c0a80132'
+>         SECFEE = 9.000000
+>         SHARES = 74100.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8a5b10ac390c6d6ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8a5b10ac390c6d6ac0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a5b10ac390c6d6ac0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a5b10ac390c6d6ac0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 65 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 9/19/08
+acquired yes 
+last ticket:  2008-07-25 PRICE = 3.904724
+last price:
+
+going with  $4.05 per share   20080912  acquired by PGRS  cash acquis 
+/Marketocracy/bin/cahelper -symbol  IONA  -effective 20080912 -type ACQUIS -exchange UN -acqType 1 -acqCash 4.05 -acqShare 0 -purchaser PRGS   >& /Users/build/caout/IONA.20150924-ACQUIS.out 
+IONA.20150924-ACQUIS.out
+stocks2:~/caout build$ tail -f IONA.20150924-ACQUIS.out
+D: (09-24 12:37:48.926) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-24 12:38:13.124) cahelper started on 2015-09-24 12:38:13 -0400
+
+D: (09-24 12:38:13.304) There are [0] open tickets for IONA on 20080912
+D: (09-24 12:38:13.759) StockFileLoad Version:4.0
+D: (09-24 12:38:13.759) Loading Stock Data
+D: (09-24 12:38:52.333) Building Lookup Index
+D: (09-24 12:38:57.395) Finished Building Index
+D: (09-24 12:39:01.192) Finished Loading Stock Data
+D: (09-24 12:39:01.310) Connection to 192.168.111.157:6666 succeeded
+D: (09-24 12:39:04.791) SavingChanges for position sell out 101 of 322
+D: (09-24 12:39:17.616) {
+    "ACQUIRED_STOCK" = IONA; 
+    "ACQUIRING_STOCK" = PRGS; 
+    AMOUNT = 4.05; 
+    APPLIED = 1; 
+    DATE = 20080912; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = PRGS; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-24 12:39:20.160) SUCCESS
+D: (09-24 12:39:20.161) cahelper finished 2015-09-24 12:39:20 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8a5b10ac390c6d6ac0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46206P109
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IONA TECHNOLOGIES ADR
+>     PRIMARYKEY = X'8a5c10ac390c6d6ac0a8015c'
+>       STOCKKEY = X'8a5b10ac390c6d6ac0a8015c'
+>         SYMBOL = IONA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46206P109
+>           DATE = TIMESTAMP '2008-09-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IONA TECHNOLOGIES ADR
+>     PRIMARYKEY = X'528a485f560426f5c0a86fab'
+>       STOCKKEY = X'8a5b10ac390c6d6ac0a8015c'
+>         SYMBOL = IONA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'528a485f560426f5c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'528a485f560426f5c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|IONA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|4.050000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150924:123813
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = PRGS     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-09-12 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PRGS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-09-12 00:00:00.000000'
+>            PRIMARYKEY = X'5282485f560426f5c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'5282485f560426f5c0a86fab';
+> Row 1:
+>   _C001 = 111.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'5282485f560426f5c0a86fab'));
+there are 111 fundkeys, save to CA issues IONA fundkeys.txt
+
+For Beta case
+IONA no longer trades but is still active on our site - acquired by PRGS for 4.05
+
+check on 9/25/15   invalidate funds
+check MAdmin
+
+9/29/15
+IONA has been acquired	right curve
+ 	 	
+IONA TECHNOLOGIES ADR [IONA] acquired by PROGRESS SOFTWARE [PRGS] on 2008-09-12 00:00:00.
+
+invalidate  reprice close
+

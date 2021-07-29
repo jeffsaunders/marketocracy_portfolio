@@ -1,0 +1,701 @@
+date:  6/19/15
+ticker:  QADA
+
+short in member's fund found 3 stockkes
+> Row 823:
+>    LOGINNAME = pthurmanb
+>       SYMBOL = PSCVF
+>   PRIMARYKEY = X'158d6bd04d851a8bc0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+QADA 	$26.91 	-182 	-$4,897.62 	$13.99 	-1.68% 	0.00% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 18, 2015 		-182 	-182 	Sell
+Total: -182
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 18, 2015 	182 	$9.10 	$0.09 	$4,911.61 	$26.99
+
+he has long QADA and short QADA
+long
+QADA 	click me 	$26.91 	182 	$4,897.62 	0.38% 	$2,534.18 	-1.68% 	107.22% 	107.22% 	Details 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 28, 2012 		1 	1 	Corporate Action
+Feb 08, 2013 	1 	1 	2 	Corporate Action
+May 10, 2013 	2 	180 	182 	Buy
+Total: 182
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 10, 2013 	180 	$9.00 	$2,336.00 	$12.98
+  	  	 
+SELLS
+You have no sells for this position
+  	  	 
+ 	 corporate actions 	
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 21, 2012 	QADB declared a dividend of 0.449549 percent in stock QADA.
+Dec 21, 2012 	QADB declared a dividend of 0 percent in stock QADA.
+Nov 23, 2012 	QADB declared a dividend of 0.469851 percent in stock QADA.
+
+
+short
+QADA 	$26.91 	-182 	-$4,897.62 	$13.99 	-1.68% 	0.00% 	Details  	TOP
+
+select distinct stockkey from mstockalias where symbol='QADA';
+> Row 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+> Row 2:
+>   STOCKKEY = X'e7e75ff94d0aa3f4c0a80146'
+> Row 3:
+>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+
+there are three
+**********************************************************************
+> QADA 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+this is the one to keep
+COMPANYID = 19764
+original mtickets 1510  after combining  1510
+**********************************************************************
+select * from mstockalias where STOCKKEY = X'04695d274d0aa282c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74727D306
+>           DATE = TIMESTAMP '2010-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = QAD Inc
+>     PRIMARYKEY = X'046a5d274d0aa282c0a80146'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>         SYMBOL = QADA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey= X'046a5d274d0aa282c0a80146';
+	there are 36 CAs
+	select distinct BB_ACTIONMNEMONIC  from mcorporateaction where aliaskey= X'046a5d274d0aa282c0a80146';
+	> Row 1:
+	>   BB_ACTIONMNEMONIC = DVD_STOCK
+	> Row 2:
+	>   BB_ACTIONMNEMONIC = LIST
+	> Row 3:
+	>   BB_ACTIONMNEMONIC = DVD_CASH
+	select count(*) from mticket where stockkey= X'04695d274d0aa282c0a80146';
+	> Row 1:
+	>   _C001 = 1510.000000
+Let's look at the DVD stock
+select * from mcorporateaction where aliaskey= X'046a5d274d0aa282c0a80146' and BB_ACTIONMNEMONIC = 'DVD_STOCK';
+there are 24 DVD_STOCK
+Here is the LIST
+select * from mcorporateaction where aliaskey= X'046a5d274d0aa282c0a80146' and BB_ACTIONMNEMONIC = 'LIST';
+> Row 1:
+>              ALIASKEY = X'046a5d274d0aa282c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|QADA|CP_SEC_TYP|2|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50486060
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 225703
+>        BB_COMPANYNAME = QAD Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = QADA    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-15 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = QADA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1fb4193f4d095049c0a80146'
+>               VERSION = NULL
+
+How about DVD_cash
+select * from mcorporateaction where aliaskey= X'046a5d274d0aa282c0a80146' and BB_ACTIONMNEMONIC = 'DVD_CASH';
+there are 11 of these 
+
+**********************************************************************
+> QADA 2:
+>   STOCKKEY = X'e7e75ff94d0aa3f4c0a80146'
+this has no mtickets, deleting this
+**********************************************************************
+select * from mstockalias where STOCKKEY = X'e7e75ff94d0aa3f4c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74727D306
+>           DATE = TIMESTAMP '2010-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = QAD Inc
+>     PRIMARYKEY = X'e7e85ff94d0aa3f4c0a80146'
+>       STOCKKEY = X'e7e75ff94d0aa3f4c0a80146'
+>         SYMBOL = QADA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'e7e85ff94d0aa3f4c0a80146';
+no CAs   no CAs good news
+	select count(*) from mticket where stockkey= X'e7e75ff94d0aa3f4c0a80146';
+> Row 1:
+>   _C001 = 0.000000  No tickers good news 
+This one can be deleted 
+
+******************************************************
+> QADA 3:
+>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+this has 10 mtickets, going to move these and delete this stockkey
+******************************************************
+select * from mstockalias where STOCKKEY = X'37155ff94d0aa3f7c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74727D306
+>           DATE = TIMESTAMP '2010-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = QAD Inc
+>     PRIMARYKEY = X'37165ff94d0aa3f7c0a80146'
+>       STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+>         SYMBOL = QADA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=  X'37165ff94d0aa3f7c0a80146';
+nothing  no CAs
+select count(*) from mticket where stockkey=X'37155ff94d0aa3f7c0a80146';
+> Row 1:
+>   _C001 = 10.000000
+select distinct sourcekey from mticket where stockkey=X'37155ff94d0aa3f7c0a80146';;
+null only just member tickets
+Let's get the primarykeys
+select primarykey from mticket where STOCKKEY = X'37155ff94d0aa3f7c0a80146';
+there are 10 ticketkeys save to CA issues QADA ticketkeys.txt
+
+Let's get the fundkeys
+select distinct fundkey from mticketallocation where ticketkey in (select primarykey from mticket where STOCKKEY = X'37155ff94d0aa3f7c0a80146');
+there are 7 fundkeys save to CA issues QADA fundkeys.txt
+
+
+let's see if we can create an sql statement to get the loginname fund symbol and fund primarykey
+select mm.loginname,  mf.symbol, mf.primarykey from mmanager mm, mfund mf, mticket mt, mticketallocation ma 
+	where mm.primarykey = mt.managerkey
+	and mf.primarykey = ma.fundkey 
+	and mt.primarykey = ma.ticketkey
+	and mt.stockkey = X'37155ff94d0aa3f7c0a80146';  
+
+> Row 1:
+>    LOGINNAME = francois60
+>       SYMBOL = FSC
+>   PRIMARYKEY = X'449e1c5c527baccfc0a80132'
+> Row 2:
+>    LOGINNAME = hiromimini
+>       SYMBOL = MCRH
+>   PRIMARYKEY = X'79bd27b83becc18cc0a801e1'
+> Row 3:
+>    LOGINNAME = deepsilver
+>       SYMBOL = DASFB
+>   PRIMARYKEY = X'd62816cf4e8153f4c0a80132'
+> Row 4:
+>    LOGINNAME = deepsilver
+>       SYMBOL = DASFB
+>   PRIMARYKEY = X'd62816cf4e8153f4c0a80132'
+> Row 5:
+>    LOGINNAME = bradley.taylor
+>       SYMBOL = BMF
+>   PRIMARYKEY = X'9260042b54f96547c0a86f98'
+> Row 6:
+>    LOGINNAME = ascent
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'fb5747d954ec5115c0a86f98'
+> Row 7:
+>    LOGINNAME = ascent
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'fb5747d954ec5115c0a86f98'
+> Row 8:
+>    LOGINNAME = bradley.taylor
+>       SYMBOL = BMF
+>   PRIMARYKEY = X'9260042b54f96547c0a86f98'
+> Row 9:
+>    LOGINNAME = tshields
+>       SYMBOL = TSAMF
+>   PRIMARYKEY = X'44443c08504aa34ac0a80135'
+> Row 10:
+>    LOGINNAME = pthurmanb
+>       SYMBOL = PSCVF
+>   PRIMARYKEY = X'158d6bd04d851a8bc0a80134'
+
+Ok, lets change QADA-3 mtickets to QADA-1 tickets   let's make sure we have the correct ones
+select distinct stockkey from mstockalias where symbol='QADA';
+> QADA 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+	select count(*) from mticket where stockkey= X'04695d274d0aa282c0a80146';
+	> Row 1:
+	>   _C001 = 1510.000000
+> QADA 2:
+>   STOCKKEY = X'e7e75ff94d0aa3f4c0a80146'
+	select count(*) from mticket where stockkey= X'e7e75ff94d0aa3f4c0a80146';
+	> Row 1:
+	>   _C001 = 0.000000
+
+> QADA 3:
+>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+	select count(*) from mticket where stockkey= X'37155ff94d0aa3f7c0a80146';
+	> Row 1:
+	>   _C001 = 10.000000
+
+let's take a look at our member  pthurmanb
+select primarykey from mmanager where loginname='pthurmanb';
+> Row 1:
+>   PRIMARYKEY = X'a6102c944cf589d5c0a80134'
+his mtickets for QADQ-1
+	select * from mticket where STOCKKEY = X'04695d274d0aa282c0a80146' and managerkey= X'a6102c944cf589d5c0a80134';
+his mtickets for QADQ-3
+	select * from mticket where STOCKKEY = X'37155ff94d0aa3f7c0a80146' and managerkey= X'a6102c944cf589d5c0a80134';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-18 09:36:42.000000'
+>        COMMENT = NULL
+>     COMMISSION = 9.100000
+>   CURRENTORDER = X'7f1d01165582133ac0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 4911.610066
+>         OPENED = TIMESTAMP '2015-06-17 20:39:22.000000'
+>          PRICE = 26.986868
+>     PRIMARYKEY = X'7f1b01165582133ac0a86fa6'  <-- that is the one
+>         SECFEE = 0.090000
+>         SHARES = 182.000000  <------------------- the one with 182 shares needs to get changed 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+log in as this member pthurmanb fund: PSCVF  has the short (and long)
+long:
+QADA 	click me 	$26.91 	182 	$4,897.62 	0.38% 	$2,652.11 	-1.68% 	112.21% 	112.21% 	Details 
+
+short:
+QADA 	$26.91 	-182 	-$4,897.62 	$14.00 	-1.68% 	0.00% 	Details  
+Hexkey: 7F1B01165582133AC0A86FA6
+
+ok, we can do the move  QADQ-3 mtickets to QADQ-1 mtickets
+> QADA 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+> QADA 3:
+>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+
+we already have the ticketkeys and fundkeys
+let's delete the mtrades
+select primarykey from mticket where STOCKKEY = X'37155ff94d0aa3f7c0a80146';
+delete from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'37155ff94d0aa3f7c0a80146');
+Now let's move the stockkeys
+update mticket set STOCKKEY = X'04695d274d0aa282c0a80146' where STOCKKEY= X'37155ff94d0aa3f7c0a80146';
+
+ok let's tickle the tickets
+put our keys into ticketstotickle on stocks then run this 
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-06-20 09:36:40 -0400
+<<<< dbtool finished at 2015-06-20 09:37:36 -0400
+
+Invalidate the funds 
+let's log in as the members, need to click on the tickets I think
+
+> Row 1:
+>    LOGINNAME = francois60
+>       SYMBOL = FSC
+>   PRIMARYKEY = X'449e1c5c527baccfc0a80132'
+> Row 2:
+>    LOGINNAME = hiromimini
+>       SYMBOL = MCRH
+>   PRIMARYKEY = X'79bd27b83becc18cc0a801e1'
+> Row 3:
+>    LOGINNAME = deepsilver
+>       SYMBOL = DASFB
+>   PRIMARYKEY = X'd62816cf4e8153f4c0a80132'
+> Row 4:
+>    LOGINNAME = deepsilver
+>       SYMBOL = DASFB
+>   PRIMARYKEY = X'd62816cf4e8153f4c0a80132'
+> Row 5:
+>    LOGINNAME = bradley.taylor
+>       SYMBOL = BMF
+>   PRIMARYKEY = X'9260042b54f96547c0a86f98'
+> Row 6:
+>    LOGINNAME = ascent
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'fb5747d954ec5115c0a86f98'
+> Row 7:
+>    LOGINNAME = ascent
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'fb5747d954ec5115c0a86f98'
+> Row 8:
+>    LOGINNAME = bradley.taylor
+>       SYMBOL = BMF
+>   PRIMARYKEY = X'9260042b54f96547c0a86f98'
+> Row 9:
+>    LOGINNAME = tshields
+>       SYMBOL = TSAMF
+>   PRIMARYKEY = X'44443c08504aa34ac0a80135'
+> Row 10:
+>    LOGINNAME = pthurmanb
+>       SYMBOL = PSCVF
+>   PRIMARYKEY = X'158d6bd04d851a8bc0a80134'
+
+for the short he has this:
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Paragon ROIC Smallcap Value Fund 	PSCVF 	182
+Paragon ROIC Smallcap Value Fund 	PSCVF 	182
+  	  	 
+left curve 	 reverse ticket [ADMIN ONLY] 	right curve
+  	  	
+Hexkey: 7F1B01165582133AC0A86FA6
+
+select * from mticket where primarykey=X'7F1B01165582133AC0A86FA6';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-18 09:36:42.000000'
+>        COMMENT = NULL
+>     COMMISSION = 9.100000
+>   CURRENTORDER = X'7f1d01165582133ac0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 4911.610066
+>         OPENED = TIMESTAMP '2015-06-17 20:39:22.000000'
+>          PRICE = 26.986868
+>     PRIMARYKEY = X'7f1b01165582133ac0a86fa6'
+>         SECFEE = 0.090000
+>         SHARES = 182.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'7f1b01165582133ac0a86fa6';
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'b1282f355582cd4ec0a86f9c'
+>                 PRIMARYKEY = X'20a0464755856c9fc0a86f92'
+>                     SHARES = 182.000000
+>                  TICKETKEY = X'7f1b01165582133ac0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-06-18 09:36:42.000000'
+>                      PRICE = 26.986868
+>   CREATEDBYCORPORATEACTION = 0'
+	select stockkey from mposition where primarykey=X'b1282f355582cd4ec0a86f9c';
+	> Row 1:
+	>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'27e565e850ee03f2c0a80146'
+>                 PRIMARYKEY = X'f81a494f55856f9ac0a86f92'
+>                     SHARES = 182.000000
+>                  TICKETKEY = X'7f1b01165582133ac0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-06-18 09:36:42.000000'
+>                      PRICE = 26.986868
+>   CREATEDBYCORPORATEACTION = 0
+	select stockkey from mposition where primarykey=X'27e565e850ee03f2c0a80146';
+	> Row 1:
+	>   STOCKKEY = X'04695d274d0aa282c0a80146'
+
+
+Let's get rid of stockkey 3
+> QADA 3:
+>   STOCKKEY = X'37155ff94d0aa3f7c0a80146'
+
+set commit false;
+
+delete from mstock where primarykey=  X'37155ff94d0aa3f7c0a80146'; 
+
+delete from mwindowstock where stockkey=X'37155ff94d0aa3f7c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'37155ff94d0aa3f7c0a80146');
+
+delete from mstockalias where stockkey=X'37155ff94d0aa3f7c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'37155ff94d0aa3f7c0a80146');   
+
+delete from mposition where stockkey=X'37155ff94d0aa3f7c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'37155ff94d0aa3f7c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'37155ff94d0aa3f7c0a80146');
+
+delete from mticket where stockkey=X'37155ff94d0aa3f7c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'37155ff94d0aa3f7c0a80146';  
+
+commit;
+
+set commit true;
+
+ok QADQ-3 is gone
+
+let's tickle and invalidate again
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+invalidate
+
+logged back in as pthurmanb   PSCVF  the short is gone and the long is gone.  
+entering QADA in the stock info box shows that he didn't trade it but that's okay
+let's check the trades for him
+
+> QADA 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+select primarykey from mmanager where loginname='pthurmanb';
+> Row 1:
+>   PRIMARYKEY = X'a6102c944cf589d5c0a80134'
+select * from mticket where managerkey= X'a6102c944cf589d5c0a80134' and stockkey=X'04695d274d0aa282c0a80146' order by closed; 
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-12-28 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'27e265e850ee03f2c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-12-28 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'27e065e850ee03f2c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = X'ca7e5dab50edfe4cc0a80146'
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-02-08 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'28ca172d51158e69c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2013-02-08 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'28c8172d51158e69c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = X'3e383ecb50f9dbbfc0a80146'
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-02-08 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'ea276d1651198471c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2013-02-08 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'ea256d1651198471c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = X'a2f8748850c9141ec0a80146'
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-10 13:48:00.000000'
+>        COMMENT = 
+>     COMMISSION = 9.000000
+>   CURRENTORDER = X'2a9d292d51887920c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 2336.000040
+>         OPENED = TIMESTAMP '2013-05-06 23:46:40.000000'
+>          PRICE = 12.977778
+>     PRIMARYKEY = X'2a9b292d51887920c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 180.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-18 09:36:42.000000'
+>        COMMENT = NULL
+>     COMMISSION = 9.100000
+>   CURRENTORDER = X'7f1d01165582133ac0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a6102c944cf589d5c0a80134'
+>       MODIFIED = NULL
+>            NET = 4911.610066
+>         OPENED = TIMESTAMP '2015-06-17 20:39:22.000000'
+>          PRICE = 26.986868
+>     PRIMARYKEY = X'7f1b01165582133ac0a86fa6'
+>         SECFEE = 0.090000
+>         SHARES = 182.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'04695d274d0aa282c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+looks good - need a nightly load.
+we need to get rid of QADA-2 still have a collision
+> QADA 2:
+>   STOCKKEY = X'e7e75ff94d0aa3f4c0a80146'
+
+select count(*) from mticket where stockkey=X'e7e75ff94d0aa3f4c0a80146';
+none  ok let's get rid of this stockkey
+set commit false;
+
+delete from mstock where primarykey=  X'e7e75ff94d0aa3f4c0a80146'; 
+
+delete from mwindowstock where stockkey=X'e7e75ff94d0aa3f4c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'e7e75ff94d0aa3f4c0a80146');
+
+delete from mstockalias where stockkey=X'e7e75ff94d0aa3f4c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'e7e75ff94d0aa3f4c0a80146');   
+
+delete from mposition where stockkey=X'e7e75ff94d0aa3f4c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'e7e75ff94d0aa3f4c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'e7e75ff94d0aa3f4c0a80146');
+
+delete from mticket where stockkey=X'e7e75ff94d0aa3f4c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'e7e75ff94d0aa3f4c0a80146';  
+
+commit;
+
+set commit true;
+
+Ok, we should have one and only one QADA
+select distinct stockkey from mstockalias where symbol='QADA';
+> Row 1:
+>   STOCKKEY = X'04695d274d0aa282c0a80146'
+select count(*) from mticket where STOCKKEY = X'04695d274d0aa282c0a80146';
+> Row 1:
+>   _C001 = 1520.000000  <--- good we picked up the new mtickets
+let's get the companyID
+
+select * from mstock where primarykey=X'04695d274d0aa282c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'046a5d274d0aa282c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'04695d274d0aa282c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19764
+>   WINDOWIDENTITYKEY = NULL
+
+let's check on prices 
+QADA listed on our site on 2010-12-16
+
+select * from stockprices where companyid=19764 order by daynumber;
+first one
+> Row 1:
+>   DAYNUMBER = 3636  <--- 12/16/10	3636	Thu   this is the day we listed  good
+>   COMPANYID = 19764
+>      OPENED = 86000
+>        HIGH = 120000
+>         LOW = 86000
+>      CLOSED = 115000
+>      VOLUME = 1733
+
+
+last one
+> Row 1151:
+>   DAYNUMBER = 5282  <---6/19/15	5282	Fri
+>   COMPANYID = 19764
+>      OPENED = 273100
+>        HIGH = 276900
+>         LOW = 269100
+>      CLOSED = 269100
+>      VOLUME = 98719
+
+good we have ALL prices no need to do any pricing
+
+let's reprice anyone who ever held QADA
+select primarykey from mposition where stockkey=X'04695d274d0aa282c0a80146';
+select fundkey from mposition where primarykey in (select primarykey from mposition where stockkey=X'04695d274d0aa282c0a80146');
+102 fundkeys  save to CA issues QADQ fundkeys ALL.txt
+
+
+let's invalidate on stocks
+let's reprice all for the new site 
+
+
+check on 6/21/15
+
+stock QADA should be pricing
+our member XXX when we enter symbol QADQ should come up with the trading history, even though he has 0 shares now
+
+
+6/23/15 - QADA graph is showing.
+pthurmanb
+SYMBOL = PSCVF
+your holdings of QADA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+PGBFX 	0 	N/A 	N/A
+PETFX 	0 	N/A 	N/A
+PCSFX 	0 	N/A 	N/A
+PSCVF 	0 	$.00 	0.00%  <--
+BESPX 	0 	N/A 	N/A
+VRCMX 	0 	N/A 	N/A
+SBSVX 	0 	N/A 	N/A
+SBIVX 	0 	N/A 	N/A 
+
+we;re getting history now
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 28, 2012 		1 	1 	Corporate Action
+Feb 08, 2013 	1 	1 	2 	Corporate Action
+May 10, 2013 	2 	180 	182 	Buy
+Jun 18, 2015 	182 	-182 		Sell
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 10, 2013 	180 	$9.00 	$2,336.00 	$12.98
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 18, 2015 	182 	$9.10 	$0.09 	$4,911.61 	$26.99
+
+good, closing this out on 6/23/15 

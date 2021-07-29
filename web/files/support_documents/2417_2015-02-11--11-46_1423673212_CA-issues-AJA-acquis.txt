@@ -1,0 +1,165 @@
+date: 2/9/15
+AJA delisted
+
+quantum:  
+
+Appalachian Power Co., 8.00% Junior Subor Debentures Series B
+Ticker Symbol: AJA*     CUSIP: 037735818     Exchange: NYSE
+Security Type:   Exchange-Traded Debt Security
+* NOTE: This security is no longer trading as of 7/24/02
+Security has been Called for:  Wednesday, July 24, 2002
+6/17/2002 American Electric Power announced that this issue will be redeemed on 7/24/2002 at $25 plus accrued interest.
+
+out site:
+Symbol: AJA	Name: APPALACHIAN PWR 8.00% JR DEBS	Price: $25.52
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+CAs
+cash dividends paid by AJA	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+27 Jun 00	27 Jun 00	27 Jun 00	N/A	$0.50	Dividend amount:0.5 per share.
+27 Sep 00	27 Sep 00	27 Sep 00	N/A	$0.50	Dividend amount:0.5 per share.
+26 Dec 00	26 Dec 00	26 Dec 00	N/A	$0.50	Dividend amount:0.5 per share.
+
+select distinct stockkey from mstockalias where symbol='AJA';
+> Row 1:
+>   STOCKKEY = X'acce10ac390c6defc0a8015c'
+select * from mstockalias where STOCKKEY = X'acce10ac390c6defc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 037735818
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = APPALACHIAN PWR 8.00% JR DEBS
+>     PRIMARYKEY = X'accf10ac390c6defc0a8015c'
+>       STOCKKEY = X'acce10ac390c6defc0a8015c'
+>         SYMBOL = AJA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+MAdmin
+no one
+/Marketocracy/bin/dbtool lookup stock AJA
+>>>> dbtool started at 2015-02-10 01:31:46 -0500
+stock: AJA
+  PK       : [ACCE10AC390C6DEFC0A8015C]
+  companyID: [9641]
+  symbol   : [AJA]
+  name     : [APPALACHIAN PWR 8.00% JR DEBS]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-10 01:31:47 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9641
+2002-07-16 (Tue) [561]: O:25.1100 H:25.1100 L:25.1100 C:25.1100 V:10200 TSO:0 A:25.1100 R:1.0000 CA:0.0000
+2002-07-17 (Wed) [562]: O:25.1100 H:25.1200 L:25.1100 C:25.1200 V:3700 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-18 (Thu) [563]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:4800 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-19 (Fri) [564]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:2600 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-20 (Sat) [565]: <WEEKEND>
+2002-07-21 (Sun) [566]: <WEEKEND>
+2002-07-22 (Mon) [567]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:1500 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-23 (Tue) [568]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:400 TSO:0 A:25.1200 R:1.0000 CA:0.0000  <--- last day
+2002-07-24 (Wed) [569]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:0 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-25 (Thu) [570]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:0 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-26 (Fri) [571]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:0 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+2002-07-27 (Sat) [572]: <WEEKEND>
+2002-07-28 (Sun) [573]: <WEEKEND>
+
+
+2002-07-24 (Wed) [569]: O:25.1200 H:25.1200 L:25.1200 C:25.1200 V:0 TSO:0 A:25.1200 R:1.0000 CA:0.0000
+
+/Marketocracy/bin/cahelper -symbol AJA -effective 20020724 -type ACQUIS -exchange UN -acqType 1 -acqCash 25.12 -acqShare 0 -purchaser AJA >& /Users/build/caout/AJA.20150209-ACQUIS.out
+stocks:~/caout build$ tail -f AJA.20150209-ACQUIS.out
+D: (02-10 01:35:31.494) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-10 01:36:04.674) cahelper started on 2015-02-10 01:36:04 -0500
+
+D: (02-10 01:36:05.133) There are [0] open tickets for AJA on 20020724
+D: (02-10 01:36:05.465) StockFileLoad Version:3.0
+D: (02-10 01:36:05.465) Loading Stock Data
+D: (02-10 01:36:56.533) Building Lookup Index
+D: (02-10 01:37:01.461) Finished Building Index
+D: (02-10 01:37:02.885) Finished Loading Stock Data
+D: (02-10 01:37:02.940) Connection to 192.168.111.157:6666 succeeded
+D: (02-10 01:37:02.964) {
+    "ACQUIRED_STOCK" = AJA; 
+    "ACQUIRING_STOCK" = "AJA_FIX"; 
+    AMOUNT = 25.120001; 
+    APPLIED = 1; 
+    DATE = 20020724; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AJA_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-10 01:37:03.432) SUCCESS
+D: (02-10 01:37:03.432) cahelper finished 2015-02-10 01:37:03 -0500
+
+
+select * from mstockalias where STOCKKEY = X'acce10ac390c6defc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 037735818
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = APPALACHIAN PWR 8.00% JR DEBS
+>     PRIMARYKEY = X'accf10ac390c6defc0a8015c'
+>       STOCKKEY = X'acce10ac390c6defc0a8015c'
+>         SYMBOL = AJA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 037735818
+>           DATE = TIMESTAMP '2002-07-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = APPALACHIAN PWR 8.00% JR DEBS
+>     PRIMARYKEY = X'abd74cf954d9a6d5c0a86f92'
+>       STOCKKEY = X'acce10ac390c6defc0a8015c'
+>         SYMBOL = AJA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <-- inactive
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'abd74cf954d9a6d5c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'abd74cf954d9a6d5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AJA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|25.120001|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150210:013604
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-24 00:00:00.000000'
+>         BB_IDENTIFIER = AJA_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AJA_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-07-24 00:00:00.000000'
+>            PRIMARYKEY = X'abd14cf954d9a6d4c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'abd14cf954d9a6d4c0a86f92' ;
+> Row 1:
+>   _C001 = 1.000000
+
+check on 2/11/15 see  that this is acquired
+
+2/11/15 
+it is acquired - Jul 24, 2002	APPALACHIAN PWR 8.00% JR DEBS acquired by a private company on 2002-07-24 00:00:00.
+
+closing this

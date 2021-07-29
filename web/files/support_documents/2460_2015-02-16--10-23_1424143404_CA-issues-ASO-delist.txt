@@ -1,0 +1,296 @@
+date: 2/15/15
+ASO  delisted
+
+quantum
+AmSouth Bancorporation
+Ticker Symbol: ASO*     CUSIP: 032165102     Exchange: NYSE
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 11/04/06
+
+Company's Online Profile
+BUSINESS:  AmSouth Bancorporation is a regional bank holding company, headquartered in Birmingham AL and operating almost 300 offices in AL, FL, TN and GA.
+Notes:  Nov. 4, 2006 -- Regions Financial Corp. (NYSE: RF) announced today that it has completed its merger with AmSouth Bancorporation. AmSouth and Regions announced plans to merge in May 2006, and shareholders of each company approved the transaction in October.
+Large Cap Stock -   Market Value $ 6.7 Billion
+
+
+our site
+ymbol: ASO	Name: Airshares EU Carbon Allowanced Fund	Price: $22.00
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+CAs 
+none
+
+let's see what we have in the database
+select distinct stockkey from mstockalias where symbol='ASO';
+> Row 1:
+>   STOCKKEY = X'07370e21390ae25fc0a80116'
+> Row 2:
+>   STOCKKEY = X'684f238749a34d50c0a80146'
+
+
+
+there are two
+> ASO 1:
+>   STOCKKEY = X'07370e21390ae25fc0a80116'
+select * from mstockalias where STOCKKEY = X'07370e21390ae25fc0a80116';
+this is amsouth (quantum has this) and it is delisted - good
+
+> ASO 2:
+>   STOCKKEY = X'684f238749a34d50c0a80146'
+select * from mstockalias where STOCKKEY = X'684f238749a34d50c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00950G104
+>           DATE = TIMESTAMP '2008-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Airshares EU Carbon Allowanced Fund
+>     PRIMARYKEY = X'6850238749a34d50c0a80146'
+>       STOCKKEY = X'684f238749a34d50c0a80146'
+>         SYMBOL = ASO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check mtickets
+select count(*) from mticket where STOCKKEY = X'684f238749a34d50c0a80146';
+> Row 1:
+>   _C001 = 28.000000
+
+check who holds this ASO 02/15/2015
+Stock:Airshares EU Carbon Allowanced Fund  Symbol:ASO
+Date: 02/15/2015
+
+2 users found
+
+1	gfontana	reveille
+
+let's see if we have an acquis in the database that has not been applied for this one:
+select * from mcorporateaction where aliaskey is null and BB_SECID='ASO' order by BB_EFFECTIVE;
+nothing for airshares
+
+google.com
+
+http://www1.nyse.com/pdfs/Trader_Update_AirShares_Liquidation_July_2009.pdf
+Issuer
+AirShares EU Carbon Allowances Fund
+CUSIP
+00950G104
+July 24, 2009
+On July 23, 2009, XShares Advisors LLC announced that it has determined to liquidate and dissolve AirShares EU Carbon Allowances Fund (the "Fund"). Accordingly, Friday, July 31, 2009, will be the final day the Fund's Units of Beneficial Interest can be traded on NYSE Arca and the last day on which creation unit aggregations of such Units may be purchased or redeemed. NYSE Arca will suspend trading in the Funds prior to the opening of business on Monday, August 3, 2009.
+Any person holding shares in a Fund after the suspension date will receive a cash distribution equal to the net asset value of their shares as of July 31, 2009, including any capital gains and dividends.
+XShares Advisors LLC: 800-925-2870
+
+July 31, 2009, will be the final day
+check historical pricing
+
+
+/Marketocracy/bin/dbtool lookup stock ASO
+>>>> dbtool started at 2015-02-15 08:23:36 -0500
+stock: ASO
+  PK       : [07370E21390AE25FC0A80116]
+  companyID: [4190]
+  symbol   : [ASO]
+  name     : [AMSOUTH BANCORP]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: ASO
+  PK       : [07370E21390AE25FC0A80116]
+  companyID: [4190]
+  symbol   : [ASO]
+  name     : [AMSOUTH BANCORP]
+  date     : [2006-11-06 00:00:00]
+  status   : [Delist]
+stock: ASO
+  PK       : [684F238749A34D50C0A80146]
+  companyID: [18448]
+  symbol   : [ASO]
+  name     : [Airshares EU Carbon Allowanced Fund]
+  date     : [2008-12-15 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-15 08:23:37 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18448
+2009-07-21 (Tue) [3123]: O:23.0799 H:23.2000 L:22.5000 C:23.0799 V:3700 TSO:10000 A:23.0799 R:1.0000 CA:0.0000
+2009-07-22 (Wed) [3124]: O:23.0900 H:23.0900 L:23.0875 C:23.0875 V:600 TSO:10000 A:23.0875 R:1.0000 CA:0.0000
+2009-07-23 (Thu) [3125]: O:22.6700 H:23.1600 L:21.5100 C:23.1600 V:1512 TSO:10000 A:23.1600 R:1.0000 CA:0.0000
+2009-07-24 (Fri) [3126]: O:23.0500 H:23.0500 L:22.8600 C:22.8600 V:450 TSO:10000 A:22.8600 R:1.0000 CA:0.0000
+2009-07-25 (Sat) [3127]: <WEEKEND>
+2009-07-26 (Sun) [3128]: <WEEKEND>
+2009-07-27 (Mon) [3129]: O:22.9600 H:22.9700 L:22.9600 C:22.9700 V:200 TSO:10000 A:22.9700 R:1.0000 CA:0.0000
+2009-07-28 (Tue) [3130]: O:22.5600 H:22.5600 L:21.8200 C:21.8800 V:2092 TSO:10000 A:21.8800 R:1.0000 CA:0.0000
+2009-07-29 (Wed) [3131]: O:20.2600 H:21.5000 L:20.2600 C:21.5000 V:400 TSO:10000 A:21.5000 R:1.0000 CA:0.0000
+2009-07-30 (Thu) [3132]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-07-31 (Fri) [3133]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000  <---
+2009-08-01 (Sat) [3134]: <WEEKEND>
+2009-08-02 (Sun) [3135]: <WEEKEND>
+2009-08-03 (Mon) [3136]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-04 (Tue) [3137]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-05 (Wed) [3138]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-06 (Thu) [3139]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-07 (Fri) [3140]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-08 (Sat) [3141]: <WEEKEND>
+2009-08-09 (Sun) [3142]: <WEEKEND>
+2009-08-10 (Mon) [3143]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-11 (Tue) [3144]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-12 (Wed) [3145]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-13 (Thu) [3146]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-14 (Fri) [3147]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-15 (Sat) [3148]: <WEEKEND>
+2009-08-16 (Sun) [3149]: <WEEKEND>
+2009-08-17 (Mon) [3150]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-18 (Tue) [3151]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-19 (Wed) [3152]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-20 (Thu) [3153]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-21 (Fri) [3154]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-22 (Sat) [3155]: <WEEKEND>
+2009-08-23 (Sun) [3156]: <WEEKEND>
+2009-08-24 (Mon) [3157]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-25 (Tue) [3158]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-26 (Wed) [3159]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-27 (Thu) [3160]: O:20.2500 H:22.0000 L:20.2500 C:22.0000 V:600 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-28 (Fri) [3161]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-08-29 (Sat) [3162]: <WEEKEND>
+2009-08-30 (Sun) [3163]: <WEEKEND>
+2009-08-31 (Mon) [3164]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+2009-09-01 (Tue) [3165]: O:22.0000 H:22.0000 L:22.0000 C:22.0000 V:0 TSO:10000 A:22.0000 R:1.0000 CA:0.0000
+
+date to apply acquis / delist 2009-07-31  
+cash:  22
+
+/Marketocracy/bin/cahelper -symbol ASO -effective 20090731 -type ACQUIS -exchange UN -acqType 1 -acqCash 22.00 -acqShare 0 -purchaser ASO >& /Users/build/caout/ASO.201502115-ACQUIS.out
+stocks:~/caout build$ tail -f ASO.201502115-ACQUIS.out
+D: (02-15 08:26:58.485) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-15 08:27:21.851) cahelper started on 2015-02-15 08:27:21 -0500
+
+D: (02-15 08:27:22.264) There are [0] open tickets for ASO on 20090731
+D: (02-15 08:27:22.440) StockFileLoad Version:3.0
+D: (02-15 08:27:22.441) Loading Stock Data
+D: (02-15 08:28:02.018) Building Lookup Index
+D: (02-15 08:28:05.917) Finished Building Index
+D: (02-15 08:28:06.850) Finished Loading Stock Data
+D: (02-15 08:28:06.967) Connection to 192.168.111.157:6666 succeeded
+D: (02-15 08:28:07.041) {
+    "ACQUIRED_STOCK" = ASO; 
+    "ACQUIRING_STOCK" = "ASO_FIX"; 
+    AMOUNT = 22; 
+    APPLIED = 1; 
+    DATE = 20090731; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ASO_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-15 08:28:07.876) SUCCESS
+D: (02-15 08:28:07.877) cahelper finished 2015-02-15 08:28:07 -0500
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'684f238749a34d50c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00950G104
+>           DATE = TIMESTAMP '2008-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Airshares EU Carbon Allowanced Fund
+>     PRIMARYKEY = X'6850238749a34d50c0a80146'
+>       STOCKKEY = X'684f238749a34d50c0a80146'
+>         SYMBOL = ASO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00950G104
+>           DATE = TIMESTAMP '2009-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Airshares EU Carbon Allowanced Fund
+>     PRIMARYKEY = X'429d512154e09ebac0a86f92'
+>       STOCKKEY = X'684f238749a34d50c0a80146'
+>         SYMBOL = ASO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- inactive this is good
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'429d512154e09ebac0a86f92';
+> Row 1:
+>              ALIASKEY = X'429d512154e09ebac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ASO  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|22.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150215:082721
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ASO_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ASO_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'4297512154e09eb9c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'4297512154e09eb9c0a86f92';
+> Row 1:
+>   _C001 = 2.000000
+
+members got their shares taken 
+
+
+
+check on 2/16/15 that ASO is acquired  member's got cash
+gfontana	reveille   on 7/31/2009  
+
+2/16/15 ASO  is acquired
+login as gfontana 
+ your holdings of ASO	
+ 	 	
+Fund	Shares	Value	Portion of fund
+RCoDi	 0	 N/A	 N/A
+RTeSe	 0	 N/A	 N/A
+HIF	 0	 N/A	 N/A
+RMat	 0	 N/A	 N/A
+REne	 0	 N/A	 N/A
+BS	 0	 N/A	 N/A
+RFin	 0	 N/A	 N/A
+MKT	0	 $.00	 0.00%
+ITA	 0	 N/A	 N/A
+M100M	 0	 N/A	 N/A
+expand
+LEDGER
+Date	Start	Change	End	Type
+Apr 30, 2009		46	46	Buy
+Jul 31, 2009	46	-46		Corporate Action
+Total: 0
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Apr 30, 2009	46	$2.30	$1,020.90	$22.19
+ 	 
+SELLS
+You have no sells for this position
+
+46 * 22 = 1012
+
+invalidate? 
+/Marketocracy/bin/dbtool lookup fund gfontana
+fund: gfontana
+  PK: [0F7201333E4A6419C0A80134]
+  symbol: [MKT]
+  managerKey: [086A03883AF2ABEDC0A801E0]
+  loginName: [gfontana]
+
+/Marketocracy/bin/fptool invalidateFund 0F7201333E4A6419C0A80134
+
+closing this out, the stock has been acquired 
+2/16/15

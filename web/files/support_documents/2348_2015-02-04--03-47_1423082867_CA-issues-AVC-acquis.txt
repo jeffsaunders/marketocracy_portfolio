@@ -1,0 +1,170 @@
+date: 2/4/15
+AVC   not active
+
+select distinct stockkey from mstockalias where symbol='AVC';
+> Row 1:
+>   STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+select * from mstockalias where STOCKKEY = X'0cbf0e21390af1ffc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141888107
+>           DATE = TIMESTAMP '2000-04-29 10:30:23.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CARIBINER INTERNATIONAL
+>     PRIMARYKEY = X'0cc00e21390af1ffc0a80116'
+>       STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+>         SYMBOL = CWC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-09-19 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Audio Visual SVC
+>     PRIMARYKEY = X'618806a739e90c42c0a801dc'
+>       STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+>         SYMBOL = AVC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'618806a739e90c42c0a801dc';
+> Row 1:
+>              ALIASKEY = X'618806a739e90c42c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CWC|CP_NOTES||CP_NEW_TKR|AVC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = Audio Visual Services Corp
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-09-19 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = NULL
+>              BB_SECID = CWC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'0751064939e7ed48c0a801dc'
+>               VERSION = 1
+
+do we have any historical prices 
+/Marketocracy/bin/dbtool lookup stock AVC
+>>>> dbtool started at 2015-02-04 15:41:55 -0500
+stock: AVC
+  PK       : [0CBF0E21390AF1FFC0A80116]
+  companyID: [4544]
+  symbol   : [AVC]
+  name     : [Audio Visual SVC]
+  date     : [2000-09-19 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-04 15:41:56 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4544
+2001-03-10 (Sat) [68]: <WEEKEND>
+2001-03-11 (Sun) [69]: <WEEKEND>
+2001-03-12 (Mon) [70]: O:0.5000 H:0.5200 L:0.5000 C:0.5000 V:20600 TSO:0 A:0.5000 R:1.0000 CA:0.0000
+2001-03-13 (Tue) [71]: O:0.5000 H:0.5000 L:0.3500 C:0.4000 V:115100 TSO:0 A:0.4000 R:1.0000 CA:0.0000
+2001-03-14 (Wed) [72]: O:0.3000 H:0.3600 L:0.2900 C:0.2900 V:47700 TSO:0 A:0.2900 R:1.0000 CA:0.0000
+2001-03-15 (Thu) [73]: O:0.3000 H:0.4000 L:0.3000 C:0.4000 V:26000 TSO:0 A:0.4000 R:1.0000 CA:0.0000
+2001-03-16 (Fri) [74]: O:0.4500 H:0.5600 L:0.4500 C:0.5200 V:161700 TSO:0 A:0.5200 R:1.0000 CA:0.0000  <-- last known price
+
+2001-03-16  0.52
+/Marketocracy/bin/cahelper -symbol AVC -effective 20010316 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.52 -acqShare 0 -purchaser AVC >& /Users/build/caout/AVC.20150204-ACQUIS.out
+stocks:~/caout build$ tail -f AVC.20150204-ACQUIS.out
+D: (02-04 15:44:14.136) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-04 15:44:37.658) cahelper started on 2015-02-04 15:44:37 -0500
+
+D: (02-04 15:44:38.071) There are [0] open tickets for AVC on 20010316
+D: (02-04 15:44:38.226) StockFileLoad Version:3.0
+D: (02-04 15:44:38.226) Loading Stock Data
+D: (02-04 15:45:16.522) Building Lookup Index
+D: (02-04 15:45:20.425) Finished Building Index
+D: (02-04 15:45:21.345) Finished Loading Stock Data
+D: (02-04 15:45:21.461) Connection to 192.168.111.157:6666 succeeded
+D: (02-04 15:45:21.487) {
+    "ACQUIRED_STOCK" = AVC; 
+    "ACQUIRING_STOCK" = "AVC_FIX"; 
+    AMOUNT = 0.52; 
+    APPLIED = 1; 
+    DATE = 20010316; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AVC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-04 15:45:21.874) SUCCESS
+D: (02-04 15:45:21.874) cahelper finished 2015-02-04 15:45:21 -0500
+
+
+
+select * from mstockalias where STOCKKEY = X'0cbf0e21390af1ffc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141888107
+>           DATE = TIMESTAMP '2000-04-29 10:30:23.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CARIBINER INTERNATIONAL
+>     PRIMARYKEY = X'0cc00e21390af1ffc0a80116'
+>       STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+>         SYMBOL = CWC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-09-19 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Audio Visual SVC
+>     PRIMARYKEY = X'618806a739e90c42c0a801dc'
+>       STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+>         SYMBOL = AVC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2001-03-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Audio Visual SVC
+>     PRIMARYKEY = X'bdf81e1354d284b6c0a86f92'
+>       STOCKKEY = X'0cbf0e21390af1ffc0a80116'
+>         SYMBOL = AVC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'bdf81e1354d284b6c0a86f92';
+> Row 1:
+>              ALIASKEY = X'bdf81e1354d284b6c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AVC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.520000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150204:034437
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-03-16 00:00:00.000000'
+>         BB_IDENTIFIER = AVC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-03-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AVC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-03-16 00:00:00.000000'
+>            PRIMARYKEY = X'bdf21e1354d284b5c0a86f92'
+>               VERSION = NULL
+
+closing this out, AVC is acquired 

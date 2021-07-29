@@ -1,0 +1,438 @@
+date:  7/24/15
+ticker TACO  
+
+correct cusip:  245496104
+
+checking with the fidlity site:  good
+
+Del Taco Restaurants, Inc. (TACO) -NasdaqCM
+Watchlist
+15.97 Up 0.11(0.69%) 1:14PM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	15.86
+Open:	15.85
+Bid:	15.96 x 200
+Ask:	15.97 x 600
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	27-Jul-15TACO Earnings announcement
+Day's Range:	15.81 - 15.99
+52wk Range:	9.60 - 17.25
+Volume:	105,938
+Avg Vol (3m):	191,789
+Market Cap:	619.67M
+P/E (ttm):	N/A
+EPS (ttm):	-0.36
+Div & Yield:	N/A (N/A
+
+Del Taco Restaurants, Inc.
+Ticker Symbol: TACO     CUSIP: 245496104     Exchange: NCM
+
+our site:
+Symbol: TACO 	Name: Levy Acquisition Corp 	Price: $15.97
+Volume: 101,978 	Sector: Unclassified 	Change: $0.11
+Short Volume: 175,952 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 175,952 	 Exchange: NASDAQ 	Today: 0.69%
+50 Day Ave: $15.55 	Year High: $17.25 	High: $15.99
+200 Day Ave: $12.05 	Year Low: $9.60 	Low: $15.75
+
+strange
+
+select distinct stockkey from mstockalias where symbol='TACO';
+
+> Row 1:
+>   STOCKKEY = X'fee20e21390ace78c0a80116'
+> Row 2:
+>   STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+
+
+there are two
+
+> TACO 1:
+>   STOCKKEY = X'fee20e21390ace78c0a80116'
+select * from mstockalias where STOCKKEY = X'fee20e21390ace78c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873425102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TACO CABANA'A'
+>     PRIMARYKEY = X'fee30e21390ace78c0a80116'
+>       STOCKKEY = X'fee20e21390ace78c0a80116'
+>         SYMBOL = TACO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873425102
+>           DATE = TIMESTAMP '2000-12-20 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TACO CABANA'A'
+>     PRIMARYKEY = X'18c765e43a483a2dc0a80117'
+>       STOCKKEY = X'fee20e21390ace78c0a80116'
+>         SYMBOL = TACO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+this one is delisted 
+
+> TACO 2:
+>   STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+select * from mstockalias where STOCKKEY = X'eb261b1e52e0ccbbc0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 52748T104
+>           DATE = TIMESTAMP '2014-01-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Levy Acquisition Corp
+>     PRIMARYKEY = X'eb271b1e52e0ccbbc0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = LEVY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'eb271b1e52e0ccbbc0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'eb271b1e52e0ccbbc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UR|CP_TKR|LEVY|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85790066
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 7860791
+>        BB_COMPANYNAME = Levy Acquisition Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-06 00:00:00.000000'
+>         BB_IDENTIFIER = LEVY    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-02 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = LEVY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-01-02 00:00:00.000000'
+>            PRIMARYKEY = X'4bfd64e052e0ad57c0a86f92'
+>               VERSION = NULL
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 52748T104
+>           DATE = TIMESTAMP '2015-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Levy Acquisition Corp
+>     PRIMARYKEY = X'71e115a855401542c0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = TACO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'71e115a855401542c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'71e115a855401542c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|LEVY US|CP_NEW_TKR|TACO US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106040834
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 7860791
+>        BB_COMPANYNAME = Levy Acquisition Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-28 00:00:00.000000'
+>         BB_IDENTIFIER = LEVY    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-27 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LEVY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-04-27 00:00:00.000000'
+>            PRIMARYKEY = X'b6a84352553ec1ebc0a86f92'
+>               VERSION = NULL
+
+
+so this is legitimate?
+
+http://www.businesswire.com/news/home/20150630006207/en/Levy-Acquisition-Corp.-Stockholders-Approve-Definitive-Merger#.VbJ8w0XdKRA
+
+looks legit
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TACO' order by BB_EFFECTIVE;
+nothing
+
+select * from mstock where primarykey=X'eb261b1e52e0ccbbc0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'71e115a855401542c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'eb261b1e52e0ccbbc0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 25444
+>   WINDOWIDENTITYKEY = NULL
+
+
+COMPANYID = 25444
+
+see if the price jumped on or around 6/30/15
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 25444
+2015-06-16 (Tue) [5279]: O:15.1500 H:15.1700 L:14.7200 C:14.8800 V:257699 TSO:0 A:14.8800 R:1.0000 CA:0.0000
+2015-06-17 (Wed) [5280]: O:14.8400 H:14.8800 L:14.5000 C:14.6700 V:150445 TSO:0 A:14.6700 R:1.0000 CA:0.0000
+2015-06-18 (Thu) [5281]: O:14.6900 H:14.8500 L:14.5500 C:14.8200 V:38540 TSO:0 A:14.8200 R:1.0000 CA:0.0000
+2015-06-19 (Fri) [5282]: O:14.8800 H:15.3500 L:14.6700 C:15.3500 V:100482 TSO:0 A:15.3500 R:1.0000 CA:0.0000
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:15.0000 H:15.0100 L:14.5000 C:14.6400 V:384809 TSO:0 A:14.6400 R:1.0000 CA:0.0000
+2015-06-23 (Tue) [5286]: O:14.6900 H:14.7400 L:14.5700 C:14.7400 V:32686 TSO:0 A:14.7400 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:14.7300 H:14.9900 L:14.6500 C:14.9300 V:73756 TSO:0 A:14.9300 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:14.8900 H:15.1600 L:14.7600 C:15.0000 V:65026 TSO:0 A:15.0000 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:15.6500 H:15.6500 L:14.6500 C:15.0300 V:195287 TSO:0 A:15.0300 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:14.9000 H:15.2200 L:14.6600 C:14.8600 V:132764 TSO:0 A:14.8600 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:15.0400 H:15.2800 L:14.8200 C:15.2200 V:637811 TSO:0 A:15.2200 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:15.2500 H:15.9500 L:15.1800 C:15.6100 V:492229 TSO:0 A:15.6100 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:15.6800 H:15.7900 L:15.0500 C:15.2800 V:102815 TSO:0 A:15.2800 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:15.4200 H:15.6500 L:15.1000 C:15.3000 V:84809 TSO:0 A:15.3000 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:15.3000 H:15.3200 L:15.0600 C:15.2300 V:237469 TSO:0 A:15.2300 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:15.1300 H:15.1900 L:14.9000 C:14.9900 V:159528 TSO:0 A:14.9900 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:15.0600 H:15.2000 L:15.0000 C:15.1000 V:72418 TSO:0 A:15.1000 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:15.1800 H:15.1900 L:15.0600 C:15.1500 V:77824 TSO:0 A:15.1500 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:15.2500 H:15.9300 L:15.2000 C:15.3400 V:175704 TSO:0 A:15.3400 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:15.4000 H:15.6000 L:15.2500 C:15.3500 V:174578 TSO:0 A:15.3500 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:15.3500 H:15.3500 L:15.0000 C:15.1300 V:135402 TSO:0 A:15.1300 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:15.0600 H:15.3200 L:15.0100 C:15.1100 V:388098 TSO:0 A:15.1100 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:15.2000 H:15.3000 L:15.1400 C:15.2600 V:92183 TSO:0 A:15.2600 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:15.3000 H:15.3000 L:15.1000 C:15.2100 V:64947 TSO:0 A:15.2100 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:15.2700 H:15.5500 L:15.2100 C:15.5400 V:203421 TSO:0 A:15.5400 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:15.5500 H:15.9000 L:15.5300 C:15.7000 V:162010 TSO:0 A:15.7000 R:1.0000 CA:0.0000
+2015-07-23 (Thu) [5316]: O:15.6800 H:15.9600 L:15.6500 C:15.8600 V:93836 TSO:0 A:15.8600 R:1.0000 CA:0.0000
+
+
+Looks like we need to apply a name change and cusip change
+
+Del Taco Restaurants, Inc.
+Ticker Symbol: TACO     CUSIP: 245496104     Exchange: NCM
+
+
+/Marketocracy/bin/cahelper -symbol TACO -effective 20150630 -type CHG_NAME -exchange UQ -newName 'Del Taco Restaurants, Inc.' >& /Users/build/caout/TACO.20150724-CHG_NAME.out
+stocks:~/caout build$ cat TACO.20150724-CHG_NAME.out
+D: (07-24 14:11:03.360) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-24 14:11:38.190) cahelper started on 2015-07-24 14:11:38 -0400
+
+D: (07-24 14:11:38.456) {
+    APPLIED = 1; 
+    DATE = 20150630; 
+    "NEW_NAME" = "Del Taco Restaurants, Inc."; 
+    NOTES = "N.A."; 
+    "OLD_NAME" = " "; 
+    SYMBOL = TACO; 
+    TYPE = "CHG_NAME"; 
+}
+D: (07-24 14:11:38.844) SUCCESS
+D: (07-24 14:11:38.845) cahelper finished 2015-07-24 14:11:38 -0400
+
+
+change the cusip
+/Marketocracy/bin/cahelper -symbol TACO -effective 20150630 -type CHG_ID -exchange UQ -newCusip '245496104' >& /Users/build/caout/TACO.20150724-CHG_CUSIP.out
+stocks:~/caout build$ tail -f TACO.20150724-CHG_CUSIP.out
+D: (07-24 14:15:59.422) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-24 14:16:47.374) cahelper started on 2015-07-24 14:16:47 -0400
+
+D: (07-24 14:16:47.756) {
+    APPLIED = 1; 
+    DATE = 20150630; 
+    "NEW_CUSIP" = 245496104; 
+    NOTES = "N.A."; 
+    "OLD_CUSIP" = " "; 
+    SYMBOL = TACO; 
+    TYPE = "CHG_ID"; 
+}
+D: (07-24 14:16:48.016) SUCCESS
+D: (07-24 14:16:48.016) cahelper finished 2015-07-24 14:16:48 -0400
+
+
+
+check the data base again
+
+
+select * from mstockalias where STOCKKEY = X'eb261b1e52e0ccbbc0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 52748T104
+>           DATE = TIMESTAMP '2014-01-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Levy Acquisition Corp
+>     PRIMARYKEY = X'eb271b1e52e0ccbbc0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = LEVY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 52748T104
+>           DATE = TIMESTAMP '2015-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Levy Acquisition Corp
+>     PRIMARYKEY = X'71e115a855401542c0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = TACO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 52748T104
+>           DATE = TIMESTAMP '2015-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Del Taco Restaurants, Inc.
+>     PRIMARYKEY = X'da0d128f55b27fdac0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = TACO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'da0d128f55b27fdac0a86f92';
+> Row 1:
+>              ALIASKEY = X'da0d128f55b27fdac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME| |CP_NEW_NAME|Del Taco Restaurants, Inc.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150724:021138
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = TACO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TACO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'da07128f55b27fdac0a86f92'
+>               VERSION = NULL
+update mcorporateaction set  BB_ACTIONDICTIONARY = 'CP_OLD_NAME|Levy Acquisition Corp|CP_NEW_NAME|Del Taco Restaurants, Inc.|CP_NOTES|N.A.'      where PRIMARYKEY = X'da07128f55b27fdac0a86f92';
+	select * from mcorporateaction where aliaskey=X'da0d128f55b27fdac0a86f92';
+> Row 1:
+>              ALIASKEY = X'da0d128f55b27fdac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Levy Acquisition Corp|CP_NEW_NAME|Del Taco Restaurants, Inc.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150724:021138
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = TACO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TACO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'da07128f55b27fdac0a86f92'
+>               VERSION = NULL
+
+
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 245496104
+>           DATE = TIMESTAMP '2015-06-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Del Taco Restaurants, Inc.
+>     PRIMARYKEY = X'66af13f355b2810fc0a86f92'
+>       STOCKKEY = X'eb261b1e52e0ccbbc0a86f92'
+>         SYMBOL = TACO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'66af13f355b2810fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'66af13f355b2810fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP|245496104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150724:021647
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = TACO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TACO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'66a913f355b2810fc0a86f92'
+>               VERSION = NULL
+update mcorporateaction set  BB_ACTIONDICTIONARY = 'CP_OLD_CUSIP|52748T104|CP_NEW_CUSIP|245496104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.'      where PRIMARYKEY = X'66a913f355b2810fc0a86f92';
+	select * from mcorporateaction where aliaskey=X'66af13f355b2810fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'66af13f355b2810fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|52748T104|CP_NEW_CUSIP|245496104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150724:021647
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = TACO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TACO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'66a913f355b2810fc0a86f92'
+>               VERSION = NULL
+
+no need to update any trades
+but we'll need to do something on the new site.
+
+on the new site
+/Marketocracy/Scripts/build/bin/findFundsForStock.py eb261b1e52e0ccbbc0a86f92 2015-06-30
+7AC466B542EA668CC0A80134, GVF, greenab, 1400
+C1F8595D5526D8ACC0A86FA6, APH, ahoffard, 1711
+ABA530DE397FFBE1C0A80119, ASF, jpolomny, 5000
+
+who bought it?
+
+MAdmin 
+Stock:Levy Acquisition Corp  Symbol:TACO
+Date: 07/24/2015
+
+5 users found
+
+1	ahoffard	greenab	huyehara	jpolomny	masters100manager
+
+
+check on 7/25/15 - see that tne name is now Del Taco.
+preprice everyone
+try it: 
+
+The new name shows up which is surprising because StockPrices on stocks is not updated 
+
+closing this out 

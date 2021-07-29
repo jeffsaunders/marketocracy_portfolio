@@ -1,0 +1,226 @@
+
+date:    6/22/14
+ticker:   RAC
+
+yahoo:  nothing
+
+quantum:
+Rampart Capital Corp.
+Ticker Symbol: RAC*     CUSIP: Unknown*      Exchange: AMEX
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 1/01/04
+
+oursite:
+Symbol: RAC 	Name: RAMPART CAPITAL CORP 	Price: $3.47
+Volume: 	Sector: Financials 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: AMEX 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+none
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:RAMPART CAPITAL CORP  Symbol:RAC
+Date: 06/22/2015
+
+8 users found
+
+1	baneasa	bunnyluv	katka	lpoapro	mtucker	rbitrage	thewhat	wdmartin	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'RAC';  
+> Row 1:
+>   STOCKKEY = X'663710ac390c6d24c0a8015c'
+
+select * from mstockalias where stockkey=X'663710ac390c6d24c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751569104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = RAMPART CAPITAL CORP
+>     PRIMARYKEY = X'663810ac390c6d24c0a8015c'
+>       STOCKKEY = X'663710ac390c6d24c0a8015c'
+>         SYMBOL = RAC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RAC'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RAC
+>>>> dbtool started at 2015-06-22 15:23:57 -0400
+stock: RAC
+  PK       : [663710AC390C6D24C0A8015C]
+  companyID: [6798]
+  symbol   : [RAC]
+  name     : [RAMPART CAPITAL CORP]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-22 15:23:58 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6798
+2003-11-01 (Sat) [1034]: <WEEKEND>
+2003-11-02 (Sun) [1035]: <WEEKEND>
+2003-11-03 (Mon) [1036]: O:3.4300 H:3.4600 L:3.3800 C:3.4600 V:43000 TSO:0 A:3.4600 R:1.0000 CA:0.0000
+2003-11-04 (Tue) [1037]: O:3.4100 H:3.4100 L:3.4100 C:3.4100 V:4000 TSO:0 A:3.4100 R:1.0000 CA:0.0000
+2003-11-05 (Wed) [1038]: O:3.4300 H:3.4700 L:3.4300 C:3.4700 V:43800 TSO:0 A:3.4700 R:1.0000 CA:0.0000
+2003-11-06 (Thu) [1039]: O:3.4700 H:3.4700 L:3.4700 C:3.4700 V:0 TSO:0 A:3.4700 R:1.0000 CA:0.0000
+2003-11-07 (Fri) [1040]: O:3.4700 H:3.4700 L:3.4700 C:3.4700 V:0 TSO:0 A:3.4700 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'663710ac390c6d24c0a8015c' and shares > 0 order by closed; 
+> Row 100:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-11-03 10:04:00.000000'
+>        COMMENT = 
+>     COMMISSION = 290.000000
+>   CURRENTORDER = X'96a859963f94240ac0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ae4a31c93f8ee9aec0a80133'
+>       MODIFIED = NULL
+>            NET = 20234.402000
+>         OPENED = TIMESTAMP '2003-10-20 14:06:02.000000'
+>          PRICE = 3.488690
+>     PRIMARYKEY = X'96a659963f94240ac0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 5800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'663710ac390c6d24c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'663710ac390c6d24c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'663710ac390c6d24c0a8015c'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'663710ac390c6d24c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 8 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 1/01/04
+last ticket:  2003-11-07 (Fri) [1040]: O:3.4700 H:3.4700 L:3.4700 C:3.4700 V:0 TSO:0 A:3.4700 R:1.0000 CA:0.0000
+last price:  2003-11-07 (Fri) [1040]: O:3.4700 H:3.4700 L:3.4700 C:3.4700 V:0 TSO:0 A:3.4700 R:1.0000 CA:0.0000
+
+going with 20031107 3.4700
+
+
+/Marketocracy/bin/cahelper -symbol  RAC  -effective 20031107 -type ACQUIS -exchange UN -acqType 1 -acqCash 3.4700 -acqShare 0 -purchaser RAC   >& /Users/build/caout/RAC.20150622-DELIST.out 
+RAC.20150622-DELIST.out
+stocks:~/caout build$ tail -f RAC.20150622-DELIST.out
+D: (06-22 15:26:52.298) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-22 15:27:17.314) cahelper started on 2015-06-22 15:27:17 -0400
+
+D: (06-22 15:27:18.257) There are [0] open tickets for RAC on 20031107
+D: (06-22 15:27:18.526) StockFileLoad Version:4.0
+D: (06-22 15:27:18.526) Loading Stock Data
+D: (06-22 15:27:57.487) Building Lookup Index
+D: (06-22 15:28:02.555) Finished Building Index
+D: (06-22 15:28:06.490) Finished Loading Stock Data
+D: (06-22 15:28:06.609) Connection to 192.168.111.172:6666 succeeded
+D: (06-22 15:28:06.977) {
+    "ACQUIRED_STOCK" = RAC; 
+    "ACQUIRING_STOCK" = "RAC_FIX"; 
+    AMOUNT = 3.47; 
+    APPLIED = 1; 
+    DATE = 20031107; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RAC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-22 15:28:08.609) SUCCESS
+D: (06-22 15:28:08.609) cahelper finished 2015-06-22 15:28:08 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'663710ac390c6d24c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751569104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = RAMPART CAPITAL CORP
+>     PRIMARYKEY = X'663810ac390c6d24c0a8015c'
+>       STOCKKEY = X'663710ac390c6d24c0a8015c'
+>         SYMBOL = RAC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751569104
+>           DATE = TIMESTAMP '2003-11-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = RAMPART CAPITAL CORP
+>     PRIMARYKEY = X'ed8a65a155886196c0a86f92'
+>       STOCKKEY = X'663710ac390c6d24c0a8015c'
+>         SYMBOL = RAC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'ed8a65a155886196c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ed8a65a155886196c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RAC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|3.470000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150622:032717
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-11-07 00:00:00.000000'
+>         BB_IDENTIFIER = RAC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RAC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-11-07 00:00:00.000000'
+>            PRIMARYKEY = X'ed8465a155886195c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ed8465a155886195c0a86f92';
+> Row 1:
+>   _C001 = 19.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ed8465a155886195c0a86f92'));
+there are 19 fundkeys, save to CA issues RAC fundkeys.txt
+
+For Beta case
+RAC no longer trades but is still active on our site - need to delist 
+
+check on 6/23/15   invalidate funds
+check MAdmin   is clear
+
+6/23/15
+RAC has been acquired 	right curve
+  	  	
+RAMPART CAPITAL CORP acquired by a private company on 2003-11-07 00:00:00. 
+
+invalidate
+reprice
+closing this out 

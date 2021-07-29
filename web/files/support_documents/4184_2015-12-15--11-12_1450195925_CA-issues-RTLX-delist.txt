@@ -1,0 +1,342 @@
+RTLX
+CA issues RTLX delist.txt
+date:    12/13/15
+ticker:  RTLX
+
+yahoo:  nothing
+
+quantum:
+Retalix Ltd
+Ticker Symbol: RTLX*     CUSIP: M8215W109     Exchange: NNM
+* NOTE: This security is no longer trading as of 2/06/13  acquired for $30.00
+
+Company's Online Profile
+BUSINESS:  Retalix Ltd is a leading global provider of innovative software and services to high volume, high complexity retailers, including supermarkets, convenience stores, fuel stations, drugstores and department stores. The company's products and services help its customers to manage and optimize their retail operations, differentiate their brand and build consumer loyalty, while providing retailers with the flexibility and scalability to support ongoing business transformation and growth. Retalix offers solutions for point-of-sale (POS), sales channels and in-store management (including mobile and e-commerce), customer management and marketing, merchandising, and logistics. By leveraging a multitude of deployment options, including Software-As-A-Service (SaaS), Retalix serves a large customer base of approximately 70,000 stores across more than 50 countries worldwide. The Company's headquarters are located in Ra'anana, Israel, and its North America headquarters are located in Plano, Texas.
+Notes:  DULUTH, Ga., February 6, 2013 - NCR Corporation (NYSE: NCR) today announced that it has completed its acquisition of Retalix Ltd. (NASDAQ: RTLX), a leading global provider of innovative retail software and services. In the transaction, NCR is paying a cash purchase price of $30.00 per Retalix share, implying a transaction value of approximately $650 million, excluding transaction related fees. With the completion of the transaction, Retalix became a wholly owned subsidiary of NCR, and its common stock ceased to trade on the NASDAQ Global Select Market and Tel Aviv Stock Exchange and will be delisted.
+Previous Ticker Symbol: POSI    Changed: 11/20/00
+Previous Name: Point of Sale Ltd    Changed: 11/20/00
+Small Cap Stock -   Market Value $ 415 Million
+
+oursite:
+ymbol: RTLX	Name: RETALIX LTD	Price: $29.88
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  RTLX   
+ [NEW QUOTE]       
+Corporate Actions for RETALIX LTD	  December 13, 2015
+left curve	  symbol changes for RTLX	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+20 Nov 00	POSI	RTLX	Change in the ticker (trading) symbol from POSI to RTLX
+ 	 	 
+left curve	  listing changes for RTLX	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jul 03, 2006	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that RTLX trades on from NASDAQ to NASDAQ
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=RTLX
+
+check MAdmin
+Stock:RETALIX LTD  Symbol:RTLX
+Date: 12/13/2015
+
+34 users found
+
+1	3055electric	8675309	adamhersh	astuk	azaria	b_grodek	biyts1	bvergara	daveroggen	eloeb
+2	entendu	fmoslehi	galocracy	gwright64	halpern	is_med1	itabarean	james23	jdamian_jr	jfrancois
+3	jubals	karlwm	lady_bug	lilyleona	magicman	manfredk	mtalisman	mvq	nchaviano	otcgenius
+4	polaskyx5	ssfu	uday_j	vincent_ong
+
+database
+select distinct stockkey from mstockalias where symbol= 'RTLX';  
+> Row 1:
+>   STOCKKEY = X'f6560e21390abb49c0a80116'
+select * from mstockalias where stockkey=X'f6560e21390abb49c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M7945W108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = POINT OF SALE
+>     PRIMARYKEY = X'f6570e21390abb49c0a80116'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = POSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M8215W109
+>           DATE = TIMESTAMP '2000-11-20 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = RETALIX LTD
+>     PRIMARYKEY = X'2c6536f93a1a2f75c0a80114'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = RTLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M8215W109
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = RETALIX LTD
+>     PRIMARYKEY = X'49aa150944a9ce0ec0a80146'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = RTLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RTLX'  order by BB_EFFECTIVE;
+> Row 15:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|RTLX|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73781749
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 182582
+>        BB_COMPANYNAME = Retalix Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-07 00:00:00.000000'
+>         BB_IDENTIFIER = RTLX    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-06 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RTLX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-02-06 00:00:00.000000'
+>            PRIMARYKEY = X'1fab43c25112e917c0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RTLX
+>>>> dbtool started at 2015-12-13 08:51:09 -0500
+stock: RTLX
+  PK       : [F6560E21390ABB49C0A80116]
+  companyID: [3110]
+  symbol   : [RTLX]
+  name     : [RETALIX LTD]
+  date     : [2000-11-20 15:00:00]
+  status   : [Active]
+stock: RTLX
+  PK       : [F6560E21390ABB49C0A80116]
+  companyID: [3110]
+  symbol   : [RTLX]
+  name     : [RETALIX LTD]
+  date     : [2006-07-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-12-13 08:51:10 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3110
+2013-01-19 (Sat) [4401]: <WEEKEND>
+2013-01-20 (Sun) [4402]: <WEEKEND>
+2013-01-21 (Mon) [4403]: <HOLIDAY>
+2013-01-22 (Tue) [4404]: O:29.8700 H:29.9800 L:29.8400 C:29.9000 V:3500 TSO:20406 A:29.9000 R:1.0000 CA:0.0000
+2013-01-23 (Wed) [4405]: O:29.8500 H:29.8800 L:29.8400 C:29.8400 V:3100 TSO:20406 A:29.8400 R:1.0000 CA:0.0000
+2013-01-24 (Thu) [4406]: O:29.8700 H:29.8700 L:29.8400 C:29.8400 V:8818 TSO:20406 A:29.8400 R:1.0000 CA:0.0000
+2013-01-25 (Fri) [4407]: O:29.9000 H:29.9000 L:29.8500 C:29.9000 V:1400 TSO:20406 A:29.9000 R:1.0000 CA:0.0000
+2013-01-26 (Sat) [4408]: <WEEKEND>
+2013-01-27 (Sun) [4409]: <WEEKEND>
+2013-01-28 (Mon) [4410]: O:29.8600 H:29.8900 L:29.8600 C:29.8700 V:8451 TSO:20406 A:29.8700 R:1.0000 CA:0.0000
+2013-01-29 (Tue) [4411]: O:29.8600 H:29.8800 L:29.8600 C:29.8700 V:18723 TSO:20406 A:29.8700 R:1.0000 CA:0.0000
+2013-01-30 (Wed) [4412]: O:29.8800 H:29.8900 L:29.8600 C:29.8700 V:15205 TSO:20406 A:29.8700 R:1.0000 CA:0.0000
+2013-01-31 (Thu) [4413]: O:29.8600 H:29.9000 L:29.8400 C:29.8700 V:48294 TSO:20406 A:29.8700 R:1.0000 CA:0.0000
+2013-02-01 (Fri) [4414]: O:29.9000 H:29.9000 L:29.8500 C:29.8600 V:6774 TSO:20406 A:29.8600 R:1.0000 CA:0.0000
+2013-02-02 (Sat) [4415]: <WEEKEND>
+2013-02-03 (Sun) [4416]: <WEEKEND>
+2013-02-04 (Mon) [4417]: O:29.8500 H:29.9700 L:29.8500 C:29.8900 V:6550 TSO:20406 A:29.8900 R:1.0000 CA:0.0000
+2013-02-05 (Tue) [4418]: O:29.9000 H:29.9200 L:29.8700 C:29.8800 V:8700 TSO:20406 A:29.8800 R:1.0000 CA:0.0000
+2013-02-06 (Wed) [4419]: O:29.8800 H:29.8800 L:29.8800 C:29.8800 V:8700 TSO:20406 A:29.8800 R:1.0000 CA:0.0000
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f6560e21390abb49c0a80116' and shares > 0 order by closed; 
+> Row 337:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-12-21 13:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'887a230350d3b05ec0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0ecb51783a252c48c0a80118'
+>       MODIFIED = NULL
+>            NET = 59184.480000
+>         OPENED = TIMESTAMP '2012-12-20 19:42:06.000000'
+>          PRICE = 29.592240
+>     PRIMARYKEY = X'8878230350d3b05ec0a80132'
+>         SECFEE = 1.330000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f6560e21390abb49c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f6560e21390abb49c0a80116'  and totalshares < 0);
+no shorts 
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f6560e21390abb49c0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST:   2013-02-07 
+there are 34 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 2/06/13  acquired for $30.00
+last ticket: 2012-12-21 PRICE = 29.592240
+last price:  2013-02-05 (Tue) [4418]: O:29.9000 H:29.9200 L:29.8700 C:29.8800 V:8700 TSO:20406 A:29.8800 R:1.0000 CA:0.0000
+
+going with 20130205 30.00
+
+/Marketocracy/bin/cahelper -symbol  RTLX  -effective 20130205 -type ACQUIS -exchange UN -acqType 1 -acqCash 30.00 -acqShare 0 -purchaser RTLX   >& /Users/build/caout/RTLX.20151213-ACQUIS.out 
+RTLX.20151213-ACQUIS.out
+stocks1:~/caout build$ tail -f RTLX.20151213-ACQUIS.out
+D: (12-13 08:53:49.297) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-13 08:54:47.915) cahelper started on 2015-12-13 08:54:47 -0500
+
+D: (12-13 08:54:48.174) There are [0] open tickets for RTLX on 20130205
+D: (12-13 08:54:48.631) StockFileLoad Version:4.0
+D: (12-13 08:54:48.631) Loading Stock Data
+D: (12-13 08:56:32.772) Building Lookup Index
+D: (12-13 08:56:46.843) Finished Building Index
+D: (12-13 08:56:57.060) Finished Loading Stock Data
+D: (12-13 08:56:57.127) Connection to 192.168.111.172:6666 succeeded
+D: (12-13 08:57:00.403) {
+    "ACQUIRED_STOCK" = RTLX; 
+    "ACQUIRING_STOCK" = "RTLX_FIX"; 
+    AMOUNT = 30; 
+    APPLIED = 1; 
+    DATE = 20130205; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RTLX_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-13 08:57:05.391) SUCCESS
+D: (12-13 08:57:05.391) cahelper finished 2015-12-13 08:57:05 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'f6560e21390abb49c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M7945W108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = POINT OF SALE
+>     PRIMARYKEY = X'f6570e21390abb49c0a80116'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = POSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M8215W109
+>           DATE = TIMESTAMP '2000-11-20 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = RETALIX LTD
+>     PRIMARYKEY = X'2c6536f93a1a2f75c0a80114'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = RTLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M8215W109
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = RETALIX LTD
+>     PRIMARYKEY = X'49aa150944a9ce0ec0a80146'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = RTLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M8215W109
+>           DATE = TIMESTAMP '2013-02-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = RETALIX LTD
+>     PRIMARYKEY = X'ef6721ba566d78a8c0a86fab'
+>       STOCKKEY = X'f6560e21390abb49c0a80116'
+>         SYMBOL = RTLX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'ef6721ba566d78a8c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'ef6721ba566d78a8c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RTLX  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|30.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151213:085447
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-05 00:00:00.000000'
+>         BB_IDENTIFIER = RTLX_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-05 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RTLX_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-05 00:00:00.000000'
+>            PRIMARYKEY = X'ef6121ba566d78a7c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'ef6121ba566d78a7c0a86fab';
+> Row 1:
+>   _C001 = 46.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ef6121ba566d78a7c0a86fab'));
+there are 46 fundkeys, save to CA issues RTLX fundkeys.txt
+
+For Beta case
+RTLX no longer trades but is still active on our site - need to delist 
+
+check on 12/15/15   invalidate funds
+check MAdmin  clear
+ RTLX has been acquired	right curve
+ 	 	
+RETALIX LTD acquired by a private company on 2013-02-05 00:00:00.
+ 	 	 
+
+invalidate reprice and close 
+
+
+

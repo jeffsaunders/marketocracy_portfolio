@@ -1,0 +1,300 @@
+date: 2/2/15
+Ticket Number:	2289
+Portfolio Username:	kuyeno
+Ticker Symbol:	PCNTF
+Corporate Action Type:
+Acquisition
+Subject:
+June 2007 Acquisition
+Description:
+Asia Netcom to acquire Pacific Internet Maggie Au June 08, 2007 http://www.telecomasia.net/content/fasttakes-ntt-docomo-dtl-huawei
+Thank you.
+
+yahoo  nothing
+quantum
+Pacific Internet Ltd
+Ticker Symbol: PCNTF*     CUSIP: Y66183107     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 9/29/08
+
+Company's Online Profile
+BUSINESS:  Pacific Internet Ltd offers Internet access services in six countries - Singapore, Hong Kong, the Philippines, Australia, India and Thailand - and portal sites under Pacfusion.com Ltd.
+Notes:  Acquisition per the Other OTC on 9/29/2008.
+IPO - 2/4/1999 - 3.00 Million Shares @ $17.00/share.
+Micro Cap Stock -   Market Value $ 25.2 Million
+
+ANC parent Connect Holdings Ltd announced Thursday Singapore VoIP company Media Ring had accepted the new cash offer of US$11 per share, up from the previous offer of $10.
+
+our site
+
+let's see what we have in the database
+last price is $11
+select distinct stockkey from mstockalias where symbol='PCNTF';
+> Row 1:
+>   STOCKKEY = X'93a110ac390c6d80c0a8015c'
+select * from mstockalias where STOCKKEY = X'93a110ac390c6d80c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y66183107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PACIFIC INTERNET
+>     PRIMARYKEY = X'93a210ac390c6d80c0a8015c'
+>       STOCKKEY = X'93a110ac390c6d80c0a8015c'
+>         SYMBOL = PCNTF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y66183107
+>           DATE = TIMESTAMP '2007-10-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PACIFIC INTERNET
+>     PRIMARYKEY = X'475b5e5c47214ac1c0a80146'
+>       STOCKKEY = X'93a110ac390c6d80c0a8015c'
+>         SYMBOL = PCNTF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XB
+
+need to apply
+
+let's see when the pricing stopped in our site
+/Marketocracy/bin/dbtool lookup stock PCNTF
+>>>> dbtool started at 2015-02-02 09:58:27 -0500
+stock: PCNTF
+  PK       : [93A110AC390C6D80C0A8015C]
+  companyID: [7490]
+  symbol   : [PCNTF]
+  name     : [PACIFIC INTERNET]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+stock: PCNTF
+  PK       : [93A110AC390C6D80C0A8015C]
+  companyID: [7490]
+  symbol   : [PCNTF]
+  name     : [PACIFIC INTERNET]
+  date     : [2007-10-25 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-02 09:58:28 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7490
+2008-09-23 (Tue) [2822]: O:10.3000 H:10.3000 L:10.3000 C:10.3000 V:0 TSO:13835 A:10.3000 R:1.0000 CA:0.0000
+2008-09-24 (Wed) [2823]: O:10.3000 H:10.5000 L:10.5000 C:10.5000 V:500 TSO:13835 A:10.5000 R:1.0000 CA:0.0000
+2008-09-25 (Thu) [2824]: O:10.3000 H:10.0500 L:10.0500 C:10.0500 V:1300 TSO:13835 A:10.0500 R:1.0000 CA:0.0000
+2008-09-26 (Fri) [2825]: O:10.3000 H:11.0000 L:11.0000 C:11.0000 V:200 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-09-27 (Sat) [2826]: <WEEKEND>
+2008-09-28 (Sun) [2827]: <WEEKEND>
+2008-09-29 (Mon) [2828]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-09-30 (Tue) [2829]: O:11.0000 H:11.0000 L:9.5000 C:11.0000 V:1475 TSO:13835 A:11.0000 R:1.0000 CA:0.0000  <--
+2008-10-01 (Wed) [2830]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-02 (Thu) [2831]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-03 (Fri) [2832]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-04 (Sat) [2833]: <WEEKEND>
+2008-10-05 (Sun) [2834]: <WEEKEND>
+2008-10-06 (Mon) [2835]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-07 (Tue) [2836]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-08 (Wed) [2837]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-09 (Thu) [2838]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+2008-10-10 (Fri) [2839]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:13835 A:11.0000 R:1.0000 CA:0.0000
+
+stopped on 9/30/2008
+
+let's see who held this PCNTF on 9/30/2008
+Stock:PACIFIC INTERNET  Symbol:PCNTF
+Date: 09/30/2008
+
+67 users found
+
+1	ahawkins	atarijunky	barryaustin	beachbumed	bigglesworth	bng1	booatha	callen	cdavarice	chinakid
+2	davidwdover	dblue	dmotosue	donmccann	dpurho	felix	finarea	genomeprofile	icevodka	iitproject
+3	jacarroll	jatput	jgsuarez	jhm5	jmorris2	john97	jstremmler	jwilliams10	kimlullo	kkelleher
+4	klandragan	kuyeno	leyshla	luster	marke	mazakman	mchea	mhannigan	mjtowle	mlm
+5	mlyzan	mnbhayes	money21	pbradford	phos	pieter_steetsel	przuniga	r.j.h.hood	rcalugar	richfield
+6	rknapik	rnke2003	sav	schofara	sema_1970	shelton	shelton20	simonemarlia	sirrobin	somedalum
+7	syoung8	tcombs	tmarcinko	undervalued	utterme	vak001	volodya	 	 	 
+
+
+how about today?
+same
+
+let's look up member kuyeno
+your holdings of PCNTF	
+ 	 	
+Fund	Shares	Value	Portion of fund
+IQ	 0	 N/A	 N/A
+FFF	 0	 N/A	 N/A
+SF	15,000	 $165,000.00	 13.21%
+HSF	 0	 N/A	 N/A
+SAFE	 0	 N/A	 N/A
+KEN	10,000	 $110,000.00	 4.59%
+KMF	 0	 N/A	 N/A
+CGF	20,000	 $220,000.00	 5.92%
+5F2	 0	 N/A	 N/A
+WIND	 0	 N/A	 N/A
+GGF	 0	 N/A	 N/A
+CRUDE	 0	 N/A	 N/A
+EMC2	 0	 N/A	 N/A
+888	 0	 N/A	 N/A
+MLP	 0	 N/A	 N/A
+ 	 	[ Trade this stock ]
+
+
+he has it in quite a few funds
+ok let's apply it
+
+/Marketocracy/bin/cahelper -symbol PCNTF -effective 20080930 -type ACQUIS -exchange UN -acqType 1 -acqCash 11.00 -acqShare 0 -purchaser PCNTF >& /Users/build/caout/PCNTF.20150202-ACQUIS.out
+PCNTF.20150202-ACQUIS.out
+stocks:~/caout build$ tail -f PCNTF.20150202-ACQUIS.out
+D: (02-02 10:07:33.146) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-02 10:08:39.461) cahelper started on 2015-02-02 10:08:39 -0500
+
+D: (02-02 10:08:46.606) There are [0] open tickets for PCNTF on 20080930
+D: (02-02 10:08:47.138) StockFileLoad Version:3.0
+D: (02-02 10:08:47.139) Loading Stock Data
+D: (02-02 10:10:41.300) Building Lookup Index
+D: (02-02 10:10:53.185) Finished Building Index
+D: (02-02 10:10:55.872) Finished Loading Stock Data
+D: (02-02 10:10:55.926) Connection to 192.168.111.157:6666 succeeded
+D: (02-02 10:11:01.811) SavingChanges for position sell out 101 of 297
+D: (02-02 10:11:17.332) {
+    "ACQUIRED_STOCK" = PCNTF; 
+    "ACQUIRING_STOCK" = "PCNTF_FIX"; 
+    AMOUNT = 11; 
+    APPLIED = 1; 
+    DATE = 20080930; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PCNTF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-02 10:11:23.111) SUCCESS
+D: (02-02 10:11:23.111) cahelper finished 2015-02-02 10:11:23 -0500
+
+
+check the database 
+select * from mstockalias where STOCKKEY = X'93a110ac390c6d80c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y66183107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PACIFIC INTERNET
+>     PRIMARYKEY = X'93a210ac390c6d80c0a8015c'
+>       STOCKKEY = X'93a110ac390c6d80c0a8015c'
+>         SYMBOL = PCNTF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y66183107
+>           DATE = TIMESTAMP '2007-10-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PACIFIC INTERNET
+>     PRIMARYKEY = X'475b5e5c47214ac1c0a80146'
+>       STOCKKEY = X'93a110ac390c6d80c0a8015c'
+>         SYMBOL = PCNTF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y66183107
+>           DATE = TIMESTAMP '2008-09-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PACIFIC INTERNET
+>     PRIMARYKEY = X'90dc420b54cf92fec0a86f92'
+>       STOCKKEY = X'93a110ac390c6d80c0a8015c'
+>         SYMBOL = PCNTF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- status key is inactive
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey=X'90dc420b54cf92fec0a86f92';
+> Row 1:
+>              ALIASKEY = X'90dc420b54cf92fec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PCNTF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|11.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150202:100839
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-09-30 00:00:00.000000'
+>         BB_IDENTIFIER = PCNTF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-09-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PCNTF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'90d6420b54cf92f7c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'90d6420b54cf92f7c0a86f92';
+> Row 1:
+>   _C001 = 117.000000
+
+
+check member again:
+your holdings of PCNTF	
+ 	 	
+Fund	Shares	Value	Portion of fund
+IQ	 0	 N/A	 N/A
+FFF	 0	 N/A	 N/A
+SF	0	 $.00	 0.00%
+HSF	 0	 N/A	 N/A
+SAFE	 0	 N/A	 N/A
+KEN	0	 $.00	 0.00%
+KMF	 0	 N/A	 N/A
+CGF	0	 $.00	 0.00%
+5F2	 0	 N/A	 N/A
+WIND	 0	 N/A	 N/A
+GGF	 0	 N/A	 N/A
+CRUDE	 0	 N/A	 N/A
+EMC2	 0	 N/A	 N/A
+888	 0	 N/A	 N/A
+MLP	 0	 N/A	 N/A
+
+what should he get on 9/30/2008
+Fund	Shares	Value	Portion of fund
+
+SF	15,000 * $11.00 = $165,000
+
+KEN	10,000 * $11.00 = $110,000
+
+CGF	20,000 * $11.00 = $220,000
+
+check on 2/3/15
+2/3/15
+
+the stock is acquired
+PCNTF has been acquired	
+ 	 	
+PACIFIC INTERNET acquired by a private company on 2008-09-30 00:00:00.
+
+check his funds
+SF
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+09/30/2008	$99,165.42	$0.00	$2.72	$165,000.00	$46.11	$0.00	$264,122.02	$591,795.52	$855,917.54	100,000	$8.56	Yes	Details 
+he got the cash
+
+KEN
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+09/30/2008	$43,039.01	$0.00	$1.18	$110,261.00	$76.02	$0.00	$153,225.17	$1,267,259.83	$1,420,485.00	100,000	$14.20	Yes	Details 
+he got the cash
+
+CGF
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+09/30/2008	$35,177.55	$0.00	$0.96	$220,000.00	$110.11	$0.00	$255,068.40	$1,867,421.78	$2,122,490.18	100,000	$21.22	Yes	Details
+he got the cash
+
+the stock is acquired and delisted - and the member got cash - closing this out

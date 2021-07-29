@@ -1,0 +1,242 @@
+date:  9/4/15
+dividend for GOV
+icket Number:	3641
+Portfolio Username:	lgeraci
+Ticker Symbol:	GOV
+Corporate Action Type:
+Other
+Subject:
+Dividend not posted
+Description:
+Monday, July 13, 2015 Government Properties Income Trust Announces Quarterly Common DividendBusiness Wire (Mon, Jul 13
+Affected Funds:	34-2
+
+
+
+our site:
+cash dividends paid by GOV	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+21 Oct 09	23 Oct 09	25 Nov 09	4	$0.10	Dividend amount:0.1 per share.
+21 Oct 09	23 Oct 09	25 Nov 09	4	$0.40	Dividend amount:0.4 per share.
+17 Dec 09	21 Dec 09	29 Jan 10	4	$0.40	Dividend amount:0.4 per share.
+21 Apr 10	23 Apr 10	24 May 10	4	$0.40	Dividend amount:0.4 per share.
+14 Jul 10	16 Jul 10	16 Aug 10	4	$0.41	Dividend amount:0.41 per share.
+25 Oct 10	27 Oct 10	23 Nov 10	4	$0.41	Dividend amount:0.41 per share.
+24 Jan 11	26 Jan 11	23 Feb 11	4	$0.41	Dividend amount:0.41 per share.
+07 Jul 11	11 Jul 11	24 Aug 11	4	$0.42	Dividend amount:0.42 per share.
+25 Oct 11	27 Oct 11	22 Nov 11	4	$0.42	Dividend amount:0.42 per share.
+24 Jan 12	26 Jan 12	24 Feb 12	4	$0.42	Dividend amount:0.42 per share.
+24 Apr 12	26 Apr 12	24 May 12	4	$0.42	Dividend amount:0.42 per share.
+19 Jul 12	23 Jul 12	22 Aug 12	4	$0.42	Dividend amount:0.42 per share.
+18 Oct 12	22 Oct 12	21 Nov 12	4	$0.43	Dividend amount:0.43 per share.
+23 Jan 13	25 Jan 13	22 Feb 13	4	$0.43	Dividend amount:0.43 per share.
+24 Apr 13	26 Apr 13	24 May 13	4	$0.43	Dividend amount:0.43 per share.
+24 Jul 13	26 Jul 13	23 Aug 13	4	$0.43	Dividend amount:0.43 per share.
+23 Oct 13	25 Oct 13	22 Nov 13	4	$0.43	Dividend amount:0.43 per share.
+09 Jan 14	13 Jan 14	21 Feb 14	4	$0.43	Dividend amount:0.43 per share.
+23 Apr 14	25 Apr 14	21 May 14	4	$0.43	Dividend amount:0.43 per share.
+23 Jul 14	25 Jul 14	22 Aug 14	4	$0.43	Dividend amount:0.43 per share.
+22 Oct 14	24 Oct 14	20 Nov 14	4	$0.43	Dividend amount:0.43 per share.
+21 Jan 15	23 Jan 15	26 Feb 15	4	$0.43	Dividend amount:0.43 per share.
+22 Apr 15	24 Apr 15	25 May 15	4	$0.43	Dividend amount:0.43 per share.  <-- this was the last one
+
+dividends.com
+Payout Amount	Declared Date	Ex-Dividend Date	Record Date	Pay Date ▼	Qualified Dividend?	Payout Type	Frequency
+$0.4300			2015-07-13		2015-07-22			2015-07-24	2015-08-24	Non-Qualified	Regular	Quarter
+
+/Marketocracy/bin/cahelper -symbol GOV -effective 20150722 -type DVD_CASH -exchange UQ -payDate 20150824 -recordDate 20150724 -amount 0.4300 &> /Users/build/caout/GOV.20150904-DVD_CASH.2015-08.out 
+GOV.20150904-DVD_CASH.2015-08.out
+stocks:~/caout build$ tail -f GOV.20150904-DVD_CASH.2015-08.out
+D: (09-04 17:26:25.382) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-04 17:27:35.703) cahelper started on 2015-09-04 17:27:35 -0400
+
+D: (09-04 17:27:35.984) {
+    AMOUNT = 0.43; 
+    APPLIED = 1; 
+    DATE = 20150722; 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150824; 
+    "RECORD_DATE" = 20150724; 
+    SYMBOL = GOV; 
+    TYPE = "DVD_CASH"; 
+}
+D: (09-04 17:27:36.175) SUCCESS
+D: (09-04 17:27:36.175) cahelper finished 2015-09-04 17:27:36 -0400
+
+
+
+member lgeraci  check on 20150824  for GOV
+
+your holdings of GOV	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+LMF	0	N/A	N/A
+LMFD	500	$7,715.00	0.70%
+
+LEDGER
+Date	Start	Change	End	Type
+May 18, 2015		500	500	Buy
+Total: 500
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 18, 2015	500	$25.00	$9,991.25	$19.98
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+lgeracie should get 500 * 0.43 = 215 on 20150824 in his fund  LMFD
+
+9/5/15
+dividend appears 
+22 Jul 15	24 Jul 15	24 Aug 15	4	$0.43	Dividend amount:0.43 per share.
+
+need to invalidate
+select distinct stockkey from mstockalias where symbol='GOV';
+
+> Row 1:
+>   STOCKKEY = X'637110ac390c6d1ec0a8015c'
+> Row 2:
+>   STOCKKEY = X'718e47174a272b38c0a80146'
+
+there are two
+
+> GOV 1:
+>   STOCKKEY = X'637110ac390c6d1ec0a8015c'
+select * from mstockalias where stockkey=X'637110ac390c6d1ec0a8015c';
+different stock is GOVB now, ok
+> GOV 2:
+>   STOCKKEY = X'718e47174a272b38c0a80146'
+select * from mstockalias where stockkey=X'718e47174a272b38c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38376A103
+>           DATE = TIMESTAMP '2009-06-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Government Properties Income Trust
+>     PRIMARYKEY = X'718f47174a272b38c0a80146'
+>       STOCKKEY = X'718e47174a272b38c0a80146'
+>         SYMBOL = GOV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402040
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey=X'718f47174a272b38c0a80146' order by BB_EFFECTIVE;
+> Row 25:
+>              ALIASKEY = X'718f47174a272b38c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150724|CP_PAY_DT|20150824|CP_FREQ|4|CP_NET_AMT|0.430000|CP_TAX_AMT| |CP_GROSS_AMT|0.430000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150904:052735
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-22 00:00:00.000000'
+>         BB_IDENTIFIER = GOV     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'dc5349a655ea0cc7c0a86f92'
+>               VERSION = NULL
+
+select fundkey from mposition where stockkey = X'718e47174a272b38c0a80146';
+thre are 57 fundkeys save to CA issues GOV fundkeys.txt
+
+
+log back in after the invalidate
+lgeraci should get 500 * 0.43 = 215 on 20150824 in his fund  LMFD
+
+
+his FundDatePage for 8/24/15  has the dividend
+GOV	Government Properties Income Trust	$15.62	0.7%	500	$215.00	$7,810.00	Details
+
+but the FundTransactionPage page does not
+08/24/2015	$34,398.04	$0.00	$0.94	$0.00	$62.17	-$10,051.84	$44,388.65	$1,047,611.44	$1,092,000.09	100,000	$10.92	Yes	Details 
+
+it doesn't look like the nightly load finished
+stocks:~ build$ ls -l /Marketocracy/Stock*
+-rw-r--r--   1 build  build  2553987072 Aug 31 23:52 /Marketocracy/StockPrices.archive.2015-09-01
+-rw-r--r--   1 build  build  2554834944 Sep  1 23:47 /Marketocracy/StockPrices.archive.2015-09-02
+-rw-r--r--   1 build  build  2555244544 Sep  2 23:51 /Marketocracy/StockPrices.archive.2015-09-03
+-rw-r--r--   1 build  build  2555641856 Sep  4 02:58 /Marketocracy/StockPrices.archive.2015-09-04
+
+/Marketocracy/StockFile:
+total 409880
+-rw-rw-r--   1 build  build   12422677 Sep  4 19:34 acquisitions
+-rw-rw-r--   1 build  build      70446 Sep  4 19:31 bankruptcies
+-rw-rw-r--   1 build  build  165163249 Sep  4 19:34 cashDividends
+-rw-rw-r--   1 build  build    5323255 Sep  4 19:31 cusipChanges
+-rw-rw-r--   1 build  build     523297 Sep  4 19:30 delistings
+-rw-rw-r--   1 build  build        438 Sep  4 19:25 exchanges
+-rw-rw-r--   1 build  build    2467770 Sep  4 19:30 listingChanges
+-rw-rw-r--   1 build  build    1713629 Sep  4 19:30 nameChanges
+-rw-rw-r--   1 build  build     265990 Sep  4 19:34 spinOffs
+-rw-rw-r--   1 build  build    3145327 Sep  4 19:34 splits
+-rw-rw-r--   1 build  build    1058491 Sep  4 19:34 stockDividends
+-rw-rw-r--   1 build  build   12311304 Sep  4 19:30 stocks
+-rw-rw-r--   1 build  build    5362235 Sep  4 19:30 symbolChanges
+-rw-rw-r--   1 build  build          3 Sep  4 19:34 version
+
+contact the team
+
+9/10/15
+the stock prices problem seems to be fixed - I have invalidaed the funds - check the member 
+lgeraci
+
+22 Jul 15	24 Jul 15	24 Aug 15	4	$0.43	Dividend amount:0.43 per share.
+
+your holdings of GOV	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+LMF	0	N/A	N/A
+LMFD	500	$7,625.00	0.69%
+
+check LMFD  on 20150824
+
+LEDGER
+Date	Start	Change	End	Type
+May 18, 2015		500	500	Buy
+Total: 500
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 18, 2015	500	$25.00	$9,991.25	$19.98
+ 	 	 
+ 	 	
+SELLS
+
+
+/Marketocracy/bin/dbtool lookup fund lgeraci
+>>>> dbtool started at 2015-09-10 09:12:30 -0400
+fund: lgeraci
+  PK: [8EA6100E3B15A03AC0A801E0]
+  symbol: [LMF]
+  managerKey: [123764743B159FD7C0A801E0]
+  loginName: [lgeraci]
+fund: lgeraci
+  PK: [2F0B674846100B94C0A80135]
+  symbol: [LMFD]
+  managerKey: [123764743B159FD7C0A801E0]
+  loginName: [lgeraci]
+<<<< dbtool finished at 2015-09-10 09:12:30 -0400
+
+
+/Marketocracy/bin/fptool invalidateFund 2F0B674846100B94C0A80135
+
+
+checking the fund:
+
+08/24/2015	$34,398.04	$0.00	$0.94	$215.00	$62.17	-$10,051.84	$44,603.65	$1,047,611.44	$1,092,215.09	100,000	$10.92	Yes	Details 
+
+it's there
+
+reprice the new site 
+

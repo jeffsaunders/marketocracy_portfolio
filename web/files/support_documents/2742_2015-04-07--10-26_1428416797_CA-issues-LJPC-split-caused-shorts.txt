@@ -1,0 +1,853 @@
+date:  4/7/15
+ticker LJPC  
+
+1 for 100 split caused members to go short:
+
+bounty
+
+> Row 1266:  DONE
+>    LOGINNAME = bounty
+>       SYMBOL = OHMF
+>   PRIMARYKEY = X'a6a552954086aa97ffffffff'
+ positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+LJPC 	$18.23 	-44 	-$802.12 	-$87,960.31 	0.00% 	-100.82% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 07, 2004 		30000 	30000 	Buy
+May 03, 2005 	30000 	3000 	33000 	Buy
+Jun 03, 2005 	33000 	29758 	62758 	Buy
+Dec 22, 2005 	62758 	-50207 	12551 	Corporate Action
+Apr 15, 2011 	12551 	-12426 	125 	Corporate Action
+May 19, 2011 	125 	-90 	35 	Sell
+Feb 17, 2012 	35 	-79 	-44 	Corporate Action  <--- what happened here   Split terms:1 for 100
+Total: -44
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 7, 2004 	30,000 	$1,500.00 	$65,332.77 	$2.18
+May 3, 2005 	3,000 	$75.00 	$1,575.00 	$0.53
+Jun 3, 2005 	29,758 	$968.27 	$20,333.77 	$0.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 19, 2011 	45 	$2.14 	$0.01 	$40.60 	$0.90
+May 19, 2011 	45 	$2.25 	$0.00 	$42.75 	$0.95
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 17, 2012 	Split terms:1 for 100
+Dec 22, 2005 	Split terms:1 for 5
+Apr 15, 2011 	Split terms:1 for 100  	  	 
+
+check the ledger OHMF  on Feb 17, 2012  20120217   maybe it got applied twice? 
+trades on February 17, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Sell 	LJPC 	79 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	LJPC 	0 	$0.00 	$0.00 	$0.00 	$0.00
+should have sold only 45  and bought 0
+get the hexkeys
+79 share sell:  Hexkey: E677104A4F3EEB1EC0A80146
+select * from mticket where primarykey=X'E677104A4F3EEB1EC0A80146' ;
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'e679104a4f3eeb1ec0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e5b0c3439dc78a5c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e677104a4f3eeb1ec0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ebc60e21390aa24bc0a80116'
+>      SOURCEKEY = X'308516af4f3d926cc0a80146'
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'e677104a4f3eeb1ec0a80146';
+> Row 1:
+>                    KINDKEY = X'6333039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'1ff71c6741b5bea6c0a8011e'
+>                 PRIMARYKEY = X'e67a104a4f3eeb1ec0a80146'
+>                     SHARES = 79.000000
+>                  TICKETKEY = X'e677104a4f3eeb1ec0a80146'
+>                     CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+select * from morder where ticketkey=X'e677104a4f3eeb1ec0a80146';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e679104a4f3eeb1ec0a80146'
+>         SHARES = 79.000000
+>      TICKETKEY = X'e677104a4f3eeb1ec0a80146'
+>           TIME = TIMESTAMP '2012-02-17 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+let's update the share quantity
+set commit false;
+update morder set shares=35 where ticketkey=X'e677104a4f3eeb1ec0a80146';
+update mtrade set shares=35 where ticketkey=X'e677104a4f3eeb1ec0a80146';
+commit;
+set commit true;
+
+tickle the ticket 
+ticketkey=X'e677104a4f3eeb1ec0a80146';
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey e677104a4f3eeb1ec0a80146    
+did not work
+put this in tickletickets
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-04-07 08:25:44 -0400
+<<<< dbtool finished at 2015-04-07 08:25:44 -0400
+
+let's do the buy  wit that is good 0 shares 
+
+invalidate the fund 
+select fundkey from mposition where primarykey= X'1ff71c6741b5bea6c0a8011e';
+> Row 1:
+>   FUNDKEY = X'a6a552954086aa97ffffffff'
+
+/Marketocracy/bin/fptool invalidateFund a6a552954086aa97ffffffff
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 07, 2004 		30000 	30000 	Buy
+May 03, 2005 	30000 	3000 	33000 	Buy
+Jun 03, 2005 	33000 	29758 	62758 	Buy
+Dec 22, 2005 	62758 	-50207 	12551 	Corporate Action
+Apr 15, 2011 	12551 	-12426 	125 	Corporate Action
+May 19, 2011 	125 	-90 	35 	Sell
+Feb 17, 2012 	35 	-35 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 7, 2004 	30,000 	$1,500.00 	$65,332.77 	$2.18
+May 3, 2005 	3,000 	$75.00 	$1,575.00 	$0.53
+Jun 3, 2005 	29,758 	$968.27 	$20,333.77 	$0.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 19, 2011 	45 	$2.14 	$0.01 	$40.60 	$0.90
+May 19, 2011 	45 	$2.25 	$0.00 	$42.75 	$0.95
+  	  	 
+left curve 	 corporate actions 	right curve
+
+is good now 
+
+check bounty again:
+
+your holdings of LJPC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+OMF 	0 	N/A 	N/A
+FTMF 	-30 	-$546.90 	-0.06%
+CCMF1 	0 	$.00 	0.00%
+CCMF 	0 	$.00 	0.00%
+CCF4 	0 	$.00 	0.00%
+OHMF 	0 	$.00 	0.00%
+OLFF 	0 	$.00 	0.00%
+FAMF 	-73 	-$1,330.79 	-0.32%
+EMF 	0 	$.00 	0.00%
+MMF 	0 	$.00 	0.00%
+VMF 	0 	$.00 	0.00%
+VvMF 	0 	N/A 	N/A 
+
+FTMF
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 25, 2004 		6760 	6760 	Buy
+Oct 27, 2004 	6760 	3712 	10472 	Buy
+Oct 28, 2004 	10472 	36288 	46760 	Buy
+Nov 11, 2004 	46760 	-10761 	35999 	Sell
+Nov 15, 2004 	35999 	-36000 	-1 	Sell
+Dec 09, 2004 	-1 	27000 	26999 	Buy
+Dec 17, 2004 	26999 	-2382 	24617 	Sell
+Jan 03, 2005 	24617 	-24617 		Sell
+Jan 15, 2006 		8028 	8028 	Buy
+Apr 15, 2011 	8028 	-7948 	80 	Corporate Action
+May 19, 2011 	80 	-59 	21 	Sell
+Feb 17, 2012 	21 	-51 	-30 	Corporate Action  <--- should have only sold 21
+Total: -30
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Oct 25, 2004 	6,760 	$338.00 	$7,706.40 	$1.14
+Oct 27, 2004 	3,712 	$185.60 	$4,380.16 	$1.18
+Oct 28, 2004 	36,288 	$1,814.40 	$43,527.67 	$1.20
+Dec 9, 2004 	27,000 	$1,350.00 	$49,817.43 	$1.85
+Jan 15, 2006 	8,028 	$401.40 	$27,440.64 	$3.42
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 11, 2004 	10,761 	$538.05 	$0.33 	$13,564.51 	$1.26
+Nov 15, 2004 	36,000 	$1,800.00 	$1.17 	$47,982.37 	$1.33
+Dec 17, 2004 	2,382 	$119.10 	$0.12 	$4,740.06 	$1.99
+Jan 3, 2005 	24,617 	$1,230.85 	$1.00 	$41,274.27 	$1.68
+May 19, 2011 	29 	$1.38 	$0.01 	$26.16 	$0.90
+May 19, 2011 	30 	$1.50 	$0.00 	$28.50 	$0.95
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Apr 15, 2011 	Split terms:1 for 100
+Feb 17, 2012 	Split terms:1 for 100
+
+Feb 17, 2012  get the hex key
+FTMF  20120217 
+trades on February 17, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Buy 	LJPC 	0 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	LJPC 	51 	$0.00 	$0.00 	$0.00 	$0.00
+Hexkey: E62B104A4F3EEB1EC0A80146
+
+select * from mticket where primarykey=X'E62B104A4F3EEB1EC0A80146';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'e62d104a4f3eeb1ec0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e5b0c3439dc78a5c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e62b104a4f3eeb1ec0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ebc60e21390aa24bc0a80116'
+>      SOURCEKEY = X'308516af4f3d926cc0a80146'
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'e62b104a4f3eeb1ec0a80146';
+> Row 1:
+>                    KINDKEY = X'6333039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'f43e3664417ffe86c0a8011e'
+>                 PRIMARYKEY = X'e62e104a4f3eeb1ec0a80146'
+>                     SHARES = 51.000000
+>                  TICKETKEY = X'e62b104a4f3eeb1ec0a80146'
+>                     CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+select * from morder where ticketkey=X'e62b104a4f3eeb1ec0a80146';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e62d104a4f3eeb1ec0a80146'
+>         SHARES = 51.000000
+>      TICKETKEY = X'e62b104a4f3eeb1ec0a80146'
+>           TIME = TIMESTAMP '2012-02-17 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+set commit false;
+update mtrade set shares=21 where ticketkey=X'e62b104a4f3eeb1ec0a80146';
+update morder set shares=21 where ticketkey=X'e62b104a4f3eeb1ec0a80146';
+commit;
+set commit true;
+
+tickle the ticket 
+e62b104a4f3eeb1ec0a80146
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-04-07 08:51:39 -0400
+<<<< dbtool finished at 2015-04-07 08:51:39 -0400
+
+invalidate the fund 
+select fundkey from mposition where primarykey=  X'f43e3664417ffe86c0a8011e';
+> Row 1:
+>   FUNDKEY = X'52d851e339dd5097c0a80118'
+/Marketocracy/bin/fptool invalidateFund 52d851e339dd5097c0a80118
+/Marketocracy/bin/fptool priceFund 52d851e339dd5097c0a80118
+
+just not working - stayig at 51 shares
+
+lets try this one 
+FAMF
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 19, 2004 		20000 	20000 	Buy
+Oct 28, 2004 	20000 	20000 	40000 	Buy
+Nov 05, 2004 	40000 	7716 	47716 	Buy
+Nov 08, 2004 	47716 	24284 	72000 	Buy
+Nov 22, 2004 	72000 	-20000 	52000 	Sell
+Dec 03, 2004 	52000 	-52000 		Sell
+Dec 09, 2004 		59561 	59561 	Buy
+Dec 17, 2004 	59561 	-3208 	56353 	Sell
+Dec 20, 2004 	56353 	-51563 	4790 	Sell
+Feb 10, 2005 	4790 	-4789 	1 	Sell
+Mar 08, 2005 	1 	-1 		Sell
+Apr 14, 2005 		72000 	72000 	Buy
+May 03, 2005 	72000 	30000 	102000 	Buy
+May 09, 2005 	102000 	31000 	133000 	Buy
+Jun 03, 2005 	133000 	-21000 	112000 	Sell
+Jun 06, 2005 	112000 	-23000 	89000 	Sell
+Jun 20, 2005 	89000 	-89000 		Sell
+Jun 26, 2006 		30419 	30419 	Buy
+Apr 10, 2007 	30419 	-10419 	20000 	Sell
+Apr 15, 2011 	20000 	-19800 	200 	Corporate Action
+May 19, 2011 	200 	-146 	54 	Sell
+Feb 17, 2012 	54 	-126 	-72 	Corporate Action
+Jan 23, 2014 	-72 	-1 	-73 	Corporate Action  <-- remove this one 
+Total: -73
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Oct 19, 2004 	20,000 	$1,000.00 	$23,936.22 	$1.20
+Oct 28, 2004 	20,000 	$1,000.00 	$23,990.12 	$1.20
+Nov 5, 2004 	7,716 	$385.80 	$9,182.04 	$1.19
+Nov 8, 2004 	24,284 	$1,214.20 	$29,373.27 	$1.21
+Dec 9, 2004 	52,000 	$2,600.00 	$95,944.68 	$1.85
+Dec 9, 2004 	7,561 	$378.05 	$13,647.25 	$1.80
+Apr 14, 2005 	72,000 	$2,072.28 	$43,517.78 	$0.60
+May 3, 2005 	30,000 	$741.95 	$15,581.03 	$0.52
+May 9, 2005 	31,000 	$740.61 	$15,552.81 	$0.50
+Jun 26, 2006 	30,419 	$1,520.95 	$111,830.37 	$3.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 22, 2004 	20,000 	$1,000.00 	$0.65 	$26,490.57 	$1.32
+Dec 3, 2004 	52,000 	$2,600.00 	$1.99 	$82,389.41 	$1.58
+Dec 17, 2004 	3,208 	$160.40 	$0.16 	$6,485.94 	$2.02
+Dec 20, 2004 	51,563 	$2,578.15 	$2.49 	$103,802.02 	$2.01
+Feb 10, 2005 	4,789 	$239.45 	$0.24 	$6,904.13 	$1.44
+Mar 8, 2005 	1 	$0.05 	$0.01 	$1.19 	$1.19
+Jun 3, 2005 	21,000 	$871.44 	$0.73 	$16,557.43 	$0.79
+Jun 6, 2005 	23,000 	$1,138.45 	$0.96 	$21,630.59 	$0.94
+Jun 20, 2005 	89,000 	$4,146.50 	$3.47 	$78,783.52 	$0.89
+Apr 10, 2007 	10,419 	$520.95 	$2.56 	$82,810.49 	$7.95
+May 19, 2011 	73 	$3.47 	$0.01 	$65.87 	$0.90
+May 19, 2011 	73 	$3.65 	$0.00 	$69.35 	$0.95
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Jan 23, 2014 	Split terms:split terms: 1 for 50
+Apr 15, 2011 	Split terms:1 for 100
+Feb 17, 2012 	Split terms:1 for 100
+
+FAMF  20140123
+
+trades on January 23, 2014 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Buy 	LJPC 	0 	$0.00 	$0.00 	$0.00 	$0.00  <--- remove this 
+Split Sell 	LJPC 	1 	$0.00 	$0.00 	$0.00 	$0.00  <-- remove this
+
+select distinct stockkey from mstockalias where symbol='LJPC';
+> Row 1:
+>   STOCKKEY = X'ebc60e21390aa24bc0a80116'
+select primarykey from mstockalias where STOCKKEY = X'ebc60e21390aa24bc0a80116';
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where STOCKKEY = X'ebc60e21390aa24bc0a80116') and BB_ACTIONMNEMONIC='STOCK_SPLT' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'9cb728b643ab6902c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20051222|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 20267917
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 148250
+>        BB_COMPANYNAME = La Jolla Pharmaceutical Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-12-22 00:00:00.000000'
+>         BB_IDENTIFIER = LJPCD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2005-12-21 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = LJPCD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ad53289243ab683cc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'023d2e8f4da8c8b3c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 100|CP_RATIO|0.010000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.010000|CP_ADJ_DT|20110415|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 53678498
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 148250
+>        BB_COMPANYNAME = La Jolla Pharmaceutical Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-04-15 00:00:00.000000'
+>         BB_IDENTIFIER = LJPC    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-04-13 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = LJPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-04-14 00:00:00.000000'
+>            PRIMARYKEY = X'f2f544864da775a2c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'ffb30d284f3ee8fec0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 100|CP_RATIO|0.010000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.010000|CP_ADJ_DT|20120217|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 61754282
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 148250
+>        BB_COMPANYNAME = La Jolla Pharmaceutical Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-02-17 00:00:00.000000'
+>         BB_IDENTIFIER = LJPC    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-02-16 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = LJPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-02-16 00:00:00.000000'
+>            PRIMARYKEY = X'308516af4f3d926cc0a80146'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'2dd01eac52e0ce4bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|split terms: 1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|20140123|CP_PAY_DT|20140123|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20140608:103138
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-23 00:00:00.000000'
+>         BB_IDENTIFIER = LJPC     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-23 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = LJPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-23 00:00:00.000000'
+>            PRIMARYKEY = X'c3ac24d953951c8ac0a86f92'
+>               VERSION = NULL
+
+it was applied only once 
+Feb 17, 2012 	54 	-126 	-72 	Corporate Action
+
+
+change this to 54  20120217
+
+ trades on February 17, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Buy 	LJPC 	1 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	LJPC 	127 	$0.00 	$0.00 	$0.00 	$0.00
+
+Hexkey: E61F104A4F3EEB1EC0A80146
+
+select * from mticket where primarykey=X'E61F104A4F3EEB1EC0A80146';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'e621104a4f3eeb1ec0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e5b0c3439dc78a5c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e61f104a4f3eeb1ec0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000   <--- change to 54
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ebc60e21390aa24bc0a80116'
+>      SOURCEKEY = X'308516af4f3d926cc0a80146'
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'e61f104a4f3eeb1ec0a80146';
+> Row 1:
+>                    KINDKEY = X'6333039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0e4d366441756830c0a8011e'
+>                 PRIMARYKEY = X'e622104a4f3eeb1ec0a80146'
+>                     SHARES = 127.000000  <--- change to 54
+>                  TICKETKEY = X'e61f104a4f3eeb1ec0a80146'
+>                     CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+select * from morder where ticketkey=X'e61f104a4f3eeb1ec0a80146';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e621104a4f3eeb1ec0a80146'
+>         SHARES = 127.000000 <--- change to 54 
+>      TICKETKEY = X'e61f104a4f3eeb1ec0a80146'
+>           TIME = TIMESTAMP '2012-02-17 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+set commit false;
+update morder set shares=54 where ticketkey=X'e61f104a4f3eeb1ec0a80146';
+update mtrade set shares=54 where ticketkey=X'e61f104a4f3eeb1ec0a80146';
+commit;
+set commit true;
+
+tickle the tickete61f104a4f3eeb1ec0a80146
+e61f104a4f3eeb1ec0a80146
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-04-07 09:20:37 -0400
+<<<< dbtool finished at 2015-04-07 09:20:37 -0400
+
+invalidate the fund
+select fundkey from mposition where primarykey= X'0e4d366441756830c0a8011e';
+> Row 1:
+>   FUNDKEY = X'7c5864283a25273ac0a801e0'
+
+/Marketocracy/bin/fptool invalidateFund 7c5864283a25273ac0a801e0
+
+good now have to do the buy  20120217
+Hexkey: E624104A4F3EEB1EC0A80146
+
+select * from mtrade where ticketkey=X'E624104A4F3EEB1EC0A80146' ;
+> Row 1:
+>                    KINDKEY = X'6336039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0e4d366441756830c0a8011e'
+>                 PRIMARYKEY = X'e627104a4f3eeb1ec0a80146'
+>                     SHARES = 1.000000
+>                  TICKETKEY = X'e624104a4f3eeb1ec0a80146'
+>                     CLOSED = TIMESTAMP '2012-02-17 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+select * from morder where ticketkey=X'E624104A4F3EEB1EC0A80146' ;
+> Row 1:
+>      ACTIONKEY = X'6336039339e7e927c0a801dc'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e626104a4f3eeb1ec0a80146'
+>         SHARES = 1.000000
+>      TICKETKEY = X'e624104a4f3eeb1ec0a80146'
+>           TIME = TIMESTAMP '2012-02-17 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+set commit false;
+update mtrade set shares=0 where ticketkey=X'E624104A4F3EEB1EC0A80146' ;
+update morder set shares=0 where ticketkey=X'E624104A4F3EEB1EC0A80146' ;
+
+commit;
+set commit true;
+
+tickle the ticket E624104A4F3EEB1EC0A80146
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-04-07 09:29:36 -0400
+<<<< dbtool finished at 2015-04-07 09:29:37 -0400
+
+invalidate the fund
+select fundkey from mposition where primarykey=X'0e4d366441756830c0a8011e' ;
+> Row 1:
+>   FUNDKEY = X'7c5864283a25273ac0a801e0'
+
+/Marketocracy/bin/fptool invalidateFund 7c5864283a25273ac0a801e0
+
+logout and back in
+done for both
+
+lets see if anyone else is short
+
+get the type for long funds
+select * from mfund where primarykey= X'7c5864283a25273ac0a801e0';
+> Row 1:
+>                  DESCRIPTION = New Fund
+>                  BASISPOINTS = 0.000000
+>                    BROKERKEY = NULL
+>                 CAPSECTORKEY = NULL
+>                        CUSIP = NULL
+>                 CUSTODIANKEY = NULL
+>                      DATAKEY = NULL
+>                  DIVERSIFIED = NO
+>                    INCEPTION = TIMESTAMP '2000-11-29 15:00:00.000000'
+>                      KINDKEY = X'70443ca1391e026fc0a8015c'  <==
+>                         NAME = Farm & Market Fund
+>                    PARENTKEY = NULL
+>                 PORTFOLIOKEY = X'6e5e0c3439dc78a5c0a80119'
+>                   PRIMARYKEY = X'7c5864283a25273ac0a801e0'
+>                         RISK = NULL
+>                    SECTORKEY = NULL
+>                         SIZE = NULL
+>                     STYLEKEY = NULL
+>                       SYMBOL = FAMF
+>         DISQUALIFICATIONDATE = NULL
+>                       ACTIVE = 1
+>                  INITIALCASH = NULL
+>                INITIALSHARES = NULL
+>   MIRRORDISQUALIFICATIONDATE = NULL
+>       DISQUALIFICATIONREASON = NULL
+
+
+KINDKEY = X'70443ca1391e026fc0a8015c'
+
+select distinct kindkey from mfund;
+> Row 1:
+>   KINDKEY = X'70443ca1391e026fc0a8015c'  <--- long fund
+> Row 2:
+>   KINDKEY = X'0702661140d1e219c0a8020c'  <-- short fund
+
+
+select distinct stockkey from mstockalias where symbol='LJPC';
+> Row 1:
+>   STOCKKEY = X'ebc60e21390aa24bc0a80116'
+
+select fundkey from mposition where STOCKKEY = X'ebc60e21390aa24bc0a80116' and totalshares < 0;
+> Row 1:
+>   FUNDKEY = X'12642df53c716574c0a801e0'
+> Row 2:
+>   FUNDKEY = X'843e454045f584c3c0a80133'
+> Row 3:
+>   FUNDKEY = X'35bb6f4c4429b7e2c0a80132'
+> Row 4:
+>   FUNDKEY = X'87ac212a414897dec0a8013c'
+> Row 5:
+>   FUNDKEY = X'587245ad51882348c0a80146'
+> Row 6:
+>   FUNDKEY = X'f4bc6bbe518bbe21c0a80146'
+> Row 7:
+>   FUNDKEY = X'e737352051938e97c0a80146'
+> Row 8:
+>   FUNDKEY = X'0ba7032b41f058e9c0a80134'
+
+select primarykey, symbol from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'ebc60e21390aa24bc0a80116' and totalshares < 0) and KINDKEY = X'70443ca1391e026fc0a8015c';
+> Row 1:
+>   PRIMARYKEY = X'12642df53c716574c0a801e0'
+>       SYMBOL = GARP
+> Row 2:
+>   PRIMARYKEY = X'587245ad51882348c0a80146'
+>       SYMBOL = JoeToms4
+> Row 3:
+>   PRIMARYKEY = X'f4bc6bbe518bbe21c0a80146'
+>       SYMBOL = huyehara_hmf1
+> Row 4:
+>   PRIMARYKEY = X'e737352051938e97c0a80146'
+>       SYMBOL = JoeToms6
+
+
+we have 4 long funds that are short in LJPC  let's expand
+
+1.  
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey=X'12642df53c716574c0a801e0'));
+> Row 1:
+>   LOGINNAME = svanness
+GARP
+
+2.  
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey=X'587245ad51882348c0a80146'));
+> Row 1:
+>   LOGINNAME = teamfunds
+JoeToms4
+
+3.  
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey=X'f4bc6bbe518bbe21c0a80146'));
+> Row 1:
+>   LOGINNAME = techplusmanager
+huyehara_hmf1
+
+4.  
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey=X'e737352051938e97c0a80146'));
+> Row 1:
+>   LOGINNAME = teamfunds
+JoeToms6
+
+
+this is a real one:
+1.  
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey=X'12642df53c716574c0a801e0'));
+> Row 1:
+>   LOGINNAME = svanness
+GARP
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 08, 2007 		29874 	29874 	Buy
+Mar 09, 2007 	29874 	5000 	34874 	Buy
+Mar 12, 2007 	34874 	565 	35439 	Multiple
+Mar 13, 2007 	35439 	6000 	41439 	Buy
+Mar 16, 2007 	41439 	-39000 	2439 	Sell
+Apr 09, 2007 	2439 	-200 	2239 	Multiple
+Apr 18, 2007 	2239 	-1100 	1139 	Sell
+Apr 26, 2007 	1139 	1500 	2639 	Buy
+May 02, 2007 	2639 	-1400 	1239 	Sell
+Aug 27, 2007 	1239 	-1251 	-12 	Sell  <--- change to 1239
+Total: -12
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 8, 2007 	20,000 	$1,000.00 	$89,760.22 	$4.49
+Mar 8, 2007 	9,874 	$493.70 	$41,258.70 	$4.18
+Mar 9, 2007 	5,000 	$250.00 	$28,958.09 	$5.79
+Mar 12, 2007 	974 	$48.70 	$7,548.51 	$7.75
+Mar 12, 2007 	3,291 	$164.55 	$24,824.66 	$7.54
+Mar 12, 2007 	3,300 	$165.00 	$25,702.30 	$7.79
+Mar 13, 2007 	6,000 	$300.00 	$44,832.48 	$7.47
+Apr 9, 2007 	1,000 	$50.00 	$6,572.92 	$6.57
+Apr 26, 2007 	1,500 	$75.00 	$10,133.06 	$6.76
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 12, 2007 	7,000 	$350.00 	$1.61 	$51,930.32 	$7.42
+Mar 16, 2007 	20,000 	$1,000.00 	$4.10 	$132,612.02 	$6.63
+Mar 16, 2007 	19,000 	$950.00 	$3.98 	$128,685.17 	$6.77
+Apr 9, 2007 	1,200 	$60.00 	$0.23 	$7,280.67 	$6.07
+Apr 18, 2007 	1,100 	$55.00 	$0.23 	$7,541.73 	$6.86
+May 2, 2007 	1,400 	$70.00 	$0.26 	$8,294.94 	$5.92
+Aug 27, 2007 	1,251 	$62.55 	$0.16 	$5,077.21 	$4.06 <--- change to 1239
+
+combo ticket
+ fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Growth and Income 	GNI 	1,460
+Growth at a reasonable price 	GARP 	1,251  <--- change to 1239
+High Grow with Capital preservation 	HGWCP 	1,303
+Information Technology 	IT 	1,200
+Low priced stocks 	LPC 	1,200
+Predator 	P 	2,000
+Special Situations 	SS 	1,200
+The Gambler's Fund 	GAMB 	1,250
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GNI 20070827 LJPC -1460 4.06
+Trading -1460.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: GNI Growth and Income
+building trade (has to load stock prices first)
+price = 4.06
+selling -1460.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GARP 20070827 LJPC -1239 4.06
+Trading -1239.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: GARP Growth at a reasonable price
+building trade (has to load stock prices first)
+price = 4.06
+selling -1239.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  HGWCP 20070827 LJPC -1303 4.06
+Trading -1303.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: HGWCP High Grow with Capital preservation
+building trade (has to load stock prices first)
+price = 4.06
+selling -1303.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  IT 20070827 LJPC -1200 4.06
+Trading -1200.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: IT Information Technology
+building trade (has to load stock prices first)
+price = 4.06
+selling -1200.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  LPC 20070827 LJPC -1200 4.06
+Trading -1200.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: LPC Low priced stocks
+building trade (has to load stock prices first)
+price = 4.06
+selling -1200.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  P 20070827 LJPC -2000 4.06
+Trading -2000.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: P Predator
+building trade (has to load stock prices first)
+price = 4.06
+selling -2000.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  SS 20070827 LJPC -1200 4.06
+Trading -1200.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: SS Special Situations
+building trade (has to load stock prices first)
+price = 4.06
+selling -1200.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GAMB 20070827 LJPC -1250 4.06
+Trading -1250.0 shares of LA JOLLA PHARMACEUTICAL on Aug 27, 2007 at 4.06
+manager: svanness L. VanNess
+fund: GAMB The Gambler's Fund
+building trade (has to load stock prices first)
+price = 4.06
+selling -1250.0 shares of LJPC at 4.06 on 20070827
+invaldating fund prices from Aug 27, 2007
+Done
+
+this one is done
+
+******
+
+> Row 1:
+>   LOGINNAME = teamfunds
+JoeToms4
+sell of 20 with no buys - removed 
+
+> Row 1:
+>   LOGINNAME = teamfunds
+JoeToms6
+sell of 20 with no buys removed
+
+> Row 1:
+>   LOGINNAME = techplusmanager
+huyehara_hmf1
+sell of 81 shares with no buy - removed 
+
+
+select primarykey, symbol from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'ebc60e21390aa24bc0a80116' and totalshares < 0) and KINDKEY = X'70443ca1391e026fc0a8015c';
+none any more done.

@@ -1,0 +1,418 @@
+date:  6/9/15
+ticker: FUQI
+
+yahoo:  stale  
+FUQI INTERNATIONAL (FUQI) -Other OTC
+Watchlist
+1.50 0.00(0.00%) Jun 28   <---- 6/28  
+Add to Portfolio
+Prev Close:	1.50
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	7.00
+Beta:	1.93
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	0.55 - 1.59
+Volume:	0
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	0.71
+EPS (ttm):	2.12
+Div & Yield:	N/A (N/A)
+
+
+quantum:
+Fuqi International, Inc..
+Ticker Symbol: FUQI*     CUSIP: 36102A207     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 7/01/13
+
+oursite:
+Symbol: FUQI 	Name: Fuqi International, Incorporated 	Price: $6.80
+Volume: 	Sector: Consumer Discretionary 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+listing changes for FUQI 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Jan 04, 2010 	NASDAQ 	UQ 	NASDAQ 	UW 	Change in the exchange that FUQI trades on from NASDAQ to NASDAQ
+Mar 29, 2011 	NASDAQ 	UW 	OTCBB-OTHER 	UV 	Change in the exchange that FUQI trades on from NASDAQ to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+FUQI  MM/DD/YYYY
+Stock:Fuqi International, Incorporated  Symbol:FUQI
+Date: 06/09/2015
+
+80 users found
+
+1	advisorcfa	alcraig	alfiechwa	apuo	bankscounty	bardo	biko	blackaction	c.luongvan	ccachat
+2	cd	cgnx	cs345	cvantoor	cyancide	danfinn00	davejones	dbautz	dcharlan	dgrogan
+3	dmitry_buriko	dougalcarlisle	drass	fundamental	giuseppe82	godfather40	gregharman	hansthered	iwatt001	jdiorio
+4	jlee929	joeeleonard	jpsandrs	jreg87	julinator	justin_collett83	krymer	links7521	lou.liu	mamu
+5	martinweinand	mcheng	minuet	morgan0126	msarfaty	mtaguchi	nalsaadi	neil_nadeau	nikp814	nslaughter
+6	pegasus666	pjz0001	pkawuki	ppfister1	producer	pst0ne	ras2178	reveille	richandhappy	romere1
+7	rrobins	sarora	shani	sharding	speculant	teakins2007	teamfunds	techplusmanager	tenbagger	tgarrettwi
+8	thegreatone	thirdfloor	vsagdeo	vsdm	wbeare12	weatherguy1033	whandke	x11	yseric	yuqiongzhu
+
+database
+select distinct stockkey from mstockalias where symbol= 'FUQI';  
+> Row 1:
+>   STOCKKEY = X'83e042c547869434c0a80146'
+
+select * from mstockalias where stockkey= X'83e042c547869434c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2007-10-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'83e142c547869434c0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2010-01-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'661b432b4b42669bc0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2011-03-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'111674e24d925ee7c0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FUQI'  order by BB_EFFECTIVE;
+> Row 11:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|FUQI|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 79098006
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 12234791
+>        BB_COMPANYNAME = Fuqi International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = FUQI    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = FUQI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'489a42b451d20a68c0a80146'
+>               VERSION = NULL
+delisted on 2013-07-01
+
+last known price
+/Marketocracy/bin/dbtool lookup stock FUQI
+>>>> dbtool started at 2015-06-09 21:33:50 -0400
+stock: FUQI
+  PK       : [83E042C547869434C0A80146]
+  companyID: [17885]
+  symbol   : [FUQI]
+  name     : [Fuqi International, Incorporated]
+  date     : [2007-10-23 00:00:00]
+  status   : [Active]
+stock: FUQI
+  PK       : [83E042C547869434C0A80146]
+  companyID: [17885]
+  symbol   : [FUQI]
+  name     : [Fuqi International, Incorporated]
+  date     : [2010-01-04 00:00:00]
+  status   : [Active]
+stock: FUQI
+  PK       : [83E042C547869434C0A80146]
+  companyID: [17885]
+  symbol   : [FUQI]
+  name     : [Fuqi International, Incorporated]
+  date     : [2011-03-29 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-09 21:33:51 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17885
+2010-06-21 (Mon) [3458]: O:9.2500 H:9.3900 L:8.7400 C:8.8200 V:421149 TSO:27628 A:8.8200 R:1.0000 CA:0.0000
+2010-06-22 (Tue) [3459]: O:8.8400 H:9.1199 L:8.6100 C:8.6400 V:448663 TSO:27628 A:8.6400 R:1.0000 CA:0.0000
+2010-06-23 (Wed) [3460]: O:8.6400 H:8.9200 L:8.3699 C:8.4300 V:317483 TSO:27628 A:8.4300 R:1.0000 CA:0.0000
+2010-06-24 (Thu) [3461]: O:8.3300 H:8.5500 L:8.1700 C:8.2100 V:427108 TSO:27628 A:8.2100 R:1.0000 CA:0.0000
+2010-06-25 (Fri) [3462]: O:8.2000 H:8.3600 L:8.0200 C:8.1100 V:1784226 TSO:27628 A:8.1100 R:1.0000 CA:0.0000
+2010-06-26 (Sat) [3463]: <WEEKEND>
+2010-06-27 (Sun) [3464]: <WEEKEND>
+2010-06-28 (Mon) [3465]: O:8.1500 H:8.2300 L:7.9100 C:8.0300 V:436167 TSO:27628 A:8.0300 R:1.0000 CA:0.0000
+2010-06-29 (Tue) [3466]: O:7.9900 H:8.0000 L:7.4000 C:7.5300 V:458724 TSO:27628 A:7.5300 R:1.0000 CA:0.0000
+2010-06-30 (Wed) [3467]: O:7.3500 H:7.4000 L:6.6932 C:6.8000 V:1236795 TSO:27628 A:6.8000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'83e042c547869434c0a80146' and shares > 0 order by closed; 
+> Row 2417:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-06-28 15:18:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1343.050000
+>   CURRENTORDER = X'5f1309eb51baaa0cc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c58619e14d0e736bc0a80135'
+>       MODIFIED = NULL
+>            NET = 38573.253938
+>         OPENED = TIMESTAMP '2013-06-14 01:28:44.000000'
+>          PRICE = 1.436032
+>     PRIMARYKEY = X'5f1109eb51baaa0cc0a80134'
+>         SECFEE = 0.700000
+>         SHARES = 26861.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+last ticket 2013-06-28    price: 1.436032
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'83e042c547869434c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'83e042c547869434c0a80146' and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'f4bc6bbe518bbe21c0a80146'
+>       SYMBOL = huyehara_hmf1
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'83e042c547869434c0a80146' and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = techplusmanager huyehara_hmf1
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 09, 2009 		76 	76 	Buy
+Apr 17, 2009 	76 	3800 	3876 	Buy
+May 12, 2009 	3876 	-3877 	-1 	Sell
+Nov 04, 2009 	-1 	3800 	3799 	Buy
+Nov 06, 2009 	3799 	-3800 	-1 	Sell
+Jan 05, 2010 	-1 	2533 	2532 	Buy
+Jan 11, 2010 	2532 	-2533 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2009 	76 	$3.80 	$574.56 	$7.56
+Apr 17, 2009 	3,800 	$190.00 	$19,819.26 	$5.22
+Nov 4, 2009 	1,267 	$63.35 	$27,137.08 	$21.42
+Nov 4, 2009 	2,533 	$126.65 	$54,230.71 	$21.41
+Jan 5, 2010 	2,533 	$126.65 	$51,666.39 	$20.40
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 12, 2009 	3,877 	$193.85 	$0.68 	$26,222.98 	$6.76
+Nov 6, 2009 	1,267 	$63.35 	$0.71 	$27,303.99 	$21.55
+Nov 6, 2009 	2,533 	$126.65 	$1.50 	$58,121.75 	$22.95
+Jan 11, 2010 	2,533 	$126.65 	$1.42 	$54,985.18 	$21.71  <--- make it 2532
+/Marketocracy/Scripts/build/bin/backdatedtrade.py techplusmanager huyehara_hmf1 20100111 FUQI -2532 21.71 
+Trading -2532.0 shares of Fuqi International, Incorporated on Jan 11, 2010 at 21.71
+manager: techplusmanager Tech Plus Manager
+fund: huyehara_hmf1
+building trade (has to load stock prices first)
+price = 21.71
+selling -2532.0 shares of FUQI at 21.71 on 20100111
+invaldating fund prices from Jan 11, 2010
+Done
+
+
+let's resolve this short 
+techplusmanager  fund: 
+ 
+apply the acquis
+80 members hold FUQI
+delisted on 2013-07-01
+quantumonline: This security is no longer trading as of 7/01/13
+yahoo finance:  1.50 0.00(0.00%) Jun 28   <---- 6/28
+last ticket 2013-06-28    price: 1.436032
+
+going with 20130701    1.436032
+
+/Marketocracy/bin/cahelper -symbol  FUQI  -effective 20130701 -type ACQUIS -exchange UN -acqType 1 -acqCash  1.436032 -acqShare 0 -purchaser FUQI   >& /Users/build/caout/FUQI.201500609-ACQUIS.out
+FUQI.201500609-ACQUIS.out
+stocks:~/caout build$ tail -f FUQI.201500609-ACQUIS.out
+D: (06-09 21:41:15.894) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-09 21:41:40.457) cahelper started on 2015-06-09 21:41:40 -0400
+
+D: (06-09 21:41:40.612) There are [0] open tickets for FUQI on 20130701
+D: (06-09 21:41:40.975) StockFileLoad Version:4.0
+D: (06-09 21:41:40.976) Loading Stock Data
+D: (06-09 21:42:19.955) Building Lookup Index
+D: (06-09 21:42:25.028) Finished Building Index
+D: (06-09 21:42:28.735) Finished Loading Stock Data
+D: (06-09 21:42:28.854) Connection to 192.168.111.172:6666 succeeded
+D: (06-09 21:42:32.106) SavingChanges for position sell out 101 of 419
+D: (06-09 21:42:38.067) {
+    "ACQUIRED_STOCK" = FUQI; 
+    "ACQUIRING_STOCK" = "FUQI_FIX"; 
+    AMOUNT = 1.436032; 
+    APPLIED = 1; 
+    DATE = 20130701; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "FUQI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-09 21:42:40.477) SUCCESS
+D: (06-09 21:42:40.477) cahelper finished 2015-06-09 21:42:40 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'83e042c547869434c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2007-10-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'83e142c547869434c0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2010-01-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'661b432b4b42669bc0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2011-03-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'111674e24d925ee7c0a80146'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36102A207
+>           DATE = TIMESTAMP '2013-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Fuqi International, Incorporated
+>     PRIMARYKEY = X'09371412557795d4c0a86f92'
+>       STOCKKEY = X'83e042c547869434c0a80146'
+>         SYMBOL = FUQI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'09371412557795d4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'09371412557795d4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FUQI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.436032|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150609:094140
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = FUQI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FUQI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'09311412557795d4c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'09311412557795d4c0a86f92';
+> Row 1:
+>   _C001 = 151.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'09311412557795d4c0a86f92'));
+151 fundkeys  save to CA issues FUQI fundkeys.txt
+
+check on 6/10/15   invalidate funds
+ FUQI has been acquired 	right curve
+  	  	
+Fuqi International, Incorporated acquired by a private company on 2013-07-01 00:00:00. 
+trades on July 01, 2013 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Stock Dividend Buy 	SNP 	30 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	SNP 	39 	$0.00 	$0.00 	$0.00 	$0.00
+Sell 	FUQI 	100 	$0.00 	$0.00 	$0.00 	$0.00
+
+1.436032 * 100 = 
+check MAdmin
+Stock:Fuqi International, Incorporated  Symbol:FUQI
+
+Date: 06/10/2015
+
+1 users found
+
+1	teamfunds	 
+
+lets get rid of the shares in teamfunds
+JoeToms2
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 09, 2009 		19 	19 	Buy
+Apr 17, 2009 	19 	950 	969 	Buy
+May 12, 2009 	969 	-969 		Sell
+Nov 04, 2009 		950 	950 	Buy
+Nov 06, 2009 	950 	-950 		Sell
+Jan 05, 2010 		633 	633 	Buy
+Jan 11, 2010 	633 	-633 		Sell
+Jul 01, 2013 		-19 	-19 	Corporate Action
+Total: -19
+
+get rid of the CA 
+done
+
+closing this out members got cash and the stock is acquired 	 	 	 	 	 	 	 	 

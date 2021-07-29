@@ -1,0 +1,247 @@
+RNVS
+date:   11/16/2015
+ticker:    RNVS
+
+yahoo:  nothing
+
+quantum:  nothing 
+
+oursite:
+Symbol: RNVS	Name: Renovis, Inc	Price: $2.10
+Volume:	Sector: Health Care	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+
+research  stock info  RNVS   
+    
+Corporate Actions for Renovis, Inc	  November 16, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Renovis, Inc  Symbol:RNVS
+Date: 11/16/2015
+
+39 users found
+
+1	andrewyeh	aragon9197	bclopton	bgruber	bobbyr98	coolperson0808	dave1969	denebs	dubliner	eric0034
+2	explorer7	ferran	fkuster	fpeng	grimlock	ianchull	jamesreyes78	jbroman	jim3333	jsbaker
+3	jyt459	kama	kens	kevante	meleke	mj2345unc	mseibel	narden	nrappaccini	pablo4414
+4	richardk	richfield	rnice	skyyhi	tgarrettwi	thegate12	tjenkins	txcla	wpicaco
+
+database
+select distinct stockkey from mstockalias where symbol= 'RNVS';  
+> Row 1:
+>   STOCKKEY = X'd1966c9741e35836c0a80146'
+select * from mstockalias where stockkey=X'd1966c9741e35836c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 759885106
+>           DATE = TIMESTAMP '2004-02-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Renovis, Inc
+>     PRIMARYKEY = X'd1976c9741e35836c0a80146'
+>       STOCKKEY = X'd1966c9741e35836c0a80146'
+>         SYMBOL = RNVS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RNVS'  order by BB_EFFECTIVE;
+Share holders meeting:  2008-05-01
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RNVS
+>>>> dbtool started at 2015-11-16 22:27:51 -0500
+stock: RNVS
+  PK       : [D1966C9741E35836C0A80146]
+  companyID: [15431]
+  symbol   : [RNVS]
+  name     : [Renovis, Inc]
+  date     : [2004-02-05 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-16 22:27:52 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15431
+2008-04-28 (Mon) [2674]: O:2.2000 H:2.2200 L:2.1300 C:2.1300 V:99638 TSO:29770 A:2.1300 R:1.0000 CA:0.0000
+2008-04-29 (Tue) [2675]: O:2.1000 H:2.2400 L:2.1000 C:2.1700 V:151772 TSO:29770 A:2.1700 R:1.0000 CA:0.0000
+2008-04-30 (Wed) [2676]: O:2.1400 H:2.2599 L:2.1500 C:2.2599 V:74666 TSO:29770 A:2.2599 R:1.0000 CA:0.0000
+2008-05-01 (Thu) [2677]: O:2.2300 H:2.2900 L:2.1400 C:2.2000 V:748430 TSO:29770 A:2.2000 R:1.0000 CA:0.0000
+2008-05-02 (Fri) [2678]: O:2.2400 H:2.3800 L:2.0500 C:2.1000 V:585590 TSO:29770 A:2.1000 R:1.0000 CA:0.0000  <---
+2008-05-03 (Sat) [2679]: <WEEKEND>
+2008-05-04 (Sun) [2680]: <WEEKEND>
+2008-05-05 (Mon) [2681]: O:2.1000 H:2.1000 L:2.1000 C:2.1000 V:0 TSO:29770 A:2.1000 R:1.0000 CA:0.0000
+2008-05-06 (Tue) [2682]: O:2.1000 H:2.1000 L:2.1000 C:2.1000 V:0 TSO:29770 A:2.1000 R:1.0000 CA:0.0000
+2008-05-07 (Wed) [2683]: O:2.1000 H:2.1000 L:2.1000 C:2.1000 V:0 TSO:29770 A:2.1000 R:1.0000 CA:0.0000
+
+...
+2008-11-21 (Fri) [2881]: O:2.1000 H:2.1000 L:2.1000 C:2.1000 V:0 TSO:29770 A:2.1000 R:1.0000 CA:0.0000
+2008-11-22 (Sat) [2882]: <WEEKEND>
+2008-11-23 (Sun) [2883]: <WEEKEND>
+2008-11-24 (Mon) [2884]: O:2.1000 H:2.1000 L:2.1000 C:2.1000 V:0 TSO:29770 A:2.1000 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'd1966c9741e35836c0a80146' and shares > 0 order by closed; 
+> Row 545:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-03-17 09:51:00.000000'
+>        COMMENT = 
+>     COMMISSION = 13.500000
+>   CURRENTORDER = X'077d2bb747de0a33c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c5794ab143324e66c0a80133'
+>       MODIFIED = NULL
+>            NET = 683.250090
+>         OPENED = TIMESTAMP '2008-03-17 02:05:39.000000'
+>          PRICE = 2.530556
+>     PRIMARYKEY = X'077b2bb747de0a33c0a80134'
+>         SECFEE = 0.030000
+>         SHARES = 270.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd1966c9741e35836c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'd1966c9741e35836c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd1966c9741e35836c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd1966c9741e35836c0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 39 members who hold this stock
+quantum:   nothing 
+last ticket:  2008-03-17   PRICE = 2.530556
+last price:  2008-05-02 (Fri) [2678]: O:2.2400 H:2.3800 L:2.0500 C:2.1000 V:585590 TSO:29770 A:2.1000 R:1.0000 CA:0.0000  <---
+
+going with 20080502 2.10
+
+/Marketocracy/bin/cahelper -symbol  RNVS  -effective 20080502 -type ACQUIS -exchange UN -acqType 1 -acqCash 2.10 -acqShare 0 -purchaser RNVS   >& /Users/build/caout/RNVS.20151116-DELIST.out 
+RNVS.20151116-DELIST.out
+stocks1:~/caout build$ tail -f RNVS.20151116-DELIST.out
+D: (11-16 22:31:38.638) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-16 22:32:02.300) cahelper started on 2015-11-16 22:32:02 -0500
+
+D: (11-16 22:32:02.662) There are [0] open tickets for RNVS on 20080502
+D: (11-16 22:32:03.305) StockFileLoad Version:4.0
+D: (11-16 22:32:03.305) Loading Stock Data
+D: (11-16 22:32:41.377) Building Lookup Index
+D: (11-16 22:32:47.035) Finished Building Index
+D: (11-16 22:32:50.984) Finished Loading Stock Data
+D: (11-16 22:32:51.104) Connection to 192.168.111.172:6666 succeeded
+D: (11-16 22:32:53.516) SavingChanges for position sell out 101 of 186
+D: (11-16 22:33:00.543) {
+    "ACQUIRED_STOCK" = RNVS; 
+    "ACQUIRING_STOCK" = "RNVS_FIX"; 
+    AMOUNT = 2.1; 
+    APPLIED = 1; 
+    DATE = 20080502; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RNVS_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-16 22:33:00.667) SUCCESS
+D: (11-16 22:33:00.667) cahelper finished 2015-11-16 22:33:00 -0500
+Check the results 
+select * from mstockalias where stockkey= X'd1966c9741e35836c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 759885106
+>           DATE = TIMESTAMP '2004-02-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Renovis, Inc
+>     PRIMARYKEY = X'd1976c9741e35836c0a80146'
+>       STOCKKEY = X'd1966c9741e35836c0a80146'
+>         SYMBOL = RNVS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 759885106
+>           DATE = TIMESTAMP '2008-05-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Renovis, Inc
+>     PRIMARYKEY = X'd60a4f9f564a9fb2c0a86fab'
+>       STOCKKEY = X'd1966c9741e35836c0a80146'
+>         SYMBOL = RNVS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'd60a4f9f564a9fb2c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'd60a4f9f564a9fb2c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RNVS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.100000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151116:103202
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-05-02 00:00:00.000000'
+>         BB_IDENTIFIER = RNVS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-05-02 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RNVS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-05-02 00:00:00.000000'
+>            PRIMARYKEY = X'd6044f9f564a9fb2c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'd6044f9f564a9fb2c0a86fab';
+> Row 1:
+>   _C001 = 101.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'd6044f9f564a9fb2c0a86fab'));
+there are 101 fundkeys, save to 
+
+For Beta case
+RNVS no longer trades but is still active on our site - need to delist 
+
+check on 11/17/15   invalidate funds
+check MAdmin  clear 
+
+RNVS has been acquired	right curve
+ 	 	
+Renovis, Inc acquired by a private company on 2008-05-02 00:00:00.
+
+invalidate reprice and close 
+
+
+

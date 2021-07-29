@@ -1,0 +1,86 @@
+date: 2/10/15
+AJC delisted / acquired
+
+quantum
+Appalachian Power Co., 7.30% Redeem Senior Notes due 2038
+Ticker Symbol: AJC*     CUSIP: 037735784     Exchange: NYSE
+Security Type:   Exchange-Traded Debt Security
+* NOTE: This security is no longer trading as of 6/30/03
+Security has been Called for:  Monday, June 30, 2003
+May 27, 2003 -- Appalachian Power Co. will redeem all the outstanding principal amount of its 7.20% Senior Notes, Series A, due 2038, and its 7.30% Senior Notes, Series B, due 2038, on June 30, 2003, at 100% of the principal amount outstanding. Interest payable on June 30, 2003, will be paid in the usual manner.
+QUANTUMONLINE.COM SECURITY DESCRIPTION:  Appalachian Power Co., 7.30% Senior Notes, Series B, due 2038, issued in $25 denominations, redeemable at the issuer's option on or after 4/22/2003 at $25 per share plus accrued and unpaid interest, maturing 6/30/2028, distributions of 7.30% ($1.825) per annum are paid quarterly on 3/31, 6/30, 9/30 & 12/31 to holders of record one business day prior to the payment date. Units are expected to trade flat, which means accrued interest will be reflected in the trading price and the purchasers will not pay and the sellers will not receive any accrued and unpaid interest. The Notes are unsecured and unsubordinated obligations of the company and will rank equally with all existing and future unsecured and unsubordinated indebtedness of the company. See the IPO prospectus for further information on the debt securities by clicking on the ‘Link to IPO Prospectus’ provided below. Appalachian Power Co. is a wholly-owned subsidiary of American Electric Power Co. Inc. (NYSE: 
+
+select distinct stockkey from mstockalias where symbol='AJC';
+> Row 1:
+>   STOCKKEY = X'acd610ac390c6defc0a8015c'
+select * from mstockalias where STOCKKEY = X'acd610ac390c6defc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 037735784
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = APPALACHIAN PWR 7.30% SR NOTES
+>     PRIMARYKEY = X'acd710ac390c6defc0a8015c'
+>       STOCKKEY = X'acd610ac390c6defc0a8015c'
+>         SYMBOL = AJC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+our site
+
+	
+
+Symbol: AJC	Name: APPALACHIAN PWR 7.30% SR NOTES	Price: $25.40
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+MAdmin
+
+Stock:APPALACHIAN PWR 7.30% SR NOTES  Symbol:AJC
+Date: 02/10/2015
+
+1 users found
+
+1	miax
+
+/Marketocracy/bin/cahelper -symbol AJC -effective 20030630 -type ACQUIS -exchange UN -acqType 1 -acqCash 25.00 -acqShare 0 -purchaser AJC >& /Users/build/caout.AJC.20150210-ACQUIS.out
+stocks:~ build$ tail -f caout.AJC.20150210-ACQUIS.out
+D: (02-10 21:06:48.868) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-10 21:07:12.705) cahelper started on 2015-02-10 21:07:12 -0500
+
+D: (02-10 21:07:13.069) There are [0] open tickets for AJC on 20030630
+D: (02-10 21:07:13.228) StockFileLoad Version:3.0
+D: (02-10 21:07:13.228) Loading Stock Data
+D: (02-10 21:07:53.061) Building Lookup Index
+D: (02-10 21:07:57.103) Finished Building Index
+D: (02-10 21:07:58.040) Finished Loading Stock Data
+D: (02-10 21:07:58.159) Connection to 192.168.111.157:6666 succeeded
+D: (02-10 21:07:58.167) {
+    "ACQUIRED_STOCK" = AJC; 
+    "ACQUIRING_STOCK" = "AJC_FIX"; 
+    AMOUNT = 25; 
+    APPLIED = 1; 
+    DATE = 20030630; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AJC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-10 21:07:58.551) SUCCESS
+D: (02-10 21:07:58.551) cahelper finished 2015-02-10 21:07:58 -0500
+
+mv caout.AJC.20150210-ACQUIS.out ./caout/AJC.20150210-ACQUIS.out
+
+ok, check on 2/11/15 for the ACQUIS
+2/11/15 = acquis is there
+ AJC has been acquired	
+ 	 	
+APPALACHIAN PWR 7.30% SR NOTES acquired by a private company on 2003-06-30 00:00:00.
+
+closing this out 

@@ -1,0 +1,2172 @@
+date: 4/27/15
+ticker
+
+looks like a collision  found this while looking at shorts for mpatterson2  MMF fund
+
+
+> Row 1189:
+>    LOGINNAME = mpatterson2
+>       SYMBOL = MMF
+>   PRIMARYKEY = X'8da90cae3bab7abac0a80119'
+MUINQ 	$0.04 	-53,500 	-$1,872.50 	-$21,942.64 	0.00% 	-43.98% 	Details  	MIDDLE
+LEDGER
+Date 	Start 	Change 	End 	Type
+Sep 21, 2001 		3500 	3500 	Buy
+Oct 15, 2001 	3500 	50000 	53500 	Buy
+Nov 16, 2001 	53500 	-53500 		Corporate Action
+Oct 17, 2002 		-22450 	-22450 	Sell
+Nov 01, 2002 	-22450 	-31050 	-53500 	Sell
+Total: -53,500
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Sep 21, 2001 	3,500 	$175.00 	$5,775.00 	$1.65
+Oct 15, 2001 	50,000 	$2,101.00 	$44,121.00 	$0.88
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Oct 17, 2002 	22,450 	$280.62 	$0.17 	$5,331.71 	$0.24
+Nov 1, 2002 	31,050 	$388.11 	$0.24 	$7,374.15 	$0.24
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Nov 16, 2001 	BlackRock Muni Intermediate Du acquired by a private company on 2001-11-16 00:00:00.
+
+this looks like the CA was applied prematurely?
+
+select distinct stockkey from mstockalias where symbol='MUINQ';
+> Row 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'1d2c0e21390b20e4c0a80116';
+	five DVD_CASH
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'928e4e9b3dfe85d4c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'928e4e9b3dfe85d4c0a80146';
+> Row 1:
+>              ALIASKEY = X'928e4e9b3dfe85d4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7356987
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-14 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-14 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1bd60b693bf33090c0a801dc'
+>               VERSION = NULL
+
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'a70e08dd409b434ac0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'a70e08dd409b434ac0a80146';
+> Row 1:
+>              ALIASKEY = X'a70e08dd409b434ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ US|CP_NAME| |CP_ID_BB_COMP| |CP_UNIT| |CP_TOT_AMT| |CP_TYP|1|CP_CASH|0.32|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG| |CP_DEBT| |CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG| |CP_INIT_OFFER_PREMIUM| |CP_CUR_PREM| |CP_PCT_OWNED| |CP_PCT_SOUGHT| |CP_ACCT_METHOD| |CP_UNSOLICITED| |CP_DETAIL_FLAG| |CP_CRNCY|USD|CP_CASH_VAL| |CP_ARBITRAGE_PROF| |CP_CUR_TOT_VAL| |CP_ADVISORS_NUM| |CP_ADVISORS| |CP_NOTES| 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 2004050716
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY =  
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-16 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>            PRIMARYKEY = X'5f360635409b4112c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'5f360635409b4112c0a80146';
+	> Row 1:
+>   _C001 = 17.000000
+Assessment:  I think that we need to back this ACQUIS out  stock still is trading
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'5cbc5de13c6ddfd2c0a801dc';
+> Row 1:
+>              ALIASKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUI US|CP_NEW_TKR|MUIN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473439f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'42fe3bc23ce0be79c0a801dc';
+> Row 1:
+>              ALIASKEY = X'42fe3bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7413408
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd08c1e453c06f730c0a801dc'
+>               VERSION = NULL
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'43013bc23ce0be79c0a801dc' ;
+> Row 1:
+>              ALIASKEY = X'43013bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473639f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'acb65ba33d4747b4c0a801dc' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'acb65ba33d4747b4c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUIN US|CP_NEW_TKR|MUINQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8617133
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ   UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5d4657163d4745c0c0a801dc'
+>               VERSION = NULL
+
+***  this is the break *****
+Then 40 DVD_CASH for the new MUINQ  
+
+
+
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'fb0512b14521c4d7c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'fb0512b14521c4d7c0a80146';
+> Row 1:
+>              ALIASKEY = X'fb0512b14521c4d7c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Muni Intermediate Duration Fun|CP_NEW_NAME|BlackRock Muni Intermediate Du|CP_NOTES|BlackRock Muni Intermediate Duration Fund, Inc. 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23176186
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'920f208b4502206fc0a80146'
+>               VERSION = NULL
+
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2006-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'978912b84521c514c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'978912b84521c514c0a80146';
+> Row 1:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|62618U107|CP_NEW_CUSIP|09253X102|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US62618U1079|CP_NEW_ISIN|US09253X1028|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23177086
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'9211208b4502206fc0a80146'
+>               VERSION = NULL
+
+
+
+ok, there is an acquis for the old company which needs to be backed out:
+
+> Row 1:
+>              ALIASKEY = X'a70e08dd409b434ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ US|CP_NAME| |CP_ID_BB_COMP| |CP_UNIT| |CP_TOT_AMT| |CP_TYP|1|CP_CASH|0.32|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG| |CP_DEBT| |CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG| |CP_INIT_OFFER_PREMIUM| |CP_CUR_PREM| |CP_PCT_OWNED| |CP_PCT_SOUGHT| |CP_ACCT_METHOD| |CP_UNSOLICITED| |CP_DETAIL_FLAG| |CP_CRNCY|USD|CP_CASH_VAL| |CP_ARBITRAGE_PROF| |CP_CUR_TOT_VAL| |CP_ADVISORS_NUM| |CP_ADVISORS| |CP_NOTES| 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 2004050716
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY =  
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-16 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>            PRIMARYKEY = X'5f360635409b4112c0a80146'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '2004050716:MARTY' where PRIMARYKEY = X'5f360635409b4112c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'5f360635409b4112c0a80146';
+> Row 1:
+>              ALIASKEY = X'a70e08dd409b434ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ US|CP_NAME| |CP_ID_BB_COMP| |CP_UNIT| |CP_TOT_AMT| |CP_TYP|1|CP_CASH|0.32|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG| |CP_DEBT| |CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG| |CP_INIT_OFFER_PREMIUM| |CP_CUR_PREM| |CP_PCT_OWNED| |CP_PCT_SOUGHT| |CP_ACCT_METHOD| |CP_UNSOLICITED| |CP_DETAIL_FLAG| |CP_CRNCY|USD|CP_CASH_VAL| |CP_ARBITRAGE_PROF| |CP_CUR_TOT_VAL| |CP_ADVISORS_NUM| |CP_ADVISORS| |CP_NOTES| 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 2004050716:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY =  
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-16 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2001-11-16 00:00:00.000000'
+>            PRIMARYKEY = X'5f360635409b4112c0a80146'
+>               VERSION = NULL
+
+
+let's untrade this
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 2004050716:MARTY
+untrading action with ID: 2004050716:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:MUINQ]
+
+
+let's look at the mstockalias records again:
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'928e4e9b3dfe85d4c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <-- here is a 927
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'928e4e9b3dfe85d4c0a80146';
+> Row 1:
+>              ALIASKEY = X'928e4e9b3dfe85d4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7356987
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-14 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-14 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1bd60b693bf33090c0a801dc'
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'1bd60b693bf33090c0a801dc';
+delete from mstockalias where PRIMARYKEY = X'928e4e9b3dfe85d4c0a80146';
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'a70e08dd409b434ac0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- another 927
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'a70e08dd409b434ac0a80146';
+nothing let's delete it 
+delete from mstockalias where PRIMARYKEY = X'a70e08dd409b434ac0a80146';
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'5cbc5de13c6ddfd2c0a801dc';
+> Row 1:
+>              ALIASKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUI US|CP_NEW_TKR|MUIN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473439f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'42fe3bc23ce0be79c0a801dc';
+> Row 1:
+>              ALIASKEY = X'42fe3bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7413408
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd08c1e453c06f730c0a801dc'
+>               VERSION = NULL
+
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'43013bc23ce0be79c0a801dc';
+> Row 1:
+>              ALIASKEY = X'43013bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473639f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'acb65ba33d4747b4c0a801dc';
+> Row 1:
+>              ALIASKEY = X'acb65ba33d4747b4c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUIN US|CP_NEW_TKR|MUINQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8617133
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ   UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5d4657163d4745c0c0a801dc'
+>               VERSION = NULL
+
+
+*******  the rest of the CAs belong to the new company 
+bunches of DVD_CASH for the new company
+
+> Row 2:
+>              ALIASKEY = X'acb65ba33d4747b4c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20030916|CP_PAY_DT|20030929|CP_FREQ|12|CP_NET_AMT|0.072000|CP_TAX_AMT| |CP_GROSS_AMT|0.072000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20030912|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12329206
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 20
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'856246b13f627a91c0a80146'
+>               VERSION = NULL
+
+
+first one under the old stockkey
+
+and the last one
+> Row 41:
+>              ALIASKEY = X'acb65ba33d4747b4c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20060915|CP_PAY_DT|20060928|CP_FREQ|12|CP_NET_AMT|0.063000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.063000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20060913|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23147676
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-09-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ec3d653f4508b801c0a80146'
+>               VERSION = NULL
+
+
+we need to 
+1.  delist the old company
+2.  move the DVD_CASH over
+
+select count(*) from mcorporateaction where BB_ACTIONMNEMONIC = 'DVD_CASH' and aliaskey=X'acb65ba33d4747b4c0a801dc';
+> Row 1:
+>   _C001 = 40.000000
+
+
+let's see who holds 
+
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'fb0512b14521c4d7c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'fb0512b14521c4d7c0a80146';
+> Row 1:
+>              ALIASKEY = X'fb0512b14521c4d7c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Muni Intermediate Duration Fun|CP_NEW_NAME|BlackRock Muni Intermediate Du|CP_NOTES|BlackRock Muni Intermediate Duration Fund, Inc. 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23176186
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'920f208b4502206fc0a80146'
+>               VERSION = NULL
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2006-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'978912b84521c514c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'978912b84521c514c0a80146';
+> Row 1:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|62618U107|CP_NEW_CUSIP|09253X102|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US62618U1079|CP_NEW_ISIN|US09253X1028|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23177086
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'9211208b4502206fc0a80146'
+>               VERSION = NULL
+
+
+
+let's see if we can distinguish by pricing
+/Marketocracy/bin/dbtool lookup stock MUINQ
+>>>> dbtool started at 2015-04-27 15:26:28 -0400
+stock: MUINQ
+  PK       : [1D2B0E21390B20E4C0A80116]
+  companyID: [5595]
+  symbol   : [MUINQ]
+  name     : [METALS USA]
+  date     : [2002-07-30 00:00:00]
+  status   : [Active]
+stock: MUINQ
+  PK       : [1D2B0E21390B20E4C0A80116]
+  companyID: [5595]
+  symbol   : [MUINQ]
+  name     : [BlackRock Muni Intermediate Du]
+  date     : [2006-10-02 00:00:00]
+  status   : [Active]
+stock: MUINQ
+  PK       : [1D2B0E21390B20E4C0A80116]
+  companyID: [5595]
+  symbol   : [MUINQ]
+  name     : [BlackRock Muni Intermediate Du]
+  date     : [2006-10-02 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-27 15:26:28 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5595
+
+2004-02-10 (Tue) [1135]: O:0.0350 H:0.0350 L:0.0350 C:0.0350 V:0 TSO:0 A:429493.7454 R:1.0000 CA:3.0192
+
+the last one in the history on our site. 
+
+let's look at the trading history
+select * from mticket where stockkey = X'1d2b0e21390b20e4c0a80116' and shares > 0 order by closed;
+> Row 81:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-05-05 11:45:57.000000'
+>        COMMENT = 
+>     COMMISSION = 30.606995
+>   CURRENTORDER = X'f084054f3ea82846c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2f6c085c3b15334ec0a801e1'
+>       MODIFIED = NULL
+>            NET = 581.532900
+>         OPENED = TIMESTAMP '2003-04-24 14:09:10.000000'
+>          PRICE = 0.021756
+>     PRIMARYKEY = X'f082054f3ea82846c0a80132'
+>         SECFEE = 0.020000
+>         SHARES = 26730.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+last one 2003-04-24
+
+when did the new MUNIQ or MUI start trading?
+
+we do have MUI separately, too
+select distinct stockkey from mstockalias where symbol='MUI';
+> Row 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+> Row 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+
+htere ate two
+
+> MUI 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116';
+this is the metals one - an older ticker in the history was MUI
+> MUI 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+select * from mstockalias where STOCKKEY = X'8c43553645e5de95c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock Muni Interemediate Duration Fund, Incorporated
+>     PRIMARYKEY = X'8c44553645e5de95c0a80146'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XB
+select * from mcorporateaction where aliaskey=X'8c44553645e5de95c0a80146';
+> Row 1:
+>              ALIASKEY = X'8c44553645e5de95c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20070315|CP_PAY_DT|20070402|CP_FREQ|12|CP_NET_AMT|0.061000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.061000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20070313|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 25376756
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-03-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-03-01 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2007-03-02 00:00:00.000000'
+>            PRIMARYKEY = X'ada7084845f75767c0a80146'
+>               VERSION = NULL
+
+
+
+first cash dividend under MUI is pay date 20070402
+
+how about under the other stockkey?    2004-02-10
+2004-02-10 (Tue) [1135]: O:0.0350 H:0.0350 L:0.0350 C:0.0350 V:0 TSO:0 A:429493.7454 R:1.0000 CA:3.0192
+
+MAdmin MUINQ 02/10/2004
+Stock:BlackRock Muni Intermediate Du  Symbol:MUINQ
+Date: 02/10/2004
+
+11 users found
+
+1	acornell	bbtest2	brodav	cstephens	elantagne	geoff	haag	jfehlinger	jreilly	thargreaves
+2	tklingler	 	 	 
+
+we're good to delist this one
+/Marketocracy/bin/cahelper -symbol MUINQ -effective 20040210 -type ACQUIS -exchange UQ  -acqType 1 -acqCash 0.0350 -purchaser MUINQ >& /Users/build/caout/MUINQ.20150427-ACQUIS.out
+MUINQ.20150427-ACQUIS.out
+stocks:~/caout build$ tail -f MUINQ.20150427-ACQUIS.out
+D: (04-27 15:59:38.088) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-27 16:00:28.483) cahelper started on 2015-04-27 16:00:28 -0400
+
+D: (04-27 16:00:28.814) There are [0] open tickets for MUINQ on 20040210
+D: (04-27 16:00:29.076) StockFileLoad Version:3.0
+D: (04-27 16:00:29.076) Loading Stock Data
+D: (04-27 16:01:57.792) Building Lookup Index
+D: (04-27 16:02:06.241) Finished Building Index
+D: (04-27 16:02:08.272) Finished Loading Stock Data
+D: (04-27 16:02:08.326) Connection to 192.168.111.172:6666 succeeded
+D: (04-27 16:02:08.684) {
+    "ACQUIRED_STOCK" = MUINQ; 
+    "ACQUIRING_STOCK" = "MUINQ_FIX"; 
+    AMOUNT = 0.035; 
+    APPLIED = 1; 
+    DATE = 20040210; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MUINQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-27 16:02:09.617) SUCCESS
+D: (04-27 16:02:09.617) cahelper finished 2015-04-27 16:02:09 -0400
+
+check the database 
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'1b0e1323553e955cc0a86f92'  <---- set the identitykey here 
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'1b0e1323553e955cc0a86f92';
+> Row 1:
+>              ALIASKEY = X'1b0e1323553e955cc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.035000|CP_CASH_FLAG|1|CP_SH|0.035000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150427:040028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'1b061323553e955cc0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'1b061323553e955cc0a86f92';
+> Row 1:
+>   _C001 = 14.000000
+
+let's fix the name
+update mstockalias set name='METALS USA' where primarykey=X'1b0e1323553e955cc0a86f92';
+select * from mstock where primarykey=X'1d2b0e21390b20e4c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'978912b84521c514c0a80146'
+>                NAME = METALS USA
+>          PRIMARYKEY = X'1d2b0e21390b20e4c0a80116'
+>              SYMBOL = MUI
+>           COMPANYID = 5595
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY=X'1b0e1323553e955cc0a86f92' where PRIMARYKEY = X'1d2b0e21390b20e4c0a80116';
+done
+
+**** end 
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'fb0512b14521c4d7c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'fb0512b14521c4d7c0a80146';
+delete from mstockalias where PRIMARYKEY = X'fb0512b14521c4d7c0a80146';
+> Row 1:
+>              ALIASKEY = X'fb0512b14521c4d7c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Muni Intermediate Duration Fun|CP_NEW_NAME|BlackRock Muni Intermediate Du|CP_NOTES|BlackRock Muni Intermediate Duration Fund, Inc. 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23176186
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'920f208b4502206fc0a80146'
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'920f208b4502206fc0a80146';
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2006-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BlackRock Muni Intermediate Du
+>     PRIMARYKEY = X'978912b84521c514c0a80146'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'978912b84521c514c0a80146';
+delete from mstockalias where PRIMARYKEY = X'978912b84521c514c0a80146';
+> Row 1:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|62618U107|CP_NEW_CUSIP|09253X102|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US62618U1079|CP_NEW_ISIN|US09253X1028|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23177086
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'9211208b4502206fc0a80146'
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'9211208b4502206fc0a80146';
+> Row 2:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061016|CP_PAY_DT|20061030|CP_FREQ|12|CP_NET_AMT|0.063000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.063000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061012|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23462054
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-12 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-10-03 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'693e74dd452ef353c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061114|CP_PAY_DT|20061129|CP_FREQ|12|CP_NET_AMT|0.063000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.063000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061110|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23803211
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-11-02 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'40d55aba45553cdcc0a80146'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061215|CP_PAY_DT|20061228|CP_FREQ|N.A.|CP_NET_AMT|0.036923|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.036923|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1034|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061213|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 24194744
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-05 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'dfa236b04580be92c0a80146'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061215|CP_PAY_DT|20061228|CP_FREQ|N.A.|CP_NET_AMT|0.082059|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.082059|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1035|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061213|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 24194732
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-05 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'dfa036b04580be92c0a80146'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061215|CP_PAY_DT|20061228|CP_FREQ|12|CP_NET_AMT|0.061000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.061000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061213|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 24193788
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-05 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'df9e36b04580be91c0a80146'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20070116|CP_PAY_DT|20070201|CP_FREQ|12|CP_NET_AMT|0.061000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.061000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20070111|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 24641392
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-01-11 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-01-02 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'487223ce45a6f9e1c0a80146'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'978912b84521c514c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20070215|CP_PAY_DT|20070301|CP_FREQ|12|CP_NET_AMT|0.061000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.061000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20070213|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 25021740
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 8121755
+>        BB_COMPANYNAME = BlackRock Muni Intermediate Duration Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-02-13 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-02-01 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'6b533f2c45d27b7ac0a80146'
+>               VERSION = NULL
+
+
+When did the new MUI list?
+> MUI 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+select * from mstockalias where STOCKKEY = X'8c43553645e5de95c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock Muni Interemediate Duration Fund, Incorporated
+>     PRIMARYKEY = X'8c44553645e5de95c0a80146'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XB
+
+
+update mcorporateaction set aliaskey=X'8c44553645e5de95c0a80146' where aliaskey=X'978912b84521c514c0a80146' and BB_ACTIONMNEMONIC='DVD_CASH';
+
+
+let's see what we have now:
+old MUI 1
+> MUI 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1b0e1323553e955cc0a86f92'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+
+ok
+
+those old DVD_CASH
+	select * from mcorporateaction where aliaskey= X'acb65ba33d4747b4c0a801dc' order by BB_EFFECTIVE;
+update mcorporateaction set aliaskey=X'8c44553645e5de95c0a80146'  where aliaskey= X'acb65ba33d4747b4c0a801dc' and BB_ACTIONMNEMONIC='DVD_CASH';
+
+let's check the entire enchilada
+
+select distinct stockkey from mstockalias where symbol='MUI';
+> Row 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+> Row 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+there are two
+********************
+> MUI 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+********************
+select * from mstockalias where stockkey= X'1d2b0e21390b20e4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'1d2c0e21390b20e4c0a80116';
+> Row 1:
+>              ALIASKEY = X'1d2c0e21390b20e4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.03|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.03|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.03|CP_RECORD_DT|20000615|CP_PAY_DT|20000615|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-06-15 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5830064939e7f018c0a801dc'
+>               VERSION = 1
+> Row 2:
+>              ALIASKEY = X'1d2c0e21390b20e4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.03|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.03|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.03|CP_RECORD_DT|20000914|CP_PAY_DT|20000914|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-09-14 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5ff6064939e7f08dc0a801dc'
+>               VERSION = 1
+> Row 3:
+>              ALIASKEY = X'1d2c0e21390b20e4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.03|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.03|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.03|CP_RECORD_DT|20001115|CP_PAY_DT|20001115|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-11-15 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ded805dd3a13a1dfc0a80114'
+>               VERSION = 1
+> Row 4:
+>              ALIASKEY = X'1d2c0e21390b20e4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010404|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|N.A.|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010406|CP_PAY_DT|20010417|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6441308
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = METALS USA INC
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-04-04 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-03-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'65cc4a183acbd207c0a801dc'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'1d2c0e21390b20e4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010828|CP_NOTES|N.A.|CP_NET_AMT|N.A.|CP_ADJ|1.000000|CP_BONUS_AMT|N.A.|CP_FREQ|75|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|N.A.|CP_PAR_PCT|N.A.|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_DVD_TYP|1020|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7063671
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-28 00:00:00.000000'
+>         BB_IDENTIFIER = MUI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-08-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MUI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c21e315a3b8c4d40c0a801dc'
+>               VERSION = NULL
+
+
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'5cbc5de13c6ddfd2c0a801dc';
+> Row 1:
+>              ALIASKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUI US|CP_NEW_TKR|MUIN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473439f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'42fe3bc23ce0be79c0a801dc';
+> Row 1:
+>              ALIASKEY = X'42fe3bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7413408
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc.
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd08c1e453c06f730c0a801dc'
+>               VERSION = NULL
+
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'43013bc23ce0be79c0a801dc';
+> Row 1:
+>              ALIASKEY = X'43013bc23ce0be79c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MUIN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE =  
+>              BB_SECID = MUIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'473639f23c6dde84c0a801dc'
+>               VERSION = NULL
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'acb65ba33d4747b4c0a801dc';
+> Row 1:
+>              ALIASKEY = X'acb65ba33d4747b4c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|MUIN US|CP_NEW_TKR|MUINQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8617133
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 225538
+>        BB_COMPANYNAME = Metals USA Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ   UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5d4657163d4745c0c0a801dc'
+>               VERSION = NULL
+
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1b0e1323553e955cc0a86f92'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'1b0e1323553e955cc0a86f92';
+> Row 1:
+>              ALIASKEY = X'1b0e1323553e955cc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.035000|CP_CASH_FLAG|1|CP_SH|0.035000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150427:040028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'1b061323553e955cc0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'1b061323553e955cc0a86f92';
+> Row 1:
+>   _C001 = 14.000000
+
+let's get the fundkeys 
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'1b061323553e955cc0a86f92'));
+there are 14 save to CA issues MUINQ fundkeys.txt
+********************
+> MUI 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+********************
+select * from mstockalias where stockkey= X'8c43553645e5de95c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock Muni Interemediate Duration Fund, Incorporated
+>     PRIMARYKEY = X'8c44553645e5de95c0a80146'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XB
+
+	select * from mcorporateaction where aliaskey= X'8c44553645e5de95c0a80146' order by BB_EFFECTIVE;
+92 DVD_CASH
+
+select * from mticket where STOCKKEY = X'8c43553645e5de95c0a80146' order by closed;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-06-26 11:55:00.000000'
+>        COMMENT = 
+>     COMMISSION = 3.500000
+>   CURRENTORDER = X'7b380dce4681340fc0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5f8b1c19453410b3c0a80132'
+>       MODIFIED = NULL
+>            NET = 989.800000
+>         OPENED = TIMESTAMP '2007-06-26 11:43:11.000000'
+>          PRICE = 14.140000
+>     PRIMARYKEY = X'7b360dce4681340fc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 70.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-07-10 10:39:00.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'9c204e3b46938202c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3e3713af4692ffb4c0a80134'
+>       MODIFIED = NULL
+>            NET = 14649.200000
+>         OPENED = TIMESTAMP '2007-07-10 08:56:34.000000'
+>          PRICE = 14.649200
+>     PRIMARYKEY = X'9c1e4e3b46938202c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-10-26 12:37:00.000000'
+>        COMMENT = 
+>     COMMISSION = 3.500000
+>   CURRENTORDER = X'11b6516e47221467c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5f8b1c19453410b3c0a80132'
+>       MODIFIED = NULL
+>            NET = 958.962020
+>         OPENED = TIMESTAMP '2007-10-26 12:23:03.000000'
+>          PRICE = 13.699457
+>     PRIMARYKEY = X'11b4516e47221467c0a80134'
+>         SECFEE = 0.030000
+>         SHARES = 70.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-01-22 09:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 21.000000
+>   CURRENTORDER = X'036e67c94794fbeec0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'cdf636073bb3687ac0a80119'
+>       MODIFIED = NULL
+>            NET = 5867.400000
+>         OPENED = TIMESTAMP '2008-01-21 15:09:18.000000'
+>          PRICE = 13.970000
+>     PRIMARYKEY = X'036c67c94794fbeec0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 420.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-01-23 13:46:00.000000'
+>        COMMENT = 
+>     COMMISSION = 716.000000
+>   CURRENTORDER = X'05b7100047960678c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'cdf636073bb3687ac0a80119'
+>       MODIFIED = NULL
+>            NET = 202380.622000
+>         OPENED = TIMESTAMP '2008-01-22 10:06:32.000000'
+>          PRICE = 14.132725
+>     PRIMARYKEY = X'05b5100047960678c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 14320.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-01-25 12:04:00.000000'
+>        COMMENT = 
+>     COMMISSION = 736.950000
+>   CURRENTORDER = X'3e9739584797b866c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'cdf636073bb3687ac0a80119'
+>       MODIFIED = NULL
+>            NET = 209707.951582
+>         OPENED = TIMESTAMP '2008-01-23 16:57:58.000000'
+>          PRICE = 14.228099
+>     PRIMARYKEY = X'3e9539584797b866c0a80132'
+>         SECFEE = 6.470000
+>         SHARES = 14739.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 7:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-04-01 13:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 74.000000
+>   CURRENTORDER = X'b90d121f47f25e45c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'164f19763f44d854c0a80132'
+>       MODIFIED = NULL
+>            NET = 20166.808560
+>         OPENED = TIMESTAMP '2008-04-01 12:09:41.000000'
+>          PRICE = 13.626222
+>     PRIMARYKEY = X'b90b121f47f25e45c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 1480.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 8:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-11-11 12:23:00.000000'
+>        COMMENT = 
+>     COMMISSION = 74.000000
+>   CURRENTORDER = X'1a32642349199d54c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'164f19763f44d854c0a80132'
+>       MODIFIED = NULL
+>            NET = 17128.870120
+>         OPENED = TIMESTAMP '2008-11-11 09:57:24.000000'
+>          PRICE = 11.573561
+>     PRIMARYKEY = X'1a30642349199d54c0a80133'
+>         SECFEE = 0.530000
+>         SHARES = 1480.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 9:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-02-03 12:19:00.000000'
+>        COMMENT = 
+>     COMMISSION = 288.000000
+>   CURRENTORDER = X'180c1ff34d4a1b0bc0a80135'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'63bf3b054c4005adc0a80133'
+>       MODIFIED = NULL
+>            NET = 79069.616640
+>         OPENED = TIMESTAMP '2011-02-02 22:03:39.000000'
+>          PRICE = 13.727364
+>     PRIMARYKEY = X'180a1ff34d4a1b0bc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 5760.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 10:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-03-02 13:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 288.000000
+>   CURRENTORDER = X'92ba65ab4d6debc7c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'63bf3b054c4005adc0a80133'
+>       MODIFIED = NULL
+>            NET = 81217.091120
+>         OPENED = TIMESTAMP '2011-03-02 02:03:35.000000'
+>          PRICE = 14.100189
+>     PRIMARYKEY = X'92b865ab4d6debc7c0a80132'
+>         SECFEE = 1.570000
+>         SHARES = 5760.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 11:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-08-04 13:45:00.000000'
+>        COMMENT = 
+>     COMMISSION = 297.500000
+>   CURRENTORDER = X'cd8605524e3a0f61c0a80132'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'63bf3b054c4005adc0a80133'
+>       MODIFIED = NULL
+>            NET = 84728.071400
+>         OPENED = TIMESTAMP '2011-08-03 23:17:53.000000'
+>          PRICE = 14.240012
+>     PRIMARYKEY = X'cd8405524e3a0f61c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 5950.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 12:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-09-06 11:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 297.500000
+>   CURRENTORDER = X'65b030794e62cd83c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'63bf3b054c4005adc0a80133'
+>       MODIFIED = NULL
+>            NET = 86126.934300
+>         OPENED = TIMESTAMP '2011-09-03 20:59:47.000000'
+>          PRICE = 14.475115
+>     PRIMARYKEY = X'65ae30794e62cd83c0a80135'
+>         SECFEE = 1.660000
+>         SHARES = 5950.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+check on 4/28/15 
+
+the acquis occurred on  20040210    
+
+check on 4/28/ 15  invalidate the fundkeys
+
+4/28/15
+select distinct stockkey from mstockalias where symbol='MUINQ';
+> Row 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1d2c0e21390b20e4c0a80116'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'5cbc5de13c6ddfd2c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'42fe3bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2001-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'43013bc23ce0be79c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591324108
+>           DATE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'acb65ba33d4747b4c0a801dc'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = METALS USA
+>     PRIMARYKEY = X'1b0e1323553e955cc0a86f92'
+>       STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+>         SYMBOL = MUINQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'1b0e1323553e955cc0a86f92';
+> Row 1:
+>              ALIASKEY = X'1b0e1323553e955cc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MUINQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.035000|CP_CASH_FLAG|1|CP_SH|0.035000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150427:040028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = MUINQ_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MUINQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'1b061323553e955cc0a86f92'
+>               VERSION = NULL
+
+on 20040210 members got 0.35 cash
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'1b061323553e955cc0a86f92') order by loginname;
+
+> Row 1:
+>   LOGINNAME = DELETED_2003229
+> Row 2:
+>   LOGINNAME = acornell
+> Row 3:
+>   LOGINNAME = bbtest2
+> Row 4:
+>   LOGINNAME = brodav
+> Row 5:
+>   LOGINNAME = cstephens
+> Row 6:
+>   LOGINNAME = elantagne
+> Row 7:
+>   LOGINNAME = geoff
+> Row 8:
+>   LOGINNAME = haag
+> Row 9:
+>   LOGINNAME = jfehlinger
+> Row 10:
+>   LOGINNAME = jreilly
+> Row 11:
+>   LOGINNAME = thargreaves
+> Row 12:
+>   LOGINNAME = tklingler
+marketocracy@db1#51>
+
+try acornell
+your holdings of MUINQ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+ACMF 	0 	$.00 	0.00%  <---expand 
+ACMDF 	0 	N/A 	N/A 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 09, 2000 		1000 	1000 	Buy
+Feb 10, 2004 	1000 	-1000 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 9, 2000 	1,000 	$50.00 	$3,175.00 	$3.18
+
+acornell ACMF 20040210   1000 * 0.035 = 35.00
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+02/10/2004 	$42,773.23 	$0.00 	$1.17 	$35.00 	$37.07 	$0.00 	$42,772.34 	$636,676.06 	$679,448.40 	100,000 	$6.79 	No 	Details  
+
+he got the cash, closing this out 
+
+select distinct stockkey from mstockalias where symbol='MUI';
+> Row 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+> Row 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+
+
+there are two
+> MUI 1:
+>   STOCKKEY = X'1d2b0e21390b20e4c0a80116'
+select * from mstockalias where STOCKKEY = X'1d2b0e21390b20e4c0a80116';
+metals  above
+> MUI 2:
+>   STOCKKEY = X'8c43553645e5de95c0a80146'
+select * from mstockalias where STOCKKEY = X'8c43553645e5de95c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09253X102
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock Muni Interemediate Duration Fund, Incorporated
+>     PRIMARYKEY = X'8c44553645e5de95c0a80146'
+>       STOCKKEY = X'8c43553645e5de95c0a80146'
+>         SYMBOL = MUI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XB
+
+

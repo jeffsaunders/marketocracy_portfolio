@@ -1,0 +1,360 @@
+ADNC
+Type
+Corporate Action | Acquisition
+Ticket
+3401
+Priority
+High
+Status
+Open
+Member Name
+Owen Bernard
+Username
+owenbernard
+Fund Symbols
+AMBVF
+Stock Tickers
+ADNC
+Description / Resources:
+Mon 07/13/2015 at 09:16 PM
+
+should have received on a per share basis $2.51 in cash and .13207 shares of Knowles Corp (KN) for every 1 share of fomer Audience (ADNC) owned
+
+Additional Information:
+
+Stock Ticker: ADNC
+
+
+
+date:    7/13/15
+ticker:    ADNC
+
+yahoo:
+
+quantum:
+Audience, Inc.
+Ticker Symbol: ADNC*     CUSIP: 05070J102     Exchange: NCM
+* NOTE: This security is no longer trading as of 7/01/15
+
+Company's Online Profile
+BUSINESS:  Audience is a leading global provider of advanced voice and audio processors for mobile products. With their earSmart™ intelligent voice processors, they are innovating "brain-like" technologies that allow mobile devices to deliver better voice quality for clear conversations in nearly any setting, higher accuracy and performance for speech recognition services, and enhanced audio for multimedia recording and playback, including mobile video, music, and more.
+
+Notes:  Jul. 1, 2015-- Knowles Corporation (NYSE: KN), a market leader and global supplier of advanced micro-acoustic
+ solutions and specialty components, today announced the successful completion of its cash and stock tender offer for 
+all the outstanding shares of common stock of Audience, Inc. As a result of the acquisition, Audience common stock 
+will cease trading on the NASDAQ Stock Market. Pursuant to the merger agreement, each share of common stock of 
+Audience not accepted for payment in the offer, other than those held by Knowles or Audience or their respective 
+subsidiaries, or holders who properly exercise appraisal rights, was converted into the right to receive 
+$2.51 per share in cash, without interest, and 0.13207 shares of Knowles common stock
+
+
+oursite:
+Symbol: ADNC 	Name: Audience Inc 	Price: $4.89
+Volume: 242,009 	Sector: Information Technology 	Change: $0.00
+Short Volume: 367,566 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 367,566 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $4.84 	Year High: $11.56 	High: $4.94
+200 Day Ave: $4.86 	Year Low: $3.17 	Low: $4.85
+no CAs 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=ADNC
+last trade 6/30/15
+
+check MAdmin
+Stock:Audience Inc  Symbol:ADNC
+Date: 07/13/2015
+
+3 users found
+
+1	cheil36	owenbernard	wwasilev
+
+database
+select distinct stockkey from mstockalias where symbol= 'ADNC';  
+> Row 1:
+>   STOCKKEY = X'611c15164fac4545c0a80146'
+
+select * from mstockalias where stockkey=X'611c15164fac4545c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05070J102
+>           DATE = TIMESTAMP '2012-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Audience Inc
+>     PRIMARYKEY = X'611d15164fac4545c0a80146'
+>       STOCKKEY = X'611c15164fac4545c0a80146'
+>         SYMBOL = ADNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ADNC'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ADNC
+>>>> dbtool started at 2015-07-14 00:54:34 -0400
+stock: ADNC
+  PK       : [611C15164FAC4545C0A80146]
+  companyID: [22467]
+  symbol   : [ADNC]
+  name     : [Audience Inc]
+  date     : [2012-05-10 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-14 00:54:34 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 22467
+can't get prices now 
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'611c15164fac4545c0a80146' and shares > 0 order by closed; 
+> Row 117:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-09 10:29:19.000000'
+>        COMMENT = NULL
+>     COMMISSION = 2143.000000
+>   CURRENTORDER = X'ced0323a5575933cc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'782241c13986376fc0a801e1'
+>       MODIFIED = NULL
+>            NET = 200826.547780
+>         OPENED = TIMESTAMP '2015-06-08 09:06:04.000000'
+>          PRICE = 4.685640
+>     PRIMARYKEY = X'cece323a5575933cc0a86fa6'
+>         SECFEE = 3.540000
+>         SHARES = 42860.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'611c15164fac4545c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'611c15164fac4545c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'611c15164fac4545c0a80146'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'611c15164fac4545c0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 3 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 7/01/15   $2.51 per share in cash, without interest, and 0.13207 shares of Knowles common stock  KN
+last ticket: 2015-06-09  PRICE = 4.685640
+last price:  can't get it that's ok, we know the terms 
+
+going with type 3 cash and shares    20150701
+/Marketocracy/bin/cahelper -symbol  ADNC  -effective 20150701 -type ACQUIS -exchange UN -acqType 3 -acqCash 2.51 -acqShare 0.13207 -purchaser KN   >& /Users/build/caout/ADNC.20150713-ACQUIS-KN.out
+ADNC.20150713-ACQUIS-KN.out
+stocks:~/caout build$ tail -f ADNC.20150713-ACQUIS-KN.out
+D: (07-14 16:23:27.129) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-14 16:23:50.976) cahelper started on 2015-07-14 16:23:50 -0400
+
+D: (07-14 16:23:51.751) There are [0] open tickets for ADNC on 20150701
+D: (07-14 16:23:54.988) StockFileLoad Version:4.0
+D: (07-14 16:23:54.988) Loading Stock Data
+D: (07-14 16:24:33.452) Building Lookup Index
+D: (07-14 16:24:38.349) Finished Building Index
+D: (07-14 16:24:42.023) Finished Loading Stock Data
+D: (07-14 16:24:42.156) Connection to 192.168.111.172:6666 succeeded
+D: (07-14 16:24:45.510) {
+    "ACQUIRED_STOCK" = ADNC; 
+    "ACQUIRING_STOCK" = KN; 
+    AMOUNT = "CASH 2.51: SHARES 0.13207"; 
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "cheil36/Discovery", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "wwasilev/RSI2", 
+        "owenbernard/AMB Underwood Value Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = KN; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-14 16:24:46.188) SUCCESS
+D: (07-14 16:24:46.188) cahelper finished 2015-07-14 16:24:46 -0400
+ 
+
+Check the results 
+select * from mstockalias where stockkey= X'611c15164fac4545c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05070J102
+>           DATE = TIMESTAMP '2012-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Audience Inc
+>     PRIMARYKEY = X'611d15164fac4545c0a80146'
+>       STOCKKEY = X'611c15164fac4545c0a80146'
+>         SYMBOL = ADNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05070J102
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Audience Inc
+>     PRIMARYKEY = X'38622ef255a5700dc0a86f92'
+>       STOCKKEY = X'611c15164fac4545c0a80146'
+>         SYMBOL = ADNC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'38622ef255a5700dc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'38622ef255a5700dc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ADNC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|2.510000|CP_CASH_FLAG|1|CP_SH|0.132070|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150714:042350
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = KN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = KN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'f1c92ef255a56fd6c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'f1c92ef255a56fd6c0a86f92';
+> Row 1:
+>   _C001 = 8.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'f1c92ef255a56fd6c0a86f92'));
+there are 4 fundkeys, save to CA issues ADNC fundkeys.txt
+
+For Beta case
+ADNC no longer trades but is still active on our site - need to delist 
+
+check on 7/15/15   invalidate funds
+check MAdmin
+
+let's check the member
+Username
+owenbernard
+Fund Symbols
+AMBVF
+
+
+AMBVF LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 30, 2015 		19721 	19721 	Buy
+Jul 01, 2015 	19721 	-19721 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 30, 2015 	19,721 	$986.05 	$94,463.59 	$4.79
+
+19721 * 2.51 = 49,499.71  on 7/1/15
+and should get shares of KN
+19721 * 0.13207 = 2604.55247  
+
+check the ledger for KN
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 14, 2014 		1810 	1810 	Buy
+Sep 24, 2014 	1810 	2650 	4460 	Buy
+Oct 15, 2014 	4460 	1840 	6300 	Buy
+Jan 28, 2015 	6300 	150 	6450 	Buy
+Feb 13, 2015 	6450 	6440 	12890 	Buy
+Jul 01, 2015 	12890 	2604 	15494 	Corporate Action  <-- got 2604 more
+Total: 15,494
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 14, 2014 	1,810 	$90.50 	$57,858.03 	$31.97
+Sep 24, 2014 	1,330 	$66.50 	$36,277.06 	$27.28
+Sep 24, 2014 	1,320 	$66.00 	$36,735.33 	$27.83
+Oct 15, 2014 	1,840 	$92.00 	$34,776.00 	$18.90
+Jan 28, 2015 	150 	$7.50 	$3,198.00 	$21.32
+Feb 13, 2015 	3,290 	$164.50 	$61,786.20 	$18.78
+Feb 13, 2015 	3,150 	$157.50 	$59,157.00 	$18.78
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+
+check in the morning of 7/15 for the cash
+let's check the member
+Username
+owenbernard
+Fund Symbols
+AMBVF
+
+
+AMBVF LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 30, 2015 		19721 	19721 	Buy
+Jul 01, 2015 	19721 	-19721 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 30, 2015 	19,721 	$986.05 	$94,463.59 	$4.79
+
+19721 * 2.51 = 49,499.71  on 7/1/15
+and should get shares of KN
+19721 * 0.13207 = 2604.55247  
+
+7/16/15
+ADNC
+Username
+owenbernard
+Fund Symbols
+AMBVF
+
+ ADNC has been acquired 	right curve
+  	  	
+Audience Inc [ADNC] acquired by Knowles Corp [KN] on 2015-07-01 00:00:00.   20150701
+
+check MAdmin  clear 
+
+invaldiate  done
+
+checking the member again:
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+07/01/2015 	$36,808.97 	$0.00 	$1.01 	$49,644.31 	$65.16 	$0.00 	$86,389.12 	$1,081,180.70 	$1,167,569.82 	100,000 	$11.68 	Yes 	Details  
+the cash is there
+look at the trading for this day
+
+trades on July 01, 2015 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Stock Dividend Buy 	KN 	2,604 	$0.00 	$0.00 	$0.00 	$0.00
+Sell 	ADNC 	19,721 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	BXLT-W 	163 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+He got the KN as well, closing this out 
+
+
+reprice request  ADNC acquired by KN for cash and shares.  20150701
+
+closing this out 

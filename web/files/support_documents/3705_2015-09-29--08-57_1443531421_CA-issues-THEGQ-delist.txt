@@ -1,0 +1,368 @@
+THEGQ
+date:  
+ticker:    THEGQ
+
+yahoo:
+
+quantum:  still thinks this trdes 
+
+oursite:
+Symbol: THEGQ	Name: TWEETER HOME ENTERTAINM'T	Price: $0.01
+Volume:	Sector: Consumer Discretionary	Change:
+Short Volume: 0	Style: Micro Cap : Blend	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:TWEETER HOME ENTERTAINM'T  Symbol:THEGQ
+Date: 09/27/2015
+
+69 users found
+
+1	andylee	asame	awinks43	bbranum	blingblingcorp	blowke	bnuri	briangravenhorst	daniel_hh	darth_trader_hsm
+2	ddeighton	dfoster2	dneale	doomedhero	dorthvader	dpurho	drzaiusdrzaius	dsti	elsg	feelingscarfy
+3	finclplnr	gbravo	gmantica	gqthang	gqthang2	gqthang4	gqthang5	gregthomas91	hoochkitty	ikonshul
+4	jeffbae	jristheone	jwgeno	kleinphi	leehager2@yahoo.com	magness	make.it.big	mdr7u	mhull	mkulcsar
+5	mynameizbrent	paulkopp	pclark1	pkgcarpenter	rallen0759	rbalachandran	robebcan	robin	rshuhart	ryarbrough
+6	saila16	salemphreak	sigmatrading	socerfrek	solarcat	stanglx718	steve06	stevenlobo	swayla	taxidiotis
+7	thegate12	tterraccino	ugotmerocn	vooch5	wbarton1	wholeleaf	wookalar	wouterb	zjhafeez
+
+database
+select distinct stockkey from mstockalias where symbol= 'THEGQ';  
+> Row 1:
+>   STOCKKEY = X'9db410ac390c6d98c0a8015c'
+select * from mstockalias where stockkey=X'9db410ac390c6d98c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2000-04-30 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'9db510ac390c6d98c0a8015c'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-10 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'e8f365f2466dfe82c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-20 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'dcbd4d13467b2da2c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-20 21:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'eefe4e4d467b2de0c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2013-10-07 21:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'1f1d2cdd52548d95c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = THEGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='THEGQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|THEGQ|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC **
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90292596
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 346000
+>        BB_COMPANYNAME = Tweeter Home Entertainment Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-22 21:00:00.000000'
+>         BB_IDENTIFIER = THEGQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-22 21:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = THEGQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-04-22 21:00:00.000000'
+>            PRIMARYKEY = X'a456295b535843e1c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock THEGQ
+>>>> dbtool started at 2015-09-27 20:17:57 -0400
+stock: THEGQ
+  PK       : [9DB410AC390C6D98C0A8015C]
+  companyID: [7583]
+  symbol   : [THEGQ]
+  name     : [TWEETER HOME ENTERTAINM'T]
+  date     : [2013-10-08 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-27 20:17:57 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7583
+2014-02-04 (Tue) [4782]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:5300 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-05 (Wed) [4783]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:10008 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-06 (Thu) [4784]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:10008 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-07 (Fri) [4785]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:536392 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-08 (Sat) [4786]: <WEEKEND>
+2014-02-09 (Sun) [4787]: <WEEKEND>
+2014-02-10 (Mon) [4788]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:460053 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-11 (Tue) [4789]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:296336 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-12 (Wed) [4790]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:207436 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-13 (Thu) [4791]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:40100 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-14 (Fri) [4792]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:28000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-15 (Sat) [4793]: <WEEKEND>
+2014-02-16 (Sun) [4794]: <WEEKEND>
+2014-02-17 (Mon) [4795]: <HOLIDAY>
+2014-02-18 (Tue) [4796]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:10600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-19 (Wed) [4797]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-20 (Thu) [4798]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-21 (Fri) [4799]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-22 (Sat) [4800]: <WEEKEND>
+2014-02-23 (Sun) [4801]: <WEEKEND>
+2014-02-24 (Mon) [4802]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-25 (Tue) [4803]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-02-26 (Wed) [4804]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:64600 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+...
+2014-04-16 (Wed) [4853]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:25000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-04-17 (Thu) [4854]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:25000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-04-18 (Fri) [4855]: <HOLIDAY>
+2014-04-19 (Sat) [4856]: <WEEKEND>
+2014-04-20 (Sun) [4857]: <WEEKEND>
+2014-04-21 (Mon) [4858]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:25000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+2014-04-22 (Tue) [4859]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:25000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'9db410ac390c6d98c0a8015c' and shares > 0 order by closed; 
+> Row 1095:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-02-13 13:01:18.000000'
+>        COMMENT = 
+>     COMMISSION = 0.659500
+>   CURRENTORDER = X'652334b752fcf2d4c0a86f99'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3eeb444e46b8f374c0a80135'
+>       MODIFIED = NULL
+>            NET = 12.530500
+>         OPENED = TIMESTAMP '2014-02-13 08:29:08.000000'
+>          PRICE = 0.006265
+>     PRIMARYKEY = X'652134b752fcf2d4c0a86f99'
+>         SECFEE = 0.010000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9db410ac390c6d98c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9db410ac390c6d98c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9db410ac390c6d98c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+delist: 2014-04-22 
+there are 69 members who hold this stock
+quantum:
+last ticket: 2014-02-13 PRICE = 0.006265
+last price:  2014-04-22 (Tue) [4859]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:25000 TSO:25563 A:0.0100 R:1.0000 CA:0.0000
+
+going with 20140422 0.01
+
+/Marketocracy/bin/cahelper -symbol  THEGQ  -effective 20140422 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser THEGQ   >& /Users/build/caout/THEGQ.20150927-DELIST.out 
+D: (09-27 20:22:04.675) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-27 20:22:28.058) cahelper started on 2015-09-27 20:22:28 -0400
+
+D: (09-27 20:22:28.407) There are [0] open tickets for THEGQ on 20140422
+D: (09-27 20:22:29.588) StockFileLoad Version:4.0
+D: (09-27 20:22:29.588) Loading Stock Data
+D: (09-27 20:23:09.190) Building Lookup Index
+D: (09-27 20:23:14.447) Finished Building Index
+D: (09-27 20:23:18.397) Finished Loading Stock Data
+D: (09-27 20:23:18.512) Connection to 192.168.111.172:6666 succeeded
+D: (09-27 20:23:25.882) SavingChanges for position sell out 101 of 341
+D: (09-27 20:23:37.834) {
+    "ACQUIRED_STOCK" = THEGQ; 
+    "ACQUIRING_STOCK" = "THEGQ_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20140422; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "THEGQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-27 20:23:43.278) SUCCESS
+D: (09-27 20:23:43.278) cahelper finished 2015-09-27 20:23:43 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'9db410ac390c6d98c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2000-04-30 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'9db510ac390c6d98c0a8015c'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-10 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'e8f365f2466dfe82c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-20 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'dcbd4d13467b2da2c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2007-06-20 21:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'eefe4e4d467b2de0c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = TWTRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2013-10-07 21:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'1f1d2cdd52548d95c0a80146'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = THEGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 901167106
+>           DATE = TIMESTAMP '2014-04-21 21:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TWEETER HOME ENTERTAINM'T
+>     PRIMARYKEY = X'ab8c305656088844c0a86f92'
+>       STOCKKEY = X'9db410ac390c6d98c0a8015c'
+>         SYMBOL = THEGQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504020
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey =X'ab8c305656088844c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ab8c305656088844c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|THEGQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150927:082228
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-21 21:00:00.000000'
+>         BB_IDENTIFIER = THEGQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-21 21:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = THEGQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-04-21 21:00:00.000000'
+>            PRIMARYKEY = X'ab86305656088844c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'ab86305656088844c0a86f92';
+> Row 1:
+>   _C001 = 106.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ab86305656088844c0a86f92'));
+there are 106 fundkeys, save to CA issues THEGQ fundkeys.txt
+
+For Beta case
+THEGQ no longer trades but is still active on our site - need to delist 
+
+check on 9/29/15   invalidate funds
+check MAdmin  clear 
+
+9/29/15
+ THEGQ has been acquired	right curve
+ 	 	
+TWEETER HOME ENTERTAINM'T acquired by a private company on 2014-04-22 00:00:00.
+
+invalidate, reprice and clsoe 
+ 	 	 
+
+

@@ -1,0 +1,74 @@
+12/15/15
+EW split ?
+Ticket Number:	4194
+Portfolio Username:	estevaoliveira
+Ticker Symbol:	EW
+Corporate Action Type:
+Stock Split
+Subject:
+STOCK SPLIT 2:1
+Description:
+Announced date: 11/19/2015 Ex Date: 12/14/2015 Record Date: 11/30/2015 Pay Date: 12/11/2015 Due Bill Redemp: 12/16/2015 Amount: 2 for 1 Adjustment Factor: 2.0 Bloomberg Terminal
+
+member: estevaoliveira
+your holdings of EW	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+EMF	1,030	$82,945.90	5.33%
+ 	 	[ Trade this stock ]
+
+expand 
+LEDGER
+Date	Start	Change	End	Type
+Oct 27, 2015		515	515	Buy
+Dec 14, 2015	515	515	1030	Corporate Action
+Total: 1,030
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 27, 2015	515	$25.75	$77,517.80	$150.52
+ 	 	 
+SELLS
+You have no sells for this position
+
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+Effective Date	Description
+Dec 14, 2015	Split terms:2 for 1
+
+it's there on legacy 
+
+here's yahoo finance
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Dec 14, 2015	81.12	81.72	79.33	80.53	1,650,600	80.53
+Dec 14, 2015	2: 1 Stock Split
+Dec 11, 2015	161.58	164.20	159.22	159.71	1,139,100	79.86
+Dec 10, 2015	162.43	165.97	161.41	163.57	2,085,600	81.79
+Dec 9, 2015	158.49	163.44	156.97	162.01	2,895,000	81.00
+Dec 8, 2015	160.70	161.97	159.20	159.82	1,996,600	79.91
+
+looks like it was done on 12/14/2015
+we didn't run the CAs for that day
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey is not null and closed = TIMESTAMP'2015-12-14 00:00:00.000000'));
+there are 451 
+save to CA issues fundkeys 2015-12-14.txt
+
+his EMF fund
+/Marketocracy/bin/dbtool lookup fund estevaoliveira
+fund: estevaoliveira
+  PK: [23D437E5510EC61AC0A80132]
+  symbol: [EMF]
+  managerKey: [223637E5510EC5A4C0A80132]
+  loginName: [estevaoliveira]
+
+good it is in the list 
+let's reprice this 
+
+I ran the reprice and reload and it is good now 
+
+
+

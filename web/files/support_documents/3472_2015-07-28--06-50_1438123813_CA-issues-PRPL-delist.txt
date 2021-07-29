@@ -1,0 +1,624 @@
+PRPL
+date:   7/27/14
+ticker:    PRPL
+
+yahoo:
+
+quantum:
+
+oursite:
+ymbol: PRPL 	Name: Purple Communications Inc 	Price: $0.14
+Volume: 	Sector: Industrials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for PRPL 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+17 May 04 	GOAM 	GOAMD 	Change in the ticker (trading) symbol from GOAM to GOAMD
+15 Jun 04 	GOAMD 	GOAM 	Change in the ticker (trading) symbol from GOAMD to GOAM
+19 Aug 04 	GOAM 	GOAMC 	Change in the ticker (trading) symbol from GOAM to GOAMC
+04 Oct 04 	GOAMC 	GOADC 	Change in the ticker (trading) symbol from GOAMC to GOADC
+22 Oct 04 	GOADC 	GOAM 	Change in the ticker (trading) symbol from GOADC to GOAM
+12 Feb 09 	GOAM 	PRPL 	Change in the ticker (trading) symbol from GOAM to PRPL
+  	  	 
+left curve 	  CUSIP changes for PRPL 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+17 May 04 	38020R106 	38020R205 	Change in any of identification numbers (CUSIP) of a security from 38020R106 to 38020R205
+04 Oct 04 	38020R205 	38020R304 	Change in any of identification numbers (CUSIP) of a security from 38020R205 to 38020R304
+12 Feb 09 	38020R304 	746389105 	Change in any of identification numbers (CUSIP) of a security from 38020R304 to 746389105
+  	  	 
+left curve 	  name changes for PRPL 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+12 Feb 09 	GoAmerica Inc 	Purple Communications Inc 	Change in the name of issuer from GoAmerica Inc to Purple Communications Inc
+  	  	 
+left curve 	  listing changes for PRPL 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Aug 28, 2002 	NASDAQ 	UQ 	NASDAQ-SMALLCAP 	UR 	Change in the exchange that GOAM trades on from NASDAQ to NASDAQ-SMALLCAP
+Nov 27, 2009 	NASDAQ-SMALLCAP 	UR 	OTCBB-OTHER 	UV 	Change in the exchange that PRPL trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+  	  	 
+left curve 	  PRPL had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+17 May 04 	1 for 10 	Split terms:1 for 10
+04 Oct 04 	1 for 8 	Split terms:1 for 8
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Purple Communications Inc  Symbol:PRPL
+Date: 07/26/2015
+
+108 users found
+
+1	2944717	adevine	adia	adrianf	agalletti	aharyadi	akhan	andglori	arthur11791	avtrader
+2	balzac_14	bdrumgoole	blazeme	blowke	bltboy1	bmgeo	broge15	bwelke	capi	cbeaulieu3
+3	ccornett	cedelheit	chasten	cstephens	davehan777	dcowan1	dkoroghlian	dkoroghlian1	dmackay	dmcintire1
+4	dtravis1	efelbs	flyhighstocker	gebert	germanvt	goran	grogers	gsilcott	h.brewster	happyinvestments
+5	hmurray	ijustspray	ikoshy	jacarroll	jasonl36	jhs	jimt	jkmb	jlamey	jman41489
+6	jr4notaxes	kan1729	kevante	kitrainee	kmiles2	krogers160	ktzeng	lexusrad	lizmi04	lu_rock
+7	mavaro	mfulton	mikenholly	mirza1	mmaterni	monsean	moreno770	mspiegel	mugenpower	npalrecha
+8	ocsupertones	oneinvestor	phoward	physioo	pkim	pkozar	plangell	pnadvorni	pyzro	quantboy
+9	quantinetics	rflippin	rglenn	rjohnson8	rmarques	rmasecchia	rmorse	rohailr	sanpab	sbuckman
+10	sexybones	shayes	simonemarlia	skhader	skybordr2571	smith32	smorgan	sssmith79	terryneal	tessio27
+11	tjennings	vadka	vooch3	vwismer	warmstrong	willh08	williamgc	xavier687	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'PRPL';  
+ Row 1:
+>   STOCKKEY = X'867b10ac390c6d61c0a8015c'
+select * from mstockalias where stockkey=X'867b10ac390c6d61c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'867c10ac390c6d61c0a8015c'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2002-08-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'657138e53d6d854bc0a801dc'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2004-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'a7dc5fad40a96e7cc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-05-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'11ff60c040a96eb8c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-06-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'e2e26f9a40cfa9fdc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'd7c73dfc41255b71c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-10-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'36b7186941620091c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOADC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2004-10-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'736a188e416200f6c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOADC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2004-10-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'cc576ffd4179bb5cc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2009-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'1dfa109b4994e2aac0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2009-02-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'00ad11e24994e314c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 746389105
+>           DATE = TIMESTAMP '2009-02-12 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'0ba711e74994e32ec0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 746389105
+>           DATE = TIMESTAMP '2009-11-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'b75229ea4b1059c9c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201070
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PRPL'  order by BB_EFFECTIVE;
+> Row 8:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|PRPL|CP_DELIST_REASON|1|CP_NOTES|Merged with Purple Merger Co., LLC ($0.16/Sh)
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 56286686
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 1176387
+>        BB_COMPANYNAME = Purple Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>         BB_IDENTIFIER = PRPL    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-07-19 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = PRPL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-07-19 00:00:00.000000'
+>            PRIMARYKEY = X'eec345884e26063ec0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PRPL
+>>>> dbtool started at 2015-07-27 08:20:36 -0400
+stock: PRPL
+  PK       : [867B10AC390C6D61C0A8015C]
+  companyID: [7104]
+  symbol   : [PRPL]
+  name     : [GO AMERICA INC]
+  date     : [2009-02-12 00:00:00]
+  status   : [Active]
+stock: PRPL
+  PK       : [867B10AC390C6D61C0A8015C]
+  companyID: [7104]
+  symbol   : [PRPL]
+  name     : [Purple Communications Inc]
+  date     : [2009-02-12 00:00:01]
+  status   : [Active]
+stock: PRPL
+  PK       : [867B10AC390C6D61C0A8015C]
+  companyID: [7104]
+  symbol   : [PRPL]
+  name     : [Purple Communications Inc]
+  date     : [2009-02-12 00:00:02]
+  status   : [Active]
+stock: PRPL
+  PK       : [867B10AC390C6D61C0A8015C]
+  companyID: [7104]
+  symbol   : [PRPL]
+  name     : [Purple Communications Inc]
+  date     : [2009-11-27 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-27 08:20:37 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7104
+2011-07-14 (Thu) [3846]: O:0.1900 H:0.3400 L:0.1900 C:0.3400 V:250 TSO:9218 A:0.3400 R:1.0000 CA:0.0000
+2011-07-15 (Fri) [3847]: O:0.1900 H:0.1900 L:0.1900 C:0.1900 V:200 TSO:9218 A:0.1900 R:1.0000 CA:0.0000
+2011-07-16 (Sat) [3848]: <WEEKEND>
+2011-07-17 (Sun) [3849]: <WEEKEND>
+2011-07-18 (Mon) [3850]: O:0.1900 H:0.1900 L:0.1900 C:0.1900 V:0 TSO:9218 A:0.1900 R:1.0000 CA:0.0000
+2011-07-19 (Tue) [3851]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:1000 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2011-07-20 (Wed) [3852]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:1000 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2011-07-21 (Thu) [3853]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:1000 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2011-07-22 (Fri) [3854]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:1000 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2011-07-23 (Sat) [3855]: <WEEKEND>
+2011-07-24 (Sun) [3856]: <WEEKEND>
+2011-07-25 (Mon) [3857]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+
+
+2012-04-16 (Mon) [4123]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:0 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'867b10ac390c6d61c0a8015c' and shares > 0 order by closed; 
+> Row 1219:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-05-20 13:38:00.000000'
+>        COMMENT = 
+>     COMMISSION = 3.187000
+>   CURRENTORDER = X'9ba627144dd22924c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'473f3d8840290379c0a80132'
+>       MODIFIED = NULL
+>            NET = 60.553000
+>         OPENED = TIMESTAMP '2011-05-17 03:52:04.000000'
+>          PRICE = 0.161475
+>     PRIMARYKEY = X'9ba427144dd22924c0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 375.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'867b10ac390c6d61c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'867b10ac390c6d61c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'867b10ac390c6d61c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+delist 2011-07-20
+there are 108 members who hold this stock
+quantum:  still thinks it is active 
+last ticket: 2011-05-20  PRICE = 0.161475
+last price: 2011-07-20 (Wed) [3852]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:1000 TSO:9218 A:0.1400 R:1.0000 CA:0.0000
+
+going with 20110720 0.14
+
+/Marketocracy/bin/cahelper -symbol  PRPL  -effective 20110720 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.14 -acqShare 0 -purchaser PRPL   >& /Users/build/caout/PRPL.20150727-DELIST.out 
+PRPL.20150727-DELIST.out
+stocks:~/caout build$ tail -f PRPL.20150727-DELIST.out
+D: (07-27 08:24:39.521) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-27 08:25:13.925) cahelper started on 2015-07-27 08:25:13 -0400
+
+D: (07-27 08:25:14.373) There are [0] open tickets for PRPL on 20110720
+D: (07-27 08:25:14.991) StockFileLoad Version:4.0
+D: (07-27 08:25:14.991) Loading Stock Data
+D: (07-27 08:26:14.884) Building Lookup Index
+D: (07-27 08:26:22.336) Finished Building Index
+D: (07-27 08:26:28.047) Finished Loading Stock Data
+D: (07-27 08:26:29.207) Connection to 192.168.111.172:6666 succeeded
+D: (07-27 08:26:33.400) SavingChanges for position sell out 101 of 477
+D: (07-27 08:26:54.179) {
+    "ACQUIRED_STOCK" = PRPL; 
+    "ACQUIRING_STOCK" = "PRPL_FIX"; 
+    AMOUNT = 0.14; 
+    APPLIED = 1; 
+    DATE = 20110720; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PRPL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-27 08:27:02.854) SUCCESS
+D: (07-27 08:27:02.854) cahelper finished 2015-07-27 08:27:02 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'867b10ac390c6d61c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'867c10ac390c6d61c0a8015c'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2002-08-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'657138e53d6d854bc0a801dc'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R106
+>           DATE = TIMESTAMP '2004-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'a7dc5fad40a96e7cc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-05-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'11ff60c040a96eb8c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-06-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'e2e26f9a40cfa9fdc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'd7c73dfc41255b71c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAMC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R205
+>           DATE = TIMESTAMP '2004-10-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'36b7186941620091c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOADC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2004-10-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'736a188e416200f6c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOADC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2004-10-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'cc576ffd4179bb5cc0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = GOAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2009-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = GO AMERICA INC
+>     PRIMARYKEY = X'1dfa109b4994e2aac0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 38020R304
+>           DATE = TIMESTAMP '2009-02-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'00ad11e24994e314c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 746389105
+>           DATE = TIMESTAMP '2009-02-12 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'0ba711e74994e32ec0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 746389105
+>           DATE = TIMESTAMP '2009-11-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'b75229ea4b1059c9c0a80146'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201070
+>       STYLEKEY = XG
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 746389105
+>           DATE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Purple Communications Inc
+>     PRIMARYKEY = X'e2d5681355b6232ac0a86f92'
+>       STOCKKEY = X'867b10ac390c6d61c0a8015c'
+>         SYMBOL = PRPL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201070
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'e2d5681355b6232ac0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'e2d5681355b6232ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRPL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.140000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150727:082513
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>         BB_IDENTIFIER = PRPL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PRPL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-07-20 00:00:00.000000'
+>            PRIMARYKEY = X'e2cf681355b62329c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'e2cf681355b62329c0a86f92';
+ Row 1:
+>   _C001 = 194.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'e2cf681355b62329c0a86f92'));
+there are 194 fundkeys, save to CA issues PRPL fundkeys.txt
+
+For Beta case
+PRPL no longer trades but is still active on our site - need to delist 
+
+check on 7/28/15   invalidate funds
+check MAdmin  clear 
+
+ PRPL has been acquired 	right curve
+  	  	
+Purple Communications Inc acquired by a private company on 2011-07-20 00:00:00. 
+
+invalidate reprice and close 

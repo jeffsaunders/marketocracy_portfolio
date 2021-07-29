@@ -1,0 +1,297 @@
+date: 7/1/15
+ticker   : ZGNX
+
+
+Type
+Corporate Action | Stock Split
+Ticket
+3331
+Priority
+Medium
+Status
+Open
+Member Name
+Marcus Eder
+Username
+crossy
+Fund Symbols
+CLVF
+Stock Tickers
+ZGNX
+Description / Resources:
+Wed 07/01/2015 at 11:07 AM
+
+Hi, today ZGNX recorded a Reverse Stock Split (1:8) http://finance.yahoo.com/news/zogenix-announces-shareholders-board-directors-201801336.html
+
+
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Jul 1, 2015	14.00	14.93	13.02	13.96	700,300	13.96
+Jul 1, 2015	1: 8 Stock Split
+Jun 30, 2015	1.61	1.69	1.61	1.68	395,300	13.44
+
+
+select distinct stockkey from mstockalias where symbol='ZGNX';
+> Row 1:
+>   STOCKKEY = X'580061d74cec4fafc0a80146'
+
+select * from mstockalias where stockkey= X'580061d74cec4fafc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98978L105
+>           DATE = TIMESTAMP '2010-11-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zogenix Inc
+>     PRIMARYKEY = X'580161d74cec4fafc0a80146'
+>       STOCKKEY = X'580061d74cec4fafc0a80146'
+>         SYMBOL = ZGNX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey= X'580161d74cec4fafc0a80146';
+> Row 1:
+>              ALIASKEY = X'580161d74cec4fafc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|ZGNX|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49891780
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 14350314
+>        BB_COMPANYNAME = Zogenix Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-11-23 00:00:00.000000'
+>         BB_IDENTIFIER = ZGNX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-11-23 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ZGNX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1ada60764cec4f24c0a80146'
+>               VERSION = NULL
+
+no split
+select * from mcorporateaction where aliaskey is null and BB_SECID='ZGNX' order by BB_EFFECTIVE;
+
+no split
+
+check for shorts:
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'580061d74cec4fafc0a80146'  and totalshares < 0);
+no shorts
+
+ratio 1/8 = 0.125
+/Marketocracy/bin/cahelper -symbol ZGNX -effective 20150701 -type STOCK_SPLT -exchange UQ -payDate 20150701 -recordDate 20150701 -ratio 0.125 -terms '1 : 8' >& /Users/build/caout/ZGNX.20150701-SPLIT.out
+ZGNX.20150701-SPLIT.out
+stocks:~/caout build$ tail -f ZGNX.20150701-SPLIT.out
+D: (07-01 23:38:55.987) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-01 23:39:31.393) cahelper started on 2015-07-01 23:39:31 -0400
+
+D: (07-01 23:39:31.961) There are [0] closed tickets for ZGNX on 20150701
+D: (07-01 23:39:31.972) There are [0] open tickets for ZGNX on 20150701
+D: (07-01 23:39:32.213) StockFileLoad Version:4.0
+D: (07-01 23:39:32.213) Loading Stock Data
+D: (07-01 23:40:31.465) Building Lookup Index
+D: (07-01 23:40:39.039) Finished Building Index
+D: (07-01 23:40:44.686) Finished Loading Stock Data
+D: (07-01 23:40:44.730) Connection to 192.168.111.172:6666 succeeded
+D: (07-01 23:40:45.440) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "ronindr/ronindr's Med Short Fund", 
+        "cvantoor/cvantoor's Short Fund", 
+        "mapei/Biotech1461", 
+        "kadir/Undervalued Health Care Companies", 
+        "martinov/Turbo Penny Fund", 
+        "goldenhurricane/Mystery Fund", 
+        "alobato/ASL Top Stocks", 
+        "jmckeachie/Recovery II", 
+        "sahmed2/Shab's Biotechnology fund", 
+        "lmelo/Melo Investment Fund", 
+        "lmelo/Melo Future Fund", 
+        "lmelo/Opportunity Mutual Fund", 
+        "lmelo/Melo Growth Fund", 
+        "merrillmonty/Trading Mutual Fund", 
+        "drass/Micro relax", 
+        "crossy/Crossy's Lifesciences Value Fund", 
+        "ecki/THE CHEAPOS", 
+        "bgruber/bgruber's Mutual Fund", 
+        "rfranke/Golden Penny Fund", 
+        "pejmanh/Pejman Hamidi II", 
+        "pejmanh/Emerging Markets High Velocity "
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150701; 
+    RATIO = 0.125; 
+    "RECORD_DATE" = 20150701; 
+    SYMBOL = ZGNX; 
+    TYPE = "STOCK_SPLT"; 
+}
+D: (07-01 23:40:47.924) SUCCESS
+D: (07-01 23:40:47.925) cahelper finished 2015-07-01 23:40:47 -0400
+
+
+let's check
+select * from mstockalias where stockkey= X'580061d74cec4fafc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98978L105
+>           DATE = TIMESTAMP '2010-11-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zogenix Inc
+>     PRIMARYKEY = X'580161d74cec4fafc0a80146'
+>       STOCKKEY = X'580061d74cec4fafc0a80146'
+>         SYMBOL = ZGNX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey= X'580161d74cec4fafc0a80146';
+> Row 1:
+>              ALIASKEY = X'580161d74cec4fafc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|ZGNX|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49891780
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 14350314
+>        BB_COMPANYNAME = Zogenix Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-11-23 00:00:00.000000'
+>         BB_IDENTIFIER = ZGNX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-11-23 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ZGNX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1ada60764cec4f24c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'580161d74cec4fafc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 : 8|CP_RATIO|0.125000|CP_RECORD_DT|20150701|CP_PAY_DT|20150701|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150701:113931
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ZGNX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ZGNX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8cc03a9e5594b273c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey= X'8cc03a9e5594b273c0a86f92';
+> Row 1:
+>   _C001 = 42.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8cc03a9e5594b273c0a86f92'));
+there are 21 fundkeys   save to CA issues ZGNX fundkeys.txt
+
+check crossy CLVF 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 24, 2014 		10000 	10000 	Buy
+Dec 02, 2014 	10000 	5000 	15000 	Buy
+Dec 03, 2014 	15000 	5000 	20000 	Buy
+Dec 04, 2014 	20000 	2000 	22000 	Buy
+Dec 05, 2014 	22000 	28000 	50000 	Buy
+Feb 20, 2015 	50000 	5000 	55000 	Buy
+Feb 27, 2015 	55000 	5000 	60000 	Buy
+Mar 04, 2015 	60000 	15000 	75000 	Buy
+Jun 01, 2015 	75000 	5000 	80000 	Buy
+Jul 01, 2015 	80000 	-70000 	10000 	Corporate Action
+Total: 10,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 24, 2014 	10,000 	$500.00 	$12,444.39 	$1.24
+Dec 2, 2014 	5,000 	$250.00 	$6,052.02 	$1.21
+Dec 3, 2014 	2,000 	$100.00 	$2,390.00 	$1.20
+Dec 3, 2014 	3,000 	$150.00 	$3,602.78 	$1.20
+Dec 4, 2014 	2,000 	$100.00 	$2,432.00 	$1.22
+Dec 5, 2014 	28,000 	$1,400.00 	$34,377.03 	$1.23
+Feb 20, 2015 	5,000 	$250.00 	$7,800.00 	$1.56
+Feb 27, 2015 	5,000 	$250.00 	$8,516.30 	$1.70
+Mar 4, 2015 	15,000 	$750.00 	$25,978.02 	$1.73
+Jun 1, 2015 	5,000 	$250.00 	$9,175.00 	$1.84
+  	  	 
+SELLS
+You have no sells for this position
+
+the split is there, his 80000 shares is now 10000
+check to see that the CA is on our site under ZGNX
+
+the invalidate and reprice as of 2015-07-01 
+
+let's see if there are any shorts
+
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'580061d74cec4fafc0a80146'  and totalshares < 0);
+no shorts
+
+the invalidate and reprice as of 2015-07-01 
+7/3/15 - the reverse split is there  
+
+logging in as crossy  CLVF
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 24, 2014 		10000 	10000 	Buy
+Dec 02, 2014 	10000 	5000 	15000 	Buy
+Dec 03, 2014 	15000 	5000 	20000 	Buy
+Dec 04, 2014 	20000 	2000 	22000 	Buy
+Dec 05, 2014 	22000 	28000 	50000 	Buy
+Feb 20, 2015 	50000 	5000 	55000 	Buy
+Feb 27, 2015 	55000 	5000 	60000 	Buy
+Mar 04, 2015 	60000 	15000 	75000 	Buy
+Jun 01, 2015 	75000 	5000 	80000 	Buy
+Jul 01, 2015 	80000 	-70000 	10000 	Corporate Action
+Total: 10,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 24, 2014 	10,000 	$500.00 	$12,444.39 	$1.24
+Dec 2, 2014 	5,000 	$250.00 	$6,052.02 	$1.21
+Dec 3, 2014 	2,000 	$100.00 	$2,390.00 	$1.20
+Dec 3, 2014 	3,000 	$150.00 	$3,602.78 	$1.20
+Dec 4, 2014 	2,000 	$100.00 	$2,432.00 	$1.22
+Dec 5, 2014 	28,000 	$1,400.00 	$34,377.03 	$1.23
+Feb 20, 2015 	5,000 	$250.00 	$7,800.00 	$1.56
+Feb 27, 2015 	5,000 	$250.00 	$8,516.30 	$1.70
+Mar 4, 2015 	15,000 	$750.00 	$25,978.02 	$1.73
+Jun 1, 2015 	5,000 	$250.00 	$9,175.00 	$1.84
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+reprice this on 2015-07-01   this should run quickly  do this now 
+
+
+
+I see these stocks in crossy's CLVF fund that are not pricing
+MIVI 	MIV Therapeutics Inc 		0.0% 	1 	$0.00 	$0.00 	Details 
+ENCO 	Encorium Group Inc 		0.0% 	1 	$0.00 	$0.00 	Details 
+AIMM 	AUTOIMMUNE INC 		0.0% 	398 	$0.00 	$0.00 	Details 
+LSBC 	LARGE SCALE BIOLOGY 		0.0% 	2 	$0.00 	$0.00 	Details 
+FORBQ 	Forticell Bioscience Inc 		0.0% 	66 	$0.00 	$0.00 	Details 
+WFHCQ 	WOMEN FIRST HEALTHCARE INC 		0.0% 	100 	$0.00 	$0.00 	Details 
+PHFRQ 	PHARMACEUTICAL FORMULATIONS 		0.0% 	36,500 	$0.00 	$0.00 	Details 
+APSN 	Applied NeuroSolutions Inc 		0.0% 	1,333 	$0.00 	$0.00 	Details 
+
+
+I will work these.
+
+closing this one out 

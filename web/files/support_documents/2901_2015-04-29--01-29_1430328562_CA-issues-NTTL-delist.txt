@@ -1,0 +1,752 @@
+date:  4/28/15
+ticker: NTTL
+
+yahoo: nothing
+
+quantum:  nothing
+
+oursite:
+ymbol: NTTL 	Name: Nettel Holdings Inc 	Price: $0.00
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+Corporate Actions for Nettel Holdings Inc 	  April 28, 2015
+left curve 	  symbol changes for NTTL 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+21 Nov 00 	NTGI 	ROYA 	Change in the ticker (trading) symbol from NTGI to ROYA
+24 May 02 	ROYA 	BSTN 	Change in the ticker (trading) symbol from ROYA to BSTN
+22 May 03 	BSTN 	BOSD 	Change in the ticker (trading) symbol from BSTN to BOSD
+09 Jun 03 	BOSD 	NTTL 	Change in the ticker (trading) symbol from BOSD to NTTL
+02 Dec 03 	NTTL 	NTTLE 	Change in the ticker (trading) symbol from NTTL to NTTLE
+05 Dec 03 	NTTLE 	NTTL 	Change in the ticker (trading) symbol from NTTLE to NTTL
+18 Apr 08 	NTTL 	NTTLE 	Change in the ticker (trading) symbol from NTTL to NTTLE
+16 May 08 	NTTLE 	NTTL 	Change in the ticker (trading) symbol from NTTLE to NTTL
+23 May 08 	NTTL 	NTTLE 	Change in the ticker (trading) symbol from NTTL to NTTLE
+19 Jun 08 	NTTLE 	NTTL 	Change in the ticker (trading) symbol from NTTLE to NTTL
+  	  	 
+left curve 	  CUSIP changes for NTTL 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+24 May 02 	780269106 	09057H105 	Change in any of identification numbers (CUSIP) of a security from 780269106 to 09057H105
+22 May 03 	09057H105 	09057H204 	Change in any of identification numbers (CUSIP) of a security from 09057H105 to 09057H204
+09 Jun 03 	09057H204 	64117H108 	Change in any of identification numbers (CUSIP) of a security from 09057H204 to 64117H108
+  	  	 
+left curve 	  name changes for NTTL 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+24 May 02 	Royal Finance Inc 	Bio Standard Corp 	Change in the name of issuer from Royal Finance Inc to Bio Standard Corp
+09 Jun 03 	Bio Standard Corp 	Nettel Holdings Inc 	Change in the name of issuer from Bio Standard Corp to Nettel Holdings Inc
+  	  	 
+left curve 	  listing changes for NTTL 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Jun 19, 2008 	OTCBB 	UU 	OTCBB-OTHER 	UV 	Change in the exchange that NTTL trades on from OTCBB to OTCBB-OTHER
+  	  	 
+left curve 	  NTTL had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+21 Nov 00 	0.033333333333333333333333333333333333333 	Split terms:0.033333333333333333333333333333333333333
+24 May 02 	1 for 10 	Split terms:1 for 10
+22 May 03 	1 for 50 	
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'NTTL';  
+> Row 1:
+>   STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+
+select * from mstockalias where stockkey= X'a4c5043c39e7e9c8c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'a4c6043c39e7e9c8c0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-11-21 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'099a04ea3a1b69e5c0a80114'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = ROYA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'186227413ceef4a3c0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-05-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'9ac528fa3ceef71ec0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H105
+>           DATE = TIMESTAMP '2002-05-24 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'ff1929d53ceef82cc0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H105
+>           DATE = TIMESTAMP '2003-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'38d802753ecd81bac0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BOSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'85f402873ecd822bc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BOSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-06-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'c0dd05873ee53c7dc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-06-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'2fb405933ee53cd9c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-06-09 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'c0fe05983ee53cf7c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-12-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'9f9a281d3fcd5269c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'29ef508c3fd146b9c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-04-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'6eb93074480952c2c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'a1c7126e482e3c9cc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-05-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'dba7730b48377720c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'e6a04ddd485b0f95c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-06-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'e0a24df1485b0fcdc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NTTL'  order by BB_EFFECTIVE;
+> Row 3:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|NTTL|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 57567110
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 898442
+>        BB_COMPANYNAME = Nettel Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = NTTL    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NTTL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-09-08 00:00:00.000000'
+>            PRIMARYKEY = X'fa50332d4e6943b9c0a80146'
+>               VERSION = NULL
+
+
+check MAdmin
+
+NTTL  04/28/2015
+tock:Nettel Holdings Inc  Symbol:NTTL
+Date: 04/28/2015
+
+4 users found
+
+1	bounty	elumpkin	excellor	mxcont66	 	 	 	 	 	 
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NTTL
+>>>> dbtool started at 2015-04-28 10:44:40 -0400
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Bio Standard Corp]
+  date     : [2003-06-09 00:00:00]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2003-06-09 00:00:01]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2003-06-09 00:00:02]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2003-12-05 00:00:00]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2008-05-16 00:00:00]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2008-06-19 00:00:00]
+  status   : [Active]
+stock: NTTL
+  PK       : [A4C5043C39E7E9C8C0A801DC]
+  companyID: [12035]
+  symbol   : [NTTL]
+  name     : [Nettel Holdings Inc]
+  date     : [2008-06-19 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-28 10:44:41 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 12035
+2012-04-09 (Mon) [4116]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-10 (Tue) [4117]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.0021 H:0.0021 L:0.0021 C:0.0021 V:0 TSO:53679 A:0.0021 R:1.0000 CA:0.0000  <-- last one
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'a4c5043c39e7e9c8c0a801dc'  and shares > 0 order by closed; 
+> Row 50:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-01-23 11:18:00.000000'
+>        COMMENT = 
+>     COMMISSION = 238.553700
+>   CURRENTORDER = X'454e72e745b5776bc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'189c57da40b4c0bcc0a80134'
+>       MODIFIED = NULL
+>            NET = 5009.627700
+>         OPENED = TIMESTAMP '2007-01-22 21:48:11.000000'
+>          PRICE = 0.238554
+>     PRIMARYKEY = X'454c72e745b5776bc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 21000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+apply the acquis
+2012-04-20 (Fri) [4127]: O:0.0021 H:0.0021 L:0.0021 C:0.0021
+20120420 0.0021
+/Marketocracy/bin/cahelper -symbol  NTTL  -effective 20120420 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0021 -acqShare 0 -purchaser NTTL   >& /Users/build/caout/NTTL.20150428-ACQUIS.out
+NTTL.20150428-ACQUIS.out
+stocks:~/caout build$ tail -f NTTL.20150428-ACQUIS.out
+D: (04-28 11:01:56.108) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-28 11:02:56.904) cahelper started on 2015-04-28 11:02:56 -0400
+
+D: (04-28 11:02:57.156) There are [0] open tickets for NTTL on 20120420
+D: (04-28 11:02:58.223) StockFileLoad Version:3.0
+D: (04-28 11:02:58.223) Loading Stock Data
+D: (04-28 11:04:47.609) Building Lookup Index
+D: (04-28 11:04:56.548) Finished Building Index
+D: (04-28 11:04:58.687) Finished Loading Stock Data
+D: (04-28 11:04:59.253) Connection to 192.168.111.172:6666 succeeded
+D: (04-28 11:04:59.507) {
+    "ACQUIRED_STOCK" = NTTL; 
+    "ACQUIRING_STOCK" = "NTTL_FIX"; 
+    AMOUNT = 0.0021; 
+    APPLIED = 1; 
+    DATE = 20120420; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NTTL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-28 11:05:00.570) SUCCESS
+D: (04-28 11:05:00.570) cahelper finished 2015-04-28 11:05:00 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'a4c5043c39e7e9c8c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'a4c6043c39e7e9c8c0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-11-21 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'099a04ea3a1b69e5c0a80114'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = ROYA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'186227413ceef4a3c0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-05-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'9ac528fa3ceef71ec0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H105
+>           DATE = TIMESTAMP '2002-05-24 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'ff1929d53ceef82cc0a801dc'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H105
+>           DATE = TIMESTAMP '2003-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'38d802753ecd81bac0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BOSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'85f402873ecd822bc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = BOSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-06-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Bio Standard Corp
+>     PRIMARYKEY = X'c0dd05873ee53c7dc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09057H204
+>           DATE = TIMESTAMP '2003-06-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'2fb405933ee53cd9c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-06-09 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'c0fe05983ee53cf7c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-12-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'9f9a281d3fcd5269c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2003-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'29ef508c3fd146b9c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-04-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'6eb93074480952c2c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'a1c7126e482e3c9cc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-05-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'dba7730b48377720c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTLE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'e6a04ddd485b0f95c0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2008-06-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'e0a24df1485b0fcdc0a80146'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64117H108
+>           DATE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nettel Holdings Inc
+>     PRIMARYKEY = X'416c6e7c553fa121c0a86f92'
+>       STOCKKEY = X'a4c5043c39e7e9c8c0a801dc'
+>         SYMBOL = NTTL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <-- good inactive
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = XG
+
+
+
+select * from mcorporateaction where aliaskey = X'416c6e7c553fa121c0a86f92';
+> Row 1:
+>              ALIASKEY = X'416c6e7c553fa121c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NTTL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.002100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150428:110256
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>         BB_IDENTIFIER = NTTL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NTTL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>            PRIMARYKEY = X'41666e7c553fa120c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'41666e7c553fa120c0a86f92';
+> Row 1:
+>   _C001 = 6.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'41666e7c553fa120c0a86f92'));
+/Marketocracy/bin/fptool invalidateFund 5fbf561c3b89a4bac0a80118;
+/Marketocracy/bin/fptool invalidateFund 73bb03e33fac0001c0a80134;
+/Marketocracy/bin/fptool invalidateFund 52d851e339dd5097c0a80118;
+/Marketocracy/bin/fptool invalidateFund 63ee3d0a406340f5ffffffff;
+/Marketocracy/bin/fptool invalidateFund ad2a707f44676155c0a80134;
+/Marketocracy/bin/fptool invalidateFund fb752ccf40b5ead4c0a80132;
+
+check on 4/29/15
+
+member: elumpkin fund:  SPAM
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 02, 2001 		9756 	9756 	Buy
+May 24, 2002 	9756 	-8781 	975 	Corporate Action
+May 22, 2003 	975 	-956 	19 	Corporate Action
+Apr 20, 2012 	19 	-19 		Corporate Action
+Total: 0
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Oct 2, 2001 	9,756 	$487.80 	$21,673.20 	$2.22
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+20120420  elumpkin SPAM  19 shares * 0.0021 =0.0399
+
+check on 4/29/15
+ NTTL has been acquired 	right curve
+  	  	
+Nettel Holdings Inc acquired by a private company on 2012-04-20 00:00:00. 
+invalidate the funds and check MAdmin
+Stock:Nettel Holdings Inc  Symbol:NTTL
+Date: 04/29/2015
+
+0 users found
+
+done close this out 

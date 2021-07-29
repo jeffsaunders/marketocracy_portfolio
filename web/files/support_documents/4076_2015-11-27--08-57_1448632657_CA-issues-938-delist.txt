@@ -1,0 +1,277 @@
+938
+date:   11/26/15
+ticker:   938
+
+yahoo:  nothing
+
+quantum:  nothing 
+
+oursite:
+Symbol: 938	Name: Man Sang International Ltd	Price: $0.00
+Volume:	Sector: Unclassified	Change:
+Short Volume:	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume:	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave:	Year High:	High:
+200 Day Ave:	Year Low:	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+research  stock info  938   
+ [NEW QUOTE]       
+Corporate Actions for Man Sang International Ltd	  November 26, 2015
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=938
+
+check MAdmin
+Stock:Man Sang International Ltd  Symbol:938
+Date: 11/26/2015
+
+38 users found
+
+1	apayne	artisan1	baby_boy	bater1973	bgitarts	bjpz77	bogumil	bpostma	briangillespie	budfoxxx
+2	catfish	conuslbyrne	dicknixon	dmelliott22	dmiller1	edsanger	gkemp	hannibal	hlwornath	hobiecatlobmi
+3	hoosthu1	jae3	jeffrey	kames	lokater	mahras	mango_monkeys_3	middletonm05	parhat2	phoward
+4	psionman	rafcot	rdail1	skissinger	valuestocks	waardecreatie	waldmaninvests	xboardfan1
+
+database
+select distinct stockkey from mstockalias where symbol= '938';  
+> Row 1:
+>   STOCKKEY = X'f76273184c743705c0a80146'
+select * from mstockalias where stockkey=X'f76273184c743705c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Man Sang International Ltd
+>     PRIMARYKEY = X'f76373184c743705c0a80146'
+>       STOCKKEY = X'f76273184c743705c0a80146'
+>         SYMBOL = 938
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mstock where primarykey=X'f76273184c743705c0a80146';
+marketocracy@db1#42> select * from mstock where primarykey=X'f76273184c743705c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'f76373184c743705c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'f76273184c743705c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19149
+>   WINDOWIDENTITYKEY = NULL
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='938'  order by BB_EFFECTIVE;
+
+select count(*) from mticket where stockkey=X'f76273184c743705c0a80146';
+> Row 1:
+>   _C001 = 64.000000
+select distinct sourcekey from mticket where stockkey=X'f76273184c743705c0a80146';
+> Row 1:
+>   SOURCEKEY = X'f36169334c743369c0a80146'
+> Row 2:
+>   SOURCEKEY = NULL
+
+what created this?
+select * from mcorporateaction where primarykey=X'f36169334c743369c0a80146';
+> Row 1:
+>              ALIASKEY = X'81d1366e4bce197ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Man Sang International Ltd|CP_ID_BB_COMP|304152|CP_ID_BB_SEC|1000|CP_TERMS|77 per 10|CP_RATIO|7.700000|CP_PAY_DT|20100823|CP_RECORD_DT|20100809|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.795360|CP_ADJ_DT|20100824|CP_TKR|938     HK|CP_DUE_BILL_RED_DT|20100826|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 47065589
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 170161
+>        BB_COMPANYNAME = China Metro-Rural Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-08-24 00:00:00.000000'
+>         BB_IDENTIFIER = CNR     UA Equity
+>             BB_ISSUED = TIMESTAMP '2010-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = CNR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-08-24 00:00:00.000000'
+>            PRIMARYKEY = X'f36169334c743369c0a80146'
+>               VERSION = NULL
+
+Assessment:  on  2010-08-24  CNR spun off 938 CP_TERMS|77 per 10|CP_RATIO|7.700000
+let's look at CNR
+
+it is still active and did spin this one off. It Mang San International, only traded on the Hong Kong stock exchange
+never priced here 
+last known price
+/Marketocracy/bin/dbtool lookup stock 938  have to find company ID on it's own this returns the company ID 938
+select * from mstock where primarykey=X'f76273184c743705c0a80146';
+marketocracy@db1#42> select * from mstock where primarykey=X'f76273184c743705c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'f76373184c743705c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'f76273184c743705c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19149
+>   WINDOWIDENTITYKEY = NULL
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19149
+never priced
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f76273184c743705c0a80146' and shares > 0 order by closed; 
+no filled orders
+select * from mticket where stockkey=X'f76273184c743705c0a80146' and sourcekey is null order by closed;
+> Row 9:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-12-18 02:57:22.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'73bc233050c7dfe4c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'28f34fd240655369ffffffff'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-12-11 20:37:40.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'73ba233050c7dfe4c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f76273184c743705c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f76273184c743705c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f76273184c743705c0a80146'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f76273184c743705c0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 38 members who hold this stock
+quantum:
+last ticket:
+last price:
+
+going with today  20151126 0.0000
+here is an article
+http://www.chinametrorural.com/webadmin/pressfile/58encmr_pr20100809e.pdf
+/Marketocracy/bin/cahelper -symbol  938  -effective 20151126 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0000 -acqShare 0 -purchaser 938   >& /Users/build/caout/938.20151126-DELIST.out 
+938.20151126-DELIST.out
+stocks1:~/caout build$ tail -f 938.20151126-DELIST.out
+D: (11-26 10:33:58.942) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-26 10:34:22.567) cahelper started on 2015-11-26 10:34:22 -0500
+
+D: (11-26 10:34:22.830) There are [0] open tickets for 938 on 20151126
+D: (11-26 10:34:23.227) StockFileLoad Version:4.0
+D: (11-26 10:34:23.227) Loading Stock Data
+D: (11-26 10:35:00.085) Building Lookup Index
+D: (11-26 10:35:05.717) Finished Building Index
+D: (11-26 10:35:09.707) Finished Loading Stock Data
+D: (11-26 10:35:09.842) >>> load new StockPrices file
+D: (11-26 10:35:09.865) <<< load new StockPrices file
+D: (11-26 10:35:09.865) >>> swap StockPrices
+D: (11-26 10:35:09.865) Obtained Stockprices swap mutex
+D: (11-26 10:35:09.865) <<< swap StockPrices
+D: (11-26 10:35:09.866) Stock prices available from 2000-05-01 to 2015-11-25
+D: (11-26 10:35:09.979) Connection to 192.168.111.172:6666 succeeded
+D: (11-26 10:35:12.790) {
+    "ACQUIRED_STOCK" = 938; 
+    "ACQUIRING_STOCK" = "938_FIX"; 
+    AMOUNT = 0; 
+    APPLIED = 1; 
+    DATE = 20151126; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "938_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-26 10:35:19.017) SUCCESS
+D: (11-26 10:35:19.018) cahelper finished 2015-11-26 10:35:19 -0500
+Check the results 
+select * from mstockalias where stockkey= X'f76273184c743705c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Man Sang International Ltd
+>     PRIMARYKEY = X'f76373184c743705c0a80146'
+>       STOCKKEY = X'f76273184c743705c0a80146'
+>         SYMBOL = 938
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Man Sang International Ltd
+>     PRIMARYKEY = X'4d9e5d855657267ec0a86fab'
+>       STOCKKEY = X'f76273184c743705c0a80146'
+>         SYMBOL = 938
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'4d9e5d855657267ec0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'4d9e5d855657267ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|938  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151126:103422
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-26 00:00:00.000000'
+>         BB_IDENTIFIER = 938_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = 938_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-26 00:00:00.000000'
+>            PRIMARYKEY = X'4d985d855657267ec0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'4d985d855657267ec0a86fab';
+> Row 1:
+>   _C001 = 55.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'4d985d855657267ec0a86fab'));
+there are 55 fundkeys, save to CA issues 938 fundkeys.txt
+
+For Beta case
+938 no longer trades but is still active on our site - need to delist this never traded in the US and was a spin off from CNR.  938 only traded on the Hong Kong exchange
+
+check on 11/27/15   invalidate funds
+check MAdmin  clear
+
+938 has been acquired	right curve
+ 	 	
+Man Sang International Ltd acquired by a private company on 2015-11-26 00:00:00.
+
+invalidate reprice and close 
+
+
+

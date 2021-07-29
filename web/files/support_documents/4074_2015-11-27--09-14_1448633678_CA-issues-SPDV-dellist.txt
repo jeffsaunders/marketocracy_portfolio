@@ -1,0 +1,244 @@
+SPDV
+date:  11/26/15
+ticker:  SPDV
+
+yahoo: nothing 
+
+quantum:
+SpaceDev, Inc.
+Ticker Symbol: SPDV*     CUSIP: 846241107     Exchange: OTCBB
+* NOTE: This security is no longer trading as of 12/16/08  $0.72658 per share
+
+Company's Online Profile
+BUSINESS:  The world's first commerical space exploration & development company offering low-cost commercial missions and spacecraft for lunar orbiters, Mars orbiters and probe carriers, and asteroid rendezvous & landers as turnkey, fixed price, commercial products.
+Notes:  Acquired by Sierra Nevada Corp. for $0.72658 per share per the OTCBB on 12/16/2008.
+
+oursite:
+Symbol: SPDV	Name: SPACEDEV INC	Price: $0.72
+Volume:	Sector: Industrials	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+No CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=SPDV
+
+check MAdmin
+Stock:SPACEDEV INC  Symbol:SPDV
+Date: 11/26/2015
+
+35 users found
+
+1	ahoppin	akitchings	bbtest2	bgitarts	check688	crfinvestor	ctweight	erickwu	etalas	etrotta
+2	ffasbender	irand2	jeastman	jking16	jnegley	jpl1868	jpovilus	jsantana1	kgriebel	kreso
+3	matthewstroia	mlinksva	mtalisman	pindars	rsalvucc	stano316	steve23usa	stinkystanotter	stroia	tcracers
+4	tinchair371	volodya	wiredcoach	zerron	zpryor
+
+database
+select distinct stockkey from mstockalias where symbol= 'SPDV';  
+> Row 1:
+>   STOCKKEY = X'aec1043c39e7e9ccc0a801dc'
+select * from mstockalias where stockkey=X'aec1043c39e7e9ccc0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 846241107
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SPACEDEV INC
+>     PRIMARYKEY = X'aec2043c39e7e9ccc0a801dc'
+>       STOCKKEY = X'aec1043c39e7e9ccc0a801dc'
+>         SYMBOL = SPDV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SPDV'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SPDV
+>>>> dbtool started at 2015-11-26 09:44:54 -0500
+stock: SPDV
+  PK       : [AEC1043C39E7E9CCC0A801DC]
+  companyID: [10757]
+  symbol   : [SPDV]
+  name     : [SPACEDEV INC]
+  date     : [2000-10-13 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-26 09:44:54 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 10757
+2008-12-09 (Tue) [2899]: O:0.6000 H:0.6000 L:0.5699 C:0.6000 V:7700 TSO:42451 A:0.6000 R:1.0000 CA:0.0000
+2008-12-10 (Wed) [2900]: O:0.6100 H:0.6200 L:0.6000 C:0.6100 V:17040 TSO:42451 A:0.6100 R:1.0000 CA:0.0000
+2008-12-11 (Thu) [2901]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:3800 TSO:42451 A:0.6100 R:1.0000 CA:0.0000
+2008-12-12 (Fri) [2902]: O:0.6200 H:0.6300 L:0.6200 C:0.6300 V:13196 TSO:42451 A:0.6300 R:1.0000 CA:0.0000
+2008-12-13 (Sat) [2903]: <WEEKEND>
+2008-12-14 (Sun) [2904]: <WEEKEND>
+2008-12-15 (Mon) [2905]: O:0.6300 H:0.6899 L:0.6200 C:0.6899 V:106410 TSO:42451 A:0.6899 R:1.0000 CA:0.0000
+2008-12-16 (Tue) [2906]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-17 (Wed) [2907]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-18 (Thu) [2908]: O:0.7150 H:0.7150 L:0.7150 C:0.7150 V:0 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-19 (Fri) [2909]: O:0.7150 H:0.7150 L:0.7150 C:0.7150 V:0 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-20 (Sat) [2910]: <WEEKEND>
+2008-12-21 (Sun) [2911]: <WEEKEND>
+2008-12-22 (Mon) [2912]: O:0.7150 H:0.7150 L:0.7150 C:0.7150 V:0 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-23 (Tue) [2913]: O:0.7150 H:0.7150 L:0.7150 C:0.7150 V:0 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-24 (Wed) [2914]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-25 (Thu) [2915]: <HOLIDAY>
+2008-12-26 (Fri) [2916]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-27 (Sat) [2917]: <WEEKEND>
+2008-12-28 (Sun) [2918]: <WEEKEND>
+2008-12-29 (Mon) [2919]: O:0.7150 H:0.7150 L:0.7150 C:0.7150 V:0 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-30 (Tue) [2920]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+2008-12-31 (Wed) [2921]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'aec1043c39e7e9ccc0a801dc' and shares > 0 order by closed; 
+> Row 223:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-01-14 16:01:43.000000'
+>        COMMENT = 
+>     COMMISSION = 2909.956286
+>   CURRENTORDER = X'91b8609c4946925ac0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3cce4d2149274ec5c0a80132'
+>       MODIFIED = NULL
+>            NET = 55289.169428
+>         OPENED = TIMESTAMP '2008-12-15 12:22:34.000000'
+>          PRICE = 0.660319
+>     PRIMARYKEY = X'91b6609c4946925ac0a80132'
+>         SECFEE = 1.790000
+>         SHARES = 83731.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'aec1043c39e7e9ccc0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = matt.darrah@mdcapitalmanagement.net
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'aec1043c39e7e9ccc0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'aec1043c39e7e9ccc0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'aec1043c39e7e9ccc0a801dc'  and totalshares < 0)));
+
+apply the acquis
+ACQUIS: 
+there are 35 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 12/16/08  $0.72658 per share
+last ticket:  2009-01-14   PRICE = 0.660319  this is after the acquis date 
+last price:  2009-01-30 (Fri) [2951]: O:0.6600 H:0.7150 L:0.6600 C:0.7150 V:419540 TSO:42451 A:0.7150 R:1.0000 CA:0.0000
+
+going with 20090130 0.72658
+
+/Marketocracy/bin/cahelper -symbol  SPDV  -effective 20090130 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.72658 -acqShare 0 -purchaser SPDV   >& /Users/build/caout/SPDV.20151126-ACQUIS.out 
+SPDV.20151126-ACQUIS.out
+stocks1:~/caout build$ tail -f SPDV.20151126-ACQUIS.out
+D: (11-26 09:48:29.268) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-26 09:48:52.979) cahelper started on 2015-11-26 09:48:52 -0500
+
+D: (11-26 09:48:53.206) There are [0] open tickets for SPDV on 20090130
+D: (11-26 09:48:53.840) StockFileLoad Version:4.0
+D: (11-26 09:48:53.840) Loading Stock Data
+D: (11-26 09:49:32.323) Building Lookup Index
+D: (11-26 09:49:37.973) Finished Building Index
+D: (11-26 09:49:41.871) Finished Loading Stock Data
+D: (11-26 09:49:41.989) Connection to 192.168.111.172:6666 succeeded
+D: (11-26 09:49:44.080) {
+    "ACQUIRED_STOCK" = SPDV; 
+    "ACQUIRING_STOCK" = "SPDV_FIX"; 
+    AMOUNT = 0.72658; 
+    APPLIED = 1; 
+    DATE = 20090130; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SPDV_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-26 09:49:48.548) SUCCESS
+D: (11-26 09:49:48.548) cahelper finished 2015-11-26 09:49:48 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'aec1043c39e7e9ccc0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 846241107
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SPACEDEV INC
+>     PRIMARYKEY = X'aec2043c39e7e9ccc0a801dc'
+>       STOCKKEY = X'aec1043c39e7e9ccc0a801dc'
+>         SYMBOL = SPDV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 846241107
+>           DATE = TIMESTAMP '2009-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SPACEDEV INC
+>     PRIMARYKEY = X'6ccc5c2b56571bd5c0a86fab'
+>       STOCKKEY = X'aec1043c39e7e9ccc0a801dc'
+>         SYMBOL = SPDV
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'6ccc5c2b56571bd5c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'6ccc5c2b56571bd5c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SPDV  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.726580|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151126:094852
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = SPDV_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SPDV_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'6cc65c2b56571bd4c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'6cc65c2b56571bd4c0a86fab';
+> Row 1:
+>   _C001 = 52.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6cc65c2b56571bd4c0a86fab'));
+there are XXX fundkeys, save to CA issues SPDV fundkeys.txt
+
+For Beta case
+SPDV no longer trades but is still active on our site - need to delist 
+
+check on 11/27/15   invalidate funds
+check MAdmin   clear
+
+SPDV has been acquired	right curve
+ 	 	
+SPACEDEV INC acquired by a private company on 2009-01-30 00:00:00.
+ 
+invalidate reprice and close 
+
+
+

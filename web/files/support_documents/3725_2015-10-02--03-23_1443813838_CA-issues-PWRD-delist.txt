@@ -1,0 +1,265 @@
+PWRD
+date:   10/1/15
+ticker:   PWRD
+
+yahoo:   it prices now
+Perfect World Co., Ltd. (PWRD) -NasdaqGS   Watchlist
+20.17 0.00(0.00%) Jul 28 - Nasdaq Real Time Price
+
+Prev Close:	20.17
+Open:	20.17
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	156.45
+Beta:	0.5
+Next Earnings Date:	N/A
+Day's Range:	19.81 - 20.20
+52wk Range:	14.78 - 23.49
+Volume:	5,087,411
+Avg Vol (3m):	630,517
+Market Cap:	N/A
+P/E (ttm):	13.47
+EPS (ttm):	1.50
+Div & Yield:	N/A (N/A)
+
+quantum:  nothing at all 
+
+oursite:
+Symbol: PWRD	Name: Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B	Price: $20.17
+Volume:	Sector: Information Technology	Change:
+Short Volume: 999,999	Style: Small Cap : Value	Market Cap:
+Avg Volume: 1,269,892	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $6.43	Year High: $21.62	High:
+200 Day Ave: $15.77	Year Low: $0.00	Low:
+CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=PWRD
+
+check MAdmin
+Stock:Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B  Symbol:PWRD
+Date: 10/01/2015
+
+60 users found
+
+1	aardvark	acematic45	adamjohnhill	advisorcfa	allah	aubinnury	bdevore	benat92	cd	chevro
+2	danfinn00	danolt	dbautz	dchabino	dciccone	djgylend	dochoss36	ecm	epilnivek	fernando
+3	fivecentsworth	fmoslehi	gordogarcon	greenab	guindojr	hakonorge	hboker	heberlonghurst	hmidou	hotcakesaandbacon
+4	jdj	jk82	kbookman	kickingjack	klibanow	lou.liu	mbaruch	mikepal1	mimon	mjtigger
+5	njanderson25	pablo4414	pagi71	pml88	rancid514	reveille	rmorse	ryaniseman	satyakees	sharding
+6	shussain	staka	taras_lanovyk77	tmackmc	todd_hagopian	traderkr	truewarrior	trunkfish	trunkychristy	winston121	 	 	 	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'PWRD';  
+> Row 1:
+>   STOCKKEY = X'b5d5237d482bb12dc0a80146'
+
+select * from mstockalias where stockkey=X'b5d5237d482bb12dc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71372U104
+>           DATE = TIMESTAMP '2007-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B
+>     PRIMARYKEY = X'b5d6237d482bb12dc0a80146'
+>       STOCKKEY = X'b5d5237d482bb12dc0a80146'
+>         SYMBOL = PWRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103030
+>       STYLEKEY = SV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PWRD'  order by BB_EFFECTIVE;
+acquis in 2015-12-31?
+
+xignite?
+http://192.168.111.213/feed/stockLookup.php?symbol=PWRD
+request error
+
+how about xignite historical?
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+found an article:
+Under the terms of the Merger Agreement, which was approved by the Company's shareholders at an extraordinary general meeting held on July 28, 2015, each of the Company's ordinary shares issued and outstanding immediately prior to the effective time of the merger (the "Shares") was cancelled and ceased to exist in exchange for the right to receive US$4.04 in cash without interest and net of any applicable withholding taxes, and each American depositary share of the Company (the "ADS"), representing five class B ordinary shares of the Company, was cancelled in exchange for the right to receive US$20.20 in cash without interest and net of any applicable withholding taxes,
+yahoo price dated Jul 28
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PWRD
+>>>> dbtool started at 2015-10-01 14:30:52 -0400
+stock: PWRD
+  PK       : [B5D5237D482BB12DC0A80146]
+  companyID: [18196]
+  symbol   : [PWRD]
+  name     : [Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B]
+  date     : [2007-07-26 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-01 14:30:53 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18196
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:19.8000 H:19.8600 L:19.7400 C:19.7800 V:664268 TSO:49757 A:19.7800 R:1.0000 CA:0.4800
+2015-07-21 (Tue) [5314]: O:19.7500 H:19.9200 L:19.7500 C:19.8100 V:462737 TSO:49757 A:19.8100 R:1.0000 CA:0.4800
+2015-07-22 (Wed) [5315]: O:19.8100 H:19.8400 L:19.7500 C:19.8000 V:671261 TSO:49757 A:19.8000 R:1.0000 CA:0.4800
+2015-07-23 (Thu) [5316]: O:19.8700 H:19.9100 L:19.8000 C:19.8100 V:270061 TSO:49757 A:19.8100 R:1.0000 CA:0.4800
+2015-07-24 (Fri) [5317]: O:19.8100 H:19.8900 L:19.6800 C:19.7900 V:494505 TSO:49757 A:19.7900 R:1.0000 CA:0.4800
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:19.5700 H:19.8500 L:19.5700 C:19.8200 V:1010338 TSO:49757 A:19.8200 R:1.0000 CA:0.4800
+2015-07-28 (Tue) [5321]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5086911 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-07-29 (Wed) [5322]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800 <--
+2015-07-30 (Thu) [5323]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-07-31 (Fri) [5324]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-01 (Sat) [5325]: <WEEKEND>
+2015-08-02 (Sun) [5326]: <WEEKEND>
+2015-08-03 (Mon) [5327]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-04 (Tue) [5328]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-05 (Wed) [5329]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-06 (Thu) [5330]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-07 (Fri) [5331]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-08 (Sat) [5332]: <WEEKEND>
+2015-08-09 (Sun) [5333]: <WEEKEND>
+2015-08-10 (Mon) [5334]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-11 (Tue) [5335]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+2015-08-12 (Wed) [5336]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b5d5237d482bb12dc0a80146' and shares > 0 order by closed; 
+> Row 1276:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-27 09:31:26.000000'
+>        COMMENT = NULL
+>     COMMISSION = 200.000000
+>   CURRENTORDER = X'3404011455b47293c0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'6a4408f639a32ccbc0a801e1'
+>       MODIFIED = NULL
+>            NET = 78720.000000
+>         OPENED = TIMESTAMP '2015-07-26 01:39:31.000000'
+>          PRICE = 19.680000
+>     PRIMARYKEY = X'3402011455b47293c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 4000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b5d5237d482bb12dc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b5d5237d482bb12dc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5d5237d482bb12dc0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5d5237d482bb12dc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 60 members who hold this stock
+quantum:  nothing 
+last ticket:  2015-07-27  RICE = 19.680000
+last price:  2015-07-29 (Wed) [5322]: O:20.0500 H:20.2000 L:19.8100 C:20.1700 V:5087411 TSO:49757 A:20.1700 R:1.0000 CA:0.4800 <--
+
+going with 20150728  20.00 acquis price 
+
+/Marketocracy/bin/cahelper -symbol  PWRD  -effective 20150728 -type ACQUIS -exchange UN -acqType 1 -acqCash 20.00 -acqShare 0 -purchaser PWRD   >& /Users/build/caout/PWRD.20151001-ACQUIS.out
+PWRD.20151001-ACQUIS.out
+stocks1:~/caout build$ tail -f PWRD.20151001-ACQUIS.out
+D: (10-01 15:08:47.190) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-01 15:09:10.404) cahelper started on 2015-10-01 15:09:10 -0400
+
+D: (10-01 15:09:11.021) There are [0] open tickets for PWRD on 20150728
+D: (10-01 15:09:11.547) StockFileLoad Version:4.0
+D: (10-01 15:09:11.547) Loading Stock Data
+D: (10-01 15:09:47.922) Building Lookup Index
+D: (10-01 15:09:53.492) Finished Building Index
+D: (10-01 15:09:57.290) Finished Loading Stock Data
+D: (10-01 15:09:57.408) Connection to 192.168.111.172:6666 succeeded
+D: (10-01 15:10:01.273) SavingChanges for position sell out 101 of 293
+D: (10-01 15:10:09.497) {
+    "ACQUIRED_STOCK" = PWRD; 
+    "ACQUIRING_STOCK" = "PWRD_FIX"; 
+    AMOUNT = 20; 
+    APPLIED = 1; 
+    DATE = 20150728; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PWRD_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-01 15:10:17.766) SUCCESS
+D: (10-01 15:10:17.766) cahelper finished 2015-10-01 15:10:17 -0400
+Check the results 
+select * from mstockalias where stockkey= X'b5d5237d482bb12dc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71372U104
+>           DATE = TIMESTAMP '2007-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B
+>     PRIMARYKEY = X'b5d6237d482bb12dc0a80146'
+>       STOCKKEY = X'b5d5237d482bb12dc0a80146'
+>         SYMBOL = PWRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103030
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71372U104
+>           DATE = TIMESTAMP '2015-07-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Perfect World Co Limited- Sponsored American Deposit Receipt Repr 5 Shares B
+>     PRIMARYKEY = X'91cc6c59560d84d7c0a86fab'
+>       STOCKKEY = X'b5d5237d482bb12dc0a80146'
+>         SYMBOL = PWRD
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103030
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey =X'91cc6c59560d84d7c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'91cc6c59560d84d7c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PWRD  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|20.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151001:030910
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-28 00:00:00.000000'
+>         BB_IDENTIFIER = PWRD_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PWRD_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'91c66c59560d84d6c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'91c66c59560d84d6c0a86fab';
+> Row 1:
+>   _C001 = 113.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'91c66c59560d84d6c0a86fab'));
+there are 113 fundkeys, save to CA issues PWRD fundkeys.txt
+
+For Beta case
+PWRD no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+

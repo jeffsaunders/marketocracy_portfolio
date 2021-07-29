@@ -1,0 +1,2080 @@
+date:  5/28/15
+ticker:  AAL
+
+In a 12/9/2013 AAL press release, the company said that 0.0665 share of AAL was distributed for each AAMRQ share held. 
+	we paid this   he had 13,660  AAMRQ then * .0665 = 908  got it!  
+In a 1/9/2014, AAL press release, the company said that 0.1319 share of AAL was distributed for each AAMRQ share. 
+	need to pay  13,660 * 0.1319 = 1801 he should get  1801
+In a 2/10/2014 AAL press release, the company said that 0.1750 share of AAL was distributed for each AAMRQ share. 
+	we paid this  13,660 * 0.1750 = 2390  got it!
+In a 3/10/2014 AAL press release, the company said that 0.1842 share of AAL was distributed for each AAMRQ share. 
+	need to pay  13,660 * 0.1842 =  2516  
+In a 4/10/2014 press release, the company said that 0.1864 share of AAL was distributed for each AAMRQ share. 
+	need to pay  13,660 * 0.1864 = 2564
+In summary, a total of 0.744 share of AAL was distributed for each AAMRQ share held. 
+Because I owned 13,660 AAMRQ  shares in December 2013, I should have received 10,163 AAL shares. 
+The 3,298 shares currently in my account, only reflect the distributions announced on 12/9/2013 and 2/10/20914 of 0.0665 
+share of AAL and 0.1750 share of AAL, 
+respectively, for a total of 0.2415 share of AAL for each of my 13,660 AAMRQ shares owned. Therefore, 6,865 AAL 
+shares should be added to my account to correct this oversight.
+
+
+
+antino  AMF
+
+look at AAMRQ CAs:
+ stock dividends paid by AAMRQ 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Percent 	Symbol 	Description
+09 Dec 13 		09 Dec 13 		09 Dec 13 	6.65 	AAL 	AAMRQ declared a dividend of 6.65 percent in stock AAL.
+10 Feb 14 		09 Dec 13 		10 Feb 14 	17.5 	AAL 	AAMRQ declared a dividend of 17.5 percent in stock AAL.
+record date stays as 20131209
+effective and pay dates are the same - the date the dividend was paid
+
+
+let's log in and check AAL
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 09, 2013 		908 	908 	Corporate Action
+Feb 10, 2014 	908 	2390 	3298 	Corporate Action
+Total: 3,298
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	 
+SELLS
+You have no sells for this position
+   	
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 09, 2013 	AAMRQ declared a dividend of 6.65 percent in stock AAL.
+Feb 10, 2014 	AAMRQ declared a dividend of 17.5 percent in stock AAL.
+
+let's look at the AMF ledger on 20131209  and 20140210
+
+20131209
+ trades on December 09, 2013 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	AAMRQ 	13,660 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	AAL 	908 	$0.00 	$0.00 	$0.00 	$0.00
+hex key 8CBA0A4A544706ECC0A86F92
+select * from mcorporateaction where primarykey in (select sourcekey from mticket where primarykey=X'8CBA0A4A544706ECC0A86F92');
+> Row 1:
+>              ALIASKEY = X'812c1fa24f063491c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131209|CP_PAY_DT|20131209|CP_AMT|6.650000|CP_DVD_STOCK_TYP|2001|CP_TKR|AAL    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20141021:091752
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-09 00:00:00.000000'
+>         BB_IDENTIFIER = AAMRQ     UU Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AAMRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-09 00:00:00.000000'
+>            PRIMARYKEY = X'07e40a4a544705c0c0a86f92'
+>               VERSION = NULL
+
+select * from mstockalias where primarykey= X'812c1fa24f063491c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2012-01-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'812c1fa24f063491c0a80146'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+
+*****************
+20140210
+ trades on February 10, 2014 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Stock Dividend Buy 	AAL 	2,390 	$0.00 	$0.00 	$0.00 	$0.00
+Hexkey: 3D670CFF5447093DC0A86F92
+select * from mticket where primarykey=X'3D670CFF5447093DC0A86F92';
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-02-10 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'3d690cff5447093dc0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eb623e363c1d6a68c0a801e0'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-02-10 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'3d670cff5447093dc0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'96924ea5544630c7c0a86f92'
+>      SOURCEKEY = X'a8470cff5447080ac0a86f92'
+>    NOTIFYEMAIL = NULL
+select * from mcorporateaction where primarykey=X'a8470cff5447080ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'812c1fa24f063491c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131209|CP_PAY_DT|20140210|CP_AMT|17.500000|CP_DVD_STOCK_TYP|2001|CP_TKR|AAL    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20141021:092738
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = AAMRQ     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AAMRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'a8470cff5447080ac0a86f92'
+>               VERSION = NULL
+select * from mstockalias where primarykey= X'812c1fa24f063491c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2012-01-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'812c1fa24f063491c0a80146'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+
+the recordDate is set
+-dividendSymbol AAL
+-payDate XXX
+-recordDate 20131209
+-percent  
+
+(1)  In a 1/9/2014, AAL press release, the company said that 0.1319 share of AAL was distributed for each AAMRQ share. 
+	need to pay
+-dividendSymbol AAL
+-payDate 20140109
+-recordDate 20131209
+-percent 13.19
+/Marketocracy/bin/cahelper -symbol AAMRQ -effective 20140109 -type DVD_STOCK -exchange UU -dividendSymbol AAL -payDate 20140109 -recordDate 20131209 -percent 13.19 >& /Users/build/caout/AAMRQ-AAL.20150528-DVD_STOCK-20140109.out
+AAMRQ-AAL.20150528-DVD_STOCK-20140109.out
+stocks:~/caout build$ tail -f AAMRQ-AAL.20150528-DVD_STOCK-20140109.out
+D: (05-28 18:46:11.162) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-28 18:46:35.050) cahelper started on 2015-05-28 18:46:35 -0400
+
+D: (05-28 18:46:47.654) StockFileLoad Version:4.0
+D: (05-28 18:46:47.654) Loading Stock Data
+D: (05-28 18:47:25.182) Building Lookup Index
+D: (05-28 18:47:29.740) Finished Building Index
+D: (05-28 18:47:33.225) Finished Loading Stock Data
+D: (05-28 18:47:33.491) Connection to 192.168.111.172:6666 succeeded
+D: (05-28 18:47:34.071) >>> load new StockPrices file
+D: (05-28 18:47:34.095) <<< load new StockPrices file
+D: (05-28 18:47:34.095) >>> swap StockPrices
+D: (05-28 18:47:34.095) Obtained Stockprices swap mutex
+D: (05-28 18:47:34.096) <<< swap StockPrices
+D: (05-28 18:47:34.096) Stock prices available from 2000-05-01 to 2015-05-27
+D: (05-28 18:48:12.400) SavingChanges for Stock Dividend out 101 of 2622
+D: (05-28 18:49:17.638) SavingChanges for Stock Dividend out 201 of 2622
+D: (05-28 18:50:01.997) SavingChanges for Stock Dividend out 301 of 2622
+D: (05-28 18:50:12.881) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:12.882) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:12.882) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:12.883) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:12.883) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:12.883) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:18.603) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:18.605) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.134) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.257) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.257) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.258) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.258) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.259) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.259) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.259) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.260) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.260) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.261) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.261) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.298) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.298) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.299) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.299) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.300) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.300) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.300) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.301) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.301) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.302) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.302) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.303) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.303) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.304) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.304) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.326) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.326) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.375) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.376) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:22.377) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.377) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.378) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.379) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.379) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.461) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.462) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.463) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.476) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:22.961) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.961) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.962) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.962) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.963) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.963) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:22.989) {
+    APPLIED = 1; 
+    DATE = 20140109; 
+    FUNDS = (
+        "donquixote/donquixote's Short Fund", 
+        "nbillou/nbillou's Short Fund", 
+        "jrbill94/jrbill94's Short Fund", 
+        "jbarnes2/jbarnes2's Short Fund", 
+        "hiromimini/Drop your shorts", 
+        "phillips7521/phillips7521's Short Fund", 
+        "dishwasher/n/a", 
+        "mkt_caster/MC's terminal short fund", 
+        "ewalton/ewalton's Short Fund", 
+        "longorshort/Oink Oink Fund", 
+        "ahbahb/ahbahb's Short Fund", 
+        "marketcat/MSF", 
+        "alerner1/alerner1's Short Fund", 
+        "mgulla/Gulla Short Fund", 
+        "hoffj/The Shorty Fund", 
+        "ahoffard/shorts", 
+        "derrickho/Short Fund", 
+        "metal_money_manager/Get Short", 
+        "blink/End of the World", 
+        "psyk738178/psyk738178's Mutual Fund", 
+        "vvorrath1/St. Moritz Bubble", 
+        "roy_chew/roy Mutual Fund", 
+        "wbonness/Bill's Crapola", 
+        "gjack25/stock i would buy", 
+        "panache/Depression2", 
+        "farhangp/MOTHER OF ALL BEAR MARKETS", 
+        "azaki/azaki's Short Fund", 
+        "nyujd/value traps (experimental)", 
+        "achen/Golden Dome Short Fund", 
+        "mquirk/MAQ Short Fund", 
+        "nseth1/nseth1's Short Fund", 
+        "jklar/jklar's Mutual Fund", 
+        "jmcdowell/Jeff's First Short Fund", 
+        "misterking/MisterKing's Short Fund", 
+        "derave/David Charette's Blue Short Fund", 
+        "alee4/APL Short Fund", 
+        "tocou/tocou's Short Fund", 
+        "oknapp/Knapp Short Fund", 
+        "cshaw1/cshaw1's Mutual Fund", 
+        "mariusz106/BAD", 
+        "takinthestreet/takinthestreet's short Fund", 
+        "joeman/Short fund", 
+        "quote27/quote27's Mutual Fund", 
+        "blendedsuit/blendedsuit's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "jdrouillet/No Va A Andar", 
+        "williamhung/ShortBangs", 
+        "tgreen15/Green Partners Select Short Fund", 
+        "nwinton1/Godzilla Get-Shorty Fund", 
+        "invest2success/invest2success's Mutual Fund", 
+        "anupam/shoot em al", 
+        "mmanela/mmanela's Mutual Fund", 
+        "jdrouillet/backspin fund", 
+        "bigwack/bigwack's Mutual Fund", 
+        "freedom/SELL SELL SELL", 
+        "wildmap/EW5short", 
+        "hashbaz/Hashbaz Short", 
+        "nyujd/shorts (experimental)", 
+        "sbeatty/sbeatty's Mutual Fund", 
+        "evenzo/evenzo's Mutual Fund", 
+        "jbeuttenmuller/Beuttenmuller Hedge", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "nasud/nasud's Short Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "msnow/msnow's Mutual Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "rok/DBH Capital Short Fund", 
+        "sema_1970/Whack-A-Mole!", 
+        "drahkola/Short Fund", 
+        "calman318/Papa Bear", 
+        "qrheaume/Short Capitol Fund ", 
+        "jkwan1/Sigma Bear Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "rmorse/rmorse's Mutual Fund", 
+        "charris/charris's short  Mutual Fund", 
+        "hinerinvestments@gmail.com/HI Short Fund", 
+        "rameshumc/rameshumc's Mutual Fund", 
+        "esebeus/esebeus's Short Fund", 
+        "rnutt/Ursa Major", 
+        "mcook2/Live Deliberately Short ", 
+        "whistlingleaf/The Short Dorf", 
+        "polinesia/SHORTING", 
+        "gvan_arkel/Short Wave", 
+        "auminer/short part duh", 
+        "madabuu/OMS Bear Fund", 
+        "freewater/Freewater Trail of Dead Fund", 
+        "vanya/Dragon Contrarian Fund", 
+        "eigh8or/eigh8or's Bearcat Fund", 
+        "econley/econley's Short Fund", 
+        "busanga/Ultimate Short Threats", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "adambuck33/Short Value Fund", 
+        "pepito/pepito's Mutual Fund Short1", 
+        "pepito/pepito's Mutual Fund Short", 
+        "ccolvin/Predatory Short Fund", 
+        "jpildis/Shorts R Us", 
+        "mjtigger/Jan Short Fund", 
+        "mrdrby/Willow Short Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "holme11304/holme11304's Short fund", 
+        "racer/Racer Short Fund", 
+        "dmlakova/Pula", 
+        "dplempert/Lempert Capital Short", 
+        "msafir/msafir's short Fund", 
+        "quidprokuo/Shortay Fund", 
+        "falcon33/risk fund 1s", 
+        "mikesindexodds/mikesindexodds's Mutual Fund", 
+        "milkrate/Shortdex", 
+        "racer/RSF", 
+        "traderx44/Misty's Hedge Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "baconmakin/spongebob short pants", 
+        "ahoffard/INTEREST RATES", 
+        "djplan/djplan's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "idahoinvestor/IdahoInvestor's Short Fund", 
+        "webern/webern's Dog pile", 
+        "kwilly/Really Badd Stocks", 
+        "damanp/House 2007", 
+        "scottsobo/S ShortFund", 
+        "links7521/links7521's Mutual Fund", 
+        "rfrunzi/bihi", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "fkluczny/fkluczny's Mutual Fund", 
+        "hippytom58/hippytom58's Mutual Fund", 
+        "ashaftal/Shafty's Fund", 
+        "jmurphy2/jmurphy2's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "viengsai/viengsai's Mutual Fund", 
+        "jasch451/ema5s", 
+        "argonaut/argonaut's Short Fund", 
+        "cub_fund/tiger_fund's Mutual Fund", 
+        "mlamb2/Obvious HyperShort", 
+        "sami23/sami23's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "pdelbuck/Short Implosion Fund", 
+        "jbrosowski/jbrosowski's Mutual Fund", 
+        "tec1687/tec1687's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "jbrosowski/Candlestick Short", 
+        "eseward/PSTFP Short Fund", 
+        "wildmap/EM-Reb Short", 
+        "rtareilo/Sector Short Fund", 
+        "acgood/short fund", 
+        "timmus/Timmus's Short Fund", 
+        "mnibmgip07/TA TREND SHORT FUND", 
+        "cheapone/cheapone's Mutual Fund", 
+        "rbitrage/Here Is To Your Health", 
+        "zildjian2564/Short Fund Experiment", 
+        "ricardowong/Geminilaki SF", 
+        "gdoering/gdoering's Mutual Fund", 
+        "anilagarwal777/ASMF", 
+        "saifanil/saifanil's Long Term Mutual Fund", 
+        "down/down's Mutual Fund", 
+        "minuet/Speculator's Shorts", 
+        "shussain/SaifBank Short Fund", 
+        "blitz.paladin/Paladin Short Fund", 
+        "ssheffield/ssheffield's short fund", 
+        "pfaust/The Passe Fund", 
+        "ozman456/ozman456's Mutual Fund", 
+        "516825/Erik's Dogs", 
+        "cschier/Schier Short Fund I", 
+        "scratchy/scratchy's Mutual Fund", 
+        "rtareilo/The Short Fund", 
+        "jkbrandow/flf short", 
+        "swilson1010/MADMAX Mutual Fund", 
+        "dmmd/Midget Fund", 
+        "lrabier/lrabier's short only fund", 
+        "vnair/Short Fund", 
+        "rostberg/rostberg's Over valued Fund", 
+        "cjkeller/cjkeller's Short Practice Fund", 
+        "jarvis_hills/gone south", 
+        "jarvis_hills/dead horses", 
+        "kchamblee/bottom of the barrel", 
+        "A351WMustang/A351WMustang's Mutual Fund", 
+        "vnair/VTT", 
+        "fatty_toro/Airlines are DOomed", 
+        "brpanthers99/Short Fund", 
+        "albab/less than 2dd", 
+        "bm1/xx", 
+        "hoochkitty/Shorty", 
+        "bobandweev/ZigZagr", 
+        "jpctrader/Short Fund", 
+        "hoochkitty/Short the Hot Stocks", 
+        "tdenker1/tdenker1's Mutual Fund", 
+        "wmclennon/Bear Position Fund", 
+        "nyhex/The World is Mine - aggressive short", 
+        "procrustes/procrustes's Bear Fund", 
+        "subhendu.kar/subhendu.kar's Mutual Fund", 
+        "bm1/x", 
+        "yoslev/yoslev's Mutual Fund", 
+        "walrusbt/walrusbt's Short Fund", 
+        "logan.philp/Aggressive Contraction  Mutual Fund", 
+        "bollmann/Bollmann Short Alpha Fund", 
+        "kince_young/Aggedge Mutual Fund", 
+        "leonard6/Leonard Short Fund", 
+        "fernandograu/fernandograu's Short Fund", 
+        "soon144000/soon144000's Mutual Fund", 
+        "steeg/steeg's Mutual Fund II", 
+        "brewmaster/brewmaster's Mutual Fund", 
+        "muwakwe/muwakwe's Mutual Fund", 
+        "jlaw/jlaw's short sectors fund", 
+        "chinu/chinu's Short Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "myeh/short fund", 
+        "cumulus139/cumulus139's Short Fund", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "ssturner/Sturn's Bear Fund", 
+        "ukranjah/Capitulation Fund", 
+        "jfish816/Jfish816's Goin out of Business Fund", 
+        "fabcar/fabcar's Mutual Fund", 
+        "nyujd/shorts breakdown. (experimental)", 
+        "hoochkitty/Short MF", 
+        "lotus/lotus's Short Fund", 
+        "market_wizard/MW Superior Short", 
+        "traderkr/High Options IV Fund", 
+        "dprice1/March Madness", 
+        "dprice1/Short", 
+        "kince_young/Resolute CIL Hedge Fund", 
+        "nate1006/Bear Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gunslingerloco/Short Fin, Air, Auto", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "charlesb/The Little People Fund", 
+        "mmalabayabas/MKM Short Opportunity Fund", 
+        "zygnoda/zygnoda's Mutual Fund", 
+        "rambo/rambo's Mutual Fund", 
+        "jlaw/jlaw's Mutual Fund", 
+        "jlaw/jlaw's Over Priced Stock Fund", 
+        "mattgrint/MJG-S", 
+        "samko/Closed Experiment 2", 
+        "revblc/Bearish Prophet Patterns", 
+        "chrstieber/chrstieber's Baerenstarker Fund", 
+        "marketbreaker/Short Fund", 
+        "fb07/Sector Timing Short Fund", 
+        "blackcoffee/Sixth Sense Stock Selection (Short)", 
+        "janhendrik/Mohr Short Fund", 
+        "bijonh/bijonh's short portfolio", 
+        "mcorley/MRC Short Fund", 
+        "momentumvalue/not in use", 
+        "momentumvalue/not in use", 
+        "sarahb/Worst Stocks in Worst Sectors", 
+        "sarahb/Sarah short fund", 
+        "momentumvalue/overbought mar29 $690076", 
+        "staka/Staka's Short Fund", 
+        "passa3m/passa3m's Mutual Fund", 
+        "egalanis/egalanis' Short portfolio", 
+        "steele99/steele99's Mutual Fund", 
+        "drass/Short international", 
+        "gunslingerloco/gunslingerloco's Short Fund", 
+        "gunslingerloco/Recovery Bubble", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gilgameshloco/Air Bomb", 
+        "gilgamesh/Red Roots", 
+        "gilgamesh/x", 
+        "gilgamesh/FISHY FLAG", 
+        "gilgamesh/Jobless", 
+        "gilgamesh/Bank Holiday Party", 
+        "gilgamesh/Wreckovery", 
+        "gilgameshloco/Wards of the State", 
+        "gilgameshloco/Audit the Fed", 
+        "gilgameshloco/Debt Bomb", 
+        "flashrabbit/flashrabbit's new short fund", 
+        "gilgameshloco/Air Crash", 
+        "gilgameshdux/Air Crash", 
+        "gilgameshdux/Upgrade on Insanity", 
+        "karakaya/karakaya's Short Mutual Fund", 
+        "gilgameshdux/House of Cons", 
+        "gilgameshdux/Air Bust", 
+        "gilgameshdux/Most Likely BK", 
+        "gilgameshdux/Airline Peak", 
+        "westharbor/Hedge Fund", 
+        "rabies/Rabies's Short Fund", 
+        "gilgameshloco/Air Bomb", 
+        "stocktrader/stocktrader's Mutual Fund", 
+        "huyehara/huyehara's Mutual Fund", 
+        "en68/Emener Short Mutual Fund", 
+        "gilgameshloco/Bank Holiday", 
+        "gilgameshdux/Air & Car Bust", 
+        "gilgameshdux/Auto No Works", 
+        "gilgameshdux/Peak Air", 
+        "gilgameshdux/Air Crash", 
+        "longshort/LongShort's Short Mutual Fund", 
+        "heeyult/Heeyult's Monthly High Fund", 
+        "gilgameshloco/Cash for Junk", 
+        "gilgameshdux/Peak Air", 
+        "nigazwopr/NigazWopr Limited Capital", 
+        "nigazwopr/BS Rally", 
+        "nigazwopr/The Top", 
+        "nigazwopr/WTF", 
+        "nigazwopr/Fat Fingers", 
+        "ayerhs88/Short", 
+        "ahknaten/Kai Petainen's Shorts2", 
+        "ahknaten/Kai Petainen's Short Fund", 
+        "korodas/Korodas's Short Fund", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "cg_long_term/weekly short", 
+        "pgsecurities/PGSecurities's Mutual Fund", 
+        "gdog477/S2", 
+        "gdog477/S1 ", 
+        "gdog477/S3", 
+        "liaohjhh8888/hzlshort fund", 
+        "procrustes/Tiger Strategic Short", 
+        "ahoffard/INTERNET", 
+        "hleborobot/Belomor Short Fund", 
+        "vikram14000/Vikram Short Fund", 
+        "adh/LOCS", 
+        "sagitarius_d/Sagitarius Short Fund", 
+        "mphillips27/mphillips27's Mutual Fund", 
+        "lturner/shorty", 
+        "dcblue/BLACK KNIGHTS"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20140109; 
+    RATIO = 0.1319; 
+    "RECORD_DATE" = 20131209; 
+    SYMBOL = AAMRQ; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (05-28 18:50:23.002) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.003) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.004) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.004) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.005) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.005) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.006) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.006) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.006) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.007) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.007) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.008) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.008) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.009) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.011) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.011) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.012) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.013) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.014) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.014) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.014) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.015) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.017) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.017) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.019) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.019) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.020) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.020) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.021) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.021) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.021) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.022) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.022) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.023) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.025) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.025) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.026) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.027) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.027) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.027) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.028) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.029) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.029) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.030) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.031) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.031) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.032) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.032) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.034) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.035) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.035) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.035) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.036) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.036) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.036) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.037) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.038) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.038) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.040) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.041) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.041) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.041) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.043) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.044) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.044) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.045) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.045) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.045) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.046) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.046) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.047) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.048) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.048) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.049) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.051) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.051) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.051) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.052) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.052) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.053) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.055) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.055) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.057) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.057) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.058) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.058) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.060) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.060) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.062) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.062) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.063) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.064) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.066) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.066) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.069) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.069) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.069) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.070) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.070) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.071) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.071) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.072) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 18:50:23.073) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.074) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.074) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.074) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 18:50:23.075) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:23.075) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 18:50:24.191) SUCCESS
+D: (05-28 18:50:24.191) cahelper finished 2015-05-28 18:50:24 -0400
+
+
+(2) In a 3/10/2014 AAL press release, the company said that 0.1842 share of AAL was distributed for each AAMRQ share. 
+	need to pay
+-dividendSymbol AAL
+-payDate 20140310
+-recordDate 20131209
+-percent 18.42
+/Marketocracy/bin/cahelper -symbol AAMRQ -effective 20140310 -type DVD_STOCK -exchange UU -dividendSymbol AAL -payDate 20140310 -recordDate 20131209 -percent 18.42 >& /Users/build/caout/AAMRQ-AAL.20150528-DVD_STOCK-20140310.out
+stocks:~/caout build$ tail -f AAMRQ-AAL.20150528-DVD_STOCK-20140310.out
+D: (05-28 18:59:29.220) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-28 18:59:54.097) cahelper started on 2015-05-28 18:59:54 -0400
+
+D: (05-28 18:59:59.763) StockFileLoad Version:4.0
+D: (05-28 18:59:59.764) Loading Stock Data
+D: (05-28 19:00:41.285) Building Lookup Index
+D: (05-28 19:00:46.023) Finished Building Index
+D: (05-28 19:00:49.870) Finished Loading Stock Data
+D: (05-28 19:00:50.052) Connection to 192.168.111.172:6666 succeeded
+D: (05-28 19:00:50.964) >>> load new StockPrices file
+D: (05-28 19:00:50.993) <<< load new StockPrices file
+D: (05-28 19:00:50.993) >>> swap StockPrices
+D: (05-28 19:00:50.993) Obtained Stockprices swap mutex
+D: (05-28 19:00:50.993) <<< swap StockPrices
+D: (05-28 19:00:50.994) Stock prices available from 2000-05-01 to 2015-05-27
+D: (05-28 19:01:22.329) SavingChanges for Stock Dividend out 101 of 2622
+D: (05-28 19:02:17.077) SavingChanges for Stock Dividend out 201 of 2622
+D: (05-28 19:02:50.424) SavingChanges for Stock Dividend out 301 of 2622
+D: (05-28 19:02:58.279) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:02:58.279) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:02:58.280) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:02:58.280) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:02:58.281) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:02:58.281) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:00.407) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:00.407) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.013) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.098) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.099) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.100) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.101) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.101) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.102) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.103) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.104) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.105) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.106) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.106) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.116) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.117) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.117) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.118) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.119) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.119) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.120) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.120) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.121) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.122) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.122) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.123) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.124) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.124) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.125) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.145) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.146) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.155) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.156) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.157) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.158) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.158) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.159) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.159) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.175) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.175) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.176) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.189) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.889) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.890) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.891) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.891) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.892) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.892) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.914) {
+    APPLIED = 1; 
+    DATE = 20140310; 
+    FUNDS = (
+        "donquixote/donquixote's Short Fund", 
+        "nbillou/nbillou's Short Fund", 
+        "jrbill94/jrbill94's Short Fund", 
+        "jbarnes2/jbarnes2's Short Fund", 
+        "hiromimini/Drop your shorts", 
+        "phillips7521/phillips7521's Short Fund", 
+        "dishwasher/n/a", 
+        "mkt_caster/MC's terminal short fund", 
+        "ewalton/ewalton's Short Fund", 
+        "longorshort/Oink Oink Fund", 
+        "ahbahb/ahbahb's Short Fund", 
+        "marketcat/MSF", 
+        "alerner1/alerner1's Short Fund", 
+        "mgulla/Gulla Short Fund", 
+        "hoffj/The Shorty Fund", 
+        "ahoffard/shorts", 
+        "derrickho/Short Fund", 
+        "metal_money_manager/Get Short", 
+        "blink/End of the World", 
+        "psyk738178/psyk738178's Mutual Fund", 
+        "vvorrath1/St. Moritz Bubble", 
+        "roy_chew/roy Mutual Fund", 
+        "wbonness/Bill's Crapola", 
+        "gjack25/stock i would buy", 
+        "panache/Depression2", 
+        "farhangp/MOTHER OF ALL BEAR MARKETS", 
+        "azaki/azaki's Short Fund", 
+        "nyujd/value traps (experimental)", 
+        "achen/Golden Dome Short Fund", 
+        "mquirk/MAQ Short Fund", 
+        "nseth1/nseth1's Short Fund", 
+        "jklar/jklar's Mutual Fund", 
+        "jmcdowell/Jeff's First Short Fund", 
+        "misterking/MisterKing's Short Fund", 
+        "derave/David Charette's Blue Short Fund", 
+        "alee4/APL Short Fund", 
+        "tocou/tocou's Short Fund", 
+        "oknapp/Knapp Short Fund", 
+        "cshaw1/cshaw1's Mutual Fund", 
+        "mariusz106/BAD", 
+        "takinthestreet/takinthestreet's short Fund", 
+        "joeman/Short fund", 
+        "quote27/quote27's Mutual Fund", 
+        "blendedsuit/blendedsuit's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "jdrouillet/No Va A Andar", 
+        "williamhung/ShortBangs", 
+        "tgreen15/Green Partners Select Short Fund", 
+        "nwinton1/Godzilla Get-Shorty Fund", 
+        "invest2success/invest2success's Mutual Fund", 
+        "anupam/shoot em al", 
+        "mmanela/mmanela's Mutual Fund", 
+        "jdrouillet/backspin fund", 
+        "bigwack/bigwack's Mutual Fund", 
+        "freedom/SELL SELL SELL", 
+        "wildmap/EW5short", 
+        "hashbaz/Hashbaz Short", 
+        "nyujd/shorts (experimental)", 
+        "sbeatty/sbeatty's Mutual Fund", 
+        "evenzo/evenzo's Mutual Fund", 
+        "jbeuttenmuller/Beuttenmuller Hedge", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "nasud/nasud's Short Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "msnow/msnow's Mutual Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "rok/DBH Capital Short Fund", 
+        "sema_1970/Whack-A-Mole!", 
+        "drahkola/Short Fund", 
+        "calman318/Papa Bear", 
+        "qrheaume/Short Capitol Fund ", 
+        "jkwan1/Sigma Bear Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "rmorse/rmorse's Mutual Fund", 
+        "charris/charris's short  Mutual Fund", 
+        "hinerinvestments@gmail.com/HI Short Fund", 
+        "rameshumc/rameshumc's Mutual Fund", 
+        "esebeus/esebeus's Short Fund", 
+        "rnutt/Ursa Major", 
+        "mcook2/Live Deliberately Short ", 
+        "whistlingleaf/The Short Dorf", 
+        "polinesia/SHORTING", 
+        "gvan_arkel/Short Wave", 
+        "auminer/short part duh", 
+        "madabuu/OMS Bear Fund", 
+        "freewater/Freewater Trail of Dead Fund", 
+        "vanya/Dragon Contrarian Fund", 
+        "eigh8or/eigh8or's Bearcat Fund", 
+        "econley/econley's Short Fund", 
+        "busanga/Ultimate Short Threats", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "adambuck33/Short Value Fund", 
+        "pepito/pepito's Mutual Fund Short1", 
+        "pepito/pepito's Mutual Fund Short", 
+        "ccolvin/Predatory Short Fund", 
+        "jpildis/Shorts R Us", 
+        "mjtigger/Jan Short Fund", 
+        "mrdrby/Willow Short Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "holme11304/holme11304's Short fund", 
+        "racer/Racer Short Fund", 
+        "dmlakova/Pula", 
+        "dplempert/Lempert Capital Short", 
+        "msafir/msafir's short Fund", 
+        "quidprokuo/Shortay Fund", 
+        "falcon33/risk fund 1s", 
+        "mikesindexodds/mikesindexodds's Mutual Fund", 
+        "milkrate/Shortdex", 
+        "racer/RSF", 
+        "traderx44/Misty's Hedge Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "baconmakin/spongebob short pants", 
+        "ahoffard/INTEREST RATES", 
+        "djplan/djplan's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "idahoinvestor/IdahoInvestor's Short Fund", 
+        "webern/webern's Dog pile", 
+        "kwilly/Really Badd Stocks", 
+        "damanp/House 2007", 
+        "scottsobo/S ShortFund", 
+        "links7521/links7521's Mutual Fund", 
+        "rfrunzi/bihi", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "fkluczny/fkluczny's Mutual Fund", 
+        "hippytom58/hippytom58's Mutual Fund", 
+        "ashaftal/Shafty's Fund", 
+        "jmurphy2/jmurphy2's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "viengsai/viengsai's Mutual Fund", 
+        "jasch451/ema5s", 
+        "argonaut/argonaut's Short Fund", 
+        "cub_fund/tiger_fund's Mutual Fund", 
+        "mlamb2/Obvious HyperShort", 
+        "sami23/sami23's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "pdelbuck/Short Implosion Fund", 
+        "jbrosowski/jbrosowski's Mutual Fund", 
+        "tec1687/tec1687's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "jbrosowski/Candlestick Short", 
+        "eseward/PSTFP Short Fund", 
+        "wildmap/EM-Reb Short", 
+        "rtareilo/Sector Short Fund", 
+        "acgood/short fund", 
+        "timmus/Timmus's Short Fund", 
+        "mnibmgip07/TA TREND SHORT FUND", 
+        "cheapone/cheapone's Mutual Fund", 
+        "rbitrage/Here Is To Your Health", 
+        "zildjian2564/Short Fund Experiment", 
+        "ricardowong/Geminilaki SF", 
+        "gdoering/gdoering's Mutual Fund", 
+        "anilagarwal777/ASMF", 
+        "saifanil/saifanil's Long Term Mutual Fund", 
+        "down/down's Mutual Fund", 
+        "minuet/Speculator's Shorts", 
+        "shussain/SaifBank Short Fund", 
+        "blitz.paladin/Paladin Short Fund", 
+        "ssheffield/ssheffield's short fund", 
+        "pfaust/The Passe Fund", 
+        "ozman456/ozman456's Mutual Fund", 
+        "516825/Erik's Dogs", 
+        "cschier/Schier Short Fund I", 
+        "scratchy/scratchy's Mutual Fund", 
+        "rtareilo/The Short Fund", 
+        "jkbrandow/flf short", 
+        "swilson1010/MADMAX Mutual Fund", 
+        "dmmd/Midget Fund", 
+        "lrabier/lrabier's short only fund", 
+        "vnair/Short Fund", 
+        "rostberg/rostberg's Over valued Fund", 
+        "cjkeller/cjkeller's Short Practice Fund", 
+        "jarvis_hills/gone south", 
+        "jarvis_hills/dead horses", 
+        "kchamblee/bottom of the barrel", 
+        "A351WMustang/A351WMustang's Mutual Fund", 
+        "vnair/VTT", 
+        "fatty_toro/Airlines are DOomed", 
+        "brpanthers99/Short Fund", 
+        "albab/less than 2dd", 
+        "bm1/xx", 
+        "hoochkitty/Shorty", 
+        "bobandweev/ZigZagr", 
+        "jpctrader/Short Fund", 
+        "hoochkitty/Short the Hot Stocks", 
+        "tdenker1/tdenker1's Mutual Fund", 
+        "wmclennon/Bear Position Fund", 
+        "nyhex/The World is Mine - aggressive short", 
+        "procrustes/procrustes's Bear Fund", 
+        "subhendu.kar/subhendu.kar's Mutual Fund", 
+        "bm1/x", 
+        "yoslev/yoslev's Mutual Fund", 
+        "walrusbt/walrusbt's Short Fund", 
+        "logan.philp/Aggressive Contraction  Mutual Fund", 
+        "bollmann/Bollmann Short Alpha Fund", 
+        "kince_young/Aggedge Mutual Fund", 
+        "leonard6/Leonard Short Fund", 
+        "fernandograu/fernandograu's Short Fund", 
+        "soon144000/soon144000's Mutual Fund", 
+        "steeg/steeg's Mutual Fund II", 
+        "brewmaster/brewmaster's Mutual Fund", 
+        "muwakwe/muwakwe's Mutual Fund", 
+        "jlaw/jlaw's short sectors fund", 
+        "chinu/chinu's Short Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "myeh/short fund", 
+        "cumulus139/cumulus139's Short Fund", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "ssturner/Sturn's Bear Fund", 
+        "ukranjah/Capitulation Fund", 
+        "jfish816/Jfish816's Goin out of Business Fund", 
+        "fabcar/fabcar's Mutual Fund", 
+        "nyujd/shorts breakdown. (experimental)", 
+        "hoochkitty/Short MF", 
+        "lotus/lotus's Short Fund", 
+        "market_wizard/MW Superior Short", 
+        "traderkr/High Options IV Fund", 
+        "dprice1/March Madness", 
+        "dprice1/Short", 
+        "kince_young/Resolute CIL Hedge Fund", 
+        "nate1006/Bear Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gunslingerloco/Short Fin, Air, Auto", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "charlesb/The Little People Fund", 
+        "mmalabayabas/MKM Short Opportunity Fund", 
+        "zygnoda/zygnoda's Mutual Fund", 
+        "rambo/rambo's Mutual Fund", 
+        "jlaw/jlaw's Mutual Fund", 
+        "jlaw/jlaw's Over Priced Stock Fund", 
+        "mattgrint/MJG-S", 
+        "samko/Closed Experiment 2", 
+        "revblc/Bearish Prophet Patterns", 
+        "chrstieber/chrstieber's Baerenstarker Fund", 
+        "marketbreaker/Short Fund", 
+        "fb07/Sector Timing Short Fund", 
+        "blackcoffee/Sixth Sense Stock Selection (Short)", 
+        "janhendrik/Mohr Short Fund", 
+        "bijonh/bijonh's short portfolio", 
+        "mcorley/MRC Short Fund", 
+        "momentumvalue/not in use", 
+        "momentumvalue/not in use", 
+        "sarahb/Worst Stocks in Worst Sectors", 
+        "sarahb/Sarah short fund", 
+        "momentumvalue/overbought mar29 $690076", 
+        "staka/Staka's Short Fund", 
+        "passa3m/passa3m's Mutual Fund", 
+        "egalanis/egalanis' Short portfolio", 
+        "steele99/steele99's Mutual Fund", 
+        "drass/Short international", 
+        "gunslingerloco/gunslingerloco's Short Fund", 
+        "gunslingerloco/Recovery Bubble", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gilgameshloco/Air Bomb", 
+        "gilgamesh/Red Roots", 
+        "gilgamesh/x", 
+        "gilgamesh/FISHY FLAG", 
+        "gilgamesh/Jobless", 
+        "gilgamesh/Bank Holiday Party", 
+        "gilgamesh/Wreckovery", 
+        "gilgameshloco/Wards of the State", 
+        "gilgameshloco/Audit the Fed", 
+        "gilgameshloco/Debt Bomb", 
+        "flashrabbit/flashrabbit's new short fund", 
+        "gilgameshloco/Air Crash", 
+        "gilgameshdux/Air Crash", 
+        "gilgameshdux/Upgrade on Insanity", 
+        "karakaya/karakaya's Short Mutual Fund", 
+        "gilgameshdux/House of Cons", 
+        "gilgameshdux/Air Bust", 
+        "gilgameshdux/Most Likely BK", 
+        "gilgameshdux/Airline Peak", 
+        "westharbor/Hedge Fund", 
+        "rabies/Rabies's Short Fund", 
+        "gilgameshloco/Air Bomb", 
+        "stocktrader/stocktrader's Mutual Fund", 
+        "huyehara/huyehara's Mutual Fund", 
+        "en68/Emener Short Mutual Fund", 
+        "gilgameshloco/Bank Holiday", 
+        "gilgameshdux/Air & Car Bust", 
+        "gilgameshdux/Auto No Works", 
+        "gilgameshdux/Peak Air", 
+        "gilgameshdux/Air Crash", 
+        "longshort/LongShort's Short Mutual Fund", 
+        "heeyult/Heeyult's Monthly High Fund", 
+        "gilgameshloco/Cash for Junk", 
+        "gilgameshdux/Peak Air", 
+        "nigazwopr/NigazWopr Limited Capital", 
+        "nigazwopr/BS Rally", 
+        "nigazwopr/The Top", 
+        "nigazwopr/WTF", 
+        "nigazwopr/Fat Fingers", 
+        "ayerhs88/Short", 
+        "ahknaten/Kai Petainen's Shorts2", 
+        "ahknaten/Kai Petainen's Short Fund", 
+        "korodas/Korodas's Short Fund", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "cg_long_term/weekly short", 
+        "pgsecurities/PGSecurities's Mutual Fund", 
+        "gdog477/S2", 
+        "gdog477/S1 ", 
+        "gdog477/S3", 
+        "liaohjhh8888/hzlshort fund", 
+        "procrustes/Tiger Strategic Short", 
+        "ahoffard/INTERNET", 
+        "hleborobot/Belomor Short Fund", 
+        "vikram14000/Vikram Short Fund", 
+        "adh/LOCS", 
+        "sagitarius_d/Sagitarius Short Fund", 
+        "mphillips27/mphillips27's Mutual Fund", 
+        "lturner/shorty", 
+        "dcblue/BLACK KNIGHTS"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20140310; 
+    RATIO = 0.1842; 
+    "RECORD_DATE" = 20131209; 
+    SYMBOL = AAMRQ; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (05-28 19:03:03.934) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.935) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.937) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.937) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.939) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.939) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.940) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.940) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.942) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.942) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.943) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.943) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.944) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.945) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.946) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.946) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.948) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.949) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.951) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.952) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.953) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.954) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.955) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.956) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.958) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.958) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.960) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.960) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.962) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.962) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.963) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.964) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.967) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.967) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.969) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.969) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.970) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.971) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.973) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.973) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.975) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.975) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.977) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.978) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.978) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.979) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.980) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.981) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.982) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.982) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.984) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.984) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.985) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.986) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.987) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.987) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.988) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.989) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.990) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.990) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.992) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.992) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:03.994) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.995) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.995) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.996) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.997) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.997) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:03.998) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:03.998) Position 317A159053A85569C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.000) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.001) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.002) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.003) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.004) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.004) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.006) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.006) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.007) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.008) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.009) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.009) Position 226E012852B84749C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.011) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.011) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.012) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.013) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.014) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.015) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.015) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.016) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.017) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.017) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.019) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.019) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.021) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.021) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.023) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.024) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.025) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.026) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.027) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.027) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!!
+D: (05-28 19:03:04.028) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.029) Position 66B1046853907114C0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.030) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.031) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!!
+D: (05-28 19:03:04.032) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:04.032) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!!
+D: (05-28 19:03:08.911) SUCCESS
+D: (05-28 19:03:08.911) cahelper finished 2015-05-28 19:03:08 -0400
+
+
+
+(3) In a 4/10/2014 press release, the company said that 0.1864 share of AAL was distributed for each AAMRQ share. 
+	need to pay
+-dividendSymbol AAL
+-payDate 20140410
+-recordDate 20131209
+-percent 18.64
+/Marketocracy/bin/cahelper -symbol AAMRQ -effective 20140410 -type DVD_STOCK -exchange UU -dividendSymbol AAL -payDate 20140410 -recordDate 20131209 -percent 18.64 >& /Users/build/caout/AAMRQ-AAL.20150528-DVD_STOCK-20140410.out
+stocks:~/caout build$ tail -f AAMRQ-AAL.20150528-DVD_STOCK-20140410.out
+D: (05-28 19:03:55.805) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-28 19:04:21.915) cahelper started on 2015-05-28 19:04:21 -0400
+
+D: (05-28 19:04:27.921) StockFileLoad Version:4.0
+D: (05-28 19:04:27.921) Loading Stock Data
+D: (05-28 19:05:10.431) Building Lookup Index
+D: (05-28 19:05:16.201) Finished Building Index
+D: (05-28 19:05:20.173) Finished Loading Stock Data
+D: (05-28 19:05:20.396) Connection to 192.168.111.172:6666 succeeded
+D: (05-28 19:05:20.399) * Going into multiThreaded mode * [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.480) StockFileLoad Version:4.0 [Thread-0x214fa00]
+D: (05-28 19:05:20.480) Loading Stock Data [Thread-0x214fa00]
+D: (05-28 19:05:20.792) >>> load new StockPrices file [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.822) <<< load new StockPrices file [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.823) >>> swap StockPrices [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.823) Obtained Stockprices swap mutex [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.823) <<< swap StockPrices [Thread-0xa000ed88:MAIN]
+D: (05-28 19:05:20.823) Stock prices available from 2000-05-01 to 2015-05-27 [Thread-0xa000ed88:MAIN]
+D: (05-28 19:06:00.363) SavingChanges for Stock Dividend out 101 of 2622 [Thread-0xa000ed88:MAIN]
+D: (05-28 19:06:07.713) Building Lookup Index [Thread-0x214fa00]
+D: (05-28 19:06:16.845) Finished Building Index [Thread-0x214fa00]
+D: (05-28 19:06:21.278) Finished Loading Stock Data [Thread-0x214fa00]
+D: (05-28 19:06:53.951) SavingChanges for Stock Dividend out 201 of 2622 [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:28.394) SavingChanges for Stock Dividend out 301 of 2622 [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.082) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.083) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.084) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.084) Position 317A159053A85569C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.085) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:36.086) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:37.931) Position 66B1046853907114C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:37.932) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.546) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.632) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.632) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.633) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.634) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.635) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.636) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.636) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.637) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.638) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.639) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.640) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.651) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.653) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.654) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.655) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.655) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.656) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.657) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.658) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.659) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.660) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.660) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.661) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.662) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.663) Position 226E012852B84749C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.664) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.686) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.686) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.696) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.697) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.698) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.699) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.700) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.701) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.701) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.718) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.719) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.720) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:40.734) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.167) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.168) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.169) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.170) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.170) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.171) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.199) {
+    APPLIED = 1; 
+    DATE = 20140410; 
+    FUNDS = (
+        "donquixote/donquixote's Short Fund", 
+        "nbillou/nbillou's Short Fund", 
+        "jrbill94/jrbill94's Short Fund", 
+        "jbarnes2/jbarnes2's Short Fund", 
+        "hiromimini/Drop your shorts", 
+        "phillips7521/phillips7521's Short Fund", 
+        "dishwasher/n/a", 
+        "mkt_caster/MC's terminal short fund", 
+        "ewalton/ewalton's Short Fund", 
+        "longorshort/Oink Oink Fund", 
+        "ahbahb/ahbahb's Short Fund", 
+        "marketcat/MSF", 
+        "alerner1/alerner1's Short Fund", 
+        "mgulla/Gulla Short Fund", 
+        "hoffj/The Shorty Fund", 
+        "ahoffard/shorts", 
+        "derrickho/Short Fund", 
+        "metal_money_manager/Get Short", 
+        "blink/End of the World", 
+        "psyk738178/psyk738178's Mutual Fund", 
+        "vvorrath1/St. Moritz Bubble", 
+        "roy_chew/roy Mutual Fund", 
+        "wbonness/Bill's Crapola", 
+        "gjack25/stock i would buy", 
+        "panache/Depression2", 
+        "farhangp/MOTHER OF ALL BEAR MARKETS", 
+        "azaki/azaki's Short Fund", 
+        "nyujd/value traps (experimental)", 
+        "achen/Golden Dome Short Fund", 
+        "mquirk/MAQ Short Fund", 
+        "nseth1/nseth1's Short Fund", 
+        "jklar/jklar's Mutual Fund", 
+        "jmcdowell/Jeff's First Short Fund", 
+        "misterking/MisterKing's Short Fund", 
+        "derave/David Charette's Blue Short Fund", 
+        "alee4/APL Short Fund", 
+        "tocou/tocou's Short Fund", 
+        "oknapp/Knapp Short Fund", 
+        "cshaw1/cshaw1's Mutual Fund", 
+        "mariusz106/BAD", 
+        "takinthestreet/takinthestreet's short Fund", 
+        "joeman/Short fund", 
+        "quote27/quote27's Mutual Fund", 
+        "blendedsuit/blendedsuit's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "jdrouillet/No Va A Andar", 
+        "williamhung/ShortBangs", 
+        "tgreen15/Green Partners Select Short Fund", 
+        "nwinton1/Godzilla Get-Shorty Fund", 
+        "invest2success/invest2success's Mutual Fund", 
+        "anupam/shoot em al", 
+        "mmanela/mmanela's Mutual Fund", 
+        "jdrouillet/backspin fund", 
+        "bigwack/bigwack's Mutual Fund", 
+        "freedom/SELL SELL SELL", 
+        "wildmap/EW5short", 
+        "hashbaz/Hashbaz Short", 
+        "nyujd/shorts (experimental)", 
+        "sbeatty/sbeatty's Mutual Fund", 
+        "evenzo/evenzo's Mutual Fund", 
+        "jbeuttenmuller/Beuttenmuller Hedge", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "nasud/nasud's Short Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "msnow/msnow's Mutual Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "rok/DBH Capital Short Fund", 
+        "sema_1970/Whack-A-Mole!", 
+        "drahkola/Short Fund", 
+        "calman318/Papa Bear", 
+        "qrheaume/Short Capitol Fund ", 
+        "jkwan1/Sigma Bear Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "rmorse/rmorse's Mutual Fund", 
+        "charris/charris's short  Mutual Fund", 
+        "hinerinvestments@gmail.com/HI Short Fund", 
+        "rameshumc/rameshumc's Mutual Fund", 
+        "esebeus/esebeus's Short Fund", 
+        "rnutt/Ursa Major", 
+        "mcook2/Live Deliberately Short ", 
+        "whistlingleaf/The Short Dorf", 
+        "polinesia/SHORTING", 
+        "gvan_arkel/Short Wave", 
+        "auminer/short part duh", 
+        "madabuu/OMS Bear Fund", 
+        "freewater/Freewater Trail of Dead Fund", 
+        "vanya/Dragon Contrarian Fund", 
+        "eigh8or/eigh8or's Bearcat Fund", 
+        "econley/econley's Short Fund", 
+        "busanga/Ultimate Short Threats", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "adambuck33/Short Value Fund", 
+        "pepito/pepito's Mutual Fund Short1", 
+        "pepito/pepito's Mutual Fund Short", 
+        "ccolvin/Predatory Short Fund", 
+        "jpildis/Shorts R Us", 
+        "mjtigger/Jan Short Fund", 
+        "mrdrby/Willow Short Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "holme11304/holme11304's Short fund", 
+        "racer/Racer Short Fund", 
+        "dmlakova/Pula", 
+        "dplempert/Lempert Capital Short", 
+        "msafir/msafir's short Fund", 
+        "quidprokuo/Shortay Fund", 
+        "falcon33/risk fund 1s", 
+        "mikesindexodds/mikesindexodds's Mutual Fund", 
+        "milkrate/Shortdex", 
+        "racer/RSF", 
+        "traderx44/Misty's Hedge Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "baconmakin/spongebob short pants", 
+        "ahoffard/INTEREST RATES", 
+        "djplan/djplan's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "idahoinvestor/IdahoInvestor's Short Fund", 
+        "webern/webern's Dog pile", 
+        "kwilly/Really Badd Stocks", 
+        "damanp/House 2007", 
+        "scottsobo/S ShortFund", 
+        "links7521/links7521's Mutual Fund", 
+        "rfrunzi/bihi", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "fkluczny/fkluczny's Mutual Fund", 
+        "hippytom58/hippytom58's Mutual Fund", 
+        "ashaftal/Shafty's Fund", 
+        "jmurphy2/jmurphy2's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "viengsai/viengsai's Mutual Fund", 
+        "jasch451/ema5s", 
+        "argonaut/argonaut's Short Fund", 
+        "cub_fund/tiger_fund's Mutual Fund", 
+        "mlamb2/Obvious HyperShort", 
+        "sami23/sami23's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "pdelbuck/Short Implosion Fund", 
+        "jbrosowski/jbrosowski's Mutual Fund", 
+        "tec1687/tec1687's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "jbrosowski/Candlestick Short", 
+        "eseward/PSTFP Short Fund", 
+        "wildmap/EM-Reb Short", 
+        "rtareilo/Sector Short Fund", 
+        "acgood/short fund", 
+        "timmus/Timmus's Short Fund", 
+        "mnibmgip07/TA TREND SHORT FUND", 
+        "cheapone/cheapone's Mutual Fund", 
+        "rbitrage/Here Is To Your Health", 
+        "zildjian2564/Short Fund Experiment", 
+        "ricardowong/Geminilaki SF", 
+        "gdoering/gdoering's Mutual Fund", 
+        "anilagarwal777/ASMF", 
+        "saifanil/saifanil's Long Term Mutual Fund", 
+        "down/down's Mutual Fund", 
+        "minuet/Speculator's Shorts", 
+        "shussain/SaifBank Short Fund", 
+        "blitz.paladin/Paladin Short Fund", 
+        "ssheffield/ssheffield's short fund", 
+        "pfaust/The Passe Fund", 
+        "ozman456/ozman456's Mutual Fund", 
+        "516825/Erik's Dogs", 
+        "cschier/Schier Short Fund I", 
+        "scratchy/scratchy's Mutual Fund", 
+        "rtareilo/The Short Fund", 
+        "jkbrandow/flf short", 
+        "swilson1010/MADMAX Mutual Fund", 
+        "dmmd/Midget Fund", 
+        "lrabier/lrabier's short only fund", 
+        "vnair/Short Fund", 
+        "rostberg/rostberg's Over valued Fund", 
+        "cjkeller/cjkeller's Short Practice Fund", 
+        "jarvis_hills/gone south", 
+        "jarvis_hills/dead horses", 
+        "kchamblee/bottom of the barrel", 
+        "A351WMustang/A351WMustang's Mutual Fund", 
+        "vnair/VTT", 
+        "fatty_toro/Airlines are DOomed", 
+        "brpanthers99/Short Fund", 
+        "albab/less than 2dd", 
+        "bm1/xx", 
+        "hoochkitty/Shorty", 
+        "bobandweev/ZigZagr", 
+        "jpctrader/Short Fund", 
+        "hoochkitty/Short the Hot Stocks", 
+        "tdenker1/tdenker1's Mutual Fund", 
+        "wmclennon/Bear Position Fund", 
+        "nyhex/The World is Mine - aggressive short", 
+        "procrustes/procrustes's Bear Fund", 
+        "subhendu.kar/subhendu.kar's Mutual Fund", 
+        "bm1/x", 
+        "yoslev/yoslev's Mutual Fund", 
+        "walrusbt/walrusbt's Short Fund", 
+        "logan.philp/Aggressive Contraction  Mutual Fund", 
+        "bollmann/Bollmann Short Alpha Fund", 
+        "kince_young/Aggedge Mutual Fund", 
+        "leonard6/Leonard Short Fund", 
+        "fernandograu/fernandograu's Short Fund", 
+        "soon144000/soon144000's Mutual Fund", 
+        "steeg/steeg's Mutual Fund II", 
+        "brewmaster/brewmaster's Mutual Fund", 
+        "muwakwe/muwakwe's Mutual Fund", 
+        "jlaw/jlaw's short sectors fund", 
+        "chinu/chinu's Short Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "myeh/short fund", 
+        "cumulus139/cumulus139's Short Fund", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "ssturner/Sturn's Bear Fund", 
+        "ukranjah/Capitulation Fund", 
+        "jfish816/Jfish816's Goin out of Business Fund", 
+        "fabcar/fabcar's Mutual Fund", 
+        "nyujd/shorts breakdown. (experimental)", 
+        "hoochkitty/Short MF", 
+        "lotus/lotus's Short Fund", 
+        "market_wizard/MW Superior Short", 
+        "traderkr/High Options IV Fund", 
+        "dprice1/March Madness", 
+        "dprice1/Short", 
+        "kince_young/Resolute CIL Hedge Fund", 
+        "nate1006/Bear Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gunslingerloco/Short Fin, Air, Auto", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "charlesb/The Little People Fund", 
+        "mmalabayabas/MKM Short Opportunity Fund", 
+        "zygnoda/zygnoda's Mutual Fund", 
+        "rambo/rambo's Mutual Fund", 
+        "jlaw/jlaw's Mutual Fund", 
+        "jlaw/jlaw's Over Priced Stock Fund", 
+        "mattgrint/MJG-S", 
+        "samko/Closed Experiment 2", 
+        "revblc/Bearish Prophet Patterns", 
+        "chrstieber/chrstieber's Baerenstarker Fund", 
+        "marketbreaker/Short Fund", 
+        "fb07/Sector Timing Short Fund", 
+        "blackcoffee/Sixth Sense Stock Selection (Short)", 
+        "janhendrik/Mohr Short Fund", 
+        "bijonh/bijonh's short portfolio", 
+        "mcorley/MRC Short Fund", 
+        "momentumvalue/not in use", 
+        "momentumvalue/not in use", 
+        "sarahb/Worst Stocks in Worst Sectors", 
+        "sarahb/Sarah short fund", 
+        "momentumvalue/overbought mar29 $690076", 
+        "staka/Staka's Short Fund", 
+        "passa3m/passa3m's Mutual Fund", 
+        "egalanis/egalanis' Short portfolio", 
+        "steele99/steele99's Mutual Fund", 
+        "drass/Short international", 
+        "gunslingerloco/gunslingerloco's Short Fund", 
+        "gunslingerloco/Recovery Bubble", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "gilgameshloco/Air Bomb", 
+        "gilgamesh/Red Roots", 
+        "gilgamesh/x", 
+        "gilgamesh/FISHY FLAG", 
+        "gilgamesh/Jobless", 
+        "gilgamesh/Bank Holiday Party", 
+        "gilgamesh/Wreckovery", 
+        "gilgameshloco/Wards of the State", 
+        "gilgameshloco/Audit the Fed", 
+        "gilgameshloco/Debt Bomb", 
+        "flashrabbit/flashrabbit's new short fund", 
+        "gilgameshloco/Air Crash", 
+        "gilgameshdux/Air Crash", 
+        "gilgameshdux/Upgrade on Insanity", 
+        "karakaya/karakaya's Short Mutual Fund", 
+        "gilgameshdux/House of Cons", 
+        "gilgameshdux/Air Bust", 
+        "gilgameshdux/Most Likely BK", 
+        "gilgameshdux/Airline Peak", 
+        "westharbor/Hedge Fund", 
+        "rabies/Rabies's Short Fund", 
+        "gilgameshloco/Air Bomb", 
+        "stocktrader/stocktrader's Mutual Fund", 
+        "huyehara/huyehara's Mutual Fund", 
+        "en68/Emener Short Mutual Fund", 
+        "gilgameshloco/Bank Holiday", 
+        "gilgameshdux/Air & Car Bust", 
+        "gilgameshdux/Auto No Works", 
+        "gilgameshdux/Peak Air", 
+        "gilgameshdux/Air Crash", 
+        "longshort/LongShort's Short Mutual Fund", 
+        "heeyult/Heeyult's Monthly High Fund", 
+        "gilgameshloco/Cash for Junk", 
+        "gilgameshdux/Peak Air", 
+        "nigazwopr/NigazWopr Limited Capital", 
+        "nigazwopr/BS Rally", 
+        "nigazwopr/The Top", 
+        "nigazwopr/WTF", 
+        "nigazwopr/Fat Fingers", 
+        "ayerhs88/Short", 
+        "ahknaten/Kai Petainen's Shorts2", 
+        "ahknaten/Kai Petainen's Short Fund", 
+        "korodas/Korodas's Short Fund", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "cg_long_term/weekly short", 
+        "pgsecurities/PGSecurities's Mutual Fund", 
+        "gdog477/S2", 
+        "gdog477/S1 ", 
+        "gdog477/S3", 
+        "liaohjhh8888/hzlshort fund", 
+        "procrustes/Tiger Strategic Short", 
+        "ahoffard/INTERNET", 
+        "hleborobot/Belomor Short Fund", 
+        "vikram14000/Vikram Short Fund", 
+        "adh/LOCS", 
+        "sagitarius_d/Sagitarius Short Fund", 
+        "mphillips27/mphillips27's Mutual Fund", 
+        "lturner/shorty", 
+        "dcblue/BLACK KNIGHTS"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20140410; 
+    RATIO = 0.18639999; 
+    "RECORD_DATE" = 20131209; 
+    SYMBOL = AAMRQ; 
+    TYPE = "DVD_STOCK"; 
+} [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.215) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.216) Position DBBC74C752D6DF83C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.216) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.216) Position D74506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.217) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.217) Position 2EB7159053A8314BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.218) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.218) Position 3AE56784537A0E7BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.219) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.219) Position 27A806CC52AF3758C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.220) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.220) Position 47F11A92543BD786C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.221) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.221) Position CBA306CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.222) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.222) Position 776906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.223) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.223) Position D63306CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.225) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.225) Position 62323050541C7DDAC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.226) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.226) Position 22916B7C53BD43E2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.227) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.227) Position DE7F39CE52D3F8EDC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.227) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.228) Position D71F06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.228) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.229) Position 776106CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.229) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.230) Position 6C2704685390CAF8C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.230) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.231) Position 8EA206CC52AF376BC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.231) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.232) Position F29D06CC52AF373EC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.232) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.232) Position AE1806CC52AF3780C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.233) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.233) Position D71506CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.234) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.234) Position 456702BB54185A61C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.235) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.235) Position 406C6784537A4E92C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.236) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.236) Position 2EE4159053A832D3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.237) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.237) Position C59139CE52CC69D4C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.238) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.238) Position 05BD357A543D2A0FC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.239) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.239) Position 4CB970D953F5F46AC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.240) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.241) Position C9E306CC52AF3789C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.241) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.241) Position 21D566D5539B0F74C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.243) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.243) Position 772F06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.244) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.244) Position 773906CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.245) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.245) Position 26CA66D5539EF18EC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.245) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.246) Position 70511F3C536CFE7DC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.246) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.247) Position 9B1D06CC52AF376DC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.247) Position 226E012852B84749C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.248) Position 226E012852B84749C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.248) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.249) Position EC645BBD54329CE0C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.249) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.250) Position 22956B7C53BD43E3C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.251) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.251) Position 6F3137155304E5F1C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.252) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.252) Position D70106CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.253) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.253) Position 774D06CC52AF37A2C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.254) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.254) Position B3D10E8C53875DB6C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.254) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.255) Position AD8506CC52AF3731C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.255) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.256) Position 45A106CC52AF379CC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.256) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.257) Position 856C08F253E64291C0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.257) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.257) Position A1D5422E534D5782C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.258) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.258) Position 545863FE52DFD6B0C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.259) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.259) Position 0A13012852B0B1C9C0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.260) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.261) Position 468B02BB54187EF2C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.261) Position 317A159053A85569C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.262) Position 317A159053A85569C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.262) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.263) Position C68D39CE52CD611DC0A86F86 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.263) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.264) Position D73D06CC52AF37BAC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.265) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.265) Position CB5706CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.266) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.266) Position CB4D06CC52AF37ACC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.267) Position 66B1046853907114C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.267) Position 66B1046853907114C0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.268) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.268) Position D62B06CC52AF37ADC0A86F92 has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.269) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:41.269) Position 8583619553D1311BC0A86F9C has no trades and should be deleted!! [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:45.613) SUCCESS [Thread-0xa000ed88:MAIN]
+D: (05-28 19:07:45.614) cahelper finished 2015-05-28 19:07:45 -0400
+
+
+let's check AAMRQ
+select distinct stockkey from mstockalias where symbol='AAMRQ'; 
+> Row 1:
+>   STOCKKEY = X'06a30e21390ae0bdc0a80116'
+select * from mstockalias where STOCKKEY = X'06a30e21390ae0bdc0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'06a40e21390ae0bdc0a80116'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AMR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2011-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'b2242f824ed56d06c0a80146'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AMR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2012-01-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'19a41f2f4f06342ac0a80146'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2012-01-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'812c1fa24f063491c0a80146'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2013-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'50c90fdb54470aeec0a86f92'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 001765106
+>           DATE = TIMESTAMP '2013-12-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AMR CORP
+>     PRIMARYKEY = X'695541ed5448a285c0a86f92'
+>       STOCKKEY = X'06a30e21390ae0bdc0a80116'
+>         SYMBOL = AAMRQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = MG
+select * from mcorporateaction where aliaskey=X'695541ed5448a285c0a86f92' order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = X'695541ed5448a285c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131209|CP_PAY_DT|20140109|CP_AMT|13.190000|CP_DVD_STOCK_TYP|2001|CP_TKR|AAL    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150528:064635
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-09 00:00:00.000000'
+>         BB_IDENTIFIER = AAMRQ     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AAMRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>            PRIMARYKEY = X'ccac696355679acbc0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'ccac696355679acbc0a86f92';
+> Row 1:
+>   _C001 = 316.000000
+	select primarykey from mmanager where loginname='antino';
+> Row 1:
+>   PRIMARYKEY = X'eb623e363c1d6a68c0a801e0'
+select managerkey from mticket where sourcekey=X'ccac696355679acbc0a86f92' ;
+select loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'ccac696355679acbc0a86f92') order by loginname;
+> Row 3:
+>              ALIASKEY = X'695541ed5448a285c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131209|CP_PAY_DT|20140310|CP_AMT|18.420000|CP_DVD_STOCK_TYP|2001|CP_TKR|AAL    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150528:065954
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-10 00:00:00.000000'
+>         BB_IDENTIFIER = AAMRQ     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-03-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AAMRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-03-10 00:00:00.000000'
+>            PRIMARYKEY = X'25a66dd855679deac0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey= X'25a66dd855679deac0a86f92';
+> Row 1:
+>   _C001 = 316.000000
+
+> Row 4:
+>              ALIASKEY = X'695541ed5448a285c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131209|CP_PAY_DT|20140410|CP_AMT|18.639999|CP_DVD_STOCK_TYP|2001|CP_TKR|AAL    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150528:070421
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-10 00:00:00.000000'
+>         BB_IDENTIFIER = AAMRQ     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AAMRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-04-10 00:00:00.000000'
+>            PRIMARYKEY = X'b3586f5f55679ef5c0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey= X'b3586f5f55679ef5c0a86f92';
+
+for some reason antino was not included
+
+buy them manually
+/Marketocracy/Scripts/build/bin/backdatedtrade.py antino AMF 20140109 AAL 1801 0
+Trading 1801.0 shares of American Airlines Group Inc. on Jan 09, 2014 at 0.0
+manager: antino Anthony Sorrentino
+fund: AMF
+building trade (has to load stock prices first)
+price = 0.0
+buying 1801.0 shares of AAL at 0.0 on 20140109
+Debugger() was called!
+invaldating fund prices from Jan 09, 2014
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py antino AMF 20140310 AAL 2516 0
+Trading 2516.0 shares of American Airlines Group Inc. on Mar 10, 2014 at 0.0
+manager: antino Anthony Sorrentino
+fund: AMF
+building trade (has to load stock prices first)
+price = 0.0
+buying 2516.0 shares of AAL at 0.0 on 20140310
+Debugger() was called!
+invaldating fund prices from Mar 10, 2014
+Done
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py antino AMF 20140410 AAL 2564 0
+Trading 2564.0 shares of American Airlines Group Inc. on Apr 10, 2014 at 0.0
+manager: antino Anthony Sorrentino
+fund: AMF
+building trade (has to load stock prices first)
+price = 0.0
+buying 2564.0 shares of AAL at 0.0 on 20140410
+Debugger() was called!
+invaldating fund prices from Apr 10, 2014
+Done
+
+
+let's log out and back in and see if the trades appear for AAL
+
+
+ ACTIONKEY = X'6339039339e7e927c0a801dc'  <--- Stock Dividend Buy 
+
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 09, 2013 		908 	908 	Corporate Action
+Jan 09, 2014 	908 	1801 	2709 	Buy
+Feb 10, 2014 	2709 	2390 	5099 	Corporate Action
+Mar 10, 2014 	5099 	2516 	7615 	Buy
+Apr 10, 2014 	7615 	2564 	10179 	Buy
+Total: 10,179
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2014 	1,801 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+Mar 10, 2014 	2,516 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+Apr 10, 2014 	2,564 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+
+ ACTIONKEY = X'6339039339e7e927c0a801dc'  <--- Stock Dividend Buy 
+
+let's expand these buys
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2014 	1,801 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+Hexkey: 9EB10B625567ACE9C0A86F92
+select * from mticket where primarykey=X'9EB10B625567ACE9C0A86F92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'9eb30b625567ace9c0a86f92'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eb623e363c1d6a68c0a801e0'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9eb10b625567ace9c0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 1801.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'96924ea5544630c7c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey= X'9eb10b625567ace9c0a86f92';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'8cbf0a4a544706ecc0a86f92'
+>                 PRIMARYKEY = X'9eb80b625567aceac0a86f92'
+>                     SHARES = 1801.000000
+>                  TICKETKEY = X'9eb10b625567ace9c0a86f92'
+>                     CLOSED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 0
+
+select * from morder where ticketkey= X'9eb10b625567ace9c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'9eb30b625567ace9c0a86f92'
+>         SHARES = 1801.000000
+>      TICKETKEY = X'9eb10b625567ace9c0a86f92'
+>           TIME = TIMESTAMP '2014-01-09 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 1801
+select * from mticketallocation where ticketkey= X'9eb10b625567ace9c0a86f92';
+> Row 1:
+>      FUNDKEY = X'eb6e3e363c1d6d47c0a801e0'
+>   PRIMARYKEY = X'9eb40b625567ace9c0a86f92'
+>       SHARES = 1801.000000
+>    TICKETKEY = X'9eb10b625567ace9c0a86f92'
+
+set commit false;
+update mticket set ACTIONKEY = X'6339039339e7e927c0a801dc'  where PRIMARYKEY = X'9eb10b625567ace9c0a86f92';
+update mtrade set KINDKEY = X'6339039339e7e927c0a801dc'  where ticketkey = X'9eb10b625567ace9c0a86f92';
+update morder set ACTIONKEY = X'6339039339e7e927c0a801dc'  where ticketkey = X'9eb10b625567ace9c0a86f92';
+commit;
+set commit true;
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 9eb10b625567ace9c0a86f92
+let's invalidate the fund
+select primarykey from mmanager where loginname='antino';
+> Row 1:
+>   PRIMARYKEY = X'eb623e363c1d6a68c0a801e0'
+select primarykey from mportfolio where managerkey= X'eb623e363c1d6a68c0a801e0';
+> Row 1:
+>   PRIMARYKEY = X'eb653e363c1d6a68c0a801e0'
+select symbol, primarykey from mfund where portfoliokey =X'eb653e363c1d6a68c0a801e0' and symbol='AMF'; 
+> Row 1:
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'eb6e3e363c1d6d47c0a801e0'
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund eb6e3e363c1d6d47c0a801e0
+
+
+Mar 10, 2014 	2,516 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+Apr 10, 2014 	2,564 	$0.00 	$0.00 	$0.00  <--- here are the ones I did
+
+
+
+
+ok, the shares are there
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 09, 2013 		908 	908 	Corporate Action
+Jan 09, 2014 	908 	1801 	2709 	Buy
+Feb 10, 2014 	2709 	2390 	5099 	Corporate Action
+Mar 10, 2014 	5099 	2516 	7615 	Buy
+Apr 10, 2014 	7615 	2564 	10179 	Buy
+Total: 10,179
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2014 	1,801 	$0.00 	$0.00 	$0.00
+Mar 10, 2014 	2,516 	$0.00 	$0.00 	$0.00
+Apr 10, 2014 	2,564 	$0.00 	$0.00 	$0.00
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+
+check on 5/29/15 for antino - see if the type of buy gets updated?
+other wise close it out 
+
+6/2/15  antino  ok, he got the shares - but I had to use regular buys
+closing this out 

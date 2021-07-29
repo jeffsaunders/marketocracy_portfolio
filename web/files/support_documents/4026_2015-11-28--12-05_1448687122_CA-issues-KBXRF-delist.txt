@@ -1,0 +1,405 @@
+KBXRF
+date:  11/22/15
+ticker:   KBXRF
+
+yahoo:  nothing 
+
+quantum:  nothing 
+
+oursite:
+ymbol: KBXRF	Name: Kimber Resources, Incorporated	Price: $0.14
+Volume:	Sector: Materials	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+research  stock info  KBXRF   
+ [NEW QUOTE]       
+Corporate Actions for Kimber Resources, Incorporated	  November 22, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for KBXRF	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+02 Aug 13	KBX	KBXR	Change in the ticker (trading) symbol from KBX to KBXR
+06 Aug 13	KBXR	KBXRF	Change in the ticker (trading) symbol from KBXR to KBXRF
+ 	 	 
+left curve	  listing changes for KBXRF	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 02, 2013	AMEX	UA	OTCBB-OTHER	UV	Change in the exchange that KBXR trades on from AMEX to OTCBB-OTHER
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=KBXRF
+
+check MAdmin
+Stock:Kimber Resources, Incorporated  Symbol:KBXRF
+Date: 11/22/2015
+
+36 users found
+
+1	agulbrandsen11	asimraja	beursman	castaways2006	cfalcon	cleaverc	cmunny	crutherglen	dprice1	drac
+2	fkluczny	givlhad	goldman	jaime	jeric	jleibert	jmcgregor	job1925	joe12pack	kama
+3	landisman	loosegun	mathiasfranke	mdino51	mrbeachroach	mycash	njacoby	nocte-volens	pvbe	regleo
+4	silverwood	sriramve	stevenshigematsu	vanya	vek	webern
+
+database
+select distinct stockkey from mstockalias where symbol= 'KBXRF';  
+> Row 1:
+>   STOCKKEY = X'3866154f442ccfe9c0a80146'
+select * from mstockalias where stockkey=X'3866154f442ccfe9c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2005-12-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'3867154f442ccfe9c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'd3bf22fc51fc3976c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'feb1246151fc39e4c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'd17b02c252017f39c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='KBXRF'  order by BB_EFFECTIVE;
+> Row 12:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|KBXRF|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 86179274
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 7804780
+>        BB_COMPANYNAME = Kimber Resources Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = KBXRF   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = KBXRF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2014-01-13 00:00:00.000000'
+>            PRIMARYKEY = X'b00a724152e0b65ac0a86f92'
+>               VERSION = NULL
+> Row 13:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|3136971Z MM|CP_NAME|Invecture Group SA de CV|CP_ID_BB_COMP|15482499|CP_UNIT|Kimber Resources Inc|CP_TOT_AMT|15.414722|CP_ACQUIS_TYP|1|CP_CASH|0.150000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|2.740040|CP_DEBT_FLAG|2|CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|32.743362|CP_CUR_PREMIUM|3.448283|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|CAD|CP_CASH_VAL|0.150000|CP_ARBITRAGE_PROF|0.005000|CP_CUR_TOT_VAL|15.414722|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Legal Adviser;1;Dorsey & Whitney, Stikeman Elliott;13;100.000000;1;Acquirer Legal Adviser;1;Blake Cassels, Paul Weiss;13;100.000000;1;Target Financial & Fairness Op;1;Primary Capital;13;100.000000;|CP_ACQ_TKR|3136971Z MM|CP_ACQ_ID_BB_GLOBAL|BBG000BDT0H8|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FY1978|CP_ACQ_ID_BB_SEC_NUM_DES|3136971Z|CP_ACQ_FEED_SOURCE| |CP_TARGET_TKR|KBR CN|CP_TARGET_ID_BB_GLOBAL|BBG000BBQF46|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001GFFDJ1|CP_TARGET_ID_BB_SEC_NUM_DES|KBR|CP_TARGET_FEED_SOURCE|CN|CP_NOTES|OFF EFF: 12/02/13: ACQ'R OWNS 79.59% OF TGT SHARES.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81830520
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 7804780
+>        BB_COMPANYNAME = Kimber Resources Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = KBXRF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = KBXRF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>            PRIMARYKEY = X'77346e1452e0b32ec0a86f92'
+>               VERSION = NULL
+> Row 14:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|3136971Z MM|CP_NAME|Invecture Group SA de CV|CP_ID_BB_COMP|15482499|CP_UNIT|Kimber Resources Inc|CP_TOT_AMT|15.414722|CP_ACQUIS_TYP|1|CP_CASH|0.150000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|2.740040|CP_DEBT_FLAG|2|CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|32.743362|CP_CUR_PREMIUM|3.448283|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|CAD|CP_CASH_VAL|0.150000|CP_ARBITRAGE_PROF|0.005000|CP_CUR_TOT_VAL|15.414722|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Legal Adviser;1;Dorsey & Whitney, Stikeman Elliott;13;100.000000;1;Acquirer Legal Adviser;1;Blake Cassels, Paul Weiss;13;100.000000;1;Target Financial & Fairness Op;1;Primary Capital;13;100.000000;|CP_ACQ_TKR|3136971Z MM|CP_ACQ_ID_BB_GLOBAL|BBG000BDT0H8|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FY1978|CP_ACQ_ID_BB_SEC_NUM_DES|3136971Z|CP_ACQ_FEED_SOURCE| |CP_TARGET_TKR|KBR CN|CP_TARGET_ID_BB_GLOBAL|BBG000BBQF46|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001GFFDJ1|CP_TARGET_ID_BB_SEC_NUM_DES|KBR|CP_TARGET_FEED_SOURCE|CN|CP_NOTES|OFF EFF: 12/02/13: ACQ'R OWNS 79.59% OF TGT SHARES.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81830520
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 7804780
+>        BB_COMPANYNAME = Kimber Resources Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = KBXRF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = KBXRF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-09 00:00:00.000000'
+>            PRIMARYKEY = X'acb6709552e0b525c0a86f92'
+>               VERSION = NULL
+> Row 15:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|3136971Z MM|CP_NAME|Invecture Group SA de CV|CP_ID_BB_COMP|15482499|CP_UNIT|Kimber Resources Inc|CP_TOT_AMT|15.414722|CP_ACQUIS_TYP|1|CP_CASH|0.150000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|2.740040|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|32.743362|CP_CUR_PREMIUM|3.448276|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|CAD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|15.414722|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Legal Adviser;1;Dorsey & Whitney, Stikeman Elliott;13;100.000000;1;Acquirer Legal Adviser;1;Blake Cassels, Paul Weiss;13;100.000000;1;Target Financial & Fairness Op;1;Primary Capital;13;100.000000;|CP_ACQ_TKR|3136971Z MM|CP_ACQ_ID_BB_GLOBAL|BBG000BDT0H8|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FY1978|CP_ACQ_ID_BB_SEC_NUM_DES|3136971Z|CP_ACQ_FEED_SOURCE| |CP_TARGET_TKR|KBR CN|CP_TARGET_ID_BB_GLOBAL|BBG000BBQF46|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001GFFDJ1|CP_TARGET_ID_BB_SEC_NUM_DES|KBR|CP_TARGET_FEED_SOURCE|CN|CP_NOTES|OFF EFF: 12/02/13: ACQ'R OWNS 79.59% OF TGT SHARES.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81830520
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 7804780
+>        BB_COMPANYNAME = Kimber Resources Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = KBXRF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = KBXRF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-13 00:00:00.000000'
+>            PRIMARYKEY = X'498c751352e0b876c0a86f92'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock KBXRF
+>>>> dbtool started at 2015-11-22 09:11:00 -0500
+stock: KBXRF
+  PK       : [3866154F442CCFE9C0A80146]
+  companyID: [16160]
+  symbol   : [KBXRF]
+  name     : [Kimber Resources, Incorporated]
+  date     : [2013-08-06 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-22 09:11:00 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16160
+2014-01-04 (Sat) [4751]: <WEEKEND>
+2014-01-05 (Sun) [4752]: <WEEKEND>
+2014-01-06 (Mon) [4753]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:12200 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+2014-01-07 (Tue) [4754]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:5000 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+2014-01-08 (Wed) [4755]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:300 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+2014-01-09 (Thu) [4756]: O:0.1400 H:0.1400 L:0.1400 C:0.1400 V:300 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+2014-01-10 (Fri) [4757]: O:0.1300 H:0.1300 L:0.1300 C:0.1300 V:10000 TSO:62086 A:0.1300 R:1.0000 CA:0.0000
+2014-01-11 (Sat) [4758]: <WEEKEND>
+2014-01-12 (Sun) [4759]: <WEEKEND>
+2014-01-13 (Mon) [4760]: O:0.1300 H:0.1400 L:0.1300 C:0.1400 V:430398 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'3866154f442ccfe9c0a80146' and shares > 0 order by closed; 
+> Row 304:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-11-11 15:51:00.000000'
+>        COMMENT = 
+>     COMMISSION = 41.596876
+>   CURRENTORDER = X'63a405d2528110a5c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'42133b974e16d830c0a80134'
+>       MODIFIED = NULL
+>            NET = 873.534396
+>         OPENED = TIMESTAMP '2013-11-11 12:15:17.000000'
+>          PRICE = 0.144625
+>     PRIMARYKEY = X'63a205d2528110a5c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 6040.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'3866154f442ccfe9c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'3866154f442ccfe9c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'3866154f442ccfe9c0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST:   1/13/2014  CP_CASH|0.150000 
+there are 36 members who hold this stock
+quantum: nothing 
+last ticket: 2013-11-11  PRICE = 0.144625
+last price:  2014-01-13 (Mon) [4760]: O:0.1300 H:0.1400 L:0.1300 C:0.1400 V:430398 TSO:62086 A:0.1400 R:1.0000 CA:0.0000
+
+going with 20140113 0.15
+
+/Marketocracy/bin/cahelper -symbol  KBXRF  -effective 20140113 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.15 -acqShare 0 -purchaser KBXRF   >& /Users/build/caout/KBXRF.20151122-ACQUIS.out 
+KBXRF.20151122-ACQUIS.out
+stocks1:~/caout build$ tail -f KBXRF.20151122-ACQUIS.out
+D: (11-22 09:13:51.118) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-22 09:14:15.156) cahelper started on 2015-11-22 09:14:15 -0500
+
+D: (11-22 09:14:15.549) There are [0] open tickets for KBXRF on 20140113
+D: (11-22 09:14:16.274) StockFileLoad Version:4.0
+D: (11-22 09:14:16.274) Loading Stock Data
+D: (11-22 09:14:53.893) Building Lookup Index
+D: (11-22 09:14:59.484) Finished Building Index
+D: (11-22 09:15:03.846) Finished Loading Stock Data
+D: (11-22 09:15:03.972) Connection to 192.168.111.172:6666 succeeded
+D: (11-22 09:15:05.844) {
+    "ACQUIRED_STOCK" = KBXRF; 
+    "ACQUIRING_STOCK" = "KBXRF_FIX"; 
+    AMOUNT = 0.15; 
+    APPLIED = 1; 
+    DATE = 20140113; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "KBXRF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-22 09:15:11.641) SUCCESS
+D: (11-22 09:15:11.641) cahelper finished 2015-11-22 09:15:11 -0500
+Check the results 
+select * from mstockalias where stockkey= X'3866154f442ccfe9c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2005-12-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'3867154f442ccfe9c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'd3bf22fc51fc3976c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'feb1246151fc39e4c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2013-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'd17b02c252017f39c0a80146'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49435N101
+>           DATE = TIMESTAMP '2014-01-13 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Kimber Resources, Incorporated
+>     PRIMARYKEY = X'6eba31c95651cdb7c0a86fab'
+>       STOCKKEY = X'3866154f442ccfe9c0a80146'
+>         SYMBOL = KBXRF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'6eba31c95651cdb7c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'6eba31c95651cdb7c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|KBXRF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.150000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151122:091415
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-13 00:00:00.000000'
+>         BB_IDENTIFIER = KBXRF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = KBXRF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-13 00:00:00.000000'
+>            PRIMARYKEY = X'6eb431c95651cdb7c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'6eb431c95651cdb7c0a86fab';
+> Row 1:
+>   _C001 = 55.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6eb431c95651cdb7c0a86fab'));
+there are 55 fundkeys, save to CA issues KBXRF fundkeys.txt
+
+For Beta case
+KBXRF no longer trades but is still active on our site - need to delist 
+
+check on 11/27/15   invalidate funds
+check MAdmin   clear
+
+KBXRF has been acquired	right curve
+ 	 	
+Kimber Resources, Incorporated acquired by a private company on 2014-01-13 00:00:00.
+
+invalidate reprice and close 
+
+
+

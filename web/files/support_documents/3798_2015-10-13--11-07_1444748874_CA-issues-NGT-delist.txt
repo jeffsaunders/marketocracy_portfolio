@@ -1,0 +1,250 @@
+NGT
+date:  
+ticker:  
+
+yahoo:
+
+quantum:
+Eastern American Natural Gas Trust Depositary Units
+Ticker Symbol: NGT*     CUSIP: 276217106     Exchange: NYSE
+Security Type:   U.S. Royalty Trust
+* NOTE: This security is no longer trading as of 5/31/13
+QUANTUMONLINE.COM SECURITY DESCRIPTION:  Eastern American Natural Gas Trust is a grantor trust, which holds net profit interests in approximately 650 producing gas wells located in West Virginia and Pennsylvania. The Trust depository units include an interest in United States Treasury obligations with a face value of $20.00 per depository unit at maturity in 2013. The trust expires as of 5/15/2013. This security Is subject to original issue discount (OID) accruals per information we have received from QOL users.
+Notes:  May 22, 2013 — EASTERN AMERICAN NATURAL GAS TRUST (NYSE—NGT) (the “Trust”) reiterated today that May 24, 2013 will be the last day of trading of the Depositary Units on the New York Stock Exchange, and announced that it will close the stock transfer books at the close of business on May 31, 2013. As previously announced, the close of business on May 31, 2013 will be the record date for all remaining distributions.
+IPO - 3/15/1993 - 5.90 Million Units @ $20.50/unit.
+Small Cap Stock -   Market Value $ 163 Million
+
+oursite:
+Symbol: NGT	Name: EASTERN AMERNATLGASTR'SPERS'	Price: $20.90
+Volume:	Sector: Energy	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:EASTERN AMERNATLGASTR'SPERS'  Symbol:NGT
+Date: 10/12/2015
+
+61 users found
+
+1	DarthCidious	aanaz	ajs11	applesauce	aproperrogue	bbelluche	bdelong	beuler	bgitarts	bosilovic
+2	brodav	bullwinkle	cmiller	colineddington	conta001	cubhawk42	deacon5	djobrien1981	dliddane	donquixote
+3	ewalton	gsilcott	guru_2.0	jardantz	jdonehoo	jefmeister	jfernandez	jholler	jprobyn	kirsty
+4	liamv	licheng_apl	loosegun	loso_way	madubil	maquisard	maxie3	mdacorta	mitm01	mriegelman
+5	mwerfel	ndk	obrunie	ralward	reddog4life553	rfaill	robert_little	rserrell	rusfarmhouse	rymandtimin
+6	samkung	simonemarlia	spaceflyer	stockmiser	tspwr	tthai	tymer	upgrade_this	valuehighlight	vooch
+7	wmorales	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'NGT';  
+> Row 1:
+>   STOCKKEY = X'11cb0e21390affc4c0a80116'
+select * from mstockalias where stockkey=X'11cb0e21390affc4c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 276217106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = EASTERN AMERNATLGASTR'SPERS'
+>     PRIMARYKEY = X'11cc0e21390affc4c0a80116'
+>       STOCKKEY = X'11cb0e21390affc4c0a80116'
+>         SYMBOL = NGT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NGT'  order by BB_EFFECTIVE;
+> Row 15:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|NGT|CP_DELIST_REASON|26|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 76880585
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 117048
+>        BB_COMPANYNAME = Eastern American Natural Gas
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-05-28 00:00:00.000000'
+>         BB_IDENTIFIER = NGT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NGT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-05-08 00:00:00.000000'
+>            PRIMARYKEY = X'a23a2691518ad266c0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NGT
+>>>> dbtool started at 2015-10-12 16:57:23 -0400
+stock: NGT
+  PK       : [11CB0E21390AFFC4C0A80116]
+  companyID: [4867]
+  symbol   : [NGT]
+  name     : [EASTERN AMERNATLGASTR'SPERS']
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-12 16:57:24 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4867
+2013-05-17 (Fri) [4519]: O:20.6500 H:20.8700 L:20.6500 C:20.8600 V:5212 TSO:5900 A:20.8600 R:1.0000 CA:20.4139
+2013-05-18 (Sat) [4520]: <WEEKEND>
+2013-05-19 (Sun) [4521]: <WEEKEND>
+2013-05-20 (Mon) [4522]: O:20.7900 H:20.8600 L:20.7800 C:20.8100 V:7558 TSO:5900 A:20.8100 R:1.0000 CA:20.4139
+2013-05-21 (Tue) [4523]: O:20.6500 H:20.9000 L:20.6500 C:20.9000 V:4700 TSO:5900 A:20.9000 R:1.0000 CA:20.4139
+2013-05-22 (Wed) [4524]: O:20.8100 H:20.8800 L:20.6900 C:20.8800 V:4145 TSO:5900 A:20.8800 R:1.0000 CA:20.4139
+2013-05-23 (Thu) [4525]: O:20.8800 H:20.8800 L:20.8800 C:20.8800 V:4145 TSO:5900 A:20.8800 R:1.0000 CA:20.4139
+2013-05-24 (Fri) [4526]: O:20.8700 H:20.9100 L:20.8500 C:20.9000 V:9541 TSO:5900 A:20.9000 R:1.0000 CA:20.4139
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'11cb0e21390affc4c0a80116' and shares > 0 order by closed; 
+> Row 478:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-06-14 14:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 55.000000
+>   CURRENTORDER = X'9f8a02fb4fda0bc9c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'894e6d844ec2be3fc0a80132'
+>       MODIFIED = NULL
+>            NET = 23172.109600
+>         OPENED = TIMESTAMP '2012-06-14 12:05:29.000000'
+>          PRICE = 21.065554
+>     PRIMARYKEY = X'9f8802fb4fda0bc9c0a80135'
+>         SECFEE = 0.530000
+>         SHARES = 1100.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'11cb0e21390affc4c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'11cb0e21390affc4c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'11cb0e21390affc4c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'11cb0e21390affc4c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 61 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 5/31/13
+last ticket:  2012-06-14
+last price:  PRICE = 21.065554
+
+goonig with  May 24, 2013  20130524  20.00
+
+/Marketocracy/bin/cahelper -symbol  NGT  -effective 20130524 -type ACQUIS -exchange UN -acqType 1 -acqCash 20.00 -acqShare 0 -purchaser NGT   >& /Users/build/caout/NGT.20151012-DELIST.out
+NGT.20151012-DELIST.out
+stocks1:~/caout build$ tail -f NGT.20151012-DELIST.out
+D: (10-12 17:07:54.640) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-12 17:08:20.364) cahelper started on 2015-10-12 17:08:20 -0400
+
+D: (10-12 17:08:20.622) There are [0] open tickets for NGT on 20130524
+D: (10-12 17:08:20.951) StockFileLoad Version:4.0
+D: (10-12 17:08:20.952) Loading Stock Data
+D: (10-12 17:09:00.888) Building Lookup Index
+D: (10-12 17:09:06.891) Finished Building Index
+D: (10-12 17:09:10.988) Finished Loading Stock Data
+D: (10-12 17:09:11.113) Connection to 192.168.111.172:6666 succeeded
+D: (10-12 17:09:14.659) {
+    "ACQUIRED_STOCK" = NGT; 
+    "ACQUIRING_STOCK" = "NGT_FIX"; 
+    AMOUNT = 20; 
+    APPLIED = 1; 
+    DATE = 20130524; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NGT_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-12 17:09:20.148) SUCCESS
+D: (10-12 17:09:20.148) cahelper finished 2015-10-12 17:09:20 -0400
+Check the results 
+select * from mstockalias where stockkey= X'11cb0e21390affc4c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 276217106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = EASTERN AMERNATLGASTR'SPERS'
+>     PRIMARYKEY = X'11cc0e21390affc4c0a80116'
+>       STOCKKEY = X'11cb0e21390affc4c0a80116'
+>         SYMBOL = NGT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 276217106
+>           DATE = TIMESTAMP '2013-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = EASTERN AMERNATLGASTR'SPERS'
+>     PRIMARYKEY = X'96174015561c2144c0a86fab'
+>       STOCKKEY = X'11cb0e21390affc4c0a80116'
+>         SYMBOL = NGT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'96174015561c2144c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'96174015561c2144c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NGT  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|20.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151012:050820
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-05-24 00:00:00.000000'
+>         BB_IDENTIFIER = NGT_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NGT_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-05-24 00:00:00.000000'
+>            PRIMARYKEY = X'96114015561c2144c0a86fab'
+>               VERSION = NULL
+
+
+
+select count(*) from mticket where sourcekey = X'96114015561c2144c0a86fab';
+> Row 1:
+>   _C001 = 92.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'96114015561c2144c0a86fab'));
+there are 92 fundkeys, save to CA issues NGT fundkeys.txt
+
+For Beta case
+NGT no longer trades but is still active on our site - need to delist 
+
+check on 10/13/15   invalidate funds
+check MAdmin  clear 
+
+
+ NGT has been acquired	right curve
+ 	 	
+EASTERN AMERNATLGASTR'SPERS' acquired by a private company on 2013-05-24 00:00:00.
+
+invalidate - reprice and close 
+
+
+
+
+

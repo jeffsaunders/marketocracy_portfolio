@@ -1,0 +1,127 @@
+date:  2/3/15
+request to add a stock
+
+Ticket Number:	2303
+Portfolio Username:	srshah
+Ticker Symbol:	LNVGY
+Corporate Action Type:
+Other
+Subject:
+Adding Lenovo Group to virtual trading
+Description:
+Hi, just wanted to point out that the Lenovo ADR (LNVGY) is not registered in the system.
+Thank you.
+
+yahoo
+Lenovo Group Limited (LNVGY) -Other OTC
+27.95  1.89(7.25%) 12:02PM EST
+
+quantum  not found
+
+xignite  not there
+
+select * from mcorporateaction where BB_SECID='LNVGY';
+155 CAs
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where BB_SECID='LNVGY';
+> Row 1:
+>   BB_ACTIONMNEMONIC = CHG_TKR
+> Row 2:
+>   BB_ACTIONMNEMONIC = DIVEST
+> Row 3:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 4:
+>   BB_ACTIONMNEMONIC = STOCK_BUY
+> Row 5:
+>   BB_ACTIONMNEMONIC = ACQUIS
+> Row 6:
+>   BB_ACTIONMNEMONIC = SH_HOLDER_MEET
+
+
+investing.com  got the cusip:  526250105
+
+LNVGY|Q|526250105|Lenovo Group Limited|20150203
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='LNVGY';
+> Row 1:
+>   STOCKKEY = X'6991032054d1099cc0a86f92'
+
+select * from mstockalias where STOCKKEY = X'6991032054d1099cc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 526250105
+>           DATE = TIMESTAMP '2015-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lenovo Group Limited
+>     PRIMARYKEY = X'6992032054d1099cc0a86f92'
+>       STOCKKEY = X'6991032054d1099cc0a86f92'
+>         SYMBOL = LNVGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+investing.com:  Market Cap  14.59B   that is large cap
+how about growth  LG
+
+update mstockalias set STYLEKEY='LG' where PRIMARYKEY = X'6992032054d1099cc0a86f92';
+what do they do?
+Business Summary	 
+Lenovo Group Limited, together with its subsidiaries, develops, manufactures, and markets technology products and services. It operates through China, Asia Pacific, Europe-Middle East-Africa, and Americas segments. The company offers commercial and consumer personal computers, as well as servers and workstations; mobile Internet devices, including tablets and smart phones; and notebooks and desktops. It also provides accessories and parts, audio and video products, batteries and power products, cables and connectors, carrying cases, docks and port replicators, keyboards and mice, memory products, monitor accessories, monitors, security and storage products, tablet accessories, and wireless and networking products. In addition, the company trades in mobile phones and accessories; retails and services consumer electronic products; offers repair services for computer hardware and software systems; and researches and develops mobile software, as well as operates as a procurement agency. Lenovo Group Limited has a strategic alliance with Zenoss, Inc. to improve IT service delivery. The company was founded in 1984 and is headquartered in Beijing, China, and is considered as a Red Chip company due to its listing on the Hong Kong Stock Exchange.
+
+45202030	Technology Hardware, Storage & Peripherals
+	Manufacturers of cellular phones, personal computers, servers, electronic computer components and peripherals. Includes data storage components, motherboards, audio and video cards, monitors, keyboards, printers, and other peripherals. Excludes semiconductors classified in the Semiconductors Sub-Industry.
+
+update mstockalias set GICSKEY='45202030' where PRIMARYKEY = X'6992032054d1099cc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 526250105
+>           DATE = TIMESTAMP '2015-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lenovo Group Limited
+>     PRIMARYKEY = X'6992032054d1099cc0a86f92'
+>       STOCKKEY = X'6991032054d1099cc0a86f92'
+>         SYMBOL = LNVGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202030
+>       STYLEKEY = LG
+
+
+I have added this.   it is in the database - check our site on 2/3/15 make sure it is there and do a sample buy
+
+2/14/15 - LNVGY is there on our site 
+select count(*) from mticket where stockkey=X'6991032054d1099cc0a86f92';
+> Row 1:
+>   _C001 = 1.000000
+
+select * from mticket where stockkey=X'6991032054d1099cc0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-02-04 14:58:45.000000'
+>        COMMENT = NULL
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'61a332ea54d249e7c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'503a6a3f4904f9cac0a80135'
+>       MODIFIED = NULL
+>            NET = 59241.082000
+>         OPENED = TIMESTAMP '2015-02-04 11:33:43.000000'
+>          PRICE = 29.620541
+>     PRIMARYKEY = X'61a132ea54d249e7c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'6991032054d1099cc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select loginname from mmanager where primarykey=X'503a6a3f4904f9cac0a80135';
+> Row 1:
+>   LOGINNAME = srshah
+
+we have one member who bought - closing this out
+

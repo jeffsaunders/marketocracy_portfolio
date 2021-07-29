@@ -1,0 +1,89 @@
+date: 11/2/15
+ONE
+Type
+Portfolio Platform |
+Ticket
+3914
+Priority
+Medium
+Status
+Open
+Member Name
+A A
+Username
+ascent
+Fund Symbols
+AMF
+Stock Tickers
+N/A
+Description / Resources:
+Mon 11/02/2015 at 12:55 PM
+
+Short Position - System recommended I submit a ticket for an unexplained short position.
+
+member ascent  fund  AMF
+
+short?  31287 short tried to expand - looks like there might be a collision because I see that he did sell
+and has 0 balance in this
+
+check legacy
+no short there.
+check the ONE trades
+currently has 0 shares
+
+expanded the trades:
+LEDGER
+Date	Start	Change	End	Type
+Oct 26, 2015		20479	20479	Buy
+Oct 28, 2015	20479	10802	31281	Buy
+Oct 30, 2015	31281	-31281		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 26, 2015	20,479	$1,023.95	$61,856.59	$3.02
+Oct 28, 2015	10,802	$540.10	$32,189.92	$2.98
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 30, 2015	31,281	$1,564.05	$1.59	$89,522.07	$2.86
+ 	 	 
+
+
+is there more than one stockkey?
+
+select distinct stockkey from mstockalias where symbol='ONE';
+> Row 1:
+>   STOCKKEY = X'0acb0e21390aec5ec0a80116'
+> Row 2:
+>   STOCKKEY = X'd3f634f74c1a8e4fc0a80146'
+
+there are two
+> ONE 1:
+>   STOCKKEY = X'0acb0e21390aec5ec0a80116'
+select * from mstockalias where STOCKKEY=X'0acb0e21390aec5ec0a80116' order by "date";
+this one is delsited 
+> ONE 2:
+>   STOCKKEY = X'd3f634f74c1a8e4fc0a80146'
+select * from mstockalias where STOCKKEY=X'd3f634f74c1a8e4fc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42983D104
+>           DATE = TIMESTAMP '2010-06-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Higher One Holdings Inc
+>     PRIMARYKEY = X'd3f734f74c1a8e4fc0a80146'
+>       STOCKKEY = X'd3f634f74c1a8e4fc0a80146'
+>         SYMBOL = ONE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = UU
+
+
+no collision
+I did a GeT trade history and then a reload
+got rid of the short 
+

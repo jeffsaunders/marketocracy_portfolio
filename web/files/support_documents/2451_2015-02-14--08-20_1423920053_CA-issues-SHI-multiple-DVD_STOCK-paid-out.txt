@@ -1,0 +1,1582 @@
+date: 2/13/15
+SHI issue raised by Thomas Krouse
+
+Ticket Number:	2451
+Portfolio Username:	advisorcfa
+Ticker Symbol:	SHI
+Corporate Action Type:
+Other
+Subject:
+Duplicate CAs posted for SHI (incorrect stock dividends)
+Description:
+Hi, Multiple duplicate CAs seem to have been posted for SHI in Portfolio. There was only one "50% stock dividend" [same as a 3 for 2 stock split] which was effective Dec 11, 2013, but Portfolio shows four duplicate transactions on the same Effective Date (three extra) as well as an additional inaccurate one (as far as I can tell) effective Dec 31, 2014. All of these CAs have the same Record Date. I believe that three of the 2013 and the 2014 CAs should be deleted. Independent details of the actual dividend history can be found here: http://www.dividend.com/dividend-stocks/uncategorized/other/shi-sinopec-shanghai-petrochemical-co-ltd-adr-sponsored-repr-cl-h-shs/ Portfolio currently displays the following Corporate Actions for SHI: stock dividends paid by SHI Effective Date Record Date Pay Date Percent Symbol Description 11 Dec 13 24 Oct 13 10 Dec 13 50 SHI SHI declared a dividend of 50 percent in stock SHI. 11 Dec 13 24 Oct 13 10 Dec 13 50 SHI SHI declared a dividend of 50 percent in stock SHI. 11 Dec 13 24 Oct 13 10 Dec 13 50 SHI SHI declared a dividend of 50 percent in stock SHI. 11 Dec 13 24 Oct 13 10 Dec 13 50 SHI SHI declared a dividend of 50 percent in stock SHI. 31 Dec 14 24 Oct 13 10 Dec 13 50 SHI SHI declared a dividend of 50 percent in stock SHI. Thank you, ~Thomas
+Thank you.
+
+yahoo:
+Sinopec Shanghai Petrochemical Co. Ltd. (SHI) -NYSE   Watchlist
+30.16  1.15(3.96%) Feb 12, 4:02PM EST
+
+quantum:
+Sinopec Shanghai Petrochemical Co. Ltd ADR
+Ticker Symbol: SHI     CUSIP: Y80373106     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Shanghai Petrochemical is one of the largest petrochemical companies in China in terms of sales revenue, and was one of the first Chinese companies to complete a global securities offering. Located in the Jinshan District in southwest Shanghai, the Group is a highly-integrated petrochemicals enterprise which processes crude oil into a broad range of products such as synthetic fibres, resins and plastics, intermediate petrochemicals and petroleum products.
+ADR with an ADR ratio of 1:100
+Large Cap Stock -   Market Value $ 3.5 Billion
+
+xignite:   it's there  82935M109
+
+
+Dividend.com 
+Payout Amount	Declared Date	Ex-Dividend Date	Record Date	Pay Date ▼	Qualified Dividend?	Payout Type	Frequency
+
+3-for-2		2013-12-11	2013-10-24	2013-12-10	NM	Stock Split	NM
+
+
+our site:
+Symbol: SHI	Name: SINOPEC SHANGHAI PETROCHEM CO	Price: $30.16
+Volume: 5,676	Sector: Materials	Change: $0.00
+Short Volume: 9,113	Style: Small Cap : Blend	Market Cap: $2,171,520,000
+Avg Volume: 9,113	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $29.59	Year High: $35.30	High: $30.22
+200 Day Ave: $30.05	Year Low: $22.73	Low: $30.08
+
+CAs
+cash dividends paid by SHI	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+10 May 00	10 May 00	10 May 00	N/A	$0.65	Dividend amount:0.649 per share.
+10 May 01	14 May 01		1	$0.72	Dividend amount:0.7248 per share.
+14 May 03	16 May 03		1	$0.60	Dividend amount:0.604 per share.
+12 May 04	14 May 04		1	$0.97	Dividend amount:0.9661 per share.
+23 May 05	25 May 05		1	$2.42	Dividend amount:2.4165 per share.
+10 May 06	12 May 06		1	$1.25	Dividend amount:1.24781 per share.
+15 May 07	17 May 07		1	$0.52	Dividend amount:0.5191 per share.
+06 May 08	08 May 08		1	$1.28	Dividend amount:1.284 per share.
+18 May 10	20 May 10		1	$0.44	Dividend amount:0.439508 per share.
+29 Jun 11	01 Jul 11	08 Aug 11	1	$1.55	Dividend amount:1.546742 per share.
+29 Jun 12	03 Jul 12	06 Aug 12	1	$0.79	Dividend amount:0.785064 per share.
+22 Oct 13	24 Oct 13	16 Dec 13	1	$0.82	Dividend amount:0.816833 per share.
+26 Jun 14	30 Jun 14	28 Jul 14	1	$0.80	Dividend amount:0.803264 per share.
+ 	 	 
+	  stock dividends paid by SHI	
+ 	 	
+Effective Date	Record Date	Pay Date	Percent	Symbol	Description
+11 Dec 13	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+11 Dec 13	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+11 Dec 13	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+11 Dec 13	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+31 Dec 14	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+
+sure enough we do show 5 DVD_STOCK dividends  
+
+Check the database 
+
+select distinct stockkey from mstockalias where symbol='SHI';
+> Row 1:
+>   STOCKKEY = X'b14a1029390b38aac0a80116'
+
+select * from mstockalias where STOCKKEY = X'b14a1029390b38aac0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82935M109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = SINOPEC SHANGHAI PETROCHEM CO
+>     PRIMARYKEY = X'b14b1029390b38aac0a80116'
+>       STOCKKEY = X'b14a1029390b38aac0a80116'
+>         SYMBOL = SHI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101010
+>       STYLEKEY = SB
+
+select * from mcorporateaction where aliaskey=X'b14b1029390b38aac0a80116' and BB_ACTIONMNEMONIC='DVD_STOCK' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-11 00:00:00.000000'
+>            PRIMARYKEY = X'1ed2700c5230f351c0a80146'
+>               VERSION = NULL
+	check on mtickets:
+	select count(*) from mticket where sourcekey=X'1ed2700c5230f351c0a80146';
+	> Row 1:
+	>   _C001 = 280.000000
+
+> Row 2:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-10-29 00:00:00.000000'
+>            PRIMARYKEY = X'a951275752703b0bc0a80146'
+>               VERSION = NULL
+	check on mtickets:
+	select count(*) from mticket where sourcekey=X'a951275752703b0bc0a80146';
+	> Row 1:
+	>   _C001 = 280.000000
+
+
+> Row 3:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'21113eae52e0901bc0a86f92'
+>               VERSION = NULL
+	check on mtickets:
+	select count(*) from mticket where sourcekey=X'21113eae52e0901bc0a86f92';
+	> Row 1:
+	>   _C001 = 280.000000
+
+> Row 4:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'a2b8435952e09394c0a86f92'
+>               VERSION = NULL
+	check on mtickets:
+	select count(*) from mticket where sourcekey=X'a2b8435952e09394c0a86f92';
+	> Row 1:
+	>   _C001 = 280.000000
+
+> Row 5:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20141231|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>            PRIMARYKEY = X'f46b064f522e505cc0a80146'
+>               VERSION = NULL
+	check on mtickets:
+	select count(*) from mticket where sourcekey=X'f46b064f522e505cc0a80146';
+	> Row 1:
+	>   _C001 = 280.000000
+
+pay dates are all 20131210   12/10/2013
+
+login as advisorcfa
+
+ your holdings of SHI	
+ 	 	
+Fund	Shares	Value	Portion of fund
+CHINA	802	 $24,188.32	 3.09%   <---- expand 
+RUSSR	 0	 N/A	 N/A
+ENRGY	0	 $.00	 0.00%
+AGBF	0	 $.00	 0.00%
+ASHRT	-27	 -$814.32	 0.12%
+TKSLF	25	 $754.00	 0.13%
+GFINL	 0	 N/A	 N/A
+
+let's expand CHINA
+LEDGER
+Date	Start	Change	End	Type
+Jan 09, 2004		1000	1000	Buy
+Jan 20, 2004	1000	500	1500	Buy
+Jul 26, 2005	1500	1500	3000	Buy
+Apr 20, 2007	3000	-1000	2000	Sell
+Apr 27, 2007	2000	-500	1500	Sell
+Jan 31, 2008	1500	300	1800	Buy
+May 16, 2008	1800	-200	1600	Sell
+May 15, 2009	1600	-411	1189	Sell
+Jul 09, 2009	1189	-1089	100	Sell
+Dec 10, 2013	100	657	757	Corporate Action
+Apr 09, 2014	757	45	802	Buy
+Total: 802
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 9, 2004	1,000	$50.00	$43,592.20	$43.59
+Jan 20, 2004	500	$25.00	$21,400.00	$42.80
+Jul 26, 2005	1,500	$75.00	$52,455.00	$34.97
+Jan 31, 2008	300	$15.00	$13,490.25	$44.97
+Apr 9, 2014	45	$2.25	$1,133.43	$25.19
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 20, 2007	300	$15.00	$0.56	$18,218.24	$60.73
+Apr 20, 2007	700	$35.00	$1.32	$42,880.68	$61.26
+Apr 27, 2007	500	$25.00	$0.93	$29,998.05	$60.00
+May 16, 2008	200	$10.00	$0.25	$7,994.95	$39.97
+May 15, 2009	411	$20.55	$0.35	$13,735.89	$33.42
+Jul 9, 2009	1,089	$54.45	$0.99	$38,103.12	$34.99
+ 	 	 
+	 corporate actions	
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Dec 11, 2013	SHI declared a dividend of 50 percent in stock SHI.
+Dec 11, 2013	SHI declared a dividend of 50 percent in stock SHI.
+Dec 31, 2014	SHI declared a dividend of 50 percent in stock SHI.
+Dec 11, 2013	SHI declared a dividend of 50 percent in stock SHI.
+Dec 11, 2013	SHI declared a dividend of 50 percent in stock SHI.
+
+Let's look at advisorcfa's ledger for CHINA on 12/10/2013
+ trades on December 10, 2013	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	SHI	50	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	SHI	112	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	SHI	75	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	SHI	168	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	SHI	252	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+He started with 100 shares
+first   3/2 * 100 = 150  ( got 50 shares)
+second   3/2 * 150 = 225  (got 75 shares)
+third  3/2 * 225 = 337 (got 112 shares)
+fourth  3/2 * 337 = 505 (got 168 shares)
+fifth  3/2 * 505 = 757 (got 252 shares)
+
+Let's look at MAdmin to see who holds this SHI on 12/10/2013
+Stock:SINOPEC SHANGHAI PETROCHEM CO  Symbol:SHI
+Date: 12/10/2013
+
+171 users found
+
+1	4tigres	Investacons	Rational_Investor	abadazz	acanete	advisorcfa	ajmorris	ajyang	akrustev	albertson
+2	alexs	alpine9wc	anrosen	anyhow	arnaldomolina	asalvador	asianbi	aspire2004	atomheart	azaharias
+3	bbonomini	bcchill	biged	bigorangefan	bquortrup1	bwoyat	canuckerus	chaimshmerel	chih22	claryn
+4	cmaraschino	cmckinzie	cocobear	collin2985	crsungods	cstelmachowski	danhtcat	dbautz	derrickho	doppelaar
+5	dravenace	dskuncaitis	dweiss1975	dws90	dzpan	dzpan84	egoralski	ej	enroncfo	eschmitzva
+6	eugene_07	expe107	fire_light_x	flexoffset	followthetrader	furndog	fws	gchellam	gedwards	gemfire
+7	gfontana	gkalisch	gordo	grahamnewman	greggorysmith	grete65416	gtan	hdb	hedgething	hernandez
+8	hinrich	hshaub	hussainrp	hwornath	ijersey	island	j-schreiber	jaikman	jdj	jeffunderwood
+9	jehfes	jfrancois	jgarzik	jhamer	jinsan	jlkappa1	jlorber	joeledgerton	john97	kaddo
+10	kama	katep	katzenbach	kb3054	kcgreg	kikola	klandragan	knobloch	knox	ladiesman2k7
+11	leftylb	leijin	lingram	lisa_villeneuve	lordprime	lou.liu	lwroblewski	mabot9	marco907	marketocracy
+12	martyf	mateok05	mchristy	mdacorta	milkrate	moydodyr	mrardies	mrgill3	msi_ham	msutterus
+13	mtalisman	myeh	natalyat	natural	ngqi	observe	oduvall	ongsiapco	optimus25	paintgod111
+14	pascalmurphy	perkdogz	peterng25	phatyou	play4bull	psionman	rabbit75	ramsaca	rancid514	retief
+15	richardawilson3	rooster	sgates501	simonemarlia	skissinger	sleepy.ichabod	sommcorp091243	spydrjoat	strata	strawberry_muffin
+16	syt1989	tacall	tadglines	tbuehler	theuptick	trino8	trixi	truewarrior	trunkychristy	undream2
+17	utterme	voltaire	vooch4	vrodrigo	weatherguy1033	wijjit	xandy	xauzas	yoshetty	yu138086
+18	zhengquan	 	 	 
+
+I need to back out four of these - let Kim take a look at this first  
+
+
+
+Gather more info:
+Let's get the mtickets, ticketkeys, then the mtrades and positionkeys with the goal to get the distinct fundkeys that were affected
+
+let's use the first DVD_STOCK (although they should all be the same)
+
+select primarykey from mticket where sourcekey=X'1ed2700c5230f351c0a80146';
+
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'1ed2700c5230f351c0a80146');
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'1ed2700c5230f351c0a80146') );
+280 returns
+saving these to:  CA issues SHI fundkeys to invalidate.txt
+
+here they are in the proper format - removed the X''
+/Marketocracy/bin/fptool invalidateFund 0007697541091a13c0a80134;
+/Marketocracy/bin/fptool invalidateFund 009f2d144405f504c0a80133;
+/Marketocracy/bin/fptool invalidateFund 020266d746471c7cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 02d370d748c20c80c0a80132;
+/Marketocracy/bin/fptool invalidateFund 03663bf24aaf382fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 03a76fcb43b98233c0a80133;
+/Marketocracy/bin/fptool invalidateFund 04cd5886415d766dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 056b2124495a2d70c0a80133;
+/Marketocracy/bin/fptool invalidateFund 05900da448589c33c0a80134;
+/Marketocracy/bin/fptool invalidateFund 06e7048b39d0102dc0a80119;
+/Marketocracy/bin/fptool invalidateFund 09d7024e458c4792c0a80134;
+/Marketocracy/bin/fptool invalidateFund 0a6e629c399c2c8bc0a80118;
+/Marketocracy/bin/fptool invalidateFund 0af120ce3ac952e8c0a80118;
+/Marketocracy/bin/fptool invalidateFund 0aff5f3e487c181fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 0b0766d746471ed3c0a80133;
+/Marketocracy/bin/fptool invalidateFund 0ba7032b41f058e9c0a80134;
+/Marketocracy/bin/fptool invalidateFund 0c6643954061ace8ffffffff;
+/Marketocracy/bin/fptool invalidateFund 0dfb63313a402907c0a80119;
+/Marketocracy/bin/fptool invalidateFund 0f7201333e4a6419c0a80134;
+/Marketocracy/bin/fptool invalidateFund 119e16f23b538c52c0a80118;
+/Marketocracy/bin/fptool invalidateFund 139174c945173caec0a80132;
+/Marketocracy/bin/fptool invalidateFund 143927da3e4a114ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 15e9117346d14badc0a80132;
+/Marketocracy/bin/fptool invalidateFund 162108a44298b840c0a80133;
+/Marketocracy/bin/fptool invalidateFund 16c31f194724eaf9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1a6c0f2e3fab2b79c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1afc099f3cd0b9f2c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 1b44642d41d4382dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 1c855c4c4061e946ffffffff;
+/Marketocracy/bin/fptool invalidateFund 1cef468e3a32b235c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 1d2e026b43e17f17c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1f2055a14348a17bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 1ff6391145890b77c0a80132;
+/Marketocracy/bin/fptool invalidateFund 20bb125543de844dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 20c9200b3cc9b821c0a80118;
+/Marketocracy/bin/fptool invalidateFund 20f3364043bc5a3bc0a80132;
+/Marketocracy/bin/fptool invalidateFund 22412ff7721c6a6678cd169a;
+/Marketocracy/bin/fptool invalidateFund 22b367984287ded2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 23ac39ab3f6b9f1ec0a80132;
+/Marketocracy/bin/fptool invalidateFund 23f8181f3f73aa7ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 259f2b024a459c4982053fa0;
+/Marketocracy/bin/fptool invalidateFund 25af1e064a8495bbc0a80146;
+/Marketocracy/bin/fptool invalidateFund 2628401b3ffe1fbfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 26be3ea83fecc04dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 27226b14489078b9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 283b1abe42ee0cf7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 28c800833a722aadc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 29533b3e46ecee33c0a80134;
+/Marketocracy/bin/fptool invalidateFund 29a5e1ff2a420e76fe5db697;
+/Marketocracy/bin/fptool invalidateFund 2d422958423bc3e4c0a80133;
+/Marketocracy/bin/fptool invalidateFund 2e3d00bf42f25a93c0a80134;
+/Marketocracy/bin/fptool invalidateFund 2f431ab93cae00e1c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 2fca033241e2f0eec0a80134;
+/Marketocracy/bin/fptool invalidateFund 2fd174c3426d065dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 32f63b9c447987dfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 33816e6b44182b6ec0a80134;
+/Marketocracy/bin/fptool invalidateFund 3549563948ea13f2c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3600356743f3a47bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 3709029445249ba9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 387705d84149af27c0a80132;
+/Marketocracy/bin/fptool invalidateFund 39e90196431b3224c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3a95326343d3bd99c0a80133;
+/Marketocracy/bin/fptool invalidateFund 3b80319546f42793c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3c4a273548c95e4fc0a80135;
+/Marketocracy/bin/fptool invalidateFund 3e6110033ff2f731c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3e716bc8470e59cfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 40e962923d3f2f0bc0a80119;
+/Marketocracy/bin/fptool invalidateFund 41d6370547f873cdc0a80134;
+/Marketocracy/bin/fptool invalidateFund 42a9372d447f58a6c0a80133;
+/Marketocracy/bin/fptool invalidateFund 42d41b8150436893c0a80134;
+/Marketocracy/bin/fptool invalidateFund 434b1b8150436a46c0a80134;
+/Marketocracy/bin/fptool invalidateFund 43d56cef42f0a423c0a80132;
+/Marketocracy/bin/fptool invalidateFund 44e912d043a3d680c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4527641044183e9bc0a80132;
+/Marketocracy/bin/fptool invalidateFund 4581124841c8a657c0a80132;
+/Marketocracy/bin/fptool invalidateFund 46ed03f043ccc568c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4704638341b9b086c0a80134;
+/Marketocracy/bin/fptool invalidateFund 491209c743a7855ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 49f62d7547536795c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4a150ffb42f909f3c0a80132;
+/Marketocracy/bin/fptool invalidateFund 4b5d51ab3fec8dcac0a80132;
+/Marketocracy/bin/fptool invalidateFund 4e4c70983ba2401cc0a80119;
+/Marketocracy/bin/fptool invalidateFund 4edf089f404bf8f9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 4eec49e9429308c2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 506f5a2e39fc52dbc0a80118;
+/Marketocracy/bin/fptool invalidateFund 509370364424fe3dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 50f8033c4224b127c0a80134;
+/Marketocracy/bin/fptool invalidateFund 51dc1cb542f387c7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 528b52b33fb3fe82c0a80134;
+/Marketocracy/bin/fptool invalidateFund 52ca18a13bdc8ed0c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 539504ab4405ff83c0a80133;
+/Marketocracy/bin/fptool invalidateFund 53e3320d42cb23a2c0a80132;
+/Marketocracy/bin/fptool invalidateFund 541b65b842c9b492c0a80133;
+/Marketocracy/bin/fptool invalidateFund 54e03cfb46825a26c0a80132;
+/Marketocracy/bin/fptool invalidateFund 553369364db5a02bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 564463733a9b413bc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 565d54d23aa95130c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 56b240e24532396bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 56e5409c464d3ad5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 59d932214224038ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 5b724fe54f7b6b74c0a80133;
+/Marketocracy/bin/fptool invalidateFund 5c2100f847e26195c0a80135;
+/Marketocracy/bin/fptool invalidateFund 5c9219153ff7a153c0a80133;
+/Marketocracy/bin/fptool invalidateFund 5d7868743dac7e7dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 5dc3234f427fa1e0c0a80134;
+/Marketocracy/bin/fptool invalidateFund 5e013f50489a0179c0a80135;
+/Marketocracy/bin/fptool invalidateFund 5e150315440d2ea6c0a80134;
+/Marketocracy/bin/fptool invalidateFund 5e2774a650518e79c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5e48035b3f13459dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 5ebe3cd639c4edf3c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 5f7d4abf44484892c0a80133;
+/Marketocracy/bin/fptool invalidateFund 610604d747efb6a8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 63ab65413bdc62bbc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 645a035d3ffd8bc3c0a80133;
+/Marketocracy/bin/fptool invalidateFund 648f1c9e3ff5b89fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 649115fe459766b7c0a80133;
+/Marketocracy/bin/fptool invalidateFund 656025fa4911c8d6c0a80134;
+/Marketocracy/bin/fptool invalidateFund 665049bc43bd43abc0a80133;
+/Marketocracy/bin/fptool invalidateFund 672506543b6036e0c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 69ac21184148973bc0a8013c;
+/Marketocracy/bin/fptool invalidateFund 69fc2e1d3b812c84c0a80118;
+/Marketocracy/bin/fptool invalidateFund 6ab6090b4287cbafc0a80134;
+/Marketocracy/bin/fptool invalidateFund 6b61450c46dfa6cfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6b781bd03ff07959c0a80134;
+/Marketocracy/bin/fptool invalidateFund 6c4f12433da7e019c0a80132;
+/Marketocracy/bin/fptool invalidateFund 6c97314b43b08f9cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6d494feb3ca36887c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 6d7974a941597d82c0a80133;
+/Marketocracy/bin/fptool invalidateFund 6da9361541d35c6cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6e40722943948cabc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7002017d3f648249c0a80134;
+/Marketocracy/bin/fptool invalidateFund 708d16d943371628c0a80132;
+/Marketocracy/bin/fptool invalidateFund 712b10d543140cc7c0a80132;
+/Marketocracy/bin/fptool invalidateFund 73cb257f3f4b87b5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 748c049d45d64474c0a80133;
+/Marketocracy/bin/fptool invalidateFund 75b1722943948d3ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 76992a91426c2d7bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 76e72c2142c4cc24c0a80133;
+/Marketocracy/bin/fptool invalidateFund 77113b9c44797323c0a80133;
+/Marketocracy/bin/fptool invalidateFund 78f357ea4f7a3137c0a80133;
+/Marketocracy/bin/fptool invalidateFund 79f934d742cc7a1ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 7a0003254874fd66c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7a785fb94645d61fc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7b260ad340bf423ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 7bad3c8746eb72cfc0a80132;
+/Marketocracy/bin/fptool invalidateFund 7c4a54ae47f6b7c2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 7dcd42c442b04f42c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7e7102d73f735459c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7ea543a5441ab32bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7eca0fb644772494c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7f15633146bca628c0a80133;
+/Marketocracy/bin/fptool invalidateFund 80020d6e47a2cb44daa5d03f;
+/Marketocracy/bin/fptool invalidateFund 81c926de46fc34bfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 82400177413f63d8c0a80132;
+/Marketocracy/bin/fptool invalidateFund 83340354400ef425c0a80133;
+/Marketocracy/bin/fptool invalidateFund 837615b33d6153f6c0a801e2;
+/Marketocracy/bin/fptool invalidateFund 8426385b3a2a6c5bc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 8497185743b412efc0a80134;
+/Marketocracy/bin/fptool invalidateFund 85703b1c3a27d1dbc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 85a40837472b7deec0a80135;
+/Marketocracy/bin/fptool invalidateFund 86fd2a184398e6e8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8982690741e72483c0a80133;
+/Marketocracy/bin/fptool invalidateFund 899b70594d992fc9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 8b580da448588b6bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8c2b2041425dfe37c0a80132;
+/Marketocracy/bin/fptool invalidateFund 8c51034d3b79911bc0a80118;
+/Marketocracy/bin/fptool invalidateFund 8d0d19ee3fca8a10c0a80133;
+/Marketocracy/bin/fptool invalidateFund 8df15b8e47cdae9ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 8e731d4c43c421a7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8f3204a33fa140ebc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8f830da448588ff0c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8fb82c2142c4cfdfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 902b371d418a9ccdc0a8013c;
+/Marketocracy/bin/fptool invalidateFund 908b4b194d72e97bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 925701283b097263c0a80118;
+/Marketocracy/bin/fptool invalidateFund 94260b623f3a55c9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 95ad681641e99463c0a80132;
+/Marketocracy/bin/fptool invalidateFund 95d648df42407626c0a80132;
+/Marketocracy/bin/fptool invalidateFund 9703157f47a14742c0a80132;
+/Marketocracy/bin/fptool invalidateFund 97b316673ceceb7ec0a801e1;
+/Marketocracy/bin/fptool invalidateFund 9885317f463e7420c0a80135;
+/Marketocracy/bin/fptool invalidateFund 9bc7504a3a19a6fcc0a80118;
+/Marketocracy/bin/fptool invalidateFund 9c656d0941216cd7c0a80132;
+/Marketocracy/bin/fptool invalidateFund 9c6a4f5b3f949f3ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 9d27686045d197a9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 9da545ef47b3201fc0a80133;
+/Marketocracy/bin/fptool invalidateFund 9f9211df3d931baec0a80134;
+/Marketocracy/bin/fptool invalidateFund a030026a3fa9363ec0a80132;
+/Marketocracy/bin/fptool invalidateFund a0d4500041fe7f64c0a80132;
+/Marketocracy/bin/fptool invalidateFund a0e401334675fd26c0a80132;
+/Marketocracy/bin/fptool invalidateFund a12806224393b89fc0a80133;
+/Marketocracy/bin/fptool invalidateFund a64d1dd542e810ffc0a80132;
+/Marketocracy/bin/fptool invalidateFund a74935d03d42aadac0a801e0;
+/Marketocracy/bin/fptool invalidateFund a817304741ffb4d1c0a80132;
+/Marketocracy/bin/fptool invalidateFund a85c312c3d18686cc0a801e1;
+/Marketocracy/bin/fptool invalidateFund a9e720534320ddf3c0a80133;
+/Marketocracy/bin/fptool invalidateFund aa486e6e473a0f04c0a80133;
+/Marketocracy/bin/fptool invalidateFund aa7d737747e03ca2c0a80133;
+/Marketocracy/bin/fptool invalidateFund aaae02db484ad33ac0a80133;
+/Marketocracy/bin/fptool invalidateFund ac4565ad4adc5992c0a80133;
+/Marketocracy/bin/fptool invalidateFund ac5567a76d255348df5e5077;
+/Marketocracy/bin/fptool invalidateFund ac9168443fab3329c0a80133;
+/Marketocracy/bin/fptool invalidateFund acf260913dde8c5ec0a80132;
+/Marketocracy/bin/fptool invalidateFund ae2f122d4f8c2c6ac0a80132;
+/Marketocracy/bin/fptool invalidateFund ae8e66dd3d54221cc0a80119;
+/Marketocracy/bin/fptool invalidateFund aeac2b143feff7adc0a80133;
+/Marketocracy/bin/fptool invalidateFund b12b04bd461a6323c0a80134;
+/Marketocracy/bin/fptool invalidateFund b13b71a247550755c0a80133;
+/Marketocracy/bin/fptool invalidateFund b3d062fb3efbe179c0a80132;
+/Marketocracy/bin/fptool invalidateFund b3f46d85426387a6c0a80133;
+/Marketocracy/bin/fptool invalidateFund b4c52e21407460edffffffff;
+/Marketocracy/bin/fptool invalidateFund b6090f36466bb755c0a80134;
+/Marketocracy/bin/fptool invalidateFund b60b17034017c3cbc0a80133;
+/Marketocracy/bin/fptool invalidateFund b7b414db45a8aba9c0a80134;
+/Marketocracy/bin/fptool invalidateFund b88b0a42442ad801c0a80133;
+/Marketocracy/bin/fptool invalidateFund b94346554512cd3fc0a80134;
+/Marketocracy/bin/fptool invalidateFund baed3d883c533535c0a801e1;
+/Marketocracy/bin/fptool invalidateFund bc2b278a3b02a024c0a801e0;
+/Marketocracy/bin/fptool invalidateFund bd8000f143fd939dc0a80134;
+/Marketocracy/bin/fptool invalidateFund bf4362cc4244571cc0a80134;
+/Marketocracy/bin/fptool invalidateFund c2a54c863c6d1be5c0a80119;
+/Marketocracy/bin/fptool invalidateFund c3d1346d45e49944c0a80134;
+/Marketocracy/bin/fptool invalidateFund c48b1920486c4594c0a80134;
+/Marketocracy/bin/fptool invalidateFund c4f40eb243c7e2e4c0a80133;
+/Marketocracy/bin/fptool invalidateFund c5315f5446899a04c0a80132;
+/Marketocracy/bin/fptool invalidateFund c67003d3452bba11c0a80134;
+/Marketocracy/bin/fptool invalidateFund c74754fe475787d9c0a80134;
+/Marketocracy/bin/fptool invalidateFund c7b5740f45c56b9ec0a80135;
+/Marketocracy/bin/fptool invalidateFund ca60569247bdba2cc0a80134;
+/Marketocracy/bin/fptool invalidateFund cadf13e347094167c0a80135;
+/Marketocracy/bin/fptool invalidateFund cc2c03fd3fd57849c0a80134;
+/Marketocracy/bin/fptool invalidateFund cc794b413d173f1cc0a801e0;
+/Marketocracy/bin/fptool invalidateFund cd7547133f90ab10c0a80133;
+/Marketocracy/bin/fptool invalidateFund ce353b0443ea6e71c0a80134;
+/Marketocracy/bin/fptool invalidateFund d0070fa93f67aa7bc0a80134;
+/Marketocracy/bin/fptool invalidateFund d2835f7f489b222ac0a80133;
+/Marketocracy/bin/fptool invalidateFund d3273d02433a2d7cc0a80133;
+/Marketocracy/bin/fptool invalidateFund d32c1f873d9846f8c0a80135;
+/Marketocracy/bin/fptool invalidateFund d3cc4e8b419e9310c0a80132;
+/Marketocracy/bin/fptool invalidateFund d4483e003a99beaec0a80119;
+/Marketocracy/bin/fptool invalidateFund d53b0fe74f207f6dc0a80134;
+/Marketocracy/bin/fptool invalidateFund d7955cdb459299adc0a80135;
+/Marketocracy/bin/fptool invalidateFund dc87244245a7f692c0a80135;
+/Marketocracy/bin/fptool invalidateFund dd7517d93be8395ac0a801e1;
+/Marketocracy/bin/fptool invalidateFund de1f3b154403ac31c0a80133;
+/Marketocracy/bin/fptool invalidateFund deb95f4d43d077cdc0a80133;
+/Marketocracy/bin/fptool invalidateFund e2d4282647b10d37c0a80134;
+/Marketocracy/bin/fptool invalidateFund e371551141b96f00c0a80133;
+/Marketocracy/bin/fptool invalidateFund e3f02211422e5d84c0a80132;
+/Marketocracy/bin/fptool invalidateFund e55663974250c5eac0a80134;
+/Marketocracy/bin/fptool invalidateFund e6231c114051182cc0a80133;
+/Marketocracy/bin/fptool invalidateFund e65320cc3bafc732c0a801e1;
+/Marketocracy/bin/fptool invalidateFund e6b46e1743286981c0a80134;
+/Marketocracy/bin/fptool invalidateFund e77637ae4647b670c0a80132;
+/Marketocracy/bin/fptool invalidateFund e87024ff3c40ae79c0a80118;
+/Marketocracy/bin/fptool invalidateFund eb6454bc462a5500c0a80135;
+/Marketocracy/bin/fptool invalidateFund ec2e66914011d7abc0a80133;
+/Marketocracy/bin/fptool invalidateFund ec6a12ea3f14d0d2c0a80132;
+/Marketocracy/bin/fptool invalidateFund ef332a4345bf815ac0a80132;
+/Marketocracy/bin/fptool invalidateFund efff2e9b42611ce9c0a80133;
+/Marketocracy/bin/fptool invalidateFund f13a46e84d4767d6c0a80134;
+/Marketocracy/bin/fptool invalidateFund f18d290043441e5ec0a80133;
+/Marketocracy/bin/fptool invalidateFund f20304253f3d41cdc0a80133;
+/Marketocracy/bin/fptool invalidateFund f26735223d6519e9c0a80119;
+/Marketocracy/bin/fptool invalidateFund f33e0661426f7034c0a80133;
+/Marketocracy/bin/fptool invalidateFund f3962ba447d06807c0a80135;
+/Marketocracy/bin/fptool invalidateFund f4083ade43e37ddfc0a80133;
+/Marketocracy/bin/fptool invalidateFund f459728841d5694fc0a80132;
+/Marketocracy/bin/fptool invalidateFund f56545cb4390fd0fc0a80134;
+/Marketocracy/bin/fptool invalidateFund f6b906113f9de603c0a80133;
+/Marketocracy/bin/fptool invalidateFund f6df5e5b3d44a60bc0a801e2;
+/Marketocracy/bin/fptool invalidateFund f76b2f3141c52efec0a80133;
+/Marketocracy/bin/fptool invalidateFund f77707ff460018dbc0a80135;
+/Marketocracy/bin/fptool invalidateFund f89c5b9843bfcacac0a80134;
+/Marketocracy/bin/fptool invalidateFund f93744d53fd17587c0a80133;
+/Marketocracy/bin/fptool invalidateFund fa942da545b53a9ec0a80133;
+/Marketocracy/bin/fptool invalidateFund fa9f1ec340d7864ac0a80133;
+/Marketocracy/bin/fptool invalidateFund fddd37223db93efdc0a80134;
+/Marketocracy/bin/fptool invalidateFund fea30f98489fce30c0a80134;
+/Marketocracy/bin/fptool invalidateFund fed12c1d4ac0ca19c0a80134;
+
+Let's update the DVD_STOCK mcorporateaction records to make the BB_ACTIONID's unique - first get them
+select * from mcorporateaction where aliaskey=X'b14b1029390b38aac0a80116' and BB_ACTIONMNEMONIC='DVD_STOCK' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508  <---- this one can stay
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-11 00:00:00.000000'
+>            PRIMARYKEY = X'1ed2700c5230f351c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508   <---- append  MARTY1
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-10-29 00:00:00.000000'
+>            PRIMARYKEY = X'a951275752703b0bc0a80146'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONID='81250508:MARTY1'  where PRIMARYKEY = X'a951275752703b0bc0a80146';
+> Row 3:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508   <---- append  MARTY2
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'21113eae52e0901bc0a86f92'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONID='81250508:MARTY2'  where PRIMARYKEY = X'21113eae52e0901bc0a86f92';
+> Row 4:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508   <---- append  MARTY3
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'a2b8435952e09394c0a86f92'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONID='81250508:MARTY3'  where PRIMARYKEY = X'a2b8435952e09394c0a86f92';
+> Row 5:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20141231|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 81250508   <---- append  MARTY4
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>            PRIMARYKEY = X'f46b064f522e505cc0a80146'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONID='81250508:MARTY4'  where PRIMARYKEY = X'f46b064f522e505cc0a80146';
+
+
+let's check the mcorporateaction records again, make sure our BB_ACTIONID fields are unique
+select * from mcorporateaction where aliaskey=X'b14b1029390b38aac0a80116' and BB_ACTIONMNEMONIC='DVD_STOCK' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-11 00:00:00.000000'
+>            PRIMARYKEY = X'1ed2700c5230f351c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508:MARTY1
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-10-29 00:00:00.000000'
+>            PRIMARYKEY = X'a951275752703b0bc0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508:MARTY2
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'21113eae52e0901bc0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|50% Bonus issue comprised of capitalisation of Capital fund of 33.6% with no tax & capitalisation of Surplus Reserve fund 16.4% with 32.8% withholding tax. The tax will be deducted from the cash distribution
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508:MARTY3
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-12-06 00:00:00.000000'
+>            PRIMARYKEY = X'a2b8435952e09394c0a86f92'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20141231|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 81250508:MARTY4
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>            PRIMARYKEY = X'f46b064f522e505cc0a80146'
+>               VERSION = NULL
+
+
+
+Let's do the reverseCA.py's
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81250508:MARTY4
+ran successfully
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81250508:MARTY3
+looks ran successfully
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81250508:MARTY2
+ran successfully
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81250508:MARTY1
+ran successfully
+
+
+check the database
+select * from mcorporateaction where aliaskey=X'b14b1029390b38aac0a80116' and BB_ACTIONMNEMONIC='DVD_STOCK' order by BB_EFFECTIVE;
+
+
+invalidate the funds?
+yes, they are all invalidated. 
+/Marketocracy/bin/fptool invalidateFund 0007697541091a13c0a80134;
+/Marketocracy/bin/fptool invalidateFund 009f2d144405f504c0a80133;
+/Marketocracy/bin/fptool invalidateFund 020266d746471c7cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 02d370d748c20c80c0a80132;
+/Marketocracy/bin/fptool invalidateFund 03663bf24aaf382fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 03a76fcb43b98233c0a80133;
+/Marketocracy/bin/fptool invalidateFund 04cd5886415d766dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 056b2124495a2d70c0a80133;
+/Marketocracy/bin/fptool invalidateFund 05900da448589c33c0a80134;
+/Marketocracy/bin/fptool invalidateFund 06e7048b39d0102dc0a80119;
+/Marketocracy/bin/fptool invalidateFund 09d7024e458c4792c0a80134;
+/Marketocracy/bin/fptool invalidateFund 0a6e629c399c2c8bc0a80118;
+/Marketocracy/bin/fptool invalidateFund 0af120ce3ac952e8c0a80118;
+/Marketocracy/bin/fptool invalidateFund 0aff5f3e487c181fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 0b0766d746471ed3c0a80133;
+/Marketocracy/bin/fptool invalidateFund 0ba7032b41f058e9c0a80134;
+/Marketocracy/bin/fptool invalidateFund 0c6643954061ace8ffffffff;
+/Marketocracy/bin/fptool invalidateFund 0dfb63313a402907c0a80119;
+/Marketocracy/bin/fptool invalidateFund 0f7201333e4a6419c0a80134;
+/Marketocracy/bin/fptool invalidateFund 119e16f23b538c52c0a80118;
+/Marketocracy/bin/fptool invalidateFund 139174c945173caec0a80132;
+/Marketocracy/bin/fptool invalidateFund 143927da3e4a114ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 15e9117346d14badc0a80132;
+/Marketocracy/bin/fptool invalidateFund 162108a44298b840c0a80133;
+/Marketocracy/bin/fptool invalidateFund 16c31f194724eaf9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1a6c0f2e3fab2b79c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1afc099f3cd0b9f2c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 1b44642d41d4382dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 1c855c4c4061e946ffffffff;
+/Marketocracy/bin/fptool invalidateFund 1cef468e3a32b235c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 1d2e026b43e17f17c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1f2055a14348a17bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 1ff6391145890b77c0a80132;
+/Marketocracy/bin/fptool invalidateFund 20bb125543de844dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 20c9200b3cc9b821c0a80118;
+/Marketocracy/bin/fptool invalidateFund 20f3364043bc5a3bc0a80132;
+/Marketocracy/bin/fptool invalidateFund 22412ff7721c6a6678cd169a;
+/Marketocracy/bin/fptool invalidateFund 22b367984287ded2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 23ac39ab3f6b9f1ec0a80132;
+/Marketocracy/bin/fptool invalidateFund 23f8181f3f73aa7ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 259f2b024a459c4982053fa0;
+/Marketocracy/bin/fptool invalidateFund 25af1e064a8495bbc0a80146;
+/Marketocracy/bin/fptool invalidateFund 2628401b3ffe1fbfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 26be3ea83fecc04dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 27226b14489078b9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 283b1abe42ee0cf7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 28c800833a722aadc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 29533b3e46ecee33c0a80134;
+/Marketocracy/bin/fptool invalidateFund 29a5e1ff2a420e76fe5db697;
+/Marketocracy/bin/fptool invalidateFund 2d422958423bc3e4c0a80133;
+/Marketocracy/bin/fptool invalidateFund 2e3d00bf42f25a93c0a80134;
+/Marketocracy/bin/fptool invalidateFund 2f431ab93cae00e1c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 2fca033241e2f0eec0a80134;
+/Marketocracy/bin/fptool invalidateFund 2fd174c3426d065dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 32f63b9c447987dfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 33816e6b44182b6ec0a80134;
+/Marketocracy/bin/fptool invalidateFund 3549563948ea13f2c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3600356743f3a47bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 3709029445249ba9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 387705d84149af27c0a80132;
+/Marketocracy/bin/fptool invalidateFund 39e90196431b3224c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3a95326343d3bd99c0a80133;
+/Marketocracy/bin/fptool invalidateFund 3b80319546f42793c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3c4a273548c95e4fc0a80135;
+/Marketocracy/bin/fptool invalidateFund 3e6110033ff2f731c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3e716bc8470e59cfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 40e962923d3f2f0bc0a80119;
+/Marketocracy/bin/fptool invalidateFund 41d6370547f873cdc0a80134;
+/Marketocracy/bin/fptool invalidateFund 42a9372d447f58a6c0a80133;
+/Marketocracy/bin/fptool invalidateFund 42d41b8150436893c0a80134;
+/Marketocracy/bin/fptool invalidateFund 434b1b8150436a46c0a80134;
+/Marketocracy/bin/fptool invalidateFund 43d56cef42f0a423c0a80132;
+/Marketocracy/bin/fptool invalidateFund 44e912d043a3d680c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4527641044183e9bc0a80132;
+/Marketocracy/bin/fptool invalidateFund 4581124841c8a657c0a80132;
+/Marketocracy/bin/fptool invalidateFund 46ed03f043ccc568c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4704638341b9b086c0a80134;
+/Marketocracy/bin/fptool invalidateFund 491209c743a7855ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 49f62d7547536795c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4a150ffb42f909f3c0a80132;
+/Marketocracy/bin/fptool invalidateFund 4b5d51ab3fec8dcac0a80132;
+/Marketocracy/bin/fptool invalidateFund 4e4c70983ba2401cc0a80119;
+/Marketocracy/bin/fptool invalidateFund 4edf089f404bf8f9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 4eec49e9429308c2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 506f5a2e39fc52dbc0a80118;
+/Marketocracy/bin/fptool invalidateFund 509370364424fe3dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 50f8033c4224b127c0a80134;
+/Marketocracy/bin/fptool invalidateFund 51dc1cb542f387c7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 528b52b33fb3fe82c0a80134;
+/Marketocracy/bin/fptool invalidateFund 52ca18a13bdc8ed0c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 539504ab4405ff83c0a80133;
+/Marketocracy/bin/fptool invalidateFund 53e3320d42cb23a2c0a80132;
+/Marketocracy/bin/fptool invalidateFund 541b65b842c9b492c0a80133;
+/Marketocracy/bin/fptool invalidateFund 54e03cfb46825a26c0a80132;
+/Marketocracy/bin/fptool invalidateFund 553369364db5a02bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 564463733a9b413bc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 565d54d23aa95130c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 56b240e24532396bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 56e5409c464d3ad5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 59d932214224038ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 5b724fe54f7b6b74c0a80133;
+/Marketocracy/bin/fptool invalidateFund 5c2100f847e26195c0a80135;
+/Marketocracy/bin/fptool invalidateFund 5c9219153ff7a153c0a80133;
+/Marketocracy/bin/fptool invalidateFund 5d7868743dac7e7dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 5dc3234f427fa1e0c0a80134;
+/Marketocracy/bin/fptool invalidateFund 5e013f50489a0179c0a80135;
+/Marketocracy/bin/fptool invalidateFund 5e150315440d2ea6c0a80134;
+/Marketocracy/bin/fptool invalidateFund 5e2774a650518e79c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5e48035b3f13459dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 5ebe3cd639c4edf3c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 5f7d4abf44484892c0a80133;
+/Marketocracy/bin/fptool invalidateFund 610604d747efb6a8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 63ab65413bdc62bbc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 645a035d3ffd8bc3c0a80133;
+/Marketocracy/bin/fptool invalidateFund 648f1c9e3ff5b89fc0a80132;
+/Marketocracy/bin/fptool invalidateFund 649115fe459766b7c0a80133;
+/Marketocracy/bin/fptool invalidateFund 656025fa4911c8d6c0a80134;
+/Marketocracy/bin/fptool invalidateFund 665049bc43bd43abc0a80133;
+/Marketocracy/bin/fptool invalidateFund 672506543b6036e0c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 69ac21184148973bc0a8013c;
+/Marketocracy/bin/fptool invalidateFund 69fc2e1d3b812c84c0a80118;
+/Marketocracy/bin/fptool invalidateFund 6ab6090b4287cbafc0a80134;
+/Marketocracy/bin/fptool invalidateFund 6b61450c46dfa6cfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6b781bd03ff07959c0a80134;
+/Marketocracy/bin/fptool invalidateFund 6c4f12433da7e019c0a80132;
+/Marketocracy/bin/fptool invalidateFund 6c97314b43b08f9cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6d494feb3ca36887c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 6d7974a941597d82c0a80133;
+/Marketocracy/bin/fptool invalidateFund 6da9361541d35c6cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6e40722943948cabc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7002017d3f648249c0a80134;
+/Marketocracy/bin/fptool invalidateFund 708d16d943371628c0a80132;
+/Marketocracy/bin/fptool invalidateFund 712b10d543140cc7c0a80132;
+/Marketocracy/bin/fptool invalidateFund 73cb257f3f4b87b5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 748c049d45d64474c0a80133;
+/Marketocracy/bin/fptool invalidateFund 75b1722943948d3ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 76992a91426c2d7bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 76e72c2142c4cc24c0a80133;
+/Marketocracy/bin/fptool invalidateFund 77113b9c44797323c0a80133;
+/Marketocracy/bin/fptool invalidateFund 78f357ea4f7a3137c0a80133;
+/Marketocracy/bin/fptool invalidateFund 79f934d742cc7a1ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 7a0003254874fd66c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7a785fb94645d61fc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7b260ad340bf423ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 7bad3c8746eb72cfc0a80132;
+/Marketocracy/bin/fptool invalidateFund 7c4a54ae47f6b7c2c0a80134;
+/Marketocracy/bin/fptool invalidateFund 7dcd42c442b04f42c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7e7102d73f735459c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7ea543a5441ab32bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 7eca0fb644772494c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7f15633146bca628c0a80133;
+/Marketocracy/bin/fptool invalidateFund 80020d6e47a2cb44daa5d03f;
+/Marketocracy/bin/fptool invalidateFund 81c926de46fc34bfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 82400177413f63d8c0a80132;
+/Marketocracy/bin/fptool invalidateFund 83340354400ef425c0a80133;
+/Marketocracy/bin/fptool invalidateFund 837615b33d6153f6c0a801e2;
+/Marketocracy/bin/fptool invalidateFund 8426385b3a2a6c5bc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 8497185743b412efc0a80134;
+/Marketocracy/bin/fptool invalidateFund 85703b1c3a27d1dbc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 85a40837472b7deec0a80135;
+/Marketocracy/bin/fptool invalidateFund 86fd2a184398e6e8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8982690741e72483c0a80133;
+/Marketocracy/bin/fptool invalidateFund 899b70594d992fc9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 8b580da448588b6bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8c2b2041425dfe37c0a80132;
+/Marketocracy/bin/fptool invalidateFund 8c51034d3b79911bc0a80118;
+/Marketocracy/bin/fptool invalidateFund 8d0d19ee3fca8a10c0a80133;
+/Marketocracy/bin/fptool invalidateFund 8df15b8e47cdae9ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 8e731d4c43c421a7c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8f3204a33fa140ebc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8f830da448588ff0c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8fb82c2142c4cfdfc0a80133;
+/Marketocracy/bin/fptool invalidateFund 902b371d418a9ccdc0a8013c;
+/Marketocracy/bin/fptool invalidateFund 908b4b194d72e97bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 925701283b097263c0a80118;
+/Marketocracy/bin/fptool invalidateFund 94260b623f3a55c9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 95ad681641e99463c0a80132;
+/Marketocracy/bin/fptool invalidateFund 95d648df42407626c0a80132;
+/Marketocracy/bin/fptool invalidateFund 9703157f47a14742c0a80132;
+/Marketocracy/bin/fptool invalidateFund 97b316673ceceb7ec0a801e1;
+/Marketocracy/bin/fptool invalidateFund 9885317f463e7420c0a80135;
+/Marketocracy/bin/fptool invalidateFund 9bc7504a3a19a6fcc0a80118;
+/Marketocracy/bin/fptool invalidateFund 9c656d0941216cd7c0a80132;
+/Marketocracy/bin/fptool invalidateFund 9c6a4f5b3f949f3ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 9d27686045d197a9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 9da545ef47b3201fc0a80133;
+/Marketocracy/bin/fptool invalidateFund 9f9211df3d931baec0a80134;
+/Marketocracy/bin/fptool invalidateFund a030026a3fa9363ec0a80132;
+/Marketocracy/bin/fptool invalidateFund a0d4500041fe7f64c0a80132;
+/Marketocracy/bin/fptool invalidateFund a0e401334675fd26c0a80132;
+/Marketocracy/bin/fptool invalidateFund a12806224393b89fc0a80133;
+/Marketocracy/bin/fptool invalidateFund a64d1dd542e810ffc0a80132;
+/Marketocracy/bin/fptool invalidateFund a74935d03d42aadac0a801e0;
+/Marketocracy/bin/fptool invalidateFund a817304741ffb4d1c0a80132;
+/Marketocracy/bin/fptool invalidateFund a85c312c3d18686cc0a801e1;
+/Marketocracy/bin/fptool invalidateFund a9e720534320ddf3c0a80133;
+/Marketocracy/bin/fptool invalidateFund aa486e6e473a0f04c0a80133;
+/Marketocracy/bin/fptool invalidateFund aa7d737747e03ca2c0a80133;
+/Marketocracy/bin/fptool invalidateFund aaae02db484ad33ac0a80133;
+/Marketocracy/bin/fptool invalidateFund ac4565ad4adc5992c0a80133;
+/Marketocracy/bin/fptool invalidateFund ac5567a76d255348df5e5077;
+/Marketocracy/bin/fptool invalidateFund ac9168443fab3329c0a80133;
+/Marketocracy/bin/fptool invalidateFund acf260913dde8c5ec0a80132;
+/Marketocracy/bin/fptool invalidateFund ae2f122d4f8c2c6ac0a80132;
+/Marketocracy/bin/fptool invalidateFund ae8e66dd3d54221cc0a80119;
+/Marketocracy/bin/fptool invalidateFund aeac2b143feff7adc0a80133;
+/Marketocracy/bin/fptool invalidateFund b12b04bd461a6323c0a80134;
+/Marketocracy/bin/fptool invalidateFund b13b71a247550755c0a80133;
+/Marketocracy/bin/fptool invalidateFund b3d062fb3efbe179c0a80132;
+/Marketocracy/bin/fptool invalidateFund b3f46d85426387a6c0a80133;
+/Marketocracy/bin/fptool invalidateFund b4c52e21407460edffffffff;
+/Marketocracy/bin/fptool invalidateFund b6090f36466bb755c0a80134;
+/Marketocracy/bin/fptool invalidateFund b60b17034017c3cbc0a80133;
+/Marketocracy/bin/fptool invalidateFund b7b414db45a8aba9c0a80134;
+/Marketocracy/bin/fptool invalidateFund b88b0a42442ad801c0a80133;
+/Marketocracy/bin/fptool invalidateFund b94346554512cd3fc0a80134;
+/Marketocracy/bin/fptool invalidateFund baed3d883c533535c0a801e1;
+/Marketocracy/bin/fptool invalidateFund bc2b278a3b02a024c0a801e0;
+/Marketocracy/bin/fptool invalidateFund bd8000f143fd939dc0a80134;
+/Marketocracy/bin/fptool invalidateFund bf4362cc4244571cc0a80134;
+/Marketocracy/bin/fptool invalidateFund c2a54c863c6d1be5c0a80119;
+/Marketocracy/bin/fptool invalidateFund c3d1346d45e49944c0a80134;
+/Marketocracy/bin/fptool invalidateFund c48b1920486c4594c0a80134;
+/Marketocracy/bin/fptool invalidateFund c4f40eb243c7e2e4c0a80133;
+/Marketocracy/bin/fptool invalidateFund c5315f5446899a04c0a80132;
+/Marketocracy/bin/fptool invalidateFund c67003d3452bba11c0a80134;
+/Marketocracy/bin/fptool invalidateFund c74754fe475787d9c0a80134;
+/Marketocracy/bin/fptool invalidateFund c7b5740f45c56b9ec0a80135;
+/Marketocracy/bin/fptool invalidateFund ca60569247bdba2cc0a80134;
+/Marketocracy/bin/fptool invalidateFund cadf13e347094167c0a80135;
+/Marketocracy/bin/fptool invalidateFund cc2c03fd3fd57849c0a80134;
+/Marketocracy/bin/fptool invalidateFund cc794b413d173f1cc0a801e0;
+/Marketocracy/bin/fptool invalidateFund cd7547133f90ab10c0a80133;
+/Marketocracy/bin/fptool invalidateFund ce353b0443ea6e71c0a80134;
+/Marketocracy/bin/fptool invalidateFund d0070fa93f67aa7bc0a80134;
+/Marketocracy/bin/fptool invalidateFund d2835f7f489b222ac0a80133;
+/Marketocracy/bin/fptool invalidateFund d3273d02433a2d7cc0a80133;
+/Marketocracy/bin/fptool invalidateFund d32c1f873d9846f8c0a80135;
+/Marketocracy/bin/fptool invalidateFund d3cc4e8b419e9310c0a80132;
+/Marketocracy/bin/fptool invalidateFund d4483e003a99beaec0a80119;
+/Marketocracy/bin/fptool invalidateFund d53b0fe74f207f6dc0a80134;
+/Marketocracy/bin/fptool invalidateFund d7955cdb459299adc0a80135;
+/Marketocracy/bin/fptool invalidateFund dc87244245a7f692c0a80135;
+/Marketocracy/bin/fptool invalidateFund dd7517d93be8395ac0a801e1;
+/Marketocracy/bin/fptool invalidateFund de1f3b154403ac31c0a80133;
+/Marketocracy/bin/fptool invalidateFund deb95f4d43d077cdc0a80133;
+/Marketocracy/bin/fptool invalidateFund e2d4282647b10d37c0a80134;
+/Marketocracy/bin/fptool invalidateFund e371551141b96f00c0a80133;
+/Marketocracy/bin/fptool invalidateFund e3f02211422e5d84c0a80132;
+/Marketocracy/bin/fptool invalidateFund e55663974250c5eac0a80134;
+/Marketocracy/bin/fptool invalidateFund e6231c114051182cc0a80133;
+/Marketocracy/bin/fptool invalidateFund e65320cc3bafc732c0a801e1;
+/Marketocracy/bin/fptool invalidateFund e6b46e1743286981c0a80134;
+/Marketocracy/bin/fptool invalidateFund e77637ae4647b670c0a80132;
+/Marketocracy/bin/fptool invalidateFund e87024ff3c40ae79c0a80118;
+/Marketocracy/bin/fptool invalidateFund eb6454bc462a5500c0a80135;
+/Marketocracy/bin/fptool invalidateFund ec2e66914011d7abc0a80133;
+/Marketocracy/bin/fptool invalidateFund ec6a12ea3f14d0d2c0a80132;
+/Marketocracy/bin/fptool invalidateFund ef332a4345bf815ac0a80132;
+/Marketocracy/bin/fptool invalidateFund efff2e9b42611ce9c0a80133;
+/Marketocracy/bin/fptool invalidateFund f13a46e84d4767d6c0a80134;
+/Marketocracy/bin/fptool invalidateFund f18d290043441e5ec0a80133;
+/Marketocracy/bin/fptool invalidateFund f20304253f3d41cdc0a80133;
+/Marketocracy/bin/fptool invalidateFund f26735223d6519e9c0a80119;
+/Marketocracy/bin/fptool invalidateFund f33e0661426f7034c0a80133;
+/Marketocracy/bin/fptool invalidateFund f3962ba447d06807c0a80135;
+/Marketocracy/bin/fptool invalidateFund f4083ade43e37ddfc0a80133;
+/Marketocracy/bin/fptool invalidateFund f459728841d5694fc0a80132;
+/Marketocracy/bin/fptool invalidateFund f56545cb4390fd0fc0a80134;
+/Marketocracy/bin/fptool invalidateFund f6b906113f9de603c0a80133;
+/Marketocracy/bin/fptool invalidateFund f6df5e5b3d44a60bc0a801e2;
+/Marketocracy/bin/fptool invalidateFund f76b2f3141c52efec0a80133;
+/Marketocracy/bin/fptool invalidateFund f77707ff460018dbc0a80135;
+/Marketocracy/bin/fptool invalidateFund f89c5b9843bfcacac0a80134;
+/Marketocracy/bin/fptool invalidateFund f93744d53fd17587c0a80133;
+/Marketocracy/bin/fptool invalidateFund fa942da545b53a9ec0a80133;
+/Marketocracy/bin/fptool invalidateFund fa9f1ec340d7864ac0a80133;
+/Marketocracy/bin/fptool invalidateFund fddd37223db93efdc0a80134;
+/Marketocracy/bin/fptool invalidateFund fea30f98489fce30c0a80134;
+/Marketocracy/bin/fptool invalidateFund fed12c1d4ac0ca19c0a80134;
+
+let's log back in as thomas krouse (advisorcfa)
+LEDGER for CHINA fund
+Date	Start	Change	End	Type
+Jan 09, 2004		1000	1000	Buy
+Jan 20, 2004	1000	500	1500	Buy
+Jul 26, 2005	1500	1500	3000	Buy
+Apr 20, 2007	3000	-1000	2000	Sell
+Apr 27, 2007	2000	-500	1500	Sell
+Jan 31, 2008	1500	300	1800	Buy
+May 16, 2008	1800	-200	1600	Sell
+May 15, 2009	1600	-411	1189	Sell
+Jul 09, 2009	1189	-1089	100	Sell
+Dec 10, 2013	100	75	175	Corporate Action
+Apr 09, 2014	175	45	220	Buy
+
+record date is 10/24/13
+
+he had 100 shares back then - not sure why 
+
+let's back the last one out, too and then reapply
+>            PRIMARYKEY = X'1ed2700c5230f351c0a80146'
+update mcorporateaction set BB_ACTIONID = '81250508:MARTYF'   where PRIMARYKEY = X'1ed2700c5230f351c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'1ed2700c5230f351c0a80146';
+> Row 1:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI US|CP_ADJ|1.500000|CP_ADJ_DT|20131211|CP_INDICATOR|N|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81250508:MARTYF
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 119638
+>        BB_COMPANYNAME = Sinopec Shanghai Petrochemical Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-09 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2013-09-11 00:00:00.000000'
+>            PRIMARYKEY = X'1ed2700c5230f351c0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81250508:MARTYF
+ran successfully - doing the invalidate fund step just to be safe
+
+DVD_STOCK  SHI
+BB_EFFECTIVE = TIMESTAMP '2013-12-11
+CP_RECORD_DT|20131024|CP_PAY_DT|20131210
+50 percent
+
+/Marketocracy/bin/cahelper -symbol SHI -effective 20131211  -type DVD_STOCK -dividendSymbol SHI -payDate 20131210 -recordDate 20131024 -percent 50 >& /Users/build/caout/SHI.20150213-DVD_STOCK.out
+
+SHI.20150213-DVD_STOCK.out
+stocks:~/caout build$ tail -f SHI.20150213-DVD_STOCK.out
+D: (02-13 15:02:30.120) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-13 15:02:54.574) cahelper started on 2015-02-13 15:02:54 -0500
+
+D: (02-13 15:02:55.366) StockFileLoad Version:3.0
+D: (02-13 15:02:55.367) Loading Stock Data
+D: (02-13 15:03:35.087) Building Lookup Index
+D: (02-13 15:03:39.068) Finished Building Index
+D: (02-13 15:03:39.998) Finished Loading Stock Data
+D: (02-13 15:03:40.119) Connection to 192.168.111.157:6666 succeeded
+D: (02-13 15:03:42.926) SavingChanges for Stock Dividend out 101 of 693
+D: (02-13 15:03:53.356) SavingChanges for Stock Dividend out 201 of 693
+D: (02-13 15:04:08.564) {
+    APPLIED = 1; 
+    DATE = 20131211; 
+    FUNDS = (
+        "wijjit/wijjit's Mutual Fund", 
+        "ijersey/Jersey ADR Fund", 
+        "jeffunderwood/Jeffrey Underwood's Mutual Fund", 
+        "azaharias/International Explorer", 
+        "treichart/Toby Clinton Reichart's Mutual Fund", 
+        "tbuehler/TRB Low P/E Value Fund", 
+        "vestor22/vestor22's Mutual Fund", 
+        "ongsiapco/Tiger Cub Asian Millenium Portfolio", 
+        "cmckinzie/Mckinzie ADR FUND", 
+        "hshaub/harry j. shaub's Mutual Fund", 
+        "mrgill3/Attempt at Value Fund", 
+        "gsoros/China Fund", 
+        "mkey1/Martin Key's Mutual Fund", 
+        "cfalcon/CHARLES FALCON's Mutual Fund", 
+        "jdrouillet/Pendapatan yang  besar", 
+        "ongsiapco/Tiger Cub Trading Opportunities Portfolio", 
+        "dravenace/IAG Test Fund", 
+        "danhtcat/DC Mutual Fund", 
+        "grahamnewman/Graham Newman Fund", 
+        "cstelmachowski/The Sin Fund", 
+        "island/paradise's mutual fund", 
+        "gfontana/Random Materials Fund", 
+        "gchellam/RG Global", 
+        "dweiss1975/Emerging Markets Super Value Fund", 
+        "dcraze/Jump and Jive Fund", 
+        "doppelaar/ADR Fund", 
+        "atomheart/Atomheart Medium to High Risk Recovery Fund", 
+        "trino8/Lee's fund", 
+        "trino8/Mixed Basket", 
+        "trino8/Lee's Bulldozer Fund", 
+        "bquortrup1/China Growth and Resource", 
+        "gfontana/Market", 
+        "abarzaghi/Portafoglio 1/7/03 Fund", 
+        "theuptick/The Great Wall of China Fund", 
+        "leijin/leijin's Mutual Fund", 
+        "xauzas/New era76", 
+        "aaahron/aaahron's Mutual Fund", 
+        "eschmitzva/DSS Enterprises Matrix Fund", 
+        "sommcorp091243/K.M. Sommerhauser:  Mutual Fund #3: Karl Fund:", 
+        "sommcorp091243/K.M. Sommerhauser: DOW UNLEASHED", 
+        "jbaker/China Venture", 
+        "joeledgerton/China Fund", 
+        "derrickho/Emerging Markets", 
+        "jehfes/Jeff's Materials Up Fund", 
+        "greggorysmith/China Moon", 
+        "psionman/GEMS Value", 
+        "egoralski/egoralski's Mutual Fund", 
+        "siempre/Siempre's New Mutual Fund", 
+        "aaahron/aaahron's Mutual Fund", 
+        "sommcorp091243/K.M. Sommerhauser: Mutual Fund #5: Liana Fund:", 
+        "siempre/Siempre's +30 Fund", 
+        "chih22/Connect Game International Fund", 
+        "jlorber/Post SARS Asia", 
+        "kvnfltn/ Leaders List", 
+        "sgates501/Gates SmallCap Opportunity Fund", 
+        "catchthetrend/Trend Fund #1", 
+        "moydodyr/CS Watchlist", 
+        "ajmorris/ajmorris's Mutual Fund", 
+        "gedwards/CHINA Fund", 
+        "advisorcfa/AdvisorCFA's China Fund", 
+        "jamieglick/Momentum Plays 2004", 
+        "biondo008/ZEHN", 
+        "drstifte/Rebound Fund", 
+        "mtalisman/CONSUMERISM", 
+        "gordo/Gordo's Mutual Fund", 
+        "pascalmurphy/Pinnacle Mutual Fund", 
+        "kvnfltn/Precision Fund", 
+        "kcgreg/kcgreg's Mutual Fund", 
+        "gtan/Gerald Tan's Mutual Fund", 
+        "crsungods/Nevada Equity Growth Fund", 
+        "lisa_villeneuve/lisa_villeneuve's Asian Equities", 
+        "fws/fws's Mutual Fund", 
+        "dizsh/China is Cool!", 
+        "katzenbach/China Fund", 
+        "perkdogz/China Fund", 
+        "aragon9197/Flux Quantum China Fund", 
+        "followthetrader/Sabio Fund", 
+        "zhengquan/zhengquan's Mutual Fund", 
+        "furndog/recommended to todd", 
+        "mdacorta/China Investment Fund", 
+        "albertson/China ADR", 
+        "asianbi/The Opium Fund", 
+        "natalyat/Natalya's ADRs", 
+        "jubals/Hoping to increase shareholder wealth substantially", 
+        "derrickho/Global Equity", 
+        "wholly/Ultra-Value Ultra-Growth", 
+        "play4bull/play4bull's energy fund", 
+        "tadglines/Tad's Undervalued Fund", 
+        "acanete/The Stockhead's Money", 
+        "gkalisch/International Mutual Fund", 
+        "wholly/Geo Income Fund", 
+        "trunkychristy/Emerging Markets", 
+        "vooch4/T", 
+        "canuckerus/Asia/Pacific NYSE Fund", 
+        "hernandez/hernandez's Mutual Fund", 
+        "xandy/Momentum & Impulse buy", 
+        "dskuncaitis/dskuncaitis's Mutual Fund", 
+        "kikola/Energy I", 
+        "jpovilus/Pov Anything Goes Fund", 
+        "phatyou/PS Watchlist", 
+        "bwoyat/ADR Value Leaders Fund", 
+        "j-schreiber/j-schreiber's Mutual Fund", 
+        "bbonomini/bobbonomini's Mutual Fund", 
+        "truewarrior/True Warrior Fund", 
+        "pllap2/\"mourning star'", 
+        "ngqi/Growing Mutual Fund", 
+        "retief/FISHER", 
+        "retief/COMBO", 
+        "milkrate/Quantitative Fund", 
+        "kvnfltn/Interstate Holdings", 
+        "royaldmd/royaldmd's Mutual Fund", 
+        "claryn/claryn's Mutual Fund", 
+        "lordprime/LordPrime's Solar Fund", 
+        "grete65416/grete65416's Mutual Fund", 
+        "oduvall/oduvall's Asia Fund", 
+        "aspire2004/CHINA INDEX FUND", 
+        "cheddar73/Cheddar Equity Income", 
+        "truewarrior/Georgetown MBA Fund", 
+        "spydrjoat/Selective Addition Value Fund", 
+        "spydrjoat/The Fresh 100", 
+        "perkdogz/perkdogz's stock fund", 
+        "john97/east asia plus o&g", 
+        "hussainrp/hussainrp's Mutual Fund", 
+        "katep/katep's Mutual Fund", 
+        "anyhow/Genius Definite Growth Fund", 
+        "cowboy_dickrdoo/All the Best Cowboy Dickrdoos have Chinese Eyes", 
+        "collin2985/everything", 
+        "utterme/Banking Fund", 
+        "hwornath/hwornath's Mutual Fund Revised", 
+        "yay/Screener #2", 
+        "ej/ej's Mutual Fund", 
+        "bcchill/BCChill's Mutual Fund", 
+        "b_waldrop/Momentum Value 1-5", 
+        "b_waldrop/Momentum Value PE Compliant", 
+        "ngyles/short only mutual fund", 
+        "b_waldrop/Momentum Value", 
+        "klandragan/kmaterials", 
+        "4tigres/4tigres's Mutual Fund", 
+        "profssrfink/profssrfink's materials fund", 
+        "roar/Collin's Short Fund", 
+        "hdb/HDB Aggressive Growth", 
+        "alexs/alexs's Mutual Fund2", 
+        "strawberry_muffin/Strawberry & Muffin's Mutual Fund", 
+        "jehan/Short Large Cap Fund ", 
+        "jaikman/Jaik's Mut Fund", 
+        "collin2985/collin2985's Mutual Fund", 
+        "natural21/Natural's International Fund", 
+        "natural/Natural's International Fund", 
+        "bcchill/bcchill's March Fund", 
+        "natural/Natural's Staples Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "greensail/Greensail's Bear Fund", 
+        "timingizeverything/Redy 2 Short  Mutual Fund", 
+        "fire_light_x/fire_light_x's Mutual Fund", 
+        "rfrunzi/bihi", 
+        "beachbumed/BeachBumEd's Short Fund", 
+        "yoshetty/Nat Resources Fund", 
+        "cfoam/Short Fund", 
+        "natural/Natural's Materials Fund", 
+        "djplan/djplan's Mutual Fund", 
+        "rooster/Foreign Fund", 
+        "optimus25/Global Economy Fund", 
+        "chaimshmerel/chaimshmerel's Mutual Fund", 
+        "alpine9wc/Austrian Wonder China Fund", 
+        "trixi/trixi's Mutual Fund", 
+        "leftylb/leftylb's Mutual Fund", 
+        "voltaire/Voltaire's Main Mutual Fund", 
+        "tacall/Anthem Overseas Fund", 
+        "cocobear/cocobear's Mutual Fund", 
+        "simonemarlia/Energy G.", 
+        "yrik/Short", 
+        "msi_ham/msi_ham Basic Materials", 
+        "simonemarlia/China", 
+        "simonemarlia/simonemarlia's Mutual Fund", 
+        "simonemarlia/Energy & Water Fund", 
+        "simonemarlia/simonemarlia's Flexy Fund - Bolide", 
+        "clangmead1/clangmead shorts", 
+        "flexoffset/Flexo Fund", 
+        "simonemarlia/Simone Marlia trend up", 
+        "undream2/Universal Growth Fund", 
+        "marco907/marco907's Mutual Fund", 
+        "lwroblewski/Guardian Growth", 
+        "knox/knox's Mutual Fund", 
+        "limchaye/Global Index Fund", 
+        "mareklitwin/Mark Litwin Securities A", 
+        "mareklitwin/Mark Litwin Securities C", 
+        "marke60/Eastman Profit Fund", 
+        "mareklitwin/Mark Litwin Securities D", 
+        "mareklitwin/Mark Litwin Securities F", 
+        "knox/knox's Micro Cap Growth Mutual Fund", 
+        "lingram/Levi's China Fund", 
+        "jgarzik/G Yahoo Mechanical Growth", 
+        "skissinger/Kissinger Small Cap Fund", 
+        "kama/Dog 40", 
+        "mchristy/Materials Long Fund", 
+        "biged/Biged's Hybrid Mutual Fund", 
+        "Investacons/Mark Mohr Strat Lab Open Fund", 
+        "strata/Strata Blend Fund", 
+        "skissinger/Scott Kissinger Strat Lab Open Fund", 
+        "ladiesman2k7/ladiesman2k7's Mutual Fund", 
+        "gemfire/Gulfgate Drayage Fund", 
+        "knobloch/Knobloch's Aggressive Mutual Fund", 
+        "knobloch/Knobloch's QuantPure Mutual  Fund", 
+        "peterng25/ChinaGate", 
+        "DELETED_moonrunreport1_20071211130001/Stackable", 
+        "arnaldomolina/Arnaldo Molina Energy Fund", 
+        "mateok05/China Value MDK", 
+        "ericspears/ems basic materials", 
+        "anrosen/Value Fund", 
+        "kama/kama - best sectors", 
+        "runforest/Bubble Trouble", 
+        "sleepy.ichabod/sleepy.ichabod's Mutual Fund", 
+        "kchamblee/bottom of the barrel", 
+        "vrodrigo/CHINA", 
+        "abadazz/abadazz's Revo Mutual Fund", 
+        "eugene_07/Eugene Mutual Fund", 
+        "moonblaster/Stackable Mutual Fund", 
+        "umass/UMASS Fund", 
+        "martyf/martyf's BRIC Mutual Fund", 
+        "weatherguy1033/GX Growth Index B", 
+        "weatherguy1033/GX Growth Average", 
+        "trixi/trixi's Mutual Fund", 
+        "Rational_Investor/Rational Investor SLO2 Fund", 
+        "observe/observe's Mutual Fund", 
+        "rabbit75/rabbit75's Energy 2%", 
+        "kaddo/kaddo's Energy  Mutual Fund", 
+        "mabot9/mabot9's Mutual Fund", 
+        "hinrich/Hinrich's Mutual Fund", 
+        "qmp/qmp's DMT", 
+        "jarvis_hills/dead horses", 
+        "gh528i/gh528i's Mutual Fund", 
+        "ajyang/Yang Education Fund", 
+        "ramsaca/ramsaca's Mutual Fund", 
+        "rawley/Tryoutfund", 
+        "hinrich/Warnecke European Fund", 
+        "enroncfo/The Evil Fund", 
+        "dzpan/EMEGF", 
+        "dzpan84/Emerging Market Enhanced Return Fund", 
+        "dzpan/EMEGF", 
+        "jinsan/China Mutual Fund", 
+        "dbautz/China Short Fund", 
+        "bobbytheg1/Oak Street Capital Focused Fund", 
+        "lou.liu/Chinese ADR index Fund", 
+        "furndog/Furndogs China Fund", 
+        "hedgething/hedgething's SHORT SELL Fund", 
+        "jdj/JDJ's Grand Enterprise", 
+        "snir.gliksman/snir.gliksman's Mutual Fund", 
+        "trixi/trixi's Mutual Fund", 
+        "myeh/China Fund", 
+        "revblc/Sell Scan", 
+        "akrustev/akrustev's Mutual Fund", 
+        "swissedge/swissedge's SHORT Mutual Fund", 
+        "carlos.martin/Martin's Short Cylce Fund", 
+        "carlos.martin/Martin's Short 3 Months Fund", 
+        "pejmanh/Short Alpha", 
+        "advisorcfa/AdvisorCFA Strat Lab Open Fund", 
+        "advisorcfa/AdvisorCFA's Short Fund", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "marketocracy/Sleep Well At Night (SWAN) Ver2", 
+        "expe107/High Reward", 
+        "swissedge/swissedge's Mutual Fund", 
+        "mrardies/Ardies Mutual Fund", 
+        "swissedge/FLOP 6 pos W", 
+        "msutterus/Mitch Global Growth and Income", 
+        "rancid514/rancid514's Mutual Fund", 
+        "syt1989/Yuting Sun's Mutual Fund", 
+        "cmaraschino/crm-p", 
+        "kb3054/Kyle's Mutual Fund", 
+        "bigorangefan/BigOrangeFan's First Mutual Fund", 
+        "asalvador/AGS Value Fund", 
+        "jhamer/Long-Only Fund", 
+        "jlkappa1/JLK Spec", 
+        "richardawilson3/richardawilson3's Mutual Fund", 
+        "dws90/Fundy the Mutual Fund", 
+        "jjliu2/BBC Chinese Fund", 
+        "yu138086/YU Large Cap", 
+        "paintgod111/Brick House Focused Equity Fund", 
+        "cubicshogi/Cubicshogi's Short NEG FCF Stochastics Fund", 
+        "cubicshogi/Cubicshogi's NEG FCF Fund", 
+        "minuet/Shorts 4: Mission from Marketocracy"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20131210; 
+    RATIO = 0.5; 
+    "RECORD_DATE" = 20131024; 
+    SYMBOL = SHI; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (02-13 15:04:19.813) SUCCESS
+D: (02-13 15:04:19.813) cahelper finished 2015-02-13 15:04:19 -0500
+
+
+check the database
+select * from mcorporateaction where aliaskey=X'b14b1029390b38aac0a80116' and BB_ACTIONMNEMONIC='DVD_STOCK' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b14b1029390b38aac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131024|CP_PAY_DT|20131210|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|SHI    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150213:030254
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = SHI     (null) Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SHI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-11 00:00:00.000000'
+>            PRIMARYKEY = X'566e151354de586ec0a86f92'
+>               VERSION = NULL
+
+let's check advisorcfa again
+CHINA
+
+your holdings of SHI	
+ 	 	
+Fund	Shares	Value	Portion of fund
+CHINA	195	 $5,855.85	 0.76%
+RUSSR	 0	 N/A	 N/A
+ENRGY	0	 $.00	 0.00%
+AGBF	0	 $.00	 0.00%
+ASHRT	38	 $1,141.14	 -0.17%
+TKSLF	25	 $750.75	 0.13%
+GFINL	 0	 N/A	 N/A
+ 	 	[ Trade this stock ]
+
+LEDGER
+Date	Start	Change	End	Type
+Jan 09, 2004		1000	1000	Buy
+Jan 20, 2004	1000	500	1500	Buy
+Jul 26, 2005	1500	1500	3000	Buy
+Apr 20, 2007	3000	-1000	2000	Sell
+Apr 27, 2007	2000	-500	1500	Sell
+Jan 31, 2008	1500	300	1800	Buy
+May 16, 2008	1800	-200	1600	Sell
+May 15, 2009	1600	-411	1189	Sell
+Jul 09, 2009	1189	-1089	100	Sell
+Dec 10, 2013	100	50	150	Corporate Action
+Apr 09, 2014	150	45	195	Buy
+Total: 195
+
+looks good he had 100 shares and then he got 50 shares as a result of the dividend - looks good
+We'll need a nightly load to see 
+
+check on 12/14/15 for the DVD_STOCK text to be there 
+
+cash dividends paid by SHI	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+10 May 00	10 May 00	10 May 00	N/A	$0.65	Dividend amount:0.649 per share.
+10 May 01	14 May 01		1	$0.72	Dividend amount:0.7248 per share.
+14 May 03	16 May 03		1	$0.60	Dividend amount:0.604 per share.
+12 May 04	14 May 04		1	$0.97	Dividend amount:0.9661 per share.
+23 May 05	25 May 05		1	$2.42	Dividend amount:2.4165 per share.
+10 May 06	12 May 06		1	$1.25	Dividend amount:1.24781 per share.
+15 May 07	17 May 07		1	$0.52	Dividend amount:0.5191 per share.
+06 May 08	08 May 08		1	$1.28	Dividend amount:1.284 per share.
+18 May 10	20 May 10		1	$0.44	Dividend amount:0.439508 per share.
+29 Jun 11	01 Jul 11	08 Aug 11	1	$1.55	Dividend amount:1.546742 per share.
+29 Jun 12	03 Jul 12	06 Aug 12	1	$0.79	Dividend amount:0.785064 per share.
+22 Oct 13	24 Oct 13	16 Dec 13	1	$0.82	Dividend amount:0.816833 per share.
+26 Jun 14	30 Jun 14	28 Jul 14	1	$0.80	Dividend amount:0.803264 per share.
+ 	 	 
+	  stock dividends paid by SHI	
+ 	 	
+Effective Date	Record Date	Pay Date	Percent	Symbol	Description
+11 Dec 13	24 Oct 13	10 Dec 13	50	SHI	SHI declared a dividend of 50 percent in stock SHI.
+ 	 	 
+good - there is only the single DVD_STOCK now - closing this out

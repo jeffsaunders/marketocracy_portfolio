@@ -1,0 +1,438 @@
+date: 3/24/15
+ticker:  HIH  acquired
+
+select distinct stockkey from mstockalias where symbol='HIH';
+> Row 1:
+>   STOCKKEY = X'ab9a161840e5e11ec0a80146'
+select * from mstockalias where STOCKKEY = X'ab9a161840e5e11ec0a80146';
+> Row 2:
+>   STOCKKEY = X'062b61444296b3c6c0a80146'
+select * from mstockalias where STOCKKEY = X'062b61444296b3c6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2003-06-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'062c61444296b3c6c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = RMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'66f75dd549598f1bc0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'0e665dec49598f61c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X105
+>           DATE = TIMESTAMP '2008-12-29 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'96255df249598f73c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X204
+>           DATE = TIMESTAMP '2009-09-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'dd22616d4a9d8c47c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+how many people hold HIH?
+
+MAdmin 03/24/2015  for HIH
+
+Stock:Helios High Income Fund Inc  Symbol:HIH
+Date: 03/24/2015
+
+16 users found
+
+1	art	brandsmeier	danmar9	feelingscarfy	gmeeks	jkeller4000	jubals	lukacs	maxpower2010	mjhbu33
+2	quadtay	revblc	richandhappy	sagitarius_d	undream2	zhuolu
+
+
+/Marketocracy/bin/cahelper -symbol HIH -effective 20140813 -type ACQUIS -exchange UU -acqType 2 -acqCash 0 -acqShare 0.85513247 -purchaser HIH >& /Users/build/caout/HAV.20150324-ACQUIS-HIH.out
+
+HAV.20150324-ACQUIS-HIH.out
+stocks:~/caout build$ cat HAV.20150324-ACQUIS-HIH.out
+D: (03-24 20:23:32.743) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-24 20:23:57.508) cahelper started on 2015-03-24 20:23:57 -0400
+
+D: (03-24 20:23:59.069) There are [0] open tickets for HIH on 20140813
+D: (03-24 20:23:59.425) StockFileLoad Version:3.0
+D: (03-24 20:23:59.425) Loading Stock Data
+D: (03-24 20:24:42.865) Building Lookup Index
+D: (03-24 20:24:47.208) Finished Building Index
+D: (03-24 20:24:48.205) Finished Loading Stock Data
+D: (03-24 20:24:48.409) Connection to 192.168.111.172:6666 succeeded
+D: (03-24 20:24:50.459) {
+    "ACQUIRED_STOCK" = HIH; 
+    "ACQUIRING_STOCK" = "HIH_FIX"; 
+    AMOUNT = 0.855132; 
+    APPLIED = 1; 
+    DATE = 20140813; 
+    FUNDS = (); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = "HIH_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-24 20:24:52.535) SUCCESS
+D: (03-24 20:24:52.535) cahelper finished 2015-03-24 20:24:52 -0400
+
+checking:
+
+select * from mstockalias where STOCKKEY = X'062b61444296b3c6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2003-06-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'062c61444296b3c6c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = RMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'66f75dd549598f1bc0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'0e665dec49598f61c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X105
+>           DATE = TIMESTAMP '2008-12-29 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'96255df249598f73c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X204
+>           DATE = TIMESTAMP '2009-09-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'dd22616d4a9d8c47c0a80146'  <--- set identitykey here 
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X204
+>           DATE = TIMESTAMP '2014-08-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'1beb4eda5512001fc0a86f92'  <--- delete this 
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'1beb4eda5512001fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'1beb4eda5512001fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|HIH  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.855132|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150324:082357
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-13 00:00:00.000000'
+>         BB_IDENTIFIER = HIH_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HIH_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-08-13 00:00:00.000000'
+>            PRIMARYKEY = X'1b504eda5512001dc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'1b504eda5512001dc0a86f92';
+> Row 1:
+>   _C001 = 31.000000
+select distinct stockkey from mticket where sourcekey=X'1b504eda5512001dc0a86f92';
+> Row 1:
+>   STOCKKEY = X'062b61444296b3c6c0a80146'
+
+
+no good members were supposed to get HHY
+undo it 
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID  20150324:082357
+this ran 
+
+select * from mstock where primarykey= X'062b61444296b3c6c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'1beb4eda5512001fc0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'062b61444296b3c6c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 15598
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6cdb
+
+update mstock set identitykey=X'dd22616d4a9d8c47c0a80146'  where primarykey=X'062b61444296b3c6c0a80146';
+
+delete from mstockalias where PRIMARYKEY = X'1beb4eda5512001fc0a86f92';
+done
+
+let's rerun it 
+/Marketocracy/bin/cahelper -symbol HIH -effective 20140813 -type ACQUIS -exchange UU -acqType 2 -acqCash 0 -acqShare 0.85513247 -purchaser HHY >& /Users/build/caout/HIH.20150324-ACQUIS-HHY.out
+
+stocks:~/caout build$ cat HIH.20150324-ACQUIS-HHY.out
+D: (03-24 20:32:30.855) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-24 20:32:56.262) cahelper started on 2015-03-24 20:32:56 -0400
+
+D: (03-24 20:32:56.479) There are [0] open tickets for HIH on 20140813
+D: (03-24 20:33:01.775) StockFileLoad Version:3.0
+D: (03-24 20:33:01.775) Loading Stock Data
+D: (03-24 20:33:44.441) Building Lookup Index
+D: (03-24 20:33:48.644) Finished Building Index
+D: (03-24 20:33:49.646) Finished Loading Stock Data
+D: (03-24 20:33:49.884) Connection to 192.168.111.172:6666 succeeded
+D: (03-24 20:33:50.485) >>> load new StockPrices file
+D: (03-24 20:33:50.511) <<< load new StockPrices file
+D: (03-24 20:33:50.512) >>> swap StockPrices
+D: (03-24 20:33:50.512) Obtained Stockprices swap mutex
+D: (03-24 20:33:50.512) <<< swap StockPrices
+D: (03-24 20:33:50.512) Stock prices available from 2000-05-01 to 2015-03-23
+D: (03-24 20:33:57.090) {
+    "ACQUIRED_STOCK" = HIH; 
+    "ACQUIRING_STOCK" = HHY; 
+    AMOUNT = 0.855132; 
+    APPLIED = 1; 
+    DATE = 20140813; 
+    FUNDS = (
+        "orange/Lowrey Fund: Aqua", 
+        "danmar9/danmar9's Mutual Fund", 
+        "sagitarius_d/sagitarius_d's Income Fund", 
+        "quadtay/QuadTay Dividend Fund", 
+        "nyujd/value traps (experimental)", 
+        "mattwright/FIGHT THE TAPE", 
+        "zio11/zio11's Mutual Fund", 
+        "whistlingleaf/The Short Dorf", 
+        "solyt/solyt's Mutual Fund", 
+        "janhendrik/Mohr Short Fund", 
+        "rbitrage/Bio-China Fund", 
+        "jubals/jubals's Monthly Mutual Fund", 
+        "feelingscarfy/testing stupid theories #139", 
+        "gmeeks/Walk On Superfund", 
+        "bpostma/brandonpostma@sbcglobal.net", 
+        "undream2/Universal Dividend Fund", 
+        "art/Art's Mutual Fund", 
+        "belomor/Dividend fund", 
+        "zhuolu/Fund of Closed End ETFs", 
+        "lukacs/lukacs's Mutual Fund", 
+        "brandsmeier/brandsmeier's Mutual Fund", 
+        "mjhbu33/Marcus Distressed Opportunity", 
+        "mjhbu33/Marcus Growth", 
+        "t-100/CEF", 
+        "richandhappy/Dividend ETF", 
+        "t-100/Cash Flow 2.0", 
+        "maxpower2010/CEF", 
+        "maxpower2010/MONTHLY", 
+        "revblc/Buy the best sector", 
+        "jkeller4000/jkeller4000's Mutual Fund", 
+        "howards85/Capital Sectors High Income Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = HHY; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-24 20:34:00.192) SUCCESS
+D: (03-24 20:34:00.192) cahelper finished 2015-03-24 20:34:00 -0400
+
+select * from mstockalias where STOCKKEY = X'062b61444296b3c6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2003-06-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'062c61444296b3c6c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = RMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RMk High Income Fund
+>     PRIMARYKEY = X'66f75dd549598f1bc0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74963B105
+>           DATE = TIMESTAMP '2008-12-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'0e665dec49598f61c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X105
+>           DATE = TIMESTAMP '2008-12-29 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'96255df249598f73c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X204
+>           DATE = TIMESTAMP '2009-09-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'dd22616d4a9d8c47c0a80146'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 42327X204
+>           DATE = TIMESTAMP '2014-08-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Helios High Income Fund Inc
+>     PRIMARYKEY = X'440351aa55120274c0a86f92'
+>       STOCKKEY = X'062b61444296b3c6c0a80146'
+>         SYMBOL = HIH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'440351aa55120274c0a86f92';
+> Row 1:
+>              ALIASKEY = X'440351aa55120274c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|HIH  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.855132|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150324:083256
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-13 00:00:00.000000'
+>         BB_IDENTIFIER = HHY     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HHY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-08-13 00:00:00.000000'
+>            PRIMARYKEY = X'0b2951aa55120238c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'0b2951aa55120238c0a86f92';
+> Row 1:
+>   _C001 = 62.000000
+select distinct stockkey from mticket where sourcekey=X'0b2951aa55120238c0a86f92';;
+> Row 1:
+>   STOCKKEY = X'b0db10ac390c6dfbc0a8015c'
+> Row 2:
+>   STOCKKEY = X'062b61444296b3c6c0a80146'
+
+good check on 3/25/15 for the acquis 
+link:  http://finance.yahoo.com/news/brookfield-investment-management-inc-announces-122708173.html
+Fund Name 	Ticker 	NAV/Share 	Conversion Ratio
+Helios Advantage Income Fund, Inc. 	HAV 	$9.3222 	0.89548712
+Helios High Income Fund, Inc. 	HIH 	$8.9021 	0.85513247  <----   
+Helios Multi-Sector High Income Fund, Inc. 	HMH 	$6.3791 	0.61277401
+Helios Strategic Income Fund, Inc. 	HSA 	$7.0296 	0.67526080
+Brookfield High Income Fund Inc. 	HHY 	$10.4102 	N/A
+
+
+3/25/15 - 
+
+

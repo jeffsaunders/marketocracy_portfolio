@@ -1,0 +1,107 @@
+date:  5/19/15
+ticker:  PLPM
+
+yahoo:  
+Planet Payment, Inc. (PLPM) -NasdaqCM
+Watchlist
+2.4950 Down 0.1650(6.20%) 11:57AM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	2.66
+Open:	2.71
+Bid:	2.53 x 500
+Ask:	2.55 x 100
+1y Target Est:	3.83
+Beta:	0.86
+Earnings Date:	Aug 10 - Aug 14 (Est.)
+Day's Range:	2.49 - 2.71
+52wk Range:	1.33 - 3.04
+Volume:	196,649
+Avg Vol (3m):	234,776
+Market Cap:	132.19M
+P/E (ttm):	51.58
+EPS (ttm):	0.05
+Div & Yield:	N/A (N/A
+historical start date:
+11/20/2008
+
+quantum:
+
+xignite:
+
+our site:
+nothing
+select * from mstockalias where symbol='PLPM';
+select * from mcorporateaction where BB_SECID='PLPM' order by BB_EFFECTIVE;
+nothing useful in the database 
+
+jeff asked me to chek this
+select distinct stockkey from mstockalias where symbol='CMDXF';
+select * from mcorporateaction where BB_SECID='CMDXF' order by BB_EFFECTIVE;
+
+
+PLPM
+list date:   20150519
+name:  Planet Payment, Inc.
+exchange: nasdaq
+cusip  U72603118  from xignite   is good
+
+lets list the company
+PLPM|Q|U72603118|Planet Payment, Inc.|20150519
+put this into symmadd.txt
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='PLPM';
+> Row 1:
+>   STOCKKEY = X'dfe751fd555b637cc0a86f92'
+
+select * from mstockalias where STOCKKEY = X'dfe751fd555b637cc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = U72603118
+>           DATE = TIMESTAMP '2015-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Planet Payment, Inc.
+>     PRIMARYKEY = X'dfe851fd555b637cc0a86f92'
+>       STOCKKEY = X'dfe751fd555b637cc0a86f92'
+>         SYMBOL = PLPM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+Planet Payment, Inc. provides international payment, transaction, and multi-currency processing services. The company offers payment processing services that enable the authorization and settlement of payment transactions by providing the connections between the merchant, its bank, and the card association; online access to advanced reconciliation and reporting services, as well as localized language support to its customers; and multi-currency processing services, consisting of Pay In Your Currency, 
+
+VISA is 45102020
+let's use that one
+45102020	Data Processing & Outsourced Services
+	Providers of commercial electronic data processing and/or business process outsourcing services. Includes companies that provide services for back-office automation.
+
+update mstockalias set GICSKEY='45102020'  where PRIMARYKEY = X'dfe851fd555b637cc0a86f92';
+let's get the marketcap from yahoo  127.72M
+
+Micro cap - Market capitalizations between $50 million to $300 million 
+update mstockalias set STYLEKEY='XG'  where PRIMARYKEY = X'dfe851fd555b637cc0a86f92';
+
+  select * from mstockalias where STOCKKEY = X'dfe751fd555b637cc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = U72603118
+>           DATE = TIMESTAMP '2015-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Planet Payment, Inc.
+>     PRIMARYKEY = X'dfe851fd555b637cc0a86f92'
+>       STOCKKEY = X'dfe751fd555b637cc0a86f92'
+>         SYMBOL = PLPM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+
+
+Ok, I've listed PLPM  should be ready to trade tomorrow 5/20/15
+created case 3088 for PLPM
+check on 5/20/15 and do a sample buy
+
+5/20/15
+it's there  check xignite 
+closing this out

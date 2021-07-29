@@ -1,0 +1,228 @@
+date:  
+ticker:   EWMD
+
+yahoo:
+
+quantum:
+Guggenheim S&P MidCap 400 Equal Weight ETF
+Ticker Symbol: EWMD*     CUSIP: 78355W510     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   U.S. Market Segment Index ETF
+* NOTE: This security is no longer trading as of 3/15/13
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Guggenheim S&P MidCap 400 Equa  Symbol:EWMD
+Date: 07/27/2015
+
+0 users found
+
+database
+select distinct stockkey from mstockalias where symbol= 'EWMD';  
+> Row 1:
+>   STOCKKEY = X'179665e43a483a23c0a80117'
+> Row 2:
+>   STOCKKEY = X'c88164534e3b2026c0a80146'
+
+there are two
+> Row 1:
+>   STOCKKEY = X'179665e43a483a23c0a80117'
+select * from mstockalias where stockkey=X'179665e43a483a23c0a80117'     order by "date";
+different ticker 
+> Row 2:
+>   STOCKKEY = X'c88164534e3b2026c0a80146'
+select * from mstockalias where stockkey=X'c88164534e3b2026c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rydex S&P MidCap 400 Equal Weight ETF
+>     PRIMARYKEY = X'c88264534e3b2026c0a80146'
+>       STOCKKEY = X'c88164534e3b2026c0a80146'
+>         SYMBOL = EWMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P MidCap 400 Equa
+>     PRIMARYKEY = X'a5271ae34f500a87c0a80146'
+>       STOCKKEY = X'c88164534e3b2026c0a80146'
+>         SYMBOL = EWMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='EWMD'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock EWMD
+>>>> dbtool started at 2015-07-27 23:09:56 -0400
+stock: EWMD
+  PK       : [179665E43A483A23C0A80117]
+  companyID: [13884]
+  symbol   : [EWMD]
+  name     : [Tropical Leisure Resorts]
+  date     : [2002-11-06 00:00:00]
+  status   : [Active]
+stock: EWMD
+  PK       : [179665E43A483A23C0A80117]
+  companyID: [13884]
+  symbol   : [EWMD]
+  name     : [Tropical Leisure Resorts]
+  date     : [2003-05-28 00:00:00]
+  status   : [Active]
+stock: EWMD
+  PK       : [C88164534E3B2026C0A80146]
+  companyID: [20996]
+  symbol   : [EWMD]
+  name     : [Rydex S&P MidCap 400 Equal Weight ETF]
+  date     : [2011-08-04 00:00:00]
+  status   : [Active]
+stock: EWMD
+  PK       : [C88164534E3B2026C0A80146]
+  companyID: [20996]
+  symbol   : [EWMD]
+  name     : [Guggenheim S&P MidCap 400 Equa]
+  date     : [2012-03-01 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-27 23:09:57 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20996
+2013-03-15 (Fri) [4456]: O:36.7600 H:36.7800 L:36.5700 C:36.7100 V:13362 TSO:0 A:36.7100 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'STOCK_KEY' and shares > 0 order by closed; 
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0)));
+
+apply the acquis
+there are 0 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 3/15/13
+last ticket:
+last price:
+
+going with 20130315 36.71
+
+/Marketocracy/bin/cahelper -symbol  EWMD  -effective 20130315 -type ACQUIS -exchange UN -acqType 1 -acqCash 36.71 -acqShare 0 -purchaser EWMD   >& /Users/build/caout/EWMD.20150727-DELIST.out
+EWMD.20150727-DELIST.out
+stocks:~/caout build$ tail -f EWMD.20150727-DELIST.out
+D: (07-27 23:11:25.577) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-27 23:11:59.253) cahelper started on 2015-07-27 23:11:59 -0400
+
+D: (07-27 23:11:59.567) There are [0] open tickets for EWMD on 20130315
+D: (07-27 23:11:59.594) {
+    "ACQUIRED_STOCK" = EWMD; 
+    "ACQUIRING_STOCK" = "EWMD_FIX"; 
+    AMOUNT = 36.709999; 
+    APPLIED = 1; 
+    DATE = 20130315; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "EWMD_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-27 23:11:59.902) SUCCESS
+D: (07-27 23:11:59.902) cahelper finished 2015-07-27 23:11:59 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'c88164534e3b2026c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rydex S&P MidCap 400 Equal Weight ETF
+>     PRIMARYKEY = X'c88264534e3b2026c0a80146'
+>       STOCKKEY = X'c88164534e3b2026c0a80146'
+>         SYMBOL = EWMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P MidCap 400 Equa
+>     PRIMARYKEY = X'a5271ae34f500a87c0a80146'
+>       STOCKKEY = X'c88164534e3b2026c0a80146'
+>         SYMBOL = EWMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P MidCap 400 Equa
+>     PRIMARYKEY = X'ad1f0fde55b6f2ffc0a86f92'
+>       STOCKKEY = X'c88164534e3b2026c0a80146'
+>         SYMBOL = EWMD
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'ad1f0fde55b6f2ffc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ad1f0fde55b6f2ffc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|EWMD  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|36.709999|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150727:111159
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = EWMD_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-03-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EWMD_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-03-15 00:00:00.000000'
+>            PRIMARYKEY = X'ad190fde55b6f2ffc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ad190fde55b6f2ffc0a86f92';
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'SOURCEKEY'));
+there are 0 fundkeys, save to CA issues EWMD fundkeys.txt
+
+For Beta case
+EWMD no longer trades but is still active on our site - need to delist 
+
+check on 7/28/15 no one holds it just check to see that it has been acquired 
+check MAdmin
+
+done no funds to reprice, just close it 

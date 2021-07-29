@@ -1,0 +1,117 @@
+date: 4/20/15
+
+From: 	ted tukiendorf <ted.tukiendorf@grishambros.com>
+	Subject: 	RE: unavailable stock????? - RKUS is now available on or site
+	Date: 	April 20, 2015 12:21:52 PM PDT
+	To: 	Marty Fukui <marty.fukui@marketocracy.com>
+
+Marty,
+I'm afraid that I am back with yet another issue.  I had placed a GTC for NVIV over the weekend.  NONE of it has filled???
+Ted
+ 
+not on our site
+
+yahoo:
+InVivo Therapeutics Holdings Corp. (NVIV) -NasdaqCM
+13.50 Down 2.88(17.58%) 4:00PM EDT
+After Hours : 13.14 Down 0.36 (2.67%) 4:41PM EDT
+Add to Portfolio
+Prev Close:	16.38
+Open:	14.75
+Bid:	13.11 x 100
+Ask:	14.00 x 200
+1y Target Est:	3.00
+Beta:	1.13
+Next Earnings Date:	N/A
+Day's Range:	12.50 - 14.75
+52wk Range:	1.88 - 19.68
+Volume:	941,251
+Avg Vol (3m):	312,281
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.21
+Div & Yield:	N/A (N/A)
+
+quantum:
+
+xignite
+it's there
+CUSIP: 	46186M209  good
+
+select distinct stockkey from mstockalias where symbol='NVIV';
+
+let's list it
+
+NVIV|Q|46186M209|InVivo Therapeutics Holdings Corp.|20150420
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='NVIV';
+> Row 1:
+>   STOCKKEY = X'ed0742d955356c08c0a86f92'
+select * from mstockalias where STOCKKEY = X'ed0742d955356c08c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46186M209
+>           DATE = TIMESTAMP '2015-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = InVivo Therapeutics Holdings Corp.
+>     PRIMARYKEY = X'ed0842d955356c08c0a86f92'
+>       STOCKKEY = X'ed0742d955356c08c0a86f92'
+>         SYMBOL = NVIV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+
+yahoo finance
+ About InVivo Therapeutics
+
+InVivo Therapeutics Holdings Corp. is a research and clinical-stage biomaterials and biotechnology company with a focus on treatment of spinal cord injuries. The company was founded in 2005 with proprietary technology co-invented by Robert Langer, ScD, Professor at Massachusetts Institute of Technology, and Joseph P. Vacanti, MD, who then was at Boston Children’s Hospital and who now is affiliated with Massachusetts General Hospital. In 2011 the company earned the David S. Apple Award from the American Spinal Injury Association for its outstanding contribution to spinal cord injury medicine. The publicly-traded company is headquartered in Cambridge, MA. For more details, visit www.invivotherapeutics.com.
+35201010	Biotechnology
+	Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering. Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application.
+update mstockalias set GICSKEY='35201010'  where  PRIMARYKEY = X'ed0842d955356c08c0a86f92';
+select * from mstockalias where STOCKKEY = X'ed0742d955356c08c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46186M209
+>           DATE = TIMESTAMP '2015-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = InVivo Therapeutics Holdings Corp.
+>     PRIMARYKEY = X'ed0842d955356c08c0a86f92'
+>       STOCKKEY = X'ed0742d955356c08c0a86f92'
+>         SYMBOL = NVIV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+
+update mstockalias set STYLEKEY='XG'  where  PRIMARYKEY = X'ed0842d955356c08c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46186M209
+>           DATE = TIMESTAMP '2015-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = InVivo Therapeutics Holdings Corp.
+>     PRIMARYKEY = X'ed0842d955356c08c0a86f92'
+>       STOCKKEY = X'ed0742d955356c08c0a86f92'
+>         SYMBOL = NVIV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+it's there check on 4/21/15 and do sample buy
+
+
+4/21/15
+PortfolioAdmin - it is there
+Portfolio not there  (app1)
+let's see the timestamps of the sock files on app1
+StockPrices is april 16th
+
+ok, did a sample buy   on both legacy and beta sites - both worked - closing this out.
+
+

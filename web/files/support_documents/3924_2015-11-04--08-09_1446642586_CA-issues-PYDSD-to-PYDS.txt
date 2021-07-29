@@ -1,0 +1,698 @@
+date: 11/3/15
+PYDS
+Type
+General Help | Short Position/Long Funds
+Ticket
+3924
+Priority
+High
+Status
+Open
+Member Name
+Himanshu Keskar
+Username
+greatblackcrow
+Fund Symbols
+HKMF
+Stock Tickers
+N/A
+Description / Resources:
+Tue 11/03/2015 at 02:40 PM
+
+I had bought PYDS a few months ago. I did not sell it. Now, I do not see it in my portfolio.
+
+greatblackcrow   HKMF  
+ticker PYDS
+
+yahoo
+Payment Data Systems, Inc. (PYDS) -NasdaqCM   Watchlist
+2.7561 Up 0.0361(1.33%) 3:06PM EST
+
+Prev Close:	2.72
+Open:	2.75
+Bid:	2.50 x 1000
+Ask:	2.85 x 400
+1y Target Est:	8.00
+Beta:	2.05486
+Next Earnings Date:	16-Nov-15PYDS Earnings announcement
+Day's Range:	2.7463 - 2.76
+52wk Range:	1.80 - 6.60
+Volume:	6,279
+Avg Vol (3m):	19,872
+Market Cap:	34.03M
+P/E (ttm):	7.03
+EPS (ttm):	0.39
+Div & Yield:	N/A (N/A
+
+our site
+Payment Data Systems, Inc.
+Ticker Symbol: PYDS     CUSIP: 70438S202     Exchange: NCM
+
+Company's Online Profile
+BUSINESS:  Payment Data Systems, Inc. is an integrated payment solutions provider to merchants and billers. The Company provides an extensive set of products to deliver world-class payment acceptance. Payment Data has solutions for merchants, billers, banks, service bureaus and card issuers. The strength of the Company is its ability to offer specifically tailored solutions for card issuance, payment acceptance and bill payments. Through its wholly-owned subsidiary of FiCentive, Inc., a turn-key prepaid card solutions provider, that quickly and securely delivers customized prepaid card programs for corporations, financial institutions, affinity groups or any organization that needs to deliver a financial incentive to their customers, vendors, or employees. The Company's proprietary platform boasts the highest level of security, encryption and card association compliance. The Company's prepaid card programs for many industries.
+Micro Cap Stock -   Market Value $ 62.4 Million
+
+
+our site
+Symbol: PYDSD	Name: Payment Data Systems Inc	Price: $2.92
+Volume:	Sector: Information Technology	Change:
+Short Volume: 11,947	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 11,947	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $1.95	Year High: $6.60	High:
+200 Day Ave: $3.55	Year Low: $0.00	Low:
+
+we have it as PYDSD
+
+look at CAs
+symbol changes for PYDSD	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+20 Aug 03	BLLS	PYDS	Change in the ticker (trading) symbol from BLLS to PYDS
+23 Jul 15	PYDS	PYDSD	Change in the ticker (trading) symbol from PYDS to PYDSD
+ 	 	 
+left curve	  CUSIP changes for PYDSD	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+20 Aug 03	090181108	70438S103	Change in any of identification numbers (CUSIP) of a security from 090181108 to 70438S103
+23 Jul 15	70438S103	70438S202	Change in any of identification numbers (CUSIP) of a security from 70438S103 to 70438S202
+ 	 	 
+left curve	  name changes for PYDSD	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+18 Jun 01	Billserv.com Inc.	Billserv Inc	Change in the name of issuer from Billserv.com Inc. to Billserv Inc
+20 Aug 03	Billserv Inc	Payment Data Systems Inc	Change in the name of issuer from Billserv Inc to Payment Data Systems Inc
+ 	 	 
+left curve	  listing changes for PYDSD	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Feb 04, 2003	NASDAQ	UQ	OTCBB	UU	Change in the exchange that BLLS trades on from NASDAQ to OTCBB
+Jul 23, 2012	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that PYDS trades on from OTCBB to OTCBB-OTHER
+ 	 	 
+left curve	  PYDSD had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+23 Jul 15	1 for 15	Split terms:1 for 15
+
+did the ticker really change in the real world and was there a split?
+the stock did split
+
+select distinct stockkey from mstockalias where symbol='PYDS';
+> Row 1:
+>   STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+
+select * from mstockalias where stockkey=X'7a8710ac390c6d45c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BILLSERV.COM INC
+>     PRIMARYKEY = X'7a8810ac390c6d45c0a8015c'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2001-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'258820d93b2ec14ec0a801dc'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'1d0323573e407ec2c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-02-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'14a423693e407f4cc0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-08-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'b60d6b633f44288dc0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-08-20 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'acd46c803f4428f1c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2003-08-20 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'f4056c843f442910c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2012-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'a530597e500dde36c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'a530597e500dde36c0a80146';
+> Row 1:
+>              ALIASKEY = X'a530597e500dde36c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 66657550
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 381245
+>        BB_COMPANYNAME = Payment Data Systems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-07-23 00:00:00.000000'
+>         BB_IDENTIFIER = PYDS    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-07-23 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = PYDS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-07-23 00:00:00.000000'
+>            PRIMARYKEY = X'957a4818500dd5c2c0a80146'
+>               VERSION = NULL
+
+
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2015-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'2cb204ea56119d05c0a86fab'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'2cb204ea56119d05c0a86fab';
+> Row 1:
+>              ALIASKEY = X'2cb204ea56119d05c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|PYDS US|CP_NEW_TKR|PYDSD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924982
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 381245
+>        BB_COMPANYNAME = Payment Data Systems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-23 00:00:00.000000'
+>         BB_IDENTIFIER = PYDS    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = PYDS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'44e22c4455be7883c0a86f92'
+>               VERSION = NULL
+
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S202
+>           DATE = TIMESTAMP '2015-07-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'9d0e04ea56119d20c0a86fab'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'9d0e04ea56119d20c0a86fab';
+> Row 1:
+>              ALIASKEY = X'9d0e04ea56119d20c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|70438S103|CP_NEW_CUSIP|70438S202|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US70438S1033|CP_NEW_ISIN|US70438S2023|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109980018
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 381245
+>        BB_COMPANYNAME = Payment Data Systems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-23 00:00:00.000000'
+>         BB_IDENTIFIER = PYDS    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = PYDS  <----
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'44e42c4455be7883c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'9d0e04ea56119d20c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 15|CP_RATIO|0.066667|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.066667|CP_ADJ_DT|20150723|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924964
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 381245
+>        BB_COMPANYNAME = Payment Data Systems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-23 00:00:00.000000'
+>         BB_IDENTIFIER = PYDS    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = PYDS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'44e02c4455be7883c0a86f92'
+>               VERSION = NULL
+
+'so there is a ticker change, but nothing bringing it back
+
+select * from mcorporateaction where BB_SECID='PYDSD' and aliaskey is null;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|PYDSD US|CP_NEW_TKR|PYDS US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110954434
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 381245
+>        BB_COMPANYNAME = Payment Data Systems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-11 00:00:00.000000'
+>         BB_IDENTIFIER = PYDSD   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = PYDSD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd3ab0e4955c92c78c0a86f92'
+>               VERSION = NULL
+
+this was supposed to change back on 20150811
+
+select distinct stockkey from mstockalias where symbol='PYDSD';
+> Row 1:
+>   STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+select * from mstockalias where STOCKKEY = X'7a8710ac390c6d45c0a8015c' order by "date";
+there is only this one
+
+Ok, let's change the ticker back
+
+/Marketocracy/bin/cahelper -symbol PYDS -effective 20150811 -type CHG_TKR -exchange UQ -oldSymbol PYDSD >& /Users/build/caout/PYDSD.20151103-CHG_TKR-PYDS.out 
+PYDSD.20151103-CHG_TKR-PYDS.out
+stocks1:~/caout build$ tail -f PYDSD.20151103-CHG_TKR-PYDS.out
+D: (11-03 21:22:41.972) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-03 21:23:30.415) cahelper started on 2015-11-03 21:23:30 -0500
+
+D: (11-03 21:23:30.727) {
+    APPLIED = 1; 
+    DATE = 20150811; 
+    "NEW_TICKER" = "PYDS US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "PYDSD US"; 
+    SYMBOL = PYDS; 
+    TYPE = "CHG_TKR"; 
+}
+D: (11-03 21:23:31.034) SUCCESS
+D: (11-03 21:23:31.034) cahelper finished 2015-11-03 21:23:31 -0500
+
+
+select distinct stockkey from mstockalias where symbol='PYDS';
+> Row 1:
+>   STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+select * from mstockalias where STOCKKEY = X'7a8710ac390c6d45c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BILLSERV.COM INC
+>     PRIMARYKEY = X'7a8810ac390c6d45c0a8015c'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2001-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'258820d93b2ec14ec0a801dc'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'1d0323573e407ec2c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-02-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'14a423693e407f4cc0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = BLLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-08-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Billserv Inc
+>     PRIMARYKEY = X'b60d6b633f44288dc0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 090181108
+>           DATE = TIMESTAMP '2003-08-20 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'acd46c803f4428f1c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2003-08-20 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'f4056c843f442910c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2012-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'a530597e500dde36c0a80146'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S103
+>           DATE = TIMESTAMP '2015-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'2cb204ea56119d05c0a86fab'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S202
+>           DATE = TIMESTAMP '2015-07-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'9d0e04ea56119d20c0a86fab'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 70438S202
+>           DATE = TIMESTAMP '2015-08-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Payment Data Systems Inc
+>     PRIMARYKEY = X'bfc4358756396c22c0a86fab'
+>       STOCKKEY = X'7a8710ac390c6d45c0a8015c'
+>         SYMBOL = PYDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'bfc4358756396c22c0a86fab';
+> Row 1:
+>              ALIASKEY = X'bfc4358756396c22c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|PYDSD US|CP_NEW_TKR|PYDS US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151103:092330
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-11 00:00:00.000000'
+>         BB_IDENTIFIER = PYDS     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PYDS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-08-11 00:00:00.000000'
+>            PRIMARYKEY = X'bfb5358756396c22c0a86fab'
+>               VERSION = NULL
+
+check the cusip, check xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=PYDS
+it is there and the cusip in xignite is  70438S202  70438S202  agrees
+
+select * from mstock where primarykey=X'7a8710ac390c6d45c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'bfc4358756396c22c0a86fab'
+>                NAME = BILLSERV.COM INC
+>          PRIMARYKEY = X'7a8710ac390c6d45c0a8015c'
+>              SYMBOL = BLLS
+>           COMPANYID = 7400
+>   WINDOWIDENTITYKEY = NULL
+
+let's look at the price history
+companyID   7400
+2015-07-23   PYDS to PYDSD
+2015-08-11   PYDSD to PYDS
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7400
+there is continuous pricing until this date:
+2015-10-02 (Fri) [5387]: O:2.9800 H:3.0000 L:2.8800 C:2.9200 V:14917 TSO:110778 A:2.9200 R:1.0000 CA:0.0000
+
+need prices from 2015-10-03  5388
+
+get them from yahoo finance and save to:  CA issues PYDS prices to be loaded.txt
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5419,7400,27500,27600,27500,27600,6300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5418,7400,26700,27300,26700,27200,13700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5415,7400,27400,27400,25600,27200,7900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5414,7400,27500,28000,27500,27500,12800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5413,7400,27200,27700,26000,27300,3900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5412,7400,26700,27500,26400,27300,3900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5411,7400,28500,28500,26500,27300,28500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5408,7400,28300,28500,28000,28200,4800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5407,7400,28400,28400,28000,28000,1600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5406,7400,27700,28100,27700,28100,1600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5405,7400,28200,28900,28200,28300,10000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5404,7400,28500,29000,27600,27900,14800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5401,7400,29500,29600,27900,28400,16700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5400,7400,28500,29000,27500,28500,16400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5399,7400,28100,29700,27500,27500,4300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5398,7400,29000,29000,28000,28100,3600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5397,7400,28000,28000,27600,27800,1600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5394,7400,28300,28800,28000,28000,5300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5393,7400,29000,29100,28000,28200,12300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5392,7400,29500,29800,29000,29000,10500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5391,7400,28900,29500,28900,29500,5100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5390,7400,29500,29500,29200,29500,3000);
+
+run this 
+select * from stockprices where companyID=7400 order by daynumber;
+this is the last one currently
+> Row 3905:
+>   DAYNUMBER = 5387
+>   COMPANYID = 7400
+>      OPENED = 29800
+>        HIGH = 30000
+>         LOW = 28800
+>      CLOSED = 29200
+>      VOLUME = 14917
+
+after running this 
+select * from stockprices where companyID=7400 order by daynumber;
+> Row 3927:
+>   DAYNUMBER = 5419
+>   COMPANYID = 7400
+>      OPENED = 27500
+>        HIGH = 27600
+>         LOW = 27500
+>      CLOSED = 27600
+>      VOLUME = 6300
+
+need to invalidate prices  from 
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-10-03
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-11-03
+D: (21:41:04.602) Invalidate all prices >= 2015-10-03 (5388)
+
+get all the fundkeys that held this stock save to CA issues PYDS fundkeys.txt
+select fundkey from mposition where stockkey=X'7a8710ac390c6d45c0a8015c';
+
+
+check this in the morning
+PYDS should be active and trading again and there should be prices and a chart 
+
+our member
+greatblackcrow   HKMF  
+ticker PYDS
+
+your holdings of PYDSD	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+HKMF	718	$2,096.56	0.23%
+expand 
+LEDGER
+Date	Start	Change	End	Type
+Jun 08, 2015		9916	9916	Buy
+Jun 10, 2015	9916	865	10781	Buy
+Jul 23, 2015	10781	-10063	718	Corporate Action  <-- 1 for 15 split (reverse)
+Total: 718
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jun 8, 2015	9,916	$133.49	$2,803.22	$0.28
+Jun 10, 2015	865	$11.16	$234.33	$0.27
+ 	 	 
+SELLS
+You have no sells for this position
+
+11/4/15
+checking on PYDS 
+it is there and the chart is good 
+
+invalidate and reprice 
+
+CAs
+symbol changes for PYDS	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+20 Aug 03	BLLS	PYDS	Change in the ticker (trading) symbol from BLLS to PYDS
+23 Jul 15	PYDS	PYDSD	Change in the ticker (trading) symbol from PYDS to PYDSD
+11 Aug 15	PYDSD	PYDS	Change in the ticker (trading) symbol from PYDSD to PYDS
+ 	 	 
+left curve	  CUSIP changes for PYDS	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+20 Aug 03	090181108	70438S103	Change in any of identification numbers (CUSIP) of a security from 090181108 to 70438S103
+23 Jul 15	70438S103	70438S202	Change in any of identification numbers (CUSIP) of a security from 70438S103 to 70438S202
+ 	 	 
+left curve	  name changes for PYDS	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+18 Jun 01	Billserv.com Inc.	Billserv Inc	Change in the name of issuer from Billserv.com Inc. to Billserv Inc
+20 Aug 03	Billserv Inc	Payment Data Systems Inc	Change in the name of issuer from Billserv Inc to Payment Data Systems Inc
+ 	 	 
+left curve	  listing changes for PYDS	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Feb 04, 2003	NASDAQ	UQ	OTCBB	UU	Change in the exchange that BLLS trades on from NASDAQ to OTCBB
+Jul 23, 2012	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that PYDS trades on from OTCBB to OTCBB-OTHER
+ 	 	 
+left curve	  PYDS had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+23 Jul 15	1 for 15	Split terms:1 for 15
+
+I've reprice on 2015-06-08, the first day the member bought PYDS 
+
+
+greatblackcrow   HKMF  
+ticker PYDS

@@ -1,0 +1,324 @@
+date:  6/9/15
+ticker:  QXMCF
+
+yahoo: nothing
+
+quantum:
+Qiao Xing Mobile Communication Co., Ltd.
+Ticker Symbol: QXMCF*     CUSIP: G73031109     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 8/23/12
+
+oursite:
+Symbol: QXMCF 	Name: Qiao Xing Mobile Communication Company, Limited 	Price: $2.60
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for QXMCF 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+18 May 12 	QXM 	QXMCF 	Change in the ticker (trading) symbol from QXM to QXMCF
+  	  	 
+left curve 	  listing changes for QXMCF 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+May 18, 2012 	NYSE 	UN 	OTCBB-OTHER 	UV 	Change in the exchange that QXMCF trades on from NYSE to OTCBB-OTHER
+  	  	 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+QXMCF  MM/DD/YYYY
+Stock:Qiao Xing Mobile Communication Company, Limited  Symbol:QXMCF
+Date: 06/09/2015
+
+75 users found
+
+1	No1Investor	abusigin	abyli	advisorcfa	alpine9wc	badkor	bcsamp	benwsanders76	bgitarts	biged903
+2	blackaction	bschnoor	bull4u	bulova28	castaways2006	cid78250	cwthomas	dartmonkey	dm5215	dodgers6
+3	drac	edge	ejkong	equinox	fishnutz	freilech	geldrausch	gheorghe_cv	gnail	hisson14u
+4	irand2	irvanm	jamileo	jayface	jdiesn@gmail.com	jeffers	jimsgundam	jmatchette	justin_hendrix	jwiggam
+5	karysma	longshort	lou.liu	mcoyle4	mdimich	mitchadv	mktpirate	moliere33	money462	moreno770
+6	mross	mt_suit	ndestafney	newlife1	phishman2112	postq	pshao649	rajeev_agr	retirefund	revblc
+7	reveille	robertt7	rrokhsar	saluki	saturnin55	sitetrader	spatience	tbc_hound	tleung	trichards
+8	valuestocks	venturer	vrodrigo	warbuff	wisdomfolly	 	 	 	 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'QXMCF';  
+> Row 1:
+>   STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+
+select * from mstockalias where stockkey= X'b37a58b3467c0c3fc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2007-05-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'b37b58b3467c0c3fc0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2012-05-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'480e38574fb6d02bc0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXMCF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2012-05-18 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'c7ec39e04fb6d093c0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXMCF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='QXMCF'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|QXMCF|CP_DELIST_REASON|17|CP_NOTES|Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 67985022
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 11806378
+>        BB_COMPANYNAME = Qiao Xing Mobile Communication Co Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-08-23 00:00:00.000000'
+>         BB_IDENTIFIER = QXMCF   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-08-23 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = QXMCF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-08-23 00:00:00.000000'
+>            PRIMARYKEY = X'7faa03115036b0cfc0a80146'
+>               VERSION = NULL
+delist on 2012-08-23
+
+last known price
+/Marketocracy/bin/dbtool lookup stock QXMCF
+>>>> dbtool started at 2015-06-09 19:41:02 -0400
+stock: QXMCF
+  PK       : [B37A58B3467C0C3FC0A80146]
+  companyID: [17161]
+  symbol   : [QXMCF]
+  name     : [Qiao Xing Mobile Communication Company, Limited]
+  date     : [2012-05-18 00:00:00]
+  status   : [Active]
+stock: QXMCF
+  PK       : [B37A58B3467C0C3FC0A80146]
+  companyID: [17161]
+  symbol   : [QXMCF]
+  name     : [Qiao Xing Mobile Communication Company, Limited]
+  date     : [2012-05-18 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-09 19:41:02 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17161
+2010-06-22 (Tue) [3459]: O:2.7400 H:2.7400 L:2.6500 C:2.6500 V:29123 TSO:47609 A:2.6500 R:1.0000 CA:0.0000
+2010-06-23 (Wed) [3460]: O:2.6100 H:2.6600 L:2.6000 C:2.6400 V:39455 TSO:47609 A:2.6400 R:1.0000 CA:0.0000
+2010-06-24 (Thu) [3461]: O:2.6100 H:2.6500 L:2.5900 C:2.6300 V:50962 TSO:47609 A:2.6300 R:1.0000 CA:0.0000
+2010-06-25 (Fri) [3462]: O:2.6300 H:2.6400 L:2.5900 C:2.6400 V:21063 TSO:47609 A:2.6400 R:1.0000 CA:0.0000
+2010-06-26 (Sat) [3463]: <WEEKEND>
+2010-06-27 (Sun) [3464]: <WEEKEND>
+2010-06-28 (Mon) [3465]: O:2.6300 H:2.6400 L:2.6000 C:2.6200 V:13888 TSO:47609 A:2.6200 R:1.0000 CA:0.0000
+2010-06-29 (Tue) [3466]: O:2.5400 H:2.6400 L:2.5200 C:2.6400 V:70547 TSO:47609 A:2.6400 R:1.0000 CA:0.0000
+2010-06-30 (Wed) [3467]: O:2.6000 H:2.6600 L:2.5800 C:2.6000 V:100330 TSO:47609 A:2.6000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b37a58b3467c0c3fc0a80146' and shares > 0 order by closed; 
+> Row 1242:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-08-22 10:16:00.000000'
+>        COMMENT = 
+>     COMMISSION = 123.439763
+>   CURRENTORDER = X'2b942fe950325468c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8803477a46b1f1fbc0a80132'
+>       MODIFIED = NULL
+>            NET = 2345.355497
+>         OPENED = TIMESTAMP '2012-08-20 11:14:48.000000'
+>          PRICE = 0.092841
+>     PRIMARYKEY = X'2b922fe950325468c0a80134'
+>         SECFEE = 0.060000
+>         SHARES = 25262.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+'
+last ticket 2012-08-22 price: 0.092841
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b37a58b3467c0c3fc0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b37a58b3467c0c3fc0a80146' and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b37a58b3467c0c3fc0a80146' and totalshares < 0)));
+
+apply the acquis
+75 members hold QXMCF
+quantum: This security is no longer trading as of 8/23/12
+delist on 2012-08-23
+last ticket 2012-08-22 price: 0.092841
+
+going with 20120822 0.092
+
+/Marketocracy/bin/cahelper -symbol  QXMCF  -effective 20120822 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.092 -acqShare 0 -purchaser QXMCF   >& /Users/build/caout/QXMCF.20150609-ACQUIS.out
+QXMCF.20150609-ACQUIS.out
+stocks:~/caout build$ tail -f QXMCF.20150609-ACQUIS.out
+D: (06-09 19:59:29.921) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-09 19:59:55.031) cahelper started on 2015-06-09 19:59:55 -0400
+
+D: (06-09 19:59:55.326) There are [0] open tickets for QXMCF on 20120822
+D: (06-09 19:59:55.625) StockFileLoad Version:4.0
+D: (06-09 19:59:55.625) Loading Stock Data
+D: (06-09 20:00:40.980) Building Lookup Index
+D: (06-09 20:00:46.142) Finished Building Index
+D: (06-09 20:00:50.030) Finished Loading Stock Data
+D: (06-09 20:00:50.149) Connection to 192.168.111.172:6666 succeeded
+D: (06-09 20:00:53.067) SavingChanges for position sell out 101 of 251
+D: (06-09 20:00:59.402) {
+    "ACQUIRED_STOCK" = QXMCF; 
+    "ACQUIRING_STOCK" = "QXMCF_FIX"; 
+    AMOUNT = 0.092; 
+    APPLIED = 1; 
+    DATE = 20120822; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "QXMCF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-09 20:01:00.508) SUCCESS
+D: (06-09 20:01:00.508) cahelper finished 2015-06-09 20:01:00 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'b37a58b3467c0c3fc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2007-05-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'b37b58b3467c0c3fc0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2012-05-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'480e38574fb6d02bc0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXMCF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2012-05-18 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'c7ec39e04fb6d093c0a80146'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXMCF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G73031109
+>           DATE = TIMESTAMP '2012-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Qiao Xing Mobile Communication Company, Limited
+>     PRIMARYKEY = X'cea46b7755777dfbc0a86f92'
+>       STOCKKEY = X'b37a58b3467c0c3fc0a80146'
+>         SYMBOL = QXMCF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey = X'cea46b7755777dfbc0a86f92';
+> Row 1:
+>              ALIASKEY = X'cea46b7755777dfbc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|QXMCF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.092000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150609:075955
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-08-22 00:00:00.000000'
+>         BB_IDENTIFIER = QXMCF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-08-22 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = QXMCF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-08-22 00:00:00.000000'
+>            PRIMARYKEY = X'ce9e6b7755777dfbc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ce9e6b7755777dfbc0a86f92';
+> Row 1:
+>   _C001 = 110.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'ce9e6b7755777dfbc0a86f92'));
+110 fundkeys save to CA issues QXMCF fundkeys.txt
+
+check on 6/10/15   invalidate funds
+QXMCF has been acquired 	right curve
+  	  	
+Qiao Xing Mobile Communication Company, Limited acquired by a private company on 2012-08-22 00:00:00. 
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+08/22/2012 	$198,319.35 	$0.00 	$5.43 	$9.20 	$32.69 	$0.00 	$198,301.29 	$398,910.42 	$597,211.71 	100,000 	$5.97 	Yes 	Details
+trades on August 22, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	QXMCF 	100 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+0.92 * 100 = 9.20   he got the cash 
+check MAdmin
+
+reprice is done, close this out 

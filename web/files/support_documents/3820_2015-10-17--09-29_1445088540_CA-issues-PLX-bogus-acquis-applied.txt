@@ -1,0 +1,482 @@
+date:  10/16/15
+
+Marty, for member: sarora, he purchased PLX on October 7th. It shows fills in his recent orders but there is no record of it in his strat or his ledger (on legacy) Fund WKLYW
+
+member sarora 
+bought PLX 
+fund: WKLYW
+
+see the order but not in the strat of ledger
+
+login in as sarora  look at the stock see if it shows 
+
+WKLYW
+
+
+ PLX has been acquired	right curve
+ 	 	
+Protalix BioTherapeutics Inc [PLX] acquired by PFIZER INC [PFE] on 2015-10-13 00:00:00.
+
+your holdings of PLX	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+BBBMF	0	N/A	N/A
+IIL20	0	N/A	N/A
+TopIn	0	N/A	N/A
+MOSTS	0	N/A	N/A
+CON3LO	0	N/A	N/A
+WBRBBUY	0	N/A	N/A
+BBANG	0	N/A	N/A
+WKLYW	0	$.00	0.00%  <-----
+MOMIRI	0	N/A	N/A
+BSBEHIV	0	$.00	0.00%  <----
+TRIMF	0	N/A	N/A
+
+
+WKLYW
+LEDGER
+Date	Start	Change	End	Type
+Oct 13, 2015				Multiple   <---- going to look at the ledger on this date
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 13, 2015	1,958	$97.90	$2,146.92	$1.10
+ 	 	 
+SELLS
+You have no sells for this position
+
+
+ positions on October 13, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+AMSC	AMER SUPERCONDUCTOR	$5.32	6.2%	10,819	$0.00	$57,557.08	Details 
+ROSG	Rosetta Genomics Limited	$2.55	5.6%	20,208	$0.00	$51,530.40	Details 
+CYTR	CYTRX CORP	$2.66	5.5%	19,065	$0.00	$50,712.90	Details 
+SQNM	SEQUENOM INC	$1.86	5.0%	24,824	$0.00	$46,172.64	Details 
+CYTX	Cytori Therapeutics, Incorporated	$0.40	5.0%	114,471	$0.00	$45,788.40	Details 
+IMMU	IMMUNOMEDICS INC	$2.07	4.9%	21,947	$0.00	$45,430.29	Details 
+CLDN	Celladon Corp	$1.10	4.8%	39,887	$0.00	$43,875.70	Details 
+DSCO	DISCOVERY LABORATORIES	$0.35	4.7%	124,533	$0.00	$43,586.55	Details 
+PRAN	Prana Biotechnology Ltd ADS	$0.85	4.6%	49,858	$0.00	$42,379.30	Details 
+DRWI	Dragonwave, Incorporated	$0.18	4.0%	203,767	$0.00	$36,678.06	Details 
+LPTN	LPATH INC	$0.22	3.7%	155,810	$0.00	$34,278.20	Details 
+BIOS	BioScrip Inc	$1.72	3.7%	19,617	$0.00	$33,741.24	Details 
+RBCN	Rubicon Technology Inc	$1.26	2.8%	20,833	$0.00	$26,249.58	Details 
+HART	Harvard Apparatus Regenerative Technology Inc	$0.68	2.6%	35,112	$0.00	$23,876.16	Details 
+ 	 	 
+left curve	 trades on October 13, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Buy		PLX		1,958		$1.10	$2,146.92	$97.90	$0.00
+Sell	PLX		1,958		$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+select distinct stockkey from mstockalias where symbol='PLX';
+> Row 1:
+>   STOCKKEY = X'cc310e21390a5bfbc0a80116'
+> Row 2:
+>   STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+
+there are two
+> PLX 1:
+>   STOCKKEY = X'cc310e21390a5bfbc0a80116'
+select * from mstockalias where stockkey=X'cc310e21390a5bfbc0a80116' order by "date";
+delisted a long time ago, not an issue
+> PLX 2:
+>   STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+select * from mstockalias where stockkey=X'a661043c39e7e9c9c0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q101
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'a662043c39e7e9c9c0a801dc'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = OTIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q101
+>           DATE = TIMESTAMP '2007-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'c9802ca3459c6e16c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = ORTX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-01-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'29d62e5a459c6e5dc0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = ORTX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'0fbe3d5545e793aac0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-03-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'8b5f42d145e793e6c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'd16e449f45e793fac0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'e9ee469245f60605c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'e043469a45f60629c0a80146'   <--- make this the identitykey
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2015-10-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'03ef39db561d8c2ec0a86fab'   <-------- delete this after changing the identitykey
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PLX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <----------  inactive status
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'03ef39db561d8c2ec0a86fab';
+> Row 1:
+>              ALIASKEY = X'03ef39db561d8c2ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PLX US|CP_NAME|Protalix BioTherapeutics Inc|CP_ID_BB_COMP|186128|CP_UNIT|Protalix BioTherapeutics Inc|CP_TOT_AMT|10.000000|CP_ACQUIS_TYP|1|CP_CASH|10.000000|CP_CASH_FLAG|2|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|10.000000|CP_ADVISORS_NUM|N.A.|CP_SH_FRACTIONAL|0|CP_ADVISORS|N.A.|CP_ACQ_TKR|PFE US|CP_ACQ_ID_BB_GLOBAL|BBG000BR2B91|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZ744|CP_ACQ_ID_BB_SEC_NUM_DES|PFE|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|PLX US|CP_TARGET_ID_BB_GLOBAL|BBG000JW08N5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FHMVF4|CP_TARGET_ID_BB_SEC_NUM_DES|PLX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 113990017
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101166
+>        BB_COMPANYNAME = Pfizer Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-13 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-13 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-10-13 00:00:00.000000'
+>            PRIMARYKEY = X'c6843929561d89a7c0a86fab'
+>               VERSION = NULL
+
+
+acquis from bloomberg $10 per share     he bought for $1.10
+
+1958 * 10 = 19580   he does not have cash yet - which is good, 
+
+on yahoo finance this still trades
+checking with Steve
+
+how many tickets were generated?
+
+select count(*) from mticket where sourcekey=X'c6843929561d89a7c0a86fab';
+> Row 1:
+>   _C001 = 56.000000
+select distinct managerkey from mticket where sourcekey=X'c6843929561d89a7c0a86fab';
+47 managers
+select loginname from mmanager where primarykey in (select distinct managerkey from mticket where sourcekey=X'c6843929561d89a7c0a86fab');
+69booger69
+A351WMustang
+abushnaq
+ahknaten
+bagchucker
+bchatraw
+bk1
+bullbearpigs
+bushes
+crossy
+cschier
+cshaw1
+dcinokla
+dishwasher
+ferran
+ganzhornpolice
+gmendiola
+hboker
+hiromimini
+inksleeve
+jarvis_hills
+joycerefron
+larrymunsil
+LordUrle
+lsoon_fong1
+maxjacobs75
+newlife1
+nicholasdp
+oc036801
+pgr45za
+phoward
+pjz0001
+prydonian93
+quantboy
+rsyke
+runforest
+sarora   <----- our member
+sierra14
+sondai3
+stavon
+stil370
+tavros
+teamfunds
+tecnocrat
+usna4life
+valueportfolio
+warcraft82
+
+
+let's make this more unique
+
+update mcorporateaction set BB_ACTIONID = '113990017:MARTY' where PRIMARYKEY = X'c6843929561d89a7c0a86fab';
+	select * from mcorporateaction where aliaskey=X'03ef39db561d8c2ec0a86fab';
+
+> Row 1:
+>              ALIASKEY = X'03ef39db561d8c2ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PLX US|CP_NAME|Protalix BioTherapeutics Inc|CP_ID_BB_COMP|186128|CP_UNIT|Protalix BioTherapeutics Inc|CP_TOT_AMT|10.000000|CP_ACQUIS_TYP|1|CP_CASH|10.000000|CP_CASH_FLAG|2|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|10.000000|CP_ADVISORS_NUM|N.A.|CP_SH_FRACTIONAL|0|CP_ADVISORS|N.A.|CP_ACQ_TKR|PFE US|CP_ACQ_ID_BB_GLOBAL|BBG000BR2B91|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZ744|CP_ACQ_ID_BB_SEC_NUM_DES|PFE|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|PLX US|CP_TARGET_ID_BB_GLOBAL|BBG000JW08N5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FHMVF4|CP_TARGET_ID_BB_SEC_NUM_DES|PLX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 113990017:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101166
+>        BB_COMPANYNAME = Pfizer Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-13 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-13 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-10-13 00:00:00.000000'
+>            PRIMARYKEY = X'c6843929561d89a7c0a86fab'
+>               VERSION = NULL
+
+ok let's remove this
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 113990017:MARTY
+
+
+we need to delete the mstockalias but first change the identitykey to point to the previous mstockalias
+
+>     PRIMARYKEY = X'e043469a45f60629c0a80146'   <--- make this the identitykey
+
+select * from mstock where primarykey=X'a661043c39e7e9c9c0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'03ef39db561d8c2ec0a86fab'
+>                NAME = ORTHODONTIX
+>          PRIMARYKEY = X'a661043c39e7e9c9c0a801dc'
+>              SYMBOL = OTIX
+>           COMPANYID = 13197
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6e4f
+
+update mstock set IDENTITYKEY=X'e043469a45f60629c0a80146' where PRIMARYKEY = X'a661043c39e7e9c9c0a801dc';
+delete the mstockalias record for the acquis 
+
+
+>     PRIMARYKEY = X'03ef39db561d8c2ec0a86fab'   <-------- delete this after changing the identitykey
+delete from mstockalias where PRIMARYKEY = X'03ef39db561d8c2ec0a86fab' ;
+done
+select * from mstockalias where stockkey=X'a661043c39e7e9c9c0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q101
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'a662043c39e7e9c9c0a801dc'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = OTIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q101
+>           DATE = TIMESTAMP '2007-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'c9802ca3459c6e16c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = ORTX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-01-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'29d62e5a459c6e5dc0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = ORTX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ORTHODONTIX INC
+>     PRIMARYKEY = X'0fbe3d5545e793aac0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68750Q200
+>           DATE = TIMESTAMP '2007-03-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'8b5f42d145e793e6c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'd16e449f45e793fac0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PXBT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'e9ee469245f60605c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74365A101
+>           DATE = TIMESTAMP '2007-03-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Protalix BioTherapeutics Inc
+>     PRIMARYKEY = X'e043469a45f60629c0a80146'
+>       STOCKKEY = X'a661043c39e7e9c9c0a801dc'
+>         SYMBOL = PLX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XV
+
+let's get the fundkeys for anyone who ever held PLX
+
+select fundkey from mposition where stockkey=X'a661043c39e7e9c9c0a801dc';
+there are 156
+save to CA issues PLX fundkeys.txt
+
+invalidate
+
+log back in on the legacy site as sarora
+your holdings of PLX	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+BBBMF	0	N/A	N/A
+IIL20	0	N/A	N/A
+TopIn	0	N/A	N/A
+MOSTS	0	N/A	N/A
+CON3LO	0	N/A	N/A
+WBRBBUY	0	N/A	N/A
+BBANG	0	N/A	N/A
+WKLYW	1,958	$1,977.58	0.21%   <---- shares are back
+MOMIRI	0	N/A	N/A
+BSBEHIV	34,782	$35,129.82	3.76%  <---- shares are back
+TRIMF	0	N/A	N/A
+ 	
+his shares are back on legacy
+
+now reprice on the new site 
+
+
+member has his shares back  closing this out 

@@ -1,0 +1,805 @@
+PXP	Plains Exploration & Production Co. L.P.		0.0%	1	$0.00	$0.00	Details 
+yahoo  nothing
+
+quantum
+
+Plains Exploration and Production Co.
+Ticker Symbol: PXP*     CUSIP: 726505100     Exchange: NYSE
+* NOTE: This security is no longer trading as of 5/31/13
+Notes:  May 31, 2013 -- Freeport-McMoRan Copper & Gold Inc. (NYS: FCX) today announced that it has completed its 
+acquisition of Plains Exploration & Production Company (NYS: PXP) , adding a high quality portfolio of U.S.-based 
+oil and gas assets to its global mining business. This approximate $16.3 billion transaction included the assumption
+ of $9.7 billion of PXP debt as of March 31, 2013, the payment of approximately $3.3 billion in cash 
+($25 per PXP share), the issuance of approximately 91 million shares of FCX common stock 
+(0.6531 shares per PXP share), equivalent to a value of approximately $2.9 billion based on the closing price of 
+FCX's common stock on May 30, 2013, and the value of the $3 per share PXP special cash dividend paid on May 31, 2013.
+ After giving effect to the transaction, FCX has approximately 1,038 million shares outstanding. 
+Effective as of the close of trading on May 30, 2013, PXP's common stock (NYS: PXP) will no longer trade. 
+As previously reported, based on the May 31, 2013 closing date and pursuant to the proration formula set forth 
+in the merger agreement: PXP stockholders that elected to receive FCX common stock will receive shares of 
+FCX common stock at an exchange ratio of approximately 1.4302 shares of FCX common stock for each share of 
+PXP common stock. PXP stockholders that elected to receive cash will receive $46.01 in cash for each share of 
+PXP common stock. •PXP stockholders who did not make a valid election or did not deliver a valid election form 
+prior to the election deadline will receive approximately 99.5 percent of their merger consideration in cash equal 
+to $46.01 for each share of PXP common stock and the remainder of their merger consideration in shares of FCX 
+common stock at an exchange ratio of approximately 1.4302 shares of FCX common stock for each share of PXP common 
+stock. No fractional shares of FCX common stock will be issued, and PXP stockholders will receive cash in lieu of 
+fractional shares. PXP's registered shareholders will receive information from Computershare Trust Company, N.A., 
+the exchange agent for the merger, regarding the exchange of their PXP common shares. PXP's shareholders holding 
+through a broker or bank should receive information regarding the exchange of their PXP common shares from the 
+broker or bank.
+Large Cap Stock -   Market Value $ 2.7 Billion
+
+xignite nothing
+
+select distinct stockkey from mstockalias where symbol='PXP';
+> Row 1:
+>   STOCKKEY = X'c25510ac390c6e24c0a8015c'
+select * from mstockalias where STOCKKEY = X'c25510ac390c6e24c0a8015c';
+delisted 
+> Row 2:
+>   STOCKKEY = X'528c33db3e49f401c0a80146'
+select * from mstockalias where STOCKKEY = X'528c33db3e49f401c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 726505100
+>           DATE = TIMESTAMP '2002-12-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Plains Exploration & Production Co. L.P.
+>     PRIMARYKEY = X'528d33db3e49f401c0a80146'
+>       STOCKKEY = X'528c33db3e49f401c0a80146'
+>         SYMBOL = PXP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = MG
+
+acquired by FCX for cash and shares of FCX
+
+date:    5/31/13
+cash: $25 per PXP share
+stock: 0.6531 shares per PXP share of FCX
+/Marketocracy/bin/cahelper -symbol PXP -effective 20130531 -type ACQUIS -exchange UN -acqType 2 -acqCash 25.00 -acqShare 0.6531 -purchaser FCX >& /Users/build/caout/PXP.20150203-ACQUIS.out
+PXP.20150203-ACQUIS.out
+stocks:~/caout build$ tail -f PXP.20150203-ACQUIS.out
+D: (02-03 16:21:32.606) cahelper started on 2015-02-03 16:21:32 -0500
+
+D: (02-03 16:21:53.155) There are [0] open tickets for PXP on 20130531
+D: (02-03 16:21:57.013) StockFileLoad Version:3.0
+D: (02-03 16:21:57.013) Loading Stock Data
+D: (02-03 16:22:37.270) Building Lookup Index
+D: (02-03 16:22:42.016) Finished Building Index
+D: (02-03 16:22:43.222) Finished Loading Stock Data
+D: (02-03 16:22:43.346) Connection to 192.168.111.157:6666 succeeded
+D: (02-03 16:23:12.714) SavingChanges for Stock Dividend out 101 of 1106
+D: (02-03 16:24:48.325) >>> load new StockPrices file
+D: (02-03 16:24:48.341) <<< load new StockPrices file
+D: (02-03 16:24:48.342) >>> swap StockPrices
+D: (02-03 16:24:48.342) Obtained Stockprices swap mutex
+D: (02-03 16:24:48.343) <<< swap StockPrices
+D: (02-03 16:24:48.343) Stock prices available from 2000-05-01 to 2015-02-02
+D: (02-03 16:25:17.869) SavingChanges for Stock Dividend out 201 of 1106
+D: (02-03 16:27:06.398) SavingChanges for Stock Dividend out 301 of 1106
+D: (02-03 16:28:39.035) SavingChanges for Stock Dividend out 401 of 1106
+D: (02-03 16:29:22.038) SavingChanges for Stock Dividend out 501 of 1106
+D: (02-03 16:31:40.265) SavingChanges for Stock Dividend out 601 of 1106
+D: (02-03 16:32:50.459) SavingChanges for position sell out 101 of 1106
+D: (02-03 16:33:02.359) SavingChanges for position sell out 201 of 1106
+D: (02-03 16:33:23.165) SavingChanges for position sell out 301 of 1106
+D: (02-03 16:33:37.948) SavingChanges for position sell out 401 of 1106
+D: (02-03 16:33:48.174) SavingChanges for position sell out 501 of 1106
+D: (02-03 16:34:06.551) SavingChanges for position sell out 601 of 1106
+D: (02-03 16:34:19.042) {
+    "ACQUIRED_STOCK" = PXP; 
+    "ACQUIRING_STOCK" = FCX; 
+    AMOUNT = 0.6531; 
+    APPLIED = 1; 
+    DATE = 20130531; 
+    FUNDS = (
+        "mt_suit/Trader VIC's Mutual Fund", 
+        "ffoil/Dartboard Fund", 
+        "lwilliams3/L-W Energy Three Fund", 
+        "atapparo/TPB Mutual Fund", 
+        "rb374/Roger Brown's Mutual Fund", 
+        "mterrill/techmax", 
+        "rmudd/Energy Sector Fund", 
+        "cmartin3/CM Growth # 2", 
+        "mcoblentz/JAG Momentum Fund", 
+        "lhague/energy", 
+        "codytafel/James Tafel's Mutual Fund", 
+        "codytafel/codytafel's Diversified Mutual Fund", 
+        "radams/RLA Value Fund", 
+        "emaxx888/emaxx888's Mutual Fund", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "ahoffard/Cyclical", 
+        "cmartin3/Oil and Gas", 
+        "astewart2/Nig No No Lo", 
+        "aceman61/otter exploration fund", 
+        "emaxx888/emaxx888's Mutual Fund", 
+        "1duwayo/Emine Demir's Mutual Fund", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "zen1212/Zen Value Select Fund", 
+        "jrheaume/J-R Energy Services Fund", 
+        "jdamian_jr/JRD Natural Resources Fund", 
+        "osigurgeirsson/osigurgeirsson's Mutual Fund", 
+        "ynotmarty/Marty's Daily Notes Fund", 
+        "jpatrick1998/Jay Patrick's Value Fund", 
+        "creynes/CDR Mutual Fund", 
+        "sfong/Northwind Value Fund", 
+        "jmunic/Small-Mid Cap Aggressive Value", 
+        "mbutler1/Juggernaut Fund", 
+        "mtownsend/mtownsend's Mutual Fund", 
+        "phoward/Energy", 
+        "dhaas/Doug's Opportunities Fund", 
+        "bkalaf/BD Kalaf's Natural Resources Growth & Value Fund", 
+        "zkrstevski/4 Forth Educational Fund (no techs)", 
+        "jdamian_jr/JRD Small Cap Fund", 
+        "terryhicks/hicks picks performance fund", 
+        "jharaty/Jonathan Haraty's Mutual Fund", 
+        "jgoldstein/Mother's Value Fund", 
+        "bbetts/Bryan Michael Betts's Mutual Fund", 
+        "rstack/petroleum", 
+        "bbtest2/DURKOP MAVERICK GLOBAL APPRECIATION FUND", 
+        "bsmith/Information and Financial Fund", 
+        "sahmed2/Shabbir Ahmed's Mutual Fund", 
+        "helmma/Helm", 
+        "jholdn/Industrial Fund", 
+        "qrheaume/Q-R  Energy Too Fund", 
+        "rhaffner/energy first", 
+        "rfabian/Absolute SmallCap Return", 
+        "acampbell/Campbell Value Fund", 
+        "santanatwins/santana crazy multicap", 
+        "butler/d", 
+        "bbtest2/DURKOP MAVERICK GROWTH FUND", 
+        "t011363/Excessive Cash Mutual Fund", 
+        "bbtest2/DURKOP MAVERICK NATURAL RESOURCE FUND", 
+        "camqtr/Cavalito Energia do Futuro", 
+        "bbetts/Bryan  Betts's Mutual Fund", 
+        "ryan715/Growth", 
+        "rjohnson/Rocky Johnson's Value Fund", 
+        "humpty/humpty's Mutual Fund", 
+        "mishinka/Janus Aspen International Grth Retire", 
+        "cwhittington/First Fund", 
+        "nwalker/Weeks FootBridge Fund", 
+        "mgough/Defensive Fund", 
+        "coachstroke/Coachstroke's Mutual Fund", 
+        "spaceflyer/SF Energy Fund", 
+        "vestor22/Materials & Energy Fund", 
+        "raffg/Raff Strategic Growth", 
+        "joshdm_94/The Real Deal", 
+        "cwhittington/Wellington Aggresive Fund", 
+        "ddoman/Doman Fund", 
+        "epitt/ESP Growth Fund II", 
+        "sokolandrey/sokolandrey's Mutual Fund", 
+        "sokolandrey/sokolandrey's Mutual Fund", 
+        "cfalcon/CFalcon's Energy  ", 
+        "epitt/ESP Growth Fund I", 
+        "mkantor/Kantor Energy Fund", 
+        "winkiedinkie/Resource Mutual Fund", 
+        "markdark/MarkDark's Mutual Fund", 
+        "vitaminc6779/Electric City", 
+        "kama/kama - best sectors", 
+        "DELETE_joshua_ncontrol_40619049/Hayes Hedge Fund", 
+        "ocsupertones/Diversity", 
+        "doldis/Dave's Scouter Screener", 
+        "camqtr/Cavalito Undiscovered Small Caps", 
+        "freedom/Make Money Mutual Fund", 
+        "dpurho/dpurho's Growth Fund", 
+        "griff76544/griff76544's Mutual Fund", 
+        "fpurifoy/fpurifoy's Mutual Fund", 
+        "hugedrive/hugedrive's tech Mutual Fund", 
+        "azaharias/Energy & Utility Fund", 
+        "ecervantes/Edgardo's Energy Futures Fund", 
+        "bbyard/bbyard's Mutual Fund", 
+        "atejani/Microsoft + Rabbitt", 
+        "rpratt/Nylander Energy", 
+        "jchauvette/ymalah's Mutual Fund", 
+        "virtuefund/Virtue's Fund # 1", 
+        "euanmcf/amalgamation of tops", 
+        "euanmcf/rebound", 
+        "bpowers2/Keepin It Real FUnd", 
+        "raystonn/Raystonn Aggressive Growth Fund", 
+        "jguinn/JD Guinn's Mutual Fund", 
+        "rhanks/RHanks's Energy Fund", 
+        "arjonesy/Fuel For The Masses", 
+        "jdrouillet/Middle Caps", 
+        "ajblais/anthony blais's energy Mutual Fund", 
+        "spopovic/spopovic's Mutual Fund", 
+        "gfontana/Market", 
+        "p1000tw/Shareholder Focus Small Cap Growth Fund", 
+        "zsklar/Today's Dumb Fund", 
+        "dginty/Balanced Cap Fund", 
+        "kbladlee/ Le R\U00eave Test  Mutual Fund", 
+        "mpisula/NorthCoast Value Fund", 
+        "hotmamma/Brandon Waldron Mutual Fund", 
+        "portfolio_doc/Manashirov's Mutual Fund", 
+        "dcason/D Cason Small Cap Growth", 
+        "syoung8/S. Young's Energy Fund ", 
+        "hotmamma/hotmamma mutual fund", 
+        "luca_eng/Equity Lucky Luke", 
+        "kvnfltn/ Leaders List", 
+        "ghimes/Gerald Himes's Mutual Fund", 
+        "cdalzell/Hoosier Total Market Madess Fund", 
+        "euanmcf/energy", 
+        "hotmamma/brandon waldron mutual fund2", 
+        "rtareilo/Top 20 30 40 Growth", 
+        "spaulj13/spaulj13's Mutual Fund", 
+        "jfreifeld/Growth Leaders test", 
+        "jaybirddog/Last Mile Fund", 
+        "mabenne/numbnut fund", 
+        "masterfp_98/tracking fund", 
+        "mat913/M.A.T", 
+        "awesome1/awesome1 LOTTO", 
+        "bplain/BP's Penny Stock FUnd", 
+        "jpb/Prac", 
+        "gaszap/Gaszap's Rocket Fuel Fund Z#1", 
+        "gaszap/Gaszap's Diesel Fuel Fund  NPM", 
+        "melegnano/Gwiez Value Select", 
+        "mvrh/IBD Weekend 100", 
+        "mvrh/IBD Daily Big Money", 
+        "dawnview/Applied Infrastructure Fund", 
+        "davidwood4/Lwood", 
+        "p.zasdad/Zasdad Focused Trading Fund", 
+        "jbabka/Small MoJo GoGo", 
+        "voltage4/voltage4's Mutual Fund", 
+        "patchu/PChu Energy Fund", 
+        "boxster1990/Feldman and Company Mutual Fund", 
+        "catchthetrend/Trend Fund #1", 
+        "kaiserbhuyan/kaiserbhuyan's Mutual Fund", 
+        "jpb/Shorts Practice", 
+        "jrheaume/Papa Bear Fund ", 
+        "thomasan2000/Andy Thomas's Mutual Fund", 
+        "qrheaume/Short Balanced Fund ", 
+        "jak2005/jak2005's Short Fund", 
+        "dexion10/Dig Balanced Fund", 
+        "jcarr/jcarr's contrafund", 
+        "lorenzm/LORENZ INVESTMENTS VALUE AND INCOME FUND", 
+        "fkluczny/AmericanAllAhareShortFund 9", 
+        "kazshak/Formula Value Fund", 
+        "blue/blue's Mutual Fund", 
+        "minuet/Speculator's Shorts", 
+        "blue/blue's Mutual Fund", 
+        "sef_1968/ScreenerX", 
+        "brandslam/Peridot Capital Strategic Value ", 
+        "dribinskas/drew's fund", 
+        "dilauren/OPTION FUND", 
+        "mbarbon/mbarbon's Short Mutual Fund", 
+        "infiniteset/too much to buy", 
+        "jgfeller/High PE Short", 
+        "royaloil/RYLOYL Mutual Fund", 
+        "milkrate/Alpha Fund", 
+        "mongo26/Michael Mongelluzzo's Mutual Fund", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "norfnil/norfnil's Mutual Fund", 
+        "the_man_down_under/Growth", 
+        "tiny/tiny's Mutual Fund", 
+        "winkiedinkie/Energy Fund", 
+        "grainone/TDSP Short Watch", 
+        "robin/Watch List", 
+        "willblur/willblur's Un-Fundamental Fund", 
+        "lwilliams3/Short Quality Fund ", 
+        "vooch/X Fund", 
+        "dkarafil/DGK Focus", 
+        "satori/Satori Energy Fund", 
+        "kbladlee/Short Fund", 
+        "dmmd/Midget Fund", 
+        "bergerb2/bergerb2's Mutual Fund", 
+        "dman19762001/dman19762001's Mutual Fund", 
+        "holdenll/SHORT Fund", 
+        "samko/Closed Experiment 2", 
+        "bshennessey/Hennessey Cyclical Fund", 
+        "dmg023/dmg023's Mutual Fund", 
+        "nrablicki/Mid Cap Select", 
+        "ondal/Ondal Value", 
+        "peto/peto's Mutual Fund", 
+        "vooch5/momo1", 
+        "vooch3/5P", 
+        "gcastro694/gcastro694's Mutual Fund", 
+        "spmcmahon/Multicap Blend Fund", 
+        "mkt_caster/MC's black box short fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "gtm/GTM Capital", 
+        "collin2985/Basic Materials - Independent Oil & Gas", 
+        "roar/Basic Materials - Oil & Gas", 
+        "profssrfink/profssrfink's Energy fund", 
+        "hiromimini/Selling into Computational Kaos", 
+        "rok/DBH Capital Mid Cap Fund", 
+        "floutsector/floutsector's Mutual Fund", 
+        "ch222/ch222's Short-only Mutual Fund", 
+        "mahmur/Kirkwood", 
+        "qorkypez/Qorkypez's Mutual Fund", 
+        "tsailors/TCS", 
+        "fpurifoy/market  particpator", 
+        "eschmitzva/DSS Enterprises O&G Fund", 
+        "bullish/bullish's Mutual Fund", 
+        "bullish/bullish's Mutual Fund", 
+        "telkins/Toni M. Elkins's Mutual Fund", 
+        "telkins/Toni M. Elkins's Mutual Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "ava/Eleanor's Mutual Fund", 
+        "erichuss/Momentum Mutual Fund", 
+        "blue/blue's Mutual Fund", 
+        "spicciurro/PICS Growth and Income", 
+        "lwilliams3/Short Strategy Fund ", 
+        "qrheaume/Short Diversified Fund ", 
+        "dprice1/March Madness", 
+        "dprice1/Short", 
+        "topmodel/TopModelShort", 
+        "rogeriopedrozo/Protection Mutual Fund", 
+        "cmccann77/CMX", 
+        "cfalcon/CFalcon's Short Fund", 
+        "cfalcon/CFalcon's ", 
+        "lwilliams3/Short Investment Fund ", 
+        "leggwork/QF-15", 
+        "jjones16/Jones Fund", 
+        "joycerefron/FOCUS Real Short", 
+        "joycerefron/FOCUS Short", 
+        "aristote/aristote's Mutual Fund", 
+        "san1520/san1520's Mutual Fund", 
+        "raytoei/mfi-vanilla", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "kirsty/kirsty's Mutual Fund", 
+        "wulfster/My New Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "chzosso/Third Point", 
+        "llarry/llarry's Mutual Fund", 
+        "barons/barons's Mutual Fund", 
+        "kchamblee/bottom of the barrel", 
+        "bkeats/bkeats's Mutual Fund", 
+        "devdev142/US Small Index", 
+        "rabies/Rabies's Rhabdovirus Salivation Fund", 
+        "chapp/Beat the Market", 
+        "lotus/Energy Fund", 
+        "albab/aaNodiv", 
+        "gdog477/Low PE ratio", 
+        "esmilio/esmilio's Mutual Fund", 
+        "texastea007/texastea007's Mutual Fund", 
+        "brouke/DGO Fund", 
+        "jthornton2/Relative Value Fund", 
+        "bandrews1/Quantech Sector Shifter", 
+        "ozman456/ozman456's Mutual Fund", 
+        "ldp_investor/LMF Mutual Fund", 
+        "jbarefield/Triple Dip", 
+        "bsmith/Defense-Energy Fund", 
+        "bandrews1/Quantech Core", 
+        "sprintin_skin/sprintin_skin's Mutual Fund", 
+        "afinci/afinci's Mutual Fund", 
+        "joliger1/Oliger Mutual Fund", 
+        "jcouvelis/jcouvelis's Mutual Fund", 
+        "aakav/aakav's Mutual Fund", 
+        "justus5/Jon Woods's Mutual Fund", 
+        "lpeterson1/lp's Mutual Fund", 
+        "kzack/Oil&Energy Fund", 
+        "runonward/B's Energy Mutual Fund", 
+        "skrugler/Energy Fund", 
+        "wcollins/Market Potential Fund", 
+        "danbegood/ALF Technical Analysis Fund", 
+        "hrosenblum/HMR Fund", 
+        "sullivan47/favorite stocks", 
+        "guentert/Synergy Trend Fund", 
+        "aerarii_reditus/Polaron Top Diversified Fund", 
+        "jdamian_jr/JRD Large Cap Fund", 
+        "jsunendar/JSUNENDAR FOCUS FUND", 
+        "starchamber/StarChamber's Second Mutual Fund", 
+        "DELETE_khorton_30130063/khorton's Mutual Fund", 
+        "rrshah/B School", 
+        "wkusakabe/United Defense & Peace Fund", 
+        "dbanas/DB's Technical Fund", 
+        "jrcummings/jrc natural resources", 
+        "ckjnigel/Cyberdigm Mutual Fund", 
+        "bandrews1/Quantech Growth", 
+        "rtsamuel3/rtsamuel3's 5-75-25-200", 
+        "jahearn/jahearn's Mutual Fund", 
+        "dlundgren/Energy", 
+        "aakav/aakav's  stocks Mutual Fund", 
+        "DELETED_rwilson4_1483679125/High Return Mutual Fund", 
+        "nicholaf/Mid Cap Value Quant Fund", 
+        "ckjnigel/Old Paradigm Fund", 
+        "zpryor/Zacks Petroleum Fund", 
+        "jash/Jerry Ash's Mutual Fund", 
+        "wkusakabe/wkusakabe's Mutual Fund", 
+        "bsmith/General Growth Fund", 
+        "bandrews1/Quantech Value", 
+        "ddmans/ddmans's Mutual Fund", 
+        "gstemerman/Fortune Fast Fund", 
+        "blingblingcorp/blingblingcorp's Mutual Fund", 
+        "ckjnigel/Another Mutual Fund", 
+        "ggetthere/Energy Mutual Fund", 
+        "heisenberg/Heisenberg Fund", 
+        "astuk/Armin Stuk's First GROWTH Fund", 
+        "mhodges/mhodges's Mutual Fund", 
+        "mrm661014@cs.com/Fortune Fund", 
+        "jchauvette/Ymalah mutual's funds", 
+        "rfabian/Absolute Growth + Value Fund", 
+        "msemones1/msemones1's Mutual Fund", 
+        "jgrissel/Steady J - Weekly Look", 
+        "aakav/aakav's Mutual Fund", 
+        "j_rocket/Midas Fund", 
+        "aportugal/Portugal Mutual Fund", 
+        "bunnyluv/bunnyluv's Fund", 
+        "ryessup/Reta's  Energy Fund", 
+        "jevans2/jevans2's Mutual Fund", 
+        "ctam1/ctam1's Mutual Fund", 
+        "tcoffman/tim l. coffman's Mutual Fund", 
+        "arraizuloaga/Polar Bear MF", 
+        "rmatthews2/rmatthews2's Mutual Fund", 
+        "aerarii_reditus/Polaron Profit Fund", 
+        "bsmith/Tron House Memorial Fund", 
+        "ckjnigel/Yet Another Mutual Fund", 
+        "bkara/Independence Diversified Ultra Fund", 
+        "notchie/Carmel Clay Educators Fund", 
+        "starchamber/starchamber's Mutual Fund", 
+        "lwilliams3/L-W Energy Too Fund", 
+        "rtsamuel3/rtsamuel3's 7-75-25-500-RA", 
+        "willashworth1/willashworth1's Mutual Fund", 
+        "bsmith/Metals 'n Blue", 
+        "cds/Solar Growth Fund", 
+        "jbarefield/New fund", 
+        "jchauvette/YMALAH-3", 
+        "dgoodlife1/Dougslick", 
+        "aerarii_reditus/Polaron Growth Fund", 
+        "rkwan1/Fortune Fund", 
+        "kmarczak/PF Mutual Fund", 
+        "kevineanes/Eanes Energy Fund", 
+        "vptitsyn/DR_01 Fund", 
+        "wallstgolfer/wallstgolfer's Mutual Fund", 
+        "rteigen/Prosperity Fund", 
+        "spierce3/P&K 25 Fund", 
+        "davester/DC's \"value/growth blend\" fund", 
+        "pwallick/Nosebleed fund", 
+        "cmcfee/Mac High Risk Mutual Fund", 
+        "jbernier/jbernier's Mutual Fund 2", 
+        "cgable1/cgable1's Mutual Fund", 
+        "theuncle/Gemstone Fund", 
+        "willi25794/Bear Stock", 
+        "balciunas4/Balciunas Energy Fund", 
+        "jgarzik/G Insider Buying Fund", 
+        "ypunj/Mata Capital", 
+        "abcpserv/Test Fund", 
+        "vooch4/T", 
+        "ckloew/The Scavenger Fund", 
+        "mrm661014@cs.com/Mid Cap Value", 
+        "mochi/ALB", 
+        "daniel_pfund/50 top ideas", 
+        "koorosh/koorosh's Mutual Fund", 
+        "gfontana/Random Energy Fund", 
+        "hakker724/hakker724's Mutual Fund", 
+        "shinetime153/shinetime153's Mutual Fund", 
+        "arcadius884/Energy, Commodity and Transportation High Growth Fund", 
+        "apreuss/apreuss's Castaway", 
+        "vooch3/O Fund", 
+        "bill2jamie/William's Aggressive Performance Fund", 
+        "fishpond97/Fishpond97's Mid-Cap Value Fund", 
+        "heliosdiem/Second Intelligent New Gig", 
+        "benkhk/moneymaker23", 
+        "mvrh/Fortune's 100 Fastest Growing Companies", 
+        "rdemarco2/Ematic Bear Fund", 
+        "apreuss/apreuss's Mutual Fund", 
+        "ryessup/Short Fund", 
+        "rkohut/Rene Kohut's Energy Fund", 
+        "tennybrink12/tennybrink12's Mutual Fund", 
+        "dogonyaro/Summit Long Term Fund", 
+        "redcayuga/RedCayuga Trading Fund", 
+        "bjdesai/Concentrated Value", 
+        "seanbergin/seanbergin's Mutual Fund", 
+        "mochi/mixed bag", 
+        "debert/Micro/Small Cap Value Fund", 
+        "csarra/christian sarra's Mutual Fund#10", 
+        "jubals/jubals's Mutual Fund", 
+        "benzito/Long-Shoe", 
+        "downward_dog/downward_dog's Mutual Fund", 
+        "teflonralphie/TeflonRalphie's Fanatasy Fund", 
+        "mrm661014@cs.com/mrm661014@cs.com's Mutual Fund", 
+        "daveahn/The Great Ahn Fund", 
+        "stheccanat/Theccanat All Cap Fund", 
+        "pjdee/pjdee's Mutual Fund", 
+        "chfifield/Fifield Energy Fund", 
+        "prayerman/prayerman's Mutual Fund", 
+        "mcgovja/McGovern All Cap Value", 
+        "oenseling/Oliver Growth Value Fund", 
+        "apreuss/apreuss's Mutual Fund", 
+        "milkrate/Energy Fund", 
+        "scottishjeff/scottishjeff's Mutual Fund", 
+        "redcayuga/RedCayuga Blend", 
+        "kama/Insider buy www.ThomsonFN.com", 
+        "aessma/Essmaster Mutual Fund", 
+        "silva13/silva13's Mutual Fund", 
+        "csarra/christian sarra's Mutual Fund#7", 
+        "csarra/christian sarra's Mutual Fund#2", 
+        "mistercox/Trendcast", 
+        "licheng_apl/Licheng Energy Fund", 
+        "babyfacenat/babyfacenat's Mutual Fund", 
+        "kikola/Energy I", 
+        "jm50273/jm50273's Mutual Fund", 
+        "vestor22/vestor22's Mutual Fund", 
+        "gabethornhill/Large Cap BB", 
+        "gmantica/Meridian Capital Fund", 
+        "zakjepatat/zakjepatat's Mutual Fund", 
+        "apreuss/apreuss's Mutual Fund", 
+        "jdamian_jr/JRD Aggressive Growth Fund", 
+        "p.zasdad/Zasdad Zen Attitude Fund", 
+        "bill2jamie/Earnings Kings", 
+        "madarrah/Mustang Parnters", 
+        "mikki33/Michael Bonn's (mikki33) Single-Double-Triple", 
+        "csarra/christian sarra's Mutual Fund#4", 
+        "csarra/christian sarra's Mutual Fund#3", 
+        "mvrh1/IBD Daily 100", 
+        "jdjuly5/Mid Cap Selections", 
+        "pkadota/PK Criteria Mutual Fund", 
+        "davester/DC's Energy Fund", 
+        "mochi/beta driver fund", 
+        "ishare/Capital Group", 
+        "rlake76/Basque Value", 
+        "kshibley44/Lionwing20 Fund", 
+        "aschaefer/Screen For March 2005", 
+        "schiff6827/Opportunistic Mutual Fund (Long)", 
+        "mjmayer/Marty Mayer's Large-Cap Value Fund", 
+        "nyujd/etf  + sector watch", 
+        "k2378/k2378's Mutual Fund", 
+        "ahoffard/INTEREST RATES", 
+        "susanb/NJ Fund", 
+        "dliddane/terminator 2", 
+        "jimyy/Jims Real Estate", 
+        "pdelgado/PAD5MF - JN", 
+        "dannygrubb/The Happy Quant Energy Fund", 
+        "daveahn/ABC", 
+        "kdressel/Dvich 21st Century", 
+        "rjkuyvenhoven/Razor's Robot 1", 
+        "biep/biep's Mutual Fund", 
+        "aogilvie/ACO Partners Hedge", 
+        "superjake/Revan", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "otismo/Otismo's #1Short Fund", 
+        "moreno770/MonteNew1", 
+        "finanaliticasector_a/energy_1", 
+        "smurfburglar/smurfburglar's Mutual Fund", 
+        "topnotch/Gad's Opportunist Fund", 
+        "francium/francium's Mutual Fund", 
+        "eschmitzva/Marketocracy Posters' Castaway Fund", 
+        "zuby84/zuby84's Mutual Fund", 
+        "mkraut/mkraut's Mutual Fund", 
+        "fenlon/fenlon's Mutual Fund", 
+        "usna4life/usna4life's Mutual Fund 2", 
+        "maagap/Maagap Low PE Fund", 
+        "dmangan1/Simple Way Mutual Fund", 
+        "smoothplay/Oil, Exploration, and Services", 
+        "moreno770/MonteNEW2", 
+        "mdb/Prudent Fund", 
+        "vanprooyen/VANPRO Graham and Dodd", 
+        "guyvega/Valumentum Fund", 
+        "guydolo/TecnoQuant Long", 
+        "jhowser1/jason's private fun", 
+        "egebhart/egebhart's Mutual Fund", 
+        "larryjthompson/Larry J. Thompson's Quantitative Trading Fund", 
+        "frostyfreak/kex010", 
+        "luis439/luis439's Mutual Fund", 
+        "coldstocks/coldstocks's Value Mutual Fund", 
+        "barbara/BF1--2000", 
+        "castaways2006/castaways2006 \"A\"-list", 
+        "smoothplay/Energy Fund", 
+        "acanete/MODEL - GROWTH 1 (inactive)", 
+        "nmacey/nmacey's Mutual Fund", 
+        "frostyfreak/kkex020", 
+        "rajakrsnan/rajakrsnan's Mutual Fund", 
+        "ferran/CV (Maig 12/06)", 
+        "conqstspd/Bang Em Short", 
+        "argonaut/argonaut's List of Oil Companies", 
+        "romero853/romero853's Mutual Fund", 
+        "university/university's aggressive Mutual Fund", 
+        "larryjthompson/Larry Thompson's Top 20 Mutual Fund", 
+        "finanaliticasector_a/energy_2", 
+        "alexslug/alexslug's Mutual Fund", 
+        "dscott/dscott's Mutual Fund", 
+        "lcalvert/Paradigm Mutual Fund", 
+        "stevenlberry/Upgrade-50", 
+        "eylem/eylem's Industry Leaders", 
+        "t0fu/Dorfman 2006 Picks", 
+        "rarkell/rarkell's Mutual Fund", 
+        "finanaliticasector_a/energy_5", 
+        "edbenkart/Benkart Mutual Fund", 
+        "kama/Shorting Zaks Bears", 
+        "duck888/Smorgasborg", 
+        "topnotch/Gad's Growth Fund", 
+        "davepavlik/davepavlik's Mutual Fund", 
+        "riskfile/Riskfile's Mutual Fund-Short", 
+        "ahoffard/shorts", 
+        "highwaysix/highwaysix's Mutual Fund", 
+        "brannon10/brannon10's Mutual Fund", 
+        "jawink0/jawink0", 
+        "pattib/Patti's P fund", 
+        "samuelwilson/Valuengine 5 Star ", 
+        "b_grodek/ The Free spirit Mutual Fund", 
+        "hpatel298/BuyLow", 
+        "dleveck/dleveck's Short Fund", 
+        "rjeddings/Takin' it in the Shorts", 
+        "obe/Uniting Strategies", 
+        "kdressel/kdressel's value fund", 
+        "rtwirth/Robert T. Wirth Capital Growth", 
+        "agmcderm/agmcderm's Mutual Fund", 
+        "avatarium/crb", 
+        "seabatid/Alphabet Experiment Mutual Fund", 
+        "ajani/Single A Capital", 
+        "bull_bear1980/bull_bear1980's Mutual Fund", 
+        "slat/slat's Mutual Fund", 
+        "mevolution/mevolution's Mutual Fund", 
+        "sgeri/Against the House", 
+        "scottstockscreener/scottstockscreener's Mutual Fund", 
+        "rfield55/rfield55's Short Fund", 
+        "minuet/Shorts 4: Mission from Marketocracy", 
+        "eugene_07/Top10 Fund", 
+        "denzeljh/denzeljh's Mutual Fund", 
+        "nickw/Nick Wilczynski Strat Lab Open Fund", 
+        "cricenti/Midwest Value Special Situation", 
+        "jlight/jlight's Mutual Fund", 
+        "wwwtradersaffiliatescom/wwwtradersaffiliatescom's Mutual Fund", 
+        "dosmanski/Insane Dane Fund", 
+        "kulananda/World Growth & Opportunuty Fund", 
+        "oroborous/Any Return Div Fund", 
+        "joboggi/O'Shaugnessy Growth Stocks", 
+        "gedanken/Gedanken Growth Fund", 
+        "tranc3/Krypto's High Yield Fund", 
+        "kll/Future Innovator Fund", 
+        "bradhark/bradhark's Mutual Fund", 
+        "bekricm/Big Money", 
+        "bever77/bever77's Mutual Fund", 
+        "resssb/Stevens Group Fund", 
+        "yoyo50/Charlotte Odell's Energy Fund", 
+        "dclaw/dclaw's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "brokertfs/Cornucopia Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "gmartino/BallBag", 
+        "abollinger/Abollinger Short Fund", 
+        "jarvis_hills/dead horses", 
+        "sveneziani/Mantuamegenuit US Medium Cap", 
+        "kdressel/KLTT", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "pkucheria/pkucheria's Mutual Fund", 
+        "oroborous/High Return Div Fud", 
+        "tacall/Anthem Energy Enterprise Fund", 
+        "milkrate/Lobo Fund", 
+        "bullwinkle/bullwinkle's Gas/Oil Mutual Fund", 
+        "mtoubak/WPA Growth Fund", 
+        "chapmame/Chapman's Mutual Fund", 
+        "yitzehr/yitzehr's Mutual Fund", 
+        "wbloomer/Navellier Emerging Growth", 
+        "beerandwings/SKO Cap App", 
+        "jgallan1/Oil fund", 
+        "julinator/OLYMPIC FUND", 
+        "spoorts/spoorts's Mutual Fund", 
+        "glogsdon/Graham's energy Fund", 
+        "sarah7769/sarah7769's Mutual Fund", 
+        "bobelle21/Next Generation Mutual Fund II", 
+        "bobelle21/Next Generation Mutual Fund II", 
+        "bobelle21/Next Generation Mutual Fund III", 
+        "bobelle21/Next Generation Mutual Fund IV", 
+        "joshhill1978/JTH Intrinsic Value Fund", 
+        "mmerveille1/Perf 1", 
+        "fabcar/fabcar's Mutual Fund", 
+        "igdbest/igdbest's Mutual Fund", 
+        "lawian/lawian's Mutual Fund", 
+        "messaye/Time", 
+        "spiffyspleen/Cheap Stock Fund", 
+        "new101/AutoFund", 
+        "new101/AutoFund", 
+        "ericfernandez/Two Rivers Short Fund", 
+        "juneboogie/Octavius Gill jr's Short Mutual Fund", 
+        "dbarrows2000/dbarrows2000's Mutual Fund", 
+        "revblc/Short Fund", 
+        "mtulett/Alt Short Fund", 
+        "mtulett/MT's Short Fund", 
+        "dmoffet/Apocalypse", 
+        "simbert/Imbert Hedge Fund", 
+        "alui/AL's SmallCap Opportunity Fund", 
+        "tammendola/WAR FUND", 
+        "chris_nairn/chris_nairn's Mutual Fund", 
+        "ahknaten/Kai Petainen's Energy Shorts", 
+        "marketocracy/SWAN Fund ver 0", 
+        "stavon/energy", 
+        "jpsandrs/Energy fund", 
+        "mmetrock/mmetrock's C Wave Down fund", 
+        "fundamental/FundAmental's Mutual Fund", 
+        "zfitter/The Dreadnought Fund", 
+        "austing143/Green Utop Fund", 
+        "momentumvalue/not in use", 
+        "pbradford/SB Research", 
+        "bbocracy/bbocracy's Energy Fund", 
+        "richfield/richfield's Able Long Fund", 
+        "mlaborde/Down Turn Mutual Fund", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "kuyeno/Shorty", 
+        "kelly.tidwell/kelly.tidwell's Mutual Fund", 
+        "laurent_zarruk/Olympian Mutual Fund", 
+        "ammonra/Ammon-Ra's Mutual Fund", 
+        "driescaers/driescaers's Mutual Fund", 
+        "pbchan/pbchan's Mutual Fund", 
+        "mlear/Lear's Mutual Fund", 
+        "mlear/cheap small-cap energy fund", 
+        "shep_1487/SPS Capital Management", 
+        "ljoneill/Deep Value", 
+        "daniele_ignone/Mid Cap", 
+        "qpr/Price Target Short  Mutual Fund", 
+        "invest2010/T. Boone Pickens Style", 
+        "dontgoshane/World Energy", 
+        "jeannie/Oil Independents Fund", 
+        "sgchauhan/wcat's short energy fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "advisorcfa/AdvisorCFA's Short Fund", 
+        "kadir/CROIC ", 
+        "jbissey1990/jbissey1990's Mutual Fund", 
+        "advisorcfa/AdvisorCFA Strat Lab Open Fund", 
+        "ydw0505/ydw0505's Mutual Fund", 
+        "ahoffard/Excel Resouces", 
+        "unashogi/Unashogi's Stocks Up 20% YTD Fund", 
+        "guido/JMLSI-Shorts", 
+        "guido/ShortGas", 
+        "annanshogi/Annanshogi's SIPro Index Keelix Version Fund", 
+        "joeeleonard/Mad Money", 
+        "donahue5000/donahue5000 Oil and Gas Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = FCX; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-03 16:34:33.588) SUCCESS
+D: (02-03 16:34:33.588) cahelper finished 2015-02-03 16:34:33 -0500
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'528c33db3e49f401c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 726505100
+>           DATE = TIMESTAMP '2002-12-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Plains Exploration & Production Co. L.P.
+>     PRIMARYKEY = X'528d33db3e49f401c0a80146'
+>       STOCKKEY = X'528c33db3e49f401c0a80146'
+>         SYMBOL = PXP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 726505100
+>           DATE = TIMESTAMP '2013-05-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Plains Exploration & Production Co. L.P.
+>     PRIMARYKEY = X'480a4b2e54d13e7fc0a86f92'
+>       STOCKKEY = X'528c33db3e49f401c0a80146'
+>         SYMBOL = PXP
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = MG
+select * from mcorporateaction where aliaskey=X'480a4b2e54d13e7fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'480a4b2e54d13e7fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PXP  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|25.000000|CP_CASH_FLAG|N.A.|CP_SH|0.653100|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150203:042132
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-05-31 00:00:00.000000'
+>         BB_IDENTIFIER = FCX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FCX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-05-31 00:00:00.000000'
+>            PRIMARYKEY = X'98554b2e54d13bdcc0a86f92'
+>               VERSION = NULL
+
+check on 2/4/15 
+
+2/4/15 - the acquis is there
+May 31, 2013	Plains Exploration & Production Co. L.P. [PXP] acquired by Freeport-McMoRan Inc [FCX] on 2013-05-31 00:00:00.
+
+closing this out

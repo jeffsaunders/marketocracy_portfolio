@@ -1,0 +1,356 @@
+date:   6/22/15
+ticker:   CUREQ
+
+yahoo:  nothing
+
+quantum:
+Curative Health Services, Inc.
+Ticker Symbol: CUREQ*     CUSIP: 23126W100     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 6/09/06
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:CURATIVE HEALTH SVCS  Symbol:CUREQ
+Date: 06/22/2015
+
+95 users found
+
+1	abadazz	ahowl7mx	ak72737	annelies619	anthonymorris	aratnikas	arogolsky	asmith8	azablocki1	benneke
+2	bhenderson	bltboy1	blue_silk	bunnyluv	cabro57	cctunes	cfilstead	chief	christophe10	clark
+3	cyberwulff	darklancet	dblade	dick_jane	dmtest	dsohi	euanmcf	fairwaypga	fndblsh	ganga_financial_group
+4	gazev	genpitaly	h2oskierdan	haltafi	htraub	jakewk	jamesatlas@hotmail.com	janvrot	jevany	jlamm
+5	jlewis1	jmaurice	john97	joshuaadams	juliuspleaser	kathynz	keving23	kg	kkam	kleinphi
+6	liquidassets	lw425	madraven	matrix	mcleff	megalopsychia	mferri	michael.keane	mkantor	mlks
+7	moreno770	myeh	netrun	ngkent	nigelrake50	otismo	parkmp02	pmccrite1	priv8pete	racerboy112
+8	rainman104	rbrower	rickdlt	robertororo	ryarbrough	seblanglois	sgleichman	sillyhumberto	skashin2	smcghie
+9	stamo	stock_insider	stockbard	stone_cold	tduong1	titwick	tjenkins	tlundg	vanderstraeten89	victorlabo
+10	vvancleave	xgreenx	xperttrader	youril	zagr0s06
+
+database
+select distinct stockkey from mstockalias where symbol= 'CUREQ';  
+> Row 1:
+>   STOCKKEY = X'dc120e21390a7e0ac0a80116'
+
+select * from mstockalias where stockkey=X'dc120e21390a7e0ac0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'dc130e21390a7e0ac0a80116'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2003-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'f73e1e9e3f42d754c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2006-02-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'b35d5f0f43fbd446c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2006-03-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'18d74bf84428a6fbc0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 23126W100
+>           DATE = TIMESTAMP '2006-03-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'57930586442b4a96c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CUREQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CUREQ'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CUREQ
+>>>> dbtool started at 2015-06-23 00:56:33 -0400
+stock: CUREQ
+  PK       : [DC120E21390A7E0AC0A80116]
+  companyID: [1429]
+  symbol   : [CUREQ]
+  name     : [CURATIVE HEALTH SVCS]
+  date     : [2006-03-29 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-23 00:56:34 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 1429
+2006-06-05 (Mon) [1981]: O:0.0180 H:0.0190 L:0.0180 C:0.0190 V:134300 TSO:13019 A:0.0190 R:1.0000 CA:0.0000
+2006-06-06 (Tue) [1982]: O:0.0150 H:0.0160 L:0.0100 C:0.0110 V:2604900 TSO:13019 A:0.0110 R:1.0000 CA:0.0000
+2006-06-07 (Wed) [1983]: O:0.0120 H:0.0120 L:0.0095 C:0.0095 V:2360800 TSO:13019 A:0.0095 R:1.0000 CA:0.0000
+2006-06-08 (Thu) [1984]: O:0.0100 H:0.0100 L:0.0040 C:0.0060 V:6478600 TSO:13019 A:0.0060 R:1.0000 CA:0.0000
+2006-06-09 (Fri) [1985]: O:0.0060 H:0.0060 L:0.0020 C:0.0030 V:8522000 TSO:13019 A:0.0030 R:1.0000 CA:0.0000
+2006-06-10 (Sat) [1986]: <WEEKEND>
+2006-06-11 (Sun) [1987]: <WEEKEND>
+2006-06-12 (Mon) [1988]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:0 TSO:13019 A:0.0030 R:1.0000 CA:0.0000
+2006-06-13 (Tue) [1989]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:0 TSO:13019 A:0.0030 R:1.0000 CA:0.0000
+2006-06-14 (Wed) [1990]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:0 TSO:13019 A:0.0030 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'dc120e21390a7e0ac0a80116' and shares > 0 order by closed; 
+> Row 1800:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2006-04-25 11:36:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 37.360850
+>   CURRENTORDER = X'01345d3a444e1036c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'07c8070c39d4a6efc0a80119'
+>       MODIFIED = NULL
+>            NET = 709.856150
+>         OPENED = TIMESTAMP '2006-04-25 08:04:06.000000'
+>          PRICE = 0.061727
+>     PRIMARYKEY = X'01325d3a444e1036c0a80134'
+>         SECFEE = 0.030000
+>         SHARES = 11500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'dc120e21390a7e0ac0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dc120e21390a7e0ac0a80116'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'adc0260a3974dd46c0a801e1'
+>       SYMBOL = EEEp1
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 19, 2003 		-13000 	-13000 	Sell
+Total: -13,000
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 19, 2003 	13,000 	$650.00 	$7.67 	$163,176.99 	$12.55
+> Row 2:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'08314e2939b31fdec0a801e0'
+>       SYMBOL = JAAMF
+
+> Row 1:
+>   LOGINNAME = john97
+
+he had two sells of 13000 shares which he didn't hold and there is no collision, I deleted these 
+
+*********  end of shorts
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dc120e21390a7e0ac0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 95 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 6/09/06
+last ticket: 2006-04-25  PRICE = 0.061727
+last price:  2006-06-14 (Wed) [1990]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:0 TSO:13019 A:0.0030 R:1.0000 CA:0.0000
+
+going with 20060609 0.0030
+
+
+/Marketocracy/bin/cahelper -symbol  CUREQ  -effective 20060609 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0030 -acqShare 0 -purchaser CUREQ   >& /Users/build/caout/CUREQ.20150623-DELIST.out
+CUREQ.20150623-DELIST.out
+stocks:~/caout build$ cat CUREQ.20150623-DELIST.out
+D: (06-23 09:15:39.479) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-23 09:16:19.405) cahelper started on 2015-06-23 09:16:19 -0400
+
+D: (06-23 09:16:19.737) There are [0] open tickets for CUREQ on 20060609
+D: (06-23 09:16:50.486) Waiting for lock: MDistributedLock(0xd04b440) locked: NO  path: '/tmp/MMarketDataHandler.lock' ownerPid: 19594
+D: (06-23 09:17:20.490) Waiting for lock: MDistributedLock(0xd04b440) locked: NO  path: '/tmp/MMarketDataHandler.lock' ownerPid: 19594
+D: (06-23 09:17:25.493) StockFileLoad Version:4.0
+D: (06-23 09:17:25.493) Loading Stock Data
+D: (06-23 09:18:31.064) Building Lookup Index
+D: (06-23 09:18:38.144) Finished Building Index
+D: (06-23 09:18:43.869) Finished Loading Stock Data
+D: (06-23 09:18:43.988) Connection to 192.168.111.172:6666 succeeded
+D: (06-23 09:18:48.651) SavingChanges for position sell out 101 of 527
+D: (06-23 09:19:02.327) {
+    "ACQUIRED_STOCK" = CUREQ; 
+    "ACQUIRING_STOCK" = "CUREQ_FIX"; 
+    AMOUNT = 0.003; 
+    APPLIED = 1; 
+    DATE = 20060609; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CUREQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-23 09:19:09.940) SUCCESS
+D: (06-23 09:19:09.940) cahelper finished 2015-06-23 09:19:09 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'dc120e21390a7e0ac0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'dc130e21390a7e0ac0a80116'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2003-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'f73e1e9e3f42d754c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2006-02-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'b35d5f0f43fbd446c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y876
+>           DATE = TIMESTAMP '2006-03-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'18d74bf84428a6fbc0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CURE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 23126W100
+>           DATE = TIMESTAMP '2006-03-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'57930586442b4a96c0a80146'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CUREQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 23126W100
+>           DATE = TIMESTAMP '2006-06-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CURATIVE HEALTH SVCS
+>     PRIMARYKEY = X'a1214c8c55895c23c0a86f92'
+>       STOCKKEY = X'dc120e21390a7e0ac0a80116'
+>         SYMBOL = CUREQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'a1214c8c55895c23c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'a1214c8c55895c23c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CUREQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.003000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150623:091619
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-06-09 00:00:00.000000'
+>         BB_IDENTIFIER = CUREQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-06-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CUREQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-06-09 00:00:00.000000'
+>            PRIMARYKEY = X'a11b4c8c55895c23c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'a11b4c8c55895c23c0a86f92';
+> Row 1:
+>   _C001 = 181.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'a11b4c8c55895c23c0a86f92'));
+there are 181 fundkeys, save to CA issues CUREQ fundkeys.txt
+
+For Beta case
+CUREQ no longer trades but is still active on our site - need to delist 
+
+check on 6/24/15   invalidate funds
+check MAdmin  is clear 
+
+ CUREQ has been acquired 	right curve
+  	  	
+CURATIVE HEALTH SVCS acquired by a private company on 2006-06-09 00:00:00.
+  	  	 invalidate
+
+close and reprice 

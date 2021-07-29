@@ -1,0 +1,344 @@
+OMNY
+date:    11/18/15
+ticker:   OMNY
+
+yahoo:  nothing
+
+quantum: nothing
+
+oursite:
+Symbol: OMNY	Name: OMNISKY CORP	Price: $0.00
+Volume:	Sector: Telecommunication Services	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  OMNY   
+ [NEW QUOTE]       
+Corporate Actions for OMNISKY CORP	  November 18, 2015
+left curve	  symbol changes for OMNY	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+28 Nov 01	OMNY	OMNYE	Change in the ticker (trading) symbol from OMNY to OMNYE
+05 Dec 01	OMNYE	OMNY	Change in the ticker (trading) symbol from OMNYE to OMNY
+ 	 	 
+left curve	  listing changes for OMNY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Dec 04, 2001	NASDAQ	UQ	OTCBB-OTHER	UV	Change in the exchange that OMNYE trades on from NASDAQ to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=OMNY
+
+check MAdmin
+Stock:OMNISKY CORP  Symbol:OMNY
+Date: 11/18/2015
+
+33 users found
+
+1	ace_chiu	agolabek	ahimsl	aleibfreid	barryboy32	bfraser1	chris_1001	cmarland	cnstratton	dbarbetta
+2	dcolera	dhasty	djhwood1	epanton	jhcomstock	jjbrown	jkelly1	jpalumbo	jpodulka	lhemming
+3	luckyddawg	matematika	mcheney	pattyfox	rmorris	sbuckman	smezic	sup4141	thallen34	twhalen
+4	tymer	uptick	wbertelson	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'OMNY';  
+> Row 1:
+>   STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+select * from mstockalias where stockkey=X'7d8b043c39e7e9afc0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2000-09-25 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'7d8c043c39e7e9afc0a801dc'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-11-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'46126ad03c05a703c0a801dc'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-12-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'd5ae748a4aa6d35dc0a8013c'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'7b9574984aa6d39fc0a8013c'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='OMNY'  order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|OMNY|CP_DELIST_REASON|29|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 58333290
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 1477006
+>        BB_COMPANYNAME = OmniSky Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-11 00:00:00.000000'
+>         BB_IDENTIFIER = OMNY    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-10-10 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = OMNY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-10-10 00:00:00.000000'
+>            PRIMARYKEY = X'89aa071d4e93734ec0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock OMNY
+>>>> dbtool started at 2015-11-18 10:13:55 -0500
+stock: OMNY
+  PK       : [7D8B043C39E7E9AFC0A801DC]
+  companyID: [13568]
+  symbol   : [OMNY]
+  name     : [OMNISKY CORP]
+  date     : [2000-09-25 15:00:00]
+  status   : [Active]
+stock: OMNY
+  PK       : [7D8B043C39E7E9AFC0A801DC]
+  companyID: [13568]
+  symbol   : [OMNY]
+  name     : [OMNISKY CORP]
+  date     : [2001-12-05 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-18 10:13:55 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 13568
+2011-10-11 (Tue) [3935]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7d8b043c39e7e9afc0a801dc' and shares > 0 order by closed; 
+> Row 160:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2001-11-23 13:00:14.000000'
+>        COMMENT = NULL
+>     COMMISSION = 500.050000
+>   CURRENTORDER = X'175a611e3bfe87c3c0a801e1'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'60ba02f53b8e6429c0a801e1'
+>       MODIFIED = NULL
+>            NET = 10501.050000
+>         OPENED = TIMESTAMP '2001-11-23 12:30:43.000000'
+>          PRICE = 0.210021
+>     PRIMARYKEY = X'1759611e3bfe87c3c0a801e1'
+>         SECFEE = 0.000000
+>         SHARES = 50000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7d8b043c39e7e9afc0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7d8b043c39e7e9afc0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7d8b043c39e7e9afc0a801dc'  and totalshares < 0)));
+
+apply the acquis
+DELIST:  2011-10-11
+there are 33 members who hold this stock
+quantum:
+last ticket:  2001-11-23  PRICE = 0.210021
+last price:  2011-10-11 (Tue) [3935]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+
+going with 20111011 0.0010 
+
+/Marketocracy/bin/cahelper -symbol  OMNY  -effective 20111011 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0010  -acqShare 0 -purchaser OMNY   >& /Users/build/caout/OMNY.20151118-DELIST.out 
+OMNY.20151118-DELIST.out
+stocks1:~/caout build$ tail -f OMNY.20151118-DELIST.out
+D: (11-18 10:17:36.237) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-18 10:18:00.092) cahelper started on 2015-11-18 10:18:00 -0500
+
+D: (11-18 10:18:00.302) There are [0] open tickets for OMNY on 20111011
+D: (11-18 10:18:00.636) StockFileLoad Version:4.0
+D: (11-18 10:18:00.636) Loading Stock Data
+D: (11-18 10:18:37.701) Building Lookup Index
+D: (11-18 10:18:43.320) Finished Building Index
+D: (11-18 10:18:47.201) Finished Loading Stock Data
+D: (11-18 10:18:47.319) Connection to 192.168.111.172:6666 succeeded
+D: (11-18 10:18:49.263) {
+    "ACQUIRED_STOCK" = OMNY; 
+    "ACQUIRING_STOCK" = "OMNY_FIX"; 
+    AMOUNT = 0.001; 
+    APPLIED = 1; 
+    DATE = 20111011; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "OMNY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-18 10:18:55.108) SUCCESS
+D: (11-18 10:18:55.109) cahelper finished 2015-11-18 10:18:55 -0500
+Check the results 
+select * from mstockalias where stockkey= X'7d8b043c39e7e9afc0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2000-09-25 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'7d8c043c39e7e9afc0a801dc'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-11-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'46126ad03c05a703c0a801dc'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-12-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'd5ae748a4aa6d35dc0a8013c'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2001-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'7b9574984aa6d39fc0a8013c'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68213L103
+>           DATE = TIMESTAMP '2011-10-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = OMNISKY CORP
+>     PRIMARYKEY = X'e1501a44564c96a8c0a86fab'
+>       STOCKKEY = X'7d8b043c39e7e9afc0a801dc'
+>         SYMBOL = OMNY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50102010
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'e1501a44564c96a8c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'e1501a44564c96a8c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|OMNY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.001000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151118:101800
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-11 00:00:00.000000'
+>         BB_IDENTIFIER = OMNY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-10-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = OMNY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-11 00:00:00.000000'
+>            PRIMARYKEY = X'e14a1a44564c96a8c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'e14a1a44564c96a8c0a86fab';
+> Row 1:
+>   _C001 = 59.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'e14a1a44564c96a8c0a86fab'));
+there are 59 fundkeys, save to CA issues OMNY fundkeys.txt
+
+For Beta case
+OMNY no longer trades but is still active on our site - need to delist 
+
+check on 11/19/15   invalidate funds
+check MAdmin  clear 
+
+OMNY has been acquired	right curve
+ 	 	
+OMNISKY CORP acquired by a private company on 2011-10-11 00:00:00.
+
+invalidate reprice and close 
+
+
+

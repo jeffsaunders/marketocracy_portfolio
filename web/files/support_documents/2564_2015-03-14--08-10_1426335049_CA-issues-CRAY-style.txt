@@ -1,0 +1,127 @@
+date:  3/14/15
+style update 
+Ticket Number:	2564
+Portfolio Username:	2004_porsche_911
+Ticker Symbol:	CRAY
+Corporate Action Type:
+Other
+Subject:
+CRAY
+Description:
+CRAY (CRAY INC) has Style: Micro Cap : Value but its style should be closer to Small Cap : Growth.
+Thank you.
+
+select distinct stockkey from mstockalias where symbol='CRAY'; 
+> Row 1:
+>   STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+select * from mstockalias where STOCKKEY = X'7eec10ac390c6d4fc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'7eed10ac390c6d4fc0a8015c'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223106
+>           DATE = TIMESTAMP '2005-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'8227214d4281678fc0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223106
+>           DATE = TIMESTAMP '2005-06-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'fb562e3842a10b71c0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223106
+>           DATE = TIMESTAMP '2006-06-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'3c371da34488d6afc0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAYD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223304
+>           DATE = TIMESTAMP '2006-06-08 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'1b3124d54488d6fbc0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAYD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223304
+>           DATE = TIMESTAMP '2006-07-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'c5413e4f44af11efc0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223304
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'd4e93afa4d225da9c0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = XV
+
+update mstockalias set STYLEKEY='SG' where stockkey=X'7eec10ac390c6d4fc0a8015c';
+select * from mstockalias where STOCKKEY = X'7eec10ac390c6d4fc0a8015c';
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 225223304
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRAY INC
+>     PRIMARYKEY = X'd4e93afa4d225da9c0a80146'
+>       STOCKKEY = X'7eec10ac390c6d4fc0a8015c'
+>         SYMBOL = CRAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = SG
+
+it's good check on 3/14/15
+3/14/15  style is SG closing this out 

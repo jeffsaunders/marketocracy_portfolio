@@ -1,0 +1,485 @@
+ATL	
+date:   11/5/15
+ticker:   ATL
+
+yahoo:
+Atlatsa Resources Corporation (ATL) -NYSE MKT
+0.06 0.00(0.00%) Jul 10
+Prev Close:	0.06
+Open:	0.06
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	0.68
+Beta:	1.46
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	0.06 - 0.40
+Volume:	0
+Avg Vol (3m):	48,415
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.05
+Div & Yield:	N/A (N/A
+
+quantum:
+Atalanta/Sosnoff Capital Corp.
+Ticker Symbol: ATL*     CUSIP: 046499109     Exchange: NYSE
+* NOTE: This security is no longer trading as of 7/14/03
+
+BUSINESS:  Atalanta/Sosnoff Capital Corp. provides discretionary investment management and related services to individuals, corporations, public funds, Taft-Hartley plans, and endowment institutions.
+Notes:  Atalanta/Sosnoff Capital Corp. was acquired by its CEO effective 7/14/2003.
+
+oursite:
+Symbol: ATLRF	Name: Atlatsa Resources Corp	Price: $0.03
+Volume: 416,034	Sector: Materials	Change: $0.00
+Short Volume: 45,611	Style: Micro Cap : Blend	Market Cap: $6,052,290
+Avg Volume: 45,611	 Exchange: AMEX	Today: 0.00%
+50 Day Ave: $0.04	Year High: $0.23	High: $0.04
+200 Day Ave: $0.11	Year Low: $0.02	Low: $0.03
+
+research  stock info  ATLRF   
+ [NEW QUOTE]       
+Corporate Actions for Atlatsa Resources Corp	  November 05, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for ATLRF	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+08 Jul 02	ARQRF	ARQRE	Change in the ticker (trading) symbol from ARQRF to ARQRE
+12 Jul 02	ARQRE	ARQRF	Change in the ticker (trading) symbol from ARQRE to ARQRF
+15 Mar 04	ARQRF	ANO	Change in the ticker (trading) symbol from ARQRF to ANO
+14 May 12	ANO	ATL	Change in the ticker (trading) symbol from ANO to ATL
+13 Jul 15	ATL	ATLRF	Change in the ticker (trading) symbol from ATL to ATLRF
+ 	 	 
+left curve	  CUSIP changes for ATLRF	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+14 May 12	03633E108	049477102	Change in any of identification numbers (CUSIP) of a security from 03633E108 to 049477102
+ 	 	 
+left curve	  name changes for ATLRF	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+14 May 12	Anooraq Resources Corp	Atlatsa Resources Corp	Change in the name of issuer from Anooraq Resources Corp to Atlatsa Resources Corp
+ 	 	 
+left curve	  listing changes for ATLRF	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Mar 15, 2004	OTCBB	UU	AMEX	UA	Change in the exchange that ANO trades on from OTCBB to AMEX
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=ATL
+
+check MAdmin
+Stock:Atlatsa Resources Corp  Symbol:ATLRF
+Date: 11/05/2015
+
+44 users found
+
+1	DruidKGM	automaton	babdul	bkalaf	bottomfisher1	calman318	chico237	damor181	db	disneyfreak518
+2	drac	ehovey	extesy	ffis	fol40561	gcoopersf	gurucandidate	hugemagic	jdberia	jmcgregor
+3	jmfunes	johnkingla	jpb	jpovilus	kingjohn2	kkylheku	m_davis	mcintyre63	meleke	mmucil
+4	nabootrader	njacoby	paolom	phoward	psionman	sav	smilingbear	stoynova	tfischer	tortugalaud
+5	trixi	updowdown	utepark	wo_neill
+
+this is the wrong one
+look on 07/11/2003 
+Stock:ATALANTA/SOSNOFF CAPITAL  Symbol:ATL
+Date: 07/11/2003
+
+9 users found
+
+1	bmills	jmcgraw	kjweliczka	mbarnes	rcote	rshuhart	stanglx718	tbuehler	ymills	 
+
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'ATL';  
+> Row 1:
+>   STOCKKEY = X'07530e21390ae2c0c0a80116'
+> Row 2:
+>   STOCKKEY = X'77293d3c40c4e79bc0a80146'
+
+there are two
+> ATL 1:
+>   STOCKKEY = X'07530e21390ae2c0c0a80116'
+select * from mstockalias where stockkey=X'07530e21390ae2c0c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 046499109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ATALANTA/SOSNOFF CAPITAL
+>     PRIMARYKEY = X'07540e21390ae2c0c0a80116'
+>       STOCKKEY = X'07530e21390ae2c0c0a80116'
+>         SYMBOL = ATL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'07540e21390ae2c0c0a80116';
+two DVD_CASH that's it
+
+> ATL 2:   this one still trades and is not the problem 
+>   STOCKKEY = X'77293d3c40c4e79bc0a80146'
+select * from mstockalias where stockkey=X'77293d3c40c4e79bc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'772a3d3c40c4e79bc0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ARQRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-07-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'61c420fb40c629e6c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ARQRE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-07-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'e35d210f40c62a07c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ARQRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2004-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'86d4222840c62a42c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ANO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03633E108
+>           DATE = TIMESTAMP '2004-03-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'2112222b40c62a59c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ANO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03633E108
+>           DATE = TIMESTAMP '2012-05-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Anooraq Resources Corporation
+>     PRIMARYKEY = X'1ce2583a4fb18b89c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ATL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03633E108
+>           DATE = TIMESTAMP '2012-05-14 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Atlatsa Resources Corp
+>     PRIMARYKEY = X'a74859a44fb18c12c0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ATL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 049477102
+>           DATE = TIMESTAMP '2012-05-14 00:00:02.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Atlatsa Resources Corp
+>     PRIMARYKEY = X'568f59ab4fb18c2cc0a80146'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ATL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 049477102
+>           DATE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Atlatsa Resources Corp
+>     PRIMARYKEY = X'eb284e105604362ac0a86fab'
+>       STOCKKEY = X'77293d3c40c4e79bc0a80146'
+>         SYMBOL = ATLRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XB
+ THIS ONE STILL TRADES 
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ATL'  order by BB_EFFECTIVE;
+> Row 4:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|2115Z   AU|CP_NAME|Private Investor|CP_ID_BB_COMP|1096040|CP_UNIT|Atalanta/Sosnoff Capital Cor|CP_TOT_AMT|22.435715|CP_ACQUIS_TYP|1|CP_CASH|13.950000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|4.498297|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|81.000000|CP_PCT_SOUGHT|19.000000|CP_ACCOUNTING_METHOD|0|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|13.950000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|N.A.|CP_ADVISORS_NUM|N.A.|CP_SH_FRACTIONAL|0|CP_ADVISORS|N.A.|CP_NOTES|ACQ'R; MARTIN SOSNOFF.                                                          6/11/03 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 11536023
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100125
+>        BB_COMPANYNAME = Atalanta/Sosnoff Capital Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-06-11 00:00:00.000000'
+>         BB_IDENTIFIER = ATL     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-06-11 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = ATL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'907b2a4d3ee7dec7c0a80146'
+>               VERSION = NULL
+
+looks like there was an acquisition on 2003-06-11  13.95 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ATL
+>>>> dbtool started at 2015-11-05 15:11:18 -0500
+stock: ATL
+  PK       : [07530E21390AE2C0C0A80116]
+  companyID: [4197]  <-------------  
+  symbol   : [ATL]
+  name     : [ATALANTA/SOSNOFF CAPITAL]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: ATL
+  PK       : [77293D3C40C4E79BC0A80146]
+  companyID: [15269]
+  symbol   : [ATL]
+  name     : [Anooraq Resources Corporation]
+  date     : [2012-05-14 00:00:00]
+  status   : [Active]
+stock: ATL
+  PK       : [77293D3C40C4E79BC0A80146]
+  companyID: [15269]
+  symbol   : [ATL]
+  name     : [Atlatsa Resources Corp]
+  date     : [2012-05-14 00:00:01]
+  status   : [Active]
+stock: ATL
+  PK       : [77293D3C40C4E79BC0A80146]
+  companyID: [15269]
+  symbol   : [ATL]
+  name     : [Atlatsa Resources Corp]
+  date     : [2012-05-14 00:00:02]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-05 15:11:19 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4197
+2003-06-29 (Sun) [909]: <WEEKEND>
+2003-06-30 (Mon) [910]: O:13.9700 H:13.9700 L:13.5500 C:13.5500 V:40600 TSO:0 A:13.5500 R:1.0000 CA:0.0000
+2003-07-01 (Tue) [911]: O:13.8000 H:13.8400 L:13.8000 C:13.8400 V:5200 TSO:0 A:13.8400 R:1.0000 CA:0.0000
+2003-07-02 (Wed) [912]: O:13.8500 H:13.9900 L:13.8500 C:13.9700 V:3100 TSO:0 A:13.9700 R:1.0000 CA:0.0000
+2003-07-03 (Thu) [913]: O:13.9700 H:13.9700 L:13.9700 C:13.9700 V:0 TSO:0 A:13.9700 R:1.0000 CA:0.0000
+2003-07-04 (Fri) [914]: <HOLIDAY>
+2003-07-05 (Sat) [915]: <WEEKEND>
+2003-07-06 (Sun) [916]: <WEEKEND>
+2003-07-07 (Mon) [917]: O:13.9700 H:13.9700 L:13.9700 C:13.9700 V:0 TSO:0 A:13.9700 R:1.0000 CA:0.0000
+2003-07-08 (Tue) [918]: O:13.9500 H:13.9700 L:13.8600 C:13.8600 V:27000 TSO:0 A:13.8600 R:1.0000 CA:0.0000
+2003-07-09 (Wed) [919]: O:13.9000 H:13.9400 L:13.9000 C:13.9000 V:6400 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-10 (Thu) [920]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-11 (Fri) [921]: O:13.9400 H:13.9400 L:13.9000 C:13.9000 V:1200 TSO:0 A:13.9000 R:1.0000 CA:0.0000  <---
+2003-07-12 (Sat) [922]: <WEEKEND>
+2003-07-13 (Sun) [923]: <WEEKEND>
+2003-07-14 (Mon) [924]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-15 (Tue) [925]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-16 (Wed) [926]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-17 (Thu) [927]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+2003-07-18 (Fri) [928]: O:13.9000 H:13.9000 L:13.9000 C:13.9000 V:0 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'07530e21390ae2c0c0a80116' and shares > 0 order by closed; 
+> Row 36:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-07-02 15:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 12.000000
+>   CURRENTORDER = X'3d8b0ceb3f02dd93c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'25c3453b3bb10a16c0a80119'
+>       MODIFIED = NULL
+>            NET = 3360.800160
+>         OPENED = TIMESTAMP '2003-07-02 09:26:43.000000'
+>          PRICE = 14.003334
+>     PRIMARYKEY = X'3d890ceb3f02dd93c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 240.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'07530e21390ae2c0c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'07530e21390ae2c0c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'07530e21390ae2c0c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 9 members who hold this stock  
+quantum:  NOTE: This security is no longer trading as of 7/14/03
+last ticket:  2003-07-02  PRICE = 14.003334
+last price:  2003-07-11 (Fri) [921]: O:13.9400 H:13.9400 L:13.9000 C:13.9000 V:1200 TSO:0 A:13.9000 R:1.0000 CA:0.0000
+
+going with 20030711 13.90
+
+/Marketocracy/bin/cahelper -symbol  ATL  -effective 20030711 -type ACQUIS -exchange UN -acqType 1 -acqCash 13.90 -acqShare 0 -purchaser ATL   >& /Users/build/caout/ATL.20151105-DELIST.out 
+ATL.20151105-DELIST.out
+stocks1:~/caout build$ tail -f ATL.20151105-DELIST.out
+D: (11-05 15:46:55.111) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-05 15:47:43.362) cahelper started on 2015-11-05 15:47:43 -0500
+
+D: (11-05 15:47:43.627) There are [0] open tickets for ATL on 20030711
+D: (11-05 15:47:44.308) StockFileLoad Version:4.0
+D: (11-05 15:47:44.308) Loading Stock Data
+D: (11-05 15:49:01.651) Building Lookup Index
+D: (11-05 15:49:13.441) Finished Building Index
+D: (11-05 15:49:21.608) Finished Loading Stock Data
+D: (11-05 15:49:21.656) Connection to 192.168.111.172:6666 succeeded
+D: (11-05 15:49:21.952) {
+    "ACQUIRED_STOCK" = ATL; 
+    "ACQUIRING_STOCK" = "ATL_FIX"; 
+    AMOUNT = 13.9; 
+    APPLIED = 1; 
+    DATE = 20030711; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ATL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-05 15:49:23.085) SUCCESS
+D: (11-05 15:49:23.085) cahelper finished 2015-11-05 15:49:23 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'07530e21390ae2c0c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 046499109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ATALANTA/SOSNOFF CAPITAL
+>     PRIMARYKEY = X'07540e21390ae2c0c0a80116'
+>       STOCKKEY = X'07530e21390ae2c0c0a80116'
+>         SYMBOL = ATL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 046499109
+>           DATE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ATALANTA/SOSNOFF CAPITAL
+>     PRIMARYKEY = X'29cf0b6a563bc06fc0a86fab'
+>       STOCKKEY = X'07530e21390ae2c0c0a80116'
+>         SYMBOL = ATL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'29cf0b6a563bc06fc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'29cf0b6a563bc06fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ATL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|13.900000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151105:034743
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>         BB_IDENTIFIER = ATL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ATL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>            PRIMARYKEY = X'29c60b6a563bc06fc0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'29c60b6a563bc06fc0a86fab';
+> Row 1:
+>   _C001 = 13.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'29c60b6a563bc06fc0a86fab'));
+there are 13 fundkeys, save to CA issues ATL fundkeys.txt
+
+For Beta case
+ATL no longer trades but is still active on our site - need to delist 
+
+check on 11/6/15   invalidate funds
+check MAdmin   check ATL on 07/11/2003
+
+MAdmin 
+07/10/2003  should have members
+Stock:ATALANTA/SOSNOFF CAPITAL  Symbol:ATL
+Date: 07/10/2003
+
+9 users found
+
+1	bmills	jmcgraw	kjweliczka	mbarnes	rcote	rshuhart	stanglx718	tbuehler	ymills
+
+07/11/2003  should have 0 members   good
+
+let's invalidate reprice and close 
+
+
+
+

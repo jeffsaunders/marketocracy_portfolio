@@ -1,0 +1,964 @@
+date:  6/6/15
+ticker: RGDO
+
+Ticket Number:	3188
+Portfolio Username:	sherndon2
+Problem Type:
+Fund Issue
+Subject:
+Reverse split problem
+Description:
+I had 57,470 shares of RGDO which was acquired by TBRA in a 9-1 reverse split. On my fund it shows I have 6385 shares of RGDO instead of TBRA
+
+news info:  http://ir.tobiratherapeutics.com/releasedetail.cfm?ReleaseID=910586
+
+TBRA and RGDO both existed.  
+
+yahoo:  for TBRA, shows a 1 for 9 split on May 5, 2015	1: 9 Stock Split
+ 
+quantum:
+
+oursite:
+RGDO
+Symbol: RGDO 	Name: Tobira Therapeutics Inc 	Price: $1.21
+Volume: 104,458 	Sector: Health Care 	Change: $0.00
+Short Volume: 182,981 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 182,981 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $6.56 	Year High: $66.24 	High: $1.25
+200 Day Ave: $9.11 	Year Low: $1.18 	Low: $1.18
+
+research stock info RGDO
+	
+ [NEW QUOTE]       
+	
+Corporate Actions for Tobira Therapeutics Inc 	  June 06, 2015
+left curve 	  CUSIP changes for RGDO 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+05 May 15 	75874Q107 	88883P101 	Change in any of identification numbers (CUSIP) of a security from 75874Q107 to 88883P101
+  	  	 
+left curve 	  name changes for RGDO 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+05 May 15 	Regado Biosciences Inc 	Tobira Therapeutics Inc 	Change in the name of issuer from Regado Biosciences Inc to Tobira Therapeutics Inc
+  	  	 
+left curve 	  RGDO had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+05 May 15 	1 for 9 	Split terms:1 for 9
+
+
+TBRA
+Symbol: TBRA 	Name: Tobira Therapeutics Inc 	Price: $17.84
+Volume: 123,099 	Sector: Unclassified 	Change: $0.46
+Short Volume: 35,353 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 35,353 	 Exchange: NASDAQ 	Today: 2.65%
+50 Day Ave: $6.57 	Year High: $18.02 	High: $18.02
+200 Day Ave: $1.64 	Year Low: $0.00 	Low: $16.35
+
+research stock info TBRA
+	
+ [NEW QUOTE]       
+	
+Corporate Actions for Tobira Therapeutics Inc 	  June 06, 2015
+username: password: forgot? | sign up
+  	
+LOG IN PLEASE
+  	  	 
+
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=RGDO
+
+check MAdmin
+RGDO  MM/DD/YYYY
+
+database  for RGDO
+select distinct stockkey from mstockalias where symbol= 'RGDO';  
+> Row 1:
+>   STOCKKEY = X'9e313c3b51c237aec0a80146'
+
+
+select * from mstockalias where stockkey= X'9e313c3b51c237aec0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2013-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Regado Biosciences Inc
+>     PRIMARYKEY = X'9e323c3b51c237aec0a80146'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'9e323c3b51c237aec0a80146';
+> Row 1:
+>              ALIASKEY = X'9e323c3b51c237aec0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|RGDO|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 78438844
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-19 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-06-17 00:00:00.000000'
+>            PRIMARYKEY = X'304d5c1351bf92bec0a80146'
+>               VERSION = NULL
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'c0e65b7d55494a93c0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'c0e65b7d55494a93c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c0e65b7d55494a93c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Regado Biosciences Inc|CP_NEW_NAME|Tobira Therapeutics Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106413218
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'845020f45547f742c0a86f92'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88883P101
+>           DATE = TIMESTAMP '2015-05-05 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'9bd35ba455494aafc0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'9bd35ba455494aafc0a86f92';
+> Row 1:
+>              ALIASKEY = X'9bd35ba455494aafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|75874Q107|CP_NEW_CUSIP|88883P101|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US75874Q1076|CP_NEW_ISIN|US88883P1012|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106413950
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'844620f45547f73fc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'9bd35ba455494aafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 9|CP_RATIO|0.111111|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.111111|CP_ADJ_DT|20150505|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106412336
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'844420f45547f73ec0a86f92'
+>               VERSION = NULL
+
+
+ok, let's check TBRA
+select distinct stockkey from mstockalias where symbol='TBRA';
+> Row 1:
+>   STOCKKEY = X'b86237b453d82a40c0a86f92'
+select * from mstockalias where STOCKKEY = X'b86237b453d82a40c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-07-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'b86337b453d82a40c0a86f92'
+>       STOCKKEY = X'b86237b453d82a40c0a86f92'
+>         SYMBOL = TBRA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey= X'b86337b453d82a40c0a86f92';
+> Row 1:
+>              ALIASKEY = X'b86337b453d82a40c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|TBRA|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 94138627
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 16330925
+>        BB_COMPANYNAME = Tobira Therapeutics Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-29 00:00:00.000000'
+>         BB_IDENTIFIER = TBRA    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-25 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = TBRA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-25 00:00:00.000000'
+>            PRIMARYKEY = X'7ad0162653d2e151c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where stockkey= X'b86237b453d82a40c0a86f92';
+no one holds it.
+
+1.  both RGDO and TBRA stocks existed and traded independently before the merger.
+2.  TBRA should get acquired by RGDO and holders should get XXXX shares of RGDO and TBRA will cease trading
+3.  RGDO will do a 1 for 9 split
+4.  RGDO will do a name change
+5.  RGDO will do a ticker change to TBRA
+6.  RGDO will do a cusip change.  
+
+supporting notes:
+In connection with the merger, Regado changed its name to Tobira Therapeutics, Inc. and effected a nine for one reverse stock split. The combined company will commence trading as of tomorrow, May 5, 2015 on The NASDAQ Global Market under the symbol "TBRA."
+The holders of shares of Tobira common stock outstanding immediately prior to the merger received 1.4302 shares of Regado common stock in exchange for each share of Tobira common stock in the merger. All Regado shares will be subject to the nine for one reverse stock split.  
+
+let's see who holds TBRA as of today
+TBRA 06/06/2015
+no one?
+nope no one
+
+so we can just apply the acquis for TBRA on the day before  20150504
+/Marketocracy/bin/cahelper -symbol TBRA -effective 20150504 -type ACQUIS -exchange UQ -acqType 2 -acqCash 0 -acqShare 1.4302 -purchaser RGDO >& /Users/build/caout/TBRA.20150606-ACQUIS-RGDO.out
+TBRA.20150606-ACQUIS-RGDO.out
+stocks:~/caout build$ tail -f TBRA.20150606-ACQUIS-RGDO.out
+D: (06-07 00:01:32.490) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-07 00:02:08.472) cahelper started on 2015-06-07 00:02:08 -0400
+
+D: (06-07 00:02:08.777) There are [0] open tickets for TBRA on 20150504
+D: (06-07 00:02:08.856) {
+    "ACQUIRED_STOCK" = TBRA; 
+    "ACQUIRING_STOCK" = RGDO; 
+    AMOUNT = 1.4302; 
+    APPLIED = 1; 
+    DATE = 20150504; 
+    FUNDS = (); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = RGDO; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-07 00:02:09.231) SUCCESS
+D: (06-07 00:02:09.232) cahelper finished 2015-06-07 00:02:09 -0400
+
+select distinct stockkey from mstockalias where symbol='TBRA';
+> Row 1:
+>   STOCKKEY = X'b86237b453d82a40c0a86f92'
+select * from mstockalias where STOCKKEY = X'b86237b453d82a40c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-07-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'b86337b453d82a40c0a86f92'
+>       STOCKKEY = X'b86237b453d82a40c0a86f92'
+>         SYMBOL = TBRA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'c05818f75573c240c0a86f92'
+>       STOCKKEY = X'b86237b453d82a40c0a86f92'
+>         SYMBOL = TBRA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'c05818f75573c240c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c05818f75573c240c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TBRA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|1.430200|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150607:120208
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-04 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'c04e18f75573c240c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'c04e18f75573c240c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+
+that's what I expected, as no one held TBRA.   So as of 5/4/2015, TBRA is an available ticker symbol
+
+Let's look at RGDO now
+select distinct stockkey from mstockalias where symbol='RGDO';
+> Row 1:
+>   STOCKKEY = X'9e313c3b51c237aec0a80146'
+select * from mstockalias where STOCKKEY = X'9e313c3b51c237aec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2013-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Regado Biosciences Inc
+>     PRIMARYKEY = X'9e323c3b51c237aec0a80146'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+the list
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'c0e65b7d55494a93c0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+the name change 
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88883P101
+>           DATE = TIMESTAMP '2015-05-05 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'9bd35ba455494aafc0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'9bd35ba455494aafc0a86f92';
+> Row 1:
+>              ALIASKEY = X'9bd35ba455494aafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|75874Q107|CP_NEW_CUSIP|88883P101|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US75874Q1076|CP_NEW_ISIN|US88883P1012|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106413950
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'844620f45547f73fc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'9bd35ba455494aafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 9|CP_RATIO|0.111111|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.111111|CP_ADJ_DT|20150505|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106412336
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'844420f45547f73ec0a86f92'
+>               VERSION = NULL
+
+the ticker change must have been blocked
+select * from mcorporateaction where aliaskey is null and BB_SECID='RGDO' order by BB_EFFECTIVE;
+> Row 24:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|RGDO US|CP_NEW_TKR|TBRA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106415096
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 16330561
+>        BB_COMPANYNAME = Regado Biosciences Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = RGDO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RGDO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'844a20f45547f741c0a86f92'
+>               VERSION = NULL
+
+here it is!  it was blocked by the fact that TBRA already existed.
+Now I should be able to process this
+
+/Marketocracy/bin/cahelper -symbol TBRA -effective 20150505 -type CHG_TKR -exchange UQ -oldSymbol RGDO >& /Users/build/caout/RGDO.20150606-CHG_TKR-TBRA.out
+stocks:~/caout build$ tail -f RGDO.20150606-CHG_TKR-TBRA.out
+D: (06-07 00:20:56.120) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-07 00:21:20.914) cahelper started on 2015-06-07 00:21:20 -0400
+
+D: (06-07 00:21:21.139) {
+    APPLIED = 1; 
+    DATE = 20150505; 
+    "NEW_TICKER" = "TBRA US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "RGDO US"; 
+    SYMBOL = TBRA; 
+    TYPE = "CHG_TKR"; 
+}
+D: (06-07 00:21:21.608) SUCCESS
+D: (06-07 00:21:21.609) cahelper finished 2015-06-07 00:21:21 -0400
+
+check the results
+select * from mstockalias where STOCKKEY = X'9e313c3b51c237aec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2013-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Regado Biosciences Inc
+>     PRIMARYKEY = X'9e323c3b51c237aec0a80146'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 75874Q107
+>           DATE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'c0e65b7d55494a93c0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88883P101
+>           DATE = TIMESTAMP '2015-05-05 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'9bd35ba455494aafc0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = RGDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88883P101
+>           DATE = TIMESTAMP '2015-05-05 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tobira Therapeutics Inc
+>     PRIMARYKEY = X'ce201e4d5573c6c1c0a86f92'
+>       STOCKKEY = X'9e313c3b51c237aec0a80146'
+>         SYMBOL = TBRA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey= X'ce201e4d5573c6c1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'ce201e4d5573c6c1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|RGDO US|CP_NEW_TKR|TBRA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150607:122120
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-05 00:00:00.000000'
+>         BB_IDENTIFIER = TBRA     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TBRA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>            PRIMARYKEY = X'ce171e4d5573c6c0c0a86f92'
+>               VERSION = NULL
+
+check on 6/7/15
+see that RGDO changed to TBRA
+the old TBRA is acquired
+
+member: sherndon2
+your holdings of RGDO 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+WETMF 	0 	N/A 	N/A
+SMF1 	6,385 	$7,725.85 	0.11%   <--- expand 
+IMF 	0 	N/A 	N/A
+TRSMF 	0 	N/A 	N/A
+LF 	0 	N/A 	N/A
+LEMF 	0 	N/A 	N/A
+BMF 	0 	N/A 	N/A
+MDMF 	0 	N/A 	N/A
+23MF 	0 	N/A 	N/A 
+
+SMF1 LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 29, 2014 		57470 	57470 	Buy
+May 05, 2015 	57470 	-51085 	6385 	Corporate Action
+Total: 6,385
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 29, 2014 	57,470 	$2,511.93 	$52,750.54 	$0.92
+  	  	 
+SELLS
+You have no sells for this position
+
+let's check prices for RGDO
+/Marketocracy/bin/dbtool lookup stock RGDO
+>>>> dbtool started at 2015-06-07 00:34:51 -0400
+stock: RGDO
+  PK       : [9E313C3B51C237AEC0A80146]
+  companyID: [24411]
+  symbol   : [RGDO]
+  name     : [Regado Biosciences Inc]
+  date     : [2013-06-19 00:00:00]
+  status   : [Active]
+stock: RGDO
+  PK       : [9E313C3B51C237AEC0A80146]
+  companyID: [24411]
+  symbol   : [RGDO]
+  name     : [Tobira Therapeutics Inc]
+  date     : [2015-05-05 00:00:00]
+  status   : [Active]
+stock: RGDO
+  PK       : [9E313C3B51C237AEC0A80146]
+  companyID: [24411]
+  symbol   : [RGDO]
+  name     : [Tobira Therapeutics Inc]
+  date     : [2015-05-05 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-07 00:34:51 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 24411
+2015-04-27 (Mon) [5229]: O:1.4000 H:1.4700 L:1.2600 C:1.2700 V:453162 TSO:0 A:1.2700 R:1.0000 CA:0.0000
+2015-04-28 (Tue) [5230]: O:1.2800 H:1.3100 L:1.2000 C:1.2600 V:213821 TSO:0 A:1.2600 R:1.0000 CA:0.0000
+2015-04-29 (Wed) [5231]: O:1.2300 H:1.2900 L:1.2100 C:1.2300 V:253923 TSO:0 A:1.2300 R:1.0000 CA:0.0000
+2015-04-30 (Thu) [5232]: O:1.2500 H:1.2500 L:1.1800 C:1.1800 V:272917 TSO:0 A:1.1800 R:1.0000 CA:0.0000
+2015-05-01 (Fri) [5233]: O:1.1800 H:1.2200 L:1.1600 C:1.2100 V:129927 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-02 (Sat) [5234]: <WEEKEND>
+2015-05-03 (Sun) [5235]: <WEEKEND>
+2015-05-04 (Mon) [5236]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000  <-- last valid price
+2015-05-05 (Tue) [5237]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-06 (Wed) [5238]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-07 (Thu) [5239]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-08 (Fri) [5240]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-09 (Sat) [5241]: <WEEKEND>
+2015-05-10 (Sun) [5242]: <WEEKEND>
+2015-05-11 (Mon) [5243]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-12 (Tue) [5244]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-13 (Wed) [5245]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-14 (Thu) [5246]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-15 (Fri) [5247]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-16 (Sat) [5248]: <WEEKEND>
+2015-05-17 (Sun) [5249]: <WEEKEND>
+2015-05-18 (Mon) [5250]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-19 (Tue) [5251]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-20 (Wed) [5252]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-21 (Thu) [5253]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-22 (Fri) [5254]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-23 (Sat) [5255]: <WEEKEND>
+2015-05-24 (Sun) [5256]: <WEEKEND>
+2015-05-25 (Mon) [5257]: <HOLIDAY>
+2015-05-26 (Tue) [5258]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-27 (Wed) [5259]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-28 (Thu) [5260]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-29 (Fri) [5261]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-05-30 (Sat) [5262]: <WEEKEND>
+2015-05-31 (Sun) [5263]: <WEEKEND>
+2015-06-01 (Mon) [5264]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-06-02 (Tue) [5265]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-06-03 (Wed) [5266]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-06-04 (Thu) [5267]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+2015-06-05 (Fri) [5268]: O:1.2100 H:1.2500 L:1.1800 C:1.2100 V:104458 TSO:0 A:1.2100 R:1.0000 CA:0.0000
+
+need to fix the prices 
+
+let's get prices from 5/1/15 to the present
+5/4/15 had pre-split prices and 5/5/15 should have post split prices
+
+get them from yahoo finance and save as
+CA issues TBRA post split prices.csv
+
+companyID: [24411]
+day number:  5236  was the last price pre-split   5/4/15
+
+5268
+5267
+5266
+5265
+5264
+5261
+5260
+5259
+5258
+5254
+5253
+5252
+5251
+5250
+5247
+5246
+5245
+5244
+5243
+5240
+5239
+5238
+5237
+
+we need to delete these from the database
+go to the stockprices database 
+/Library/FrontBase/bin/sql92 
+connect to marketdata@stocks user eouser; 
+select * from stockprices where companyid= 24411 and daynumber >= 5237;
+
+delete from stockprices where companyid= 24411 and daynumber >= 5237;
+
+select * from stockprices where companyid= 24411 and daynumber >= 5237;
+nothing
+select * from stockprices where companyid= 24411 order by daynumber;
+ok, this is the highest one now.
+
+here's the new stockprices I built
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5268,24411,175500,180200,163500,178400,123100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5267,24411,152600,176500,145000,173800,116500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5266,24411,144200,156600,143300,153500,118900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5265,24411,138880,145500,132200,144700,52800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5264,24411,129800,139000,129030,138400,37800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5261,24411,135200,135300,127300,131400,46500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5260,24411,130000,137800,128500,136300,32800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5259,24411,135200,135200,130100,130200,27400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5258,24411,133900,136000,129000,135000,138300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5254,24411,133900,136400,130100,136000,32000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5253,24411,141760,141760,132000,132400,23500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5252,24411,134200,144000,130000,144000,29100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5251,24411,139400,139400,129900,134300,37300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5250,24411,140100,140100,132500,139700,21900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5247,24411,133500,143500,128400,140000,105600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5246,24411,134600,140300,128200,134500,42300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5245,24411,140000,144000,134000,140400,31400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5244,24411,147500,147500,133100,141700,72200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5243,24411,156900,156900,143000,149300,78500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5240,24411,155000,161600,140480,158400,106200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5239,24411,133900,166000,131000,157000,310100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5238,24411,121100,140400,107000,134900,110100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5237,24411,105000,127500,105000,127200,87900);
+
+let's check this again let's go one day before 
+select * from stockprices where companyid= 24411 and daynumber >= 5236;
+> Row 1:
+>   DAYNUMBER = 5236
+>   COMPANYID = 24411
+>      OPENED = 12100
+>        HIGH = 12500
+>         LOW = 11800
+>      CLOSED = 12100
+>      VOLUME = 104458
+> Row 2:
+>   DAYNUMBER = 5268
+>   COMPANYID = 24411
+>      OPENED = 175500
+>        HIGH = 180200
+>         LOW = 163500
+>      CLOSED = 178400
+>      VOLUME = 123100
+> Row 3:
+>   DAYNUMBER = 5267
+>   COMPANYID = 24411
+>      OPENED = 152600
+>        HIGH = 176500
+>         LOW = 145000
+>      CLOSED = 173800
+>      VOLUME = 116500
+> Row 4:
+>   DAYNUMBER = 5266
+>   COMPANYID = 24411
+>      OPENED = 144200
+>        HIGH = 156600
+>         LOW = 143300
+>      CLOSED = 153500
+>      VOLUME = 118900
+> Row 5:
+>   DAYNUMBER = 5265
+>   COMPANYID = 24411
+>      OPENED = 138880
+>        HIGH = 145500
+>         LOW = 132200
+>      CLOSED = 144700
+>      VOLUME = 52800
+> Row 6:
+>   DAYNUMBER = 5264
+>   COMPANYID = 24411
+>      OPENED = 129800
+>        HIGH = 139000
+>         LOW = 129030
+>      CLOSED = 138400
+>      VOLUME = 37800
+> Row 7:
+>   DAYNUMBER = 5261
+>   COMPANYID = 24411
+>      OPENED = 135200
+>        HIGH = 135300
+>         LOW = 127300
+>      CLOSED = 131400
+>      VOLUME = 46500
+> Row 8:
+>   DAYNUMBER = 5260
+>   COMPANYID = 24411
+>      OPENED = 130000
+>        HIGH = 137800
+>         LOW = 128500
+>      CLOSED = 136300
+>      VOLUME = 32800
+> Row 9:
+>   DAYNUMBER = 5259
+>   COMPANYID = 24411
+>      OPENED = 135200
+>        HIGH = 135200
+>         LOW = 130100
+>      CLOSED = 130200
+>      VOLUME = 27400
+> Row 10:
+>   DAYNUMBER = 5258
+>   COMPANYID = 24411
+>      OPENED = 133900
+>        HIGH = 136000
+>         LOW = 129000
+>      CLOSED = 135000
+>      VOLUME = 138300
+> Row 11:
+>   DAYNUMBER = 5254
+>   COMPANYID = 24411
+>      OPENED = 133900
+>        HIGH = 136400
+>         LOW = 130100
+>      CLOSED = 136000
+>      VOLUME = 32000
+> Row 12:
+>   DAYNUMBER = 5253
+>   COMPANYID = 24411
+>      OPENED = 141760
+>        HIGH = 141760
+>         LOW = 132000
+>      CLOSED = 132400
+>      VOLUME = 23500
+> Row 13:
+>   DAYNUMBER = 5252
+>   COMPANYID = 24411
+>      OPENED = 134200
+>        HIGH = 144000
+>         LOW = 130000
+>      CLOSED = 144000
+>      VOLUME = 29100
+> Row 14:
+>   DAYNUMBER = 5251
+>   COMPANYID = 24411
+>      OPENED = 139400
+>        HIGH = 139400
+>         LOW = 129900
+>      CLOSED = 134300
+>      VOLUME = 37300
+> Row 15:
+>   DAYNUMBER = 5250
+>   COMPANYID = 24411
+>      OPENED = 140100
+>        HIGH = 140100
+>         LOW = 132500
+>      CLOSED = 139700
+>      VOLUME = 21900
+> Row 16:
+>   DAYNUMBER = 5247
+>   COMPANYID = 24411
+>      OPENED = 133500
+>        HIGH = 143500
+>         LOW = 128400
+>      CLOSED = 140000
+>      VOLUME = 105600
+> Row 17:
+>   DAYNUMBER = 5246
+>   COMPANYID = 24411
+>      OPENED = 134600
+>        HIGH = 140300
+>         LOW = 128200
+>      CLOSED = 134500
+>      VOLUME = 42300
+> Row 18:
+>   DAYNUMBER = 5245
+>   COMPANYID = 24411
+>      OPENED = 140000
+>        HIGH = 144000
+>         LOW = 134000
+>      CLOSED = 140400
+>      VOLUME = 31400
+> Row 19:
+>   DAYNUMBER = 5244
+>   COMPANYID = 24411
+>      OPENED = 147500
+>        HIGH = 147500
+>         LOW = 133100
+>      CLOSED = 141700
+>      VOLUME = 72200
+> Row 20:
+>   DAYNUMBER = 5243
+>   COMPANYID = 24411
+>      OPENED = 156900
+>        HIGH = 156900
+>         LOW = 143000
+>      CLOSED = 149300
+>      VOLUME = 78500
+> Row 21:
+>   DAYNUMBER = 5240
+>   COMPANYID = 24411
+>      OPENED = 155000
+>        HIGH = 161600
+>         LOW = 140480
+>      CLOSED = 158400
+>      VOLUME = 106200
+> Row 22:
+>   DAYNUMBER = 5239
+>   COMPANYID = 24411
+>      OPENED = 133900
+>        HIGH = 166000
+>         LOW = 131000
+>      CLOSED = 157000
+>      VOLUME = 310100
+> Row 23:
+>   DAYNUMBER = 5238
+>   COMPANYID = 24411
+>      OPENED = 121100
+>        HIGH = 140400
+>         LOW = 107000
+>      CLOSED = 134900
+>      VOLUME = 110100
+> Row 24:
+>   DAYNUMBER = 5237
+>   COMPANYID = 24411
+>      OPENED = 105000
+>        HIGH = 127500
+>         LOW = 105000
+>      CLOSED = 127200
+>      VOLUME = 87900
+
+invalidate from 5/5/15 
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-05-05
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-06
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-06
+D: (09:11:51.328) Invalidate all prices >= 2010-07-01 (3468)
+
+	** note do this on a "fresh" day, otherwise there will be lots of junk to sort through in the output
+		here there is only one line, the one we want 
+
+ok check on 6/7/15 - see if RGDO has changed ticker to TBRA  and check prices
+6/13/15
+ symbol changes for TBRA 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+05 May 15 	RGDO 	TBRA 	Change in the ticker (trading) symbol from RGDO to TBRA
+
+it is pricing
+invalidate   don't have a file
+let's try this - get the fundkeys for RGDO on 5/4/2014
+
+stockkey X'9e313c3b51c237aec0a80146'
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 9e313c3b51c237aec0a80146 2015-05-04
+25F132DF3E5D01D6C0A80132, SMF1, sherndon2, 57470
+F04C42343D45EEAAC0A801E2, MVF, mtom, 30000
+F73759BF39DBFD8CC0A80119, XBMF, crfinvestor, 8100
+34E3508140B38A65C0A80133, BCF, crfinvestor, 21480
+5A2A515C3DADD7F2C0A80134, XB2, crfinvestor, 30030
+9DCC158442A8E797C0A80132, SMCap, mtom, 50000
+917D6B854749157BC0A80133, BBBMF, sarora, 33630
+0A964E93524E64F5C0A80132, BAZMF, sarora, 12483
+622646634FC7B160C0A80133, UHCC, kadir, 88700
+74AB394642F62F5AC0A80134, TMF, themagician, 17661
+
+invalidate done
+reprice - done
+closing this out 

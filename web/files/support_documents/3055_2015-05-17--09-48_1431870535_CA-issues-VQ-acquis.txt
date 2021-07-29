@@ -1,0 +1,234 @@
+date: 5/14/15
+ticker:  VQ
+
+yahoo:  nothing 
+
+quantum:
+Venoco, Inc.
+Ticker Symbol: VQ*     CUSIP: 92275P307     Exchange: NYSE
+* NOTE: This security is no longer trading as of 10/03/12
+
+Company's Online Profile
+BUSINESS:  Venoco is an independent energy company primarily engaged in the acquisition, exploitation and development of oil and natural gas properties in California and Texas. Venoco operates three offshore platforms in the Santa Barbara Channel, has non-operated interests in three other platforms, operates four onshore properties in Southern California, has extensive operations in Northern California's Sacramento Basin and operates thirteen fields in Texas.
+
+Notes:  Oct 3, 2012 - Venoco, Inc. ( NYSE : VQ ) announced today that it has closed the transaction 
+contemplated by the merger agreement among Venoco, Timothy Marquez, Denver Parent Corporation (DPC) 
+and Denver Merger Sub. Venoco was merged with and into Denver Merger Sub, with Venoco being the 
+surviving entity. Venoco, as a wholly owned subsidiary of DPC, will continue with the same officers 
+that served the company prior to the merger, with Timothy Marquez as the sole director and Ed O'Donnell 
+as the Chief Executive Officer.
+
+oursite:
+ 	
+Symbol: VQ 	Name: Venoco, Incorporated 	Price: $12.49
+Volume: 	Sector: Energy 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VQ
+
+check MAdmin
+VQ  05/15/2015
+Stock:Venoco, Incorporated  Symbol:VQ
+Date: 05/14/2015
+
+20 users found
+
+1	akapil	asalvador	bmcclard	crossy	drum420	ecervantes	esmilio	eterjesen	longshort	mabot9
+2	mdcook	mlambert890	odyd	pbradford	quepasa001	seanheberling	sokolandrey	stavon	themistocles	vagadragon	 	 	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'VQ';  
+> Row 1:
+>   STOCKKEY = X'8a23553645e5ddb7c0a80146'
+
+select * from mstockalias where stockkey= X'8a23553645e5ddb7c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92275P307
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Venoco, Incorporated
+>     PRIMARYKEY = X'8a24553645e5ddb7c0a80146'
+>       STOCKKEY = X'8a23553645e5ddb7c0a80146'
+>         SYMBOL = VQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VQ'  order by BB_EFFECTIVE;
+> Row 18:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Management Group|CP_ID_BB_COMP|829011|CP_UNIT|Venoco Inc|CP_TOT_AMT|382.800995|CP_ACQUIS_TYP|1|CP_CASH|12.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|27.026056|CP_CUR_PREMIUM|0.080066|CP_PCT_OWNED|50.299999|CP_PCT_SOUGHT|49.700001|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|382.800995|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Squire Sanders;13;100.000000;1;Target Financial Adviser;1;BofA ML;13;100.000000;1;Acquirer Legal Adviser;1;Wachtell Lipton;13;100.000000;1;Acquirer Financial Adviser;1;BMO Capital Mkts, Citi;13;100.000000;1;Legal Adv to Target Financial;1;Dewey & LeBoeuf;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 57284993
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 982334
+>        BB_COMPANYNAME = Venoco Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-04 00:00:00.000000'
+>         BB_IDENTIFIER = VQ      US Equity
+>             BB_ISSUED = TIMESTAMP '2011-08-29 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = VQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-04 00:00:00.000000'
+>            PRIMARYKEY = X'31c12529506e0f90c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VQ
+>>>> dbtool started at 2015-05-14 21:37:26 -0400
+stock: VQ
+  PK       : [8A23553645E5DDB7C0A80146]
+  companyID: [16807]
+  symbol   : [VQ]
+  name     : [Venoco, Incorporated]
+  date     : [2007-02-27 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-14 21:37:26 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16807
+2012-09-28 (Fri) [4288]: O:11.7900 H:12.0000 L:11.7900 C:11.8800 V:531862 TSO:52464 A:11.8800 R:1.0000 CA:0.0000
+2012-09-29 (Sat) [4289]: <WEEKEND>
+2012-09-30 (Sun) [4290]: <WEEKEND>
+2012-10-01 (Mon) [4291]: O:11.9900 H:12.3100 L:11.9000 C:12.3000 V:1578029 TSO:52464 A:12.3000 R:1.0000 CA:0.0000
+2012-10-02 (Tue) [4292]: O:12.3100 H:12.3600 L:12.1300 C:12.3100 V:1014894 TSO:52464 A:12.3100 R:1.0000 CA:0.0000
+2012-10-03 (Wed) [4293]: O:12.3000 H:12.5100 L:12.2000 C:12.4900 V:3555586 TSO:52464 A:12.4900 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'8a23553645e5ddb7c0a80146'  and shares > 0 order by closed; 
+> Row 625:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-10-03 15:53:00.000000'
+>        COMMENT = 
+>     COMMISSION = 436.000000
+>   CURRENTORDER = X'82151aa3506c9651c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3ab62ddc3c485ed3c0a801e0'
+>       MODIFIED = NULL
+>            NET = 108485.120480
+>         OPENED = TIMESTAMP '2012-10-03 15:47:29.000000'
+>          PRICE = 12.440954
+>     PRIMARYKEY = X'82131aa3506c9651c0a80135'
+>         SECFEE = 2.440000
+>         SHARES = 8720.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8a23553645e5ddb7c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+last ticket 2012-10-03
+apply the acquis  VQ
+CP_ACQUIS_TYP|1|CP_CASH|12.500000
+20121004
+/Marketocracy/bin/cahelper -symbol  VQ  -effective 20121004 -type ACQUIS -exchange UN -acqType 1 -acqCash 12.50 -acqShare 0 -purchaser VQ   >& /Users/build/caout/VQ.20150514-ACQUIS.out
+VQ.20150514-ACQUIS.out
+stocks:~/caout build$ tail -f VQ.20150514-ACQUIS.out
+D: (05-14 21:38:53.649) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-14 21:39:39.734) cahelper started on 2015-05-14 21:39:39 -0400
+
+D: (05-14 21:39:40.026) There are [0] open tickets for VQ on 20121004
+D: (05-14 21:39:40.570) StockFileLoad Version:4.0
+D: (05-14 21:39:40.570) Loading Stock Data
+D: (05-14 21:40:56.095) Building Lookup Index
+D: (05-14 21:41:05.320) Finished Building Index
+D: (05-14 21:41:12.601) Finished Loading Stock Data
+D: (05-14 21:41:12.633) Connection to 192.168.111.172:6666 succeeded
+D: (05-14 21:41:14.147) {
+    "ACQUIRED_STOCK" = VQ; 
+    "ACQUIRING_STOCK" = "VQ_FIX"; 
+    AMOUNT = 12.5; 
+    APPLIED = 1; 
+    DATE = 20121004; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-14 21:41:17.207) SUCCESS
+D: (05-14 21:41:17.207) cahelper finished 2015-05-14 21:41:17 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8a23553645e5ddb7c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92275P307
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Venoco, Incorporated
+>     PRIMARYKEY = X'8a24553645e5ddb7c0a80146'
+>       STOCKKEY = X'8a23553645e5ddb7c0a80146'
+>         SYMBOL = VQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92275P307
+>           DATE = TIMESTAMP '2012-10-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Venoco, Incorporated
+>     PRIMARYKEY = X'fe514abd55554e5cc0a86f92'
+>       STOCKKEY = X'8a23553645e5ddb7c0a80146'
+>         SYMBOL = VQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'fe514abd55554e5cc0a86f92';
+> Row 1:
+>              ALIASKEY = X'fe514abd55554e5cc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|12.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150514:093939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-04 00:00:00.000000'
+>         BB_IDENTIFIER = VQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-04 00:00:00.000000'
+>            PRIMARYKEY = X'fe4b4abd55554e5bc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'fe4b4abd55554e5bc0a86f92';
+> Row 1:
+>   _C001 = 45.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'fe4b4abd55554e5bc0a86f92'));
+45 fundkeys save to CA issues VQ fundkeys.txt
+
+check on 5/15/15  then invalidate 
+5/17/15 
+ VQ has been acquired 	right curve
+  	  	
+Venoco, Incorporated acquired by a private company on 2012-10-04 00:00:00. 
+
+invalidate 
+on 20121004 members got 12.50 per share 
+closing

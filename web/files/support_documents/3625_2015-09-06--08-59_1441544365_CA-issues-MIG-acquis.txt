@@ -1,0 +1,377 @@
+
+date:    9/3/15
+ticker:   MIG
+
+yahoo:
+
+quantum:
+Meadowbrook Insurance Group, Inc.
+Ticker Symbol: MIG*     CUSIP: 58319P108     Exchange: NYSE
+* NOTE: This security is no longer trading as of 7/07/15
+
+Company's Online Profile
+BUSINESS:  Meadowbrook Insurance Group, Inc. is a specialty insurance underwriter and insurance administration services company that serves the needs of underserved market segments that value service and specialized knowledge. The Company markets and underwritea specialty property and casualty insurance products on both an admitted and non-admitted basis through a broad and diverse network of independent retail, wholesale program administrators and general agents. They primarily focus on niche or specialty program business and risk management solutions for agents, professional and trade associations, pools, trusts and small to medium-sized insureds. These solutions include specialty program underwriting; excess and surplus lines insurance products; alternative risk transfer solutions, agency operations and insurance administration services.
+Notes:  July 7, 2015 -- Fosun International Limited, together with its subsidiaries and Meadowbrook Insurance Group, Inc. (NYSE: MIG) today announced the completion of Fosun's acquisition of Meadowbrook. Shares of Meadowbrook common stock will be delisted and cease trading on the New York Stock Exchange before the opening of the market on July 8, 2015.
+
+oursite:
+Symbol: MIG	Name: MEADOWBROOK INSURANCE GRP	Price: $8.64
+Volume:	Sector: Financials	Change:
+Short Volume: 375,165	Style: Small Cap : Value	Market Cap:
+Avg Volume: 375,165	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $6.21	Year High: $8.65	High:
+200 Day Ave: $7.56	Year Low: $0.00	Low:
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:MEADOWBROOK INSURANCE GRP  Symbol:MIG
+Date: 09/02/2015
+
+105 users found
+
+1	13oclock	2455137	acmartinez	aharon10	analyzit	andrewyeh	apreuss	arius_reborn	babdul	bakerw1
+2	bas8203	bengillihan	bengt	bmoney1234	briankann	castaways2006	cbettles	ccassara	ccc880	chaika
+3	chinaman	cubs518	daviddil	disturbed	dmiller1	dmoffet	dmueller1	downwardog	dpalmer	enkeeton
+4	eylem	fabio_carradori	fake	fcasseus	finnegan	flajuie	frellwan	gatsby123	gmetrou	gr123
+5	gregsss	gsamos	harford	hlwright1	hndasiguy	hobiecatlobmi	j-schreiber	jaimeantunes	jak27	jhagedorn
+6	jlewis7	jman206	joeyval23	jorgemb	jpsandrs	jrsegal	jspiro1	jsuriel220	kenimo	kg
+7	kleinphi	kooky	ktcwatson	kunkman30	langer55	lare49	lel4866	lorenzoswank	margareth21	markasaro
+8	mcarniol	mestre	mozed	mtojunior	muller55	ndoss	neroclaudiuscaesar	nickja14	nktanaka	nosliwde
+9	pbradford	pmcclain	rjsmith	sbjae	sdip60	shelupinin	shiningrook	siakhasone	signguy-ron	spmcmahon
+10	stewartf	stocksgonewild	tbmonroe	teamfunds	tecnocrat	thenich	thewineclubguys	tina	tomfalz	tradingfloorguru
+11	tunabomber	utterme	vagabond9	wesson	worthken	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'MIG';  
+> Row 1:
+>   STOCKKEY = X'1bef0e21390b1d67c0a80116'
+select * from mstockalias where stockkey=X'1bef0e21390b1d67c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 58319P108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEADOWBROOK INSURANCE GRP
+>     PRIMARYKEY = X'1bf00e21390b1d67c0a80116'
+>       STOCKKEY = X'1bef0e21390b1d67c0a80116'
+>         SYMBOL = MIG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = SV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MIG'  order by BB_EFFECTIVE;
+> Row 64:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|656 HK|CP_NAME|Fosun International Ltd|CP_ID_BB_COMP|12167565|CP_UNIT|Meadowbrook Insurance Group In|CP_TOT_AMT|433.310394|CP_ACQUIS_TYP|1|CP_CASH|8.650000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|35.410141|CP_CUR_PREMIUM|3.717020|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|8.650000|CP_ARBITRAGE_PROF|0.309999|CP_CUR_TOT_VAL|433.310364|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser(s);1;Sidley Austin;13;100.000000;1;Target Financial Adviser(s);1;Willis Capital;13;100.000000;1;Acquirer Legal Adviser(s);1;DLA Piper LLP;13;100.000000;1;Acquirer Financial Adviser(s);1;KPMG Corp Fin, PwC, Towers Watson;13;100.000000;|CP_ACQ_TKR|656 HK|CP_ACQ_ID_BB_GLOBAL|BBG000RJJ5Z8|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001G09BL2|CP_ACQ_ID_BB_SEC_NUM_DES|656|CP_ACQ_FEED_SOURCE|HK|CP_TARGET_TKR|MIG US|CP_TARGET_ID_BB_GLOBAL|BBG000C1V3N7|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FGZ6N8|CP_TARGET_ID_BB_SEC_NUM_DES|MIG|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 100784215
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 170844
+>        BB_COMPANYNAME = Meadowbrook Insurance Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = MIG     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = MIG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-02-25 00:00:00.000000'
+>            PRIMARYKEY = X'86a21f1354ee6119c0a86f92'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock MIG
+>>>> dbtool started at 2015-09-02 16:35:53 -0400
+stock: MIG
+  PK       : [1BEF0E21390B1D67C0A80116]
+  companyID: [5516]
+  symbol   : [MIG]
+  name     : [MEADOWBROOK INSURANCE GRP]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-02 16:35:53 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5516
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:8.5300 H:8.6300 L:8.5300 C:8.5900 V:2141309 TSO:57147 A:8.5900 R:1.0000 CA:0.8200
+2015-06-30 (Tue) [5293]: O:8.6300 H:8.6300 L:8.5900 C:8.6000 V:264595 TSO:57147 A:8.6000 R:1.0000 CA:0.8200
+2015-07-01 (Wed) [5294]: O:8.6300 H:8.6500 L:8.6200 C:8.6200 V:162753 TSO:57147 A:8.6200 R:1.0000 CA:0.8200
+2015-07-02 (Thu) [5295]: O:8.6500 H:8.6500 L:8.6200 C:8.6400 V:330327 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:8.6200 H:8.6500 L:8.6200 C:8.6300 V:390408 TSO:57147 A:8.6300 R:1.0000 CA:0.8200
+2015-07-07 (Tue) [5300]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200  <----
+2015-07-08 (Wed) [5301]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-09 (Thu) [5302]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-10 (Fri) [5303]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-14 (Tue) [5307]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+2015-07-15 (Wed) [5308]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'1bef0e21390b1d67c0a80116' and shares > 0 order by closed; 
+> Row 1496:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-04-17 09:38:52.000000'
+>        COMMENT = NULL
+>     COMMISSION = 237.000000
+>   CURRENTORDER = X'3a3e1ef0553071cdc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'67e35a9239cef2a2c0a80119'
+>       MODIFIED = NULL
+>            NET = 40185.341800
+>         OPENED = TIMESTAMP '2015-04-16 22:37:01.000000'
+>          PRICE = 8.477920
+>     PRIMARYKEY = X'3a3c1ef0553071cdc0a86fa6'
+>         SECFEE = 0.710000
+>         SHARES = 4740.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1bef0e21390b1d67c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'1bef0e21390b1d67c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1bef0e21390b1d67c0a80116'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1bef0e21390b1d67c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 105 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 7/07/15
+last ticket: 2015-04-17 PRICE = 8.477920
+last price:  2015-07-07 (Tue) [5300]: O:8.6500 H:8.6500 L:8.6400 C:8.6400 V:628491 TSO:57147 A:8.6400 R:1.0000 CA:0.8200  <----
+
+going with 20150707 8.65
+
+/Marketocracy/bin/cahelper -symbol  MIG  -effective 20150707 -type ACQUIS -exchange UN -acqType 1 -acqCash  8.65 -acqShare 0 -purchaser MIG   >& /Users/build/caout/MIG.20150902-ACQUIS.out 
+tail -f MIG.20150902-ACQUIS.out
+stocks:~/caout build$ tail -f MIG.20150902-ACQUIS.out
+D: (09-02 16:38:41.324) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-02 16:39:39.055) cahelper started on 2015-09-02 16:39:39 -0400
+
+D: (09-02 16:39:39.279) There are [0] open tickets for MIG on 20150707
+D: (09-02 16:39:39.938) StockFileLoad Version:4.0
+D: (09-02 16:39:39.939) Loading Stock Data
+D: (09-02 16:41:19.998) Building Lookup Index
+D: (09-02 16:41:32.285) Finished Building Index
+D: (09-02 16:41:42.157) Finished Loading Stock Data
+D: (09-02 16:41:42.215) Connection to 192.168.111.172:6666 succeeded
+D: (09-02 16:42:42.828) SavingChanges for position sell out 101 of 488
+D: (09-02 16:43:03.228) {
+    "ACQUIRED_STOCK" = MIG; 
+    "ACQUIRING_STOCK" = "MIG_FIX"; 
+    AMOUNT = 8.65; 
+    APPLIED = 1; 
+    DATE = 20150707; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MIG_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-02 16:43:11.015) SUCCESS
+D: (09-02 16:43:11.015) cahelper finished 2015-09-02 16:43:11 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'1bef0e21390b1d67c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 58319P108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEADOWBROOK INSURANCE GRP
+>     PRIMARYKEY = X'1bf00e21390b1d67c0a80116'
+>       STOCKKEY = X'1bef0e21390b1d67c0a80116'
+>         SYMBOL = MIG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 58319P108
+>           DATE = TIMESTAMP '2015-07-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEADOWBROOK INSURANCE GRP
+>     PRIMARYKEY = X'6b701c7f55e75e8bc0a86f92'
+>       STOCKKEY = X'1bef0e21390b1d67c0a80116'
+>         SYMBOL = MIG
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey =X'6b701c7f55e75e8bc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'6b701c7f55e75e8bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MIG  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|8.650000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150902:043939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-07 00:00:00.000000'
+>         BB_IDENTIFIER = MIG_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MIG_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-07 00:00:00.000000'
+>            PRIMARYKEY = X'6b6a1c7f55e75e8bc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'6b6a1c7f55e75e8bc0a86f92';
+> Row 1:
+>   _C001 = 189.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6b6a1c7f55e75e8bc0a86f92'));
+there are XXX fundkeys, save to CA issues MIG fundkeys.txt
+
+For Beta case
+MIG no longer trades but is still active on our site - need to delist 
+
+check on 9/3/15   invalidate funds
+check MAdmin  one user
+Stock:MEADOWBROOK INSURANCE GRP  Symbol:MIG
+Date: 09/05/2015
+
+1 users found
+
+teamfunds
+
+your holdings of MIG	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+GRQM	0	N/A	N/A
+3M	-141,816	-$1,225,290.24	-1.29%  <--- 
+SWAN	0	N/A	N/A
+SWAN2	0	N/A	N/A
+SWANX	0	N/A	N/A
+SWANX2	0	N/A	N/A
+jackweyland_VALUE	0	N/A	N/A
+huyehara_HMF	0	N/A	N/A
+LogicaTeam_Fund	0	N/A	N/A
+JoeToms	0	N/A	N/A
+JoeToms2	0	$.00	0.00%
+JoeToms3	0	N/A	N/A
+rmcduff_rmg1	0	N/A	N/A
+rmcduff_rmg1_po_1m	0	N/A	N/A
+rmcduff_rmg1_to_1m	0	N/A	N/A
+rmcduff_rmg1_pt_1m_cl	0	N/A	N/A
+rmcduff_rmg1_pt_1m_cp	0	N/A	N/A
+rmg1_pt_1m_cp_1	0	N/A	N/A
+rmg1_pt_1m_cp_2	0	N/A	N/A
+rmg1_pt_1m_cp_3	0	N/A	N/A
+JoeToms4	0	$.00	0.00%
+JoeToms5	0	N/A	N/A
+JoeToms6	0	$.00	0.00%
+ 	 	[ Trade this stock ]
+
+LEDGER
+Date	Start	Change	End	Type
+Sep 17, 2003		5701	5701	Buy
+Nov 12, 2003	5701	-5700	1	Sell
+Dec 16, 2004	1	9346	9347	Buy
+Sep 09, 2005	9347	-10355	-1008	Sell
+Oct 07, 2005	-1008	11795	10787	Buy
+Dec 15, 2005	10787	-11795	-1008	Sell
+Oct 31, 2006	-1008	-1	-1009	Sell
+Apr 22, 2010	-1009	23007	21998	Buy
+Apr 23, 2010	21998	1543	23541	Buy
+Jul 07, 2015	23541	-165357	-141816	Corporate Action
+Total: -141,816
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 17, 2003	5,701	$285.06	$23,089.93	$4.05
+Dec 16, 2004	9,346	$467.29	$47,235.03	$5.05
+Oct 7, 2005	11,795	$589.76	$65,419.87	$5.55
+Apr 22, 2010	23,007	$1,150.34	$192,278.59	$8.36
+Apr 23, 2010	1,543	$77.15	$12,791.76	$8.29
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 12, 2003	5,700	$285.00	$1.14	$23,966.54	$4.20
+Sep 9, 2005	10,355	$517.74	$2.35	$55,473.95	$5.36
+Dec 15, 2005	11,795	$589.76	$3.02	$71,624.35	$6.07
+Oct 31, 2006	1	$0.07	$0.01	$17.29	$11.70
+
+the CA sold way too many shares  change to 23541
+
+3M fund on 20150707
+
+ trades on July 07, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	MIG	165,357	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+Hexkey: 7ED01C7F55E75F54C0A86F92
+
+get the hex key
+
+select * from mticket where primarykey= X'7ED01C7F55E75F54C0A86F92';
+select * from morder where ticketkey =X'7ED01C7F55E75F54C0A86F92';
+select * from mtrade where ticketkey =X'7ED01C7F55E75F54C0A86F92';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=23541 where ticketkey =X'7ED01C7F55E75F54C0A86F92';
+update morder set shares=23541 where ticketkey =X'7ED01C7F55E75F54C0A86F92';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 7ED01C7F55E75F54C0A86F92
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/dbtool lookup fund teamfunds
+fund: teamfunds
+  PK: [5B8706614CE5A584C0A80146]
+  symbol: [3M]
+  managerKey: [2B3032873BA7BA79C0A80118]
+  loginName: [teamfunds]
+
+/Marketocracy/bin/fptool invalidateFund   5B8706614CE5A584C0A80146
+
+logout and back in you'll need to expand for the change to take 
+
+ok, teamfunds is at 0 shares
+
+invalidate all funds with MIG  done
+
+reprice 
+MIG has been acquired	right curve
+ 	 	
+MEADOWBROOK INSURANCE GRP acquired by a private company on 2015-07-07 00:00:00.
+
+closing this out 

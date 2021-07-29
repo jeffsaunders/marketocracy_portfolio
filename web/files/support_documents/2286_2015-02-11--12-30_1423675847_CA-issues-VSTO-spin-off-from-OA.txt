@@ -1,0 +1,389 @@
+date: 2/10/15
+bloomberg processed spin 
+
+RECORD_DATE:20150202
+APPLIED:1
+NOTES:ATK and Orbital Sciences Corp entered into a transaction agreement in which Alliant's Aerospace and Defense Groups will merge with Orbital immediately following the spin-off of Alliant's sporting group business (Vista Outdoor Inc).
+RATIO:2
+SYMBOL:OA
+SPINOFF_SYMBOL:VSTO
+DATE:2015-02-10 00:00:00
+PAY_DATE:20150209
+TYPE:SPIN
+
+OA spun off VSTO
+
+select distinct stockkey from mstockalias where symbol='VSTO';
+> Row 1:
+>   STOCKKEY = X'f8aa32274ca11bd2c0a80146'
+> Row 2:
+>   STOCKKEY = X'31415cc654cad014c0a86f92'
+> Row 3:
+>   STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+
+
+
+> VSTO 1:
+>   STOCKKEY = X'f8aa32274ca11bd2c0a80146'
+select * from mstockalias where stockkey= X'f8aa32274ca11bd2c0a80146';
+this one changed ticker, no problem
+
+************************************************************************************************************
+> VSTO 2:
+>   STOCKKEY = X'31415cc654cad014c0a86f92'
+this one started as -W and did a ticker change into VSTO
+************************************************************************************************************
+select * from mstockalias where stockkey= X'31415cc654cad014c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-01-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Vista Outdoor Inc
+>     PRIMARYKEY = X'31425cc654cad014c0a86f92'
+>       STOCKKEY = X'31415cc654cad014c0a86f92'
+>         SYMBOL = VSTO-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Vista Outdoor Inc
+>     PRIMARYKEY = X'25c13a0c54da9cbac0a86f92'
+>       STOCKKEY = X'31415cc654cad014c0a86f92'
+>         SYMBOL = VSTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+************************************************************************************************************
+> VSTO 3:
+>   STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+this one was the spin off
+************************************************************************************************************
+select * from mstockalias where stockkey= X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Vista Outdoor Inc
+>     PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92'
+>       STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+>         SYMBOL = VSTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+We have a collision on VSTO-2 and VSTO-3
+
+VSTO-2
+>   STOCKKEY = X'31415cc654cad014c0a86f92'
+select count(*) from mticket where STOCKKEY = X'31415cc654cad014c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+none of these
+we can delete it 
+
+
+> VSTO 3:
+>   STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+select count(*) from mticket where STOCKKEY = X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   _C001 = 592.000000
+select distinct sourcekey from mticket where STOCKKEY = X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   SOURCEKEY = X'0d96353454da9b36c0a86f92'
+there are no member generated tickets yet.
+
+Let's delete VSTO-2
+>   STOCKKEY = X'31415cc654cad014c0a86f92'
+this one started as -W and did a ticker change into VSTO  No mtickets no members holding it
+
+set commit false;
+
+delete from mstock where primarykey=  X'31415cc654cad014c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'31415cc654cad014c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'31415cc654cad014c0a86f92');
+
+delete from mstockalias where stockkey=X'31415cc654cad014c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'31415cc654cad014c0a86f92');   
+
+delete from mposition where stockkey=X'31415cc654cad014c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'31415cc654cad014c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'31415cc654cad014c0a86f92');
+
+delete from mticket where stockkey=X'31415cc654cad014c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'31415cc654cad014c0a86f92';  
+
+commit;
+
+set commit true;
+
+good there are only two now
+
+
+************************************************************************************************************
+> VSTO 3:
+>   STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+this one was the spin off
+************************************************************************************************************
+select * from mstockalias where stockkey= X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Vista Outdoor Inc
+>     PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92'
+>       STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+>         SYMBOL = VSTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+we need to update the cusip, GICS and style
+
+is this in xignite?  it is there but no cusip, not in quantum yet, either
+I found it  928377100
+
+update mstockalias set CUSIP = '928377100' where PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92';
+
+joining midcap 400  let's make it MG
+
+update mstockalias set stylekey = 'MG' where PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92';
+
+it looks like they make consumer outdoor sporting goods.
+
+25202010	Leisure Products
+	Manufacturers of leisure products and equipment including sports equipment, bicycles and toys.
+
+update mstockalias set GICSKEY = '25202010' where PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92';
+
+select * from mstockalias where stockkey= X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 928377100
+>           DATE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Vista Outdoor Inc
+>     PRIMARYKEY = X'72fe3d2e54da9ef1c0a86f92'
+>       STOCKKEY = X'72fd3d2e54da9ef1c0a86f92'
+>         SYMBOL = VSTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = MG
+select distinct sourcekey from mticket where stockkey=X'72fd3d2e54da9ef1c0a86f92';
+> Row 1:
+>   SOURCEKEY = X'0d96353454da9b36c0a86f92'
+
+select * from mcorporateaction where primarykey=X'0d96353454da9b36c0a86f92';
+> Row 1:
+>              ALIASKEY = X'69d83b6d54da9d4bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Vista Outdoor Inc|CP_ID_BB_COMP|40163352|CP_ID_BB_SEC|1000|CP_TERMS|2 per 1|CP_RATIO|2.000000|CP_PAY_DT|20150209|CP_RECORD_DT|20150202|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.465972|CP_ADJ_DT|20150210|CP_TKR|VSTO US|CP_DUE_BILL_RED_DT|20150212|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006F8QZK4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006F8QZF0|CP_SPINOFF_ID_BB_SEC_NUM_DES|VSTO|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|ATK and Orbital Sciences Corp entered into a transaction agreement in which Alliant's Aerospace and Defense Groups will merge with Orbital immediately following the spin-off of Alliant's sporting group business (Vista Outdoor Inc).
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90518370
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Orbital ATK Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = OA      US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-29 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = OA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'0d96353454da9b36c0a86f92'
+>               VERSION = NULL
+
+get the mstockalias record for this one
+select * from mstockalias where primarykey=X'69d83b6d54da9d4bc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68557N103
+>           DATE = TIMESTAMP '2015-02-10 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Orbital ATK Inc
+>     PRIMARYKEY = X'69d83b6d54da9d4bc0a86f92'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = OA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+
+now get all of the mstockalias records associated with this stockkey
+select * from mstockalias where STOCKKEY = X'074f0e21390ae2b4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALLIANT TECHSYSTEMS
+>     PRIMARYKEY = X'07500e21390ae2b4c0a80116'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = ATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'07500e21390ae2b4c0a80116';
+dvd cash
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALLIANT TECHSYSTEMS
+>     PRIMARYKEY = X'25c53a0c54da9cbbc0a86f92'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = OA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'25c53a0c54da9cbbc0a86f92';
+> Row 1:
+>              ALIASKEY = X'25c53a0c54da9cbbc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ATK US|CP_NEW_TKR|OA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 101193666
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>            PRIMARYKEY = X'f77a673e54af18a3c0a86f92'
+>               VERSION = NULL
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2015-02-10 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Orbital ATK Inc
+>     PRIMARYKEY = X'b3373b6054da9d30c0a86f92'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = OA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'25c53a0c54da9cbbc0a86f92';
+> Row 1:
+>              ALIASKEY = X'25c53a0c54da9cbbc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ATK US|CP_NEW_TKR|OA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 101193666
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>            PRIMARYKEY = X'f77a673e54af18a3c0a86f92'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68557N103
+>           DATE = TIMESTAMP '2015-02-10 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Orbital ATK Inc
+>     PRIMARYKEY = X'25c53a0c54da9cbbc0a86f92'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = OA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'25c53a0c54da9cbbc0a86f92';
+
+the spin off is there.
+
+ATK to OA
+symbol changes for OA	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+10 Feb 15	ATK	OA	Change in the ticker (trading) symbol from ATK to OA
+ 	 	 
+	  CUSIP changes for OA	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+10 Feb 15	018804104	68557N103	Change in any of identification numbers (CUSIP) of a security from 018804104 to 68557N103
+ 	 	 
+	  name changes for OA	
+ 	 	
+Effective Date	Old Name	New Name	Description
+10 Feb 15	Alliant Techsystems Inc	Orbital ATK Inc	Change in the name of issuer from Alliant Techsystems Inc to Orbital ATK Inc
+ 	 	 
+	  cash dividends paid by OA	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+04 Feb 11	08 Feb 11	04 Mar 11	4	$0.20	Dividend amount:0.2 per share.
+02 Jun 11	06 Jun 11	30 Jun 11	4	$0.20	Dividend amount:0.2 per share.
+02 Sep 11	07 Sep 11	29 Sep 11	4	$0.20	Dividend amount:0.2 per share.
+05 Dec 11	07 Dec 11	29 Dec 11	4	$0.20	Dividend amount:0.2 per share.
+05 Mar 12	07 Mar 12	29 Mar 12	4	$0.20	Dividend amount:0.2 per share.
+07 Jun 12	11 Jun 12	28 Jun 12	4	$0.20	Dividend amount:0.2 per share.
+31 Aug 12	05 Sep 12	27 Sep 12	4	$0.20	Dividend amount:0.2 per share.
+19 Nov 12	21 Nov 12	13 Dec 12	4	$0.26	Dividend amount:0.26 per share.
+01 Mar 13	05 Mar 13	28 Mar 13	4	$0.26	Dividend amount:0.26 per share.
+30 May 13	03 Jun 13	27 Jun 13	4	$0.26	Dividend amount:0.26 per share.
+30 Aug 13	04 Sep 13	26 Sep 13	4	$0.26	Dividend amount:0.26 per share.
+18 Nov 13	20 Nov 13	12 Dec 13	4	$0.26	Dividend amount:0.26 per share.
+28 Feb 14	04 Mar 14	27 Mar 14	4	$0.32	Dividend amount:0.32 per share.
+28 Feb 14	04 Mar 14	27 Mar 14	4	$0.32	Dividend amount:0.32 per share.
+29 May 14	02 Jun 14	26 Jun 14	4	$0.32	Dividend amount:0.32 per share.
+29 Aug 14	03 Sep 14	25 Sep 14	4	$0.32	Dividend amount:0.32 per share.
+17 Nov 14	19 Nov 14	11 Dec 14	4	$0.32	Dividend amount:0.32 per share.
+29 Jan 15	02 Feb 15	06 Feb 15	4	$0.32	Dividend amount:0.32 per share.
+ 	 	 
+	  spinoffs by OA	
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+10 Feb 15	02 Feb 15	09 Feb 15	2 per 1	VC	VSTO US spun off from OA with terms:2 per 1
+ 	 	 
+	  OA had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+28 Nov 00	1.5	Split terms:1.5
+10 Sep 01	3 for 2	Split terms:3 for 2
+11 Jun 02		Split terms:
+
+closing this out - there is a case
+
+

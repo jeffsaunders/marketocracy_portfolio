@@ -1,0 +1,169 @@
+date: 11/1/15
+ticker PTCHF  list as PureTech - 
+description:  we missed the list of PTCHF as PureTech because a previous company used this ticker (Patch) and we missed the
+delist of old PTCHF.   I have delisted old PTCHF and now it is time to list new PTCHF
+
+Yahoo finance 
+PureTech Health plc (PTCHF) -Other OTC   Watchlist
+2.35 Up 0.06(2.62%) Oct 30, 3:49PM EDT
+
+Prev Close:	2.29
+Open:	2.35
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	0.05
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	2.35 - 2.35
+52wk Range:	2.35 - 2.35
+Volume:	8,000
+Avg Vol (3m):	N/A
+Market Cap:	108.28M
+P/E (ttm):	N/A
+EPS (ttm):	-0.28
+Div & Yield:	N/A (N/A
+
+xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=PTCHF   good and we have a cusip
+703012302
+this cusip does not agree on fidelity
+let's try investing.com  not found
+
+searched on the web - dtcc 
+ADD***
+G7297M101  <---- this one is good
+PTCHF
+PURETECH HEALTH PLC ORD SHS (GBR)
+07/28/2015
+try this one 
+
+let's list this one
+PTCHF|QB|G7297M101|PureTech Health plc|20150728
+
+put this into symadd.txt on stocks1
+
+run the script
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check the database  there should be two stockkeys for PTCHF.  one is for old PTCHF as Patch which we just delisted
+and the second one will be for PureTech which we just listed.  We're going to copy the prices over from old PTCHF from
+2015-07-28 to this new one 
+
+select distinct stockkey from mstockalias where symbol='PTCHF';
+> Row 1:
+>   STOCKKEY = X'c62f4d663a1cac7ec0a80114'
+> Row 2:
+>   STOCKKEY = X'ea2c2dc456361c77c0a86fab'
+there are two
+
+> PTCHF 1:
+>   STOCKKEY = X'c62f4d663a1cac7ec0a80114'
+select * from mstockalias where stockkey=X'c62f4d663a1cac7ec0a80114' order by "date";
+> Row 27:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 703012302
+>           DATE = TIMESTAMP '2013-12-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Patch International Inc
+>     PRIMARYKEY = X'8f7f2d2b563615c2c0a86fab'
+>       STOCKKEY = X'c62f4d663a1cac7ec0a80114'
+>         SYMBOL = PTCHF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XB
+	select companyID from mstock where primarykey=X'c62f4d663a1cac7ec0a80114';
+> Row 1:
+>   COMPANYID = 12546
+
+> PTCHF 2:
+>   STOCKKEY = X'ea2c2dc456361c77c0a86fab'
+select * from mstockalias where stockkey=X'ea2c2dc456361c77c0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = G7297M101
+>           DATE = TIMESTAMP '2015-07-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PureTech Health plc
+>     PRIMARYKEY = X'ea2d2dc456361c77c0a86fab'
+>       STOCKKEY = X'ea2c2dc456361c77c0a86fab'
+>         SYMBOL = PTCHF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mexchange where primarykey=X'6325039339e7e926c0a801dc';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+	select companyID from mstock where primarykey=X'ea2c2dc456361c77c0a86fab';
+> Row 1:
+>   COMPANYID = 29152
+
+companyID
+old PTCHF  12546
+new PTCHF  29152
+
+daynumber for 2015-07-28
+7/28/15	5321	Tue
+
+we should have no prices for companyID 29152;
+select * from stockprices where companyID = 29152;
+good norhing
+update stockprices set companyid=29152 where companyid=12546 and daynumber >= 5321;
+
+now check the prices again:
+
+select * from stockprices where companyID = 29152 order by daynumber;
+> Row 1:
+>   DAYNUMBER = 5322
+>   COMPANYID = 29152
+>      OPENED = 23900
+>        HIGH = 23900
+>         LOW = 23900
+>      CLOSED = 23900
+>      VOLUME = 9000
+
+> Row 67:
+>   DAYNUMBER = 5415
+>   COMPANYID = 29152
+>      OPENED = 23500
+>        HIGH = 23500
+>         LOW = 23500
+>      CLOSED = 23500
+>      VOLUME = 8000
+
+ let's invalidate stock prices from
+2015-07-28
+
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-07-28
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-11-01
+D: (09:17:42.677) Invalidate all prices >= 2015-07-28 (5321)
+
+
+Check on 11/2/15
+see that PTCHF has been listed.
+check on 11/3/15 for prices 
+
+11/3/15
+PTCHF is there
+Symbol: PTCHF	Name: PureTech Health plc	Price: $2.30
+Volume: 4,000	Sector: Unclassified	Change: $0.00
+Short Volume: 16,038	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 16,038	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $2.19	Year High: $2.39	High: $2.35
+200 Day Ave: $0.75	Year Low: $0.00	Low: $2.30
+
+pricing and there is a graph
+
+
+
+

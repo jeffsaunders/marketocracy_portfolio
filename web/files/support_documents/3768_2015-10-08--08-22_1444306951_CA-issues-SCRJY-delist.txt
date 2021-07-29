@@ -1,0 +1,313 @@
+SCRJY
+date:   10/5/15
+ticker:  
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Converium Holding  Symbol:SCRJY
+Date: 10/05/2015
+
+62 users found
+
+1	agcarle	altman	apfel	babdul	bdabueva	bigmoneybastard	bmoore	bsettles	bufordshighway	castaways2006
+2	chinaman	cowdude	dcharlan	dharrer	dmiller1	dmr0834	downriggin	egghead	ejsiii	fundwarrior
+3	gigiobe	gracelee999	grete65416	hdfund	hernandez	igdbest	ikapital	jjmmrb	joeymag	joownaz
+4	jweaver2	keimwj	kidbiz	kleinphi	lesson2	lesson3	li_he	li_ping	lookright2000	lsoon_fong
+5	lvg55	maksfeof	mart06	mj150	mopoji123	nmiksis	orkunsahmali	pottspoint	prichins	pwallick
+6	rhnaccounts	rkuli	ryarbrough	sgallacher14	stanglx718	stone_cold	tekkie1	tjenkins	tmac	vadka
+7	weatherguy1033	zurn	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'SCRJY';  
+> Row 1:
+>   STOCKKEY = X'128c5f914016f83dc0a80146'
+select * from mstockalias where stockkey=X'128c5f914016f83dc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 21248N107
+>           DATE = TIMESTAMP '2001-12-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'128d5f914016f83dc0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = CHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 80918K108
+>           DATE = TIMESTAMP '2007-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'55e83eee46f0835ac0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = CHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 80918K108
+>           DATE = TIMESTAMP '2008-01-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'3a9950964782e79ac0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = SCRJY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 14056T100
+>           DATE = TIMESTAMP '2008-01-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'38a151b14782e7cec0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = SCRJY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SCRJY'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SCRJY
+>>>> dbtool started at 2015-10-05 16:48:58 -0400
+stock: SCRJY
+  PK       : [128C5F914016F83DC0A80146]
+  companyID: [15164]
+  symbol   : [SCRJY]
+  name     : [Converium Holding]
+  date     : [2008-01-07 00:00:00]
+  status   : [Active]
+stock: SCRJY
+  PK       : [128C5F914016F83DC0A80146]
+  companyID: [15164]
+  symbol   : [SCRJY]
+  name     : [Converium Holding]
+  date     : [2008-01-07 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-05 16:48:59 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15164
+2008-06-21 (Sat) [2728]: <WEEKEND>
+2008-06-22 (Sun) [2729]: <WEEKEND>
+2008-06-23 (Mon) [2730]: O:8.1500 H:8.6500 L:8.1500 C:8.3000 V:9186 TSO:292829 A:8.3000 R:1.0000 CA:0.0000
+2008-06-24 (Tue) [2731]: O:8.1500 H:8.3000 L:8.1500 C:8.2500 V:42797 TSO:292829 A:8.2500 R:1.0000 CA:0.0000
+2008-06-25 (Wed) [2732]: O:8.1500 H:8.3000 L:8.1000 C:8.3000 V:4525 TSO:292829 A:8.3000 R:1.0000 CA:0.0000
+2008-06-26 (Thu) [2733]: O:8.1500 H:8.3900 L:8.1900 C:8.2400 V:2977 TSO:292829 A:8.2400 R:1.0000 CA:0.0000
+2008-06-27 (Fri) [2734]: O:8.1500 H:8.5000 L:8.3000 C:8.4500 V:6530 TSO:292829 A:8.4500 R:1.0000 CA:0.0000  <---
+2008-06-28 (Sat) [2735]: <WEEKEND>
+2008-06-29 (Sun) [2736]: <WEEKEND>
+2008-06-30 (Mon) [2737]: O:8.4500 H:8.4500 L:8.4500 C:8.4500 V:0 TSO:292829 A:8.4500 R:1.0000 CA:0.0000
+2008-07-01 (Tue) [2738]: O:8.4500 H:8.4500 L:8.4500 C:8.4500 V:0 TSO:292829 A:8.4500 R:1.0000 CA:0.0000
+
+..
+2008-11-21 (Fri) [2881]: O:8.4500 H:8.4500 L:8.4500 C:8.4500 V:0 TSO:292829 A:8.4500 R:1.0000 CA:0.0000
+2008-11-22 (Sat) [2882]: <WEEKEND>
+2008-11-23 (Sun) [2883]: <WEEKEND>
+2008-11-24 (Mon) [2884]: O:8.4500 H:8.4500 L:8.4500 C:8.4500 V:0 TSO:292829 A:8.4500 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'128c5f914016f83dc0a80146' and shares > 0 order by closed; 
+> Row 627:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-01-04 12:53:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'bf0a4a58477d4e71c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2c7e1a203a21d3c2c0a801e0'
+>       MODIFIED = NULL
+>            NET = 16424.090000
+>         OPENED = TIMESTAMP '2008-01-03 16:06:57.000000'
+>          PRICE = 8.212045
+>     PRIMARYKEY = X'bf084a58477d4e71c0a80135'
+>         SECFEE = 0.510000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'128c5f914016f83dc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'128c5f914016f83dc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'128c5f914016f83dc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 62 members who hold this stock
+quantum:  nothing
+last ticket: 2008-01-04 PRICE = 8.212045
+last price:  2008-06-27 (Fri) [2734]: O:8.1500 H:8.5000 L:8.3000 C:8.4500 V:6530 TSO:292829 A:8.4500 R:1.0000 CA:0.0000  <---
+
+going with 20080627 8.45
+
+/Marketocracy/bin/cahelper -symbol  SCRJY  -effective 20080627 -type ACQUIS -exchange UN -acqType 1 -acqCash 8.45 -acqShare 0 -purchaser SCRJY   >& /Users/build/caout/SCRJY.20151007-DELIST.out 
+SCRJY.20151007-DELIST.out
+stocks1:~/caout build$ tail -f SCRJY.20151007-DELIST.out
+D: (10-07 21:08:57.154) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-07 21:09:20.261) cahelper started on 2015-10-07 21:09:20 -0400
+
+D: (10-07 21:09:22.023) There are [0] open tickets for SCRJY on 20080627
+D: (10-07 21:09:22.257) StockFileLoad Version:4.0
+D: (10-07 21:09:22.257) Loading Stock Data
+D: (10-07 21:09:58.571) Building Lookup Index
+D: (10-07 21:10:04.104) Finished Building Index
+D: (10-07 21:10:07.875) Finished Loading Stock Data
+D: (10-07 21:10:07.993) Connection to 192.168.111.172:6666 succeeded
+D: (10-07 21:10:10.128) SavingChanges for position sell out 101 of 220
+D: (10-07 21:10:14.845) {
+    "ACQUIRED_STOCK" = SCRJY; 
+    "ACQUIRING_STOCK" = "SCRJY_FIX"; 
+    AMOUNT = 8.45; 
+    APPLIED = 1; 
+    DATE = 20080627; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SCRJY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-07 21:10:19.768) SUCCESS
+D: (10-07 21:10:19.769) cahelper finished 2015-10-07 21:10:19 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'128c5f914016f83dc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 21248N107
+>           DATE = TIMESTAMP '2001-12-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'128d5f914016f83dc0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = CHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 80918K108
+>           DATE = TIMESTAMP '2007-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'55e83eee46f0835ac0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = CHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 80918K108
+>           DATE = TIMESTAMP '2008-01-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'3a9950964782e79ac0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = SCRJY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 14056T100
+>           DATE = TIMESTAMP '2008-01-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'38a151b14782e7cec0a80146'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = SCRJY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 14056T100
+>           DATE = TIMESTAMP '2008-06-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Converium Holding
+>     PRIMARYKEY = X'10a85d865615c242c0a86fab'
+>       STOCKKEY = X'128c5f914016f83dc0a80146'
+>         SYMBOL = SCRJY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402070
+>       STYLEKEY = XB
+
+
+select * from mcorporateaction where aliaskey =X'10a85d865615c242c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'10a85d865615c242c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SCRJY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|8.450000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151007:090920
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-06-27 00:00:00.000000'
+>         BB_IDENTIFIER = SCRJY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-06-27 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SCRJY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-06-27 00:00:00.000000'
+>            PRIMARYKEY = X'10a25d865615c240c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'10a25d865615c240c0a86fab';
+> Row 1:
+>   _C001 = 106.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'10a25d865615c240c0a86fab'));
+there are 106 fundkeys, save to CA issues SCRJY fundkeys.txt
+
+For Beta case
+SCRJY no longer trades but is still active on our site - need to delist 
+
+check on 10/8/15   invalidate funds
+check MAdmin  clear 
+
+
+SCRJY has been acquired	right curve
+ 	 	
+Converium Holding acquired by a private company on 2008-06-27 00:00:00.
+
+invalidate reprice and close 
+
+
+
+
+

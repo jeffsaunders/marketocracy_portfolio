@@ -1,0 +1,131 @@
+date:  10/7/15
+ticker:  PSTG
+case:    3761
+member:  peterg
+fund:
+
+List this stock
+
+oursite:  nothing
+
+Yahoo:
+Pure Storage, Inc. (PSTG) -NYSE
+16.26 0.00(0.00%) 11:05AM EDT - NYSE Real Time Price
+
+Prev Close:	N/A
+Open:	16.74
+Bid:	16.30 x 800
+Ask:	16.32 x 100
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	16.25 - 17.00
+52wk Range:	16.25 - 17.00
+Volume:	10,797,022
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	N/A
+Div & Yield:	N/A (N/A)
+
+Pure Storage, Inc.
+650 Castro Street
+Suite 400
+Mountain View, CA 94041
+United States - Map
+Phone: 800-379-7873
+Fax: 650-625-9667
+Website: http://www.purestorage.com
+
+Details	 
+Index Membership:	N/A
+Sector:	N/A
+Industry:	N/A
+Full Time Employees:	1,100
+
+
+quantum:  nothing
+
+xignite:  is there cusip is 74624M102
+confirming:   cusip is good
+
+select distinct stockkey from mstockalias where symbol='PSTG';
+nothing
+select * from mcorporateaction where BB_SECID='PSTG';
+
+
+PSTG|N|74624M102|Pure Storage, Inc.|20151007
+
+put this into symadd.txt  then run 
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+wait this stock listed today - will probably come in the bloomberg feed - let's wait
+update the case 
+
+select distinct stockkey from mstockalias where symbol='PSTG';
+> Row 1:
+>   STOCKKEY = X'62ac3be456155c74c0a86fab'
+select * from mstockalias  where STOCKKEY = X'62ac3be456155c74c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74624M102
+>           DATE = TIMESTAMP '2015-10-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Pure Storage, Inc.
+>     PRIMARYKEY = X'62ad3be456155c74c0a86fab'
+>       STOCKKEY = X'62ac3be456155c74c0a86fab'
+>         SYMBOL = PSTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check this on legacy on 10/8/15 
+
+looks like we received it today from bloomberg, too
+
+select distinct stockkey from mstockalias where symbol='PSTG';
+> Row 1:
+>   STOCKKEY = X'62ac3be456155c74c0a86fab'
+
+select * from mstockalias  where STOCKKEY = X'62ac3be456155c74c0a86fab';
+
+10/8/15
+Symbol: PSTG	Name: Pure Storage, Inc.	Price: $16.01
+Volume: 18,804,360	Sector: Unclassified	Change: $0.00
+Short Volume: 375,910	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 375,910	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.32	Year High: $17.00	High: $17.00
+200 Day Ave: $0.08	Year Low: $0.00	Low: $16.00
+
+it's there  
+select * from mstockalias  where STOCKKEY = X'62ac3be456155c74c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74624M102
+>           DATE = TIMESTAMP '2015-10-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Pure Storage, Inc.
+>     PRIMARYKEY = X'62ad3be456155c74c0a86fab'
+>       STOCKKEY = X'62ac3be456155c74c0a86fab'
+>         SYMBOL = PSTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select count(*) from mticket where stockkey=X'62ad3be456155c74c0a86fab';
+none yet
+
+lets update the case 
+and close this out 
+
+
+
+
+
+
+
+
+

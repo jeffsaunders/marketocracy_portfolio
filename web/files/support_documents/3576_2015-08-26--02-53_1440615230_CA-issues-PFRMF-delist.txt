@@ -1,0 +1,328 @@
+PFRMF
+date:  
+ticker:  PFRMF
+
+yahoo:
+
+quantum: not found
+
+oursite:
+Symbol: PFRMF	Name: Pacific Rim Mining	Price: $0.06
+Volume:	Sector: Materials	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Pacific Rim Mining  Symbol:PFRMF
+Date: 08/24/2015
+
+88 users found
+
+1	aandrews1771	acolton	ajblais	am153	amoloney	amoloney1	arjonesy	asa_skater	axenolith	bbtest2
+2	bedo	benmackay	bkalaf	bobbrownleee	bopeep	calepino	campagveloce	cassiar	ccook	cgraves
+3	charris	collin2985	compwiz4u	doppelaar	drac	eddythebrain	edfrank	epitt	etalas	extraultra
+4	flexoffset	flyinryan	fredricktoo	fund_raiser	game27	germain	glycogen	gnug	gteti	jaime
+5	jdberia	jlaforet	jmcgregor	joefrocks	john_corso	jpurves	jsdnyc	jt3641	jvolentine	kaiserbhuyan
+6	karllutjen	kazrisk	le_palais_contarini	marketeer	mcfadden2002	mleach	mroider	msheridan1	nbullers	njacoby
+7	pattib	pensionrecovery	pierrea777	pkirschenbaum1	razz	rfye	rhester	ric	rokit	rtshapiro
+8	rw1392	sahmed2	scotstrickland	stock_engineer	stocksniffer1	thegreenlion9	theharridan	thewhat	timex	trdr
+9	tunecedemalis	twalker1	valeriedeh	vandixhorn	vooch5	wavetiming	wghiler	wolf1904
+
+database
+select distinct stockkey from mstockalias where symbol= 'PFRMF';  
+> Row 1:
+>   STOCKKEY = X'c4150c273cf15430c0a801dc'
+select * from mstockalias where stockkey=X'c4150c273cf15430c0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2002-04-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'c4160c273cf15430c0a801dc'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PMU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2002-07-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'd46738673d37b56ec0a801dc'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PMU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2010-09-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'6d183c784c894ba7c0a80146'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PFRMF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2010-09-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'2fbb3dec4c894c22c0a80146'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PFRMF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PFRMF'  order by BB_EFFECTIVE;
+> Row 13:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|PFRMF|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 84423528
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 7716316
+>        BB_COMPANYNAME = Pacific Rim Mining Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-03 00:00:00.000000'
+>         BB_IDENTIFIER = PFRMF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-02 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = PFRMF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-12-02 00:00:00.000000'
+>            PRIMARYKEY = X'04f93beb52e08edcc0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PFRMF
+>>>> dbtool started at 2015-08-24 22:20:48 -0400
+stock: PFRMF
+  PK       : [C4150C273CF15430C0A801DC]
+  companyID: [14916]
+  symbol   : [PFRMF]
+  name     : [Pacific Rim Mining ]
+  date     : [2010-09-09 00:00:00]
+  status   : [Active]
+stock: PFRMF
+  PK       : [C4150C273CF15430C0A801DC]
+  companyID: [14916]
+  symbol   : [PFRMF]
+  name     : [Pacific Rim Mining ]
+  date     : [2010-09-09 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-24 22:20:49 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 14916
+2013-11-23 (Sat) [4709]: <WEEKEND>
+2013-11-24 (Sun) [4710]: <WEEKEND>
+2013-11-25 (Mon) [4711]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:25500 TSO:118033 A:0.0600 R:1.0000 CA:0.0000
+2013-11-26 (Tue) [4712]: O:0.0600 H:0.0800 L:0.0600 C:0.0600 V:47671 TSO:118033 A:0.0600 R:1.0000 CA:0.0000
+2013-11-27 (Wed) [4713]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:16459 TSO:118033 A:0.0600 R:1.0000 CA:0.0000
+2013-11-28 (Thu) [4714]: <HOLIDAY>
+2013-11-29 (Fri) [4715]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:16459 TSO:118033 A:0.0600 R:1.0000 CA:0.0000
+2013-11-30 (Sat) [4716]: <WEEKEND>
+2013-12-01 (Sun) [4717]: <WEEKEND>
+2013-12-02 (Mon) [4718]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:48703 TSO:118033 A:0.0600 R:1.0000 CA:0.0000  <--- last price
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'c4150c273cf15430c0a801dc' and shares > 0 order by closed; 
+> Row 781:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-05-14 14:19:00.000000'
+>        COMMENT = 
+>     COMMISSION = 21.370000
+>   CURRENTORDER = X'77b458d14fb11ad6c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd718128339846becc0a80118'
+>       MODIFIED = NULL
+>            NET = 448.770000
+>         OPENED = TIMESTAMP '2012-05-14 10:46:46.000000'
+>          PRICE = 0.089754
+>     PRIMARYKEY = X'77b258d14fb11ad6c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 5000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'c4150c273cf15430c0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c4150c273cf15430c0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c4150c273cf15430c0a801dc'  and totalshares < 0)));
+
+apply the acquis
+delist: 2013-12-03
+there are 88 members who hold this stock
+quantum: nothing
+last ticket: 2012-05-14  0.089754
+last price:  2013-12-02 (Mon) [4718]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:48703 TSO:118033 A:0.0600 R:1.0000 CA:0.0000  <--- last price
+
+going with 20131203 0.0600
+
+/Marketocracy/bin/cahelper -symbol  PFRMF  -effective 20131203 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0600 -acqShare 0 -purchaser PFRMF   >& /Users/build/caout/PFRMF.20150824-DELIST.out 
+PFRMF.20150824-DELIST.out
+stocks:~/caout build$ tail -f PFRMF.20150824-DELIST.out
+D: (08-24 22:26:25.721) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-24 22:27:12.863) cahelper started on 2015-08-24 22:27:12 -0400
+
+D: (08-24 22:27:13.200) There are [0] open tickets for PFRMF on 20131203
+D: (08-24 22:27:13.687) StockFileLoad Version:4.0
+D: (08-24 22:27:13.687) Loading Stock Data
+D: (08-24 22:28:34.611) Building Lookup Index
+D: (08-24 22:28:44.162) Finished Building Index
+D: (08-24 22:28:51.944) Finished Loading Stock Data
+D: (08-24 22:28:52.004) Connection to 192.168.111.172:6666 succeeded
+D: (08-24 22:28:55.328) SavingChanges for position sell out 101 of 239
+D: (08-24 22:29:01.460) {
+    "ACQUIRED_STOCK" = PFRMF; 
+    "ACQUIRING_STOCK" = "PFRMF_FIX"; 
+    AMOUNT = 0.06; 
+    APPLIED = 1; 
+    DATE = 20131203; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PFRMF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-24 22:29:03.182) SUCCESS
+D: (08-24 22:29:03.182) cahelper finished 2015-08-24 22:29:03 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'c4150c273cf15430c0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2002-04-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'c4160c273cf15430c0a801dc'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PMU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2002-07-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'd46738673d37b56ec0a801dc'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PMU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2010-09-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'6d183c784c894ba7c0a80146'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PFRMF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2010-09-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'2fbb3dec4c894c22c0a80146'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PFRMF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 694915208
+>           DATE = TIMESTAMP '2013-12-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Pacific Rim Mining 
+>     PRIMARYKEY = X'ab3641d755dbd281c0a86f92'
+>       STOCKKEY = X'c4150c273cf15430c0a801dc'
+>         SYMBOL = PFRMF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104040
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'ab3641d755dbd281c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ab3641d755dbd281c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PFRMF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.060000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150824:102712
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-03 00:00:00.000000'
+>         BB_IDENTIFIER = PFRMF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PFRMF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-03 00:00:00.000000'
+>            PRIMARYKEY = X'ab3041d755dbd280c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'ab3041d755dbd280c0a86f92';
+> Row 1:
+>   _C001 = 121.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ab3041d755dbd280c0a86f92'));
+there are 121 fundkeys, save to CA issues PFRMF fundkeys.txt
+
+For Beta case
+PFRMF no longer trades but is still active on our site - need to delist 
+
+check on 8/25/15   invalidate funds
+check MAdmin  clear  
+
+
+MDTL PFRMF has been acquired	right curve
+ 	 	
+Pacific Rim Mining acquired by a private company on 2013-12-03 00:00:00.
+
+invalidate  reprice and close this out 
+

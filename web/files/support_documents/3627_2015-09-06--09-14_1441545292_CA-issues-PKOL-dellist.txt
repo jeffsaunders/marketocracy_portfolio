@@ -1,0 +1,244 @@
+PKOL
+date:  
+ticker:  PKOL
+
+yahoo:
+
+quantum:
+PowerShares Global Coal Portfolio
+Ticker Symbol: PKOL*     CUSIP: 73936Q884     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   International Market Sector Index ETF
+* NOTE: This security is no longer trading as of 2/26/13
+
+Company's Online Profile
+FUND DESCRIPTION:  PowerShares Global Coal Portfolio is an exchange-traded index fund or Index ETF which is a separate investment portfolio of the PowerShares Exchange-Traded Fund Trust II, an open-ended investment management company. INVESTMENT OBJECTIVE: PowerShares Global Coal Portfolio seeks investment results that correspond, before fees and expenses, generally to the price and yield performance of the NASDAQ OMX Global Coal Index. INDEX DESCRIPTION: The NASDAQ OMX Global Coal Index is designed to measure the overall performance of globally traded securities of the largest and most liquid companies involved in the coal industry and is calculated and maintained by NASDAQ OMX (the Index Provider). As of December 31, 2009, the Index included consisted of approximately 29 securities of companies with market capitalizations between $421.3 million and $86.4 billion. FUND STRATEGY: The Fund will normally invest at least 90% of its total assets in the securities that comprise the Index and ADRs and GDRs based on the securities in the Index. The Fund anticipates that the majority of its investments will be in the securities that comprise the Index rather than in ADRs and GDRs. The Fund will normally invest at least 80% of its total assets in securities of companies involved in the coal industry. The Fund will invest 25% or more of the value of its total assets in securities of issuers in an industry or group of industries to the extent that the Index concentrates in an industry or group of industries. FUND MANAGEMENT: Invesco PowerShares Capital Management LLC has overall responsibility as the Fund's investment adviser for the selection and ongoing monitoring of the Fund's investments, managing the Fund's business affairs and providing certain clerical, bookkeeping and other administrative services.
+Notes:  1/25/2013 The issuer has determined to liquidate the fund on March 7, 2013. The fund will be closed to new investors at the close of regular trading on February 26, 2013; accordingly, trading in the funds will be suspended before the opening of business on February 27, 2013. 12/19/2012 Invesco PowerShares Capital Management LLC, a leading global provider of exchange-traded funds (ETFs) with more than $74 billion in franchise assets, announced changes to its product line. As part of its ongoing commitment to putting investors’ interests first, Invesco PowerShares announced that it plans to close 13 ETFs. The affected funds represent less than 1% of Invesco PowerShares’ total assets. At a Dec. 18, 2012 meeting, the PowerShares Funds Board of Trustees approved the closings. The final day of trading on The NASDAQ Stock Market LLC and NYSE Arca, Inc. will be Feb. 26, 2013. Shareholders may sell their holdings on or before Feb. 26, 2013, and may incur typical transaction fees from their broker-dealer. Shareholders who do not sell their holdings on or before Feb. 26, 2013, will receive cash equal to the amount of the net asset value of their shares, which will include any capital gains and dividends, in the cash portion of their brokerage accounts on the liquidation date (currently scheduled for March 7, 2013). Shareholders will generally recognize a capital gain or loss equal to the amount received for their shares over their adjusted basis in such shares.
+
+oursite:
+Symbol: PKOL	Name: PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio	Price: $18.62
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $18.70	High:
+200 Day Ave: $5.68	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio  Symbol:PKOL
+Date: 09/02/2015
+
+6 users found
+
+1	george_scombulis	jstawski	pbradford	pthurmanb	rayburpa	reveille	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'PKOL';  
+> Row 1:
+>   STOCKKEY = X'750b351149f677cdc0a80146'
+select * from mstockalias where stockkey=X'750b351149f677cdc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q884
+>           DATE = TIMESTAMP '2008-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio
+>     PRIMARYKEY = X'750c351149f677cdc0a80146'
+>       STOCKKEY = X'750b351149f677cdc0a80146'
+>         SYMBOL = PKOL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PKOL'  order by BB_EFFECTIVE;
+nothing useful
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PKOL
+>>>> dbtool started at 2015-09-03 01:41:34 -0400
+stock: PKOL
+  PK       : [750B351149F677CDC0A80146]
+  companyID: [18493]
+  symbol   : [PKOL]
+  name     : [PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio]
+  date     : [2008-09-18 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-03 01:41:35 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18493
+2013-02-03 (Sun) [4416]: <WEEKEND>
+2013-02-04 (Mon) [4417]: O:19.8100 H:19.8100 L:19.7800 C:19.7900 V:1801 TSO:450 A:19.7900 R:1.0000 CA:0.0000
+2013-02-05 (Tue) [4418]: O:19.5700 H:19.8100 L:19.5300 C:19.6500 V:47680 TSO:450 A:19.6500 R:1.0000 CA:0.0000
+2013-02-06 (Wed) [4419]: O:19.5700 H:19.6600 L:19.5700 C:19.6600 V:6905 TSO:450 A:19.6600 R:1.0000 CA:0.0000
+2013-02-07 (Thu) [4420]: O:19.4600 H:19.4600 L:19.2500 C:19.3400 V:665 TSO:450 A:19.3400 R:1.0000 CA:0.0000
+2013-02-08 (Fri) [4421]: O:19.2800 H:19.5000 L:19.2800 C:19.5000 V:4999 TSO:450 A:19.5000 R:1.0000 CA:0.0000
+2013-02-09 (Sat) [4422]: <WEEKEND>
+2013-02-10 (Sun) [4423]: <WEEKEND>
+2013-02-11 (Mon) [4424]: O:19.3800 H:19.4600 L:19.3800 C:19.4500 V:5181 TSO:450 A:19.4500 R:1.0000 CA:0.0000
+2013-02-12 (Tue) [4425]: O:19.5900 H:19.7200 L:19.5800 C:19.5800 V:6536 TSO:450 A:19.5800 R:1.0000 CA:0.0000
+2013-02-13 (Wed) [4426]: O:19.8300 H:19.8300 L:19.6700 C:19.7200 V:5000 TSO:450 A:19.7200 R:1.0000 CA:0.0000
+2013-02-14 (Thu) [4427]: O:19.6700 H:20.2800 L:19.6700 C:20.2600 V:10778 TSO:450 A:20.2600 R:1.0000 CA:0.0000
+2013-02-15 (Fri) [4428]: O:19.9000 H:19.9000 L:19.9000 C:19.9000 V:204 TSO:450 A:19.9000 R:1.0000 CA:0.0000
+2013-02-16 (Sat) [4429]: <WEEKEND>
+2013-02-17 (Sun) [4430]: <WEEKEND>
+2013-02-18 (Mon) [4431]: <HOLIDAY>
+2013-02-19 (Tue) [4432]: O:20.0000 H:20.0100 L:19.9700 C:20.0000 V:2700 TSO:450 A:20.0000 R:1.0000 CA:0.0000
+2013-02-20 (Wed) [4433]: O:19.8900 H:19.8900 L:19.5300 C:19.5300 V:4830 TSO:450 A:19.5300 R:1.0000 CA:0.0000
+2013-02-21 (Thu) [4434]: O:19.2000 H:19.2900 L:19.1700 C:19.1900 V:1653 TSO:450 A:19.1900 R:1.0000 CA:0.0000
+2013-02-22 (Fri) [4435]: O:19.1900 H:19.1900 L:19.1800 C:19.1800 V:800 TSO:450 A:19.1800 R:1.0000 CA:0.0000
+2013-02-23 (Sat) [4436]: <WEEKEND>
+2013-02-24 (Sun) [4437]: <WEEKEND>
+2013-02-25 (Mon) [4438]: O:19.0600 H:19.2700 L:18.6000 C:18.6000 V:2458 TSO:450 A:18.6000 R:1.0000 CA:0.0000
+2013-02-26 (Tue) [4439]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:3860 TSO:450 A:18.6200 R:1.0000 CA:0.0000  <---
+2013-02-27 (Wed) [4440]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:0 TSO:450 A:18.6200 R:1.0000 CA:0.0000
+2013-02-28 (Thu) [4441]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:0 TSO:450 A:18.6200 R:1.0000 CA:0.0000
+2013-03-01 (Fri) [4442]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:0 TSO:450 A:18.6200 R:1.0000 CA:0.0000
+2013-03-02 (Sat) [4443]: <WEEKEND>
+2013-03-03 (Sun) [4444]: <WEEKEND>
+2013-03-04 (Mon) [4445]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:0 TSO:450 A:18.6200 R:1.0000 CA:0.0000
+2013-03-05 (Tue) [4446]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:0 TSO:450 A:18.6200 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'750b351149f677cdc0a80146' and shares > 0 order by closed; 
+> Row 133:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-05-14 14:41:00.000000'
+>        COMMENT = 
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'eebf5c1f4fad4d84c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'1b731eb63b7176f4c0a801e0'
+>       MODIFIED = NULL
+>            NET = 10944.242000
+>         OPENED = TIMESTAMP '2012-05-11 13:33:56.000000'
+>          PRICE = 21.888484
+>     PRIMARYKEY = X'eebd5c1f4fad4d84c0a80132'
+>         SECFEE = 0.250000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'750b351149f677cdc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = ags_trader1@yahoo.com
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'750b351149f677cdc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'750b351149f677cdc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'750b351149f677cdc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 6 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 2/26/13
+last ticket: 2012-05-14  PRICE = 21.888484
+last price:  2013-02-26 (Tue) [4439]: O:18.6000 H:18.7000 L:18.5000 C:18.6200 V:3860 TSO:450 A:18.6200 R:1.0000 CA:0.0000  <---
+
+going with 20130226 18.6200
+
+/Marketocracy/bin/cahelper -symbol  PKOL  -effective 20130226 -type ACQUIS -exchange UN -acqType 1 -acqCash 18.6200 -acqShare 0 -purchaser PKOL   >& /Users/build/caout/PKOL.20150903-DELIST.out 
+PKOL.20150903-DELIST.out
+stocks:~/caout build$ tail -f PKOL.20150903-DELIST.out
+D: (09-03 08:33:27.560) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-03 08:34:25.707) cahelper started on 2015-09-03 08:34:25 -0400
+
+D: (09-03 08:34:25.939) There are [0] open tickets for PKOL on 20130226
+D: (09-03 08:34:26.395) StockFileLoad Version:4.0
+D: (09-03 08:34:26.396) Loading Stock Data
+D: (09-03 08:36:06.775) Building Lookup Index
+D: (09-03 08:36:18.618) Finished Building Index
+D: (09-03 08:36:28.727) Finished Loading Stock Data
+D: (09-03 08:36:28.765) Connection to 192.168.111.172:6666 succeeded
+D: (09-03 08:36:29.852) {
+    "ACQUIRED_STOCK" = PKOL; 
+    "ACQUIRING_STOCK" = "PKOL_FIX"; 
+    AMOUNT = 18.620001; 
+    APPLIED = 1; 
+    DATE = 20130226; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PKOL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-03 08:36:30.785) SUCCESS
+D: (09-03 08:36:30.786) cahelper finished 2015-09-03 08:36:30 -0400
+Check the results 
+select * from mstockalias where stockkey= X'750b351149f677cdc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q884
+>           DATE = TIMESTAMP '2008-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio
+>     PRIMARYKEY = X'750c351149f677cdc0a80146'
+>       STOCKKEY = X'750b351149f677cdc0a80146'
+>         SYMBOL = PKOL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q884
+>           DATE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio
+>     PRIMARYKEY = X'77174adc55e83e51c0a86f92'
+>       STOCKKEY = X'750b351149f677cdc0a80146'
+>         SYMBOL = PKOL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'77174adc55e83e51c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'77174adc55e83e51c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PKOL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|18.620001|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150903:083425
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = PKOL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PKOL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'77114adc55e83e51c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'77114adc55e83e51c0a86f92';
+> Row 1:
+>   _C001 = 9.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'77114adc55e83e51c0a86f92'));
+there are 9 fundkeys, save to CA issues PKOL fundkeys.txt
+
+For Beta case
+PKOL no longer trades but is still active on our site - need to delist 
+
+check on 9/4/15   invalidate funds
+check MAdmin  ckear 
+
+9/6/15 
+ PKOL has been acquired	right curve
+ 	 	
+PowerShares Exchange-Traded Funds Trust- Shs Global Coal Portfolio acquired by a private company on 2013-02-26 00:00:00.
+
+invalidate reprice and close 

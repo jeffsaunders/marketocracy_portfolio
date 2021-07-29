@@ -1,0 +1,103 @@
+date:  7/23/15
+ticker KMP
+
+ov 28, 2014, KMP was exchanged for KMI puls cash.
+Type
+Corporate Action | Acquisition
+Ticket
+3413
+Priority
+Medium
+Status
+Awaiting Response
+Member Name
+hewitt ingram
+Username
+hewitting
+Fund Symbols
+HMF
+Stock Tickers
+KMP
+Description / Resources:
+Wed 07/15/2015 at 04:54 PM
+
+each KMP was exchanged for 2.2264 KMI plus $9.5414 cash. valuation of portfolio shows a huge drop in value that day when none actually occurred.
+
+Additional Information:
+
+Stock Ticker: KMP
+
+
+hewitting    HMF    on 11/28/14
+
+
+on 11/9/14 is when the drop happens
+the NAV is out of whack before that.  
+
+
+ok - the legacy site HMF  on 11/8/14
+Cash: $175,847.59 	Stock: $2,869,901.74 	Total: $3,045,749.33 	Shares: 100,000 	Price: $30.46
+
+new site on 11/8/14
+Cash: $167,320.24 	Stock: $4,344,446.46 	Total: $4,511,766.70 	Shares: $100,000 	Price: $45.12
+at the bottom
+Stock Total: 	$2,869,901.74
+
+so the stock agrees
+
+let's ask Jeff to reprice this fund from inception
+
+
+let's reprice this one from the inception
+what is the fundkey for his HMF fund
+
+select primarykey from mmanager where loginname='hewitting';
+> Row 1:
+>   PRIMARYKEY = X'b1cb2d5e42446d54c0a80133'
+select primarykey from mportfolio where managerkey in (select primarykey from mmanager where loginname='hewitting');
+select primarykey from mfund where symbol='HMF' and portfoliokey in (select primarykey from mportfolio where managerkey in (select primarykey from mmanager where loginname='hewitting'));
+
+> Row 1:
+>   PRIMARYKEY = X'b1e12d5e42446dedc0a80133'
+
+fundkey X'b1e12d5e42446dedc0a80133'  
+
+the inception date
+select * from mfund where primarykey=X'b1e12d5e42446dedc0a80133';
+> Row 1:
+>                  DESCRIPTION = growth focus, long term gain, diversified, concentrated. companies are selected based on long term earnings potential.
+>                  BASISPOINTS = 0.000000
+>                    BROKERKEY = NULL
+>                 CAPSECTORKEY = NULL
+>                        CUSIP = NULL
+>                 CUSTODIANKEY = NULL
+>                      DATAKEY = NULL
+>                  DIVERSIFIED = NO
+>                    INCEPTION = TIMESTAMP '2005-03-25 12:00:00.000000'  <-- there it is 
+>                      KINDKEY = X'70443ca1391e026fc0a8015c'
+>                         NAME = hewitting's Mutual Fund
+>                    PARENTKEY = NULL
+>                 PORTFOLIOKEY = X'b1ce2d5e42446d54c0a80133'
+>                   PRIMARYKEY = X'b1e12d5e42446dedc0a80133'
+>                         RISK = NULL
+>                    SECTORKEY = NULL
+>                         SIZE = NULL
+>                     STYLEKEY = NULL
+>                       SYMBOL = HMF
+>         DISQUALIFICATIONDATE = NULL
+>                       ACTIVE = 1
+>                  INITIALCASH = 1000000.000000
+>                INITIALSHARES = 100000.000000
+>   MIRRORDISQUALIFICATIONDATE = NULL
+>       DISQUALIFICATIONREASON = NULL
+
+2005-03-25
+
+let's invalidate his fund
+/Marketocracy/bin/fptool invalidateFund b1e12d5e42446dedc0a80133
+
+fundkey X'b1e12d5e42446dedc0a80133'    date:  2005-03-25
+
+the reprice completed and his fund NAV is normal
+
+KMP and KMI is good

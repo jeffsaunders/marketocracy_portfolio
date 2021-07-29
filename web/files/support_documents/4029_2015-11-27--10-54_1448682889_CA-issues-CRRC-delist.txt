@@ -1,0 +1,300 @@
+CRRC
+date:   11/22/15 
+ticker:   CRRC
+
+yahoo:
+Courier Corporation (CRRC) -NasdaqGS   Watchlist
+23.09 0.00(0.00%) Jun 5, 4:00PM EDT
+
+Prev Close:	23.09
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	21.00
+Beta:	0.5
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	11.41 - 25.35
+Volume:	0
+Avg Vol (3m):	105,347
+Market Cap:	265.93M
+P/E (ttm):	N/A
+EPS (ttm):	-0.46
+Div & Yield:	0.84 (3.60%
+Jun 5 what year?  check historical prices
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Jun 8, 2015	23.09	23.09	23.09	23.09	0	23.09
+Jun 5, 2015	23.12	23.15	23.05	23.09	35,500	23.09
+
+quantum:
+Courier Corp.
+Ticker Symbol: CRRC*     CUSIP: 222660102     Exchange: NNM
+* NOTE: This security is no longer trading as of 6/08/15
+
+Company's Online Profile
+BUSINESS:  Courier Corporation publishes, prints and sells books. Founded in 1824, today Courier has two lines of business: full-service book manufacturing and specialty publishing. The Company is focused on achieving industry-leading financial performance by serving markets with above-average growth rates and strong future prospects. These include educational, religious and specialty book publishing. With headquarters in North Chelmsford, Massachusetts, Courier has approximately 1,900 employees in ten major operating locations throughout the United States.
+Notes:  June 8, 2015 -- RR Donnelley & Sons Company (Nasdaq:RRD) today announced that it has completed its previously announced acquisition of Courier Corporation, one of America's major book manufacturers. Courier Corp. (Nasdaq: CRRC) agreed to be acquired by Chicago's R.R. Donnelley & Sons Co. (Nasdaq: RRD) for $261 million.
+
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=CRRC
+
+check MAdmin
+Stock:COURIER CORP  Symbol:CRRC
+Date: 11/22/2015
+
+41 users found
+
+1	aharon10	bdelong	benzito	bora_bora	cairsten	dbvic	djb54	djb54amw	dukelw	dwaldman
+2	earlmiranda	genomeprofile	givlhad	govaert	growthquestor	jbenhurst	jcdyer	jdelvec	joanwilliams	jrobinson2
+3	jtkiii	kadir	larry_nesko	lveach	michaelcalvert	msingh83	myungjin	pthp	rdf	robak
+4	robhemmerich	scottishjeff	searchship	sidshah94	solomons	steamboat	tterraccino	valuestudent	vintage	vooch2
+5	wishbringer	 	 	 	
+
+database
+select distinct stockkey from mstockalias where symbol= 'CRRC';  
+> Row 1:
+>   STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+select * from mstockalias where stockkey=X'db9e0e21390a7cfdc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 222660102
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COURIER CORP
+>     PRIMARYKEY = X'db9f0e21390a7cfdc0a80116'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>         SYMBOL = CRRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 222660102
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COURIER CORP
+>     PRIMARYKEY = X'46ec150944a9cdc8c0a80146'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>         SYMBOL = CRRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = XV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CRRC'  order by BB_EFFECTIVE;
+> Row 54:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|RRD US|CP_NAME|RR Donnelley & Sons Co|CP_ID_BB_COMP|100469|CP_UNIT|Courier Corp|CP_TOT_AMT|293.858795|CP_ACQUIS_TYP|4|CP_CASH|23.000000|CP_CASH_FLAG|1|CP_SH|1.375600|CP_SH_FLAG|1|CP_DEBT|27.797001|CP_DEBT_FLAG|2|CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|43.512299|CP_CUR_PREMIUM|1.853014|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|2|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|23.161375|CP_ARBITRAGE_PROF|0.421375|CP_CUR_TOT_VAL|295.742004|CP_ADVISORS_NUM|2|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;2;3;1;Acquirer Legal Adviser(s);1;Goodwin Procter;13;100.000000;1;Acquirer Financial Adviser(s);1;Blackstone Group;13;100.000000;|CP_ACQ_TKR|RRD US|CP_ACQ_ID_BB_GLOBAL|BBG000BH93Y6|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDYHY0|CP_ACQ_ID_BB_SEC_NUM_DES|RRD|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|CRRC US|CP_TARGET_ID_BB_GLOBAL|BBG000BGC819|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FF1728|CP_TARGET_ID_BB_SEC_NUM_DES|CRRC|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101847312
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 103145
+>        BB_COMPANYNAME = Courier Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = CRRC    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-27 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CRRC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-02-12 00:00:00.000000'
+>            PRIMARYKEY = X'd1b4050854dd3c71c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CRRC
+stock: CRRC
+  PK       : [DB9E0E21390A7CFDC0A80116]
+  companyID: [1400]
+  symbol   : [CRRC]
+  name     : [COURIER CORP]
+  date     : [2006-07-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-22 10:26:03 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 1400
+2015-05-31 (Sun) [5263]: <WEEKEND>
+2015-06-01 (Mon) [5264]: O:24.6700 H:24.7700 L:24.4500 C:24.6700 V:286702 TSO:11911 A:24.6700 R:1.0000 CA:4.2000
+2015-06-02 (Tue) [5265]: O:24.6200 H:24.9600 L:24.6100 C:24.9500 V:298754 TSO:11911 A:24.9500 R:1.0000 CA:4.2000
+2015-06-03 (Wed) [5266]: O:24.8400 H:25.1200 L:24.8400 C:24.9100 V:233084 TSO:11911 A:24.9100 R:1.0000 CA:4.2000
+2015-06-04 (Thu) [5267]: O:24.0000 H:24.0000 L:23.0100 C:23.1300 V:117808 TSO:11911 A:23.1300 R:1.0000 CA:4.2000
+2015-06-05 (Fri) [5268]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000  <---
+2015-06-06 (Sat) [5269]: <WEEKEND>
+2015-06-07 (Sun) [5270]: <WEEKEND>
+2015-06-08 (Mon) [5271]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000
+2015-06-09 (Tue) [5272]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000
+2015-06-10 (Wed) [5273]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000
+2015-06-11 (Thu) [5274]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000
+2015-06-12 (Fri) [5275]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'db9e0e21390a7cfdc0a80116' and shares > 0 order by closed; 
+> Row 531:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-02-19 12:47:58.000000'
+>        COMMENT = Good Price|
+>     COMMISSION = 192.300000
+>   CURRENTORDER = X'f70a0c0654e5fd6cc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b9d81f553bae79c3c0a80118'
+>       MODIFIED = NULL
+>            NET = 89771.473550
+>         OPENED = TIMESTAMP '2015-02-19 10:12:44.000000'
+>          PRICE = 23.341517
+>     PRIMARYKEY = X'f7080c0654e5fd6cc0a86f98'
+>         SECFEE = 1.570000
+>         SHARES = 3846.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'db9e0e21390a7cfdc0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'db9e0e21390a7cfdc0a80116'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'db9e0e21390a7cfdc0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 41 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 6/08/15
+last ticket: 2015-02-19   PRICE = 23.341517
+last price:  2015-06-05 (Fri) [5268]: O:23.1200 H:23.1500 L:23.0500 C:23.0900 V:35487 TSO:11911 A:23.0900 R:1.0000 CA:4.2000  <---
+
+going with 20150605  23.09
+
+/Marketocracy/bin/cahelper -symbol  CRRC  -effective 20150605 -type ACQUIS -exchange UN -acqType 1 -acqCash 23.09 -acqShare 0 -purchaser CRRC   >& /Users/build/caout/CRRC.20151122-DELIST.out 
+CRRC.20151122-DELIST.out
+stocks1:~/caout build$ tail -f CRRC.20151122-DELIST.out
+D: (11-22 10:30:04.275) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-22 10:30:27.856) cahelper started on 2015-11-22 10:30:27 -0500
+
+D: (11-22 10:30:28.105) There are [0] open tickets for CRRC on 20150605
+D: (11-22 10:30:28.835) StockFileLoad Version:4.0
+D: (11-22 10:30:28.835) Loading Stock Data
+D: (11-22 10:31:05.826) Building Lookup Index
+D: (11-22 10:31:11.405) Finished Building Index
+D: (11-22 10:31:15.286) Finished Loading Stock Data
+D: (11-22 10:31:15.606) Connection to 192.168.111.172:6666 succeeded
+D: (11-22 10:31:19.411) {
+    "ACQUIRED_STOCK" = CRRC; 
+    "ACQUIRING_STOCK" = "CRRC_FIX"; 
+    AMOUNT = 23.09; 
+    APPLIED = 1; 
+    DATE = 20150605; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CRRC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-22 10:31:25.605) SUCCESS
+D: (11-22 10:31:25.605) cahelper finished 2015-11-22 10:31:25 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'db9e0e21390a7cfdc0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 222660102
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COURIER CORP
+>     PRIMARYKEY = X'db9f0e21390a7cfdc0a80116'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>         SYMBOL = CRRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 222660102
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COURIER CORP
+>     PRIMARYKEY = X'46ec150944a9cdc8c0a80146'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>         SYMBOL = CRRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 222660102
+>           DATE = TIMESTAMP '2015-06-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COURIER CORP
+>     PRIMARYKEY = X'688733df5651df94c0a86fab'
+>       STOCKKEY = X'db9e0e21390a7cfdc0a80116'
+>         SYMBOL = CRRC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'688733df5651df94c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'688733df5651df94c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CRRC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|23.090000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151122:103027
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-05 00:00:00.000000'
+>         BB_IDENTIFIER = CRRC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-05 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CRRC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-05 00:00:00.000000'
+>            PRIMARYKEY = X'688133df5651df93c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'688133df5651df93c0a86fab';
+> Row 1:
+>   _C001 = 66.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'688133df5651df93c0a86fab'));
+there are 66 fundkeys, save to CA issues CRRC fundkeys.txt
+
+For Beta case
+CRRC no longer trades but is still active on our site - need to delist 
+
+check on 11/24/15   invalidate funds
+check MAdmin  clear
+CRRC has been acquired	right curve
+ 	 	
+COURIER CORP acquired by a private company on 2015-06-05 00:00:00.
+
+
+invalidate reprice and close 
+
+
+

@@ -1,0 +1,641 @@
+date:  12/2/15
+ticker SYBRQ    split applied twice 
+found this while working on a member short
+
+> Row 6:
+>    LOGINNAME = pogyman
+>       SYMBOL = MAGMF
+>   PRIMARYKEY = X'aeb1245939c4ba2ec0a801e0'
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+SYBRQ	$0.00	-5,000	-$5.00	-$10,192.50	0.00%	-100.05%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Sep 18, 2000		10000	10000	Buy
+Feb 20, 2003	10000	-15000	-5000	Corporate Action
+Total: -5,000
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 18, 2000	10,000	$500.00	$10,187.50	$1.02
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Feb 20, 2003	Split terms:1 for 4
+Feb 20, 2003	Split terms:1 for 4
+
+this was applied twice  ugh separate file
+let's see what the transactions looked like in the ledger 
+
+20030220 was the date 
+trades on February 20, 2003	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Split Sell	SYBRQ	10,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	SYBRQ	2,500	$0.00	$0.00	$0.00	$0.00
+Split Buy	SYBRQ	2,500	$0.00	$0.00	$0.00	$0.00
+Split Sell	SYBRQ	10,000	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+who else is short?
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9b4410ac390c6d93c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9b4410ac390c6d93c0a8015c'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'aeb1245939c4ba2ec0a801e0'
+>       SYMBOL = MAGMF
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9b4410ac390c6d93c0a8015c'  and totalshares < 0)));
+
+> Row 1:
+>   LOGINNAME = pogyman
+
+select distinct stockkey from mstockalias where symbol ='SYBRQ';
+> Row 1:
+>   STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+
+
+select * from mstockalias where stockkey=X'9b4410ac390c6d93c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E303
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'9b4510ac390c6d93c0a8015c'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E303
+>           DATE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'50166f683e5596e5c0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'50166f683e5596e5c0a80146';
+> Row 1:
+>              ALIASKEY = X'50166f683e5596e5c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SYBR US|CP_NEW_TKR|SYBRD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10367734
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'accf6f203e559677c0a80146'
+>               VERSION = NULL
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E303
+>           DATE = TIMESTAMP '2003-02-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'503b6f683e5596e9c0a80146'     <---- delete this is duplicate 
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+	select * from mcorporateaction where aliaskey=X'503b6f683e5596e9c0a80146';
+> Row 1:
+>              ALIASKEY = X'503b6f683e5596e9c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SYBR US|CP_NEW_TKR|SYBRD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10367734
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'abd26f203e559642c0a80146'    <---- delete this is duplicate 
+>               VERSION = NULL
+
+delete from mcorporateaction where PRIMARYKEY = X'abd26f203e559642c0a80146';
+delete from mstockalias where PRIMARYKEY = X'503b6f683e5596e9c0a80146';
+
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-02-20 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'91736f7a3e55975ac0a80146'   <--- delete this, it is duplicate
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'91736f7a3e55975ac0a80146';
+> Row 1:
+>              ALIASKEY = X'91736f7a3e55975ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|87159E303|CP_NEW_CUSIP|87159E402|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US87159E3036|CP_NEW_ISIN|US87159E4026|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10367738
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'abd46f203e559643c0a80146'   <--- delete this, it is duplicate
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'abd46f203e559643c0a80146' ;
+delete from mstockalias  where PRIMARYKEY = X'91736f7a3e55975ac0a80146' ;
+
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-02-20 00:00:03.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'91776f7a3e55975bc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'91776f7a3e55975bc0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030220|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10369894
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'acd36f203e559677c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030220|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10369894
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'abd66f203e559643c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|87159E303|CP_NEW_CUSIP|87159E402|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US87159E3036|CP_NEW_ISIN|US87159E4026|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10367738
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'acd16f203e559677c0a80146'
+>               VERSION = NULL
+
+
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-03-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'90e21c303e7a80edc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'90e21c303e7a80edc0a80146';
+> Row 1:
+>              ALIASKEY = X'90e21c303e7a80edc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SYBRD US|CP_NEW_TKR|SYBR US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10732466
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-03-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBR    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-03-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'93471b113e7a8049c0a80146'
+>               VERSION = NULL
+
+
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-03-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'90f31c303e7a80efc0a80146'  <--- delete is duplicate
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'90f31c303e7a80efc0a80146';
+> Row 1:
+>              ALIASKEY = X'90f31c303e7a80efc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SYBRD US|CP_NEW_TKR|SYBR US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10732466
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-03-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBR    UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-03-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'947d1b113e7a8089c0a80146'   <--- delete is duplicate
+>               VERSION = NULL
+
+delete from mcorporateaction where PRIMARYKEY = X'947d1b113e7a8089c0a80146';
+delete from mstockalias where PRIMARYKEY = X'90f31c303e7a80efc0a80146';
+
+
+
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2008-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'2ba460b848e57d47c0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'2ba460b848e57d47c0a80146';
+> Row 1:
+>              ALIASKEY = X'2ba460b848e57d47c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UR|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 33683992
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = SYBR    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-10-01 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'487a5f5248e57cc8c0a80146'
+>               VERSION = NULL
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2011-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'c0b613014d48994cc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'c0b613014d48994cc0a80146';
+> Row 1:
+>              ALIASKEY = X'c0b613014d48994cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SYBR US|CP_NEW_TKR|SYBRQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 51691790
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-02-01 00:00:00.000000'
+>         BB_IDENTIFIER = SYBR    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-01-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SYBR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-31 00:00:00.000000'
+>            PRIMARYKEY = X'5ea117964d474655c0a80146'
+>               VERSION = NULL
+
+
+I remove the duplicates for the ticker changes and IDs
+
+here is the set of splits
+	select * from mcorporateaction where aliaskey=X'91776f7a3e55975bc0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030220|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10369894
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'acd36f203e559677c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'acd36f203e559677c0a80146';
+> Row 1:
+>   _C001 = 14.000000
+> Row 2:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030220|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10369894
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'abd66f203e559643c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'abd66f203e559643c0a80146';
+> Row 1:
+>   _C001 = 14.000000
+let's untrade this one 
+update mcorporateaction set BB_ACTIONID = '10369894:MARTY' where PRIMARYKEY = X'abd66f203e559643c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'abd66f203e559643c0a80146';
+> Row 1:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030220|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10369894:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'abd66f203e559643c0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 10369894:MARTY
+untrading action with ID: 10369894:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:SYBRQ]
+
+this looks like it rain
+
+> Row 3:
+>              ALIASKEY = X'91776f7a3e55975bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|87159E303|CP_NEW_CUSIP|87159E402|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US87159E3036|CP_NEW_ISIN|US87159E4026|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10367738
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 104950
+>        BB_COMPANYNAME = Synergy Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = SYBRD   UR Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = SYBRD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'acd16f203e559677c0a80146'
+>               VERSION = NULL
+
+
+
+does Synergy Brands still trade?  not sure
+
+
+ok, let's do this again
+select distinct stockkey from mstockalias where symbol='SYBRQ';
+> Row 1:
+>   STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+select * from mstockalias where STOCKKEY = X'9b4410ac390c6d93c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E303
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'9b4510ac390c6d93c0a8015c'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E303
+>           DATE = TIMESTAMP '2003-02-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'50166f683e5596e5c0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-02-20 00:00:03.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'91776f7a3e55975bc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2003-03-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'90e21c303e7a80edc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2008-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'2ba460b848e57d47c0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87159E402
+>           DATE = TIMESTAMP '2011-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SYNERGY BRANDS
+>     PRIMARYKEY = X'c0b613014d48994cc0a80146'
+>       STOCKKEY = X'9b4410ac390c6d93c0a8015c'
+>         SYMBOL = SYBRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XB
+
+our member has the correct number of shares now
+SYBRQ	click me	$0.00	2,500	$2.50	0.00%	-$10,185.00	0.00%	-99.98%	-99.98%	Details 
+
+Mike at BTIG looked it up still active but very light trade no real market he says.  this is good we can close it out 
+
+
+wait members on the new site might have this 
+
+select fundkey from mposition where primarykey in (select primarykey from mposition where stockkey=X'9b4410ac390c6d93c0a8015c');
+there re 80 fundkeys, save to CA issues SYBRQ fundkeys.txt
+
+
+reprice and close 

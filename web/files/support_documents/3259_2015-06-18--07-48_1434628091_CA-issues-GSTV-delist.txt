@@ -1,0 +1,594 @@
+date:  6/16/15
+ticker:GSTV
+
+yahoo:  nothing
+
+quantum: nothing
+
+oursite:
+Symbol: GSTV 	Name: Global Stevia Corp 	Price: $0.01
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.01 	High:
+200 Day Ave: $0.01 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for GSTV 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+18 Jun 12 	GRUH 	GRUHD 	Change in the ticker (trading) symbol from GRUH to GRUHD
+16 Jul 12 	GRUHD 	GRUH 	Change in the ticker (trading) symbol from GRUHD to GRUH
+30 Jul 12 	GRUH 	GSTV 	Change in the ticker (trading) symbol from GRUH to GSTV
+11 Sep 12 	GSTV 	GSTVD 	Change in the ticker (trading) symbol from GSTV to GSTVD
+08 Oct 12 	GSTVD 	GSTV 	Change in the ticker (trading) symbol from GSTVD to GSTV
+05 Sep 13 	GSTV 	GSTVE 	Change in the ticker (trading) symbol from GSTV to GSTVE
+08 Oct 13 	GSTVE 	GSTV 	Change in the ticker (trading) symbol from GSTVE to GSTV
+  	  	 
+left curve 	  CUSIP changes for GSTV 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+18 Jun 12 	403305105 	379389109 	Change in any of identification numbers (CUSIP) of a security from 403305105 to 379389109
+11 Sep 12 	379389109 	379389208 	Change in any of identification numbers (CUSIP) of a security from 379389109 to 379389208
+  	  	 
+left curve 	  name changes for GSTV 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+18 Jun 12 	Guru Health Inc 	Global Stevia Corp 	Change in the name of issuer from Guru Health Inc to Global Stevia Corp
+  	  	 
+left curve 	  listing changes for GSTV 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Oct 27, 2011 	OTCBB-OTHER 	UV 	OTCBB 	UU 	Change in the exchange that GRUH trades on from OTCBB-OTHER to OTCBB
+Oct 08, 2013 	OTCBB 	UU 	OTCBB-OTHER 	UV 	Change in the exchange that GSTVE trades on from OTCBB to OTCBB-OTHER
+  	  	 
+left curve 	  GSTV had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+18 Jun 12 	13 for 1 	Split terms:13 for 1
+11 Sep 12 	5 for 1 	Split terms:5 for 1
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Global Stevia Corp  Symbol:GSTV
+Date: 06/16/2015
+
+1 users found
+
+1	chenguthrie
+
+database
+select distinct stockkey from mstockalias where symbol= 'GSTV';  
+> Row 1:
+>   STOCKKEY = X'589501934e9e00d3c0a80146'
+
+select * from mstockalias where stockkey= X'589501934e9e00d3c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'589601934e9e00d3c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'09aa08024ea9de75c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'a5643dc94fdfaed7c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-18 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'92373f464fdfaf86c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-06-18 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'4f153f4e4fdfafabc0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'48b273d050049962c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'18be61a550170f19c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-09-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'035b100b504fbdd7c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2012-09-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'5346109d504fbe69c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2012-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'c1fe2aa2507355a1c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-09-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'a0a3120652290c47c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'1f2b2cdd52548d95c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-10-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'49b82e5852548e4fc0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GSTV'  order by BB_EFFECTIVE;
+> Row 3:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|GSTV|CP_DELIST_REASON|17|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 101357135
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 24279417
+>        BB_COMPANYNAME = Global Stevia Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-13 00:00:00.000000'
+>         BB_IDENTIFIER = GSTV    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = GSTV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-13 00:00:00.000000'
+>            PRIMARYKEY = X'bc323f6e54b5b1c4c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GSTV
+>>>> dbtool started at 2015-06-17 02:55:50 -0400
+stock: GSTV
+  PK       : [589501934E9E00D3C0A80146]
+  companyID: [21283]
+  symbol   : [GSTV]
+  name     : [Global Stevia Corp]
+  date     : [2012-07-30 00:00:00]
+  status   : [Active]
+stock: GSTV
+  PK       : [589501934E9E00D3C0A80146]
+  companyID: [21283]
+  symbol   : [GSTV]
+  name     : [Global Stevia Corp]
+  date     : [2012-10-08 00:00:00]
+  status   : [Active]
+stock: GSTV
+  PK       : [589501934E9E00D3C0A80146]
+  companyID: [21283]
+  symbol   : [GSTV]
+  name     : [Global Stevia Corp]
+  date     : [2013-10-08 00:00:00]
+  status   : [Active]
+stock: GSTV
+  PK       : [589501934E9E00D3C0A80146]
+  companyID: [21283]
+  symbol   : [GSTV]
+  name     : [Global Stevia Corp]
+  date     : [2013-10-08 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-17 02:55:50 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 21283
+2015-02-08 (Sun) [5151]: <WEEKEND>
+2015-02-09 (Mon) [5152]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-02-10 (Tue) [5153]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-02-11 (Wed) [5154]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-02-12 (Thu) [5155]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-02-13 (Fri) [5156]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'589501934e9e00d3c0a80146' and shares > 0 order by closed; 
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-11-19 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 12.485250
+>   CURRENTORDER = X'10504e3450a7da22c0a80135'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'5bd0203350a68e39c0a80135'
+>       MODIFIED = NULL
+>            NET = 262.190250
+>         OPENED = TIMESTAMP '2012-11-17 13:40:34.000000'
+>          PRICE = 0.146475
+>     PRIMARYKEY = X'104e4e3450a7da22c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 1790.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'589501934e9e00d3c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'589501934e9e00d3c0a80146' and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'589501934e9e00d3c0a80146' and totalshares < 0)));
+
+apply the acquis
+there is one member that holds this
+delisted on 2015-01-13 
+quantum: nothing 
+last ticket:  2012-11-19    0.146475
+last price:   2015-02-13 (Fri) [5156]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:595000 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+
+
+going with 20150113   .01 
+
+/Marketocracy/bin/cahelper -symbol  GSTV  -effective 20150113 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser GSTC   >& /Users/build/caout/GSTV.20150616-DELIST.out
+GSTV.20150616-DELIST.out
+stocks:~/caout build$ tail -f GSTV.20150616-DELIST.out
+D: (06-17 02:59:26.041) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-17 02:59:50.041) cahelper started on 2015-06-17 02:59:50 -0400
+
+D: (06-17 02:59:50.447) There are [0] open tickets for GSTV on 20150113
+D: (06-17 02:59:50.601) StockFileLoad Version:4.0
+D: (06-17 02:59:50.601) Loading Stock Data
+D: (06-17 03:00:29.338) Building Lookup Index
+D: (06-17 03:00:34.369) Finished Building Index
+D: (06-17 03:00:38.261) Finished Loading Stock Data
+D: (06-17 03:00:38.379) Connection to 192.168.111.172:6666 succeeded
+D: (06-17 03:00:38.388) {
+    "ACQUIRED_STOCK" = GSTV; 
+    "ACQUIRING_STOCK" = GSTC; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20150113; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = GSTC; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-17 03:00:39.176) SUCCESS
+D: (06-17 03:00:39.176) cahelper finished 2015-06-17 03:00:39 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'589501934e9e00d3c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'589601934e9e00d3c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'09aa08024ea9de75c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guru Health Inc
+>     PRIMARYKEY = X'a5643dc94fdfaed7c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-18 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'92373f464fdfaf86c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-06-18 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'4f153f4e4fdfafabc0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'48b273d050049962c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GRUH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-07-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'18be61a550170f19c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389109
+>           DATE = TIMESTAMP '2012-09-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'035b100b504fbdd7c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2012-09-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'5346109d504fbe69c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2012-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'c1fe2aa2507355a1c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-09-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'a0a3120652290c47c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTVE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'1f2b2cdd52548d95c0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2013-10-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'49b82e5852548e4fc0a80146'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 379389208
+>           DATE = TIMESTAMP '2015-01-13 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Stevia Corp
+>     PRIMARYKEY = X'c72748f755811ae6c0a86f92'
+>       STOCKKEY = X'589501934e9e00d3c0a80146'
+>         SYMBOL = GSTV
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'c72748f755811ae6c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'c72748f755811ae6c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GSTV  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150617:025950
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-13 00:00:00.000000'
+>         BB_IDENTIFIER = GSTC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GSTC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-13 00:00:00.000000'
+>            PRIMARYKEY = X'c72148f755811ae6c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey =X'c72148f755811ae6c0a86f92';
+> Row 1:
+>   _C001 = 1.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'c72148f755811ae6c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'f42c4e3450a7d5bdc0a80135'
+
+
+check on 6/18/15   invalidate funds
+check MAdmin

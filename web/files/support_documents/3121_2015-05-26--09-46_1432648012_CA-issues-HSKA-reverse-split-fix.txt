@@ -1,0 +1,151 @@
+date:  5/26/15
+ticker: HKSA
+
+Member(s) are short because there was a manually applied reverse split done after the fact.
+Members' trade done after the split date need to be scaled back to post-split quantities
+
+> Row 896:
+>    LOGINNAME = jpicard
+>       SYMBOL = JMF2
+>   PRIMARYKEY = X'e1332d7449fe267fc0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+HSKA 	$30.00 	-33,137 	-$994,110.00 	-$793,279.71 	0.00% 	-2090.90% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 01, 2010 		42860 	42860 	Buy
+Dec 30, 2010 	42860 	-38574 	4286 	Corporate Action
+Mar 16, 2011 	4286 	-37423 	-33137 	Sell
+Total: -33,137
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 1, 2010 	42,860 	$1,806.65 	$37,939.60 	$0.89
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 16, 2011 	37,423 	$1,871.15 	$4.63 	$238,768.82 	$6.38
+  	  	 
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 30, 2010 	Split terms:(null)   <-- need to update the terms, too
+  	  	    	  	 
+this looks like a split that was manually applied
+select distinct stockkey from mstockalias where symbol ='HSKA';
+> Row 1:
+>   STOCKKEY = X'e6b60e21390a95a8c0a80116'
+
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey = X'e6b60e21390a95a8c0a80116' ) and BB_ACTIONMNEMONIC='STOCK_SPLT' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'4b022ff34be48507c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|(null)|CP_RATIO|0.100000|CP_RECORD_DT|20101230|CP_PAY_DT|20101230|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20110523:114843
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = HSKA     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HSKA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-12-30 00:00:00.000000'
+>            PRIMARYKEY = X'2a2309b84ddb2a9bc0a8013c'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|20101230|CP_PAY_DT|20101230|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.' where PRIMARYKEY = X'2a2309b84ddb2a9bc0a8013c';
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey = X'e6b60e21390a95a8c0a80116' ) and BB_ACTIONMNEMONIC='STOCK_SPLT' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'4b022ff34be48507c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|20101230|CP_PAY_DT|20101230|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20110523:114843
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = HSKA     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HSKA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-12-30 00:00:00.000000'
+>            PRIMARYKEY = X'2a2309b84ddb2a9bc0a8013c'
+>               VERSION = NULL
+good
+
+yup manually applied  done after the fact
+
+<STOCKKEY_TO_CHANGE>    X'e6b60e21390a95a8c0a80116'
+<SPLIT_DATE>    2010-12-30
+<APPLIED_DATE> 2011-05-23
+<SPLIT_RATIO> 0.10
+
+select primarykey  from mticket where STOCKKEY = X'e6b60e21390a95a8c0a80116' and closed > TIMESTAMP'2010-12-30 00:00:00.000000' and closed < TIMESTAMP'2011-05-23 00:00:00.000000' and shares > 0 and sourcekey is null order by closed;
+8 mtickets
+90ee23764d515568c0a80134
+283857fa4d77f0c8c0a80135
+5d6766cd4d584714c0a80134
+ab8670294d875c67c0a80134
+93d21fc24dc03cfec0a80135
+9f6429384dc98026c0a80135
+b9f04dfb4dcad54ec0a80133
+5a3702db4dcd69c8c0a80134
+put these into ticketstotickle
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-05-26 09:35:11 -0400
+<<<< dbtool finished at 2015-05-26 09:35:59 -0400
+
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey  from mticket where STOCKKEY = X'e6b60e21390a95a8c0a80116' and closed > TIMESTAMP'2010-12-30 00:00:00.000000' and closed < TIMESTAMP'2011-05-23 00:00:00.000000' and shares > 0 and sourcekey is null));
+/Marketocracy/bin/fptool invalidateFund a53371dd48dd0045c0a80133;
+/Marketocracy/bin/fptool invalidateFund e1332d7449fe267fc0a80133;
+/Marketocracy/bin/fptool invalidateFund 3fba299443b751eec0a80133;
+/Marketocracy/bin/fptool invalidateFund c9fe475442d90b14c0a80134;
+
+
+
+set commit false;
+update mticket set shares=shares*0.10 where STOCKKEY = X'e6b60e21390a95a8c0a80116' and closed > TIMESTAMP'2010-12-30 00:00:00.000000' and closed < TIMESTAMP'2011-05-23 00:00:00.000000' and shares > 0 and sourcekey is null;
+update morder set SHARESFILLED = SHARESFILLED*0.10  where ticketkey in (select primarykey from mticket where STOCKKEY = X'e6b60e21390a95a8c0a80116' and closed > TIMESTAMP'2010-12-30 00:00:00.000000' and closed < TIMESTAMP'2011-05-23 00:00:00.000000' and shares > 0 and sourcekey is null);
+update mtrade set shares = shares*0.10  where ticketkey in (select primarykey from mticket where STOCKKEY = X'e6b60e21390a95a8c0a80116' and closed > TIMESTAMP'2010-12-30 00:00:00.000000' and closed < TIMESTAMP'2011-05-23 00:00:00.000000' and shares > 0 and sourcekey is null);
+commit;
+set commit true;
+
+ok let's log back in as the member 
+jpicard  JMF2 - short is gone, let's look at trades for HSKA
+ your holdings of HSKA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+JMF 	0 	N/A 	N/A
+JPMF 	0 	N/A 	N/A
+JMF1 	0 	N/A 	N/A
+JMF2 	544 	$16,320.00 	1.23%  <--- expand 
+
+jpicard JMF2
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 01, 2010 		42860 	42860 	Buy
+Dec 30, 2010 	42860 	-38574 	4286 	Corporate Action
+Mar 16, 2011 	4286 	-3742 	544 	Sell
+Total: 544
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 1, 2010 	42,860 	$1,806.65 	$37,939.60 	$0.89
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 16, 2011 	3,742 	$187.10 	$0.47 	$23,874.96 	$6.38
+
+good - close this out! 

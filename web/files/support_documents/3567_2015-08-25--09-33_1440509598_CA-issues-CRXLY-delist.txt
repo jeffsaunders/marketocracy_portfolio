@@ -1,0 +1,337 @@
+
+date:  
+ticker:   CRXLY
+
+yahoo:  nothing 
+
+quantum:  nothing 
+
+oursite:
+Symbol: CRXLY	Name: CRUCELL N.V. ADS	Price: $32.38
+Volume:	Sector: Health Care	Change:
+Short Volume: 0	Style: Small Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:CRUCELL N.V. ADS  Symbol:CRXLY
+Date: 08/24/2015
+
+89 users found
+
+1	apreuss	beachbumed	bedromeyez	biged	bluestar	brett1963	buntfetus	ccannon	chan8318	cposs
+2	daleu	dave1969	dean.martin	dlundgren	donquixote	dphuntsman	drose	ejvdk	fcolaizzi	fkocevar
+3	fleander	fwicz1	gabestern	greensail	gundam999	hernandez	hkazemi26	hlbeckpe	hmallubhotla	jahuu1
+4	jdewhitt	jetmf	jliyork	jlortiz	johallen	jomax	joshalix	jrpmacro	jurac	jwpconsulting
+5	kama	kbladlee	kikola	lensmo	magicman	marketcat	mbledug	mebear	metamarkets	miduso
+6	mikes	mmosley	mr.d	mrtechstocks	mtalisman	nouk	osoter2033	patplayer19	pelo	penggijb
+7	peterd96	qtopoly	reddog4life553	richardwhite00	rmorse	rnice	romere1	rpatzman	rpr	rseverso
+8	rustico	scap	sef_1968	shakes19	shrewst	susanb	svanness	tcostello	teuf	thunderballfists
+9	tmorris1	trovales	uferry	varlin	volleyball	vsagdeo	waxne	woodiwea	zero320
+
+web search:
+http://crucell.com/about-us
+
+there is an active website, company is private part of Johnson and Johnson
+Crucell joined the Janssen Pharmaceutical Companies of Johnson & Johnson in February 2011 and as of October 2014 Crucell is changing its identity into Janssen. For Janssen, the acquisition of Crucell has provided a firm foothold in the increasingly important field of disease prevention. Ultimately, this should mean that many more people around the world can live longer, healthier lives—and we are passionately committed to making that happen. 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'CRXLY';  
+> Row 1:
+>   STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+select * from mstockalias where stockkey=X'4f1126dc3a00fd8dc0a80114'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2000-11-01 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'4f1226dc3a00fd8dc0a80114'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2011-03-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'250f6d254d910d00c0a80146'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2011-03-28 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'f8056d694d910d53c0a80146'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CRXLY'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CRXLY|CP_DELIST_REASON|17|CP_NOTES|ADR Program Terminated. (Mandatory surrender; 32.430411/ADRS)
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 62697256
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 1477472
+>        BB_COMPANYNAME = Crucell NV
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = CRXLY   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-21 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CRXLY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2012-03-21 00:00:00.000000'
+>            PRIMARYKEY = X'71a0617d4f6a577fc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CRXLY
+>>>> dbtool started at 2015-08-24 09:20:27 -0400
+stock: CRXLY
+  PK       : [4F1126DC3A00FD8DC0A80114]
+  companyID: [12672]
+  symbol   : [CRXLY]
+  name     : [CRUCELL N.V. ADS]
+  date     : [2011-03-28 00:00:00]
+  status   : [Active]
+stock: CRXLY
+  PK       : [4F1126DC3A00FD8DC0A80114]
+  companyID: [12672]
+  symbol   : [CRXLY]
+  name     : [CRUCELL N.V. ADS]
+  date     : [2011-03-28 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-24 09:20:28 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 12672
+2012-03-19 (Mon) [4095]: O:32.3300 H:32.3300 L:32.3200 C:32.3200 V:600 TSO:66600 A:32.3200 R:1.0000 CA:0.0000
+2012-03-20 (Tue) [4096]: O:32.3200 H:32.4200 L:32.3200 C:32.4200 V:467 TSO:66600 A:32.4200 R:1.0000 CA:0.0000
+2012-03-21 (Wed) [4097]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-22 (Thu) [4098]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000  <--- delist date
+2012-03-23 (Fri) [4099]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-24 (Sat) [4100]: <WEEKEND>
+2012-03-25 (Sun) [4101]: <WEEKEND>
+2012-03-26 (Mon) [4102]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-27 (Tue) [4103]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-28 (Wed) [4104]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-29 (Thu) [4105]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-30 (Fri) [4106]: O:32.3300 H:32.4099 L:32.3300 C:32.3800 V:10812 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-03-31 (Sat) [4107]: <WEEKEND>
+2012-04-01 (Sun) [4108]: <WEEKEND>
+2012-04-02 (Mon) [4109]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-03 (Tue) [4110]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-04 (Wed) [4111]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-05 (Thu) [4112]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-06 (Fri) [4113]: <HOLIDAY>
+2012-04-07 (Sat) [4114]: <WEEKEND>
+2012-04-08 (Sun) [4115]: <WEEKEND>
+2012-04-09 (Mon) [4116]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-10 (Tue) [4117]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:32.3800 H:32.3800 L:32.3800 C:32.3800 V:0 TSO:66600 A:32.3800 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'4f1126dc3a00fd8dc0a80114' and shares > 0 order by closed; 
+> Row 1809:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-12-06 09:51:00.000000'
+>        COMMENT = 
+>     COMMISSION = 77.500000
+>   CURRENTORDER = X'7eea024a4eb5cb33c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6a9302eb39cab9c2c0a801e0'
+>       MODIFIED = NULL
+>            NET = 46683.749950
+>         OPENED = TIMESTAMP '2011-11-05 19:48:03.000000'
+>          PRICE = 30.118548
+>     PRIMARYKEY = X'7ee8024a4eb5cb33c0a80134'
+>         SECFEE = 0.900000
+>         SHARES = 1550.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'4f1126dc3a00fd8dc0a80114'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4f1126dc3a00fd8dc0a80114'  and totalshares < 0);
+not shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4f1126dc3a00fd8dc0a80114'  and totalshares < 0)));
+
+apply the acquis
+delist:  2012-03-22
+there are 89 members who hold this stock
+quantum:  nothing 
+last ticket: 2011-12-06  PRICE = 30.118548
+last price:  (Mandatory surrender; 32.430411/ADRS)
+
+going with 20120322  32.430411
+
+/Marketocracy/bin/cahelper -symbol  CRXLY  -effective 20120322 -type ACQUIS -exchange UN -acqType 1 -acqCash 32.430411 -acqShare 0 -purchaser CRXLY   >& /Users/build/caout/CRXLY.20150824-DELIST.out
+CRXLY.20150824-DELIST.out
+stocks:~/caout build$ tail -f CRXLY.20150824-DELIST.out
+D: (08-24 09:32:24.883) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-24 09:33:12.996) cahelper started on 2015-08-24 09:33:12 -0400
+
+D: (08-24 09:33:13.355) There are [0] open tickets for CRXLY on 20120322
+D: (08-24 09:33:13.957) StockFileLoad Version:4.0
+D: (08-24 09:33:13.957) Loading Stock Data
+D: (08-24 09:34:34.378) Building Lookup Index
+D: (08-24 09:34:44.040) Finished Building Index
+D: (08-24 09:34:51.971) Finished Loading Stock Data
+D: (08-24 09:34:52.016) Connection to 192.168.111.172:6666 succeeded
+D: (08-24 09:35:00.486) SavingChanges for position sell out 101 of 427
+D: (08-24 09:35:25.052) {
+    "ACQUIRED_STOCK" = CRXLY; 
+    "ACQUIRING_STOCK" = "CRXLY_FIX"; 
+    AMOUNT = 32.430412; 
+    APPLIED = 1; 
+    DATE = 20120322; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CRXLY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-24 09:35:38.742) SUCCESS
+D: (08-24 09:35:38.742) cahelper finished 2015-08-24 09:35:38 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'4f1126dc3a00fd8dc0a80114'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2000-11-01 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'4f1226dc3a00fd8dc0a80114'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2011-03-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'250f6d254d910d00c0a80146'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2011-03-28 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'f8056d694d910d53c0a80146'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 228769105
+>           DATE = TIMESTAMP '2012-03-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRUCELL N.V. ADS
+>     PRIMARYKEY = X'ed0b4f0e55db1d19c0a86f92'
+>       STOCKKEY = X'4f1126dc3a00fd8dc0a80114'
+>         SYMBOL = CRXLY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+
+select * from mcorporateaction where aliaskey =X'ed0b4f0e55db1d19c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ed0b4f0e55db1d19c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CRXLY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|32.430412|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150824:093312
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = CRXLY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-22 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CRXLY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-03-22 00:00:00.000000'
+>            PRIMARYKEY = X'ed054f0e55db1d18c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ed054f0e55db1d18c0a86f92';
+> Row 1:
+>   _C001 = 151.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ed054f0e55db1d18c0a86f92'));
+there are 151 fundkeys, save to CA issues CRXLY fundkeys.txt
+
+For Beta case
+CRXLY no longer trades but is still active on our site - need to delist 
+
+check on 8/25/15   invalidate funds
+check MAdmin  clear 
+
+CRXLY has been acquired	right curve
+ 	 	
+CRUCELL N.V. ADS acquired by a private company on 2012-03-22 00:00:00.
+ 	 	 
+CRXLY	2012-03-22
+
+invaldate reprice and close this out 
+
+

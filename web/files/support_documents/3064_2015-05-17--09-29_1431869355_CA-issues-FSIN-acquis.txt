@@ -1,0 +1,416 @@
+date:  5/15/15
+ticker: FSIN 
+
+yahoo:  nothing
+
+quantum: nothing
+
+oursite:
+Symbol: FSIN 	Name: Fushi Copperweld Inc 	Price: $9.45
+Volume: 	Sector: Industrials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=FSIN
+
+check MAdmin
+FSIN  05/15/2015
+Stock:Fushi Copperweld Inc  Symbol:FSIN
+Date: 05/15/2015
+
+59 users found
+
+1	Bentiss	advisorcfa	apuo	babdul	bazzwell	bcbeistline	bgitarts	bolphur	boyplunger	bubblesu4ian
+2	ccachat	cgraydon	chaosama	cicabum	cls	d.blazer	davidfuhrman	dchabino	direstrait	dishwasher
+3	dphillips	dpmatthews	dynamo	fmoslehi	globalhawk	headhunter	humility	jarvis_hills	jgossage	jimbrown
+4	justin_collett83	kickingjack	krystyna	longshort	lotohy	makfeo	nikp814	nslaughter	pbradford	petercat
+5	peto	poopchank	pplo5850	rainmakerdna	renato	scary	seadrive	stavon	studentc	sumo
+6	thomasomelli	timmee	todd_hagopian	valueman77	varian	wdeatherage	webby99	whandke	zdevelopment	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'FSIN';  
+> Row 1:
+>   STOCKKEY = X'7b724f2d46993827c0a80146'
+
+select * from mstockalias where stockkey= X'7b724f2d46993827c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = FUSHI INTERNATIONAL INC
+>           DATE = TIMESTAMP '2002-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 36113C101
+>     PRIMARYKEY = X'7b734f2d46993827c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = FUSHI INTERNATIONAL INC
+>           DATE = TIMESTAMP '2002-01-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'bb2e1d7b469c7de6c0a8013c'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2002-01-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'eaac4257469c960dc0a8013c'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2007-08-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'1bc5530346d8c839c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2008-01-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fushi Copperweld Inc
+>     PRIMARYKEY = X'b628594d478d73d4c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113E107
+>           DATE = TIMESTAMP '2008-01-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fushi Copperweld Inc
+>     PRIMARYKEY = X'4ba55950478d73e5c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FSIN'  order by BB_EFFECTIVE;
+> Row 22:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|Fushi Copperweld Inc|CP_TOT_AMT|99.186783|CP_ACQUIS_TYP|1|CP_CASH|9.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|32.371891|CP_CUR_PREMIUM|0.529103|CP_PCT_OWNED|29.200001|CP_PCT_SOUGHT|70.800003|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|99.186783|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Gibson Dunn Crut, Loeb & Loeb LLP;13;100.000000;1;Target Financial Adviser;1;BofA ML;13;100.000000;1;Acquirer Legal Adviser;1;Ropes & Gray, Skadden Arps, Weil Gotshal;13;100.000000;1;Acquirer Financial Adviser;1;Deutsche Bank;13;100.000000;1;Legal Adv to Target Financial;1;Shearman Sterlng;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 60372332
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 119737
+>        BB_COMPANYNAME = Fushi Copperweld Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>         BB_IDENTIFIER = FSIN    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = FSIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-26 00:00:00.000000'
+>            PRIMARYKEY = X'd50630f850dcdba4c0a80146'
+>               VERSION = NULL
+
+9.50 cash given on 12/27/2012 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock FSIN
+>>>> dbtool started at 2015-05-15 15:05:06 -0400
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [36113C101]
+  date     : [2002-01-01 00:00:00]
+  status   : [Active]
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [FUSHI INTERNATIONAL INC]
+  date     : [2002-01-01 00:00:01]
+  status   : [Active]
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [FUSHI INTERNATIONAL INC]
+  date     : [2002-01-01 00:00:02]
+  status   : [Active]
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [FUSHI INTERNATIONAL INC]
+  date     : [2007-08-31 00:00:00]
+  status   : [Active]
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [Fushi Copperweld Inc]
+  date     : [2008-01-15 00:00:00]
+  status   : [Active]
+stock: FSIN
+  PK       : [7B724F2D46993827C0A80146]
+  companyID: [17434]
+  symbol   : [FSIN]
+  name     : [Fushi Copperweld Inc]
+  date     : [2008-01-15 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-15 15:05:06 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17434
+2012-12-13 (Thu) [4364]: O:9.4700 H:9.4800 L:9.4600 C:9.4700 V:359686 TSO:29715 A:9.4700 R:1.0000 CA:0.0000
+2012-12-14 (Fri) [4365]: O:9.4900 H:9.5000 L:9.4800 C:9.4800 V:282621 TSO:29715 A:9.4800 R:1.0000 CA:0.0000
+2012-12-15 (Sat) [4366]: <WEEKEND>
+2012-12-16 (Sun) [4367]: <WEEKEND>
+2012-12-17 (Mon) [4368]: O:9.4800 H:9.4800 L:9.4200 C:9.4600 V:595529 TSO:29715 A:9.4600 R:1.0000 CA:0.0000
+2012-12-18 (Tue) [4369]: O:9.4600 H:9.4600 L:9.4200 C:9.4200 V:236061 TSO:29715 A:9.4200 R:1.0000 CA:0.0000
+2012-12-19 (Wed) [4370]: O:9.4300 H:9.4900 L:9.4200 C:9.4700 V:295434 TSO:29715 A:9.4700 R:1.0000 CA:0.0000
+2012-12-20 (Thu) [4371]: O:9.4300 H:9.4700 L:9.4300 C:9.4400 V:176933 TSO:29715 A:9.4400 R:1.0000 CA:0.0000
+2012-12-21 (Fri) [4372]: O:9.4400 H:9.4700 L:9.0200 C:9.2800 V:588307 TSO:29715 A:9.2800 R:1.0000 CA:0.0000
+2012-12-22 (Sat) [4373]: <WEEKEND>
+2012-12-23 (Sun) [4374]: <WEEKEND>
+2012-12-24 (Mon) [4375]: O:9.3200 H:9.4400 L:9.1300 C:9.3300 V:639895 TSO:29715 A:9.3300 R:1.0000 CA:0.0000
+2012-12-25 (Tue) [4376]: <HOLIDAY>
+2012-12-26 (Wed) [4377]: O:9.4100 H:9.4800 L:9.3800 C:9.4500 V:3499815 TSO:29715 A:9.4500 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'7b724f2d46993827c0a80146' and shares > 0 order by closed; 
+> Row 1000:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-12-26 15:42:00.000000'
+>        COMMENT = 
+>     COMMISSION = 750.000000
+>   CURRENTORDER = X'632e13d050db5435c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7d4207f33bd25467c0a80119'
+>       MODIFIED = NULL
+>            NET = 140871.045000
+>         OPENED = TIMESTAMP '2012-12-26 14:47:01.000000'
+>          PRICE = 9.391403
+>     PRIMARYKEY = X'632c13d050db5435c0a80132'
+>         SECFEE = 3.180000
+>         SHARES = 15000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last ticker 12/26/2012 a sell
+9.50 cash given on 12/27/2012  in an unapplied CA
+quantum no help
+last price we have:  2012-12-26 (Wed) [4377]: O:9.4100 H:9.4800 L:9.3800 C:9.4500 V:3499815 TSO:29715 A:9.4500 R:1.0000 CA:0.0000
+
+let's use this:   20121227  give  9.50   FSIN
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  FSIN  -effective 20121227 -type ACQUIS -exchange UN -acqType 1 -acqCash 9.50 -acqShare 0 -purchaser FSIN   >& /Users/build/caout/FSIN.20150515.20150515-ACQUIS.out
+FSIN.20150515.20150515-ACQUIS.out
+stocks:~/caout build$ tail -f FSIN.20150515.20150515-ACQUIS.out
+D: (05-15 15:14:35.273) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-15 15:15:31.900) cahelper started on 2015-05-15 15:15:31 -0400
+
+D: (05-15 15:15:32.162) There are [0] open tickets for FSIN on 20121227
+D: (05-15 15:15:32.978) StockFileLoad Version:4.0
+D: (05-15 15:15:32.978) Loading Stock Data
+D: (05-15 15:17:08.069) Building Lookup Index
+D: (05-15 15:17:19.730) Finished Building Index
+D: (05-15 15:17:29.520) Finished Loading Stock Data
+D: (05-15 15:17:29.567) Connection to 192.168.111.172:6666 succeeded
+D: (05-15 15:17:33.424) SavingChanges for position sell out 101 of 289
+D: (05-15 15:17:40.831) {
+    "ACQUIRED_STOCK" = FSIN; 
+    "ACQUIRING_STOCK" = "FSIN_FIX"; 
+    AMOUNT = 9.5; 
+    APPLIED = 1; 
+    DATE = 20121227; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "FSIN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-15 15:17:45.472) SUCCESS
+D: (05-15 15:17:45.472) cahelper finished 2015-05-15 15:17:45 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'7b724f2d46993827c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = FUSHI INTERNATIONAL INC
+>           DATE = TIMESTAMP '2002-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 36113C101
+>     PRIMARYKEY = X'7b734f2d46993827c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = FUSHI INTERNATIONAL INC
+>           DATE = TIMESTAMP '2002-01-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'bb2e1d7b469c7de6c0a8013c'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2002-01-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'eaac4257469c960dc0a8013c'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2007-08-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FUSHI INTERNATIONAL INC
+>     PRIMARYKEY = X'1bc5530346d8c839c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113C101
+>           DATE = TIMESTAMP '2008-01-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fushi Copperweld Inc
+>     PRIMARYKEY = X'b628594d478d73d4c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113E107
+>           DATE = TIMESTAMP '2008-01-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fushi Copperweld Inc
+>     PRIMARYKEY = X'4ba55950478d73e5c0a80146'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 36113E107
+>           DATE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fushi Copperweld Inc
+>     PRIMARYKEY = X'2627199d555645d4c0a86f92'
+>       STOCKKEY = X'7b724f2d46993827c0a80146'
+>         SYMBOL = FSIN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'2627199d555645d4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'2627199d555645d4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FSIN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|9.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150515:031531
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>         BB_IDENTIFIER = FSIN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FSIN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-27 00:00:00.000000'
+>            PRIMARYKEY = X'2621199d555645d3c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'2621199d555645d3c0a86f92';
+> Row 1:
+>   _C001 = 105.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'2621199d555645d3c0a86f92'));
+105 fundkeys save to CA issues FSIN fundkeys.txt
+
+ok - check on 5/16/15  then do the invalidate 
+
+5/17/15
+ FSIN has been acquired 	right curve
+  	  	
+Fushi Copperweld Inc acquired by a private company on 2012-12-27 00:00:00.
+  	  	 
+acquis is there, invalidate funds 
+babdul can be our test member  BMF2 had FSIN 
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+12/27/2012 	$37,678.95 	$0.00 	$1.03 	$28,500.00 	$76.67 	$0.00 	$66,103.32 	$1,322,876.29 	$1,388,979.61 	100,000 	$13.89 	Yes 	Details  
+trades on December 27, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	FSIN 	3,000 	$0.00 	$0.00 	$0.00 	$0.00
+
+3000*9.50 = 28500  he got it
+closing this out 
+
+on 20121227 members got 9.50 per share 

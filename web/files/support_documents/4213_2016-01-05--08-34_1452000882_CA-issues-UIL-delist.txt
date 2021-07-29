@@ -1,0 +1,1005 @@
+DATE:2015-12-17 00:00:00
+NOTES:N.A.
+REASON:Acquired/Merged
+APPLIED:1
+SYMBOL:UIL
+TYPE:DELIST
+
+CA issues UIL delist.txt
+date:  12/17/15
+ticker:    UIL
+
+UIL delist came in and got processed today.  I am trying to find the terms 
+Iberdrola (Spanish company) and UIL Holdings merged.   Holders got cash and stock in the
+new company   Avangrid (NYSE: AGR)
+
+ah it looks like we just listed AGR today as well:
+DATE:2015-12-17 00:00:00
+NEW_EXCHANGE:NYSE
+NOTES:N.A.
+APPLIED:1
+NEW_LIST:AGR
+SYMBOL:AGR
+TYPE:LIST
+
+
+yahoo:  nothing for UIL
+yahoo: for AGR
+
+berdrola USA and UIL Holdings merger creates a diversified energy & utility company
+December 17, 2015 Michelle Froese : 0 Comments
+Iberdrola USA and UIL Holdings Corporation announced the closing of the merger between their companies that creates a diversified energy and utility company.The company will operate under the name AVANGRID, Inc. with $30 billion in assets and operations in 25 states.
+“Today, AVANGRID, a new American energy giant, has been born. As we have done since our arrival in the United States in 2006, we will continue investing in clean energy across the country, and bring new value to our utility customers through improving infrastructure, new technology, and innovative services,” Iberdrola’s Chairman, Ignacio Galán stated.
+
+here's a good article:
+http://news.morningstar.com/articlenet/article.aspx?id=733720
+
+UIL shareholders received one share of Iberdrola USA and $10.50 in cash for each UIL share. 
+
+AGR check this is new for today
+let's see what we have for AGR
+select distinct stockkey from mstockalias where symbol='AGR';
+> Row 1:
+>   STOCKKEY = X'05f30e21390adee7c0a80116'
+	select * from mstockalias where STOCKKEY = X'05f30e21390adee7c0a80116' order by "date";
+	delisted - ok 
+> Row 2:
+>   STOCKKEY = X'204843fe3b1fecebc0a801dc'
+	select * from mstockalias where STOCKKEY = X'204843fe3b1fecebc0a801dc' order by "date";
+	delisted - ok
+> Row 3:
+>   STOCKKEY = X'275b5a593cfc3d0bc0a801dc'
+	select * from mstockalias where STOCKKEY = X'275b5a593cfc3d0bc0a801dc' order by "date";
+	select * from mstockalias where STOCKKEY = X'275b5a593cfc3d0bc0a801dc' order by "date";
+
+> Row 4:
+>   STOCKKEY = X'f37e70505673513fc0a86fab'
+	select * from mstockalias where STOCKKEY = X'f37e70505673513fc0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Iberdrola USA Inc
+>     PRIMARYKEY = X'f37f70505673513fc0a86fab'
+>       STOCKKEY = X'f37e70505673513fc0a86fab'
+>         SYMBOL = AGR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'f37f70505673513fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'f37f70505673513fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|AGR|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 117384959
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 101064
+>        BB_COMPANYNAME = Iberdrola USA Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = AGR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = AGR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1005
+>            BB_UPDATED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'8f5147415671fdb4c0a86fab'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-12-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Avangrid Inc
+>     PRIMARYKEY = X'aca87065567351c9c0a86fab'
+>       STOCKKEY = X'f37e70505673513fc0a86fab'
+>         SYMBOL = AGR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'aca87065567351c9c0a86fab';
+> Row 1:
+>              ALIASKEY = X'aca87065567351c9c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Iberdrola USA Inc|CP_NEW_NAME|Avangrid Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 117384947
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 101064
+>        BB_COMPANYNAME = Iberdrola USA Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = AGR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = AGR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'8f5347415671fdb8c0a86fab'
+>               VERSION = NULL
+
+
+quantum:
+UIL Holdings Corp.
+Ticker Symbol: UIL     CUSIP: 902748102     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  UIL Holdings Corporation is a diversified energy delivery company serving approximately 700,000 electric and natural gas utility customers in 66 communities across two states, with combined total assets of over $4 billion. UIL Holdings is the parent company for The United Illuminating Company (UI), The Southern Connecticut Gas Company (SCG), Connecticut Natural Gas Corporation (CNG), and The Berkshire Gas Company (Berkshire Gas), each more than 100 years old. UI provides for the transmission and delivery of electricity and other energy related services for Connecticut’s Greater New Haven and Bridgeport areas. SCG and CNG are natural gas distribution companies that serve customers in Connecticut, while Berkshire Gas serves natural gas customers in western Massachusetts. UIL Holdings employs more than 1,800 people in the New England region.
+
+oursite:
+Symbol: UIL	Name: UIL HOLDINGS	Price: $50.10
+Volume: 1,645,544	Sector: Utilities	Change: $0.00
+Short Volume: 243,449	Style: Mid Cap : Value	Market Cap: $1,499,442,900
+Avg Volume: 243,449	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $49.63	Year High: $52.50	High: $50.52
+200 Day Ave: $48.88	Year Low: $41.19	Low: $47.63
+
+research  stock info  UIL   
+ [NEW QUOTE]       
+Corporate Actions for UIL HOLDINGS	  December 17, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  cash dividends paid by UIL	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+06 Jun 00	06 Jun 00	06 Jun 00	N/A	$0.72	Dividend amount:0.72 per share.
+05 Sep 00	05 Sep 00	05 Sep 00	N/A	$0.72	Dividend amount:0.72 per share.
+05 Dec 00	05 Dec 00	05 Dec 00	N/A	$0.72	Dividend amount:0.72 per share.
+08 Mar 01	12 Mar 01	01 Apr 01	4	$0.72	Dividend amount:0.72 per share.
+06 Jun 01	08 Jun 01	01 Jul 01	4	$0.72	Dividend amount:0.72 per share.
+05 Sep 01	07 Sep 01	01 Oct 01	4	$0.72	Dividend amount:0.72 per share.
+05 Dec 01	07 Dec 01	01 Jan 02	4	$0.72	Dividend amount:0.72 per share.
+07 Mar 02	11 Mar 02	01 Apr 02	4	$0.72	Dividend amount:0.72 per share.
+05 Jun 02	07 Jun 02	01 Jul 02	4	$0.72	Dividend amount:0.72 per share.
+04 Sep 02	06 Sep 02	01 Oct 02	4	$0.72	Dividend amount:0.72 per share.
+05 Dec 02	09 Dec 02	01 Jan 03	4	$0.72	Dividend amount:0.72 per share.
+06 Mar 03	10 Mar 03	01 Apr 03	4	$0.72	Dividend amount:0.72 per share.
+05 Jun 03	09 Jun 03	01 Jul 03	4	$0.72	Dividend amount:0.72 per share.
+04 Sep 03	08 Sep 03	01 Oct 03	4	$0.72	Dividend amount:0.72 per share.
+05 Dec 03	09 Dec 03	01 Jan 04	4	$0.72	Dividend amount:0.72 per share.
+05 Mar 04	09 Mar 04	01 Apr 04	4	$0.72	Dividend amount:0.72 per share.
+03 Jun 04	07 Jun 04	01 Jul 04	4	$0.72	Dividend amount:0.72 per share.
+03 Sep 04	08 Sep 04	01 Oct 04	4	$0.72	Dividend amount:0.72 per share.
+07 Dec 04	09 Dec 04	01 Jan 05	4	$0.72	Dividend amount:0.72 per share.
+04 Mar 05	08 Mar 05	01 Apr 05	4	$0.72	Dividend amount:0.72 per share.
+03 Jun 05	07 Jun 05	01 Jul 05	4	$0.72	Dividend amount:0.72 per share.
+02 Sep 05	07 Sep 05	01 Oct 05	4	$0.72	Dividend amount:0.72 per share.
+05 Dec 05	07 Dec 05	01 Jan 06	4	$0.72	Dividend amount:0.72 per share.
+03 Mar 06	07 Mar 06	01 Apr 06	4	$0.72	Dividend amount:0.72 per share.
+02 Jun 06	06 Jun 06	03 Jul 06	4	$0.72	Dividend amount:0.72 per share.
+01 Sep 06	06 Sep 06	01 Oct 06	4	$0.43	Dividend amount:0.432 per share.
+04 Dec 06	06 Dec 06	01 Jan 07	4	$0.43	Dividend amount:0.432 per share.
+02 Mar 07	06 Mar 07	01 Apr 07	4	$0.43	Dividend amount:0.432 per share.
+01 Jun 07	05 Jun 07	01 Jul 07	4	$0.43	Dividend amount:0.432 per share.
+04 Sep 07	06 Sep 07	01 Oct 07	4	$0.43	Dividend amount:0.432 per share.
+03 Dec 07	05 Dec 07	01 Jan 08	4	$0.43	Dividend amount:0.432 per share.
+11 Mar 08	13 Mar 08	01 Apr 08	4	$0.43	Dividend amount:0.432 per share.
+10 Jun 08	12 Jun 08	01 Jul 08	4	$0.43	Dividend amount:0.432 per share.
+10 Sep 08	12 Sep 08	01 Oct 08	4	$0.43	Dividend amount:0.432 per share.
+10 Dec 08	12 Dec 08	01 Jan 09	4	$0.43	Dividend amount:0.432 per share.
+16 Mar 09	18 Mar 09	01 Apr 09	4	$0.43	Dividend amount:0.432 per share.
+15 Jun 09	17 Jun 09	01 Jul 09	4	$0.43	Dividend amount:0.432 per share.
+15 Sep 09	17 Sep 09	01 Oct 09	4	$0.43	Dividend amount:0.432 per share.
+16 Dec 09	18 Dec 09	04 Jan 10	4	$0.43	Dividend amount:0.432 per share.
+08 Mar 10	10 Mar 10	01 Apr 10	4	$0.43	Dividend amount:0.432 per share.
+15 Jun 10	17 Jun 10	01 Jul 10	4	$0.43	Dividend amount:0.432 per share.
+15 Sep 10	17 Sep 10	01 Oct 10	4	$0.43	Dividend amount:0.432 per share.
+15 Dec 10	17 Dec 10	03 Jan 11	4	$0.43	Dividend amount:0.432 per share.
+04 Mar 11	08 Mar 11	01 Apr 11	4	$0.43	Dividend amount:0.432 per share.
+15 Sep 11	19 Sep 11	03 Oct 11	4	$0.43	Dividend amount:0.432 per share.
+15 Dec 11	19 Dec 11	03 Jan 12	4	$0.43	Dividend amount:0.432 per share.
+08 Mar 12	12 Mar 12	02 Apr 12	4	$0.43	Dividend amount:0.432 per share.
+14 Jun 12	18 Jun 12	02 Jul 12	4	$0.43	Dividend amount:0.432 per share.
+17 Sep 12	19 Sep 12	01 Oct 12	4	$0.43	Dividend amount:0.432 per share.
+17 Dec 12	19 Dec 12	02 Jan 13	4	$0.43	Dividend amount:0.432 per share.
+07 Mar 13	11 Mar 13	01 Apr 13	4	$0.43	Dividend amount:0.432 per share.
+13 Jun 13	17 Jun 13	01 Jul 13	4	$0.43	Dividend amount:0.432 per share.
+16 Sep 13	18 Sep 13	01 Oct 13	4	$0.43	Dividend amount:0.432 per share.
+16 Dec 13	18 Dec 13	02 Jan 14	4	$0.43	Dividend amount:0.432 per share.
+16 Dec 13	18 Dec 13	02 Jan 14	4	$0.43	Dividend amount:0.432 per share.
+06 Mar 14	10 Mar 14	01 Apr 14	4	$0.43	Dividend amount:0.432 per share.
+06 Mar 14	10 Mar 14	01 Apr 14	4	$0.43	Dividend amount:0.432 per share.
+12 Jun 14	16 Jun 14	01 Jul 14	4	$0.43	Dividend amount:0.432 per share.
+15 Sep 14	17 Sep 14	01 Oct 14	4	$0.43	Dividend amount:0.432 per share.
+15 Dec 14	17 Dec 14	02 Jan 15	4	$0.43	Dividend amount:0.432 per share.
+06 Mar 15	10 Mar 15	01 Apr 15	4	$0.43	Dividend amount:0.432 per share.
+11 Jun 15	15 Jun 15	01 Jul 15	4	$0.43	Dividend amount:0.432 per share.
+14 Sep 15	16 Sep 15	01 Oct 15	4	$0.43	Dividend amount:0.432 per share.
+10 Dec 15	14 Dec 15	04 Jan 16	4	$0.43	Dividend amount:0.432 per share.
+ 	 	 
+left curve	  UIL had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+05 Jul 06	5 for 3	Split terms:5 for 3
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=UIL
+
+check MAdmin
+Stock:UIL HOLDINGS  Symbol:UIL
+Date: 12/17/2015
+
+62 users found
+
+1	2_plus_2	advisestocks	ajsharma	augur	bmcauley1	bsauls1	ceenamrog	celeborn	darkros	dave3
+2	daveta	dcinokla	deepelem	devin21	dginty	donquixote	drlaz	enkeeton	fredleblond	fuad
+3	george.balatinos	hsiumi	jack51	johnbash1	johnulu	jorgeramos49	jselengut	jtmuncey	jubals	kama
+4	karlpopper	kreed	laromana	larry_nesko	lsaunders	maquisard	mbuchanan1	mrm661014@cs.com	mvrh1	nate1006
+5	natural	nc020872	ndecesare2	newtype	nmcginn	nucsteve	ophie	percipience	peterg	pwallick
+6	rangerdon	rfiqueroa	rjames1	ryarbrough	scott_nelson	shifftty	stussyking	usumar	v_ragha	victorlabo
+7	vooch	zdevelopment	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'UIL';  
+> Row 1:
+>   STOCKKEY = X'b5e71029390b4620c0a80116'
+select * from mstockalias where stockkey=X'b5e71029390b4620c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'b5e81029390b4620c0a80116'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'300670b856735442c0a86fab'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='UIL'  order by BB_EFFECTIVE;
+> Row 83:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|IBE SM|CP_NAME|Iberdrola SA|CP_ID_BB_COMP|115724|CP_UNIT|UIL Holdings Corp|CP_TOT_AMT|4608.875000|CP_ACQUIS_TYP|3|CP_CASH|10.500000|CP_CASH_FLAG|1|CP_SH|42.250000|CP_SH_FLAG|3|CP_DEBT|1626.060059|CP_DEBT_FLAG|2|CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|19.479040|CP_CUR_PREMIUM|1.305935|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|1|CP_CRNCY|USD|CP_CASH_VAL|52.750000|CP_ARBITRAGE_PROF|0.680000|CP_CUR_TOT_VAL|4608.875000|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Legal Adviser(s);1;Sullivan Cromwel, Wiggin & Dana;13;100.000000;1;Target Financial Adviser(s);1;Morgan Stanley;13;100.000000;1;Acquirer Financial Adviser(s);1;Lazard Ltd;13;100.000000;|CP_ACQ_TKR|IBE SM|CP_ACQ_ID_BB_GLOBAL|BBG000BC49N1|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FFG0Q1|CP_ACQ_ID_BB_SEC_NUM_DES|IBE|CP_ACQ_FEED_SOURCE|SM|CP_TARGET_TKR|UIL US|CP_TARGET_ID_BB_GLOBAL|BBG000BBCRB7|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G6VC50|CP_TARGET_ID_BB_SEC_NUM_DES|UIL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|ACTL ACQ'R: IBERDROLA USA INC. STK TERM: TGT SHAREHOLDERS TO RECEIVE 1 SHR IN NEWLY-LISTED US CO PER EACH TGT SHR
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 103188375
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 1409233
+>        BB_COMPANYNAME = UIL Holdings Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = UIL     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-25 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = UIL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'6c1b6bf454efb05bc0a86f92'
+>               VERSION = NULL
+
+this has a really old when issued date but future effective date 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock UIL
+>>>> dbtool started at 2015-12-17 23:29:57 -0500
+stock: UIL
+  PK       : [B5E71029390B4620C0A80116]
+  companyID: [6419]
+  symbol   : [UIL]
+  name     : [UIL HOLDINGS]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: UIL
+  PK       : [B5E71029390B4620C0A80116]
+  companyID: [6419]
+  symbol   : [UIL]
+  name     : [UIL HOLDINGS]
+  date     : [2015-12-17 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-12-17 23:29:57 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6419
+2015-12-11 (Fri) [5457]: O:45.9100 H:46.9200 L:45.5000 C:46.4400 V:301226 TSO:29929 A:46.4400 R:1.0000 CA:8.2080
+2015-12-12 (Sat) [5458]: <WEEKEND>
+2015-12-13 (Sun) [5459]: <WEEKEND>
+2015-12-14 (Mon) [5460]: O:46.4400 H:47.3200 L:46.4400 C:47.1600 V:231342 TSO:29929 A:47.1600 R:1.0000 CA:8.2080
+2015-12-15 (Tue) [5461]: O:47.0000 H:47.8400 L:46.7200 C:47.4600 V:471760 TSO:29929 A:47.4600 R:1.0000 CA:8.2080
+2015-12-16 (Wed) [5462]: O:47.9500 H:50.5200 L:47.6300 C:50.1000 V:1625174 TSO:29929 A:50.1000 R:1.0000 CA:8.2080
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b5e71029390b4620c0a80116' and shares > 0 order by closed; 
+> Row 593:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-26 10:54:07.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'e8a700c7562e38e5c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'34983e8844d212cdc0a80132'
+>       MODIFIED = NULL
+>            NET = 25417.580500
+>         OPENED = TIMESTAMP '2015-10-26 10:29:52.000000'
+>          PRICE = 50.835161
+>     PRIMARYKEY = X'e8a500c7562e38e5c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b5e71029390b4620c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5e71029390b4620c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5e71029390b4620c0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 62 members who hold this stock
+quantum:
+last ticket: 2015-10-26 PRICE = 50.835161
+last price:  2015-12-16 (Wed) [5462]: O:47.9500 H:50.5200 L:47.6300 C:50.1000 V:1625174 TSO:29929 A:50.1000 R:1.0000 CA:8.2080
+
+we need to use 12/17/15 because we're giving AGR stock which just listed 
+going with 20151217  type 3   10.50  1 AGR  
+
+/Marketocracy/bin/cahelper -symbol  UIL  -effective 20151217 -type ACQUIS -exchange UN -acqType 3 -acqCash 10.50 -acqShare 0 -purchaser AGR   >& /Users/build/caout/UIL.20151217-ACQUIS-AGR.out 
+UIL.20151217-ACQUIS-AGR.out
+stocks1:~/caout build$ tail -f UIL.20151217-ACQUIS-AGR.out
+D: (12-17 23:55:13.072) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-17 23:56:26.595) cahelper started on 2015-12-17 23:56:26 -0500
+
+D: (12-17 23:56:26.852) There are [0] open tickets for UIL on 20151217
+D: (12-17 23:56:30.388) StockFileLoad Version:4.0
+D: (12-17 23:56:30.388) Loading Stock Data
+D: (12-17 23:58:33.609) Building Lookup Index
+D: (12-17 23:58:50.933) Finished Building Index
+D: (12-17 23:59:02.216) Finished Loading Stock Data
+D: (12-17 23:59:02.263) Connection to 192.168.111.172:6666 succeeded
+D: (12-18 00:00:30.414) SavingChanges for Stock Dividend out 101 of 230
+D: (12-18 00:00:47.704) SavingChanges for position sell out 101 of 230
+D: (12-18 00:00:56.760) {
+    "ACQUIRED_STOCK" = UIL; 
+    "ACQUIRING_STOCK" = AGR; 
+    AMOUNT = "CASH 10.5: SHARES 0"; 
+    APPLIED = 1; 
+    DATE = 20151217; 
+    FUNDS = (
+        "bmcauley1/Tax-Efficient Growth fund", 
+        "nmcginn/Nicholas J McGinn's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "kreed/Reed's Growth", 
+        "ceenamrog/Charles Gorman's Electric Mutual Fund", 
+        "ryarbrough/Yarbrough Value Fund II", 
+        "ryarbrough/Yarbrough Value Fund II", 
+        "jdamian_jr/JRD Utility Fund", 
+        "deepelem/Aspire Capital", 
+        "epresa/Eduardo Presa's Orange Fund", 
+        "dginty/Small Cap Fund", 
+        "mbuchanan1/mbuchanan1's screen1", 
+        "shifftty/shifftty's Mutual Fund", 
+        "mvrh1/Lycos Most Down Daily", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "rfiqueroa/Equity Income", 
+        "jgoldstein/Mother's Select Fund", 
+        "ndecesare2/ndecesare2's Mutual Fund", 
+        "mkey1/Stable Dividend Mutual Fund", 
+        "rdell_orfano/rdell_orfano's Mutual Fund", 
+        "travistaylor/Random Fund #1", 
+        "jgoldstein/Mothers Equity Income Fund", 
+        "ewastell/Edward M Wastell Jr's Mutual Fund", 
+        "victorlabo/Victor's High Yield", 
+        "boyplunger/boyplunger's aggressive fund", 
+        "wwtrader/wwtrader's Mutual Fund", 
+        "glasp/glasp game", 
+        "hsiumi/High Utilities Yield Fund", 
+        "lsaunders/Low Volatility Stock Fund", 
+        "darkros/Zero Correlation Fund", 
+        "lsaunders/I-Advantage Equity Income Fund", 
+        "nc020872/Slowly but Surely", 
+        "2_plus_2/Whole Milk Fund", 
+        "devin21/VLTechnical Short Fund", 
+        "jtmuncey/jtmuncey's Income Mutual Fund", 
+        "jtmuncey/J's Income Mutual Fund", 
+        "jselengut/New Income Fund", 
+        "enkeeton/enkeeton's Mutual Fund", 
+        "nucsteve/SML Utilities Fund", 
+        "stanglx718/MF2000", 
+        "rangerdon/rangerdon's  52week hi", 
+        "fuad/fuad's Mutual Fund", 
+        "vooch/Vooch Dividend Fund", 
+        "rbitrage/Another Utility Fund", 
+        "vooch/Dividend Fund", 
+        "vooch/Vooch New Ideas", 
+        "rjames1/rjames1's High Dividend fund", 
+        "rjames1/Dick's Doozie Mutual Fund", 
+        "robhemmerich/shorts", 
+        "milkrate/Energy Fund II", 
+        "mwarner/MWarner's Short Fund", 
+        "dtmoore/The long side of my long/short portfolio", 
+        "milkrate/Shortstop Fund", 
+        "clangmead1/clangmead shorts", 
+        "glanderson/glanderson's Shorting Mutual Fund", 
+        "mrm661014@cs.com/mrm661014@cs.com's Mutual Fund", 
+        "dave3/Dave3's Value Fund", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "lycos/Lycos Shorts", 
+        "daveta/TA top divergences", 
+        "coaster/IMPACT GROWTH", 
+        "kama/Shorting Zaks Bears", 
+        "wforeman/Wesley's Super Shorty Fund", 
+        "jorgeramos49/jorgeramos49's Mutual Fund", 
+        "jubals/jubals's ZLONG Mutual Fund", 
+        "advisestocks/Dynamic Portfolio  Fund", 
+        "ajsharma/ajsharma's Mutual Fund1", 
+        "natural/Natural's Utilities Fund", 
+        "computelgt/computelgt's Mutual Fund", 
+        "stussyking/stussyking's Mutual Fund", 
+        "augur/Joludi und Kobanchegg", 
+        "fredleblond/Yoda Mutual Fund", 
+        "laromana/laromana's Mutual Fund", 
+        "scott_nelson/scott_nelson's Mutual Fund", 
+        "drlaz/PIM's Best M/C mID-Momentum", 
+        "karlpopper/OpenSocietyFundONE", 
+        "kvogelsang/Boo Bear Fund", 
+        "momentumvalue/going down?", 
+        "jbatzer/bottom shorts", 
+        "momentumvalue/not in use", 
+        "invest2success/invest2success's Mutual Fund", 
+        "donquixote/Phoenix Energy Mutual Fund", 
+        "ophie/SCV - Orig", 
+        "ophie/SCV - Mine", 
+        "newtype/Newtype Growth Equity Fund", 
+        "v_ragha/v_ragha's Mutual Fund", 
+        "maquisard/Dividend Fund", 
+        "dcinokla/Carter Utility Fund", 
+        "jchauvette/Ymalah's Mutual Fund", 
+        "pwallick/Utility Income", 
+        "jack51/jack51's Mutual Fund", 
+        "larry_nesko/The Quality Dividend Fund", 
+        "jubals/Jubals Energy Fund", 
+        "zdevelopment/ZDevelopment Long", 
+        "percipience/Dividends Only's Mutual Fund", 
+        "sheheryar/Amjad Khursheed Low B Momentum Fund", 
+        "alobato/PEG Bear", 
+        "usumar/usumar's Mutual Fund", 
+        "george.balatinos/The Rogue Investment Fund- Short", 
+        "johnbash1/Utility Mutual Fund", 
+        "razmig/ACM ", 
+        "nate1006/Utilities Fund", 
+        "celeborn/Compound", 
+        "peterg/Dividend & Growth Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = AGR; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-18 00:01:01.344) SUCCESS
+D: (12-18 00:01:01.345) cahelper finished 2015-12-18 00:01:01 -0500
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'b5e81029390b4620c0a80116'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'300670b856735442c0a86fab'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'e5350286567392f6c0a86fab'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'e5350286567392f6c0a86fab';
+> Row 1:
+>              ALIASKEY = X'e5350286567392f6c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|UIL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|10.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151217:115626
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = AGR     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AGR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>            PRIMARYKEY = X'97fa0286567391fac0a86fab'
+>               VERSION = NULL	
+	select count(*) from mticket where sourcekey=X'97fa0286567391fac0a86fab';
+> Row 1:
+>   _C001 = 212.000000
+select distinct stockkey from mticket where sourcekey=X'97fa0286567391fac0a86fab';
+> Row 1:
+>   STOCKKEY = X'f37e70505673513fc0a86fab'
+	select * from mstockalias where STOCKKEY = X'f37e70505673513fc0a86fab' order by "date";
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-12-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Avangrid Inc
+>     PRIMARYKEY = X'aca87065567351c9c0a86fab'
+>       STOCKKEY = X'f37e70505673513fc0a86fab'
+>         SYMBOL = AGR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+> Row 2:
+>   STOCKKEY = X'b5e71029390b4620c0a80116'
+	select * from mstockalias where STOCKKEY = X'b5e71029390b4620c0a80116' order by "date";
+	UIL
+Check the results 
+
+select count(*) from mticket where sourcekey = X'97fa0286567391fac0a86fab';
+> Row 1:
+>   _C001 = 212.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'97fa0286567391fac0a86fab'));
+there are 106 fundkeys, save to CA issues UIL fundkeys.txt
+
+For Beta case
+UIL no longer trades but is still active on our site - need to delist 
+
+check on 12/18/15   invalidate funds
+check MAdmin 
+
+invalidate reprice and close 
+
+
+for the case
+UIL and Iberdrola (Spanish company) merged.
+As a result of the merger, a new company was forned Avangrid (AGR)
+Symbol: AGR	Name: Avangrid Inc	Price: $36.12
+Volume: 1,181,540	Sector: Unclassified	Change: $0.00
+Short Volume:	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume:	 Exchange: NYSE	Today: 0.00%
+50 Day Ave:	Year High:	High: $38.75
+200 Day Ave:	Year Low:	Low: $36.12
+
+Shares of UIL were delisted and holders received cash (10.50) and 1 share of AGR for each share of UIL
+there are 62 members who hold this stock
+quantum:
+last ticket: 2015-10-26 PRICE = 50.835161
+last price:  2015-12-16 (Wed) [5462]: O:47.9500 H:50.5200 L:47.6300 C:50.1000 V:1625174 TSO:29929 A:50.1000 R:1.0000 CA:8.2080
+
+we need to use 12/17/15 because we're giving AGR stock which just listed 
+going with 20151217  type 3   10.50  1 AGR  
+
+
+12/18/15
+AGR is there 
+check UIL 
+
+UIL has been acquired	right curve
+ 	 	
+UIL HOLDINGS [UIL] acquired by Avangrid Inc [AGR] on 2015-12-17 00:00:00.
+
+MAdmin  clear
+
+invalidate reprice and close 
+ laromana  LMF fund
+
+trades on December 17, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	UIL	100	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	AGR	0	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+got no shares 
+does anyone have AGR?
+
+he had 100 shares 100 *10.50 = 1050   
+12/17/2015	$255,815.03	$0.00	$7.01	$1,217.50	$78.49	$0.00	$256,961.05	$1,158,125.68	$1,415,086.73	100,000	$14.15	Yes	Details 
+he got 140+127 = 1217  ok he got the cash
+
+I did the acquis with 0 share ugh
+
+need to undo
+select distinct stockkey from mstockalias where symbol='UIL';
+> Row 1:
+>   STOCKKEY = X'b5e71029390b4620c0a80116'
+
+select * from mstockalias where STOCKKEY = X'b5e71029390b4620c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'b5e81029390b4620c0a80116'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'300670b856735442c0a86fab'  <-- set the identitykey here 
+>       STOCKKEY = X'b5e71029390b4620c0a80116'  
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'e5350286567392f6c0a86fab'  <---- delete this 
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'e5350286567392f6c0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'e5350286567392f6c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|UIL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|10.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151217:115626
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = AGR     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AGR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>            PRIMARYKEY = X'97fa0286567391fac0a86fab'
+>               VERSION = NULL
+
+
+change the identitykey
+>     PRIMARYKEY = X'300670b856735442c0a86fab'  <-- set the identitykey here 
+select * from mstock where primarykey =X'b5e71029390b4620c0a80116'; 
+> Row 1:
+>         IDENTITYKEY = X'e5350286567392f6c0a86fab'
+>                NAME = UNITED ILLUMINATING
+>          PRIMARYKEY = X'b5e71029390b4620c0a80116'
+>              SYMBOL = UIL
+>           COMPANYID = 6419
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-691
+update mstock set IDENTITYKEY = X'300670b856735442c0a86fab' where PRIMARYKEY = X'b5e71029390b4620c0a80116';
+
+is this unique
+select count(*) from mcorporateaction where BB_ACTIONID = '20151217:115626';
+> Row 1:
+>   _C001 = 1.000000
+
+
+let's get the ticketkeys for this in case the reverseCA fails
+select primarykey from mticket where sourcekey=X'97fa0286567391fac0a86fab';
+there are 212 ticketkeys  save to CA issues UIL ticketkeys to delete.txt
+
+we're ready to do the reverseCA
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20151217:115626
+
+got these errors
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+
+let's try deleting the mcorporateaction
+>            PRIMARYKEY = X'97fa0286567391fac0a86fab'
+
+delete from mcorporateaction where PRIMARYKEY = X'97fa0286567391fac0a86fab';
+it appears to be gone
+
+
+>     PRIMARYKEY = X'e5350286567392f6c0a86fab'  <---- delete this 
+delete from mstockalias where PRIMARYKEY = X'e5350286567392f6c0a86fab';
+
+should be good to rerun, let's check
+
+
+/Marketocracy/bin/cahelper -symbol  UIL  -effective 20151217 -type ACQUIS -exchange UN -acqType 3 -acqCash 10.50 -acqShare 1 -purchaser AGR   >& /Users/build/caout/UIL.20151218-ACQUIS-AGR.out 
+tail -f UIL.20151218-ACQUIS-AGR.out
+D: (12-18 08:48:11.140) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-18 08:49:10.850) cahelper started on 2015-12-18 08:49:10 -0500
+
+D: (12-18 08:49:13.333) There are [0] open tickets for UIL on 20151217
+D: (12-18 08:49:15.861) StockFileLoad Version:4.0
+D: (12-18 08:49:15.862) Loading Stock Data
+D: (12-18 08:50:54.586) Building Lookup Index
+D: (12-18 08:51:08.477) Finished Building Index
+D: (12-18 08:51:17.658) Finished Loading Stock Data
+D: (12-18 08:51:17.715) Connection to 192.168.111.172:6666 succeeded
+D: (12-18 08:52:30.725) SavingChanges for Stock Dividend out 101 of 230
+D: (12-18 08:52:51.196) SavingChanges for position sell out 101 of 230
+D: (12-18 08:53:01.006) {
+    "ACQUIRED_STOCK" = UIL; 
+    "ACQUIRING_STOCK" = AGR; 
+    AMOUNT = "CASH 10.5: SHARES 1"; 
+    APPLIED = 1; 
+    DATE = 20151217; 
+    FUNDS = (
+        "bmcauley1/Tax-Efficient Growth fund", 
+        "nmcginn/Nicholas J McGinn's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "kreed/Reed's Growth", 
+        "ceenamrog/Charles Gorman's Electric Mutual Fund", 
+        "ryarbrough/Yarbrough Value Fund II", 
+        "ryarbrough/Yarbrough Value Fund II", 
+        "jdamian_jr/JRD Utility Fund", 
+        "deepelem/Aspire Capital", 
+        "epresa/Eduardo Presa's Orange Fund", 
+        "dginty/Small Cap Fund", 
+        "mbuchanan1/mbuchanan1's screen1", 
+        "shifftty/shifftty's Mutual Fund", 
+        "mvrh1/Lycos Most Down Daily", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "bsauls1/bsauls1's Mutual Fund", 
+        "rfiqueroa/Equity Income", 
+        "jgoldstein/Mother's Select Fund", 
+        "ndecesare2/ndecesare2's Mutual Fund", 
+        "mkey1/Stable Dividend Mutual Fund", 
+        "rdell_orfano/rdell_orfano's Mutual Fund", 
+        "travistaylor/Random Fund #1", 
+        "jgoldstein/Mothers Equity Income Fund", 
+        "ewastell/Edward M Wastell Jr's Mutual Fund", 
+        "victorlabo/Victor's High Yield", 
+        "boyplunger/boyplunger's aggressive fund", 
+        "wwtrader/wwtrader's Mutual Fund", 
+        "glasp/glasp game", 
+        "hsiumi/High Utilities Yield Fund", 
+        "lsaunders/Low Volatility Stock Fund", 
+        "darkros/Zero Correlation Fund", 
+        "lsaunders/I-Advantage Equity Income Fund", 
+        "nc020872/Slowly but Surely", 
+        "2_plus_2/Whole Milk Fund", 
+        "devin21/VLTechnical Short Fund", 
+        "jtmuncey/jtmuncey's Income Mutual Fund", 
+        "jtmuncey/J's Income Mutual Fund", 
+        "jselengut/New Income Fund", 
+        "enkeeton/enkeeton's Mutual Fund", 
+        "nucsteve/SML Utilities Fund", 
+        "stanglx718/MF2000", 
+        "rangerdon/rangerdon's  52week hi", 
+        "fuad/fuad's Mutual Fund", 
+        "vooch/Vooch Dividend Fund", 
+        "rbitrage/Another Utility Fund", 
+        "vooch/Dividend Fund", 
+        "vooch/Vooch New Ideas", 
+        "rjames1/rjames1's High Dividend fund", 
+        "rjames1/Dick's Doozie Mutual Fund", 
+        "robhemmerich/shorts", 
+        "milkrate/Energy Fund II", 
+        "mwarner/MWarner's Short Fund", 
+        "dtmoore/The long side of my long/short portfolio", 
+        "milkrate/Shortstop Fund", 
+        "clangmead1/clangmead shorts", 
+        "glanderson/glanderson's Shorting Mutual Fund", 
+        "mrm661014@cs.com/mrm661014@cs.com's Mutual Fund", 
+        "dave3/Dave3's Value Fund", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "lycos/Lycos Shorts", 
+        "daveta/TA top divergences", 
+        "coaster/IMPACT GROWTH", 
+        "kama/Shorting Zaks Bears", 
+        "wforeman/Wesley's Super Shorty Fund", 
+        "jorgeramos49/jorgeramos49's Mutual Fund", 
+        "jubals/jubals's ZLONG Mutual Fund", 
+        "advisestocks/Dynamic Portfolio  Fund", 
+        "ajsharma/ajsharma's Mutual Fund1", 
+        "natural/Natural's Utilities Fund", 
+        "computelgt/computelgt's Mutual Fund", 
+        "stussyking/stussyking's Mutual Fund", 
+        "augur/Joludi und Kobanchegg", 
+        "fredleblond/Yoda Mutual Fund", 
+        "laromana/laromana's Mutual Fund", 
+        "scott_nelson/scott_nelson's Mutual Fund", 
+        "drlaz/PIM's Best M/C mID-Momentum", 
+        "karlpopper/OpenSocietyFundONE", 
+        "kvogelsang/Boo Bear Fund", 
+        "momentumvalue/going down?", 
+        "jbatzer/bottom shorts", 
+        "momentumvalue/not in use", 
+        "invest2success/invest2success's Mutual Fund", 
+        "donquixote/Phoenix Energy Mutual Fund", 
+        "ophie/SCV - Orig", 
+        "ophie/SCV - Mine", 
+        "newtype/Newtype Growth Equity Fund", 
+        "v_ragha/v_ragha's Mutual Fund", 
+        "maquisard/Dividend Fund", 
+        "dcinokla/Carter Utility Fund", 
+        "jchauvette/Ymalah's Mutual Fund", 
+        "pwallick/Utility Income", 
+        "jack51/jack51's Mutual Fund", 
+        "larry_nesko/The Quality Dividend Fund", 
+        "jubals/Jubals Energy Fund", 
+        "zdevelopment/ZDevelopment Long", 
+        "percipience/Dividends Only's Mutual Fund", 
+        "sheheryar/Amjad Khursheed Low B Momentum Fund", 
+        "alobato/PEG Bear", 
+        "usumar/usumar's Mutual Fund", 
+        "george.balatinos/The Rogue Investment Fund- Short", 
+        "johnbash1/Utility Mutual Fund", 
+        "razmig/ACM ", 
+        "nate1006/Utilities Fund", 
+        "celeborn/Compound", 
+        "peterg/Dividend & Growth Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = AGR; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-18 08:53:07.417) SUCCESS
+D: (12-18 08:53:07.417) cahelper finished 2015-12-18 08:53:07 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'b5e71029390b4620c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'b5e81029390b4620c0a80116'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'300670b856735442c0a86fab'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 902748102
+>           DATE = TIMESTAMP '2015-12-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UIL HOLDINGS
+>     PRIMARYKEY = X'475e10f356740fa9c0a86fab'
+>       STOCKKEY = X'b5e71029390b4620c0a80116'
+>         SYMBOL = UIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey =X'475e10f356740fa9c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'475e10f356740fa9c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|UIL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|10.500000|CP_CASH_FLAG|1|CP_SH|1.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151218:084910
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = AGR     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AGR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-17 00:00:00.000000'
+>            PRIMARYKEY = X'fa2310f356740ed6c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'fa2310f356740ed6c0a86fab';
+> Row 1:
+>   _C001 = 212.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'fa2310f356740ed6c0a86fab'));
+there are 106 fundkeys, save to CA issues XXX fundkeys.txt
+
+For Beta case
+UIL no longer trades but is still active on our site - need to delist 
+
+let's check our member
+ laromana  LMF fund
+
+trades on December 17, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	UIL	100	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	AGR	100	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+He got his 100 shares of AGR 
+check on 12/19/15   invalidate funds   for the cash portion
+
+check MAdmin  clear
+
+UIL has been acquired	right curve
+ 	 	
+UIL HOLDINGS [UIL] acquired by Avangrid Inc [AGR] on 2015-12-17 00:00:00.
+
+invalidate reprice and close 

@@ -1,0 +1,85 @@
+date:  BIRT
+appears that members hold it.  even though MAdmin does not
+
+select distinct stockkey from mstockalias where symbol='BIRT';
+> Row 1:
+>   STOCKKEY = X'766810ac390c6d3bc0a8015c'
+
+select * from mstockalias where STOCKKEY = X'766810ac390c6d3bc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00508B102
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ACTUATE CORP
+>     PRIMARYKEY = X'766910ac390c6d3bc0a8015c'
+>       STOCKKEY = X'766810ac390c6d3bc0a8015c'
+>         SYMBOL = ACTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00508B102
+>           DATE = TIMESTAMP '2003-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ACTUATE CORP
+>     PRIMARYKEY = X'be215ed33ed6bc54c0a80146'
+>       STOCKKEY = X'766810ac390c6d3bc0a8015c'
+>         SYMBOL = ACTUE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00508B102
+>           DATE = TIMESTAMP '2003-06-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ACTUATE CORP
+>     PRIMARYKEY = X'49d703b53ee9313dc0a80146'
+>       STOCKKEY = X'766810ac390c6d3bc0a8015c'
+>         SYMBOL = ACTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00508B102
+>           DATE = TIMESTAMP '2010-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ACTUATE CORP
+>     PRIMARYKEY = X'33343d114cd1e34bc0a80146'
+>       STOCKKEY = X'766810ac390c6d3bc0a8015c'
+>         SYMBOL = BIRT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00508B102
+>           DATE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ACTUATE CORP
+>     PRIMARYKEY = X'084b3f3554beee7bc0a86f92'
+>       STOCKKEY = X'766810ac390c6d3bc0a8015c'
+>         SYMBOL = BIRT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XB
+
+select * from mposition where stockkey=X'766810ac390c6d3bc0a8015c' and totalshares > 0;
+nothing
+select * from mposition where stockkey=X'766810ac390c6d3bc0a8015c' and totalshares < 0;
+nothing
+select count(*) from mposition where stockkey=X'766810ac390c6d3bc0a8015c' and totalshares = 0;
+> Row 1:
+>   _C001 = 558.000000
+
+
+I checked the stockinfopage for BIRT and current holdings is all zero'ed out - can close this out, but need to find out what Kim did
+

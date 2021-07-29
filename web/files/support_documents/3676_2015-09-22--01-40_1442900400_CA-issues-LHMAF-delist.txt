@@ -1,0 +1,677 @@
+Hi Marty - I sent this message previous but have not heard back.
+
+I had LHMAF in my port sdgix and the company was bought by Western Lithium WLCDF for stock.
+
+Those shares should be in my portfolio.
+
+Please have a look
+
+Thank you
+
+Steven Bulwa
+
+
+LHMAF
+date:    9/16/15
+ticker:   LHMAF
+
+yahoo:
+Lithium Americas Corp. (LHMAF) -Other OTC
+0.22 0.00(0.00%) Sep 3
+Add to Portfolio
+Prev Close:	0.22
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	0.073475
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	0.17 - 0.39
+Volume:	0
+Avg Vol (3m):	45,245
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.02
+Div & Yield:	N/A (N/A
+
+quantum:  nothing 
+
+oursite:
+Symbol: LHMAF	Name: Lithium Americas Corp	Price: $0.22
+Volume:	Sector: Materials	Change:
+Short Volume: 56,253	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 56,253	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.24	Year High: $0.38	High:
+200 Day Ave: $0.26	Year Low: $0.00	Low:
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=LHMAF
+
+check MAdmin
+Stock:Lithium Americas Corp  Symbol:LHMAF
+Date: 09/16/2015
+
+1 users found
+1	sbulwa	
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'LHMAF';  
+> Row 1:
+>   STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+
+select * from mstockalias where stockkey=X'5eb5144b4c9a8491c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 536800105
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Lithium Americas Corp
+>     PRIMARYKEY = X'5eb6144b4c9a8491c0a80146'  <---- set identitykey here 
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>         SYMBOL = LHMAF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 536800105
+>           DATE = TIMESTAMP '2015-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Lithium Americas Corp
+>     PRIMARYKEY = X'366459b355ef6b4ec0a86f92'  <--- delete this 
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>         SYMBOL = LHMAF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'366459b355ef6b4ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'366459b355ef6b4ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|LHMAF|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 112110428
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 18330454
+>        BB_COMPANYNAME = Lithium Americas Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = LHMAF   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-04 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = LHMAF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-09-04 00:00:00.000000'
+>            PRIMARYKEY = X'6132627c55ea22f8c0a86f92'  <---- delete 
+>               VERSION = NULL
+	any tickets?
+	select count(*) from mticket where sourcekey=X'6132627c55ea22f8c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+no tickets
+let's delete this 
+delete from mcorporateaction   where  PRIMARYKEY = X'6132627c55ea22f8c0a86f92';
+
+>     PRIMARYKEY = X'5eb6144b4c9a8491c0a80146'  <---- set identitykey here 
+select * from mstock where primarykey=X'5eb5144b4c9a8491c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'366459b355ef6b4ec0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'5eb5144b4c9a8491c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19205
+>   WINDOWIDENTITYKEY = NULL
+
+update mstock set IDENTITYKEY = X'5eb6144b4c9a8491c0a80146' where primarykey=X'5eb5144b4c9a8491c0a80146';
+delete the mstockalias record now
+>     PRIMARYKEY = X'366459b355ef6b4ec0a86f92'  <--- delete this 
+delete from mstockalias where PRIMARYKEY = X'366459b355ef6b4ec0a86f92';
+
+ok, we should only have one mstockalias 
+select * from mstockalias where stockkey=X'5eb5144b4c9a8491c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 536800105
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Lithium Americas Corp
+>     PRIMARYKEY = X'5eb6144b4c9a8491c0a80146'
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>         SYMBOL = LHMAF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+
+
+
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='LHMAF'  order by BB_EFFECTIVE;
+nothing 
+
+ah - I found the article when I searched on Western Lithium
+
+http://finance.yahoo.com/news/western-lithium-lithium-americas-announce-223757143.html
+VANCOUVER, BRITISH COLUMBIA and TORONTO, ONTARIO--(Marketwired - Sep 4, 2015) - Western Lithium USA Corporation ("Western Lithium") (WLC.TO)(WLCDF) and Lithium Americas Corp. ("Lithium Americas") (LAC.TO) are pleased to announce that they have completed the plan of arrangement (the "Arrangement"), pursuant to which Western Lithium acquired all of the issued and outstanding common shares of Lithium Americas (the "Lithium Americas Shares") in exchange for 0.789 common shares of Western Lithium (the "Exchange Ratio") for each Lithium Americas Share held.
+
+get WLCDF    0.789
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock LHMAF
+>>>> dbtool started at 2015-09-16 16:39:04 -0400
+stock: LHMAF
+  PK       : [5EB5144B4C9A8491C0A80146]
+  companyID: [19205]
+  symbol   : [LHMAF]
+  name     : [Lithium Americas Corp]
+  date     : [2010-09-22 00:00:00]
+  status   : [Active]
+stock: LHMAF
+  PK       : [5EB5144B4C9A8491C0A80146]
+  companyID: [19205]
+  symbol   : [LHMAF]
+  name     : [Lithium Americas Corp]
+  date     : [2015-09-08 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-09-16 16:39:05 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19205
+2015-08-17 (Mon) [5341]: O:0.2300 H:0.2300 L:0.2300 C:0.2300 V:104400 TSO:0 A:0.2300 R:1.0000 CA:0.0000
+2015-08-18 (Tue) [5342]: O:0.2400 H:0.2400 L:0.2300 C:0.2400 V:141303 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2015-08-19 (Wed) [5343]: O:0.2300 H:0.2300 L:0.2200 C:0.2200 V:171951 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2015-08-20 (Thu) [5344]: O:0.2200 H:0.2200 L:0.2100 C:0.2100 V:107000 TSO:0 A:0.2100 R:1.0000 CA:0.0000
+2015-08-21 (Fri) [5345]: O:0.2200 H:0.2200 L:0.1900 C:0.1900 V:24650 TSO:0 A:0.1900 R:1.0000 CA:0.0000
+2015-08-22 (Sat) [5346]: <WEEKEND>
+2015-08-23 (Sun) [5347]: <WEEKEND>
+2015-08-24 (Mon) [5348]: O:0.1700 H:0.2000 L:0.1500 C:0.1900 V:27108 TSO:0 A:0.1900 R:1.0000 CA:0.0000
+2015-08-25 (Tue) [5349]: O:0.2000 H:0.2100 L:0.1900 C:0.1900 V:11530 TSO:0 A:0.1900 R:1.0000 CA:0.0000
+2015-08-26 (Wed) [5350]: O:0.2100 H:0.2200 L:0.2000 C:0.2200 V:160700 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2015-08-27 (Thu) [5351]: O:0.2400 H:0.2500 L:0.2200 C:0.2400 V:77940 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2015-08-28 (Fri) [5352]: O:0.2500 H:0.2500 L:0.2300 C:0.2500 V:26600 TSO:0 A:0.2500 R:1.0000 CA:0.0000
+2015-08-29 (Sat) [5353]: <WEEKEND>
+2015-08-30 (Sun) [5354]: <WEEKEND>
+2015-08-31 (Mon) [5355]: O:0.2500 H:0.2500 L:0.2300 C:0.2400 V:5293 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2015-09-01 (Tue) [5356]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:12500 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2015-09-02 (Wed) [5357]: O:0.2300 H:0.2300 L:0.2200 C:0.2200 V:7500 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2015-09-03 (Thu) [5358]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:5000 TSO:0 A:0.2200 R:1.0000 CA:0.0000  <--- right here 
+2015-09-04 (Fri) [5359]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:5000 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2015-09-05 (Sat) [5360]: <WEEKEND>
+2015-09-06 (Sun) [5361]: <WEEKEND>
+2015-09-07 (Mon) [5362]: <HOLIDAY>
+2015-09-08 (Tue) [5363]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:5000 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'5eb5144b4c9a8491c0a80146' and shares > 0 order by closed; 
+> Row 9:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-08-25 16:01:07.000000'
+>        COMMENT = 
+>     COMMISSION = 320.920099
+>   CURRENTORDER = X'937708c353d2779ac0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b3791db6397738e5c0a801e1'
+>       MODIFIED = NULL
+>            NET = 6739.322083
+>         OPENED = TIMESTAMP '2014-07-25 11:28:26.000000'
+>          PRICE = 0.257305
+>     PRIMARYKEY = X'937508c353d2779ac0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 26192.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'5eb5144b4c9a8491c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'5eb5144b4c9a8491c0a80146'  and totalshares < 0);
+no short
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'5eb5144b4c9a8491c0a80146'  and totalshares < 0)));
+
+
+
+do we have this stock?    no we don't have it
+select * from mstockalias where symbol='WLCDF';
+select * from mcorporateaction where BB_SECID='WLCDF';
+
+let's list WLCDF first  let's use yesterday so that there is no conflict
+Western Lithium USA Corporation 
+xignite:   has it and the cusip is 95854Q109  is good 
+WLCDF|QB|95854Q109|Western Lithium USA Corporation|20140902
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select * from mstockalias where symbol='WLCDF';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 95854Q109
+>           DATE = TIMESTAMP '2014-09-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Western Lithium USA Corporation
+>     PRIMARYKEY = X'd785205b55f9d839c0a86fab'
+>       STOCKKEY = X'd784205b55f9d839c0a86fab'
+>         SYMBOL = WLCDF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+it is there 
+
+ok now we can do the delist of LHMAF
+apply the acquis
+20150903  acquis 
+there are 1 members who hold this stock
+quantum:  nothing 
+last ticket:  2014-08-25  PRICE = 0.257305
+last price:  2015-09-03 (Thu) [5358]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:5000 TSO:0 A:0.2200 R:1.0000 CA:0.0000  <--- right here 
+
+going with 20150903 type 2 stock    WLCDF    0.789
+
+
+/Marketocracy/bin/cahelper -symbol  LHMAF  -effective 20150903 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 0.789 -purchaser WLCDF   >& /Users/build/caout/LHMAF.20150916-ACQUIS-WLCDF.out
+LHMAF.20150916-ACQUIS-WLCDF.out
+stocks2:~/caout build$ tail -f LHMAF.20150916-ACQUIS-WLCDF.out
+D: (09-16 17:03:25.627) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-16 17:04:01.266) cahelper started on 2015-09-16 17:04:01 -0400
+
+D: (09-16 17:04:01.549) There are [0] open tickets for LHMAF on 20150903
+D: (09-16 17:04:01.945) StockFileLoad Version:4.0
+D: (09-16 17:04:01.945) Loading Stock Data
+D: (09-16 17:05:01.093) Building Lookup Index
+D: (09-16 17:05:10.225) Finished Building Index
+D: (09-16 17:05:16.811) Finished Loading Stock Data
+D: (09-16 17:05:16.877) Connection to 192.168.111.157:6666 succeeded
+D: (09-16 17:05:16.968) {
+    "ACQUIRED_STOCK" = LHMAF; 
+    "ACQUIRING_STOCK" = WLCDF; 
+    AMOUNT = 0.789; 
+    APPLIED = 1; 
+    DATE = 20150903; 
+    FUNDS = ("sbulwa/timer", "sbulwa/sbulwa's moneymaker"); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = WLCDF; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-16 17:05:17.704) SUCCESS
+D: (09-16 17:05:17.705) cahelper finished 2015-09-16 17:05:17 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'5eb5144b4c9a8491c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 536800105
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Lithium Americas Corp
+>     PRIMARYKEY = X'5eb6144b4c9a8491c0a80146'
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>         SYMBOL = LHMAF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 536800105
+>           DATE = TIMESTAMP '2015-09-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Lithium Americas Corp
+>     PRIMARYKEY = X'6848210355f9d98cc0a86fab'
+>       STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+>         SYMBOL = LHMAF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'6848210355f9d98cc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'6848210355f9d98cc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|LHMAF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.789000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150916:050401
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-03 00:00:00.000000'
+>         BB_IDENTIFIER = WLCDF     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = WLCDF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-03 00:00:00.000000'
+>            PRIMARYKEY = X'651c210355f9d941c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'651c210355f9d941c0a86fab';
+> Row 1:
+>   _C001 = 4.000000
+select distinct stockkey from mticket where sourcekey = X'651c210355f9d941c0a86fab';
+> Row 1:
+>   STOCKKEY = X'5eb5144b4c9a8491c0a80146'
+> Row 2:
+>   STOCKKEY = X'd784205b55f9d839c0a86fab'
+
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'651c210355f9d941c0a86fab'));
+there are 2 fundkeys, save to CA issues LHMAF fundkeys.txt
+
+For Beta case
+LHMAF no longer trades but is still active on our site - need to delist 
+
+check on 9/17/15   invalidate funds
+check MAdmin
+
+member:  sbulwa
+
+your holdings of LHMAF	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+timer	0	$.00	0.00%
+sdgix	0	$.00	0.00%
+ 	 	[ Trade this stock ]
+
+
+timer fund
+LEDGER
+Date	Start	Change	End	Type
+Jul 24, 2013		24714	24714	Buy
+Aug 19, 2013	24714	13500	38214	Buy
+Sep 03, 2015	38214	-38214		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 24, 2013	24,714	$593.69	$12,467.46	$0.50
+Aug 19, 2013	13,500	$327.41	$6,875.67	$0.51
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+
+sdgix fund 
+LEDGER
+Date	Start	Change	End	Type
+Jul 24, 2013		24714	24714	Buy
+Aug 22, 2013	24714	14763	39477	Buy
+Sep 12, 2013	39477	200	39677	Buy
+Oct 14, 2013	39677	13175	52852	Buy
+Dec 27, 2013	52852	25612	78464	Buy
+Apr 07, 2014	78464	10000	88464	Buy
+Aug 25, 2014	88464	26192	114656	Buy
+Sep 03, 2015	114656	-114656		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 24, 2013	24,714	$593.69	$12,467.46	$0.50
+Aug 22, 2013	14,763	$354.95	$7,454.04	$0.50
+
+
+Sep 12, 2013	200	$4.10	$86.00	$0.43
+Oct 14, 2013	13,175	$216.24	$4,541.11	$0.34
+Dec 27, 2013	25,612	$378.75	$7,953.73	$0.31
+Apr 7, 2014	10,000	$113.05	$2,374.05	$0.24
+Aug 25, 2014	26,192	$320.92	$6,739.32	$0.26
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+timer fund:  38214  * 0.789 = 30150 
+sdgix fund:  114656 * 0.789 = 90463
+
+let's look at the ledgers for 20150903 
+
+sdgix fund:   trades on September 03, 2015	
+ 
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	LHMAF	114,656	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	 	90,463	$0.00	$0.00	$0.00	$0.00   <-- goodWLCDF placeholders
+
+timer fund:
+trades on September 03, 2015
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	LHMAF	38,214	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	 	30,150	$0.00	$0.00	$0.00	$0.00  <-- good WLCDF
+
+
+need to add backdated prices for WLCDF
+select * from mstock where primarykey in (select distinct stockkey from mstockalias where symbol='WLCDF');
+> Row 1:
+>         IDENTITYKEY = X'd785205b55f9d839c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'd784205b55f9d839c0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 28764
+>   WINDOWIDENTITYKEY = NULL
+
+get prices from 9/2/2015 through today
+
+CA issues WLCDF prices to be loaded.txt
+
+ok go to marketdata@stocks2
+
+select * from stockprices where companyID=28764;
+nothing
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5370,28764,2600,2800,2600,2700,83600);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5369,28764,2700,2800,2600,2600,189200);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5366,28764,3100,3100,2700,2700,325700);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5365,28764,3000,3100,2900,2900,88100);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5364,28764,3200,3200,2900,2900,192400);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5363,28764,3000,3200,3000,3100,143700);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5359,28764,3100,3100,2900,2900,187400);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5358,28764,3200,3200,3000,3000,160100);insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5357,28764,3100,3200,2800,3200,379600);
+
+select * from stockprices where companyID=28764 order by daynumber;
+> Row 1:
+>   DAYNUMBER = 5357
+>   COMPANYID = 28764
+>      OPENED = 3100
+>        HIGH = 3200
+>         LOW = 2800
+>      CLOSED = 3200
+>      VOLUME = 379600
+> Row 2:
+>   DAYNUMBER = 5358
+>   COMPANYID = 28764
+>      OPENED = 3200
+>        HIGH = 3200
+>         LOW = 3000
+>      CLOSED = 3000
+>      VOLUME = 160100
+> Row 3:
+>   DAYNUMBER = 5359
+>   COMPANYID = 28764
+>      OPENED = 3100
+>        HIGH = 3100
+>         LOW = 2900
+>      CLOSED = 2900
+>      VOLUME = 187400
+> Row 4:
+>   DAYNUMBER = 5363
+>   COMPANYID = 28764
+>      OPENED = 3000
+>        HIGH = 3200
+>         LOW = 3000
+>      CLOSED = 3100
+>      VOLUME = 143700
+> Row 5:
+>   DAYNUMBER = 5364
+>   COMPANYID = 28764
+>      OPENED = 3200
+>        HIGH = 3200
+>         LOW = 2900
+>      CLOSED = 2900
+>      VOLUME = 192400
+> Row 6:
+>   DAYNUMBER = 5365
+>   COMPANYID = 28764
+>      OPENED = 3000
+>        HIGH = 3100
+>         LOW = 2900
+>      CLOSED = 2900
+>      VOLUME = 88100
+> Row 7:
+>   DAYNUMBER = 5366
+>   COMPANYID = 28764
+>      OPENED = 3100
+>        HIGH = 3100
+>         LOW = 2700
+>      CLOSED = 2700
+>      VOLUME = 325700
+> Row 8:
+>   DAYNUMBER = 5369
+>   COMPANYID = 28764
+>      OPENED = 2700
+>        HIGH = 2800
+>         LOW = 2600
+>      CLOSED = 2600
+>      VOLUME = 189200
+> Row 9:
+>   DAYNUMBER = 5370
+>   COMPANYID = 28764
+>      OPENED = 2600
+>        HIGH = 2800
+>         LOW = 2600
+>      CLOSED = 2700
+>      VOLUME = 83600
+
+invalidate stock prices from 2015-09-02
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-09-02
+
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-09-16
+D: (17:26:20.300) Invalidate all prices >= 2015-09-02 (5357)
+
+
+good
+
+check on 9/17/15
+
+LHMAF should be acquired on 9/3/15  by WLCDF
+WLCDF should be listed and have a chart from 9/2/15
+
+member should have shares of WLCDF
+
+
+
+
+9/17/15
+LHMAF has been acquired	right curve
+ 	 	
+Lithium Americas Corp [LHMAF] acquired by Western Lithium USA Corporation [WLCDF] on 2015-09-03 00:00:00.
+
+
+your holdings of LHMAF	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+timer	0	$.00	0.00%
+sdgix	0	$.00	0.00%
+
+expand  sdgix
+LEDGER
+Date	Start	Change	End	Type
+Jul 24, 2013		24714	24714	Buy
+Aug 22, 2013	24714	14763	39477	Buy
+Sep 12, 2013	39477	200	39677	Buy
+Oct 14, 2013	39677	13175	52852	Buy
+Dec 27, 2013	52852	25612	78464	Buy
+Apr 07, 2014	78464	10000	88464	Buy
+Aug 25, 2014	88464	26192	114656	Buy
+Sep 03, 2015	114656	-114656		Corporate Action   20150903
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 24, 2013	24,714	$593.69	$12,467.46	$0.50
+Aug 22, 2013	14,763	$354.95	$7,454.04	$0.50
+Sep 12, 2013	200	$4.10	$86.00	$0.43
+Oct 14, 2013	13,175	$216.24	$4,541.11	$0.34
+Dec 27, 2013	25,612	$378.75	$7,953.73	$0.31
+Apr 7, 2014	10,000	$113.05	$2,374.05	$0.24
+Aug 25, 2014	26,192	$320.92	$6,739.32	$0.26
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+
+trades on September 03, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	LHMAF	114,656	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	WLCDF	90,463	$0.00	$0.00	$0.00	$0.00
+
+
+9/18/15
+check LHMAF
+ LHMAF has been acquired	right curve
+ 	 	
+Lithium Americas Corp [LHMAF] acquired by Western Lithium USA Corporation [WLCDF] on 2015-09-03 00:00:00.
+MADmin  clear 
+
+check WLCDF
+Symbol: WLCDF	Name: Western Lithium USA Corporation	Price: $0.26
+Volume: 293,185	Sector: Unclassified	Change: $0.00
+Short Volume: 45,706	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 45,706	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.06	Year High: $0.32	High: $0.28
+200 Day Ave: $0.02	Year Low: $0.00	Low: $0.26
+
+
+it's there check chart 
+chart is there 
+
+invalidated
+reprice 
+2015-09-03
+
+I've repriced 
+
+closing this out 
+ 	 	 
+
+
+
+
+
+
+
+
+
+
+ 	 	 
+ 	 	 
+
+
+
+

@@ -1,0 +1,308 @@
+date: 5/29/15
+ticker:  DLAKY   need to list it
+Ticket Number:	3142
+Portfolio Username:	steve1968nj
+Problem Type:
+Trading Issue
+Subject:
+DLAKY
+Description:
+I entered an order for Lufthansa on the 27th, but there has been no buying action. Is this security, which trades in Europe, out of scope or is its trading volume so low it has delayed this purchase? Recent volume has been ~ 25,000 to 30,000 shares per day.
+
+
+yahoo
+Deutsche Lufthansa Aktiengesellschaft (DLAKY) -Other OTC
+Watchlist
+14.18 Down 0.31(2.14%) 1:12PM EDT
+Add to Portfolio
+Prev Close:	14.49
+Open:	14.18
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	19.20
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	14.09 - 14.19
+52wk Range:	13.11 - 27.12
+Volume:	23,681
+Avg Vol (3m):	31,542
+Market Cap:	N/A
+P/E (ttm):	7.96
+EPS (ttm):	1.77
+Div & Yield:	N/A (N/A)
+
+quantum  nothing
+
+xignite  - it is there, getting a feed  251561304  is good
+
+ your holdings of DLAKY 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+SMF2 	0 	N/A 	N/A
+SMF0 	0 	N/A 	N/A
+SMF 	0 	N/A 	N/A
+SMF1 	5,000 	$68,950.00 	3.74%
+SMF4 	0 	N/A 	N/A
+SMF6 	5,000 	$68,950.00 	3.84% 
+
+
+
+select distinct stockkey from mstockalias where symbol='DLAKY';
+nothing
+select * from mcorporateaction where aliaskey is null and BB_SECID='DLAKY';
+no list 
+
+let's list it  as of today
+DLAKY|U|251561304|Deutsche Lufthansa Aktiengesellschaft|20150529
+
+put this in the symadd.txt
+then run this
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+Debugger() was called!
+Debugger() was called!
+/Marketocracy/bin/cahelper -symbol DLAKY -effective 20150529 -type EQY_LIST -exchange UU >& /Users/build/caout/DLAKY.20150529-EQY_LIST.out
+DLAKY.20150529-EQY_LIST.out
+stocks:~/caout build$ tail -f DLAKY.20150529-EQY_LIST.out
+D: (05-29 14:06:08.037) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-29 14:06:32.509) cahelper started on 2015-05-29 14:06:32 -0400
+
+D: (05-29 14:06:35.912) {
+    APPLIED = 1; 
+    DATE = 20150529; 
+    "NEW_EXCHANGE" = OTCBB; 
+    "NEW_LIST" = DLAKY; 
+    NOTES = "N.A."; 
+    SYMBOL = DLAKY; 
+    TYPE = "EQY_LIST"; 
+}
+D: (05-29 14:06:36.024) SUCCESS
+D: (05-29 14:06:36.024) cahelper finished 2015-05-29 14:06:36 -0400
+
+select distinct stockkey from mstockalias where symbol='DLAKY';
+> Row 1:
+>   STOCKKEY = X'1a1554145568aaa8c0a86f92'
+select * from mstockalias where STOCKKEY = X'1a1554145568aaa8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 0
+>     PRIMARYKEY = X'1a1654145568aaa8c0a86f92'
+>       STOCKKEY = X'1a1554145568aaa8c0a86f92'
+>         SYMBOL = DLAKY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+update mstockalias set cusip='251561304' where PRIMARYKEY = X'1a1654145568aaa8c0a86f92';
+update mstockalias set name='Deutsche Lufthansa Aktiengesellschaft' where PRIMARYKEY = X'1a1654145568aaa8c0a86f92';
+
+select distinct gicskey from mstockalias where symbol='AAL';
+not set
+how abotu detla
+select distinct gicskey from mstockalias where symbol='DAL';
+> Row 1:
+>   GICSKEY = 20302010
+update mstockalias set GICSKEY='20302010'  where SYMBOL = 'DLAKY';
+update mstockalias set STYLEKEY='LG'  where SYMBOL = 'DLAKY';
+select * from mstockalias where STOCKKEY = X'1a1554145568aaa8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 251561304
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Deutsche Lufthansa Aktiengesellschaft
+>     PRIMARYKEY = X'1a1654145568aaa8c0a86f92'
+>       STOCKKEY = X'1a1554145568aaa8c0a86f92'
+>         SYMBOL = DLAKY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = LG
+select * from mcorporateaction where aliaskey=X'1a1654145568aaa8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1a1654145568aaa8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UU|CP_TKR|DLAKY|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150529:020632
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = DLAKY     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = DLAKY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'1a0b54145568aaa8c0a86f92'
+>               VERSION = NULL
+
+
+done check on 5/30/15 after the nightly load - do a sample buy
+nake sure it prices
+
+6/1/15
+it is there, entered a test buy on legacy
+check on new site and do a buy also
+
+6/2/15
+both buys went through from the old and new sites - closing this out 
+
+
+
+reopening this   member had an open order, let's fill it
+
+Member Name
+Steven Harvey
+Username
+steve1968nj
+Fund Symbols
+SMF6
+Stock Tickers
+DLAKY  
+open order not filling
+
+login as him: steve1968nj  password:  004999
+
+nothing showing on the old site as far as filled or open orders 
+bnew site
+Fund	Type	Symbol	Open Date	Limit	Current	Shares	Fills	Order Type	Status	Actions
+SMF1	Buy	DLAKY	May 27, 2015 10:26 PM	$0.00	$14.62	5000	0	GTC	Pending	Cancel
+
+today 14.03 to 14.18
+we listed DLKAY on 5/29 check the prices 
+Date			Open	High	Low		Close	Volume	Adj Close*
+Jun 3, 2015		14.18	14.31	14.17	14.30	20,600	14.30
+Jun 2, 2015		14.04	14.19	14.04	14.06	14,700	14.06
+Jun 1, 2015		13.98	14.03	13.88	13.95	42,000	13.95
+May 29, 2015	14.18	14.19	14.09	14.18	29,900	14.18
+
+let's fill these
+/Marketocracy/Scripts/build/bin/backdatedtrade.py steve1968nj SMF6 20150601 DLAKY 5000 13.90 
+Trading 5000.0 shares of Deutsche Lufthansa Aktiengesellschaft on Jun 01, 2015 at 13.9
+manager: steve1968nj Steven Harvey
+fund: SMF6
+building trade (has to load stock prices first)
+price = 13.9
+buying 5000.0 shares of DLAKY at 13.9 on 20150601
+invaldating fund prices from Jun 01, 2015
+Done
+
+
+get the fundkey for this fund
+/Marketocracy/bin/dbtool lookup fund steve1968nj
+>>>> dbtool started at 2015-06-07 08:00:46 -0400
+fund: steve1968nj
+  PK: [EA2503504034DE3DC0A80133]
+  symbol: [SMF2]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [4E8822393BC1B91FC0A80119]
+  symbol: [SMF1]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [EDE508963C74F9BAC0A801E0]
+  symbol: [SMF2]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [7A25051D3CAC83D3C0A80119]
+  symbol: [SMF0]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [48A46AB63E1F51C1C0A80133]
+  symbol: [SMF]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [912B514741E88A84C0A80133]
+  symbol: [SMF3]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [537328424286208CC0A80133]
+  symbol: [SMFY]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [B35033F0442BD1F9C0A80134]
+  symbol: [SMA]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [E8BB0A1245145167C0A80134]
+  symbol: [SMF4]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [EF94146445E7845EC0A80133]
+  symbol: [SMF1]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [54633B1546166C7CC0A80133]
+  symbol: [SMFS]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [547C3B1546167305C0A80133]
+  symbol: [SMFH]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [C41727A847110A90C0A80135]
+  symbol: [SMF1]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [EC77113349613B93C0A80135]
+  symbol: [SMF1]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [2E1743E24E7803FEC0A80135]
+  symbol: [SMF3]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [3D412B094E78785BC0A80132]
+  symbol: [SMF4]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [68372B094E787EC9C0A80132]
+  symbol: [SMF5]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+fund: steve1968nj
+  PK: [93F418494E7E8A5EC0A80135]
+  symbol: [SMF6]
+  managerKey: [B9D81F553BAE79C3C0A80118]
+  loginName: [steve1968nj]
+<<<< dbtool finished at 2015-06-07 08:00:46 -0400
+
+
+invalidate the fund  2015-05-29
+/Marketocracy/bin/fptool invalidateFund EC77113349613B93C0A80135;
+/Marketocracy/bin/fptool invalidateFund 93F418494E7E8A5EC0A80135;
+
+reprice I mean
+EC77113349613B93C0A80135,93F418494E7E8A5EC0A80135
+
+field-fund-keyDone!
+2 Funds Processed
+12 Queries Processed
+
+check  password  steve1968nj  	004999  let's log in as him 
+he has it on the new site in both the SMF1 and SMF6 funds, closing this out

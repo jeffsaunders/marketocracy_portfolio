@@ -1,0 +1,343 @@
+date: 2/3/15
+NCQ	NovaCopper Inc		0.0%	500	$0.00	$0.00	Details 
+yahoo is there
+quantum is there
+xignite is there 66988K102
+not sure why this is not pricing?
+
+maybe a collision?
+select distinct stockkey from mstockalias where symbol='NCQ';
+
+> Row 1:
+>   STOCKKEY = X'0567561d4f987fb8c0a80146'
+> Row 2:
+>   STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+
+
+**********************************************
+> NCQ 1:
+>   STOCKKEY = X'0567561d4f987fb8c0a80146'
+this one started as w and then did a chg tkr
+***********************************************
+select * from mstockalias where STOCKKEY = X'0567561d4f987fb8c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-04-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'0568561d4f987fb8c0a80146'
+>       STOCKKEY = X'0567561d4f987fb8c0a80146'
+>         SYMBOL = NCQw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'0568561d4f987fb8c0a80146';
+> Row 1:
+>              ALIASKEY = X'0568561d4f987fb8c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UA|CP_TKR|NCQw|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 63480251
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 28385409
+>        BB_COMPANYNAME = NovaCopper Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-25 00:00:00.000000'
+>         BB_IDENTIFIER = NCQw    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NCQw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-04-25 00:00:00.000000'
+>            PRIMARYKEY = X'51aa4f9f4f987ee5c0a80146'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66988K102
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'99340cad4fa068f6c0a80146'
+>       STOCKKEY = X'0567561d4f987fb8c0a80146'
+>         SYMBOL = NCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'99340cad4fa068f6c0a80146';
+> Row 1:
+>              ALIASKEY = X'99340cad4fa068f6c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NCQw US|CP_NEW_TKR|NCQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 63550526
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 28385409
+>        BB_COMPANYNAME = NovaCopper Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = NCQw    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-17 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NCQw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-04-24 00:00:00.000000'
+>            PRIMARYKEY = X'181c08d94f972c26c0a80146'
+>               VERSION = NULL
+
+select count(*) from mticket where stockkey=X'0567561d4f987fb8c0a80146';
+> Row 1:
+>   _C001 = 0.000000
+that is good news!
+
+***************************************************
+> Row 2:
+>   STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+this one came from a spinoff I would bet 
+***************************************************
+select * from mstockalias where STOCKKEY = X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146'
+>       STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+>         SYMBOL = NCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'3a1b132b4fa06ec6c0a80146';
+nothing
+select count(*) from mticket where stockkey=X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   _C001 = 511.000000
+
+select distinct sourcekey from mticket where stockkey=X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+select count(*) from  mticket where stockkey=X'3a1a132b4fa06ec6c0a80146' and sourcekey is null;
+> Row 1:
+>   _C001 = 64.000000
+
+> Row 2:
+>   SOURCEKEY = X'82d405e94fa06798c0a80146'
+select count(*) from  mticket where stockkey=X'3a1a132b4fa06ec6c0a80146' and sourcekey is not null;
+> Row 1:
+>   _C001 = 447.000000
+
+
+for NCQ1 there are no mtickets, we can just delete that 
+**********************************************
+> NCQ 1:
+>   STOCKKEY = X'0567561d4f987fb8c0a80146'
+this one started as w and then did a chg tkr
+delete this total 
+
+set commit false;
+
+delete from mstock where primarykey=  X'0567561d4f987fb8c0a80146'; 
+
+delete from mwindowstock where stockkey=X'0567561d4f987fb8c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'0567561d4f987fb8c0a80146');
+
+delete from mstockalias where stockkey=X'0567561d4f987fb8c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'0567561d4f987fb8c0a80146');   
+
+delete from mposition where stockkey=X'0567561d4f987fb8c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'0567561d4f987fb8c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'0567561d4f987fb8c0a80146');
+
+delete from mticket where stockkey=X'0567561d4f987fb8c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'0567561d4f987fb8c0a80146';  
+
+commit;
+
+set commit true;
+
+ok, there should only be one stockkey 
+select distinct stockkey from mstockalias where symbol='NCQ';
+> Row 1:
+>   STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+
+select * from mstockalias where STOCKKEY = X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146'
+>       STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+>         SYMBOL = NCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+need the cusip, the gics and the style 
+
+>        GICSKEY = 15104020
+update mstockalias set GICSKEY = '15104020' where PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146';
+
+Market Cap:	31.35M
+update mstockalias set STYLEKEY = 'XG' where PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146';
+cusip is 66988K102
+update mstockalias set CUSIP = '66988K102' where PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66988K102
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146'
+>       STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+>         SYMBOL = NCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+
+check on 2/4/15
+we may need to update the prices
+
+
+2/4/15 - no prices for NCQ
+let's see what we have
+select distinct stockkey from mstockalias where symbol='NCQ';
+> Row 1:
+>   STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+select * from mstockalias where STOCKKEY = X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66988K102
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NovaCopper Inc
+>     PRIMARYKEY = X'3a1b132b4fa06ec6c0a80146'
+>       STOCKKEY = X'3a1a132b4fa06ec6c0a80146'
+>         SYMBOL = NCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+
+select * from mstock where PRIMARYKEY = X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'3a1b132b4fa06ec6c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'3a1a132b4fa06ec6c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 22415
+>   WINDOWIDENTITYKEY = NULL
+
+select distinct sourcekey from mticket where stockkey=X'3a1a132b4fa06ec6c0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+> Row 2:
+>   SOURCEKEY = X'82d405e94fa06798c0a80146'
+
+select * from mcorporateaction where primarykey=X'82d405e94fa06798c0a80146';
+> Row 1:
+>              ALIASKEY = X'eff814a04096b7abc0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|NovaCopper Inc|CP_ID_BB_COMP|28385409|CP_ID_BB_SEC|1001|CP_TERMS|1 per 6|CP_RATIO|0.166667|CP_PAY_DT|20120430|CP_RECORD_DT|20120427|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.902371|CP_ADJ_DT|20120501|CP_TKR|NCQ US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 59286685
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 110068
+>        BB_COMPANYNAME = Novagold Resources Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = NG      US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-16 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = NG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'82d405e94fa06798c0a80146'
+>               VERSION = NULL
+
+spin off from NG
+anyone have NCQ now?
+MAdmin
+Stock:NovaCopper Inc  Symbol:NCQ
+Date: 02/04/2015
+
+251 users found
+
+1	2466846	55mph	aakav	aam	adam_foust	afberry	alextoshev	amanda87	amboy	anaxagoras
+2	apascualy	appy_6	aristote	atlasblue	atlasblue59	axenolith	babdul	balgacs	banman87	bbonomini
+3	bbtest2	beared	benmackay	bhenderson	bp11	bquortrup1	brpanthers99	bsess	bstarr13	btate259
+4	bvbfan	calman318	ccbuck	cfalcon	chaoswk	charris	chelsea713	chico237	chris_nairn	chromerider
+5	claude22	cmunny	cosmic_power	crodriguez3	crutherglen	cyberman1	danohd44	darrencoble	dconnors	de_mols
+6	dennis2461	diepvunguyen	disturbed	dizsh	dklubin	dmanh	doppelaar	dpearce	drac	drusan
+7	dskuncaitis	dtorres990	dvhees	eckiecki2002	eddielee88	edfalc	emanoninc09	ematte	erichexagon	erikframe
+8	erode	eschmitzva	esublett	etgil9	flytiger	fxapprentice	garyhipp	gdoering	gdog477	gilgamesh
+9	gldbug800	glycogen	gmetrou	goldman	goldnut	golfazoid	gorilla	greenab	heightscapital	hernandez
+10	hookipa	hvan_bragt	ichiban	imeroz	imperialfleet	iwatt001	j026	jackburton	jaker3	jasteck
+11	jaybirddog	jayprince	jbailey	jbowers24	jczerw	jdberia	jgage	jhayes4	jimmymac	jlcookie20@aol.com
+12	jleibert	jmeek	jmikula	joefrocks	joeyeff@yahoo.com	joren	jrodder	jwachtman	kaiserbhuyan	kalib
+13	kama	kdrees	kikola	kipkeener	kiran	kis_ent	klandragan	kmaksimovich	kobyesh	kskinner16
+14	kuyeno	leketjj	lightraider	lilxboizquid	lincsbarn	lingram	loosegun	ltgguy	luckyddawg	luvnpeas
+15	lvanness	lwroblewski	matwgood@gmail.com	mdcshwartz	mediabull	medlerajm	mgonzalez261	microcapspeculator	milldoc	miragetusk
+16	mkzemmel	mlagarde	mlclarke100	mmeleski	mnytrouble	mpatterson2	mrcowie	mross	mrripley	myeh
+17	mytwogirls	nabootrader	nalsaadi	newbie	newlife1	nightpony	ninjatrader	njacoby	nlee	northstar
+18	nosro	nsxpower	omarm1984	omo	ottofeige	pbradford	perkdogz	phatyou	phoward	pjmmorin
+19	pkempinski	pmossal	polinesia	profrjb	psionman	pthurmanb	quienestupadre12	rad1	randy31947	ratutony
+20	rbendekgey	rcharles1	redgunners	redmak2	reedjames123	reglaub	regleo	reveille	rincoln	robhfeld
+21	rodo	rott	rreedom	rtshapiro	rwbil	rzart	scotstrickland	scouzer	sethatk	shui
+22	sillyhumberto	silverpig	silverstone	silverwood	smilingbear	souren	srombolli	stack888	stever	stifano
+23	stock_engineer	stock_sniffer	stocksniffer1	svanness	svillmow	sweaver	swh50	swingouton5	syoung8	tcasey
+24	tea650	tfischer	thayes6	timbo56	tksmith86	tree73	treefrog	trex_48001	tstevens622	tunecedemalis
+25	twshorey22	tylerroberts	vek	vimalchacko	warima	waxne	waynetr	westeringho	wmvjohnson	xandy
+26	xauzas	 
+
+
+kuyeno   let's use him
+/Marketocracy/bin/dbtool decryptpassword -loginName kuyeno
+	 Password = kensenses
+
+he has it from 4/30/12  SAFE fund
+checking the ledger  it has a price on 2/3/15  let's check 5/1/12
+no price on 5/1/12
+2015-01-09 is the date that xignite picked up prices
+check that date 20150109
+nope, let's just price it from 5/1/12
+
+/Marketocracy/Scripts/stocks/daily/stock-price-importer-bloomberg.rb s NCQ -b 20120501 -e 20150203 &
+
+it is running, just let it run
+
+now invalidate prices
+/Marketocracy/bin/StockPriceBuilder invalidate 2012-05-01
+
+OK
+
+check again on 2/5/15   use kuyeno  SAFE fund on 5/1/12
+current prices are there, not past history
+
+20150202 no price
+20150203 price
+let's try it from 1/20 through 2/2  
+
+/Marketocracy/Scripts/stocks/daily/stock-price-importer.rb -s NCQ -b 20150120 -e 20150202
+
+closing this out - it's there now
+
+
+

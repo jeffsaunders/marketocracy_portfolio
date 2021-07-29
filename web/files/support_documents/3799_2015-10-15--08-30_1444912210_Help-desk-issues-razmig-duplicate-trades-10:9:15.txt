@@ -1,0 +1,82 @@
+date: 10/13/15
+
+Type
+Portfolio Platform |
+Ticket
+3799
+Priority
+High
+Status
+Open
+Member Name
+Razmig Bulujian
+Username
+razmig
+Fund Symbols
+RBMF
+Stock Tickers
+N/A
+Description / Resources:
+Mon 10/12/2015 at 09:34 PM
+
+Several of the last batch of orders placed three days ago for this folio were "doubled" from 8.25% resulting in those positions becoming 2x their intended weight one of the order is still pending, afraid it too will end up becoming 2x its intended weight The doubling of orders appear to have only affected RBMF alone, since trades were placed for RPC as well. Please take the necessary steps to verify my original trades, correct the doubled orders and perhaps cancel the currently open doubled pending order The trade wizard does not appear to add or subtract the change in shares which occur when a trade is placed. Its caused issues in RPC which were simple to avoid in the legacy site to becoming an issue on any given day. Seven days would render a fund ineligible for rankling so I wonder why its still an issue after all these months of use.
+
+razmig   RBMF
+
+
+logged into his legacy account - looked at recent trades and did a download.   Sorted by date, type and symbol then 
+saved only the duplicates from 10/9/15
+
+these are RBMF
+Close Date	Type	Symbol	Shares	Net Avg. Price	Net
+9-Oct-15	Buy	DRN	1,065	$72.33 	$77,035.67   <---- RBMF
+9-Oct-15	Buy	DRN	1,065	$72.33 	$77,035.67 
+9-Oct-15	Buy	ERUS	5,760	$13.59 	$78,295.81   <---- RBMF
+9-Oct-15	Buy	ERUS	5,760	$13.59 	$78,295.81 
+9-Oct-15	Buy	ERX	2,087	$37.22 	$77,678.14   <---- RBMF
+9-Oct-15	Buy	ERX	2,087	$37.22 	$77,678.14 
+
+9-Oct-15	Sell	SNX	105	$91.70 	$9,628.33     <--- RPC
+9-Oct-15	Sell	SNX	105	$91.70 	$9,628.33 
+9-Oct-15	Sell	ZBIO	8,636	$30.21 	$260,853.71   <--- RPC
+9-Oct-15	Sell	ZBIO	8,636	$30.21 	$260,853.71 
+
+
+all duplicates removed, let's invaldiate
+/Marketocracy/bin/dbtool lookup fund razmig
+>>>> dbtool started at 2015-10-13 08:36:04 -0400
+fund: razmig
+  PK: [336A0ECF3FC87002C0A80134]
+  symbol: [RPC]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [ACAE66FF3AA5D75DC0A801E1]
+  symbol: [RBMF]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [E7A506E84F00CAF2C0A80132]
+  symbol: [ACM]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+<<<< dbtool finished at 2015-10-13 08:36:05 -0400
+
+/Marketocracy/bin/fptool invalidateFund 336A0ECF3FC87002C0A80134;
+/Marketocracy/bin/fptool invalidateFund ACAE66FF3AA5D75DC0A801E1;
+
+check qty of DRN on old site first
+1075 on old site
+2140 on new site 
+
+reprice on the new site 
+336A0ECF3FC87002C0A80134,ACAE66FF3AA5D75DC0A801E1
+
+
+10/15/15
+log in as razmig new site
+
+ERUS and ERX now show only a single trades - update the case and close this out 
+
+
+

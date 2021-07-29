@@ -1,0 +1,290 @@
+date: 4/3/15
+stocks in trojancd TMF that no longer appear to trade - ledger has no info
+
+UALAQ 	UAL CORP 		0.0% 	3,000 	$0.00 	$0.00 	Details 
+SVNTQ 	Savient Pharmaceuticals Inc 		0.0% 	10,000 	$0.00 	$0.00 	Details 
+JMXIE 	JUPITER MEDIA METRIX INC 		0.0% 	302,960 	$0.00 	$0.00 	Details 
+YMI 	YM Biosciences, Inc. 		0.0% 	50,000 	$0.00 	$0.00 	Details 
+BWLRF 	BREAKWATER RES LTD 		0.0% 	10,862 	$0.00 	$0.00 	Details 
+
+JMXIE
+
+select distinct stockkey from mstockalias where symbol='JMXIE';
+> Row 1:
+>   STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+
+select * from mstockalias where STOCKKEY = X'8f0610ac390c6d75c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 58440X103
+>           DATE = TIMESTAMP '2000-04-30 13:29:25.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MEDIA METRIX(IPO)
+>     PRIMARYKEY = X'8f0710ac390c6d75c0a8015c'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = MMXI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2000-09-21 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'62ee06a739e90cb3c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2002-08-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'139c6a9c3d51d2b4c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2002-08-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'7db76c633d51d4c5c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2003-04-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'6f456d003ea746acc0a80146'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+how about MAdmin
+
+JMXIE on 04/04/2015
+Stock:JUPITER MEDIA METRIX INC  Symbol:JMXIE
+Date: 04/04/2015
+
+20 users found
+
+1	arvalenzuela	cmccormick	eastcoastceo	fernwood68	glamirand	gobseck	jfettig	jgiambrone	jjakobovits	kedwards
+2	ksmith	matongo930	mluther	mmohan	r_misteryman	sambuca	sevenonem	tfaulkner	trojancd	xavier687
+
+historical prices 
+/Marketocracy/bin/dbtool lookup stock JMXIE
+>>>> dbtool started at 2015-04-04 08:49:04 -0400
+stock: JMXIE
+  PK       : [8F0610AC390C6D75C0A8015C]
+  companyID: [8530]
+  symbol   : [JMXIE]
+  name     : [JUPITER MEDIA METRIX INC]
+  date     : [2003-04-23 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-04 08:49:04 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8530
+2003-04-22 (Tue) [841]: O:0.1810 H:0.1820 L:0.1790 C:0.1800 V:26000 TSO:0 A:0.1800 R:1.0000 CA:0.0000
+2003-04-23 (Wed) [842]: O:0.1810 H:0.1850 L:0.1810 C:0.1820 V:35200 TSO:0 A:0.1820 R:1.0000 CA:0.0000
+2003-04-24 (Thu) [843]: O:0.1900 H:0.2100 L:0.1850 C:0.2000 V:5975100 TSO:0 A:0.2000 R:1.0000 CA:0.0000
+2003-04-25 (Fri) [844]: O:0.2010 H:0.2100 L:0.2000 C:0.2050 V:2483600 TSO:0 A:0.2050 R:1.0000 CA:0.0000
+2003-04-26 (Sat) [845]: <WEEKEND>
+2003-04-27 (Sun) [846]: <WEEKEND>
+2003-04-28 (Mon) [847]: O:0.2050 H:0.2100 L:0.2020 C:0.2020 V:184000 TSO:0 A:0.2020 R:1.0000 CA:0.0000
+2003-04-29 (Tue) [848]: O:0.2020 H:0.2150 L:0.2020 C:0.2150 V:549700 TSO:0 A:0.2150 R:1.0000 CA:0.0000
+2003-04-30 (Wed) [849]: O:0.2100 H:0.2100 L:0.2100 C:0.2100 V:43000 TSO:0 A:0.2100 R:1.0000 CA:0.0000
+2003-05-01 (Thu) [850]: O:0.2150 H:0.2250 L:0.2100 C:0.2200 V:36800 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-02 (Fri) [851]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-03 (Sat) [852]: <WEEKEND>
+2003-05-04 (Sun) [853]: <WEEKEND>
+2003-05-05 (Mon) [854]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-06 (Tue) [855]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-07 (Wed) [856]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-08 (Thu) [857]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-09 (Fri) [858]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:0 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2003-05-10 (Sat) [859]: <WEEKEND>
+
+
+2003-05-01 (Thu) [850]: O:0.2150 H:0.2250 L:0.2100 C:0.2200 V:36800 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+20030501    0.22    use this 
+
+/Marketocracy/bin/cahelper -symbol JMXIE -effective 20030501 -type ACQUIS -exchange UU -acqType 1 -acqCash 0.22 -acqShare 0 -purchaser JMXIE >& /Users/build/caout/JMXIE.20150404-ACQUIS.out
+stocks:~/caout build$ tail -f JMXIE.20150404-ACQUIS.out
+D: (04-04 08:58:31.099) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-04 08:58:55.911) cahelper started on 2015-04-04 08:58:55 -0400
+
+D: (04-04 08:58:56.787) There are [0] open tickets for JMXIE on 20030501
+D: (04-04 08:58:56.992) StockFileLoad Version:3.0
+D: (04-04 08:58:56.993) Loading Stock Data
+D: (04-04 08:59:40.310) Building Lookup Index
+D: (04-04 08:59:44.713) Finished Building Index
+D: (04-04 08:59:45.714) Finished Loading Stock Data
+D: (04-04 08:59:45.832) Connection to 192.168.111.172:6666 succeeded
+D: (04-04 08:59:45.881) >>> load new StockPrices file
+D: (04-04 08:59:45.906) <<< load new StockPrices file
+D: (04-04 08:59:45.906) >>> swap StockPrices
+D: (04-04 08:59:45.906) Obtained Stockprices swap mutex
+D: (04-04 08:59:45.907) <<< swap StockPrices
+D: (04-04 08:59:45.907) Stock prices available from 2000-05-01 to 2015-04-02
+D: (04-04 08:59:46.669) {
+    "ACQUIRED_STOCK" = JMXIE; 
+    "ACQUIRING_STOCK" = "JMXIE_FIX"; 
+    AMOUNT = 0.22; 
+    APPLIED = 1; 
+    DATE = 20030501; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "JMXIE_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-04 08:59:49.037) SUCCESS
+D: (04-04 08:59:49.037) cahelper finished 2015-04-04 08:59:49 -0400
+
+
+check the database
+select * from mstockalias where STOCKKEY = X'8f0610ac390c6d75c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 58440X103
+>           DATE = TIMESTAMP '2000-04-30 13:29:25.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MEDIA METRIX(IPO)
+>     PRIMARYKEY = X'8f0710ac390c6d75c0a8015c'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = MMXI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2000-09-21 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'62ee06a739e90cb3c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2002-08-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'139c6a9c3d51d2b4c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2002-08-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'7db76c633d51d4c5c0a801dc'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2003-04-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'6f456d003ea746acc0a80146'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 48206U104
+>           DATE = TIMESTAMP '2003-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = JUPITER MEDIA METRIX INC
+>     PRIMARYKEY = X'd4280891551fe010c0a86f92'
+>       STOCKKEY = X'8f0610ac390c6d75c0a8015c'
+>         SYMBOL = JMXIE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'd4280891551fe010c0a86f92';
+> Row 1:
+>              ALIASKEY = X'd4280891551fe010c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|JMXIE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.220000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150404:085855
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = JMXIE_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = JMXIE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'd4220891551fe00fc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey= X'd4220891551fe00fc0a86f92';
+> Row 1:
+>   _C001 = 37.000000
+
+get the fundkeys
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd4220891551fe00fc0a86f92'));
+
+save to CA issues JMXIE fundkeys.txt
+
+check on 4/5/15 - for the acquis and then do the fund invalidation
+
+4/5/15 - the acquis is there doing the invalidation
+member: trojancd fund: TMF
+May 01, 2003 	302960 	-302960 		Corporate Action   cash 0.22
+member: trojancd fund: TMF  date: 20030501 302960*.22= 66651.20
+
+
+ledger:
+ 	
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+05/01/2003 	$83,425.50 	$0.00 	$2.29 	$66,651.20 	$40.47 	$0.00 	$150,038.51 	$596,003.23 	$746,041.74 	100,000 	$7.46 	No 	Details 
+closing this out 

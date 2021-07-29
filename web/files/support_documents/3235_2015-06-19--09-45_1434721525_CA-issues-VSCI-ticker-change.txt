@@ -1,0 +1,1484 @@
+date: 6/12/15
+ticker:  VSCI
+VSCI-name change to CGNT and 1:5 reverse stock split../ on March 31st; not shown yet...?
+Type
+Corporate Action | Ticker Symbol Change
+Ticket
+3235
+Priority
+Medium
+Status
+Open
+Member Name
+Norbert Paul
+Username
+pbrett
+Fund Symbols
+ABCR
+Stock Tickers
+VSCI
+
+our site:
+Symbol: VSCI 	Name: Cogentix Medical Inc 	Price: $0.35
+Volume: 129,064 	Sector: Health Care 	Change: $0.00
+Short Volume: 129,064 	Style: Micro Cap : Value 	Market Cap: $12,898,900
+Avg Volume: 129,064 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.35 	Year High: $6.20 	High: $0.38
+200 Day Ave: $3.07 	Year Low: $0.35 	Low: $0.35
+
+yahoo:
+ CUSIP changes for VSCI 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+01 Apr 15 	927912105 	19243A104 	Change in any of identification numbers (CUSIP) of a security from 927912105 to 19243A104
+  	  	 
+left curve 	  name changes for VSCI 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+01 Apr 15 	Vision Sciences Inc/DE 	Cogentix Medical Inc 	Change in the name of issuer from Vision Sciences Inc/DE to Cogentix Medical Inc
+  	  	 
+left curve 	  VSCI had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+01 Apr 15 	1 for 5 	Split terms:1 for 5
+
+quantum:
+Cogentix Medical, Inc.
+Ticker Symbol: CGNT     CUSIP: 19243A104     Exchange: NCM
+
+Company's Online Profile
+BUSINESS:  Cogentix Medical, Inc. is a global medical device company, headquartered in Minnetonka, Minnesota, with operations in New York, United Kingdom and The Netherlands. The Company designs, develops, manufactures and markets innovative proprietary technologies serving the urology market.
+
+Notes:  March 31, 2015 -- Uroplasty, Inc. (NASDAQ: UPI) and Vision-Sciences, Inc. (NASDAQ: VSCI) today announced the completion of their merger. The merger was originally announced in December 2014, and completion of the all-stock combination creates a new medical device company named Cogentix Medical, Inc. Beginning on April 1, 2015, Vision Sciences will change its name to the new company, Cogentix Medical, Inc. and it will trade on the NASDAQ under the symbol CGNT. Cogentix Medical will have its U.S. headquarters in Minnetonka, MN, where Uroplasty's current headquarters is located. In the merger, each Uroplasty share of common stock will be converted into the right to receive 3.6331 shares of Vision common stock. The exchange ratio will be adjusted appropriately to fully reflect the effect of any reclassification, stock split, stock dividend or distribution, recapitalization or other similar transaction with respect to either the Uroplasty shares or Vision shares prior to the completion of the merger, including the reverse stock split. Upon completion of the merger, Uroplasty shareholders will own approximately 62.5% of the combined company and the Vision shareholders will own approximately 37.5%. Based on the number of Uroplasty and Vision shares outstanding as of February 20, 2015, we expect that the total number of Vision shares to be issued in connection with the merger will be approximately 80.4 million. In connection with the closing of the merger, Uroplasty shares will be delisted from NASDAQ and deregistered under the federal securities laws, and shares of common stock of the combined company will trade under the symbol CGNT.________________March 31, 2015 -- Following the shareholders meeting of Vision-Sciences, Inc. (NASDAQ: VSCI) on March 30, 2015, the Company's board of directors determined to effect a one-for-five reverse stock split of the Company's common stock effective at 4:05 pm EDT on March 31, 2015.
+   Link to IPO Prospectus
+Previous Ticker Symbol: VSCI    Changed: 4/01/15
+Previous Name: Vision-Sciences, Inc.    Changed: 3/31/15
+Micro Cap Stock -   Market Value $ 14.7 Million
+Click for current CGNT price quote from the NASDAQ
+
+select distinct stockkey from mstockalias where symbol='VSCI';
+> Row 1:
+>   STOCKKEY = X'034a0e21390ad81bc0a80116'
+
+select * from mstockalias where STOCKKEY = X'034a0e21390ad81bc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'034b0e21390ad81bc0a80116' ;
+	nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'275c477e551c789dc0a86f92';
+> Row 1:
+>              ALIASKEY = X'275c477e551c789dc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Vision Sciences Inc/DE|CP_NEW_NAME|Cogentix Medical Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104850638
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76e50382551b24e0c0a86f92'
+>               VERSION = NULL
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'559f4787551c78bac0a86f92';
+> Row 1:
+>              ALIASKEY = X'559f4787551c78bac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|927912105|CP_NEW_CUSIP|19243A104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US9279121050|CP_NEW_ISIN|US19243A1043|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104850908
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76df0382551b24dec0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'559f4787551c78bac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150401|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104843684
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76db0382551b24dcc0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'76db0382551b24dcc0a86f92';
+> Row 1:
+>   _C001 = 104.000000
+
+let's see if the new ticker already exists 
+CGNT
+select distinct stockkey from mstockalias where symbol='CGNT';
+> Row 1:
+>   STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+select * from mstockalias where STOCKKEY = X'8967043c39e7e9bfc0a801dc';
+it's a different company that doesn't use the ticker anymore, it's available
+
+select * from mcorporateaction where BB_SECID='VSCI' and aliaskey is null order by BB_EFFECTIVE;
+
+> Row 13:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|VSCI US|CP_NEW_TKR|CGNT US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104850872
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76dd0382551b24ddc0a86f92'
+>               VERSION = NULL
+
+
+it is there not sure why it didn't get applied
+/Marketocracy/bin/cahelper -symbol CGNT -effective 20150401 -type CHG_TKR -exchange UQ -oldSymbol VSCI >& /Users/build/caout/VSCI.20150612-CHG_TKR-CGNT.out
+D: (06-12 09:12:33.187) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-12 09:12:58.531) cahelper started on 2015-06-12 09:12:58 -0400
+
+D: (06-12 09:12:58.834) {
+    APPLIED = 0; 
+    DATE = 20150401; 
+    NOTES = "N.A."; 
+    SYMBOL = CGNT; 
+    TYPE = "CHG_TKR"; 
+}
+D: (06-12 09:12:58.835) SUCCESS
+D: (06-12 09:12:58.835) cahelper finished 2015-06-12 09:12:58 -0400
+
+select * from mstockalias where STOCKKEY = X'034a0e21390ad81bc0a80116';
+
+why didn't this go through
+
+CGNT symbol is available 
+
+odd, this is not pricing 
+
+select distinct stockkey from mstockalias where symbol='VSCI';
+> Row 1:
+>   STOCKKEY = X'034a0e21390ad81bc0a80116'
+select * from mstock where primarykey= X'034a0e21390ad81bc0a80116';
+> Row 1:
+>         IDENTITYKEY = X'559f4787551c78bac0a86f92'
+>                NAME = VISION-SCIENCES INC
+>          PRIMARYKEY = X'034a0e21390ad81bc0a80116'
+>              SYMBOL = VSCI
+>           COMPANYID = 3939
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6859
+
+companyID is 3939
+
+let's look at historical pricing
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3939
+nothing returned.   odd
+do we have prices?
+stock looks good file is up to date
+
+do we have this in xignite?
+http://192.168.111.213/feed/stockLookup.php?symbol=VSCI
+get success but the date is Date: 	3/31/2015  which is expected last day for this company as this ticker 
+http://192.168.111.213/feed/stockLookup.php?symbol=CGNT
+succes
+
+
+still not running, 
+let me compose it again
+
+/Marketocracy/bin/cahelper -symbol CGNT -effective 20150401 -type CHG_TKR -exchange UU -oldSymbol VSCI >& /Users/build/caout/VSCI.20150612-CHG_TKR-CGNT.out
+
+it won't run. 
+
+select distinct stockkey from mstockalias where symbol='CGNT';
+> Row 1:
+>   STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+select * from mstockalias where STOCKKEY = X'8967043c39e7e9bfc0a801dc';
+
+6/14/15
+let's try this - let's set the ticker change date to one day later 20150402
+
+/Marketocracy/bin/cahelper -symbol CGNT -effective 20150402 -type CHG_TKR -exchange UU -oldSymbol VSCI >& /Users/build/caout/VSCI.20150613-CHG_TKR-CGNT.out
+ok, it still does not work
+
+why not?   the chart is pricing the stock just fine until the date when the ticker changed in the real world.
+
+/Marketocracy/bin/cahelper no help running it without parms 
+select distinct stockkey from mstockalias where symbol='VSCI';  onlyone
+
+select distinct stockkey from mstockalias where symbol='CGNT';
+> Row 1:
+>   STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+select * from mstockalias where STOCKKEY = X'8967043c39e7e9bfc0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-07-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COGNIGEN NETWORKS INC
+>     PRIMARYKEY = X'8968043c39e7e9bfc0a801dc'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2001-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COGNIGEN NETWORKS INC
+>     PRIMARYKEY = X'95d50d5a3bce3901c0a801dc'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N.A.
+>           DATE = TIMESTAMP '2001-10-17 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COGNIGEN NETWORKS INC
+>     PRIMARYKEY = X'24b00e393bce3a87c0a801dc'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2001-10-17 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COGNIGEN NETWORKS INC
+>     PRIMARYKEY = X'24b50e393bce3a87c0a801dc'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2004-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = China Granite Corp
+>     PRIMARYKEY = X'58951ebd40527c86c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'58951ebd40527c86c0a80146';
+> Row 1:
+>              ALIASKEY = X'58951ebd40527c86c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Arbor Inc/FL|CP_NEW_NAME|China Granite Corp|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 13976543
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 1176541
+>        BB_COMPANYNAME = China Granite Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2004-03-12 00:00:00.000000'
+>         BB_IDENTIFIER = CGNT    UU Equity
+>             BB_ISSUED = TIMESTAMP '2004-03-11 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CGNT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-03-11 00:00:00.000000'
+>            PRIMARYKEY = X'b6f01b4740527ae8c0a80146'
+>               VERSION = NULL
+	this one does not belong  *** REMOVE  *******
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16937Y109
+>           DATE = TIMESTAMP '2004-03-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = China Granite Corp
+>     PRIMARYKEY = X'17591ec240527c94c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = CGNW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16937Y109
+>           DATE = TIMESTAMP '2006-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = China Granite Corp
+>     PRIMARYKEY = X'446a35be44a5d78cc0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16937Y109
+>           DATE = TIMESTAMP '2006-06-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'278d389444a5d7c2c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2006-06-30 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'47be392d44a5d7d3c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2006-11-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'91271dd54567b267c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREHE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2006-11-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'c8d2248c456ba74dc0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2007-04-13 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'dc2004d046203613c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2007-04-13 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'032306bf4620363ac0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2007-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'de045419461af003c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SREHE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2008-04-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Strategic Rare Earth Metals In
+>     PRIMARYKEY = X'd1fb2661480fea1bc0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = BYHL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19242L200
+>           DATE = TIMESTAMP '2008-04-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BayHill Capital Corp
+>     PRIMARYKEY = X'867e2677480fea65c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = BYHL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 07278T106
+>           DATE = TIMESTAMP '2008-04-23 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BayHill Capital Corp
+>     PRIMARYKEY = X'93f6267c480fea77c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = BYHL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 07278T106
+>           DATE = TIMESTAMP '2012-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = BayHill Capital Corp
+>     PRIMARYKEY = X'56b402044fc945b1c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 19:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 07278T106
+>           DATE = TIMESTAMP '2012-06-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Agricon Global Corp
+>     PRIMARYKEY = X'7f3102244fc9462ac0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 20:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00850P105
+>           DATE = TIMESTAMP '2012-06-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Agricon Global Corp
+>     PRIMARYKEY = X'99e703614fc94644c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 21:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00850P105
+>           DATE = TIMESTAMP '2012-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Agricon Global Corp
+>     PRIMARYKEY = X'b87b597e500de079c0a80146'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 22:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00850P105
+>           DATE = TIMESTAMP '2014-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Agricon Global Corp
+>     PRIMARYKEY = X'f0a85ba65490c8ecc0a86f92'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 23:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00850P105
+>           DATE = TIMESTAMP '2014-12-16 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = StrategaBiz Inc
+>     PRIMARYKEY = X'163e5bfc5490c9a9c0a86f92'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 24:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86271B106
+>           DATE = TIMESTAMP '2014-12-16 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = StrategaBiz Inc
+>     PRIMARYKEY = X'fd0e5c135490c9d0c0a86f92'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = AGRCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+> Row 25:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86271B106
+>           DATE = TIMESTAMP '2015-01-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = StrategaBiz Inc
+>     PRIMARYKEY = X'eff8017654b85560c0a86f92'
+>       STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+>         SYMBOL = SGBZ  <--- current ticker is this
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202010
+>       STYLEKEY = XB
+
+select * from mstock where primarykey=X'8967043c39e7e9bfc0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'eff8017654b85560c0a86f92'
+>                NAME = Cognigen Networks Inc
+>          PRIMARYKEY = X'8967043c39e7e9bfc0a801dc'
+>              SYMBOL = CGNT
+>           COMPANYID = 11204
+>   WINDOWIDENTITYKEY = NULL
+/Marketocracy/bin/dbtool lookup stock CGNT
+>>>> dbtool started at 2015-06-13 09:40:22 -0400
+stock: CGNT
+  PK       : [8967043C39E7E9BFC0A801DC]
+  companyID: [11204]
+  symbol   : [CGNT]
+  name     : [COGNIGEN NETWORKS INC]
+  date     : [2000-07-13 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-13 09:40:22 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 11204
+
+
+select distinct stockkey from mstockalias where symbol='VSCI';
+> Row 1:
+>   PRIMARYKEY = X'94b00fa5408f2032c0a80134'
+select * from mstockalias where stockkey =X'034a0e21390ad81bc0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+
+/Marketocracy/bin/dbtool lookup stock CGNT
+>>>> dbtool started at 2015-06-14 10:57:26 -0400
+stock: CGNT
+  PK       : [8967043C39E7E9BFC0A801DC]
+  companyID: [11204]
+  symbol   : [CGNT]
+  name     : [COGNIGEN NETWORKS INC]
+  date     : [2000-07-13 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-14 10:57:26 -0400
+
+
+
+/Marketocracy/bin/cahelper -symbol LUIS -effective 20150401 -type CHG_TKR -exchange UU -oldSymbol VSCI >& /Users/build/caout/VSCI.20150614-CHG_TKR.out
+stocks:~/caout build$ cat VSCI.20150614-CHG_TKR.out
+D: (06-14 11:07:56.258) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-14 11:08:20.163) cahelper started on 2015-06-14 11:08:20 -0400
+
+D: (06-14 11:08:20.434) {
+    APPLIED = 1; 
+    DATE = 20150401; 
+    "NEW_TICKER" = "LUIS US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "VSCI US"; 
+    SYMBOL = LUIS; 
+    TYPE = "CHG_TKR"; 
+}
+D: (06-14 11:08:20.788) SUCCESS
+D: (06-14 11:08:20.789) cahelper finished 2015-06-14 11:08:20 -0400
+
+now change it to CGNT
+select * from mstockalias where stockkey =X'034a0e21390ad81bc0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'a6742001557d98e4c0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = LUIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'a6742001557d98e4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a6742001557d98e4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|VSCI US|CP_NEW_TKR|LUIS US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150614:110820
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = LUIS     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = LUIS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>            PRIMARYKEY = X'a66e2001557d98e4c0a86f92'
+>               VERSION = NULL
+
+ok let's update manually 
+set commit false;
+update mstockalias set SYMBOL = 'CGNT' where PRIMARYKEY = X'a6742001557d98e4c0a86f92';
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_TKR|VSCI US|CP_NEW_TKR|CGNT US|CP_NOTES|N.A.' where PRIMARYKEY = X'a66e2001557d98e4c0a86f92';
+update mcorporateaction set BB_IDENTIFIER = 'CGNT     UU Equity' where PRIMARYKEY = X'a66e2001557d98e4c0a86f92';
+update mcorporateaction set BB_SECID = 'CGNT' where PRIMARYKEY = X'a66e2001557d98e4c0a86f92';
+commit;
+set commit true;
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'a6742001557d98e4c0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'a6742001557d98e4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a6742001557d98e4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|VSCI US|CP_NEW_TKR|CGNT US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150614:110820
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = CGNT     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CGNT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>            PRIMARYKEY = X'a66e2001557d98e4c0a86f92'
+>               VERSION = NULL
+
+
+ok, check on 6/15/15
+
+6/15/15 - the ticker change is there
+ symbol changes for CGNT 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+01 Apr 15 	VSCI 	CGNT 	Change in the ticker (trading) symbol from VSCI to CGNT
+
+Let's log in as our member (legacy)
+Username pbrett
+Fund  ABCR
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 07, 2003 		1160 	1160 	Buy
+Nov 10, 2003 	1160 	3180 	4340 	Buy
+Nov 11, 2003 	4340 	1402 	5742 	Buy
+Nov 13, 2003 	5742 	3000 	8742 	Buy
+Nov 14, 2003 	8742 	4000 	12742 	Buy
+Jan 14, 2004 	12742 	2210 	14952 	Buy
+Apr 14, 2005 	14952 	4000 	18952 	Buy
+Aug 01, 2005 	18952 	5000 	23952 	Buy
+Oct 19, 2005 	23952 	4000 	27952 	Buy
+Dec 13, 2005 	27952 	20000 	47952 	Buy
+Mar 16, 2006 	47952 	10000 	57952 	Buy
+Jul 03, 2006 	57952 	-8889 	49063 	Sell
+Jun 23, 2010 	49063 	50000 	99063 	Buy
+Sep 07, 2012 	99063 	394 	99457 	Buy
+Sep 14, 2012 	99457 	10337 	109794 	Buy
+Mar 25, 2013 	109794 	114355 	224149 	Buy
+Nov 15, 2013 	224149 	80000 	304149 	Buy
+Apr 01, 2015 	304149 	-243320 	60829 	Corporate Action
+Total: 60,829
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 7, 2003 	1,160 	$58.00 	$2,172.22 	$1.87
+Nov 10, 2003 	3,180 	$159.00 	$6,402.30 	$2.01
+Nov 11, 2003 	1,402 	$70.10 	$2,763.20 	$1.97
+Nov 13, 2003 	3,000 	$150.00 	$5,999.00 	$2.00
+Nov 14, 2003 	4,000 	$200.00 	$8,008.84 	$2.00
+Jan 14, 2004 	2,210 	$110.50 	$3,777.50 	$1.71
+Apr 14, 2005 	4,000 	$200.00 	$10,553.56 	$2.64
+Aug 1, 2005 	5,000 	$250.00 	$10,413.17 	$2.08
+Oct 19, 2005 	4,000 	$200.00 	$7,527.73 	$1.88
+Dec 13, 2005 	20,000 	$1,000.00 	$40,687.98 	$2.03
+Mar 16, 2006 	10,000 	$500.00 	$17,896.56 	$1.79
+Jun 23, 2010 	50,000 	$2,500.00 	$52,733.60 	$1.05
+Sep 7, 2012 	394 	$19.70 	$569.90 	$1.45
+Sep 14, 2012 	10,337 	$516.85 	$13,850.25 	$1.34
+Mar 25, 2013 	114,355 	$5,717.75 	$130,195.91 	$1.14
+Nov 15, 2013 	80,000 	$3,616.38 	$75,943.98 	$0.95
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 3, 2006 	8,889 	$444.45 	$0.48 	$14,943.70 	$1.68
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Apr 01, 2015 	Split terms:1 for 5
+
+let's look at the ledger to make sure it is pricing
+
+20150331 to start
+CGNT 	Cogentix Medical Inc 	$0.35 	3.3% 	304,149 	$0.00 	$106,452.15 	Details
+4/1/15
+CGNT 	Cogentix Medical Inc 	$0.35 	0.7% 	60,829 	$0.00 	$21,290.15 	Details 
+ trades on April 01, 2015 
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Sell 	CGNT 	304,149 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	CGNT 	60,829 	$0.00 	$0.00 	$0.00 	$0.00
+4/2/15
+CGNT 	Cogentix Medical Inc 	$0.35 	0.7% 	60,829 	$0.00 	$21,290.15 	Details 
+
+Friday  6/12/15
+stuck at 0.35
+
+got the historical prices from yahoo finance
+get the companyid
+select distinct stockkey from mstockalias where symbol='CGNT';
+> Row 1:
+>   STOCKKEY = X'8967043c39e7e9bfc0a801dc'
+> Row 2:
+>   STOCKKEY = X'034a0e21390ad81bc0a80116'
+select * from mstockalias where STOCKKEY = X'034a0e21390ad81bc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'a6742001557d98e4c0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI   <---- update this one 
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+update mstockalias set SYMBOL = 'CGNT' where PRIMARYKEY = X'275c477e551c789dc0a86f92';
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI  <---- update this one 
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+update mstockalias set SYMBOL = 'CGNT' where PRIMARYKEY = X'559f4787551c78bac0a86f92';
+
+select * from mstockalias where STOCKKEY = X'034a0e21390ad81bc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VISION-SCIENCES INC
+>     PRIMARYKEY = X'034b0e21390ad81bc0a80116'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = VSCI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'a6742001557d98e4c0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'a6742001557d98e4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a6742001557d98e4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|VSCI US|CP_NEW_TKR|CGNT US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150614:110820
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = CGNT     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CGNT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-04-01 00:00:00.000000'
+>            PRIMARYKEY = X'a66e2001557d98e4c0a86f92'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927912105
+>           DATE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'275c477e551c789dc0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'275c477e551c789dc0a86f92';
+> Row 1:
+>              ALIASKEY = X'275c477e551c789dc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Vision Sciences Inc/DE|CP_NEW_NAME|Cogentix Medical Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104850638
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76e50382551b24e0c0a86f92'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19243A104
+>           DATE = TIMESTAMP '2015-04-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cogentix Medical Inc
+>     PRIMARYKEY = X'559f4787551c78bac0a86f92'
+>       STOCKKEY = X'034a0e21390ad81bc0a80116'
+>         SYMBOL = CGNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'559f4787551c78bac0a86f92';
+> Row 1:
+>              ALIASKEY = X'559f4787551c78bac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|927912105|CP_NEW_CUSIP|19243A104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US9279121050|CP_NEW_ISIN|US19243A1043|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104850908
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76df0382551b24dec0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'559f4787551c78bac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150401|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 104843684
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 115939
+>        BB_COMPANYNAME = Vision Sciences Inc/DE
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = VSCI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = VSCI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'76db0382551b24dcc0a86f92'
+>               VERSION = NULL
+select * from mstock where primarykey=X'034a0e21390ad81bc0a80116';
+> Row 1:
+>         IDENTITYKEY = X'a6742001557d98e4c0a86f92'
+>                NAME = VISION-SCIENCES INC
+>          PRIMARYKEY = X'034a0e21390ad81bc0a80116'
+>              SYMBOL = VSCI
+>           COMPANYID = 3939  <--------------------------
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6859
+
+4/1/15	=	5203 daynumber
+
+select * from stockprices where companyid and daynumber >= 5203;
+ssh build@stocks
+/Library/FrontBase/bin/sql92
+connect to marketdata@stocks user eouser;
+> Auto committing is on: SET COMMIT TRUE;
+marketdata@stocks#2>
+select * from stockprices where companyid=3939 and daynumber >= 5203;
+nothing
+let's try one day only
+select * from stockprices where companyid=3939 and daynumber = 5203;
+> Row 1:
+>   DAYNUMBER = 5203
+>   COMPANYID = 3939
+>      OPENED = 3800
+>        HIGH = 3800
+>         LOW = 3500
+>      CLOSED = 3500
+>      VOLUME = 129064
+select * from stockprices where companyid=3939 and daynumber >= 5203;
+> Row 51:
+>   DAYNUMBER = 5275
+>   COMPANYID = 3939
+>      OPENED = 3800
+>        HIGH = 3800
+>         LOW = 3500
+>      CLOSED = 3500
+>      VOLUME = 129064
+
+let's delete these 
+delete  from stockprices where companyid=3939 and daynumber >= 5203;
+select * from stockprices where companyid=3939 order by daynumber;
+> Row 3777:
+>   DAYNUMBER = 5202
+>   COMPANYID = 3939
+>      OPENED = 3800
+>        HIGH = 3800
+>         LOW = 3500
+>      CLOSED = 3500
+>      VOLUME = 129064
+
+ok let's do the update
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5275,3939,16000,17000,16000,16300,13800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5274,3939,16600,16900,15800,16100,8000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5273,3939,16100,16800,15400,15400,93800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5272,3939,16800,17000,16000,16000,37400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5271,3939,16900,17100,16800,16800,20700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5268,3939,16500,17100,16400,16800,25600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5267,3939,17300,17400,16600,16600,54600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5266,3939,17000,17400,16500,17300,50600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5265,3939,16800,17200,16600,16900,68500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5264,3939,16600,17000,16300,16700,98400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5261,3939,16900,16900,16700,16700,13700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5260,3939,16900,17000,16500,16900,26900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5259,3939,16600,17200,16300,16500,91300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5258,3939,17500,17500,16200,16900,34500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5254,3939,18000,18000,16600,17200,227100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5253,3939,16100,17100,15600,16800,46500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5252,3939,16200,16200,15500,15800,12200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5251,3939,15800,16700,15400,15600,24800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5250,3939,16100,16200,15400,15500,27400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5247,3939,16800,17400,15800,16200,73900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5246,3939,17100,17500,17000,17000,317100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5245,3939,17200,17400,16400,17000,43000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5244,3939,17100,17500,16700,17300,51100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5243,3939,17000,17500,16700,16700,65600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5240,3939,16700,17300,16400,16700,25300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5239,3939,16700,18000,16200,17300,84000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5238,3939,16500,16700,16500,16600,8600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5237,3939,16500,16900,16000,16500,20200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5236,3939,16400,16900,15800,16700,16200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5233,3939,15600,17300,15600,16100,25500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5232,3939,16200,16300,15600,15800,31600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5231,3939,16800,16800,14200,15500,145000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5230,3939,16700,17000,15500,15500,22200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5229,3939,16400,17100,16300,16400,23700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5226,3939,17500,17500,16700,17000,31600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5225,3939,15500,17300,15500,17100,42900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5224,3939,15500,16600,15200,16300,59800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5223,3939,16900,16900,15400,15500,22500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5222,3939,16500,16700,16200,16600,18000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5219,3939,14800,16800,14500,16500,26300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5218,3939,16500,17000,16000,17000,21000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5217,3939,16500,16900,16200,16700,76500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5216,3939,15100,17000,15000,16400,98000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5215,3939,14300,15200,14300,15000,44000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5212,3939,14500,15100,14200,14300,118000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5211,3939,14900,14900,14200,14300,44900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5210,3939,14500,14900,14500,14500,42400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5209,3939,14800,15200,14500,14500,111100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5208,3939,16800,16800,14600,15200,95000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5204,3939,16900,17000,14300,16900,164100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5203,3939,18500,24000,16000,16100,94000);
+
+check the results 
+select * from stockprices where companyid=3939 and daynumber >= 5203 order by daynumber;
+> Row 1:
+>   DAYNUMBER = 5203
+>   COMPANYID = 3939
+>      OPENED = 18500
+>        HIGH = 24000
+>         LOW = 16000
+>      CLOSED = 16100
+>      VOLUME = 94000
+
+to
+
+> Row 51:
+>   DAYNUMBER = 5203
+>   COMPANYID = 3939
+>      OPENED = 18500
+>        HIGH = 24000
+>         LOW = 16000
+>      CLOSED = 16100
+>      VOLUME = 94000
+
+ok, let's set the invalidate stock prices date of 4/1/2015
+
+1.  Go to stocks   ssh build@stocks
+
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-04-01
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-15
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-15
+D: (08:37:37.321) Invalidate all prices >= 2015-04-01 (5203)
+
+
+ok, check on 6/16/15 - then invalidate everyone's fund
+6.17.15
+
+select distinct stockkey from mstockalias where symbol='VSCI';
+> Row 1:
+>   STOCKKEY = X'034a0e21390ad81bc0a80116'
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 034a0e21390ad81bc0a80116 2015-03-31
+D36435E53A2B021AC0A80119, DCMF9, DELETED_2003228, 300
+7EC34B323A291C32C0A80118, DCMF6, DELETED_2003228, 1
+3DF127EF3A29DC9BC0A801E0, DCMF8, DELETED_2003228, 3
+10442B4F3A296C0DC0A801E1, DCMF7, DELETED_2003228, 1
+AE6C50853A2560D5C0A801E1, DCMF1, DELETED_2003228, 6300
+5BD766BE3B7C38ADC0A801E1, 031, moreno770, 4000
+33206BF63BC3817AC0A80118, CMF, cevans1, 1000
+803E22F53F8C2381C0A80133, OVF, tchotki, 6040
+D8EA116A3F0390F7C0A80133, MNSRF, rbitrage, 4200
+E42405BB3B6F6C3AC0A80118, ABCR, pbrett, 304149
+7898533F3FBF8A76C0A80134, REALF, atulbhasin2002, 500
+B5FE33563A04864FC0A80119, CVI, mtom, 100000
+761605853F65469DC0A80132, EMF, evianello, 2280
+7825034F3FB25F80C0A80132, TFHSF, thefletch, 25000
+81ED2ACA40C21F71C0A80132, SMF, svetlin, 1000
+ED5F5B5E40F9146DC0A80133, TOP50, eckiecki2002, 4100
+AB46350E416C293FC0A80132, DMF, djdisk, 640
+D3DB4E8B419E938EC0A80132, MICRO, katzenbach, 9000
+F23C428941EFC278C0A80133, ITM, icevodka, 100
+93615A3E425C1CF8C0A80133, RF, mtom, 15690
+C64637D843970ADEC0A80132, KMF, kay1234, 557
+A5910286448D101FC0A80133, VMF, vegas17, 1200
+EF5636C145DDC7AFC0A80134, RSF, ibid, 2042
+9BDE136741D10965C0A80133, SPEED, parhat2, 6920
+910A2BB246DF4C58C0A80134, JSCMF, jdayley, 3000
+612A32CE39C7AF3BC0A801E1, ARBT, aratnikas, 400
+882209DB470E475BC0A80133, aaLPE, gdog477, 7374
+976853FD474726E7C0A80133, JMF, jonnygomes, 100
+83C50A723FE39598C0A80133, SMCF, everett_i_holmes, 101723
+4960551B3A32DE52C0A801E1, RDF, rbjr, 7930
+8746368447430436C0A80133, D$H, dharburger, 2021
+A1816E4F47A2A20EDAA5D03F, SLO2, nrwoodcubs, 7000
+9AF241D047B49D18C0A80134, BIG, bardo, 2570
+3899554F47E8FE31C0A80135, MMF, majones, 4167
+55080EDC480CB8E1C0A80133, VFF, acorson, 12140
+7D2C493C47A2A07ADAA5D03F, SLO2, shorty4407, 7788
+E7600BD3484841EFC0A80134, LCF, stonecoldfx, 10190
+A0CC629848486722C0A80132, WMF, womanwithportfolio, 3000
+0C780D2F485FE948C0A80132, A1, mranney, 9475
+4F0B44893DA44225C0A80133, VolPB, guru, 11777
+B719201548CFC371C0A80135, MF4S, jpreidis, 10816
+A4B42B753D6ACF39C0A80119, INSII, mtom, 177500
+37B76A993D2E3371C0A801E0, MMBF, mtom, 91535
+676D588D47D86D2CC0A80135, BEAR, mtom, 60000
+513D737147E08121C0A80133, M08F, mtom, 60000
+0EDD1AA94887EDDBC0A80134, 08SF, mtom, 41000
+2014243548FD17EDC0A80133, BMF, bnj646, 1560
+E5A86124502AB2EBC0A80134, 13S, jaytrader, 1950
+BE976124502AAC6DC0A80134, JMFs, jaytrader, 1980
+
+I have invalidated and repriced - let's check member pbrett ABCR on the new site
+Done!
+13 Funds Processed
+130 Queries Processed
+
+still showing VSCI
+
+let's look him up on legacy
+his ABCR fund:
+CGNT 	click me 	$1.69 	60,829 	$102,801.01 	3.22% 	-$271,750.55 	0.00% 	-69.77% 	-69.77% 	Details 
+
+let's look up his fund
+/Marketocracy/bin/dbtool lookup fund  pbrett
+>>>> dbtool started at 2015-06-17 07:59:37 -0400
+fund: pbrett
+  PK: [E42405BB3B6F6C3AC0A80118]
+  symbol: [ABCR]
+  managerKey: [CC5605BB3B6F67A0C0A80118]
+  loginName: [pbrett]
+<<<< dbtool finished at 2015-06-17 07:59:37 -0400
+
+
+Brandon did something, looking again at this 
+
+
+legacy site, entered ticker VSCI and see the ticker change and he has these shares
+your holdings of CGNT 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+ABCR 	60,829 	$101,584.43 	3.16% 
+expand
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 07, 2003 		1160 	1160 	Buy
+Nov 10, 2003 	1160 	3180 	4340 	Buy
+Nov 11, 2003 	4340 	1402 	5742 	Buy
+Nov 13, 2003 	5742 	3000 	8742 	Buy
+Nov 14, 2003 	8742 	4000 	12742 	Buy
+Jan 14, 2004 	12742 	2210 	14952 	Buy
+Apr 14, 2005 	14952 	4000 	18952 	Buy
+Aug 01, 2005 	18952 	5000 	23952 	Buy
+Oct 19, 2005 	23952 	4000 	27952 	Buy
+Dec 13, 2005 	27952 	20000 	47952 	Buy
+Mar 16, 2006 	47952 	10000 	57952 	Buy
+Jul 03, 2006 	57952 	-8889 	49063 	Sell
+Jun 23, 2010 	49063 	50000 	99063 	Buy
+Sep 07, 2012 	99063 	394 	99457 	Buy
+Sep 14, 2012 	99457 	10337 	109794 	Buy
+Mar 25, 2013 	109794 	114355 	224149 	Buy
+Nov 15, 2013 	224149 	80000 	304149 	Buy
+Apr 01, 2015 	304149 	-243320 	60829 	Corporate Action
+Total: 60,829
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 7, 2003 	1,160 	$58.00 	$2,172.22 	$1.87
+Nov 10, 2003 	3,180 	$159.00 	$6,402.30 	$2.01
+Nov 11, 2003 	1,402 	$70.10 	$2,763.20 	$1.97
+Nov 13, 2003 	3,000 	$150.00 	$5,999.00 	$2.00
+Nov 14, 2003 	4,000 	$200.00 	$8,008.84 	$2.00
+Jan 14, 2004 	2,210 	$110.50 	$3,777.50 	$1.71
+Apr 14, 2005 	4,000 	$200.00 	$10,553.56 	$2.64
+Aug 1, 2005 	5,000 	$250.00 	$10,413.17 	$2.08
+Oct 19, 2005 	4,000 	$200.00 	$7,527.73 	$1.88
+Dec 13, 2005 	20,000 	$1,000.00 	$40,687.98 	$2.03
+Mar 16, 2006 	10,000 	$500.00 	$17,896.56 	$1.79
+Jun 23, 2010 	50,000 	$2,500.00 	$52,733.60 	$1.05
+Sep 7, 2012 	394 	$19.70 	$569.90 	$1.45
+Sep 14, 2012 	10,337 	$516.85 	$13,850.25 	$1.34
+Mar 25, 2013 	114,355 	$5,717.75 	$130,195.91 	$1.14
+Nov 15, 2013 	80,000 	$3,616.38 	$75,943.98 	$0.95
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 3, 2006 	8,889 	$444.45 	$0.48 	$14,943.70 	$1.68
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Apr 01, 2015 	Split terms:1 for 5
+
+Corporate Actions for Cogentix Medical Inc 	  June 18, 2015
+left curve 	  symbol changes for CGNT 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+01 Apr 15 	VSCI 	CGNT 	Change in the ticker (trading) symbol from VSCI to CGNT
+  	  	 
+left curve 	  CUSIP changes for CGNT 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+01 Apr 15 	927912105 	19243A104 	Change in any of identification numbers (CUSIP) of a security from 927912105 to 19243A104
+  	  	 
+left curve 	  name changes for CGNT 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+01 Apr 15 	Vision Sciences Inc/DE 	Cogentix Medical Inc 	Change in the name of issuer from Vision Sciences Inc/DE to Cogentix Medical Inc
+  	  	 
+left curve 	  CGNT had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+01 Apr 15 	1 for 5 	Split terms:1 for 5
+
+ok look at the new site
+the new site and old site agree, new site shows CGNT now
+
+updated the case 
+
+6/19/15
+pbrett
+Fund Symbols
+ABCR
+
+Brandon fixed it so now CGNT is there, closing this out 

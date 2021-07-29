@@ -1,0 +1,255 @@
+
+date:  
+ticker:   WFHCQ
+
+stock is not pricing in crossy CLVF fund
+
+yahoo: nothing 
+
+quantum:
+Women First HealthCare, Inc.
+Ticker Symbol: WFHCQ*     CUSIP: 978150100     Exchange: NNM
+* NOTE: This security is no longer trading as of 9/17/10
+
+Company's Online Profile
+BUSINESS:  Women First HealthCare, Inc. is a specialty health care company dedicated to improving the health of midlife women.
+
+Notes:  Registration revoked by the SEC per the Other OTC on 9/17/2010.
+oursite:
+Symbol: WFHCQ 	Name: WOMEN FIRST HEALTHCARE INC 	Price: $0.00
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+symbol changes for WFHCQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+04 May 04 	WFHC 	WFHCQ 	Change in the ticker (trading) symbol from WFHC to WFHCQ
+  	  	 
+left curve 	  listing changes for WFHCQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Apr 14, 2004 	NASDAQ 	UQ 	OTCBB 	UU 	Change in the exchange that WFHC trades on from NASDAQ to OTCBB
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:WOMEN FIRST HEALTHCARE INC  Symbol:WFHCQ
+Date: 07/03/2015
+
+32 users found
+
+1	aharon-ezer	bsauls1	camqtr	cisaac	codyborders	crossy	dfoster2	ems779	gbailey1	gunanaman
+2	ijbsega	jamesreyes78	jcollins1	jgaffin1	kathynz	klmarcus	leif	lodro	lporter	mbarnes73
+3	moreno770	parokium	ppan	pudendal	rbomba	rogerbrookuk	rxfund	rxfund2	sanpab	santosrodriguez
+4	schiding14	trand	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'WFHCQ';  
+> Row 1:
+>   STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+
+select * from mstockalias where stockkey=X'a06910ac390c6d9fc0a8015c'     order by "date";
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='WFHCQ'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock WFHCQ
+>>>> dbtool started at 2015-07-04 01:10:53 -0400
+stock: WFHCQ
+  PK       : [A06910AC390C6D9FC0A8015C]
+  companyID: [8728]
+  symbol   : [WFHCQ]
+  name     : [WOMEN FIRST HEALTHCARE INC]
+  date     : [2004-05-04 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-04 01:10:54 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8728
+2012-04-10 (Tue) [4117]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'a06910ac390c6d9fc0a8015c' and shares > 0 order by closed; 
+> Row 450:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-03-11 11:19:00.000000'
+>        COMMENT = Asset Allocation|
+>     COMMISSION = 1.280029
+>   CURRENTORDER = X'266c50d147bd942fc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9b776b913a8601ebc0a80119'
+>       MODIFIED = NULL
+>            NET = 24.320556
+>         OPENED = TIMESTAMP '2008-02-21 10:09:35.000000'
+>          PRICE = 0.000286
+>     PRIMARYKEY = X'266a50d147bd942fc0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 85085.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'a06910ac390c6d9fc0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a06910ac390c6d9fc0a8015c'  and totalshares < 0);
+
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a06910ac390c6d9fc0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 32 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 9/17/10
+last ticket: 2008-03-11  PRICE = 0.000286
+last price:  2012-04-20 (Fri) [4127]: O:0.0025 H:0.0025 L:0.0025 C:0.0025 V:0 TSO:0 A:0.0025 R:1.0000 CA:0.0000
+
+going with 20100917 0.0025 
+
+/Marketocracy/bin/cahelper -symbol  WFHCQ  -effective 20100917 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0025  -acqShare 0 -purchaser WFHCQ   >& /Users/build/caout/WFHCQ.20150703-DELIST.out 
+WFHCQ.20150703-DELIST.out
+stocks:~/caout build$ tail -f WFHCQ.20150703-DELIST.out
+D: (07-04 01:15:11.444) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-04 01:15:58.893) cahelper started on 2015-07-04 01:15:58 -0400
+
+D: (07-04 01:15:59.156) There are [0] open tickets for WFHCQ on 20100917
+D: (07-04 01:15:59.522) StockFileLoad Version:4.0
+D: (07-04 01:15:59.522) Loading Stock Data
+D: (07-04 01:17:16.985) Building Lookup Index
+D: (07-04 01:17:26.278) Finished Building Index
+D: (07-04 01:17:33.655) Finished Loading Stock Data
+D: (07-04 01:17:33.726) Connection to 192.168.111.172:6666 succeeded
+D: (07-04 01:17:35.152) {
+    "ACQUIRED_STOCK" = WFHCQ; 
+    "ACQUIRING_STOCK" = "WFHCQ_FIX"; 
+    AMOUNT = 0.0025; 
+    APPLIED = 1; 
+    DATE = 20100917; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "WFHCQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-04 01:17:38.340) SUCCESS
+D: (07-04 01:17:38.341) cahelper finished 2015-07-04 01:17:38 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'a06910ac390c6d9fc0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 978150100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = WOMEN FIRST HEALTHCARE INC
+>     PRIMARYKEY = X'a06a10ac390c6d9fc0a8015c'
+>       STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+>         SYMBOL = WFHC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 978150100
+>           DATE = TIMESTAMP '2004-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WOMEN FIRST HEALTHCARE INC
+>     PRIMARYKEY = X'17933ad9407ded5effffffff'
+>       STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+>         SYMBOL = WFHC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 978150100
+>           DATE = TIMESTAMP '2004-05-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WOMEN FIRST HEALTHCARE INC
+>     PRIMARYKEY = X'a723476740984b0dc0a80146'
+>       STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+>         SYMBOL = WFHCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 978150100
+>           DATE = TIMESTAMP '2010-09-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WOMEN FIRST HEALTHCARE INC
+>     PRIMARYKEY = X'05a6417755976c0fc0a86f92'
+>       STOCKKEY = X'a06910ac390c6d9fc0a8015c'
+>         SYMBOL = WFHCQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102010
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'05a6417755976c0fc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'05a6417755976c0fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WFHCQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.002500|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150704:011558
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-17 00:00:00.000000'
+>         BB_IDENTIFIER = WFHCQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = WFHCQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'05a0417755976c0ec0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'05a0417755976c0ec0a86f92';
+> Row 1:
+>   _C001 = 52.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'05a0417755976c0ec0a86f92'));
+there are 52 fundkeys, save to CA issues WFHCQ fundkeys.txt
+
+For Beta case
+WFHCQ no longer trades but is still active on our site - need to delist 
+
+check on 7/4/15   invalidate funds
+check MAdmin  check cross CLVF fund 
+
+7/6/15
+ WFHCQ has been acquired 	right curve
+  	  	
+WOMEN FIRST HEALTHCARE INC acquired by a private company on 2010-09-17 00:00:00. 
+invalidate reprice and update case 
+
+closing this out 

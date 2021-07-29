@@ -1,0 +1,335 @@
+GFGFQ
+
+date:  
+ticker:  
+
+yahoo:
+
+quantum:
+Guaranty Financial Group, Inc.
+Ticker Symbol: GFGFQ*     CUSIP: Unknown*      Exchange: OTOTC
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 5/16/11
+
+Notes:  Bankruptcy per the Other OTC on 10/20/2009. Plan of bankruptcy effective, all shares have been cancelled per the Other OTC on 5/16/2011.
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Guaranty Financial Group Inc  Symbol:GFGFQ
+Date: 08/01/2015
+
+96 users found
+
+1	abbycapital	abusigin	ag1	aschaefer	bangal	bhamilton	butna	cbedevian	cowdude	coynej60
+2	cr501s09	csimpson	devdev142	dfama	dharvey1	dick_jane	donkeydew	dspeak	empire	ericp33
+3	eskyba	fabio_carradori	finanaliticasector_a	fritzlink	gaszap	glim888	globettrotter	gugunganteng	gweatherbee	hortonpt
+4	hurrlibutz	hypedaj	imirza	inventorjs	jdjuly5	jerrico	jim_dallas	joeyeff@yahoo.com	jpb	jstarr1
+5	kampfhundstreichler	katelyn17	kens	kevante	kfoster	kpedo	krobinson1	limsxoxo	lrichardson	lt2f
+6	mbtrump	mertzm79	mikeb	mjo717	mocean	mrm661014@cs.com	mwydler	nc020872	ncomtois	npoling
+7	ocsupertones	patar31	pburke	pk4793	plumb01	poopchank	psmooth	randycibc	rbice	riskfile
+8	rjjones	rlake76	rmorse	seabatid	searching418	shootermcgavin	sillerta	stapler	stevetroy	stockmarine
+9	straighttalk	sveneziani	tarpro	teenerball	tfischer	tfreem1	tjennings1	tomdgthegreat	tonimarket	trek1red
+10	twinsouls	utterme	volodya	wieselman	wo_neill	zyberianinvestor
+
+database
+select distinct stockkey from mstockalias where symbol= 'GFGFQ';  
+> Row 1:
+>   STOCKKEY = X'332068fd4779b01ec0a80146'
+
+select * from mstockalias where stockkey=X'332068fd4779b01ec0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2007-12-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'332168fd4779b01ec0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'cc381b574a930000c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-08-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'e1451b9c4a930047c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'f1d3568b4adf7737c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGFQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GFGFQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|GFGFQ|CP_DELIST_REASON|3|CP_NOTES|Plan of Bankruptcy Effective; All shares have been cancelled; Deletion Time 15:09:16
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 54541929
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 13049852
+>        BB_COMPANYNAME = Guaranty Financial Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-05-16 00:00:00.000000'
+>         BB_IDENTIFIER = GFGFQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-16 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = GFGFQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-05-16 00:00:00.000000'
+>            PRIMARYKEY = X'c5e23a4a4dd1a688c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GFGFQ
+>>>> dbtool started at 2015-08-02 02:12:35 -0400
+stock: GFGFQ
+  PK       : [332068FD4779B01EC0A80146]
+  companyID: [17841]
+  symbol   : [GFGFQ]
+  name     : [Guaranty Financial Group Inc]
+  date     : [2009-10-21 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-02 02:12:35 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17841
+2011-05-09 (Mon) [3780]: O:0.0055 H:0.0055 L:0.0055 C:0.0055 V:24950 TSO:0 A:0.0055 R:1.0000 CA:0.0000
+2011-05-10 (Tue) [3781]: O:0.0045 H:0.0045 L:0.0045 C:0.0045 V:41120 TSO:0 A:0.0045 R:1.0000 CA:0.0000
+2011-05-11 (Wed) [3782]: O:0.0055 H:0.0060 L:0.0041 C:0.0041 V:304417 TSO:0 A:0.0041 R:1.0000 CA:0.0000
+2011-05-12 (Thu) [3783]: O:0.0045 H:0.0070 L:0.0045 C:0.0068 V:226033 TSO:0 A:0.0068 R:1.0000 CA:0.0000
+2011-05-13 (Fri) [3784]: O:0.0041 H:0.0045 L:0.0040 C:0.0040 V:240320 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+2011-05-14 (Sat) [3785]: <WEEKEND>
+2011-05-15 (Sun) [3786]: <WEEKEND>
+2011-05-16 (Mon) [3787]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+2011-05-17 (Tue) [3788]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+2011-05-18 (Wed) [3789]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+2011-05-19 (Thu) [3790]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+2011-05-20 (Fri) [3791]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+2011-05-21 (Sat) [3792]: <WEEKEND>
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'332068fd4779b01ec0a80146' and shares > 0 order by closed; 
+Row 227:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-04-11 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.049825
+>   CURRENTORDER = X'383514a64da0dd45c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'69b1487c43c7d57ec0a80132'
+>       MODIFIED = NULL
+>            NET = 0.946675
+>         OPENED = TIMESTAMP '2011-04-09 18:27:17.000000'
+>          PRICE = 0.005173
+>     PRIMARYKEY = X'383314a64da0dd45c0a80132'
+>         SECFEE = 0.010000
+>         SHARES = 183.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'332068fd4779b01ec0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'332068fd4779b01ec0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'332068fd4779b01ec0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist 2011-05-16
+there are 96 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 5/16/11
+last ticket:  2011-04-11    PRICE = 0.005173
+last price: 2011-05-16 (Mon) [3787]: O:0.0055 H:0.0055 L:0.0050 C:0.0050 V:189300 TSO:0 A:0.0050 R:1.0000 CA:0.0000
+
+going with 20110516 0.0050
+
+/Marketocracy/bin/cahelper -symbol  GFGFQ  -effective 20110516 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0050 -acqShare 0 -purchaser GFGFQ   >& /Users/build/caout/GFGFQ.20150801-DELIST
+GFGFQ.20150801-DELIST
+stocks:~/caout build$ tail -f GFGFQ.20150801-DELIST
+D: (08-02 02:17:54.914) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-02 02:18:57.057) cahelper started on 2015-08-02 02:18:57 -0400
+
+D: (08-02 02:18:58.034) There are [0] open tickets for GFGFQ on 20110516
+D: (08-02 02:18:58.502) StockFileLoad Version:4.0
+D: (08-02 02:18:58.502) Loading Stock Data
+D: (08-02 02:20:15.751) Building Lookup Index
+D: (08-02 02:20:24.906) Finished Building Index
+D: (08-02 02:20:32.627) Finished Loading Stock Data
+D: (08-02 02:20:32.767) Connection to 192.168.111.172:6666 succeeded
+D: (08-02 02:20:32.828) >>> load new StockPrices file
+D: (08-02 02:20:32.852) <<< load new StockPrices file
+D: (08-02 02:20:32.853) >>> swap StockPrices
+D: (08-02 02:20:32.853) Obtained Stockprices swap mutex
+D: (08-02 02:20:32.853) <<< swap StockPrices
+D: (08-02 02:20:32.853) Stock prices available from 2000-05-01 to 2015-07-31
+D: (08-02 02:20:35.392) SavingChanges for position sell out 101 of 223
+D: (08-02 02:20:46.497) {
+    "ACQUIRED_STOCK" = GFGFQ; 
+    "ACQUIRING_STOCK" = "GFGFQ_FIX"; 
+    AMOUNT = 0.005; 
+    APPLIED = 1; 
+    DATE = 20110516; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GFGFQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-02 02:20:57.576) SUCCESS
+D: (08-02 02:20:57.577) cahelper finished 2015-08-02 02:20:57 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'332068fd4779b01ec0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2007-12-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'332168fd4779b01ec0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'cc381b574a930000c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-08-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'e1451b9c4a930047c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2009-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'f1d3568b4adf7737c0a80146'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGFQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40108N106
+>           DATE = TIMESTAMP '2011-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Guaranty Financial Group Inc
+>     PRIMARYKEY = X'8f6b342055bdb652c0a86f92'
+>       STOCKKEY = X'332068fd4779b01ec0a80146'
+>         SYMBOL = GFGFQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'8f6b342055bdb652c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'8f6b342055bdb652c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GFGFQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.005000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150802:021857
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-05-16 00:00:00.000000'
+>         BB_IDENTIFIER = GFGFQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GFGFQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-05-16 00:00:00.000000'
+>            PRIMARYKEY = X'8f65342055bdb651c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'8f65342055bdb651c0a86f92';
+> Row 1:
+>   _C001 = 187.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8f65342055bdb651c0a86f92'));
+there are 187 fundkeys, save to CA issues GFGFQ fundkeys.txt
+
+For Beta case
+GFGFQ no longer trades but is still active on our site - need to delist 
+
+check on 8/2/15   invalidate funds
+check MAdmin  clear 
+
+
+GFGFQ has been acquired 	right curve
+  	  	
+Guaranty Financial Group Inc acquired by a private company on 2011-05-16 00:00:00.
+ invalidate, reprice and close  	  	 

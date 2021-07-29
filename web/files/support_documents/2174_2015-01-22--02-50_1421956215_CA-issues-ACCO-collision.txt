@@ -1,0 +1,4076 @@
+date:  1/19/15
+ticker collision ACCO
+
+select distinct stockkey from mstockalias where symbol='ACCO';
+
+> Row 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+> Row 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+> Row 3:
+>   STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+We have three stockkeys for ACCO
+
+******************************************************************
+> ACCO 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+this one is inactive 
+******************************************************************
+select * from mstockalias where STOCKKEY =   X'8152043c39e7e9bec0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'8153043c39e7e9bec0a801dc'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2003-10-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'9d1109223f8a136bc0a80146'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+inactive ok
+
+******************************************************************
+> ACCO 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+started life as ABD then did a ticker change to ACCO  this seems good according to 
+Quantume
+9/22/2009 - ABD IPO'ed
+5/1/12 changed ticker to ACCO  this is the one to keep
+******************************************************************
+select * from mstockalias where STOCKKEY =  X'f07b1b9e4303ee4ec0a80146'; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'f07c1b9e4303ee4ec0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ABD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'f07c1b9e4303ee4ec0a80146';
+	nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'99390cad4fa068f7c0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'99390cad4fa068f7c0a80146';
+> Row 1:
+>              ALIASKEY = X'99390cad4fa068f7c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ABD US|CP_NEW_TKR|ACCO US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 63376457
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9919597
+>        BB_COMPANYNAME = ACCO Brands Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = ABD     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-13 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ABD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-04-13 00:00:00.000000'
+>            PRIMARYKEY = X'97924c044f88aa97c0a80146'
+>               VERSION = NULL
+
+CHECK for mtickets
+select count(*) from mticket where STOCKKEY = X'f07b1b9e4303ee4ec0a80146';
+> Row 1:
+>   _C001 = 1168.000000
+
+check for ones created by CA
+select distinct sourcekey from mticket where STOCKKEY = X'f07b1b9e4303ee4ec0a80146';
+> Row 1:
+>   SOURCEKEY = X'd3dc19074303ebb7c0a80146'    FO spin
+> Row 2:
+>   SOURCEKEY = NULL
+	select count(*) from mticket where stockkey =X'f07b1b9e4303ee4ec0a80146' and  SOURCEKEY is NULL;
+> Row 1:
+>   _C001 = 641.000000
+
+> Row 3:
+>   SOURCEKEY = X'74215cba4722b33bc0a8013c'
+
+How can there be two different non null sourcekeys?
+what are the sourcekeys ?
+
+> Row 1:
+>   SOURCEKEY = X'd3dc19074303ebb7c0a80146'
+select count(*) from mticket where SOURCEKEY = X'd3dc19074303ebb7c0a80146';
+> Row 1:
+>   _C001 = 490.000000
+select * from mcorporateaction where primarykey=X'd3dc19074303ebb7c0a80146';
+> Row 1:
+>              ALIASKEY = X'12e40e21390b02ecc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|ACCO Brands Corp|CP_ID_BB_COMP|9919597|CP_ID_BB_SEC|1000|CP_TERMS|.235   : 1|CP_RATIO|0.235000|CP_PAY_DT|20050816|CP_RECORD_DT|20050809|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.940787|CP_ADJ_DT|20050817|CP_TKR|ABD     US|CP_DUE_BILL_RED_DT|20050819|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 17452457
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100057
+>        BB_COMPANYNAME = Fortune Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = FO      UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-03-16 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = FO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2005-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'd3dc19074303ebb7c0a80146'
+>               VERSION = NULL
+
+not sure exactly what this is: 
+select * from mticket where sourcekey= X'd3dc19074303ebb7c0a80146';
+select distinct stockkey from mticket where sourcekey= X'd3dc19074303ebb7c0a80146';
+> Row 1:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+I thought that there might be more than one stockkey
+let's look at one of the mtickets:
+> Row 490:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-08-16 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'0af61b9e4303efdec0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9bc55558418d3af0c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2005-08-16 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'0af41b9e4303efdec0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>      SOURCEKEY = X'd3dc19074303ebb7c0a80146'
+>    NOTIFYEMAIL = NULL
+
+select loginname from mmanager where primarykey=X'9bc55558418d3af0c0a80134';
+> Row 1:
+>   LOGINNAME = mgulla
+select * from morder where ticketkey=X'0af41b9e4303efdec0a80146';
+> Row 1:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'0af61b9e4303efdec0a80146'
+>         SHARES = 170.000000
+>      TICKETKEY = X'0af41b9e4303efdec0a80146'
+>           TIME = TIMESTAMP '2005-08-16 12:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+select * from mtrade where ticketkey=X'0af41b9e4303efdec0a80146';
+> Row 1:
+>                    KINDKEY = X'9e84669940d1e2bcc0a8020c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0af91b9e4303efdec0a80146'
+>                 PRIMARYKEY = X'0af71b9e4303efdec0a80146'
+>                     SHARES = 170.000000
+>                  TICKETKEY = X'0af41b9e4303efdec0a80146'
+>                     CLOSED = TIMESTAMP '2005-08-16 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey = X'0af91b9e4303efdec0a80146');
+> Row 1:
+>   SYMBOL = GSEF
+
+lets login and check mgulla    GSEF fund on 8/16/2005
+member got -170 in this inactive fund base on a CA
+let's look at symbol='FO';
+select distinct stockkey from mstockalias where symbol='FO';
+> Row 1:
+>   STOCKKEY = X'12e30e21390b02ecc0a80116'
+select * from mstockalias where  STOCKKEY = X'12e30e21390b02ecc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 349631101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FORTUNE BRANDS
+>     PRIMARYKEY = X'12e40e21390b02ecc0a80116'
+>       STOCKKEY = X'12e30e21390b02ecc0a80116'
+>         SYMBOL = FO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201020
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'12e40e21390b02ecc0a80116' and BB_ACTIONMNEMONIC <> 'DVD_CASH';
+> Row 1:
+>              ALIASKEY = X'12e40e21390b02ecc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|ACCO Brands Corp|CP_ID_BB_COMP|9919597|CP_ID_BB_SEC|1000|CP_TERMS|.235   : 1|CP_RATIO|0.235000|CP_PAY_DT|20050816|CP_RECORD_DT|20050809|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.940787|CP_ADJ_DT|20050817|CP_TKR|ABD     US|CP_DUE_BILL_RED_DT|20050819|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 17452457
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100057
+>        BB_COMPANYNAME = Fortune Brands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = FO      UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-03-16 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = FO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2005-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'd3dc19074303ebb7c0a80146'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 349631101
+>           DATE = TIMESTAMP '2011-10-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FORTUNE BRANDS
+>     PRIMARYKEY = X'6a503c4d4e8b8c38c0a80146'
+>       STOCKKEY = X'12e30e21390b02ecc0a80116'
+>         SYMBOL = BEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201020
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 349631101
+>           DATE = TIMESTAMP '2011-10-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Beam Inc
+>     PRIMARYKEY = X'86903d8e4e8b8c9ac0a80146'
+>       STOCKKEY = X'12e30e21390b02ecc0a80116'
+>         SYMBOL = BEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201020
+>       STYLEKEY = MB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073730103
+>           DATE = TIMESTAMP '2011-10-04 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Beam Inc
+>     PRIMARYKEY = X'00013db64e8b8cafc0a80146'
+>       STOCKKEY = X'12e30e21390b02ecc0a80116'
+>         SYMBOL = BEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201020
+>       STYLEKEY = MB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073730103
+>           DATE = TIMESTAMP '2014-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Beam Inc
+>     PRIMARYKEY = X'652d31f25419b35bc0a86f92'
+>       STOCKKEY = X'12e30e21390b02ecc0a80116'
+>         SYMBOL = BEAM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201020
+>       STYLEKEY = MB
+
+
+
+The other non null sourcekey
+> Row 3:
+>   SOURCEKEY = X'74215cba4722b33bc0a8013c'
+select count(*) from mticket where SOURCEKEY = X'74215cba4722b33bc0a8013c';
+> Row 1:
+>   _C001 = 74.000000
+what is the CA?
+select * from mcorporateaction where primarykey=X'74215cba4722b33bc0a8013c';
+> Row 1:
+>              ALIASKEY = X'df005cba4722b36dc0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GBND  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|59.000000|CP_CASH_FLAG|N.A.|CP_SH|1.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20071026:114043
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = ABD     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2005-08-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ABD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'74215cba4722b33bc0a8013c'
+>               VERSION = NULL
+
+ACCO brands acquired GBND  this is fine   holders of GBND got ABD
+
+Assessment:
+1.  FO spun off ABD on 8/16/05 or 8/17/05  and ABD came to like
+2.  ABD acquired GBND on 8/17/05
+3.  ABD changed symbol to ACCO and that is where it is today, this stock still trades. 
+******************************************************************
+> ACCO 3:
+>   STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+this one came from a spin off and there are member trades
+we're going to merge these over to ACCO-2
+******************************************************************
+select * from mstockalias where STOCKKEY =  X'ca6d132b4fa06dc8c0a80146'; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'ca6e132b4fa06dc8c0a80146'
+>       STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'ca6e132b4fa06dc8c0a80146';
+nothing
+CHECK for mticket
+
+select count(*) from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146';
+> Row 1:
+>   _C001 = 270.000000
+
+check for the sourcekey
+select distinct sourcekey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146';
+there are two
+
+> Row 1:
+>   SOURCEKEY = X'81f505e94fa06761c0a80146'
+select count(*) from mticket where SOURCEKEY = X'81f505e94fa06761c0a80146';
+> Row 1:
+>   _C001 = 254.000000
+
+what is this CA?
+select * from mcorporateaction where primarykey=X'81f505e94fa06761c0a80146';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|ACCO Brands Corp|CP_ID_BB_COMP|9919597|CP_ID_BB_SEC|1000|CP_TERMS|.3299  : 1|CP_RATIO|0.329865|CP_PAY_DT|20120430|CP_RECORD_DT|20120424|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.890632|CP_ADJ_DT|20120501|CP_TKR|ACCO US|CP_DUE_BILL_RED_DT|20120503|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|MeadWestvaco announced a "spin-merge" transaction in which the MWV Consumer & Office Products operations will be spun off in a new entity and then that entity will be immediately merged into ACCO Brands.  MWV shareholders will receive .32986547 shares of ACCO Brands for every 1 shares of MWV held.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 59320548
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 7648068
+>        BB_COMPANYNAME = MeadWestvaco Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-04-30 00:00:00.000000'
+>            PRIMARYKEY = X'81f505e94fa06761c0a80146'
+>               VERSION = NULL
+
+ah it's a spin off 
+
+> Row 2:
+>   SOURCEKEY = NULL
+select count(*) from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146'  and sourcekey is null;
+> Row 1:
+>   _C001 = 16.000000
+
+Assessment:
+1.   We'll keep ACCO-2.  This is the true "creation" path.  
+ACCO-3 we need to change, these came about via a spin off from MWV, however, the action should have been a DVD_STOCK
+instead because ACCO already existed.
+
+
+There are 270 mtickets total for ACCO-3    254 of these are from the CA which will be backed out.
+There are also 16 mtickets generated by members.       Need to capture the mtickets, get the ticketkeys, also get mtrades 
+and we'll need to delete these.   Move the mtickets over.
+
+1.  let's get the mtckets for ACCO-3
+select * from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null;
+save these to file:  CA issues ACCO 3 mtickets
+
+2.  let's get the ticketkeys for ACCO-3  we'll be ticking these
+select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null;
+> Row 1:
+>   PRIMARYKEY = X'4428565e4fa14ed8c0a80134'
+> Row 2:
+>   PRIMARYKEY = X'04a521bb4fa464c0c0a80135'
+> Row 3:
+>   PRIMARYKEY = X'de032e3a4ff73c02c0a80135'
+> Row 4:
+>   PRIMARYKEY = X'0e23116950626f07c0a80132'
+> Row 5:
+>   PRIMARYKEY = X'5fb1250c506d0299c0a80135'
+> Row 6:
+>   PRIMARYKEY = X'38fd2c7050b63ed1c0a80134'
+> Row 7:
+>   PRIMARYKEY = X'090854f750e2190ec0a80132'
+> Row 8:
+>   PRIMARYKEY = X'532c3cbd50f61fc3c0a80134'
+> Row 9:
+>   PRIMARYKEY = X'48712c8951243615c0a80134'
+> Row 10:
+>   PRIMARYKEY = X'48fa2c8951243889c0a80134'
+> Row 11:
+>   PRIMARYKEY = X'0b6b5f9551d7288cc0a80132'
+> Row 12:
+>   PRIMARYKEY = X'0cd65f9551d72918c0a80132'
+> Row 13:
+>   PRIMARYKEY = X'8b4e38b8527146c3c0a80135'
+> Row 14:
+>   PRIMARYKEY = X'c8622d6553225bc9c0a86f99'
+> Row 15:
+>   PRIMARYKEY = X'6388566e5381ed6dc0a86f98'
+> Row 16:
+>   PRIMARYKEY = X'7441059e540f23dcc0a86f98'
+save these to file:  CA issues ACCO 3 ticketkeys
+
+3.  Let's get the fundkeys
+select fundkey from mposition where primarykey in(select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null));
+> Row 1:
+>   FUNDKEY = X'e724110d399d7351c0a80118'
+> Row 2:
+>   FUNDKEY = X'2ef008fe42f4b7fec0a80134'
+> Row 3:
+>   FUNDKEY = X'1cfd6a1c4302f483c0a80133'
+> Row 4:
+>   FUNDKEY = X'ff9e71d54b2448e1c0a80134'
+> Row 5:
+>   FUNDKEY = X'790721e649f2f6a1c0a80134'
+> Row 6:
+>   FUNDKEY = X'e0d3559646cbbfacc0a80135'
+> Row 7:
+>   FUNDKEY = X'85145fcc49417c4ac0a80133'
+> Row 8:
+>   FUNDKEY = X'710d02594f0f5f7ec0a80135'
+> Row 9:
+>   FUNDKEY = X'e1290ee144419c0cc0a80134'
+> Row 10:
+>   FUNDKEY = X'c8a1039f4424b1b4c0a80134'
+> Row 11:
+>   FUNDKEY = X'ebf958f03c41070cc0a80119'
+> Row 12:
+>   FUNDKEY = X'84196d3f3bc25cecc0a801e1'
+> Row 13:
+>   FUNDKEY = X'5f08512e43c16f2bc0a80134'
+
+save these to file: CA issues ACCO 3 fundkeys
+
+4.  let's get the mtrades for ACCO-3
+select * from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null);
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'13b8132b4fa06eaec0a80146'
+>                 PRIMARYKEY = X'd53302cf4fa166fdc0a8011e'
+>                     SHARES = 1210.000000
+>                  TICKETKEY = X'4428565e4fa14ed8c0a80134'
+>                     CLOSED = TIMESTAMP '2012-05-02 12:55:25.000000'
+>                      PRICE = 10.998800
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'35b2132b4fa06ebcc0a80146'
+>                 PRIMARYKEY = X'33c702cc4fa7fdd2c0a8011e'
+>                     SHARES = 65.000000
+>                  TICKETKEY = X'04a521bb4fa464c0c0a80135'
+>                     CLOSED = TIMESTAMP '2012-05-07 12:52:34.000000'
+>                      PRICE = 10.409700
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'059e3ba840d73045c0a8020c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'ade0132b4fa06e80c0a80146'
+>                 PRIMARYKEY = X'a4d942554ff73c52c0a8011e'
+>                     SHARES = 264.000000
+>                  TICKETKEY = X'de032e3a4ff73c02c0a80135'
+>                     CLOSED = TIMESTAMP '2012-07-06 15:28:00.000000'
+>                      PRICE = 10.346200
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'1267132b4fa06eadc0a80146'
+>                 PRIMARYKEY = X'9c4b3fe2506303bec0a8011e'
+>                     SHARES = 682.000000
+>                  TICKETKEY = X'0e23116950626f07c0a80132'
+>                     CLOSED = TIMESTAMP '2012-09-26 09:30:00.000000'
+>                      PRICE = 6.123700
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'35c6132b4fa06ebcc0a80146'
+>                 PRIMARYKEY = X'8ba52cf0506d906bc0a8011e'
+>                     SHARES = 346.000000
+>                  TICKETKEY = X'5fb1250c506d0299c0a80135'
+>                     CLOSED = TIMESTAMP '2012-10-04 09:34:00.000000'
+>                      PRICE = 6.243100
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'f7ac132b4fa06ea6c0a80146'
+>                 PRIMARYKEY = X'd7e4568850b64110c0a8011e'
+>                     SHARES = 1236.000000
+>                  TICKETKEY = X'38fd2c7050b63ed1c0a80134'
+>                     CLOSED = TIMESTAMP '2012-11-28 11:51:00.000000'
+>                      PRICE = 6.821500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 7:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'36ea132b4fa06e58c0a80146'
+>                 PRIMARYKEY = X'1b3f14cd50f6baa5c0a8011e'
+>                     SHARES = 301.000000
+>                  TICKETKEY = X'532c3cbd50f61fc3c0a80134'
+>                     CLOSED = TIMESTAMP '2013-01-16 09:33:00.000000'
+>                      PRICE = 8.552900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 8:
+>                    KINDKEY = X'705f3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'220c132b4fa06eb3c0a80146'
+>                 PRIMARYKEY = X'c172652451dabefac0a8011e'
+>                     SHARES = 1154.000000
+>                  TICKETKEY = X'0cd65f9551d72918c0a80132'
+>                     CLOSED = TIMESTAMP '2013-07-08 09:30:00.000000'
+>                      PRICE = 6.519900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 9:
+>                    KINDKEY = X'705f3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'2230132b4fa06eb4c0a80146'
+>                 PRIMARYKEY = X'c19b652451dabf1ac0a8011e'
+>                     SHARES = 1154.000000
+>                  TICKETKEY = X'0b6b5f9551d7288cc0a80132'
+>                     CLOSED = TIMESTAMP '2013-07-08 09:30:00.000000'
+>                      PRICE = 6.519900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 10:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'21f8132b4fa06eb3c0a80146'
+>                 PRIMARYKEY = X'865025f852714734c0a8011e'
+>                     SHARES = 329.000000
+>                  TICKETKEY = X'8b4e38b8527146c3c0a80135'
+>                     CLOSED = TIMESTAMP '2013-10-30 13:51:00.000000'
+>                      PRICE = 5.957800
+>   CREATEDBYCORPORATEACTION = 0
+> Row 11:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'f7b6132b4fa06ea6c0a80146'
+>                 PRIMARYKEY = X'182451735323052bc0a86f9c'
+>                     SHARES = 257.000000
+>                  TICKETKEY = X'c8622d6553225bc9c0a86f99'
+>                     CLOSED = TIMESTAMP '2014-03-14 09:32:00.000000'
+>                      PRICE = 5.859900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 12:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'3991132b4fa06ebec0a80146'
+>                 PRIMARYKEY = X'2c666feb5384949dc0a86f9c'
+>                     SHARES = 359.000000
+>                  TICKETKEY = X'6388566e5381ed6dc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-05-27 09:32:00.000000'
+>                      PRICE = 6.049900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 13:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'37db132b4fa06e02c0a80146'
+>                 PRIMARYKEY = X'c8e7076e540f23e9c0a86f9c'
+>                     SHARES = 201.000000
+>                  TICKETKEY = X'7441059e540f23dcc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-09-09 11:59:00.000000'
+>                      PRICE = 7.769900
+>   CREATEDBYCORPORATEACTION = 0
+
+
+select primarykey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null);
+> Row 1:
+>   PRIMARYKEY = X'd53302cf4fa166fdc0a8011e'
+> Row 2:
+>   PRIMARYKEY = X'33c702cc4fa7fdd2c0a8011e'
+> Row 3:
+>   PRIMARYKEY = X'a4d942554ff73c52c0a8011e'
+> Row 4:
+>   PRIMARYKEY = X'9c4b3fe2506303bec0a8011e'
+> Row 5:
+>   PRIMARYKEY = X'8ba52cf0506d906bc0a8011e'
+> Row 6:
+>   PRIMARYKEY = X'd7e4568850b64110c0a8011e'
+> Row 7:
+>   PRIMARYKEY = X'1b3f14cd50f6baa5c0a8011e'
+> Row 8:
+>   PRIMARYKEY = X'c172652451dabefac0a8011e'
+> Row 9:
+>   PRIMARYKEY = X'c19b652451dabf1ac0a8011e'
+> Row 10:
+>   PRIMARYKEY = X'865025f852714734c0a8011e'
+> Row 11:
+>   PRIMARYKEY = X'182451735323052bc0a86f9c'
+> Row 12:
+>   PRIMARYKEY = X'2c666feb5384949dc0a86f9c'
+> Row 13:
+>   PRIMARYKEY = X'c8e7076e540f23e9c0a86f9c'
+save these to CA issues ACCO-3 mtrade primarykeys
+
+select loginname from mmanager where primarykey in (select managerkey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null); 
+> Row 1:
+>   LOGINNAME = mchristy
+> Row 2:
+>   LOGINNAME = grumpypole
+> Row 3:
+>   LOGINNAME = vel007
+> Row 4:
+>   LOGINNAME = adaher
+> Row 5:
+>   LOGINNAME = natalieb
+> Row 6:
+>   LOGINNAME = sdignan
+> Row 7:
+>   LOGINNAME = bearfodder
+> Row 8:
+>   LOGINNAME = gabipatrick
+> Row 9:
+>   LOGINNAME = grayanderson
+> Row 10:
+>   LOGINNAME = wbauder
+> Row 11:
+>   LOGINNAME = dontgoshane
+> Row 12:
+>   LOGINNAME = investorlestrade
+
+let's look at mchristy
+select primarykey from mmanager where loginname='mchristy';
+> Row 1:
+>   PRIMARYKEY = X'b8472cd0399c076dc0a80118'  <--- managerkey
+
+
+select * from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146'  and managerkey=X'b8472cd0399c076dc0a80118';
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'37d8132b4fa06e02c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b8472cd0399c076dc0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'37d6132b4fa06e02c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+>      SOURCEKEY = X'81f505e94fa06761c0a80146'
+>    NOTIFYEMAIL = NULL
+	select * from mtrade where ticketkey=X'37d6132b4fa06e02c0a80146';
+	> Row 1:
+	>                    KINDKEY = X'6339039339e7e927c0a801dc'
+	>                   MATCHKEY = NULL
+	>                POSITIONKEY = X'37db132b4fa06e02c0a80146'
+	>                 PRIMARYKEY = X'37d9132b4fa06e02c0a80146'
+	>                     SHARES = 201.000000
+	>                  TICKETKEY = X'37d6132b4fa06e02c0a80146'
+	>                     CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+	>                      PRICE = 0.000000
+	>   CREATEDBYCORPORATEACTION = 1
+	select symbol from mfund where primarykey in (select fundkey from mposition where primarykey=X'37db132b4fa06e02c0a80146');
+	> Row 1:
+	>   SYMBOL = MJCBE
+
+
+MJCBE	 trades on April 30, 2012	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	ACCO	201	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	PSX	108	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+> Row 2:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'370b132b4fa06e58c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b8472cd0399c076dc0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'3709132b4fa06e58c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+>      SOURCEKEY = X'81f505e94fa06761c0a80146'
+>    NOTIFYEMAIL = NULL
+	select * from mtrade where ticketkey=X'3709132b4fa06e58c0a80146';
+	> Row 1:
+	>                    KINDKEY = X'9e84669940d1e2bcc0a8020c'
+	>                   MATCHKEY = NULL
+	>                POSITIONKEY = X'501f132b4fa06e60c0a80146'
+	>                 PRIMARYKEY = X'370c132b4fa06e58c0a80146'
+	>                     SHARES = 254.000000
+	>                  TICKETKEY = X'3709132b4fa06e58c0a80146'
+	>                     CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+	>                      PRICE = 0.000000
+	>   CREATEDBYCORPORATEACTION = 1
+	select symbol from mfund where primarykey in (select fundkey from mposition where primarykey=X'501f132b4fa06e60c0a80146');
+	> Row 1:
+	>   SYMBOL = MSBT
+		
+
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-09 11:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 10.050000
+>   CURRENTORDER = X'7443059e540f23dcc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b8472cd0399c076dc0a80118'
+>       MODIFIED = NULL
+>            NET = 1561.740000
+>         OPENED = TIMESTAMP '2014-09-09 11:59:24.000000'
+>          PRICE = 7.769851
+>     PRIMARYKEY = X'7441059e540f23dcc0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 201.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select * from mtrade where ticketkey=X'7441059e540f23dcc0a86f98';
+	> Row 1:
+	>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+	>                   MATCHKEY = NULL
+	>                POSITIONKEY = X'37db132b4fa06e02c0a80146'
+	>                 PRIMARYKEY = X'c8e7076e540f23e9c0a86f9c'
+	>                     SHARES = 201.000000
+	>                  TICKETKEY = X'7441059e540f23dcc0a86f98'
+	>                     CLOSED = TIMESTAMP '2014-09-09 11:59:00.000000'
+	>                      PRICE = 7.769900
+	>   CREATEDBYCORPORATEACTION = 0
+
+
+	select symbol from mfund where primarykey in (select fundkey from mposition where primarykey=X'37db132b4fa06e02c0a80146');
+	> Row 1:
+	>   SYMBOL = MJCBE
+
+mchristy in the MSBT
+LEDGER
+Date	Start	Change	End	Type
+Apr 30, 2012		-254	-254	Corporate Action
+Total: -254
+ 	 	 
+BUYS
+You have no Buys for this position
+ 	 	 
+SELLS
+You have no sells for this position
+
+
+6. ok, let's delete the mtrades first:
+delete  from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null);
+done
+
+7. move the mtickets 
+select count(*) from  mticket where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null;
+> Row 1:
+>   _C001 = 16.000000
+
+change the stockkey to  > ACCO 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+update 
+
+update mticket set STOCKKEY = X'f07b1b9e4303ee4ec0a80146'  where stockkey=X'ca6d132b4fa06dc8c0a80146' and sourcekey is null;
+done
+
+Let's back out the CA
+******************************************************************
+> ACCO 3:
+>   STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+this one came from a spin off and there are member trades
+we're going to merge these over to ACCO-2
+******************************************************************
+select * from mstockalias where STOCKKEY = X'ca6d132b4fa06dc8c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'ca6e132b4fa06dc8c0a80146'
+>       STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey=X'ca6e132b4fa06dc8c0a80146';
+nothing
+select count(*) from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146';
+> Row 1:
+>   _C001 = 254.000000
+
+select distinct sourcekey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146';
+> Row 1:
+>   SOURCEKEY = X'81f505e94fa06761c0a80146'
+
+select * from mcorporateaction where primarykey=X'81f505e94fa06761c0a80146';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|ACCO Brands Corp|CP_ID_BB_COMP|9919597|CP_ID_BB_SEC|1000|CP_TERMS|.3299  : 1|CP_RATIO|0.329865|CP_PAY_DT|20120430|CP_RECORD_DT|20120424|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.890632|CP_ADJ_DT|20120501|CP_TKR|ACCO US|CP_DUE_BILL_RED_DT|20120503|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|MeadWestvaco announced a "spin-merge" transaction in which the MWV Consumer & Office Products operations will be spun off in a new entity and then that entity will be immediately merged into ACCO Brands.  MWV shareholders will receive .32986547 shares of ACCO Brands for every 1 shares of MWV held.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 59320548
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 7648068
+>        BB_COMPANYNAME = MeadWestvaco Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-04-30 00:00:00.000000'
+>            PRIMARYKEY = X'81f505e94fa06761c0a80146'
+>               VERSION = NULL
+
+terms CP_TERMS|.3299  : 1|CP_RATIO|0.329865   
+effective date: 2012-05-01
+record date: 20120424
+pay date:  20120430
+
+MWV dvd_stock ACCO
+
+update mcorporateaction set BB_ACTIONID = '59320548:MARTY' where  PRIMARYKEY = X'81f505e94fa06761c0a80146';
+select * from mcorporateaction where primarykey=X'81f505e94fa06761c0a80146';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|ACCO Brands Corp|CP_ID_BB_COMP|9919597|CP_ID_BB_SEC|1000|CP_TERMS|.3299  : 1|CP_RATIO|0.329865|CP_PAY_DT|20120430|CP_RECORD_DT|20120424|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.890632|CP_ADJ_DT|20120501|CP_TKR|ACCO US|CP_DUE_BILL_RED_DT|20120503|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|MeadWestvaco announced a "spin-merge" transaction in which the MWV Consumer & Office Products operations will be spun off in a new entity and then that entity will be immediately merged into ACCO Brands.  MWV shareholders will receive .32986547 shares of ACCO Brands for every 1 shares of MWV held.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 59320548:MARTY
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 7648068
+>        BB_COMPANYNAME = MeadWestvaco Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-04-30 00:00:00.000000'
+>            PRIMARYKEY = X'81f505e94fa06761c0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 59320548:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+stocks:~ build$ Read from remote host stocks: Operation timed out
+Connection to stocks closed.
+
+not sure what happened 
+
+
+
+Let's tickle the tickets
+X'04a521bb4fa464c0c0a80135'
+X'090854f750e2190ec0a80132'
+X'0b6b5f9551d7288cc0a80132'
+X'0cd65f9551d72918c0a80132'
+X'0e23116950626f07c0a80132'
+X'38fd2c7050b63ed1c0a80134'
+X'4428565e4fa14ed8c0a80134'
+X'48712c8951243615c0a80134'
+X'48fa2c8951243889c0a80134'
+X'532c3cbd50f61fc3c0a80134'
+X'5fb1250c506d0299c0a80135'
+X'6388566e5381ed6dc0a86f98'
+X'7441059e540f23dcc0a86f98'
+X'8b4e38b8527146c3c0a80135'
+X'c8622d6553225bc9c0a86f99'
+X'de032e3a4ff73c02c0a80135'
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+let's invalidate the funds
+/Marketocracy/bin/fptool invalidateFund 1cfd6a1c4302f483c0a80133;
+/Marketocracy/bin/fptool invalidateFund 2ef008fe42f4b7fec0a80134;
+/Marketocracy/bin/fptool invalidateFund 5f08512e43c16f2bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 710d02594f0f5f7ec0a80135;
+/Marketocracy/bin/fptool invalidateFund 790721e649f2f6a1c0a80134;
+/Marketocracy/bin/fptool invalidateFund 84196d3f3bc25cecc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 85145fcc49417c4ac0a80133;
+/Marketocracy/bin/fptool invalidateFund c8a1039f4424b1b4c0a80134;
+/Marketocracy/bin/fptool invalidateFund e0d3559646cbbfacc0a80135;
+/Marketocracy/bin/fptool invalidateFund e1290ee144419c0cc0a80134;
+/Marketocracy/bin/fptool invalidateFund e724110d399d7351c0a80118;
+/Marketocracy/bin/fptool invalidateFund ebf958f03c41070cc0a80119;
+/Marketocracy/bin/fptool invalidateFund ff9e71d54b2448e1c0a80134;
+
+done
+
+select * from mcorporateaction where primarykey=X'81f505e94fa06761c0a80146';
+
+let's delete all trades of ACCO-3
+> ACCO 3:
+>   STOCKKEY = X'ca6d132b4fa06dc8c0a80146'
+
+set commit false;
+
+delete from mstock where primarykey=  X'ca6d132b4fa06dc8c0a80146'; 
+
+delete from mwindowstock where stockkey=X'ca6d132b4fa06dc8c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'ca6d132b4fa06dc8c0a80146');
+
+delete from mstockalias where stockkey=X'ca6d132b4fa06dc8c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'ca6d132b4fa06dc8c0a80146');   
+
+delete from mposition where stockkey=X'ca6d132b4fa06dc8c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146');
+
+delete from mticket where stockkey=X'ca6d132b4fa06dc8c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'ca6d132b4fa06dc8c0a80146';  
+
+commit;
+
+set commit true;
+
+select distinct stockkey from mstockalias where symbol='ACCO';
+> Row 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+select * from mstockalias where STOCKKEY = X'8152043c39e7e9bec0a801dc';
+927
+> Row 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+select * from mstockalias where STOCKKEY = X'f07b1b9e4303ee4ec0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'f07c1b9e4303ee4ec0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ABD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'99390cad4fa068f7c0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+
+
+tomorrow we will run the DVD_STOCK
+terms CP_TERMS|.3299  : 1|CP_RATIO|0.329865   
+effective date: 20120501
+record date: 20120424
+pay date:  20120430
+
+/Marketocracy/bin/cahelper -symbol MWV -effective 20120501 -type DVD_STOCK -exchange UN  -dividendSymbol ACCO -payDate 20120430 -recordDate 20120424 -percent 32.99 >& /Users/build/caout/MWV.20150119-DVD_STOCK-ACCO.out
+MWV.20150119-DVD_STOCK-ACCO.out
+stocks:~/caout build$ tail -f MWV.20150119-DVD_STOCK-ACCO.out
+D: (01-20 13:31:44.987) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-20 13:32:22.297) cahelper started on 2015-01-20 13:32:22 -0500
+
+D: (01-20 13:32:25.218) StockFileLoad Version:3.0
+D: (01-20 13:32:25.218) Loading Stock Data
+D: (01-20 13:33:23.583) Building Lookup Index
+D: (01-20 13:33:29.626) Finished Building Index
+D: (01-20 13:33:31.001) Finished Loading Stock Data
+D: (01-20 13:33:31.197) Connection to 192.168.111.157:6666 succeeded
+D: (01-20 13:34:07.826) SavingChanges for Stock Dividend out 101 of 527
+D: (01-20 13:35:38.714) SavingChanges for Stock Dividend out 201 of 527
+D: (01-20 13:36:32.006) {
+    APPLIED = 1; 
+    DATE = 20120501; 
+    FUNDS = (
+        "wqureshi/Wasim's Mutual Fund", 
+        "cthiessen/CT Equity Fund", 
+        "riskreward/Risk-Reward Opportunity Fund", 
+        "mbunn/Michael Bunn's Mutual Fund", 
+        "slewis/steve lewis's Mutual Fund", 
+        "llafave/Lynn LaFave's Mutual Fund", 
+        "dharvey1/Darren David Harvey's Mutual Fund 2", 
+        "gracec/Grace Growth Value Blend", 
+        "ecarter/edward carter's Mutual Fund", 
+        "owldo/William Halterman's Mutual Fund", 
+        "tsundberg/Timothy M Sundberg's Mutual Fund", 
+        "dedstroke2/ The No-Technology Capital Opportunities Fund", 
+        "msmagacz/Goosh Traditional Value Fund", 
+        "dwarren1/P. David Warren's Mutual Fund", 
+        "budcorona/Richard Callaro's Mutual Fund", 
+        "snester/Sergei Nester's Mutual Fund", 
+        "thebax/Richard Anthony Baxter's Mutual Fund", 
+        "tdavis/Terry Davis's Mutual Fund", 
+        "mchristy/MJC Behavioral Fund", 
+        "bpowers2/Keepin It Real FUnd", 
+        "psmooth/Return on Risk Money-Builder", 
+        "DELETED_2005280/NYSE Select Fund", 
+        "chinktor/Chinktor's Wonton Fund", 
+        "cchapman1/Rock 'n' Roll 50 Fund", 
+        "parteebj/parteebj's Mutual Fund", 
+        "dschimming/The Nomadic Sector Fund", 
+        "dginty/dginty's Second Mutual Fund", 
+        "DELETED_2005372/Predator Rex Mutual Fund", 
+        "DELETED_2003229/denise value equity fund", 
+        "jdillon/jdillon's Mutual Fund", 
+        "jfg/jfg's Mutual Fund", 
+        "elegallais/elegallais's Mutual Fund", 
+        "dinoand/value and restruscturing", 
+        "dginty/Balanced Cap Fund", 
+        "jhoffman1/Real Estate Mutual Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "dharvey/Duncan Harvey's Mutual Fund", 
+        "DELETED_2003229/denise gold rush fund", 
+        "DELETED_2004157/A2Z Index", 
+        "adaher/Adam Downgrade Fund", 
+        "akhan/Akhtar Hameed Khan's Mutual Fund", 
+        "jrobinson2/Jonathan H. Robinson's Mutual Fund", 
+        "DELETED_2003229/denises small cap", 
+        "DELETED_2003229/denises big one fund", 
+        "jhoffman1/BLUE CHIP  Mutual Fund", 
+        "sethdavis/Single Letter Stocks", 
+        "DELETED_2003228/denise callahan's family fund", 
+        "jsuttmiller/THE fund", 
+        "jwhollis/ITC Value Fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "jhoffman1/Natural ResourcesMutual Fund", 
+        "tdunn/abcdefghijklmnopqrstuvwxyz", 
+        "rok/Alphabet Fund", 
+        "ccreager/Chris Creager's  Alphabet Soup Mutual Fund", 
+        "den18951/DEN-INDEX", 
+        "rceccon/Alphabet Soup", 
+        "hereiam/SI US Value Fund", 
+        "gidamone/gidamone's Mutual Fund", 
+        "snag/Value", 
+        "mmcaleen/Mike's  Mutual Fund", 
+        "csimpson/Carey Simpson Alphabet Index Fund", 
+        "jmoede/Blind Hope Mutual Fund", 
+        "rgrill/Ralph Grill's Mutual Fund", 
+        "acommodity/Guy Edrington's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "DELETED_2003229/callahan blended growth fund", 
+        "keenan/The M&A Index Fund", 
+        "dhosek/Dondex 24", 
+        "kathynz/Portfolio F", 
+        "DELETED_2003229/denises broadcast fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "DELETED_2003229/denise callahan's chi town fund", 
+        "bward/Fund Number Four", 
+        "DELETED_2003229/denise callahan's mid cap blend", 
+        "bkalaf/BD Kalaf's Legentus Fund", 
+        "leifs/Seven to Five Fund", 
+        "jwhollis/Income and Capital Appreciation", 
+        "ierlikhman/IOSSIF ALPHABET FUND", 
+        "spardon/Steve Pardon's Earnings Announcement Fund", 
+        "gbailey/New York Gain", 
+        "mjwilhelmii/Wilhelm Trust", 
+        "efournier/efournier's Mutual Fund", 
+        "jblount/Joel's Value Dividend Fund", 
+        "rmb4620400/rmb defensive fund", 
+        "jmmoore7/jmmoore7's  Mutual Fund", 
+        "mdoniger/the Hammer fund", 
+        "astuk/Armin Stuk's First MATERIALS Fund", 
+        "magic_money/FAUX DOUGH-3", 
+        "davybob2000/davybob2000's Mutual Fund", 
+        "jsunendar/Joeliardi Opportunity Fund", 
+        "jsunendar/JSunendar Balance Fund", 
+        "ccreager/Chris's Income Play", 
+        "spanky52/spanky52's Mutual Fund", 
+        "mwoott55250/mwoott55250's Mutual Fund", 
+        "dmcgirr/Daniel McGirr Large Cap Twenty-Five Index", 
+        "johnmstone/Stone Fund", 
+        "glim888/Lim Value Fund", 
+        "dgumaer/dgumaer's Mutual Fund", 
+        "zyberianinvestor/zyberianinvestor's Charleston Fund", 
+        "alanlast/Total Fund", 
+        "bayleys1/bayleys1's Mutual Fund20", 
+        "dullom/dullom's Incomel Fund", 
+        "mmarcewicz/Inflation Hedge", 
+        "spaulj13/spaulj13's Mutual Fund", 
+        "jamesmader/Speculative Growth Fund", 
+        "gweatherbee/RK-Downers", 
+        "plaskin/plaskin's Mutual Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "jbyron/Iceland Glacier Fund", 
+        "bunnyluv/bunnyluv's RISING DOGS", 
+        "jgoldstein/500 Contrarian Index", 
+        "willi25794/Bear Short", 
+        "ddoman/Doman Momentum Fund", 
+        "rangerdon/rangerdon's  52week hi", 
+        "boyplunger/boyplunger's VL Fund", 
+        "qrheaume/Short Growth Fund ", 
+        "abeweldy/Redakers Mutual Fund II", 
+        "gerrypang/FinCalc56", 
+        "kred7111/kred7111's Mutual Fund", 
+        "mwomack/Matthew Womack's Mutual Fund", 
+        "vchandra/VCs Short Fund #1", 
+        "ondal/Ondal's Prudent Short Fund", 
+        "mlm/ESOP", 
+        "mgajak/mg commodities", 
+        "minuet/The Bankrupcy File", 
+        "prmorris/PillBaseline031505", 
+        "prmorris/Pildenstein031505", 
+        "gracec/ Grace Agility Fund", 
+        "aschaefer/Good Dividend Yield", 
+        "aschaefer/Earnings Quality 4-30-2005", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "rdollete/Blindfolded Screener", 
+        "lwilliams3/Short Strategy Fund ", 
+        "keith_foulke/System Picks Short", 
+        "holdenll/SHORT Fund", 
+        "sorengi/Treasure Fund", 
+        "jdjuly5/Ching's Natural Resource Sells", 
+        "equitymerc/Short Portfolio", 
+        "bearfodder/Multi Cap Global Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "willblur/willblur's Un-Fundamental Fund", 
+        "mchristy/Materials Short Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "backtash/backtash's Mutual Fund", 
+        "bigburrito/slugs", 
+        "kellerman75/kellerman75's Mutual Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "draymonda/Draymonda_AGgrowth_Mutual_Fund", 
+        "mvallarelli/FEB 06", 
+        "rtareilo/Short Market Fund", 
+        "bradlevi/High Expectation Fund", 
+        "ashokgoyal37/UPTICK", 
+        "arturo52/arturo52's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "zac_is_good/Show Me The Money", 
+        "finanaliticasector_a/MATERIALS1", 
+        "market_wizard/MW's Magic Short Fund", 
+        "jctrader/Expansion S", 
+        "ljoneill/Mid Cap Shorts", 
+        "wbonner/3rd quarter 2006", 
+        "asellers103/asellers103's Mutual Fund", 
+        "thadley77/quant1", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "vinsom68/SAPI Slugs", 
+        "fivenine/Funded Beyond All Recognition", 
+        "katelyn17/katelyn17's Mutual Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "nmgiard/Nick's Slug Fund", 
+        "trixs/Aberrations and Anomalies", 
+        "vladzaff/Emerging Agressive", 
+        "tdrumgo/News Release", 
+        "jameslaviano/30271K542", 
+        "vzhig/Active Portfolio", 
+        "pavelko/pavelko's Mutual Fund", 
+        "mclauch/mclauch's Mutual Fund", 
+        "vanprooyen/VANPRO Natural Resources", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "chinakid/chinakid's Mutual Fund", 
+        "bchatraw/H Short QOE", 
+        "jeannie/IndustrialGrowthFund", 
+        "tony_camean/growth+value rebalanced", 
+        "appl3py3/appl3py3's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "malpost/TEAM 7 Orig (PutOpp)", 
+        "vel007/vel007's Mutual Fund", 
+        "rjcondon/CONsumer Staples Fund", 
+        "greatware/SAPI Slugs MSN", 
+        "bmcclard/Relative Value Short", 
+        "dpage1435/DRPIII", 
+        "vsrivas1/vsrivas1 SLO2 Fund", 
+        "spippi/spippi's Mutual Fund", 
+        "rpatzman/Get shorty", 
+        "cburgess/S&P 500 Index", 
+        "dionysius/dionysius's Mutual Fund", 
+        "andrewkcook/Andrew's Financials and Utilities Fund", 
+        "bradhark/bradhark's Mutual Fund", 
+        "52wingman/52wingman's Mutual Fund", 
+        "rpatzman/Acuity Short", 
+        "alobato/Alobato Short Losers", 
+        "jgallan1/Stockscouter t50 - new", 
+        "jarvis_hills/dead horses", 
+        "chushogi/Chushogi's Yavzinsky Fund", 
+        "psparke/vCash", 
+        "psparke/Cash 2", 
+        "masterfp_98/masterfp_98's Mutual Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "spivey/Spivey Mutual Fund", 
+        "grumpypole/GrumpyPole's Materials Fund", 
+        "wbauder/Yield", 
+        "xoseh/Mike's Mutual Fund", 
+        "gabipatrick/gabipatrick's Mutual Fund", 
+        "aaltoandmiesvander/aaltoandmiesvander's SP500Short", 
+        "primemvr/primemvr's Mutual Fund", 
+        "dojaman/dojaman's Mutual Fund", 
+        "cvantoor/Chuck' s Short Fund", 
+        "barewires/Praxis Two", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "natalieb/kiplinger-sell", 
+        "jarvis_hills/utilities", 
+        "stavon/midas", 
+        "hansthered/SAPI Slugs", 
+        "appl3py3/high growth wood/paper stocks", 
+        "mhannigan/Mike's SAPI Slugs Fund", 
+        "westharbor/Hedge Fund", 
+        "bhagwat/bhagwat's Mutual Fund", 
+        "congiundi/Congiundi's Mutual Fund", 
+        "lciciora/MarketEssentials.com Relative P/E & Earnings ", 
+        "fundamental/GPS's SPecial Fund", 
+        "tekvestor/JELLYFISH", 
+        "kanundrum/Kanundrum US Equities - Short", 
+        "adaher/Hermanator Fund", 
+        "kazshak/ValueScreen July 3 2008", 
+        "grayanderson/GEA's Mutual Fund - Value", 
+        "piazzi/PSRSF", 
+        "piazzi/PSRF", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "projectmako/Falling Knife Agility Fund", 
+        "grayanderson/GEA's Mutual Fund-Commodities", 
+        "mectec/Mectec Prime Growth MACD", 
+        "stoke/High Five Select", 
+        "trader30/Gekko Growth & Income Fund", 
+        "pattiann1632/Patti's Jinger  Fund", 
+        "iproi/valu lip", 
+        "sdignan/sdignan's Mutual Fund", 
+        "a887007/a887007's Mutual Fund", 
+        "dontgoshane/World Wide Mid Cap", 
+        "zapatzik/zapatzik's Mutual Fund", 
+        "cleverd83/Raise the Bar/Lower the Boom Fund", 
+        "keyser21/keyser21's Mutual Fund", 
+        "zarathustrategies/Zarathu Materials Fund", 
+        "investorlestrade/Timeliness", 
+        "investorlestrade/Keep It Simple Stupid"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20120430; 
+    RATIO = 0.32990002; 
+    "RECORD_DATE" = 20120424; 
+    SYMBOL = MWV; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (01-20 13:36:36.606) SUCCESS
+D: (01-20 13:36:36.606) cahelper finished 2015-01-20 13:36:36 -0500
+
+select distinct stockkey from mstockalias where symbol='MWV';
+> Row 1:
+>   STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+
+select * from mstockalias where STOCKKEY = X'1b6b0e21390b1bf6c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582834107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEAD CORP
+>     PRIMARYKEY = X'1b6c0e21390b1bf6c0a80116'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MEA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 583334107
+>           DATE = TIMESTAMP '2002-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MeadWestvaco
+>     PRIMARYKEY = X'f81310373c6af583c0a801dc'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MWV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey=X'f81310373c6af583c0a801dc';
+> Row 58:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:013222
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'2d55504d54be9f36c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'2d55504d54be9f36c0a86f92';
+> Row 1:
+>   _C001 = 255.000000
+
+looks good - check on 1/21/15 for the CA to appear 
+
+1/21/14 - max barbon wrote in says that he has ACCO
+
+Something wrong with the accounting of this stock…
+It shows up in both my long and short position…
+ 
+Username:Natalieb – portfolio ks
+
+let's log in 
+
+your holdings of ACCO	
+ 	 	
+Fund	Shares	Value	Portion of fund
+NMF	0	 $.00	 0.00%
+NMF2	 0	 N/A	 N/A
+Auto	 0	 N/A	 N/A
+div	 0	 N/A	 N/A
+trst	 0	 N/A	 N/A
+fly	 0	 N/A	 N/A
+brk	 0	 N/A	 N/A
+ssp	 0	 N/A	 N/A
+Bal	 0	 N/A	 N/A
+five	 0	 N/A	 N/A
+etf	 0	 N/A	 N/A
+kb	 0	 N/A	 N/A
+ks	-1,210	 -$10,127.70	 -0.51%  <--- expand
+3d	 0	 N/A	 N/A
+INC	 0	 N/A	 N/A
+
+LEDGER
+Date	Start	Change	End	Type
+May 02, 2012		-1210	-1210	Sell
+Total: -1,210
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 2, 2012	1,210	$60.50	$0.30	$13,308.55	$11.00
+ 	 	 
+let's look at the stratification
+
+ks fund
+
+long:
+BOTTOM
+ACCO	click me	$8.37	2,420	$20,255.40	1.03%	$20,255.40	1.82%	0.00%	0.00%	Details 
+
+short:
+ACCO	$8.37	-1,210	-$10,127.70	$3,180.85	1.82%	0.00%	Details 
+
+we see the -1210
+
+clicking on the 2420 in the long category to see the trades'
+
+died again -
+
+select distinct stockkey from mstockalias where symbol='ACCO';
+> Row 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+select * from mstockalias where stockkey=X'8152043c39e7e9bec0a801dc';
+this one is delisted 
+> Row 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+select * from mstockalias where stockkey=X'f07b1b9e4303ee4ec0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'f07c1b9e4303ee4ec0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ABD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'99390cad4fa068f7c0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+
+so we have natalieb with two ACCO positions in her ks fund
+
+select primarykey from mmanager where loginname ='natalieb';
+> Row 1:
+>   PRIMARYKEY = X'5c414955425bfdb8c0a80133'
+select primarykey from mportfolio where managerkey=X'5c414955425bfdb8c0a80133';
+> Row 1:
+>   PRIMARYKEY = X'5c444955425bfdb8c0a80133'
+
+select primarykey from mfund where symbol='ks' and portfoliokey=X'5c444955425bfdb8c0a80133';
+> Row 1:
+>   PRIMARYKEY = X'790721e649f2f6a1c0a80134'
+
+the LONG position in ks fund with 2420 shares of ACCO
+select * from mposition where fundkey=X'790721e649f2f6a1c0a80134' and totalshares = 2420;
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'485d616954be83b6c0a86f92'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'8152043c39e7e9bec0a801dc'     <---- this is the old ACCO which should not be even considered
+>                SYMBOL = NULL
+>           TOTALSHARES = 2420.000000
+>               FUNDKEY = X'790721e649f2f6a1c0a80134'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2012-04-30 12:00:00.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2012-04-30 12:00:00.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 0.000000
+>        TOTALUSERSELLS = 0.000000
+>        RECENTUSERBUYS = 0.000000
+>       RECENTUSERSELLS = 0.000000
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+select * from mstockalias where stockkey=X'8152043c39e7e9bec0a801dc'  ;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'8153043c39e7e9bec0a801dc'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2003-10-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'9d1109223f8a136bc0a80146'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+
+this is the old one
+select * from mticket where managerkey=X'5c414955425bfdb8c0a80133' and stockkey=X'8152043c39e7e9bec0a801dc' ;
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'485a616954be83b6c0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5c414955425bfdb8c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'4858616954be83b6c0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>      SOURCEKEY = X'459a616954be7f15c0a86f92'
+>    NOTIFYEMAIL = NULL
+	select * from mtrade where ticketkey=X'4858616954be83b6c0a86f92';
+	> Row 1:
+	>                    KINDKEY = X'6339039339e7e927c0a801dc'
+	>                   MATCHKEY = NULL
+	>                POSITIONKEY = X'485d616954be83b6c0a86f92'
+	>                 PRIMARYKEY = X'485b616954be83b6c0a86f92'
+	>                     SHARES = 1210.000000
+	>                  TICKETKEY = X'4858616954be83b6c0a86f92'
+	>                     CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+	>                      PRICE = 0.000000
+	>   CREATEDBYCORPORATEACTION = 1
+
+
+select * from mcorporateaction where primarykey=X'459a616954be7f15c0a86f92';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:111517
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'459a616954be7f15c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'42f6504d54bea01fc0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5c414955425bfdb8c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'42f4504d54bea01fc0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>      SOURCEKEY = X'2d55504d54be9f36c0a86f92'
+>    NOTIFYEMAIL = NULL
+	select * from mtrade where ticketkey= X'42f4504d54bea01fc0a86f92';
+> Row 1:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'485d616954be83b6c0a86f92'
+>                 PRIMARYKEY = X'42f7504d54bea01fc0a86f92'
+>                     SHARES = 1210.000000
+>                  TICKETKEY = X'42f4504d54bea01fc0a86f92'
+>                     CLOSED = TIMESTAMP '2012-04-30 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+	select * from mcorporateaction where primarykey=X'2d55504d54be9f36c0a86f92';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:013222
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'2d55504d54be9f36c0a86f92'
+>               VERSION = NULL
+
+
+***********  the -1210 qty *************
+select * from mposition where fundkey=X'790721e649f2f6a1c0a80134' and totalshares = -1210;
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'68a8126054bdb2f1c0a86f92'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'f07b1b9e4303ee4ec0a80146'   <----- this is ACCO-2 which is the one to keep
+>                SYMBOL = NULL
+>           TOTALSHARES = -1210.000000
+>               FUNDKEY = X'790721e649f2f6a1c0a80134'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2012-05-02 12:55:25.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2012-05-02 12:55:25.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 0.000000
+>        TOTALUSERSELLS = 13308.550500
+>        RECENTUSERBUYS = 0.000000
+>       RECENTUSERSELLS = 13308.550500
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+
+
+there are two MWV DVD_STOCK
+
+select distinct stockkey from mstockalias where symbol='MWV'; 
+> Row 1:
+>   STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+
+select * from mstockalias where STOCKKEY = X'1b6b0e21390b1bf6c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582834107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEAD CORP
+>     PRIMARYKEY = X'1b6c0e21390b1bf6c0a80116'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MEA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 583334107
+>           DATE = TIMESTAMP '2002-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MeadWestvaco
+>     PRIMARYKEY = X'f81310373c6af583c0a801dc'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MWV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey=X'f81310373c6af583c0a801dc' and BB_ACTIONMNEMONIC = 'DVD_STOCK' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:111517
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'459a616954be7f15c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:013222
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'2d55504d54be9f36c0a86f92'
+>               VERSION = NULL
+Assessment, we have two DVD_STOCK from MWV - they create the wrong stockkeys
+let's back them both out  
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20150120:013222
+untrading action with ID: 20150120:013222
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+
+
+this one seemed to take - let's log out and back in as member natalieb
+
+she has 1210 now.   
+
+let's see if we can change the stockkey in these mtickets, tickle them - clear the mtrades
+
+let's work off this mcorporateaction record
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:111517
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'459a616954be7f15c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'459a616954be7f15c0a86f92';
+> Row 1:
+>   _C001 = 255.000000
+select primarykey from mticket where sourcekey = X'459a616954be7f15c0a86f92';
+file:  CA issues ACCO-X ticketkeys to tickle
+
+select * from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'459a616954be7f15c0a86f92');
+
+we need the fundkeys 
+
+select distinct fundkey from mposition  where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'459a616954be7f15c0a86f92'));
+file:  CA issues ACCO-X fundkeys to invalidate.txt
+
+let's delete the mtrades:  
+delete from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'459a616954be7f15c0a86f92');
+done
+update mticket set stockkey=X'f07b1b9e4303ee4ec0a80146'  where sourcekey = X'459a616954be7f15c0a86f92';
+
+let's tickle the tickets
+
+
+let's invalidate the funds
+ok done
+
+log back in as natalieb  did not work.
+
+back out the CA
+
+
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:111517
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'459a616954be7f15c0a86f92'
+>               VERSION = NULL
+
+select primarykey from mticket where sourcekey=X'459a616954be7f15c0a86f92';
+select primarykey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'459a616954be7f15c0a86f92');
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20150120:111517
+
+seemed to have worked
+
+log back in as natalieb
+
+still there 
+
+
+select * from mposition where fundkey=X'790721e649f2f6a1c0a80134' and totalshares = 2420;
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'485d616954be83b6c0a86f92'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'8152043c39e7e9bec0a801dc'     <---- this is the old ACCO which should not be even considered
+>                SYMBOL = NULL
+>           TOTALSHARES = 2420.000000
+>               FUNDKEY = X'790721e649f2f6a1c0a80134'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2012-04-30 12:00:00.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2012-04-30 12:00:00.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 0.000000
+>        TOTALUSERSELLS = 0.000000
+>        RECENTUSERBUYS = 0.000000
+>       RECENTUSERSELLS = 0.000000
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+
+delete from mposition where primarykey= X'485d616954be83b6c0a86f92';
+
+
+good only one ACCO, the short which is ok, because we need to add back the CA
+
+let's check MWV
+select distinct stockkey from mstockalias where symbol='MWV';
+> Row 1:
+>   STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+
+select * from mstockalias where stockkey=X'1b6b0e21390b1bf6c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582834107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEAD CORP
+>     PRIMARYKEY = X'1b6c0e21390b1bf6c0a80116'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MEA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 583334107
+>           DATE = TIMESTAMP '2002-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MeadWestvaco
+>     PRIMARYKEY = X'f81310373c6af583c0a801dc'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MWV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'1b6b0e21390b1bf6c0a80116') and BB_ACTIONMNEMONIC='DVD_STOCK';
+
+ok there is none 
+
+
+let's try this again"
+/Marketocracy/bin/cahelper -symbol MWV -effective 20120501 -type DVD_STOCK -exchange UN  -dividendSymbol ACCO -payDate 20120430 -recordDate 20120424 -percent 32.99 >& /Users/build/caout/MWV.20150121-DVD_STOCK-ACCO.out
+got an error on saving
+
+let's see if the mcorporateaction was creted. 
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'1b6b0e21390b1bf6c0a80116') and BB_ACTIONMNEMONIC='DVD_STOCK';
+nothing
+
+1/22/15 
+let's try the stock dividend CA again
+/Marketocracy/bin/cahelper -symbol MWV -effective 20120501 -type DVD_STOCK -exchange UN  -dividendSymbol ACCO -payDate 20120430 -recordDate 20120424 -percent 32.99 >& /Users/build/caout/MWV.20150121-DVD_STOCK-ACCO.out
+stocks:~/caout build$ tail -f MWV.20150121-DVD_STOCK-ACCO.out
+D: (01-22 10:25:43.790) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-22 10:26:17.273) cahelper started on 2015-01-22 10:26:17 -0500
+
+D: (01-22 10:26:19.591) StockFileLoad Version:3.0
+D: (01-22 10:26:19.591) Loading Stock Data
+D: (01-22 10:27:16.744) Building Lookup Index
+D: (01-22 10:27:22.797) Finished Building Index
+D: (01-22 10:27:24.192) Finished Loading Stock Data
+D: (01-22 10:27:24.348) Connection to 192.168.111.157:6666 succeeded
+D: (01-22 10:27:50.436) SavingChanges for Stock Dividend out 101 of 527
+D: (01-22 10:28:56.012) SavingChanges for Stock Dividend out 201 of 527
+D: (01-22 10:29:35.069) {
+    APPLIED = 1; 
+    DATE = 20120501; 
+    FUNDS = (
+        "wqureshi/Wasim's Mutual Fund", 
+        "cthiessen/CT Equity Fund", 
+        "riskreward/Risk-Reward Opportunity Fund", 
+        "mbunn/Michael Bunn's Mutual Fund", 
+        "slewis/steve lewis's Mutual Fund", 
+        "llafave/Lynn LaFave's Mutual Fund", 
+        "dharvey1/Darren David Harvey's Mutual Fund 2", 
+        "gracec/Grace Growth Value Blend", 
+        "ecarter/edward carter's Mutual Fund", 
+        "owldo/William Halterman's Mutual Fund", 
+        "tsundberg/Timothy M Sundberg's Mutual Fund", 
+        "dedstroke2/ The No-Technology Capital Opportunities Fund", 
+        "msmagacz/Goosh Traditional Value Fund", 
+        "dwarren1/P. David Warren's Mutual Fund", 
+        "budcorona/Richard Callaro's Mutual Fund", 
+        "snester/Sergei Nester's Mutual Fund", 
+        "thebax/Richard Anthony Baxter's Mutual Fund", 
+        "tdavis/Terry Davis's Mutual Fund", 
+        "mchristy/MJC Behavioral Fund", 
+        "bpowers2/Keepin It Real FUnd", 
+        "psmooth/Return on Risk Money-Builder", 
+        "DELETED_2005280/NYSE Select Fund", 
+        "chinktor/Chinktor's Wonton Fund", 
+        "cchapman1/Rock 'n' Roll 50 Fund", 
+        "parteebj/parteebj's Mutual Fund", 
+        "dschimming/The Nomadic Sector Fund", 
+        "dginty/dginty's Second Mutual Fund", 
+        "DELETED_2005372/Predator Rex Mutual Fund", 
+        "DELETED_2003229/denise value equity fund", 
+        "jdillon/jdillon's Mutual Fund", 
+        "jfg/jfg's Mutual Fund", 
+        "elegallais/elegallais's Mutual Fund", 
+        "dinoand/value and restruscturing", 
+        "dginty/Balanced Cap Fund", 
+        "jhoffman1/Real Estate Mutual Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "dharvey/Duncan Harvey's Mutual Fund", 
+        "DELETED_2003229/denise gold rush fund", 
+        "DELETED_2004157/A2Z Index", 
+        "adaher/Adam Downgrade Fund", 
+        "akhan/Akhtar Hameed Khan's Mutual Fund", 
+        "jrobinson2/Jonathan H. Robinson's Mutual Fund", 
+        "DELETED_2003229/denises small cap", 
+        "DELETED_2003229/denises big one fund", 
+        "jhoffman1/BLUE CHIP  Mutual Fund", 
+        "sethdavis/Single Letter Stocks", 
+        "DELETED_2003228/denise callahan's family fund", 
+        "jsuttmiller/THE fund", 
+        "jwhollis/ITC Value Fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "jhoffman1/Natural ResourcesMutual Fund", 
+        "tdunn/abcdefghijklmnopqrstuvwxyz", 
+        "rok/Alphabet Fund", 
+        "ccreager/Chris Creager's  Alphabet Soup Mutual Fund", 
+        "den18951/DEN-INDEX", 
+        "rceccon/Alphabet Soup", 
+        "hereiam/SI US Value Fund", 
+        "gidamone/gidamone's Mutual Fund", 
+        "snag/Value", 
+        "mmcaleen/Mike's  Mutual Fund", 
+        "csimpson/Carey Simpson Alphabet Index Fund", 
+        "jmoede/Blind Hope Mutual Fund", 
+        "rgrill/Ralph Grill's Mutual Fund", 
+        "acommodity/Guy Edrington's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "DELETED_2003229/callahan blended growth fund", 
+        "keenan/The M&A Index Fund", 
+        "dhosek/Dondex 24", 
+        "kathynz/Portfolio F", 
+        "DELETED_2003229/denises broadcast fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "DELETED_2003229/denise callahan's chi town fund", 
+        "bward/Fund Number Four", 
+        "DELETED_2003229/denise callahan's mid cap blend", 
+        "bkalaf/BD Kalaf's Legentus Fund", 
+        "leifs/Seven to Five Fund", 
+        "jwhollis/Income and Capital Appreciation", 
+        "ierlikhman/IOSSIF ALPHABET FUND", 
+        "spardon/Steve Pardon's Earnings Announcement Fund", 
+        "gbailey/New York Gain", 
+        "mjwilhelmii/Wilhelm Trust", 
+        "efournier/efournier's Mutual Fund", 
+        "jblount/Joel's Value Dividend Fund", 
+        "rmb4620400/rmb defensive fund", 
+        "jmmoore7/jmmoore7's  Mutual Fund", 
+        "mdoniger/the Hammer fund", 
+        "astuk/Armin Stuk's First MATERIALS Fund", 
+        "magic_money/FAUX DOUGH-3", 
+        "davybob2000/davybob2000's Mutual Fund", 
+        "jsunendar/Joeliardi Opportunity Fund", 
+        "jsunendar/JSunendar Balance Fund", 
+        "ccreager/Chris's Income Play", 
+        "spanky52/spanky52's Mutual Fund", 
+        "mwoott55250/mwoott55250's Mutual Fund", 
+        "dmcgirr/Daniel McGirr Large Cap Twenty-Five Index", 
+        "johnmstone/Stone Fund", 
+        "glim888/Lim Value Fund", 
+        "dgumaer/dgumaer's Mutual Fund", 
+        "zyberianinvestor/zyberianinvestor's Charleston Fund", 
+        "alanlast/Total Fund", 
+        "bayleys1/bayleys1's Mutual Fund20", 
+        "dullom/dullom's Incomel Fund", 
+        "mmarcewicz/Inflation Hedge", 
+        "spaulj13/spaulj13's Mutual Fund", 
+        "jamesmader/Speculative Growth Fund", 
+        "gweatherbee/RK-Downers", 
+        "plaskin/plaskin's Mutual Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "jbyron/Iceland Glacier Fund", 
+        "bunnyluv/bunnyluv's RISING DOGS", 
+        "jgoldstein/500 Contrarian Index", 
+        "willi25794/Bear Short", 
+        "ddoman/Doman Momentum Fund", 
+        "rangerdon/rangerdon's  52week hi", 
+        "boyplunger/boyplunger's VL Fund", 
+        "qrheaume/Short Growth Fund ", 
+        "abeweldy/Redakers Mutual Fund II", 
+        "gerrypang/FinCalc56", 
+        "kred7111/kred7111's Mutual Fund", 
+        "mwomack/Matthew Womack's Mutual Fund", 
+        "vchandra/VCs Short Fund #1", 
+        "ondal/Ondal's Prudent Short Fund", 
+        "mlm/ESOP", 
+        "mgajak/mg commodities", 
+        "minuet/The Bankrupcy File", 
+        "prmorris/PillBaseline031505", 
+        "prmorris/Pildenstein031505", 
+        "gracec/ Grace Agility Fund", 
+        "aschaefer/Good Dividend Yield", 
+        "aschaefer/Earnings Quality 4-30-2005", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "rdollete/Blindfolded Screener", 
+        "lwilliams3/Short Strategy Fund ", 
+        "keith_foulke/System Picks Short", 
+        "holdenll/SHORT Fund", 
+        "sorengi/Treasure Fund", 
+        "jdjuly5/Ching's Natural Resource Sells", 
+        "equitymerc/Short Portfolio", 
+        "bearfodder/Multi Cap Global Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "willblur/willblur's Un-Fundamental Fund", 
+        "mchristy/Materials Short Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "backtash/backtash's Mutual Fund", 
+        "bigburrito/slugs", 
+        "kellerman75/kellerman75's Mutual Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "draymonda/Draymonda_AGgrowth_Mutual_Fund", 
+        "mvallarelli/FEB 06", 
+        "rtareilo/Short Market Fund", 
+        "bradlevi/High Expectation Fund", 
+        "ashokgoyal37/UPTICK", 
+        "arturo52/arturo52's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "zac_is_good/Show Me The Money", 
+        "finanaliticasector_a/MATERIALS1", 
+        "market_wizard/MW's Magic Short Fund", 
+        "jctrader/Expansion S", 
+        "ljoneill/Mid Cap Shorts", 
+        "wbonner/3rd quarter 2006", 
+        "asellers103/asellers103's Mutual Fund", 
+        "thadley77/quant1", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "vinsom68/SAPI Slugs", 
+        "fivenine/Funded Beyond All Recognition", 
+        "katelyn17/katelyn17's Mutual Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "nmgiard/Nick's Slug Fund", 
+        "trixs/Aberrations and Anomalies", 
+        "vladzaff/Emerging Agressive", 
+        "tdrumgo/News Release", 
+        "jameslaviano/30271K542", 
+        "vzhig/Active Portfolio", 
+        "pavelko/pavelko's Mutual Fund", 
+        "mclauch/mclauch's Mutual Fund", 
+        "vanprooyen/VANPRO Natural Resources", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "chinakid/chinakid's Mutual Fund", 
+        "bchatraw/H Short QOE", 
+        "jeannie/IndustrialGrowthFund", 
+        "tony_camean/growth+value rebalanced", 
+        "appl3py3/appl3py3's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "malpost/TEAM 7 Orig (PutOpp)", 
+        "vel007/vel007's Mutual Fund", 
+        "rjcondon/CONsumer Staples Fund", 
+        "greatware/SAPI Slugs MSN", 
+        "bmcclard/Relative Value Short", 
+        "dpage1435/DRPIII", 
+        "vsrivas1/vsrivas1 SLO2 Fund", 
+        "spippi/spippi's Mutual Fund", 
+        "rpatzman/Get shorty", 
+        "cburgess/S&P 500 Index", 
+        "dionysius/dionysius's Mutual Fund", 
+        "andrewkcook/Andrew's Financials and Utilities Fund", 
+        "bradhark/bradhark's Mutual Fund", 
+        "52wingman/52wingman's Mutual Fund", 
+        "rpatzman/Acuity Short", 
+        "alobato/Alobato Short Losers", 
+        "jgallan1/Stockscouter t50 - new", 
+        "jarvis_hills/dead horses", 
+        "chushogi/Chushogi's Yavzinsky Fund", 
+        "psparke/vCash", 
+        "psparke/Cash 2", 
+        "masterfp_98/masterfp_98's Mutual Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "spivey/Spivey Mutual Fund", 
+        "grumpypole/GrumpyPole's Materials Fund", 
+        "wbauder/Yield", 
+        "xoseh/Mike's Mutual Fund", 
+        "gabipatrick/gabipatrick's Mutual Fund", 
+        "aaltoandmiesvander/aaltoandmiesvander's SP500Short", 
+        "primemvr/primemvr's Mutual Fund", 
+        "dojaman/dojaman's Mutual Fund", 
+        "cvantoor/Chuck' s Short Fund", 
+        "barewires/Praxis Two", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "natalieb/kiplinger-sell", 
+        "jarvis_hills/utilities", 
+        "stavon/midas", 
+        "hansthered/SAPI Slugs", 
+        "appl3py3/high growth wood/paper stocks", 
+        "mhannigan/Mike's SAPI Slugs Fund", 
+        "westharbor/Hedge Fund", 
+        "bhagwat/bhagwat's Mutual Fund", 
+        "congiundi/Congiundi's Mutual Fund", 
+        "lciciora/MarketEssentials.com Relative P/E & Earnings ", 
+        "fundamental/GPS's SPecial Fund", 
+        "tekvestor/JELLYFISH", 
+        "kanundrum/Kanundrum US Equities - Short", 
+        "adaher/Hermanator Fund", 
+        "kazshak/ValueScreen July 3 2008", 
+        "grayanderson/GEA's Mutual Fund - Value", 
+        "piazzi/PSRSF", 
+        "piazzi/PSRF", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "projectmako/Falling Knife Agility Fund", 
+        "grayanderson/GEA's Mutual Fund-Commodities", 
+        "mectec/Mectec Prime Growth MACD", 
+        "stoke/High Five Select", 
+        "trader30/Gekko Growth & Income Fund", 
+        "pattiann1632/Patti's Jinger  Fund", 
+        "iproi/valu lip", 
+        "sdignan/sdignan's Mutual Fund", 
+        "a887007/a887007's Mutual Fund", 
+        "dontgoshane/World Wide Mid Cap", 
+        "zapatzik/zapatzik's Mutual Fund", 
+        "cleverd83/Raise the Bar/Lower the Boom Fund", 
+        "keyser21/keyser21's Mutual Fund", 
+        "zarathustrategies/Zarathu Materials Fund", 
+        "investorlestrade/Timeliness", 
+        "investorlestrade/Keep It Simple Stupid"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20120430; 
+    RATIO = 0.32990002; 
+    "RECORD_DATE" = 20120424; 
+    SYMBOL = MWV; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (01-22 10:29:40.134) SUCCESS
+D: (01-22 10:29:40.135) cahelper finished 2015-01-22 10:29:40 -0500
+
+
+today it ran
+
+let's check natalieb  don't see it
+
+check the database  MWV gave ACCO
+select distinct stockkey from mstockalias where symbol='MWV';
+> Row 1:
+>   STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+
+select * from mstockalias where STOCKKEY = X'1b6b0e21390b1bf6c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582834107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEAD CORP
+>     PRIMARYKEY = X'1b6c0e21390b1bf6c0a80116'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MEA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 583334107
+>           DATE = TIMESTAMP '2002-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MeadWestvaco
+>     PRIMARYKEY = X'f81310373c6af583c0a801dc'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MWV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'f81310373c6af583c0a801dc' and BB_ACTIONMNEMONIC='DVD_STOCK';
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150122:102617
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'b6a2416154c11699c0a86f92'
+>               VERSION = NULL
+
+there is is - check for mtickets
+select count(*) from mticket where sourcekey=X'b6a2416154c11699c0a86f92';
+> Row 1:
+>   _C001 = 255.000000
+
+great we had 255 mtickets generated
+
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'b6a2416154c11699c0a86f92') order by loginname;
+> Row 1:
+>   LOGINNAME = 52wingman
+> Row 2:
+>   LOGINNAME = DELETED_2003228
+> Row 3:
+>   LOGINNAME = DELETED_2003229
+> Row 4:
+>   LOGINNAME = DELETED_2004157
+> Row 5:
+>   LOGINNAME = DELETED_2005280
+> Row 6:
+>   LOGINNAME = DELETED_2005372
+> Row 7:
+>   LOGINNAME = a887007
+> Row 8:
+>   LOGINNAME = aaltoandmiesvander
+> Row 9:
+>   LOGINNAME = abeweldy
+> Row 10:
+>   LOGINNAME = acommodity
+> Row 11:
+>   LOGINNAME = adaher
+> Row 12:
+>   LOGINNAME = akhan
+> Row 13:
+>   LOGINNAME = alanlast
+> Row 14:
+>   LOGINNAME = alobato
+> Row 15:
+>   LOGINNAME = andrewkcook
+> Row 16:
+>   LOGINNAME = appl3py3
+> Row 17:
+>   LOGINNAME = arturo52
+> Row 18:
+>   LOGINNAME = aschaefer
+> Row 19:
+>   LOGINNAME = asellers103
+> Row 20:
+>   LOGINNAME = ashokgoyal37
+> Row 21:
+>   LOGINNAME = astuk
+> Row 22:
+>   LOGINNAME = backtash
+> Row 23:
+>   LOGINNAME = barewires
+> Row 24:
+>   LOGINNAME = bayleys1
+> Row 25:
+>   LOGINNAME = bchatraw
+> Row 26:
+>   LOGINNAME = bearfodder
+> Row 27:
+>   LOGINNAME = bhagwat
+> Row 28:
+>   LOGINNAME = bigburrito
+> Row 29:
+>   LOGINNAME = bkalaf
+> Row 30:
+>   LOGINNAME = bmcclard
+> Row 31:
+>   LOGINNAME = boyplunger
+> Row 32:
+>   LOGINNAME = bpowers2
+> Row 33:
+>   LOGINNAME = bradhark
+> Row 34:
+>   LOGINNAME = bradlevi
+> Row 35:
+>   LOGINNAME = budcorona
+> Row 36:
+>   LOGINNAME = bunnyluv
+> Row 37:
+>   LOGINNAME = bward
+> Row 38:
+>   LOGINNAME = cburgess
+> Row 39:
+>   LOGINNAME = cchapman1
+> Row 40:
+>   LOGINNAME = ccreager
+> Row 41:
+>   LOGINNAME = chinakid
+> Row 42:
+>   LOGINNAME = chinktor
+> Row 43:
+>   LOGINNAME = chushogi
+> Row 44:
+>   LOGINNAME = cleverd83
+> Row 45:
+>   LOGINNAME = congiundi
+> Row 46:
+>   LOGINNAME = csimpson
+> Row 47:
+>   LOGINNAME = cthiessen
+> Row 48:
+>   LOGINNAME = cvantoor
+> Row 49:
+>   LOGINNAME = davybob2000
+> Row 50:
+>   LOGINNAME = ddoman
+> Row 51:
+>   LOGINNAME = dedstroke2
+> Row 52:
+>   LOGINNAME = den18951
+> Row 53:
+>   LOGINNAME = dginty
+> Row 54:
+>   LOGINNAME = dgumaer
+> Row 55:
+>   LOGINNAME = dharvey
+> Row 56:
+>   LOGINNAME = dharvey1
+> Row 57:
+>   LOGINNAME = dhosek
+> Row 58:
+>   LOGINNAME = dinoand
+> Row 59:
+>   LOGINNAME = dionysius
+> Row 60:
+>   LOGINNAME = dmcgirr
+> Row 61:
+>   LOGINNAME = dojaman
+> Row 62:
+>   LOGINNAME = dontgoshane
+> Row 63:
+>   LOGINNAME = dpage1435
+> Row 64:
+>   LOGINNAME = draymonda
+> Row 65:
+>   LOGINNAME = dschimming
+> Row 66:
+>   LOGINNAME = dullom
+> Row 67:
+>   LOGINNAME = dwarren1
+> Row 68:
+>   LOGINNAME = ecarter
+> Row 69:
+>   LOGINNAME = efournier
+> Row 70:
+>   LOGINNAME = elegallais
+> Row 71:
+>   LOGINNAME = equitymerc
+> Row 72:
+>   LOGINNAME = finanaliticasector_a
+> Row 73:
+>   LOGINNAME = fivenine
+> Row 74:
+>   LOGINNAME = foolflea
+> Row 75:
+>   LOGINNAME = fundamental
+> Row 76:
+>   LOGINNAME = gabipatrick
+> Row 77:
+>   LOGINNAME = gbailey
+> Row 78:
+>   LOGINNAME = gerrypang
+> Row 79:
+>   LOGINNAME = gidamone
+> Row 80:
+>   LOGINNAME = glim888
+> Row 81:
+>   LOGINNAME = gracec
+> Row 82:
+>   LOGINNAME = grayanderson
+> Row 83:
+>   LOGINNAME = greatware
+> Row 84:
+>   LOGINNAME = grumpypole
+> Row 85:
+>   LOGINNAME = gskur
+> Row 86:
+>   LOGINNAME = gweatherbee
+> Row 87:
+>   LOGINNAME = hansthered
+> Row 88:
+>   LOGINNAME = hereiam
+> Row 89:
+>   LOGINNAME = hiromimini
+> Row 90:
+>   LOGINNAME = holdenll
+> Row 91:
+>   LOGINNAME = hvfaith
+> Row 92:
+>   LOGINNAME = ierlikhman
+> Row 93:
+>   LOGINNAME = investorlestrade
+> Row 94:
+>   LOGINNAME = iproi
+> Row 95:
+>   LOGINNAME = jameslaviano
+> Row 96:
+>   LOGINNAME = jamesmader
+> Row 97:
+>   LOGINNAME = jarvis_hills
+> Row 98:
+>   LOGINNAME = jblount
+> Row 99:
+>   LOGINNAME = jbyron
+> Row 100:
+>   LOGINNAME = jctrader
+> Row 101:
+>   LOGINNAME = jdillon
+> Row 102:
+>   LOGINNAME = jdjuly5
+> Row 103:
+>   LOGINNAME = jeannie
+> Row 104:
+>   LOGINNAME = jfg
+> Row 105:
+>   LOGINNAME = jfrancois
+> Row 106:
+>   LOGINNAME = jgallan1
+> Row 107:
+>   LOGINNAME = jgoldstein
+> Row 108:
+>   LOGINNAME = jhoffman1
+> Row 109:
+>   LOGINNAME = jmmoore7
+> Row 110:
+>   LOGINNAME = jmoede
+> Row 111:
+>   LOGINNAME = johnmstone
+> Row 112:
+>   LOGINNAME = johnulu
+> Row 113:
+>   LOGINNAME = jrheaume
+> Row 114:
+>   LOGINNAME = jrobinson2
+> Row 115:
+>   LOGINNAME = jsunendar
+> Row 116:
+>   LOGINNAME = jsuttmiller
+> Row 117:
+>   LOGINNAME = jwhollis
+> Row 118:
+>   LOGINNAME = kanundrum
+> Row 119:
+>   LOGINNAME = katelyn17
+> Row 120:
+>   LOGINNAME = kathynz
+> Row 121:
+>   LOGINNAME = kazshak
+> Row 122:
+>   LOGINNAME = keenan
+> Row 123:
+>   LOGINNAME = keith_foulke
+> Row 124:
+>   LOGINNAME = kellerman75
+> Row 125:
+>   LOGINNAME = keyser21
+> Row 126:
+>   LOGINNAME = kirsty
+> Row 127:
+>   LOGINNAME = kred7111
+> Row 128:
+>   LOGINNAME = larryjthompson
+> Row 129:
+>   LOGINNAME = lciciora
+> Row 130:
+>   LOGINNAME = leifs
+> Row 131:
+>   LOGINNAME = ljoneill
+> Row 132:
+>   LOGINNAME = llafave
+> Row 133:
+>   LOGINNAME = lwilliams3
+> Row 134:
+>   LOGINNAME = magic_money
+> Row 135:
+>   LOGINNAME = malpost
+> Row 136:
+>   LOGINNAME = market_wizard
+> Row 137:
+>   LOGINNAME = masterfp_98
+> Row 138:
+>   LOGINNAME = mbunn
+> Row 139:
+>   LOGINNAME = mchristy
+> Row 140:
+>   LOGINNAME = mclauch
+> Row 141:
+>   LOGINNAME = mdoniger
+> Row 142:
+>   LOGINNAME = mectec
+> Row 143:
+>   LOGINNAME = mgajak
+> Row 144:
+>   LOGINNAME = mhannigan
+> Row 145:
+>   LOGINNAME = minuet
+> Row 146:
+>   LOGINNAME = mjwilhelmii
+> Row 147:
+>   LOGINNAME = mlm
+> Row 148:
+>   LOGINNAME = mmarcewicz
+> Row 149:
+>   LOGINNAME = mmcaleen
+> Row 150:
+>   LOGINNAME = msmagacz
+> Row 151:
+>   LOGINNAME = mvallarelli
+> Row 152:
+>   LOGINNAME = mwomack
+> Row 153:
+>   LOGINNAME = mwoott55250
+> Row 154:
+>   LOGINNAME = natalieb   <---- there it is 
+> Row 155:
+>   LOGINNAME = nick85016
+> Row 156:
+>   LOGINNAME = nmgiard
+> Row 157:
+>   LOGINNAME = ondal
+> Row 158:
+>   LOGINNAME = owldo
+> Row 159:
+>   LOGINNAME = parteebj
+> Row 160:
+>   LOGINNAME = pattiann1632
+> Row 161:
+>   LOGINNAME = pavelko
+> Row 162:
+>   LOGINNAME = piazzi
+> Row 163:
+>   LOGINNAME = plaskin
+> Row 164:
+>   LOGINNAME = primemvr
+> Row 165:
+>   LOGINNAME = prmorris
+> Row 166:
+>   LOGINNAME = projectmako
+> Row 167:
+>   LOGINNAME = psmooth
+> Row 168:
+>   LOGINNAME = psparke
+> Row 169:
+>   LOGINNAME = qrheaume
+> Row 170:
+>   LOGINNAME = rangerdon
+> Row 171:
+>   LOGINNAME = rceccon
+> Row 172:
+>   LOGINNAME = rdollete
+> Row 173:
+>   LOGINNAME = rgrill
+> Row 174:
+>   LOGINNAME = riskreward
+> Row 175:
+>   LOGINNAME = rjcondon
+> Row 176:
+>   LOGINNAME = rmb4620400
+> Row 177:
+>   LOGINNAME = rmorse
+> Row 178:
+>   LOGINNAME = rok
+> Row 179:
+>   LOGINNAME = rpatzman
+> Row 180:
+>   LOGINNAME = rtareilo
+> Row 181:
+>   LOGINNAME = sdignan
+> Row 182:
+>   LOGINNAME = sethdavis
+> Row 183:
+>   LOGINNAME = skyyhi
+> Row 184:
+>   LOGINNAME = slewis
+> Row 185:
+>   LOGINNAME = snag
+> Row 186:
+>   LOGINNAME = snester
+> Row 187:
+>   LOGINNAME = sorengi
+> Row 188:
+>   LOGINNAME = spanky52
+> Row 189:
+>   LOGINNAME = spardon
+> Row 190:
+>   LOGINNAME = spaulj13
+> Row 191:
+>   LOGINNAME = spippi
+> Row 192:
+>   LOGINNAME = spivey
+> Row 193:
+>   LOGINNAME = stavon
+> Row 194:
+>   LOGINNAME = stoke
+> Row 195:
+>   LOGINNAME = tdavis
+> Row 196:
+>   LOGINNAME = tdrumgo
+> Row 197:
+>   LOGINNAME = tdunn
+> Row 198:
+>   LOGINNAME = tekvestor
+> Row 199:
+>   LOGINNAME = thadley77
+> Row 200:
+>   LOGINNAME = thebax
+> Row 201:
+>   LOGINNAME = tony_camean
+> Row 202:
+>   LOGINNAME = trader30
+> Row 203:
+>   LOGINNAME = trixs
+> Row 204:
+>   LOGINNAME = tsundberg
+> Row 205:
+>   LOGINNAME = vanprooyen
+> Row 206:
+>   LOGINNAME = vchandra
+> Row 207:
+>   LOGINNAME = vel007
+> Row 208:
+>   LOGINNAME = vinsom68
+> Row 209:
+>   LOGINNAME = vladzaff
+> Row 210:
+>   LOGINNAME = vsrivas1
+> Row 211:
+>   LOGINNAME = vzhig
+> Row 212:
+>   LOGINNAME = wbauder
+> Row 213:
+>   LOGINNAME = wbonner
+> Row 214:
+>   LOGINNAME = westharbor
+> Row 215:
+>   LOGINNAME = willblur
+> Row 216:
+>   LOGINNAME = willi25794
+> Row 217:
+>   LOGINNAME = wqureshi
+> Row 218:
+>   LOGINNAME = xoseh
+> Row 219:
+>   LOGINNAME = zac_is_good
+> Row 220:
+>   LOGINNAME = zapatzik
+> Row 221:
+>   LOGINNAME = zarathustrategies
+> Row 222:
+>   LOGINNAME = zyberianinvestor
+
+let's look at the stratification page for the fund for natalieb
+
+your holdings of ACCO	
+ 	 	
+Fund	Shares	Value	Portion of fund
+NMF	0	 $.00	 0.00%
+NMF2	 0	 N/A	 N/A
+Auto	 0	 N/A	 N/A
+div	 0	 N/A	 N/A
+trst	 0	 N/A	 N/A
+fly	 0	 N/A	 N/A
+brk	 0	 N/A	 N/A
+ssp	 0	 N/A	 N/A
+Bal	 0	 N/A	 N/A
+five	 0	 N/A	 N/A
+etf	 0	 N/A	 N/A
+kb	 0	 N/A	 N/A
+ks	-1,210	 -$10,061.15	 -0.51%  <--- this one 
+3d	 0	 N/A	 N/A
+INC	 0	 N/A	 N/A
+
+stratification for ks 
+
+it's giving me the wrong stock for this
+why
+
+
+let's go an analysis of the dates for each of the ACCO's
+
+select distinct stockkey from mstockalias where symbol='ACCO';
+> Row 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+> Row 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+
+
+> ACCO 1:
+>   STOCKKEY = X'8152043c39e7e9bec0a801dc'
+select * from mstockalias where STOCKKEY = X'8152043c39e7e9bec0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'8153043c39e7e9bec0a801dc'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2003-10-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 800 AMERICA.COM INC
+>     PRIMARYKEY = X'9d1109223f8a136bc0a80146'
+>       STOCKKEY = X'8152043c39e7e9bec0a801dc'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'9d1109223f8a136bc0a80146';
+> Row 1:
+>              ALIASKEY = X'9d1109223f8a136bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ACCO US|CP_NAME| |CP_ID_BB_COMP| |CP_UNIT| |CP_TOT_AMT| |CP_TYP|1|CP_CASH|0.000100|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG| |CP_DEBT| |CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG| |CP_INIT_OFFER_PREMIUM| |CP_CUR_PREM| |CP_PCT_OWNED| |CP_PCT_SOUGHT| |CP_ACCT_METHOD| |CP_UNSOLICITED| |CP_DETAIL_FLAG| |CP_CRNCY|USD|CP_CASH_VAL| |CP_ARBITRAGE_PROF| |CP_CUR_TOT_VAL| |CP_ADVISORS_NUM| |CP_ADVISORS| |CP_NOTES|We are unable to get consistent data on this stock from our data sources. Your position has been cashed out and your fund has been credited accordingly.  If you have questions related to this transaction please email us at info@marketocracy.com.|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID =  
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = US
+>          BB_EFFECTIVE = TIMESTAMP '2003-10-10 00:00:00.000000'
+>         BB_IDENTIFIER = MDELIST     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-10-10 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = MDELIST
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2003-10-10 00:00:00.000000'
+>            PRIMARYKEY = X'2e8f09223f8a1163c0a80146'
+>               VERSION = NULL
+
+this one was acquired on 10/10/2003 
+
+
+> ACCO 2:
+>   STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+select * from mstockalias where STOCKKEY = X'f07b1b9e4303ee4ec0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2005-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'f07c1b9e4303ee4ec0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ABD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00081T108
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACCO Brands Corp
+>     PRIMARYKEY = X'99390cad4fa068f7c0a80146'
+>       STOCKKEY = X'f07b1b9e4303ee4ec0a80146'
+>         SYMBOL = ACCO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = SV
+
+let's check that dvd_stock date again
+> Row 1:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ACCO    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150122:102617
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'b6a2416154c11699c0a86f92'
+>               VERSION = NULL
+record date: 20120424
+effective date: 2012-05-01 
+paydate: 20120430
+
+
+let's try giving ABD
+back this out
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20150122:102617
+
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:ACCO]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Sell>:ACCO]
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+
+let's check the database
+select count(*) from mticket where sourcekey = X'b6a2416154c11699c0a86f92';
+no longer any mtickets
+
+natalieb doesn't have the old ACCO anymore, let's try the CA with ABD
+
+/Marketocracy/bin/cahelper -symbol MWV -effective 20120501 -type DVD_STOCK -exchange UN  -dividendSymbol ABD -payDate 20120430 -recordDate 20120424 -percent 32.99 >& /Users/build/caout/MWV.20150122-DVD_STOCK-ABD.out
+
+MWV.20150122-DVD_STOCK-ABD.out
+stocks:~/caout build$ tail -f MWV.20150122-DVD_STOCK-ABD.out
+D: (01-22 14:22:00.346) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-22 14:22:43.623) cahelper started on 2015-01-22 14:22:43 -0500
+
+D: (01-22 14:22:46.024) StockFileLoad Version:3.0
+D: (01-22 14:22:46.024) Loading Stock Data
+D: (01-22 14:24:06.899) Building Lookup Index
+D: (01-22 14:24:14.998) Finished Building Index
+D: (01-22 14:24:16.858) Finished Loading Stock Data
+D: (01-22 14:24:16.902) Connection to 192.168.111.157:6666 succeeded
+D: (01-22 14:24:22.127) >>> load new StockPrices file
+D: (01-22 14:24:22.159) <<< load new StockPrices file
+D: (01-22 14:24:22.160) >>> swap StockPrices
+D: (01-22 14:24:22.160) Obtained Stockprices swap mutex
+D: (01-22 14:24:22.160) <<< swap StockPrices
+D: (01-22 14:24:22.161) Stock prices available from 2000-05-01 to 2015-01-21
+D: (01-22 14:24:37.691) SavingChanges for Stock Dividend out 101 of 527
+D: (01-22 14:25:41.857) SavingChanges for Stock Dividend out 201 of 527
+D: (01-22 14:26:17.319) {
+    APPLIED = 1; 
+    DATE = 20120501; 
+    FUNDS = (
+        "wqureshi/Wasim's Mutual Fund", 
+        "cthiessen/CT Equity Fund", 
+        "riskreward/Risk-Reward Opportunity Fund", 
+        "mbunn/Michael Bunn's Mutual Fund", 
+        "slewis/steve lewis's Mutual Fund", 
+        "llafave/Lynn LaFave's Mutual Fund", 
+        "dharvey1/Darren David Harvey's Mutual Fund 2", 
+        "gracec/Grace Growth Value Blend", 
+        "ecarter/edward carter's Mutual Fund", 
+        "owldo/William Halterman's Mutual Fund", 
+        "tsundberg/Timothy M Sundberg's Mutual Fund", 
+        "dedstroke2/ The No-Technology Capital Opportunities Fund", 
+        "msmagacz/Goosh Traditional Value Fund", 
+        "dwarren1/P. David Warren's Mutual Fund", 
+        "budcorona/Richard Callaro's Mutual Fund", 
+        "snester/Sergei Nester's Mutual Fund", 
+        "thebax/Richard Anthony Baxter's Mutual Fund", 
+        "tdavis/Terry Davis's Mutual Fund", 
+        "mchristy/MJC Behavioral Fund", 
+        "bpowers2/Keepin It Real FUnd", 
+        "psmooth/Return on Risk Money-Builder", 
+        "DELETED_2005280/NYSE Select Fund", 
+        "chinktor/Chinktor's Wonton Fund", 
+        "cchapman1/Rock 'n' Roll 50 Fund", 
+        "parteebj/parteebj's Mutual Fund", 
+        "dschimming/The Nomadic Sector Fund", 
+        "dginty/dginty's Second Mutual Fund", 
+        "DELETED_2005372/Predator Rex Mutual Fund", 
+        "DELETED_2003229/denise value equity fund", 
+        "jdillon/jdillon's Mutual Fund", 
+        "jfg/jfg's Mutual Fund", 
+        "elegallais/elegallais's Mutual Fund", 
+        "dinoand/value and restruscturing", 
+        "dginty/Balanced Cap Fund", 
+        "jhoffman1/Real Estate Mutual Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "dharvey/Duncan Harvey's Mutual Fund", 
+        "DELETED_2003229/denise gold rush fund", 
+        "DELETED_2004157/A2Z Index", 
+        "adaher/Adam Downgrade Fund", 
+        "akhan/Akhtar Hameed Khan's Mutual Fund", 
+        "jrobinson2/Jonathan H. Robinson's Mutual Fund", 
+        "DELETED_2003229/denises small cap", 
+        "DELETED_2003229/denises big one fund", 
+        "jhoffman1/BLUE CHIP  Mutual Fund", 
+        "sethdavis/Single Letter Stocks", 
+        "DELETED_2003228/denise callahan's family fund", 
+        "jsuttmiller/THE fund", 
+        "jwhollis/ITC Value Fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "jhoffman1/Natural ResourcesMutual Fund", 
+        "tdunn/abcdefghijklmnopqrstuvwxyz", 
+        "rok/Alphabet Fund", 
+        "ccreager/Chris Creager's  Alphabet Soup Mutual Fund", 
+        "den18951/DEN-INDEX", 
+        "rceccon/Alphabet Soup", 
+        "hereiam/SI US Value Fund", 
+        "gidamone/gidamone's Mutual Fund", 
+        "snag/Value", 
+        "mmcaleen/Mike's  Mutual Fund", 
+        "csimpson/Carey Simpson Alphabet Index Fund", 
+        "jmoede/Blind Hope Mutual Fund", 
+        "rgrill/Ralph Grill's Mutual Fund", 
+        "acommodity/Guy Edrington's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "DELETED_2003229/callahan blended growth fund", 
+        "keenan/The M&A Index Fund", 
+        "dhosek/Dondex 24", 
+        "kathynz/Portfolio F", 
+        "DELETED_2003229/denises broadcast fund", 
+        "DELETED_2003229/denise callahan's Mutual Fund", 
+        "DELETED_2003229/denise callahan's chi town fund", 
+        "bward/Fund Number Four", 
+        "DELETED_2003229/denise callahan's mid cap blend", 
+        "bkalaf/BD Kalaf's Legentus Fund", 
+        "leifs/Seven to Five Fund", 
+        "jwhollis/Income and Capital Appreciation", 
+        "ierlikhman/IOSSIF ALPHABET FUND", 
+        "spardon/Steve Pardon's Earnings Announcement Fund", 
+        "gbailey/New York Gain", 
+        "mjwilhelmii/Wilhelm Trust", 
+        "efournier/efournier's Mutual Fund", 
+        "jblount/Joel's Value Dividend Fund", 
+        "rmb4620400/rmb defensive fund", 
+        "jmmoore7/jmmoore7's  Mutual Fund", 
+        "mdoniger/the Hammer fund", 
+        "astuk/Armin Stuk's First MATERIALS Fund", 
+        "magic_money/FAUX DOUGH-3", 
+        "davybob2000/davybob2000's Mutual Fund", 
+        "jsunendar/Joeliardi Opportunity Fund", 
+        "jsunendar/JSunendar Balance Fund", 
+        "ccreager/Chris's Income Play", 
+        "spanky52/spanky52's Mutual Fund", 
+        "mwoott55250/mwoott55250's Mutual Fund", 
+        "dmcgirr/Daniel McGirr Large Cap Twenty-Five Index", 
+        "johnmstone/Stone Fund", 
+        "glim888/Lim Value Fund", 
+        "dgumaer/dgumaer's Mutual Fund", 
+        "zyberianinvestor/zyberianinvestor's Charleston Fund", 
+        "alanlast/Total Fund", 
+        "bayleys1/bayleys1's Mutual Fund20", 
+        "dullom/dullom's Incomel Fund", 
+        "mmarcewicz/Inflation Hedge", 
+        "spaulj13/spaulj13's Mutual Fund", 
+        "jamesmader/Speculative Growth Fund", 
+        "gweatherbee/RK-Downers", 
+        "plaskin/plaskin's Mutual Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "jbyron/Iceland Glacier Fund", 
+        "bunnyluv/bunnyluv's RISING DOGS", 
+        "jgoldstein/500 Contrarian Index", 
+        "willi25794/Bear Short", 
+        "ddoman/Doman Momentum Fund", 
+        "rangerdon/rangerdon's  52week hi", 
+        "boyplunger/boyplunger's VL Fund", 
+        "qrheaume/Short Growth Fund ", 
+        "abeweldy/Redakers Mutual Fund II", 
+        "gerrypang/FinCalc56", 
+        "kred7111/kred7111's Mutual Fund", 
+        "mwomack/Matthew Womack's Mutual Fund", 
+        "vchandra/VCs Short Fund #1", 
+        "ondal/Ondal's Prudent Short Fund", 
+        "mlm/ESOP", 
+        "mgajak/mg commodities", 
+        "minuet/The Bankrupcy File", 
+        "prmorris/PillBaseline031505", 
+        "prmorris/Pildenstein031505", 
+        "gracec/ Grace Agility Fund", 
+        "aschaefer/Good Dividend Yield", 
+        "aschaefer/Earnings Quality 4-30-2005", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "rdollete/Blindfolded Screener", 
+        "lwilliams3/Short Strategy Fund ", 
+        "keith_foulke/System Picks Short", 
+        "holdenll/SHORT Fund", 
+        "sorengi/Treasure Fund", 
+        "jdjuly5/Ching's Natural Resource Sells", 
+        "equitymerc/Short Portfolio", 
+        "bearfodder/Multi Cap Global Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "hvfaith/hvfaith's Mutual Fund", 
+        "willblur/willblur's Un-Fundamental Fund", 
+        "mchristy/Materials Short Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "backtash/backtash's Mutual Fund", 
+        "bigburrito/slugs", 
+        "kellerman75/kellerman75's Mutual Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "draymonda/Draymonda_AGgrowth_Mutual_Fund", 
+        "mvallarelli/FEB 06", 
+        "rtareilo/Short Market Fund", 
+        "bradlevi/High Expectation Fund", 
+        "ashokgoyal37/UPTICK", 
+        "arturo52/arturo52's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "zac_is_good/Show Me The Money", 
+        "finanaliticasector_a/MATERIALS1", 
+        "market_wizard/MW's Magic Short Fund", 
+        "jctrader/Expansion S", 
+        "ljoneill/Mid Cap Shorts", 
+        "wbonner/3rd quarter 2006", 
+        "asellers103/asellers103's Mutual Fund", 
+        "thadley77/quant1", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "vinsom68/SAPI Slugs", 
+        "fivenine/Funded Beyond All Recognition", 
+        "katelyn17/katelyn17's Mutual Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "nmgiard/Nick's Slug Fund", 
+        "trixs/Aberrations and Anomalies", 
+        "vladzaff/Emerging Agressive", 
+        "tdrumgo/News Release", 
+        "jameslaviano/30271K542", 
+        "vzhig/Active Portfolio", 
+        "pavelko/pavelko's Mutual Fund", 
+        "mclauch/mclauch's Mutual Fund", 
+        "vanprooyen/VANPRO Natural Resources", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "chinakid/chinakid's Mutual Fund", 
+        "bchatraw/H Short QOE", 
+        "jeannie/IndustrialGrowthFund", 
+        "tony_camean/growth+value rebalanced", 
+        "appl3py3/appl3py3's Mutual Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "malpost/TEAM 7 Orig (PutOpp)", 
+        "vel007/vel007's Mutual Fund", 
+        "rjcondon/CONsumer Staples Fund", 
+        "greatware/SAPI Slugs MSN", 
+        "bmcclard/Relative Value Short", 
+        "dpage1435/DRPIII", 
+        "vsrivas1/vsrivas1 SLO2 Fund", 
+        "spippi/spippi's Mutual Fund", 
+        "rpatzman/Get shorty", 
+        "cburgess/S&P 500 Index", 
+        "dionysius/dionysius's Mutual Fund", 
+        "andrewkcook/Andrew's Financials and Utilities Fund", 
+        "bradhark/bradhark's Mutual Fund", 
+        "52wingman/52wingman's Mutual Fund", 
+        "rpatzman/Acuity Short", 
+        "alobato/Alobato Short Losers", 
+        "jgallan1/Stockscouter t50 - new", 
+        "jarvis_hills/dead horses", 
+        "chushogi/Chushogi's Yavzinsky Fund", 
+        "psparke/vCash", 
+        "psparke/Cash 2", 
+        "masterfp_98/masterfp_98's Mutual Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "spivey/Spivey Mutual Fund", 
+        "grumpypole/GrumpyPole's Materials Fund", 
+        "wbauder/Yield", 
+        "xoseh/Mike's Mutual Fund", 
+        "gabipatrick/gabipatrick's Mutual Fund", 
+        "aaltoandmiesvander/aaltoandmiesvander's SP500Short", 
+        "primemvr/primemvr's Mutual Fund", 
+        "dojaman/dojaman's Mutual Fund", 
+        "cvantoor/Chuck' s Short Fund", 
+        "barewires/Praxis Two", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "natalieb/kiplinger-sell", 
+        "jarvis_hills/utilities", 
+        "stavon/midas", 
+        "hansthered/SAPI Slugs", 
+        "appl3py3/high growth wood/paper stocks", 
+        "mhannigan/Mike's SAPI Slugs Fund", 
+        "westharbor/Hedge Fund", 
+        "bhagwat/bhagwat's Mutual Fund", 
+        "congiundi/Congiundi's Mutual Fund", 
+        "lciciora/MarketEssentials.com Relative P/E & Earnings ", 
+        "fundamental/GPS's SPecial Fund", 
+        "tekvestor/JELLYFISH", 
+        "kanundrum/Kanundrum US Equities - Short", 
+        "adaher/Hermanator Fund", 
+        "kazshak/ValueScreen July 3 2008", 
+        "grayanderson/GEA's Mutual Fund - Value", 
+        "piazzi/PSRSF", 
+        "piazzi/PSRF", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "projectmako/Falling Knife Agility Fund", 
+        "grayanderson/GEA's Mutual Fund-Commodities", 
+        "mectec/Mectec Prime Growth MACD", 
+        "stoke/High Five Select", 
+        "trader30/Gekko Growth & Income Fund", 
+        "pattiann1632/Patti's Jinger  Fund", 
+        "iproi/valu lip", 
+        "sdignan/sdignan's Mutual Fund", 
+        "a887007/a887007's Mutual Fund", 
+        "dontgoshane/World Wide Mid Cap", 
+        "zapatzik/zapatzik's Mutual Fund", 
+        "cleverd83/Raise the Bar/Lower the Boom Fund", 
+        "keyser21/keyser21's Mutual Fund", 
+        "zarathustrategies/Zarathu Materials Fund", 
+        "investorlestrade/Timeliness", 
+        "investorlestrade/Keep It Simple Stupid"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20120430; 
+    RATIO = 0.32990002; 
+    "RECORD_DATE" = 20120424; 
+    SYMBOL = MWV; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (01-22 14:26:21.618) SUCCESS
+D: (01-22 14:26:21.619) cahelper finished 2015-01-22 14:26:21 -0500
+
+check natalieb and the database
+
+MWV
+select distinct stockkey from mstockalias where symbol='MWV';
+> Row 1:
+>   STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+
+select * from mstockalias where STOCKKEY = X'1b6b0e21390b1bf6c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582834107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MEAD CORP
+>     PRIMARYKEY = X'1b6c0e21390b1bf6c0a80116'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MEA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 583334107
+>           DATE = TIMESTAMP '2002-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MeadWestvaco
+>     PRIMARYKEY = X'f81310373c6af583c0a801dc'
+>       STOCKKEY = X'1b6b0e21390b1bf6c0a80116'
+>         SYMBOL = MWV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'f81310373c6af583c0a801dc';
+> Row 49:
+>              ALIASKEY = X'f81310373c6af583c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120424|CP_PAY_DT|20120430|CP_AMT|32.990002|CP_DVD_STOCK_TYP|2001|CP_TKR|ABD    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150122:022243
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MWV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MWV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'2d2913d254c14e03c0a86f92'
+>               VERSION = NULL
+
+no longer in the stratification as a short and long
+checking the ledger on 20120430 for his ks fund
+positions on April 30, 2012	
+ 	 	
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+PPG	PPG INDUS	$105.24	8.7%	1,130	$0.00	$118,921.20	Details 
+DD	DU PONT (EI) DE NEMOURS	$53.46	8.7%	2,220	$0.00	$118,681.20	Details 
+ESV	Ensco PLC	$54.65	8.6%	2,150	$0.00	$117,497.50	Details 
+AVY	AVERY DENNISON CORP	$31.98	8.6%	3,670	$0.00	$117,366.60	Details 
+MWV	MeadWestvaco	$31.82	8.6%	3,670	$0.00	$116,779.40	Details 
+PETM	PETSMART INC	$58.26	8.5%	2,000	$0.00	$116,520.00	Details 
+CTSH	COGNIZANT TECH SOLUTIONS'A'	$73.33	8.4%	1,570	$0.00	$115,128.10	Details 
+WSO	WATSCO, INC	$71.95	8.3%	1,580	$992.00	$113,681.00	Details 
+EXPD	EXPEDITORS INTL,WASH	$40.00	7.8%	2,650	$0.00	$106,000.00	Details 
+NOK	NOKIA CORP ADS	$3.65	7.5%	28,000	$0.00	$102,200.00	Details 
+PM	Philip Morris International I	$89.51	3.3%	500	$0.00	$44,755.00	Details 
+WLL	Whiting Petroleum Corporation	$57.20	3.2%	760	$0.00	$43,472.00	Details 
+GR	Goodrich Corp	$125.46	2.8%	310	$0.00	$38,892.60	Details 
+C	CITIGROUP INC	$33.05	2.8%	1,150	$0.00	$38,007.50	Details 
+SPY	SPDR S&P 500 ETF Trust	$139.87	2.6%	250	$0.00	$34,967.50	Details 
+ACCO	ACCO Brands Corp	$10.55	0.9%	1,210	$0.00	$12,765.50	Details 
+ 	 	 
+	 trades on April 30, 2012	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Buy	NOK	1,400	$3.71	$5,193.90	$70.00	$0.00
+Sell	PPG	20	$105.82	$2,116.35	$1.00	$0.05
+Buy	NOK	500	$3.68	$1,840.00	$25.00	$0.00
+Sell	AVY	50	$32.23	$1,611.26	$2.50	$0.04
+Buy	EXPD	40	$40.06	$1,602.20	$2.00	$0.00
+Sell	PETM	20	$58.21	$1,164.17	$1.00	$0.03
+Sell	ESV	20	$53.95	$1,079.05	$1.00	$0.03
+Sell	DD	20	$53.38	$1,067.57	$1.00	$0.03
+Sell	PPG	10	$105.14	$1,051.37	$0.50	$0.03
+Sell	AVY	30	$31.95	$958.47	$1.50	$0.03
+Sell	MWV	30	$31.68	$950.37	$1.50	$0.03
+Buy	EXPD	20	$40.08	$801.60	$1.00	$0.00
+Sell	WSO	10	$74.38	$743.78	$0.50	$0.02
+Sell	CTSH	10	$72.89	$728.88	$0.50	$0.02
+Stock Dividend Buy	ACCO	1,210	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+and expanding:
+ks fund:
+LEDGER
+Date	Start	Change	End	Type
+Apr 30, 2012		1210	1210	Corporate Action
+May 02, 2012	1210	-1210		Sell
+Total: 0
+ 	 	 
+BUYS
+You have no Buys for this position
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 2, 2012	1,210	$60.50	$0.30	$13,308.55	$11.00
+ 	 	 
+
+
+It worked, we're done! 
+

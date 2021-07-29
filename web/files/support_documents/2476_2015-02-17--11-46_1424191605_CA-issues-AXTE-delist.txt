@@ -1,0 +1,171 @@
+date: 2/16/15
+AXTE
+
+quantum:
+Shares MSCI ACWI ex US Telecommunication Services ETF
+Ticker Symbol: AXTE*     CUSIP: 464289560     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   International Market Sector Index ETF
+* NOTE: This security is no longer trading as of 3/25/14
+
+Notes:  January 24, 2014 -- iShares Exchange Traded Funds (ETFs) plans to close and liquidate ten funds that make 
+up the iShares All Country World Index (ACWI) ex-U.S. sector suite. After the close of business on March 25, 2014 
+the funds will no longer accept creation orders. Trading in the funds will be halted prior to market open on 
+March 26, 2014. Proceeds of the liquidation are currently scheduled to be sent to shareholders on or about 
+April 1, 2014. For more information call 1-800-iShares (1-800-474-2737).
+
+
+our site:
+Symbol: AXTE	Name: iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund	Price: $50.75
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+no CAs
+
+select distinct stockkey from mstockalias where symbol='AXTE';
+> Row 1:
+>   STOCKKEY = X'87ac30984c40d6d4c0a80146'
+select * from mstockalias where STOCKKEY = X'87ac30984c40d6d4c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund
+>     PRIMARYKEY = X'87ad30984c40d6d4c0a80146'  <--- set the mstock identitykey here
+>       STOCKKEY = X'87ac30984c40d6d4c0a80146'
+>         SYMBOL = AXTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mstock where primarykey=X'87ac30984c40d6d4c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'f5b26ea554e292e8c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'87ac30984c40d6d4c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19083
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'87ad30984c40d6d4c0a80146' where PRIMARYKEY = X'87ac30984c40d6d4c0a80146';
+select * from mcorporateaction where aliaskey is null and BB_SECID='AXTE';
+
+
+check MAdmin
+AXTE 02/16/2015
+Stock:iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund  Symbol:AXTE
+Date: 02/16/2015
+
+0 users found
+no one
+
+historical prices
+/Marketocracy/bin/dbtool lookup stock AXTE
+>>>> dbtool started at 2015-02-16 19:58:55 -0500
+stock: AXTE
+  PK       : [87AC30984C40D6D4C0A80146]
+  companyID: [19083]
+  symbol   : [AXTE]
+  name     : [iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund]
+  date     : [2010-07-16 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-16 19:58:55 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19083
+2012-04-17 (Tue) [4124]: O:52.8200 H:52.8200 L:52.8200 C:52.8200 V:100 TSO:0 A:52.8200 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:52.0700 H:52.0700 L:52.0700 C:52.0700 V:500 TSO:0 A:52.0700 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:52.0700 H:52.0700 L:52.0700 C:52.0700 V:500 TSO:0 A:52.0700 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:52.0700 H:52.0700 L:52.0700 C:52.0700 V:500 TSO:0 A:52.0700 R:1.0000 CA:0.0000
+2012-04-21 (Sat) [4128]: <WEEKEND>
+2012-04-22 (Sun) [4129]: <WEEKEND>
+2012-04-23 (Mon) [4130]: O:50.7000 H:50.7500 L:50.7000 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000
+2012-04-24 (Tue) [4131]: O:50.7500 H:50.7500 L:50.7500 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000
+2012-04-25 (Wed) [4132]: O:50.7500 H:50.7500 L:50.7500 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000
+2012-04-26 (Thu) [4133]: O:50.7500 H:50.7500 L:50.7500 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000
+2012-04-27 (Fri) [4134]: O:50.7500 H:50.7500 L:50.7500 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000
+2012-04-28 (Sat) [4135]: <WEEKEND>
+2012-04-29 (Sun) [4136]: <WEEKEND>
+2012-04-30 (Mon) [4137]: O:50.7500 H:50.7500 L:50.7500 C:50.7500 V:500 TSO:0 A:50.7500 R:1.0000 CA:0.0000  <- last price
+
+apply the acquis
+/Marketocracy/bin/cahelper -symbol AXTE -effective 20120430 -type ACQUIS -exchange UN -acqType 1 -acqCash 50.75 -acqShare 0 -purchaser AXTE >& /Users/build/caout/AXTE.20150216-ACQUIS.out
+stocks:~/caout build$ tail -f AXTE.20150216-ACQUIS.out
+D: (02-16 20:01:04.785) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-16 20:01:28.472) cahelper started on 2015-02-16 20:01:28 -0500
+
+D: (02-16 20:01:28.783) There are [0] open tickets for AXTE on 20120430
+D: (02-16 20:01:28.805) {
+    "ACQUIRED_STOCK" = AXTE; 
+    "ACQUIRING_STOCK" = AXTE; 
+    AMOUNT = 50.75; 
+    APPLIED = 1; 
+    DATE = 20120430; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = AXT; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-16 20:01:29.140) SUCCESS
+D: (02-16 20:01:29.141) cahelper finished 2015-02-16 20:01:29 -0500
+
+select * from mstockalias where STOCKKEY = X'87ac30984c40d6d4c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund
+>     PRIMARYKEY = X'87ad30984c40d6d4c0a80146'
+>       STOCKKEY = X'87ac30984c40d6d4c0a80146'
+>         SYMBOL = AXTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund
+>     PRIMARYKEY = X'11c8700a54e29418c0a86f92'
+>       STOCKKEY = X'87ac30984c40d6d4c0a80146'
+>         SYMBOL = AXTE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey= X'11c8700a54e29418c0a86f92';
+> Row 1:
+>              ALIASKEY = X'11c8700a54e29418c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AXTE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|50.750000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150216:080632
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-30 00:00:00.000000'
+>         BB_IDENTIFIER = AXTE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AXTE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-30 00:00:00.000000'
+>            PRIMARYKEY = X'11c2700a54e29418c0a86f92'
+>               VERSION = NULL
+
+check on 2/17/15 for the acquis 
+ AXTE has been acquired	
+ 	 	
+iShares MSCI ACWI ex US Telecommunication Services Sector Index Fund acquired by a private company on 2012-04-30 00:00:00.
+this is done
+closing
+

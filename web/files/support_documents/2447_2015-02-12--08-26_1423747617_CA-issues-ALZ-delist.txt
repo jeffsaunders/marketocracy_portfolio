@@ -1,0 +1,156 @@
+date: 2/11/15
+ALZ delisted
+
+yahoo nothing 
+quantum
+Alabama Power Co., 7 1/8% Senior Notes Series A due 12/1/2047
+Ticker Symbol: ALZ*     CUSIP: 010392645     Exchange: NYSE
+Security Type:   Exchange-Traded Debt Security
+* NOTE: This security is no longer trading as of 1/13/03
+Security has been Called for:  Monday, January 13, 2003
+
+our site
+Symbol: ALZ	Name: ALABAMA PWR 7.125% SR NOTES	Price: $25.66
+Volume:	Sector: Utilities	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+MAdmin
+Stock:ALABAMA PWR 7.125% SR NOTES  Symbol:ALZ
+Date: 02/11/2015
+
+6 users found
+
+1	jaxjon	jhudanish	mariafer	nathalie347	ralward	vikingdan
+
+check historical pricing
+
+/Marketocracy/bin/dbtool lookup stock ALZ
+>>>> dbtool started at 2015-02-11 17:35:47 -0500
+stock: ALZ
+  PK       : [AD2210AC390C6DF0C0A8015C]
+  companyID: [9497]
+  symbol   : [ALZ]
+  name     : [ALABAMA PWR 7.125% SR NOTES]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-11 17:35:48 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9497
+2011-05-22 (Sun) [3793]: <WEEKEND>
+2011-05-23 (Mon) [3794]: O:25.6624 H:25.6624 L:25.6624 C:25.6624 V:0 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-05-24 (Tue) [3795]: O:25.8100 H:25.8100 L:25.6300 C:25.6624 V:13483 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-05-25 (Wed) [3796]: O:25.8100 H:25.8100 L:25.6300 C:25.6624 V:13483 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-05-26 (Thu) [3797]: O:25.8100 H:25.8100 L:25.6300 C:25.6624 V:13483 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-05-27 (Fri) [3798]: O:25.8100 H:25.8100 L:25.6300 C:25.6624 V:13483 TSO:0 A:25.6624 R:1.0000 CA:0.0000  <--
+2011-05-28 (Sat) [3799]: <WEEKEND>
+2011-05-29 (Sun) [3800]: <WEEKEND>
+2011-05-30 (Mon) [3801]: <HOLIDAY>
+2011-05-31 (Tue) [3802]: O:25.6624 H:25.6624 L:25.6624 C:25.6624 V:0 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-06-01 (Wed) [3803]: O:25.6624 H:25.6624 L:25.6624 C:25.6624 V:0 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-06-02 (Thu) [3804]: O:25.6624 H:25.6624 L:25.6624 C:25.6624 V:0 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-06-03 (Fri) [3805]: O:25.6624 H:25.6624 L:25.6624 C:25.6624 V:0 TSO:0 A:25.6624 R:1.0000 CA:0.0000
+2011-06-04 (Sat) [3806]: <WEEKEND>
+2011-06-05 (Sun) [3807]: <WEEKEND>
+
+
+use this
+2011-05-27 (Fri) [3798]: O:25.8100 H:25.8100 L:25.6300 C:25.6624 V:13483 TSO:0 A:25.6624 R:1.0000 CA:0.0000  <--
+
+/Marketocracy/bin/cahelper -symbol ALZ -effective 20110527 -type ACQUIS -exchange UN -acqType 1 -acqCash 25.66 -acqShare 0 -purchaser ALZ >& /Users/build/caout/ALZ.20150211-ACQUIS.out
+stocks:~/caout build$ cat ALZ.20150211-ACQUIS.out
+D: (02-11 17:39:08.433) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-11 17:39:42.732) cahelper started on 2015-02-11 17:39:42 -0500
+
+D: (02-11 17:39:43.424) There are [0] open tickets for ALZ on 20110527
+D: (02-11 17:39:43.650) StockFileLoad Version:3.0
+D: (02-11 17:39:43.650) Loading Stock Data
+D: (02-11 17:40:46.199) Building Lookup Index
+D: (02-11 17:40:52.382) Finished Building Index
+D: (02-11 17:40:53.773) Finished Loading Stock Data
+D: (02-11 17:40:53.907) Connection to 192.168.111.157:6666 succeeded
+D: (02-11 17:40:54.156) {
+    "ACQUIRED_STOCK" = ALZ; 
+    "ACQUIRING_STOCK" = "ALZ_FIX"; 
+    AMOUNT = 25.66; 
+    APPLIED = 1; 
+    DATE = 20110527; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ALZ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-11 17:40:55.327) SUCCESS
+D: (02-11 17:40:55.327) cahelper finished 2015-02-11 17:40:55 -0500
+
+
+
+select distinct stockkey from mstockalias where symbol='ALZ';
+> Row 1:
+>   STOCKKEY = X'ad2210ac390c6df0c0a8015c'
+select * from mstockalias where STOCKKEY = X'ad2210ac390c6df0c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 010392538
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALABAMA PWR 7.125% SR NOTES
+>     PRIMARYKEY = X'ad2310ac390c6df0c0a8015c'
+>       STOCKKEY = X'ad2210ac390c6df0c0a8015c'
+>         SYMBOL = ALZ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 010392538
+>           DATE = TIMESTAMP '2011-05-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALABAMA PWR 7.125% SR NOTES
+>     PRIMARYKEY = X'3181724254dbda2fc0a86f92'
+>       STOCKKEY = X'ad2210ac390c6df0c0a8015c'
+>         SYMBOL = ALZ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey= X'3181724254dbda2fc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'3181724254dbda2fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ALZ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|25.660000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150211:053942
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-05-27 00:00:00.000000'
+>         BB_IDENTIFIER = ALZ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-27 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ALZ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-05-27 00:00:00.000000'
+>            PRIMARYKEY = X'317b724254dbda2ec0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey= X'317b724254dbda2ec0a86f92';
+> Row 1:
+>   _C001 = 11.000000
+
+
+looks good check on 2/12/15 for the acquis to appear
+2/12/15
+ALZ is acquired/delisted
+ALZ has been acquired	
+ 	 	
+ALABAMA PWR 7.125% SR NOTES acquired by a private company on 2011-05-27 00:00:00.
+
+closing this out

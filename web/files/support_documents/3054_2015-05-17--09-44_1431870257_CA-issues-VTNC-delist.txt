@@ -1,0 +1,309 @@
+date:  5/15/15
+ticker:VTNC
+
+yahoo:  stale 
+Vitran Corporation, Inc. (VTNC) -NasdaqGS
+Watchlist
+6.49 0.00(0.00%) Mar 26
+Add to Portfolio
+Prev Close:	6.49
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	6.50
+Beta:	2.66
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	6.46 - 6.53
+Volume:	29,314
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-1.41
+Div & Yield:	N/A (N/A)
+
+quantum:
+
+oursite:
+Symbol: VTNC 	Name: VITRAN CORP INC 	Price: $6.49
+Volume: 	Sector: Industrials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+CAs
+o 
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VTNC
+
+check MAdmin
+VTNC  05/15/2015
+Stock:VITRAN CORP INC  Symbol:VTNC
+Date: 05/14/2015
+
+52 users found
+
+1	anonymityness	astuk	bford	bkalaf	blingbling	blitzwing	botchmanov	bunnyluv	cschwartz	destinyfaith
+2	djb54	fkhan1	fpower	fwwups	gpbax	greed	jalis	jamendola	jarvis_hills	jhagedorn
+3	jhamer	josefornell	kama	knode11	kwade	lhague	lkris	morgan0126	msgbrian	naviglia2
+4	oroborous	pattiann1632	rangerdon	rebelsphinx	retief	rooster	rrshah	rserrell	rugolotti	sheraz
+5	sroselius	stavon	swiseman	taras_lanovyk77	tecnocrat	teenerball	tradesim	transmaster	utterme	vududoctor
+6	winkiedinkie	xboardfan1	 	 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'VTNC';  
+> Row 1:
+>   STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+
+select * from mstockalias where stockkey= X'67cd10ac390c6d28c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'67ce10ac390c6d28c0a8015c'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2005-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'cb012f85422d1574c0a80146'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VTNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2005-03-07 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'5ce02f92422d1591c0a80146'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VTNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VTNC'  order by BB_EFFECTIVE;
+> Row 32:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|TFI CN|CP_NAME|TransForce Inc|CP_ID_BB_COMP|108585|CP_UNIT|Vitran Corp Inc|CP_TOT_AMT|127.249100|CP_ACQUIS_TYP|1|CP_CASH|6.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|41.748001|CP_DEBT_FLAG|2|CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|48.505009|CP_CUR_PREMIUM|0.293542|CP_PCT_OWNED|19.950001|CP_PCT_SOUGHT|80.050003|CP_UNSOLICITED|2|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|6.500000|CP_ARBITRAGE_PROF|0.019024|CP_CUR_TOT_VAL|127.249054|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Financial Adviser;1;Stephens Inc;13;100.000000;1;Acquirer Legal Adviser;1;Dorsey & Whitney, Heenan Blaikie, McMillan LLP;13;100.000000;1;Acquirer Financial Adviser;1;National Bk Finl;13;100.000000;|CP_ACQ_TKR|TFI CN|CP_ACQ_ID_BB_GLOBAL|BBG000G5FQQ8|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FF6RT0|CP_ACQ_ID_BB_SEC_NUM_DES|TFI|CP_ACQ_FEED_SOURCE|CN|CP_TARGET_TKR|VTN CN|CP_TARGET_ID_BB_GLOBAL|BBG000BD0PS2|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FF92M9|CP_TARGET_ID_BB_SEC_NUM_DES|VTN|CP_TARGET_FEED_SOURCE|CN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81847615
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 110903
+>        BB_COMPANYNAME = Vitran Corp Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-31 00:00:00.000000'
+>         BB_IDENTIFIER = VTNC    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = VTNC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-03-05 00:00:00.000000'
+>            PRIMARYKEY = X'3f0850e653190941c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VTNC
+>>>> dbtool started at 2015-05-14 17:34:36 -0400
+stock: VTNC
+  PK       : [67CD10AC390C6D28C0A8015C]
+  companyID: [6769]
+  symbol   : [VTNC]
+  name     : [VITRAN CORP INC]
+  date     : [2005-03-07 00:00:00]
+  status   : [Active]
+stock: VTNC
+  PK       : [67CD10AC390C6D28C0A8015C]
+  companyID: [6769]
+  symbol   : [VTNC]
+  name     : [VITRAN CORP INC]
+  date     : [2005-03-07 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-14 17:34:36 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6769
+2014-03-18 (Tue) [4824]: O:6.4500 H:6.4900 L:6.4500 C:6.4800 V:39512 TSO:16266 A:6.4800 R:1.0000 CA:0.0000
+2014-03-19 (Wed) [4825]: O:6.4800 H:6.4800 L:6.4700 C:6.4800 V:31656 TSO:16266 A:6.4800 R:1.0000 CA:0.0000
+2014-03-20 (Thu) [4826]: O:6.4700 H:6.4800 L:6.4500 C:6.4500 V:25382 TSO:16266 A:6.4500 R:1.0000 CA:0.0000
+2014-03-21 (Fri) [4827]: O:6.4600 H:6.4900 L:6.4600 C:6.4800 V:49100 TSO:16266 A:6.4800 R:1.0000 CA:0.0000
+2014-03-22 (Sat) [4828]: <WEEKEND>
+2014-03-23 (Sun) [4829]: <WEEKEND>
+2014-03-24 (Mon) [4830]: O:6.4800 H:6.4800 L:6.4600 C:6.4700 V:30775 TSO:16266 A:6.4700 R:1.0000 CA:0.0000
+2014-03-25 (Tue) [4831]: O:6.5000 H:6.5000 L:6.4900 C:6.4900 V:50007 TSO:16266 A:6.4900 R:1.0000 CA:0.0000
+2014-03-26 (Wed) [4832]: O:6.5300 H:6.5300 L:6.4900 C:6.4900 V:29545 TSO:16266 A:6.4900 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'67cd10ac390c6d28c0a8015c' and shares > 0 order by closed; 
+> Row 1052:
+>      ACTIONKEY = X'059e3ba840d73045c0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-12-09 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 110.000000
+>   CURRENTORDER = X'ee452dd8529e1aa8c0a86f85'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e63017ba3989e7d8c0a80118'
+>       MODIFIED = NULL
+>            NET = 12043.554600
+>         OPENED = TIMESTAMP '2013-12-03 12:53:44.000000'
+>          PRICE = 5.474343
+>     PRIMARYKEY = X'ee432dd8529e1aa8c0a86f85'
+>         SECFEE = 0.000000
+>         SHARES = 2200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last trade 12/9/13
+last price we have 3/26/14  6.49
+from the CA unapplied
+CP_ACQUIS_TYP|1|CP_CASH|6.500000  2014-03-31  
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  VTNC  -effective 20140331 -type ACQUIS -exchange UN -acqType 1 -acqCash 6.50 -acqShare 0 -purchaser VTNC   >& /Users/build/caout/VTNC.20150514-ACQUIS.out
+VTNC.20150514-ACQUIS.out
+stocks:~/caout build$ tail -f VTNC.20150514-ACQUIS.out
+D: (05-14 17:40:51.029) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-14 17:41:37.748) cahelper started on 2015-05-14 17:41:37 -0400
+
+D: (05-14 17:41:38.201) There are [0] open tickets for VTNC on 20140331
+D: (05-14 17:41:38.688) StockFileLoad Version:4.0
+D: (05-14 17:41:38.688) Loading Stock Data
+D: (05-14 17:41:45.206) Building Lookup Index
+D: (05-14 17:41:52.919) Finished Building Index
+D: (05-14 17:41:53.775) Finished Loading Stock Data
+D: (05-14 17:41:53.843) Connection to 192.168.111.172:6666 succeeded
+D: (05-14 17:41:56.168) {
+    "ACQUIRED_STOCK" = VTNC; 
+    "ACQUIRING_STOCK" = "VTNC_FIX"; 
+    AMOUNT = 6.5; 
+    APPLIED = 1; 
+    DATE = 20140331; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VTNC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-14 17:42:00.904) SUCCESS
+D: (05-14 17:42:00.905) cahelper finished 2015-05-14 17:42:00 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'67cd10ac390c6d28c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'67ce10ac390c6d28c0a8015c'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2005-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'cb012f85422d1574c0a80146'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VTNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2005-03-07 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'5ce02f92422d1591c0a80146'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VTNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92850E107
+>           DATE = TIMESTAMP '2014-03-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VITRAN CORP INC
+>     PRIMARYKEY = X'62d305da55551692c0a86f92'
+>       STOCKKEY = X'67cd10ac390c6d28c0a8015c'
+>         SYMBOL = VTNC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20304020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'62d305da55551692c0a86f92';
+> Row 1:
+>              ALIASKEY = X'62d305da55551692c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VTNC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|6.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150514:054137
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-31 00:00:00.000000'
+>         BB_IDENTIFIER = VTNC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VTNC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-03-31 00:00:00.000000'
+>            PRIMARYKEY = X'62cd05da55551691c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'62cd05da55551691c0a86f92';
+> Row 1:
+>   _C001 = 75.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'62cd05da55551691c0a86f92'));
+75 fundkeys  save to CA issues VTNC fundkeys.txt
+
+5/17/15 
+ VTNC has been acquired 	right curve
+  	  	
+VITRAN CORP INC acquired by a private company on 2014-03-31 00:00:00. 
+
+acquis is there invalidate 
+on 20140331  members got 6.50
+ closing 

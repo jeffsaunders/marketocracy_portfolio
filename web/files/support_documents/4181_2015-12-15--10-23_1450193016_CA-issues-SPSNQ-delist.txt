@@ -1,0 +1,362 @@
+SPSNQ	
+CA issues SPSNQ delist.txt
+date:  
+ticker:  
+
+yahoo:  nothing
+
+quantum:  nothing 
+
+oursite:
+Symbol: SPSNQ	Name: Spansion, Incorporated Class A	Price: $0.01
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  SPSNQ   
+ [NEW QUOTE]       
+Corporate Actions for Spansion, Incorporated Class A	  December 13, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for SPSNQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+07 May 09	SPSN	SPSNQ	Change in the ticker (trading) symbol from SPSN to SPSNQ
+ 	 	 
+left curve	  listing changes for SPSNQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jul 03, 2006	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that SPSN trades on from NASDAQ to NASDAQ
+May 07, 2009	NASDAQ	UW	OTCBB-OTHER	UV	Change in the exchange that SPSNQ trades on from NASDAQ to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=SPSNQ
+
+check MAdmin
+Stock:Spansion, Incorporated Class A  Symbol:SPSNQ
+Date: 12/12/2015
+
+34 users found
+
+1	argentina	bull_bear1980	castaways2006	cdemaria	craigbuj	csilk	ehickey	foolsmith	harish63	hpatel298
+2	idahoinvestor	jabz	jhho	jrandlett	kogelet	leonardorh	matthiash	mbaeu1	mchristy	mellj3217
+3	modenaf1	newlife1	nnnzaw	orangeyellow3682	phoward	rbitrage	rexboyce	right_hook	rooster	rshulman
+4	tavros	utterme	winlarge	wuz_my_name	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'SPSNQ';  
+> Row 1:
+>   STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+select * from mstockalias where stockkey=X'cf7d74c2449aa5e2c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2005-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'cf7e74c2449aa5e2c0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'4c15150944a9ce4fc0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2009-05-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'13a20a934a03929ac0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2009-05-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'21950aa64a0392cfc0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SPSNQ'  order by BB_EFFECTIVE;
+notning 
+last known price
+/Marketocracy/bin/dbtool lookup stock SPSNQ
+>>>> dbtool started at 2015-12-13 00:38:30 -0500
+stock: SPSNQ
+  PK       : [CF7D74C2449AA5E2C0A80146]
+  companyID: [16217]
+  symbol   : [SPSNQ]
+  name     : [Spansion, Incorporated Class A]
+  date     : [2009-05-07 00:00:00]
+  status   : [Active]
+stock: SPSNQ
+  PK       : [CF7D74C2449AA5E2C0A80146]
+  companyID: [16217]
+  symbol   : [SPSNQ]
+  name     : [Spansion, Incorporated Class A]
+  date     : [2009-05-07 00:00:01]
+  status   : [Active]
+
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16217
+2010-05-04 (Tue) [3410]: O:0.0285 H:0.0520 L:0.0281 C:0.0455 V:25413818 TSO:161069 A:0.0455 R:1.0000 CA:0.0000
+2010-05-05 (Wed) [3411]: O:0.0480 H:0.0645 L:0.0380 C:0.0383 V:33749864 TSO:161069 A:0.0383 R:1.0000 CA:0.0000
+2010-05-06 (Thu) [3412]: O:0.0377 H:0.0400 L:0.0320 C:0.0368 V:7648206 TSO:161069 A:0.0368 R:1.0000 CA:0.0000
+2010-05-07 (Fri) [3413]: O:0.0361 H:0.0361 L:0.0301 C:0.0310 V:7400102 TSO:161069 A:0.0310 R:1.0000 CA:0.0000
+2010-05-08 (Sat) [3414]: <WEEKEND>
+2010-05-09 (Sun) [3415]: <WEEKEND>
+2010-05-10 (Mon) [3416]: O:0.0306 H:0.0457 L:0.0160 C:0.0188 V:32975319 TSO:161069 A:0.0188 R:1.0000 CA:0.0000
+2010-05-11 (Tue) [3417]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-12 (Wed) [3418]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-13 (Thu) [3419]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-14 (Fri) [3420]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-15 (Sat) [3421]: <WEEKEND>
+2010-05-16 (Sun) [3422]: <WEEKEND>
+2010-05-17 (Mon) [3423]: O:0.0069 H:0.0069 L:0.0069 C:0.0069 V:0 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-18 (Tue) [3424]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-19 (Wed) [3425]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-20 (Thu) [3426]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-21 (Fri) [3427]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-22 (Sat) [3428]: <WEEKEND>
+2010-05-23 (Sun) [3429]: <WEEKEND>
+2010-05-24 (Mon) [3430]: O:0.0069 H:0.0069 L:0.0069 C:0.0069 V:0 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+2010-05-25 (Tue) [3431]: O:0.0069 H:0.0069 L:0.0069 C:0.0069 V:0 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'cf7d74c2449aa5e2c0a80146' and shares > 0 order by closed; 
+> Row 196:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-05-10 15:30:00.000000'
+>        COMMENT = Bad News|Technical Analysis Indicators|
+>     COMMISSION = 664.188500
+>   CURRENTORDER = X'701a102e4be855dcc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'1ac80d883a1c7bc5c0a80118'
+>       MODIFIED = NULL
+>            NET = 12619.581500
+>         OPENED = TIMESTAMP '2010-05-10 14:52:12.000000'
+>          PRICE = 0.023370
+>     PRIMARYKEY = X'7018102e4be855dcc0a80133'
+>         SECFEE = 0.230000
+>         SHARES = 540000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'cf7d74c2449aa5e2c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'cf7d74c2449aa5e2c0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'cf7d74c2449aa5e2c0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 34 members who hold this stock
+quantum:
+last ticket:  2010-05-10 PRICE = 0.023370
+last price:	  2010-05-11 (Tue) [3417]: O:0.0059 H:0.0074 L:0.0051 C:0.0069 V:23047842 TSO:161069 A:0.0069 R:1.0000 CA:0.0000
+
+going with 20100511 0.0069
+
+/Marketocracy/bin/cahelper -symbol  SPSNQ  -effective 20100511 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0069 -acqShare 0 -purchaser SPSNQ   >& /Users/build/caout/SPSNQ.20151212-DELIST.out 
+stocks1:~/caout build$ tail -f SPSNQ.20151212-DELIST.out
+D: (12-13 00:41:43.843) Install Tiger valueForKey: hack for NSArray and NSSet
+
+D: (12-13 00:42:42.838) cahelper started on 2015-12-13 00:42:42 -0500
+
+D: (12-13 00:42:43.124) There are [0] open tickets for SPSNQ on 20100511
+D: (12-13 00:42:43.509) StockFileLoad Version:4.0
+D: (12-13 00:42:43.509) Loading Stock Data
+D: (12-13 00:44:26.378) Building Lookup Index
+D: (12-13 00:44:40.136) Finished Building Index
+D: (12-13 00:44:50.410) Finished Loading Stock Data
+D: (12-13 00:44:50.477) Connection to 192.168.111.172:6666 succeeded
+D: (12-13 00:44:51.187) >>> load new StockPrices file
+D: (12-13 00:44:51.209) <<< load new StockPrices file
+D: (12-13 00:44:51.210) >>> swap StockPrices
+D: (12-13 00:44:51.210) Obtained Stockprices swap mutex
+D: (12-13 00:44:51.210) <<< swap StockPrices
+D: (12-13 00:44:51.210) Stock prices available from 2000-05-01 to 2015-12-11
+D: (12-13 00:44:52.590) {
+    "ACQUIRED_STOCK" = SPSNQ; 
+    "ACQUIRING_STOCK" = "SPSNQ_FIX"; 
+    AMOUNT = 0.0069; 
+    APPLIED = 1; 
+    DATE = 20100511; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SPSNQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-13 00:44:56.779) SUCCESS
+D: (12-13 00:44:56.780) cahelper finished 2015-12-13 00:44:56 -0500
+Check the results 
+select * from mstockalias where stockkey= X'cf7d74c2449aa5e2c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2005-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'cf7e74c2449aa5e2c0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'4c15150944a9ce4fc0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2009-05-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'13a20a934a03929ac0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2009-05-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'21950aa64a0392cfc0a80146'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 84649R101
+>           DATE = TIMESTAMP '2010-05-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Spansion, Incorporated Class A
+>     PRIMARYKEY = X'0a0915a9566d0553c0a86fab'
+>       STOCKKEY = X'cf7d74c2449aa5e2c0a80146'
+>         SYMBOL = SPSNQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'0a0915a9566d0553c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'0a0915a9566d0553c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SPSNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.006900|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151213:124242
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-05-11 00:00:00.000000'
+>         BB_IDENTIFIER = SPSNQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-05-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SPSNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-05-11 00:00:00.000000'
+>            PRIMARYKEY = X'0a0315a9566d0552c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'0a0315a9566d0552c0a86fab';
+> Row 1:
+>   _C001 = 68.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'0a0315a9566d0552c0a86fab'));
+there are 68 fundkeys, save to CA issues SPSNQ fundkeys.txt
+
+For Beta case
+SPSNQ no longer trades but is still active on our site - need to delist 
+SPSNQ has been acquired	right curve
+ 	 	
+Spansion, Incorporated Class A acquired by a private company on 2010-05-11 00:00:00.
+ 	 	 
+
+check on 12/14/15   invalidate funds
+check MAdmin  clear
+
+SPSNQ has been acquired	right curve
+ 	 	
+Spansion, Incorporated Class A acquired by a private company on 2010-05-11 00:00:00.
+ 	 	 
+
+invalidate reprice and close 
+
+
+

@@ -1,0 +1,293 @@
+date:   9/29/15
+ticker:   TAR
+
+yahoo:
+
+quantum:
+Telefonica de Argentina S.A. ADR
+Ticker Symbol: TAR*     CUSIP: 879378206     Exchange: NYSE
+* NOTE: This security is no longer trading as of 1/26/10
+
+Notes:  I am writing to you on behalf of Telefónica de Argentina S.A. and Telefónica, S.A., domiciled at Av. Ingeniero Huergo 723, ground floor, City of Buenos Aires in compliance with the provisions of chapter 21, section 2 of the General Resolution No. 368/01. In this regard, please be advised that Telefónica, S.A., controlling shareholder of Telefónica de Argentina S.A., on January 25, 2010, has made a public deed of the Unilateral Declaration of Willingness to Buy All the Remaining Capital Stock Held by Minority Shareholders pursuant to the provisions of section 29, Decree 677/01. Therefore and pursuant to the above mentioned section, effective from the date of the public deed (i) Telefónica, S.A. has purchased all the remaining capital stock of Telefónica de Argentina S.A. held by minority shareholders and (ii) the Declaration to Buy implies the full right of Telefónica de Argentina S.A. to withdraw from the public offering system and become unlisted.
+
+oursite:
+Symbol: TAR	Name: TELEFONICA DE ARGENTINA ADS	Price: $10.34
+Volume:	Sector: Telecommunication Services	Change:
+Short Volume: 0	Style: Small Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CA
+CUSIP changes for TAR	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+12 Dec 01	879378206	879378404	Change in any of identification numbers (CUSIP) of a security from 879378206 to 879378404
+12 Dec 01			Change in any of identification numbers (CUSIP) of a security from to
+ 	 	 
+left curve	  cash dividends paid by TAR	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+03 Aug 00	03 Aug 00	03 Aug 00	N/A	$0.70	Dividend amount:0.7 per share.
+26 Mar 01	28 Mar 01	05 Apr 01	2	$0.70	Dividend amount:0.7 per share.
+05 Nov 01	07 Nov 01		2	$0.70	Dividend amount:0.7 per share.
+19 Dec 06	21 Dec 06		75	$1.96	Dividend amount:1.961105 per share.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=TAR
+
+check MAdmin
+Stock:TELEFONICA DE ARGENTINA ADS  Symbol:TAR
+Date: 09/29/2015
+
+64 users found
+
+1	aarmstrong	adela_cruz1	adshah1	andreacanonica	anrosen	boss99	bshaulis	case	cgraydon	chanthony45
+2	cheetahgrl	cpineda	dick_jane	dipodale	doppelaar	ejlepoud	elvisoak	evan	fire	fire_light_x
+3	fsmith	gbenedict	gfontana	hendersonds_is	in-psychic_trading	jdberia	jfernandez	jfrancois	jpildis	jsambors
+4	jthompson2	kama	kathywi	katzenbach	kkeller	kskrede	kumar67	lioncapital121212	maplepoles	maverik
+5	metero	mj150	mwhitmoe	nachoman	pdimopoulos	rdstiles	rogeratplay	rteigen	sae9e	sfield106
+6	simraj68	skashin2	stock_insider	tecnocrat	tfinnerty	thuotari	tv_weber	tye_tye87	vinsom68	vstesin
+7	winslim11	wollac	younghawk	zxp	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'TAR';  
+> Row 1:
+>   STOCKKEY = X'b3641029390b3eaec0a80116'
+select * from mstockalias where stockkey=X'b3641029390b3eaec0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378206
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'b3651029390b3eaec0a80116'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378404
+>           DATE = TIMESTAMP '2001-12-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'f0e956b83c181e7bc0a801dc'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378404
+>           DATE = TIMESTAMP '2001-12-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'f0f756b83c181e7cc0a801dc'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TAR'  order by BB_EFFECTIVE;
+noting usefu
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TAR
+stock: TAR
+  PK       : [B3641029390B3EAEC0A80116]
+  companyID: [6259]
+  symbol   : [TAR]
+  name     : [TELEFONICA DE ARGENTINA ADS]
+  date     : [2001-12-12 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-29 15:56:39 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6259
+2010-01-17 (Sun) [3303]: <WEEKEND>
+2010-01-18 (Mon) [3304]: <HOLIDAY>
+2010-01-19 (Tue) [3305]: O:10.2500 H:10.3500 L:10.2500 C:10.3500 V:5200 TSO:174605 A:10.3500 R:1.0000 CA:0.0000
+2010-01-20 (Wed) [3306]: O:10.2899 H:10.3800 L:10.1600 C:10.1900 V:1600 TSO:174605 A:10.1900 R:1.0000 CA:0.0000
+2010-01-21 (Thu) [3307]: O:10.3500 H:10.3500 L:10.3500 C:10.3500 V:100 TSO:174605 A:10.3500 R:1.0000 CA:0.0000
+2010-01-22 (Fri) [3308]: O:10.3500 H:10.3500 L:10.3500 C:10.3500 V:300 TSO:174605 A:10.3500 R:1.0000 CA:0.0000
+2010-01-23 (Sat) [3309]: <WEEKEND>
+2010-01-24 (Sun) [3310]: <WEEKEND>
+2010-01-25 (Mon) [3311]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000
+2010-01-26 (Tue) [3312]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000  <--
+2010-01-27 (Wed) [3313]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000
+2010-01-28 (Thu) [3314]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000
+2010-01-29 (Fri) [3315]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b3641029390b3eaec0a80116' and shares > 0 order by closed; 
+> Row 1044:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-01-06 14:33:00.000000'
+>        COMMENT = 
+>     COMMISSION = 462.000000
+>   CURRENTORDER = X'f78256054b2b0951c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0b5b695d3e52dfc4c0a80135'
+>       MODIFIED = NULL
+>            NET = 95701.553640
+>         OPENED = TIMESTAMP '2009-12-17 23:47:13.000000'
+>          PRICE = 10.357311
+>     PRIMARYKEY = X'f78056054b2b0951c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 9240.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b3641029390b3eaec0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b3641029390b3eaec0a80116'  and totalshares < 0);
+nothing
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b3641029390b3eaec0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 64 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 1/26/10
+last ticket:  2010-01-06  PRICE = 10.357311
+last price:  2010-01-26 (Tue) [3312]: O:10.2000 H:10.4000 L:10.2000 C:10.3400 V:1334 TSO:174605 A:10.3400 R:1.0000 CA:0.0000  <--
+
+going with 20100126 10.34
+
+/Marketocracy/bin/cahelper -symbol  TAR  -effective 20100126 -type ACQUIS -exchange UN -acqType 1 -acqCash 10.34 -acqShare 0 -purchaser TAR   >& /Users/build/caout/TAR.20150929-DELIST.out 
+stocks1:~/caout build$ tail -f TAR.20150929-DELIST.out
+D: (09-29 15:59:31.765) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-29 15:59:55.028) cahelper started on 2015-09-29 15:59:55 -0400
+
+D: (09-29 15:59:55.256) There are [0] open tickets for TAR on 20100126
+D: (09-29 15:59:55.999) StockFileLoad Version:4.0
+D: (09-29 15:59:55.999) Loading Stock Data
+D: (09-29 16:00:32.284) Building Lookup Index
+D: (09-29 16:00:37.705) Finished Building Index
+D: (09-29 16:00:41.476) Finished Loading Stock Data
+D: (09-29 16:00:41.594) Connection to 192.168.111.172:6666 succeeded
+D: (09-29 16:00:45.389) SavingChanges for position sell out 101 of 255
+D: (09-29 16:00:53.385) {
+    "ACQUIRED_STOCK" = TAR; 
+    "ACQUIRING_STOCK" = "TAR_FIX"; 
+    AMOUNT = 10.34; 
+    APPLIED = 1; 
+    DATE = 20100126; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TAR_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-29 16:01:00.538) SUCCESS
+D: (09-29 16:01:00.539) cahelper finished 2015-09-29 16:01:00 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'b3641029390b3eaec0a80116'  order by "date";
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378206
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'b3651029390b3eaec0a80116'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378404
+>           DATE = TIMESTAMP '2001-12-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'f0e956b83c181e7bc0a801dc'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378404
+>           DATE = TIMESTAMP '2001-12-12 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'f0f756b83c181e7cc0a801dc'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 879378404
+>           DATE = TIMESTAMP '2010-01-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TELEFONICA DE ARGENTINA ADS
+>     PRIMARYKEY = X'0a491c88560aedbbc0a86fab'
+>       STOCKKEY = X'b3641029390b3eaec0a80116'
+>         SYMBOL = TAR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+select * from mcorporateaction where aliaskey =X'0a491c88560aedbbc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'0a491c88560aedbbc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TAR  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|10.340000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150929:035955
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-01-26 00:00:00.000000'
+>         BB_IDENTIFIER = TAR_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-01-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TAR_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-01-26 00:00:00.000000'
+>            PRIMARYKEY = X'0a431c88560aedbbc0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'0a431c88560aedbbc0a86fab';
+> Row 1:
+>   _C001 = 111.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'0a431c88560aedbbc0a86fab'));
+there are 111 fundkeys, save to CA issues TAR fundkeys.txt
+
+For Beta case
+TAR no longer trades but is still active on our site - need to delist 
+
+check on 9/30/15   invalidate funds
+check MAdmin  clear 
+
+10/1/15
+ TAR has been acquired	right curve
+ 	 	
+TELEFONICA DE ARGENTINA ADS acquired by a private company on 2010-01-26 00:00:00.
+
+invalidate reprice and close 

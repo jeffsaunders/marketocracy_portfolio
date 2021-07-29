@@ -1,0 +1,398 @@
+PJB
+date:  9/1/15 
+ticker:    PJB
+
+case 3612
+Delisted at 13.79  
+Member Name
+
+patrick bradford
+
+Username
+
+pbradford
+
+Fund Symbols
+
+GMSFX
+
+Stock Tickers
+
+PJB
+
+
+yahoo:
+
+quantum:
+PowerShares Dynamic Banking Portfolio
+Ticker Symbol: PJB*     CUSIP: 73935X336     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   Managed Index ETF
+* NOTE: This security is no longer trading as of 4/15/13
+Security has been Called for:  Thursday, March 7, 2013
+
+oursite:
+Symbol: PJB	Name: Powershares ETF Dynamic Banking Sector Portfolio Fund	Price: $13.79
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+listing changes for PJB	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Nov 03, 2008	AMEX	UA	NYSE	UN	Change in the exchange that PJB trades on from AMEX to NYSE
+ 	 	 
+left curve	  cash dividends paid by PJB	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+15 Jun 07	19 Jun 07	29 Jun 07	4	$0.21	Dividend amount:0.21285 per share.
+21 Sep 07	25 Sep 07	28 Sep 07	4	$0.03	Dividend amount:0.02889 per share.
+21 Dec 07	26 Dec 07	31 Dec 07	4	$0.16	Dividend amount:0.16212 per share.
+20 Mar 08	25 Mar 08	31 Mar 08	4	$0.00	Dividend amount:0.00305 per share.
+20 Jun 08	24 Jun 08	30 Jun 08	4	$0.26	Dividend amount:0.26434 per share.
+19 Sep 08	23 Sep 08	30 Sep 08	4	$0.06	Dividend amount:0.05836 per share.
+18 Sep 09	22 Sep 09	30 Sep 09	4	$0.04	Dividend amount:0.04302 per share.
+18 Dec 09	22 Dec 09	31 Dec 09	4	$0.18	Dividend amount:0.17522 per share.
+18 Jun 10	22 Jun 10	30 Jun 10	4	$0.03	Dividend amount:0.02999 per share.
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Powershares ETF Dynamic Banking Sector Portfolio Fund  Symbol:PJB
+Date: 09/01/2015
+
+10 users found
+
+1	castaways2006	dmgoorabian	joshuabordenjr	jtkc80	kjones	mjheath45	pbradford	reveille	schgai	swayla	 	 	 	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'PJB';  
+> Row 1:
+>   STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+select * from mstockalias where stockkey=X'8a3f553645e5ddc5c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X336
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Powershares ETF Dynamic Banking Sector Portfolio Fund
+>     PRIMARYKEY = X'8a40553645e5ddc5c0a80146'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>         SYMBOL = PJB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X336
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares ETF Dynamic Banking Sector Portfolio Fund
+>     PRIMARYKEY = X'39f14376494c830ac0a8013c'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>         SYMBOL = PJB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PJB'  order by BB_EFFECTIVE;
+> Row 18:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UP|CP_TKR|PJB|CP_DELIST_REASON|26|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73369321
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 11112451
+>        BB_COMPANYNAME = PowerShares Dynamic Banking Portfolio
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-27 00:00:00.000000'
+>         BB_IDENTIFIER = PJB     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-01-25 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = PJB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-01-25 00:00:00.000000'
+>            PRIMARYKEY = X'ef4729795103169dc0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PJB
+>>>> dbtool started at 2015-09-01 11:35:20 -0400
+stock: PJB
+  PK       : [8A3F553645E5DDC5C0A80146]
+  companyID: [16814]
+  symbol   : [PJB]
+  name     : [Powershares ETF Dynamic Banking Sector Portfolio Fund]
+  date     : [2007-02-27 00:00:00]
+  status   : [Active]
+stock: PJB
+  PK       : [8A3F553645E5DDC5C0A80146]
+  companyID: [16814]
+  symbol   : [PJB]
+  name     : [Powershares ETF Dynamic Banking Sector Portfolio Fund]
+  date     : [2008-11-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-01 11:35:21 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16814
+2013-02-02 (Sat) [4415]: <WEEKEND>
+2013-02-03 (Sun) [4416]: <WEEKEND>
+2013-02-04 (Mon) [4417]: O:13.9800 H:13.9900 L:13.9800 C:13.9900 V:8526 TSO:1949 A:13.9900 R:1.0000 CA:0.9778
+2013-02-05 (Tue) [4418]: O:14.0800 H:14.1400 L:14.0800 C:14.1400 V:1902 TSO:1949 A:14.1400 R:1.0000 CA:0.9778
+2013-02-06 (Wed) [4419]: O:14.1400 H:14.1400 L:14.1400 C:14.1400 V:100 TSO:1949 A:14.1400 R:1.0000 CA:0.9778
+2013-02-07 (Thu) [4420]: O:14.1500 H:14.1500 L:14.0700 C:14.0800 V:11936 TSO:1949 A:14.0800 R:1.0000 CA:0.9778
+2013-02-08 (Fri) [4421]: O:14.1900 H:14.1900 L:14.1700 C:14.1800 V:2980 TSO:1949 A:14.1800 R:1.0000 CA:0.9778
+2013-02-09 (Sat) [4422]: <WEEKEND>
+2013-02-10 (Sun) [4423]: <WEEKEND>
+2013-02-11 (Mon) [4424]: O:13.9900 H:14.1900 L:13.9900 C:14.1900 V:4100 TSO:1949 A:14.1900 R:1.0000 CA:0.9778
+2013-02-12 (Tue) [4425]: O:14.2500 H:14.3000 L:14.2500 C:14.3000 V:2599 TSO:1949 A:14.3000 R:1.0000 CA:0.9778
+2013-02-13 (Wed) [4426]: O:14.2600 H:14.2700 L:14.1800 C:14.1800 V:3570 TSO:1949 A:14.1800 R:1.0000 CA:0.9778
+2013-02-14 (Thu) [4427]: O:14.1400 H:14.2200 L:14.1400 C:14.2000 V:13700 TSO:1949 A:14.2000 R:1.0000 CA:0.9778
+2013-02-15 (Fri) [4428]: O:14.0900 H:14.2000 L:14.0900 C:14.1500 V:15492 TSO:1949 A:14.1500 R:1.0000 CA:0.9778
+2013-02-16 (Sat) [4429]: <WEEKEND>
+2013-02-17 (Sun) [4430]: <WEEKEND>
+2013-02-18 (Mon) [4431]: <HOLIDAY>
+2013-02-19 (Tue) [4432]: O:14.1300 H:14.1800 L:14.1300 C:14.1800 V:200 TSO:1949 A:14.1800 R:1.0000 CA:0.9778
+2013-02-20 (Wed) [4433]: O:14.2000 H:14.2000 L:14.1000 C:14.1000 V:10780 TSO:1949 A:14.1000 R:1.0000 CA:0.9778
+2013-02-21 (Thu) [4434]: O:14.0400 H:14.0400 L:13.9500 C:14.0000 V:1956 TSO:1949 A:14.0000 R:1.0000 CA:0.9778
+2013-02-22 (Fri) [4435]: O:14.0200 H:14.0500 L:14.0200 C:14.0500 V:1540 TSO:1949 A:14.0500 R:1.0000 CA:0.9778
+2013-02-23 (Sat) [4436]: <WEEKEND>
+2013-02-24 (Sun) [4437]: <WEEKEND>
+2013-02-25 (Mon) [4438]: O:14.1300 H:14.1300 L:14.1100 C:14.1100 V:269 TSO:1949 A:14.1100 R:1.0000 CA:0.9778
+2013-02-26 (Tue) [4439]: O:13.8200 H:13.8600 L:13.7300 C:13.7900 V:10266 TSO:1949 A:13.7900 R:1.0000 CA:0.9778
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8a3f553645e5ddc5c0a80146' and shares > 0 order by closed; 
+> Row 39:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-02-18 15:46:00.000000'
+>        COMMENT = 
+>     COMMISSION = 28.650000
+>   CURRENTORDER = X'6d3325ca4d5ed151c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'dc3725ca4d5ecb46c0a80133'
+>       MODIFIED = NULL
+>            NET = 7741.468368
+>         OPENED = TIMESTAMP '2011-02-18 15:06:41.000000'
+>          PRICE = 13.510416
+>     PRIMARYKEY = X'6d3125ca4d5ed151c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 573.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8a3f553645e5ddc5c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a3f553645e5ddc5c0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a3f553645e5ddc5c0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist: 2013-02-27 
+there are 10 members who hold this stock
+quantum:  * NOTE: This security is no longer trading as of 4/15/13
+Security has been Called for:  Thursday, March 7, 2013
+last ticket:  2011-02-18
+last price:  2013-02-26 (Tue) [4439]: O:13.8200 H:13.8600 L:13.7300 C:13.7900 V:10266 TSO:1949 A:13.7900 R:1.0000 CA:0.9778
+
+going with 20130226  13.79 all cash 
+
+
+/Marketocracy/bin/cahelper -symbol  PJB  -effective 20130226 -type ACQUIS -exchange UN -acqType 1 -acqCash 13.79 -acqShare 0 -purchaser PJB   >& /Users/build/caout/PJB.20150901-DELIST.out
+stocks:~/caout build$ tail -f PJB.20150901-DELIST.out
+D: (09-01 12:12:26.642) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-01 12:13:36.310) cahelper started on 2015-09-01 12:13:36 -0400
+
+D: (09-01 12:13:36.575) There are [0] open tickets for PJB on 20130226
+D: (09-01 12:13:37.130) StockFileLoad Version:4.0
+D: (09-01 12:13:37.131) Loading Stock Data
+D: (09-01 12:15:40.440) Building Lookup Index
+D: (09-01 12:15:52.408) Finished Building Index
+D: (09-01 12:16:02.200) Finished Loading Stock Data
+D: (09-01 12:16:02.252) Connection to 192.168.111.172:6666 succeeded
+D: (09-01 12:16:03.419) {
+    "ACQUIRED_STOCK" = PJB; 
+    "ACQUIRING_STOCK" = "PJB_FIX"; 
+    AMOUNT = 13.79; 
+    APPLIED = 1; 
+    DATE = 20130226; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PJB_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-01 12:16:14.540) SUCCESS
+D: (09-01 12:16:14.541) cahelper finished 2015-09-01 12:16:14 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'8a3f553645e5ddc5c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X336
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Powershares ETF Dynamic Banking Sector Portfolio Fund
+>     PRIMARYKEY = X'8a40553645e5ddc5c0a80146'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>         SYMBOL = PJB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X336
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares ETF Dynamic Banking Sector Portfolio Fund
+>     PRIMARYKEY = X'39f14376494c830ac0a8013c'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>         SYMBOL = PJB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X336
+>           DATE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares ETF Dynamic Banking Sector Portfolio Fund
+>     PRIMARYKEY = X'247c608655e5ceb0c0a86f92'
+>       STOCKKEY = X'8a3f553645e5ddc5c0a80146'
+>         SYMBOL = PJB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'247c608655e5ceb0c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'247c608655e5ceb0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PJB  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|13.790000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150901:121336
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = PJB_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PJB_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'2476608655e5ceb0c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'2476608655e5ceb0c0a86f92';
+> Row 1:
+>   _C001 = 15.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'2476608655e5ceb0c0a86f92'));
+there are 15 fundkeys, save to CA issues PJB fundkeys.txt
+
+member pbradford  let's check his funds
+your holdings of PJB	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+BBTFX	0	N/A	N/A
+IMGFX	0	N/A	N/A
+ISGFX	0	N/A	N/A
+scgfx	0	N/A	N/A
+mcgsx	0	N/A	N/A
+scffx	0	N/A	N/A
+BSSFX	0	N/A	N/A
+SHRTX	0	N/A	N/A
+NOWRK	0	N/A	N/A
+MSAFX	0	N/A	N/A
+DJIFX	0	N/A	N/A
+DJCFX	0	N/A	N/A
+LCGFX	0	N/A	N/A
+GMSFX	0	$.00	0.00%  <---   pbradford  GMSFX
+ 	 	[ Trade this stock ]
+
+LEDGER
+Date	Start	Change	End	Type
+May 06, 2010		730	730	Buy
+May 10, 2010	730	380	1110	Buy
+May 21, 2010	1110	-740	370	Sell
+Aug 12, 2010	370	-180	190	Sell
+Nov 04, 2010	190	600	790	Buy
+Nov 23, 2010	790	-200	590	Sell
+Dec 02, 2010	590	980	1570	Buy
+Feb 26, 2013	1570	-1570		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 6, 2010	730	$36.50	$10,193.01	$13.96
+May 10, 2010	380	$19.00	$5,090.60	$13.40
+Nov 4, 2010	600	$30.00	$7,365.52	$12.28
+Dec 2, 2010	980	$49.00	$11,823.95	$12.07
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 21, 2010	740	$37.00	$0.17	$9,494.59	$12.83
+Aug 12, 2010	180	$9.00	$0.04	$2,114.38	$11.75
+Nov 23, 2010	200	$10.00	$0.05	$2,368.75	$11.84
+
+
+
+For Beta case
+PJB no longer trades but is still active on our site - need to delist 
+
+check on 9/2/15   invalidate funds
+check MAdmin
+
+member  pbradford  fund GMSFX  had 1570 shares of PJB.  He got 13.79 for it   = 21650.30  on 20130226
+
+PJB has been acquired	right curve
+ 	 	
+Powershares ETF Dynamic Banking Sector Portfolio Fund acquired by a private company on 2013-02-26 00:00:00.
+
+invalidate 
+
+2/26/2013	$98,857.94	$0.00	$2.71	$63,150.26	$43.46	$0.00	$161,967.45	$634,309.95	$796,277.40	100,000	$7.96	Yes	Details 
+
+ trades on February 26, 2013	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	PJB	1,570	$0.00	$0.00	$0.00	$0.00
+Sell	PSTL	2,894	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+reprice 
+
+PJB 2013-02-13   then close it out
+
+
+

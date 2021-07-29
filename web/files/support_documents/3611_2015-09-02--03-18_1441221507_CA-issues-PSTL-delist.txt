@@ -1,0 +1,224 @@
+PSTL
+date:  
+ticker:   PSTL
+
+yahoo:
+
+quantum:
+PowerShares Global Steel Portfolio
+Ticker Symbol: PSTL*     CUSIP: 73936Q868     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   Commodities Index ETF
+* NOTE: This security is no longer trading as of 2/26/13
+
+
+
+oursite:
+Symbol: PSTL	Name: PowerShares Global Steel	Price: $14.08
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:PowerShares Global Steel  Symbol:PSTL
+Date: 09/01/2015
+
+2 users found
+
+1	pbradford	reveille
+
+database
+select distinct stockkey from mstockalias where symbol= 'PSTL';  
+> Row 1:
+>   STOCKKEY = X'ed1e5ae24ba2e25fc0a80146'
+select * from mstockalias where stockkey=X'ed1e5ae24ba2e25fc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q868
+>           DATE = TIMESTAMP '2008-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Global Steel
+>     PRIMARYKEY = X'ed1f5ae24ba2e25fc0a80146'
+>       STOCKKEY = X'ed1e5ae24ba2e25fc0a80146'
+>         SYMBOL = PSTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PSTL'  order by BB_EFFECTIVE;
+nothing usefi
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PSTL
+>>>> dbtool started at 2015-09-01 15:40:39 -0400
+stock: PSTL
+  PK       : [ED1E5AE24BA2E25FC0A80146]
+  companyID: [18886]
+  symbol   : [PSTL]
+  name     : [PowerShares Global Steel]
+  date     : [2008-09-18 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-01 15:40:40 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18886
+2013-02-15 (Fri) [4428]: O:14.8000 H:14.8000 L:14.8000 C:14.8000 V:1308 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+2013-02-16 (Sat) [4429]: <WEEKEND>
+2013-02-17 (Sun) [4430]: <WEEKEND>
+2013-02-18 (Mon) [4431]: <HOLIDAY>
+2013-02-19 (Tue) [4432]: O:14.9800 H:14.9800 L:14.9800 C:14.9800 V:5000 TSO:0 A:14.9800 R:1.0000 CA:0.0000
+2013-02-20 (Wed) [4433]: O:14.5600 H:14.5600 L:14.4700 C:14.4700 V:200 TSO:0 A:14.4700 R:1.0000 CA:0.0000
+2013-02-21 (Thu) [4434]: O:14.1600 H:14.1600 L:14.1200 C:14.1200 V:1252 TSO:0 A:14.1200 R:1.0000 CA:0.0000
+2013-02-22 (Fri) [4435]: O:14.2000 H:14.2600 L:14.1700 C:14.2400 V:9800 TSO:0 A:14.2400 R:1.0000 CA:0.0000
+2013-02-23 (Sat) [4436]: <WEEKEND>
+2013-02-24 (Sun) [4437]: <WEEKEND>
+2013-02-25 (Mon) [4438]: O:14.4000 H:14.4000 L:14.1000 C:14.1600 V:3002 TSO:0 A:14.1600 R:1.0000 CA:0.0000
+2013-02-26 (Tue) [4439]: O:14.0800 H:14.0800 L:14.0800 C:14.0800 V:589 TSO:0 A:14.0800 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'ed1e5ae24ba2e25fc0a80146' and shares > 0 order by closed; 
+> Row 28:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-09-08 12:56:00.000000'
+>        COMMENT = 
+>     COMMISSION = 25.500000
+>   CURRENTORDER = X'cd4f1d904e53e47dc0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98671e253cd2f094c0a801e0'
+>       MODIFIED = NULL
+>            NET = 9168.840210
+>         OPENED = TIMESTAMP '2011-08-23 13:33:49.000000'
+>          PRICE = 17.978118
+>     PRIMARYKEY = X'cd4d1d904e53e47dc0a80132'
+>         SECFEE = 0.180000
+>         SHARES = 510.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed1e5ae24ba2e25fc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'ed1e5ae24ba2e25fc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ed1e5ae24ba2e25fc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ed1e5ae24ba2e25fc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 2 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 2/26/13
+last ticket:  2011-09-08  PRICE = 17.978118
+last price:  2013-02-26 (Tue) [4439]: O:14.0800 H:14.0800 L:14.0800 C:14.0800 V:589 TSO:0 A:14.0800 R:1.0000 CA:0.0000
+
+member says 14.34, will give him 14.34  he and one other hold this
+going with 20130226 14.34 all cash 
+
+/Marketocracy/bin/cahelper -symbol  PSTL  -effective 20130226 -type ACQUIS -exchange UN -acqType 1 -acqCash 14.34  -acqShare 0 -purchaser PSTL   >& /Users/build/caout/PSTL.20150901-DELIST.out 
+PSTL.20150901-DELIST.out
+stocks:~/caout build$ tail -f PSTL.20150901-DELIST.out
+D: (09-01 15:46:48.928) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-01 15:48:00.967) cahelper started on 2015-09-01 15:48:00 -0400
+
+D: (09-01 15:48:01.134) There are [0] open tickets for PSTL on 20130226
+D: (09-01 15:48:01.498) StockFileLoad Version:4.0
+D: (09-01 15:48:01.498) Loading Stock Data
+D: (09-01 15:49:45.217) Building Lookup Index
+D: (09-01 15:49:57.444) Finished Building Index
+D: (09-01 15:50:06.844) Finished Loading Stock Data
+D: (09-01 15:50:06.899) Connection to 192.168.111.172:6666 succeeded
+D: (09-01 15:50:06.953) {
+    "ACQUIRED_STOCK" = PSTL; 
+    "ACQUIRING_STOCK" = "PSTL_FIX"; 
+    AMOUNT = 14.34; 
+    APPLIED = 1; 
+    DATE = 20130226; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PSTL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-01 15:50:07.954) SUCCESS
+D: (09-01 15:50:07.954) cahelper finished 2015-09-01 15:50:07 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'ed1e5ae24ba2e25fc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q868
+>           DATE = TIMESTAMP '2008-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Global Steel
+>     PRIMARYKEY = X'ed1f5ae24ba2e25fc0a80146'
+>       STOCKKEY = X'ed1e5ae24ba2e25fc0a80146'
+>         SYMBOL = PSTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73936Q868
+>           DATE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PowerShares Global Steel
+>     PRIMARYKEY = X'65e62dee55e600f1c0a86f92'
+>       STOCKKEY = X'ed1e5ae24ba2e25fc0a80146'
+>         SYMBOL = PSTL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'65e62dee55e600f1c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'65e62dee55e600f1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PSTL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|14.340000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150901:034800
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = PSTL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PSTL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'65e02dee55e600f0c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'65e02dee55e600f0c0a86f92';
+> Row 1:
+>   _C001 = 4.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'65e02dee55e600f0c0a86f92'));
+there are 4 fundkeys, save to CA issues PSTL fundkeys.txt
+
+For Beta case
+PSTL no longer trades but is still active on our site - need to delist 
+
+member pbradford  GMSFX   had   2894 shares * 14.34  =  41499.96
+check on 9/2/15   invalidate funds
+check MAdmin  clear 
+
+ PSTL has been acquired	right curve
+ 	 	
+PowerShares Global Steel acquired by a private company on 2013-02-26 00:00:00.
+
+invalidate reprice and close 

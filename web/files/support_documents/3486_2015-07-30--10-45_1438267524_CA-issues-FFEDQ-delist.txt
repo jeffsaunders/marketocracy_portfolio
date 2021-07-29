@@ -1,0 +1,455 @@
+FFEDQ
+date:  7/29/2015 
+ticker:   FFEDQ
+
+yahoo:  nothing
+
+quantum:   doesn't show that this is delisted 
+
+oursite:
+Symbol: FFEDQ 	Name: FIRSTFED FINANCIAL 	Price: $0.02
+Volume: 	Sector: Financials 	Change:
+Short Volume: 0 	Style: Micro Cap : Blend 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for FFEDQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+04 Mar 09 	FED 	FFED 	Change in the ticker (trading) symbol from FED to FFED
+11 Jan 10 	FFED 	FFEDQ 	Change in the ticker (trading) symbol from FFED to FFEDQ
+  	  	 
+left curve 	  listing changes for FFEDQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Mar 04, 2009 	NYSE 	UN 	OTCBB-OTHER 	UV 	Change in the exchange that FFED trades on from NYSE to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:FIRSTFED FINANCIAL  Symbol:FFEDQ
+Date: 07/29/2015
+
+122 users found
+
+1	2466846	EarningsGuru	adesai50	akeroydm	andrews	aritza	arts	ashuvalov	assurbanibpal	aviator
+2	bcorbitt	brutdj	bullrich	capital	ccadnum	cmartin3	crherbert	cw0104	dbanas	dchamberlain
+3	dcovert	dean-uhk	dginty	diegoesguerra	dogburn	drac	dwaters	eandres	eart	edenison
+4	edwardudell	efournier	emonk	enroncfo	eschneider	finanaliticaam	finanaliticaretail	finanaliticasector_b	flajuie	gabethornhill
+5	gauley	gbrown	gdog477	georgedollars	ghouser	gio30	henry6363	hfelicies	hotelmotel	idli
+6	investingiseasy	jacob_reynolds	jbrumley1030	jehfes	jeroen	jgigante	jhaydon	jimjim56	jmcleod	josh_livingston
+7	josue	jubals	kama	kjb1891	klmarcus	luis439	luzkannon	maurice_ebong	mdcromer	mhelfrich
+8	michael.keane	mnichols	moomacher	morgank	mtom	nathanws	nbasso	nrablicki	nyujd	orlot
+9	ottofeige	patchu	pcrosetti	peterg	pgreen	pwiltzius	qcheng790	rabockma	rachel_gladney	rmorse
+10	robebcan	rosexu	rraney	rshetty23	salamari	samss007	scbrown1	sdaltman82	snickerz1227	spardon
+11	stawil	stock_shark	studentc	sumo	sveneziani	tas	tharrington	thingone	thinker	thinking
+12	thor409	thought	tina	tquinlan	trickytrees_00	uinetwork	uptowngirl	wbrower	weggo	whboone
+13	xxxmaria20xxx	yuriw	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'FFEDQ';  
+> Row 1:
+>   STOCKKEY = X'124b0e21390b011ec0a80116'
+
+select * from mstockalias where stockkey=X'124b0e21390b011ec0a80116'     order by "date";
+> Row 1:
+>   STOCKKEY = X'124b0e21390b011ec0a80116'
+marketocracy@db1#21> select * from mstockalias where stockkey=X'124b0e21390b011ec0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'124c0e21390b011ec0a80116'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2009-03-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'aba360cb49af4090c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2009-03-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'fa0860dc49af40c4c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2010-01-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'3da340624b4b9fc7c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFEDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FFEDQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|FFEDQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 72459415
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 100586
+>        BB_COMPANYNAME = FirstFed Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = FFEDQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = FFEDQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'68051ac350de2becc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock FFEDQ
+>>>> dbtool started at 2015-07-29 11:40:54 -0400
+stock: FFEDQ
+  PK       : [124B0E21390B011EC0A80116]
+  companyID: [4899]
+  symbol   : [FFEDQ]
+  name     : [FIRSTFED FINANCIAL]
+  date     : [2010-01-11 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-29 11:40:55 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4899
+2012-12-22 (Sat) [4373]: <WEEKEND>
+2012-12-23 (Sun) [4374]: <WEEKEND>
+2012-12-24 (Mon) [4375]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:200 TSO:13684 A:0.0200 R:1.0000 CA:0.0000
+2012-12-25 (Tue) [4376]: <HOLIDAY>
+2012-12-26 (Wed) [4377]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:5666 TSO:13684 A:0.0200 R:1.0000 CA:0.0000
+2012-12-27 (Thu) [4378]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:3552 TSO:13684 A:0.0200 R:1.0000 CA:0.0000
+2012-12-28 (Fri) [4379]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:5550 TSO:13684 A:0.0200 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'124b0e21390b011ec0a80116' and shares > 0 order by closed; 
+> Row 1656:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-07-25 09:45:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.255990
+>   CURRENTORDER = X'5af44c705009562ac0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b16611b73f1722abc0a80132'
+>       MODIFIED = NULL
+>            NET = 4.863810
+>         OPENED = TIMESTAMP '2012-07-20 08:59:21.000000'
+>          PRICE = 0.003741
+>     PRIMARYKEY = X'5af24c7050095629c0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 1300.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'124b0e21390b011ec0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'124b0e21390b011ec0a80116'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'124b0e21390b011ec0a80116'  and totalshares < 0)));
+
+apply the acquis
+delist:  2012-12-31  
+there are 122 members who hold this stock
+quantum:  still thinks this is active 
+last ticket:  2012-07-25  PRICE = 0.003741
+last price:  2012-12-28 (Fri) [4379]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:5550 TSO:13684 A:0.0200 R:1.0000 CA:0.0000
+
+going with 20121231 0.0200 
+
+
+/Marketocracy/bin/cahelper -symbol  FFEDQ  -effective 20121231 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0200  -acqShare 0 -purchaser FFEDQ   >& /Users/build/caout/FFEDQ.20150729-DELIST.out 
+FFEDQ.20150729-DELIST.out
+stocks:~/caout build$ tail -f FFEDQ.20150729-DELIST.out
+D: (07-29 11:44:51.706) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-29 11:45:37.319) cahelper started on 2015-07-29 11:45:37 -0400
+
+D: (07-29 11:45:37.563) There are [0] open tickets for FFEDQ on 20121231
+D: (07-29 11:45:38.200) StockFileLoad Version:4.0
+D: (07-29 11:45:38.200) Loading Stock Data
+D: (07-29 11:46:56.194) Building Lookup Index
+D: (07-29 11:47:05.301) Finished Building Index
+D: (07-29 11:47:12.957) Finished Loading Stock Data
+D: (07-29 11:47:13.008) Connection to 192.168.111.172:6666 succeeded
+D: (07-29 11:47:16.004) SavingChanges for position sell out 101 of 468
+D: (07-29 11:47:29.819) SavingChanges for position sell out 201 of 468
+D: (07-29 11:47:42.707) {
+    "ACQUIRED_STOCK" = FFEDQ; 
+    "ACQUIRING_STOCK" = "FFEDQ_FIX"; 
+    AMOUNT = 0.02; 
+    APPLIED = 1; 
+    DATE = 20121231; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "FFEDQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-29 11:47:47.527) SUCCESS
+D: (07-29 11:47:47.527) cahelper finished 2015-07-29 11:47:47 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'124b0e21390b011ec0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'124c0e21390b011ec0a80116'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2009-03-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'aba360cb49af4090c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2009-03-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'fa0860dc49af40c4c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFED
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2010-01-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'3da340624b4b9fc7c0a80146'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFEDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 337907109
+>           DATE = TIMESTAMP '2012-12-31 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FIRSTFED FINANCIAL
+>     PRIMARYKEY = X'ac10557355b8f521c0a86f92'
+>       STOCKKEY = X'124b0e21390b011ec0a80116'
+>         SYMBOL = FFEDQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XB
+
+
+select * from mcorporateaction where aliaskey =X'ac10557355b8f521c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'ac10557355b8f521c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FFEDQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.020000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150729:114537
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = FFEDQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FFEDQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'ac0a557355b8f521c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ac0a557355b8f521c0a86f92';
+243 tickets
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ac0a557355b8f521c0a86f92'));
+there are 243 fundkeys, save to CA issues FFEDQ fundkeys.txt
+
+For Beta case
+FFEDQ no longer trades but is still active on our site - need to delist 
+
+check on 7/30/15   invalidate funds
+check MAdmin
+
+7/30/15
+ FFEDQ has been acquired 	right curve
+  	  	
+FIRSTFED FINANCIAL acquired by a private company on 2012-12-31 00:00:00. 
+
+
+
+Stock:AgFeed Industries Incorporated  Symbol:FEEDQ
+Date: 07/30/2015
+
+2 users found
+
+1	teamfunds	techplusmanager
+
+teamfunds  SWAN
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 16, 2009 		24297 	24297 	Buy
+Mar 17, 2009 	24297 	6074 	30371 	Buy
+Mar 31, 2009 	30371 	10124 	40495 	Buy
+Apr 02, 2009 	40495 	10124 	50619 	Buy
+Apr 03, 2009 	50619 	9111 	59730 	Buy
+Apr 07, 2009 	59730 	9111 	68841 	Buy
+Apr 13, 2009 	68841 	-7086 	61755 	Sell
+Jun 03, 2009 	61755 	-17210 	44545 	Sell
+Jun 11, 2009 	44545 	-10124 	34421 	Sell
+Jun 23, 2009 	34421 	-14173 	20248 	Sell
+Jul 23, 2009 	20248 	20247 	40495 	Buy
+Oct 28, 2009 	40495 	-20247 	20248 	Sell
+Nov 10, 2009 	20248 	30371 	50619 	Buy
+Nov 11, 2009 	50619 	44648 	95267 	Buy
+Dec 30, 2009 	95267 	26992 	122259 	Buy
+Feb 17, 2010 	122259 	18124 	140383 	Buy
+Apr 11, 2013 	140383 	-2304 	138079 	Sell
+Apr 12, 2013 	138079 	-768 	137311 	Sell
+Apr 15, 2013 	137311 	-1536 	135775 	Sell
+Jul 16, 2013 	135775 	-1920 	133855 	Sell
+Apr 10, 2014 	133855 	-1494850 	-1360995 	Corporate Action  <--- should be 133855
+
+go to SWAN 20140410
+
+Hexkey: 531153AE54D14132C0A86F92
+
+How to update share qty in an CA such as an acquis
+
+go to the ledger for the specific date and find the sell with the CA - that is our hexkey (ticketkey)
+select * from morder where ticketkey=X'531153AE54D14132C0A86F92';  	  	 
+select * from mtrade where ticketkey=X'531153AE54D14132C0A86F92';  	  	 
+set commit false;
+update morder set shares=133855  where ticketkey=X'531153AE54D14132C0A86F92' ;
+update mtrade set shares= 133855 where ticketkey=X'531153AE54D14132C0A86F92' ;
+commit;
+set commit true;
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 531153AE54D14132C0A86F92
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'531153AE54D14132C0A86F92');
+> Row 1:
+>   FUNDKEY = X'a5036d224d146e01c0a80146'
+/Marketocracy/bin/dbtool lookup fund 
+/Marketocracy/bin/fptool invalidateFund a5036d224d146e01c0a80146
+
+log back in and expand the trade - this is needed for the change to appear
+ok, this one is good
+
+techplusmanager
+your holdings of FEEDQ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+tpfqx 	0 	N/A 	N/A
+huyehara_hmf1 	-2 	-$0.42 	-0.00%
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 19, 2009 		7600 	7600 	Buy
+Oct 21, 2009 	7600 	1621 	9221 	Buy
+Oct 29, 2009 	9221 	-4154 	5067 	Sell
+Nov 24, 2009 	5067 	-5067 		Sell
+Jan 04, 2010 		5066 	5066 	Buy
+Jan 05, 2010 	5066 	2533 	7599 	Buy
+Jan 19, 2010 	7599 	-7600 	-1 	Sell
+Mar 09, 2010 	-1 	15200 	15199 	Buy
+May 27, 2010 	15199 	-3612 	11587 	Sell
+Jun 23, 2010 	11587 	-10961 	626 	Sell
+Jun 24, 2010 	626 	-628 	-2 	Sell
+Aug 10, 2010 	-2 	12227 	12225 	Buy
+Aug 19, 2010 	12225 	-12227 	-2 	Sell  <--- should be 12225
+Total: -2
+
+go to huyehara_hmf1  20100819
+
+Hexkey: D3D76FEC518BC176C0A80146 
+
+How to update share qty in an CA such as an acquis
+
+go to the ledger for the specific date and find the sell with the CA - that is our hexkey (ticketkey)
+select * from morder where ticketkey=X'D3D76FEC518BC176C0A80146';  	  	 
+select * from mtrade where ticketkey=X'D3D76FEC518BC176C0A80146';  	
+select * from mticket where primarykey=X'D3D76FEC518BC176C0A80146';
+select * from mticketallocation where ticketkey=X'D3D76FEC518BC176C0A80146';  	
+set commit false;
+update morder set shares=12225  where ticketkey=X'D3D76FEC518BC176C0A80146' ;
+update morder set sharesfilled=12225  where ticketkey=X'D3D76FEC518BC176C0A80146' ;
+update mtrade set shares=12225  where ticketkey=X'D3D76FEC518BC176C0A80146' ;
+update mticketallocation set shares=12225  where ticketkey=X'D3D76FEC518BC176C0A80146' ;
+
+commit;
+set commit true;
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey D3D76FEC518BC176C0A80146
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'D3D76FEC518BC176C0A80146');
+> Row 1:
+>   FUNDKEY = X'f4bc6bbe518bbe21c0a80146'
+
+/Marketocracy/bin/dbtool lookup fund 
+/Marketocracy/bin/fptool invalidateFund f4bc6bbe518bbe21c0a80146
+
+log back in and expand the trade - this is needed for the change to appear
+
+good

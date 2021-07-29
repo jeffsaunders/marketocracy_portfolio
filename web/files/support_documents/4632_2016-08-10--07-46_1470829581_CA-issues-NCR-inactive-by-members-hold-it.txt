@@ -1,0 +1,624 @@
+NCR
+8/8/16
+as a result of my script to flush out stocks that are inactive but still have members who hold them
+this is the last one.  
+
+https://www.zacks.com/stock/news/200347/ncr-announces-closure-of-blackstone-group-transaction
+BX bought a small stake in NCR but they did not acquire the company - bogus acquis applied - need to back it out 
+
+CA issues NCR inactive by members hold it.txt
+
+> Row 27241:
+>      STOCKKEY = X'1e430e21390b23b2c0a80116'
+>   TOTALSHARES = 12862.000000
+
+
+select * from mstockalias where STOCKKEY = X'1e430e21390b23b2c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62886E108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NCR CORP
+>     PRIMARYKEY = X'1e440e21390b23b2c0a80116'
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>         SYMBOL = NCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62886E108
+>           DATE = TIMESTAMP '2015-12-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NCR CORP
+>     PRIMARYKEY = X'7eb24429566229b4c0a86fab'
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>         SYMBOL = NCR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'7eb24429566229b4c0a86fab';
+> Row 1:
+>              ALIASKEY = X'7eb24429566229b4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NCR US|CP_NAME|NCR Corp|CP_ID_BB_COMP|202476|CP_UNIT|NCR Corp|CP_TOT_AMT|0.000000|CP_ACQUIS_TYP|1|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|1|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Cravath Swaine;13;100.000000;1;Target Financial Adviser(s);1;Atlas Stock, BofA ML, JP Morgan;13;100.000000;1;Acquirer Legal Adviser(s);1;Kirkland & Ellis;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi, Goldman Sachs, RBC Capital Mkts;13;100.000000;1;Legal Adv to Target Financial;1;Davis Polk;13;100.000000;|CP_ACQ_TKR|BX US|CP_ACQ_ID_BB_GLOBAL|BBG000BH0106|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FNLT67|CP_ACQ_ID_BB_SEC_NUM_DES|BX|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|NCR US|CP_TARGET_ID_BB_GLOBAL|BBG000BMXK89|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FJK845|CP_TARGET_ID_BB_SEC_NUM_DES|NCR|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108327072
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 302892
+>        BB_COMPANYNAME = Blackstone Group LP/The
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-04 00:00:00.000000'
+>         BB_IDENTIFIER = BX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-12 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = BX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-04 00:00:00.000000'
+>            PRIMARYKEY = X'8bc343b8566226cdc0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+	> Row 1:
+>   _C001 = 365.000000
+
+do we have more than one NCR?
+select distinct stockkey from mstockalias where symbol='NCR';
+> Row 1:
+>   STOCKKEY = X'1e430e21390b23b2c0a80116'
+no 
+
+checking MAdminStock:NCR CORP  Symbol:NCR
+Date: 08/08/2016
+
+3 users found
+
+1	frodrigues	giuxe	rexjacobsen
+
+try Kim's script:
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 1e430e21390b23b2c0a80116 2016-08-08
+1e430e21390b23b2c0a80116
+BD74640E5753C5E7C0A86FA6, FEF, frodrigues, 2500
+8FB404F4564EE1C8C0A86FA6, GBS, giuxe, 597
+018D4833579EBE97C0A86FA6, RDV, rexjacobsen, 446
+67155E9955F72AD4C0A86FA6, EFF, frodrigues, 12862
+
+
+Yahoo finance still have NCR as does quantum
+
+select companyid from mstock where primarykey=X'1e430e21390b23b2c0a80116';
+> Row 1:
+>   COMPANYID = 5665
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5665
+2000-05-01 (Mon) [-245]: O:38.5625 H:39.6875 L:38.5000 C:39.1250 V:817700 TSO:92900 A:429460.3321 R:2.0000 CA:55.9600
+2000-05-02 (Tue) [-244]: O:39.0625 H:39.1250 L:36.8750 C:37.0000 V:2173300 TSO:92900 A:429459.2696 R:2.0000 CA:55.9600
+2000-05-03 (Wed) [-243]: O:37.0000 H:37.4375 L:35.1875 C:35.5000 V:725100 TSO:92900 A:429458.5196 R:2.0000 CA:55.9600
+2000-05-04 (Thu) [-242]: O:35.7500 H:36.9375 L:35.7500 C:36.1875 V:688100 TSO:92900 A:429458.8634 R:2.0000 CA:55.9600
+2000-05-05 (Fri) [-241]: O:36.1875 H:36.6875 L:35.4375 C:36.1875 V:382900 TSO:92900 A:429458.8634 R:2.0000 CA:55.9600
+...
+2016-07-28 (Thu) [5687]: O:31.9200 H:33.1200 L:31.8800 C:32.9700 V:1316085 TSO:159200 A:32.9700 R:1.0000 CA:55.9600
+2016-07-29 (Fri) [5688]: O:32.8900 H:33.1100 L:32.4100 C:32.9700 V:917091 TSO:159200 A:32.9700 R:1.0000 CA:55.9600
+2016-07-30 (Sat) [5689]: <WEEKEND>
+2016-07-31 (Sun) [5690]: <WEEKEND>
+2016-08-01 (Mon) [5691]: O:33.0000 H:33.1500 L:32.6300 C:32.7200 V:558458 TSO:159200 A:32.7200 R:1.0000 CA:55.9600
+2016-08-02 (Tue) [5692]: O:32.7300 H:32.7300 L:31.6100 C:31.7400 V:1258833 TSO:159200 A:31.7400 R:1.0000 CA:55.9600
+2016-08-03 (Wed) [5693]: O:31.7400 H:32.4800 L:31.5600 C:32.4200 V:653178 TSO:159200 A:32.4200 R:1.0000 CA:55.9600
+2016-08-04 (Thu) [5694]: O:32.4000 H:32.8500 L:32.3200 C:32.3700 V:700204 TSO:159200 A:32.3700 R:1.0000 CA:55.9600
+2016-08-05 (Fri) [5695]: O:32.6300 H:32.8900 L:32.5500 C:32.6800 V:736495 TSO:159200 A:32.6800 R:1.0000 CA:55.9600
+
+prices appear to be continuous.
+
+
+> Row 1:
+>              ALIASKEY = X'7eb24429566229b4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NCR US|CP_NAME|NCR Corp|CP_ID_BB_COMP|202476|CP_UNIT|NCR Corp|CP_TOT_AMT|0.000000|CP_ACQUIS_TYP|1|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|1|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Cravath Swaine;13;100.000000;1;Target Financial Adviser(s);1;Atlas Stock, BofA ML, JP Morgan;13;100.000000;1;Acquirer Legal Adviser(s);1;Kirkland & Ellis;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi, Goldman Sachs, RBC Capital Mkts;13;100.000000;1;Legal Adv to Target Financial;1;Davis Polk;13;100.000000;|CP_ACQ_TKR|BX US|CP_ACQ_ID_BB_GLOBAL|BBG000BH0106|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FNLT67|CP_ACQ_ID_BB_SEC_NUM_DES|BX|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|NCR US|CP_TARGET_ID_BB_GLOBAL|BBG000BMXK89|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FJK845|CP_TARGET_ID_BB_SEC_NUM_DES|NCR|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108327072
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 302892
+>        BB_COMPANYNAME = Blackstone Group LP/The
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-04 00:00:00.000000'
+>         BB_IDENTIFIER = BX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-12 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = BX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-04 00:00:00.000000'
+>            PRIMARYKEY = X'8bc343b8566226cdc0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+	> Row 1:
+>   _C001 = 365.000000
+
+12/4/2015  was the date of the supposed acquis
+ah - BX bought a stake in NCR but didn't acquire NCR
+
+So are there mtickets after the acquis?
+
+select count(*) from mticket where stockkey=X'1e430e21390b23b2c0a80116' and closed > TIMESTAMP '2015-11-12 00:00:00.000000' and shares > 0;
+> Row 1:
+>   _C001 = 8.000000
+
+select * from mticket where stockkey=X'1e430e21390b23b2c0a80116' and closed > TIMESTAMP '2015-11-12 00:00:00.000000' and shares > 0 order by closed;
+the latest:
+> Row 8:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-08-05 15:21:14.000000'
+>        COMMENT = NULL
+>     COMMISSION = 643.100000
+>   CURRENTORDER = X'f4bc00df57a4dce2c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0ef609be39764ae3c0a801e0'
+>       MODIFIED = NULL
+>            NET = 421565.696582
+>         OPENED = TIMESTAMP '2016-08-05 14:37:15.000000'
+>          PRICE = 32.776061
+>     PRIMARYKEY = X'f4ba00df57a4dce2c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 12862.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+let's back out the acquis 
+select count(*) from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+> Row 1:
+>   _C001 = 365.000000
+
+select distinct managerkey from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+300 distinct mamanagers
+select loginname from mmanager where primarykey in (select distinct managerkey from mticket where sourcekey=X'8bc343b8566226cdc0a86fab') order by loginname;
+A351WMustang
+aggiebrad
+alui
+andylee
+anieves089
+aoninvest
+apreuss
+arian
+arogolsky
+asabata
+asanzone
+awesome1
+axelsonfunds
+ayce
+babdul
+bamafan271
+bambam40
+barrettrking
+basketball05
+bayleys1
+bdevore
+bearlysure
+belmon
+beris
+bhershey
+bhouston
+billyboy123
+bilpearl
+binkster666
+blackpawn
+bmcclard
+bnieves
+bpc
+bwharton
+c2dare
+captlvntr
+carol_newell
+cgoorahoo
+cgraydon
+chaiwatuk
+cmarks
+coachstroke
+coaster
+commtrader7
+confusedtrader
+cosburn
+cowdude
+cranjenk
+crayson10
+crossy
+csevak
+cshumate
+csmith2
+cvasavada
+cxs
+dalecmorgan
+dcm165
+DELETED_2006646
+DELETED_jakerosser1_2010022609390001
+derave
+dginty
+dgriffith
+dhancock
+djb
+dknepp1
+donquixote
+dravenace
+dwilliams7
+eckiecki2002
+edmundtck
+edwardtrafford
+efournier
+eggzster
+elamanes1
+elaurance
+enycehotness87
+epulido
+esmilio
+euanmcf
+fb07
+fhornsby
+flajuie
+fmauck
+fmaurrasse
+fred0053
+freewater
+fwatchdog
+gdog477
+germs
+gfunck
+ggravelle
+gkalisch
+gtj
+handress
+hanusje
+hedricks
+hobostockpix
+holup3409
+housteven
+hpope
+hrick
+hungerme
+icesare
+Icicles
+inquisitor
+ischiff2
+jamarante342
+jarvis_hills
+jawaharb
+jbarnes
+jbibb
+jbrosowski
+jdjuly5
+jeffjwb7
+jeffpk23
+jesusm007
+jfrancois
+jgalaviz
+jgfeller
+jgoldstein
+jhudanish
+jjohnson7
+jkg
+jkliora
+jlaw
+jocohud
+joe@analyticcapital.com
+johnnyp
+jpsandrs
+jrepas
+jrheaume
+jthomasson
+jtkc80
+jughead
+juliuspleaser
+jwise
+jxxs
+kalinucluke
+kapler
+kchamblee
+kenwakokoro
+kevante
+kevineanes
+ki1park
+kirin
+kirklaja
+kkooper
+kkreitzberg@scu.edu
+kohsuke
+kscott1
+ksmith
+larryjthompson
+laurentpoirier
+lentrekin
+les28409
+livermore618
+liws
+lolindrath
+lpraj
+luckybluesman
+lwroblewski
+lzarruk
+ma_g
+macmanc
+madison10
+magic_money
+marcust
+marcy
+marketmeta
+marketup
+mayvau
+mbarnes
+mbuchanan1
+mchmyshuk
+mconerly
+mdavis
+mendelson
+minuet
+misty_071
+misty_70
+mkilmain
+mmosley
+mochi
+moneymakermary
+moreno770
+mr.sunflower
+mracca
+mrjasonmartin
+msaal
+mseifert
+msi_ham
+msoileau
+mviani
+mvrh
+mvrh1
+mwilliams
+naj1982
+naplesfl
+natekane2001
+nbillou
+nealiam
+nlu
+nrablicki
+nrbelex
+nsalazar
+nursemink
+oneyank
+orange
+oroborous
+panther21
+patchu
+patriot
+pauljoh1
+pdg
+pierce
+pjacques
+pkezios
+pogden
+predictor
+qpr
+qrheaume
+quadtay
+qucksilver
+r1rooster
+rajeev103
+rajksarkar
+ramonhuerta
+rancid514
+rbernier
+rbi
+rbrtwy
+rcohan
+rd
+realvalue
+rfailla
+rfarrell
+rfuel
+ric
+rjeddings
+rlfitzpatrick
+rmckenzie1
+rogerbrookuk
+rruckle
+rwilson
+saber980
+salubri
+sami23
+scottbunn
+scottkingoh
+sdani
+seal17
+sergiop
+sheltim
+simonemarlia
+skyetrax
+smckown
+smitchell1
+sruppel
+stanley15
+static
+steele99
+stoke
+stoxgoddfrank
+swanny1617
+t-durden
+tadden
+taylor
+teamfunds
+techplusmanager
+teen_investor
+tfwalsh
+therichman10
+titicamara
+tolandse
+tradezzzz
+trunkychristy
+tshields
+tstillwagon1
+tuke
+twqs
+tz7bandit
+ucdballer411
+uma
+unamuno
+upennstud
+vanmeerten
+vestor22
+vikingdan
+vooch3
+vooch4
+vsagdeo
+waardecreatie
+williamjacobs
+winchesterjason
+wjgraham
+wramos031
+wshamp
+wwasilev
+ykinvestments
+yuyu
+
+
+
+crossy is one of the members
+your holdings of NCR	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+CSWF	0	$.00	0.00%  <---
+CFSF	0	N/A	N/A
+CWBF	0	N/A	N/A
+CTCF	0	N/A	N/A
+CDSF	0	N/A	N/A
+CIAF	0	N/A	N/A
+CEOF	0	N/A	N/A
+CLVF	0	N/A	N/A
+CTXF	0	N/A	N/A
+
+expand:
+LEDGER
+Date	Start	Change	End	Type
+Jun 18, 2013		10	10	Buy
+Sep 18, 2014	10	-9	1	Sell
+Dec 04, 2015	1	-1		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jun 18, 2013	10	$0.50	$340.40	$34.04
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Sep 18, 2014	9	$0.45	$0.01	$315.44	$35.05
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Dec 04, 2015	NCR CORP [NCR] acquired by Blackstone Group LP/The [BX] on 2015-12-04 00:00:00.
+
+he only had one share 
+	select * from mcorporateaction where aliaskey=X'7eb24429566229b4c0a86fab';
+> Row 1:
+>              ALIASKEY = X'7eb24429566229b4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NCR US|CP_NAME|NCR Corp|CP_ID_BB_COMP|202476|CP_UNIT|NCR Corp|CP_TOT_AMT|0.000000|CP_ACQUIS_TYP|1|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|1|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Cravath Swaine;13;100.000000;1;Target Financial Adviser(s);1;Atlas Stock, BofA ML, JP Morgan;13;100.000000;1;Acquirer Legal Adviser(s);1;Kirkland & Ellis;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi, Goldman Sachs, RBC Capital Mkts;13;100.000000;1;Legal Adv to Target Financial;1;Davis Polk;13;100.000000;|CP_ACQ_TKR|BX US|CP_ACQ_ID_BB_GLOBAL|BBG000BH0106|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FNLT67|CP_ACQ_ID_BB_SEC_NUM_DES|BX|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|NCR US|CP_TARGET_ID_BB_GLOBAL|BBG000BMXK89|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FJK845|CP_TARGET_ID_BB_SEC_NUM_DES|NCR|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108327072
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 302892
+>        BB_COMPANYNAME = Blackstone Group LP/The
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-04 00:00:00.000000'
+>         BB_IDENTIFIER = BX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-12 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = BX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-04 00:00:00.000000'
+>            PRIMARYKEY = X'8bc343b8566226cdc0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+	> Row 1:
+>   _C001 = 365.000000
+
+update mcorporateaction set BB_ACTIONID = '108327072:MARTY' where PRIMARYKEY = X'8bc343b8566226cdc0a86fab';
+let's get the ticketkeys from this just in case we have to remove it manually
+save to CA issues NCR ticketkeys bogus acquis.txt
+
+select primarykey from mticket where sourcekey=X'8bc343b8566226cdc0a86fab';
+
+ok back it out
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 108327072:MARTY
+
+it appears to have worked 
+
+delete from mcorporateaction where PRIMARYKEY = X'8bc343b8566226cdc0a86fab';
+no data - good
+
+We need to clean up mstockalias now 
+select * from mstockalias where STOCKKEY = X'1e430e21390b23b2c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62886E108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NCR CORP
+>     PRIMARYKEY = X'1e440e21390b23b2c0a80116'  <-- make this the identitykey
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>         SYMBOL = NCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62886E108
+>           DATE = TIMESTAMP '2015-12-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NCR CORP
+>     PRIMARYKEY = X'7eb24429566229b4c0a86fab'  <--- delete 
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>         SYMBOL = NCR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'7eb24429566229b4c0a86fab';
+	nothing
+update mstock set identitykey=X'1e440e21390b23b2c0a80116' where primarykey=X'1e430e21390b23b2c0a80116'; 
+now delete the 927 mstockalias record
+
+delete from mstockalias where PRIMARYKEY = X'7eb24429566229b4c0a86fab';
+
+check
+select * from mstockalias where STOCKKEY = X'1e430e21390b23b2c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62886E108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NCR CORP
+>     PRIMARYKEY = X'1e440e21390b23b2c0a80116'
+>       STOCKKEY = X'1e430e21390b23b2c0a80116'
+>         SYMBOL = NCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202010
+>       STYLEKEY = MV
+
+let's get the fundkeys so we can invalidate
+select distinct fundkey from mposition where stockkey=X'1e430e21390b23b2c0a80116'; 
+there are 865 save to CA issues NCR bogus acquis fundkeys.txt
+
+Ok - check on 8/9/16  see that NCR is active again
+invalidate and reprice on the new site   update the case 
+
+no longer acquired - active again
+
+invalidate and reprice 

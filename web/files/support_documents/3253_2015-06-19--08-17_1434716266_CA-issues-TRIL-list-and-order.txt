@@ -1,0 +1,609 @@
+date: 6/17/15
+ticker:  TRIL   missed the listing:  case 3253
+
+select distinct stockkey from mstockalias where symbol='TRIL';
+> Row 1:
+>   STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+
+just one
+
+select * from mstockalias where STOCKKEY = X'b2a9043c39e7e9cdc0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2000-05-03 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'b2aa043c39e7e9cdc0a801dc'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TRIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2003-10-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'ad515ce73fa07f65c0a80146'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TIV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2003-10-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'8cc15cef3fa07f80c0a80146'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TIV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2012-06-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'b9f142c24fe8ed3ec0a80146'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TVLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2012-06-25 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'8e16446b4fe8ee16c0a80146'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TVLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2012-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'c5375d4a50243d47c0a80146'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TVLYQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 895735108
+>           DATE = TIMESTAMP '2014-11-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tri-Valley Corp
+>     PRIMARYKEY = X'8bce0a2b55760d8fc0a86f92'
+>       STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+>         SYMBOL = TVLYQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = XV
+
+only one stockkey - we missed TRIL new
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TRIL' order by BB_EFFECTIVE;
+nothing useful
+
+yahoo:
+earliest date for prices  3/22/2013
+Trillium Therapeutics Inc. (TRIL) -NasdaqCM
+21.95 Up 0.22(1.01%) 11:58AM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	21.73
+Open:	21.73
+Bid:	21.57 x 100
+Ask:	21.75 x 100
+1y Target Est:	N/A
+Beta:	-2.11
+Next Earnings Date:	N/A
+Day's Range:	20.75 - 21.99
+52wk Range:	5.64 - 29.92
+Volume:	55,138
+Avg Vol (3m):	213,580
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-2.89
+Div & Yield:	N/A (N/A
+
+quantum:
+Trillium Therapeutics, Inc.
+Ticker Symbol: TRIL     CUSIP: 89620X506     Exchange: NCM
+
+Company's Online Profile
+BUSINESS:  Trillium Therapeutics, Inc. is an immuno-oncology company developing innovative therapies for the treatment of cancer. The Company has two premier preclinical programs, SIRPaFc and a CD200 monoclonal antibody (mAb), which target two key immunoregulatory pathways that tumor cells exploit to evade the host immune system.
+
+Previous Ticker Symbol: SCTPF    Changed: 12/19/14
+Previous Name: Stem Cell Therapeutics Corp.    Changed: 6/05/14
+Micro Cap Stock -   Market Value $ 34.2 Million 
+
+previous ticker SCTPF
+select * from mcorporateaction where aliaskey is null and BB_SECID='SCTPF' order by BB_EFFECTIVE;
+whole lot of stuff.  we just need to list as far base as the first trade
+
+
+ok - the other company which used TRIL in its past:   TVLYQ
+STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+delisted on 2014/11/26
+
+quick check of MAdmin
+Stock:Tri-Valley Corp  Symbol:TVLYQ
+Date: 11/26/2014
+
+0 users found
+
+good no one holds it
+
+select count(*) from mticket where stockkey=X'b2a9043c39e7e9cdc0a801dc' and closed >= TIMESTAMP'2014-11-26 00:00:00.000000' and shares > 0 order by closed;
+nothing
+
+let's look at the case 
+
+
+Member Name
+Andriy Petruk
+Username
+apetruk
+Fund Symbols
+APMF
+
+
+he wants to buy
+let's log in as the member
+apetruk
+
+open orders:
+all open tickets 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Open Date 	Limit 	Current 	Shares 	Fills 	Avg. Paid 	Order Type 	Last Filled 	 
+Buy 	TVLYQ 	Jun 9, 2015 	$25.50 	$0.01 	7,000 	0 	$0.00 	Good Until Canceled 	  	Details Cancel  
+
+let's list it as of June 1, 2015
+
+ticker:  TRIL
+name: Trillium Therapeutics Inc.
+cusip:  89620X506  verified
+xignite: is there
+exchange:  nasdaq
+
+TRIL|Q|89620X506|Trillium Therapeutics Inc.|20150601
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='TRIL';
+> Row 1:
+>   STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+> Row 2:
+>   STOCKKEY = X'16bd06255581a269c0a86f92'
+select * from mstockalias where STOCKKEY = X'16bd06255581a269c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89620X506
+>           DATE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trillium Therapeutics Inc.
+>     PRIMARYKEY = X'16be06255581a269c0a86f92'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>         SYMBOL = TRIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+Micro Cap Stock -   Market Value $ 34.2 Million 
+let's set the style key to XG
+update mstockalias set STYLEKEY = 'XG' where  PRIMARYKEY = X'16be06255581a269c0a86f92';
+what sector?
+going with this
+35201010	Biotechnology
+	Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering. Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application.
+update mstockalias set GICSKEY = '35201010' where  PRIMARYKEY = X'16be06255581a269c0a86f92';
+
+select * from mstockalias where STOCKKEY = X'16bd06255581a269c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89620X506
+>           DATE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trillium Therapeutics Inc.
+>     PRIMARYKEY = X'16be06255581a269c0a86f92'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>         SYMBOL = TRIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+
+check on 6/18/15 for the stock to be there   then do a test buy
+execute the order for the member 
+
+
+Username apetruk
+Fund  APMF
+
+
+he wants to buy
+let's log in as the member
+apetruk
+
+open orders:
+all open tickets 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Open Date 	Limit 	Current 	Shares 	Fills 	Avg. Paid 	Order Type 	Last Filled 	 
+Buy 	TVLYQ 	Jun 9, 2015 	$25.50 	$0.01 	7,000 	0 	$0.00 	Good Until Canceled 	
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apetruk APMF 20150609 TRIL 7000 25.50
+
+6/18/15 - TRIL is there on the legacy site - entering a buy 10 shares order on martyfukui account
+
+ok, I put in a buy order for 10 shares on legacy and 5 shares on the new site .
+
+let's log in as apetruk and cancel his order for that TRIL 
+I have canceled the order
+
+check the price range for TRIL on 6/9/15
+Prices
+Date			Open	High	Low	Close	Volume	Adj Close*
+Jun 17, 2015	21.73	22.87	20.75	22.59	112,100	22.59
+Jun 16, 2015	22.90	23.38	21.50	21.73	85,800	21.73
+Jun 15, 2015	23.47	23.47	22.29	23.03	88,100	23.03
+Jun 12, 2015	24.40	24.40	23.24	23.32	111,200	23.32
+Jun 11, 2015	24.51	24.86	23.26	24.43	103,000	24.43
+Jun 10, 2015	24.09	24.78	23.87	24.17	55,300	24.17
+Jun 9, 2015		25.30	25.82	23.81	24.30	127,900	24.30  <----  25.50 is within range
+Jun 8, 2015		25.04	26.72	24.55	25.52	245,900	25.52
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apetruk APMF 20150609 TRIL 7000 25.50
+
+Trading 7000.0 shares of Trillium Therapeutics Inc. on Jun 09, 2015 at 25.5
+manager: apetruk Andriy Petruk
+fund: APMF
+building trade (has to load stock prices first)
+price = 25.5
+buying 7000.0 shares of TRIL at 25.5 on 20150609
+invaldating fund prices from Jun 09, 2015
+Done
+
+let's get the fundkey and then reprice the member from 2015-06-09
+/Marketocracy/bin/dbtool lookup fund apetruk
+fund: apetruk
+  PK: [67DC39943992E58AC0A801E0]
+  symbol: [APMF]
+  managerKey: [97705D6839899514C0A80118]
+  loginName: [apetruk]
+2015-06-09  67DC39943992E58AC0A801E0    
+
+login as the member   password : serbina
+
+APMF
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 09, 2015 		7000 	7000 	Buy
+Total: 7,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 9, 2015 	7,000 	$350.00 	$178,850.00 	$25.55
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+why is this at 25.55?
+
+select distinct stockkey from mstockalias where symbol='TRIL';
+> Row 1:
+>   STOCKKEY = X'b2a9043c39e7e9cdc0a801dc'
+> Row 2:
+>   STOCKKEY = X'16bd06255581a269c0a86f92'
+select * from mstockalias where STOCKKEY = X'16bd06255581a269c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89620X506
+>           DATE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trillium Therapeutics Inc.
+>     PRIMARYKEY = X'16be06255581a269c0a86f92'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>         SYMBOL = TRIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+select * from mticket where stockkey=X'16bd06255581a269c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = NULL
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'65a462af5582b926c0a86f89'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8522624741b79785c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-06-18 08:27:18.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'65a262af5582b926c0a86f89'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'70863ca1391e0272c0a8015c'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey= X'8522624741b79785c0a80134';
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = NULL
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'cb1500d25582ba36c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8522624741b79785c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-06-18 08:31:50.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'cb1300d25582ba36c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'70863ca1391e0272c0a8015c'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey= ;
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-09 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 350.000000
+>   CURRENTORDER = X'9af318815582bcb6c0a86f92'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'97705d6839899514c0a80118'
+>       MODIFIED = NULL
+>            NET = 178850.000000
+>         OPENED = TIMESTAMP '2015-06-09 00:00:00.000000'
+>          PRICE = 25.550000
+>     PRIMARYKEY = X'9af118815582bcb6c0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 7000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'16bd06255581a269c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select * from morder where ticketkey=X'9af118815582bcb6c0a86f92' ;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'9af318815582bcb6c0a86f92'
+>         SHARES = 7000.000000
+>      TICKETKEY = X'9af118815582bcb6c0a86f92'
+>           TIME = TIMESTAMP '2015-06-09 00:00:00.000000'
+>   AVERAGEPRICE = 25.500000
+>   SHARESFILLED = 7000
+
+ok, wait until my orders fill
+need to add prices historical
+
+2015-06-01 is when I listed this
+get the companyid
+select * from mstock where primarykey= X'16bd06255581a269c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'16be06255581a269c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'16bd06255581a269c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28477
+>   WINDOWIDENTITYKEY = NULL
+/Library/FrontBase/bin/sql92
+connect to marketdata@stocks user eouser;
+select * from stockprices where companyid= 28477;
+> Row 1:
+>   DAYNUMBER = 5280
+>   COMPANYID = 28477
+>      OPENED = 217300
+>        HIGH = 228700
+>         LOW = 207500
+>      CLOSED = 225900
+>      VOLUME = 112057
+
+this is: 6/17/15	5280	Wed
+need prices from 6/1/15 to 6/16/15
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5279,28477,229000,233799.99,215000,217300,85800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5278,28477,234699.99,234699.99,222900.01,230300.01,88100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5275,28477,244000,244000,232400,233200,111200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5274,28477,245100,248600.01,232600,244300,103000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5273,28477,240900,247800.01,238700.01,241700,55300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5272,28477,252999.99,258200,238099.99,242999.99,127900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5271,28477,250400.01,267199.99,245499.99,255200,245900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5268,28477,231700,252500,231399.99,248650,264800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5267,28477,227700,238799.99,221000,232900.01,145300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5266,28477,225200,228689.99,219500.01,227700,75900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5265,28477,222999.99,229900,221200.01,224699.99,101700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5264,28477,221800,227700,210499.99,222900.01,158300);
+
+check 
+select * from stockprices where companyid= 28477;
+> Row 1:
+>   DAYNUMBER = 5280
+>   COMPANYID = 28477
+>      OPENED = 217300
+>        HIGH = 228700
+>         LOW = 207500
+>      CLOSED = 225900
+>      VOLUME = 112057
+> Row 2:
+>   DAYNUMBER = 5279
+>   COMPANYID = 28477
+>      OPENED = 229000
+>        HIGH = 233799
+>         LOW = 215000
+>      CLOSED = 217300
+>      VOLUME = 85800
+> Row 3:
+>   DAYNUMBER = 5278
+>   COMPANYID = 28477
+>      OPENED = 234699
+>        HIGH = 234699
+>         LOW = 222900
+>      CLOSED = 230300
+>      VOLUME = 88100
+> Row 4:
+>   DAYNUMBER = 5275
+>   COMPANYID = 28477
+>      OPENED = 244000
+>        HIGH = 244000
+>         LOW = 232400
+>      CLOSED = 233200
+>      VOLUME = 111200
+> Row 5:
+>   DAYNUMBER = 5274
+>   COMPANYID = 28477
+>      OPENED = 245100
+>        HIGH = 248600
+>         LOW = 232600
+>      CLOSED = 244300
+>      VOLUME = 103000
+> Row 6:
+>   DAYNUMBER = 5273
+>   COMPANYID = 28477
+>      OPENED = 240900
+>        HIGH = 247800
+>         LOW = 238700
+>      CLOSED = 241700
+>      VOLUME = 55300
+> Row 7:
+>   DAYNUMBER = 5272
+>   COMPANYID = 28477
+>      OPENED = 252999
+>        HIGH = 258200
+>         LOW = 238099
+>      CLOSED = 242999
+>      VOLUME = 127900
+> Row 8:
+>   DAYNUMBER = 5271
+>   COMPANYID = 28477
+>      OPENED = 250400
+>        HIGH = 267199
+>         LOW = 245499
+>      CLOSED = 255200
+>      VOLUME = 245900
+> Row 9:
+>   DAYNUMBER = 5268
+>   COMPANYID = 28477
+>      OPENED = 231700
+>        HIGH = 252500
+>         LOW = 231399
+>      CLOSED = 248650
+>      VOLUME = 264800
+> Row 10:
+>   DAYNUMBER = 5267
+>   COMPANYID = 28477
+>      OPENED = 227700
+>        HIGH = 238799
+>         LOW = 221000
+>      CLOSED = 232900
+>      VOLUME = 145300
+> Row 11:
+>   DAYNUMBER = 5266
+>   COMPANYID = 28477
+>      OPENED = 225200
+>        HIGH = 228689
+>         LOW = 219500
+>      CLOSED = 227700
+>      VOLUME = 75900
+> Row 12:
+>   DAYNUMBER = 5265
+>   COMPANYID = 28477
+>      OPENED = 222999
+>        HIGH = 229900
+>         LOW = 221200
+>      CLOSED = 224699
+>      VOLUME = 101700
+> Row 13:
+>   DAYNUMBER = 5264
+>   COMPANYID = 28477
+>      OPENED = 221800
+>        HIGH = 227700
+>         LOW = 210499
+>      CLOSED = 222900
+>      VOLUME = 158300
+
+invalidate prices from 6/1/15
+1.  Go to stocks   ssh build@stocks
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-06-01
+
+
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-18
+
+D: (09:26:16.758) Invalidate all prices >= 2015-06-01 (5264)
+
+
+it is there.  
+
+check on 6/19/15 for the prices.  also for my fills 
+my fills are there.   And the graph looks good.  
+
+member:  apetruk   APMF
+get the fundkey 
+/Marketocracy/bin/dbtool lookup fund apetruk
+fund: apetruk
+  PK: [67DC39943992E58AC0A801E0]
+  symbol: [APMF]
+  managerKey: [97705D6839899514C0A80118]
+  loginName: [apetruk]
+
+/Marketocracy/bin/fptool invalidateFund 67DC39943992E58AC0A801E0
+
+his trades
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 09, 2015 		7000 	7000 	Buy
+Total: 7,000
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 9, 2015 	7,000 	$350.00 	$178,850.00 	$25.55
+  	  	 
+SELLS
+You have no sells for this position
+
+let's reprice on the new site  67DC39943992E58AC0A801E0   2015-06-09
+
+this finished.  
+ield-fund-keyDone!
+1 Funds Processed
+6 Queries Processed
+
+I am closing this out.  6/19/15

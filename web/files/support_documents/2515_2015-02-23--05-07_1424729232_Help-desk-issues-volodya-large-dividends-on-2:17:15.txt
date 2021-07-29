@@ -1,0 +1,155 @@
+date: 2/23/15
+problem with NA dividends
+
+volodya  
+
+Ticket Number:	2515
+Portfolio Username:	volodya
+Ticker Symbol:	NA
+Corporate Action Type:
+Dividend Paid in Cash
+Subject:
+Dividends
+Description:
+just checked a few other portfolios, looks like VM4 received $255,500 on 2/17; VM3 received $200,750, and VM15 received 171,915 in dividends. those amounts are very high...
+Thank you.
+
+VM3
+VM4
+VM15
+
+2/17/15
+VM3
+02/17/2015	$466,953.65	$0.00	$12.79	$200,750.00	$181.44	$0.00	$667,535.01	$2,844,330.68	$3,511,865.69	100,000	$35.12	Yes	Details
+
+I don't see any stock in the detail page that paid this much
+
+select * from mcorporateaction where aliaskey is not null and BB_ACTIONMNEMONIC='DVD_CASH' and BB_ACTIONDICTIONARY like '%CP_PAY_DT|20150217|%';
+lots of actions
+
+let's try invalidating his funds
+/Marketocracy/bin/dbtool lookup fund volodya
+>>>> dbtool started at 2015-02-23 16:55:23 -0500
+fund: volodya
+  PK: [815C2B66401AAB74C0A80134]
+  symbol: [VM6]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [818A2B66401AACA4C0A80134]
+  symbol: [VM7]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [4105144A414994E0C0A80133]
+  symbol: [VM8]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [3AC22DDC3C48606AC0A801E0]
+  symbol: [VM1]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [5AA02DDC3C487CBDC0A801E0]
+  symbol: [VM2]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [9658644D3C4D7038C0A801E1]
+  symbol: [VM3]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [9F796CB541DDC353C0A80132]
+  symbol: [VM9]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [43721FD33DBE9C05C0A80133]
+  symbol: [VM4]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [460023BF3E0C8E75C0A80132]
+  symbol: [VM5]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [9DB4032241E2F4EFC0A80134]
+  symbol: [VM9]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [F0B7111E42728D2DC0A80133]
+  symbol: [VM10]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [0B0E4BDA42838229C0A80133]
+  symbol: [VM11]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [E2E870194283B136C0A80132]
+  symbol: [VM11]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [F3B5152A447DAFCEC0A80132]
+  symbol: [VM13]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [98B031EF45E87E47C0A80134]
+  symbol: [VM14]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [B3DB65D34E3C027BC0A80132]
+  symbol: [VMF]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [99B117D84E42B6D6C0A80134]
+  symbol: [VM15]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [A21C17D84E42B8E7C0A80134]
+  symbol: [VMF2]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [C9872C3A4E4D16D2C0A80135]
+  symbol: [VMF3]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [C9892C3A4E4D16FFC0A80135]
+  symbol: [VMF3]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [C41671904E60E96FC0A80135]
+  symbol: [VMF4]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+fund: volodya
+  PK: [E78243194E7B76E8C0A80132]
+  symbol: [VMF5]
+  managerKey: [3AB62DDC3C485ED3C0A801E0]
+  loginName: [volodya]
+<<<< dbtool finished at 2015-02-23 16:55:24 -0500
+
+let's do VM3 
+/Marketocracy/bin/fptool invalidateFund  9658644D3C4D7038C0A801E1
+VM4
+/Marketocracy/bin/fptool invalidateFund  43721FD33DBE9C05C0A80133
+VM15
+/Marketocracy/bin/fptool invalidateFund  99B117D84E42B6D6C0A80134
+VM1
+/Marketocracy/bin/fptool invalidateFund  3AC22DDC3C48606AC0A801E0
+done
+
+I went through all of this funds in their ledgers and they no longer have huge dividends - closing this one out

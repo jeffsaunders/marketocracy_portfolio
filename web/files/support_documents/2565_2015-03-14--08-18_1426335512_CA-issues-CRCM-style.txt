@@ -1,0 +1,64 @@
+date: 3/13/15
+
+icket Number:	2565
+Portfolio Username:	2004_porsche_911
+Ticker Symbol:	CRCM
+Corporate Action Type:
+Other
+Subject:
+CRCM
+Description:
+CRCM (Care.com Inc) has Sector: Unclassified and Style: Unclassified Market Cap : Unclassified Style.
+ Its sector should be Information Technology (Internet Information Providers).
+ Style should be closer to Micro Cap : Growth.
+
+select distinct stockkey from mstockalias where symbol='CRCM'; 
+> Row 1:
+>   STOCKKEY = X'59341cf852e1ab20c0a87091'
+
+select * from mstockalias where stockkey= X'59341cf852e1ab20c0a87091';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141633107
+>           DATE = TIMESTAMP '2014-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care.com Inc
+>     PRIMARYKEY = X'59351cf852e1ab20c0a87091'
+>       STOCKKEY = X'59341cf852e1ab20c0a87091'
+>         SYMBOL = CRCM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+Details	 
+Index Membership:	N/A
+Sector:	Technology
+Industry:	Internet Information Providers
+Full Time Employees:	336
+
+45101010	Internet Software & Services
+	Companies developing and marketing internet software and/or providing internet services including online databases and interactive services, as well as companies deriving a majority of their revenues from online advertising. Excludes companies classified in the Internet Retail Sub-Industry.
+
+update mstockalias set GICSKEY='45101010'  where STOCKKEY = X'59341cf852e1ab20c0a87091';
+update mstockalias set STYLEKEY='XG'  where STOCKKEY = X'59341cf852e1ab20c0a87091';
+
+check cusip 141633107 is good
+check
+select * from mstockalias where stockkey= X'59341cf852e1ab20c0a87091';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141633107
+>           DATE = TIMESTAMP '2014-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care.com Inc
+>     PRIMARYKEY = X'59351cf852e1ab20c0a87091'
+>       STOCKKEY = X'59341cf852e1ab20c0a87091'
+>         SYMBOL = CRCM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+are there any dividends?  does not appear so
+
+check this on 3/14/15   is good

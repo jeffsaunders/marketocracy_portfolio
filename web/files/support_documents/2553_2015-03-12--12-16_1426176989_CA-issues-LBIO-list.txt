@@ -1,0 +1,163 @@
+date: 3/11/15
+request to add new ticker by Steve  mapsyntax
+
+From: 	Steve Stewart <steve.mapsyntax@gmail.com>
+	Subject: 	Re: user ID - mapsyntax
+	Date: 	March 11, 2015 11:39:16 AM PDT
+	To: 	Marty Fukui <marty.fukui@mcm.marketocracy.com>
+Marty... can you put in a request to make LBIO available to trade.  thanks
+
+yahoo
+Lion Biotechnologies, Inc. (LBIO)
+-NasdaqGM
+Watchlist
+11.28 Up 1.04(10.16%) 3:59PM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	10.24
+Open:	10.30
+Bid:	11.20 x 2000
+Ask:	11.50 x 100
+1y Target Est:	16.67
+Beta:	6.31
+Next Earnings Date:	N/A
+Day's Range:	10.30 - 12.00
+52wk Range:	4.97 - 11.98
+Volume:	1,245,177
+Avg Vol (3m):	154,132
+Market Cap:	311.77M
+P/E (ttm):	N/A
+EPS (ttm):	-1.20
+Div & Yield:	N/A (N/A)
+
+quantum
+Lion Biotechnologies, Inc.
+Ticker Symbol: LBIO     CUSIP: 53619R102     Exchange: NGM
+
+Company's Online Profile
+BUSINESS:  Lion Biotechnologies, Inc. is a biotechnology company that is focused on developing and commercializing adoptive cell therapy (ACT) using autologous tumor infiltrating lymphocytes for the treatment of metastatic melanoma and other solid cancers.
+
+IPO - 2/26/2015 - 8.00 Million Shares @ $8.00/share.    Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 379 Million 
+
+xignite  it is there cusip is 53619R102
+
+LBIO|Q|53619R102|Lion Biotechnologies, Inc.|20150310
+
+put this in to symadd.txt
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+GICS - 35201010	Biotechnology
+	Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering. Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application.
+
+select distinct stockkey from mstockalias where symbol='LBIO';
+> Row 1:
+>   STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92'
+select * from mstockalias where STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53619R102
+>           DATE = TIMESTAMP '2015-03-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lion Biotechnologies, Inc.
+>     PRIMARYKEY = X'ffbf0bdf5500a4ddc0a86f92'
+>       STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92'
+>         SYMBOL = LBIO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+update mstockalias set GICSKEY='35201010' where PRIMARYKEY = X'ffbf0bdf5500a4ddc0a86f92';
+Market Cap:	311.77M
+Small cap - Have a market cap between $300 million to $2 billion. 
+update mstockalias set STYLEKEY='SG' where PRIMARYKEY = X'ffbf0bdf5500a4ddc0a86f92';
+select * from mstockalias where STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53619R102
+>           DATE = TIMESTAMP '2015-03-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lion Biotechnologies, Inc.
+>     PRIMARYKEY = X'ffbf0bdf5500a4ddc0a86f92'
+>       STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92'
+>         SYMBOL = LBIO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = SG
+good we're ready.
+
+check on 3/12/15  and do a sample trade 
+
+3/12/15  it is there and I entered a good til cancel order to buy 10 shares at the market
+
+select primarykey from mmanager where loginname='martyfukui';
+> Row 1:
+>   PRIMARYKEY = X'8522624741b79785c0a80134'
+
+select * from mticket where managerkey= X'8522624741b79785c0a80134' and stockkey= X'ffbe0bdf5500a4ddc0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = NULL
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'96f31da955018d0ec0a86f89'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8522624741b79785c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-03-12 08:56:46.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'96f11da955018d0ec0a86f89'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'70863ca1391e0272c0a8015c'
+>       STOCKKEY = X'ffbe0bdf5500a4ddc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+this is the mticket just entered, the market is not yet open
+what is lifekey?  
+select distinct LIFEKEY from mticket;
+> Row 1:
+>   LIFEKEY = X'70923ca1391e0272c0a8015c'
+> Row 2:
+>   LIFEKEY = X'70953ca1391e0272c0a8015c'  <--- good til cancel
+> Row 3:
+>   LIFEKEY = X'38280a7c3922fa63c0a801dc'
+It's Day, Next Day and GTC. Next Day is just a day trade that's been entered after market close.
+
+everything is 0 including shares
+
+Here is the morder  everything is 0 
+select * from morder where ticketkey= X'96f11da955018d0ec0a86f89';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'96f31da955018d0ec0a86f89'
+>         SHARES = 10.000000
+>      TICKETKEY = X'96f11da955018d0ec0a86f89'
+>           TIME = TIMESTAMP '2015-03-12 08:56:46.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+Is there an mtrade 
+select * from mtrade where ticketkey= X'96f11da955018d0ec0a86f89';
+no mtrade yet.
+
+mticketallocation?
+select * from mticketallocation where ticketkey= X'96f11da955018d0ec0a86f89';
+> Row 1:
+>      FUNDKEY = X'4bb6490243ab1231c0a80134'
+>   PRIMARYKEY = X'96f41da955018d0ec0a86f89'
+>       SHARES = 10.000000
+>    TICKETKEY = X'96f11da955018d0ec0a86f89'
+shares is there 
+
+my trade executed - closing this out, notify member
+
+
+

@@ -1,0 +1,100 @@
+date:  11/2/15
+rade cancelled
+Type
+General Help | Trading Issue
+Ticket
+3918
+Priority
+Medium
+Status
+Open
+Member Name
+Jim Van Meerten
+Username
+vanmeerten
+Fund Symbols
+VMSWG
+Stock Tickers
+N/A
+Description / Resources:
+Mon 11/02/2015 at 05:17 PM
+
+did not get a trade in SGSVF
+
+vanmeerten  VMSWG    no trade for SGSVF
+
+Sabina Gold & Silver Corp. (SGSVF) -Other OTC
+0.45 Down 0.02(4.79%) 3:51PM EST
+Prev Close:	0.47
+Open:	0.45
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	0.45 - 0.46
+52wk Range:	0.24 - 0.48
+Volume:	89,000
+Avg Vol (3m):	38,942
+Market Cap:	88.00M
+P/E (ttm):	N/A
+EPS (ttm):	-0.03
+Div & Yield:	N/A (N/A)
+
+not on our site 
+
+select * from mstockalias where symbol='SGSVF'; nothing
+select * from mcorporateaction where BB_SECID='SGSVF';
+somethings but no list 
+
+check xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=SGSVF
+cusip is there  785246109  good
+
+let's list it
+
+SGSVF|QB|785246109|Sabina Gold & Silver Corp.|20151102
+
+put this into symadd.txt
+
+run this
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check agaain 
+
+select distinct stockkey from mstockalias where symbol='SGSVF';
+> Row 1:
+>   STOCKKEY = X'1fa0605d5637e4d0c0a86fab'
+select * from mstockalias where STOCKKEY = X'1fa0605d5637e4d0c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 785246109
+>           DATE = TIMESTAMP '2015-11-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Sabina Gold & Silver Corp.
+>     PRIMARYKEY = X'1fa1605d5637e4d0c0a86fab'
+>       STOCKKEY = X'1fa0605d5637e4d0c0a86fab'
+>         SYMBOL = SGSVF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+it is there
+
+11/2/15  check on this on legacy
+
+Symbol: SGSVF	Name: Sabina Gold & Silver Corp.	Price: $0.45
+Volume: 89,000	Sector: Unclassified	Change: $0.00
+Short Volume: 1,780	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 1,780	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.01	Year High: $0.46	High: $0.46
+200 Day Ave: $0.00	Year Low: $0.00	Low: $0.45
+
+it's there  closing this out 
+
+
+
+
+'
+
+

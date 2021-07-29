@@ -1,0 +1,1156 @@
+date: 1/28/15
+missing dividends for RIT
+
+says delisted on our site 
+ RIT has been acquired	
+ 	 	
+LMP Real Estate Income Fund In [RIT] acquired by WELLPOINT HLTH NETWORKS [WLP] on 2002-02-01 00:00:00.
+ 	 	
+20 Jan 10	22 Jan 10	29 Jan 10	12	$0.06	Dividend amount:0.06 per share.
+17 Feb 10	19 Feb 10	26 Feb 10	12	$0.06	Dividend amount:0.06 per share.
+17 Mar 10	19 Mar 10	26 Mar 10	12	$0.06	Dividend amount:0.06 per share.
+21 Apr 10	23 Apr 10	30 Apr 10	12	$0.06	Dividend amount:0.06 per share.
+19 May 10	21 May 10	28 May 10	12	$0.06	Dividend amount:0.06 per share.
+16 Jun 10	18 Jun 10	25 Jun 10	12	$0.06	Dividend amount:0.06 per share.
+ 	 	 
+select distinct stockkey from mstockalias where symbol='RIT';
+> Row 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+
+select * from mstockalias where STOCKKEY = X'af6a1029390b33ccc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'af6b1029390b33ccc0a80116'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'af6b1029390b33ccc0a80116';
+nothing - maybe list? 
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'e8fc17123c5b5cb5c0a801dc'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8fc17123c5b5cb5c0a801dc' and BB_ACTIONMNEMONIC <> 'DVD_CASH';
+> Row 1:
+>              ALIASKEY = X'e8fc17123c5b5cb5c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|1228.884156|CP_NOTES|TGT SHRHLDR APPROVAL 1/30/02.                                                         01/30/02 |CP_UNIT|Rightchoice Managed Care Inc|CP_DEBT|N.A.|CP_CUR_PREMIUM|5.034170|CP_DT_FLAG|0|CP_SH_FLAG|1|CP_UNSOLICITED|0|CP_SH|0.616100|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|3.691483|CP_NAME|Rightchoice Managed Care Inc|CP_INIT_OFFER_PREMIUM|42.430191|CP_CASH_VAL|66.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|4|CP_ADVISORS|;2;8;3;1;Exchange Agent;1;MELLON INVESTOR;13;N.A.;1;Target Legal Adviser;1;LEWIS RICE FINGE;13;N.A.;1;Target Financial Adviser;1;CSFB (SW);13;N.A.;1;Target Financial Adviser;1;UBS WARBURG;13;N.A.;1;Acquirer Legal Adviser;1;SIMPSON THACHER;13;N.A.;1;Acquirer Financial Adviser;1;MERRILL LYNCH;13;N.A.;1;Legal Adv to Target Financial;1;DAVIS POLK;13;N.A.;1;Legal Adv to Target Financial;1;DEWEY BALLANTINE;13;N.A.;|CP_TKR|RIT     US|CP_CASH|66.000000|CP_DETAIL_FLAG|2|CP_CASH_FLAG|1|CP_TOT_AMT|984.606995|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|1|CP_ADVISORS_NUM|8|CP_ID_BB_COMP|148740
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7249306
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 186477
+>        BB_COMPANYNAME = Wellpoint Health Networks
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>         BB_IDENTIFIER = WLP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = WLP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-02-01 00:00:00.000000'
+>            PRIMARYKEY = X'738c41d83c5b56dcc0a801dc'
+>               VERSION = NULL
+
+**********************  here, old RIT got acquired *************************
+
+let's see who held RIT on 02/01/2002
+Stock:LMP Real Estate Income Fund In  Symbol:RIT
+Date: 02/01/2002
+
+0 users found
+
+what do we have for quantum
+LMP Real Estate Income Fund
+Ticker Symbol: RIT     CUSIP: 50208C108     Exchange: NYSE
+IPO - 7/26/2002 - 9.65 Million Shares @ $15.00/share.    Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 213 Million
+
+******  we missed the listing of new RIT
+
+do any members hold this today?
+Stock:LMP Real Estate Income Fund In  Symbol:RIT
+Date: 01/28/2015
+
+2 users found
+
+1	majenifuja	mcummings1
+
+**************************
+
+let's list a new one
+Let's list a new RIT as on 7/26/2002
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'a9b874db452aff64c0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'a9b874db452aff64c0a80146';
+> Row 1:
+>              ALIASKEY = X'a9b874db452aff64c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Real Estate Income Fund Inc|CP_NEW_NAME|LMP Real Estate Income Fund In|CP_NOTES|LMP Real Estate Income Fund Inc. 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23369356
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd06368a9452afec4c0a80146'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50208C108
+>           DATE = TIMESTAMP '2006-10-09 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'e8b0033d452aff7ec0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8b0033d452aff7ec0a80146' and BB_ACTIONMNEMONIC <> 'DVD_CASH';
+> Row 1:
+>              ALIASKEY = X'e8b0033d452aff7ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|755881109|CP_NEW_CUSIP|50208C108|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US7558811094|CP_NEW_ISIN|US50208C1080|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23369340
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-26 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd06168a9452afec3c0a80146'
+>               VERSION = NULL
+
+
+Assessment - we missed the listing of new RIT
+1.  list a new one   IPO date:  7/26/2002   original name:  Real Estate Income Fund Inc  original cusip: 755881109
+
+RIT|N|755881109|Real Estate Income Fund Inc|20020726
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+let's see what we have
+select distinct stockkey from mstockalias where symbol='RIT';
+> Row 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+> Row 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+
+**********************************************************************
+> RIT 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+**********************************************************************
+select * from mstockalias where STOCKKEY = X'af6a1029390b33ccc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'af6b1029390b33ccc0a80116'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'e8fc17123c5b5cb5c0a801dc'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'a9b874db452aff64c0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50208C108
+>           DATE = TIMESTAMP '2006-10-09 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'e8b0033d452aff7ec0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+**********************************************************************
+> RIT 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+**********************************************************************
+select * from mstockalias where STOCKKEY = X'1403515854c954b6c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755881109
+>           DATE = TIMESTAMP '2002-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Real Estate Income Fund Inc
+>     PRIMARYKEY = X'1404515854c954b6c0a86f92'
+>       STOCKKEY = X'1403515854c954b6c0a86f92'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's add the mstockalias records from above to this, by changing the stockkey
+> RIT 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'a9b874db452aff64c0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+update mstockalias set STOCKKEY = X'1403515854c954b6c0a86f92' where PRIMARYKEY = X'a9b874db452aff64c0a80146';
+and we need to update the statuskey
+update mstockalias set STATUSKEY=X'634a039339e7e928c0a801dc'  where PRIMARYKEY = X'a9b874db452aff64c0a80146';
+ok, this one is moved over
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50208C108
+>           DATE = TIMESTAMP '2006-10-09 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'e8b0033d452aff7ec0a80146'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+update mstockalias set STOCKKEY = X'1403515854c954b6c0a86f92' where PRIMARYKEY = X'e8b0033d452aff7ec0a80146';
+update mstockalias set STATUSKEY=X'634a039339e7e928c0a801dc'  where PRIMARYKEY = X'e8b0033d452aff7ec0a80146';
+
+ok, we've moved over the two mstockalias records - there should be three of them for this stockkey 
+STOCKKEY = X'af6a1029390b33ccc0a80116'
+select * from mstockalias where STOCKKEY = X'1403515854c954b6c0a86f92' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755881109
+>           DATE = TIMESTAMP '2002-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Real Estate Income Fund Inc
+>     PRIMARYKEY = X'1404515854c954b6c0a86f92'
+>       STOCKKEY = X'1403515854c954b6c0a86f92'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'a9b874db452aff64c0a80146'
+>       STOCKKEY = X'1403515854c954b6c0a86f92'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+update mstockalias set CUSIP = '755881109' where PRIMARYKEY = X'a9b874db452aff64c0a80146';
+select * from mcorporateaction where aliaskey=X'a9b874db452aff64c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'a9b874db452aff64c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Real Estate Income Fund Inc|CP_NEW_NAME|LMP Real Estate Income Fund In|CP_NOTES|LMP Real Estate Income Fund Inc. 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23369356
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd06368a9452afec4c0a80146'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50208C108
+>           DATE = TIMESTAMP '2006-10-09 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LMP Real Estate Income Fund In
+>     PRIMARYKEY = X'e8b0033d452aff7ec0a80146'   <--- set the identitykey here 
+>       STOCKKEY = X'1403515854c954b6c0a86f92'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+select * from mstock where primarykey=X'1403515854c954b6c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'1404515854c954b6c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'1403515854c954b6c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27752
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'e8b0033d452aff7ec0a80146'   where PRIMARYKEY = X'1403515854c954b6c0a86f92';
+done
+select * from mcorporateaction where aliaskey=X'e8b0033d452aff7ec0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'e8b0033d452aff7ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|755881109|CP_NEW_CUSIP|50208C108|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US7558811094|CP_NEW_ISIN|US50208C1080|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 23369340
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-09 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-09-26 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd06168a9452afec3c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'e8b0033d452aff7ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20061020|CP_PAY_DT|20061027|CP_FREQ|12|CP_NET_AMT|0.109000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.109000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20061018|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 22769579
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-08-10 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'9a110ba54536dc3fc0a80146'
+>               VERSION = NULL
+	pay date:  10/27/2006
+to the last one
+> Row 47:
+>              ALIASKEY = X'e8b0033d452aff7ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100618|CP_PAY_DT|20100625|CP_FREQ|12|CP_NET_AMT|0.060000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.060000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.993274|CP_ADJ_DT|20100616|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 43141839
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = LMP Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-06-16 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-02-16 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2010-06-16 00:00:00.000000'
+>            PRIMARYKEY = X'7fe86f8c4c193bb3c0a80146'
+>               VERSION = NULL
+	pay date: 6/25/2010
+
+*****************************
+then we have some dividends in the earlier stockkey - let's get them and move them over
+
+> RIT 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+
+select * from mstockalias where STOCKKEY = X'af6a1029390b33ccc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'af6b1029390b33ccc0a80116'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'af6b1029390b33ccc0a80116';
+nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'e8fc17123c5b5cb5c0a801dc'   <---- set the identitykey here 
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+select * from mstock where primarykey=X'af6a1029390b33ccc0a80116';
+> Row 1:
+>         IDENTITYKEY = X'e8b0033d452aff7ec0a80146'
+>                NAME = RIGHTCHOICE MANAGED CARE'A'
+>          PRIMARYKEY = X'af6a1029390b33ccc0a80116'
+>              SYMBOL = RIT
+>           COMPANYID = 6009
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'e8fc17123c5b5cb5c0a801dc'  where PRIMARYKEY = X'af6a1029390b33ccc0a80116';
+done
+
+select * from mcorporateaction where aliaskey=X'e8fc17123c5b5cb5c0a801dc' ;
+> Row 1:
+>              ALIASKEY = X'e8fc17123c5b5cb5c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|1228.884156|CP_NOTES|TGT SHRHLDR APPROVAL 1/30/02.                                                         01/30/02 |CP_UNIT|Rightchoice Managed Care Inc|CP_DEBT|N.A.|CP_CUR_PREMIUM|5.034170|CP_DT_FLAG|0|CP_SH_FLAG|1|CP_UNSOLICITED|0|CP_SH|0.616100|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|3.691483|CP_NAME|Rightchoice Managed Care Inc|CP_INIT_OFFER_PREMIUM|42.430191|CP_CASH_VAL|66.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|4|CP_ADVISORS|;2;8;3;1;Exchange Agent;1;MELLON INVESTOR;13;N.A.;1;Target Legal Adviser;1;LEWIS RICE FINGE;13;N.A.;1;Target Financial Adviser;1;CSFB (SW);13;N.A.;1;Target Financial Adviser;1;UBS WARBURG;13;N.A.;1;Acquirer Legal Adviser;1;SIMPSON THACHER;13;N.A.;1;Acquirer Financial Adviser;1;MERRILL LYNCH;13;N.A.;1;Legal Adv to Target Financial;1;DAVIS POLK;13;N.A.;1;Legal Adv to Target Financial;1;DEWEY BALLANTINE;13;N.A.;|CP_TKR|RIT     US|CP_CASH|66.000000|CP_DETAIL_FLAG|2|CP_CASH_FLAG|1|CP_TOT_AMT|984.606995|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|1|CP_ADVISORS_NUM|8|CP_ID_BB_COMP|148740
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7249306
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 186477
+>        BB_COMPANYNAME = Wellpoint Health Networks
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>         BB_IDENTIFIER = WLP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = WLP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-02-01 00:00:00.000000'
+>            PRIMARYKEY = X'738c41d83c5b56dcc0a801dc'
+>               VERSION = NULL
+
+then we have these DVD_CASH that need to be moved over to the other RIT
+
+> Row 2:
+>              ALIASKEY = X'e8fc17123c5b5cb5c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020920|CP_NOTES|N.A.|CP_NET_AMT|0.106300|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|12|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.106300|CP_PAR_PCT| |CP_RECORD_DT|20020924|CP_PAY_DT|20020927|CP_DVD_TYP|1008|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8929176
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-20 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2002-09-05 00:00:00.000000'
+>            PRIMARYKEY = X'197c5e023d8bd388c0a801dc'
+>               VERSION = NULL
+
+
+down to
+
+> Row 55:
+>              ALIASKEY = X'e8fc17123c5b5cb5c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20060922|CP_PAY_DT|20060929|CP_FREQ|12|CP_NET_AMT|0.109000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.109000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20060920|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 22769567
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7808756
+>        BB_COMPANYNAME = Real Estate Income Fund Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-09-20 00:00:00.000000'
+>         BB_IDENTIFIER = RIT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-08-10 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = RIT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'0d33049d4511f250c0a80146'
+>               VERSION = NULL
+
+
+select count(*) from mcorporateaction where BB_SECID = 'RIT' and BB_ACTIONMNEMONIC = 'DVD_CASH' and ALIASKEY = X'e8fc17123c5b5cb5c0a801dc';
+there are 54
+let's move them to this aliaskey  PRIMARYKEY = X'1404515854c954b6c0a86f92'
+
+update mcorporateaction set aliaskey=X'1404515854c954b6c0a86f92' where BB_SECID = 'RIT' and BB_ACTIONMNEMONIC = 'DVD_CASH' and ALIASKEY = X'e8fc17123c5b5cb5c0a801dc';
+done
+
+let's do this again - see where we are
+
+select distinct stockkey from mstockalias where symbol='RIT';
+> Row 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+> Row 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+
+
+> RIT 1:
+>   STOCKKEY = X'af6a1029390b33ccc0a80116'
+select * from mstockalias where STOCKKEY = X'af6a1029390b33ccc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'af6b1029390b33ccc0a80116'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'af6b1029390b33ccc0a80116';
+nothing
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76657T102
+>           DATE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RIGHTCHOICE MNGD CARE INC(DEL)
+>     PRIMARYKEY = X'e8fc17123c5b5cb5c0a801dc'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>         SYMBOL = RIT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8fc17123c5b5cb5c0a801dc';
+> Row 1:
+>              ALIASKEY = X'e8fc17123c5b5cb5c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|1228.884156|CP_NOTES|TGT SHRHLDR APPROVAL 1/30/02.                                                         01/30/02 |CP_UNIT|Rightchoice Managed Care Inc|CP_DEBT|N.A.|CP_CUR_PREMIUM|5.034170|CP_DT_FLAG|0|CP_SH_FLAG|1|CP_UNSOLICITED|0|CP_SH|0.616100|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|3.691483|CP_NAME|Rightchoice Managed Care Inc|CP_INIT_OFFER_PREMIUM|42.430191|CP_CASH_VAL|66.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|4|CP_ADVISORS|;2;8;3;1;Exchange Agent;1;MELLON INVESTOR;13;N.A.;1;Target Legal Adviser;1;LEWIS RICE FINGE;13;N.A.;1;Target Financial Adviser;1;CSFB (SW);13;N.A.;1;Target Financial Adviser;1;UBS WARBURG;13;N.A.;1;Acquirer Legal Adviser;1;SIMPSON THACHER;13;N.A.;1;Acquirer Financial Adviser;1;MERRILL LYNCH;13;N.A.;1;Legal Adv to Target Financial;1;DAVIS POLK;13;N.A.;1;Legal Adv to Target Financial;1;DEWEY BALLANTINE;13;N.A.;|CP_TKR|RIT     US|CP_CASH|66.000000|CP_DETAIL_FLAG|2|CP_CASH_FLAG|1|CP_TOT_AMT|984.606995|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|1|CP_ADVISORS_NUM|8|CP_ID_BB_COMP|148740
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7249306
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 186477
+>        BB_COMPANYNAME = Wellpoint Health Networks
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-02-01 00:00:00.000000'
+>         BB_IDENTIFIER = WLP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = WLP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-02-01 00:00:00.000000'
+>            PRIMARYKEY = X'738c41d83c5b56dcc0a801dc'
+>               VERSION = NULL
+
+
+
+> RIT 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+select * from mstockalias where STOCKKEY = X'1403515854c954b6c0a86f92';
+
+select count(*) from mcorporateaction where aliaskey is not null and BB_SECID='RIT' and  BB_ACTIONMNEMONIC='DVD_CASH';
+
+they are all moved over.
+
+Now we need to do trades i
+
+select count(*) from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000';
+> Row 1:
+>   _C001 = 6.000000
+select *  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000' order by opened;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-08-15 11:21:31.000000'
+>        COMMENT = 
+>     COMMISSION = 75.000000
+>   CURRENTORDER = X'27bc08ed3d5b2ab6c0a80119'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd9802219399d4a36c0a80119'
+>       MODIFIED = NULL
+>            NET = 22686.000000
+>         OPENED = TIMESTAMP '2002-08-15 00:14:46.000000'
+>          PRICE = 15.124000
+>     PRIMARYKEY = X'27bb08ed3d5b2ab6c0a80119'
+>         SECFEE = 0.000000
+>         SHARES = 1500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-09-09 11:29:27.000000'
+>        COMMENT = 
+>     COMMISSION = 0.250000
+>   CURRENTORDER = X'b24f57013d7b62bac0a801e2'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'b3611f9b3a0f88c1c0a801e1'
+>       MODIFIED = NULL
+>            NET = 75.500000
+>         OPENED = TIMESTAMP '2002-09-08 10:46:18.000000'
+>          PRICE = 15.100000
+>     PRIMARYKEY = X'b24e57013d7b62bac0a801e2'
+>         SECFEE = 0.000000
+>         SHARES = 5.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-09-25 16:24:52.000000'
+>        COMMENT = 
+>     COMMISSION = 4.500000
+>   CURRENTORDER = X'9e252d313d921236c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'49513e203cdabedfc0a80119'
+>       MODIFIED = NULL
+>            NET = 1264.500000
+>         OPENED = TIMESTAMP '2002-09-25 15:44:54.000000'
+>          PRICE = 14.050000
+>     PRIMARYKEY = X'9e222d313d921236c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 90.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-10-23 14:46:34.000000'
+>        COMMENT = 
+>     COMMISSION = 75.000000
+>   CURRENTORDER = X'5fa901d03db6df4ac0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd9802219399d4a36c0a80119'
+>       MODIFIED = NULL
+>            NET = 18513.440000
+>         OPENED = TIMESTAMP '2002-10-23 13:41:30.000000'
+>          PRICE = 12.342293
+>     PRIMARYKEY = X'5fa801d03db6df4ac0a80132'
+>         SECFEE = 0.560000
+>         SHARES = 1500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-01-16 13:32:03.000000'
+>        COMMENT = 
+>     COMMISSION = 70.000000
+>   CURRENTORDER = X'7fa038753e25f966c0a80132'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'a0f4038d3af06c85c0a80119'
+>       MODIFIED = NULL
+>            NET = 19954.400000
+>         OPENED = TIMESTAMP '2003-01-15 19:14:30.000000'
+>          PRICE = 14.253143
+>     PRIMARYKEY = X'7f9f38753e25f966c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 1400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-08-05 11:09:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 70.000000
+>   CURRENTORDER = X'6cd5036d3f2fa2dac0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a0f4038d3af06c85c0a80119'
+>       MODIFIED = NULL
+>            NET = 20950.210200
+>         OPENED = TIMESTAMP '2003-08-05 08:28:10.000000'
+>          PRICE = 14.964436
+>     PRIMARYKEY = X'6cd3036d3f2fa2dac0a80133'
+>         SECFEE = 0.990000
+>         SHARES = 1400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af6a1029390b33ccc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+let's get the ticketkeys
+
+select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000' order by opened;
+> Row 1:
+>   PRIMARYKEY = X'27bb08ed3d5b2ab6c0a80119'
+> Row 2:
+>   PRIMARYKEY = X'b24e57013d7b62bac0a801e2'
+> Row 3:
+>   PRIMARYKEY = X'9e222d313d921236c0a80134'
+> Row 4:
+>   PRIMARYKEY = X'5fa801d03db6df4ac0a80132'
+> Row 5:
+>   PRIMARYKEY = X'7f9f38753e25f966c0a80132'
+> Row 6:
+>   PRIMARYKEY = X'6cd3036d3f2fa2dac0a80133'
+
+let's get the mtrades
+select * from mtrade where ticketkey in (select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000');
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'df7868b53d921b94c0a8011e'
+>                 PRIMARYKEY = X'df7968b53d921b95c0a8011e'
+>                     SHARES = 90.000000
+>                  TICKETKEY = X'9e222d313d921236c0a80134'
+>                     CLOSED = TIMESTAMP '2002-09-25 16:24:52.000000'
+>                      PRICE = 14.050000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'c0064fd03d5bc6ffc0a80114'
+>                 PRIMARYKEY = X'1776097a3db6ee8bc0a8011e'
+>                     SHARES = 1500.000000
+>                  TICKETKEY = X'5fa801d03db6df4ac0a80132'
+>                     CLOSED = TIMESTAMP '2002-10-23 14:46:34.000000'
+>                      PRICE = 12.342293
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'c0064fd03d5bc6ffc0a80114'
+>                 PRIMARYKEY = X'c0074fd03d5bc6ffc0a80114'
+>                     SHARES = 1500.000000
+>                  TICKETKEY = X'27bb08ed3d5b2ab6c0a80119'
+>                     CLOSED = TIMESTAMP '2002-08-15 11:21:31.000000'
+>                      PRICE = 15.124000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'431a07473d7cbe58c0a80114'
+>                 PRIMARYKEY = X'431b07473d7cbe58c0a80114'
+>                     SHARES = 5.000000
+>                  TICKETKEY = X'b24e57013d7b62bac0a801e2'
+>                     CLOSED = TIMESTAMP '2002-09-09 11:29:27.000000'
+>                      PRICE = 15.100000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'ebd313de3bd579c7c0a80114'
+>                 PRIMARYKEY = X'6fb25f0b3e26faa3c0a8011e'
+>                     SHARES = 1400.000000
+>                  TICKETKEY = X'7f9f38753e25f966c0a80132'
+>                     CLOSED = TIMESTAMP '2003-01-16 13:32:03.000000'
+>                      PRICE = 14.253143
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'ebd313de3bd579c7c0a80114'
+>                 PRIMARYKEY = X'9a1907673f2fc8a5c0a8011e'
+>                     SHARES = 1400.000000
+>                  TICKETKEY = X'6cd3036d3f2fa2dac0a80133'
+>                     CLOSED = TIMESTAMP '2003-08-05 11:09:00.000000'
+>                      PRICE = 14.964436
+>   CREATEDBYCORPORATEACTION = 0
+
+select positionkey from mtrade where ticketkey in (select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000');
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000'));
+> Row 1:
+>   FUNDKEY = X'495e3e203cdabfa5c0a80119'
+> Row 2:
+>   FUNDKEY = X'2aa118583af06dbdc0a80119'
+> Row 3:
+>   FUNDKEY = X'd22d3e633af0b13fc0a80118'
+> Row 4:
+>   FUNDKEY = X'afe157013d7b5656c0a801e2'
+
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000')));
+
+here are the fund symbols
+> Row 1:
+>   SYMBOL = DMF
+> Row 2:
+>   SYMBOL = LV  tymer
+> Row 3:
+>   SYMBOL = MMF
+> Row 4:
+>   SYMBOL = MMFII
+
+select distinct managerkey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000' order by opened;
+> Row 1:
+>   MANAGERKEY = X'd9802219399d4a36c0a80119'
+> Row 2:
+>   MANAGERKEY = X'b3611f9b3a0f88c1c0a801e1'
+> Row 3:
+>   MANAGERKEY = X'49513e203cdabedfc0a80119'
+> Row 4:
+>   MANAGERKEY = X'a0f4038d3af06c85c0a80119'
+
+
+select loginname from mmanager where primarykey in (select  managerkey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000');
+> Row 1:
+>   LOGINNAME = tymer
+> Row 2:
+>   LOGINNAME = majenifuja
+> Row 3:
+>   LOGINNAME = dhomco
+> Row 4:
+>   LOGINNAME = mcummings1
+
+
+
+let's take a look at the members' trades
+
+tymer
+majenifuja
+dhomco
+dhomco
+
+Let's get rid of the mtrades
+
+delete from mtrade where ticketkey in (select primarykey  from mticket where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000');
+
+let's update the mtickets 
+
+> RIT 2:
+>   STOCKKEY = X'1403515854c954b6c0a86f92'
+update mticket set STOCKKEY = X'1403515854c954b6c0a86f92'  where stockkey = X'af6a1029390b33ccc0a80116' and opened > TIMESTAMP '2002-02-01 00:00:00.000000';
+mtickets are updated
+
+let's tickle them
+
+27bb08ed3d5b2ab6c0a80119
+5fa801d03db6df4ac0a80132
+6cd3036d3f2fa2dac0a80133
+7f9f38753e25f966c0a80132
+9e222d313d921236c0a80134
+b24e57013d7b62bac0a801e2
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+get debugger callsed
+
+try them individually
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 27bb08ed3d5b2ab6c0a80119
+>>>> dbtool started at 2015-01-28 22:00:00 -0500
+<<<< dbtool finished at 2015-01-28 22:02:10 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 5fa801d03db6df4ac0a80132;
+>>>> dbtool started at 2015-01-28 22:02:58 -0500
+<<<< dbtool finished at 2015-01-28 22:05:06 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 6cd3036d3f2fa2dac0a80133;
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 7f9f38753e25f966c0a80132;
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 9e222d313d921236c0a80134;
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey b24e57013d7b62bac0a801e2;
+
+
+let's invalidate the funds
+/Marketocracy/bin/fptool invalidateFund 2aa118583af06dbdc0a80119;
+/Marketocracy/bin/fptool invalidateFund 495e3e203cdabfa5c0a80119;
+/Marketocracy/bin/fptool invalidateFund afe157013d7b5656c0a801e2;
+/Marketocracy/bin/fptool invalidateFund d22d3e633af0b13fc0a80118;
+
+
+
+
+Now we can do the dividends
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+3/18/2015	Cash	0.06	11/18/2014	3/20/2015	3/27/2015
+2/18/2015	Cash	0.06	11/18/2014	2/20/2015	2/27/2015
+1/21/2015	Cash	0.06	11/18/2014	1/23/2015	1/30/2015
+12/17/2014	Cash	0.06	8/18/2014	12/19/2014	12/26/2014
+11/19/2014	Cash	0.06	8/18/2014	11/21/2014	11/28/2014
+10/22/2014	Cash	0.06	8/18/2014	10/24/2014	10/31/2014
+9/17/2014	Cash	0.06	5/20/2014	9/19/2014	9/26/2014
+8/20/2014	Cash	0.06	5/20/2014	8/22/2014	8/29/2014
+7/16/2014	Cash	0.06	5/20/2014	7/18/2014	7/25/2014
+6/18/2014	Cash	0.06	2/13/2014	6/20/2014	6/27/2014
+5/21/2014	Cash	0.06	2/13/2014	5/23/2014	5/30/2014
+4/15/2014	Cash	0.06	2/13/2014	4/17/2014	4/25/2014
+3/19/2014	Cash	0.06	11/18/2013	3/21/2014	3/28/2014
+2/19/2014	Cash	0.06	11/18/2013	2/21/2014	2/28/2014
+1/22/2014	Cash	0.06	11/18/2013	1/24/2014	1/31/2014
+12/18/2013	Cash	0.06	8/19/2013	12/20/2013	12/27/2013
+11/20/2013	Cash	0.06	8/19/2013	11/22/2013	11/29/2013
+10/16/2013	Cash	0.06	8/19/2013	10/18/2013	10/25/2013
+9/18/2013	Cash	0.06	5/21/2013	9/20/2013	9/27/2013
+8/21/2013	Cash	0.06	5/21/2013	8/23/2013	8/30/2013
+7/17/2013	Cash	0.06	5/21/2013	7/19/2013	7/26/2013
+6/19/2013	Cash	0.06	2/19/2013	6/21/2013	6/28/2013
+5/22/2013	Cash	0.06	2/19/2013	5/24/2013	5/31/2013
+4/17/2013	Cash	0.06	2/19/2013	4/19/2013	4/26/2013
+3/20/2013	Cash	0.06	11/13/2012	3/22/2013	3/29/2013
+2/13/2013	Cash	0.06	11/13/2012	2/15/2013	2/22/2013
+1/16/2013	Cash	0.06	11/13/2012	1/18/2013	1/25/2013
+12/12/2012	Cash	0.06	8/13/2012	12/14/2012	12/21/2012
+11/20/2012	Cash	0.06	8/13/2012	11/23/2012	11/30/2012
+10/17/2012	Cash	0.06	8/13/2012	10/19/2012	10/26/2012
+9/19/2012	Cash	0.06	5/14/2012	9/21/2012	9/28/2012
+8/22/2012	Cash	0.06	5/14/2012	8/24/2012	8/31/2012
+7/18/2012	Cash	0.06	5/14/2012	7/20/2012	7/27/2012
+6/20/2012	Cash	0.06	2/13/2012	6/22/2012	6/29/2012
+5/16/2012	Cash	0.06	2/13/2012	5/18/2012	5/25/2012
+4/18/2012	Cash	0.06	2/13/2012	4/20/2012	4/27/2012
+3/21/2012	Cash	0.06	11/14/2011	3/23/2012	3/30/2012
+2/15/2012	Cash	0.06	11/14/2011	2/17/2012	2/24/2012
+1/18/2012	Cash	0.06	11/14/2011	1/20/2012	1/27/2012
+12/14/2011	Cash	0.06	8/12/2011	12/16/2011	12/23/2011
+11/16/2011	Cash	0.06	8/12/2011	11/18/2011	11/25/2011
+10/19/2011	Cash	0.06	8/12/2011	10/21/2011	10/28/2011
+9/21/2011	Cash	0.06	5/16/2011	9/23/2011	9/30/2011
+8/17/2011	Cash	0.06	5/16/2011	8/19/2011	8/26/2011
+7/20/2011	Cash	0.06	5/16/2011	7/22/2011	7/29/2011
+6/15/2011	Cash	0.06	2/14/2011	6/17/2011	6/24/2011
+5/18/2011	Cash	0.06	2/14/2011	5/20/2011	5/27/2011
+4/19/2011	Cash	0.06	2/14/2011	4/21/2011	4/29/2011
+3/16/2011	Cash	0.06	11/15/2010	3/18/2011	3/25/2011
+2/16/2011	Cash	0.06	11/15/2010	2/18/2011	2/25/2011
+1/19/2011	Cash	0.06	11/17/2010	1/21/2011	1/28/2011
+12/21/2010	Cash	0.06	8/16/2010	12/23/2010	12/30/2010
+11/17/2010	Cash	0.06	8/16/2010	11/19/2010	11/26/2010
+10/20/2010	Cash	0.06	8/16/2010	10/22/2010	10/29/2010
+9/15/2010	Cash	0.06	5/17/2010	9/17/2010	9/24/2010
+8/18/2010	Cash	0.06	5/17/2010	8/20/2010	8/27/2010
+7/21/2010	Cash	0.06	5/17/2010	7/23/2010	7/30/2010
+6/16/2010	Cash	0.06	2/16/2010	6/18/2010	6/25/2010  <===  last one paid 
+
+/Marketocracy/bin/cahelper -symbol RIT -effective 20150318 -type DVD_CASH -exchange UN -payDate 20150327 -recordDate 20150320 -amount 0.06 >& /Users/build/caout/RIT.20150128-2015-03.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20150218 -type DVD_CASH -exchange UN -payDate 20150227 -recordDate 20150220 -amount 0.06 >& /Users/build/caout/RIT.20150128-2015-02.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20150121 -type DVD_CASH -exchange UN -payDate 20150130 -recordDate 20150123 -amount 0.06 >& /Users/build/caout/RIT.20150128-2015-01.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20141217 -type DVD_CASH -exchange UN -payDate 20141226 -recordDate 20141219 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-12.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20141119 -type DVD_CASH -exchange UN -payDate 20141128 -recordDate 20141121 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-11.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20141022 -type DVD_CASH -exchange UN -payDate 20141031 -recordDate 20141024 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-10.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140917 -type DVD_CASH -exchange UN -payDate 20140926 -recordDate 20140919 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-09.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140820 -type DVD_CASH -exchange UN -payDate 20140829 -recordDate 20140822 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-08.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140716 -type DVD_CASH -exchange UN -payDate 20140725 -recordDate 20140718 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-07.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140618 -type DVD_CASH -exchange UN -payDate 20140627 -recordDate 20140620 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-06.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140521 -type DVD_CASH -exchange UN -payDate 20140530 -recordDate 20140523 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-05.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140415 -type DVD_CASH -exchange UN -payDate 20140425 -recordDate 20140417 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-04.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140319 -type DVD_CASH -exchange UN -payDate 20140328 -recordDate 20140321 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-03.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140219 -type DVD_CASH -exchange UN -payDate 20140228 -recordDate 20140221 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-02.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20140122 -type DVD_CASH -exchange UN -payDate 20140131 -recordDate 20140124 -amount 0.06 >& /Users/build/caout/RIT.20150128-2014-01.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20131218 -type DVD_CASH -exchange UN -payDate 20131227 -recordDate 20131220 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-12.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20131120 -type DVD_CASH -exchange UN -payDate 20131129 -recordDate 20131122 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-11.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20131016 -type DVD_CASH -exchange UN -payDate 20131025 -recordDate 20131018 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-10.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130918 -type DVD_CASH -exchange UN -payDate 20130927 -recordDate 20130920 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-09.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130821 -type DVD_CASH -exchange UN -payDate 20130830 -recordDate 20130823 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-08.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130717 -type DVD_CASH -exchange UN -payDate 20130726 -recordDate 20130719 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-07.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130619 -type DVD_CASH -exchange UN -payDate 20130628 -recordDate 20130621 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-06.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130522 -type DVD_CASH -exchange UN -payDate 20130531 -recordDate 20130524 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-05.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130417 -type DVD_CASH -exchange UN -payDate 20130426 -recordDate 20130419 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-04.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130320 -type DVD_CASH -exchange UN -payDate 20130329 -recordDate 20130322 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-03.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130213 -type DVD_CASH -exchange UN -payDate 20130222 -recordDate 20130215 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-02.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20130116 -type DVD_CASH -exchange UN -payDate 20130125 -recordDate 20130118 -amount 0.06 >& /Users/build/caout/RIT.20150128-2013-01.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20121212 -type DVD_CASH -exchange UN -payDate 20121221 -recordDate 20121214 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-12.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20121120 -type DVD_CASH -exchange UN -payDate 20121130 -recordDate 20121123 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-11.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20121017 -type DVD_CASH -exchange UN -payDate 20121026 -recordDate 20121019 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-10.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120919 -type DVD_CASH -exchange UN -payDate 20120928 -recordDate 20120921 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-09.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120822 -type DVD_CASH -exchange UN -payDate 20120831 -recordDate 20120824 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-08.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120718 -type DVD_CASH -exchange UN -payDate 20120727 -recordDate 20120720 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-07.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120620 -type DVD_CASH -exchange UN -payDate 20120629 -recordDate 20120622 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-06.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120516 -type DVD_CASH -exchange UN -payDate 20120525 -recordDate 20120518 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-05.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120418 -type DVD_CASH -exchange UN -payDate 20120427 -recordDate 20120420 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-04.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120321 -type DVD_CASH -exchange UN -payDate 20120330 -recordDate 20120323 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-03.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120215 -type DVD_CASH -exchange UN -payDate 20120224 -recordDate 20120217 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-02.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20120118 -type DVD_CASH -exchange UN -payDate 20120127 -recordDate 20120120 -amount 0.06 >& /Users/build/caout/RIT.20150128-2012-01.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20111214 -type DVD_CASH -exchange UN -payDate 20111223 -recordDate 20111216 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-12.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20111116 -type DVD_CASH -exchange UN -payDate 20111125 -recordDate 20111118 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-11.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20111019 -type DVD_CASH -exchange UN -payDate 20111028 -recordDate 20111021 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-10.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110921 -type DVD_CASH -exchange UN -payDate 20110930 -recordDate 20110923 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-09.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110817 -type DVD_CASH -exchange UN -payDate 20110826 -recordDate 20110819 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-08.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110720 -type DVD_CASH -exchange UN -payDate 20110729 -recordDate 20110722 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-07.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110615 -type DVD_CASH -exchange UN -payDate 20110624 -recordDate 20110617 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-06.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110518 -type DVD_CASH -exchange UN -payDate 20110527 -recordDate 20110520 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-05.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110419 -type DVD_CASH -exchange UN -payDate 20110429 -recordDate 20110421 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-04.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110316 -type DVD_CASH -exchange UN -payDate 20110325 -recordDate 20110318 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-03.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110216 -type DVD_CASH -exchange UN -payDate 20110225 -recordDate 20110218 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-02.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20110119 -type DVD_CASH -exchange UN -payDate 20110128 -recordDate 20110121 -amount 0.06 >& /Users/build/caout/RIT.20150128-2011-01.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20101221 -type DVD_CASH -exchange UN -payDate 20101230 -recordDate 20101223 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-12.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20101117 -type DVD_CASH -exchange UN -payDate 20101126 -recordDate 20101119 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-11.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20101020 -type DVD_CASH -exchange UN -payDate 20101029 -recordDate 20101022 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-10.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20100915 -type DVD_CASH -exchange UN -payDate 20100924 -recordDate 20100917 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-09.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20100818 -type DVD_CASH -exchange UN -payDate 20100827 -recordDate 20100820 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-08.out;
+/Marketocracy/bin/cahelper -symbol RIT -effective 20100721 -type DVD_CASH -exchange UN -payDate 20100730 -recordDate 20100723 -amount 0.06 >& /Users/build/caout/RIT.20150128-2010-07.out;
+
+RIT.20150128-2010-07.out
+RIT.20150128-2010-08.out
+RIT.20150128-2010-09.out
+RIT.20150128-2010-10.out
+RIT.20150128-2010-11.out
+RIT.20150128-2010-12.out
+RIT.20150128-2011-01.out
+RIT.20150128-2011-02.out
+RIT.20150128-2011-03.out
+RIT.20150128-2011-04.out
+RIT.20150128-2011-05.out
+RIT.20150128-2011-06.out
+RIT.20150128-2011-07.out
+RIT.20150128-2011-08.out
+RIT.20150128-2011-09.out
+RIT.20150128-2011-10.out
+RIT.20150128-2011-11.out
+RIT.20150128-2011-12.out
+RIT.20150128-2012-01.out
+RIT.20150128-2012-02.out
+RIT.20150128-2012-03.out
+RIT.20150128-2012-04.out
+RIT.20150128-2012-05.out
+RIT.20150128-2012-06.out
+RIT.20150128-2012-07.out
+RIT.20150128-2012-08.out
+RIT.20150128-2012-09.out
+RIT.20150128-2012-10.out
+RIT.20150128-2012-11.out
+RIT.20150128-2012-12.out
+RIT.20150128-2013-01.out
+RIT.20150128-2013-02.out
+RIT.20150128-2013-03.out
+RIT.20150128-2013-04.out
+RIT.20150128-2013-05.out
+RIT.20150128-2013-06.out
+RIT.20150128-2013-07.out
+RIT.20150128-2013-08.out
+RIT.20150128-2013-09.out
+RIT.20150128-2013-10.out
+RIT.20150128-2013-11.out
+RIT.20150128-2013-12.out
+RIT.20150128-2014-01.out
+RIT.20150128-2014-02.out
+RIT.20150128-2014-03.out
+RIT.20150128-2014-04.out
+RIT.20150128-2014-05.out
+RIT.20150128-2014-06.out
+RIT.20150128-2014-07.out
+RIT.20150128-2014-08.out
+RIT.20150128-2014-09.out
+RIT.20150128-2014-10.out
+RIT.20150128-2014-11.out
+RIT.20150128-2014-12.out
+RIT.20150128-2015-01.out
+RIT.20150128-2015-02.out
+RIT.20150128-2015-03.out
+
+
+check on 1/29/15   look to see the RIT is no longer delisted and look for the dividends
+and check the members
+
+1/29/15
+RIT is there now, not delisted and all of the dividends are moved over (old ones) and applied (new ones)
+checking the member   tymer  
+
+LV fund
+LEDGER
+Date	Start	Change	End	Type
+Aug 15, 2002		1500	1500	Buy
+Oct 23, 2002	1500	-1500		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Aug 15, 2002	1,500	$75.00	$22,686.00	$15.12
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 23, 2002	1,500	$75.00	$0.56	$18,513.44	$12.34
+ 	 	 
+
+
+this one is done, closing it out

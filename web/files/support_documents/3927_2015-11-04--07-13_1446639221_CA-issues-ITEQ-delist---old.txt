@@ -1,0 +1,212 @@
+ITEQ
+date:   11/3/15
+ticker:   ITEQ
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:ITEQ INC  Symbol:ITEQ
+Date: 11/03/2015
+
+2 users found
+
+1	bcolborne	sroselius
+
+database
+select distinct stockkey from mstockalias where symbol= 'ITEQ';  
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 450430103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ITEQ INC
+>     PRIMARYKEY = X'e95f0e21390a9c4fc0a80116'
+>       STOCKKEY = X'e95e0e21390a9c4fc0a80116'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mstockalias where stockkey=X'e95e0e21390a9c4fc0a80116'     order by "date";
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ITEQ'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ITEQ
+>>>> dbtool started at 2015-11-03 19:36:04 -0500
+stock: ITEQ
+  PK       : [E95E0E21390A9C4FC0A80116]
+  companyID: [2280]
+  symbol   : [ITEQ]
+  name     : [ITEQ INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-03 19:36:04 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2280
+2001-06-27 (Wed) [177]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:6900 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+2001-06-28 (Thu) [178]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:500 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+2001-06-29 (Fri) [179]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:1600 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+2001-06-30 (Sat) [180]: <WEEKEND>
+2001-07-01 (Sun) [181]: <WEEKEND>
+2001-07-02 (Mon) [182]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:133000 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+2001-07-03 (Tue) [183]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:6000 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'e95e0e21390a9c4fc0a80116' and shares > 0 order by closed; 
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2000-10-19 18:38:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 23820.000000
+>   CURRENTORDER = X'fa72603339a55ec7c0a801e1'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'11ed4cff399b0054c0a80118'
+>       MODIFIED = NULL
+>            NET = 240977.750000
+>         OPENED = TIMESTAMP '2000-08-24 13:43:35.000000'
+>          PRICE = 0.505831
+>     PRIMARYKEY = X'fa67603339a55ec7c0a801e1'
+>         SECFEE = 0.000000
+>         SHARES = 476400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'e95e0e21390a9c4fc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'e95e0e21390a9c4fc0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e95e0e21390a9c4fc0a80116'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e95e0e21390a9c4fc0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 2 members who hold this stock
+quantum:  nothing
+last ticket:  2000-10-19 PRICE = 0.505831
+last price:  2001-07-03 (Tue) [183]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:6000 TSO:0 A:0.0300 R:1.0000 CA:0.0000
+
+going with 20010703 0.03 
+
+/Marketocracy/bin/cahelper -symbol  ITEQ  -effective 20010703 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.03 -acqShare 0 -purchaser ITEQ   >& /Users/build/caout/ITEQ.20151103-DELIST.out 
+ITEQ.20151103-DELIST.out
+stocks1:~/caout build$ tail -f ITEQ.20151103-DELIST.out
+D: (11-03 19:59:46.862) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-03 20:00:40.129) cahelper started on 2015-11-03 20:00:40 -0500
+
+D: (11-03 20:00:40.420) There are [0] open tickets for ITEQ on 20010703
+D: (11-03 20:00:40.667) StockFileLoad Version:4.0
+D: (11-03 20:00:40.667) Loading Stock Data
+D: (11-03 20:01:58.637) Building Lookup Index
+D: (11-03 20:02:09.735) Finished Building Index
+D: (11-03 20:02:17.835) Finished Loading Stock Data
+D: (11-03 20:02:17.876) Connection to 192.168.111.172:6666 succeeded
+D: (11-03 20:02:17.905) {
+    "ACQUIRED_STOCK" = ITEQ; 
+    "ACQUIRING_STOCK" = "ITEQ_FIX"; 
+    AMOUNT = 0.03; 
+    APPLIED = 1; 
+    DATE = 20010703; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ITEQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-03 20:02:19.417) SUCCESS
+D: (11-03 20:02:19.417) cahelper finished 2015-11-03 20:02:19 -0500
+Check the results 
+select * from mstockalias where stockkey= X'e95e0e21390a9c4fc0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 450430103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ITEQ INC
+>     PRIMARYKEY = X'e95f0e21390a9c4fc0a80116'
+>       STOCKKEY = X'e95e0e21390a9c4fc0a80116'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 450430103
+>           DATE = TIMESTAMP '2001-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ITEQ INC
+>     PRIMARYKEY = X'4bc433c2563958b8c0a86fab'
+>       STOCKKEY = X'e95e0e21390a9c4fc0a80116'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'4bc433c2563958b8c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'4bc433c2563958b8c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ITEQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.030000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151103:080040
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-07-03 00:00:00.000000'
+>         BB_IDENTIFIER = ITEQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ITEQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-07-03 00:00:00.000000'
+>            PRIMARYKEY = X'4bbe33c2563958b8c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'4bbe33c2563958b8c0a86fab';
+> Row 1:
+>   _C001 = 2.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'4bbe33c2563958b8c0a86fab'));
+there are 2 fundkeys, save to CA issues ITEQ fundkeys.txt
+
+For Beta case
+ITEQ (as ITEQ INC) no longer trades but is still active on our site - need to delist preventing new ITEQ from listing
+
+check on 11/4/15   invalidate funds
+check MAdmin  clear
+
+ITEQ has been acquired	right curve
+ 	 	
+ITEQ INC acquired by a private company on 2001-07-03 00:00:00.
+ 	 	 
+
+invalidate, reprice and close 
+
+
+
+

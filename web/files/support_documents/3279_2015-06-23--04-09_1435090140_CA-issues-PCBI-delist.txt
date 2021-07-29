@@ -1,0 +1,284 @@
+date:  6/22/15
+ticker: PCBI
+
+yahoo:   nothing
+
+
+quantum:
+Peoples Community Bancorp, Inc.
+Ticker Symbol: PCBI*     CUSIP: 71083E107     Exchange: OTOTC
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 7/11/12
+
+oursite:
+Symbol: PCBI 	Name: PEOPLES COMMUNITY BANCORP 	Price: $0.00
+Volume: 	Sector: Financials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+listing changes for PCBI 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Aug 14, 2009 	NASDAQ 	UQ 	OTCBB-OTHER 	UV 	Change in the exchange that PCBI trades on from NASDAQ to OTCBB-OTHER
+  	  	 
+left curve 	  cash dividends paid by PCBI 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+14 Jun 04 	15 Jun 04 	30 Jun 04 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Sep 04 	15 Sep 04 	30 Sep 04 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Dec 04 	15 Dec 04 	31 Dec 04 	4 	$0.15 	Dividend amount:0.15 per share.
+16 Dec 04 	15 Dec 04 	31 Dec 04 	4 	$0.15 	Dividend amount:0.15 per share.
+11 Mar 05 	15 Mar 05 	31 Mar 05 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Jun 05 	15 Jun 05 	30 Jun 05 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Sep 05 	15 Sep 05 	30 Sep 05 	4 	$0.15 	Dividend amount:0.15 per share.
+19 Dec 05 	21 Dec 05 	30 Dec 05 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Mar 06 	15 Mar 06 	31 Mar 06 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Jun 06 	15 Jun 06 	30 Jun 06 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Sep 06 	15 Sep 06 	30 Sep 06 	4 	$0.15 	Dividend amount:0.15 per share.
+14 Dec 06 	18 Dec 06 	30 Dec 06 	4 	$0.15 	Dividend amount:0.15 per share.
+15 Mar 07 	19 Mar 07 	30 Mar 07 	4 	$0.15 	Dividend amount:0.15 per share.
+13 Jun 07 	15 Jun 07 	30 Jun 07 	4 	$0.15 	Dividend amount:0.15 per share.
+12 Sep 07 	15 Sep 07 	30 Sep 07 	4 	$0.15 	Dividend amount:0.15 per share.
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:PEOPLES COMMUNITY BANCORP  Symbol:PCBI
+Date: 06/22/2015
+
+9 users found
+
+1	guich	jmcgraw2	jsavey	jstires	kerzha	kidbiz	mage53	mcgraw1	reveille
+
+database
+select distinct stockkey from mstockalias where symbol= 'PCBI';  
+> Row 1:
+>   STOCKKEY = X'938910ac390c6d80c0a8015c'
+
+select * from mstockalias where stockkey= X'938910ac390c6d80c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71086E107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEOPLES COMMUNITY BANCORP
+>     PRIMARYKEY = X'938a10ac390c6d80c0a8015c'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>         SYMBOL = PCBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71086E107
+>           DATE = TIMESTAMP '2009-08-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEOPLES COMMUNITY BANCORP
+>     PRIMARYKEY = X'29aa04e84a85f276c0a80146'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>         SYMBOL = PCBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PCBI'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PCBI
+>>>> dbtool started at 2015-06-22 13:36:34 -0400
+stock: PCBI
+  PK       : [938910AC390C6D80C0A8015C]
+  companyID: [7262]
+  symbol   : [PCBI]
+  name     : [PEOPLES COMMUNITY BANCORP]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+stock: PCBI
+  PK       : [938910AC390C6D80C0A8015C]
+  companyID: [7262]
+  symbol   : [PCBI]
+  name     : [PEOPLES COMMUNITY BANCORP]
+  date     : [2009-08-14 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-22 13:36:34 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7262
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+2012-04-17 (Tue) [4124]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+2012-04-18 (Wed) [4125]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+2012-04-19 (Thu) [4126]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+2012-04-20 (Fri) [4127]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'938910ac390c6d80c0a8015c'  and shares > 0 order by closed; 
+> Row 74:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-07-26 14:01:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.403123
+>   CURRENTORDER = X'9ac26e9b4c2b77a0c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a3c4036f3b6c1d60c0a80118'
+>       MODIFIED = NULL
+>            NET = 7.659337
+>         OPENED = TIMESTAMP '2010-06-30 12:58:08.000000'
+>          PRICE = 0.004298
+>     PRIMARYKEY = X'9ac06e9b4c2b77a0c0a80134'
+>         SECFEE = 0.010000
+>         SHARES = 1782.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = bgrueneberg@yahoo.com
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'938910ac390c6d80c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'938910ac390c6d80c0a8015c'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'938910ac390c6d80c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 9 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 7/11/12
+last ticket:  2010-07-26   0.004298
+last price:  2012-04-20 (Fri) [4127]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4844 A:0.0001 R:1.0000 CA:0.7500
+
+going with 20120420  0.0001
+
+
+/Marketocracy/bin/cahelper -symbol  PCBI  -effective  20120420 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0001 -acqShare 0 -purchaser PCBI   >& /Users/build/caout/PCBI.20150622-DELIST.out
+PCBI.20150622-DELIST.out
+stocks:~/caout build$ tail -f PCBI.20150622-DELIST.out
+D: (06-22 13:39:50.960) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-22 13:40:16.083) cahelper started on 2015-06-22 13:40:16 -0400
+
+D: (06-22 13:40:16.307) There are [0] open tickets for PCBI on 20120420
+D: (06-22 13:40:16.801) StockFileLoad Version:4.0
+D: (06-22 13:40:16.802) Loading Stock Data
+D: (06-22 13:40:56.230) Building Lookup Index
+D: (06-22 13:41:01.262) Finished Building Index
+D: (06-22 13:41:04.990) Finished Loading Stock Data
+D: (06-22 13:41:05.110) Connection to 192.168.111.172:6666 succeeded
+D: (06-22 13:41:05.535) {
+    "ACQUIRED_STOCK" = PCBI; 
+    "ACQUIRING_STOCK" = "PCBI_FIX"; 
+    AMOUNT = 0.0001; 
+    APPLIED = 1; 
+    DATE = 20120420; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PCBI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-22 13:41:07.389) SUCCESS
+D: (06-22 13:41:07.389) cahelper finished 2015-06-22 13:41:07 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'938910ac390c6d80c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71086E107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEOPLES COMMUNITY BANCORP
+>     PRIMARYKEY = X'938a10ac390c6d80c0a8015c'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>         SYMBOL = PCBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71086E107
+>           DATE = TIMESTAMP '2009-08-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEOPLES COMMUNITY BANCORP
+>     PRIMARYKEY = X'29aa04e84a85f276c0a80146'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>         SYMBOL = PCBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71086E107
+>           DATE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEOPLES COMMUNITY BANCORP
+>     PRIMARYKEY = X'0530481155884880c0a86f92'
+>       STOCKKEY = X'938910ac390c6d80c0a8015c'
+>         SYMBOL = PCBI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'0530481155884880c0a86f92';
+> Row 1:
+>              ALIASKEY = X'0530481155884880c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PCBI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150622:014016
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>         BB_IDENTIFIER = PCBI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PCBI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>            PRIMARYKEY = X'052a481155884880c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'052a481155884880c0a86f92';
+> Row 1:
+>   _C001 = 21.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'052a481155884880c0a86f92'));
+there are 21 fundkeys, save to CA issues PBI fundkeys.txt
+
+For Beta case
+PCBI no longer trades but is still active on our site - need to delist 
+
+check on 6/23/15   invalidate funds
+check MAdmin
+
+6/23/15
+ PCBI has been acquired 	right curve
+  	  	
+PEOPLES COMMUNITY BANCORP acquired by a private company on 2012-04-20 00:00:00.
+  	  	 
+
+MAdmin  no one  good
+
+invalidate
+done
+reprice
+2012-04-20   
+
+closing this out 

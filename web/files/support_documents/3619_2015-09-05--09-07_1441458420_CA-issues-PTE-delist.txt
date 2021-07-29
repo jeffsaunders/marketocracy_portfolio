@@ -1,0 +1,285 @@
+case 3619
+date:  9/1/15
+ticker:   PTE
+
+yahoo:
+
+quantum:
+PowerShares Dynamic Telecommunications & Wireless Portfolio
+Ticker Symbol: PTE*     CUSIP: 73935X765     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   Managed Index ETF
+* NOTE: This security is no longer trading as of 12/14/10
+
+oursite:
+Symbol: PTE	Name: Powershares Dynamic Telecom & Wireless Portfolio	Price: $16.38
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Powershares Dynamic Telecom & Wireless Portfolio  Symbol:PTE
+Date: 09/01/2015
+
+10 users found
+
+1	bgitarts	buffetfan	carderock	coaster	cokaveman	kpearson	marcorod70	originalaborigine	pbradford	reveille	 	 	 	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'PTE';  
+> Row 1:
+>   STOCKKEY = X'e8d609fd449c3475c0a80146'
+select * from mstockalias where stockkey=X'e8d609fd449c3475c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X765
+>           DATE = TIMESTAMP '2005-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Powershares Dynamic Telecom & Wireless Portfolio
+>     PRIMARYKEY = X'e8d709fd449c3475c0a80146'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>         SYMBOL = PTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X765
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares Dynamic Telecom & Wireless Portfolio
+>     PRIMARYKEY = X'13963dca494c7f90c0a8013c'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>         SYMBOL = PTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PTE'  order by BB_EFFECTIVE;
+> Row 10:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UP|CP_TKR|PTE|CP_DELIST_REASON|26|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49000051
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 10064423
+>        BB_COMPANYNAME = PowerShares Dynamic Telecommunications & Wireless Portfolio
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = PTE     US Equity
+>             BB_ISSUED = TIMESTAMP '2010-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = PTE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ff030ee24cbccaedc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PTE
+>>>> dbtool started at 2015-09-02 02:01:42 -0400
+stock: PTE
+  PK       : [E8D609FD449C3475C0A80146]
+  companyID: [16276]
+  symbol   : [PTE]
+  name     : [Powershares Dynamic Telecom & Wireless Portfolio]
+  date     : [2005-12-06 00:00:00]
+  status   : [Active]
+stock: PTE
+  PK       : [E8D609FD449C3475C0A80146]
+  companyID: [16276]
+  symbol   : [PTE]
+  name     : [Powershares Dynamic Telecom & Wireless Portfolio]
+  date     : [2008-11-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-02 02:01:43 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16276
+2010-12-02 (Thu) [3622]: O:15.6600 H:15.8799 L:15.6600 C:15.8799 V:18731 TSO:1399 A:15.8799 R:1.0000 CA:0.8635
+2010-12-03 (Fri) [3623]: O:15.8700 H:16.0000 L:15.8700 C:15.9930 V:4932 TSO:1399 A:15.9930 R:1.0000 CA:0.8635
+2010-12-04 (Sat) [3624]: <WEEKEND>
+2010-12-05 (Sun) [3625]: <WEEKEND>
+2010-12-06 (Mon) [3626]: O:16.0500 H:16.0500 L:16.0200 C:16.0200 V:680 TSO:1399 A:16.0200 R:1.0000 CA:0.8635
+2010-12-07 (Tue) [3627]: O:16.1000 H:16.1301 L:16.0400 C:16.0450 V:6374 TSO:1399 A:16.0450 R:1.0000 CA:0.8635
+2010-12-08 (Wed) [3628]: O:16.1400 H:16.1400 L:16.0700 C:16.0870 V:5893 TSO:1399 A:16.0870 R:1.0000 CA:0.8635
+2010-12-09 (Thu) [3629]: O:16.1000 H:16.1119 L:16.1000 C:16.1030 V:1209 TSO:1399 A:16.1030 R:1.0000 CA:0.8635
+2010-12-10 (Fri) [3630]: O:16.2600 H:16.2600 L:16.2300 C:16.2301 V:2103 TSO:1399 A:16.2301 R:1.0000 CA:0.8635
+2010-12-11 (Sat) [3631]: <WEEKEND>
+2010-12-12 (Sun) [3632]: <WEEKEND>
+2010-12-13 (Mon) [3633]: O:16.3800 H:16.4399 L:16.3600 C:16.3640 V:13085 TSO:1399 A:16.3640 R:1.0000 CA:0.8635
+2010-12-14 (Tue) [3634]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635  <---
+2010-12-15 (Wed) [3635]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-16 (Thu) [3636]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-17 (Fri) [3637]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-18 (Sat) [3638]: <WEEKEND>
+2010-12-19 (Sun) [3639]: <WEEKEND>
+2010-12-20 (Mon) [3640]: O:16.3800 H:16.3800 L:16.3800 C:16.3800 V:0 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-21 (Tue) [3641]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-22 (Wed) [3642]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+2010-12-23 (Thu) [3643]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'e8d609fd449c3475c0a80146' and shares > 0 order by closed; 
+> Row 70:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-11-23 13:56:00.000000'
+>        COMMENT = 
+>     COMMISSION = 7.500000
+>   CURRENTORDER = X'927b51384cec0072c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98671e253cd2f094c0a801e0'
+>       MODIFIED = NULL
+>            NET = 2311.860050
+>         OPENED = TIMESTAMP '2010-11-23 12:57:06.000000'
+>          PRICE = 15.412400
+>     PRIMARYKEY = X'927951384cec0072c0a80135'
+>         SECFEE = 0.040000
+>         SHARES = 150.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'e8d609fd449c3475c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e8d609fd449c3475c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e8d609fd449c3475c0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist: 2010-12-15
+there are 10 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 12/14/10
+last ticket: 2010-11-23   PRICE = 15.412400
+last price:  2010-12-14 (Tue) [3634]: O:16.4500 H:16.4700 L:16.3500 C:16.3800 V:25619 TSO:1399 A:16.3800 R:1.0000 CA:0.8635  <---
+
+going with 20101214  16.38
+
+
+/Marketocracy/bin/cahelper -symbol  PTE  -effective 20101214 -type ACQUIS -exchange UN -acqType 1 -acqCash 16.38 -acqShare 0 -purchaser PTE   >& /Users/build/caout/PTE.20150902-DELIST.out
+PTE.20150902-DELIST.out
+stocks:~/caout build$ tail -f PTE.20150902-DELIST.out
+D: (09-02 08:49:36.194) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-02 08:50:33.799) cahelper started on 2015-09-02 08:50:33 -0400
+
+D: (09-02 08:50:34.027) There are [0] open tickets for PTE on 20101214
+D: (09-02 08:50:34.405) StockFileLoad Version:4.0
+D: (09-02 08:50:34.405) Loading Stock Data
+D: (09-02 08:52:16.036) Building Lookup Index
+D: (09-02 08:52:28.452) Finished Building Index
+D: (09-02 08:52:38.381) Finished Loading Stock Data
+D: (09-02 08:52:38.437) Connection to 192.168.111.172:6666 succeeded
+D: (09-02 08:52:38.849) {
+    "ACQUIRED_STOCK" = PTE; 
+    "ACQUIRING_STOCK" = "PTE_FIX"; 
+    AMOUNT = 16.379999; 
+    APPLIED = 1; 
+    DATE = 20101214; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PTE_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-02 08:52:40.824) SUCCESS
+D: (09-02 08:52:40.824) cahelper finished 2015-09-02 08:52:40 -0400
+Check the results 
+select * from mstockalias where stockkey= X'e8d609fd449c3475c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X765
+>           DATE = TIMESTAMP '2005-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Powershares Dynamic Telecom & Wireless Portfolio
+>     PRIMARYKEY = X'e8d709fd449c3475c0a80146'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>         SYMBOL = PTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X765
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares Dynamic Telecom & Wireless Portfolio
+>     PRIMARYKEY = X'13963dca494c7f90c0a8013c'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>         SYMBOL = PTE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 73935X765
+>           DATE = TIMESTAMP '2010-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Powershares Dynamic Telecom & Wireless Portfolio
+>     PRIMARYKEY = X'0a28700955e6f09ac0a86f92'
+>       STOCKKEY = X'e8d609fd449c3475c0a80146'
+>         SYMBOL = PTE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'0a28700955e6f09ac0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'0a28700955e6f09ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PTE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|16.379999|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150902:085033
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = PTE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PTE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'0a22700955e6f099c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'0a22700955e6f099c0a86f92';
+> Row 1:
+>   _C001 = 15.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'0a22700955e6f099c0a86f92'));
+there are XXX fundkeys, save to CA issues PTE fundkeys.txt
+
+For Beta case
+PTE no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin  clear
+
+9/5/15 
+PTE has been acquired	right curve
+ 	 	
+Powershares Dynamic Telecom & Wireless Portfolio acquired by a private company on 2010-12-14 00:00:00.
+ 	 	 
+invalidate, reprice close 
+

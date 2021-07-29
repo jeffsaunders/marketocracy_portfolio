@@ -1,0 +1,291 @@
+
+date:   7/30/15
+ticker:   TRLY
+
+yahoo:
+
+quantum:
+Terra Networks, S.A.
+Ticker Symbol: TRLY*     CUSIP: Unknown*      Exchange: OTOTC
+* If you know the CUSIP number for this security, please let us know.
+* Symbol changed!! New symbol: TRRA as of 11/16/04
+
+Company's Online Profile
+BUSINESS:  Terra Lycos, S.A. is one of the most popular Internet networks in the U.S., Europe and Asia, is the leading portal to Spanish- and Portuguese-speaking markets, and is the number three Intenet Service Provider in the world.
+
+Notes:  Created by the combination of Terra Networks and Lycos in October 2000.
+this is not up to date
+
+
+
+oursite:
+Symbol: TRLY 	Name: TERRA NETWORKS S.A. ADR 	Price: $3.62
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Small Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+
+CAs
+symbol changes for TRLY 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+31 Oct 00 	TRRA 	TRLY 	Change in the ticker (trading) symbol from TRRA to TRLY
+  	  	 
+left curve 	  cash dividends paid by TRLY 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+12 Sep 00 	12 Sep 00 	12 Sep 00 	N/A 	$0.08 	Dividend amount:0.08 per share.
+  	  	 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:TERRA NETWORKS S.A. ADR  Symbol:TRLY
+Date: 07/30/2015
+
+109 users found
+
+1	4tigres	aarmstrong	aprossner	arvalenzuela	astafford	azaharias	bblock	bigglesworth	blundgren	boris78
+2	bounty	bstewart1	btaylor	callen	ccooper	centurybull	cheil36	chimp98percent	cortinah	d3
+3	darktrader	davidwdover	ddownes	dfoster	dlester	dmccusker	doleson	dpavic	drenn	eliepano
+4	fernwood68	gbarbero	gbenedict	gdell	gfontana	glamirand2	globalmarkets	go_stanford	gr8pix	gwaterman
+5	hammersmn	infernotk	jacarroll	jcaplan	jcarraher	jdberia	jet	jfalkowski1	jgoins	jhoffman2
+6	jlafarga	jmarquart	jmartin	jmonsante	jonwu	jpossing	jrobinson2	jroca	jrosenthal	jtmuncey
+7	jude	kbenavides	kswinehart	ktitterington	lberry	lexrex	lgolden	mboling	mcasey	mecstriker
+8	michael.keane	mihai	noodlepuck	ntyson	nwahlberg@charter.net	ocsupertones	oliver	optionseller	outsidetrader	pclark1
+9	quimix	rajneeshba	randominvestor	rca	rdhoward	rdixon	rdunn	rellswor	rgauri	rgrill
+10	rlada	rribeiro1	ruia	sahmed2	sangeeth	scastello	skang	slavas	sohony	sopuga
+11	spsmyk	tashanash	tdsbu	techmaster	tgenger	ttindall	tv_weber	vladimirbel	wshamp	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'TRLY';  
+> Row 1:
+>   STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+
+select * from mstockalias where stockkey=X'9d1810ac390c6d97c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88100W103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TERRA NETWORKS S.A. ADR
+>     PRIMARYKEY = X'9d1910ac390c6d97c0a8015c'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>         SYMBOL = TRRA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88100W103
+>           DATE = TIMESTAMP '2000-10-31 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TERRA NETWORKS S.A. ADR
+>     PRIMARYKEY = X'd43f357f3a001788c0a80114'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>         SYMBOL = TRLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = SV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TRLY'  order by BB_EFFECTIVE;
+nothing 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TRLY
+>>>> dbtool started at 2015-07-30 12:29:59 -0400
+stock: TRLY
+  PK       : [9D1810AC390C6D97C0A8015C]
+  companyID: [7930]
+  symbol   : [TRLY]
+  name     : [TERRA NETWORKS S.A. ADR]
+  date     : [2000-10-31 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-30 12:30:00 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7930
+2004-11-05 (Fri) [1404]: O:3.5500 H:3.6500 L:3.5500 C:3.6100 V:16900 TSO:0 A:3.6100 R:1.0000 CA:0.0000
+2004-11-06 (Sat) [1405]: <WEEKEND>
+2004-11-07 (Sun) [1406]: <WEEKEND>
+2004-11-08 (Mon) [1407]: O:3.6000 H:3.6200 L:3.5800 C:3.5800 V:19700 TSO:0 A:3.5800 R:1.0000 CA:0.0000
+2004-11-09 (Tue) [1408]: O:3.6000 H:3.6490 L:3.6000 C:3.6300 V:26200 TSO:0 A:3.6300 R:1.0000 CA:0.0000
+2004-11-10 (Wed) [1409]: O:3.6300 H:3.6590 L:3.6000 C:3.6200 V:23300 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+2004-11-11 (Thu) [1410]: O:3.5700 H:3.6400 L:3.5700 C:3.6400 V:8900 TSO:0 A:3.6400 R:1.0000 CA:0.0000
+2004-11-12 (Fri) [1411]: O:3.6000 H:3.6900 L:3.6000 C:3.6100 V:13800 TSO:0 A:3.6100 R:1.0000 CA:0.0000
+2004-11-13 (Sat) [1412]: <WEEKEND>
+2004-11-14 (Sun) [1413]: <WEEKEND>
+2004-11-15 (Mon) [1414]: O:3.6000 H:3.6210 L:3.6000 C:3.6200 V:31500 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+2004-11-16 (Tue) [1415]: O:3.6200 H:3.6200 L:3.6200 C:3.6200 V:0 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+2004-11-17 (Wed) [1416]: O:3.6200 H:3.6200 L:3.6200 C:3.6200 V:0 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+2004-11-18 (Thu) [1417]: O:3.6200 H:3.6200 L:3.6200 C:3.6200 V:0 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'9d1810ac390c6d97c0a8015c' and shares > 0 order by closed; 
+> Row 707:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2004-11-09 15:53:00.000000'
+>        COMMENT = 
+>     COMMISSION = 680.500000
+>   CURRENTORDER = X'd1ca41284189c27ec0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c6b85b0a3a620ac8c0a80118'
+>       MODIFIED = NULL
+>            NET = 49701.120490
+>         OPENED = TIMESTAMP '2004-11-04 00:47:42.000000'
+>          PRICE = 3.651809
+>     PRIMARYKEY = X'd1c841284189c27ec0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 13610.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9d1810ac390c6d97c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9d1810ac390c6d97c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9d1810ac390c6d97c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 109 members who hold this stock
+quantum: nothing 
+last ticket:  2004-11-09  3.651809
+last price:  2004-11-18 (Thu) [1417]: O:3.6200 H:3.6200 L:3.6200 C:3.6200 V:0 TSO:0 A:3.6200 R:1.0000 CA:0.0000
+
+going with 20041118 3.62
+
+/Marketocracy/bin/cahelper -symbol  TRLY  -effective 20041118 -type ACQUIS -exchange UN -acqType 1 -acqCash 3.62 -acqShare 0 -purchaser TRLY   >& /Users/build/caout/TRLY.20150730-DELIST.out 
+TRLY.20150730-DELIST.out
+stocks:~/caout build$ tail -f TRLY.20150730-DELIST.out
+D: (07-30 12:41:23.053) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-30 12:42:08.987) cahelper started on 2015-07-30 12:42:08 -0400
+
+D: (07-30 12:42:09.239) There are [0] open tickets for TRLY on 20041118
+D: (07-30 12:42:09.718) StockFileLoad Version:4.0
+D: (07-30 12:42:09.718) Loading Stock Data
+D: (07-30 12:43:26.604) Building Lookup Index
+D: (07-30 12:43:35.770) Finished Building Index
+D: (07-30 12:43:43.431) Finished Loading Stock Data
+D: (07-30 12:43:43.467) Connection to 192.168.111.172:6666 succeeded
+D: (07-30 12:43:43.564) >>> load new StockPrices file
+D: (07-30 12:43:43.597) <<< load new StockPrices file
+D: (07-30 12:43:43.597) >>> swap StockPrices
+D: (07-30 12:43:43.597) Obtained Stockprices swap mutex
+D: (07-30 12:43:43.598) <<< swap StockPrices
+D: (07-30 12:43:43.598) Stock prices available from 2000-05-01 to 2015-07-29
+D: (07-30 12:43:46.144) SavingChanges for position sell out 101 of 285
+D: (07-30 12:43:58.709) {
+    "ACQUIRED_STOCK" = TRLY; 
+    "ACQUIRING_STOCK" = "TRLY_FIX"; 
+    AMOUNT = 3.62; 
+    APPLIED = 1; 
+    DATE = 20041118; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TRLY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-30 12:44:12.060) SUCCESS
+D: (07-30 12:44:12.060) cahelper finished 2015-07-30 12:44:12 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'9d1810ac390c6d97c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88100W103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TERRA NETWORKS S.A. ADR
+>     PRIMARYKEY = X'9d1910ac390c6d97c0a8015c'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>         SYMBOL = TRRA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88100W103
+>           DATE = TIMESTAMP '2000-10-31 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TERRA NETWORKS S.A. ADR
+>     PRIMARYKEY = X'd43f357f3a001788c0a80114'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>         SYMBOL = TRLY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88100W103
+>           DATE = TIMESTAMP '2004-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TERRA NETWORKS S.A. ADR
+>     PRIMARYKEY = X'9911400155ba53e1c0a86f92'
+>       STOCKKEY = X'9d1810ac390c6d97c0a8015c'
+>         SYMBOL = TRLY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = SV
+
+
+select * from mcorporateaction where aliaskey =X'9911400155ba53e1c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'9911400155ba53e1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TRLY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|3.620000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150730:124208
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-11-18 00:00:00.000000'
+>         BB_IDENTIFIER = TRLY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-11-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRLY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-11-18 00:00:00.000000'
+>            PRIMARYKEY = X'990b400155ba53e0c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'990b400155ba53e0c0a86f92';
+> Row 1:
+>   _C001 = 163.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'990b400155ba53e0c0a86f92'));
+there are 163 fundkeys, save to CA issues TRLY fundkeys.txt
+
+For Beta case
+TRLY no longer trades but is still active on our site - need to delist 
+
+check on 7/31/15   invalidate funds
+check MAdmin clear 
+8/1/15  
+TRLY has been acquired 	right curve
+  	  	
+TERRA NETWORKS S.A. ADR acquired by a private company on 2004-11-18 00:00:00. 
+invalidate, reprice, and close 

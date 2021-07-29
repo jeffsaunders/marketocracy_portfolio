@@ -1,0 +1,265 @@
+date:  2/17/15
+ticker
+
+quantum:
+Benjamin Franklin Bancorp, Inc.
+Ticker Symbol: BFBC*     CUSIP: 082073107     Exchange: NNM
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 2/12/09
+
+Company's Online Profile
+BUSINESS:  Benjamin Franklin Bancorp, Inc. is the bank holding company for Benjamin Franklin Bank, a full service 
+community bank originally chartered in 1871. The Bank has eight banking locations: two in Franklin and one in 
+each of Bellingham, Foxboro, Medfield, Milford, Waltham and Newton, Massachusetts. The Bank offers a full range 
+of products and services for consumers and small to mid-sized businesses.
+Notes:  February 12, 2009 - Benjamin Franklin Bancorp, Inc., the bank holding company for Benjamin Franklin Bank, 
+announced today that at a Special Meeting of Shareholders held on February 11, 2009, Benjamin Franklin shareholders 
+voted to approve the Agreement and Plan of Merger providing for the acquisition of Benjamin Franklin by Independent 
+Bank Corp. The number of shares of Benjamin Franklin common stock voting to approve the merger agreement represented 
+approximately 95.0% of the shares voted and 72.0% of the total number of outstanding shares. The transaction is 
+subject to the approval of Independent Bank Corp. shareholders, regulatory approval and other standard conditions.
+
+oursite:
+Symbol: BFBC	Name: Benjamin Franklin Bancorp, Incorporated	Price: $11.00
+Volume:	Sector: Financials	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs:
+cash dividends paid by BFBC	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+07 Feb 07	09 Feb 07	23 Feb 07	4	$0.04	Dividend amount:0.04 per share.
+07 May 07	09 May 07	23 May 07	4	$0.06	Dividend amount:0.06 per share.
+07 May 07	09 May 07	23 May 07	4	$0.06	Dividend amount:0.06 per share.
+08 Aug 07	10 Aug 07	24 Aug 07	4	$0.06	Dividend amount:0.06 per share.
+06 Nov 07	08 Nov 07	22 Nov 07	4	$0.06	Dividend amount:0.06 per share.
+05 Feb 08	07 Feb 08	21 Feb 08	4	$0.06	Dividend amount:0.06 per share.
+06 May 08	08 May 08	22 May 08	4	$0.08	Dividend amount:0.08 per share.
+06 Aug 08	08 Aug 08	22 Aug 08	4	$0.08	Dividend amount:0.08 per share.
+06 Aug 08	08 Aug 08	22 Aug 08	4	$0.08	Dividend amount:0.08 per share.
+06 Aug 08	08 Aug 08	22 Aug 08	4	$0.08	Dividend amount:0.08 per share.
+06 Aug 08	08 Aug 08	22 Aug 08	4	$0.08	Dividend amount:0.08 per share.
+05 Nov 08	07 Nov 08	21 Nov 08	4	$0.08	Dividend amount:0.08 per share.
+06 Feb 09	10 Feb 09	24 Feb 09	4	$0.08	Dividend amount:0.08 per share.
+
+nasdaqtrader
+Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	First Date Traded
+04/05/2005	BFBC	Q	Benjamin Franklin Bancorp, Inc. Common Stock	N/A	04/05/2005
+Anticipated Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+04/04/2005	BFBC	Q	Benjamin Franklin Bancorp, Inc. Common Stock	N/A	04/05/2005 Pending SEC Release
+Issue Suspensions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+04/13/2009	BFBC	G	Benjamin Franklin Bancorp, Inc. Common Stock	N/A	04/14/2009 Acquired by Independent Bank Corp. (0.59/sh INDB)
+Issue Deletions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+04/22/2009	BFBC	G	Benjamin Franklin Bancorp, Inc. Common Stock	N/A	04/23/2009 Removed From Listing & Registration
+
+4/14/2009 acquired 0.59 / share   of INDB
+
+Look at INDB
+select distinct stockkey from mstockalias where symbol='INDB';
+> Row 1:
+>   STOCKKEY = X'e8560e21390a99a8c0a80116'
+select * from mstockalias where STOCKKEY = X'e8560e21390a99a8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 453836108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INDEPENDENT BANK(MA)
+>     PRIMARYKEY = X'e8570e21390a99a8c0a80116'
+>       STOCKKEY = X'e8560e21390a99a8c0a80116'
+>         SYMBOL = INDB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 453836108
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INDEPENDENT BANK(MA)
+>     PRIMARYKEY = X'564e150944a9cf55c0a80146'
+>       STOCKKEY = X'e8560e21390a99a8c0a80116'
+>         SYMBOL = INDB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SB
+  ok good it existed at the time of the merger 
+
+
+MAdmin
+Stock:Benjamin Franklin Bancorp, Incorporated  Symbol:BFBC
+Date: 02/17/2015
+
+4 users found
+
+1	gxm	mebear	reveille	rogdow
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'BFBC';  
+> Row 1:
+>   STOCKKEY = X'aea66c5545835237c0a80146'
+
+select * from mstockalias where stockkey= X'aea66c5545835237c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 082073107
+>           DATE = TIMESTAMP '2005-04-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Benjamin Franklin Bancorp, Incorporated
+>     PRIMARYKEY = X'aea76c5545835237c0a80146'
+>       STOCKKEY = X'aea66c5545835237c0a80146'
+>         SYMBOL = BFBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XV
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BFBC
+>>>> dbtool started at 2015-02-17 09:09:15 -0500
+stock: BFBC
+  PK       : [AEA66C5545835237C0A80146]
+  companyID: [16458]
+  symbol   : [BFBC]
+  name     : [Benjamin Franklin Bancorp, Incorporated]
+  date     : [2005-04-05 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-17 09:09:16 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16458
+2009-03-31 (Tue) [3011]: O:9.2000 H:9.6700 L:8.5900 C:8.8100 V:2433 TSO:7842 A:8.8100 R:1.0000 CA:0.0000
+2009-04-01 (Wed) [3012]: O:8.7899 H:8.7899 L:8.6800 C:8.7899 V:400 TSO:7842 A:8.7899 R:1.0000 CA:0.0000
+2009-04-02 (Thu) [3013]: O:8.5399 H:9.2500 L:8.3200 C:9.2000 V:7580 TSO:7842 A:9.2000 R:1.0000 CA:0.0000
+2009-04-03 (Fri) [3014]: O:9.4000 H:9.5600 L:9.2899 C:9.5399 V:3259 TSO:7842 A:9.5399 R:1.0000 CA:0.0000
+2009-04-04 (Sat) [3015]: <WEEKEND>
+2009-04-05 (Sun) [3016]: <WEEKEND>
+2009-04-06 (Mon) [3017]: O:9.1900 H:9.1900 L:9.1900 C:9.1900 V:200 TSO:7842 A:9.1900 R:1.0000 CA:0.0000
+2009-04-07 (Tue) [3018]: O:9.6800 H:9.6800 L:9.5900 C:9.5900 V:200 TSO:7842 A:9.5900 R:1.0000 CA:0.0000
+2009-04-08 (Wed) [3019]: O:9.3699 H:9.4000 L:9.3699 C:9.3699 V:3000 TSO:7842 A:9.3699 R:1.0000 CA:0.0000
+2009-04-09 (Thu) [3020]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000  <--- 
+2009-04-10 (Fri) [3021]: <HOLIDAY>
+2009-04-11 (Sat) [3022]: <WEEKEND>
+2009-04-12 (Sun) [3023]: <WEEKEND>
+2009-04-13 (Mon) [3024]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+2009-04-14 (Tue) [3025]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+2009-04-15 (Wed) [3026]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+2009-04-16 (Thu) [3027]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+2009-04-17 (Fri) [3028]: O:9.6500 H:11.0000 L:9.6500 C:11.0000 V:4965 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+2009-04-18 (Sat) [3029]: <WEEKEND>
+2009-04-19 (Sun) [3030]: <WEEKEND>
+2009-04-20 (Mon) [3031]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:7842 A:11.0000 R:1.0000 CA:0.0000
+
+
+apply the acquis
+terms: 4/14/2009 acquired 0.59 / share   of INDB
+
+/Marketocracy/bin/cahelper -symbol  BFBC  -effective 20090414 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 0.59 -purchaser INDB   >& /Users/build/caout/BFBC.20150217-ACQUIS-INDB.out
+BFBC.20150217-ACQUIS-INDB.out
+stocks:~/caout build$ tail -f BFBC.20150217-ACQUIS-INDB.out
+D: (02-17 09:16:35.003) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-17 09:17:10.173) cahelper started on 2015-02-17 09:17:10 -0500
+
+D: (02-17 09:17:11.410) There are [0] open tickets for BFBC on 20090414
+D: (02-17 09:17:16.625) StockFileLoad Version:3.0
+D: (02-17 09:17:16.625) Loading Stock Data
+D: (02-17 09:17:58.095) Building Lookup Index
+D: (02-17 09:18:02.266) Finished Building Index
+D: (02-17 09:18:03.248) Finished Loading Stock Data
+D: (02-17 09:18:03.380) Connection to 192.168.111.157:6666 succeeded
+D: (02-17 09:18:03.800) {
+    "ACQUIRED_STOCK" = BFBC; 
+    "ACQUIRING_STOCK" = INDB; 
+    AMOUNT = 0.59; 
+    APPLIED = 1; 
+    DATE = 20090414; 
+    FUNDS = (
+        "reveille/Reveille's Mutual Fund2", 
+        "tmayoras/Mayoras Mutual Conversion Fund", 
+        "mebear/fund no. 1", 
+        "rogdow/rogdow's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "gxm/Gap Up"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = INDB; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-17 09:18:05.809) SUCCESS
+D: (02-17 09:18:05.809) cahelper finished 2015-02-17 09:18:05 -0500
+
+select * from mstockalias where stockkey= X'aea66c5545835237c0a80146' order by mstockalias.date;
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 082073107
+>           DATE = TIMESTAMP '2005-04-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Benjamin Franklin Bancorp, Incorporated
+>     PRIMARYKEY = X'aea76c5545835237c0a80146'
+>       STOCKKEY = X'aea66c5545835237c0a80146'
+>         SYMBOL = BFBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 082073107
+>           DATE = TIMESTAMP '2009-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Benjamin Franklin Bancorp, Incorporated
+>     PRIMARYKEY = X'e50c685154e34d9bc0a86f92'
+>       STOCKKEY = X'aea66c5545835237c0a80146'
+>         SYMBOL = BFBC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40102010
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey = X'e50c685154e34d9bc0a86f92';
+> Row 1:
+>              ALIASKEY = X'e50c685154e34d9bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BFBC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.590000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150217:091710
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-04-14 00:00:00.000000'
+>         BB_IDENTIFIER = INDB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-04-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = INDB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-04-14 00:00:00.000000'
+>            PRIMARYKEY = X'c882685154e34d66c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'c882685154e34d66c0a86f92';
+> Row 1:
+>   _C001 = 12.000000
+
+
+good - this is done  check on 2/18/15 for BFBC to be applied by INDB
+2/18/15 - this acquis is there closing this out 

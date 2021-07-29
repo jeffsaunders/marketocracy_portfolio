@@ -1,0 +1,779 @@
+date:  8/23/15
+tkcer: FNF
+
+We have a collision on our site:
+real world:
+Yahoo
+Fidelity National Financial, Inc. (FNF) -NYSE   Watchlist
+38.31 Down 0.57(1.47%) Aug 21, 4:02PM EDT
+After Hours : 38.31 0.00 (0.00%) Aug 21, 4:34PM EDT
+
+Add to Portfolio
+Prev Close:	38.88
+Open:	38.61
+Bid:	38.34 x 2300
+Ask:	38.35 x 800
+1y Target Est:	44.71
+Beta:	1.06
+Earnings Date:	Oct 27 - Nov 2 (Est.)
+Day's Range:	38.31 - 38.94
+52wk Range:	25.65 - 40.25
+Volume:	1,421,537
+Avg Vol (3m):	1,133,530
+Market Cap:	13.64B
+P/E (ttm):	14.85
+EPS (ttm):	2.58
+Div & Yield:	0.84 (2.20%
+
+select distinct stockkey from mstockalias where symbol='FNF';
+
+> Row 1:
+>   STOCKKEY = X'12d30e21390b02b2c0a80116'
+> Row 2:
+>   STOCKKEY = X'38aa01f84355ae26c0a80146'
+> Row 3:
+>   STOCKKEY = X'2cee05e453a8b276c0a86f92'
+
+there are three
+************************************************************
+> FNF 1:
+>   STOCKKEY = X'12d30e21390b02b2c0a80116'
+COMPANYID = 4933
+list: 2000-04-29
+delist: 2006-11-09
+************************************************************
+select * from mstock where primarykey=X'12d30e21390b02b2c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'a8700de74637a840c0a8013c'
+>                NAME = FIDELITY NATL FINL
+>          PRIMARYKEY = X'12d30e21390b02b2c0a80116'
+>              SYMBOL = FNF
+>           COMPANYID = 4933
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-77a7
+select * from mstockalias where stockkey=X'12d30e21390b02b2c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIDELITY NATL FINL
+>     PRIMARYKEY = X'12d40e21390b02b2c0a80116'
+>       STOCKKEY = X'12d30e21390b02b2c0a80116'
+>         SYMBOL = FNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2006-11-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FIDELITY NATL FINL
+>     PRIMARYKEY = X'a8700de74637a840c0a8013c'
+>       STOCKKEY = X'12d30e21390b02b2c0a80116'
+>         SYMBOL = FNF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'a8700de74637a840c0a8013c';
+> Row 1:
+>              ALIASKEY = X'a8700de74637a840c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FNF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|103.000000|CP_CASH_FLAG|N.A.|CP_SH|0.537410|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070501:043725
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-11-09 00:00:00.000000'
+>         BB_IDENTIFIER = FIS     UN Equity
+>             BB_ISSUED = TIMESTAMP '2006-11-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FIS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-11-09 00:00:00.000000'
+>            PRIMARYKEY = X'b1300de74637a505c0a8013c'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'b1300de74637a505c0a8013c';
+> Row 1:
+>   _C001 = 1417.000000
+************************************************************
+> FNF 2:
+>   STOCKKEY = X'38aa01f84355ae26c0a80146'
+COMPANYID = 15711
+list: 2005-10-18
+delist: 2014-06-30  (me)
+************************************************************
+select * from mstock where primarykey=X'38aa01f84355ae26c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'9bda15c8558cc75ac0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'38aa01f84355ae26c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 15711
+>   WINDOWIDENTITYKEY = NULL
+select * from mstockalias where stockkey=X'38aa01f84355ae26c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R105
+>           DATE = TIMESTAMP '2005-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Fidelity National Title Group
+>     PRIMARYKEY = X'38ab01f84355ae26c0a80146'
+>       STOCKKEY = X'38aa01f84355ae26c0a80146'
+>         SYMBOL = FNT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2006-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Fidelity National Title Group
+>     PRIMARYKEY = X'41c35bd045553d2ac0a80146'
+>       STOCKKEY = X'38aa01f84355ae26c0a80146'
+>         SYMBOL = FNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2006-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Fidelity National Financial In
+>     PRIMARYKEY = X'40625bdb45553d63c0a80146'
+>       STOCKKEY = X'38aa01f84355ae26c0a80146'
+>         SYMBOL = FNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2014-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Fidelity National Financial In
+>     PRIMARYKEY = X'9bda15c8558cc75ac0a86f92'
+>       STOCKKEY = X'38aa01f84355ae26c0a80146'
+>         SYMBOL = FNF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40301040
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'9bda15c8558cc75ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'9bda15c8558cc75ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FNF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|32.759998|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150625:113029
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = FNF_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FNF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'9bd315c8558cc755c0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'9bd315c8558cc755c0a86f92';
+> Row 1:
+>   _C001 = 958.000000
+************************************************************
+> FNF 3:
+>   STOCKKEY = X'2cee05e453a8b276c0a86f92'
+COMPANYID = 26482
+************************************************************
+select * from mstock where primarykey=X'2cee05e453a8b276c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'742510ed53b33e34c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'2cee05e453a8b276c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 26482
+>   WINDOWIDENTITYKEY = NULL
+select * from mstockalias where stockkey=X'2cee05e453a8b276c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-06-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FNF Group
+>     PRIMARYKEY = X'2cef05e453a8b276c0a86f92'
+>       STOCKKEY = X'2cee05e453a8b276c0a86f92'
+>         SYMBOL = FNFw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'2cef05e453a8b276c0a86f92';
+> Row 1:
+>              ALIASKEY = X'2cef05e453a8b276c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|FNFw|CP_SEC_TYP|67|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92471000
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-23 00:00:00.000000'
+>         BB_IDENTIFIER = FNFw    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = FNFw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'828702ae539b820dc0a86f92'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FNF Group
+>     PRIMARYKEY = X'742510ed53b33e34c0a86f92'
+>       STOCKKEY = X'2cee05e453a8b276c0a86f92'
+>         SYMBOL = FNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+		select * from mcorporateaction where aliaskey=X'742510ed53b33e34c0a86f92';
+> Row 1:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FNFV Group|CP_ID_BB_COMP|40863800|CP_ID_BB_SEC|1000|CP_TERMS|.3333  : 1|CP_RATIO|0.333300|CP_PAY_DT|N.A.|CP_RECORD_DT|N.A.|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20140701|CP_TKR|FNFV-W US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|E|CP_SPINOFF_ID_BB_GLOBAL|BBG006N7RYV7|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006N7RYB9|CP_SPINOFF_ID_BB_SEC_NUM_DES|FNFV-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92470844
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10048798
+>        BB_COMPANYNAME = Fidelity National Financial Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'80c702ae539b8194c0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'80c702ae539b8194c0a86f92';
+	no mtickets
+	CP_TKR|FNFV-W
+	select distinct stockkey from mstockalias where symbol='FNFV-W';
+	> Row 1:
+	>   STOCKKEY = X'1799171e53b34303c0a86f92'
+	select * from mstockalias where stockkey=X'1799171e53b34303c0a86f92';
+	> Row 1:
+	>   CAPSECTORKEY = NULL
+	>          CUSIP = NULL
+	>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+	>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+	>           NAME = FNFV Group
+	>     PRIMARYKEY = X'179a171e53b34303c0a86f92'
+	>       STOCKKEY = X'1799171e53b34303c0a86f92'
+	>         SYMBOL = FNFV-W
+	>      STATUSKEY = X'634a039339e7e928c0a801dc'
+	>      CSISYMBOL = NULL
+	>        GICSKEY = 00000000
+	>       STYLEKEY = UU
+	select count(*) from mticket where stockkey=X'1799171e53b34303c0a86f92';
+	> Row 1:
+	>   _C001 = 0.000000
+	does FNFV exist in the real world?  yes and we have it listed on our site, just no one holds it
+	Stock:FNFV Group  Symbol:FNFV
+	Date: 08/23/2015
+
+	2 users found
+
+	1	aharon10	theyellowjeep
+	select count(*) from mticket where stockkey=X'1799171e53b34303c0a86f92';
+	no tickets - strange  i bet we have a collision on FNFV
+	select distinct stockkey from mstockalias where symbol='FNFV';
+	> Row 1:
+	>   STOCKKEY = X'2cf205e453a8b278c0a86f92'   it's a different stockkey
+	select * from mstockalias where STOCKKEY = X'2cf205e453a8b278c0a86f92';
+	> Row 1:
+	>   CAPSECTORKEY = NULL
+	>          CUSIP = NULL
+	>           DATE = TIMESTAMP '2014-06-23 00:00:00.000000'
+	>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+	>           NAME = FNFV Group
+	>     PRIMARYKEY = X'2cf305e453a8b278c0a86f92'
+	>       STOCKKEY = X'2cf205e453a8b278c0a86f92'
+	>         SYMBOL = FNFVw
+	>      STATUSKEY = X'634a039339e7e928c0a801dc'
+	>      CSISYMBOL = NULL
+	>        GICSKEY = 00000000
+	>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'2cf305e453a8b278c0a86f92';
+	bloomberg list 
+	> Row 2:
+	>   CAPSECTORKEY = NULL
+	>          CUSIP = 31620R402
+	>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+	>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+	>           NAME = FNFV Group
+	>     PRIMARYKEY = X'742110ed53b33e34c0a86f92'
+	>       STOCKKEY = X'2cf205e453a8b278c0a86f92'
+	>         SYMBOL = FNFV
+	>      STATUSKEY = X'634a039339e7e928c0a801dc'
+	>      CSISYMBOL = NULL
+	>        GICSKEY = 00000000
+	>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'742110ed53b33e34c0a86f92';
+	ticker change and dvd stock
+
+> Row 2:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|FNFw US|CP_NEW_TKR|FNF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 92471102
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = FNFw    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = FNFw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'828902ae539b820dc0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FNF Group|CP_ID_BB_COMP|40863830|CP_ID_BB_SEC|1000|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|N.A.|CP_RECORD_DT|N.A.|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20140701|CP_TKR|FNF-W US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|E|CP_SPINOFF_ID_BB_GLOBAL|BBG006N7S6K9|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006N7S1J2|CP_SPINOFF_ID_BB_SEC_NUM_DES|FNF-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92471042
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10048798
+>        BB_COMPANYNAME = Fidelity National Financial Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'80c902ae539b8194c0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140916|CP_PAY_DT|20140930|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.18|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.993610|CP_ADJ_DT|20140912|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 93963644
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-22 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-09-12 00:00:00.000000'
+>            PRIMARYKEY = X'8db8211854137c1ec0a86f92'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141217|CP_PAY_DT|20141231|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.19|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.994172|CP_ADJ_DT|20141215|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 97993915
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-10-28 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-15 00:00:00.000000'
+>            PRIMARYKEY = X'38140541548f76c0c0a86f92'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150317|CP_PAY_DT|20150331|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.19|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.994845|CP_ADJ_DT|20150313|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101857254
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-13 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-27 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-13 00:00:00.000000'
+>            PRIMARYKEY = X'08ea469055036c4ac0a86f92'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'742510ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150616|CP_PAY_DT|20150630|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.19|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.994850|CP_ADJ_DT|20150612|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106331544
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40863830
+>        BB_COMPANYNAME = FNF Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-12 00:00:00.000000'
+>         BB_IDENTIFIER = FNF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'06f012f2557b63d3c0a86f92'
+>               VERSION = NULL
+
+
+Assessment:
+yahoo finance has FNF Financial as the company name they paid a dividend on 
+Jun 12, 2015	0.19 Dividend
+Mar 13, 2015	0.19 Dividend
+
+this matches what we have byt the company name on our site is wrong
+
+what does xignite have?
+
+http://192.168.111.213/feed/stockLookup.php?symbol=FNF
+Name:	Fidelity National Financial Inc
+CUSIP:	31620R303
+and this points to:   FNF Group   
+
+***************   10/15/15  need to revist this
+
+where are we?
+
+FNF
+yahoo finance
+Fidelity National Financial, Inc. (FNF) -NYSE
+35.77 Down 0.04(0.11%) 11:49AM EDT - Nasdaq Real Time Price
+Prev Close:	35.81
+Open:	36.00
+Bid:	35.86 x 400
+Ask:	35.88 x 300
+1y Target Est:	44.57
+Beta:	1.06673
+Next Earnings Date:	27-Oct-15FNF Earnings announcement
+Day's Range:	35.77 - 36.14
+52wk Range:	26.50 - 40.25
+Volume:	235,047
+Avg Vol (3m):	1,254,400
+Market Cap:	12.74B
+P/E (ttm):	13.87
+EPS (ttm):	2.58
+Div & Yield:	0.84 (2.31%)
+
+our site:
+Symbol: FNF	Name: FNF Group	Price: $35.89
+Volume: 214,446	Sector: Unclassified	Change: $0.08
+Short Volume: 999,999	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 1,291,670	 Exchange: NYSE	Today: 0.22%
+50 Day Ave: $37.07	Year High: $40.25	High: $36.14
+200 Day Ave: $37.03	Year Low: $25.65	Low: $35.82
+
+CAs
+symbol changes for FNF	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+01 Jul 14	FNFw	FNF	Change in the ticker (trading) symbol from FNFw to FNF
+ 	 	 
+left curve	  cash dividends paid by FNF	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+12 Sep 14	16 Sep 14	30 Sep 14	4	$0.18	Dividend amount:0.18 per share.
+15 Dec 14	17 Dec 14	31 Dec 14	4	$0.19	Dividend amount:0.19 per share.
+13 Mar 15	17 Mar 15	31 Mar 15	4	$0.19	Dividend amount:0.19 per share.
+12 Jun 15	16 Jun 15	30 Jun 15	4	$0.19	Dividend amount:0.19 per share.
+14 Sep 15	16 Sep 15	30 Sep 15	4	$0.21	Dividend amount:0.21 per share.
+ 	 	 
+left curve	  spinoffs by FNF	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+01 Jul 14	 	 	.3333 : 1	FNFV-W	FNFV-W US spun off from FNF with terms:.3333 : 1
+01 Jul 14	 	 	1 per 1	FNF-W	FNF-W US spun off from FNF with terms:1 per 1
+
+we have a different name
+
+select distinct stockkey from mstockalias where symbol='FNF';
+> Row 1:
+>   STOCKKEY = X'12d30e21390b02b2c0a80116'
+> Row 2:
+>   STOCKKEY = X'38aa01f84355ae26c0a80146'
+> Row 3:
+>   STOCKKEY = X'2cee05e453a8b276c0a86f92'
+
+there are three
+> FNF 1:
+>   STOCKKEY = X'12d30e21390b02b2c0a80116'
+select * from mstockalias where stockkey=X'12d30e21390b02b2c0a80116' order by "date";
+delisted 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 12d30e21390b02b2c0a80116 2014-10-15
+0B166D7F39D92BF5C0A80119, RAMGX, rmelvin, -453
+positions/stratification	right curve
+ 	 	[download spreadsheet]
+ 	 	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+ 	 	
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.93	-453	-$16,276.29	-$12,732.94	0.34%	-160.40%	Details 	TOP
+LEDGER
+Date	Start	Change	End	Type
+Oct 05, 2001		300	300	Buy
+May 23, 2002	300	30	330	Corporate Action
+May 27, 2003	330	82	412	Corporate Action
+Feb 26, 2004	412	41	453	Corporate Action
+Nov 09, 2006	453	-453		Corporate Action
+Apr 10, 2007		-453	-453	Sell  <-- untrade 
+Total: -453
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 5, 2001	300	$15.00	$7,938.00	$26.46
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 10, 2007	453	$22.65	$0.35	$11,164.90	$24.65
+ 	 	 
+
+A5762CB13FAA8689C0A80134, MILLS, ddm1133, -220
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.92	-220	-$7,902.40	-$9,650.95	0.31%	-144.17%	Details 	
+LEDGER
+Date	Start	Change	End	Type
+Nov 19, 2003		200	200	Buy
+Feb 26, 2004	200	20	220	Corporate Action
+Nov 09, 2006	220	-220		Corporate Action
+Nov 14, 2006		-220	-220	Sell
+Total: -220
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Nov 19, 2003	200	$10.00	$6,694.00	$33.47
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 14, 2006	220	$11.00	$0.16	$4,905.84	$22.30  <-- untrade 
+ 	 	 
+
+
+
+63CD37E1415C3960C0A80132, LOPRT, flajuie, -1100
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.88	-1,100	-$39,468.00	-$35,232.92	0.20%	-34.06%	Details 	TOP
+LEDGER
+Date	Start	Change	End	Type
+Sep 30, 2004		790	790	Buy
+Mar 22, 2005	790	460	1250	Buy
+Jun 22, 2005	1250	410	1660	Buy
+Jun 23, 2005	1660	1100	2760	Buy
+Dec 15, 2005	2760	-1660	1100	Sell
+Nov 09, 2006	1100	-1100		Corporate Action
+Apr 16, 2007		-1100	-1100	Sell
+Total: -1,100
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 30, 2004	790	$39.50	$29,999.30	$37.97
+Mar 22, 2005	460	$23.00	$18,771.00	$40.81
+Jun 22, 2005	410	$20.50	$14,878.90	$36.29
+Jun 23, 2005	1,100	$55.00	$39,805.40	$36.19
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 15, 2005	1,660	$83.00	$2.59	$61,730.71	$37.19
+Apr 16, 2007	1,100	$55.00	$0.86	$27,664.14	$25.15  <-- untrade 
+ 	 	 
+
+80160BF33E4BC832C0A80135, WLDV, wleung, -2290
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+ 	 	
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.88	-2,290	-$82,165.20	-$119,453.79	0.20%	-74.88%	Details 	TOP
+LEDGER
+Date	Start	Change	End	Type
+Jan 31, 2005		1680	1680	Buy
+Feb 01, 2006	1680	-1680		Sell
+Feb 16, 2006		2210	2210	Buy
+Feb 24, 2006	2210	80	2290	Buy
+Nov 09, 2006	2290	-2290		Corporate Action
+Feb 06, 2007		-2290	-2290	Sell
+Total: -2,290
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 31, 2005	1,680	$84.00	$73,164.00	$43.55
+Feb 16, 2006	2,210	$110.50	$83,303.40	$37.69
+Feb 24, 2006	80	$4.00	$3,049.40	$38.12
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Feb 1, 2006	1,680	$84.00	$2.78	$66,357.22	$39.50
+Feb 6, 2007	2,290	$114.50	$1.72	$55,870.98	$24.40
+
+1A06131041EBD1F3C0A80132, KMF-S, kaiserbhuyan, 1100
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.88	1,100	$39,468.00	$56,196.58	-0.20%	125.87%	Details 	TOP  short fund
+LEDGER
+Date	Start	Change	End	Type
+Mar 23, 2005		-1000	-1000	Sell
+Jul 17, 2006	-1000	-100	-1100	Sell
+Nov 09, 2006	-1100	1100		Corporate Action
+Apr 09, 2007		1100	1100	Buy
+Total: 1,100
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Apr 9, 2007	1,100	$55.00	$27,918.00	$25.38  <-- untrde
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Mar 23, 2005	1,000	$50.00	$1.35	$40,896.65	$40.90
+Jul 17, 2006	100	$5.00	$0.12	$3,749.88	$37.50  
+
+59595FA042E062FDC0A80133, TMF, tfoster, -1270
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.89	-1,270	-$45,580.30	-$66,867.28	0.22%	-135.87%	Details 	TOP
+LEDGER
+Date	Start	Change	End	Type
+Jul 28, 2005		1270	1270	Buy
+Nov 09, 2006	1270	-1270		Corporate Action
+Nov 15, 2006		-1270	-1270	Sell
+Total: -1,270
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 28, 2005	1,270	$63.50	$49,213.40	$38.75
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 15, 2006	1,270	$63.50	$0.86	$27,926.44	$21.99  <--
+
+E1EC185944F36A37C0A80134, DIV, scott_nelson, -1540
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+FNF	$35.90	-1,540	-$55,278.30	-$81,419.18	0.24%	-135.49%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Aug 29, 2006		1540	1540	Buy
+Nov 09, 2006	1540	-1540		Corporate Action
+Nov 16, 2006		-1540	-1540	Sell
+Total: -1,540
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Aug 29, 2006	1,540	$77.00	$60,093.60	$39.02
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 16, 2006	1,540	$77.00	$1.05	$33,952.75	$22.05  <---
+ 	 	 
+
+E22A62B549825DA7C0A80146, AF1752, new101, 51572
+F3A0647749825F9DC0A80146, AF1800, new101, 51948
+A4954ECA4989F2BEC0A80146, UIT-090203-1154, new101, 51948
+F0485DA34989FE75C0A80146, UIT-090203-1245, new101, 51948
+5B4816194B45785AC0A80146, DELETE_20101207173247_SWANFUND, teamfunds, 126
+F2EA43A74AF10354C0A80146, dels2, teamfunds, 880
+A7AC184D4AFE221FC0A80146, DELETE_20101208163048_SWANFUNDc, teamfunds, 124
+FD39075B4D071718C0A80146, DELETE_20130419_SWANTEST, teamfunds, 879
+7864381A4D2D8E55C0A80146, DELETE_20110112063927_SWAN2, teamfunds, 3589
+
+these are done 
+
+> FNF 2:
+>   STOCKKEY = X'38aa01f84355ae26c0a80146'
+select * from mstockalias where stockkey=X'38aa01f84355ae26c0a80146' order by "date";
+delisted 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 38aa01f84355ae26c0a80146 2014-10-15
+E24B289B418E7D29C0A80134, AMF, aebnoether, 300  <--- just need to expand and they are gone
+F23874C34A80678DC0A80146, SWANv0, marketocracy, -87
+423A42565363A774C0A86F99, AKM, sheheryar, -1200
+7B696ED552E6D8DDC0A86F9C, AZF, arrored, 90
+
+> FNF 3:
+>   STOCKKEY = X'2cee05e453a8b276c0a86f92'
+select * from mstockalias where stockkey=X'2cee05e453a8b276c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-06-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FNF Group
+>     PRIMARYKEY = X'2cef05e453a8b276c0a86f92'
+>       STOCKKEY = X'2cee05e453a8b276c0a86f92'
+>         SYMBOL = FNFw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 31620R303
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = FNF Group
+>     PRIMARYKEY = X'742510ed53b33e34c0a86f92'
+>       STOCKKEY = X'2cee05e453a8b276c0a86f92'
+>         SYMBOL = FNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+no collision, just have an old name only on the legacy site - no problem
+
+
+
+

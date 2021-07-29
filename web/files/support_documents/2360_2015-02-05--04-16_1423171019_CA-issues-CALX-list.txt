@@ -1,0 +1,79 @@
+date:  2/4/15
+CALX - list it
+
+yahoo:
+Calix Inc. (CALX) -NYSE   Watchlist
+8.67  1.88(17.82%) 4:05PM EST
+
+Add to Portfolio
+Prev Close:	10.55
+Open:	9.01
+Bid:	8.54 x 1000
+Ask:	10.31 x 100
+1y Target Est:	13.50
+Beta:	0.74
+Earnings Date:	Apr 27 - May 1 (Est.)
+Day's Range:	8.45 - 9.50
+52wk Range:	7.12 - 11.60
+Volume:	3,202,010
+Avg Vol (3m):	262,694
+Market Cap:	443.23M
+P/E (ttm):	N/A
+EPS (ttm):	-0.48
+Div & Yield:	N/A (N/A
+
+quantum
+Calix, Inc.
+Ticker Symbol: CALX     CUSIP: 13100M509     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Calix, Inc., is a leading global provider of broadband communications access systems and software. The Calix Unified Access portfolio allows service providers to connect to their residential and business subscribers and deploy virtually any service over fiber- and copper-based network architectures.
+Small Cap Stock -   Market Value $ 416 Million
+xignite
+ it's there 13100M509 is the cusup
+
+not on our site, let's list it
+
+CALX|N|13100M509|Calix Inc.|20150204
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='CALX';
+> Row 1:
+>   STOCKKEY = X'7ee4381554d298efc0a86f92'
+
+select * from mstockalias where STOCKKEY = X'7ee4381554d298efc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 13100M509
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Calix Inc.
+>     PRIMARYKEY = X'7ee5381554d298efc0a86f92'
+>       STOCKKEY = X'7ee4381554d298efc0a86f92'
+>         SYMBOL = CALX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+update mstockalias set STYLEKEY='SV' where PRIMARYKEY = X'7ee5381554d298efc0a86f92';
+45201020	Communications Equipment
+	Manufacturers of communication equipment and products, including LANs, WANs, routers, telephones, switchboards and exchanges. Excludes cellular phone manufacturers classified in the Technology Hardware, Storage & Peripherals Sub-Industry.
+update mstockalias set GICSKEY='45201020' where PRIMARYKEY = X'7ee5381554d298efc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 13100M509
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Calix Inc.
+>     PRIMARYKEY = X'7ee5381554d298efc0a86f92'
+>       STOCKKEY = X'7ee4381554d298efc0a86f92'
+>         SYMBOL = CALX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = SV
+
+check on 2/5/15 - see that it is there and do a sample buy
+CALX is now on our site 

@@ -1,0 +1,228 @@
+date: 5/15/15
+ticker: SCR
+
+yahoo:
+nothing
+quantum:
+site is down
+
+oursite:
+Symbol: SCR 	Name: Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs 	Price: $9.60
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs says no CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=SCR
+gives error
+
+check MAdmin
+XXXX  MM/DD/YYYY
+Stock:Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs  Symbol:SCR
+Date: 05/15/2015
+
+39 users found
+
+1	alfredhorg	aratnikas	aubinnury	benat92	cfalcon	chaoye	cr506sum08	dbautz	dmulholand	dw6jp
+2	erk183	fishpond97	geldrausch	greenab	hedgething	jfrancois	joeelefant	joeyjoebobjoebob	kuyeno	lotus
+3	lou.liu	lwroblewski	mariusz106	mimon	neil_nadeau	renova	reveille	richandhappy	rufusjonz	satansmunchkin
+4	shaft	stavon	topbooks	tylerholden	ultraviolet	vrodrigo	welikala	wisdomfolly	zaheeraa	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'SCR';  
+> Row 1:
+>   STOCKKEY = X'1777017c468549dfc0a80146'
+
+select * from mstockalias where stockkey= X'1777017c468549dfc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82859P104
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs
+>     PRIMARYKEY = X'1778017c468549dfc0a80146'
+>       STOCKKEY = X'1777017c468549dfc0a80146'
+>         SYMBOL = SCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SCR'  order by BB_EFFECTIVE;
+> Row 26:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|Simcere Pharmaceutical Group|CP_TOT_AMT|114.556129|CP_ACQUIS_TYP|1|CP_CASH|9.660000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.858561|CP_CUR_PREMIUM|0.624994|CP_PCT_OWNED|77.570000|CP_PCT_SOUGHT|22.430000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|9.660000|CP_ARBITRAGE_PROF|0.059999|CP_CUR_TOT_VAL|114.556137|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Shearman Sterlng;13;100.000000;1;Target Financial Adviser;1;UBS;13;100.000000;1;Acquirer Legal Adviser;1;Cleary Gottlieb, Conyers Dill, Skadden Arps;13;100.000000;1;Legal Adv to Target Financial;1;Davis Polk;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|SCR US|CP_TARGET_ID_BB_GLOBAL|BBG000Q4LH10|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FS7SG3|CP_TARGET_ID_BB_SEC_NUM_DES|SCR|CP_TARGET_FEED_SOURCE|US|CP_NOTES|PRIVATE INVESTOR: MR JINSHENG REN AND MR HONGQUAN LIU. ACTL ACQ'R: SIMCERE HOLDING LTD
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 74891015
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 11747017
+>        BB_COMPANYNAME = Simcere Pharmaceutical Group
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = SCR     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-03-11 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = SCR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-23 00:00:00.000000'
+>            PRIMARYKEY = X'd7895a3852e0a510c0a86f92'
+>               VERSION = NULL
+CP_ACQUIS_TYP|1|CP_CASH|9.660000    on  1/3/2014
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SCR
+>>>> dbtool started at 2015-05-15 07:24:27 -0400
+stock: SCR
+  PK       : [1777017C468549DFC0A80146]
+  companyID: [17230]
+  symbol   : [SCR]
+  name     : [Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs]
+  date     : [2007-04-20 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-15 07:24:28 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17230
+2013-12-15 (Sun) [4731]: <WEEKEND>
+2013-12-16 (Mon) [4732]: O:9.5400 H:9.5600 L:9.5400 C:9.5500 V:7011 TSO:62503 A:9.5500 R:1.0000 CA:0.0000
+2013-12-17 (Tue) [4733]: O:9.5600 H:9.5800 L:9.5600 C:9.5600 V:20999 TSO:62503 A:9.5600 R:1.0000 CA:0.0000
+2013-12-18 (Wed) [4734]: O:9.5500 H:9.6000 L:9.5500 C:9.5700 V:40792 TSO:62503 A:9.5700 R:1.0000 CA:0.0000
+2013-12-19 (Thu) [4735]: O:9.5800 H:9.5900 L:9.5800 C:9.5800 V:13094 TSO:62503 A:9.5800 R:1.0000 CA:0.0000
+2013-12-20 (Fri) [4736]: O:9.5800 H:9.6000 L:9.5800 C:9.6000 V:65507 TSO:62503 A:9.6000 R:1.0000 CA:0.0000
+2013-12-21 (Sat) [4737]: <WEEKEND>
+2013-12-22 (Sun) [4738]: <WEEKEND>
+2013-12-23 (Mon) [4739]: O:9.6000 H:9.6000 L:9.5900 C:9.6000 V:52673 TSO:62503 A:9.6000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'1777017c468549dfc0a80146'  and shares > 0 order by closed; 
+> Row 494:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-10-09 09:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 10.500000
+>   CURRENTORDER = X'd97d4ad95255158cc0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'683066b542ea65d2c0a80134'
+>       MODIFIED = NULL
+>            NET = 1978.282010
+>         OPENED = TIMESTAMP '2013-10-09 04:36:28.000000'
+>          PRICE = 9.420391
+>     PRIMARYKEY = X'd97b4ad95255158cc0a80132'
+>         SECFEE = 0.040000
+>         SHARES = 210.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1777017c468549dfc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last trades 10/9/2013 
+last price we have  2013-12-23 (Mon) [4739]: O:9.6000 H:9.6000 L:9.5900 C:9.6000 V:52673 TSO:62503 A:9.6000 R:1.0000 CA:0.0000
+ca in db:   CP_ACQUIS_TYP|1|CP_CASH|9.660000    on  1/3/2014
+20140103 9.66  
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  SCR  -effective 20140103 -type ACQUIS -exchange UN -acqType 1 -acqCash 9.66 -acqShare 0 -purchaser SCR   >& /Users/build/caout/SCR.20150515-ACQUIS.out
+SCR.20150515-ACQUIS.out
+stocks:~/caout build$ tail -f SCR.20150515-ACQUIS.out
+D: (05-15 07:28:31.389) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-15 07:29:19.006) cahelper started on 2015-05-15 07:29:19 -0400
+
+D: (05-15 07:29:19.332) There are [0] open tickets for SCR on 20140103
+D: (05-15 07:29:20.021) StockFileLoad Version:4.0
+D: (05-15 07:29:20.021) Loading Stock Data
+D: (05-15 07:30:35.997) Building Lookup Index
+D: (05-15 07:30:45.216) Finished Building Index
+D: (05-15 07:30:52.292) Finished Loading Stock Data
+D: (05-15 07:30:52.318) Connection to 192.168.111.172:6666 succeeded
+D: (05-15 07:30:54.478) {
+    "ACQUIRED_STOCK" = SCR; 
+    "ACQUIRING_STOCK" = "SCR_FIX"; 
+    AMOUNT = 9.66; 
+    APPLIED = 1; 
+    DATE = 20140103; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SCR_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-15 07:30:59.956) SUCCESS
+D: (05-15 07:30:59.956) cahelper finished 2015-05-15 07:30:59 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'1777017c468549dfc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82859P104
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs
+>     PRIMARYKEY = X'1778017c468549dfc0a80146'
+>       STOCKKEY = X'1777017c468549dfc0a80146'
+>         SYMBOL = SCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82859P104
+>           DATE = TIMESTAMP '2014-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs
+>     PRIMARYKEY = X'489107ad5555d88fc0a86f92'
+>       STOCKKEY = X'1777017c468549dfc0a80146'
+>         SYMBOL = SCR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'489107ad5555d88fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'489107ad5555d88fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SCR  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|9.660000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150515:072919
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = SCR_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SCR_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-03 00:00:00.000000'
+>            PRIMARYKEY = X'488b07ad5555d88fc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'488b07ad5555d88fc0a86f92';
+> Row 1:
+>   _C001 = 65.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'488b07ad5555d88fc0a86f92'));
+65 fundkeys save to CA issues SCR fundkeys.txt
+
+check on 5/16/15 then invalidate
+5/17/15
+ SCR has been acquired 	right curve
+  	  	
+Simcere Pharmaceutical Group Shs Sponsored American Deposit Receipt Repr 2 Shs acquired by a private company on 2014-01-03 00:00:00. 
+acquis is there invalidate 
+on 20140103 members got 9.66 cash

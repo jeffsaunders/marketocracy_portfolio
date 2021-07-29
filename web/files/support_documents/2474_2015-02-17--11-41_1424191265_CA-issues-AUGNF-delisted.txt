@@ -1,0 +1,146 @@
+date: 2/16/15
+
+AUGNF
+
+our site only
+
+select distinct stockkey from mstockalias where symbol='AUGNF';
+> Row 1:
+>   STOCKKEY = X'ca035e894cc0bffdc0a80146'
+select * from mstockalias where STOCKKEY = X'ca035e894cc0bffdc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Augen Gold Corp
+>     PRIMARYKEY = X'ca045e894cc0bffdc0a80146'
+>       STOCKKEY = X'ca035e894cc0bffdc0a80146'
+>         SYMBOL = AUGNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check historical prices
+/Marketocracy/bin/dbtool lookup stock AUGNF
+>>>> dbtool started at 2015-02-16 16:43:38 -0500
+stock: AUGNF
+  PK       : [CA035E894CC0BFFDC0A80146]
+  companyID: [19397]
+  symbol   : [AUGNF]
+  name     : [Augen Gold Corp]
+  date     : [2010-10-21 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-16 16:43:39 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19397
+2011-10-21 (Fri) [3945]: O:0.2480 H:0.2480 L:0.2480 C:0.2480 V:0 TSO:0 A:0.2480 R:1.0000 CA:0.0000
+2011-10-22 (Sat) [3946]: <WEEKEND>
+2011-10-23 (Sun) [3947]: <WEEKEND>
+2011-10-24 (Mon) [3948]: O:0.2905 H:0.2905 L:0.2905 C:0.2905 V:800 TSO:0 A:0.2905 R:1.0000 CA:0.0000
+2011-10-25 (Tue) [3949]: O:0.2924 H:0.2924 L:0.2924 C:0.2924 V:100 TSO:0 A:0.2924 R:1.0000 CA:0.0000
+2011-10-26 (Wed) [3950]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-10-27 (Thu) [3951]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-10-28 (Fri) [3952]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-10-29 (Sat) [3953]: <WEEKEND>
+2011-10-30 (Sun) [3954]: <WEEKEND>
+2011-10-31 (Mon) [3955]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:0 TSO:0 A:0.3103 R:1.0000 CA:0.0000  <-- last price
+2011-11-01 (Tue) [3956]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-11-02 (Wed) [3957]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-11-03 (Thu) [3958]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+2011-11-04 (Fri) [3959]: O:0.3103 H:0.3103 L:0.3103 C:0.3103 V:5000 TSO:0 A:0.3103 R:1.0000 CA:0.0000
+
+2011-10-31  price: 0.3103
+
+MAdmin 
+Stock:Augen Gold Corp  Symbol:AUGNF
+Date: 02/16/2015
+
+0 users found
+
+/Marketocracy/bin/cahelper -symbol AUGNF -effective 20111031 -type ACQUIS -exchange UU -acqType 1 -acqCash 0.3103 -acqShare 0 -purchaser AUGNF >& /Users/build/caout/AUGNF.20150216-ACQUIS.out
+AUGNF.20150216-ACQUIS.out
+stocks:~/caout build$ tail -f AUGNF.20150216-ACQUIS.out
+D: (02-16 16:47:42.058) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-16 16:48:05.483) cahelper started on 2015-02-16 16:48:05 -0500
+
+D: (02-16 16:48:05.767) There are [0] open tickets for AUGNF on 20111031
+D: (02-16 16:48:05.787) {
+    "ACQUIRED_STOCK" = AUGNF; 
+    "ACQUIRING_STOCK" = "AUGNF_FIX"; 
+    AMOUNT = 0.3103; 
+    APPLIED = 1; 
+    DATE = 20111031; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AUGNF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-16 16:48:06.072) SUCCESS
+D: (02-16 16:48:06.072) cahelper finished 2015-02-16 16:48:06 -0500
+
+select * from mstockalias where STOCKKEY = X'ca035e894cc0bffdc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-31 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Augen Gold Corp
+>     PRIMARYKEY = X'e870346b54e26595c0a86f92'
+>       STOCKKEY = X'ca035e894cc0bffdc0a80146'
+>         SYMBOL = AUGNF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Augen Gold Corp
+>     PRIMARYKEY = X'ca045e894cc0bffdc0a80146'
+>       STOCKKEY = X'ca035e894cc0bffdc0a80146'
+>         SYMBOL = AUGNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'ca045e894cc0bffdc0a80146';
+> Row 1:
+>              ALIASKEY = X'ca045e894cc0bffdc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|AUGNF|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49064697
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 14203631
+>        BB_COMPANYNAME = Augen Gold Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-10-21 00:00:00.000000'
+>         BB_IDENTIFIER = AUGNF   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-10-20 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = AUGNF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1002
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'871b33234cbf6dfac0a80146'
+>               VERSION = NULL
+
+delisted!   no mtickets no one held it
+select count(*) from mticket where sourcekey=X'871b33234cbf6dfac0a80146';
+> Row 1:
+>   _C001 = 0.000000
+
+check on 2/17/15 for the acquis 
+
+2/17/15 - is acquired
+AUGNF has been acquired	
+ 	 	
+Augen Gold Corp acquired by a private company on 2011-10-31 00:00:00.
+ 	 	 
+closing this out 

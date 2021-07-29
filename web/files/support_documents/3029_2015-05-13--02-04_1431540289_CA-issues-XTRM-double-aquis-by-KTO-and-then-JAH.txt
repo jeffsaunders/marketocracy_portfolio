@@ -1,0 +1,1402 @@
+date:  5/11/15
+ticker XTRM  got applied twicw acquis 
+
+> Row 1026:
+>    LOGINNAME = jmckeachie
+>       SYMBOL = JMF4
+>   PRIMARYKEY = X'b73371e83c8a1730c0a801e0'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+XTRM 	$0.00 	-1,879 	-$6.76 	-$2,325.20 	0.00% 	-14.72% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 13, 2002 		3479 	3479 	Buy
+Jan 02, 2003 	3479 	-1600 	1879 	Sell
+Dec 12, 2003 	1879 	-1879 		Corporate Action
+Dec 16, 2003 		-1879 	-1879 	Corporate Action
+Total: -1,879
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 13, 2002 	3,479 	$173.95 	$15,799.66 	$4.54
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 2, 2003 	1,600 	$80.00 	$0.41 	$13,481.22 	$8.43
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 12, 2003 	BRASS EAGLE [XTRM] acquired by K2 INC [KTO] on 2003-12-12 00:00:00.
+Dec 16, 2003 	BRASS EAGLE [XTRM] acquired by K2 INC [KTO] on 2003-12-16 00:00:00.
+
+looks like this got applied twice   	  	 
+
+select distinct stockkey from mstockalias where symbol='XTRM';
+> Row 1:
+>   STOCKKEY = X'd69a0e21390a7230c0a80116'
+select * from mstockalias where STOCKKEY = X'd69a0e21390a7230c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'd69b0e21390a7230c0a80116'
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2003-12-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'a2a355ae3fda8e72c0a80146'
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'a2a355ae3fda8e72c0a80146';
+> Row 1:
+>              ALIASKEY = X'a2a355ae3fda8e72c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|XTRM    US|CP_NAME|Brass Eagle Inc|CP_ID_BB_COMP|302514|CP_UNIT|Brass Eagle Inc|CP_TOT_AMT|94.328255|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.603600|CP_SH_FLAG|1|CP_DEBT|14.970000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|21.825838|CP_CUR_PREMIUM|-2.405380|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|80.953133|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Acquirer Legal Adviser;1;Gibson Dunn Crut;13;100.000000;|CP_NOTES|TENDER OFFER RESULTS AS OF 12/8/03: 95.7% ACCEPTANCE.                                                         12/09/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 12692147
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100102
+>        BB_COMPANYNAME = K2 Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-12-12 00:00:00.000000'
+>         BB_IDENTIFIER = KTO     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = KTO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-12-12 00:00:00.000000'
+>            PRIMARYKEY = X'9a1248de3fda8a0ac0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'9a1248de3fda8a0ac0a80146';
+> Row 1:
+>   _C001 = 78.000000
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2003-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'e6c460f13fdfc89dc0a80146'
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'e6c460f13fdfc89dc0a80146';
+> Row 1:
+>              ALIASKEY = X'e6c460f13fdfc89dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|XTRM    US|CP_NAME|Brass Eagle Inc|CP_ID_BB_COMP|302514|CP_UNIT|Brass Eagle Inc|CP_TOT_AMT|94.328255|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.603600|CP_SH_FLAG|1|CP_DEBT|14.970000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|21.825838|CP_CUR_PREMIUM|-2.405380|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|80.953133|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Acquirer Legal Adviser;1;Gibson Dunn Crut;13;100.000000;|CP_NOTES|TENDER OFFER RESULTS AS OF 12/8/03: 95.7% ACCEPTANCE.                                                         12/09/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 12692147
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100102
+>        BB_COMPANYNAME = K2 Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = KTO     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = KTO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'9f4b5e8d3fdfc6c3c0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146' ;
+> Row 1:
+>   _C001 = 34.000000
+select distinct stockkey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146' ;
+> Row 1:
+>   STOCKKEY = X'd69a0e21390a7230c0a80116'
+	select distinct symbol from mstockalias where STOCKKEY = X'd69a0e21390a7230c0a80116';
+> Row 1:
+>   SYMBOL = XTRM  <--- company sold off
+
+> Row 2:
+>   STOCKKEY = X'197b0e21390b164cc0a80116'
+	select distinct symbol from mstockalias where STOCKKEY = X'197b0e21390b164cc0a80116';
+> Row 1:
+>   SYMBOL = KTO  <--- company whose stock was given
+
+When I back this one out, people who got KTO will lose their shares 
+let's get the mticket info for the KTO buys for this second mis-applied acquis
+Frist get the managers that are affected:
+select managerkey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116';
+
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116') order by loginname;
+> Row 1:
+>   LOGINNAME = bcooke
+> Row 2:
+>   LOGINNAME = cgarcia-tunon
+> Row 3:
+>   LOGINNAME = csandstedt
+> Row 4:
+>   LOGINNAME = cwhaberm
+> Row 5:
+>   LOGINNAME = gamegod
+> Row 6:
+>   LOGINNAME = jmckeachie
+> Row 7:
+>   LOGINNAME = kpedo
+> Row 8:
+>   LOGINNAME = michael.keane
+> Row 9:
+>   LOGINNAME = multizone7
+> Row 10:
+>   LOGINNAME = psparke
+> Row 11:
+>   LOGINNAME = rbebeau
+> Row 12:
+>   LOGINNAME = skipdogg
+> Row 13:
+>   LOGINNAME = somedalum
+
+select primarykey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116';
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116');
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116'));
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'9f4b5e8d3fdfc6c3c0a80146'  and stockkey= X'197b0e21390b164cc0a80116'))) order by symbol;
+> Row 1:
+>   SYMBOL = CGTFX
+> Row 2:
+>   SYMBOL = DHMF
+> Row 3:
+>   SYMBOL = FUNK
+> Row 4:
+>   SYMBOL = GMF
+> Row 5:
+>   SYMBOL = HMF
+> Row 6:
+>   SYMBOL = JMF4
+> Row 7:
+>   SYMBOL = KMF
+> Row 8:
+>   SYMBOL = MMF
+> Row 9:
+>   SYMBOL = MMF1
+> Row 10:
+>   SYMBOL = MOMO
+> Row 11:
+>   SYMBOL = NTFX
+> Row 12:
+>   SYMBOL = RCMF
+> Row 13:
+>   SYMBOL = RCMF1
+> Row 14:
+>   SYMBOL = RCMF2
+> Row 15:
+>   SYMBOL = RMF
+> Row 16:
+>   SYMBOL = SDGF
+> Row 17:
+>   SYMBOL = TICK
+
+
+
+
+the latest mticket for XTRM
+select * from mticket where stockkey=X'd69a0e21390a7230c0a80116' and sourcekey is null order by closed; 
+
+when was the last member trade ticket?
+
+> Row 335:
+>      ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-12-15 16:02:23.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'eb7347c73fb39dcbc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'904634863b3b9bcdc0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2003-11-13 10:05:47.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'eb7147c73fb39dcbc0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+let's back out the second acquis:
+> Row 1:
+>              ALIASKEY = X'e6c460f13fdfc89dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|XTRM    US|CP_NAME|Brass Eagle Inc|CP_ID_BB_COMP|302514|CP_UNIT|Brass Eagle Inc|CP_TOT_AMT|94.328255|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.603600|CP_SH_FLAG|1|CP_DEBT|14.970000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|21.825838|CP_CUR_PREMIUM|-2.405380|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|80.953133|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Acquirer Legal Adviser;1;Gibson Dunn Crut;13;100.000000;|CP_NOTES|TENDER OFFER RESULTS AS OF 12/8/03: 95.7% ACCEPTANCE.                                                         12/09/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 12692147
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100102
+>        BB_COMPANYNAME = K2 Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = KTO     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = KTO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'9f4b5e8d3fdfc6c3c0a80146'
+>               VERSION = NULL
+first update the BB_ACYIONID
+update mcorporateaction set BB_ACTIONID = '12692147:MARTY' where  PRIMARYKEY = X'9f4b5e8d3fdfc6c3c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'9f4b5e8d3fdfc6c3c0a80146';
+> Row 1:
+>              ALIASKEY = X'e6c460f13fdfc89dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|XTRM    US|CP_NAME|Brass Eagle Inc|CP_ID_BB_COMP|302514|CP_UNIT|Brass Eagle Inc|CP_TOT_AMT|94.328255|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.603600|CP_SH_FLAG|1|CP_DEBT|14.970000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|21.825838|CP_CUR_PREMIUM|-2.405380|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|80.953133|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Acquirer Legal Adviser;1;Gibson Dunn Crut;13;100.000000;|CP_NOTES|TENDER OFFER RESULTS AS OF 12/8/03: 95.7% ACCEPTANCE.                                                         12/09/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 12692147:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100102
+>        BB_COMPANYNAME = K2 Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = KTO     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = KTO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'9f4b5e8d3fdfc6c3c0a80146'
+>               VERSION = NULL
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 12692147:MARTY
+ok this applied.
+
+let's clean up the mstockalias mstock / identitykey
+select * from mstockalias where STOCKKEY = X'd69a0e21390a7230c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'd69b0e21390a7230c0a80116'
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2003-12-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'a2a355ae3fda8e72c0a80146'  <-- make this the identitykey in mstock
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10553F106
+>           DATE = TIMESTAMP '2003-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BRASS EAGLE
+>     PRIMARYKEY = X'e6c460f13fdfc89dc0a80146'  <--- delete this (after changing the identitykey)
+>       STOCKKEY = X'd69a0e21390a7230c0a80116'
+>         SYMBOL = XTRM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+
+select * from mstock where primarykey= X'd69a0e21390a7230c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'e6c460f13fdfc89dc0a80146'
+>                NAME = BRASS EAGLE
+>          PRIMARYKEY = X'd69a0e21390a7230c0a80116'
+>              SYMBOL = XTRM
+>           COMPANYID = 1079
+>   WINDOWIDENTITYKEY = NULL
+
+update mstock set IDENTITYKEY = X'a2a355ae3fda8e72c0a80146' where primarykey= X'd69a0e21390a7230c0a80116';
+
+delete from mstockalias where PRIMARYKEY = X'e6c460f13fdfc89dc0a80146';
+
+let's see if anyone is short in KTO
+select distinct stockkey from mstockalias where symbol='KTO'; 
+> Row 1:
+>   STOCKKEY = X'197b0e21390b164cc0a80116'
+select count(*) from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0;
+> Row 1:
+>   _C001 = 18.000000
+
+select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0;
+show table mfund;  kindkey
+select distinct kindkey from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0);
+> Row 1:
+>   KINDKEY = X'70443ca1391e026fc0a8015c'
+
+all one kind key probably all LONG funds
+select symbol from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0) order by symbol;
+> Row 1:
+>   SYMBOL = CGTFX
+> Row 2:
+>   SYMBOL = DHMF
+> Row 3:
+>   SYMBOL = FUNK
+> Row 4:
+>   SYMBOL = GMF
+> Row 5:
+>   SYMBOL = HMF
+> Row 6:
+>   SYMBOL = JMF4
+> Row 7:
+>   SYMBOL = KMF
+> Row 8:
+>   SYMBOL = MMF
+> Row 9:
+>   SYMBOL = MMF1
+> Row 10:
+>   SYMBOL = MOMO
+> Row 11:
+>   SYMBOL = NTFX
+> Row 12:
+>   SYMBOL = RCMF
+> Row 13:
+>   SYMBOL = RCMF1
+> Row 14:
+>   SYMBOL = RCMF2
+> Row 15:
+>   SYMBOL = RKMF
+> Row 16:
+>   SYMBOL = RMF
+> Row 17:
+>   SYMBOL = SDGF
+> Row 18:
+>   SYMBOL = TICK
+
+let's get the member's logins
+select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0;
+select portfoliokey from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0);
+select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0));
+
+select loginname, primarykey from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0))) order by loginname;
+> Row 1:
+>    LOGINNAME = bcooke
+>   PRIMARYKEY = X'90e635c73a08a7e5c0a80118'
+> Row 2:
+>    LOGINNAME = cgarcia-tunon
+>   PRIMARYKEY = X'007547f83973211bc0a801e0'
+> Row 3:
+>    LOGINNAME = csandstedt
+>   PRIMARYKEY = X'a1a11e1e3c976704c0a801e1'
+> Row 4:
+>    LOGINNAME = cwhaberm
+>   PRIMARYKEY = X'c4d4285e3e2899d6c0a80135'
+> Row 5:
+>    LOGINNAME = gamegod
+>   PRIMARYKEY = X'a5644f3b3d433ad0c0a80118'
+> Row 6:
+>    LOGINNAME = jmckeachie
+>   PRIMARYKEY = X'd17d4be93c5d278dc0a80119'
+> Row 7:
+>    LOGINNAME = kpedo
+>   PRIMARYKEY = X'3b91609a39fec0dfc0a801e1'
+> Row 8:
+>    LOGINNAME = michael.keane
+>   PRIMARYKEY = X'ddfa4f023bd833b6c0a801e1'
+> Row 9:
+>    LOGINNAME = multizone7
+>   PRIMARYKEY = X'aca222033c7c2545c0a801e0'
+> Row 10:
+>    LOGINNAME = psparke
+>   PRIMARYKEY = X'164f19763f44d854c0a80132'
+> Row 11:
+>    LOGINNAME = rbebeau
+>   PRIMARYKEY = X'158c67683c718527c0a801e0'
+> Row 12:
+>    LOGINNAME = rkarplus
+>   PRIMARYKEY = X'23846ed7399cc233c0a80119'
+> Row 13:
+>    LOGINNAME = skipdogg
+>   PRIMARYKEY = X'f9596e2a39883119c0a80118'
+> Row 14:
+>    LOGINNAME = somedalum
+>   PRIMARYKEY = X'0b6626da39d9c7f6c0a80118'
+
+
+Let's go through these one by one by one
+select loginname, primarykey from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey in (select fundkey from mposition where  STOCKKEY = X'197b0e21390b164cc0a80116' and totalshares < 0))) order by loginname;
+> Row 1:
+>    LOGINNAME = bcooke
+>   PRIMARYKEY = X'90e635c73a08a7e5c0a80118'
+your holdings of KTO 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+RCMF1 	-603 	-$8,827.92 	-0.77%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 12, 2003 		603 	603 	Corporate Action
+Aug 09, 2007 	603 	-1206 	-603 	Corporate Action
+Total: -603
+
+BUYS
+
+You have no Buys for this position
+  	  	 
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 12, 2003 	BRASS EAGLE [XTRM] acquired by K2 INC [KTO] on 2003-12-12 00:00:00.
+Aug 09, 2007 	K2 INC [KTO] acquired by Jarden Corp [JAH] on 2007-08-09 00:00:00.
+
+
+RCMF2 	-301 	-$4,406.64 	-0.34%
+RCMF 	-603 	-$8,827.92 	-0.55%
+RCMFTECH 	0 	N/A 	N/A 
+
+> Row 2:
+>    LOGINNAME = cgarcia-tunon
+>   PRIMARYKEY = X'007547f83973211bc0a801e0'
+> Row 3:
+>    LOGINNAME = csandstedt
+>   PRIMARYKEY = X'a1a11e1e3c976704c0a801e1'
+> Row 4:
+>    LOGINNAME = cwhaberm
+>   PRIMARYKEY = X'c4d4285e3e2899d6c0a80135'
+> Row 5:
+>    LOGINNAME = gamegod
+>   PRIMARYKEY = X'a5644f3b3d433ad0c0a80118'
+> Row 6:
+>    LOGINNAME = jmckeachie
+>   PRIMARYKEY = X'd17d4be93c5d278dc0a80119'
+> Row 7:
+>    LOGINNAME = kpedo
+>   PRIMARYKEY = X'3b91609a39fec0dfc0a801e1'
+> Row 8:
+>    LOGINNAME = michael.keane
+>   PRIMARYKEY = X'ddfa4f023bd833b6c0a801e1'
+> Row 9:
+>    LOGINNAME = multizone7
+>   PRIMARYKEY = X'aca222033c7c2545c0a801e0'
+> Row 10:
+>    LOGINNAME = psparke
+>   PRIMARYKEY = X'164f19763f44d854c0a80132'
+> Row 11:
+>    LOGINNAME = rbebeau
+>   PRIMARYKEY = X'158c67683c718527c0a801e0'
+> Row 12:
+>    LOGINNAME = rkarplus
+>   PRIMARYKEY = X'23846ed7399cc233c0a80119'
+> Row 13:
+>    LOGINNAME = skipdogg
+>   PRIMARYKEY = X'f9596e2a39883119c0a80118'
+> Row 14:
+>    LOGINNAME = somedalum
+>   PRIMARYKEY = X'0b6626da39d9c7f6c0a80118'
+
+*****  snowball effect
+
+KTO was also acquired
+
+select distinct stockkey from mstockalias where symbol='KTO';
+> Row 1:
+>   STOCKKEY = X'197b0e21390b164cc0a80116'
+select * from mstockalias where STOCKKEY = X'197b0e21390b164cc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'197c0e21390b164cc0a80116'
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'5963463146bbe349c0a80146'
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+select * from mcorporateaction where aliaskey=X'5963463146bbe349c0a80146';
+> Row 1:
+>              ALIASKEY = X'5963463146bbe349c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|KTO     US|CP_NAME|K2 Inc|CP_ID_BB_COMP|100102|CP_UNIT|K2 Inc|CP_TOT_AMT|1155.697388|CP_ACQUIS_TYP|3|CP_CASH|10.850000|CP_CASH_FLAG|1|CP_SH|0.111800|CP_SH_FLAG|1|CP_DEBT|376.704010|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.574829|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|1114.272583|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;1;Acquirer Legal Adviser;1;Willkie Farr;13;100.000000;1;Acquirer Financial Adviser;1;Lehman Brothers;13;100.000000;1;Target Financial & Fairness Op;1;Blackstone Group;13;100.000000;|CP_NOTES|TERMINATION FEES: $27.5 MLN.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 26090894
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 117117
+>        BB_COMPANYNAME = Jarden Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>         BB_IDENTIFIER = JAH     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-25 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = JAH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-09 00:00:00.000000'
+>            PRIMARYKEY = X'8b31220946bbc6c0c0a80146'
+>               VERSION = NULL
+
+this gave cash and shares in JAH
+select count(*) from mticket where sourcekey=X'8b31220946bbc6c0c0a80146';
+> Row 1:
+>   _C001 = 394.000000
+
+select distinct stockkey from mticket where sourcekey=X'8b31220946bbc6c0c0a80146';
+> Row 1:
+>   STOCKKEY = X'06570e21390adfe9c0a80116'
+select distinct symbol from mstockalias where STOCKKEY = X'06570e21390adfe9c0a80116';
+> Row 1:
+>   SYMBOL = ALC
+> Row 2:
+>   SYMBOL = JAH
+
+> Row 2:
+>   STOCKKEY = X'197b0e21390b164cc0a80116'
+select distinct symbol from mstockalias where STOCKKEY = X'197b0e21390b164cc0a80116';
+> Row 1:
+>   SYMBOL = KTO
+
+well, at least JAH still trades  - members may have gone short in JAH, though
+
+**********************
+Assessment - XTRM double acquis has been backed out.
+
+so members are short in KTO - 
+let's get the terms for the KTO back it out and reapply
+***********************
+
+> Row 1:
+>              ALIASKEY = X'5963463146bbe349c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|KTO     US|CP_NAME|K2 Inc|CP_ID_BB_COMP|100102|CP_UNIT|K2 Inc|CP_TOT_AMT|1155.697388|CP_ACQUIS_TYP|3|CP_CASH|10.850000|CP_CASH_FLAG|1|CP_SH|0.111800|CP_SH_FLAG|1|CP_DEBT|376.704010|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.574829|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|1114.272583|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;1;Acquirer Legal Adviser;1;Willkie Farr;13;100.000000;1;Acquirer Financial Adviser;1;Lehman Brothers;13;100.000000;1;Target Financial & Fairness Op;1;Blackstone Group;13;100.000000;|CP_NOTES|TERMINATION FEES: $27.5 MLN.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 26090894
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 117117
+>        BB_COMPANYNAME = Jarden Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>         BB_IDENTIFIER = JAH     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-25 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = JAH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-09 00:00:00.000000'
+>            PRIMARYKEY = X'8b31220946bbc6c0c0a80146'
+>               VERSION = NULL
+
+effective date:  20070809
+KTO acquired by JAH
+type: 3
+cash: 10.85
+shares:  0.1118
+
+update the BB_ACTIONID to make it unique
+update mcorporateaction set BB_ACTIONID = '26090894:MARTY' where PRIMARYKEY = X'8b31220946bbc6c0c0a80146';
+check it 
+select * from mcorporateaction where PRIMARYKEY = X'8b31220946bbc6c0c0a80146';
+> Row 1:
+>              ALIASKEY = X'5963463146bbe349c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|KTO     US|CP_NAME|K2 Inc|CP_ID_BB_COMP|100102|CP_UNIT|K2 Inc|CP_TOT_AMT|1155.697388|CP_ACQUIS_TYP|3|CP_CASH|10.850000|CP_CASH_FLAG|1|CP_SH|0.111800|CP_SH_FLAG|1|CP_DEBT|376.704010|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.574829|CP_CUR_PREMIUM| |CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|1114.272583|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;1;Acquirer Legal Adviser;1;Willkie Farr;13;100.000000;1;Acquirer Financial Adviser;1;Lehman Brothers;13;100.000000;1;Target Financial & Fairness Op;1;Blackstone Group;13;100.000000;|CP_NOTES|TERMINATION FEES: $27.5 MLN.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 26090894:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 117117
+>        BB_COMPANYNAME = Jarden Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>         BB_IDENTIFIER = JAH     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-25 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = JAH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-09 00:00:00.000000'
+>            PRIMARYKEY = X'8b31220946bbc6c0c0a80146'
+>               VERSION = NULL
+
+let's reverse it
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 26090894:MARTY
+looks like this ran
+
+We need to update the mstockalias / mstock for KTO
+
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='KTO');
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC  
+>     PRIMARYKEY = X'197c0e21390b164cc0a80116'  <-- set indentitykey here 
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'5963463146bbe349c0a80146'  <-- delete this one 
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+
+select * from mstock where primarykey=X'197b0e21390b164cc0a80116';
+> Row 1:
+>         IDENTITYKEY = X'5963463146bbe349c0a80146'
+>                NAME = K2 INC
+>          PRIMARYKEY = X'197b0e21390b164cc0a80116'
+>              SYMBOL = KTO
+>           COMPANYID = 5359
+>   WINDOWIDENTITYKEY = NULL
+update the identity key
+update mstock set IDENTITYKEY = X'197c0e21390b164cc0a80116'   where PRIMARYKEY = X'197b0e21390b164cc0a80116';
+delete the mstockalias 
+delete from mstockalias where PRIMARYKEY = X'5963463146bbe349c0a80146';
+now check
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='KTO');
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'197c0e21390b164cc0a80116'
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+
+ok - let's reapply the acquis for KTO
+effective date:  20070809
+KTO acquired by JAH
+type: 3
+cash: 10.85
+shares:  0.1118
+
+/Marketocracy/bin/cahelper -symbol KTO -effective 20070809 -type ACQUIS -exchange UU -acqType 3 -acqCash 10.85 -acqShare 0.1118 -purchaser JAH >& /Users/build/caout/KTO.20150511-ACQUIS-JAH.out
+stocks:~/caout build$ tail -f KTO.20150511-ACQUIS-JAH.out
+D: (05-11 12:06:51.193) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-11 12:07:38.578) cahelper started on 2015-05-11 12:07:38 -0400
+
+D: (05-11 12:07:43.481) There are [0] open tickets for KTO on 20070809
+D: (05-11 12:07:48.722) StockFileLoad Version:4.0
+D: (05-11 12:07:48.722) Loading Stock Data
+D: (05-11 12:09:05.176) Building Lookup Index
+D: (05-11 12:09:15.688) Finished Building Index
+D: (05-11 12:09:22.947) Finished Loading Stock Data
+D: (05-11 12:09:23.049) Connection to 192.168.111.172:6666 succeeded
+D: (05-11 12:10:07.762) SavingChanges for Stock Dividend out 101 of 357
+D: (05-11 12:11:00.346) SavingChanges for position sell out 101 of 357
+D: (05-11 12:11:20.525) {
+    "ACQUIRED_STOCK" = KTO; 
+    "ACQUIRING_STOCK" = JAH; 
+    AMOUNT = "CASH 10.85: SHARES 0.1118"; 
+    APPLIED = 1; 
+    DATE = 20070809; 
+    FUNDS = (
+        "mghtydx/SoCal Sizzle", 
+        "rxfund/CompuPharma8", 
+        "athibodeau/Alice Thibodeau's Mutual Fund", 
+        "cwooley/Clint Wooley's EV Mutual Fund", 
+        "dforbes/David Forbes's Kid Fund", 
+        "bpeters/Benjamin  Peters's Mutual Fund", 
+        "den18951/Dennis", 
+        "gualti/SAGIO Gualti", 
+        "cmonti/Marcienne", 
+        "mrgill3/Attempt at Value Fund", 
+        "gpbax/Pro-Max", 
+        "nittnot/Stratified Aggressive Growth", 
+        "nittnot/CCG Aggressive Growth Fund", 
+        "nittnot/Nittnot Stratified Growth Fund", 
+        "cmahaffey/Technical Growth Mutual Fund", 
+        "jlear/Compliant Aggressive Value", 
+        "salemphreak/The Hades Sports Fund", 
+        "seilers/stan eilers's growth fund", 
+        "nt21/QCM Fun Fund", 
+        "roghair/Neil's Mutual Fund", 
+        "emintz/MI Diversified Momentum Fund", 
+        "myswissbroker.com/MARCUARD FASHION FUND", 
+        "gondola415/gondola415's Leisure Fund", 
+        "orange/Lowrey Fund: Khaki", 
+        "ericmefron@earthlink.net/EMAN Opportunity Fund", 
+        "klongino/klongino's Mutual Fund", 
+        "dbarsan/dbarsan's Mutual Fund", 
+        "ljgrant/ljgrant's Short Term Holdings", 
+        "montreux/Montreux Mutual Fund", 
+        "jmann2/jmann2's Low Priced Stock Fund", 
+        "hrick/Harrison Manly Fund II", 
+        "DELETED_2006516/gbddj1's Mutual Fund", 
+        "r.w.b._s/r.w.b._s's Mutual Fund", 
+        "jodawi/CyberFrog 9000", 
+        "kwegman/kwegman's Mutual Fund", 
+        "hiho11/CONSUMER RETAIL", 
+        "agillespie/Alllen Ray Gillespie, CFA's Mutual Fund", 
+        "bittna/Bittna's Rest & Relaxation Mutual Fund", 
+        "cds/CDS Growth Fund", 
+        "msmith3/Michael's Growth Fund", 
+        "butcher/The Butcher's Fun and Diversion Fund", 
+        "schick/schick's Mutual Fund", 
+        "cstafford/Chad Stafford's Fishing Fund", 
+        "shamm/shamm's Mutual Fund", 
+        "archangel/World Conqueror", 
+        "mlagarde/Mathieu Lagarde RISK/REWARD 2", 
+        "sodakjack/Erik", 
+        "beten124/beten124's Mutual Fund", 
+        "roif/roif's Mutual Fund", 
+        "lokater/David Belus's Consumer Cyclicals Mutual Fund", 
+        "psparke/Price Momentum", 
+        "jdamian_jr/jdamian_Penny Stock Fund", 
+        "jmckeachie/thebestofthebest", 
+        "cwhaberm/Huron Shores Mutual Fund", 
+        "skipdogg/SkipDogg Growth Fund", 
+        "pmcclain/New Fund", 
+        "bcooke/Robert Cooke's Mutual Fund", 
+        "michael.keane/michael.keane's Mutual Fund", 
+        "stocksystm/Tactical Timing Fund", 
+        "bcooke/Robert Cooke's Mutual Fund", 
+        "jakewk/Small Cap Growth", 
+        "pmcclain/Value Term Mutual Fund", 
+        "pmcclain/Long Term Growth Mutual Fund", 
+        "pmcclain/Technology Mutual Fund", 
+        "bcooke/Robert Cooke's Mutual Fund", 
+        "conuslbyrne/Olympus Value Fund", 
+        "rogerbrookuk/Fundamental Fund", 
+        "cgarcia-tunon/GT Special Opportunities FUnd", 
+        "gamegod/GameGod's Funky Fund", 
+        "pmcclain/Patrick McClain's Mutual Fund 2", 
+        "multizone7/KuL's Mutual Fund", 
+        "pmcclain/Special Picks Fund", 
+        "dmiller1/dmiller1's Mutual Fund", 
+        "rbebeau/rbebeau's Mutual Fund", 
+        "gamegod/Select Industries", 
+        "DELETE_bbbj_40619009/bbbj's Mutual Fund", 
+        "pmcclain/Patrick McClain's Mutual Fund 3", 
+        "pmcclain/Yesterday's Basis Fund", 
+        "pmcclain/Patrick McClain's Mutual Fund", 
+        "doconnor/doconnor's Price Volume Explosions Fund", 
+        "csandstedt/The Broken Clock Fund", 
+        "somedalum/New Theory Fund", 
+        "michael.keane/michael.keane's Mutual Fund", 
+        "willblur/willblur's Short Fund", 
+        "hale7990/The Microcap Fund", 
+        "powens/Paul Owens's Mutual Fund", 
+        "bhenderson/bhenderson's Mutual Fund", 
+        "dmoffet/Dali Mutual Fund", 
+        "zpryor/Investing In San Diego", 
+        "cgraydon/Kudzu Catfish Fund", 
+        "jflavoie/JF Lavoie's Mutual Fund", 
+        "jmckeachie/small cap 290302", 
+        "trunkychristy/Consumer Discretionary", 
+        "gualti/gualti's Mutual Fund", 
+        "jdamian_jr/jdamian consumer discretionary fund", 
+        "kosedonucu/kosedonucu's Mutual Fund", 
+        "kosedonucu/BKFund2", 
+        "kosedonucu/BKDividendFund", 
+        "irondraco/irondraco's AG Mutual Fund", 
+        "superman33/superman33's Mutual Fund", 
+        "lvolk/lvolk's Mutual Fund", 
+        "crossy/Crossy's Wellbeing Fund", 
+        "tbarlage/Inside Track Fund", 
+        "clark/ITF", 
+        "teacow/Teacow's Domestic Growth Fund", 
+        "haegint/Insider Trading Fund", 
+        "crayson10/Q Trade", 
+        "dhohner/QuantValue Fund", 
+        "philip16/philip16's Mutual Fund", 
+        "philip16/philip16's  Fund", 
+        "bobthestockbuildercarroll/bobthestockbuildercarroll's Mutual Fund", 
+        "bobthestockbuilermaster2/bobthestockbuilermaster2's Mutual Fund", 
+        "bobthestockbuildermaster/bobthestockbuildermaster's Mutual Fund", 
+        "benny/benny's Mutual Fund", 
+        "wgern/william christian gern's Mutual Fund", 
+        "duke_raoul/duke_raoul's Mutual Fund", 
+        "georgesdyer/georgesdyer's Mutual Fund", 
+        "woodsidebabyboy/Miguel's Mutual Fund", 
+        "chippy/chippy's Mutual Fund", 
+        "mochi/short interest", 
+        "imcabeer/imcabeer's Mutual Fund", 
+        "heathcox/Heathcox's Food & Travel Fund", 
+        "heathcox/Heath Solid", 
+        "haleultimate/haleultimate's Value Fund", 
+        "dimas/Dima's Short Mutual Fund", 
+        "juniorcaveman/Long Term Consumer Goods", 
+        "jubals/Hoping to increase shareholder wealth substantially", 
+        "zacharkevics/zacharkevics's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "jhamer/Short-Only Fund", 
+        "jrb78/jrb78's Mutual Fund", 
+        "beckjonathan/beckjonathan's Mutual Fund", 
+        "dfkratz/dfkratz's Mutual Fund", 
+        "heathcox/Heath's Four Percent Fund", 
+        "heathcox/Heath's Risk Inclined Fund", 
+        "ksharpless/Telecomm & Technology", 
+        "milkrate/Small Cap Value", 
+        "mcara/Starting Fund", 
+        "jaimeantunes/Skyisthelimit", 
+        "heathcox/Heath Holdings", 
+        "ddougherty2/ddougherty2's Mutual Fund", 
+        "fred123/fred123's Mutual Fund", 
+        "msaal/Michael", 
+        "biggerry/Big Gerry's Fund", 
+        "heathcox/REMerge", 
+        "robin/Watch List", 
+        "argentina/argentina's Mutual Fund", 
+        "brahmsian/Guilford's Downdraft Fund", 
+        "quebasura/QB GARP Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "wgilcher/Small Cap", 
+        "mgulla/Gulla Short Earnings Fund", 
+        "audtrader/audtrader's Diversified Fund", 
+        "over_invested/Shorty short", 
+        "rhnaccounts/Reuters Screen", 
+        "jlear/GNVI x AV blend", 
+        "jlear/GNV2 x AV blend", 
+        "fiscariche/fiscariche's Mutual Fund", 
+        "jlong4/jlong4's Mutual Fund", 
+        "piotr314/piotr314's Mutual Fund", 
+        "piotr314/piotr314's Mutual Fund", 
+        "schaubey/schaubey's Short Mutual Fund", 
+        "ml5304/Kim Mutual Fund", 
+        "jam430m22/jam430m22's Mutual Fund", 
+        "coaster/IMPACT GROWTH", 
+        "lisarec/Fundamental Screen - aapl", 
+        "chinaman/chinaman's rehab fund class A", 
+        "boreal/boreal's Mutual Fund", 
+        "marketmark80/marketmark80's Mutual Fund", 
+        "mcgootz1/mcgootz1's Mutual Fund", 
+        "dividendaristocrat/Dividend Aristocrat's Value fund", 
+        "funnybone647/Remy's Mutual Fund", 
+        "babdul/Basher  Express   Mutual   Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "gurucandidate/gurucandidate's Short Only Fund", 
+        "shelupinin/pure options play", 
+        "nramirez/NRamirez's Mutual Fund", 
+        "utterme/Sports Firms", 
+        "gustin/TreasureBundle Equity Fund", 
+        "boderkirk/Cractus White Collar Men's Fund", 
+        "tomtomtom/tomtomtom's Mutual Fund", 
+        "shayagetzl/PCR short fund ", 
+        "philholcombe02/philholcombe02's Mutual Fund", 
+        "riddik75/Fast Profits Fund", 
+        "lsaunders/I-Advantage Low Price Stock Fund", 
+        "lsaunders/Low Price/Sales Strategy", 
+        "tohara05/tohara05's Mutual Fund", 
+        "lsaunders/I-Advantage Growth Model", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "joyschwab/joyschwab's Mutual Fund", 
+        "phoward/Practice", 
+        "phoward/Practice - Smaller Stakes", 
+        "tyler01055/M & A Fund", 
+        "khabby/Moose's Sports Fund", 
+        "buffetfan/LPB, price strength", 
+        "short_2iq/short portfolio - Equity market neutral strategy", 
+        "leggj2000/LeggWork S&P 600 beater"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = JAH; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-11 12:11:43.603) SUCCESS
+D: (05-11 12:11:43.603) cahelper finished 2015-05-11 12:11:43 -0400
+
+
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='KTO');
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'197c0e21390b164cc0a80116'
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 482732104
+>           DATE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = K2 INC
+>     PRIMARYKEY = X'419e4b735550d491c0a86f92'
+>       STOCKKEY = X'197b0e21390b164cc0a80116'
+>         SYMBOL = KTO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = SG
+
+
+select * from mcorporateaction where aliaskey = X'419e4b735550d491c0a86f92';
+> Row 1:
+>              ALIASKEY = X'419e4b735550d491c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|KTO  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|10.850000|CP_CASH_FLAG|1|CP_SH|0.111800|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150511:120738
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>         BB_IDENTIFIER = JAH     UU Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = JAH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-09 00:00:00.000000'
+>            PRIMARYKEY = X'9aa94b735550d3cac0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'9aa94b735550d3cac0a86f92';
+> Row 1:
+>   _C001 = 394.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'9aa94b735550d3cac0a86f92'));
+394 fundkeys to invalidate save to CA issues KTO fundkeys.txt
+
+
+final checks
+XTRM - no one should hold shares of this now
+KTO - no one should hold shares of this
+
+MAdmin checking XTRM
+05/11/2015 
+Stock:BRASS EAGLE  Symbol:XTRM
+Date: 05/11/2015
+1  users found
+1	marketocracy
+
+login 
+your holdings of XTRM 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+WATCH 	0 	N/A 	N/A
+BIP 	0 	N/A 	N/A
+MS 	0 	N/A 	N/A
+MTF 	0 	N/A 	N/A
+HEDGE 	0 	N/A 	N/A
+50top2 	0 	N/A 	N/A
+UIT1 	0 	N/A 	N/A
+UIT-2 	0 	N/A 	N/A
+NMP1 	0 	N/A 	N/A
+NOMW 	0 	N/A 	N/A
+NOMEW 	0 	N/A 	N/A
+UITw090224 	0 	N/A 	N/A
+UITew090224a 	0 	N/A 	N/A
+UIT090303 	0 	N/A 	N/A
+SWANv2 	1 	$.00 	0.00% 
+
+expand:
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 29, 2001 		9844 	9844 	Buy
+Aug 08, 2001 	9844 	-9844 		Sell
+Jun 14, 2002 		23626 	23626 	Buy
+Sep 26, 2002 	23626 	-10434 	13192 	Sell
+Nov 04, 2002 	13192 	-7284 	5908 	Sell
+Dec 13, 2002 	5908 	-3938 	1970 	Sell
+Dec 20, 2002 	1970 	-1969 	1 	Sell
+Feb 19, 2003 	1 	3839 	3840 	Buy
+Mar 13, 2003 	3840 	-1870 	1970 	Sell
+Apr 14, 2003 	1970 	-1969 	1 	Sell   <--- sell one more share 
+Total: 1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 29, 2001 	9,844 	$492.19 	$83,457.84 	$8.48
+Jun 14, 2002 	3,938 	$196.88 	$24,176.41 	$6.14
+Jun 14, 2002 	9,844 	$492.19 	$60,441.03 	$6.14
+Jun 14, 2002 	9,844 	$492.19 	$60,441.03 	$6.14
+Feb 19, 2003 	2,264 	$113.20 	$17,299.34 	$7.64
+Feb 19, 2003 	1,575 	$78.75 	$11,890.17 	$7.55
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 8, 2001 	9,844 	$492.19 	$2.27 	$67,559.77 	$6.86
+Sep 26, 2002 	10,434 	$521.72 	$2.03 	$66,286.89 	$6.35
+Nov 4, 2002 	7,284 	$364.22 	$1.52 	$49,627.69 	$6.81
+Dec 13, 2002 	3,938 	$196.88 	$1.02 	$33,747.06 	$8.57
+Dec 20, 2002 	1,969 	$98.44 	$0.55 	$17,982.54 	$9.13
+Mar 13, 2003 	1,870 	$93.52 	$0.45 	$14,871.78 	$7.95
+Apr 14, 2003 	1,969 	$98.44 	$0.49 	$15,763.79 	$8.01   <--- sell one more share   make this 1970
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py marketocracy SWANv2 20030414 XTRM -1970 8.01 
+Trading -1970.0 shares of BRASS EAGLE on Apr 14, 2003 at 8.01
+manager: marketocracy Stock Alerts
+fund: SWANv2
+building trade (has to load stock prices first)
+price = 8.01
+selling -1970.0 shares of XTRM at 8.01 on 20030414
+invaldating fund prices from Apr 14, 2003
+Done
+
+
+check MAdmin for KTO
+Stock:K2 INC  Symbol:KTO
+Date: 05/11/2015
+
+2 users found
+
+1	kpedo	rkarplus
+
+
+kpedo
+your holdings of KTO 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+DHMF 	-120 	-$1,756.80 	-0.06%
+KMF 	0 	N/A 	N/A
+KMF1 	0 	N/A 	N/A 
+
+expand
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 12, 2003 		120 	120 	Corporate Action
+Apr 20, 2004 	120 	-240 	-120 	Sell  <--- back out 1/2 of this 
+Total: -120
+  	  	 
+BUYS
+
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Apr 20, 2004 	240 	$12.00 	$0.16 	$3,951.04 	$16.46  <- change to 120
+/Marketocracy/Scripts/build/bin/backdatedtrade.py kpedo DHMF 20040420 KTO -120 16.50
+Trading -120.0 shares of K2 INC on Apr 20, 2004 at 16.5
+manager: kpedo Douglas Heller
+fund: DHMF
+building trade (has to load stock prices first)
+price = 16.5
+selling -120.0 shares of KTO at 16.5 on 20040420
+invaldating fund prices from Apr 20, 2004
+Done
+
+
+rkarplus
+your holdings of KTO 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+RKMF 	-3,240 	-$47,433.60 	-4.03% 
+
+expand
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 27, 2003 		3240 	3240 	Corporate Action
+Dec 08, 2003 	3240 	-3240 		Sell
+Dec 10, 2003 		-3240 	-3240 	Sell  <-- remove this second sell
+Total: -3,240
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 8, 2003 	3,240 	$162.00 	$2.16 	$45,908.64 	$14.17
+Dec 10, 2003 	3,240 	$162.00 	$2.18 	$46,270.42 	$14.28 <-- remove this second sell
+on 5/12/15
+invalidate the KTO funds
+
+that eliminates the shorts with KTO
+
+
+
+Let's check JAH
+is any one short?
+
+select distinct stockkey from mstockalias where symbol='JAH';
+> Row 1:
+>   STOCKKEY = X'06570e21390adfe9c0a80116'
+select count(*) from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0;
+> Row 1:
+>   _C001 = 20.000000
+
+select fundkey from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0;
+select symbol from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0) order by symbol;
+> Row 1:
+>   SYMBOL = APTHA
+> Row 2:
+>   SYMBOL = ASKS
+> Row 3:
+>   SYMBOL = BETA
+> Row 4:
+>   SYMBOL = DDD
+> Row 5:
+>   SYMBOL = DSMF
+> Row 6:
+>   SYMBOL = EBCF
+> Row 7:
+>   SYMBOL = IDS
+> Row 8:
+>   SYMBOL = IMFS
+> Row 9:
+>   SYMBOL = JMF
+> Row 10:
+>   SYMBOL = JMF2
+> Row 11:
+>   SYMBOL = MMsf
+> Row 12:
+>   SYMBOL = PMS
+> Row 13:
+>   SYMBOL = PSF
+> Row 14:
+>   SYMBOL = SGSPC
+> Row 15:
+>   SYMBOL = SHT
+> Row 16:
+>   SYMBOL = SMF4
+> Row 17:
+>   SYMBOL = SSS
+> Row 18:
+>   SYMBOL = VS
+> Row 19:
+>   SYMBOL = XOX
+> Row 20:
+>   SYMBOL = shtwo1
+
+select portfoliokey from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0);
+select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0));
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey in (select fundkey from mposition where STOCKKEY = X'06570e21390adfe9c0a80116' and totalshares < 0))) order by loginname;
+> Row 1:
+>   LOGINNAME = DELETED_jakerosser1_2010022609390001
+> Row 2:
+>   LOGINNAME = apoth
+> Row 3:
+>   LOGINNAME = dimas
+> Row 4:
+>   LOGINNAME = eigh8or
+> Row 5:
+>   LOGINNAME = gsourek
+> Row 6:
+>   LOGINNAME = imcabeer
+> Row 7:
+>   LOGINNAME = jfrancois
+> Row 8:
+>   LOGINNAME = josephp162
+> Row 9:
+>   LOGINNAME = jpctrader
+> Row 10:
+>   LOGINNAME = jweaver2
+> Row 11:
+>   LOGINNAME = ldelapena
+> Row 12:
+>   LOGINNAME = mmetrock
+> Row 13:
+>   LOGINNAME = msaal
+> Row 14:
+>   LOGINNAME = patrick.hable
+> Row 15:
+>   LOGINNAME = pdavis68
+> Row 16:
+>   LOGINNAME = seilers
+> Row 17:
+>   LOGINNAME = shayagetzl
+> Row 18:
+>   LOGINNAME = siala
+> Row 19:
+>   LOGINNAME = themelis
+
+these may not be active or long funds
+select fundkey from mposition where stockkey=X'06570e21390adfe9c0a80116'  and totalshares <0;
+there are 20 funds
+select count(*) from mfund where primarykey in (select fundkey from mposition where stockkey=X'06570e21390adfe9c0a80116'  and totalshares <0) and active=1 and KINDKEY = X'70443ca1391e026fc0a8015c';
+> Row 1:
+>   _C001 = 0.000000
+no real shorts of JAH
+
+active=1 and KINDKEY = X'70443ca1391e026fc0a8015c'
+
+on 5/12/15  - invalidate the KTO fund keys 
+
+5.13.15
+this is the member who was short XTRM let's look at him
+> Row 1026:  DONE
+>    LOGINNAME = jmckeachie
+>       SYMBOL = JMF4
+>   PRIMARYKEY = X'b73371e83c8a1730c0a801e0'
+
+looking up his trading in XTRM
+your holdings of XTRM 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+JMF8 	0 	N/A 	N/A
+JMF1 	0 	N/A 	N/A
+JMF2 	0 	N/A 	N/A
+JMF3 	0 	N/A 	N/A
+JMF4 	0 	$.00 	0.00%  <--- expand 
+JMF5 	0 	N/A 	N/A
+JMF6 	0 	N/A 	N/A
+JMF7 	0 	N/A 	N/A
+JMF 	0 	N/A 	N/A
+JMF9 	0 	N/A 	N/A
+JMF10 	0 	N/A 	N/A
+JMF11 	0 	N/A 	N/A 
+
+JMF4
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 13, 2002 		3479 	3479 	Buy
+Jan 02, 2003 	3479 	-1600 	1879 	Sell
+Dec 12, 2003 	1879 	-1879 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 13, 2002 	3,479 	$173.95 	$15,799.66 	$4.54
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 2, 2003 	1,600 	$80.00 	$0.41 	$13,481.22 	$8.43
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 12, 2003 	BRASS EAGLE [XTRM] acquired by K2 INC [KTO] on 2003-12-12 00:00:00.
+
+let's look at 20031212  for his JMF4 fund 
+
+trades on December 12, 2003 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	XTRM 	1,879 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	KTO 	1,134 	$0.00 	$0.00 	$0.00 	$0.00  <-- he got KTO
+
+expanding on KTO to check his trading
+your holdings of KTO 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+JMF8 	0 	N/A 	N/A
+JMF1 	0 	N/A 	N/A
+JMF2 	0 	N/A 	N/A
+JMF3 	0 	N/A 	N/A
+JMF4 	0 	$.00 	0.00%
+JMF5 	0 	$.00 	0.00%
+JMF6 	0 	N/A 	N/A
+JMF7 	0 	N/A 	N/A
+JMF 	0 	N/A 	N/A
+JMF9 	0 	N/A 	N/A
+JMF10 	0 	N/A 	N/A
+JMF11 	0 	N/A 	N/A 
+
+JMF4
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 12, 2003 		1134 	1134 	Corporate Action
+Aug 09, 2007 	1134 	-1134 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 12, 2003 	BRASS EAGLE [XTRM] acquired by K2 INC [KTO] on 2003-12-12 00:00:00.
+Aug 09, 2007 	K2 INC [KTO] acquired by Jarden Corp [JAH] on 2007-08-09 00:00:00.
+
+let's check the JMF4 ledger on 20070809
+
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+08/09/2007 	$317,960.06 	$0.00 	$8.71 	$12,303.90 	$89.64 	$0.00 	$330,183.03 	$1,280,889.72 	$1,611,072.75 	100,000 	$16.11 	Yes 	Details  
+
+10.85 cash * 1134 shares = 12303.9 which is perfect
+
+ trades on August 09, 2007 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	KTO 	1,134 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	JAH 	126 	$0.00 	$0.00 	$0.00 	$0.00
+
+and he got shares of JAH  ok to close this out 
+
+
+
+
+

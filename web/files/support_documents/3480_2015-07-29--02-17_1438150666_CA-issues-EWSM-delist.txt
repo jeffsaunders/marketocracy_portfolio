@@ -1,0 +1,205 @@
+
+date:  
+ticker:   EWSM
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+XXXX  MM/DD/YYYY
+
+database
+select distinct stockkey from mstockalias where symbol= 'EWSM';  
+> Row 1:
+>   STOCKKEY = X'c88564534e3b2027c0a80146'
+
+select * from mstockalias where stockkey=X'c88564534e3b2027c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rydex S&P SmallCap 600 Equal Weight ETF
+>     PRIMARYKEY = X'c88664534e3b2027c0a80146'
+>       STOCKKEY = X'c88564534e3b2027c0a80146'
+>         SYMBOL = EWSM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P SmallCap 600 Eq
+>     PRIMARYKEY = X'a5171ae34f500a86c0a80146'
+>       STOCKKEY = X'c88564534e3b2027c0a80146'
+>         SYMBOL = EWSM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='EWSM'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock EWSM
+>>>> dbtool started at 2015-07-27 23:17:31 -0400
+stock: EWSM
+  PK       : [C88564534E3B2027C0A80146]
+  companyID: [20997]
+  symbol   : [EWSM]
+  name     : [Rydex S&P SmallCap 600 Equal Weight ETF]
+  date     : [2011-08-04 00:00:00]
+  status   : [Active]
+stock: EWSM
+  PK       : [C88564534E3B2027C0A80146]
+  companyID: [20997]
+  symbol   : [EWSM]
+  name     : [Guggenheim S&P SmallCap 600 Eq]
+  date     : [2012-03-01 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-27 23:17:32 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20997
+2013-03-10 (Sun) [4451]: <WEEKEND>
+2013-03-11 (Mon) [4452]: O:36.3500 H:37.1000 L:36.3500 C:36.3500 V:304 TSO:0 A:36.3500 R:1.0000 CA:0.0000
+2013-03-12 (Tue) [4453]: O:36.3500 H:36.3500 L:36.1300 C:36.1900 V:1038 TSO:0 A:36.1900 R:1.0000 CA:0.0000
+2013-03-13 (Wed) [4454]: O:36.2300 H:36.3900 L:36.1800 C:36.3900 V:847 TSO:0 A:36.3900 R:1.0000 CA:0.0000
+2013-03-14 (Thu) [4455]: O:36.4200 H:36.8100 L:36.4200 C:36.8100 V:471 TSO:0 A:36.8100 R:1.0000 CA:0.0000
+2013-03-15 (Fri) [4456]: O:36.9200 H:36.9200 L:36.7900 C:36.9000 V:1325 TSO:0 A:36.9000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'c88564534e3b2027c0a80146' and shares > 0 order by closed; 
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'c88564534e3b2027c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0)));
+
+apply the acquis
+there are 0 members who hold this stock
+quantum:
+last ticket:
+last price:  2013-03-15 (Fri) [4456]: O:36.9200 H:36.9200 L:36.7900 C:36.9000 V:1325 TSO:0 A:36.9000 R:1.0000 CA:0.0000
+
+going with 20130315 36.900
+
+/Marketocracy/bin/cahelper -symbol  EWSM  -effective 20130315 -type ACQUIS -exchange UN -acqType 1 -acqCash 36.900 -acqShare 0 -purchaser EWSM   >& /Users/build/caout/EWSM.20150727-DELIST.out 
+D: (07-27 23:19:41.293) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-27 23:20:15.816) cahelper started on 2015-07-27 23:20:15 -0400
+
+D: (07-27 23:20:16.639) There are [0] open tickets for EWSM on 20130315
+D: (07-27 23:20:16.659) {
+    "ACQUIRED_STOCK" = EWSM; 
+    "ACQUIRING_STOCK" = "EWSM_FIX"; 
+    AMOUNT = 36.900002; 
+    APPLIED = 1; 
+    DATE = 20130315; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "EWSM_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-27 23:20:17.153) SUCCESS
+D: (07-27 23:20:17.153) cahelper finished 2015-07-27 23:20:17 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'c88564534e3b2027c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rydex S&P SmallCap 600 Equal Weight ETF
+>     PRIMARYKEY = X'c88664534e3b2027c0a80146'
+>       STOCKKEY = X'c88564534e3b2027c0a80146'
+>         SYMBOL = EWSM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P SmallCap 600 Eq
+>     PRIMARYKEY = X'a5171ae34f500a86c0a80146'
+>       STOCKKEY = X'c88564534e3b2027c0a80146'
+>         SYMBOL = EWSM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Guggenheim S&P SmallCap 600 Eq
+>     PRIMARYKEY = X'a660117a55b6f4f0c0a86f92'
+>       STOCKKEY = X'c88564534e3b2027c0a80146'
+>         SYMBOL = EWSM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'a660117a55b6f4f0c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'a660117a55b6f4f0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|EWSM  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|36.900002|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150727:112015
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = EWSM_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-03-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EWSM_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-03-15 00:00:00.000000'
+>            PRIMARYKEY = X'a65a117a55b6f4efc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'a65a117a55b6f4efc0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'SOURCEKEY'));
+there are 0 fundkeys, save to CA issues EWSM fundkeys.txt
+
+For Beta case
+EWSM no longer trades but is still active on our site - need to delist 
+
+check on 7/28/15 no one held it, just check to see if it is delisted 
+ EWSM has been acquired 	right curve
+  	  	
+Guggenheim S&P SmallCap 600 Eq acquired by a private company on 2013-03-15 00:00:00.
+  	  	 
+closing this out, nothing to reprice, no one holds 
+

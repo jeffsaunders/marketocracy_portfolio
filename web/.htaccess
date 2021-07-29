@@ -1,0 +1,66 @@
+# Handle any connections via port 80 (HTTP) - force to port 443 (HTTPS)
+RewriteEngine on
+RewriteCond %{SERVER_PORT} ^80$
+RewriteRule ^(.*)$ https://portfolio.marketocracy.com/$1 [R=301,L]
+
+#Rewrite Rules, in order of precedence - don't change unless you know what you are doing!
+Options +FollowSymlinks
+
+# Maintenance Redirection
+# If doing site maintenence, this block of code will redirect everyone to an "Under Maintenence" page.
+# However, if you access the site via IP you can still get there (for our purposes)
+# ...and it even lets any link, by URL or IP, reach CSS and Image files regardless.
+# Comment this next line to turn on "Maintenence Mode".  It's an intentionally failing condition so the rest of the "Maintenence Mode" block is skipped 
+RewriteCond %{REQUEST_URI} ^$a
+RewriteCond %{REQUEST_URI} !maintenance.php
+RewriteCond %{REQUEST_FILENAME} !(styles|images).+$
+RewriteCond %{REMOTE_ADDR} !^97\.77\.28\.195$
+RewriteCond %{REMOTE_ADDR} !^10\.0\.0\.10$
+RewriteRule (.*) /maintenance.php [R,L]
+
+# This converts any %1 to $1.php or %1.html (checks for either's existance)- a.k.a. extensionless links.
+# i.e. marketocracy.com/foo becomes marketocracy.com/foo.php in the background, if foo.php exists.
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^/?([a-zA-Z0-9]+)$ $1.php [L]
+#RewriteCond %{REQUEST_FILENAME}.html -f
+#RewriteRule ^/?([a-zA-Z0-9]+)$ $1.html [L]
+
+# Special rules to allow for SEO friendly (and simpler) URI's
+
+# System Features
+RewriteRule ^signup/?$ /?page=11-00-00-001&task=login&cargo=signup [NC,L]
+RewriteRule ^login/?$ /?page=11-00-00-001&task=login [NC,L]
+RewriteRule ^login-auto/(.+)/?$ /?page=11-00-00-001&task=login&cargo=$1 [NC,L]
+RewriteRule ^login-failed/?$ /?page=11-00-00-001&task=login&status=login-failed [NC,L]
+RewriteRule ^login-timeout/?$ /?page=11-00-00-001&task=login&status=session-timeout [NC,L]
+RewriteRule ^login-not-validated/?$ /?page=11-00-00-001&task=login&status=login-not-validated [NC,L]
+RewriteRule ^welcome-email-sent/?$ /?page=11-00-00-001&task=login&status=welcome-email-sent [NC,L]
+RewriteRule ^welcome-email-resent/?$ /?page=11-00-00-001&task=login&status=welcome-email-resent [NC,L]
+RewriteRule ^importing/?$ /?page=11-00-00-001&task=login&status=importing [NC,L]
+
+RewriteRule ^logout/?$ /process/process-auth.php?task=logout [NC,L]
+RewriteRule ^session-timeout/?$ /process/process-auth.php?task=logout&status=session-timeout [NC,L]
+
+RewriteRule ^password-email-sent/?$ /?page=11-00-00-001&task=login&status=email-sent [NC,L]
+RewriteRule ^password-email-failed/?$ /?page=11-00-00-001&task=login&status=password-email-failed [NC,L]
+####RewriteRule ^reset-password/([A-Za-z0-9-]+)/?$ /?page=11-00-00-002&cargo=$1 [NC,L]
+####RewriteRule ^reset-password/([^/-]+)/?$ /?page=11-00-00-002&cargo=$1 [NC,L]
+RewriteRule ^reset-password/(.+)/?$ /?page=11-00-00-002&cargo=$1 [NC,L]
+RewriteRule ^reset-failed/?$ /?page=11-00-00-001&task=&status=reset-failed [NC,L]
+RewriteRule ^password-email-sent/?$ /?page=11-00-00-001&task=login&status=email-sent [NC,L]
+RewriteRule ^reset-succeeded/?$ /?page=11-00-00-001&task=login&status=reset-succeeded [NC,L]
+RewriteRule ^verify-email/(.+)/?$ /includes/pages/system-email-verify.php?cargo=$1 [NC,L]
+RewriteRule ^email-verified/(.+)/?$ /?page=11-00-00-001&task=login&status=email-verified&cargo=$1 [NC,L]
+
+RewriteRule ^validate-email/(.+)/?$ /process/system-email-validate.php?cargo=$1 [NC,L]
+
+# Membership Features
+RewriteRule ^setup-wizard/?$ /?page=10-00-00-001 [NC,L]
+
+
+
+# Default rule if none of the above matches - takes them to the site root/index
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteRule .? / [R=301,L]
+

@@ -1,0 +1,345 @@
+VIRGY	13  <----
+date:  
+ticker:   VIRGY
+
+yahoo:
+
+quantum:
+Virgin Express Holdings plc ADR
+Ticker Symbol: VIRGY*     CUSIP: 92765K206     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 7/15/05
+
+BUSINESS:  Virgin Express Holdings plc is a holding company for Virgin Express S.A./N.V. which operates from its Brussels hub to many places in Europe plus a charter service to Europe, the Middle East, and Africa.
+Notes:  ADR program terminated effective 7/17/2005.
+oursite:
+Symbol: VIRGY	Name: VIRGIN EXPRESS HLDGS ADS	Price: $1.14
+Volume:	Sector: Industrials	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+listing changes for VIRGY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jun 28, 2002	NASDAQ	UQ	OTCBB	UU	Change in the exchange that VIRGY trades on from NASDAQ to OTCBB
+Jun 24, 2005	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that VIRGY trades on from OTCBB to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VIRGY
+
+check MAdmin
+Stock:VIRGIN EXPRESS HLDGS ADS  Symbol:VIRGY
+Date: 09/30/2015
+
+7 users found
+
+1	arosenberg	bounty	cscato	dcanaan	djump	glamirand	wbarton1
+
+this is our member of interest:  dcanaan
+let's look at his account and fund(s)
+his DMF fund is his only fund:
+positions on September 29, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+AAPL	Apple Inc	$109.06	20.2%	22,500	$0.00	$2,453,850.00	Details 
+DIS	DISNEY (WALT) CO	$99.42	9.7%	11,775	$0.00	$1,170,670.50	Details 
+WSM	WILLIAMS-SONOMA	$75.73	9.4%	15,057	$0.00	$1,140,266.61	Details 
+SBUX	STARBUCKS CORP	$55.72	9.2%	20,000	$0.00	$1,114,400.00	Details 
+CHH	CHOICE HOTELS INTL	$46.64	7.6%	19,884	$0.00	$927,389.76	Details 
+KO	COCA-COLA CO	$39.66	3.3%	10,000	$0.00	$396,600.00	Details 
+FDX	FEDEX CORP	$141.93	2.5%	2,160	$0.00	$306,568.80	Details 
+WPPGY	WPP GROUP ADS	$100.76	1.7%	2,000	$0.00	$201,520.00	Details 
+TSLA	Tesla Motors Inc	$246.65	1.0%	486	$0.00	$119,871.90	Details 
+GPS	GAP INC	$30.22	1.0%	3,847	$0.00	$116,256.34	Details 
+TIF	TIFFANY & CO	$75.20	0.6%	1,000	$0.00	$75,200.00	Details 
+VIRGY	VIRGIN EXPRESS HLDGS ADS		0.0%	40,100	$0.00	$0.00	Details   <---
+
+only stock that he holds that is not pricing
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'VIRGY';  
+> Row 1:
+>   STOCKKEY = X'02da0e21390ad74bc0a80116'
+select * from mstockalias where stockkey=X'02da0e21390ad74bc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'02db0e21390ad74bc0a80116'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K206
+>           DATE = TIMESTAMP '2002-06-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'660342f23d1d1a24c0a801dc'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K206
+>           DATE = TIMESTAMP '2005-06-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'8379720342bcbb1bc0a80146'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VIRGY'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VIRGY
+>>>> dbtool started at 2015-09-30 13:48:47 -0400
+stock: VIRGY
+  PK       : [02DA0E21390AD74BC0A80116]
+  companyID: [3911]
+  symbol   : [VIRGY]
+  name     : [VIRGIN EXPRESS HLDGS ADS]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: VIRGY
+  PK       : [02DA0E21390AD74BC0A80116]
+  companyID: [3911]
+  symbol   : [VIRGY]
+  name     : [VIRGIN EXPRESS HLDGS ADS]
+  date     : [2002-06-28 00:00:00]
+  status   : [Active]
+stock: VIRGY
+  PK       : [02DA0E21390AD74BC0A80116]
+  companyID: [3911]
+  symbol   : [VIRGY]
+  name     : [VIRGIN EXPRESS HLDGS ADS]
+  date     : [2005-06-24 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-30 13:48:48 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3911
+2005-06-30 (Thu) [1641]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:0 A:1.5000 R:1.0000 CA:0.0000
+2005-07-01 (Fri) [1642]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:0 A:1.5000 R:1.0000 CA:0.0000
+2005-07-02 (Sat) [1643]: <WEEKEND>
+2005-07-03 (Sun) [1644]: <WEEKEND>
+2005-07-04 (Mon) [1645]: <HOLIDAY>
+2005-07-05 (Tue) [1646]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:0 A:1.5000 R:1.0000 CA:0.0000
+2005-07-06 (Wed) [1647]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:0 A:1.5000 R:1.0000 CA:0.0000
+2005-07-07 (Thu) [1648]: O:1.5000 H:1.7500 L:1.5000 C:1.7500 V:1500 TSO:0 A:1.7500 R:1.0000 CA:0.0000
+2005-07-08 (Fri) [1649]: O:1.7500 H:1.7500 L:1.7500 C:1.7500 V:0 TSO:0 A:1.7500 R:1.0000 CA:0.0000
+2005-07-09 (Sat) [1650]: <WEEKEND>
+2005-07-10 (Sun) [1651]: <WEEKEND>
+2005-07-11 (Mon) [1652]: O:1.7500 H:1.7500 L:1.7500 C:1.7500 V:0 TSO:0 A:1.7500 R:1.0000 CA:0.0000
+2005-07-12 (Tue) [1653]: O:1.7500 H:1.7500 L:1.1399 C:1.1399 V:200 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+2005-07-13 (Wed) [1654]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+2005-07-14 (Thu) [1655]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+2005-07-15 (Fri) [1656]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000  <----- 
+2005-07-16 (Sat) [1657]: <WEEKEND>
+2005-07-17 (Sun) [1658]: <WEEKEND>
+2005-07-18 (Mon) [1659]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+2005-07-19 (Tue) [1660]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+2005-07-20 (Wed) [1661]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000
+
+Let's check xignite prices
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+GlobalQuotes Date	GlobalQuotes Last	GlobalQuotes Open	GlobalQuotes High	GlobalQuotes Low	GlobalQuotes Volume	GlobalQuotes LastClose
+7/12/05	1.14	1.75	1.75	1.14	200	1.75
+
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+No info from Steve other than the stock being "delist".  I crossed checked the final prices that we have and what xignite has.   The last price is $1.14    on 7/15/2005.   I am going to apply that.   the member will get 40,100 * 1.14 = 45714  cash on that date and his shares will be taken
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'02da0e21390ad74bc0a80116' and shares > 0 order by closed; 
+> Row 128:
+>      ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-07-12 10:38:00.000000'
+>        COMMENT = Sector Looks Better|Asset Allocation|
+>     COMMISSION = 1.000000
+>   CURRENTORDER = X'4d4f583442cd5b8bc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e5b0c3439dc78a5c0a80119'
+>       MODIFIED = NULL
+>            NET = 33.990000
+>         OPENED = TIMESTAMP '2005-07-07 12:42:51.000000'
+>          PRICE = 1.699500
+>     PRIMARYKEY = X'4d4d583442cd5b8bc0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 20.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'02da0e21390ad74bc0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'02da0e21390ad74bc0a80116'  and totalshares < 0);
+no shorts 
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'02da0e21390ad74bc0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 7 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 7/15/05
+last ticket:  2005-07-12  PRICE = 1.699500
+last price:  2005-07-15 (Fri) [1656]: O:1.1399 H:1.1399 L:1.1399 C:1.1399 V:0 TSO:0 A:1.1399 R:1.0000 CA:0.0000  <----- 
+
+going with 20050715 1.1399    or 1.14
+
+/Marketocracy/bin/cahelper -symbol  VIRGY  -effective 20050715 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.14 -acqShare 0 -purchaser VIRGY   >& /Users/build/caout/VIRGY.20150930-DELIST.out
+VIRGY.20150930-DELIST.out
+stocks1:~/caout build$ tail -f VIRGY.20150930-DELIST.out
+D: (09-30 14:31:48.282) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-30 14:32:17.544) cahelper started on 2015-09-30 14:32:17 -0400
+
+D: (09-30 14:32:17.811) There are [0] open tickets for VIRGY on 20050715
+D: (09-30 14:32:19.394) StockFileLoad Version:4.0
+D: (09-30 14:32:19.394) Loading Stock Data
+D: (09-30 14:32:57.692) Building Lookup Index
+D: (09-30 14:33:02.556) Finished Building Index
+D: (09-30 14:33:06.150) Finished Loading Stock Data
+D: (09-30 14:33:06.268) Connection to 192.168.111.172:6666 succeeded
+D: (09-30 14:33:06.736) {
+    "ACQUIRED_STOCK" = VIRGY; 
+    "ACQUIRING_STOCK" = "VIRGY_FIX"; 
+    AMOUNT = 1.14; 
+    APPLIED = 1; 
+    DATE = 20050715; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VIRGY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-30 14:33:09.180) SUCCESS
+D: (09-30 14:33:09.180) cahelper finished 2015-09-30 14:33:09 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'02da0e21390ad74bc0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'02db0e21390ad74bc0a80116'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K206
+>           DATE = TIMESTAMP '2002-06-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'660342f23d1d1a24c0a801dc'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K206
+>           DATE = TIMESTAMP '2005-06-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'8379720342bcbb1bc0a80146'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92765K206
+>           DATE = TIMESTAMP '2005-07-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = VIRGIN EXPRESS HLDGS ADS
+>     PRIMARYKEY = X'a7d64291560c2ab1c0a86fab'
+>       STOCKKEY = X'02da0e21390ad74bc0a80116'
+>         SYMBOL = VIRGY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'a7d64291560c2ab1c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'a7d64291560c2ab1c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VIRGY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.140000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150930:023217
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-07-15 00:00:00.000000'
+>         BB_IDENTIFIER = VIRGY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-07-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VIRGY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-07-15 00:00:00.000000'
+>            PRIMARYKEY = X'a7d04291560c2ab1c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'a7d04291560c2ab1c0a86fab';
+> Row 1:
+>   _C001 = 18.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'a7d04291560c2ab1c0a86fab'));
+there are 18 fundkeys, save to CA issues VIRGY fundkeys.txt
+
+For Beta case
+VIRGY no longer trades but is still active on our site - need to delist 
+
+check on 10/1/15   invalidate funds
+check MAdmin  clear 
+
+check member dcanaan DMF  on 20050715   40,100 shares * 1.14 per share  = 45714
+
+
+10/1/15
+VIRGY has been acquired	right curve
+ 	 	
+VIRGIN EXPRESS HLDGS ADS acquired by a private company on 2005-07-15 00:00:00.
+ 	 	 
+invalidate, reprice 
+
+he got the cash
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+07/15/2005	$155,685.19	$0.00	$4.27	$45,714.00	$102.73	$0.00	$201,300.72	$1,683,505.87	$1,884,806.59	100,000	$18.85	No	Details 
+
+invalidate, reprice and close 

@@ -1,0 +1,375 @@
+date: 
+ticker:GU
+
+yahoo: nothing
+
+quantum:
+Gushan Environmental Energy Ltd
+Ticker Symbol: GU*     CUSIP: 40330W106     Exchange: NYSE
+* NOTE: This security is no longer trading as of 10/17/12
+
+oursite:
+Symbol: GU 	Name: Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares 	Price: $0.97
+Volume: 	Sector: Energy 	Change:
+Short Volume: 0 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ CUSIP changes for GU 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+12 Nov 10 	40330W106 	40330W205 	Change in any of identification numbers (CUSIP) of a security from 40330W106 to 40330W205
+  	  	 
+left curve 	  cash dividends paid by GU 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+01 Apr 08 	03 Apr 08 	  	75 	$0.11 	Dividend amount:0.10531 per share.
+31 Mar 09 	02 Apr 09 	01 Jun 09 	1 	$0.05 	Dividend amount:0.046762 per share.
+  	  	 
+left curve 	  GU had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+12 Nov 10 	1 for 5 	Split terms:1 for 5
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+GU  MM/DD/YYYY
+Stock:Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares  Symbol:GU
+Date: 06/09/2015
+
+58 users found
+
+1	ContinualEvolution	abusigin	advisorcfa	ajstancius	and475	andypavlovic	biceps	blackhawke	bustop	canyoukickit
+2	cmkrish	colbyhouse	cosmic_power	danfinn00	dgrizzard	dlatt	eliijoro1	ellas	emaxbull	erezs13
+3	floris123	furndog	headhunter	hilmy83	hinrich	iwatt001	jameskritz@hotmail.com	jmcushner	joebullock	joelre81
+4	jvanness	karen_scarbrough	lou.liu	lvanness	march2009	mattd_71	mhornkohl	mpatterson3	n.j.m	onlyraju
+5	pattiann1632	ramonhuerta	rebrown92	revblc	reveille	rexboyce	richfield	robin_chubb@yahoo.com	russiangambit	scouzer
+6	stein	svanness	swamib	tarpro	texmextrader	the_wiz	tombasa	twm2008	 	 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'GU';  
+> Row 1:
+>   STOCKKEY = X'7a4f008047c357bcc0a80146'
+
+select * from mstockalias where stockkey= X'7a4f008047c357bcc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40330W106
+>           DATE = TIMESTAMP '2007-12-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares
+>     PRIMARYKEY = X'7a50008047c357bcc0a80146'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>         SYMBOL = GU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40330W205
+>           DATE = TIMESTAMP '2010-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares
+>     PRIMARYKEY = X'4d955ae44cddcf67c0a80146'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>         SYMBOL = GU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GU'  order by BB_EFFECTIVE;
+> Row 26:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|0512078D CH|CP_NAME|Trillion Energy Holdings Ltd|CP_ID_BB_COMP|31464603|CP_UNIT|Gushan Environmental Energy Lt|CP_TOT_AMT|32.977020|CP_ACQUIS_TYP|1|CP_CASH|1.650000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|21.923000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|53.057678|CP_CUR_PREMIUM|4.430375|CP_PCT_OWNED|34.799999|CP_PCT_SOUGHT|65.199997|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|32.977020|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Target Legal Adviser;1;Conyers Dill, Sidley Austin;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 65061808
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 13850630
+>        BB_COMPANYNAME = Gushan Environmental Energy Ltd
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = GU      US Equity
+>             BB_ISSUED = TIMESTAMP '2012-06-04 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = GU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-18 00:00:00.000000'
+>            PRIMARYKEY = X'075c5a7a50808551c0a80146'
+>               VERSION = NULL
+
+10/18/2012 1.65000
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GU
+>>>> dbtool started at 2015-06-09 20:18:03 -0400
+stock: GU
+  PK       : [7A4F008047C357BCC0A80146]
+  companyID: [17962]
+  symbol   : [GU]
+  name     : [Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares]
+  date     : [2007-12-19 00:00:00]
+  status   : [Active]
+stock: GU
+  PK       : [7A4F008047C357BCC0A80146]
+  companyID: [17962]
+  symbol   : [GU]
+  name     : [Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares]
+  date     : [2010-11-12 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-09 20:18:03 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17962
+2010-06-24 (Thu) [3461]: O:0.8800 H:0.9000 L:0.8000 C:0.8212 V:124448 TSO:83415 A:4.1060 R:0.2000 CA:0.0000
+2010-06-25 (Fri) [3462]: O:0.8424 H:0.8424 L:0.7912 C:0.7912 V:94788 TSO:83415 A:3.9560 R:0.2000 CA:0.0000
+2010-06-26 (Sat) [3463]: <WEEKEND>
+2010-06-27 (Sun) [3464]: <WEEKEND>
+2010-06-28 (Mon) [3465]: O:0.8312 H:1.0700 L:0.8300 C:1.0600 V:1149130 TSO:83415 A:5.3000 R:0.2000 CA:0.0000
+2010-06-29 (Tue) [3466]: O:0.9990 H:1.0300 L:0.9000 C:1.0300 V:1965803 TSO:83415 A:5.1500 R:0.2000 CA:0.0000
+2010-06-30 (Wed) [3467]: O:0.9400 H:1.0164 L:0.7871 C:0.9700 V:269088 TSO:83415 A:4.8500 R:0.2000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7a4f008047c357bcc0a80146' and shares > 0 order by closed; 
+> Row 874:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-07-10 16:30:30.000000'
+>        COMMENT = 
+>     COMMISSION = 943.700000
+>   CURRENTORDER = X'bdd837f94fe9c153c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7ccf1e163a72175dc0a801e0'
+>       MODIFIED = NULL
+>            NET = 26946.138406
+>         OPENED = TIMESTAMP '2012-06-26 10:04:03.000000'
+>          PRICE = 1.427686
+>     PRIMARYKEY = X'bdd637f94fe9c153c0a80135'
+>         SECFEE = 0.630000
+>         SHARES = 18874.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+last trade 7/10/2012  price  1.427686
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7a4f008047c357bcc0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7a4f008047c357bcc0a80146' and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7a4f008047c357bcc0a80146' and totalshares < 0)));
+
+apply the acquis
+58 members hold GU
+10/18/2012 1.65000   found the acquis not applied 
+last price  2010-06-30 (Wed) [3467]: O:0.9400 H:1.0164 L:0.7871 C:0.9700 V:269088 TSO:83415 A:4.8500 R:0.2000 CA:0.0000
+	no help
+  
+going with 20121018  1.65
+
+/Marketocracy/bin/cahelper -symbol  GU  -effective 20121018 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.65 -acqShare 0 -purchaser GU   >& /Users/build/caout/GU.20150609-ACQUIS.out
+D: (06-09 20:22:24.115) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-09 20:22:48.562) cahelper started on 2015-06-09 20:22:48 -0400
+
+D: (06-09 20:22:48.858) There are [0] open tickets for GU on 20121018
+D: (06-09 20:22:49.167) StockFileLoad Version:4.0
+D: (06-09 20:22:49.168) Loading Stock Data
+D: (06-09 20:23:27.947) Building Lookup Index
+D: (06-09 20:23:33.099) Finished Building Index
+D: (06-09 20:23:36.951) Finished Loading Stock Data
+D: (06-09 20:23:37.101) Connection to 192.168.111.172:6666 succeeded
+D: (06-09 20:23:39.656) {
+    "ACQUIRED_STOCK" = GU; 
+    "ACQUIRING_STOCK" = "GU_FIX"; 
+    AMOUNT = 1.65; 
+    APPLIED = 1; 
+    DATE = 20121018; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GU_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-09 20:23:44.360) SUCCESS
+D: (06-09 20:23:44.360) cahelper finished 2015-06-09 20:23:44 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'7a4f008047c357bcc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40330W106
+>           DATE = TIMESTAMP '2007-12-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares
+>     PRIMARYKEY = X'7a50008047c357bcc0a80146'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>         SYMBOL = GU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40330W205
+>           DATE = TIMESTAMP '2010-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares
+>     PRIMARYKEY = X'4d955ae44cddcf67c0a80146'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>         SYMBOL = GU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 40330W205
+>           DATE = TIMESTAMP '2012-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares
+>     PRIMARYKEY = X'c742727155778358c0a86f92'
+>       STOCKKEY = X'7a4f008047c357bcc0a80146'
+>         SYMBOL = GU
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey = X'c742727155778358c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c742727155778358c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GU  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.650000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150609:082248
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = GU_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GU_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-18 00:00:00.000000'
+>            PRIMARYKEY = X'c73c727155778358c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'c73c727155778358c0a86f92';
+> Row 1:
+>   _C001 = 95.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'c73c727155778358c0a86f92'));
+95 fundkeys save to CA issue GU fundkeys.txt
+
+check on 6/10/15   invalidate funds
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+10/18/2012 	$173,822.89 	$0.00 	$4.76 	$1,650.00 	$33.14 	$0.00 	$175,444.51 	$428,006.68 	$603,451.19 	100,000 	$6.03 	Yes 	Details  
+trades on October 18, 2012 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	GU 	1,000 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+1000*1.65 = 1650 got it 
+check MAdmin
+Stock:Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares  Symbol:GU
+Date: 06/10/2015
+GU has been acquired 	right curve
+  	  	
+Gushan Environmental Energy Limited American Deposit Receipt Represents 2 Shares acquired by a private company on 2012-10-18 00:00:00.
+  	  	 
+1 users found
+
+1	svanness
+
+GNI
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 19, 2008 		1350 	1350 	Buy
+Jun 23, 2008 	1350 	-1351 	-1 	Multiple
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 19, 2008 	1,350 	$67.50 	$18,070.95 	$13.39
+Jun 23, 2008 	389 	$19.45 	$4,905.70 	$12.61  <--- buy one more share    390
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 23, 2008 	1,099 	$54.95 	$0.41 	$13,140.88 	$11.96
+Jun 23, 2008 	641 	$32.05 	$0.24 	$7,620.43 	$11.89
+
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Demographic trends 	SVMF 	42   <--- ok 
+Growth and Income 	GNI 	389  <--- 390
+Growth at a reasonable price 	GARP 	380   <--- ok 
+High Grow with Capital preservation 	HGWCP 	669  <-- make this 670
+Information Technology 	IT 	372  <--- ok
+L. VanNess Strat Lab Open Fund 	LVSLF1 	27   <--- make this 28
+Low priced stocks 	LPC 	388   <---------  ok
+Predator 	P 	390  <---------   make it 391 
+Special Situations 	SS 	402  <---------   make it 403
+Stock Traders Fund 	STF 	27  <---------   ok 
+Telecom 	TE 	395  <---------     make this 396 
+The Gambler's Fund 	GAMB 	400  <---------   ok
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  SVMF 20080623 GU  42  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GNI 20080623 GU  390  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GARP  20080623 GU  380  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  HGWCP  20080623 GU  670  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness IT 20080623 GU  372  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  LVSLF1  20080623 GU  28  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  LPC  20080623 GU  388  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  P  20080623 GU  391  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  SS 20080623 GU  403  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  STF  20080623 GU  27 12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  TE  20080623 GU  396  12.61
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GAMB  20080623 GU  400  12.61
+
+your holdings of GU 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+SVMF 	0 	$.00 	0.00%
+GARP 	0 	$.00 	0.00%
+GNI 	-1 	-$1.58 	-0.00%  <---
+IT 	0 	$.00 	0.00%
+P 	-1 	-$1.58 	-0.00% <---
+LPC 	0 	$.00 	0.00%
+SS 	-1 	-$1.58 	-0.00% <---
+GAMB 	0 	$.00 	0.00%
+TE 	-1 	-$1.58 	-0.00% <---
+HGWCP 	-1 	-$1.58 	-0.00% <---
+LOB 	0 	N/A 	N/A
+STF 	0 	$.00 	0.00%
+LVSLF1 	-1 	-$1.58 	-0.00%  <---
+
+I think that they all ran 
+let's get all the funds for this member 
+
+I have repriced all of svannsess funds as of 2012-10-18
+
+closing this out done
+

@@ -1,0 +1,290 @@
+How to handle Canadian CAs that slip through, specifically SPIN OFFs
+
+select count(*) from mcorporateaction where BB_IDENTIFIER like '%CN Equity' and aliaskey is not null and BB_ACTIONMNEMONIC='SPIN' order by BB_EFFECTIVE;
+there are 5 to start with
+
+select * from mcorporateaction where BB_IDENTIFIER like '%CN Equity' and aliaskey is not null and BB_ACTIONMNEMONIC='SPIN' order by BB_EFFECTIVE;
+
+
+> Row 5:
+>              ALIASKEY = X'e77f52d74a4199cac0a8013c'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Minewest Silver & Gold Inc|CP_ID_BB_COMP|23713728|CP_ID_BB_SEC|1000|CP_TERMS|7 per 1|CP_RATIO|7.000000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110215|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110211|CP_TKR|8131532Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 51069208
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 110348
+>        BB_COMPANYNAME = REG Technologies Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-02-11 00:00:00.000000'
+>         BB_IDENTIFIER = RRE     CN Equity
+>             BB_ISSUED = TIMESTAMP '2011-01-06 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = RRE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'cf1539504d55c76ac0a80146'
+>               VERSION = NULL
+
+select * from mstockalias where primarykey= X'e77f52d74a4199cac0a8013c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00888R107
+>           DATE = TIMESTAMP '2007-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aim Select Real Estate Income Fund
+>     PRIMARYKEY = X'e77f52d74a4199cac0a8013c'
+>       STOCKKEY = X'38120ffd3f25d00dc0a80146'
+>         SYMBOL = RRE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = SB
+
+select * from mstockalias where STOCKKEY = X'38120ffd3f25d00dc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00888R107
+>           DATE = TIMESTAMP '2002-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aim Select Real Estate Income Fund
+>     PRIMARYKEY = X'38130ffd3f25d00dc0a80146'
+>       STOCKKEY = X'38120ffd3f25d00dc0a80146'
+>         SYMBOL = RRE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = SB
+	select * from mcorporateaction where aliaskey=X'38130ffd3f25d00dc0a80146';
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00888R107
+>           DATE = TIMESTAMP '2007-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aim Select Real Estate Income Fund
+>     PRIMARYKEY = X'e77f52d74a4199cac0a8013c'
+>       STOCKKEY = X'38120ffd3f25d00dc0a80146'
+>         SYMBOL = RRE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = SB
+	select * from mcorporateaction where aliaskey=X'e77f52d74a4199cac0a8013c';
+> Row 1:
+>              ALIASKEY = X'e77f52d74a4199cac0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RRE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|17.389999|CP_CASH_FLAG|1|CP_SH|17.389999|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20090623:111313
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-03-12 00:00:00.000000'
+>         BB_IDENTIFIER = RRE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-03-12 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RRE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-03-12 00:00:00.000000'
+>            PRIMARYKEY = X'e77952d74a4199c9c0a8013c'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'e77952d74a4199c9c0a8013c';
+> Row 1:
+>   _C001 = 31.000000
+check MAdmin  RRE on 03-12-2007
+Stock:Aim Select Real Estate Income Fund  Symbol:RRE
+Date: 03/12/2007
+
+0 users found
+good the status key is 927 inactive we're good 
+
+> Row 2:
+>              ALIASKEY = X'e77f52d74a4199cac0a8013c'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Minewest Silver & Gold Inc|CP_ID_BB_COMP|23713728|CP_ID_BB_SEC|1000|CP_TERMS|7 per 1|CP_RATIO|7.000000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110215|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110211|CP_TKR|8131532Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 51069208
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 110348
+>        BB_COMPANYNAME = REG Technologies Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-02-11 00:00:00.000000'
+>         BB_IDENTIFIER = RRE     CN Equity
+>             BB_ISSUED = TIMESTAMP '2011-01-06 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = RRE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'91ca0a304d265108c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'91ca0a304d265108c0a80146';
+> Row 1:
+>   _C001 = 0.000000
+delete from mcorporateaction where  PRIMARYKEY = X'91ca0a304d265108c0a80146';
+
+
+
+> Row 3:
+>              ALIASKEY = X'e77f52d74a4199cac0a8013c'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Minewest Silver & Gold Inc|CP_ID_BB_COMP|23713728|CP_ID_BB_SEC|1000|CP_TERMS|7 per 1|CP_RATIO|7.000000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110215|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110211|CP_TKR|8131532Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 51069208
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 110348
+>        BB_COMPANYNAME = REG Technologies Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-02-11 00:00:00.000000'
+>         BB_IDENTIFIER = RRE     CN Equity
+>             BB_ISSUED = TIMESTAMP '2011-01-06 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = RRE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'cf1539504d55c76ac0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'cf1539504d55c76ac0a80146';
+> Row 1:
+>   _C001 = 0.000000
+delete from mcorporateaction where  PRIMARYKEY = X'cf1539504d55c76ac0a80146';
+
+********
+select * from mcorporateaction where BB_IDENTIFIER like '%CN Equity' and aliaskey is not null and BB_ACTIONMNEMONIC='SPIN' order by BB_EFFECTIVE;
+> Row 3:
+>              ALIASKEY = X'18f40e21390b1492c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Archean Star Resources Inc|CP_ID_BB_COMP|17067944|CP_ID_BB_SEC|1000|CP_TERMS|1 per 4|CP_RATIO|0.250000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110128|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110126|CP_TKR|3391128Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39745148
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10917482
+>        BB_COMPANYNAME = Kent Exploration Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-26 00:00:00.000000'
+>         BB_IDENTIFIER = KEX     CN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-10 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = KEX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-26 00:00:00.000000'
+>            PRIMARYKEY = X'0c5865ab4d40af1ec0a80146'
+>               VERSION = NULL
+
+select * from mstockalias where PRIMARYKEY = X'18f40e21390b1492c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 497266106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = KIRBY CORP
+>     PRIMARYKEY = X'18f40e21390b1492c0a80116'
+>       STOCKKEY = X'18f30e21390b1492c0a80116'
+>         SYMBOL = KEX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = MB
+select * from mstockalias where STOCKKEY = X'18f30e21390b1492c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 497266106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = KIRBY CORP
+>     PRIMARYKEY = X'18f40e21390b1492c0a80116'
+>       STOCKKEY = X'18f30e21390b1492c0a80116'
+>         SYMBOL = KEX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = MB
+just the one
+
+select * from mcorporateaction where aliaskey=X'18f40e21390b1492c0a80116' order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = X'18f40e21390b1492c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Archean Star Resources Inc|CP_ID_BB_COMP|17067944|CP_ID_BB_SEC|1000|CP_TERMS|1 per 4|CP_RATIO|0.250000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110128|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110126|CP_TKR|3391128Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39745148
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10917482
+>        BB_COMPANYNAME = Kent Exploration Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-26 00:00:00.000000'
+>         BB_IDENTIFIER = KEX     CN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-10 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = KEX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-20 00:00:00.000000'
+>            PRIMARYKEY = X'c4892db54d38c6a0c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'c4892db54d38c6a0c0a80146';
+	delete from mcorporateaction  where  PRIMARYKEY = X'c4892db54d38c6a0c0a80146';
+
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 3:
+>              ALIASKEY = X'18f40e21390b1492c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Archean Star Resources Inc|CP_ID_BB_COMP|17067944|CP_ID_BB_SEC|1000|CP_TERMS|1 per 4|CP_RATIO|0.250000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110128|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110126|CP_TKR|3391128Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39745148
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10917482
+>        BB_COMPANYNAME = Kent Exploration Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-26 00:00:00.000000'
+>         BB_IDENTIFIER = KEX     CN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-10 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = KEX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-20 00:00:00.000000'
+>            PRIMARYKEY = X'5c4b6f854d3a17a3c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'5c4b6f854d3a17a3c0a80146';
+	delete from mcorporateaction  where  PRIMARYKEY = X'5c4b6f854d3a17a3c0a80146';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 4:
+>              ALIASKEY = X'18f40e21390b1492c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Archean Star Resources Inc|CP_ID_BB_COMP|17067944|CP_ID_BB_SEC|1000|CP_TERMS|1 per 4|CP_RATIO|0.250000|CP_PAY_DT|N.A.|CP_RECORD_DT|20110128|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|1.000000|CP_ADJ_DT|20110126|CP_TKR|3391128Z CN|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39745148
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10917482
+>        BB_COMPANYNAME = Kent Exploration Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-26 00:00:00.000000'
+>         BB_IDENTIFIER = KEX     CN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-10 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = KEX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-26 00:00:00.000000'
+>            PRIMARYKEY = X'0c5865ab4d40af1ec0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'0c5865ab4d40af1ec0a80146';
+> Row 1:
+>   _C001 = 0.000000
+	delete from mcorporateaction  where  PRIMARYKEY = X'0c5865ab4d40af1ec0a80146';
+
+Is KEX still trading?  yes it is
+
+still trades
+
+that is it for the SPIN 

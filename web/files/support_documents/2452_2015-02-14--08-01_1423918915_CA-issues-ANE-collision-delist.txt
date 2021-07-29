@@ -1,0 +1,2026 @@
+date: 2/12/14
+ticker ANE
+
+quantum:
+Alliance Bancorp of New England, Inc.
+Ticker Symbol: ANE*     CUSIP: 01852Q109     Exchange: AMEX
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 1/01/07
+
+
+our site:  
+Symbol: ACNI	Name: CARBON ENERGY CORPORATION	Price: $0.00
+Volume: 4,000	Sector: Consumer Discretionary	Change: $0.00
+Short Volume: 11,598	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 11,598	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.01	Year High: $0.01	High: $0.00
+200 Day Ave: $0.01	Year Low: $0.01	Low: $0.00
+
+CAs
+ACNI has been acquired	
+ 	 	
+CARBON ENERGY CORPORATION [ACNI] acquired by EVERGREEN RESOURCES INC [EVG] on 2003-10-30 00:00:00.
+ 	 	[ Go to EVG ]
+ 	 	 
+	  symbol changes for ACNI	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+22 Aug 07	CRB	ANE	Change in the ticker (trading) symbol from CRB to ANE
+03 Nov 08	ANE	ACNI	Change in the ticker (trading) symbol from ANE to ACNI
+04 Nov 08	ACNI	ANE	Change in the ticker (trading) symbol from ACNI to ANE
+10 Nov 08	ANE	ACNI	Change in the ticker (trading) symbol from ANE to ACNI
+30 Apr 09	ACNI	ACNIQ	Change in the ticker (trading) symbol from ACNI to ACNIQ
+23 Feb 12	ACNIQ	ACNI	Change in the ticker (trading) symbol from ACNIQ to ACNI
+ 	 	 
+	  CUSIP changes for ACNI	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+05 Jul 07	22274N102	02520T103	Change in any of identification numbers (CUSIP) of a security from 22274N102 to 02520T103
+ 	 	 
+	  listing changes for ACNI	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Nov 03, 2008	AMEX	UA	OTCBB-OTHER	UV	Change in the exchange that ACNI trades on from AMEX to OTCBB-OTHER
+Nov 04, 2008	OTCBB-OTHER	UV	AMEX	UA	Change in the exchange that ANE trades on from OTCBB-OTHER to AMEX
+Nov 10, 2008	AMEX	UA	OTCBB-OTHER	UV	Change in the exchange that ACNI trades on from AMEX to OTCBB-OTHER
+
+
+
+not showing as delisted (no red banner)
+
+select distinct stockkey from mstockalias where symbol='ANE';
+> Row 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+> Row 2:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+
+
+there are two stockkeys
+******************************************************************************
+> ANE 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+this one was never delisted    prices stop on 2004-04-01   $40.24
+******************************************************************************
+select * from mstockalias where STOCKKEY = X'c62d0e21390a4f23c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'c62e0e21390a4f23c0a80116'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'c62e0e21390a4f23c0a80116';
+1 DVD_STOCK and 16 DVD_CASH - these are good
+select count(*) from mticket where stockkey=X'c62d0e21390a4f23c0a80116';
+> Row 1:
+>   _C001 = 155.000000
+
+how many hold this on 04/01/2004?
+Stock:ALLIANCE BANCORP NEW ENGLAND  Symbol:ANE
+Date: 04/01/2004
+
+10 users found
+
+1	beattsm	jdirand	jrepas	kwade	onlinebeauties	rfitzpatrick	slehpamer	srasmussen_2000	svanness	timo11
+Let's apply an acquis here on 20040401   40.24
+/Marketocracy/bin/cahelper -symbol ANE -effective 20040401 -type ACQUIS -exchange UN -acqType 1 -acqCash 40.24 -acqShare 0 -purchaser ANE >& /Users/build/caout/ANE.20150212-ACQUIS.out
+D: (02-12 17:33:26.730) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-12 17:33:50.475) cahelper started on 2015-02-12 17:33:50 -0500
+
+D: (02-12 17:33:50.728) There are [0] open tickets for ANE on 20040401
+D: (02-12 17:33:50.919) StockFileLoad Version:3.0
+D: (02-12 17:33:50.919) Loading Stock Data
+D: (02-12 17:34:30.650) Building Lookup Index
+D: (02-12 17:34:34.542) Finished Building Index
+D: (02-12 17:34:35.468) Finished Loading Stock Data
+D: (02-12 17:34:35.652) Connection to 192.168.111.157:6666 succeeded
+D: (02-12 17:34:36.431) {
+    "ACQUIRED_STOCK" = ANE; 
+    "ACQUIRING_STOCK" = "ANE_FIX"; 
+    AMOUNT = 40.240002; 
+    APPLIED = 1; 
+    DATE = 20040401; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ANE_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-12 17:34:38.460) SUCCESS
+D: (02-12 17:34:38.460) cahelper finished 2015-02-12 17:34:38 -0500
+
+select * from mstockalias where STOCKKEY = X'c62d0e21390a4f23c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'c62e0e21390a4f23c0a80116'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2004-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'f78c5fd354dd2a4ec0a86f92'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- ok this one is done
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'f78c5fd354dd2a4ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'f78c5fd354dd2a4ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ANE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|40.240002|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150212:053350
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = ANE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-04-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ANE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-04-01 00:00:00.000000'
+>            PRIMARYKEY = X'f7835fd354dd2a4ec0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'f7835fd354dd2a4ec0a86f92';
+> Row 1:
+>   _C001 = 22.000000
+
+good there should be no one holding ANE now on 04/01/2004
+
+******************************************************************************
+> ANE 2:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+******************************************************************************
+select * from mstockalias where STOCKKEY = X'620310ac390c6d1ac0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'620410ac390c6d1ac0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'  <--- active here 
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'620410ac390c6d1ac0a8015c';
+> Row 1:
+>              ALIASKEY = X'620410ac390c6d1ac0a8015c'
+>   BB_ACTIONDICTIONARY = CP_EXCH|OTCBB|CP_NOTES||CP_REASON||CP_TKR|CRB
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = Carbon Energy Corp
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = NULL
+>              BB_SECID = CRB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'0aae064939e7ed51c0a801dc'
+>               VERSION = 1
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f762421e3fa1d227c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- becomes inactive  strange
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'f762421e3fa1d227c0a80146';
+> Row 1:
+>              ALIASKEY = X'f762421e3fa1d227c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CRB     US|CP_NAME|Carbon Energy Corp|CP_ID_BB_COMP|1174514|CP_UNIT|Carbon Energy Corp|CP_TOT_AMT|97.444420|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.550000|CP_SH_FLAG|1|CP_DEBT|22.420000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|10.662172|CP_CUR_PREMIUM|0.714296|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|117.586578|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Target Financial Adviser;1;RBC Capital Mkts;13;100.000000;|CP_NOTES|$2.5 MLN TERMINATION FEE. STK TERMS ADJ FOR 2:1 SPLIT EFF: 9/16/03.                                                 9/16/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 10826334
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 103711
+>        BB_COMPANYNAME = Evergreen Resources Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = EVG     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = EVG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-10-30 00:00:00.000000'
+>            PRIMARYKEY = X'bac33fc63fa1d086c0a80146'
+>               VERSION = NULL
+	were there any mtickets generated?
+select count(*) from mticket where sourcekey=X'bac33fc63fa1d086c0a80146';
+> Row 1:
+>   _C001 = 22.000000
+************************   this is where CRB should stop
+let's look here to see if anyone still holds ANE
+
+10/30/2003
+Stock:ALLIANCE BANCORP NEW ENGLAND  Symbol:ANE
+Date: 10/30/2003
+
+9 users found
+
+1	beattsm	jdirand	jrepas	kwade	onlinebeauties	rfitzpatrick	slehpamer	srasmussen_2000	svanness	 
+we've applied the ANE acquis - let's check here again
+
+MAdmin ANE 10/30/2003
+
+
+
+*************************  start of American Community Newspapers on our site
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION    
+>     PRIMARYKEY = X'b0e142db468da2f5c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'b0e142db468da2f5c0a80146';
+> Row 1:
+>              ALIASKEY = X'b0e142db468da2f5c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|22274N102|CP_NEW_CUSIP|02520T103|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US22274N1028|CP_NEW_ISIN|US02520T1034|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 27104864
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>         BB_IDENTIFIER = CRB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2007-07-03 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CRB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1c7d417f468da23dc0a80146'
+>               VERSION = NULL
+
+*********  this is where american community newspapers did a ticker change into ANE
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-08-22 00:00:00.000000'   <---------------- 8/22/2007 is when the ticker changed
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'9afa5f3c46ccea96c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'9afa5f3c46ccea96c0a80146';
+> Row 1:
+>              ALIASKEY = X'9afa5f3c46ccea96c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CRB US|CP_NEW_TKR|ANE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 27720681
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-22 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'a6a35ef946ccea4ac0a80146'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'95fa704e490fbb13c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'95fa704e490fbb13c0a80146';
+> Row 1:
+>              ALIASKEY = X'95fa704e490fbb13c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ANE US|CP_NEW_TKR|ACNI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34074627
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-10-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'535d700e490fbad9c0a80146'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f460705b490fbb47c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'f460705b490fbb47c0a80146';
+> Row 1:
+>              ALIASKEY = X'f460705b490fbb47c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34074631
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-10-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'535f700e490fbadac0a80146'
+>               VERSION = NULL
+
+
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'617242ce49110c9cc0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'617242ce49110c9cc0a80146';
+> Row 1:
+>              ALIASKEY = X'617242ce49110c9cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNI US|CP_NEW_TKR|ANE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34100305
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'efeb428e49110c4dc0a80146'
+>               VERSION = NULL
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'c51a42e749110cd1c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'c51a42e749110cd1c0a80146';
+> Row 1:
+>              ALIASKEY = X'c51a42e749110cd1c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UA|CP_NOTES|Suspension reinstatement. ANE will trade on the OTC market November 3, 2008 under symbol ACNI and will be reinstated to listing on NYSE Alternext November 4, 2008 under it's original symbol ANE.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34100293
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'efe9428e49110c4dc0a80146'
+>               VERSION = NULL
+
+
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'a4c11e2f4918f59ac0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'a4c11e2f4918f59ac0a80146';
+> Row 1:
+>              ALIASKEY = X'a4c11e2f4918f59ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ANE US|CP_NEW_TKR|ACNI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34204333
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'cf781e194918f560c0a80146'
+>               VERSION = NULL
+
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'04871f724918f5cec0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'04871f724918f5cec0a80146';
+> Row 1:
+>              ALIASKEY = X'04871f724918f5cec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34204329
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'cf761e194918f560c0a80146'
+>               VERSION = NULL
+
+
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'5d695f1849f7b552c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'5d695f1849f7b552c0a80146';
+> Row 1:
+>              ALIASKEY = X'5d695f1849f7b552c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 36984638
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2009-04-28 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1dae5dc649f7b511c0a80146'
+>               VERSION = NULL
+
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'ef966f0049fa5863c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'ef966f0049fa5863c0a80146';
+> Row 1:
+>              ALIASKEY = X'ef966f0049fa5863c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNI US|CP_NEW_TKR|ACNIQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 37012971
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>         BB_IDENTIFIER = ACNIQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2009-04-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'879e691a49fa5802c0a80146'
+>               VERSION = NULL
+
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'3f7861e74f46d047c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'3f7861e74f46d047c0a80146';
+> Row 1:
+>              ALIASKEY = X'3f7861e74f46d047c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNIQ US|CP_NEW_TKR|ACNI US|CP_NOTES|Bankruptcy Case Dismissed
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 61876375
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>         BB_IDENTIFIER = ACNIQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-02-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-02-22 00:00:00.000000'
+>            PRIMARYKEY = X'085e125c4f457c62c0a80146'
+>               VERSION = NULL
+
+
+timeline:
+2000-04-28   is when the original ANE listed
+1/01/07  (according to Quantum) is when this one stopped trading
+8/22/2007 is when the collision occurred, ticker change into ANE
+
+does anyone still hold this?
+MAdmin
+Stock:CARBON ENERGY CORPORATION  Symbol:ACNI
+Date: 02/12/2015
+
+0 users found
+
+that is good
+
+how about on 01/07/2007?
+Stock:ALLIANCE BANCORP NEW ENGLAND  Symbol:ANE
+Date: 01/07/2007
+
+10 users found
+
+1	beattsm	jdirand	jrepas	kwade	onlinebeauties	rfitzpatrick	slehpamer	srasmussen_2000	svanness	timo11
+
+look at historical pricing
+/Marketocracy/bin/dbtool lookup stock ANE
+>>>> dbtool started at 2015-02-12 09:21:33 -0500
+stock: ANE
+  PK       : [C62D0E21390A4F23C0A80116]
+  companyID: [28]   <----------------- this one 
+  symbol   : [ANE]
+  name     : [ALLIANCE BANCORP NEW ENGLAND]
+  date     : [2000-04-28 15:00:00]
+  status   : [Active]
+stock: ANE
+  PK       : [620310AC390C6D1AC0A8015C]
+  companyID: [6831]
+  symbol   : [ANE]
+  name     : [CARBON ENERGY CORPORATION]
+  date     : [2007-08-22 00:00:00]
+  status   : [Delist]
+stock: ANE
+  PK       : [620310AC390C6D1AC0A8015C]
+  companyID: [6831]
+  symbol   : [ANE]
+  name     : [CARBON ENERGY CORPORATION]
+  date     : [2008-11-04 00:00:00]
+  status   : [Active]
+stock: ANE
+  PK       : [620310AC390C6D1AC0A8015C]
+  companyID: [6831]
+  symbol   : [ANE]
+  name     : [CARBON ENERGY CORPORATION]
+  date     : [2008-11-04 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-12 09:21:33 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 28
+2004-03-22 (Mon) [1176]: O:42.0200 H:42.0200 L:41.7900 C:41.7900 V:9000 TSO:0 A:41.7900 R:1.0000 CA:0.0000
+2004-03-23 (Tue) [1177]: O:41.8000 H:42.1500 L:41.8000 C:41.8100 V:28600 TSO:0 A:41.8100 R:1.0000 CA:0.0000
+2004-03-24 (Wed) [1178]: O:41.7500 H:41.7500 L:41.7500 C:41.7500 V:400 TSO:0 A:41.7500 R:1.0000 CA:0.0000
+2004-03-25 (Thu) [1179]: O:41.7600 H:41.8400 L:41.7600 C:41.8400 V:3200 TSO:0 A:41.8400 R:1.0000 CA:0.0000
+2004-03-26 (Fri) [1180]: O:41.7500 H:41.7500 L:41.3000 C:41.3100 V:1700 TSO:0 A:41.3100 R:1.0000 CA:0.0000
+2004-03-27 (Sat) [1181]: <WEEKEND>
+2004-03-28 (Sun) [1182]: <WEEKEND>
+2004-03-29 (Mon) [1183]: O:41.3000 H:41.4000 L:41.3000 C:41.4000 V:600 TSO:0 A:41.4000 R:1.0000 CA:0.0000
+2004-03-30 (Tue) [1184]: O:41.5000 H:41.5000 L:41.2000 C:41.2000 V:15300 TSO:0 A:41.2000 R:1.0000 CA:0.0000
+2004-03-31 (Wed) [1185]: O:41.3500 H:41.3500 L:40.7000 C:40.7000 V:53200 TSO:0 A:40.7000 R:1.0000 CA:0.0000
+2004-04-01 (Thu) [1186]: O:40.6000 H:40.7299 L:40.1800 C:40.2400 V:23700 TSO:0 A:40.2400 R:1.0000 CA:0.0000  <---
+2004-04-02 (Fri) [1187]: O:40.2400 H:40.2400 L:40.2400 C:40.2400 V:0 TSO:0 A:40.2400 R:1.0000 CA:0.0000
+2004-04-03 (Sat) [1188]: <WEEKEND>
+2004-04-04 (Sun) [1189]: <WEEKEND>
+2004-04-05 (Mon) [1190]: O:40.2400 H:40.2400 L:40.2400 C:40.2400 V:0 TSO:0 A:40.2400 R:1.0000 CA:0.0000
+2004-04-06 (Tue) [1191]: O:40.2400 H:40.2400 L:40.2400 C:40.2400 V:0 TSO:0 A:40.2400 R:1.0000 CA:0.0000
+2004-04-07 (Wed) [1192]: O:40.2400 H:40.2400 L:40.2400 C:40.2400 V:0 TSO:0 A:40.2400 R:1.0000 CA:0.0000
+2004-04-08 (Thu) [1193]: O:40.2400 H:40.2400 L:40.2400 C:40.2400 V:0 TSO:0 A:40.2400 R:1.0000 CA:0.0000
+2004-04-09 (Fri) [1194]: <HOLIDAY>
+2004-04-10 (Sat) [1195]: <WEEKEND>
+
+
+4/1/2004 is when pricing stopped for ANE-1 
+
+who held ANE on 04/01/2004
+MAdmin
+Stock:ALLIANCE BANCORP NEW ENGLAND  Symbol:ANE
+Date: 04/01/2004
+
+10 users found
+
+1	beattsm	jdirand	jrepas	kwade	onlinebeauties	rfitzpatrick	slehpamer	srasmussen_2000	svanness	timo11	 	 	 	 	 	 	 	 	 	 
+
+can I just apply the acquis?   or do I need to back out thes members from the later (different stock) acquis?
+let's check one member
+
+beattsm
+select primarykey from mmanager where loginname='beattsm';
+> Row 1:
+>   PRIMARYKEY = X'990244dd3a213123c0a80119'
+
+
+
+*********  so EVG acquired 
+CARBON ENERGY CORPORATION [ACNI] acquired by EVERGREEN RESOURCES INC [EVG] on 2003-10-30 00:00:00.
+ 	 	[ Go to EVG ]
+
+but EVG has a different company name -  did we delist that one?
+
+select distinct stockkey from mstockalias where symbol='EVG';
+> Row 1:
+>   STOCKKEY = X'e05a0e21390a8759c0a80116'
+> Row 2:
+>   STOCKKEY = X'08da3c6249c857bfc0a80146'
+
+two EVG
+> EVG 1:
+>   STOCKKEY = X'e05a0e21390a8759c0a80116'
+select * from mstockalias where STOCKKEY = X'e05a0e21390a8759c0a80116';
+good this was properly delisted 
+> EVG 2:
+>   STOCKKEY = X'08da3c6249c857bfc0a80146'
+select * from mstockalias where STOCKKEY = X'08da3c6249c857bfc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 27828V104
+>           DATE = TIMESTAMP '2005-02-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Eaton Vance Short Duration Diversified Income Fund
+>     PRIMARYKEY = X'08db3c6249c857bfc0a80146'
+>       STOCKKEY = X'08da3c6249c857bfc0a80146'
+>         SYMBOL = EVG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 27828V104
+>           DATE = TIMESTAMP '2010-12-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Eaton Vance Short Duration Diversified Income Fund
+>     PRIMARYKEY = X'5ba803374cfec4f5c0a80146'
+>       STOCKKEY = X'08da3c6249c857bfc0a80146'
+>         SYMBOL = EVG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+let's see if there are any unapplied mcorporateaction records for ANE
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ANE';
+
+select * from mcorporateaction where aliaskey is null and  BB_COMPANYNAME like 'Alliance Bancorp%';
+
+nothing useful
+
+ok how about prices   various ANE stockkey 2
+
+/Marketocracy/bin/dbtool lookup stock ACNI
+6831 same
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6831
+2003-10-25 (Sat) [1027]: <WEEKEND>
+2003-10-26 (Sun) [1028]: <WEEKEND>
+2003-10-27 (Mon) [1029]: O:15.0500 H:15.4000 L:15.0500 C:15.3100 V:7400 TSO:0 A:15.3100 R:1.0000 CA:0.0000
+2003-10-28 (Tue) [1030]: O:15.3100 H:15.3100 L:15.3100 C:15.3100 V:500 TSO:0 A:15.3100 R:1.0000 CA:0.0000
+2003-10-29 (Wed) [1031]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:4600 TSO:0 A:15.4000 R:1.0000 CA:0.0000  <---
+2003-10-30 (Thu) [1032]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2003-10-31 (Fri) [1033]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2003-11-01 (Sat) [1034]: <WEEKEND>
+2003-11-02 (Sun) [1035]: <WEEKEND>
+
+price volume stop on 10/29/2003 when EVG acquired CRB
+
+
+
+
+2008-10-27 (Mon) [2856]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2008-10-28 (Tue) [2857]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2008-10-29 (Wed) [2858]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2008-10-30 (Thu) [2859]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2008-10-31 (Fri) [2860]: O:15.4100 H:15.5100 L:15.4000 C:15.4000 V:0 TSO:0 A:15.4000 R:1.0000 CA:0.0000
+2008-11-01 (Sat) [2861]: <WEEKEND>
+2008-11-02 (Sun) [2862]: <WEEKEND>
+2008-11-03 (Mon) [2863]: O:0.0800 H:0.0800 L:0.0800 C:0.0800 V:7800 TSO:0 A:0.0800 R:1.0000 CA:0.0000   <--- price resumes
+2008-11-04 (Tue) [2864]: O:0.0600 H:0.0800 L:0.0301 C:0.0800 V:20453 TSO:0 A:0.0800 R:1.0000 CA:0.0000
+2008-11-05 (Wed) [2865]: O:0.0890 H:0.0890 L:0.0600 C:0.0600 V:6200 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2008-11-06 (Thu) [2866]: O:0.0300 H:0.0599 L:0.0300 C:0.0500 V:5550 TSO:0 A:0.0500 R:1.0000 CA:0.0000
+2008-11-07 (Fri) [2867]: O:0.0300 H:0.0500 L:0.0300 C:0.0499 V:52800 TSO:0 A:0.0499 R:1.0000 CA:0.0000
+2008-11-08 (Sat) [2868]: <WEEKEND>
+2008-11-09 (Sun) [2869]: <WEEKEND>
+
+
+11/3/2008 price and volume resume
+
+
+**************  let us redo this ****************
+
+select distinct stockkey from mstockalias where symbol='ANE';
+> Row 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+> Row 2:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+
+**************
+> ANE 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+**************
+select * from mstockalias where STOCKKEY = X'c62d0e21390a4f23c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'c62e0e21390a4f23c0a80116'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2004-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'f78c5fd354dd2a4ec0a86f92'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'f78c5fd354dd2a4ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'f78c5fd354dd2a4ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ANE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|40.240002|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150212:053350
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-04-01 00:00:00.000000'
+>         BB_IDENTIFIER = ANE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-04-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ANE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-04-01 00:00:00.000000'
+>            PRIMARYKEY = X'f7835fd354dd2a4ec0a86f92'
+>               VERSION = NULL
+there were mtickets generated - let's see if anyone still holds ANE on 04/01/2004
+MAdmin
+Stock:ALLIANCE BANCORP NEW ENGLAND  Symbol:ANE
+Date: 04/01/2004
+
+0 users found
+
+
+**************
+> ANE 2:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+**************
+select * from mstockalias where STOCKKEY = X'620310ac390c6d1ac0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'620410ac390c6d1ac0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f762421e3fa1d227c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'f762421e3fa1d227c0a80146';
+> Row 1:
+>              ALIASKEY = X'f762421e3fa1d227c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CRB     US|CP_NAME|Carbon Energy Corp|CP_ID_BB_COMP|1174514|CP_UNIT|Carbon Energy Corp|CP_TOT_AMT|97.444420|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.550000|CP_SH_FLAG|1|CP_DEBT|22.420000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|10.662172|CP_CUR_PREMIUM|0.714296|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|117.586578|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;1;3;1;Target Financial Adviser;1;RBC Capital Mkts;13;100.000000;|CP_NOTES|$2.5 MLN TERMINATION FEE. STK TERMS ADJ FOR 2:1 SPLIT EFF: 9/16/03.                                                 9/16/03 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 10826334
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 103711
+>        BB_COMPANYNAME = Evergreen Resources Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = EVG     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-03-31 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = EVG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-10-30 00:00:00.000000'
+>            PRIMARYKEY = X'bac33fc63fa1d086c0a80146'
+>               VERSION = NULL
+there were mtickets generated for this
+let's check to see if there are any members who still hold CRB
+(select distinct stockkey from mstockalias where symbol='CRB';   just this one)
+MAdmin  10/30/2003   CRB
+Stock:CARBON ENERGY CORPORATION  Symbol:ACNI
+Date: 10/30/2003
+
+0 users found
+
+this is good
+are there mtickets for this stockkey that are beyond  10/30/2003?
+
+select count(*) from mticket where stockkey=X'620310ac390c6d1ac0a8015c' and opened > TIMESTAMP'2003-10-30 00:00:00.000000';
+> Row 1:
+>   _C001 = 1.000000
+
+let's save these mtickets, ticketkeys, mtrades, and fundkeys
+select * from mticket where stockkey=X'620310ac390c6d1ac0a8015c' and opened > TIMESTAMP'2003-10-30 00:00:00.000000' order by opened;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-09-27 16:01:07.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'941262135064a2b0c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'275c3a563beae02ec0a801e1'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-09-27 15:02:08.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'941062135064a2b0c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'941062135064a2b0c0a80134';
+nothing
+select * from morder where ticketkey=X'941062135064a2b0c0a80134';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'941262135064a2b0c0a80134'
+>         SHARES = 2000000.000000
+>      TICKETKEY = X'941062135064a2b0c0a80134'
+>           TIME = TIMESTAMP '2012-09-27 15:02:08.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+select * from mticketallocation where ticketkey=X'941062135064a2b0c0a80134';
+> Row 1:
+>      FUNDKEY = X'c781682e3de3f1c5c0a80133'
+>   PRIMARYKEY = X'941362135064a2b0c0a80134'
+>       SHARES = 2000000.000000
+>    TICKETKEY = X'941062135064a2b0c0a80134'
+
+select symbol from mfund where primarykey=X'c781682e3de3f1c5c0a80133';
+> Row 1:
+>   SYMBOL = AMMCV
+select loginname from mmanager where primarykey=X'275c3a563beae02ec0a801e1';
+> Row 1:
+>   LOGINNAME = ahoffard
+
+
+**
+Ok, let's list a new CRB and then we will move these over  need to get the new stockkey
+CRB|A|22274N102|American Community Newspapers Inc|20070704
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+*******************************  Need to make the following it's own stockkey ***************
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'b0e142db468da2f5c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	what exchange?  select * from mexchange where primarykey=X'9d592f1d390a440bc0a8015c';
+	select * from mexchange where primarykey=X'9d592f1d390a440bc0a8015c';
+	> Row 1:
+	>   ADDRESSKEY = NULL
+	>    FEEDDELAY = 20
+	>         NAME = AMEX
+	>   PRIMARYKEY = X'9d592f1d390a440bc0a8015c'
+	lets update the name 
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'b0e142db468da2f5c0a80146';
+	select * from mcorporateaction where aliaskey=X'b0e142db468da2f5c0a80146';
+> Row 1:
+>              ALIASKEY = X'b0e142db468da2f5c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|22274N102|CP_NEW_CUSIP|02520T103|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US22274N1028|CP_NEW_ISIN|US02520T1034|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 27104864
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>         BB_IDENTIFIER = CRB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2007-07-03 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CRB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1c7d417f468da23dc0a80146'
+>               VERSION = NULL
+
+
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'9afa5f3c46ccea96c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'9afa5f3c46ccea96c0a80146';
+	select * from mcorporateaction where aliaskey=X'9afa5f3c46ccea96c0a80146';
+> Row 1:
+>              ALIASKEY = X'9afa5f3c46ccea96c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CRB US|CP_NEW_TKR|ANE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 27720681
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-22 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'a6a35ef946ccea4ac0a80146'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'95fa704e490fbb13c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'95fa704e490fbb13c0a80146';
+	select * from mcorporateaction where aliaskey=X'95fa704e490fbb13c0a80146';
+> Row 1:
+>              ALIASKEY = X'95fa704e490fbb13c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ANE US|CP_NEW_TKR|ACNI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34074627
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-10-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'535d700e490fbad9c0a80146'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f460705b490fbb47c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'f460705b490fbb47c0a80146';
+	select * from mcorporateaction where aliaskey=X'f460705b490fbb47c0a80146';
+> Row 1:
+>              ALIASKEY = X'f460705b490fbb47c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34074631
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-10-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'535f700e490fbadac0a80146'
+>               VERSION = NULL
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'617242ce49110c9cc0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'617242ce49110c9cc0a80146';
+	select * from mcorporateaction where aliaskey=X'617242ce49110c9cc0a80146';
+> Row 1:
+>              ALIASKEY = X'617242ce49110c9cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNI US|CP_NEW_TKR|ANE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34100305
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'efeb428e49110c4dc0a80146'
+>               VERSION = NULL
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'c51a42e749110cd1c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'c51a42e749110cd1c0a80146';
+	select * from mcorporateaction where aliaskey=X'c51a42e749110cd1c0a80146';
+> Row 1:
+>              ALIASKEY = X'c51a42e749110cd1c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UA|CP_NOTES|Suspension reinstatement. ANE will trade on the OTC market November 3, 2008 under symbol ACNI and will be reinstated to listing on NYSE Alternext November 4, 2008 under it's original symbol ANE.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34100293
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ANE     UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ANE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'efe9428e49110c4dc0a80146'
+>               VERSION = NULL
+
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'a4c11e2f4918f59ac0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'a4c11e2f4918f59ac0a80146';
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'a4c11e2f4918f59ac0a80146';
+> Row 1:
+>              ALIASKEY = X'a4c11e2f4918f59ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ANE US|CP_NEW_TKR|ACNI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34204333
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'cf781e194918f560c0a80146'
+>               VERSION = NULL
+
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'04871f724918f5cec0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'04871f724918f5cec0a80146';
+	select * from mcorporateaction where aliaskey=X'04871f724918f5cec0a80146';
+> Row 1:
+>              ALIASKEY = X'04871f724918f5cec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 34204329
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'cf761e194918f560c0a80146'
+>               VERSION = NULL
+
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'5d695f1849f7b552c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'5d695f1849f7b552c0a80146';
+	select * from mcorporateaction where aliaskey=X'5d695f1849f7b552c0a80146';
+> Row 1:
+>              ALIASKEY = X'5d695f1849f7b552c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 36984638
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>         BB_IDENTIFIER = ACNI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2009-04-28 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = ACNI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1dae5dc649f7b511c0a80146'
+>               VERSION = NULL
+
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'ef966f0049fa5863c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'ef966f0049fa5863c0a80146';
+	select * from mcorporateaction where aliaskey=X'ef966f0049fa5863c0a80146';
+> Row 1:
+>              ALIASKEY = X'ef966f0049fa5863c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNI US|CP_NEW_TKR|ACNIQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 37012971
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>         BB_IDENTIFIER = ACNIQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2009-04-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'879e691a49fa5802c0a80146'
+>               VERSION = NULL
+
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'3f7861e74f46d047c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set NAME = 'American Community Newspapers Inc'  where PRIMARYKEY = X'3f7861e74f46d047c0a80146';
+	select * from mcorporateaction where aliaskey=X'3f7861e74f46d047c0a80146';
+> Row 1:
+>              ALIASKEY = X'3f7861e74f46d047c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ACNIQ US|CP_NEW_TKR|ACNI US|CP_NOTES|Bankruptcy Case Dismissed
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 61876375
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 9747490
+>        BB_COMPANYNAME = American Community Newspapers Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>         BB_IDENTIFIER = ACNIQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-02-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ACNIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-02-22 00:00:00.000000'
+>            PRIMARYKEY = X'085e125c4f457c62c0a80146'
+>               VERSION = NULL
+
+
+does anyone hold this stock now?
+MAdmin ACNI  02/12/2015   no one holds this
+
+
+
+
+Ok, listing the new CRB as American Community Newspapaers Inc
+
+select distinct stockkey from mstockalias where symbol='CRB';
+> Row 1:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+> Row 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+
+two that is good
+
+> CRB 1:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+select * from mstockalias where STOCKKEY = X'620310ac390c6d1ac0a8015c';
+this has everything
+
+> CRB 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+select * from mstockalias where STOCKKEY = X'590f281454de67a4c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22274N102
+>           DATE = TIMESTAMP '2007-07-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'5910281454de67a4c0a86f92'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+this is the new one.
+
+back to the first stockkey.. we need to separate the mstockalias records
+
+> CRB 1:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+select * from mstockalias where STOCKKEY = X'620310ac390c6d1ac0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'620410ac390c6d1ac0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f762421e3fa1d227c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+-------------------  the above ones are good
+below we need to change the stockkey and then the mstock identity key
+some of the status keys are inactive - let's change this to active
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'b0e142db468da2f5c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- update this
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'b0e142db468da2f5c0a80146';
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'b0e142db468da2f5c0a80146';
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'9afa5f3c46ccea96c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- update this
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'9afa5f3c46ccea96c0a80146';
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'9afa5f3c46ccea96c0a80146';
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'95fa704e490fbb13c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--  update this 
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'95fa704e490fbb13c0a80146';
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'95fa704e490fbb13c0a80146';
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'f460705b490fbb47c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'f460705b490fbb47c0a80146';
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'617242ce49110c9cc0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'617242ce49110c9cc0a80146';
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'c51a42e749110cd1c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'c51a42e749110cd1c0a80146';
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'a4c11e2f4918f59ac0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'a4c11e2f4918f59ac0a80146';
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'04871f724918f5cec0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'04871f724918f5cec0a80146';
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'5d695f1849f7b552c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'5d695f1849f7b552c0a80146';
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'ef966f0049fa5863c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'ef966f0049fa5863c0a80146';
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'3f7861e74f46d047c0a80146'   <--- set the identity of new one here
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+	update mstockalias set STOCKKEY = X'590f281454de67a4c0a86f92' where PRIMARYKEY = X'3f7861e74f46d047c0a80146';
+
+now all of the mstockalias associated with American Community Newspaper Inc have been moved over to the new stockkey
+need to update the mstock  identitykey
+
+select * from mstock where primarykey=X'590f281454de67a4c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'5910281454de67a4c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'590f281454de67a4c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27859
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'3f7861e74f46d047c0a80146'  where PRIMARYKEY = X'590f281454de67a4c0a86f92';
+
+we have the one mticket 
+
+select * from mticket where stockkey=X'620310ac390c6d1ac0a8015c' and opened > TIMESTAMP'2003-10-30 00:00:00.000000' order by opened;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-09-27 16:01:07.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'941262135064a2b0c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'275c3a563beae02ec0a801e1'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-09-27 15:02:08.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'941062135064a2b0c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select * from mtrade where ticketkey=X'941062135064a2b0c0a80134';
+nothing
+select * from morder where ticketkey=X'941062135064a2b0c0a80134';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'941262135064a2b0c0a80134'
+>         SHARES = 2000000.000000
+>      TICKETKEY = X'941062135064a2b0c0a80134'
+>           TIME = TIMESTAMP '2012-09-27 15:02:08.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+select * from mticketallocation where ticketkey=X'941062135064a2b0c0a80134';
+> Row 1:
+>      FUNDKEY = X'c781682e3de3f1c5c0a80133'
+>   PRIMARYKEY = X'941362135064a2b0c0a80134'
+>       SHARES = 2000000.000000
+>    TICKETKEY = X'941062135064a2b0c0a80134'
+
+select symbol from mfund where primarykey=X'c781682e3de3f1c5c0a80133';
+> Row 1:
+>   SYMBOL = AMMCV
+select loginname from mmanager where primarykey=X'275c3a563beae02ec0a801e1';
+> Row 1:
+>   LOGINNAME = ahoffard
+let's delete the mticket, morder, and mticketallocation
+set commit false;
+delete from morder where TICKETKEY = X'941062135064a2b0c0a80134';
+delete from mticketallocation where TICKETKEY = X'941062135064a2b0c0a80134';
+delete from mticket where primarykey=X'941062135064a2b0c0a80134';
+commit;
+set commit true;
+
+I think that we are good.
+
+select distinct stockkey from mstockalias where symbol='ANE';
+> Row 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+> Row 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+
+thre are two
+
+> ANE 1:
+>   STOCKKEY = X'c62d0e21390a4f23c0a80116'
+	select * from mstockalias where STOCKKEY = X'c62d0e21390a4f23c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'c62e0e21390a4f23c0a80116'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2004-04-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ALLIANCE BANCORP NEW ENGLAND
+>     PRIMARYKEY = X'f78c5fd354dd2a4ec0a86f92'
+>       STOCKKEY = X'c62d0e21390a4f23c0a80116'
+>         SYMBOL = ANE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+
+> ANE 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+select * from mstockalias where STOCKKEY = X'590f281454de67a4c0a86f92' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22274N102
+>           DATE = TIMESTAMP '2007-07-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'5910281454de67a4c0a86f92'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'5910281454de67a4c0a86f92';
+nothing it is the list 
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-07-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'b0e142db468da2f5c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2007-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'9afa5f3c46ccea96c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'95fa704e490fbb13c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'f460705b490fbb47c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'617242ce49110c9cc0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'c51a42e749110cd1c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ANE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'a4c11e2f4918f59ac0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2008-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'04871f724918f5cec0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'5d695f1849f7b552c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2009-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'ef966f0049fa5863c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'3f7861e74f46d047c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+
+select distinct stockkey from mstockalias where symbol='CRB';
+> Row 1:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+> Row 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+
+
+We need to disposition american community newspapers, no loger trade
+
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02520T103
+>           DATE = TIMESTAMP '2012-02-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Community Newspapers Inc
+>     PRIMARYKEY = X'3f7861e74f46d047c0a80146'
+>       STOCKKEY = X'590f281454de67a4c0a86f92'
+>         SYMBOL = ACNI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+
+
+there are two
+> Row 1:
+>   STOCKKEY = X'620310ac390c6d1ac0a8015c'
+select * from mstockalias where STOCKKEY = X'620310ac390c6d1ac0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'620410ac390c6d1ac0a8015c'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141106104
+>           DATE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = CARBON ENERGY CORPORATION
+>     PRIMARYKEY = X'f762421e3fa1d227c0a80146'
+>       STOCKKEY = X'620310ac390c6d1ac0a8015c'
+>         SYMBOL = CRB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = UU
+
+> Row 2:
+>   STOCKKEY = X'590f281454de67a4c0a86f92'
+select * from mstockalias where STOCKKEY = X'590f281454de67a4c0a86f92';
+and that is the american community newspapers
+
+ACNI appears to still trade
+
+check on 2/14/15 for this one 
+2/14/15 - we can close this out.   ANE is acquired, and ANCI is showing as tradable.
+
+

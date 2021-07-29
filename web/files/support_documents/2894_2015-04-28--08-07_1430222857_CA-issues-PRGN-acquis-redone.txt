@@ -1,0 +1,740 @@
+date:  4/27/15
+ticker: PRGN
+
+applied acquis incorrectly
+I found members were short - they have two applied acquis for this stock
+according to quantum:
+Peregrine Systems, Inc.
+Ticker Symbol: PRGN*     CUSIP: Unknown*      Exchange: OTCBB
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 12/20/05
+
+Company's Online Profile
+BUSINESS:  The leading provider of Infrastructure Management solutions joining the disciplines of the consolidated service desk and Enterprise Asset Management through common shared data.
+
+Notes:  Acquired by Hewlett Packard Co. 0n 12/20/2005 at $26.08 per share.
+
+select distinct stockkey from mstockalias where symbol='PRGN';
+> Row 1:
+>   STOCKKEY = X'f69a0e21390abbc8c0a80116'
+> Row 2:
+>   STOCKKEY = X'351969184a2dcacbc0a80146'
+
+there are two
+**********************
+> PRGN 1:
+>   STOCKKEY = X'f69a0e21390abbc8c0a80116'
+**********************
+select * from mstockalias where STOCKKEY = X'f69a0e21390abbc8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'f69b0e21390abbc8c0a80116'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-06-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'e01629f43d1bcd8ac0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-08-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'f2d955cb3d702522c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-08-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'b16f57943d702773c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-09-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'6ade1d7f3d756c84c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'd60602953d93c8acc0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2003-08-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'cd2d54ae3fe0ac07c0a80146'  <--- set the identitykey here 
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2003-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'18d555e63fe0ad64c0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'7bb82c98431c92d4c0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'7bb82c98431c92d4c0a80146';
+> Row 1:
+>              ALIASKEY = X'7bb82c98431c92d4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.57|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 2005090506
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>         BB_IDENTIFIER = PRGNQ_FIX     UV Equity
+>             BB_ISSUED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = PRGNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>            PRIMARYKEY = X'b1b702f3431c6813c0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'b1b702f3431c6813c0a80146';
+> Row 1:
+>   _C001 = 252.000000
+
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2005-12-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'9da246994a2dc90fc0a8013c'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'9da246994a2dc90fc0a8013c';
+> Row 1:
+>              ALIASKEY = X'9da246994a2dc90fc0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|26.080000|CP_CASH_FLAG|1|CP_SH|26.080000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20090608:102851
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-12-21 00:00:00.000000'
+>         BB_IDENTIFIER = PRGN_FIX     UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-12-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PRGN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-12-21 00:00:00.000000'
+>            PRIMARYKEY = X'9d8646994a2dc8e3c0a8013c'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'9d8646994a2dc8e3c0a8013c';
+> Row 1:
+>   _C001 = 8.000000
+
+
+select * from mticket where stockkey=X'f69a0e21390abbc8c0a80116' and shares > 0 and sourcekey is null order by closed;
+the latest one is 9/19/2005
+> Row 1219:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-09-19 13:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'cebf0823432ef5edc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'df3f5fe439ce69e3c0a80118'
+>       MODIFIED = NULL
+>            NET = 12649.470000
+>         OPENED = TIMESTAMP '2005-09-19 13:31:25.000000'
+>          PRICE = 25.298940
+>     PRIMARYKEY = X'cebd0823432ef5edc0a80134'
+>         SECFEE = 0.530000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+we need to back both of them out then apply once
+
+let's back the last one out first
+> Row 1:
+>              ALIASKEY = X'9da246994a2dc90fc0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|26.080000|CP_CASH_FLAG|1|CP_SH|26.080000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20090608:102851
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-12-21 00:00:00.000000'
+>         BB_IDENTIFIER = PRGN_FIX     UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-12-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PRGN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-12-21 00:00:00.000000'
+>            PRIMARYKEY = X'9d8646994a2dc8e3c0a8013c'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20090608:102851
+untrading action with ID: 20090608:102851
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:PRGN]
+
+let's delete this 
+delete from mcorporateaction where PRIMARYKEY = X'9d8646994a2dc8e3c0a8013c';
+already gone
+
+let us set the identitykey
+select * from mstock where primarykey= X'f69a0e21390abbc8c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'9da246994a2dc90fc0a8013c'
+>                NAME = PEREGRINE SYSTEMS
+>          PRIMARYKEY = X'f69a0e21390abbc8c0a80116'
+>              SYMBOL = PRGN
+>           COMPANYID = 3127
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6dfc
+
+update mstock set IDENTITYKEY=X'cd2d54ae3fe0ac07c0a80146' where PRIMARYKEY = X'f69a0e21390abbc8c0a80116';
+>     PRIMARYKEY = X'cd2d54ae3fe0ac07c0a80146'  <--- set the identitykey here 
+
+ok, let's back the other one out
+> Row 1:
+>              ALIASKEY = X'7bb82c98431c92d4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.57|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 2005090506
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>         BB_IDENTIFIER = PRGNQ_FIX     UV Equity
+>             BB_ISSUED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = PRGNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>            PRIMARYKEY = X'b1b702f3431c6813c0a80146'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONID = '2005090506:MARTY' where PRIMARYKEY = X'b1b702f3431c6813c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'b1b702f3431c6813c0a80146';
+> Row 1:
+>              ALIASKEY = X'7bb82c98431c92d4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.57|CP_CASH_FLAG|1|CP_SH|N.A.|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 2005090506:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID =  
+>        BB_COMPANYNAME =  
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>         BB_IDENTIFIER = PRGNQ_FIX     UV Equity
+>             BB_ISSUED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE =  
+>              BB_SECID = PRGNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID =  
+>            BB_UPDATED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>            PRIMARYKEY = X'b1b702f3431c6813c0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 2005090506:MARTY
+successfully ran
+
+let's get rid of the two  mstockalias records
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2005-12-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'9da246994a2dc90fc0a8013c'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+
+delete from mstockalias where PRIMARYKEY = X'9da246994a2dc90fc0a8013c';
+done 
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2003-07-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'7bb82c98431c92d4c0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+delete from mstockalias where PRIMARYKEY = X'7bb82c98431c92d4c0a80146';
+
+check again before we reapply the acquis
+select * from mstockalias where STOCKKEY = X'f69a0e21390abbc8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'f69b0e21390abbc8c0a80116'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-06-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'e01629f43d1bcd8ac0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-08-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'f2d955cb3d702522c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-08-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'b16f57943d702773c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q101
+>           DATE = TIMESTAMP '2002-09-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'6ade1d7f3d756c84c0a801dc'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'd60602953d93c8acc0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2003-08-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'cd2d54ae3fe0ac07c0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2003-08-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'18d555e63fe0ad64c0a80146'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+
+
+ok ready to apply
+Notes:  Acquired by Hewlett Packard Co. 0n 12/20/2005 at $26.08 per share.
+/Marketocracy/bin/cahelper -symbol PRGN -effective 20051220 -type ACQUIS -exchange UQ -acqType 1 -acqCash 26.00 -acqShare 0 -purchaser HPQ >& /Users/build/caout/PRGN.20150427-ACQUIS.out
+PRGN.20150427-ACQUIS.out
+stocks:~/caout build$ tail -f PRGN.20150427-ACQUIS.out
+D: (04-27 21:07:56.119) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-27 21:08:45.196) cahelper started on 2015-04-27 21:08:45 -0400
+
+D: (04-27 21:08:45.484) There are [0] open tickets for PRGND on 20051220
+D: (04-27 21:08:46.040) StockFileLoad Version:3.0
+D: (04-27 21:08:46.040) Loading Stock Data
+D: (04-27 21:10:16.263) Building Lookup Index
+D: (04-27 21:10:25.029) Finished Building Index
+D: (04-27 21:10:27.104) Finished Loading Stock Data
+D: (04-27 21:10:27.171) Connection to 192.168.111.172:6666 succeeded
+D: (04-27 21:10:30.585) SavingChanges for position sell out 101 of 538
+D: (04-27 21:10:39.213) SavingChanges for position sell out 201 of 538
+D: (04-27 21:10:50.421) {
+    "ACQUIRED_STOCK" = PRGN; 
+    "ACQUIRING_STOCK" = HPQ; 
+    AMOUNT = 26; 
+    APPLIED = 1; 
+    DATE = 20051220; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = HPQ; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-27 21:10:56.861) SUCCESS
+D: (04-27 21:10:56.862) cahelper finished 2015-04-27 21:10:56 -0400
+
+select * from mstockalias where STOCKKEY = X'f69a0e21390abbc8c0a80116';
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 71366Q200
+>           DATE = TIMESTAMP '2005-12-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PEREGRINE SYSTEMS
+>     PRIMARYKEY = X'f0f96a49553edd9dc0a86f92'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>         SYMBOL = PRGND
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey=X'f0f96a49553edd9dc0a86f92';
+> Row 1:
+>              ALIASKEY = X'f0f96a49553edd9dc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PRGN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|26.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150427:090845
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-12-20 00:00:00.000000'
+>         BB_IDENTIFIER = HPQ     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2005-12-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HPQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-12-20 00:00:00.000000'
+>            PRIMARYKEY = X'f0eb6a49553edd9dc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'f0eb6a49553edd9dc0a86f92';
+> Row 1:
+>   _C001 = 250.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'f0eb6a49553edd9dc0a86f92'));
+250 fundkeys
+
+save to CA issues PRGN fundkeys.txt
+
+check on 4/28/15 and invalidate the funds 
+
+12/20/2005  MAdmin 
+Stock:PEREGRINE SYSTEMS  Symbol:PRGN
+Date: 12/20/2005
+
+1 users found
+
+1	jbarnes
+
+have to go by the mtickets
+select * from mticket where managerkey in (select primarykey from mmanager where loginname='jbarnes') and stockkey=X'f69a0e21390abbc8c0a80116' and shares > 0 order by closed;
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2004-04-14 09:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.850000
+>   CURRENTORDER = X'4495497e407ca02fffffffff'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e41b582239fee31dc0a801e0'
+>       MODIFIED = NULL
+>            NET = 360.380000
+>         OPENED = TIMESTAMP '2004-04-13 22:21:35.000000'
+>          PRICE = 21.198824
+>     PRIMARYKEY = X'4493497e407ca02fffffffff'
+>         SECFEE = 0.020000
+>         SHARES = 17.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f69a0e21390abbc8c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'4493497e407ca02fffffffff'));
+> Row 1:
+>   SYMBOL = JBTF
+
+20040413 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 08, 2003 		-858 	-858 	Corporate Action
+Total: -858
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+SELLS
+20030808
+
+You have no sells for this position
+**********************
+> PRGN 2:
+>   STOCKKEY = X'351969184a2dcacbc0a80146'
+**********************
+select * from mstockalias where STOCKKEY = X'351969184a2dcacbc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2007-08-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Paragon Shipping Inc.
+>     PRIMARYKEY = X'351a69184a2dcacbc0a80146'
+>       STOCKKEY = X'351969184a2dcacbc0a80146'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2010-01-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Paragon Shipping Inc.
+>     PRIMARYKEY = X'6658432b4b42669bc0a80146'
+>       STOCKKEY = X'351969184a2dcacbc0a80146'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R309
+>           DATE = TIMESTAMP '2010-03-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Paragon Shipping Inc.
+>     PRIMARYKEY = X'a49762064baa7ef0c0a80146'
+>       STOCKKEY = X'351969184a2dcacbc0a80146'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R408
+>           DATE = TIMESTAMP '2012-11-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Paragon Shipping Inc.
+>     PRIMARYKEY = X'221230395099a03cc0a80146'
+>       STOCKKEY = X'351969184a2dcacbc0a80146'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69913R408
+>           DATE = TIMESTAMP '2013-04-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Paragon Shipping Inc.
+>     PRIMARYKEY = X'af6d4ba35171c7b1c0a80146'
+>       STOCKKEY = X'351969184a2dcacbc0a80146'
+>         SYMBOL = PRGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = XV
+
+
+checking the member who went short
+rwilliams4
+>       SYMBOL = RWMF
+20051220 sold off 22 this day
+ his trades
+
+not correct on PortfolioAdmin - the nightly load did not finish
+let's get his password and log in on regular Portfolio
+
+select * from mmanager where loginname='rwilliams4';
+> Row 1:
+>                EMAIL = rickgeee@yahoo.com
+>            FIRSTNAME = Richard
+>             FULLNAME = Richard Williams
+>       HOMEADDRESSKEY = X'23fd6a553a2bd104c0a80118'
+>             LASTNAME = Williams
+>            LOGINNAME = rwilliams4
+>        LOGINPASSWORD = brettt
+>         PORTFOLIOKEY = X'23ff6a553a2bd104c0a80118'
+>           PRIMARYKEY = X'23fc6a553a2bd104c0a80118'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'23fe6a553a2bd104c0a80118'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2014-10-02 14:11:01.000000'
+>            LASTLOGIN = TIMESTAMP '2014-10-02 18:04:11.000000'
+>           LOGINCOUNT = 18
+>         LOGINSPACING = 344763583.135546
+>   JOINEDMARKETOCRACY = TIMESTAMP '2000-12-04 12:17:41.000000'
+>    ENCRYPTEDPASSWORD = 1D082B67D5E5FED3
+>         MEMBERSTATUS = -1
+
+update mmanager set MEMBERSTATUS = 1 where PRIMARYKEY = X'23fc6a553a2bd104c0a80118';
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 28, 2001 		1087 	1087 	Corporate Action
+Aug 08, 2003 	1087 	-1065 	22 	Corporate Action
+Dec 20, 2005 	22 	-22 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+ledger
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+12/20/2005 	$21,850.80 	$0.00 	$0.60 	$572.00 	$33.12 	$0.00 	$22,390.28 	$583,854.19 	$606,244.47 	100,000 	$6.06 	No 	Details 
+
+22*26= 572
+
+let's do the invalidation of the funds  - done
+check MAdmin one more time
+Stock:PEREGRINE SYSTEMS  Symbol:PRGND
+Date: 12/20/2005
+
+0 users found
+
+looks good - closing this out 

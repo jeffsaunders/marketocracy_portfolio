@@ -1,0 +1,157 @@
+date: 2/2/15
+request for symbol addition:  FNRG
+
+yahoo:
+ForceField Energy Inc. (FNRG) -NasdaqCM   Watchlist
+6.95  0.23(3.38%) 1:30PM EST - Nasdaq Real Time Price
+Prev Close:	6.72
+Open:	6.74
+Bid:	6.93 x 100
+Ask:	6.94 x 2900
+1y Target Est:	7.00
+Beta:	-0.52
+Next Earnings Date:	N/A
+Day's Range:	6.73 - 6.95
+52wk Range:	4.44 - 6.98
+Volume:	117,156
+Avg Vol (3m):	29,086
+Market Cap:	125.79M
+P/E (ttm):	N/A
+EPS (ttm):	-0.36
+Div & Yield:	N/A (N/A
+
+quantum
+ForceField Energy, Inc.
+Ticker Symbol: FNRG     CUSIP: 34520U103     Exchange: NCM
+
+Company's Online Profile
+BUSINESS:  ForceField Energy, Inc. is a global company whose products and solutions focus on renewable energy and improved energy efficiency. ForceField is the exclusive distributor in the U.S., Canada, Mexico, Latin America, the Caribbean and Europe of Light Emitting Diode (LED) commercial lighting products and fixtures for a premier LED manufacturer, Lightsky. An LED is a semiconductor device that converts electricity into light. The LED light is considered green because of the absence of dangerous chemicals and an accompanying significant reduction in energy consumption depending on the application, from 50% to 70% of traditional lighting products. ForceField’s subsidiary, TransPacific Energy Inc. has patented a technology which uses proprietary multiple component fluids that are environmentally sound, non-toxic and non-flammable.
+Previous Name: SunSi Energies, Inc.    Changed: 2/13/13
+Micro Cap Stock -   Market Value $ 86.6 Million
+
+xignite  it's there 34520U103 is the cusip  cusip is good
+
+our site
+
+ symbol changes for FNRC	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+25 Nov 05	NPTU	NPTUE	Change in the ticker (trading) symbol from NPTU to NPTUE
+13 Dec 05	NPTUE	NPTU	Change in the ticker (trading) symbol from NPTUE to NPTU
+20 Apr 07	NPTU	NPTUE	Change in the ticker (trading) symbol from NPTU to NPTUE
+01 May 07	NPTUE	FNRGE	Change in the ticker (trading) symbol from NPTUE to FNRGE
+22 May 07	FNRGE	FNRG	Change in the ticker (trading) symbol from FNRGE to FNRG
+24 May 07	FNRG	FNRGE	Change in the ticker (trading) symbol from FNRG to FNRGE
+04 Jun 07	FNRGE	FNRG	Change in the ticker (trading) symbol from FNRGE to FNRG
+17 Mar 08	FNRG	FNRC	Change in the ticker (trading) symbol from FNRG to FNRC
+20 Apr 09	FNRC	FNRCE	Change in the ticker (trading) symbol from FNRC to FNRCE
+21 Apr 09	FNRCE	FNRC	Change in the ticker (trading) symbol from FNRCE to FNRC
+20 Apr 10	FNRC	FNRCE	Change in the ticker (trading) symbol from FNRC to FNRCE
+19 May 10	FNRCE	FNRC	Change in the ticker (trading) symbol from FNRCE to FNRC
+23 Jun 14	FNRC	FNRCD	Change in the ticker (trading) symbol from FNRC to FNRCD
+21 Jul 14	FNRCD	FNRC	Change in the ticker (trading) symbol from FNRCD to FNRC
+ 	 	 
+	  CUSIP changes for FNRC	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 May 07	630798106	32114B101	Change in any of identification numbers (CUSIP) of a security from 630798106 to 32114B101
+17 Mar 08	32114B101	32114B200	Change in any of identification numbers (CUSIP) of a security from 32114B101 to 32114B200
+23 Jun 14	32114B200	32114B309	Change in any of identification numbers (CUSIP) of a security from 32114B200 to 32114B309
+ 	 	 
+	  name changes for FNRC	
+ 	 	
+Effective Date	Old Name	New Name	Description
+01 May 07	Naptau Gold Corp	1st NRG Corp	Change in the name of issuer from Naptau Gold Corp to 1st NRG Corp
+ 	 	 
+	  listing changes for FNRC	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+May 19, 2010	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that FNRC trades on from OTCBB to OTCBB-OTHER
+Oct 17, 2013	OTCBB-OTHER	UV	NASDAQ-SMALLCAP	UR	Change in the exchange that FNRG trades on from OTCBB-OTHER to NASDAQ-SMALLCAP
+ 	 	 
+	  FNRC had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+17 Mar 08	1 for 20	Split terms:1 for 20
+23 Jun 14	1:20000	Split terms:1:20000
+
+FNRG is an old ticker symbol for now FNRC which still trades
+
+select distinct stockkey from mstockalias where symbol='FNRG';
+> Row 1:
+>   STOCKKEY = X'a469043c39e7e9c8c0a801dc'
+
+select * from mstockalias where STOCKKEY = X'a469043c39e7e9c8c0a801dc';
+brings up 20 mstockalias for 1st NRG Corp  previously used our ticker FNRG
+
+let's look on nasdaq trader for FNRG
+
+Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	First Date Traded
+10/17/2013	FNRG	S	ForceField Energy Inc. Common Stock	N	10/17/2013
+Anticipated Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+10/15/2013	FNRG	S	ForceField Energy Inc. Common Stock	N	10/17/2013 From NBB (FNRG)
+10/16/2013	FNRG	S	ForceField Energy Inc. Common Stock	N	10/17/2013 From NBB (FNRG)
+
+
+let's list it as of 10/17/2013
+
+FNRG|Q|34520U103|ForceField Energy Inc.|20131017
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check the database again
+
+select distinct stockkey from mstockalias where symbol='FNRG';
+> Row 1:
+>   STOCKKEY = X'a469043c39e7e9c8c0a801dc'
+> Row 2:
+>   STOCKKEY = X'bd05093f54cfc572c0a86f92'
+select * from mstockalias where STOCKKEY = X'bd05093f54cfc572c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 34520U103
+>           DATE = TIMESTAMP '2013-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ForceField Energy Inc.
+>     PRIMARYKEY = X'bd06093f54cfc572c0a86f92'
+>       STOCKKEY = X'bd05093f54cfc572c0a86f92'
+>         SYMBOL = FNRG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+need to add the style and GICS 
+125M  is XG  let's pick growth
+update mstockalias set STYLEKEY='XG' where PRIMARYKEY = X'bd06093f54cfc572c0a86f92';
+20104010	Electrical Components & Equipment
+	Companies that produce electric cables and wires, electrical components or equipment not classified in the Heavy Electrical Equipment Sub-Industry.
+update mstockalias set GICSKEY='20104010' where PRIMARYKEY = X'bd06093f54cfc572c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 34520U103
+>           DATE = TIMESTAMP '2013-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ForceField Energy Inc.
+>     PRIMARYKEY = X'bd06093f54cfc572c0a86f92'
+>       STOCKKEY = X'bd05093f54cfc572c0a86f92'
+>         SYMBOL = FNRG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104010
+>       STYLEKEY = XG
+
+
+I have listed FNRG - check on 2/3/15 see that it is there and do a sample buy
+
+2/3/15 - stock is there , entered a test buy of 10 shares - wait until market open
+
+my order executed and filled - I am closing this out
+
+2/3/15
+
+

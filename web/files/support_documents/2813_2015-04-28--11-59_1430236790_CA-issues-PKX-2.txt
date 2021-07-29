@@ -1,0 +1,364 @@
+date: 9/7/14
+Corporate Action Submission - Case: 10625 | Ticker: PKX
+Submitted: 09/07/2014 @ 2:22 PM CDT 
+Name:	Rahul Garg
+Portfolio Username:	Rgarga
+Email:	Rgarga_2000@yahoo.com
+Corporate Action Type:	Dividend Paid in Cash
+Fund Symbol:	Pkx
+Ticker Symbol:	Pkx
+Corporate Action Description:	Dividend came in account but not here... For pkx again...
+
+yahoo:  POSCO (PKX) -NYSE   84.95
+
+select * from mstockalias where symbol='PKX';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 730450103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'ad751029390b2e41c0a80116'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'c39b1f043cad1943c0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Posco
+>     PRIMARYKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+select distinct stockkey from mstockalias where symbol='PKX';
+> Row 1:
+>   STOCKKEY = X'ad741029390b2e41c0a80116'
+
+select * from mcorporateaction where aliaskey=X'b8b32d9d3cc4c70ac0a801dc';
+last DVD_CASH
+> Row 25:
+>              ALIASKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131231|CP_PAY_DT|20140410|CP_FREQ|4|CP_NET_AMT|1.416029|CP_TAX_AMT| |CP_GROSS_AMT|1.416029|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20140425:092755
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-27 00:00:00.000000'
+>         BB_IDENTIFIER = PKX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PKX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-27 00:00:00.000000'
+>            PRIMARYKEY = X'349d0b36535b0b9bc0a86f92'
+>               VERSION = NULL
+ pay DATE 4/10/2014  
+
+check the database 
+select * from mcorporateaction where aliaskey is null and BB_SECID='PKX' and BB_ACTIONMNEMONIC='DVD_CASH';
+> Row 41:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140630|CP_PAY_DT|20140904|CP_FREQ|2|CP_NET_AMT|.438|CP_TAX_AMT|0.049222|CP_GROSS_AMT|.492222|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|10.000000|CP_ADJ|0.993255|CP_ADJ_DT|20140626|CP_INDICATOR|E|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92590192
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 129309
+>        BB_COMPANYNAME = POSCO
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = PKX     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-17 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = PKX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-08-28 00:00:00.000000'
+>            PRIMARYKEY = X'bb30283653ffb131c0a86f92'
+>               VERSION = NULL
+
+it's here, why wasn't this applied?
+
+update mcorporateaction set ALIASKEY = X'b8b32d9d3cc4c70ac0a801dc'    where PRIMARYKEY = X'bb30283653ffb131c0a86f92' ;
+done - added this to the last mstockalias record
+
+see it in the database
+
+select * from mstockalias where symbol='PKX';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 730450103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'ad751029390b2e41c0a80116'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'c39b1f043cad1943c0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Posco
+>     PRIMARYKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+	select * from mcorporateaction where aliaskey=X'b8b32d9d3cc4c70ac0a801dc' order by BB_EFFECTIVE;
+
+> Row 26:
+>              ALIASKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140630|CP_PAY_DT|20140904|CP_FREQ|2|CP_NET_AMT|.438|CP_TAX_AMT|0.049222|CP_GROSS_AMT|.492222|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|10.000000|CP_ADJ|0.993255|CP_ADJ_DT|20140626|CP_INDICATOR|E|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92590192
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 129309
+>        BB_COMPANYNAME = POSCO
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = PKX     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-17 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = PKX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-08-28 00:00:00.000000'
+>            PRIMARYKEY = X'bb30283653ffb131c0a86f92'
+>               VERSION = NULL
+
+it's there - check on 9/8/14 for the dividend
+rgarga paydate 9/4/14
+
+PortfolioAdmin crashes.   
+
+let's back out the mcorporateaction and reapply it using cahelper
+
+record date:  20140630
+pay date:  20140904
+effective:  20140626
+amount 0.50
+
+delete from mcorporateaction where PRIMARYKEY = X'bb30283653ffb131c0a86f92';
+it's gone
+let's reapply via cahelper
+/Marketocracy/bin/cahelper -symbol PKX -effective 20140626 -type DVD_CASH -exchange UN -payDate 20140904 -recordDate 20140630 -amount 0.50 >& /Users/build/caout/PKX.20140908-DVD_CASH.out
+stocks:~/caout build$ tail -f PKX.20140908-DVD_CASH.out
+D: (09-08 10:37:36.511) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-08 10:37:59.153) cahelper started on 2014-09-08 10:37:59 -0400
+
+D: (09-08 10:37:59.485) {
+    AMOUNT = 0.5; 
+    APPLIED = 1; 
+    DATE = 20140626; 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20140904; 
+    "RECORD_DATE" = 20140630; 
+    SYMBOL = PKX; 
+    TYPE = "DVD_CASH"; 
+}
+D: (09-08 10:37:59.879) SUCCESS
+D: (09-08 10:37:59.880) cahelper finished 2014-09-08 10:37:59 -0400
+
+wow, that ran fast
+
+check the database
+select * from mstockalias where symbol='PKX';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 730450103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'ad751029390b2e41c0a80116'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'c39b1f043cad1943c0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Posco
+>     PRIMARYKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+
+select distinct stockkey from mstockalias where symbol='PKX';
+> Row 1:
+>   STOCKKEY = X'ad741029390b2e41c0a80116'
+
+select * from mstockalias where STOCKKEY = X'ad741029390b2e41c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 730450103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'ad751029390b2e41c0a80116'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = POHANG IRON & STEEL ADS
+>     PRIMARYKEY = X'c39b1f043cad1943c0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693483109
+>           DATE = TIMESTAMP '2002-04-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Posco
+>     PRIMARYKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>       STOCKKEY = X'ad741029390b2e41c0a80116'
+>         SYMBOL = PKX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104050
+>       STYLEKEY = LG
+	select * from mcorporateaction where aliaskey=X'b8b32d9d3cc4c70ac0a801dc' order by BB_EFFECTIVE;
+> Row 26:
+>              ALIASKEY = X'b8b32d9d3cc4c70ac0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140630|CP_PAY_DT|20140904|CP_FREQ|4|CP_NET_AMT|0.500000|CP_TAX_AMT| |CP_GROSS_AMT|0.500000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20140908:103759
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = PKX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PKX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'565c1dcf540dbf47c0a86f92'
+>               VERSION = NULL
+
+ok check this on 9/9/14 -  look for a 50 cent dividend on 9/4/14 for member rgarga
+9/9/14 - logged in as rgarga - when I expand PKX all CAs the PortfolioAdmin session dies
+but if you expand the trades for RMF for PSX and then go to 9/4/14 the dividends are there  952.00
+1935 * .50 
+
+dividend is there closing this out.
+
+9/10/14
+looking into this for rgarga:
+
+1.  log in as him
+2.  enter the ticker PKX   check on 9/4/14  in the RMF fund
+3.  strange it's not there in the list of ledgers page but if you expand the trades for the day you will see it
+positions on September 04, 2014	
+ 	 	
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+DTV	DIRECTV	$86.65	22.4%	4,200	$0.00	$363,930.00	Details 
+GS	GOLDMAN SACHS GROUP INC	$180.08	19.9%	1,800	$0.00	$324,144.00	Details 
+ADM	ARCHER-DANIELS-MIDLAND	$50.20	9.6%	3,100	$0.00	$155,620.00	Details 
+PKX	Posco	$83.04	9.4%	1,850	$967.00	$153,624.00	Details    <-----------  
+WFC	WELLS FARGO	$51.57	9.2%	2,900	$0.00	$149,553.00	Details 
+MSFT	MICROSOFT CORP	$45.26	8.8%	3,175	$0.00	$143,700.50	Details 
+IBM	INTL BUSINESS MACHINES	$190.68	8.4%	720	$0.00	$137,289.60	Details 
+BK	Bank of New York Mellon Corp/T	$39.47	8.3%	3,414	$0.00	$134,750.58	Details 
+USG	USG CORP	$29.39	2.8%	1,539	$0.00	$45,231.21	Details 
+MDC	M.D.C. HLDGS	$28.57	1.3%	759	$0.00	$21,684.63	Detail
+
+and if you expand the trades for PSX in the RMF fund
+dividends	
+ 	 	
+The following is a list of the dividends that have been paid by this position.
+
+ 	 	
+Effective Date	Record Date	Pay Date	Description
+Dec 26, 2012	Dec 28, 2012	Apr 22, 2013	Dividend amount:1.326259 per share.
+Jun 25, 2013	Jun 27, 2013	Sep 09, 2013	Dividend amount:0.447467 per share.
+Dec 27, 2013	Dec 31, 2013	Apr 10, 2014	Dividend amount:1.416029 per share.
+Jun 26, 2014	Jun 30, 2014	Sep 04, 2014	Dividend amount:0.5 per share.
+ 	 	 
+	
+they show the divideds 
+
+
+FundTransactionPage   shows no dividends for 9/4/14 for the day
+but if you expand and go into 9/4/14 you will see dividends for PSX   FundDatePage
+PositionInfoPage for PKX shows the dividend has paid to this fund

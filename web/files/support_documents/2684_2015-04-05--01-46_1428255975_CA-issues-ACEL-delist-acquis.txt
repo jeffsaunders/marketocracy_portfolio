@@ -1,0 +1,379 @@
+date: 4/4/15
+ACEL may be delisted
+
+quantum:
+
+oursite:
+
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol= 'ACEL';  
+> Row 1:
+>   STOCKKEY = X'815a043c39e7e9bec0a801dc'
+
+select * from mstockalias where  STOCKKEY = X'815a043c39e7e9bec0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'815b043c39e7e9bec0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-07-25 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'428006a739e90462c0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACELE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2000-07-26 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'43c606a739e904b2c0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2004-09-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'41c4133d41410b0ec0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2009-01-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'50bd46a049641b4ec0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2010-07-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tamir Biotechnology Inc
+>     PRIMARYKEY = X'1ea05d804c2e5593c0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87509Q105
+>           DATE = TIMESTAMP '2010-07-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tamir Biotechnology Inc
+>     PRIMARYKEY = X'9d335d954c2e55c8c0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ACEL'  order by BB_EFFECTIVE;
+> Row 8:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|ACEL|CP_DELIST_REASON|17|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 78554492
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 132515
+>        BB_COMPANYNAME = Tamir Biotechnology Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-20 00:00:00.000000'
+>         BB_IDENTIFIER = ACEL    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-20 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ACEL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-06-20 00:00:00.000000'
+>            PRIMARYKEY = X'3bb3382f51c388fdc0a80146'
+>               VERSION = NULL
+
+check MAdmin
+
+ACEL 04/04/2015
+Stock:Tamir Biotechnology Inc  Symbol:ACEL
+Date: 04/04/2015
+
+29 users found
+
+1	b9clark	bkalaf	carmen	chughs	dean.martin	duonght_is	fundamental	gkemp	jasonrifkin	jpctrader
+2	k_hart100	klebeouf	lingram	ozguryazici	phoward	pjz0001	rdigglesworth	rickman	shrewst	simonemarlia
+3	skidwarres	smartone10017	thenewguyintown	tlbrown4567	tmages	tsparks	varlin	weightlifter	wired264h	 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ACEL
+>>>> dbtool started at 2015-04-04 19:45:30 -0400
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [ALFACELL CORP]
+  date     : [2000-07-26 15:00:00]
+  status   : [Active]
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [ ]
+  date     : [2000-10-13 15:00:00]
+  status   : [Active]
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [ALFACELL CORP]
+  date     : [2004-09-09 00:00:00]
+  status   : [Active]
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [ALFACELL CORP]
+  date     : [2009-01-06 00:00:00]
+  status   : [Active]
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [Tamir Biotechnology Inc]
+  date     : [2010-07-02 00:00:00]
+  status   : [Active]
+stock: ACEL
+  PK       : [815A043C39E7E9BEC0A801DC]
+  companyID: [13648]
+  symbol   : [ACEL]
+  name     : [Tamir Biotechnology Inc]
+  date     : [2010-07-02 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-04 19:45:30 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 13648
+2013-06-05 (Wed) [4538]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:9998 TSO:47313 A:0.0600 R:1.0000 CA:0.0000
+2013-06-06 (Thu) [4539]: O:0.0200 H:0.0300 L:0.0200 C:0.0300 V:32005 TSO:47313 A:0.0300 R:1.0000 CA:0.0000
+2013-06-07 (Fri) [4540]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:1541 TSO:47313 A:0.0300 R:1.0000 CA:0.0000
+2013-06-08 (Sat) [4541]: <WEEKEND>
+2013-06-09 (Sun) [4542]: <WEEKEND>
+2013-06-10 (Mon) [4543]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:1400 TSO:47313 A:0.0200 R:1.0000 CA:0.0000
+2013-06-11 (Tue) [4544]: O:0.0100 H:0.0300 L:0.0100 C:0.0300 V:133966 TSO:47313 A:0.0300 R:1.0000 CA:0.0000
+2013-06-12 (Wed) [4545]: O:0.0500 H:0.0500 L:0.0200 C:0.0500 V:16235 TSO:47313 A:0.0500 R:1.0000 CA:0.0000
+2013-06-13 (Thu) [4546]: O:0.0200 H:0.0500 L:0.0200 C:0.0500 V:24899 TSO:47313 A:0.0500 R:1.0000 CA:0.0000
+2013-06-14 (Fri) [4547]: O:0.0500 H:0.0500 L:0.0200 C:0.0400 V:40150 TSO:47313 A:0.0400 R:1.0000 CA:0.0000
+2013-06-15 (Sat) [4548]: <WEEKEND>
+2013-06-16 (Sun) [4549]: <WEEKEND>
+2013-06-17 (Mon) [4550]: O:0.0300 H:0.0300 L:0.0300 C:0.0300 V:21000 TSO:47313 A:0.0300 R:1.0000 CA:0.0000
+2013-06-18 (Tue) [4551]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:500 TSO:47313 A:0.0200 R:1.0000 CA:0.0000
+2013-06-19 (Wed) [4552]: O:0.0500 H:0.0500 L:0.0500 C:0.0500 V:5499 TSO:47313 A:0.0500 R:1.0000 CA:0.0000
+
+prices fizzle 
+
+apply the acquis
+let's delist it
+
+20130620    0.05 
+
+/Marketocracy/bin/cahelper -symbol ACEL  -effective 20130620 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.05  -acqShare 0 -purchaser ACEL   >& /Users/build/caout/ACEL.20150404-ACQUIS.out
+stocks:~/caout build$ tail -f ACEL.20150404-ACQUIS.out
+D: (04-04 19:51:33.536) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-04 19:52:00.566) cahelper started on 2015-04-04 19:52:00 -0400
+
+D: (04-04 19:52:01.887) There are [0] open tickets for ACEL on 20130620
+D: (04-04 19:52:02.134) StockFileLoad Version:3.0
+D: (04-04 19:52:02.134) Loading Stock Data
+D: (04-04 19:52:46.264) Building Lookup Index
+D: (04-04 19:52:50.588) Finished Building Index
+D: (04-04 19:52:51.586) Finished Loading Stock Data
+D: (04-04 19:52:51.708) Connection to 192.168.111.172:6666 succeeded
+D: (04-04 19:52:53.121) {
+    "ACQUIRED_STOCK" = ACEL; 
+    "ACQUIRING_STOCK" = "ACEL_FIX"; 
+    AMOUNT = 0.05; 
+    APPLIED = 1; 
+    DATE = 20130620; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ACEL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-04 19:52:57.210) SUCCESS
+D: (04-04 19:52:57.210) cahelper finished 2015-04-04 19:52:57 -0400
+
+
+select * from mstockalias where  STOCKKEY = X'815a043c39e7e9bec0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'815b043c39e7e9bec0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-07-25 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME =  
+>     PRIMARYKEY = X'428006a739e90462c0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACELE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2000-07-26 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'43c606a739e904b2c0a801dc'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2004-09-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'41c4133d41410b0ec0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2009-01-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALFACELL CORP
+>     PRIMARYKEY = X'50bd46a049641b4ec0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 015404106
+>           DATE = TIMESTAMP '2010-07-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tamir Biotechnology Inc
+>     PRIMARYKEY = X'1ea05d804c2e5593c0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87509Q105
+>           DATE = TIMESTAMP '2010-07-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tamir Biotechnology Inc
+>     PRIMARYKEY = X'9d335d954c2e55c8c0a80146'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87509Q105
+>           DATE = TIMESTAMP '2013-06-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Tamir Biotechnology Inc
+>     PRIMARYKEY = X'decd479055207921c0a86f92'
+>       STOCKKEY = X'815a043c39e7e9bec0a801dc'
+>         SYMBOL = ACEL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'decd479055207921c0a86f92';
+> Row 1:
+>              ALIASKEY = X'decd479055207921c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ACEL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.050000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150404:075200
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-20 00:00:00.000000'
+>         BB_IDENTIFIER = ACEL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ACEL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-06-20 00:00:00.000000'
+>            PRIMARYKEY = X'dec7479055207920c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'dec7479055207920c0a86f92';
+> Row 1:
+>   _C001 = 51.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'dec7479055207920c0a86f92'));
+put these in a file CA issues ACEL fundkeys.txt
+
+check on 4/5/15 and then run the invalidate funds 

@@ -1,0 +1,438 @@
+
+date:    7/29/15
+ticker:   CPTH
+
+yahoo:  nothing
+
+quantum:
+Critical Path, Inc.
+Ticker Symbol: CPTH*     CUSIP: 22674V506     Exchange: OTCBB
+* NOTE: This security is no longer trading as of 4/29/08
+
+oursite:
+Symbol: CPTH 	Name: CRITICAL PATH 	Price: $0.10
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for CPTH 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+04 Aug 03 	CPTH 	CPTHD 	Change in the ticker (trading) symbol from CPTH to CPTHD
+02 Sep 03 	CPTHD 	CPTH 	Change in the ticker (trading) symbol from CPTHD to CPTH
+  	  	 
+left curve 	  CUSIP changes for CPTH 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+04 Aug 03 	22674V100 	22674V506 	Change in any of identification numbers (CUSIP) of a security from 22674V100 to 22674V506
+  	  	 
+left curve 	  listing changes for CPTH 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Nov 17, 2005 	NASDAQ 	UQ 	OTCBB-OTHER 	UV 	Change in the exchange that CPTH trades on from NASDAQ to OTCBB-OTHER
+Dec 13, 2005 	OTCBB-OTHER 	UV 	OTCBB 	UU 	Change in the exchange that CPTH trades on from OTCBB-OTHER to OTCBB
+  	  	 
+left curve 	  CPTH had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+04 Aug 03 	1 for 4 	Split terms:1 for 4
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:CRITICAL PATH  Symbol:CPTH
+Date: 07/29/2015
+
+96 users found
+
+1	aalves	adrianf	agalletti	aidenodonnell	ajgelman	akhan	babdul	batzaak	bhayden1	bkendall
+2	brion1234	budcorona	calicea	cbrodbeck	ccooter	cjsturtevant	cmartin3	cmccrudden	csmith7	cunger
+3	dawarrior	dbertasso	donmccann	dprevost	drosendorf	dthompson1	dvictor11	eballantine	efrey1	emperorleo
+4	etalas	ewall	fndblsh	gbboyd	genpitaly	gguida	hjvera	ierlikhman	jbibb	jdohr
+5	jfr1	jgaffin1	jim3333	jlundell	jlusk	jmaendel	john97	jwilli	kerjen	kkonda
+6	klochner	ktimony	kward1	lijoseph	littleamy	lotecq	marke	marvin_cr	mdenadai	mdiedrick
+7	mecstriker	mgiardina1	mgibbons	mhudson	mhull	mistercox	mmarino	msavvy	mufassa	ocartade
+8	paulmeyer	rburns1	rdelgadillo	rhasty	rhaws	rjbanks	rlubberman	rpaton	ryans1newguy	sdorri
+9	sherec	shoppee	skyrich	srossi	sszymanski	svenktra	t-bill	tmcavoy	vincent_ong	vjmartin3
+10	vstillwagon	wauyeung	wavetiming	writchotte	wshevlin	xavier687
+
+database
+select distinct stockkey from mstockalias where symbol= 'CPTH';  
+> Row 1:
+>   STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+
+select * from mstockalias where stockkey=X'7ede10ac390c6d4fc0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'7edf10ac390c6d4fc0a8015c'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V100
+>           DATE = TIMESTAMP '2003-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'846016f33f2f107fc0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2003-08-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'd2c717053f2f10f7c0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2003-09-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'13036d783f554c1ac0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2005-11-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'16cc1707437d446cc0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2005-12-13 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'98fc0560439f8bcac0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CPTH'  order by BB_EFFECTIVE;
+> Row 10:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|3|CP_TKR|17757Z  US|CP_NAME|General Atlantic LLC|CP_ID_BB_COMP|1148533|CP_UNIT|CP Holdco LLC|CP_TOT_AMT|0.000000|CP_ACQUIS_TYP|9|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|N.A.|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|N.A.|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|N.A.|CP_ADVISORS|;2;3;3;1;Target Legal Adviser;1;Latham & Watkins;13;100.000000;1;Acquirer Legal Adviser;1;Gibson Dunn Crut, Janofsky & Walkr;13;100.000000;1;Acquirer Financial & Fairness;1;Oppenheimer & Co;13;100.000000;|CP_NOTES|TGT INCL CP MERGER CO.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 29211564
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 914440
+>        BB_COMPANYNAME = Critical Path Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2008-04-29 00:00:00.000000'
+>         BB_IDENTIFIER = CPTH    UU Equity
+>             BB_ISSUED = TIMESTAMP '2007-12-06 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = CPTH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-04-29 00:00:00.000000'
+>            PRIMARYKEY = X'a02226904817d2c7c0a80146'
+>               VERSION = NULL
+type 9 not useful    go with last price 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CPTH
+>>>> dbtool started at 2015-07-29 12:08:50 -0400
+stock: CPTH
+  PK       : [7EDE10AC390C6D4FC0A8015C]
+  companyID: [8926]
+  symbol   : [CPTH]
+  name     : [CRITICAL PATH]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+stock: CPTH
+  PK       : [7EDE10AC390C6D4FC0A8015C]
+  companyID: [8926]
+  symbol   : [CPTH]
+  name     : [CRITICAL PATH]
+  date     : [2003-09-02 00:00:00]
+  status   : [Active]
+stock: CPTH
+  PK       : [7EDE10AC390C6D4FC0A8015C]
+  companyID: [8926]
+  symbol   : [CPTH]
+  name     : [CRITICAL PATH]
+  date     : [2005-11-17 00:00:00]
+  status   : [Active]
+stock: CPTH
+  PK       : [7EDE10AC390C6D4FC0A8015C]
+  companyID: [8926]
+  symbol   : [CPTH]
+  name     : [CRITICAL PATH]
+  date     : [2005-12-13 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-29 12:08:51 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8926
+2008-04-21 (Mon) [2667]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:4750 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-22 (Tue) [2668]: O:0.1050 H:0.1050 L:0.1000 C:0.1000 V:12675 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-23 (Wed) [2669]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:1000 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-24 (Thu) [2670]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:16100 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-25 (Fri) [2671]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:15000 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-26 (Sat) [2672]: <WEEKEND>
+2008-04-27 (Sun) [2673]: <WEEKEND>
+2008-04-28 (Mon) [2674]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:23239 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-29 (Tue) [2675]: O:0.1000 H:0.1010 L:0.1000 C:0.1000 V:23300 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-04-30 (Wed) [2676]: O:0.1000 H:0.1010 L:0.1000 C:0.1000 V:23300 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-01 (Thu) [2677]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-02 (Fri) [2678]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-03 (Sat) [2679]: <WEEKEND>
+2008-05-04 (Sun) [2680]: <WEEKEND>
+2008-05-05 (Mon) [2681]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-06 (Tue) [2682]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-07 (Wed) [2683]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+2008-05-08 (Thu) [2684]: O:0.1000 H:0.1000 L:0.1000 C:0.1000 V:0 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7ede10ac390c6d4fc0a8015c' and shares > 0 order by closed; 
+> Row 971:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-10-15 09:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.999500
+>   CURRENTORDER = X'5fc665ed47116aabc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ada9260a3974dcb6c0a801e1'
+>       MODIFIED = NULL
+>            NET = 18.990500
+>         OPENED = TIMESTAMP '2007-10-13 21:02:35.000000'
+>          PRICE = 0.075962
+>     PRIMARYKEY = X'5fc465ed47116aabc0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 250.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7ede10ac390c6d4fc0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7ede10ac390c6d4fc0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7ede10ac390c6d4fc0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 96 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 4/29/08
+last ticket:  2007-10-15    PRICE = 0.075962
+last price:  2008-04-29 (Tue) [2675]: O:0.1000 H:0.1010 L:0.1000 C:0.1000 V:23300 TSO:37682 A:0.1000 R:1.0000 CA:0.0000
+
+going with 20080429  0.1000
+
+/Marketocracy/bin/cahelper -symbol  CPTH  -effective 20080429 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.1000 -acqShare 0 -purchaser CPTH   >& /Users/build/caout/CPTH.20150729-DELIST.out 
+FFEDQ.20150729-DELIST.out
+stocks:~/caout build$ tail -f FFEDQ.20150729-DELIST.out
+D: (07-29 11:44:51.706) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-29 11:45:37.319) cahelper started on 2015-07-29 11:45:37 -0400
+
+D: (07-29 11:45:37.563) There are [0] open tickets for FFEDQ on 20121231
+D: (07-29 11:45:38.200) StockFileLoad Version:4.0
+D: (07-29 11:45:38.200) Loading Stock Data
+D: (07-29 11:46:56.194) Building Lookup Index
+D: (07-29 11:47:05.301) Finished Building Index
+D: (07-29 11:47:12.957) Finished Loading Stock Data
+D: (07-29 11:47:13.008) Connection to 192.168.111.172:6666 succeeded
+D: (07-29 11:47:16.004) SavingChanges for position sell out 101 of 468
+D: (07-29 11:47:29.819) SavingChanges for position sell out 201 of 468
+D: (07-29 11:47:42.707) {
+    "ACQUIRED_STOCK" = FFEDQ; 
+    "ACQUIRING_STOCK" = "FFEDQ_FIX"; 
+    AMOUNT = 0.02; 
+    APPLIED = 1; 
+    DATE = 20121231; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "FFEDQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-29 11:47:47.527) SUCCESS
+D: (07-29 11:47:47.527) cahelper finished 2015-07-29 11:47:47 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'7ede10ac390c6d4fc0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'7edf10ac390c6d4fc0a8015c'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V100
+>           DATE = TIMESTAMP '2003-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'846016f33f2f107fc0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2003-08-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'd2c717053f2f10f7c0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTHD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2003-09-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'13036d783f554c1ac0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2005-11-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'16cc1707437d446cc0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2005-12-13 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'98fc0560439f8bcac0a80146'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22674V506
+>           DATE = TIMESTAMP '2008-04-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CRITICAL PATH
+>     PRIMARYKEY = X'dd535f9255b8fc90c0a86f92'
+>       STOCKKEY = X'7ede10ac390c6d4fc0a8015c'
+>         SYMBOL = CPTH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'dd535f9255b8fc90c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'dd535f9255b8fc90c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CPTH  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.100000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150729:121720
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-04-29 00:00:00.000000'
+>         BB_IDENTIFIER = CPTH_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-04-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CPTH_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-04-29 00:00:00.000000'
+>            PRIMARYKEY = X'dd4d5f9255b8fc90c0a86f92'
+>               VERSION = NULL
+marketocracy@db1#37>
+
+
+select count(*) from mticket where sourcekey = X'dd4d5f9255b8fc90c0a86f92';
+> Row 1:
+>   _C001 = 169.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'dd4d5f9255b8fc90c0a86f92'));
+there are 169 fundkeys, save to CA issues CPTH fundkeys.txt
+
+For Beta case
+CPTH no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin  clear
+
+7/30/15
+CPTH has been acquired 	right curve
+  	  	
+CRITICAL PATH acquired by a private company on 2008-04-29 00:00:00.
+  	  	 
+invalidate and reprice 
+closing this out 

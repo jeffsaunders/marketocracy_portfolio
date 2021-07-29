@@ -1,0 +1,394 @@
+date: 2/11/15
+ticker  AMW
+
+quantum:
+American Water Star, Inc.
+Ticker Symbol: AMWS*     CUSIP: 030409106     Exchange: OTOTC
+* Symbol changed!! New symbol: PSGI as of 9/11/08
+New Company Name: Prime Star Group, Inc.
+
+BUSINESS:  American Water Star Inc. is engaged in the beverage bottling industry. Its product brands are both licensed and developed in-house, and bottled in strategic locations throughout the United States. AMWS' beverage products are sold by the truckload, principally to distributors, who sell to retail stores, corner grocery stores, convenience stores, schools and other outlets.
+Previous Ticker Symbol: AMW    Changed: 1/20/06
+
+oursite:
+Name: Prime Star Group Inc	Price: $0.00
+Volume:	Sector: Consumer Staples	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol = 'AMW';
+> Row 1:
+>   STOCKKEY = X'c6210e21390a4f03c0a80116'
+select * from mstockalias where stockkey=X'c6210e21390a4f03c0a80116';
+delisted 
+> Row 2:
+>   STOCKKEY = X'8b7674b73cef5f00c0a801dc'
+select * from mstockalias where stockkey=X'8b7674b73cef5f00c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2002-02-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Merrill Lynch & Co., Inc.
+>     PRIMARYKEY = X'8b7774b73cef5f00c0a801dc'
+>       STOCKKEY = X'8b7674b73cef5f00c0a801dc'
+>         SYMBOL = AMW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+are there any mtickets for this one?
+select * from mticket where stockkey=X'8b7674b73cef5f00c0a801dc';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-08-09 09:56:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1.153000
+>   CURRENTORDER = X'6ba6600b42f87b7dc0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4230600b42f8783fc0a80132'
+>       MODIFIED = NULL
+>            NET = 24.213000
+>         OPENED = TIMESTAMP '2005-08-09 05:46:37.000000'
+>          PRICE = 0.242130
+>     PRIMARYKEY = X'6ba4600b42f87b7dc0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 100.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8b7674b73cef5f00c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select loginname from mmanager where primarykey=X'4230600b42f8783fc0a80132';
+select * from mtrade where ticketkey=X'6ba4600b42f87b7dc0a80132';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'9402204942f8b601c0a8011e'
+>                 PRIMARYKEY = X'9401204942f8b601c0a8011e'
+>                     SHARES = 100.000000
+>                  TICKETKEY = X'6ba4600b42f87b7dc0a80132'
+>                     CLOSED = TIMESTAMP '2005-08-09 09:56:00.000000'
+>                      PRICE = 0.242100
+>   CREATEDBYCORPORATEACTION = 0
+select symbol from mfund where primarykey in(select fundkey from mposition where primarykey=X'9402204942f8b601c0a8011e');
+> Row 1:
+>   SYMBOL = CMF
+
+
+> Row 1:
+>   LOGINNAME = cesare.cat
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-11-23 10:39:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.390000
+>   CURRENTORDER = X'3022711a43848cb8c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4230600b42f8783fc0a80132'
+>       MODIFIED = NULL
+>            NET = 8.190000
+>         OPENED = TIMESTAMP '2005-11-23 10:37:28.000000'
+>          PRICE = 0.136500
+>     PRIMARYKEY = X'3020711a43848cb8c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 60.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8b7674b73cef5f00c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select loginname from mmanager where primarykey=X'4230600b42f8783fc0a80132';
+> Row 1:
+>   LOGINNAME = cesare.cat
+select * from mtrade where ticketkey=X'3020711a43848cb8c0a80133';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'9402204942f8b601c0a8011e'
+>                 PRIMARYKEY = X'2c32029443848d3ac0a8011e'
+>                     SHARES = 60.000000
+>                  TICKETKEY = X'3020711a43848cb8c0a80133'
+>                     CLOSED = TIMESTAMP '2005-11-23 10:39:00.000000'
+>                      PRICE = 0.136500
+>   CREATEDBYCORPORATEACTION = 0
+
+select symbol from mfund where primarykey in(select fundkey from mposition where primarykey=X'9402204942f8b601c0a8011e');
+> Row 1:
+>   SYMBOL = CMF
+
+
+Ok for the AMW-2 there are two trades done by cesare.cat
+in the CMF fund.   
+  2005-08-09   100 shares 
+  2005-11-23    60 shares 
+
+These need to be moved to the other stockkey
+
+The third stockkey is X'496b134d3fb576d9c0a80146'
+
+let's get rid of the two mtrade records
+delete from mtrade where PRIMARYKEY = X'9401204942f8b601c0a8011e';
+delete from mtrade where PRIMARYKEY = X'2c32029443848d3ac0a8011e';
+
+select count(*) from mticket where STOCKKEY = X'8b7674b73cef5f00c0a801dc';
+> Row 1:
+>   _C001 = 2.000000
+
+update mticket set STOCKKEY = X'496b134d3fb576d9c0a80146'   where STOCKKEY = X'8b7674b73cef5f00c0a801dc';
+
+let's tickle the two mtickets 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  6ba4600b42f87b7dc0a80132;
+>>>> dbtool started at 2015-02-12 00:45:18 -0500
+<<<< dbtool finished at 2015-02-12 00:46:29 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  3020711a43848cb8c0a80133;
+>>>> dbtool started at 2015-02-12 00:46:46 -0500
+<<<< dbtool finished at 2015-02-12 00:47:55 -0500
+
+now let's invalidate the fund
+select fundkey from mposition where primarykey=X'9402204942f8b601c0a8011e';
+> Row 1:
+>   FUNDKEY = X'497b600b42f878bcc0a80132'
+/Marketocracy/bin/fptool invalidateFund 497b600b42f878bcc0a80132
+log out and back in as cesare.cat
+he's got the new stock  but still shows that he has the old one
+Symbol	Label	Price	Shares	Value	Portion of Fund	Gains	Today	Inception Return	Current Return	 	 
+GOOGL	click me	$538.00	50	$26,900.00	2.78%	$12,299.50	-0.40%	84.24%	84.24%	Details 	TOP
+TTEK	click me	$24.34	100	$2,434.00	0.25%	$929.00	-0.25%	61.73%	61.73%	Details 
+MSFT	click me	$42.38	250	$10,595.00	1.09%	$3,775.40	-0.52%	55.36%	55.36%	Details 
+EBAY	click me	$55.14	1,650	$90,981.00	9.40%	$22,605.95	-0.24%	33.06%	33.06%	Details 	MIDDLE
+GOOG	click me	$535.97	50	$26,798.50	2.77%	$26,798.50	-0.18%	0.00%	0.00%	Details 
+AMW	click me	$0.08	160	$12.80	0.00%	-$19.60	0.00%	-60.50%	-60.50%	Details 	BOTTOM
+PSGI	click me	$0.00	160	$0.02	0.00%	-$32.39	0.00%	-99.95%	-99.95%	Details 
+ 	 	 
+need to wipe out the old one 
+> Row 2:
+>   STOCKKEY = X'8b7674b73cef5f00c0a801dc'
+
+set commit false;
+
+delete from mstock where primarykey=  X'8b7674b73cef5f00c0a801dc'; 
+
+delete from mwindowstock where stockkey=X'8b7674b73cef5f00c0a801dc';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'8b7674b73cef5f00c0a801dc');
+
+delete from mstockalias where stockkey=X'8b7674b73cef5f00c0a801dc';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'8b7674b73cef5f00c0a801dc');   
+
+delete from mposition where stockkey=X'8b7674b73cef5f00c0a801dc'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'8b7674b73cef5f00c0a801dc');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'8b7674b73cef5f00c0a801dc');
+
+delete from mticket where stockkey=X'8b7674b73cef5f00c0a801dc';    
+
+delete from GFSPOSITION where stockkey=X'8b7674b73cef5f00c0a801dc';  
+
+commit;
+
+set commit true;
+done
+
+/Marketocracy/bin/fptool invalidateFund 497b600b42f878bcc0a80132
+log back in 
+
+****************************
+> Row 3:
+>   STOCKKEY = X'496b134d3fb576d9c0a80146'
+select * from mstockalias where stockkey=X'496b134d3fb576d9c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2003-07-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'496c134d3fb576d9c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = AMWS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2004-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'a2403fc340d39e78c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = AMW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2004-06-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'edca3fc940d39e98c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = AMW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2006-01-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'6c5b3b3943d1a40ec0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = AMWS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2006-01-20 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'23843b4143d1a430c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = AMWS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2008-09-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = American Water Star, Inc.
+>     PRIMARYKEY = X'9e0b22dc48cb1f17c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 030409106
+>           DATE = TIMESTAMP '2008-09-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'807c240148cb1f62c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2008-09-12 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'cbd0242948cb1f75c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2009-02-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'c33319d649a4b4c3c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2009-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'cc931b574a930000c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2009-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'ca2663724a94518dc0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2010-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'3de334e74bce187bc0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2010-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'f30e03f54bd753c7c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74163K103
+>           DATE = TIMESTAMP '2010-04-27 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Prime Star Group Inc
+>     PRIMARYKEY = X'547205934bd75513c0a80146'
+>       STOCKKEY = X'496b134d3fb576d9c0a80146'
+>         SYMBOL = PSGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30201030
+>       STYLEKEY = XG
+
+
+this one is done 

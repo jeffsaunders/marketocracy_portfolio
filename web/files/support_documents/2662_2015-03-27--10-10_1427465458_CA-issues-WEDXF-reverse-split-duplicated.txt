@@ -1,0 +1,336 @@
+date:  3/27/15
+WEDXF   1 for 50 applied twice
+
+> Row 1413:
+>    LOGINNAME = tas
+>       SYMBOL = TasF1
+>   PRIMARYKEY = X'005c494344798efbc0a80132'
+ positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+WEDXF 	$2.81 	-4,993 	-$14,052.30 	-$22,061.88 	0.00% 	-275.44% 	Details  	TOP
+ trades 	right curve
+  	  	
+
+Here is the share activity on this position, followed by a list of the individual trades for this position.
+You can click on a date from the list of individual trades to see the details of that trade.
+  	  	
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 21, 2006 		5199 	5199 	Buy
+Oct 01, 2013 	5199 	-10192 	-4993 	Corporate Action
+Total: -4,993
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 21, 2006 	5,199 	$259.95 	$8,009.52 	$1.54
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Oct 01, 2013 	Split terms:1 for 50
+Oct 01, 2013 	Split terms:1 for 50
+
+ugh double split 
+
+
+select distinct stockkey from mstockalias where symbol='WEDXF';
+> Row 1:
+>   STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+select * from mstockalias where STOCKKEY = X'a05a10ac390c6d9fc0a8015c' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'a05b10ac390c6d9fc0a8015c'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909105
+>           DATE = TIMESTAMP '2007-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'383a5b8747181035c0a80146'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909105
+>           DATE = TIMESTAMP '2008-11-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'9612704e490fbb13c0a80146'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDXF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909105
+>           DATE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'5ac2058b524b5109c0a80146'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909303
+>           DATE = TIMESTAMP '2013-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'315205af524b5187c0a80146'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'315205af524b5187c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20131001|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81832284
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = WEDXF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'73a062a65249ff8dc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'73a062a65249ff8dc0a80146';
+> Row 1:
+>   _C001 = 138.000000
+
+> Row 2:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|956909105|CP_NEW_CUSIP|956909303|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA9569091056|CP_NEW_ISIN|CA9569093037|CP_OLD_SEDOL|N.S.|CP_NEW_SEDOL|N.S.|CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 82003889
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = WEDXF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'73a262a65249ff8dc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'73a262a65249ff8dc0a80146';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 3:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20131001|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81832284
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXD   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = WEDXD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'b43715ae524b5c4cc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'b43715ae524b5c4cc0a80146';
+> Row 1:
+>   _C001 = 134.000000
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 956909303
+>           DATE = TIMESTAMP '2013-10-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WESTAIM CORP
+>     PRIMARYKEY = X'53d8094d52718e0cc0a80146'
+>       STOCKKEY = X'a05a10ac390c6d9fc0a8015c'
+>         SYMBOL = WEDXF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40203010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey=X'53d8094d52718e0cc0a80146';
+> Row 1:
+>              ALIASKEY = X'53d8094d52718e0cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|WEDXD US|CP_NEW_TKR|WEDXF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 83110640
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXD   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-10-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = WEDXD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-10-29 00:00:00.000000'
+>            PRIMARYKEY = X'aae1275752703b54c0a80146'
+>               VERSION = NULL
+
+remove this one
+> Row 3:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20131001|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81832284
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXD   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = WEDXD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'b43715ae524b5c4cc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'b43715ae524b5c4cc0a80146';
+> Row 1:
+>   _C001 = 134.000000
+update mcorporateaction set BB_ACTIONID = '81832284:MARTY' where  PRIMARYKEY = X'b43715ae524b5c4cc0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'b43715ae524b5c4cc0a80146';
+> Row 1:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20131001|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81832284:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXD   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = WEDXD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'b43715ae524b5c4cc0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 81832284:MARTY
+it ran
+ delete this one
+> Row 2:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|956909105|CP_NEW_CUSIP|956909303|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA9569091056|CP_NEW_ISIN|CA9569093037|CP_OLD_SEDOL|N.S.|CP_NEW_SEDOL|N.S.|CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 82003889
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = WEDXF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'73a262a65249ff8dc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'73a262a65249ff8dc0a80146';
+> Row 1:
+>   _C001 = 0.000000
+delete from mcorporateaction where PRIMARYKEY = X'73a262a65249ff8dc0a80146';
+done
+
+let's invalidate eeryone's fund who was affected
+> Row 1:
+>              ALIASKEY = X'315205af524b5187c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20131001|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81832284
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 194207
+>        BB_COMPANYNAME = Westaim Corp/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = WEDXF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = WEDXF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'73a062a65249ff8dc0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey= X'73a062a65249ff8dc0a80146';
+> Row 1:
+>   _C001 = 138.000000
+select primarykey from mticket where sourcekey=X'73a062a65249ff8dc0a80146';
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'73a062a65249ff8dc0a80146'));
+there are 69 - save to file  CA issues WEDXF reverse split fundkeys.txt
+
+
+check the member:  tas
+fund: TasF1
+looks good now - no more shorts 
+stock stillt rades, too 

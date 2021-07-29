@@ -1,0 +1,60 @@
+date: 11/3/15
+ONE
+Type
+Portfolio Platform |
+Ticket
+3914
+Priority
+Medium
+Status
+Open
+Member Name
+A A
+Username
+ascent
+Fund Symbols
+AMF
+Stock Tickers
+N/A
+Description / Resources:
+Mon 11/02/2015 at 12:55 PM
+
+Short Position - System recommended I submit a ticket for an unexplained short position.
+
+
+member  ascent   AMF
+not short on the legacy site:
+
+LEDGER
+Date	Start	Change	End	Type
+Oct 26, 2015		20479	20479	Buy
+Oct 28, 2015	20479	10802	31281	Buy
+Oct 30, 2015	31281	-31281		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 26, 2015	20,479	$1,023.95	$61,856.59	$3.02
+Oct 28, 2015	10,802	$540.10	$32,189.92	$2.98
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 30, 2015	31,281	$1,564.05	$1.59	$89,522.07	$2.86
+ 	 	 
+
+
+/Marketocracy/bin/dbtool lookup fund   ascent
+>>>> dbtool started at 2015-11-03 08:35:09 -0500
+fund: ascent
+  PK: [FB5747D954EC5115C0A86F98]
+  symbol: [AMF]
+  managerKey: [E7D047D954EC4F15C0A86F98]
+  loginName: [ascent]
+<<<< dbtool finished at 2015-11-03 08:35:09 -0500
+
+/Marketocracy/bin/fptool invalidateFund  FB5747D954EC5115C0A86F98
+
+Looks good now, the short is gone 
+short ONE on new site 

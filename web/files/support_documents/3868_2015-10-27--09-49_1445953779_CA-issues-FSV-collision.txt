@@ -1,0 +1,485 @@
+date:  10/25/15
+FSV is a spin off from FSRV in the real world - it is already on our site, where did it come from?
+It looks like we have a collision for FSV on our site.    Two stockkeys for FSV (same company) were created on 6/2/15
+One was created by a LIST and the other by a SPIN from CIGI.   The one with the LIST has no tickets, the one from the SPIN
+has 6 tickets, all CA generated.
+
+see related stocks - FSRV and CIGU
+
+Yahoo finance:  has this stock beginning to trade on 6/2/15
+two dividends were paid 
+
+select distinct stockkey from mstockalias where symbol='FSV';
+> Row 1:
+>   STOCKKEY = X'c92a715c556e34e0c0a86f92'
+> Row 2:
+>   STOCKKEY = X'916271d9556e35c0c0a86f92'
+
+there are two:
+***************************************************************
+> FSV 1:
+>   STOCKKEY = X'c92a715c556e34e0c0a86f92'
+COMPANYID = 28397   
+this one listed on 6/2/15  via CA and has two DVD_CASH
+***************************************************************
+select * from mstock where primarykey=X'c92a715c556e34e0c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'c92b715c556e34e0c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'c92a715c556e34e0c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28397
+>   WINDOWIDENTITYKEY = NULL
+
+select * from mstockalias where STOCKKEY = X'c92a715c556e34e0c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = New FirstService Corp
+>     PRIMARYKEY = X'c92b715c556e34e0c0a86f92'
+>       STOCKKEY = X'c92a715c556e34e0c0a86f92'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'c92b715c556e34e0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|FSV|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107536911
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = New FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'4a2b313e5568ed30c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150630|CP_PAY_DT|20150707|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.10|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996225|CP_ADJ_DT|20150626|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108438454
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'c4c9070f558dd98fc0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150930|CP_PAY_DT|20151007|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.10|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997073|CP_ADJ_DT|20150928|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112729823
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-28 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-18 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-09-28 00:00:00.000000'
+>            PRIMARYKEY = X'1b226c555609c3e1c0a86fab'
+>               VERSION = NULL
+check for mtickets
+select count(*) from mticket where stockkey=X'c92a715c556e34e0c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+***************************************************************
+> FSV 2:
+>   STOCKKEY = X'916271d9556e35c0c0a86f92'
+COMPANYID = 28398
+no CAs  
+this was created by a spin off from CIGI
+***************************************************************
+select * from mstock where primarykey=X'916271d9556e35c0c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'916371d9556e35c0c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'916271d9556e35c0c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28398
+>   WINDOWIDENTITYKEY = NULL
+select * from mstockalias where STOCKKEY = X'916271d9556e35c0c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FirstService Corp
+>     PRIMARYKEY = X'916371d9556e35c0c0a86f92'
+>       STOCKKEY = X'916271d9556e35c0c0a86f92'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'916371d9556e35c0c0a86f92';
+none
+check for mtickets
+select count(*) from mticket where stockkey=X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   _C001 = 6.000000
+select distinct sourcekey from mticket where stockkey=X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   SOURCEKEY = X'688a6d42556e3331c0a86f92'
+so there is one CA that created these FSV
+select * from mcorporateaction where primarykey=X'688a6d42556e3331c0a86f92';
+> Row 1:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FirstService Corp|CP_ID_BB_COMP|45709005|CP_ID_BB_SEC|1001|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150601|CP_RECORD_DT|20150529|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.655113|CP_ADJ_DT|20150602|CP_TKR|FSV US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0093MWSL8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0093JNR91|CP_SPINOFF_ID_BB_SEC_NUM_DES|FSV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102532747
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 119359
+>        BB_COMPANYNAME = Colliers International Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'688a6d42556e3331c0a86f92'
+>               VERSION = NULL
+spin off details:
+effective date: 2015-06-02
+terms: 1 for 1
+CP_PAY_DT 2015-06-01
+CP_RECORD_DT  2015-05-29
+
+
+//////// Assessment - the FSV which spun off did so from CIGI but this was the wrong stock and CIGIQ should have been
+delisted.  I backed out (reverseCA) of this spin off from  the CIGIQ path.   
+
+so we should only have one FSV stockkey left.
+
+select distinct stockkey from mstockalias where symbol='FSV';
+> Row 1:
+>   STOCKKEY = X'c92a715c556e34e0c0a86f92'
+
+select * from mstockalias where  STOCKKEY = X'c92a715c556e34e0c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = New FirstService Corp
+>     PRIMARYKEY = X'c92b715c556e34e0c0a86f92'
+>       STOCKKEY = X'c92a715c556e34e0c0a86f92'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'c92b715c556e34e0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|FSV|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107536911
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = New FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'4a2b313e5568ed30c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150630|CP_PAY_DT|20150707|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.10|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996225|CP_ADJ_DT|20150626|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108438454
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'c4c9070f558dd98fc0a86f92'
+>               VERSION = NULL
+BB_EFFECTIVE:  2015-06-26
+record date:  20150630
+pay date: 20150707
+amount: 0.10
+> Row 3:
+>              ALIASKEY = X'c92b715c556e34e0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150930|CP_PAY_DT|20151007|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.10|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997073|CP_ADJ_DT|20150928|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112729823
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = FirstService Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-28 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-18 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-09-28 00:00:00.000000'
+>            PRIMARYKEY = X'1b226c555609c3e1c0a86fab'
+>               VERSION = NULL
+BB_EFFECTIVE:  2015-09-28
+record date:  20150930
+pay date: 20151007
+amount: 0.10
+
+select count(*) from mticket where stockkey=X'c92a715c556e34e0c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+
+we also have two DVD_STOCK - these need to be added back when we spin off FSV correctly
+check on dividend.com
+
+
+delete everything
+STOCKKEY = X'c92a715c556e34e0c0a86f92'
+set commit false;
+
+delete from mstock where primarykey=  X'c92a715c556e34e0c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'c92a715c556e34e0c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'c92a715c556e34e0c0a86f92');
+
+delete from mstockalias where stockkey=X'c92a715c556e34e0c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'c92a715c556e34e0c0a86f92');   
+
+delete from mposition where stockkey=X'c92a715c556e34e0c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'c92a715c556e34e0c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'c92a715c556e34e0c0a86f92');
+
+delete from mticket where stockkey=X'c92a715c556e34e0c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'c92a715c556e34e0c0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'c92a715c556e34e0c0a86f92';  
+
+commit;
+
+set commit true;
+
+
+select distinct stockkey from mstockalias where symbol='FSV';
+nothing good!
+
+
+here are the dividends we'll need to apply 
+BB_EFFECTIVE:  20150626
+record date:  20150630
+pay date: 20150707
+amount: 0.10
+
+/Marketocracy/bin/cahelper -symbol FSV -effective 20150626 -type DVD_CASH -exchange UN -payDate 20150707 -recordDate 20150630 -amount 0.10 >& /Users/build/caout/FSV.20151025-DVD_CASH-2015-07.out
+
+
+BB_EFFECTIVE:  20150928
+record date:  20150930
+pay date: 20151007
+amount: 0.10
+
+FSV collision on our site one from LIST and one from SPIN off from CIGI - remove both
+
+Need to add these dividends
+
+/Marketocracy/bin/cahelper -symbol FSV -effective 20150928 -type DVD_CASH -exchange UN -payDate 20151007 -recordDate 20150930 -amount 0.10 >& /Users/build/caout/FSV.20151025-DVD_CASH-2015-10.out
+
+
+select * from mstockalias where symbol='FSV';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 33767E103
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FirstService Corporation (new)
+>     PRIMARYKEY = X'e2f11adf562d2c1fc0a86fab'
+>       STOCKKEY = X'e2f01adf562d2c1fc0a86fab'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'e2f11adf562d2c1fc0a86fab';
+
+
+10/27/15  FSV
+
+Symbol: FSV	Name: FirstService Corporation (new)	Price: $32.86
+Volume: 45,069	Sector: Unclassified	Change: $0.00
+Short Volume: 27,459	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 27,459	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $32.52	Year High: $34.31	High: $33.20
+200 Day Ave: $15.66	Year Low: $0.00	Low: $32.74
+
+CAs
+cash dividends paid by FSV	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+26 Jun 15	30 Jun 15	07 Oct 15	4	$0.10	Dividend amount:0.1 per share.
+finance:  Jun 26, 2015	0.10 Dividend  good
+
+we're missing a more recent dividend
+Sep 28, 2015	0.10 Dividend
+
+select distinct stockkey from mstockalias where symbol='FSV';
+> Row 1:
+>   STOCKKEY = X'e2f01adf562d2c1fc0a86fab'
+select * from mstockalias where stockkey=X'e2f01adf562d2c1fc0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 33767E103
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FirstService Corporation (new)
+>     PRIMARYKEY = X'e2f11adf562d2c1fc0a86fab'
+>       STOCKKEY = X'e2f01adf562d2c1fc0a86fab'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'e2f11adf562d2c1fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'e2f11adf562d2c1fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150630|CP_PAY_DT|20151007|CP_FREQ|4|CP_NET_AMT|0.100000|CP_TAX_AMT| |CP_GROSS_AMT|0.100000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151026:120926
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'052c27f9562da776c0a86fab'
+>               VERSION = NULL
+
+where is the other one?
+
+/Marketocracy/bin/cahelper -symbol FSV -effective 20150928 -type DVD_CASH -exchange UN -payDate 20151007 -recordDate 20150930 -amount 0.10 >& /Users/build/caout/FSV.20151025-DVD_CASH-2015-10.out
+D: (10-27 09:31:59.632) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-27 09:32:36.082) cahelper started on 2015-10-27 09:32:36 -0400
+
+D: (10-27 09:32:36.334) {
+    AMOUNT = 0.1; 
+    APPLIED = 1; 
+    DATE = 20150928; 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20151007; 
+    "RECORD_DATE" = 20150930; 
+    SYMBOL = FSV; 
+    TYPE = "DVD_CASH"; 
+}
+D: (10-27 09:32:36.703) SUCCESS
+D: (10-27 09:32:36.704) cahelper finished 2015-10-27 09:32:36 -0400
+
+
+BB_EFFECTIVE:  20150928
+record date:  20150930
+pay date: 20151007
+amount: 0.10
+
+select * from mcorporateaction where aliaskey=X'e2f11adf562d2c1fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'e2f11adf562d2c1fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150630|CP_PAY_DT|20151007|CP_FREQ|4|CP_NET_AMT|0.100000|CP_TAX_AMT| |CP_GROSS_AMT|0.100000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151026:120926
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'052c27f9562da776c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'e2f11adf562d2c1fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150930|CP_PAY_DT|20151007|CP_FREQ|4|CP_NET_AMT|0.100000|CP_TAX_AMT| |CP_GROSS_AMT|0.100000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151027:093236
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-28 00:00:00.000000'
+>         BB_IDENTIFIER = FSV     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FSV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-28 00:00:00.000000'
+>            PRIMARYKEY = X'9c2e6063562f7cf4c0a86fab'
+>               VERSION = NULL
+
+follow this with CA issues FSV missing divident.txt
+
+closing this out
+
+
+

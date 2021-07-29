@@ -1,0 +1,298 @@
+date: 2/9/15
+AIH delisted research
+
+yahoo:  nothing
+quantum:
+
+Ablest, Inc.
+Ticker Symbol: AIH*     CUSIP: 00371W100     Exchange: AMEX
+* NOTE: This security is no longer trading as of 1/01/10   <--- check
+
+Company's Online Profile
+BUSINESS:  Ablest, Inc. is a value-added provider of staffing solutions that targets clients who require premium staffing services that include commercial staffing and information technology solutions, managed services and vendor-on-premise programs.
+Previous Ticker Symbol: ABI    Changed: 11/20/00
+
+oursite:
+symbol changes for AIH	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+20 Nov 00	ABI	AIH	Change in the ticker (trading) symbol from ABI to AIH
+
+
+
+select distinct stockkey from mstockalias where symbol='AIH';
+> Row 1:
+>   STOCKKEY = X'60d910ac390c6d17c0a8015c'
+select * from mstockalias where STOCKKEY = X'60d910ac390c6d17c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00371W100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ABLEST INC.
+>     PRIMARYKEY = X'60da10ac390c6d17c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>         SYMBOL = ABI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201040
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00371W100
+>           DATE = TIMESTAMP '2000-11-20 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ABLEST INC.
+>     PRIMARYKEY = X'2c9836f93a1a2f77c0a80114'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>         SYMBOL = AIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201040
+>       STYLEKEY = XG
+
+let's look at historical prices
+/Marketocracy/bin/dbtool lookup stock AIH
+>>>> dbtool started at 2015-02-09 23:21:22 -0500
+stock: AIH
+  PK       : [60D910AC390C6D17C0A8015C]
+  companyID: [6721]
+  symbol   : [AIH]
+  name     : [ABLEST INC.]
+  date     : [2000-11-20 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-09 23:21:22 -0500
+
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6721
+2007-06-01 (Fri) [2342]: O:10.9400 H:10.9400 L:10.9400 C:10.9400 V:200 TSO:2927 A:10.9400 R:1.0000 CA:0.0000
+2007-06-02 (Sat) [2343]: <WEEKEND>
+2007-06-03 (Sun) [2344]: <WEEKEND>
+2007-06-04 (Mon) [2345]: O:10.9400 H:10.9400 L:10.9100 C:10.9200 V:500 TSO:2927 A:10.9200 R:1.0000 CA:0.0000
+2007-06-05 (Tue) [2346]: O:10.9100 H:11.0500 L:10.9100 C:10.9200 V:13000 TSO:2927 A:10.9200 R:1.0000 CA:0.0000
+2007-06-06 (Wed) [2347]: O:10.9100 H:10.9100 L:10.9100 C:10.9100 V:1000 TSO:2825 A:10.9100 R:1.0000 CA:0.0000
+2007-06-07 (Thu) [2348]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:100 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-08 (Fri) [2349]: O:11.0500 H:11.0500 L:10.9400 C:11.0000 V:1700 TSO:2825 A:11.0000 R:1.0000 CA:0.0000  <-- last day of pricing
+2007-06-09 (Sat) [2350]: <WEEKEND>
+2007-06-10 (Sun) [2351]: <WEEKEND>
+2007-06-11 (Mon) [2352]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-12 (Tue) [2353]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-13 (Wed) [2354]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-14 (Thu) [2355]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-15 (Fri) [2356]: O:11.0000 H:11.0000 L:11.0000 C:11.0000 V:0 TSO:2825 A:11.0000 R:1.0000 CA:0.0000
+2007-06-16 (Sat) [2357]: <WEEKEND>
+2007-06-17 (Sun) [2358]: <WEEKEND>
+
+does anyone hold this tock now?
+Stock:ABLEST INC.  Symbol:AIH
+Date: 02/09/2015
+
+10 users found
+
+1	bradywahl	bsettles	dysangel	govaert	jojo3692001	mochi	paladin	pyessne	roylang	thorpesommer
+
+we have 10 members who hold this
+
+select count(*) from mticket where STOCKKEY = X'60d910ac390c6d17c0a8015c';
+> Row 1:
+>   _C001 = 109.000000
+select * from mticket where STOCKKEY = X'60d910ac390c6d17c0a8015c' order by closed;
+
+
+last day of prices
+2007-06-08
+> Row 106:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-02-07 12:38:00.000000'
+>        COMMENT = 
+>     COMMISSION = 105.000000
+>   CURRENTORDER = X'2fdd0e1d45b76f72c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9992615939db09e8c0a80119'
+>       MODIFIED = NULL
+>            NET = 15729.910700
+>         OPENED = TIMESTAMP '2007-01-24 09:38:42.000000'
+>          PRICE = 7.490434
+>     PRIMARYKEY = X'2fdb0e1d45b76f72c0a80132'
+>         SECFEE = 0.490000
+>         SHARES = 2100.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 107:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-04-05 15:51:00.000000'
+>        COMMENT = 
+>     COMMISSION = 266.000000
+>   CURRENTORDER = X'1b50529b46147990c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd868529b46146ed5c0a80134'
+>       MODIFIED = NULL
+>            NET = 57030.177480
+>         OPENED = TIMESTAMP '2007-04-05 00:22:40.000000'
+>          PRICE = 10.719958
+>     PRIMARYKEY = X'1b4e529b46147990c0a80134'
+>         SECFEE = 1.760000
+>         SHARES = 5320.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 108:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-13 16:01:03.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'6c7049025190ed57c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd97d4c5f3af6e1efc0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2013-05-13 09:40:39.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'6c6e49025190ed57c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 109:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-06-12 16:04:19.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'542749025190e895c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd97d4c5f3af6e1efc0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2013-05-13 09:20:21.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'542549025190e895c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+let's use this record to delist
+2007-06-08 (Fri) [2349]: O:11.0500 H:11.0500 L:10.9400 C:11.0000 V:1700 TSO:2825 A:11.0000 R:1.0000 CA:0.0000  <-- last day of pricing
+
+/Marketocracy/bin/cahelper -symbol AIH -effective 20070608 -type ACQUIS -exchange UN -acqType 1 -acqCash 11.00 -acqShare 0 -purchaser AIH >& /Users/build/caout/AIH.20150209-ACQUIS.out
+stocks:~/caout build$ tail -f AIH.20150209-ACQUIS.out
+D: (02-09 23:29:00.770) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-09 23:29:24.931) cahelper started on 2015-02-09 23:29:24 -0500
+
+D: (02-09 23:29:25.125) There are [0] open tickets for AIH on 20070608
+D: (02-09 23:29:25.382) StockFileLoad Version:3.0
+D: (02-09 23:29:25.382) Loading Stock Data
+D: (02-09 23:30:09.295) Building Lookup Index
+D: (02-09 23:30:16.458) Finished Building Index
+D: (02-09 23:30:18.052) Finished Loading Stock Data
+D: (02-09 23:30:18.098) Connection to 192.168.111.157:6666 succeeded
+D: (02-09 23:30:18.374) {
+    "ACQUIRED_STOCK" = AIH; 
+    "ACQUIRING_STOCK" = "AIH_FIX"; 
+    AMOUNT = 11; 
+    APPLIED = 1; 
+    DATE = 20070608; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AIH_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-09 23:30:19.119) SUCCESS
+D: (02-09 23:30:19.120) cahelper finished 2015-02-09 23:30:19 -0500
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'60d910ac390c6d17c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00371W100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ABLEST INC.
+>     PRIMARYKEY = X'60da10ac390c6d17c0a8015c'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>         SYMBOL = ABI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201040
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00371W100
+>           DATE = TIMESTAMP '2000-11-20 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ABLEST INC.
+>     PRIMARYKEY = X'2c9836f93a1a2f77c0a80114'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>         SYMBOL = AIH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201040
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00371W100
+>           DATE = TIMESTAMP '2007-06-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = ABLEST INC.
+>     PRIMARYKEY = X'0fca1ccc54d98925c0a86f92'
+>       STOCKKEY = X'60d910ac390c6d17c0a8015c'
+>         SYMBOL = AIH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201040
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey=X'0fca1ccc54d98925c0a86f92';
+> Row 1:
+>              ALIASKEY = X'0fca1ccc54d98925c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AIH  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|11.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150209:112924
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-06-08 00:00:00.000000'
+>         BB_IDENTIFIER = AIH_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-06-08 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AIH_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-06-08 00:00:00.000000'
+>            PRIMARYKEY = X'0fc41ccc54d98924c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'0fc41ccc54d98924c0a86f92';
+> Row 1:
+>   _C001 = 12.000000
+
+
+check on 2/10/15 to see that this is acquired
+AIH has been acquired	
+ 	 	
+ABLEST INC. acquired by a private company on 2007-06-08 00:00:00.
+
+the acquis is there closing this out
+
+

@@ -1,0 +1,362 @@
+date:  3/19/15
+
+WWIN appears to be delisted - I came across this while working on a short.  But it was for another WWIN
+
+there are two:
+> Row 1:
+>   STOCKKEY = X'04ae0e21390adb54c0a80116'
+select * from mstockalias where STOCKKEY = X'04ae0e21390adb54c0a80116'; 
+acquired - good this is the one above 
+> Row 2:
+>   STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+select * from mstockalias where STOCKKEY = X'b92b01744bbf4cb0c0a80146'; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2009-10-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'b92c01744bbf4cb0c0a80146'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2009-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'126760704bc3e768c0a8013c'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2010-04-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'a26160a14bc3e79bc0a8013c'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's see if this is still active 
+yahoo  nothing
+
+quantum  has the old WWIN
+
+xignite   nothing
+
+let's look at historocal pricing
+/Marketocracy/bin/dbtool lookup stock WWIN
+>>>> dbtool started at 2015-03-19 16:54:34 -0400
+stock: WWIN
+  PK       : [04AE0E21390ADB54C0A80116]
+  companyID: [4028]
+  symbol   : [WWIN]
+  name     : [WASTE INDUSTRIES]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [04AE0E21390ADB54C0A80116]
+  companyID: [4028]
+  symbol   : [WWIN]
+  name     : [WASTE HOLDINGS]
+  date     : [2001-04-02 00:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [04AE0E21390ADB54C0A80116]
+  companyID: [4028]
+  symbol   : [WWIN]
+  name     : [Waste Industries USA Inc]
+  date     : [2002-06-17 00:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [04AE0E21390ADB54C0A80116]
+  companyID: [4028]
+  symbol   : [WWIN]
+  name     : [Waste Industries USA Inc]
+  date     : [2008-05-09 00:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [04AE0E21390ADB54C0A80116]
+  companyID: [4028]
+  symbol   : [WWIN]
+  name     : [Waste Industries USA Inc]
+  date     : [2008-05-12 00:00:00]
+  status   : [Delist]
+stock: WWIN
+  PK       : [B92B01744BBF4CB0C0A80146]
+  companyID: [18923]
+  symbol   : [WWIN]
+  name     : [Winner Medical Group Incorporated]
+  date     : [2009-10-06 00:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [B92B01744BBF4CB0C0A80146]
+  companyID: [18923]
+  symbol   : [WWIN]
+  name     : [Winner Medical Group Incorporated]
+  date     : [2009-10-08 00:00:00]
+  status   : [Active]
+stock: WWIN
+  PK       : [B92B01744BBF4CB0C0A80146]
+  companyID: [18923]
+  symbol   : [WWIN]
+  name     : [Winner Medical Group Incorporated]
+  date     : [2010-04-06 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-03-19 16:54:34 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18923
+2012-11-26 (Mon) [4347]: O:4.4300 H:4.4400 L:4.4000 C:4.4400 V:3674 TSO:0 A:4.4400 R:1.0000 CA:0.0000
+2012-11-27 (Tue) [4348]: O:4.4000 H:4.4600 L:4.4000 C:4.4500 V:59479 TSO:0 A:4.4500 R:1.0000 CA:0.0000
+2012-11-28 (Wed) [4349]: O:4.4500 H:4.4600 L:4.4500 C:4.4600 V:4815 TSO:0 A:4.4600 R:1.0000 CA:0.0000
+2012-11-29 (Thu) [4350]: O:4.4500 H:4.4700 L:4.4500 C:4.4600 V:77761 TSO:0 A:4.4600 R:1.0000 CA:0.0000
+2012-11-30 (Fri) [4351]: O:4.4600 H:4.4700 L:4.4600 C:4.4700 V:5638 TSO:0 A:4.4700 R:1.0000 CA:0.0000
+2012-12-01 (Sat) [4352]: <WEEKEND>
+2012-12-02 (Sun) [4353]: <WEEKEND>
+2012-12-03 (Mon) [4354]: O:4.4500 H:4.4700 L:4.4500 C:4.4600 V:15661 TSO:0 A:4.4600 R:1.0000 CA:0.0000
+2012-12-04 (Tue) [4355]: O:4.4600 H:4.4800 L:4.4600 C:4.4800 V:32940 TSO:0 A:4.4800 R:1.0000 CA:0.0000
+2012-12-05 (Wed) [4356]: O:4.4700 H:4.4800 L:4.4700 C:4.4800 V:3684 TSO:0 A:4.4800 R:1.0000 CA:0.0000
+2012-12-06 (Thu) [4357]: O:4.4800 H:4.4800 L:4.4500 C:4.4500 V:7752 TSO:0 A:4.4500 R:1.0000 CA:0.0000
+2012-12-07 (Fri) [4358]: O:4.4600 H:4.4600 L:4.4600 C:4.4600 V:1717 TSO:0 A:4.4600 R:1.0000 CA:0.0000
+2012-12-08 (Sat) [4359]: <WEEKEND>
+2012-12-09 (Sun) [4360]: <WEEKEND>
+2012-12-10 (Mon) [4361]: O:4.4600 H:4.4600 L:4.4600 C:4.4600 V:6809 TSO:0 A:4.4600 R:1.0000 CA:0.0000
+2012-12-11 (Tue) [4362]: O:4.4600 H:4.5000 L:4.4600 C:4.4800 V:14603 TSO:0 A:4.4800 R:1.0000 CA:0.0000
+
+
+20121211 last price of 4.48
+
+who holds it?
+MAdmin as of today
+03/19/2015
+Stock:Winner Medical Group Incorporated  Symbol:WWIN
+Date: 03/19/2015
+
+8 users found
+
+1	danik	jleb80	justin_collett83	majolie	mt_suit	reveille	scary	sjors86
+
+let's apply this
+
+/Marketocracy/bin/cahelper -symbol WWIN -effective 20121211 -type ACQUIS -exchange U@ -acqType 1 -acqCash 4.48 -acqShare 0 -purchaser WWIN >& /Users/build/caout/WWIN.20150319-ACQUIS.out
+stocks:~/caout build$ tail -f WWIN.20150319-ACQUIS.out
+D: (03-19 17:09:54.607) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-19 17:10:45.590) cahelper started on 2015-03-19 17:10:45 -0400
+
+D: (03-19 17:10:46.783) There are [0] open tickets for WWIN on 20121211
+D: (03-19 17:11:16.351) Waiting for lock: MDistributedLock(0xd235b70) locked: NO  path: '/tmp/MMarketDataHandler.lock' ownerPid: 14427
+D: (03-19 17:11:38.380) StockFileLoad Version:3.0
+D: (03-19 17:11:38.380) Loading Stock Data
+D: (03-19 17:12:50.994) Building Lookup Index
+D: (03-19 17:12:58.459) Finished Building Index
+D: (03-19 17:12:59.964) Finished Loading Stock Data
+D: (03-19 17:13:00.122) Connection to 192.168.111.172:6666 succeeded
+D: (03-19 17:13:00.561) {
+    "ACQUIRED_STOCK" = WWIN; 
+    "ACQUIRING_STOCK" = "WWIN_FIX"; 
+    AMOUNT = 4.48; 
+    APPLIED = 1; 
+    DATE = 20121211; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "WWIN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-19 17:13:01.993) SUCCESS
+D: (03-19 17:13:01.993) cahelper finished 2015-03-19 17:13:01 -0400
+
+
+looks good check on 3/20/15
+
+let's look at member danik one of the people who held this 
+
+your holdings of WWIN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+DMF 	0 	N/A 	N/A
+DT10 	0 	N/A 	N/A
+DVT 	0 	N/A 	N/A
+DvO 	0 	$.00 	0.00%  <--- expand 
+  	 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 08, 2012 		1720 	1720 	Buy
+Feb 09, 2012 	1720 	1760 	3480 	Buy
+Feb 22, 2012 	3480 	3520 	7000 	Buy
+Dec 11, 2012 	7000 	-7000 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 8, 2012 	1,720 	$86.00 	$5,338.93 	$3.10
+Feb 9, 2012 	1,760 	$88.00 	$5,431.23 	$3.09
+Feb 22, 2012 	3,520 	$176.00 	$11,066.02 	$3.14
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+he had 7000 shares    * 4.48 = 31360
+check this on 3/20/15   member danik  in his DvO fund had 7000 shares should get 31360 on 20121211 
+
+
+
+then let's get the fundkeys to invalidate after the acquis is applied and there 
+select * from mstockalias where STOCKKEY = X'b92b01744bbf4cb0c0a80146'; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2009-10-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'b92c01744bbf4cb0c0a80146'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2009-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'126760704bc3e768c0a8013c'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2010-04-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'a26160a14bc3e79bc0a8013c'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 97476P204
+>           DATE = TIMESTAMP '2012-12-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Winner Medical Group Incorporated
+>     PRIMARYKEY = X'c811384e550b3b56c0a86f92'
+>       STOCKKEY = X'b92b01744bbf4cb0c0a80146'
+>         SYMBOL = WWIN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'c811384e550b3b56c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c811384e550b3b56c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WWIN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|4.480000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150319:051045
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WWIN_FIX     U@ Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = WWIN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-11 00:00:00.000000'
+>            PRIMARYKEY = X'c80b384e550b3b55c0a86f92'
+>               VERSION = NULL
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'c80b384e550b3b55c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'7336235243bdf2edc0a80132'
+> Row 2:
+>   FUNDKEY = X'33652d5a3c959e49c0a80118'
+> Row 3:
+>   FUNDKEY = X'fcf66c0a4bc2e472c0a80134'
+> Row 4:
+>   FUNDKEY = X'e1ce4f4f47a32ec2c0a80133'
+> Row 5:
+>   FUNDKEY = X'd418538b4e397f05c0a80134'
+> Row 6:
+>   FUNDKEY = X'7a5069a94926e5a2c0a80133'
+> Row 7:
+>   FUNDKEY = X'382e2db843824d67c0a80134'
+> Row 8:
+>   FUNDKEY = X'57d32f3c4994900cc0a80133'
+> Row 9:
+>   FUNDKEY = X'201463933d95a7adc0a80133'
+> Row 10:
+>   FUNDKEY = X'a99f0aac4f27249ac0a80133'
+> Row 11:
+>   FUNDKEY = X'bf3b38564c2c0504c0a80132'
+> Row 12:
+>   FUNDKEY = X'c60f020c3be74941c0a80119'
+> Row 13:
+>   FUNDKEY = X'e7316945506318eac0a80132'
+
+put these in a file
+CA issues WWIN acquis fundkeys.txt
+
+check this on 3/20/15   member danik  in his DvO fund had 7000 shares should get 31360 on 20121211 
+
+invalidate the funds once I see the CA is there 
+
+3/20/15   
+WINN is acquired 
+your holdings of WWIN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+DMF 	0 	N/A 	N/A
+DT10 	0 	N/A 	N/A
+DVT 	0 	N/A 	N/A
+DvO 	0 	$.00 	0.00%   <--  expand 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 08, 2012 		1720 	1720 	Buy
+Feb 09, 2012 	1720 	1760 	3480 	Buy
+Feb 22, 2012 	3480 	3520 	7000 	Buy
+Dec 11, 2012 	7000 	-7000 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 8, 2012 	1,720 	$86.00 	$5,338.93 	$3.10
+Feb 9, 2012 	1,760 	$88.00 	$5,431.23 	$3.09
+Feb 22, 2012 	3,520 	$176.00 	$11,066.02 	$3.14
+
+not there in the ledger - need to invalidate
+ 	  	
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+12/11/2012 	$360,683.58 	$0.00 	$9.88 	$31,360.00 	$67.06 	$0.00 	$391,986.40 	$842,550.00 	$1,234,536.40 	100,000 	$12.35 	Yes 	Details 
+
+it's there close this out.

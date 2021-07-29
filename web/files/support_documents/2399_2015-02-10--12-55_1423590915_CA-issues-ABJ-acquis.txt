@@ -1,0 +1,151 @@
+date: 2/9/15
+ABJ is active on our site, but not in the real world
+
+we have:
+
+Symbol: ABJ	Name: ALABAMA PWR 7.00% SR NOTES C	Price: $25.40
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+select distinct stockkey from mstockalias where symbol='ABJ';
+> Row 1:
+>   STOCKKEY = X'ac1310ac390c6dedc0a8015c'
+select * from mstockalias where STOCKKEY = X'ac1310ac390c6dedc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 010392629
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALABAMA PWR 7.00% SR NOTES C
+>     PRIMARYKEY = X'ac1410ac390c6dedc0a8015c'
+>       STOCKKEY = X'ac1310ac390c6dedc0a8015c'
+>         SYMBOL = ABJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+look at historical prices
+/Marketocracy/bin/dbtool lookup stock ABJ
+>>>> dbtool started at 2015-02-09 14:12:47 -0500
+stock: ABJ
+  PK       : [AC1310AC390C6DEDC0A8015C]
+  companyID: [9929]
+  symbol   : [ABJ]
+  name     : [ALABAMA PWR 7.00% SR NOTES C]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-09 14:12:48 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9929
+2003-04-19 (Sat) [838]: <WEEKEND>
+2003-04-20 (Sun) [839]: <WEEKEND>
+2003-04-21 (Mon) [840]: O:25.2000 H:25.2000 L:25.0700 C:25.0700 V:2100 TSO:0 A:25.0700 R:1.0000 CA:0.0000
+2003-04-22 (Tue) [841]: O:25.0799 H:25.1900 L:25.0799 C:25.1400 V:2700 TSO:0 A:25.1400 R:1.0000 CA:0.0000
+2003-04-23 (Wed) [842]: O:25.2399 H:25.2399 L:25.1000 C:25.1000 V:6200 TSO:0 A:25.1000 R:1.0000 CA:0.0000
+2003-04-24 (Thu) [843]: O:25.2000 H:25.3800 L:25.2000 C:25.3800 V:3500 TSO:0 A:25.3800 R:1.0000 CA:0.0000
+2003-04-25 (Fri) [844]: O:25.4000 H:25.4000 L:25.4000 C:25.4000 V:200 TSO:0 A:25.4000 R:1.0000 CA:0.0000  <--- last price
+2003-04-26 (Sat) [845]: <WEEKEND>
+2003-04-27 (Sun) [846]: <WEEKEND>
+2003-04-28 (Mon) [847]: O:25.4000 H:25.4000 L:25.4000 C:25.4000 V:0 TSO:0 A:25.4000 R:1.0000 CA:0.0000
+2003-04-29 (Tue) [848]: O:25.4000 H:25.4000 L:25.4000 C:25.4000 V:0 TSO:0 A:25.4000 R:1.0000 CA:0.0000
+2003-04-30 (Wed) [849]: O:25.4000 H:25.4000 L:25.4000 C:25.4000 V:0 TSO:0 A:25.4000 R:1.0000 CA:0.0000
+
+2003-04-25 
+C:25.4000
+
+/Marketocracy/bin/cahelper -symbol ABJ -effective 20030425 -type ACQUIS -exchange UN -acqType 1 -acqCash 25.40 -acqShare 0 -purchaser ABJ >& /Users/build/caout/ABJ.20150209-ACQUIS.out
+
+ABJ.20150209-ACQUIS.out
+stocks:~/caout build$ tail -f ABJ.20150209-ACQUIS.out
+D: (02-09 14:15:51.966) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-09 14:16:48.181) cahelper started on 2015-02-09 14:16:48 -0500
+
+D: (02-09 14:16:48.783) There are [0] open tickets for ABJ on 20030425
+D: (02-09 14:16:54.379) StockFileLoad Version:3.0
+D: (02-09 14:16:54.380) Loading Stock Data
+D: (02-09 14:18:25.198) Building Lookup Index
+D: (02-09 14:18:33.892) Finished Building Index
+D: (02-09 14:18:36.058) Finished Loading Stock Data
+D: (02-09 14:18:36.094) Connection to 192.168.111.157:6666 succeeded
+D: (02-09 14:18:36.299) {
+    "ACQUIRED_STOCK" = ABJ; 
+    "ACQUIRING_STOCK" = "ABJ_FIX"; 
+    AMOUNT = 25.4; 
+    APPLIED = 1; 
+    DATE = 20030425; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ABJ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-09 14:18:38.574) SUCCESS
+D: (02-09 14:18:38.574) cahelper finished 2015-02-09 14:18:38 -0500
+
+check the database 
+select * from mstockalias where STOCKKEY = X'ac1310ac390c6dedc0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 010392629
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALABAMA PWR 7.00% SR NOTES C
+>     PRIMARYKEY = X'ac1410ac390c6dedc0a8015c'
+>       STOCKKEY = X'ac1310ac390c6dedc0a8015c'
+>         SYMBOL = ABJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 010392629
+>           DATE = TIMESTAMP '2003-04-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALABAMA PWR 7.00% SR NOTES C
+>     PRIMARYKEY = X'1f815f5c54d907a0c0a86f92'
+>       STOCKKEY = X'ac1310ac390c6dedc0a8015c'
+>         SYMBOL = ABJ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey= X'1f815f5c54d907a0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1f815f5c54d907a0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ABJ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|25.400000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150209:021648
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-04-25 00:00:00.000000'
+>         BB_IDENTIFIER = ABJ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-04-25 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ABJ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-04-25 00:00:00.000000'
+>            PRIMARYKEY = X'1f7b5f5c54d907a0c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=  X'1f7b5f5c54d907a0c0a86f92';
+> Row 1:
+>   _C001 = 5.000000
+
+
+check on 2/10/15 - see that this is acquired no members to check
+2/10/15
+ABJ has been acquired	
+ 	 	
+ALABAMA PWR 7.00% SR NOTES C acquired by a private company on 2003-04-25 00:00:00.
+
+closing this out

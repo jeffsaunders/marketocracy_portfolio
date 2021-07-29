@@ -1,0 +1,114 @@
+date: 1/22/15
+CBST
+
+select distinct stockkey from mstockalias where symbol='CBST';
+> Row 1:
+>   STOCKKEY = X'd9ea0e21390a7937c0a80116'
+
+select * from mstockalias  where STOCKKEY = X'd9ea0e21390a7937c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 229678107
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CUBIST PHARMACEUTICALS
+>     PRIMARYKEY = X'd9eb0e21390a7937c0a80116'
+>       STOCKKEY = X'd9ea0e21390a7937c0a80116'
+>         SYMBOL = CBST
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 229678107
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CUBIST PHARMACEUTICALS
+>     PRIMARYKEY = X'4818150944a9cde7c0a80146'
+>       STOCKKEY = X'd9ea0e21390a7937c0a80116'
+>         SYMBOL = CBST
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 229678107
+>           DATE = TIMESTAMP '2015-01-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CUBIST PHARMACEUTICALS
+>     PRIMARYKEY = X'e5c26c8c54c19178c0a86f92'
+>       STOCKKEY = X'd9ea0e21390a7937c0a80116'
+>         SYMBOL = CBST
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = MB
+
+
+select * from mcorporateaction where aliaskey=X'e5c26c8c54c19178c0a86f92';
+> Row 1:
+>              ALIASKEY = X'e5c26c8c54c19178c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CBST US|CP_NAME|Cubist Pharmaceuticals Inc|CP_ID_BB_COMP|194150|CP_UNIT|Cubist Pharmaceuticals Inc|CP_TOT_AMT|8276.545898|CP_ACQUIS_TYP|1|CP_CASH|102.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|156.511002|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|38.444939|CP_CUR_PREMIUM|0.058856|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|8276.545898|CP_ADVISORS_NUM|7|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;7;3;1;Target Legal Adviser(s);1;Cravath Swaine, Ropes & Gray;13;100.000000;1;Target Financial Adviser(s);1;Goldman Sachs, Morgan Stanley;13;100.000000;1;Acquirer Legal Adviser(s);1;Baker & McKenzie, Hughes Hubbard;13;100.000000;1;Acquirer Financial Adviser(s);1;Deutsche Bank;13;100.000000;1;Legal Adv to Target Financial;1;Paul Weiss;13;100.000000;1;Legal Adv to Acquirer Financia;1;Latham & Watkins, White & Case LLP;13;100.000000;1;Acquirer Financial & Fairness;1;JP Morgan;13;100.000000;|CP_ACQ_TKR|MRK US|CP_ACQ_ID_BB_GLOBAL|BBG000BPD168|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZ129|CP_ACQ_ID_BB_SEC_NUM_DES|MRK|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|CBST US|CP_TARGET_ID_BB_GLOBAL|BBG000GZD660|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FMB278|CP_TARGET_ID_BB_SEC_NUM_DES|CBST|CP_TARGET_FEED_SOURCE|US|CP_NOTES|T/O EFF 01/20/2015 (75.7%).
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 99665603
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100978
+>        BB_COMPANYNAME = Merck & Co Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-22 00:00:00.000000'
+>         BB_IDENTIFIER = MRK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-08 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = MRK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-22 00:00:00.000000'
+>            PRIMARYKEY = X'021a64eb54c18e04c0a86f92'
+>               VERSION = NULL
+holders of CBST got $102 / share on 1/22/15
+
+1/22/15
+let's check
+CBST has been acquired	
+ 	 	
+CUBIST PHARMACEUTICALS [CBST] acquired by MERCK & CO [MRK] on 2015-01-22 00:00:00.
+check member djgrimlok
+your holdings of CBST	
+ 	 	
+Fund	Shares	Value	Portion of fund
+tto	 0	 N/A	 N/A
+hb	 0	 N/A	 N/A
+bf	 0	 N/A	 N/A
+DMF1	 0	 N/A	 N/A
+DMF	 0	 N/A	 N/A
+bio	0	 $.00	 0.00%   <---  expand 
+blend	 0	 N/A	 N/A
+
+bio
+LEDGER
+Date	Start	Change	End	Type
+Jul 28, 2014		800	800	Buy
+Aug 11, 2014	800	450	1250	Buy
+Jan 22, 2015	1250	-1250		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 28, 2014	800	$40.00	$49,552.06	$61.94
+Aug 11, 2014	450	$22.50	$27,930.30	$62.0
+
+1/22/15 in bio:   1250 * 102 = 127500  good
+01/22/2015	$2,618.45	$0.00	$0.07	$127,500.00	$63.17	$0.00	$130,055.35	$1,032,892.12	$1,162,947.47	100,000	$11.63	Yes	Details 
+
+trades on January 22, 2015	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	CBST	1,250	$0.00	$0.00	$0.00	$0.00
+
+
+members got the cash.  closing this out

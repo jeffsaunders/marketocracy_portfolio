@@ -1,0 +1,186 @@
+date: 2/11/15
+ticker GRM  for longshort
+
+he still holds something 
+
+Marty,
+
+The closing transaction of old GRM (Graham Packaging) that should have happened when it was bought out by 
+Reynolds in Sept 2011 never got posted. I still own an equity called GRM, but it isn't the GRM that I sold short. 
+
+Can you please close it out at the Sept 2011 transaction price.
+
+Thanks,
+  Bruce
+
+
+log in as longshort
+
+check is short fund LSSHX stratification
+
+GRM	click me	$25.51	-140	-$3,571.40	3.25%	-$64.30	0.00%	-1.28%	-1.28%	Details 	
+
+Symbol: GRM	Name: GM SER D CONV DBT	Price: $25.51
+Volume:	Sector: Materials	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+
+
+
+here is his real GRM trading history
+
+LEDGER
+Date	Start	Change	End	Type
+Jun 17, 2011		-200	-200	Sell
+Jul 29, 2011	-200	60	-140	Buy
+Sep 08, 2011	-140	140		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 29, 2011	20	$1.00	$505.40	$25.27
+Jul 29, 2011	40	$2.00	$1,011.60	$25.29
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 17, 2011	200	$10.00	$0.10	$5,024.10	$25.1
+
+
+I think that we need to get rid of the mposition of old GRM in his LSSHX fund
+
+get the managerkey
+select primarykey from mmanager where loginname='longshort';
+> Row 1:
+>   PRIMARYKEY = X'6ca94725473393cbc0a80135'
+
+get the portfoliokey
+select primarykey from mportfolio where managerkey=X'6ca94725473393cbc0a80135';
+> Row 1:
+>   PRIMARYKEY = X'6cac4725473393cbc0a80135'
+
+
+get the fund key for LSSHX
+select primarykey from mfund where portfoliokey=X'6cac4725473393cbc0a80135' and symbol='LSSHX';
+> Row 1:
+>   PRIMARYKEY = X'ad5952fc47349e1dc0a80133'
+
+let's get the stockkey for GRM the old one
+
+select distinct stockkey, name from mstockalias where symbol='GRM';
+> Row 1:
+>   STOCKKEY = X'7bbe4f2d46993842c0a80146'
+>       NAME = 370442691
+> Row 2:
+>   STOCKKEY = X'7bbe4f2d46993842c0a80146'
+>       NAME = GM SER D CONV DBT
+> Row 3:
+>   STOCKKEY = X'1367409154cc3644c0a86f92'
+>       NAME = Graham Packaging Co., Inc.
+
+select * from mposition where fundkey=X'ad5952fc47349e1dc0a80133' and stockkey=X'7bbe4f2d46993842c0a80146';
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'0c30454d4dfb5ab3c0a8011f'   <-- delete this
+>             SECTORKEY = NULL
+>              STOCKKEY = X'7bbe4f2d46993842c0a80146'
+>                SYMBOL = NULL
+>           TOTALSHARES = -140.000000
+>               FUNDKEY = X'ad5952fc47349e1dc0a80133'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2009-06-01 00:00:00.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2011-07-29 11:02:00.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 1517.000000
+>        TOTALUSERSELLS = 5024.100000
+>        RECENTUSERBUYS = 1517.000000
+>       RECENTUSERSELLS = 5024.100000
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 1
+
+can I just delete this?
+delete from mposition where PRIMARYKEY = X'0c30454d4dfb5ab3c0a8011f';
+> Exception 361. Integrity constraint violation (FOREIGN KEY, MTRADE._C282(POSITIONKEY)).
+> Exception 363. Transaction rollback.
+
+
+select * from mtrade where positionkey=X'0c30454d4dfb5ab3c0a8011f';
+> Row 1:
+>                    KINDKEY = X'059e3ba840d73045c0a8020c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0c30454d4dfb5ab3c0a8011f'
+>                 PRIMARYKEY = X'9c3a395154cc3088c0a86f92'   <--- delete this 
+>                     SHARES = 0.000000
+>                  TICKETKEY = X'9c37395154cc3088c0a86f92'
+>                     CLOSED = TIMESTAMP '2009-06-01 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+select * from mticket where PRIMARYKEY = X'9c37395154cc3088c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'059e3ba840d73045c0a8020c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-06-01 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'9c39395154cc3088c0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6ca94725473393cbc0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2009-06-01 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9c37395154cc3088c0a86f92'   <--- delete this 
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7bbe4f2d46993842c0a80146'
+>      SOURCEKEY = X'9b1d395154cc2ffdc0a86f92'
+>    NOTIFYEMAIL = NULL
+
+select * from mstockalias where STOCKKEY = X'7bbe4f2d46993842c0a80146';
+this is the old one
+
+select * from morder where ticketkey= X'9c37395154cc3088c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'059e3ba840d73045c0a8020c'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9c39395154cc3088c0a86f92'  <--- delete this
+>         SHARES = 0.000000
+>      TICKETKEY = X'9c37395154cc3088c0a86f92'
+>           TIME = TIMESTAMP '2009-06-01 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+select * from mticketallocation where ticketkey= X'9c37395154cc3088c0a86f92';
+nothing
+
+let's delete the bunch:
+
+set commit false;
+delete from mticket where PRIMARYKEY = X'9c37395154cc3088c0a86f92';
+delete from mtrade where PRIMARYKEY = X'9c3a395154cc3088c0a86f92' ;
+delete from mposition where PRIMARYKEY = X'0c30454d4dfb5ab3c0a8011f';
+delete from morder where PRIMARYKEY = X'9c39395154cc3088c0a86f92';
+commit;
+set commit true;
+done.
+
+let's log back in for longshort
+
+it's gone.  he still has his trading history for new GRM but the old one is gon!
+
+closing this out 

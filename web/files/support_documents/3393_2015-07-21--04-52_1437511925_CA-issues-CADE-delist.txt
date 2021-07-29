@@ -1,0 +1,1447 @@
+CADE - need to delist this 
+date:    7/10/15
+ticker:    CADE  
+
+yahoo:    nothing 
+
+quantum:
+Cadence Financial Corporation
+Ticker Symbol: CADE*     CUSIP: 628729105     Exchange: AMEX
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 3/04/11
+
+Company's Online Profile
+BUSINESS:  Cadence Financial Corporation is a $1.6 billion bank holding company of Cadence Bank, N.A., providing full financial services, including banking, trust services, mortgage services and investment products in Mississippi, Tennessee, Alabama, Florida and Georgia.
+
+Notes:  March 4, 2011 --STARKVILLE, Miss.--(BUSINESS WIRE)--Cadence Financial Corporation and Community Bancorp LLC (CBC) today announced that CBC completed its acquisition of Cadence Financial Corporation and has invested $144 million in Cadence Bank. The new funding will be used to strengthen Cadence Bank’s capital base, develop new products, enhance customer service and expand community investments across Cadence Bank’s five-state market area.
+Previous Ticker Symbol: NBY    Changed: 6/28/06
+Previous Name: NBC Capital Corp.    Changed: 6/28/06
+Small Cap Stock -   Market Value $ 291 Million
+
+
+
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+says that no one holds it  
+
+database
+select distinct stockkey from mstockalias where symbol= 'CADE';  
+> Row 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+> Row 2:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+
+there are two:
+********************************************************************************
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+COMPANYID = 16949
+********************************************************************************
+select * from mstock where primarykey=X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'a46745df4d756cdec0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'8c5b553645e5de9fc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16949
+>   WINDOWIDENTITYKEY = NULL
+select count(*) from mticket where stockkey=X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>   _C001 = 63.000000
+
+select distinct sourcekey from mticket where stockkey=X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+	42 member tickets
+> Row 2:
+>   SOURCEKEY = X'dd90298e496d5558c0a80146'
+	16 of these 
+> Row 3:
+>   SOURCEKEY = X'74fe43a44d756b54c0a80146'
+	5 of these 
+
+select * from mstockalias where stockkey=X'8c5b553645e5de9fc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'8c5c553645e5de9fc0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'8c5c553645e5de9fc0a80146' order by BB_EFFECTIVE;
+	3 DVD_CASH
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2009-01-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'f5942b23496d5645c0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'f5942b23496d5645c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'f5942b23496d5645c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|3352Z   US|CP_NAME|United States of America|CP_ID_BB_COMP|218252|CP_UNIT|Cadence Financial Corp|CP_TOT_AMT|44.000000|CP_ACQUIS_TYP|1|CP_CASH|44.000000|CP_CASH_FLAG|2|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|44.000000|CP_ADVISORS_NUM|N.A.|CP_SH_FRACTIONAL|0|CP_ADVISORS|N.A.|CP_NOTES|ACQ'R TO PURCH PFD STK AND WRNT FOR ADDL $6.6 MLN IN CADE US SHRS. SEE {NSN KDFHP03V2801<GO>} FOR ADDL DETAILS.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 35265064
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2009-01-13 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2009-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'dd90298e496d5558c0a80146'
+>               VERSION = NULL
+1 DVD_CASH
+were there any mtickets generated by this acquis?
+	select count(*) from mticket where sourcekey=X'dd90298e496d5558c0a80146';
+> Row 1:
+>   _C001 = 16.000000
+
+
+
+> Row 3:  mstockalias
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'a46745df4d756cdec0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'a46745df4d756cdec0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'a46745df4d756cdec0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|4115352Z US|CP_NAME|Community Bancorp LLC|CP_ID_BB_COMP|21033084|CP_UNIT|Cadence Financial Corp|CP_TOT_AMT|29.772820|CP_ACQUIS_TYP|1|CP_CASH|2.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|48.654121|CP_CUR_PREMIUM|0.401606|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|29.772820|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Davis Polk, Jackson Walker;13;100.000000;1;Target Financial Adviser;1;Keefe Bruyette;13;100.000000;1;Acquirer Legal Adviser;1;Wachtell Lipton;13;100.000000;1;Acquirer Financial Adviser;1;Goldman Sachs;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48755780
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-10-06 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-03-07 00:00:00.000000'
+>            PRIMARYKEY = X'74fe43a44d756b54c0a80146'
+>               VERSION = NULL
+	Second acquisition :  were there any mtickets generated by this acquis?
+	select count(*) from mticket where sourcekey=X'74fe43a44d756b54c0a80146';
+> Row 1:
+>   _C001 = 5.000000
+
+Let's look at pricing for CADE-1   
+COMPANYID = 16949
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16949
+
+
+2009-01-07 (Wed) [2928]: O:5.3099 H:5.3600 L:5.3099 C:5.3200 V:24607 TSO:11908 A:5.3200 R:1.0000 CA:0.4000
+2009-01-08 (Thu) [2929]: O:5.3600 H:5.5599 L:5.3600 C:5.4580 V:6850 TSO:11908 A:5.4580 R:1.0000 CA:0.4000
+2009-01-09 (Fri) [2930]: O:5.4000 H:5.4000 L:5.1500 C:5.1500 V:10970 TSO:11908 A:5.1500 R:1.0000 CA:0.4000
+2009-01-10 (Sat) [2931]: <WEEKEND>
+2009-01-11 (Sun) [2932]: <WEEKEND>
+2009-01-12 (Mon) [2933]: O:5.0400 H:5.2800 L:5.0400 C:5.1000 V:2527 TSO:11908 A:5.1000 R:1.0000 CA:0.4000
+Let's look at the first and last trade for this stockkey  CADE-1
+select * from mticket where stockkey=X'8c5b553645e5de9fc0a80146' and shares > 0 order by closed;
+first:
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-04-16 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.050000
+>   CURRENTORDER = X'314a132f4622374bc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9992615939db09e8c0a80119'
+>       MODIFIED = NULL
+>            NET = 19.740000
+>         OPENED = TIMESTAMP '2007-04-15 10:31:39.000000'
+>          PRICE = 19.740000
+>     PRIMARYKEY = X'3148132f4622374bc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 1.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last: 
+> Row 42:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-01-13 15:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 40.000000
+>   CURRENTORDER = X'295613b1496c90f7c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e63017ba3989e7d8c0a80118'
+>       MODIFIED = NULL
+>            NET = 3996.870000
+>         OPENED = TIMESTAMP '2009-01-13 08:02:47.000000'
+>          PRICE = 4.996087
+>     PRIMARYKEY = X'295413b1496c90f7c0a80135'
+>         SECFEE = 0.130000
+>         SHARES = 800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+********************************************************************************
+> CADE 2:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+COMPANYID = 6710
+********************************************************************************
+select * from mstock where primarykey=X'651310ac390c6d22c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'b3ee0578471d2d04c0a8013c'
+>                NAME = NBC CAPITAL CORP
+>          PRIMARYKEY = X'651310ac390c6d22c0a8015c'
+>              SYMBOL = NBY
+>           COMPANYID = 6710
+>   WINDOWIDENTITYKEY = NULL
+select count(*) from mticket where STOCKKEY = X'651310ac390c6d22c0a8015c';
+> Row 1:
+>   _C001 = 223.000000
+select distinct sourcekey from mticket where  STOCKKEY = X'651310ac390c6d22c0a8015c';
+> Row 1:
+>   SOURCEKEY = NULL
+> Row 2:
+>   SOURCEKEY = X'389410733d7ea415c0a801dc'  <-- what is this one?
+select * from mcorporateaction where primarykey=X'389410733d7ea415c0a801dc' ;
+> Row 1:
+>              ALIASKEY = X'651410ac390c6d22c0a8015c'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020910|CP_NOTES|N.A.|CP_RECORD_DT|20020816|CP_TERMS|4 for 3|CP_STOCK_SPLT_TYP|3000|CP_ADJ|1.333333|CP_RATIO|1.333333|CP_PAY_DT|20020909|CP_SH_FRACTIONAL|1
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8628905
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = NBC Capital Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-08-01 00:00:00.000000'
+>            PRIMARYKEY = X'389410733d7ea415c0a801dc'
+>               VERSION = NULL
+
+
+
+
+select * from mstockalias where stockkey=X'651310ac390c6d22c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NBC CAPITAL CORP
+>     PRIMARYKEY = X'651410ac390c6d22c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'651410ac390c6d22c0a8015c' order by BB_EFFECTIVE;
+	> Row 10:
+>              ALIASKEY = X'651410ac390c6d22c0a8015c'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020910|CP_NOTES|N.A.|CP_RECORD_DT|20020816|CP_TERMS|4 for 3|CP_STOCK_SPLT_TYP|3000|CP_ADJ|1.333333|CP_RATIO|1.333333|CP_PAY_DT|20020909|CP_SH_FRACTIONAL|1
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8628905
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = NBC Capital Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-08-01 00:00:00.000000'
+>            PRIMARYKEY = X'389410733d7ea415c0a801dc'
+>               VERSION = NULL
+
+	26 DVD_CASH
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3e476ef644a48644c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'3e476ef644a48644c0a80146' order by BB_EFFECTIVE;
+	> Row 1:
+>              ALIASKEY = X'3e476ef644a48644c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|NBC Capital Corp|CP_NEW_NAME|Cadence Financial Corp|CP_NOTES|NAME CHANGE PENDING. 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 21464768
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2006-04-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-06-28 00:00:00.000000'
+>            PRIMARYKEY = X'282d680f44a485c8c0a80146'
+>               VERSION = NULL
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'18b66f9f44a48654c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'18b66f9f44a48654c0a80146' order by BB_EFFECTIVE;
+	> Row 1:
+>              ALIASKEY = X'18b66f9f44a48654c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|628729105|CP_NEW_CUSIP|12738A101|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US6287291057|CP_NEW_ISIN|US12738A1016|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 22290689
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2006-06-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'282b680f44a485c8c0a80146'
+>               VERSION = NULL
+	and 2 DVD_CASH
+
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3724056c471d2ccdc0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'3724056c471d2ccdc0a8013c' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'3724056c471d2ccdc0a8013c'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UQ|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20071022:070549
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'371e056c471d2ccdc0a8013c'
+>               VERSION = NULL
+	manally applied 
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'b3ee0578471d2d04c0a8013c' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b3ee0578471d2d04c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NBY US|CP_NEW_TKR|CADE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20071022:070644
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = CADE     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'b3e70578471d2d04c0a8013c'
+>               VERSION = NULL
+
+manually applied 
+
+let's look at prices for CADE-2 
+COMPANYID = 6710
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6710
+2000-05-01 (Mon) [-245]: O:20.8750 H:20.8750 L:20.8750 C:20.8750 V:400 TSO:6121 A:7.5329 R:1.3333 CA:8.1233
+2000-05-02 (Tue) [-244]: O:20.7500 H:20.7500 L:20.5000 C:20.5000 V:1500 TSO:6121 A:7.2516 R:1.3333 CA:8.1233
+2000-05-03 (Wed) [-243]: O:20.2500 H:20.5000 L:20.2500 C:20.5000 V:2400 TSO:6121 A:7.2516 R:1.3333 CA:8.1233
+2000-05-04 (Thu) [-242]: O:20.3750 H:20.6250 L:20.1250 C:20.2500 V:2300 TSO:6121 A:7.0641 R:1.3333 CA:8.1233
+2000-05-05 (Fri) [-241]: O:20.1250 H:20.1250 L:20.1250 C:20.1250 V:200 TSO:6121 A:6.9704 R:1.3333 CA:8.1233
+2000-05-06 (Sat) [-240]: <WEEKEND>
+
+
+009-01-08 (Thu) [2929]: O:21.4000 H:21.4000 L:20.9100 C:20.9500 V:0 TSO:11868 A:20.9500 R:1.0000 CA:2.4600
+2009-01-09 (Fri) [2930]: O:21.4000 H:21.4000 L:20.9100 C:20.9500 V:0 TSO:11868 A:20.9500 R:1.0000 CA:2.4600
+2009-01-10 (Sat) [2931]: <WEEKEND>
+2009-01-11 (Sun) [2932]: <WEEKEND>
+2009-01-12 (Mon) [2933]: O:21.4000 H:21.4000 L:20.9100 C:20.9500 V:0 TSO:11868 A:20.9500 R:1.0000 CA:2.4600
+2009-01-13 (Tue) [2934]: O:5.0500 H:5.0500 L:5.0000 C:5.0000 V:5800 TSO:11868 A:5.0000 R:1.0000 CA:2.4600  <--- price change
+2009-01-14 (Wed) [2935]: O:4.9800 H:5.0500 L:4.4300 C:4.4300 V:23147 TSO:11868 A:4.4300 R:1.0000 CA:2.4600
+2009-01-15 (Thu) [2936]: O:4.5400 H:4.7095 L:4.5000 C:4.6900 V:8294 TSO:11868 A:4.6900 R:1.0000 CA:2.4600
+2009-01-16 (Fri) [2937]: O:4.8700 H:4.9600 L:4.6500 C:4.6500 V:7600 TSO:11868 A:4.6500 R:1.0000 CA:2.4600
+2009-01-17 (Sat) [2938]: <WEEKEND>
+
+
+2011-12-17 (Sat) [4002]: <WEEKEND>
+2011-12-18 (Sun) [4003]: <WEEKEND>
+2011-12-19 (Mon) [4004]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-12-20 (Tue) [4005]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+
+Let's look at the first and last trade for this stockkey  CADE-2
+select * from mticket where stockkey=X'651310ac390c6d22c0a8015c' and shares > 0 order by closed;
+first:
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2000-08-22 18:00:01.000000'
+>        COMMENT = NULL
+>     COMMISSION = 75.000000
+>   CURRENTORDER = X'035f725d39a06985c0a801e1'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'7cec099839a06660c0a801e0'
+>       MODIFIED = NULL
+>            NET = 28387.500000
+>         OPENED = TIMESTAMP '2000-08-20 19:28:05.000000'
+>          PRICE = 18.925000
+>     PRIMARYKEY = X'0357725d39a06985c0a801e1'
+>         SECFEE = 0.000000
+>         SHARES = 1500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last:
+> Row 153:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-02-03 13:54:00.000000'
+>        COMMENT = 
+>     COMMISSION = 43.200000
+>   CURRENTORDER = X'dd6e1e3a4d4a3be4c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6c8717964a4569f2c0a80134'
+>       MODIFIED = NULL
+>            NET = 2188.473120
+>         OPENED = TIMESTAMP '2011-02-03 00:23:48.000000'
+>          PRICE = 2.532955
+>     PRIMARYKEY = X'dd6c1e3a4d4a3be4c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 864.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+*************************************
+Let's look at xignite historical prices for CADE
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+Assessment:
+CADE-2 is the earlier one and it is still active on our site 
+> CADE 2:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+checking to see how many members hold CADE-2 now 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 651310ac390c6d22c0a8015c 2015-07-12
+02E5725D39A066CEC0A801E1, BSMF, bjb, 1999
+EBBE23593EBF0505C0A80133, BLIMF, nevereverno, 1000
+A60D56C23EE394E2C0A80132, ULIMF, nevereverno, 890
+683727323D7D5550C0A801E2, team3, DELETE_mrleach_40619054, 100
+DC7447D43B716208C0A80118, FS, mmask, 533
+AD4E5ACC3B709CA1C0A801E0, FSMF, mmask, 533
+4F01607F3B7C0EC0C0A801E1, TSF, bulldog357, 266
+683527323D7D5512C0A801E2, team2, DELETE_mrleach_40619054, 10
+E7F164E53BD49F24C0A801E1, FMF, mhiggins1, 399
+683C27323D7D55B6C0A801E2, team5, DELETE_mrleach_40619054, 10
+683227323D7D546FC0A801E2, team1, DELETE_mrleach_40619054, 30
+1DFD5EF03BAB7C33C0A80118, FOOMF, foosleeper, 1866
+93FE6F433C3C54F9C0A80119, DGF1, dumi, 799
+0E8B024A3C5F6F18C0A80118, RMF, romeoh, 933
+681001EF3C7AB8F9C0A80118, SMF, sflynn, 1099
+1B7969AA3C7C131CC0A801E1, VMF, vjchang, 533
+19D323813C94E618C0A801E0, banks, rstack, 666
+8EBC1EFE3D3C40EAC0A80119, RMF, rbrazil, 3733
+BACF32FD3D534100C0A801E2, BLAH, parhat2, 351
+8A0F522C3D69AD7DC0A801E2, BSFIN, bananaslug, 399
+3246213D3D8CD40BC0A80133, DBT2F, rbitrage, 100
+D8440EEB3E787EC6C0A80135, AMF, awilson2, 400
+C1673A3F3E52817BC0A80133, MMF, mjayne1, 50
+47840A4F3F0054DAC0A80132, CMF, chilyherm01, 1000
+FEEF6A72414468D2C0A80133, KMF2, kaiserbhuyan, 740
+89901858422B2622C0A80132, GARP, valuevester, 810
+0D1F55264248B5D3C0A80133, PMF, pdarmy, 1000
+F1943F2E42479632C0A80133, VMF, vizz615, 1800
+CCD1090B4287AADEC0A80134, BFSF, canuckerus, 660
+515366B542EA2B9DC0A80134, PMF, phreaxer, 500
+5FCD53B242E935ACC0A80132, RMF, ritaverdi, 420
+0864120942E4FE70C0A80133, BANK, kp, 2000
+F98E463D437F2ADDC0A80134, HMF, h4000, 50
+FC8A4DF643B84906C0A80134, DGNL, bigmoneybastard, 2310
+DA42027743D678B0C0A80132, MMF, money_bags, 200
+18501C4941F5C406C0A80133, WVF, mjmiller, 960
+A8FD4BB443E3946BC0A80134, MTM, choriza, 320
+9D7670F5442B1B7DC0A80132, MMF, mdroemhild, 500
+E9553BFF4463699DC0A80134, GDLF, achen, 2640
+F56C590844536B55C0A80133, BB-GI, bettyb, 2000
+BBAF1CA443D5116BC0A80133, VMF, vchua1, 1530
+A22F2D0E42B60D12C0A80134, VMSIG, vanmeerten, 10000
+AAD803124CE482FBC0A80133, DHF, a_tute, 853
+DC9A1E3A4D4A394FC0A80134, GMF10, godfather40, 864
+
+2.  CADE-1 has the two acquis I don't believe anyone still holds this one
+
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 8c5b553645e5de9fc0a80146 2015-07-12
+no one holds this
+
+3.  CADE-1 has two acquis that need to be backed out.
+2011 had 5 tickets and 2009 had 16 tickets
+
+Let's get the 5 tickets for the 2011 acquis
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+select * from mstockalias where STOCKKEY = X'8c5b553645e5de9fc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'8c5c553645e5de9fc0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2009-01-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'f5942b23496d5645c0a80146'  <--- change this to the identitykey
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'a46745df4d756cdec0a80146'  <--- delete this 
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'a46745df4d756cdec0a80146';
+> Row 1:
+>              ALIASKEY = X'a46745df4d756cdec0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|4115352Z US|CP_NAME|Community Bancorp LLC|CP_ID_BB_COMP|21033084|CP_UNIT|Cadence Financial Corp|CP_TOT_AMT|29.772820|CP_ACQUIS_TYP|1|CP_CASH|2.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|48.654121|CP_CUR_PREMIUM|0.401606|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|29.772820|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Davis Polk, Jackson Walker;13;100.000000;1;Target Financial Adviser;1;Keefe Bruyette;13;100.000000;1;Acquirer Legal Adviser;1;Wachtell Lipton;13;100.000000;1;Acquirer Financial Adviser;1;Goldman Sachs;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48755780
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-10-06 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-03-07 00:00:00.000000'
+>            PRIMARYKEY = X'74fe43a44d756b54c0a80146'
+>               VERSION = NULL
+	this was automatically applied 
+	get the ticketkeys
+	select primarykey from mticket where sourcekey=X'74fe43a44d756b54c0a80146';
+	there are 5 tickets, save to CA issues CADE-1 2011 acquis ticketkeys.txt
+
+	get the fundkeys
+	select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'74fe43a44d756b54c0a80146'));
+	where are 5 fundkeys save to CA issues CADE-1 2011 acquis fundkeys.txt
+	ok let's try running the reverseCA.pyt
+	first make the BB_ACTIONID more unique
+	update mcorporateaction set BB_ACTIONID='48755780:MARTY' where PRIMARYKEY = X'74fe43a44d756b54c0a80146';
+	select BB_ACTIONID from mcorporateaction where PRIMARYKEY = X'74fe43a44d756b54c0a80146';
+	> Row 1:
+	>   BB_ACTIONID = 48755780:MARTY
+	good run the reverseCA
+	/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 48755780:MARTY
+	got exceptions, Kim found that the fundprice server was down 
+	/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 48755780:MARTY
+untrading action with ID: 48755780:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+exception:MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+
+going to see if I can delete the mstockalias record after I changed the identitykey
+select * from mstock where primarykey=X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'a46745df4d756cdec0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'8c5b553645e5de9fc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16949
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY= X'f5942b23496d5645c0a80146' where PRIMARYKEY = X'8c5b553645e5de9fc0a80146';
+let's see if it lets me delete the mstockalias
+delete from mstockalias where PRIMARYKEY = X'a46745df4d756cdec0a80146';
+it let me delete!
+select * from mstockalias where STOCKKEY = X'8c5b553645e5de9fc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'8c5c553645e5de9fc0a80146'   <-- set the identitykey here 
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2009-01-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'f5942b23496d5645c0a80146'  <---  delete thus
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'f5942b23496d5645c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'f5942b23496d5645c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|3352Z   US|CP_NAME|United States of America|CP_ID_BB_COMP|218252|CP_UNIT|Cadence Financial Corp|CP_TOT_AMT|44.000000|CP_ACQUIS_TYP|1|CP_CASH|44.000000|CP_CASH_FLAG|2|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|0.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|44.000000|CP_ADVISORS_NUM|N.A.|CP_SH_FRACTIONAL|0|CP_ADVISORS|N.A.|CP_NOTES|ACQ'R TO PURCH PFD STK AND WRNT FOR ADDL $6.6 MLN IN CADE US SHRS. SEE {NSN KDFHP03V2801<GO>} FOR ADDL DETAILS.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 35265064
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2009-01-13 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2009-01-13 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'dd90298e496d5558c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'f5942b23496d5645c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20090318|CP_PAY_DT|20090401|CP_FREQ|4|CP_NET_AMT|0.050000|CP_TAX_AMT| |CP_GROSS_AMT|0.050000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.985755|CP_ADJ_DT|20090316|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 35989324
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-03-16 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2009-02-25 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2009-03-16 00:00:00.000000'
+>            PRIMARYKEY = X'3dbd512949bf043ec0a80146'
+>               VERSION = NULL
+let's change the aliaskey of the DVD_CASH to the previous mstockalias
+update mcorporateaction set ALIASKEY=X'8c5c553645e5de9fc0a80146' where PRIMARYKEY = X'3dbd512949bf043ec0a80146';
+ok make the BB_ACTIONID more unique
+
+update mcorporateaction set BB_ACTIONID = '35265064:MARTY' where  PRIMARYKEY = X'dd90298e496d5558c0a80146';
+
+Let's do the reverse CA
+get the ticketkeys and fundkeys just in case.
+select primarykey from mticket where sourcekey=X'dd90298e496d5558c0a80146';
+there are 16 of them save to CA issues CADE-1 2009 acquis ticketkeys.txt
+
+get the fundkeys for the 2009 acquis
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'dd90298e496d5558c0a80146'));
+there are 16 of them save to CA issues CADE-1 2009 acquis fundkeys.txt
+
+Let's try the revereCA
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 35265064:MARTY
+untrading action with ID: 35265064:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:CADE]
+
+woo hoo
+let's update the identitykey record 
+update mstock set IDENTITYKEY= X'8c5c553645e5de9fc0a80146' where PRIMARYKEY = X'8c5b553645e5de9fc0a80146';
+
+now try deleting the last mstockalias record 
+delete from mstockalias where PRIMARYKEY = X'f5942b23496d5645c0a80146';
+
+we should have only the one mstockalias record remaining and this should be active
+select * from mstockalias where STOCKKEY = X'8c5b553645e5de9fc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'8c5c553645e5de9fc0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey=X'8c5c553645e5de9fc0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'8c5c553645e5de9fc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20080616|CP_PAY_DT|20080701|CP_FREQ|4|CP_NET_AMT|0.250000|CP_TAX_AMT| |CP_GROSS_AMT|0.250000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.982130|CP_ADJ_DT|20080612|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 31916413
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-06-12 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2008-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'bca00b924851d4e6c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'8c5c553645e5de9fc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20080917|CP_PAY_DT|20081001|CP_FREQ|4|CP_NET_AMT|0.050000|CP_TAX_AMT| |CP_GROSS_AMT|0.050000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.994444|CP_ADJ_DT|20080915|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 33075227
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-09-15 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-08-21 00:00:00.000000'
+>          BB_NUMFIELDS = 23
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2008-09-15 00:00:00.000000'
+>            PRIMARYKEY = X'088d6ac348cf133fc0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'8c5c553645e5de9fc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20081219|CP_PAY_DT|20090102|CP_FREQ|4|CP_NET_AMT|0.050000|CP_TAX_AMT| |CP_GROSS_AMT|0.050000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.989980|CP_ADJ_DT|20081217|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|T|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 34588353
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-12-17 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2008-12-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2008-12-17 00:00:00.000000'
+>            PRIMARYKEY = X'0b6f51f64949bcd2c0a80146'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'8c5c553645e5de9fc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20090318|CP_PAY_DT|20090401|CP_FREQ|4|CP_NET_AMT|0.050000|CP_TAX_AMT| |CP_GROSS_AMT|0.050000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.985755|CP_ADJ_DT|20090316|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 35989324
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-03-16 00:00:00.000000'
+>         BB_IDENTIFIER = CADE    UA Equity
+>             BB_ISSUED = TIMESTAMP '2009-02-25 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2009-03-16 00:00:00.000000'
+>            PRIMARYKEY = X'3dbd512949bf043ec0a80146'
+>               VERSION = NULL
+
+just 4 DVD_CASH
+let's move these to the most recent mstockalias of CADE-2 
+
+> CADE 2:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+
+select * from mstockalias where  STOCKKEY = X'651310ac390c6d22c0a8015c' order by "date";
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'  <---- use this for the aliaskey 
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'b3ee0578471d2d04c0a8013c' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'b3ee0578471d2d04c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NBY US|CP_NEW_TKR|CADE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20071022:070644
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = CADE     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CADE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'b3e70578471d2d04c0a8013c'
+>               VERSION = NULL
+ok, let move the DVD_CASH over 
+
+
+update mcorporateaction set aliaskey=X'b3ee0578471d2d04c0a8013c'   where aliaskey=X'8c5c553645e5de9fc0a80146';
+
+
+let's invalidate the CADE-1 fundkeys 
+first the 2011 and then the 2009
+reprice now  2007-02-27
+do the 2009 reprice  done
+
+
+
+ok we have one mstockalias for CADE-1
+
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+select * from mstockalias where STOCKKEY = X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12738A101
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corporation
+>     PRIMARYKEY = X'8c5c553645e5de9fc0a80146'
+>       STOCKKEY = X'8c5b553645e5de9fc0a80146'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey= X'8c5c553645e5de9fc0a80146';
+nothing
+check on mtickets
+select count(*) from mticket where stockkey= X'8c5b553645e5de9fc0a80146';
+> Row 1:
+>   _C001 = 63.000000
+
+check on sourcekeys - should only be member trades
+select distinct sourcekey from mticket where stockkey= X'8c5b553645e5de9fc0a80146';;
+> Row 1:
+>   SOURCEKEY = NULL
+all null 
+
+that's strange, we should have less - because we removed the acquis ones
+
+here are the 2011 acquis ticketkeys
+
+> Row 1:
+>   PRIMARYKEY = X'a48d45df4d756cdec0a80146'
+> Row 2:
+>   PRIMARYKEY = X'a51545df4d756cdec0a80146'
+> Row 3:
+>   PRIMARYKEY = X'a52945df4d756cdec0a80146'
+> Row 4:
+>   PRIMARYKEY = X'a51c45df4d756cdec0a80146'
+> Row 5:
+>   PRIMARYKEY = X'a52345df4d756cdec0a80146'
+
+> Row 1:
+>   PRIMARYKEY = X'a48d45df4d756cdec0a80146'
+select * from mticket where PRIMARYKEY = X'a48d45df4d756cdec0a80146';
+there is a ticket
+select * from mtrade where ticketkey= X'a48d45df4d756cdec0a80146'; nothing
+select * from morder where ticketkey= X'a48d45df4d756cdec0a80146'; something
+select * from mticketallocation where ticketkey= X'a48d45df4d756cdec0a80146';   nothing
+
+nothing
+select count(*) from mticket where stockkey= X'8c5b553645e5de9fc0a80146' and shares >0;
+> Row 1:
+>   _C001 = 42.000000
+
+there are 42 tickets which have shares > 0
+
+select primarykey from mticket where stockkey= X'8c5b553645e5de9fc0a80146' and shares >0;
+there are 42 ticketkeys  save to CA issues CADE-1 ticketkeys to move.txt
+
+let's get the fundkeys
+select fundkey from mticketallocation where ticketkey in (select primarykey from mticket where stockkey= X'8c5b553645e5de9fc0a80146' and shares >0);
+there are 42 fundkeys save them to CA issues CADE-1 fundkeys to move.txt
+
+get and delete the mtrades
+select count(*) from mtrade where ticketkey in (select primarykey from mticket where stockkey= X'8c5b553645e5de9fc0a80146' and shares >0);
+> Row 1:
+>   _C001 = 42.000000
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey= X'8c5b553645e5de9fc0a80146' and shares >0);
+
+ok, let's move the mtickets over 
+> CADE 2:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+select primarykey from mticket where stockkey= X'8c5b553645e5de9fc0a80146';
+update mticket set stockkey=X'651310ac390c6d22c0a8015c'  where stockkey= X'8c5b553645e5de9fc0a80146';;
+let's tickle the tickets
+put the ticket keys in ticketstotickle on stocks
+now run this
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-07-12 12:03:38 -0400
+<<<< dbtool finished at 2015-07-12 12:05:20 -0400
+
+invalidate the funds
+done
+reprice  anyone who has ever held 
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+
+2007-02-27
+
+can we get ride of CADE-1 altogether?
+
+> CADE 1:
+>   STOCKKEY = X'8c5b553645e5de9fc0a80146'
+
+set commit false;
+
+delete from mstock where primarykey=  X'8c5b553645e5de9fc0a80146'; 
+
+delete from mwindowstock where stockkey=X'8c5b553645e5de9fc0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'8c5b553645e5de9fc0a80146');
+
+delete from mstockalias where stockkey=X'8c5b553645e5de9fc0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'8c5b553645e5de9fc0a80146');   
+
+delete from mposition where stockkey=X'8c5b553645e5de9fc0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'8c5b553645e5de9fc0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'8c5b553645e5de9fc0a80146');
+
+delete from mticket where stockkey=X'8c5b553645e5de9fc0a80146';    
+
+delete from GFSPOSITION where stockkey=X'8c5b553645e5de9fc0a80146';  
+
+commit;
+
+set commit true;
+
+
+ok, we should have only CADE-1 now
+
+select distinct stockkey from mstockalias where symbol='CADE';
+> Row 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+which is CADE-2
+
+select * from mstockalias where STOCKKEY = X'651310ac390c6d22c0a8015c' order by "date";> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NBC CAPITAL CORP
+>     PRIMARYKEY = X'651410ac390c6d22c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3e476ef644a48644c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'18b66f9f44a48654c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3724056c471d2ccdc0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+select * from mstock where primarykey=X'651310ac390c6d22c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'b3ee0578471d2d04c0a8013c'
+>                NAME = NBC CAPITAL CORP
+>          PRIMARYKEY = X'651310ac390c6d22c0a8015c'
+>              SYMBOL = NBY
+>           COMPANYID = 6710
+>   WINDOWIDENTITYKEY = NULL
+
+company ID 6710
+look at stock prices see what the last one is
+select * from stockprices where companyid=6710 order by daynumber;
+> Row 2470:
+>   DAYNUMBER = 4005  <----   12/18/11	4003	Sun
+>   COMPANYID = 6710
+>      OPENED = 24900
+>        HIGH = 24900
+>         LOW = 24900
+>      CLOSED = 24900
+>      VOLUME = 0
+
+
+Cadence Financial Corporation
+Ticker Symbol: CADE*     CUSIP: 628729105     Exchange: AMEX
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 3/04/11
+
+let's look at the prices in a line view
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6710
+2011-02-25 (Fri) [3707]: O:2.4900 H:2.5111 L:2.4900 C:2.4900 V:7250 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-02-26 (Sat) [3708]: <WEEKEND>
+2011-02-27 (Sun) [3709]: <WEEKEND>
+2011-02-28 (Mon) [3710]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:34229 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-01 (Tue) [3711]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:337 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-02 (Wed) [3712]: O:2.5000 H:2.5000 L:2.4900 C:2.5000 V:33830 TSO:11868 A:2.5000 R:1.0000 CA:2.4600
+2011-03-03 (Thu) [3713]: O:2.4900 H:2.5000 L:2.4900 C:2.5000 V:4700 TSO:11868 A:2.5000 R:1.0000 CA:2.4600
+2011-03-04 (Fri) [3714]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-05 (Sat) [3715]: <WEEKEND>
+2011-03-06 (Sun) [3716]: <WEEKEND>
+2011-03-07 (Mon) [3717]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-08 (Tue) [3718]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-09 (Wed) [3719]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-10 (Thu) [3720]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-11 (Fri) [3721]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-12 (Sat) [3722]: <WEEKEND>
+2011-03-13 (Sun) [3723]: <WEEKEND>
+2011-03-14 (Mon) [3724]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-15 (Tue) [3725]: O:2.4900 H:2.5000 L:2.4900 C:2.4900 V:22591 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-16 (Wed) [3726]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-17 (Thu) [3727]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-18 (Fri) [3728]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-19 (Sat) [3729]: <WEEKEND>
+2011-03-20 (Sun) [3730]: <WEEKEND>
+2011-03-21 (Mon) [3731]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-22 (Tue) [3732]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-23 (Wed) [3733]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+2011-03-24 (Thu) [3734]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:11868 A:2.4900 R:1.0000 CA:2.4600
+
+ok, we can do the acquis now 
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'651310ac390c6d22c0a8015c' and shares > 0 order by closed; 
+> Row 195:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-02-03 13:54:00.000000'
+>        COMMENT = 
+>     COMMISSION = 43.200000
+>   CURRENTORDER = X'dd6e1e3a4d4a3be4c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6c8717964a4569f2c0a80134'
+>       MODIFIED = NULL
+>            NET = 2188.473120
+>         OPENED = TIMESTAMP '2011-02-03 00:23:48.000000'
+>          PRICE = 2.532955
+>     PRIMARYKEY = X'dd6c1e3a4d4a3be4c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 864.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'651310ac390c6d22c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'651310ac390c6d22c0a8015c'  and totalshares < 0);
+NO SHORTS 
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'651310ac390c6d22c0a8015c'  and totalshares < 0)));
+
+using the stockkey, let's see how many members hold this stock as of today stockkey=X'651310ac390c6d22c0a8015c'
+
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 651310ac390c6d22c0a8015c 2015-07-12
+
+
+apply the acquis
+there are 58 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 3/04/11  members get 2.50 
+last ticket:  2011-02-03  PRICE = 2.532955
+last price:  2.50 
+
+giving members 2.50 on 3/7/15 
+
+/Marketocracy/bin/cahelper -symbol  CADE  -effective 20110307 -type ACQUIS -exchange UN -acqType 1 -acqCash 2.50 -acqShare 0 -purchaser CADE   >& /Users/build/caout/CADE.20150712-ACQUIS.out 
+CADE.20150712-ACQUIS.out
+stocks:~/caout build$ tail -f CADE.20150712-ACQUIS.out
+D: (07-12 12:33:00.875) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-12 12:33:35.005) cahelper started on 2015-07-12 12:33:35 -0400
+
+D: (07-12 12:33:36.741) There are [2] open tickets for CADE on 20110307
+D: (07-12 12:33:36.756) StockFileLoad Version:4.0
+D: (07-12 12:33:36.756) Loading Stock Data
+D: (07-12 12:34:33.600) Building Lookup Index
+D: (07-12 12:34:41.066) Finished Building Index
+D: (07-12 12:34:46.939) Finished Loading Stock Data
+D: (07-12 12:34:47.584) Connection to 192.168.111.172:6666 succeeded
+D: (07-12 12:34:51.279) {
+    "ACQUIRED_STOCK" = CADE; 
+    "ACQUIRING_STOCK" = "CADE_FIX"; 
+    AMOUNT = 2.5; 
+    APPLIED = 1; 
+    DATE = 20110307; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CADE_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-12 12:34:57.689) SUCCESS
+D: (07-12 12:34:57.690) cahelper finished 2015-07-12 12:34:57 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'651310ac390c6d22c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NBC CAPITAL CORP
+>     PRIMARYKEY = X'651410ac390c6d22c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3e476ef644a48644c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'18b66f9f44a48654c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3724056c471d2ccdc0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'40a4212755a29728c0a86f92'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'40a4212755a29728c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'40a4212755a29728c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CADE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150712:123335
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-07 00:00:00.000000'
+>         BB_IDENTIFIER = CADE_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-03-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CADE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-03-07 00:00:00.000000'
+>            PRIMARYKEY = X'408e212755a296dfc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'408e212755a296dfc0a86f92';
+> Row 1:
+>   _C001 = 63.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'408e212755a296dfc0a86f92'));
+there are 63 fundkeys, save to CA issues CADE-2 fundkeys to invalidate.txt
+
+so there should be none left - check using stockkey 
+
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 651310ac390c6d22c0a8015c 2015-07-12
+nothing returned which is great 
+
+
+For Beta case
+CADE no longer trades but is still active on our site - need to delist 
+
+check on 7/13/15   invalidate funds
+check MAdmin
+
+7/13/15
+CADE has been acquired 	right curve
+  	  	
+Cadence Financial Corp acquired by a private company on 2011-03-07 00:00:00. 
+
+MAdmin is clear
+
+I have repriced the funds. closing this out 

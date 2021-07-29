@@ -1,0 +1,334 @@
+DELIST report  11/18/15
+DATE:2015-11-18 00:00:00
+NOTES:N.A.
+REASON:Acquired/Merged
+APPLIED:1
+SYMBOL:GOMO
+TYPE:DELIST
+
+date:   11/18/15
+ticker:   GOMO
+
+yahoo:
+Sungy Mobile Limited (GOMO) -NasdaqGM
+4.81 0.00(0.00%) Nov 17
+Prev Close:	4.81
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	5.30
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	3.25 - 6.25
+Volume:	0
+Avg Vol (3m):	73,666
+Market Cap:	151.84M
+P/E (ttm):	N/A
+EPS (ttm):	-0.23
+Div & Yield:	N/A (N/A
+Nov 17th
+
+article:
+each of the Company's ordinary shares issued and outstanding immediately prior to the effective time of the merger (the "Shares") was cancelled and ceased to exist in exchange for the right to receive US$0.81667 in cash without interest and net of any applicable withholding taxes, and each American depositary share of the Company (the "ADS"), representing six class A ordinary shares of the Company, was cancelled in exchange for the right to receive US$4.90 in cash 
+
+quantum:   still thinks it is active
+Sungy Mobile Ltd.
+Ticker Symbol: GOMO     CUSIP: 86737M100     Exchange: NGM
+
+Company's Online Profile
+BUSINESS:  Sungy Mobile Ltd. is a leading provider of mobile internet products and services globally with a focus on applications and mobile platform development. Sungy Mobile's platform product, GO Launcher EX, manages apps, widgets and functions on Android smartphones and serves as users’ first entry point to their phones; it is the mobile access point from which many users are able to find new and innovative ways to customize their experience, download apps and interact with their mobile devices every day.
+IPO - 11/22/2013 - 7.00 Million Shares @ $11.22/share.    Link to IPO Prospectus
+ADR with an ADR ratio of 1:6
+Small Cap Stock -   Market Value $ 141 Million
+Click for current GOMO price quote from the NASDAQ
+
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Sungy Mobile Ltd  Symbol:GOMO
+Date: 11/18/2015
+
+4 users found
+
+1	caimani	greenab	joeeleonard	lwilliams3	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'GOMO';  
+> Row 1:
+>   STOCKKEY = X'd01355de528fef87c0a80146'
+
+select * from mstockalias where stockkey=X'd01355de528fef87c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86737M100
+>           DATE = TIMESTAMP '2013-11-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sungy Mobile Ltd
+>     PRIMARYKEY = X'd01455de528fef87c0a80146'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>         SYMBOL = GOMO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86737M100
+>           DATE = TIMESTAMP '2015-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sungy Mobile Ltd
+>     PRIMARYKEY = X'417f2b97564d1150c0a86fab'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>         SYMBOL = GOMO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GOMO'  order by BB_EFFECTIVE;
+> Row 9:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|1285168D CH|CP_NAME|Sunflower Parent Ltd|CP_ID_BB_COMP|45879206|CP_UNIT|Sungy Mobile Ltd|CP_TOT_AMT|33.443272|CP_ACQUIS_TYP|1|CP_CASH|4.900000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|17.853790|CP_CUR_PREMIUM|1.871103|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|33.443272|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Maples & Calder, Skadden Arps;13;100.000000;1;Target Financial Adviser(s);1;Duff & Phelps;13;100.000000;1;Acquirer Legal Adviser(s);1;O'melveny & Myer, Paul Weiss;13;100.000000;1;Seller Legal Adviser(s);1;Orrick Herringtn;13;100.000000;1;Legal Adv to Target Financial;1;Gibson Dunn Crut;13;100.000000;|CP_ACQ_TKR|1285168D CH|CP_ACQ_ID_BB_GLOBAL|BBG009CLC471|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG009CLC3Z2|CP_ACQ_ID_BB_SEC_NUM_DES|1285168D|CP_ACQ_FEED_SOURCE| |CP_TARGET_TKR|GOMO US|CP_TARGET_ID_BB_GLOBAL|BBG005GS1N34|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG005GS1N07|CP_TARGET_ID_BB_SEC_NUM_DES|GOMO|CP_TARGET_FEED_SOURCE|US|CP_NOTES|ACTL ACQ'R: YUQIANG DENG & ZHI ZHU.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107547903
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 37719176
+>        BB_COMPANYNAME = Sungy Mobile Ltd
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-18 00:00:00.000000'
+>         BB_IDENTIFIER = GOMO    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-13 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = GOMO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-18 00:00:00.000000'
+>            PRIMARYKEY = X'df222b11564d0f6ac0a86fab'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GOMO
+stock: GOMO
+  PK       : [D01355DE528FEF87C0A80146]
+  companyID: [25269]
+  symbol   : [GOMO]
+  name     : [Sungy Mobile Ltd]
+  date     : [2015-11-18 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-11-19 01:07:40 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 25269
+2015-11-09 (Mon) [5425]: O:4.7800 H:4.7900 L:4.7800 C:4.7800 V:9087 TSO:0 A:4.7800 R:1.0000 CA:0.0000
+2015-11-10 (Tue) [5426]: O:4.7800 H:4.8000 L:4.7500 C:4.8000 V:18545 TSO:0 A:4.8000 R:1.0000 CA:0.0000
+2015-11-11 (Wed) [5427]: O:4.7800 H:4.7900 L:4.7500 C:4.7800 V:10614 TSO:0 A:4.7800 R:1.0000 CA:0.0000
+2015-11-12 (Thu) [5428]: O:4.7700 H:4.8000 L:4.7700 C:4.7900 V:17190 TSO:0 A:4.7900 R:1.0000 CA:0.0000
+2015-11-13 (Fri) [5429]: O:4.7900 H:4.8000 L:4.7700 C:4.8000 V:32830 TSO:0 A:4.8000 R:1.0000 CA:0.0000
+2015-11-14 (Sat) [5430]: <WEEKEND>
+2015-11-15 (Sun) [5431]: <WEEKEND>
+2015-11-16 (Mon) [5432]: O:4.7900 H:4.8400 L:4.7900 C:4.8300 V:70494 TSO:0 A:4.8300 R:1.0000 CA:0.0000
+2015-11-17 (Tue) [5433]: O:4.8000 H:4.8200 L:4.8000 C:4.8100 V:26671 TSO:0 A:4.8100 R:1.0000 CA:0.0000
+2015-11-18 (Wed) [5434]: O:4.8000 H:4.8200 L:4.8000 C:4.8100 V:26671 TSO:0 A:4.8100 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'd01355de528fef87c0a80146' and shares > 0 order by closed; 
+> Row 75:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-03-23 12:17:11.000000'
+>        COMMENT = 
+>     COMMISSION = 2213.000000
+>   CURRENTORDER = X'6f811ee9550c75b2c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'fd9d0e4339cfcbcdc0a80118'
+>       MODIFIED = NULL
+>            NET = 160715.045720
+>         OPENED = TIMESTAMP '2015-03-20 15:32:02.000000'
+>          PRICE = 3.631158
+>     PRIMARYKEY = X'6f7f1ee9550c75b2c0a86f98'
+>         SECFEE = 2.840000
+>         SHARES = 44260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'd01355de528fef87c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd01355de528fef87c0a80146'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd01355de528fef87c0a80146'  and totalshares < 0)));
+
+apply the acquis
+ACQUIS:   11/18/15
+there are 4 members who hold this stock
+quantum:  still thinks it is active
+last ticket: 2015-03-23  PRICE = 3.631158
+last price:  2015-11-18 (Wed) [5434]: O:4.8000 H:4.8200 L:4.8000 C:4.8100 V:26671 TSO:0 A:4.8100 R:1.0000 CA:0.0000
+
+going with 20151118 4.90
+
+/Marketocracy/bin/cahelper -symbol  GOMO  -effective 20151118 -type ACQUIS -exchange UN -acqType 1 -acqCash 4.90 -acqShare 0 -purchaser GOMO   >& /Users/build/caout/GOMO.20151118-ACQUIS.out 
+GOMO.20151118-ACQUIS.out
+stocks1:~/caout build$ tail -f GOMO.20151118-ACQUIS.out
+D: (11-19 01:10:35.693) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-19 01:10:59.500) cahelper started on 2015-11-19 01:10:59 -0500
+
+D: (11-19 01:10:59.857) There are [0] open tickets for GOMO on 20151118
+D: (11-19 01:11:00.042) StockFileLoad Version:4.0
+D: (11-19 01:11:00.042) Loading Stock Data
+D: (11-19 01:11:37.226) Building Lookup Index
+D: (11-19 01:11:42.849) Finished Building Index
+D: (11-19 01:11:46.755) Finished Loading Stock Data
+D: (11-19 01:11:46.874) Connection to 192.168.111.172:6666 succeeded
+D: (11-19 01:11:46.942) {
+    "ACQUIRED_STOCK" = GOMO; 
+    "ACQUIRING_STOCK" = "GOMO_FIX"; 
+    AMOUNT = 4.9; 
+    APPLIED = 1; 
+    DATE = 20151118; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GOMO_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-19 01:11:47.584) SUCCESS
+D: (11-19 01:11:47.584) cahelper finished 2015-11-19 01:11:47 -0500
+Check the results 
+select * from mstockalias where stockkey= X'd01355de528fef87c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86737M100
+>           DATE = TIMESTAMP '2013-11-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sungy Mobile Ltd
+>     PRIMARYKEY = X'd01455de528fef87c0a80146'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>         SYMBOL = GOMO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86737M100
+>           DATE = TIMESTAMP '2015-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sungy Mobile Ltd
+>     PRIMARYKEY = X'417f2b97564d1150c0a86fab'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>         SYMBOL = GOMO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 86737M100
+>           DATE = TIMESTAMP '2015-11-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sungy Mobile Ltd
+>     PRIMARYKEY = X'7b5a34c9564d67f3c0a86fab'
+>       STOCKKEY = X'd01355de528fef87c0a80146'
+>         SYMBOL = GOMO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'7b5a34c9564d67f3c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'7b5a34c9564d67f3c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GOMO  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|4.900000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151119:011059
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-18 00:00:00.000000'
+>         BB_IDENTIFIER = GOMO_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GOMO_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-18 00:00:00.000000'
+>            PRIMARYKEY = X'7b5434c9564d67f3c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'7b5434c9564d67f3c0a86fab';
+> Row 1:
+>   _C001 = 5.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'7b5434c9564d67f3c0a86fab'));
+there are 5 fundkeys, save to CA issues GOMO fundkeys.txt
+
+For Beta case
+GOMO no longer trades but is still active on our site - need to delist acquired for 4.90 on 11/18/15
+
+check on 11/20/15   invalidate funds
+check MAdmin   clear 
+
+GOMO has been acquired	right curve
+ 	 	
+Sungy Mobile Ltd acquired by a private company on 2015-11-18 00:00:00.
+
+let's check member for cash
+
+invalidate reprice and close 
+
+
+1	caimani	greenab	joeeleonard	lwilliams3	 	 
+
+caimani 
+your holdings of GOMO	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+CMF	0	$.00	0.00%
+ 	 	[ Trade this stock ]
+
+LEDGER
+Date	Start	Change	End	Type
+Oct 10, 2014		1300	1300	Buy
+Nov 18, 2015	1300	-1300		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 10, 2014	1,300	$65.00	$10,156.99	$7.81
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+caimani CMF fund 20151118
+
+check on 11/20/15
+	4.90 / share * 1300 =  6370  it is there  	 	 	 
+11/18/2015	$725,283.20	$0.00	$19.87	$6,370.00	$54.54	$0.00	$731,618.53	$266,288.03	$997,906.56	100,000	$9.98	No	Details
+
+

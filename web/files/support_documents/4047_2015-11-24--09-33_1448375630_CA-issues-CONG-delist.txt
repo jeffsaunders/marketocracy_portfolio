@@ -1,0 +1,220 @@
+CONG
+date:   11/23/15
+ticker:   CONG
+discovered this when we had a list for new CONG which did not get applied 
+yahoo:  new stock
+
+quantum:
+Russell Consistent Growth ETF
+Ticker Symbol: CONG*     CUSIP: 782474746     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   U.S. Market Segment Index ETF
+* NOTE: This security is no longer trading as of 10/16/12
+
+Company's Online Profile
+FUND DESCRIPTION:  Russell Consistent Growth ETF is an exchange-traded index fund or index ETF which is a separate portfolio of the Russell Exchange Traded Funds Trust, an open-end investment management company. INVESTMENT OBJECTIVE: The Russell Consistent Growth ETF seeks investment results that closely correspond to the total return of the Russell U.S. Large Cap Consistent Growth Index. INDEX DESCRIPTION: The Russell U.S. Large Cap Consistent Growth Index is designed to select securities intended to produce performance that is similar to professional investment managers using a consistent growth investment discipline. This discipline focuses on companies with above average earnings expectations over a long term horizon and with consistent historical earnings growth. Starting with the Russell 1000 Index (an index comprised of U.S. stocks), the Index includes companies that demonstrate growth potential as measured by: (1) average to high consensus forecasted earnings; (2) consistent earnings as measured by average to low earnings per share volatility over the past five years; and (3) efficient asset utilization as measured by average to high return on assets for the prior quarter. The Index excludes companies with low anticipated growth prospects as measured by a low price-to-book ratio. The Index Provider, Frank Russell Company, determines the composition and relative weightings of the securities in the Index and publishes information regarding the market value of the Index. The Index is reconstituted quarterly. FUND STRATEGY: The Fund is an index-based exchange-traded fund that seeks investment results that closely correspond to the total return of the Index. A passive or indexing approach to try to achieve the Fund’s investment objective is used. Indexing may reduce the chance that the Fund will substantially outperform its Index but also may reduce some of the risks of active management, such as security selection. Unlike many investment companies, the Fund does not try to beat the Index it tracks and does not seek temporary defensive positions when markets decline or appear overvalued. The Fund will normally invest at least 80% of its total assets in common stocks that comprise the Index. The Fund’s investment adviser using a replication strategy, generally invests in all of the stocks comprising the Index in proportion to their weightings in the Index. However, under various circumstances, it may not be possible or practicable to purchase all of those stocks in those weightings. In those circumstances, the Fund may purchase a sample of stocks in the Index. There may also be instances in which the Advisor may choose to overweight another stock in the Index, purchase securities not in the Index which is believed are appropriate to substitute for certain securities in the Index or utilize various combinations of other available investment techniques, in seeking to track the Index. The Fund may sell stocks that are represented in the Index in anticipation of their removal from the Index or purchase stocks not represented in the Index in anticipation of their addition to the Index. FUND MANAGEMENT: Russell Investment Management Company (RIMCo) serves as the investment adviser to the Fund.
+Notes:  The issuer has determined to liquidate this Fund on October 24, 2012. The Fund will be closed to new investors at the close of regular trading on October 9, 2012; accordingly, trading in the Fund will be suspended before the opening of business on October 17, 2012.
+
+oursite:
+Symbol: CONG	Name: Russell Consistent Growth ETF	Price: $54.51
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  CONG   
+ [NEW QUOTE]       
+Corporate Actions for Russell Consistent Growth ETF	  November 23, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=CONG
+
+check MAdmin
+no holders
+
+database
+select distinct stockkey from mstockalias where symbol= 'CONG';  
+ Row 1:
+>   STOCKKEY = X'4f9621664dd59c3cc0a80146'
+select * from mstockalias where stockkey=X'4f9621664dd59c3cc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Russell Consistent Growth ETF
+>     PRIMARYKEY = X'4f9721664dd59c3cc0a80146'
+>       STOCKKEY = X'4f9621664dd59c3cc0a80146'
+>         SYMBOL = CONG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CONG'  order by BB_EFFECTIVE;
+> Row 12:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UP|CP_TKR|CONG|CP_DELIST_REASON|26|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 69610520
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 25341582
+>        BB_COMPANYNAME = Russell Consistent Growth ETF
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-17 00:00:00.000000'
+>         BB_IDENTIFIER = CONG    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CONG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2012-10-08 00:00:00.000000'
+>            PRIMARYKEY = X'a85528eb507354f1c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CONG
+>>>> dbtool started at 2015-11-23 21:03:24 -0500
+stock: CONG
+  PK       : [4F9621664DD59C3CC0A80146]
+  companyID: [20618]
+  symbol   : [CONG]
+  name     : [Russell Consistent Growth ETF]
+  date     : [2011-05-19 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-23 21:03:24 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20618
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'4f9621664dd59c3cc0a80146' and shares > 0 order by closed; 
+no tickets
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'4f9621664dd59c3cc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4f9621664dd59c3cc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4f9621664dd59c3cc0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST:  2012-10-17 
+there are 0 members who hold this stock
+quantum:   NOTE: This security is no longer trading as of 10/16/12
+last ticket:  no trades 
+last price:  2012-10-16 (Tue) [4306]: O:54.3600 H:54.5100 L:54.3600 C:54.5100 V:1091 TSO:0 A:54.5100 R:1.0000 CA:0.0000
+
+going with 20121016 54.5100
+
+/Marketocracy/bin/cahelper -symbol  CONG  -effective 20121016 -type ACQUIS -exchange UN -acqType 1 -acqCash 54.5100 -acqShare 0 -purchaser CONG   >& /Users/build/caout/CONG.20151123-DELIST.out 
+CONG.20151123-DELIST.out
+stocks1:~/caout build$ tail -f CONG.20151123-DELIST.out
+D: (11-23 21:06:37.778) Install Tiger valueForKey: hack for NSArray and NSSet
+
+D: (11-23 21:07:01.847) cahelper started on 2015-11-23 21:07:01 -0500
+
+D: (11-23 21:07:02.196) There are [0] open tickets for CONG on 20121016
+D: (11-23 21:07:02.216) {
+    "ACQUIRED_STOCK" = CONG; 
+    "ACQUIRING_STOCK" = "CONG_FIX"; 
+    AMOUNT = 54.509998; 
+    APPLIED = 1; 
+    DATE = 20121016; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CONG_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-23 21:07:02.614) SUCCESS
+D: (11-23 21:07:02.614) cahelper finished 2015-11-23 21:07:02 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'4f9621664dd59c3cc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Russell Consistent Growth ETF
+>     PRIMARYKEY = X'4f9721664dd59c3cc0a80146'
+>       STOCKKEY = X'4f9621664dd59c3cc0a80146'
+>         SYMBOL = CONG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-10-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Russell Consistent Growth ETF
+>     PRIMARYKEY = X'15f06aba5653c646c0a86fab'
+>       STOCKKEY = X'4f9621664dd59c3cc0a80146'
+>         SYMBOL = CONG
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'15f06aba5653c646c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'15f06aba5653c646c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CONG  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|54.509998|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151123:090701
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-16 00:00:00.000000'
+>         BB_IDENTIFIER = CONG_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CONG_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-16 00:00:00.000000'
+>            PRIMARYKEY = X'15ea6aba5653c645c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'15ea6aba5653c645c0a86fab';
+no tickets 
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'SOURCEKEY'));
+there are XXX fundkeys, save to CA issues CONG fundkeys.txt
+
+For Beta case
+CONG no longer trades but is still active on our site - need to delist 
+
+check on 11/24/15   no one holds this close it out 
+
+

@@ -1,0 +1,210 @@
+5/17/16
+Help desk issues wnious WMF can't sell ABCD.txt
+
+Ticket Number:	4507
+Portfolio Username:	wnious
+Problem Type:
+Trade Issue
+Subject:
+stock not sold
+Description:
+cant sell rest of shares of ABCD from WMF.
+
+look at this stock
+
+Symbol: ABCD	Name: Cambium Learning Group Inc	Price: $4.11
+Volume: 29,606	Sector: Consumer Discretionary	Change: -$0.14
+Short Volume: 27,754	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 27,754	 Exchange: NASDAQ	Today: -3.29%
+50 Day Ave: $4.27	Year High: $5.97	High: $4.27
+200 Day Ave: $4.65	Year Low: $0.00	Low: $4.05
+
+research  stock info  ABCD   
+ [NEW QUOTE]       
+Corporate Actions for Cambium Learning Group Inc	  May 18, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  listing changes for ABCD	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jun 20, 2013	NASDAQ	UQ	NASDAQ-SMALLCAP	UR	Change in the exchange that ABCD trades on from NASDAQ to NASDAQ-SMALLCAP
+
+
+your holdings of ABCD	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+WGF	0	N/A	N/A
+WMF	11,581	$47,597.91	2.13%
+WINF	0	N/A	N/A
+WMK	0	N/A	N/A
+WVF	0	N/A	N/A
+ 	 	[ Trade this stock ]
+
+
+expand his trading
+LEDGER
+Date	Start	Change	End	Type
+Sep 18, 2015		37500	37500	Buy
+May 17, 2016	37500	-25919	11581	Sell
+Total: 11,581
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 18, 2015	37,500	$1,875.00	$188,150.89	$5.02
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 17, 2016	25,919	$518.38	$1.91	$108,874.66	$4.20
+ 	 	 
+
+the trade
+ticket detail for ABCD	right curve
+ 	 	
+Opened	Action	Shares Ordered	Limit	Shares Filled	Expires
+ 11:43:30 on May 08, 2016	 Sell	 37,500	 	 25,919	 GTC
+ 	 	 
+left curve	 completion	right curve
+ 	 	This ticket was opened at 11:43:30 on May 08, 2016 and completed at 20:13:44 on May 17, 2016
+left curve	 fees	right curve
+ 	 	
+Shares	25,919
+SEC Fee	$1.91
+Commission	$518.38
+Net	$108,874.66
+Net Avg. Price	$4.2006
+ 	 	Note: Per standard industry practice, price above is the Net Average Price, which includes the stated fees and commissions. The price can be a few cents above or below any limit price, or the high/low for the day.
+ 	 	 
+left curve	 fund trades	right curve
+ 	 	
+Name	Symbol	Quantity
+wnious's Mutual Fund	WMF	25,919
+ 	 	 
+left curve	 reverse ticket [ADMIN ONLY]	right curve
+ 	 	
+Hexkey: 525B0123572F5EACC0A86FA6
+Click here to reclose ticket
+Click here to clone and delete ticket (a do over)
+Click here to untrade ticket
+Click here to reprice all of the users funds
+
+
+Hexkey: 525B0123572F5EACC0A86FA6
+select * from mticket where primarykey=X'525B0123572F5EACC0A86FA6';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-05-17 20:13:44.000000'
+>        COMMENT = NULL
+>     COMMISSION = 518.380000
+>   CURRENTORDER = X'525d0123572f5eacc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 108874.659593
+>         OPENED = TIMESTAMP '2016-05-08 11:43:30.000000'
+>          PRICE = 4.200573
+>     PRIMARYKEY = X'525b0123572f5eacc0a86fa6'
+>         SECFEE = 1.910000
+>         SHARES = 25919.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'e51a74054f28570ec0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select * from morder where ticketkey=X'525b0123572f5eacc0a86fa6';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'525d0123572f5eacc0a86fa6'
+>         SHARES = 37500.000000
+>      TICKETKEY = X'525b0123572f5eacc0a86fa6'
+>           TIME = TIMESTAMP '2016-05-08 11:43:30.000000'
+>   AVERAGEPRICE = 4.220647
+>   SHARESFILLED = 25919
+
+select * from mtrade where ticketkey=X'525b0123572f5eacc0a86fa6';
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'b6273ec455fc4bfcc0a86f9c'
+>                 PRIMARYKEY = X'ee3e589a573bb3b8c0a86f9c'
+>                     SHARES = 25919.000000
+>                  TICKETKEY = X'525b0123572f5eacc0a86fa6'
+>                     CLOSED = TIMESTAMP '2016-05-17 20:13:44.000000'
+>                      PRICE = 4.200600
+>   CREATEDBYCORPORATEACTION = 0
+
+select * from mticketallocation where ticketkey=X'525b0123572f5eacc0a86fa6';
+> Row 1:
+>      FUNDKEY = X'27a921323e876e54c0a80133'
+>   PRIMARYKEY = X'525e0123572f5eacc0a86fa6'
+>       SHARES = 37500.000000
+>    TICKETKEY = X'525b0123572f5eacc0a86fa6'
+
+Your order was a GTC to sell 37500 ABCD at the market, opened on 5/8/16 and closed on 5/17/16
+only 25919 shares filled, leaving 11581 shares 
+
+
+completion	right curve
+ 	 	This ticket was opened at 11:43:30 on May 08, 2016 and completed at 20:13:44 on May 17, 2016
+left curve	 fees
+
+let's look at yahoo historical prices 
+
+Date	Open	High	Low	Close	Volume	Adj Close*
+May 17, 2016	4.27	4.27	4.05	4.11	29,600	4.11
+May 16, 2016	4.23	4.30	4.20	4.25	11,200	4.25
+May 13, 2016	4.24	4.31	4.21	4.23	26,600	4.23
+May 12, 2016	4.22	4.29	4.20	4.24	15,000	4.24
+May 11, 2016	4.25	4.33	4.20	4.21	20,600	4.21
+May 10, 2016	4.30	4.30	4.14	4.27	15,900	4.27
+May 09, 2016	4.25	4.37	3.97	4.30	10,000	4.30
+total volume for these trading days was 128900  
+you got 25919 /    128900  = 0.2010783553142  about 20% of the total volume. 
+
+open a GTC market order to sell 11581 ABCD
+
+I see that you opened the ticket on 5/8 and it closed on 5/17   - looking at Yahoo to get historical info:
+with a reprice and reload I was able to get his fund to have the correct share balance.  I entered on his behalf
+a Day order to sell 11581 shares of ABCD at the market.  I updated the case. 
+
+see what he says 
+
+5/20/16 - he said perfect thank you
+wnious WMF
+
+your holdings of ABCD	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+WGF	0	N/A	N/A
+WMF	0	$.00	0.00%
+WINF	0	N/A	N/A
+WMK	0	N/A	N/A
+WVF	0	N/A	N/A
+
+He was able to sell out
+LEDGER
+Date	Start	Change	End	Type
+Sep 18, 2015		37500	37500	Buy
+May 17, 2016	37500	-25919	11581	Sell
+May 18, 2016	11581	-11581		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 18, 2015	37,500	$1,875.00	$188,150.89	$5.02
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 17, 2016	25,919	$518.38	$1.91	$108,874.66	$4.20
+May 18, 2016	11,581	$231.62	$0.86	$49,118.21	$4.24
+ 	 	 
+
+I am closing this out on 5/20/16 he has sold out

@@ -1,0 +1,270 @@
+Reverse Split performed
+Type
+
+Corporate Action | Stock Split
+
+Ticket
+
+3729
+
+Priority
+
+Medium
+
+Status
+
+Open
+
+Member Name
+
+Adam Pasker
+
+Username
+
+pasker  PGMF
+
+Fund Symbols
+
+PGMF
+
+Stock Tickers
+
+JNUG  NUGT, JDST, JNUG
+
+pasker  JNUG
+
+your holdings of JNUG	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+PNF	-4,000	-$168,720.00	-39.61%
+PSF	-2,000	-$84,360.00	4.67%
+PGMF	-6,400	-$269,952.00	-27.02%
+ 	 	[ Trade this stock ]
+
+
+JNUG  PNF fund
+look at this fund ledger on 20151001
+
+
+ positions on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+LC	LendingClub Corp	$13.16	9.9%	4,000	$0.00	$52,640.00	Details 
+GTE	GRAN TIERRA ENERGY INC.	$2.27	9.4%	22,000	$0.00	$49,940.00	Details 
+WFC	WELLS FARGO	$51.44	8.7%	900	$0.00	$46,296.00	Details 
+UWTI	VelocityShares 3x Long Crude ETN	$10.37	8.4%	4,300	$0.00	$44,591.00	Details 
+CSIQ	Canadian Solar, Incorporated	$16.67	7.8%	2,500	$0.00	$41,675.00	Details 
+BBEP	BreitBurn Energy Partners L.P.	$1.97	7.0%	19,000	$0.00	$37,430.00	Details 
+SDLP	Seadrill Partners LLC	$9.25	6.1%	3,500	$0.00	$32,375.00	Details 
+EXXI	Energy XXI Ltd	$1.09	5.9%	29,000	$0.00	$31,610.00	Details 
+LINE	Linn Energy, LLC	$2.71	1.8%	3,500	$0.00	$9,485.00	Details 
+JNUG	Direxion Daily Junior Gold Miners Index Bull 3x Shares	$35.28	-26.5%	-4,000	$0.00	-$141,120.00	Details 
+NUGT	Direxion Daily Gold Miners Ind	$27.00	-73.0%	-14,400	$0.00	-$388,800.00	Details 
+ 	 	 
+left curve	 trades on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	NUGT	16,000	$28.16	$450,552.14	$800.00	$7.86  <-- member  expand  change to 1600
+Sell	JNUG	5,000	$36.52	$182,596.81	$250.00	$3.19  <-- member  expand  change to 1000
+Split Sell	NUGT	16,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	JNUG	1,000	$0.00	$0.00	$0.00	$0.00  <---- CA
+Split Buy	NUGT	1,600	$0.00	$0.00	$0.00	$0.00
+Split Sell	JNUG	5,000	$0.00	$0.00	$0.00	$0.00  <---- CA
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  pasker PNF 20151001 JNUG -1000 36.54
+Trading -1000.0 shares of Direxion Daily Junior Gold Miners Index Bull 3x Shares on Oct 01, 2015 at 36.54
+manager login: pasker
+manager: Adam Pasker
+fund: PNF
+building trade (has to load stock prices first)
+price = 36.54
+selling -1000.0 shares of JNUG at 36.54 on 20151001
+invaldating fund prices from Oct 01, 2015
+Done
+
+let's look at NUGT  1 for 10   sold 16000 got 1600 and he sold 16000
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  pasker PNF 20151001 NUGT -1600 28.18
+Trading -1600.0 shares of Direxion Daily Gold Miners Ind on Oct 01, 2015 at 28.18
+manager login: pasker
+manager: Adam Pasker
+fund: PNF
+building trade (has to load stock prices first)
+price = 28.18
+selling -1600.0 shares of NUGT at 28.18 on 20151001
+invaldating fund prices from Oct 01, 2015
+Done
+
+
+check another fund 
+PGMF fund on 20151001
+ positions on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+UWTI	VelocityShares 3x Long Crude ETN	$10.37	7.2%	7,700	$0.00	$79,849.00	Details 
+BBEP	BreitBurn Energy Partners L.P.	$1.97	6.7%	38,000	$0.00	$74,860.00	Details 
+JNUG	Direxion Daily Junior Gold Miners Index Bull 3x Shares	$35.28	-20.3%	-6,400	$0.00	-$225,792.00	Details 
+JDST	Direxion Daily Junior Gold Miners Index Bear 3X Shares	$40.90	-27.6%	-7,500	$0.00	-$306,750.00	Details 
+NUGT	Direxion Daily Gold Miners Ind	$27.00	-48.1%	-19,800	$0.00	-$534,600.00	Details 
+ 	 	 
+left curve	 trades on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee 
+Sell	NUGT	22,000	$28.16	$619,509.20	$1,100.00	$10.80   <--- change to 2200  
+Sell	JDST	10,000	$39.12	$391,193.18	$500.00	$6.82   <--- change to 2500  
+Sell	JNUG	8,000	$36.52	$292,154.90	$400.00	$5.10  <--- change to 1600
+Sell	DUST	3,000	$23.90	$71,698.74	$150.00	$1.26
+Sell	DWTI	700	$96.28	$67,396.22	$35.00	$1.18
+Split Buy	NUGT	2,200	$0.00	$0.00	$0.00	$0.00
+Split Sell	JNUG	8,000	$0.00	$0.00	$0.00	$0.00
+Split Sell	NUGT	22,000	$0.00	$0.00	$0.00	$0.00
+Split Sell	JDST	10,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	JNUG	1,600	$0.00	$0.00	$0.00	$0.00
+Split Buy	JDST	2,500	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  pasker PGMF 20151001 NUGT -2200 28.18
+Trading -2200.0 shares of Direxion Daily Gold Miners Ind on Oct 01, 2015 at 28.18
+manager login: pasker
+manager: Adam Pasker
+fund: PGMF
+building trade (has to load stock prices first)
+price = 28.18
+selling -2200.0 shares of NUGT at 28.18 on 20151001
+invaldating fund prices from Oct 01, 2015
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  pasker PGMF 20151001 JDST -2500 39.14
+Trading -2500.0 shares of Direxion Daily Junior Gold Miners Index Bear 3X Shares on Oct 01, 2015 at 39.14
+manager login: pasker
+manager: Adam Pasker
+fund: PGMF
+building trade (has to load stock prices first)
+price = 39.14
+selling -2500.0 shares of JDST at 39.14 on 20151001
+invaldating fund prices from Oct 01, 2015
+Done
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  pasker PGMF 20151001 JNUG -1600 36.54
+Trading -1600.0 shares of Direxion Daily Junior Gold Miners Index Bull 3x Shares on Oct 01, 2015 at 36.54
+manager login: pasker
+manager: Adam Pasker
+fund: PGMF
+building trade (has to load stock prices first)
+price = 36.54
+selling -1600.0 shares of JNUG at 36.54 on 20151001
+invaldating fund prices from Oct 01, 2015
+Done
+
+His next fund:  PSF
+
+pasker PSF   this is a short fund
+
+portfolioAdmin won't come up, let's try regular Portfolio
+/Marketocracy/bin/dbtool decryptpassword -loginName pasker
+heybaby
+
+select * from mmanager where loginname='pasker';
+
+update mmanager set MEMBERSTATUS=1 where  loginname='pasker';
+
+positions on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+NUGT	Direxion Daily Gold Miners Ind	$27.00	1.5%	-1,000	$0.00	-$27,000.00	Details 
+JNUG	Direxion Daily Junior Gold Miners Index Bull 3x Shares	$35.28	3.9%	-2,000	$0.00	-$70,560.00	Details 
+ 	 	 
+left curve	 trades on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Split Buy	NUGT	10,000	$0.00	$0.00	$0.00	$0.00
+Split Sell	NUGT	1,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	JDST	0	$0.00	$0.00	$0.00	$0.00
+Split Sell	JDST	0	$0.00	$0.00	$0.00	$0.00
+Split Sell	JNUG	2,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	JNUG	10,000	$0.00	$0.00	$0.00	$0.00
+
+this one is good
+
+let's get the fund keys and invalidate and also reprice
+/Marketocracy/bin/dbtool lookup fund pasker
+>>>> dbtool started at 2015-10-04 07:43:17 -0400
+fund: pasker
+  PK: [AEBB4E62417F094DC0A80133]
+  symbol: [PNF]
+  managerKey: [2DAE0F533E666207C0A80133]
+  loginName: [pasker]
+	select active from mfund where primarykey=X'AEBB4E62417F094DC0A80133';
+> Row 1:
+>   ACTIVE = 1
+
+fund: pasker
+  PK: [2DBC0F533E6662AAC0A80133]
+  symbol: [PMF]
+  managerKey: [2DAE0F533E666207C0A80133]
+  loginName: [pasker]
+	select active from mfund where primarykey=X'2DBC0F533E6662AAC0A80133';
+> Row 1:
+>   ACTIVE = 0
+
+fund: pasker
+  PK: [7AA4610B3E676275C0A80132]
+  symbol: [PNF]
+  managerKey: [2DAE0F533E666207C0A80133]
+  loginName: [pasker]
+	select active from mfund where primarykey=X'7AA4610B3E676275C0A80132';
+> Row 1:
+>   ACTIVE = 0
+
+fund: pasker
+  PK: [C8FF05E9461A5D09C0A80134]
+  symbol: [PSF]
+  managerKey: [2DAE0F533E666207C0A80133]
+  loginName: [pasker]
+fund: pasker
+  PK: [81BF126F55AEE26AC0A86FA6]
+  symbol: [PGMF]
+  managerKey: [2DAE0F533E666207C0A80133]
+  loginName: [pasker]
+<<<< dbtool finished at 2015-10-04 07:43:17 -0400
+/Marketocracy/bin/fptool invalidateFund  AEBB4E62417F094DC0A80133;
+/Marketocracy/bin/fptool invalidateFund  2DAE0F533E666207C0A80133; 
+
+AEBB4E62417F094DC0A80133,2DAE0F533E666207C0A80133
+
+still showing a short for JNUG on the new site PNF fund
+
+select distinct stockkey from mstockalias where symbol='JNUG';
+> Row 1:
+>   STOCKKEY = X'f3a94b80524df4ebc0a80146'
+select fundkey from mposition where  STOCKKEY = X'f3a94b80524df4ebc0a80146';
+there are 255 fundkeys  save to CA issues JNUG fundkeys.txt
+
+
+repriced reloaded the stratification - all is good.
+closing this out 
+
+
+
+
+
+
+
+
+
+ 	 	 
+
+
+
+
+
+
+
+

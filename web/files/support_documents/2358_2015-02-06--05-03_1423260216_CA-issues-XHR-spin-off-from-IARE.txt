@@ -1,0 +1,246 @@
+date: 2/4/15
+
+spin from bloomberg email
+TIMESTAMP: [2015-02-04 18:56:12 -0500]
+HOST     : [stocks.local]
+PROCESS  : [ApplyActions:22947]
+
+
+This is a list of the applied corporate actions for this apply run..
+Total count:1
+
+-------------------------
+FUNDS:()
+RECORD_DATE:20150120
+APPLIED:1
+NOTES:N.A.
+RATIO:0.125
+SYMBOL:IARE
+SPINOFF_SYMBOL:XHR
+DATE:2015-02-04 00:00:00
+PAY_DATE:20150203
+TYPE:SPIN
+-------------------------
+
+IARE spun off XHR   
+
+select distinct stockkey from mstockalias where symbol='XHR';
+> Row 1:
+>   STOCKKEY = X'd115580b54d2b0b3c0a86f92'
+> Row 2:
+>   STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+
+THERE ARE TWO - let's look at each stockkey
+****************************************************************************
+> XHR 1:
+>   STOCKKEY = X'd115580b54d2b0b3c0a86f92'
+****************************************************************************
+select * from mstockalias where STOCKKEY = X'd115580b54d2b0b3c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Xenia Hotels & Resorts Inc
+>     PRIMARYKEY = X'd116580b54d2b0b3c0a86f92'
+>       STOCKKEY = X'd115580b54d2b0b3c0a86f92'
+>         SYMBOL = XHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'd116580b54d2b0b3c0a86f92';
+> Row 1:
+>              ALIASKEY = X'd116580b54d2b0b3c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|XHR|CP_SEC_TYP|62|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 102044834
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 19223538
+>        BB_COMPANYNAME = Xenia Hotels & Resorts Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>         BB_IDENTIFIER = XHR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = XHR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'acef1bf154cc1ebfc0a86f92'
+>               VERSION = NULL
+
+how many tickets are there
+select count(*) from mticket where stockkey=X'd115580b54d2b0b3c0a86f92';
+none
+****************************************************************************
+> XHR 2:
+>   STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+****************************************************************************
+select * from mstockalias where STOCKKEY = X'4e1e59a354d2b198c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Xenia Hotels & Resorts Inc
+>     PRIMARYKEY = X'4e1f59a354d2b198c0a86f92'
+>       STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+>         SYMBOL = XHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'4e1f59a354d2b198c0a86f92';
+
+select count(*) from mticket where stockkey=X'4e1e59a354d2b198c0a86f92';
+none
+
+select distinct stockkey from mstockalias where symbol='IARE';
+> Row 1:
+>   STOCKKEY = X'95ed3644530694cac0a86f91'
+select * from mstockalias where STOCKKEY = X'95ed3644530694cac0a86f91';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-02-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Inland American Real Estate Trust Inc
+>     PRIMARYKEY = X'95ee3644530694cac0a86f91'
+>       STOCKKEY = X'95ed3644530694cac0a86f91'
+>         SYMBOL = IARE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'95ee3644530694cac0a86f91';
+> Row 1:
+>              ALIASKEY = X'95ee3644530694cac0a86f91'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|IARE|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 87597693
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 10086577
+>        BB_COMPANYNAME = Inland American Real Estate Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = IARE    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-19 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = IARE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-19 00:00:00.000000'
+>            PRIMARYKEY = X'ff992827530542cec0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'95ee3644530694cac0a86f91'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Xenia Hotels & Resorts Inc|CP_ID_BB_COMP|19223538|CP_ID_BB_SEC|1000|CP_TERMS|1 per 8|CP_RATIO|0.125000|CP_PAY_DT|20150203|CP_RECORD_DT|20150120|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150204|CP_TKR|XHR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006YP1L41|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG001GP8Y47|CP_SPINOFF_ID_BB_SEC_NUM_DES|XHR|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 94813910
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 10086577
+>        BB_COMPANYNAME = Inland American Real Estate Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>         BB_IDENTIFIER = IARE    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-11 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = IARE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-03 00:00:00.000000'
+>            PRIMARYKEY = X'2d20566154d2af79c0a86f92'
+>               VERSION = NULL
+select * from mticket where sourcekey=X'2d20566154d2af79c0a86f92';
+nothing
+
+Let's get rid of the listed one 
+> XHR 1:
+>   STOCKKEY = X'd115580b54d2b0b3c0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'd115580b54d2b0b3c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'd115580b54d2b0b3c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'd115580b54d2b0b3c0a86f92');
+
+delete from mstockalias where stockkey=X'd115580b54d2b0b3c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'd115580b54d2b0b3c0a86f92');   
+
+delete from mposition where stockkey=X'd115580b54d2b0b3c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'd115580b54d2b0b3c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'd115580b54d2b0b3c0a86f92');
+
+delete from mticket where stockkey=X'd115580b54d2b0b3c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'd115580b54d2b0b3c0a86f92';  
+
+commit;
+
+set commit true;
+
+
+select distinct stockkey from mstockalias where symbol='XHR';
+> Row 1:
+>   STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+select * from mstockalias where STOCKKEY = X'4e1e59a354d2b198c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Xenia Hotels & Resorts Inc
+>     PRIMARYKEY = X'4e1f59a354d2b198c0a86f92'
+>       STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+>         SYMBOL = XHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+there is only one
+let's update the GICS and Style and CUSIP
+25301020	Hotels, Resorts & Cruise Lines
+	Owners and operators of hotels, resorts and cruise-ships. Includes travel agencies, tour operators and related services not classified elsewhere . Excludes casino-hotels classified in the Casinos & Gaming Sub-Industry.
+update mstockalias set GICSKEY='25301020' where PRIMARYKEY = X'4e1f59a354d2b198c0a86f92';
+
+I found the cusip
+984017103
+
+update mstockalias set CUSIP='984017103' where PRIMARYKEY = X'4e1f59a354d2b198c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 984017103
+>           DATE = TIMESTAMP '2015-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Xenia Hotels & Resorts Inc
+>     PRIMARYKEY = X'4e1f59a354d2b198c0a86f92'
+>       STOCKKEY = X'4e1e59a354d2b198c0a86f92'
+>         SYMBOL = XHR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = UU
+
+check on 2/6/15
+I don't see a graph
+
+/Marketocracy/Scripts/stocks/daily/stock-price-importer.rb -s XHR -b 20150205 -e 20150205
+
+
+
+then  invalidate from this date in this manner
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-01-29
+
+I guess we are good, closing this out

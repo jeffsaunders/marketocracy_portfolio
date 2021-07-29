@@ -1,0 +1,570 @@
+IPIXQ
+date:  
+ticker:   IPIXQ
+
+yahoo:  nothing
+
+quantum:  nothing
+
+oursite:
+Symbol: IPIXQ 	Name: IPIX Corp 	Price: $0.01
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for IPIXQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+23 Aug 01 	IPIX 	IPIXD 	Change in the ticker (trading) symbol from IPIX to IPIXD
+21 Sep 01 	IPIXD 	IPIX 	Change in the ticker (trading) symbol from IPIXD to IPIX
+16 Aug 06 	IPIX 	IPIXQ 	Change in the ticker (trading) symbol from IPIX to IPIXQ
+  	  	 
+left curve 	  CUSIP changes for IPIXQ 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+23 Aug 01 	46059S101 	46059S200 	Change in any of identification numbers (CUSIP) of a security from 46059S101 to 46059S200
+24 Mar 04 	46059S200 	44982L103 	Change in any of identification numbers (CUSIP) of a security from 46059S200 to 44982L103
+  	  	 
+left curve 	  name changes for IPIXQ 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+24 Mar 04 	Internet Pictures Corp 	IPIX Corp 	Change in the name of issuer from Internet Pictures Corp to IPIX Corp
+  	  	 
+left curve 	  listing changes for IPIXQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Nov 01, 2002 	NASDAQ 	UQ 	NASDAQ-SMALLCAP 	UR 	Change in the exchange that IPIX trades on from NASDAQ to NASDAQ-SMALLCAP
+Aug 16, 2006 	NASDAQ-SMALLCAP 	UR 	OTCBB-OTHER 	UV 	Change in the exchange that IPIXQ trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+  	  	 
+left curve 	  IPIXQ had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+23 Aug 01 	1 for 10 	Split terms:1 for 10
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+XXXStock:IPIX Corp  Symbol:IPIXQ
+Date: 07/19/2015
+
+125 users found
+
+1	642309	acapul	adiaz1	adrianf	arussac	babs	bcampbell3	behar67	benbrown182	bhk
+2	bkalaf	blayk022	bltboy1	bolo8969	bonzi33	bpbenda	cartercc	ccornett	chenw3000	chocolate_city
+3	chrisa	ckirsebom	cmnwrld	cmunteanu	dathomp	dave	dbible	dcyerg	dennerle	diexia17
+4	donquixote	dplo86	dpurho	dyann	echoesmith	ejnewb	evianello	fsmith	gabethornhill	gathish
+5	gbrissette	gcombs	gillojello	heber	hemmy	henkel	hh	homerun_2	hrabar_40	ieteke
+6	imm2b	jak27	jan1880	jasbol3	jbuckner	jcarlson1	jdepriest	jholler	jim3333	jlaw
+7	jmartinz	jnewbury	jovixxx	jtate	kickinutz	kostiauk	l.davis@shell.com	lesiris	marke	mazakman
+8	mertc	mgrinyer	micromaster	milliondollarman	mistercox	momana	moreno770	moxyone	mpisula	mshortt
+9	msoileau	mspiegel	mverline	nahfyr	nalaland	ndgolz	netgroups	newlife1	nigelrake50	njebarle3
+10	octavian02	oleole	pakid1990	paulbaker	pchiang	pierre72079	pmonteleone	razorweb	reneebigmoney20	rhasty
+11	richfield	roleros	rsnb5@aol.com	rtsewell	samko	saurabh2606	schizo	shisho	sigj	simonemarlia
+12	slacky	stellar	stinkystanotter	sturgeonstocks	sundiata	svinik	tbehrens	templeton_pek	tjrent	valedon
+13	viking11	yaocc	yvas	zavillo	zedex86	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'IPIXQ';  
+> Row 1:
+>   STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+
+select * from mstockalias where stockkey=X'8a6d10ac390c6d6ac0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S101
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'8a6e10ac390c6d6ac0a8015c'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S101
+>           DATE = TIMESTAMP '2001-08-23 03:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'52b922a43ba3c8f2c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2001-08-23 06:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'f0d922a93ba3c963c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2001-09-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'88026f393babf236c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2002-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'3de55f123dc34483c0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2004-03-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'f29811f140624bd9ffffffff'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2004-03-24 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'cb6311f440624be9ffffffff'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2006-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'8d941f8344e3ce0cc0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2006-08-16 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'bf341fa244e3ce31c0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='IPIXQ'  order by BB_EFFECTIVE;
+> Row 3:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|IPIXQ|CP_DELIST_REASON|17|CP_NOTES|Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 59057201
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 823640
+>        BB_COMPANYNAME = IPIX Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-11-07 00:00:00.000000'
+>         BB_IDENTIFIER = IPIXQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = IPIXQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-11-07 00:00:00.000000'
+>            PRIMARYKEY = X'53b21da04eb86c46c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock IPIXQ
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2676
+2011-10-21 (Fri) [3945]: O:0.0170 H:0.0220 L:0.0170 C:0.0220 V:39800 TSO:53711 A:0.0220 R:1.0000 CA:7.4000
+2011-10-22 (Sat) [3946]: <WEEKEND>
+2011-10-23 (Sun) [3947]: <WEEKEND>
+2011-10-24 (Mon) [3948]: O:0.0155 H:0.0160 L:0.0155 C:0.0160 V:38416 TSO:53711 A:0.0160 R:1.0000 CA:7.4000
+2011-10-25 (Tue) [3949]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:43947 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-10-26 (Wed) [3950]: O:0.0170 H:0.0170 L:0.0170 C:0.0170 V:390 TSO:53711 A:0.0170 R:1.0000 CA:7.4000
+2011-10-27 (Thu) [3951]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-10-28 (Fri) [3952]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-10-29 (Sat) [3953]: <WEEKEND>
+2011-10-30 (Sun) [3954]: <WEEKEND>
+2011-10-31 (Mon) [3955]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-01 (Tue) [3956]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-02 (Wed) [3957]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-03 (Thu) [3958]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-04 (Fri) [3959]: O:0.0170 H:0.0180 L:0.0170 C:0.0180 V:1850 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-05 (Sat) [3960]: <WEEKEND>
+2011-11-06 (Sun) [3961]: <WEEKEND>
+2011-11-07 (Mon) [3962]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-08 (Tue) [3963]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-09 (Wed) [3964]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-10 (Thu) [3965]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-11 (Fri) [3966]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-12 (Sat) [3967]: <WEEKEND>
+2011-11-13 (Sun) [3968]: <WEEKEND>
+2011-11-14 (Mon) [3969]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-15 (Tue) [3970]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-16 (Wed) [3971]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-17 (Thu) [3972]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-18 (Fri) [3973]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-19 (Sat) [3974]: <WEEKEND>
+2011-11-20 (Sun) [3975]: <WEEKEND>
+2011-11-21 (Mon) [3976]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-22 (Tue) [3977]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-23 (Wed) [3978]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-24 (Thu) [3979]: <HOLIDAY>
+2011-11-25 (Fri) [3980]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-26 (Sat) [3981]: <WEEKEND>
+2011-11-27 (Sun) [3982]: <WEEKEND>
+2011-11-28 (Mon) [3983]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-29 (Tue) [3984]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-11-30 (Wed) [3985]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-01 (Thu) [3986]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-02 (Fri) [3987]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-03 (Sat) [3988]: <WEEKEND>
+2011-12-04 (Sun) [3989]: <WEEKEND>
+2011-12-05 (Mon) [3990]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-06 (Tue) [3991]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-07 (Wed) [3992]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-08 (Thu) [3993]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-09 (Fri) [3994]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-10 (Sat) [3995]: <WEEKEND>
+2011-12-11 (Sun) [3996]: <WEEKEND>
+2011-12-12 (Mon) [3997]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-13 (Tue) [3998]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-14 (Wed) [3999]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-15 (Thu) [4000]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-16 (Fri) [4001]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-17 (Sat) [4002]: <WEEKEND>
+2011-12-18 (Sun) [4003]: <WEEKEND>
+2011-12-19 (Mon) [4004]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-20 (Tue) [4005]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-21 (Wed) [4006]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-22 (Thu) [4007]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2011-12-23 (Fri) [4008]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+  
+2012-03-18 (Sun) [4094]: <WEEKEND>
+2012-03-19 (Mon) [4095]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-20 (Tue) [4096]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-21 (Wed) [4097]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-22 (Thu) [4098]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-23 (Fri) [4099]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-24 (Sat) [4100]: <WEEKEND>
+2012-03-25 (Sun) [4101]: <WEEKEND>
+2012-03-26 (Mon) [4102]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-27 (Tue) [4103]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-28 (Wed) [4104]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-29 (Thu) [4105]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-30 (Fri) [4106]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-03-31 (Sat) [4107]: <WEEKEND>
+2012-04-01 (Sun) [4108]: <WEEKEND>
+2012-04-02 (Mon) [4109]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-03 (Tue) [4110]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-04 (Wed) [4111]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-05 (Thu) [4112]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-06 (Fri) [4113]: <HOLIDAY>
+2012-04-07 (Sat) [4114]: <WEEKEND>
+2012-04-08 (Sun) [4115]: <WEEKEND>
+2012-04-09 (Mon) [4116]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-10 (Tue) [4117]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-11 (Wed) [4118]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-12 (Thu) [4119]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-13 (Fri) [4120]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-17 (Tue) [4124]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-18 (Wed) [4125]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-19 (Thu) [4126]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+2012-04-20 (Fri) [4127]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8a6d10ac390c6d6ac0a8015c' and shares > 0 order by closed; 
+> Row 2890:
+>      ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-11-23 03:08:43.000000'
+>        COMMENT = 
+>     COMMISSION = 2.031527
+>   CURRENTORDER = X'f48124d44ea59d3dc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd7ea452a397c4d37c0a80119'
+>       MODIFIED = NULL
+>            NET = 38.599017
+>         OPENED = TIMESTAMP '2011-10-24 13:15:41.000000'
+>          PRICE = 0.018139
+>     PRIMARYKEY = X'f47f24d44ea59d3dc0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 2128.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8a6d10ac390c6d6ac0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a6d10ac390c6d6ac0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a6d10ac390c6d6ac0a8015c'  and totalshares < 0)));
+
+apply the acquis
+delist 2011-11-07  PRICE = 0.018139
+there are 125 members who hold this stock
+quantum: nothing
+last ticket:  2011-11-23
+last price:  2011-11-07 (Mon) [3962]: O:0.0180 H:0.0180 L:0.0180 C:0.0180 V:0 TSO:53711 A:0.0180 R:1.0000 CA:7.4000
+
+going with 20111107 0.018139 
+
+
+/Marketocracy/bin/cahelper -symbol  IPIXQ  -effective 20111107 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.018139  -acqShare 0 -purchaser IPIXQ   >& /Users/build/caout/IPIXQ.20150719-DELIST.out
+IPIXQ.20150719-DELIST.out
+stocks:~/caout build$ tail -f IPIXQ.20150719-DELIST.out
+D: (07-19 23:26:20.590) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-19 23:26:46.225) cahelper started on 2015-07-19 23:26:46 -0400
+
+D: (07-19 23:26:46.519) There are [0] open tickets for IPIXQ on 20111107
+D: (07-19 23:26:47.032) StockFileLoad Version:4.0
+D: (07-19 23:26:47.033) Loading Stock Data
+D: (07-19 23:27:25.763) Building Lookup Index
+D: (07-19 23:27:30.538) Finished Building Index
+D: (07-19 23:27:34.176) Finished Loading Stock Data
+D: (07-19 23:27:34.356) Connection to 192.168.111.172:6666 succeeded
+D: (07-19 23:27:38.739) SavingChanges for position sell out 101 of 594
+D: (07-19 23:27:52.734) SavingChanges for position sell out 201 of 594
+D: (07-19 23:28:02.850) {
+    "ACQUIRED_STOCK" = IPIXQ; 
+    "ACQUIRING_STOCK" = "IPIXQ_FIX"; 
+    AMOUNT = 0.018139; 
+    APPLIED = 1; 
+    DATE = 20111107; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "IPIXQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-19 23:28:10.075) SUCCESS
+D: (07-19 23:28:10.075) cahelper finished 2015-07-19 23:28:10 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8a6d10ac390c6d6ac0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S101
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'8a6e10ac390c6d6ac0a8015c'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S101
+>           DATE = TIMESTAMP '2001-08-23 03:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'52b922a43ba3c8f2c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2001-08-23 06:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'f0d922a93ba3c963c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2001-09-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'88026f393babf236c0a801dc'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2002-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTERNET PICTURES CORP
+>     PRIMARYKEY = X'3de55f123dc34483c0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 46059S200
+>           DATE = TIMESTAMP '2004-03-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'f29811f140624bd9ffffffff'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2004-03-24 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'cb6311f440624be9ffffffff'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2006-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'8d941f8344e3ce0cc0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2006-08-16 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'bf341fa244e3ce31c0a80146'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44982L103
+>           DATE = TIMESTAMP '2011-11-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = IPIX Corp
+>     PRIMARYKEY = X'39ed360d55ac6a76c0a86f92'
+>       STOCKKEY = X'8a6d10ac390c6d6ac0a8015c'
+>         SYMBOL = IPIXQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'39ed360d55ac6a76c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'39ed360d55ac6a76c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|IPIXQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.018139|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150719:112646
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-11-07 00:00:00.000000'
+>         BB_IDENTIFIER = IPIXQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = IPIXQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-11-07 00:00:00.000000'
+>            PRIMARYKEY = X'39e7360d55ac6a76c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'39e7360d55ac6a76c0a86f92';
+> Row 1:
+>   _C001 = 210.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'39e7360d55ac6a76c0a86f92'));
+there are 210 fundkeys, save to CA issues IPIXQ fundkeys.txt
+
+For Beta case
+IPIXQ no longer trades but is still active on our site - need to delist 
+
+check on 7/20/15   invalidate funds
+check MAdmin  clean  
+
+ IPIXQ has been acquired 	right curve
+  	  	
+IPIX Corp acquired by a private company on 2011-11-07 00:00:00.  invalidate reprice and close 
+
+invalidate - reprice done

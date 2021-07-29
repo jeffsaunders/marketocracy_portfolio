@@ -1,0 +1,252 @@
+MDS
+date:  
+ticker:    MDS
+
+yahoo:
+
+quantum:
+Midas, Inc.
+Ticker Symbol: MDS*     CUSIP: 595626102     Exchange: NYSE
+* NOTE: This security is no longer trading as of 4/30/12
+
+Company's Online Profile
+BUSINESS:  Midas Inc. is one of the world's largest providers of automotive service, including brake, maintenance, tires, steering, suspension, and exhaust services. There are more than 1,500 franchised and company-owned Midas locations in the United States and Canada and 800 licensed and franchised stores in the following 13 countries: Australia, Austria, Belgium, the Bahamas, Costa Rica, France, Honduras, Italy, Mexico, Morocco, New Zealand, Poland, Portugal, and Spain.
+Notes:  April 30, 2012 — TBC Corporation (“TBC”), one of the largest marketers of replacement tires in the United States, today announced that it has completed the acquisition of Midas, Inc. through one of its wholly owned subsidiaries, with Midas being the surviving corporation. The short form merger was the final step of the acquisition process and follows TBC’s acceptance of and payment for all of the shares validly tendered and not withdrawn pursuant to its tender offer. The tender offer expired on April 24, 2012 with approximately 68.8 percent of Midas’ outstanding shares having been tendered. The transaction is valued at approximately $310 million, including the assumption of approximately $137 million in debt and pension liabilities.
+
+oursite:
+Symbol: MDS	Name: MIDAS INC	Price: $11.50
+Volume:	Sector: Consumer Discretionary	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:MIDAS INC  Symbol:MDS
+Date: 10/17/2015
+
+54 users found
+
+1	aanaz	aharon10	artnoc	arturk84	ashah	azellner	bears	brilliantfool	carlos-martin	chriswaye
+2	cmwilson	cyberman1	cyrus1923	dblazer	dlang1	dumac	dutzu88	edwardtrafford	eschneider	ethomas1
+3	fps	gbald75030	gunnermcgavin	jpage	jvandongen	kawalacha	kkeller	lberry	madison2004	mfeofanov
+4	mjmayer	mpeppe	mr.d	mycash	nealiam	omarko	pmvai	pnutgllry	quantinetics	redpep7784
+5	rogercfritz	slimchaouch	snipe	sosinister	tanahill	tbuehler	tcoyle	thegate12	theperfectlink	tw_fogarty
+6	vooch	waterman	watsonp	zalivin	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'MDS';  
+> Row 1:
+>   STOCKKEY = X'1b570e21390b1bc3c0a80116'
+select * from mstockalias where stockkey=X'1b570e21390b1bc3c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595626102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MIDAS INC
+>     PRIMARYKEY = X'1b580e21390b1bc3c0a80116'
+>       STOCKKEY = X'1b570e21390b1bc3c0a80116'
+>         SYMBOL = MDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504050
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MDS'  order by BB_EFFECTIVE;
+> Row 24:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|8053 JP|CP_NAME|Sumitomo Corp|CP_ID_BB_COMP|114805|CP_UNIT|Midas Inc|CP_TOT_AMT|240.998199|CP_ACQUIS_TYP|1|CP_CASH|11.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|75.300003|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|26.798611|CP_CUR_PREMIUM|0.000000|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|11.500000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|240.998199|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Kirkland & Ellis;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;1;Acquirer Legal Adviser;1;Morgan Lewis;13;100.000000;1;Acquirer Financial Adviser;1;Morgan Joseph;13;100.000000;1;Legal Adv to Target Financial;1;Simpson Thacher;13;100.000000;|CP_NOTES|ACTL ACQ'R: TBC CORP. T/O EXP TO COMMENCE NO LATER THAN 03/28/12
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 62447210
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 219872
+>        BB_COMPANYNAME = Midas Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2012-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = MDS     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-13 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = MDS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-03-14 00:00:00.000000'
+>            PRIMARYKEY = X'cb7b39384f611d17c0a80146'
+>               VERSION = NULL
+
+2012-06-30  11.500
+last known price
+/Marketocracy/bin/dbtool lookup stock MDS
+>>>> dbtool started at 2015-10-17 15:46:16 -0400
+stock: MDS
+  PK       : [1B570E21390B1BC3C0A80116]
+  companyID: [5478]
+  symbol   : [MDS]
+  name     : [MIDAS INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-17 15:46:16 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5478
+2012-04-20 (Fri) [4127]: O:11.4900 H:11.5000 L:11.4900 C:11.5000 V:277260 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+2012-04-21 (Sat) [4128]: <WEEKEND>
+2012-04-22 (Sun) [4129]: <WEEKEND>
+2012-04-23 (Mon) [4130]: O:11.4900 H:11.5000 L:11.4900 C:11.5000 V:51428 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+2012-04-24 (Tue) [4131]: O:11.5000 H:11.5000 L:11.4800 C:11.4800 V:707545 TSO:14246 A:11.4800 R:1.0000 CA:0.0000
+2012-04-25 (Wed) [4132]: O:11.5000 H:11.5000 L:11.4900 C:11.5000 V:56315 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+2012-04-26 (Thu) [4133]: O:11.4900 H:11.5000 L:11.4900 C:11.4900 V:117029 TSO:14246 A:11.4900 R:1.0000 CA:0.0000
+2012-04-27 (Fri) [4134]: O:11.5000 H:11.5000 L:11.4900 C:11.4900 V:19845 TSO:14246 A:11.4900 R:1.0000 CA:0.0000
+2012-04-28 (Sat) [4135]: <WEEKEND>
+2012-04-29 (Sun) [4136]: <WEEKEND>
+2012-04-30 (Mon) [4137]: O:11.4800 H:11.5000 L:11.4700 C:11.5000 V:104208 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+2012-05-01 (Tue) [4138]: O:11.5000 H:11.5000 L:11.5000 C:11.5000 V:104908 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'1b570e21390b1bc3c0a80116' and shares > 0 order by closed; 
+> Row 551:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-26 11:17:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 20.000000
+>   CURRENTORDER = X'aaeb1f964f995f5ec0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eedf3a533f80cf94c0a80133'
+>       MODIFIED = NULL
+>            NET = 4575.990000
+>         OPENED = TIMESTAMP '2012-04-26 10:44:46.000000'
+>          PRICE = 11.439975
+>     PRIMARYKEY = X'aae91f964f995f5ec0a80134'
+>         SECFEE = 0.110000
+>         SHARES = 400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1b570e21390b1bc3c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'1b570e21390b1bc3c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1b570e21390b1bc3c0a80116'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1b570e21390b1bc3c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 54 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 4/30/12
+last ticket: 2012-04-26 PRICE = 11.439975
+last price:  2012-05-01 (Tue) [4138]: O:11.5000 H:11.5000 L:11.5000 C:11.5000 V:104908 TSO:14246 A:11.5000 R:1.0000 CA:0.0000
+
+
+unapplied CA:  2012-06-30  11.500 acquis 
+earlier than that 
+going with 20120501 11.50
+
+/Marketocracy/bin/cahelper -symbol  MDS  -effective 20120501 -type ACQUIS -exchange UN -acqType 1 -acqCash 11.50 -acqShare 0 -purchaser MDS   >& /Users/build/caout/MDS.20151017-ACQUIS.out 
+MDS.20151017-ACQUIS.out
+stocks1:~/caout build$ tail -f MDS.20151017-ACQUIS.out
+D: (10-17 15:53:31.324) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-17 15:53:54.980) cahelper started on 2015-10-17 15:53:54 -0400
+
+D: (10-17 15:53:55.318) There are [0] open tickets for MDS on 20120501
+D: (10-17 15:53:55.575) StockFileLoad Version:4.0
+D: (10-17 15:53:55.575) Loading Stock Data
+D: (10-17 15:54:31.927) Building Lookup Index
+D: (10-17 15:54:37.523) Finished Building Index
+D: (10-17 15:54:41.394) Finished Loading Stock Data
+D: (10-17 15:54:41.511) Connection to 192.168.111.172:6666 succeeded
+D: (10-17 15:54:43.966) {
+    "ACQUIRED_STOCK" = MDS; 
+    "ACQUIRING_STOCK" = "MDS_FIX"; 
+    AMOUNT = 11.5; 
+    APPLIED = 1; 
+    DATE = 20120501; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MDS_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-17 15:54:49.752) SUCCESS
+D: (10-17 15:54:49.752) cahelper finished 2015-10-17 15:54:49 -0400
+Check the results 
+select * from mstockalias where stockkey= X'1b570e21390b1bc3c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595626102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MIDAS INC
+>     PRIMARYKEY = X'1b580e21390b1bc3c0a80116'
+>       STOCKKEY = X'1b570e21390b1bc3c0a80116'
+>         SYMBOL = MDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504050
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595626102
+>           DATE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MIDAS INC
+>     PRIMARYKEY = X'59d639fd5622a753c0a86fab'
+>       STOCKKEY = X'1b570e21390b1bc3c0a80116'
+>         SYMBOL = MDS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504050
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'59d639fd5622a753c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'59d639fd5622a753c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MDS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|11.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151017:035354
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = MDS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MDS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'59d039fd5622a752c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'59d039fd5622a752c0a86fab';
+> Row 1:
+>   _C001 = 90.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'59d039fd5622a752c0a86fab'));
+there are 90 fundkeys, save to CA issues MDS fundkeys.txt
+
+For Beta case
+MDS no longer trades but is still active on our site - need to delist 
+
+check on 10/18/15   invalidate funds
+check MAdmin  clear
+
+MDS has been acquired	right curve
+ 	 	
+MIDAS INC acquired by a private company on 2012-05-01 00:00:00.
+ 	 	 
+
+invalidate reprice   closing this out  
+
+
+

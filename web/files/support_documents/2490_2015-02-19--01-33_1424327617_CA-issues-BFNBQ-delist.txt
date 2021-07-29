@@ -1,0 +1,242 @@
+date: 2/17/15
+ticker: BFNBQ
+
+quantum:
+Beach First National Bancshares, Inc.
+Ticker Symbol: BFNBQ     CUSIP: 073334104     Exchange: OTOTC
+Security Type:   Bank Holding Company
+
+Company's Online Profile
+BUSINESS:  Beach First National Bancshares, Inc. is the parent of Beach First National Bank, a $280+ million financial institution headquartered in Myrtle Beach, South Carolina. Beach First operates six banking locations in Myrtle Beach, Surfside Beach, North Myrtle Beach, Pawleys Island, and Hilton Head Island, South Carolina, and offers a full line of banking products and services, including NetTeller internet banking.
+Previous Ticker Symbol: BFNB    Changed: 5/19/10
+Micro Cap Stock -   Market Value $ 37.3 Million
+
+oursite:
+Symbol: BFNBQ	Name: Beach First National Bankshares	Price: $0.00
+Volume:	Sector: Financials	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs
+symbol changes for BFNBQ	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+20 May 10	BFNB	BFNBQ	Change in the ticker (trading) symbol from BFNB to BFNBQ
+ 	 	 
+	  listing changes for BFNBQ	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Apr 21, 2010	NASDAQ	UQ	OTCBB-OTHER	UV	Change in the exchange that BFNB trades on from NASDAQ to OTCBB-OTHER
+ 	 	 
+	  BFNBQ had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+22 Dec 06	3 for 2	Split terms:3 for 2
+ 	 	 
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol= 'BFNBQ';  
+> Row 1:
+>   STOCKKEY = X'98180118449aa7cac0a80146'
+
+select * from mstockalias where STOCKKEY = X'98180118449aa7cac0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2005-06-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'98190118449aa7cac0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2010-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'ca1e624e4bcf699cc0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2010-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'843617434bf5a46bc0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNBQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BFNBQ
+>>>> dbtool started at 2015-02-17 21:24:13 -0500
+stock: BFNBQ
+  PK       : [98180118449AA7CAC0A80146]
+  companyID: [16253]
+  symbol   : [BFNBQ]
+  name     : [Beach First National Bankshares]
+  date     : [2010-05-20 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-17 21:24:14 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16253
+2012-04-07 (Sat) [4114]: <WEEKEND>
+2012-04-08 (Sun) [4115]: <WEEKEND>
+2012-04-09 (Mon) [4116]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:4845 A:0.0001 R:1.0000 CA:0.0000
+2012-04-10 (Tue) [4117]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:2330 TSO:4845 A:0.0001 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-21 (Sat) [4128]: <WEEKEND>
+2012-04-22 (Sun) [4129]: <WEEKEND>
+2012-04-23 (Mon) [4130]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000
+2012-04-24 (Tue) [4131]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:109 TSO:4845 A:0.0010 R:1.0000 CA:0.0000  <-- last price
+
+2012-04-24   0.0010
+apply the acquis  
+
+/Marketocracy/bin/cahelper -symbol  BFNBQ  -effective 20120424 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0010 -acqShare 0 -purchaser BFNBQ   >& /Users/build/caout/BFNBQ.20150217-ACQUIS.out
+
+BFNBQ.20150217-ACQUIS.out
+stocks:~/caout build$ tail -f BFNBQ.20150217-ACQUIS.out
+D: (02-17 21:57:36.276) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-17 21:57:58.941) cahelper started on 2015-02-17 21:57:58 -0500
+
+D: (02-17 21:57:59.750) There are [0] open tickets for BFNBQ on 20120424
+D: (02-17 21:57:59.959) StockFileLoad Version:3.0
+D: (02-17 21:57:59.959) Loading Stock Data
+D: (02-17 21:58:39.616) Building Lookup Index
+D: (02-17 21:58:43.599) Finished Building Index
+D: (02-17 21:58:44.519) Finished Loading Stock Data
+D: (02-17 21:58:44.663) Connection to 192.168.111.157:6666 succeeded
+D: (02-17 21:58:45.751) {
+    "ACQUIRED_STOCK" = BFNBQ; 
+    "ACQUIRING_STOCK" = "BFNBQ_FIX"; 
+    AMOUNT = 0.001; 
+    APPLIED = 1; 
+    DATE = 20120424; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BFNBQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-17 21:58:46.820) SUCCESS
+D: (02-17 21:58:46.820) cahelper finished 2015-02-17 21:58:46 -0500
+select * from mstockalias where STOCKKEY = X'98180118449aa7cac0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2005-06-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'98190118449aa7cac0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2010-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'ca1e624e4bcf699cc0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2010-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'843617434bf5a46bc0a80146'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNBQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 073334104
+>           DATE = TIMESTAMP '2012-04-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Beach First National Bankshares
+>     PRIMARYKEY = X'e9695ace54e3ffb7c0a86f92'
+>       STOCKKEY = X'98180118449aa7cac0a80146'
+>         SYMBOL = BFNBQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'e9695ace54e3ffb7c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'e9695ace54e3ffb7c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BFNBQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.001000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150217:095758
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-24 00:00:00.000000'
+>         BB_IDENTIFIER = BFNBQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BFNBQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-24 00:00:00.000000'
+>            PRIMARYKEY = X'e9635ace54e3ffb6c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'e9635ace54e3ffb6c0a86f92';
+> Row 1:
+>   _C001 = 13.000000
+
+check on 2/18/15 - look for acquis members got AMOUNT = 0.001; 
+    DATE = 20120424; 
+
+2/18/15 - this appears on Portfolio but not PortfolioAdmin - looks like the nightly load files are not the most
+current
+
+BFNBQ has been acquired	
+ 	 	
+Beach First National Bankshares acquired by a private company on 2012-04-24 00:00:00.
+
+2/18/15  - this acquis is there closing this out

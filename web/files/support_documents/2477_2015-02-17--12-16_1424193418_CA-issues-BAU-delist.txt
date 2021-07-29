@@ -1,0 +1,189 @@
+date: 2/16/15
+BAU
+
+nothing on quantum
+
+our site
+Symbol: BAU	Name: BACOU USA	Price: $28.48
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+select distinct stockkey from mstockalias where symbol='BAU';
+> Row 1:
+>   STOCKKEY = X'ae4810ac390c6df4c0a8015c'
+
+select * from mstockalias where STOCKKEY = X'ae4810ac390c6df4c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 056439102
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BACOU USA
+>     PRIMARYKEY = X'ae4910ac390c6df4c0a8015c'
+>       STOCKKEY = X'ae4810ac390c6df4c0a8015c'
+>         SYMBOL = BAU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BAU';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|139.392654|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|14.762039|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|2|CP_DEBT_FLAG|N.A.|CP_CASH|28.500000|CP_NAME|Christian Dalloz|CP_DEBT|N.A.|CP_CASH_VAL|28.500000|CP_PCT_SOUGHT|29.000000|CP_TYP|1|CP_ADVISORS|;2;3;3;1;Target Financial Advisor;1;DEUTSCHE BK;13;N.A.;1;Target Financial Advisor;1;WHITE & CASE LLP;13;N.A.;1;Acquirer Financial Advisor;1;ROTHSCHILD;13;N.A.;|CP_TKR|DAL     FP|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|1|CP_ADVISORS_NUM|3|CP_TOT_AMT|149.095703|CP_STAT|1|CP_CRNCY|USD|CP_CUR_PREM|0.000000|CP_ACCT_METHOD|0|CP_ID_BB_COMP|153940
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6677985
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 171501
+>        BB_COMPANYNAME = Bacou USA Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = NULL
+>         BB_IDENTIFIER = BAU     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-05-30 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = BAU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'b6cc31be3b15a630c0a801dc'
+>               VERSION = NULL
+
+
+not sure if this is good
+check MAdmin
+BAU 02/16/2015
+Stock:BACOU USA  Symbol:BAU
+Date: 02/16/2015
+
+4 users found
+
+1	beisbol	mastershaggy	rwilliams4	sdunkin	 	 	 	 	 	 
+
+check historical pricing
+/Marketocracy/bin/dbtool lookup stock BAU
+>>>> dbtool started at 2015-02-16 20:21:24 -0500
+stock: BAU
+  PK       : [AE4810AC390C6DF4C0A8015C]
+  companyID: [9333]
+  symbol   : [BAU]
+  name     : [BACOU USA]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-16 20:21:25 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9333
+2001-08-26 (Sun) [237]: <WEEKEND>
+2001-08-27 (Mon) [238]: O:28.4300 H:28.4500 L:28.4100 C:28.4100 V:3000 TSO:0 A:28.4100 R:1.0000 CA:0.0000
+2001-08-28 (Tue) [239]: O:28.4100 H:28.4100 L:28.4100 C:28.4100 V:1000 TSO:0 A:28.4100 R:1.0000 CA:0.0000
+2001-08-29 (Wed) [240]: O:28.4100 H:28.4500 L:28.4100 C:28.4500 V:4800 TSO:0 A:28.4500 R:1.0000 CA:0.0000
+2001-08-30 (Thu) [241]: O:28.4500 H:28.4800 L:28.4500 C:28.4800 V:11200 TSO:0 A:28.4800 R:1.0000 CA:0.0000
+2001-08-31 (Fri) [242]: O:28.4900 H:28.4900 L:28.4600 C:28.4800 V:3100 TSO:0 A:28.4800 R:1.0000 CA:0.0000
+2001-09-01 (Sat) [243]: <WEEKEND>
+2001-09-02 (Sun) [244]: <WEEKEND>
+2001-09-03 (Mon) [245]: <HOLIDAY>
+2001-09-04 (Tue) [246]: O:28.4900 H:28.4900 L:28.4800 C:28.4800 V:400 TSO:0 A:28.4800 R:1.0000 CA:0.0000
+2001-09-05 (Wed) [247]: O:28.4800 H:28.4800 L:28.4800 C:28.4800 V:0 TSO:0 A:28.4800 R:1.0000 CA:0.0000
+2001-09-06 (Thu) [248]: O:28.4800 H:28.4900 L:28.4500 C:28.4800 V:40000 TSO:0 A:28.4800 R:1.0000 CA:0.0000  <--- last price
+
+2001-09-06 28.48  use this for the acquis
+
+/Marketocracy/bin/cahelper -symbol BAU -effective 20010906 -type ACQUIS -exchange UN -acqType 1 -acqCash 28.48 -acqShare 0 -purchaser BAU >& /Users/build/caout/BAU.20150216-ACQUIS.out
+BAU.20150216-ACQUIS.out
+stocks:~/caout build$ tail -f BAU.20150216-ACQUIS.out
+D: (02-16 20:24:10.679) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-16 20:24:33.886) cahelper started on 2015-02-16 20:24:33 -0500
+
+D: (02-16 20:24:34.523) There are [0] open tickets for BAU on 20010906
+D: (02-16 20:24:34.676) StockFileLoad Version:3.0
+D: (02-16 20:24:34.677) Loading Stock Data
+D: (02-16 20:25:14.668) Building Lookup Index
+D: (02-16 20:25:18.602) Finished Building Index
+D: (02-16 20:25:19.530) Finished Loading Stock Data
+D: (02-16 20:25:19.647) Connection to 192.168.111.157:6666 succeeded
+D: (02-16 20:25:19.712) {
+    "ACQUIRED_STOCK" = BAU; 
+    "ACQUIRING_STOCK" = "BAU_FIX"; 
+    AMOUNT = 28.48; 
+    APPLIED = 1; 
+    DATE = 20010906; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BAU_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-16 20:25:20.331) SUCCESS
+D: (02-16 20:25:20.331) cahelper finished 2015-02-16 20:25:20 -0500
+
+
+check again 
+select * from mstockalias where STOCKKEY = X'ae4810ac390c6df4c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 056439102
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BACOU USA
+>     PRIMARYKEY = X'ae4910ac390c6df4c0a8015c'
+>       STOCKKEY = X'ae4810ac390c6df4c0a8015c'
+>         SYMBOL = BAU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 056439102
+>           DATE = TIMESTAMP '2001-09-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BACOU USA
+>     PRIMARYKEY = X'4b88746654e29852c0a86f92'
+>       STOCKKEY = X'ae4810ac390c6df4c0a8015c'
+>         SYMBOL = BAU
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey= X'4b88746654e29852c0a86f92';
+> Row 1:
+>              ALIASKEY = X'4b88746654e29852c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BAU  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|28.480000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150216:082433
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-09-06 00:00:00.000000'
+>         BB_IDENTIFIER = BAU_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-09-06 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BAU_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-09-06 00:00:00.000000'
+>            PRIMARYKEY = X'4b82746654e29851c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'4b82746654e29851c0a86f92' ;
+> Row 1:
+>   _C001 = 4.000000
+
+
+on 2001-09-06 holders got   $28.48  
+
+check on 2/17/15 for acquis 
+
+2/17/15
+BAU has been acquired	
+ 	 	
+BACOU USA acquired by a private company on 2001-09-06 00:00:00.
+
+closing this out

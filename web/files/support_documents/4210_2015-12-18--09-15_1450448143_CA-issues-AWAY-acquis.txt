@@ -1,0 +1,392 @@
+DATE:2015-12-16 00:00:00
+NOTES:N.A.
+REASON:Acquired/Merged
+APPLIED:1
+SYMBOL:AWAY   14 members 
+TYPE:DELIST   came in via bloomberg
+
+CA issues AWAY delist.txt
+date:  
+ticker:  AWAY
+
+yahoo:
+HomeAway, Inc. (AWAY) -NasdaqGS   Watchlist
+35.77 0.00(0.00%) Dec 14, 4:00PM EST
+
+Prev Close:	35.77
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	37.65
+Beta:	1.17911
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	25.13 - 40.76
+Volume:	0
+Avg Vol (3m):	2,510,650
+Market Cap:	3.44B
+P/E (ttm):	596.17
+EPS (ttm):	0.06
+Div & Yield:	N/A (N/A
+Dec 14
+
+Expedia (EXPE) for $3.9 billion in cash and stock. 
+
+Travel website Expedia will pay $38.31 per share for the vacation-rental company, a 20% premium to HomeAway's price at the market close on Wednesday, Bloomberg notes. 
+
+
+
+quantum:  thinks it is active
+
+oursite:
+Symbol: AWAY	Name: HomeAway Inc	Price: $35.77
+Volume: 5,989,037	Sector: Consumer Discretionary	Change: $0.00
+Short Volume: 999,999	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 3,002,873	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $32.65	Year High: $40.76	High: $36.18
+200 Day Ave: $30.43	Year Low: $0.00	Low: $35.46
+
+research  stock info  AWAY   
+ [NEW QUOTE]       
+Corporate Actions for HomeAway Inc	  December 17, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=AWAY
+
+check MAdmin
+Stock:HomeAway Inc  Symbol:AWAY
+Date: 12/16/2015
+
+14 users found
+
+1	adrscib	cschier	dpurho	edgomez1985	gator101	jquereau	jwebb2	lmharold	ompie	paluszak
+2	roboinvestor	selkirkrich	ucdballer411	uvf
+
+database
+select distinct stockkey from mstockalias where symbol= 'AWAY';  
+> Row 1:
+>   STOCKKEY = X'841113db4e0ba8b4c0a80146'
+
+select * from mstockalias where stockkey=X'841113db4e0ba8b4c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 43739Q100
+>           DATE = TIMESTAMP '2011-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = HomeAway Inc
+>     PRIMARYKEY = X'841213db4e0ba8b4c0a80146'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>         SYMBOL = AWAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25502020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 43739Q100
+>           DATE = TIMESTAMP '2015-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = HomeAway Inc
+>     PRIMARYKEY = X'4ee7486256720290c0a86fab'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>         SYMBOL = AWAY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25502020
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='AWAY'  order by BB_EFFECTIVE;
+> Row 42:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|EXPE US|CP_NAME|Expedia Inc|CP_ID_BB_COMP|9337540|CP_UNIT|HomeAway Inc|CP_TOT_AMT|3014.128418|CP_ACQUIS_TYP|3|CP_CASH|10.150000|CP_CASH_FLAG|1|CP_SH|0.206500|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|23.228188|CP_CUR_PREMIUM|3.563207|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|37.044559|CP_ARBITRAGE_PROF|1.274559|CP_CUR_TOT_VAL|3062.165283|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Wilson Sonsini;13;100.000000;1;Target Financial Adviser(s);1;Qatalyst Group;13;100.000000;1;Acquirer Legal Adviser(s);1;Covington Burlng, King & Wood Mall, Wachtell Lipton;13;100.000000;1;Acquirer Financial Adviser(s);1;Goldman Sachs;13;100.000000;1;Legal Adv to Target Financial;1;Shearman Sterlng;13;100.000000;|CP_ACQ_TKR|EXPE US|CP_ACQ_ID_BB_GLOBAL|BBG000QY3XZ2|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FFKPG2|CP_ACQ_ID_BB_SEC_NUM_DES|EXPE|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|AWAY US|CP_TARGET_ID_BB_GLOBAL|BBG000DBTPX7|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FQGSP7|CP_TARGET_ID_BB_SEC_NUM_DES|AWAY|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 115163892
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 11483094
+>        BB_COMPANYNAME = HomeAway Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = AWAY    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = AWAY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-15 00:00:00.000000'
+>            PRIMARYKEY = X'9f0313ee5670aa3ac0a86fab'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock AWAY
+>>>> dbtool started at 2015-12-17 01:13:40 -0500
+stock: AWAY
+  PK       : [841113DB4E0BA8B4C0A80146]
+  companyID: [20840]
+  symbol   : [AWAY]
+  name     : [HomeAway Inc]
+  date     : [2011-06-29 00:00:00]
+  status   : [Active]
+stock: AWAY
+  PK       : [841113DB4E0BA8B4C0A80146]
+  companyID: [20840]
+  symbol   : [AWAY]
+  name     : [HomeAway Inc]
+  date     : [2015-12-16 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-12-17 01:13:40 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20840
+2015-12-09 (Wed) [5455]: O:35.7900 H:36.2600 L:35.5200 C:35.8800 V:6199941 TSO:0 A:35.8800 R:1.0000 CA:0.0000
+2015-12-10 (Thu) [5456]: O:35.7900 H:36.2100 L:35.4700 C:35.9900 V:4644422 TSO:0 A:35.9900 R:1.0000 CA:0.0000
+2015-12-11 (Fri) [5457]: O:35.7900 H:36.0200 L:35.4600 C:35.5600 V:5253511 TSO:0 A:35.5600 R:1.0000 CA:0.0000
+2015-12-12 (Sat) [5458]: <WEEKEND>
+2015-12-13 (Sun) [5459]: <WEEKEND>
+2015-12-14 (Mon) [5460]: O:35.4700 H:36.1800 L:35.4600 C:35.7700 V:5984072 TSO:0 A:35.7700 R:1.0000 CA:0.0000
+2015-12-15 (Tue) [5461]: O:35.4700 H:36.1800 L:35.4600 C:35.7700 V:5989037 TSO:0 A:35.7700 R:1.0000 CA:0.0000
+2015-12-16 (Wed) [5462]: O:35.4700 H:36.1800 L:35.4600 C:35.7700 V:5989037 TSO:0 A:35.7700 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'841113db4e0ba8b4c0a80146' and shares > 0 order by closed; 
+> Row 293:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-12-01 15:59:28.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'296a23cc565e09fcc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'11b217e442dc6823c0a80132'
+>       MODIFIED = NULL
+>            NET = 17884.680000
+>         OPENED = TIMESTAMP '2015-12-01 15:58:32.000000'
+>          PRICE = 35.769360
+>     PRIMARYKEY = X'296823cc565e09fcc0a86fa6'
+>         SECFEE = 0.320000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'841113db4e0ba8b4c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'841113db4e0ba8b4c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'841113db4e0ba8b4c0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 14 members who hold this stock
+quantum:  
+last ticket: 2015-12-01  PRICE = 35.769360
+last price:  2015-12-15 (Tue) [5461]: O:35.4700 H:36.1800 L:35.4600 C:35.7700 V:5989037 TSO:0 A:35.7700 R:1.0000 CA:0.0000
+
+
+EXPE paying the equivalent $38.31 per share 
+N DIEGO & AUSTIN, Texas--(BUSINESS WIRE)--Shareholder rights attorneys at Robbins Arroyo LLP are investigating the proposed acquisition of HomeAway, Inc. (NASDAQ: AWAY) by Expedia, Inc. (NASDAQ: EXPE). On November 4, 2015, the two companies announced the signing of a definitive merger agreement pursuant to which Expedia will acquire HomeAway. Under the terms of the agreement, HomeAway shareholders will receive $10.50 in cash and 0.2065 of a share of Expedia for each share of HomeAway they own, the value of which is equivalent to $38.31 per share of HomeAway.
+
+going with 20151216 $10.50 in cash and 0.2065 of a share of Expedia  type 3
+
+/Marketocracy/bin/cahelper -symbol  AWAY  -effective 20151216 -type ACQUIS -exchange UN -acqType 3 -acqCash 10.50 -acqShare 0.2065 -purchaser EXPE   >& /Users/build/caout/AWAY.20151216-ACQUIS-EXPE.out 
+AWAY.20151216-ACQUIS-EXPE.out
+stocks1:~/caout build$ tail -f AWAY.20151216-ACQUIS-EXPE.out
+D: (12-17 08:36:15.503) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-17 08:37:14.368) cahelper started on 2015-12-17 08:37:14 -0500
+
+D: (12-17 08:37:16.443) There are [1] open tickets for AWAY on 20151216
+D: (12-17 08:37:16.460) StockFileLoad Version:4.0
+D: (12-17 08:37:16.460) Loading Stock Data
+D: (12-17 08:38:55.919) Building Lookup Index
+D: (12-17 08:39:09.861) Finished Building Index
+D: (12-17 08:39:20.150) Finished Loading Stock Data
+D: (12-17 08:39:20.585) Connection to 192.168.111.172:6666 succeeded
+D: (12-17 08:39:49.521) {
+    "ACQUIRED_STOCK" = AWAY; 
+    "ACQUIRING_STOCK" = EXPE; 
+    AMOUNT = "CASH 10.5: SHARES 0.2065"; 
+    APPLIED = 1; 
+    DATE = 20151216; 
+    FUNDS = (
+        "lrabier/lrabier's short only fund", 
+        "oxford-davis/oxford-davis's T-bill paper", 
+        "rostberg/rostberg's Over valued Fund", 
+        "uvf/Short Trial", 
+        "jhamer/Short-Only Fund", 
+        "ucdballer411/Short Only Fund", 
+        "lmharold/Harold Consumer Discretionary", 
+        "brewmaster/brewmaster's Mutual Fund", 
+        "lmharold/Harold Technology Fund", 
+        "leonard6/Leonard Short Fund", 
+        "dpurho/dpurho's secret TA Fund", 
+        "istanbul/istanbul's Short Fund", 
+        "paluszak/Paluszak's Consumer Spending Fund", 
+        "adrscib/Scibby Medium Cap Signals Fund (< $10bn)", 
+        "roboinvestor/Shorts R Us", 
+        "ompie/OM Mutual Fund", 
+        "cisforcookie/303", 
+        "jtbarron/Slyspy Doublers Mutual Fund ", 
+        "jwebb2/Webb Nasdaq Internet Index", 
+        "dpurho/dpurho's Mutual Fund", 
+        "dpurho/dpurho's special situations Fund", 
+        "edgomez1985/edgomez1985's Mutual Fund", 
+        "lmharold/Harold Mid Cap", 
+        "gator101/FM Consumer  Fund", 
+        "dpurho/dpurho's Growth Fund", 
+        "selkirkrich/Selkirk  Small Value Fund", 
+        "cschier/Mid Cap Equity Fund", 
+        "jquereau/Stellar Equity Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = EXPE; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-17 08:39:55.694) SUCCESS
+D: (12-17 08:39:55.694) cahelper finished 2015-12-17 08:39:55 -0500
+Check the results 
+select * from mstockalias where stockkey= X'841113db4e0ba8b4c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 43739Q100
+>           DATE = TIMESTAMP '2011-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = HomeAway Inc
+>     PRIMARYKEY = X'841213db4e0ba8b4c0a80146'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>         SYMBOL = AWAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25502020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 43739Q100
+>           DATE = TIMESTAMP '2015-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = HomeAway Inc
+>     PRIMARYKEY = X'4ee7486256720290c0a86fab'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>         SYMBOL = AWAY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25502020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 43739Q100
+>           DATE = TIMESTAMP '2015-12-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = HomeAway Inc
+>     PRIMARYKEY = X'd7675ce55672bb24c0a86fab'
+>       STOCKKEY = X'841113db4e0ba8b4c0a80146'
+>         SYMBOL = AWAY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25502020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'd7675ce55672bb24c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'd7675ce55672bb24c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AWAY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|10.500000|CP_CASH_FLAG|1|CP_SH|0.206500|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151217:083714
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = EXPE     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EXPE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'63535ce55672ba8ac0a86fab'
+>               VERSION = NULL
+
+
+
+select count(*) from mticket where sourcekey = X'63535ce55672ba8ac0a86fab';
+> Row 1:
+>   _C001 = 56.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'63535ce55672ba8ac0a86fab'));
+there are 28 fundkeys, save to CA issues AWAY fundkeys.txt
+
+For Beta case
+AWAY no longer trades but is still active on our site - need to delist 
+
+check on 12/18/15   invalidate funds
+check MAdmin   clear 
+
+
+AWAY has been acquired	right curve
+ 	 	
+HomeAway Inc [AWAY] acquired by Expedia Inc [EXPE] on 2015-12-16 00:00:00.
+
+
+invalidate reprice and close 
+
+check gator101  FMRRX fund  should get
+10.50 -acqShare 0.2065 -purchaser EXPE
+
+LEDGER
+Date	Start	Change	End	Type
+Apr 23, 2014		600	600	Buy
+May 21, 2014	600	300	900	Buy
+Dec 16, 2015	900	-900		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Apr 23, 2014	600	$30.00	$22,241.30	$37.07
+May 21, 2014	300	$15.00	$9,223.98	$30.75
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+900 shares  * 0.2065  = 185 shares of EXPE
+900 shares * 10.50 =  9450 cash
+
+check the ledger FMRRX on 2015-12-16
+
+12/16/2015	$453,129.30	$0.00	$12.41	$9,450.00	$75.72	$0.00	$462,515.99	$949,651.80	$1,412,167.79	100,000	$14.12	Yes	Details
+
+cash is there 
+trades on December 16, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	EXPE	185	$0.00	$0.00	$0.00	$0.00
+Sell	AWAY	900	$0.00	$0.00	$0.00	$0.00
+
+got shares, too.
+
+closing this out reprice it 
+
+
+

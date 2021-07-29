@@ -1,0 +1,1002 @@
+date: 3/17/15
+ticker RDMX - member has short - there was a double reverse split and that caused the stock to go short
+
+yahoo: nothng
+quantum:  nothing
+
+our site:
+Symbol: RDMX 	Name: RMX Holdings Inc 	Price: $0.51
+Volume: 	Sector: Materials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+symbol changes for RDMX 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+12 Aug 10 	RMX 	RDMX 	Change in the ticker (trading) symbol from RMX to RDMX
+  	  	 
+left curve 	  CUSIP changes for RDMX 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+08 Sep 10 	755747102 	74965A105 	Change in any of identification numbers (CUSIP) of a security from 755747102 to 74965A105
+  	  	 
+left curve 	  name changes for RDMX 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+08 Sep 10 	Ready Mix Inc 	RMX Holdings Inc 	Change in the name of issuer from Ready Mix Inc to RMX Holdings Inc
+  	  	 
+left curve 	  listing changes for RDMX 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Aug 12, 2010 	AMEX 	UA 	OTCBB-OTHER 	UV 	Change in the exchange that RDMX trades on from AMEX to OTCBB-OTHER
+  	  	 
+left curve 	  cash dividends paid by RDMX 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+12 Aug 10 	16 Aug 10 	23 Aug 10 	N/A 	$1.32 	Dividend amount:1.32 per share.
+  	  	 
+left curve 	  RDMX had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+12 Jan 11 	1:2645212 	Split terms:1:2645212
+12 Jan 11 	1:2645212 	Split terms:1:2645212
+
+not in xignite
+
+select distinct stockkey from mstockalias where symbol='RDMX';
+> Row 1:
+>   STOCKKEY = X'e8e209fd449c3479c0a80146'
+
+select * from mstockalias where STOCKKEY = X'e8e209fd449c3479c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2005-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'e8e309fd449c3479c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'e8e309fd449c3479c0a80146';
+nothing
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'01f5295e4c6461f2c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'01f5295e4c6461f2c0a80146';
+> Row 1:
+>              ALIASKEY = X'01f5295e4c6461f2c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|RMX US|CP_NEW_TKR|RDMX US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 47432758
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = Ready Mix Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-08-11 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1fa8743d4c64617fc0a80146'
+>               VERSION = NULL
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'12ed2a8e4c646264c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey= X'12ed2a8e4c646264c0a80146';
+> Row 1:
+>              ALIASKEY = X'12ed2a8e4c646264c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100816|CP_PAY_DT|20100823|CP_FREQ|N.A.|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|1.320000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1018|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.476190|CP_ADJ_DT|20100812|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 47345560
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = Ready Mix Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-08-06 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-08-12 00:00:00.000000'
+>            PRIMARYKEY = X'1fa4743d4c64617ec0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'12ed2a8e4c646264c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 47432754
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = Ready Mix Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-08-11 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1fa6743d4c64617ec0a80146'
+>               VERSION = NULL
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ae8b73fb4c87fadec0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'ae8b73fb4c87fadec0a80146';
+> Row 1:
+>              ALIASKEY = X'ae8b73fb4c87fadec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Ready Mix Inc|CP_NEW_NAME|RMX Holdings Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 48040984
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'f8da71e24c87f9abc0a80146'
+>               VERSION = NULL
+
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74965A105
+>           DATE = TIMESTAMP '2010-09-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ccfe74234c87fb08c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 1:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|755747102|CP_NEW_CUSIP|74965A105|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US7557471023|CP_NEW_ISIN|US74965A1051|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 48040992
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'f8dc71e24c87f9acc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'a38f27704d2ce850c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-12 00:00:00.000000'
+>            PRIMARYKEY = X'519b6c5c4d2e39fac0a80146'
+>               VERSION = NULL
+
+
+the splits happened on 20110112
+
+member who is short:
+
+> Row 1492:
+>    LOGINNAME = thefletch
+>       SYMBOL = TFBBF
+>   PRIMARYKEY = X'fba305c33fd89b93c0a80133'
+ positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+RDMX 	$0.51 	-1,473 	-$751.23 	-$15,582.13 	0.00% 	-105.07% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 23, 2006 		1473 	1473 	Buy
+Jan 12, 2011 	1473 	-2946 	-1473 	Corporate Action
+Total: -1,473
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 23, 2006 	1,473 	$73.65 	$14,830.90 	$10.07
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+check the ledger on 20110112   day of CAs and the previous day 20110111
+
+here's his ledger for TFBBF on 3/18/15
+NLN 	National Lampoon Inc 		0.0% 	85,151 	$0.00 	$0.00 	Details 
+RDMX 	RMX Holdings Inc 		0.0% 	-1,473 	$0.00 	$0.00 	Details 
+NYER 	NYER MEDICAL GROUP 		0.0% 	3,092 	$0.00 	$0.00 	Details 
+PCXCQ 	Patriot Coal Corp 		0.0% 	4,000 	$0.00 	$0.00 	Details 
+
+some stocks that need to be looked into
+
+DMX 	RMX Holdings Inc 	$0.51 	-0.1% 	-1,473 	$0.00 	-$751.23 	Details 
+  	  	 
+left curve 	 trades on January 12, 2011 	right curve
+  	  	[download spreadsheet]
+  	
+
+20110112 TFBFF:   	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Sell 	RDMX 	1,473 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	RDMX 	1,473 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	RDMX 	0 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	RDMX 	0 	$0.00 	$0.00 	$0.00 	$0.00
+
+
+20110111  
+RDMX 	RMX Holdings Inc 	$0.51 	0.1% 	1,473 	$0.00 	$751.23 	Details 
+
+so the last day it was pricing at 0.51 
+
+
+checking the price history 
+
+/Marketocracy/bin/dbtool lookup stock RDMX
+
+>>>> dbtool started at 2015-03-17 16:26:25 -0400
+stock: RDMX
+  PK       : [E8E209FD449C3479C0A80146]
+  companyID: [16279]
+  symbol   : [RDMX]
+  name     : [Ready Mix, Incorporated]
+  date     : [2010-08-12 00:00:00]
+  status   : [Active]
+stock: RDMX
+  PK       : [E8E209FD449C3479C0A80146]
+  companyID: [16279]
+  symbol   : [RDMX]
+  name     : [Ready Mix, Incorporated]
+  date     : [2010-08-12 00:00:01]
+  status   : [Active]
+stock: RDMX
+  PK       : [E8E209FD449C3479C0A80146]
+  companyID: [16279]
+  symbol   : [RDMX]
+  name     : [RMX Holdings Inc]
+  date     : [2010-09-08 00:00:00]
+  status   : [Active]
+stock: RDMX
+  PK       : [E8E209FD449C3479C0A80146]
+  companyID: [16279]
+  symbol   : [RDMX]
+  name     : [RMX Holdings Inc]
+  date     : [2010-09-08 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-03-17 16:26:26 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16279
+2010-12-24 (Fri) [3644]: <HOLIDAY>
+2010-12-25 (Sat) [3645]: <WEEKEND>
+2010-12-26 (Sun) [3646]: <WEEKEND>
+2010-12-27 (Mon) [3647]: O:0.5000 H:0.5500 L:0.5000 C:0.5500 V:4167 TSO:3809 A:0.5500 R:1.0000 CA:0.0000
+2010-12-28 (Tue) [3648]: O:0.5000 H:0.5000 L:0.5000 C:0.5000 V:1500 TSO:3809 A:0.5000 R:1.0000 CA:0.0000
+2010-12-29 (Wed) [3649]: O:0.4700 H:0.5000 L:0.4700 C:0.4703 V:4611 TSO:3809 A:0.4703 R:1.0000 CA:0.0000
+2010-12-30 (Thu) [3650]: O:0.4000 H:0.5200 L:0.4000 C:0.5200 V:5201 TSO:3809 A:0.5200 R:1.0000 CA:0.0000
+2010-12-31 (Fri) [3651]: O:0.4100 H:0.5200 L:0.4100 C:0.5200 V:5000 TSO:3809 A:0.5200 R:1.0000 CA:0.0000
+2011-01-01 (Sat) [3652]: <HOLIDAY>
+2011-01-02 (Sun) [3653]: <WEEKEND>
+2011-01-03 (Mon) [3654]: O:0.4200 H:0.5200 L:0.4200 C:0.5200 V:8965 TSO:3809 A:0.5200 R:1.0000 CA:0.0000
+2011-01-04 (Tue) [3655]: O:0.4200 H:0.4800 L:0.4200 C:0.4800 V:10500 TSO:3809 A:0.4800 R:1.0000 CA:0.0000
+2011-01-05 (Wed) [3656]: O:0.4200 H:0.4800 L:0.4200 C:0.4800 V:10500 TSO:3809 A:0.4800 R:1.0000 CA:0.0000
+2011-01-06 (Thu) [3657]: O:0.4850 H:0.4850 L:0.4850 C:0.4850 V:650 TSO:3809 A:0.4850 R:1.0000 CA:0.0000
+2011-01-07 (Fri) [3658]: O:0.4850 H:0.4850 L:0.4850 C:0.4850 V:650 TSO:3809 A:0.4850 R:1.0000 CA:0.0000
+2011-01-08 (Sat) [3659]: <WEEKEND>
+2011-01-09 (Sun) [3660]: <WEEKEND>
+2011-01-10 (Mon) [3661]: O:0.4800 H:0.4800 L:0.4800 C:0.4800 V:3200 TSO:3809 A:0.4800 R:1.0000 CA:0.0000
+2011-01-11 (Tue) [3662]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000 <--- last day
+2011-01-12 (Wed) [3663]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-13 (Thu) [3664]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-14 (Fri) [3665]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-15 (Sat) [3666]: <WEEKEND>
+2011-01-16 (Sun) [3667]: <WEEKEND>
+2011-01-17 (Mon) [3668]: <HOLIDAY>
+2011-01-18 (Tue) [3669]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-19 (Wed) [3670]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-20 (Thu) [3671]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-21 (Fri) [3672]: O:0.4800 H:0.5100 L:0.4800 C:0.5100 V:1951 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2011-01-22 (Sat) [3673]: <WEEKEND>
+and that continues until
+2012-04-17 (Tue) [4124]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:3809 A:0.5100 R:1.0000 CA:0.0000
+
+
+let's back out both of the splits
+> Row 2:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'a38f27704d2ce850c0a80146'
+>               VERSION = NULL
+
+> Row 3:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-12 00:00:00.000000'
+>            PRIMARYKEY = X'519b6c5c4d2e39fac0a80146'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '46419561:MARTY:SPLIT2' where PRIMARYKEY = X'519b6c5c4d2e39fac0a80146';
+checking 
+select * from mcorporateaction where PRIMARYKEY = X'519b6c5c4d2e39fac0a80146';
+> Row 1:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561:MARTY:SPLIT2
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-12 00:00:00.000000'
+>            PRIMARYKEY = X'519b6c5c4d2e39fac0a80146'
+>               VERSION = NULL
+
+
+ok let's back this one out.
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 46419561:MARTY:SPLIT2
+untrading action with ID: 46419561:MARTY:SPLIT2
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+
+
+looks like it worked.
+select * from mstockalias where STOCKKEY = X'e8e209fd449c3479c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2005-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'e8e309fd449c3479c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'01f5295e4c6461f2c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'12ed2a8e4c646264c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ae8b73fb4c87fadec0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74965A105
+>           DATE = TIMESTAMP '2010-09-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ccfe74234c87fb08c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'ccfe74234c87fb08c0a80146';
+> Row 1:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|755747102|CP_NEW_CUSIP|74965A105|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US7557471023|CP_NEW_ISIN|US74965A1051|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 48040992
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'f8dc71e24c87f9acc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'a38f27704d2ce850c0a80146'
+>               VERSION = NULL
+
+let's check our member:
+> Row 1492:
+>    LOGINNAME = thefletch
+>       SYMBOL = TFBBF
+
+your holdings of RDMX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+TFDLF 	0 	$.00 	0.00%
+TFBBF 	0 	$.00 	0.00%
+TFBFX 	0 	$.00 	0.00%
+TFDFF 	0 	N/A 	N/A
+TFMFX 	0 	N/A 	N/A
+TFDTF 	0 	N/A 	N/A
+TFEOF 	0 	N/A 	N/A
+TFGSF 	0 	N/A 	N/A
+TF911 	0 	N/A 	N/A
+TFLLP 	0 	N/A 	N/A
+TFRSF 	0 	N/A 	N/A 
+
+got him to 0 shares.   I'm going to back the other split out and then apply an acquis 
+
+anyone hold RDMX as of today?
+MAdmin  03/18/2015  none that is good
+
+ok, market is closed, let's untrade the other one
+
+> Row 2:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'a38f27704d2ce850c0a80146'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '46419561:MARTY:SPLIT1'   where PRIMARYKEY = X'a38f27704d2ce850c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'a38f27704d2ce850c0a80146';
+> Row 1:
+>              ALIASKEY = X'ccfe74234c87fb08c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1:2645212|CP_RATIO|0.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.000000|CP_ADJ_DT|20110112|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46419561:MARTY:SPLIT1
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 7663662
+>        BB_COMPANYNAME = RMX Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-12 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = RDMX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'a38f27704d2ce850c0a80146'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 46419561:MARTY:SPLIT1
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Buy>:RDMX]
+[<Ticket Lifetime:Day>:<Ticket Action:Split Sell>:RDMX]
+check the member
+> Row 1492:
+>    LOGINNAME = thefletch
+>       SYMBOL = TFBBF
+all funds:
+your holdings of RDMX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+TFDLF 	1,474 	$751.74 	0.07%
+TFBBF 	1,473 	$751.23 	0.03%
+TFBFX 	1,473 	$751.23 	0.03%
+TFDFF 	0 	N/A 	N/A
+TFMFX 	0 	N/A 	N/A
+TFDTF 	0 	N/A 	N/A
+TFEOF 	0 	N/A 	N/A
+TFGSF 	0 	N/A 	N/A
+TF911 	0 	N/A 	N/A
+TFLLP 	0 	N/A 	N/A
+TFRSF 	0 	N/A 	N/A 
+
+now let's apply the acquis
+
+/Marketocracy/bin/cahelper -symbol RDMX -effective 20110111 -type ACQUIS -exchange UU -acqType 1 -acqCash 0.51 -acqShare 0 -purchaser RDMX >& /Users/build/caout/RDMX.20150318-ACQUIS.out
+RDMX.20150318-ACQUIS.out
+stocks:~/caout build$ tail -f RDMX.20150318-ACQUIS.out
+D: (03-18 17:29:38.642) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-18 17:30:29.251) cahelper started on 2015-03-18 17:30:29 -0400
+
+D: (03-18 17:30:31.500) There are [0] open tickets for RDMX on 20110111
+D: (03-18 17:30:31.738) StockFileLoad Version:3.0
+D: (03-18 17:30:31.739) Loading Stock Data
+D: (03-18 17:32:03.498) Building Lookup Index
+D: (03-18 17:32:12.176) Finished Building Index
+D: (03-18 17:32:14.241) Finished Loading Stock Data
+D: (03-18 17:32:14.304) Connection to 192.168.111.172:6666 succeeded
+D: (03-18 17:32:15.007) {
+    "ACQUIRED_STOCK" = RDMX; 
+    "ACQUIRING_STOCK" = "RDMX_FIX"; 
+    AMOUNT = 0.51; 
+    APPLIED = 1; 
+    DATE = 20110111; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RDMX_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-18 17:32:17.390) SUCCESS
+D: (03-18 17:32:17.390) cahelper finished 2015-03-18 17:32:17 -0400
+
+
+check mstockalias check member and calculate what he should get
+select * from mstockalias where STOCKKEY = X'e8e209fd449c3479c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2005-08-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'e8e309fd449c3479c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'01f5295e4c6461f2c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-08-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Ready Mix, Incorporated
+>     PRIMARYKEY = X'12ed2a8e4c646264c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 755747102
+>           DATE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ae8b73fb4c87fadec0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74965A105
+>           DATE = TIMESTAMP '2010-09-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'ccfe74234c87fb08c0a80146'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 74965A105
+>           DATE = TIMESTAMP '2011-01-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = RMX Holdings Inc
+>     PRIMARYKEY = X'67ee731d5509ee77c0a86f92'
+>       STOCKKEY = X'e8e209fd449c3479c0a80146'
+>         SYMBOL = RDMX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15102010
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'67ee731d5509ee77c0a86f92';
+> Row 1:
+>              ALIASKEY = X'67ee731d5509ee77c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RDMX  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.510000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150318:053029
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-11 00:00:00.000000'
+>         BB_IDENTIFIER = RDMX_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RDMX_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-01-11 00:00:00.000000'
+>            PRIMARYKEY = X'67e8731d5509ee75c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'67e8731d5509ee75c0a86f92';
+> Row 1:
+>   _C001 = 24.000000
+
+let's check the member 
+
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 23, 2006 		1473 	1473 	Buy
+Jan 11, 2011 	1473 	-1473 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 23, 2006 	1,473 	$73.65 	$14,830.90 	$10.07
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+thefletch   on 20110111
+fund:  TFBBF  1473 * 0.51 = 751.23
+
+need to invalidate the funds
+
+get the sourcekey from the mcorporateaction where generated the mtickets  X'67e8731d5509ee75c0a86f92'
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'67e8731d5509ee75c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'833a65b34ab553b2c0a80135'
+> Row 2:
+>   FUNDKEY = X'558b36f144d60801c0a80134'
+> Row 3:
+>   FUNDKEY = X'f492680f3fb19d4ac0a80133'
+> Row 4:
+>   FUNDKEY = X'fba305c33fd89b93c0a80133'
+> Row 5:
+>   FUNDKEY = X'ccf46d304119064ec0a80134'
+> Row 6:
+>   FUNDKEY = X'4abb424244f305d2c0a80134'
+> Row 7:
+>   FUNDKEY = X'2483223d453164a7c0a80132'
+> Row 8:
+>   FUNDKEY = X'de70359240132e4bc0a80134'
+> Row 9:
+>   FUNDKEY = X'f7af5d2f3a2a66bcc0a80118'
+> Row 10:
+>   FUNDKEY = X'fdb7384645a6a4e9c0a80135'
+> Row 11:
+>   FUNDKEY = X'9f934efe3e33ef8ac0a80135'
+> Row 12:
+>   FUNDKEY = X'8d8a60253e2ca6d3c0a80133'
+> Row 13:
+>   FUNDKEY = X'deed68ac461fdd8cc0a80133'
+> Row 14:
+>   FUNDKEY = X'626369e44677c362c0a80133'
+> Row 15:
+>   FUNDKEY = X'a96a309842fb66d5c0a80133'
+> Row 16:
+>   FUNDKEY = X'69ac21184148973bc0a8013c'
+> Row 17:
+>   FUNDKEY = X'e46767f643377d60c0a80132'
+> Row 18:
+>   FUNDKEY = X'7e5a153044e609e6c0a80134'
+> Row 19:
+>   FUNDKEY = X'4ba750b3487cb2f0c0a80134'
+> Row 20:
+>   FUNDKEY = X'47fa559e42a7da12c0a80133'
+> Row 21:
+>   FUNDKEY = X'6e9e68113f6b6adec0a80132'
+> Row 22:
+>   FUNDKEY = X'93034fba4977d151c0a80134'
+> Row 23:
+>   FUNDKEY = X'f4f803944a52ab1dc0a80134'
+> Row 24:
+>   FUNDKEY = X'7a7e0eed49875829c0a80134'
+
+put these in a file
+CA issues RDMX fundkeys to invalidate.txt
+ok, we've invalidated, let's check again
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+01/11/2011 	$51,127.09 	$0.00 	$1.40 	$751.23 	$77.79 	$0.00 	$51,801.93 	$1,393,606.73 	$1,445,408.66 	100,000 	$14.45 	No 	Details  
+
+
+
+trades on January 11, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	RDMX 	1,473 	$0.00 	$0.00 	$0.00 	$0.00
+ok closing this out   3/19/15

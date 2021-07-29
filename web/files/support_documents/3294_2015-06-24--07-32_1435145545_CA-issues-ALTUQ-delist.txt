@@ -1,0 +1,311 @@
+date:  6/22/15
+ticker:  ALTUQ
+
+yahoo:  nothng
+
+quantum:  nothing 
+
+oursite:
+Symbol: ALTUQ 	Name: Altus Pharmaceuticals, Incorporated 	Price: $0.00
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Micro Cap : Blend 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for ALTUQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+23 Nov 09 	ALTU 	ALTUQ 	Change in the ticker (trading) symbol from ALTU to ALTUQ
+  	  	 
+left curve 	  listing changes for ALTUQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Aug 26, 2009 	NASDAQ 	UQ 	NASDAQ-SMALLCAP 	UR 	Change in the exchange that ALTU trades on from NASDAQ to NASDAQ-SMALLCAP
+Nov 23, 2009 	NASDAQ-SMALLCAP 	UR 	OTCBB-OTHER 	UV 	Change in the exchange that ALTUQ trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+  	  	 
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Altus Pharmaceuticals, Incorporated  Symbol:ALTUQ
+Date: 06/22/2015
+
+9 users found
+
+1	chaseboy	cperks	holdenll	iancheong	pgr45za	pieter64	rguerrieri	tickwhiz	wildbillkickoff
+
+database
+select distinct stockkey from mstockalias where symbol= 'ALTUQ';  
+> Row 1:
+>   STOCKKEY = X'8c2f553645e5de8dc0a80146'
+
+select * from mstockalias where stockkey=X'8c2f553645e5de8dc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'8c30553645e5de8dc0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-08-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'940139954a95a35dc0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-11-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'53eb0c6f4b0b06a6c0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTUQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-11-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'420c0df64b0b0737c0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTUQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ALTUQ'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ALTUQ
+>>>> dbtool started at 2015-06-23 00:03:43 -0400
+stock: ALTUQ
+  PK       : [8C2F553645E5DE8DC0A80146]
+  companyID: [16938]
+  symbol   : [ALTUQ]
+  name     : [Altus Pharmaceuticals, Incorporated]
+  date     : [2009-11-23 00:00:00]
+  status   : [Active]
+stock: ALTUQ
+  PK       : [8C2F553645E5DE8DC0A80146]
+  companyID: [16938]
+  symbol   : [ALTUQ]
+  name     : [Altus Pharmaceuticals, Incorporated]
+  date     : [2009-11-23 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-23 00:03:44 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16938
+2013-09-11 (Wed) [4636]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+2013-09-12 (Thu) [4637]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+2013-09-13 (Fri) [4638]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+2013-09-14 (Sat) [4639]: <WEEKEND>
+2013-09-15 (Sun) [4640]: <WEEKEND>
+2013-09-16 (Mon) [4641]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+2013-09-17 (Tue) [4642]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+2013-09-18 (Wed) [4643]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8c2f553645e5de8dc0a80146' and shares > 0 order by closed; 
+> Row 290:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-01-26 11:53:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.013900
+>   CURRENTORDER = X'95c6456d4f20ce10c0a80133'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'5605706439f7b837c0a80118'
+>       MODIFIED = NULL
+>            NET = 0.264100
+>         OPENED = TIMESTAMP '2012-01-25 22:52:48.000000'
+>          PRICE = 0.001651
+>     PRIMARYKEY = X'95c4456d4f20ce10c0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 160.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8c2f553645e5de8dc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8c2f553645e5de8dc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8c2f553645e5de8dc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 9 members who hold this stock
+quantum:  nothing
+last ticket:  2012-01-26   PRICE = 0.001651
+last price:  2013-09-18 (Wed) [4643]: O:0.0020 H:0.0020 L:0.0020 C:0.0020 V:108000 TSO:31131 A:0.0020 R:1.0000 CA:0.0000
+
+going with the last price  20130918  0.0020
+
+/Marketocracy/bin/cahelper -symbol  ALTUQ  -effective 20130918 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0020 -acqShare 0 -purchaser ALTUQ   >& /Users/build/caout/ALTUQ.20150623-DELIST.out
+D: (06-23 07:37:41.740) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-23 07:38:06.975) cahelper started on 2015-06-23 07:38:06 -0400
+
+D: (06-23 07:38:07.537) There are [0] open tickets for ALTUQ on 20130918
+D: (06-23 07:38:07.950) StockFileLoad Version:4.0
+D: (06-23 07:38:07.950) Loading Stock Data
+D: (06-23 07:38:48.523) Building Lookup Index
+D: (06-23 07:38:53.597) Finished Building Index
+D: (06-23 07:38:57.386) Finished Loading Stock Data
+D: (06-23 07:38:57.506) Connection to 192.168.111.172:6666 succeeded
+D: (06-23 07:38:58.318) {
+    "ACQUIRED_STOCK" = ALTUQ; 
+    "ACQUIRING_STOCK" = "ALTUQ_FIX"; 
+    AMOUNT = 0.002; 
+    APPLIED = 1; 
+    DATE = 20130918; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ALTUQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-23 07:39:02.402) SUCCESS
+D: (06-23 07:39:02.403) cahelper finished 2015-06-23 07:39:02 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8c2f553645e5de8dc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'8c30553645e5de8dc0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-08-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'940139954a95a35dc0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-11-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'53eb0c6f4b0b06a6c0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTUQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2009-11-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'420c0df64b0b0737c0a80146'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTUQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02216N105
+>           DATE = TIMESTAMP '2013-09-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Altus Pharmaceuticals, Incorporated
+>     PRIMARYKEY = X'e1bc31255589451fc0a86f92'
+>       STOCKKEY = X'8c2f553645e5de8dc0a80146'
+>         SYMBOL = ALTUQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+
+
+select * from mcorporateaction where aliaskey =X'e1bc31255589451fc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'e1bc31255589451fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ALTUQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.002000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150623:073806
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-09-18 00:00:00.000000'
+>         BB_IDENTIFIER = ALTUQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ALTUQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-09-18 00:00:00.000000'
+>            PRIMARYKEY = X'e1b631255589451ec0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'e1b631255589451ec0a86f92';
+> Row 1:
+>   _C001 = 31.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'e1b631255589451ec0a86f92'));
+there are 31 fundkeys, save to CA issues ALTUQ fundkeys.txt
+
+For Beta case
+ALTUQ no longer trades but is still active on our site - need to delist 
+
+check on 6/24/15   invalidate funds
+check MAdmin  good
+
+ALTUQ has been acquired 	right curve
+  	  	
+Altus Pharmaceuticals, Incorporated acquired by a private company on 2013-09-18 00:00:00. 
+
+invalidate and reprice 

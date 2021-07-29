@@ -1,0 +1,371 @@
+date:  
+ticker:   EPIC
+
+yahoo:
+
+quantum:
+
+oursite:
+symbol: EPIC 	Name: EPICOR SOFTWARE CORP 	Price: $12.50
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+	attention please: 	
+  	
+
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+	     
+	
+Corporate Actions for EPICOR SOFTWARE CORP 	  August 10, 2015
+username: password: forgot? | sign up
+  	
+LOG IN PLEASE
+  	  	 
+left curve 	  listing changes for EPIC 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Jul 03, 2006 	NASDAQ 	UQ 	NASDAQ 	UW 	Change in the exchange that EPIC trades on from NASDAQ to NASDAQ
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+tock:EPICOR SOFTWARE CORP  Symbol:EPIC
+Date: 08/10/2015
+
+93 users found
+
+1	agent_47	aj771	asalvador	b_lovelady	ben.gent	biged	brick	bunnyluv	clipper	cowdude
+2	cweekes	denis	dgp	dick_jane	djdillutional	dk2458	dkh	dogwelder	edemuysere	edwardtrafford
+3	ekowel	ericmefron@earthlink.net	eziedrich	f2x03	ffis	floydocracy	fsmith	gennaker	gmudd	gpbax
+4	gregsss	hielador	hornedfrog	j-schreiber	jcroft1	jehfes	john0white	jr4notaxes	jsmooth	jstuck
+5	jsvoren	jwise	jwtrader	kuyeno	laj	licheng_apl	lormon477	lvuleti	maksfeof	mayukh
+6	mbienenstock	mcrabb15	mcth20	mghtydx	michael	mjohnson6	modanq	nchaviano	nljam23	nmink
+7	opetrovic	p1000tw	patrick.hable	ptrumm	quickjr	rangerdon	rene	rfouty	richfield	rraney
+8	rschroeder	seblanglois	shawwill	sleid	snowsurflax	stockmancer	stone_cold	thomas123	threeam	tnmc77
+9	traderkr	turbobaker1	twindad4513	uncledanner	undefeated	utepark	vlad621	vududoctor	vwilliams	webmarket
+10	weightlifter	winxart	zerocoldtm	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'EPIC';  
+> Row 1:
+>   STOCKKEY = X'dfb20e21390a8613c0a80116'
+
+select * from mstockalias where stockkey=X'dfb20e21390a8613c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29426L108
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EPICOR SOFTWARE CORP
+>     PRIMARYKEY = X'dfb30e21390a8613c0a80116'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>         SYMBOL = EPIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29426L108
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EPICOR SOFTWARE CORP
+>     PRIMARYKEY = X'54eb150944a9cf21c0a80146'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>         SYMBOL = EPIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='EPIC'  order by BB_EFFECTIVE;
+> Row 26:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|6212Z LN|CP_NAME|Apax Partners LLP|CP_ID_BB_COMP|313082|CP_UNIT|Epicor Software Corp|CP_TOT_AMT|936.026489|CP_ACQUIS_TYP|1|CP_CASH|12.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|140.697006|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|18.548029|CP_CUR_PREMIUM|-0.477710|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|12.500000|CP_ARBITRAGE_PROF|-0.060000|CP_CUR_TOT_VAL|936.026489|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Wilson Sonsini;13;100.000000;1;Target Financial Adviser;1;Moelis & Co;13;100.000000;1;Acquirer Legal Adviser;1;Kirkland & Ellis;13;100.000000;1;Acquirer Financial Adviser;1;Jefferies, RBC Capital Mkts;13;100.000000;1;Legal Adv to Target Financial;1;Moelis & Co;13;100.000000;|CP_NOTES|TENDER OFFER TO COMMENCE 04/08/2011.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 53380294
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 115922
+>        BB_COMPANYNAME = Epicor Software Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = EPIC    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-04-04 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = EPIC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-04-04 00:00:00.000000'
+>            PRIMARYKEY = X'942044854d9a46e5c0a80146'
+>               VERSION = NULL
+
+looks like a cash acquis:    
+6/30/11
+CP_CASH|12.500000
+see if the prices agree
+
+last known price
+/Marketocracy/bin/dbtool lookup stock EPIC
+>>>> dbtool started at 2015-08-10 15:58:12 -0400
+stock: EPIC
+  PK       : [DFB20E21390A8613C0A80116]
+  companyID: [1661]
+  symbol   : [EPIC]
+  name     : [EPICOR SOFTWARE CORP]
+  date     : [2000-04-28 15:00:00]
+  status   : [Active]
+stock: EPIC
+  PK       : [DFB20E21390A8613C0A80116]
+  companyID: [1661]
+  symbol   : [EPIC]
+  name     : [EPICOR SOFTWARE CORP]
+  date     : [2006-07-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-10 15:58:12 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 1661
+2011-05-26 (Thu) [3797]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+2011-05-27 (Fri) [3798]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+2011-05-28 (Sat) [3799]: <WEEKEND>
+2011-05-29 (Sun) [3800]: <WEEKEND>
+2011-05-30 (Mon) [3801]: <HOLIDAY>
+2011-05-31 (Tue) [3802]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+2011-06-01 (Wed) [3803]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+2011-06-02 (Thu) [3804]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+2011-06-03 (Fri) [3805]: O:12.5000 H:12.5000 L:12.5000 C:12.5000 V:0 TSO:61394 A:12.5000 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'dfb20e21390a8613c0a80116' and shares > 0 order by closed; 
+> Row 1505:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-05-05 12:26:00.000000'
+>        COMMENT = Asset Allocation|
+>     COMMISSION = 5.500000
+>   CURRENTORDER = X'041d140d4dc2ce09c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'025d68bc49007c50c0a80134'
+>       MODIFIED = NULL
+>            NET = 1367.170010
+>         OPENED = TIMESTAMP '2011-05-05 12:19:21.000000'
+>          PRICE = 12.428818
+>     PRIMARYKEY = X'041b140d4dc2ce09c0a80132'
+>         SECFEE = 0.030000
+>         SHARES = 110.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'dfb20e21390a8613c0a80116'  and totalshares < 0;
+> Row 1:
+>   FUNDKEY = X'4afe5c1040b13ed7c0a80134'
+> Row 2:
+>   FUNDKEY = X'cbe651f0418fc4d9c0a80133'
+> Row 3:
+>   FUNDKEY = X'1282655141e4c92ac0a80133'
+> Row 4:
+>   FUNDKEY = X'3f776f0e4292568cc0a80133'
+> Row 5:
+>   FUNDKEY = X'b9e4160d42709bfdc0a80133'
+
+we do have shorts 
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dfb20e21390a8613c0a80116'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'4afe5c1040b13ed7c0a80134'
+>       SYMBOL = MAY
+
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dfb20e21390a8613c0a80116'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = mayukh
+
+check this person
+your holdings of EPIC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+MAY 	-1,834 	-$22,925.00 	-1.49% 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 04, 2004 		4100 	4100 	Buy
+Jun 14, 2004 	4100 	1000 	5100 	Buy
+Jul 13, 2004 	5100 	-2500 	2600 	Sell
+Aug 01, 2004 	2600 	-4434 	-1834 	Sell   <--- only had 2600 shares 
+Total: -1,834
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 4, 2004 	4,100 	$205.00 	$54,407.72 	$13.27
+Jun 14, 2004 	1,000 	$50.00 	$12,878.60 	$12.88
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 13, 2004 	2,500 	$125.00 	$0.68 	$28,642.70 	$11.46
+Aug 1, 2004 	4,434 	$221.70 	$1.32 	$55,800.77 	$12.58  <--- change this to 2600
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py mayukh MAY 20040801 EPIC -2600 13.00
+Trading -2600.0 shares of EPICOR SOFTWARE CORP on Aug 01, 2004 at 13.0
+manager login: mayukh
+manager: Mayukh Poddar
+fund: MAY
+building trade (has to load stock prices first)
+price = 13.0
+selling -2600.0 shares of EPIC at 13.0 on 20040801
+invaldating fund prices from Aug 01, 2004
+Done
+
+should be gone 
+it is gone!
+
+
+  	  	 
+
+
+apply the acquis
+there are 93 members who hold this stock
+quantum:  can't reach the site 
+last ticket:  2011-05-05  PRICE = 12.428818
+last price:
+
+going with 
+6/30/11  20110630
+CP_CASH|12.500000
+
+
+/Marketocracy/bin/cahelper -symbol  EPIC  -effective 20110630 -type ACQUIS -exchange UN -acqType 1 -acqCash 12.50 -acqShare 0 -purchaser EPIC   >& /Users/build/caout/EPIC.20150810-ACQUIS.out 
+EPIC.20150810-ACQUIS.out
+stocks:~/caout build$ tail -f EPIC.20150810-ACQUIS.out
+D: (08-10 16:22:00.221) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-10 16:22:46.364) cahelper started on 2015-08-10 16:22:46 -0400
+
+D: (08-10 16:22:46.680) There are [0] open tickets for EPIC on 20110630
+D: (08-10 16:22:47.209) StockFileLoad Version:4.0
+D: (08-10 16:22:47.210) Loading Stock Data
+D: (08-10 16:24:04.256) Building Lookup Index
+D: (08-10 16:24:13.558) Finished Building Index
+D: (08-10 16:24:20.790) Finished Loading Stock Data
+D: (08-10 16:24:20.826) Connection to 192.168.111.172:6666 succeeded
+D: (08-10 16:24:24.207) SavingChanges for position sell out 101 of 436
+D: (08-10 16:24:34.423) {
+    "ACQUIRED_STOCK" = EPIC; 
+    "ACQUIRING_STOCK" = "EPIC_FIX"; 
+    AMOUNT = 12.5; 
+    APPLIED = 1; 
+    DATE = 20110630; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "EPIC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-10 16:24:41.663) SUCCESS
+D: (08-10 16:24:41.663) cahelper finished 2015-08-10 16:24:41 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'dfb20e21390a8613c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29426L108
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EPICOR SOFTWARE CORP
+>     PRIMARYKEY = X'dfb30e21390a8613c0a80116'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>         SYMBOL = EPIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29426L108
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EPICOR SOFTWARE CORP
+>     PRIMARYKEY = X'54eb150944a9cf21c0a80146'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>         SYMBOL = EPIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29426L108
+>           DATE = TIMESTAMP '2011-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EPICOR SOFTWARE CORP
+>     PRIMARYKEY = X'b715585255c90816c0a86f92'
+>       STOCKKEY = X'dfb20e21390a8613c0a80116'
+>         SYMBOL = EPIC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'b715585255c90816c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'b715585255c90816c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|EPIC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|12.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150810:042246
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = EPIC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPIC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'b70f585255c90816c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'b70f585255c90816c0a86f92';
+> Row 1:
+>   _C001 = 157.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'b70f585255c90816c0a86f92'));
+there are 157 fundkeys, save to CA issues EPIC fundkeys.txt
+
+For Beta case
+EPIC no longer trades but is still active on our site - need to delist 
+
+check on 8/11/15   invalidate funds
+check MAdmin  is clear 
+
+create a case   3533
+
+
+it's there
+EPIC has been acquired	
+ 	 	
+EPICOR SOFTWARE CORP acquired by a private company on 2011-06-30 00:00:00.
+
+reprice invalidate and close 
+send reprice request to jeff and brandon
+
+

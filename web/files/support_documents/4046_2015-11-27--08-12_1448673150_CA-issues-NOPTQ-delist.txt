@@ -1,0 +1,580 @@
+NOPTQ
+date:   11/23/15
+ticker:   NOPTQ
+
+yahoo:  nothing
+
+quantum:
+NorthEast Optic Network, Inc.
+Ticker Symbol: NOPTQ*     CUSIP: Unknown*      Exchange: OTCBB
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 8/31/02
+
+Company's Online Profile
+BUSINESS:  A facilities-based provider of high-bandwidth, fiber optic transmission capacity for communications carriers on local loop, inter-city, and interstate facilities.
+Previous Ticker Symbol: NOPT    Changed: 7/10/02
+
+oursite:
+Symbol: NOPTQ	Name: NEON COMM INC	Price: $0.00
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+NOPTQ has been delisted	right curve
+ 	 	
+Equity Delisting
+ 	 	 
+left curve	  symbol changes for NOPTQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+10 Jul 02	NOPT	NOPTQ	Change in the ticker (trading) symbol from NOPT to NOPTQ
+27 Aug 02	NOPTQ	NOPQE	Change in the ticker (trading) symbol from NOPTQ to NOPQE
+26 Sep 02	NOPQE	NOPTQ	Change in the ticker (trading) symbol from NOPQE to NOPTQ
+ 	 	 
+left curve	  listing changes for NOPTQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jun 10, 2002	 		OTCBB	UU	Change in the exchange that NOPT trades on from (null) to OTCBB
+Sep 26, 2002	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that NOPTQ trades on from OTCBB to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=NOPTQ
+
+check MAdmin
+Stock:NEON COMM INC  Symbol:NOPTQ
+Date: 11/23/2015
+
+39 users found
+
+1	bclark	blueslover	bpbenda	brose	cloer	cqjb	cstephens	dpaolini	felix	fschwarz
+2	gbennethum	gsilcott	gwitter	gwoodward	haag	hiroki	jchan5	jsabourin	kgoldberg	kwilliams4
+3	lexusrad	littleprince	mburi	mgiardina1	mishkabluv	mmohan	pburdick	pgrassfield	pnovasio	pross
+4	sahmed2	skissel	srspiel	tbonebaxter	ten_bagger	wdgivens	widgeon	yhuang	zhou	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'NOPTQ';  
+> Row 1:
+>   STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+
+
+select * from mstockalias where stockkey=X'910c10ac390c6d7ac0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'910d10ac390c6d7ac0a8015c'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'910d10ac390c6d7ac0a8015c';
+nothing
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-06-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'7a53677b3d055c00c0a801dc'    <--- delete this 
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'7a53677b3d055c00c0a801dc';
+> Row 1:
+>              ALIASKEY = X'7a53677b3d055c00c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_EXCH| |CP_EQY_DELIST_REASON|14|CP_NOTES|N.A.|CP_TKR|NOPT
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8254413
+>     BB_ACTIONMNEMONIC = EQY_DELIST
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-06-10 00:00:00.000000'
+>         BB_IDENTIFIER = NOPT    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-06-10 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NOPT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'621c669b3d055acac0a801dc'  <--- delete this 
+>               VERSION = NULL
+
+delete from mcorporateaction where PRIMARYKEY = X'621c669b3d055acac0a801dc';
+delete from mstockalias where PRIMARYKEY = X'7a53677b3d055c00c0a801dc';
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-06-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'bf176a103d055f05c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'bf176a103d055f05c0a801dc';
+> Row 1:
+>              ALIASKEY = X'bf176a103d055f05c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH| |CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8255193
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-06-10 00:00:00.000000'
+>         BB_IDENTIFIER = NOPT    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-06-10 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NOPT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'621e669b3d055acbc0a801dc'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-07-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'e3c51d9e3d2ceb18c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'e3c51d9e3d2ceb18c0a801dc';
+> Row 1:
+>              ALIASKEY = X'e3c51d9e3d2ceb18c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NOPT US|CP_NEW_TKR|NOPTQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8481604
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-10 00:00:00.000000'
+>         BB_IDENTIFIER = NOPTQ   UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NOPTQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'45141a113d2ce945c0a801dc'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-08-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'489828dd3d6c31d6c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPQE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'489828dd3d6c31d6c0a801dc';
+> Row 1:
+>              ALIASKEY = X'489828dd3d6c31d6c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NOPTQ US|CP_NEW_TKR|NOPQE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8822449
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-08-27 00:00:00.000000'
+>         BB_IDENTIFIER = NOPQE   UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-08-23 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NOPQE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'23b727113d6c2fddc0a801dc'
+>               VERSION = NULL
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'01ca010b3d93c613c0a80146'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPQE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'01ca010b3d93c613c0a80146';
+> Row 1:
+>              ALIASKEY = X'01ca010b3d93c613c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UU|CP_EQY_DELIST_REASON|6|CP_NOTES|N.A.|CP_TKR|NOPQE
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9081042
+>     BB_ACTIONMNEMONIC = EQY_DELIST
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>         BB_IDENTIFIER = NOPTQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2002-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NOPTQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c7d173583d93c492c0a80146'
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'c7d173583d93c492c0a80146';
+delete from mstockalias where PRIMARYKEY = X'01ca010b3d93c613c0a80146';
+
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-09-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'd5fe02953d93c8abc0a80146'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+update mstockalias set STATUSKEY=X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'd5fe02953d93c8abc0a80146';
+	select * from mcorporateaction where aliaskey=X'd5fe02953d93c8abc0a80146';
+> Row 1:
+>              ALIASKEY = X'd5fe02953d93c8abc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NOPQE US|CP_NEW_TKR|NOPTQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9081038
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>         BB_IDENTIFIER = NOPTQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2002-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NOPTQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c7cf73583d93c491c0a80146'
+>               VERSION = NULL
+
+
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-09-26 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'71f004163d93cb39c0a80146'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'71f004163d93cb39c0a80146';
+> Row 1:
+>              ALIASKEY = X'71f004163d93cb39c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9081046
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 348173
+>        BB_COMPANYNAME = NEON Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-09-26 00:00:00.000000'
+>         BB_IDENTIFIER = NOPTQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2002-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NOPTQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c7d373583d93c494c0a80146'
+>               VERSION = NULL
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NOPTQ'  order by BB_EFFECTIVE;
+noting
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NOPTQ
+stock: NOPTQ
+  PK       : [910C10AC390C6D7AC0A8015C]
+  companyID: [7360]
+  symbol   : [NOPTQ]
+  name     : [NEON COMM INC]
+  date     : [2002-09-26 00:00:02]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-23 20:37:37 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7360
+2003-01-31 (Fri) [760]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-01 (Sat) [761]: <WEEKEND>
+2003-02-02 (Sun) [762]: <WEEKEND>
+2003-02-03 (Mon) [763]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:13800 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-04 (Tue) [764]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:4400 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-05 (Wed) [765]: O:0.0001 H:0.0200 L:0.0001 C:0.0001 V:391400 TSO:0 A:0.0001 R:1.0000 CA:0.0000  <---
+2003-02-06 (Thu) [766]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-07 (Fri) [767]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-08 (Sat) [768]: <WEEKEND>
+2003-02-09 (Sun) [769]: <WEEKEND>
+2003-02-10 (Mon) [770]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-11 (Tue) [771]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2003-02-12 (Wed) [772]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'910c10ac390c6d7ac0a8015c' and shares > 0 order by closed; 
+> Row 198:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-06-26 13:43:37.000000'
+>        COMMENT = 
+>     COMMISSION = 4050.000000
+>   CURRENTORDER = X'82ec2bef3d19a75fc0a801e1'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'48444d2d3c4c5d6fc0a80119'
+>       MODIFIED = NULL
+>            NET = 85050.000000
+>         OPENED = TIMESTAMP '2002-06-26 07:37:03.000000'
+>          PRICE = 0.283500
+>     PRIMARYKEY = X'82eb2bef3d19a75fc0a801e1'
+>         SECFEE = 0.000000
+>         SHARES = 300000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'910c10ac390c6d7ac0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'910c10ac390c6d7ac0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'910c10ac390c6d7ac0a8015c'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 39 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 8/31/02
+last ticket:  2002-06-26 PRICE = 0.283500
+last price:  2003-02-05 (Wed) [765]: O:0.0001 H:0.0200 L:0.0001 C:0.0001 V:391400 TSO:0 A:0.0001 R:1.0000 CA:0.0000  <---
+
+going with 20030204 0.0001
+
+/Marketocracy/bin/cahelper -symbol  NOPTQ  -effective 20030204 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0001 -acqShare 0 -purchaser NOPTQ   >& /Users/build/caout/NOPTQ.20151123-DELIST.out
+NOPTQ.20151123-DELIST.out
+stocks1:~/caout build$ tail -f NOPTQ.20151123-DELIST.out
+D: (11-23 20:53:01.226) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-23 20:53:25.296) cahelper started on 2015-11-23 20:53:25 -0500
+
+D: (11-23 20:53:25.601) There are [0] open tickets for NOPTQ on 20030204
+D: (11-23 20:53:26.109) StockFileLoad Version:4.0
+D: (11-23 20:53:26.109) Loading Stock Data
+D: (11-23 20:54:03.364) Building Lookup Index
+D: (11-23 20:54:09.115) Finished Building Index
+D: (11-23 20:54:13.066) Finished Loading Stock Data
+D: (11-23 20:54:13.184) Connection to 192.168.111.172:6666 succeeded
+D: (11-23 20:54:15.579) {
+    "ACQUIRED_STOCK" = NOPTQ; 
+    "ACQUIRING_STOCK" = "NOPTQ_FIX"; 
+    AMOUNT = 0.0001; 
+    APPLIED = 1; 
+    DATE = 20030204; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NOPTQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-23 20:54:19.181) SUCCESS
+D: (11-23 20:54:19.181) cahelper finished 2015-11-23 20:54:19 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'910c10ac390c6d7ac0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'910d10ac390c6d7ac0a8015c'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-06-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'bf176a103d055f05c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-07-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'e3c51d9e3d2ceb18c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-08-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'489828dd3d6c31d6c0a801dc'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPQE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-09-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'd5fe02953d93c8abc0a80146'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2002-09-26 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'71f004163d93cb39c0a80146'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 640506101
+>           DATE = TIMESTAMP '2003-02-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEON COMM INC
+>     PRIMARYKEY = X'678c6a6e5653c315c0a86fab'
+>       STOCKKEY = X'910c10ac390c6d7ac0a8015c'
+>         SYMBOL = NOPTQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'678c6a6e5653c315c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'678c6a6e5653c315c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NOPTQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151123:085325
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-04 00:00:00.000000'
+>         BB_IDENTIFIER = NOPTQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NOPTQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-02-04 00:00:00.000000'
+>            PRIMARYKEY = X'67866a6e5653c315c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'67866a6e5653c315c0a86fab';
+> Row 1:
+>   _C001 = 52.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'67866a6e5653c315c0a86fab'));
+there are XXX fundkeys, save to CA issues NOPTQ fundkeys.txt
+
+For Beta case
+NOPTQ no longer trades but is still active on our site - need to delist 
+
+check on 11/24/15   invalidate funds
+check MAdmin  clear
+
+NOPTQ has been acquired	right curve
+ 	 	
+NEON COMM INC acquired by a private company on 2003-02-04 00:00:00.
+
+
+invalidate reprice and close 
+
+
+

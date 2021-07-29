@@ -1,0 +1,271 @@
+date: 2/9/15
+
+BARS
+
+
+
+yahoo finance:
+Direxion Daily Gold Bear 3X ETF (BARS) -NYSEArca   Watchlist
+47.25 0.00(0.00%) Dec 26
+
+Direxion Daily Gold Bear 3X ETF (BARS) -NYSEArca   Watchlist
+47.25 0.00(0.00%) Dec 26
+looks to be closed out
+
+quantum:
+Direxion Daily Gold Bear 3X Shares
+Ticker Symbol: BARS*     CUSIP: 25490F209     Exchange: NYSEA
+Security Type:   Index ETF  ---  ETF SubType:   Short Index ETF
+* NOTE: This security is no longer trading as of 12/30/14
+
+Notes:  December 10, 2014 -- The Direxion Shares ETF Trust II has decided to liquidate and close the Direxion Daily 
+Gold Bear 3X Shares (Ticker: BARS) exchange-traded fund based on the recommendation of Direxion Asset Management, 
+LLC, the Fund’s Sponsor. Due to the Fund’s inability to attract sufficient investment assets, Direxion believes the 
+Fund cannot continue to conduct its business and operations in an economically efficient manner. As a result, the 
+Board concluded that liquidating and closing the Fund would be in the best interests of the Fund and its 
+shareholders. Shares of the Fund will stop trading on the NYSE Arca, Inc., and will no longer be open to purchase 
+by investors, at the close of regular trading on December 26, 2014. Shareholders may sell their holdings in the 
+Fund prior to the closing date, and those transactions are subject to customary brokerage charges. Between the 
+closing date and the liquidation date, shareholders may only be able to sell their shares to certain broker-dealers 
+and there is no assurance that there will be a market for the Fund during that time period. On December 30, 2014, 
+the Fund will liquidate its assets and distribute cash pro rata to shareholders who have not previously redeemed 
+or exchanged their shares. These payments are taxable and will include any accrued capital gains and dividends. 
+The Fund’s net asset value will reflect the costs of closing the Fund as calculated on the liquidation date. The 
+Fund will close when the distributions are complete.
+IPO - 4/10/2014    Link to IPO Prospectus
+Previous Ticker Symbol: GLDS    Changed: 8/25/14
+Micro Cap Stock -   Market Value $ 4 Million
+
+xignite:
+Date:	12/26/2014
+Time:	4:00:00 PM
+UTCOffset:	-5
+Open:	47.810000000000
+Close:	47.250000000000
+High:	47.810000000000
+Low:	47.250000000000
+Last:	47.250000000000   <--- let's give this 
+
+let's look at the historical pricing
+/Marketocracy/bin/dbtool lookup stock BARS
+>>>> dbtool started at 2015-02-09 13:06:05 -0500
+stock: BARS
+  PK       : [F4FE56CF534720C5C0A86F92]
+  companyID: [26029]
+  symbol   : [BARS]
+  name     : [Direxion Daily Gold Bear 3X Shares]
+  date     : [2014-08-25 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-09 13:06:05 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 26029
+2015-02-02 (Mon) [5145]: O:47.8100 H:47.8100 L:47.2500 C:47.2500 V:573 TSO:0 A:47.2500 R:1.0000 CA:0.0000
+2015-02-03 (Tue) [5146]: O:47.8100 H:47.8100 L:47.2500 C:47.2500 V:573 TSO:0 A:47.2500 R:1.0000 CA:0.0000
+2015-02-04 (Wed) [5147]: O:47.8100 H:47.8100 L:47.2500 C:47.2500 V:573 TSO:0 A:47.2500 R:1.0000 CA:0.0000
+2015-02-05 (Thu) [5148]: O:47.8100 H:47.8100 L:47.2500 C:47.2500 V:573 TSO:0 A:47.2500 R:1.0000 CA:0.0000
+2015-02-06 (Fri) [5149]: O:47.8100 H:47.8100 L:47.2500 C:47.2500 V:573 TSO:0 A:47.2500 R:1.0000 CA:0.0000
+
+database:
+select distinct stockkey from mstockalias where symbol='BARS';
+> Row 1:
+>   STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'f4fe56cf534720c5c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 363384108
+>           DATE = TIMESTAMP '2014-04-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Gold Bear 3X Shares
+>     PRIMARYKEY = X'f4ff56cf534720c5c0a86f92'
+>       STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+>         SYMBOL = GLDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Gold Bear 3X Shares
+>     PRIMARYKEY = X'86eb5e3153fbbe7ac0a86f92'
+>       STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+>         SYMBOL = BARS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+ your open tickets for BARS	
+ 	 	
+Fund	Close Date	Shares	Net	Commission	SEC Fee
+Sell	 	0	$0.00	$0.00	$0.00
+ 	 	[ Trade this stock ]
+ 	 	[ See all trades for this stock ]
+	 your holdings of BARS	
+ 	 	
+Fund	Shares	Value	Portion of fund
+RPC	548	 $25,893.00	 0.42%   <----- expand 
+RBMF	 0	 N/A	 N/A
+ACM	 0	 N/A	 N/A
+
+LEDGER
+Date	Start	Change	End	Type
+Dec 05, 2014		655	655	Buy
+Dec 08, 2014	655	-22	633	Sell
+Jan 19, 2015	633	-85	548	Sell
+Total: 548
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 5, 2014	655	$32.75	$31,091.99	$47.47
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 8, 2014	22	$1.10	$0.02	$1,044.32	$47.47
+Jan 19, 2015	85	$4.25	$0.08	$4,145.85	$48.77
+ 	 	 
+MAdmin
+Stock:Direxion Daily Gold Bear 3X Shares  Symbol:BARS
+Date: 02/09/2015
+
+1 users found
+
+1	razmig	 	 	 	 	 	 	 	 	 
+
+
+
+he's the only one who holds it
+
+let's apply
+
+/Marketocracy/bin/cahelper -symbol BARS -effective 20141230 -type ACQUIS -exchange UN -acqType 1 -acqCash 47.25 -acqShare 0 -purchaser BARS >& /Users/build/caout/BARS.20150209.out
+BARS.20150209.out
+stocks:~/caout build$ tail -f BARS.20150209.out
+D: (02-09 13:12:10.369) Install Tiger valueForKey: hack for NSArray and NSSet
+
+D: (02-09 13:12:34.908) cahelper started on 2015-02-09 13:12:34 -0500
+
+D: (02-09 13:12:35.186) There are [1] open tickets for BARS on 20141230
+D: (02-09 13:12:35.203) StockFileLoad Version:3.0
+D: (02-09 13:12:35.204) Loading Stock Data
+D: (02-09 13:13:23.591) Building Lookup Index
+D: (02-09 13:13:28.816) Finished Building Index
+D: (02-09 13:13:30.117) Finished Loading Stock Data
+D: (02-09 13:13:30.715) Connection to 192.168.111.157:6666 succeeded
+D: (02-09 13:13:30.990) {
+    "ACQUIRED_STOCK" = BARS; 
+    "ACQUIRING_STOCK" = "BARS_FIX"; 
+    AMOUNT = 47.25; 
+    APPLIED = 1; 
+    DATE = 20141230; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BARS_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-09 13:13:31.453) SUCCESS
+D: (02-09 13:13:31.453) cahelper finished 2015-02-09 13:13:31 -0500
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'f4fe56cf534720c5c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 363384108
+>           DATE = TIMESTAMP '2014-04-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Gold Bear 3X Shares
+>     PRIMARYKEY = X'f4ff56cf534720c5c0a86f92'
+>       STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+>         SYMBOL = GLDS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Gold Bear 3X Shares
+>     PRIMARYKEY = X'86eb5e3153fbbe7ac0a86f92'
+>       STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+>         SYMBOL = BARS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Gold Bear 3X Shares
+>     PRIMARYKEY = X'b28b4b6754d8f8cac0a86f92'
+>       STOCKKEY = X'f4fe56cf534720c5c0a86f92'
+>         SYMBOL = BARS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'b28b4b6754d8f8cac0a86f92';
+> Row 1:
+>              ALIASKEY = X'b28b4b6754d8f8cac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BARS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|47.250000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150209:011234
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = BARS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BARS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-12-30 00:00:00.000000'
+>            PRIMARYKEY = X'b2794b6754d8f892c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'b2794b6754d8f892c0a86f92';
+> Row 1:
+>   _C001 = 1.000000
+
+check on 2/10/15 member razmig  RPC fund  548 shares * 47.25 = $25,893   on 12/30/14
+
+I see the shares taken in his RPC fund on 12/30/14, however, no cash
+need to invalidate the fund
+
+>>>> dbtool started at 2015-02-10 09:40:14 -0500
+fund: razmig
+  PK: [336A0ECF3FC87002C0A80134]  <----  this one
+  symbol: [RPC]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [ACAE66FF3AA5D75DC0A801E1]  <---- this one
+  symbol: [RBMF]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [E7A506E84F00CAF2C0A80132]
+  symbol: [ACM]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+<<<< dbtool finished at 2015-02-10 09:40:15 -0500
+
+/Marketocracy/bin/fptool invalidateFund 336A0ECF3FC87002C0A80134
+
+log back in 
+The cash is there now.   We can close this out 
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+12/30/2014	$354,045.64	$0.00	$9.70	$29,909.25	$296.19	$289,419.09	$94,249.30	$5,244,224.67	$5,338,473.97	100,000	$53.38	Yes	Details 

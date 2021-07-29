@@ -1,0 +1,118 @@
+date:  1/23/15
+new list for BOX?   request from steve 
+
+request from member 
+
+Can you submit a request to have the new issue BOX available to trade??
+went public today... is it available to trade on M'tcy platform?
+
+-- 
+Stephen R. Stewart 
+Trading Coach / Chief Investment Strategist 
+Map Syntax, LLC
+www.mapsyntax.com 
+Super Stock Hall of Fame
+
+yahoo
+BOX INC (BOX) -NYSE   Watchlist
+23.23  9.23(65.93%) 4:00PM EST
+After Hours : 23.06  0.17 (0.73%) 7:59PM EST
+
+Add to Portfolio
+Prev Close:	14.00
+Open:	20.20
+Bid:	22.50 x 100
+Ask:	24.00 x 100
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	20.16 - 24.73
+52wk Range:	20.16 - 24.73
+Volume:	42,593,223
+Avg Vol (3m):	N/A
+Market Cap:	294.16M
+P/E (ttm):	N/A
+EPS (ttm):	-12.34
+Div & Yield:	N/A (N/A
+
+Box, Inc. provides a cloud-based mobile optimized enterprise content collaboration platform in the United States. The companys platform enables organizations of various sizes to store, share, manage, create, and collaborate with content internally and externally. It serves companies in a range of industries, such as healthcare and life sciences, telecommunications, energy, and financial services. The company was formerly known as Box.Net, Inc. and changed its name to Box, Inc. in November 2011. Box, Inc. was founded in 2005 and is headquartered in Los Altos, California.
+
+quantum
+nothing yet
+
+xignite
+it's there no cusip
+
+select distinct stockkey from mstockalias where symbol='BOX';
+> Row 1:
+>   STOCKKEY = X'09fb0e21390aea35c0a80116'
+select * from mstockalias where STOCKKEY = X'09fb0e21390aea35c0a80116';
+delisted 
+> Row 2:
+>   STOCKKEY = X'833e1cf04cc9faabc0a80146'
+select * from mstockalias where STOCKKEY = X'833e1cf04cc9faabc0a80146';
+delisted 
+> Row 3:
+>   STOCKKEY = X'ca3b49b854c2e1d5c0a86f92'
+select * from mstockalias where STOCKKEY = X'ca3b49b854c2e1d5c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Box Inc
+>     PRIMARYKEY = X'ca3c49b854c2e1d5c0a86f92'
+>       STOCKKEY = X'ca3b49b854c2e1d5c0a86f92'
+>         SYMBOL = BOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'ca3b49b854c2e1d5c0a86f92';
+nothing
+
+it just listed
+we need the sector, the style and the CSUIP
+
+let's check investing.com
+nothing yet
+
+update mstockalias set STYLEKEY='XG' where PRIMARYKEY = X'ca3c49b854c2e1d5c0a86f92';
+45101010	Internet Software & Services
+	Companies developing and marketing internet software and/or providing internet services including online databases and interactive services, as well as companies deriving a majority of their revenues from online advertising. Excludes companies classified in the Internet Retail Sub-Industry.
+update mstockalias set GICSKEY='45101010' where PRIMARYKEY = X'ca3c49b854c2e1d5c0a86f92';
+back from xignite:
+
+SuccessRequest0.343034Success00001383518N/ABOXUS10316T104324072587BoxNYSETECHNOLOGY1/23/201523.2320.224.7320.164259322303.031523.230101USDNoneValid
+
+
+10316T104 324072587B
+
+it's there!  
+
+10316T104
+
+update mstockalias set cusip='10316T104' where PRIMARYKEY = X'ca3c49b854c2e1d5c0a86f92';
+
+select * from mstockalias where STOCKKEY = X'ca3b49b854c2e1d5c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10316T104
+>           DATE = TIMESTAMP '2015-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Box Inc
+>     PRIMARYKEY = X'ca3c49b854c2e1d5c0a86f92'
+>       STOCKKEY = X'ca3b49b854c2e1d5c0a86f92'
+>         SYMBOL = BOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XG
+
+check on 1/24/15 to see if the symbol appears and then enter a test trade
+
+1/24/15 
+BOX appears on our site.   I am going to enter a test trade for Monday
+
+1/26/15 
+my order to buy 10 shares of BOX executed.   It's tradable.  closing this out

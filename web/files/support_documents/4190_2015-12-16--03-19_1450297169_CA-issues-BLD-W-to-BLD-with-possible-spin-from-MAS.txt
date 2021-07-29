@@ -1,0 +1,1072 @@
+12/14/15
+BLD-W  to BLD  suspect that there is a missing spin
+
+> Row 22:
+>              ALIASKEY = X'cbbc61c555947266c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|BLD-W US|CP_NEW_TKR|BLD US|CP_NOTES|End of When issued trading.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108036629
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 42470579
+>        BB_COMPANYNAME = TopBuild Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = BLD-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = BLD-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-09 00:00:00.000000'
+>            PRIMARYKEY = X'e970552355776f64c0a86f92'
+>               VERSION = NULL
+
+1. get the aliaskey from the mcorporateaction record;.
+select distinct stockkey from mstockalias where primarykey=X'cbbc61c555947266c0a86f92';
+> Row 1:
+>   STOCKKEY = X'f31d174b5581fbcec0a86f92'
+2.  expand the mstockalias records
+select * from mstockalias where stockkey=X'f31d174b5581fbcec0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'f31e174b5581fbcec0a86f92'
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>         SYMBOL = BLD-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'cbbc61c555947266c0a86f92'
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>         SYMBOL = BLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+3.  check the ticket count
+select count(*) from mticket where stockkey=X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>   _C001 = 2.000000
+
+4.  get the companyid
+select * from mstock where primarykey=X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cbbc61c555947266c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f31d174b5581fbcec0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28484
+>   WINDOWIDENTITYKEY = NULL
+
+5.  now check for mcorporateaction records with the ticker and SPIN
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|BLD US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|TopBuild Corp|CP_ID_BB_COMP|42470579|CP_ID_BB_SEC|1000|CP_TERMS|1 per 9|CP_RATIO|0.111111|CP_PAY_DT|20150630|CP_RECORD_DT|20150619|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.878890|CP_ADJ_DT|20150701|CP_TKR|BLD US|CP_DUE_BILL_RED_DT|20150706|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0077VS2C0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0077VS187|CP_SPINOFF_ID_BB_SEC_NUM_DES|BLD|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96783329
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100948
+>        BB_COMPANYNAME = Masco Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = MAS     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-30 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = MAS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'5d0833f755bcc712c0a86f92'
+>               VERSION = NULL
+
+get the terms of this spin off
+
+MAS spun off BLD
+effective date:2015-07-01
+CP_RATIO|0.111111|
+CP_PAY_DT|20150630|
+CP_RECORD_DT|20150619
+
+do we have a MAS?
+select distinct stockkey from mstockalias where symbol='MAS';
+> Row 1:
+>   STOCKKEY = X'1af70e21390b1a90c0a80116'
+select * from mstockalias where stockkey=X'1af70e21390b1a90c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 574599106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MASCO CORP
+>     PRIMARYKEY = X'1af80e21390b1a90c0a80116'
+>       STOCKKEY = X'1af70e21390b1a90c0a80116'
+>         SYMBOL = MAS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20102010
+>       STYLEKEY = MB
+
+Assessment - we have two tickets for BLD
+select * from mticket where stockkey=X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-23 12:04:30.000000'
+>        COMMENT = NULL
+>     COMMISSION = 182.850000
+>   CURRENTORDER = X'f1f800ff562a4e6fc0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'079614af473a9945c0a80133'
+>       MODIFIED = NULL
+>            NET = 110600.863485
+>         OPENED = TIMESTAMP '2015-10-23 11:12:36.000000'
+>          PRICE = 30.243605
+>     PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 3657.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-23 11:53:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 191.200000
+>   CURRENTORDER = X'905200e65653412cc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7a8a248741634bf3c0a80134'
+>       MODIFIED = NULL
+>            NET = 108019.701920
+>         OPENED = TIMESTAMP '2015-11-23 11:39:01.000000'
+>          PRICE = 28.247830
+>     PRIMARYKEY = X'905000e65653412cc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 3824.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select loginname from mmanager where primarykey in (select managerkey from mticket where stockkey=X'f31d174b5581fbcec0a86f92');
+> Row 1:
+>   LOGINNAME = mrp8ntball
+> Row 2:
+>   LOGINNAME = sriramve
+
+let's back out the BLD-W to BLD  then we can do the spin off
+select * from mstockalias where stockkey=X'f31d174b5581fbcec0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'f31e174b5581fbcec0a86f92'  <--- make this the identitykey
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>         SYMBOL = BLD-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'cbbc61c555947266c0a86f92'   <---- delete 
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>         SYMBOL = BLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'cbbc61c555947266c0a86f92';
+> Row 1:
+>              ALIASKEY = X'cbbc61c555947266c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|BLD-W US|CP_NEW_TKR|BLD US|CP_NOTES|End of When issued trading.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108036629
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 42470579
+>        BB_COMPANYNAME = TopBuild Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = BLD-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = BLD-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-09 00:00:00.000000'
+>            PRIMARYKEY = X'e970552355776f64c0a86f92'  <---- delete 
+>               VERSION = NULL
+
+select * from mstock where primarykey=X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cbbc61c555947266c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f31d174b5581fbcec0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28484
+>   WINDOWIDENTITYKEY = NULL
+
+>     PRIMARYKEY = X'f31e174b5581fbcec0a86f92'  <--- make this the identitykey
+
+update mstock set IDENTITYKEY = X'f31e174b5581fbcec0a86f92' where PRIMARYKEY = X'f31d174b5581fbcec0a86f92';
+delete the mcorporateaction and mstockalias for the CHG_TKR
+delete from mcorporateaction where PRIMARYKEY = X'e970552355776f64c0a86f92';
+delete from mstockalias where PRIMARYKEY = X'cbbc61c555947266c0a86f92';
+
+select * from mstockalias where stockkey=X'f31d174b5581fbcec0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'f31e174b5581fbcec0a86f92'
+>       STOCKKEY = X'f31d174b5581fbcec0a86f92'
+>         SYMBOL = BLD-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+Let's apply the SPIN now that BLD is free
+
+get the terms of this spin off
+
+MAS spun off BLD
+effective date:20150701
+CP_RATIO|0.111111|
+CP_PAY_DT|20150630
+CP_RECORD_DT|20150619
+
+/Marketocracy/bin/cahelper -symbol MAS -effective 20150701 -type SPIN -exchange UN -spinOffSymbol BLD -payDate 20150630 -recordDate 20150619 -name 'TopBuild Corp' -ratio 0.111111 >& /Users/build/caout/MAS.20151214-SPIN-BLD.out
+D: (12-14 15:53:24.649) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 15:54:23.581) cahelper started on 2015-12-14 15:54:23 -0500
+
+D: (12-14 15:54:36.121) StockFileLoad Version:4.0
+D: (12-14 15:54:36.121) Loading Stock Data
+D: (12-14 15:56:17.621) Building Lookup Index
+D: (12-14 15:56:29.725) Finished Building Index
+D: (12-14 15:56:39.075) Finished Loading Stock Data
+D: (12-14 15:56:39.127) Connection to 192.168.111.172:6666 succeeded
+D: (12-14 15:57:27.489) SavingChanges for Stock Dividend out 101 of 997
+D: (12-14 15:58:44.106) SavingChanges for Stock Dividend out 201 of 997
+D: (12-14 15:59:31.177) SavingChanges for Stock Dividend out 301 of 997
+D: (12-14 16:00:29.767) SavingChanges for Stock Dividend out 401 of 997
+D: (12-14 16:01:22.305) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "fatkins/value stocks", 
+        "mmacneil/FerrisWheel", 
+        "lscarnato/Agressive Growth", 
+        "nstandli/Capital Appreciation Fund", 
+        "allevajf/Mountaineer Fund", 
+        "lnoll11972/Fred Noll Fund", 
+        "bholms/Berit Kaleen Holms's Mutual Fund", 
+        "asitnik/Alexey Nicholas Sitnik's Mutual Fund", 
+        "sali/mirachooza", 
+        "telestar/Telestar3d", 
+        "dlundy/Darryl Lundy's Mutual Fund", 
+        "cstraessle/Christian  Straessle's Cyclical Fund", 
+        "rdyer/The Promised Land Growth & Income Fund", 
+        "feely1s/Large-Cap Opportunity", 
+        "mbtrump/American Leaders Fund", 
+        "mbtrump/Sector Rotation Fund", 
+        "mquarello/StockFirst Fund", 
+        "jpendleton/john pendleton's Mutual Fund", 
+        "handress/Evening Star", 
+        "dfklimovich/Building Materials ", 
+        "aoliveira/AL OLIVEIRA's  Value Mutual Fund", 
+        "csarra/christian sarra's Mutual Fund#8", 
+        "cwesterbeek/Westerbeek Select Value", 
+        "tturnier/Tex Turnier's Mutual Fund", 
+        "joeblow/Top 2 from 16 sectors of economy", 
+        "jmarcel/jmarcel's Mutual Fund", 
+        "cwhitehead/charles whitehead's conservtive value fund", 
+        "jbarnes/Barnes Large Value", 
+        "kbladlee/Ladlee Strength Value Fund", 
+        "electricsavant/ElectricSavant's Mutual Fund", 
+        "mjshan/Plus Ultra Momentum 3", 
+        "mjshan/Plus Ultra Materials Sector Fund", 
+        "mjshan/Plus Ultra Small Cap Fund", 
+        "jball/Jeff Ball's Mutual Fund", 
+        "mbarnes/Michael Barnes's Large Value Fund", 
+        "mjshan/Plus Ultra Fund", 
+        "spanky/APPRECIATION", 
+        "DELETED_2005469/Elias Rima's Mutual Fund", 
+        "pcrawford/Winner Mutual Fund", 
+        "rrshah/B School", 
+        "dprzybylski/david joseph przybylski's Mutual Fund", 
+        "awahili/Raymond Rushen Roughton, III's Mutual Fund", 
+        "pcrawford/Freedom Mutual Fund", 
+        "cmitchell1/Chris Mitchell's Fund", 
+        "key1park/Ki Park's Value Fund", 
+        "nhale/Norm Hale's Mutual Fund", 
+        "tagteam1/TAG ", 
+        "vrichards/Pathfinder Fund", 
+        "jbowie/The GT$ Fund", 
+        "mikelef/mikelef's Mutual Fund", 
+        "herrmannation/herrmannation's Mutual Fund", 
+        "pmonteleone/A List", 
+        "pmonteleone/Philip P. Monteleone, CPA, CMA, CFM's Diversified Mutual Fund", 
+        "mattyk/Fort Knox Locks", 
+        "jcampbell4/Campbell Large Cap Value and Income", 
+        "lmlynarek/ legent,s Investments", 
+        "stevecrane/Crane Quantitative Value Fund", 
+        "jcampbell4/Campbell Large Cap Growth", 
+        "lwilliamson/lwilliamson's Mutual Fund", 
+        "stcktrdr35/stcktrdr35's Mutual Fund", 
+        "aantonelli/pene's found", 
+        "tagett/Diogenes AG Fund", 
+        "nslaughter/Agothos Growth and Income Fund", 
+        "deejay/Penfield Growth  Fund", 
+        "ptarantino/ptarantino's Mutual Fund", 
+        "bigbob/bigbob's Mutual Fund", 
+        "claudio_wong/Wong's fund", 
+        "charkins1/Abby's Fund", 
+        "dginty/Balanced Cap Fund", 
+        "pseney/pseney's Mutual Fund", 
+        "mmosley/Woodland Growth Fund", 
+        "rickmccoy/rickmccoy's Mutual Fund", 
+        "ttindall/New Highs", 
+        "efournier/efournier's Mutual Fund", 
+        "bbrownson/Brownson Captial Management", 
+        "mgoldner/mgoldner' general Mutual Fund", 
+        "jchauvette/ymalah's Mutual Fund", 
+        "kmoore50/kmoore50's Value Fund", 
+        "sef_1968/The Slow and Steady 40 ", 
+        "bvandergriff/Vandergriffs PM", 
+        "jneller/regent fund", 
+        "weil00/gpt Oct 2002 picks", 
+        "hotmamma/Brandon Waldron Hoe Fund", 
+        "jcronin/Cronin Twins Growth Fund", 
+        "rtoic/rtoic's core focus fund", 
+        "mathematician/mathematician's Mutual Fund", 
+        "DELETE_maureenide_30130071/MACD Mutual Fund", 
+        "fcesare/fcesare's value fund", 
+        "jchauvette/YMALAH01", 
+        "pborowiec/pborowiec's Mutual Fund", 
+        "bcoatoam/Value Extreme", 
+        "abell/abell's Mutual Fund", 
+        "nshanske/nshanske's Mutual Fund", 
+        "vlapuma/vlapuma's large cap value", 
+        "dkmiller68/dkmiller68's small/mid growth fund", 
+        "jtmuncey/Grutz's Mutual Fund", 
+        "DELETE_demastus_40619031/Backroom Fund", 
+        "wyoung1/wyoung1's Mutual Fund", 
+        "nmink/FROSTLIST/AFGSCREEN", 
+        "butcher/Butcher's Building and DIY Fund", 
+        "cwade/cwade's Mutual Fund", 
+        "iberezniak/Berezniak Diversified Dividend Fund", 
+        "inverjach/inverjach's Mutual Fund", 
+        "dlinse/LIN-C ", 
+        "dlinse/stock", 
+        "sharpe95/GreenJacket Fund", 
+        "cyberwulff/cyberwulff's Mutual Fund", 
+        "jdamian_jr/jdamian_jr's Industrial goods fund", 
+        "DELETED_linglee_200605071211001/Ling Location Location Fund", 
+        "DELETE_philmie_40619003/Philmie's Filtered Fund", 
+        "ponel/Omega Mutual Fund", 
+        "sylvie/3 etoiles ascendantes", 
+        "sylvie/Les Fleches", 
+        "cricounet/Christian Milan 's Mutual Fund", 
+        "jmilk/jmilk growth&income", 
+        "jmilk/jmilk's mid cap value", 
+        "gmccall/Gorilla Portfolio", 
+        "jambartel/Severe Value Fund", 
+        "twqs/TWQS", 
+        "nan191/nan191's Mutual Fund", 
+        "lilyleona/lilyleona's Mutual Fund", 
+        "handress/BFSOscillatorFund", 
+        "avicere/BTSM#2", 
+        "glang/SP Beater", 
+        "joshdm_94/FOG/CANSLIM", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "grand-pas/Fundamental Diversified", 
+        "cobesdevilmaster/cobesdevilmaster's Mutual Fund", 
+        "fpower/DOWT", 
+        "orange/Lowrey Fund: Khaki", 
+        "jbyron/Iceland Glacier Fund", 
+        "kfravel/S&P 500 Select Fund", 
+        "orange/Lowrey Fund: Gray", 
+        "adenovir/adenovir's dividend growth", 
+        "rmcolella/RMC Superior Growth Fund", 
+        "jyu/tfund", 
+        "jyu/T Com", 
+        "jyu/Tech Select", 
+        "jyu/Bull Fund", 
+        "julioqwerty/8.18.04 picks", 
+        "wallstret/wallstret's Mutual Fund", 
+        "acanete/ARC Dividend Value", 
+        "pnutgllry/pnutgllry's Short Fund", 
+        "mssharma/mssharma's Industrials", 
+        "guci7/guci7's Mutual Fund", 
+        "ljoneill/LJO Large Cap Core Growth Fund", 
+        "rcutrupi/Cutrupi Brandys  Dow Plus", 
+        "ridaam/Explorer", 
+        "tchildress8272/tchildress8272's Mutual Fund", 
+        "aogilvie/ACO PARTNERS", 
+        "mvrh/IBD Daily Big Money", 
+        "salban/salban's growth fund", 
+        "gator101/FM Short B", 
+        "lnoll11972/lnoll11972's Mutual Fund", 
+        "mgulla/Gulla Short Fund", 
+        "zenner/Forbes Recs Mutual Fund", 
+        "mochi/best bets", 
+        "regentclass/regentclass's Mutual Fund", 
+        "denis/denis's Mutual Fund", 
+        "cmcfee/cmcfee's short Mutual Fund", 
+        "eferguson2/EF S&P 500 Beater", 
+        "vooch2/Dividend Aristocrats", 
+        "jimmykon/Jimmykon Mundane Investment Fund", 
+        "mochi/brook place", 
+        "alpha/Alpha's Street Insight Fund", 
+        "balletto/balletto RSValue Fund-monthly", 
+        "sjpillette/sjpillette's Industrials", 
+        "gfowler1/Fowler Classic Large Cap", 
+        "jubals/jubals's short Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "791branko/A Short Experiment", 
+        "mbarbon/mbarbon's Short Mutual Fund", 
+        "dschoenman/dschoenman's Mutual Fund", 
+        "jelloyeti/High Diversification Fund", 
+        "mt_suit/Fire of Orodruin", 
+        "play4bull/play4bull's BuyBack Fund", 
+        "astanis/astanis's Mutual Fund", 
+        "aschaefer/Screen For March 2005", 
+        "chloe/SuperNova Short Fund", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "green_treak/green_treak's Mutual Fund", 
+        "eb2568/Baker Sector Fund", 
+        "acula/Mick Mutual Fund", 
+        "vooch4/Q", 
+        "jjohnson7/jjohnson7's Mutual Fund", 
+        "jfpauze@hotmail.com/JF Mutual Fund", 
+        "scootee73/Phillips Rocket Mutual Fund", 
+        "pgolda/Paul Golda Value Fund I", 
+        "skuosma/Samu Kuosmanen's Consumer Discretionary", 
+        "enhanced/Enhanced.Net Fund A", 
+        "tojoe/SUMMA ALL", 
+        "jpr/JPR High Risk Fund", 
+        "905/905's Mutual Fund", 
+        "jdwgig/jdwgig's Mutual Fund", 
+        "jcioffi/jcioffi's cashflo", 
+        "jaloisi/jaloisi's Mutual Fund", 
+        "will60108/will60108's Grainger Mutual Fund", 
+        "fred0053/Clone Fund", 
+        "penggijb/penggijb's Mutual Fund", 
+        "DELETED_gheyland_20071211130001/The Heyland HCM Long Fund", 
+        "debracharles/Debracharles's Mutual Fund", 
+        "fauria/fauria's Mutual Fund", 
+        "new101/new1", 
+        "jjjwrussell/jjjwrussell's Mutual Fund", 
+        "asmith8/asmith8's Mutual Fund", 
+        "stan16/stan16's Mutual Fund", 
+        "jaycnpl/Manifest", 
+        "appollyona/Dog Day Fund", 
+        "jgcredleg/jgc two", 
+        "mchristy/Industrial Fund Short", 
+        "sunny92037/sunny92037's Mutual Fund", 
+        "hgans/hgans's Mutual Fund", 
+        "rdevall/RD Large Cap Value", 
+        "jgcredleg/jgc nine", 
+        "momalley/momalley's Mutual Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "coaster/IMPACT GROWTH", 
+        "bigburrito/dividends", 
+        "mokhan/mokhan's Mutual Fund", 
+        "mikki33_2000/Value Fund #2", 
+        "rsoberman1/RJS Value Fund", 
+        "rsoberman1/RJS Value Focus Fund", 
+        "schmidt612/blend 2", 
+        "dave0chan/dave0chan's Mutual Fund", 
+        "dsimpson3/Equally weighted SPUTILITIES", 
+        "gsupmt/GSU PMT", 
+        "gpatterson/Renovatio", 
+        "surleswj/Long Value", 
+        "vooch5/T10", 
+        "siakhasone/Siakhasone Michigan Index", 
+        "oberto/oberto's Mutual Fund", 
+        "alder/MF Large Incons", 
+        "ghg777/Shotgun Fund", 
+        "mrb/mrb's Short Fund", 
+        "primus/Ingenium US Short", 
+        "jbadams83/jbadams83's Mutual Fund", 
+        "teenvestor/Mike's 100-stock Fund", 
+        "rnutter/Custom Model Dividend", 
+        "mjmiller/Wolverine Value Fund", 
+        "jkaufman6/Kaufman Industrials and Manufacturers", 
+        "rfecteau/rfecteau's Mutual Fund", 
+        "fidesindeus/Barrett Value Fund", 
+        "bmcclard/Quantitative Ranking", 
+        "mrm661014@cs.com/S&P 500 Select Fund", 
+        "hphlp/hugh phelps's Mutual Fund", 
+        "finanaliticaam/1", 
+        "gtinta/ExpressInvestor.com", 
+        "money21/The Magic Formula Fund", 
+        "jimfink/jimfink's Mutual Fund2", 
+        "duster0626/duster0626's Mutual Fund", 
+        "ablechartist/AbleChartist Best of Best Value ", 
+        "tina/tina's Mutual Fund", 
+        "x01479/Absolute Value Strategy Fund", 
+        "porter448/porter448's Mutual Fund", 
+        "takara/takara's Mutual Fund", 
+        "jillse38/jillse38's Mutual Fund", 
+        "larrymunsil/Larry Munsil's LargeCap", 
+        "ablechartist/AbleChartist Larger-Cap", 
+        "finanaliticasector_a/INDUSTRIALS1", 
+        "finanaliticasector_a/INDUSTRIALS2", 
+        "finanaliticasector_a/INDUSTRIALS5", 
+        "dmlakova/dmlakova's Mutual Fund", 
+        "dsantiago/Danilo's Long Fund", 
+        "pmorin1/GW1's Mutual Fund", 
+        "danilors/Danilo's Mutual Fund", 
+        "drs1000/drs1000's Mutual Fund", 
+        "drs1001/drs1001's Mutual Fund", 
+        "ljoneill/Large Cap Longs", 
+        "finanaliticaam/5", 
+        "mrm661014@cs.com/S&P 500 Select II", 
+        "globalwarming12/globalwarming12's Mutual Fund", 
+        "roebe_is/roebe_is's Mutual Fund", 
+        "jmruk2/jmruk2's Mutual Fund", 
+        "willblur/willblur's S&P500 Short Fund", 
+        "cmccann77/cmccann77's Mutual Fund", 
+        "edward5555/ESD US VALUE", 
+        "jerzeyrican6689/jerzeyrican6689's Mutual Fund", 
+        "mickkilla911/mickkilla911's Mutual Fund", 
+        "mattie/Peregrine Short Fund", 
+        "gholds/GHold's breathlessly overhyped short fund", 
+        "jfernandez/jfernandez's Mutual Fund", 
+        "marymary/How much is that doggy?", 
+        "doleary19/Paintworks Capital I (For Tax Deferred Accnts)", 
+        "jhamer/Short-Only Fund", 
+        "cselogie/cselogie's Mutual Fund", 
+        "rgoud/Social-Ethical", 
+        "takeiteasy/Hudon Short", 
+        "phineasfolly/phineasfolly's Fund", 
+        "jjjalssss/Joe Value  Mutual Fund", 
+        "pdelbuck/Apache aggressive growth", 
+        "grahamanddoddsville/G&Dsville Value Fund", 
+        "dlee11/Davidly Short Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "gonzalez/Sectors 2 (Feb/07)", 
+        "gonzalez/Sectors3 (Feb/07)", 
+        "pww746/MStox Fund", 
+        "greatware/greatware's System Mutual Fund", 
+        "bobley/bobley's all cap value", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "dividendchecks/dividendchecks's Mutual Fund", 
+        "ottofeige/Chairman Mutual Fund", 
+        "romeo1971/romeo1971's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "quantboy/Ballast Longs", 
+        "arete/arete II", 
+        "jfrancois/jfrancois's Short Fund", 
+        "earlmiranda/Miranda Enterprise Fund", 
+        "bradlevi/S&P 50 High Dividen Yielders", 
+        "doleary19/Paintworks Capital II Long Duration", 
+        "joeyeff/Joeyeff's Timber Fund", 
+        "larchmont/Larchmont's Dividend Growth Mutual Fund", 
+        "hortonpt/HPTShort", 
+        "alobato/ASL High Yield Picks", 
+        "mnibmgip07/TA TREND SHORT FUND", 
+        "rtareilo/Sector Short Fund", 
+        "andrewkcook/Short Fund", 
+        "beachbumed/Beachbumed's Short Fund", 
+        "wo_neill/wo_neill's Mutual Fund", 
+        "westharbor/Bottom Value", 
+        "eseward/PSTFP Short Fund", 
+        "ledio/ledio's Mutual Fund", 
+        "greenyard/greenyard's Mutual Fund", 
+        "greenyard/greenyard's Mutual Fund", 
+        "curtp/curtp's Real Property Mutual Fund", 
+        "fecm/LSE Fund short", 
+        "jpraschnik/Aesop's Tortoise Value Fund", 
+        "dunshire/Short-Term [crm]", 
+        "dcraze/TQF 33", 
+        "watcher/Test Short Fund", 
+        "mhutton2/M. Hutton Mid Cap Value Fund", 
+        "tleaf/Sell", 
+        "tleaf/super sweet short", 
+        "rpatzman/Get shorty", 
+        "cburgess/S&P 500 Index", 
+        "govaert/Govaert's Timber Fund", 
+        "aresetar/s&p/wklyld", 
+        "daferdan/Dan's Current Yield Fund", 
+        "haslepat/Haze Short Fund", 
+        "rpatzman/Acuity Short", 
+        "bobandweev/ZigZagr", 
+        "jaudio/Jonathan Coyle Strat Lab Open Fund", 
+        "gmoser03@comcast.net/gmoser03@comcast.net's Mutual Fund", 
+        "yaldezian/yaldezian's Mutual Fund", 
+        "hpatel298/FCF Fund", 
+        "tbmonroe/DFR", 
+        "lindadavis08/lindadavis08's Mutual Fund", 
+        "cburgess/Burgess Equity Mutual Fund", 
+        "cburgess/Independent Trader Fund (Long)", 
+        "cmdowns/cmdowns's Mutual Fund", 
+        "tempest44/Pythagoras", 
+        "niarcas/Niarcas Mutual Fund", 
+        "jmcgraw2/jmcgraw2's Mutual Fund", 
+        "rockfish/Relipoint Income Reinvestment Fund", 
+        "krams/S. Cremer Mutual Fund", 
+        "nlgravity/High Yield Equity", 
+        "maizeblue65/High Yield Fund", 
+        "nlgravity/Infrastructure", 
+        "pfaust/The Passe Fund", 
+        "wszaroletta/Start Absolute Short 1%", 
+        "revblc/Short Fund", 
+        "yaldezian/yaldezian's New Oppty Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "lycos/Lycos Shorts", 
+        "research/Research's Model Portfolio", 
+        "erikaleigh/Erika Leigh Short", 
+        "likes/finviz", 
+        "kchamblee/bottom of the barrel", 
+        "jarvis_hills/dead horses", 
+        "regleo/regleo's Dividend Play", 
+        "altius/Altius Mid Cap", 
+        "kirsty/kirsty's Mutual Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "lmharold/Harold Industrials Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "richandhappy/My Second Mutual Fund", 
+        "gilgameshloco/Dead Money", 
+        "kikiannie11/kikiannie11's Mutual Fund", 
+        "colechris/lowmo", 
+        "kchamblee/shadowpresident's  Mutual Fund /food processing", 
+        "tshields/TS Growth Fund", 
+        "vsagdeo/vsagdeo's Retail Mutual Fund", 
+        "rjvanden/RVB Smart Buys Long Fund", 
+        "erichuss/GRQ", 
+        "pbob/Pbob Focus Fund", 
+        "gilgameshloco/Heavy Construction -", 
+        "gilgameshloco/Zombie Dance Party", 
+        "hovah5/E-GROWTH", 
+        "gilgameshdux/Housing Glut", 
+        "crazylegshockey/My Overall Michigan Fund", 
+        "westharbor/Hedge Fund", 
+        "gilgameshdux/Bank Fraud", 
+        "gilgameshloco/Happy 2010", 
+        "gilgameshdux/House of Cons", 
+        "nigazwopr/WoprNigaz", 
+        "huyehara/huyehara's Mutual Fund", 
+        "rancid514/Vision Management", 
+        "rancid514/Vision Diversified Fund", 
+        "mmmaize/test-short", 
+        "cvantoor/cvantoor's Fundamental Short Fund", 
+        "stanglx718/Rog\U00e9 Intrinsic Value Fund", 
+        "gsilcott/gsilcott's Mutual Fund", 
+        "cvantoor/cvantoor's Short Fund", 
+        "qpr/Price Target Short  Mutual Fund", 
+        "maxgk/maxgk's Short fund", 
+        "ryanrumney/ryanrumney's Mutual Fund", 
+        "wfuqua/wfuqua's Mutual Fund", 
+        "alanjaye/alanjaye's Mutual Fund", 
+        "nclementine/nclementine's Mutual Fund", 
+        "abadazz/Short", 
+        "nwatrading/Timber", 
+        "alaieus/Short Hedged Fund", 
+        "aharon10/downbeat", 
+        "minishogi/Minishogi's Options Volatility Fund", 
+        "pnutgllry/pnutgllry's Mutual Fund", 
+        "tshields/Ted's AdvantageFund", 
+        "yaldezian/yaldezian's Short Mutual Fund", 
+        "gh528i/gh528i's Mutual Fund", 
+        "milingz/Trebuchet Opportunity Fund", 
+        "kolata/Raed Kolta's Solidity Short Fund", 
+        "abeardsley/Pigmy #2", 
+        "abeardsley/Pigmy Fund", 
+        "szhebu/Santa-October12", 
+        "cds_jr/CDS Diversified 3", 
+        "cds_jr/CDS D2  Mutual Fund", 
+        "cds_jr/CDS IN3", 
+        "cds_jr/CDS Diversified", 
+        "hurx/Hurx-Crisis-Profit Fund", 
+        "jwoznicki/JWoznicki's Mutual Fund", 
+        "razmig/ACM ", 
+        "wwasilev/RSI2", 
+        "romualdw/Al's Global Fund", 
+        "scraig/scraig's short fund", 
+        "sfish57/Growth Mutual Fund", 
+        "moneymachine88888/Cramer highlights", 
+        "ryno2390/Timely (Long)", 
+        "ryno2390/Timely (Long)", 
+        "cheil36/Discovery", 
+        "gbader/SP5 Momentum and Value", 
+        "l.russo12/l.russo12.2", 
+        "longshort/longshort's Piotroski Mutual Fund", 
+        "rjohnson/Rocky Johnson's Flagship Fund", 
+        "polr.bull/1.1p", 
+        "gnouf/Overnight/MiniMoMo", 
+        "chnilo/Cory Hnilo's Mutual Fund", 
+        "drass/D500", 
+        "jeffjwb7/jeffjwb7's Mutual Fund", 
+        "2004_porsche_911/Buffett Style", 
+        "lynne_mckee/S & P 500 Value", 
+        "morsimocap/Morsimo Capital FIQ Master SPX", 
+        "natalieb/Five best", 
+        "nagendra/Nagendra's Mutual Fund", 
+        "jeannie/Anne Shields Diversified Growth", 
+        "hiromimini/Selling into Computational Kaos"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150630; 
+    RATIO = 0.111111; 
+    "RECORD_DATE" = 20150619; 
+    "SPINOFF_SYMBOL" = BLD; 
+    SYMBOL = MAS; 
+    TYPE = SPIN; 
+}
+D: (12-14 16:01:30.621) SUCCESS
+D: (12-14 16:01:30.621) cahelper finished 2015-12-14 16:01:30 -0500
+
+how many members held MAS on the record date?
+MAdmin MAS   06/19/2015
+Stock:MASCO CORP  Symbol:MAS
+Date: 06/19/2015
+
+282 users found
+
+1	aantonelli	abadazz	abell	ablechartist	adenovir	aharon10	alanjaye	allevajf	alpha	altius
+2	andrewkcook	aoliveira	aresetar	arete	aschaefer	asitnik	asmith8	astanis	awahili	bbrownson
+3	bcoatoam	beachbumed	bholms	bigbob	bobley	butcher	bvandergriff	cburgess	cds_jr	charkins1
+4	cheil36	chnilo	claudio_wong	cmccann77	cmdowns	cmitchell1	cobesdevilmaster	commtrader7	crazylegshockey	cricounet
+5	csarra	cselogie	curtp	cwade	cwesterbeek	cwhitehead	cyberwulff	daferdan	danilors	dave0chan
+6	dcraze	debracharles	deejay	denis	dfklimovich	dginty	dlinse	dlundy	dmlakova	dprzybylski
+7	drass	drs1000	drs1001	dsantiago	dschoenman	earlmiranda	eb2568	edward5555	eferguson2	efournier
+8	enhanced	erichuss	eseward	fatkins	fauria	fcesare	feely1s	fidesindeus	finanaliticaam	finanaliticasector_a
+9	gfowler1	gh528i	gilgameshdux	gilgameshloco	glang	globalwarming12	gmccall	gmoser03@comcast.net	gnouf	gonzalez
+10	govaert	gpatterson	grahamanddoddsville	green_treak	greenyard	gsilcott	gsupmt	gtinta	guci7	handress
+11	haslepat	herrmannation	hgans	hortonpt	hpatel298	hphlp	iberezniak	inverjach	jaloisi	jambartel
+12	jaudio	jaycnpl	jbadams83	jbarnes	jbowie	jbyron	jcampbell4	jcioffi	jdamian_jr	jdwgig
+13	jerzeyrican6689	jfernandez	jfpauze@hotmail.com	jillse38	jimfink	jimmykon	jjjalssss	jjjwrussell	jkaufman6	jmarcel
+14	jmcgraw2	jmilk	jmruk2	jneller	joeblow	joshdm_94	jpendleton	jpr	jpraschnik	jtmuncey
+15	julioqwerty	jwoznicki	jyu	kbladlee	kchamblee	kfravel	kikiannie11	kirsty	kmoore50	kolata
+16	larchmont	larrymunsil	likes	lilyleona	lindadavis08	lmharold	lnoll11972	longshort	lscarnato	lwilliamson
+17	lynne_mckee	maizeblue65	mathematician	mattyk	maxgk	mbarnes	mbtrump	mchristy	mgoldner	mhutton2
+18	mickkilla911	mikelef	milingz	mjmiller	mjshan	mmacneil	mmosley	mochi	mokhan	momalley
+19	money21	moneymachine88888	morsimocap	mquarello	mrm661014@cs.com	mssharma	mvrh	nagendra	nan191	natalieb
+20	nclementine	nhale	niarcas	nigazwopr	nlgravity	nshanske	nslaughter	nstandli	nwatrading	oberto
+21	orange	ottofeige	pborowiec	pcrawford	pdelbuck	penggijb	pgolda	phineasfolly	play4bull	pmonteleone
+22	pmorin1	polr.bull	ponel	porter448	primus	pseney	ptarantino	pww746	quantboy	rancid514
+23	rcutrupi	rdevall	rdyer	regentclass	research	rfecteau	rgoud	richandhappy	rickmccoy	rjohnson
+24	rmcolella	rmorse	rockfish	roebe_is	romeo1971	romualdw	rrshah	rsoberman1	rtoic	ryanrumney
+25	ryno2390	salban	sali	schmidt612	scootee73	sfish57	sharpe95	siakhasone	sjpillette	spanky
+26	stan16	stanglx718	stcktrdr35	stevecrane	sunny92037	sylvie	szhebu	tagteam1	takeiteasy	tbmonroe
+27	tchildress8272	teenvestor	telestar	tempest44	tina	ttindall	tturnier	vlapuma	vooch2	vooch4
+28	vooch5	vrichards	vsagdeo	wallstret	watcher	wfuqua	will60108	wo_neill	wwasilev	wyoung1
+29	yaldezian	zenner
+
+
+for the case
+
+MAS spun off BLD but we missed it
+effective date:20150701
+CP_RATIO|0.111111|
+CP_PAY_DT|20150630
+CP_RECORD_DT|20150619
+282 members held the stock on the date of record
+
+
+select distinct stockkey from mstockalias where symbol='BLD';
+> Row 1:
+>   STOCKKEY = X'c6b90e21390a5050c0a80116'
+select * from mstockalias where STOCKKEY = X'c6b90e21390a5050c0a80116';
+this is old and delisted 
+> Row 2:
+>   STOCKKEY = X'c4715144566f2c7fc0a86fab'
+select * from mstockalias where STOCKKEY = X'c4715144566f2c7fc0a86fab';
+
+
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TopBuild Corp
+>     PRIMARYKEY = X'c4725144566f2c7fc0a86fab'
+>       STOCKKEY = X'c4715144566f2c7fc0a86fab'
+>         SYMBOL = BLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+this is our new BLD, just spun off
+select companyid from mstock where primarykey=X'c4715144566f2c7fc0a86fab';
+select distinct sourcekey from mticket where stockkey=X'c4715144566f2c7fc0a86fab';
+> Row 1:
+>   SOURCEKEY = X'c4695144566f2c7fc0a86fab'
+select count(*) from mticket where sourcekey = X'c4695144566f2c7fc0a86fab';
+> Row 1:
+>   _C001 = 456.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'c4695144566f2c7fc0a86fab'));
+there are 456 fundkeys, save to CA issues BLD fundkeys.txt
+
+BLD-1  the one we are keeping   STOCKKEY = X'c4715144566f2c7fc0a86fab'
+
+select distinct stockkey from mstockalias where symbol='BLD-W';
+> Row 1:
+>   STOCKKEY = X'f31d174b5581fbcec0a86f92'
+
+select primarykey from mticket where STOCKKEY = X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>   PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+> Row 2:
+>   PRIMARYKEY = X'905000e65653412cc0a86fa6'
+
+get the fundkeys
+
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'f31d174b5581fbcec0a86f92');
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'f31d174b5581fbcec0a86f92'));
+> Row 1:
+>   FUNDKEY = X'86b8441f4840351cc0a80133'
+> Row 2:
+>   FUNDKEY = X'304c1cb541852198c0a80132'
+
+get and delete the mtrades 
+
+delete from mtrade where  ticketkey in (select primarykey from mticket where STOCKKEY = X'f31d174b5581fbcec0a86f92');
+
+ok, update the stockkey in the mtickets
+
+select count(*) from mticket where  STOCKKEY = X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>   _C001 = 2.000000
+update mticket set STOCKKEY=X'c4715144566f2c7fc0a86fab' where STOCKKEY = X'f31d174b5581fbcec0a86f92';
+check the count
+select count(*) from mticket where sourcekey = X'c4695144566f2c7fc0a86fab';
+> Row 1:
+>   _C001 = 456.000000
+odd, the total did not increase 
+ticketkey
+> Row 1:
+>   PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+select * from mticket where PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-23 12:04:30.000000'
+>        COMMENT = NULL
+>     COMMISSION = 182.850000
+>   CURRENTORDER = X'f1f800ff562a4e6fc0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'079614af473a9945c0a80133'
+>       MODIFIED = NULL
+>            NET = 110600.863485
+>         OPENED = TIMESTAMP '2015-10-23 11:12:36.000000'
+>          PRICE = 30.243605
+>     PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 3657.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c4715144566f2c7fc0a86fab'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select symbol from mstockalias where stockkey=X'c4715144566f2c7fc0a86fab';
+> Row 2:
+>   PRIMARYKEY = X'905000e65653412cc0a86fa6'
+select * from mticket where PRIMARYKEY = X'905000e65653412cc0a86fa6';
+
+ok.  tickle these two tickets
+
+
+
+> Row 1:
+>   PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey f1f600ff562a4e6fc0a86fa6
+> Row 2:
+>   PRIMARYKEY = X'905000e65653412cc0a86fa6'
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 905000e65653412cc0a86fa6
+
+
+invalidate the fundkeys 
+> Row 1:
+>   FUNDKEY = X'86b8441f4840351cc0a80133'
+> Row 2:
+>   FUNDKEY = X'304c1cb541852198c0a80132'
+
+/Marketocracy/bin/fptool invalidateFund 86b8441f4840351cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 304c1cb541852198c0a80132;
+
+
+
+select distinct stockkey from mstockalias where symbol='BLD-W';
+> Row 1:
+>   STOCKKEY = X'f31d174b5581fbcec0a86f92'
+the mtickets have been moved, let's double checl
+select count(*) from mticket where STOCKKEY = X'f31d174b5581fbcec0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+ok let's delete this stockkey
+set commit false;
+
+delete from mstock where primarykey=  X'f31d174b5581fbcec0a86f92'; 
+
+delete from mwindowstock where stockkey=X'f31d174b5581fbcec0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'f31d174b5581fbcec0a86f92');
+
+delete from mstockalias where stockkey=STOCKKEY_TO_X'f31d174b5581fbcec0a86f92'DELETE;  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'f31d174b5581fbcec0a86f92');   
+
+delete from mposition where stockkey=X'f31d174b5581fbcec0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'f31d174b5581fbcec0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'f31d174b5581fbcec0a86f92');
+
+delete from mticket where stockkey=X'f31d174b5581fbcec0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'f31d174b5581fbcec0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'f31d174b5581fbcec0a86f92';  
+
+commit;
+
+set commit true;
+
+done
+
+trying to manipulate the two mtickets, getting debigger
+
+> Row 1:
+>   PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey f1f600ff562a4e6fc0a86fa6
+> Row 2:
+>   PRIMARYKEY = X'905000e65653412cc0a86fa6'
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 905000e65653412cc0a86fa6
+
+
+invalidate the fundkeys 
+> Row 1:
+>   FUNDKEY = X'86b8441f4840351cc0a80133'
+> Row 2:
+>   FUNDKEY = X'304c1cb541852198c0a80132'
+
+select * from mticket where primarykey=X'f1f600ff562a4e6fc0a86fa6';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-23 12:04:30.000000'
+>        COMMENT = NULL
+>     COMMISSION = 182.850000
+>   CURRENTORDER = X'f1f800ff562a4e6fc0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'079614af473a9945c0a80133'
+>       MODIFIED = NULL
+>            NET = 110600.863485
+>         OPENED = TIMESTAMP '2015-10-23 11:12:36.000000'
+>          PRICE = 30.243605
+>     PRIMARYKEY = X'f1f600ff562a4e6fc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 3657.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c4715144566f2c7fc0a86fab'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey =X'f1f600ff562a4e6fc0a86fa6'); 
+nothing yet 
+
+
+need to run tickle tickets and invalidate funds
+check on 12/15/15 for the BLD to up up and also check MAS for the spin off.
+need to do pricing
+
+BLD got spun on 2015-07-01
+need to add prices
+save to CA issues BLD prices to be loaded.txt
+> Row 1:
+>   COMPANYID = 29334
+
+I have loaded these
+
+select min(daynumber), max(daynumber) from stockprices where COMPANYID = 29334;
+> Row 1:
+>   _C001 = 5294
+>   _C002 = 5457
+
+need to run tickle tickets and invalidate funds
+check on 12/15/15 for the BLD to up up and also check MAS for the spin off.
+
+BLD is there and MAS shows the spin off
+need to update the terms though
+select * from mcorporateaction where aliaskey is not null and BB_SECID='MAS' and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'1af80e21390b1a90c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|TopBuild Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.111111|CP_PAY_DT|20150630|CP_RECORD_DT|20150619|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|BLD US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:035423
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = MAS     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MAS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'c4695144566f2c7fc0a86fab'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_SPINOFF_NAME|TopBuild Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 9|CP_RATIO|0.111111|CP_PAY_DT|20150630|CP_RECORD_DT|20150619|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|BLD US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.' where  PRIMARYKEY = X'c4695144566f2c7fc0a86fab';
+select * from mcorporateaction where aliaskey is not null and BB_SECID='MAS' and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'1af80e21390b1a90c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|TopBuild Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 9|CP_RATIO|0.111111|CP_PAY_DT|20150630|CP_RECORD_DT|20150619|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|BLD US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:035423
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = MAS     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MAS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'c4695144566f2c7fc0a86fab'
+>               VERSION = NULL
+MAS shows the spin and BLD is there, invalidate reprice and close 

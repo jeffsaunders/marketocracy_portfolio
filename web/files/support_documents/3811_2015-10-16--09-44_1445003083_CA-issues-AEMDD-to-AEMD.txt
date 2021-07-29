@@ -1,0 +1,989 @@
+date:  10/15/15
+aemdd changed to aemd
+Type
+Corporate Action | Ticker Symbol Change
+Ticket
+3811
+Priority
+Medium
+Status
+Open
+Member Name
+Richard Hawkins
+Username
+hiromimini
+Fund Symbols
+N/A
+Stock Tickers
+AEMD/ AEMDD
+Description / Resources:
+Thu 10/15/2015 at 07:04 AM
+
+Some time ago I shorted AEMD (Aethlon Medical), but the system filled this as AEMDD. 
+I tried to cover as AEMDD but this symbol does not trade. The symbol AEMD has been trading in the real market. 
+So it seems Marketocracy needs to update to show this as AEMD. Please note this is in a SHORT fund- SUX
+
+Additional Information:
+
+Stock Ticker: AEMD/ AEMDD
+
+AEMD
+yahoo
+Aethlon Medical, Inc. (AEMD) -NasdaqCM   Watchlist
+6.61 Down 0.19(2.79%) Oct 14, 4:00PM EDT
+
+Prev Close:	6.80
+Open:	6.67
+Bid:	N/A
+Ask:	7.45 x 300
+1y Target Est:	26.00
+Beta:	2.89903
+Next Earnings Date:	N/A
+Day's Range:	6.51 - 6.85
+52wk Range:	6.00 - 36.00
+Volume:	111,373
+Avg Vol (3m):	106,655
+Market Cap:	50.30M
+P/E (ttm):	N/A
+EPS (ttm):	-0.70
+Div & Yield:	N/A (N/A)
+
+
+our site  looked up: AEMD
+Symbol: AEMDD	Name: AETHLON MEDICAL INC	Price: $8.12
+Volume:	Sector: Health Care	Change:
+Short Volume: 2,749	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 2,749	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.97	Year High: $36.00	High:
+200 Day Ave: $7.74	Year Low: $0.00	Low:
+
+not pricing 
+
+CAs
+symbol changes for AEMDD	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+14 Apr 15	AEMD	AEMDD	Change in the ticker (trading) symbol from AEMD to AEMDD
+ 	 	 
+left curve	  CUSIP changes for AEMDD	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+14 Apr 15	00808Y109	00808Y208	Change in any of identification numbers (CUSIP) of a security from 00808Y109 to 00808Y208
+ 	 	 
+left curve	  listing changes for AEMDD	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 25, 2014	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that AEMD trades on from OTCBB to OTCBB-OTHER
+Jul 13, 2015	OTCBB-OTHER	UV	NASDAQ-SMALLCAP	UR	Change in the exchange that AEMD trades on from OTCBB-OTHER to NASDAQ-SMALLCAP
+ 	 	 
+left curve	  AEMDD had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+14 Apr 15	1 for 50	Split terms:1 for 50
+
+select distinct stockkey from mstockalias where symbol='AEMD';
+> Row 1:
+>   STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+select distinct stockkey from mstockalias where symbol='AEMDD';
+> Row 1:
+>   STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+
+good there is only one stockkey
+select * from mstockalias where stockkey=X'81f2043c39e7e9bec0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'81f3043c39e7e9bec0a801dc'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'c4805f7353fbbed3c0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'73e64092552d9c9bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-04-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'51fc4101552d9d3bc0a86f92'  <--- make this the identitykey
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+	select * from mexchange where primarykey=X'6325039339e7e926c0a801dc';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+	select * from mcorporateaction where aliaskey=X'51fc4101552d9d3bc0a86f92';
+> Row 1:
+>              ALIASKEY = X'51fc4101552d9d3bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|00808Y109|CP_NEW_CUSIP|00808Y208|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US00808Y1091|CP_NEW_ISIN|US00808Y2081|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 105422328
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-13 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-04-13 00:00:00.000000'
+>            PRIMARYKEY = X'e8bf00eb552c49fbc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'51fc4101552d9d3bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 50|CP_RATIO|0.020000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.020000|CP_ADJ_DT|20150414|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 105208566
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-08 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-04-13 00:00:00.000000'
+>            PRIMARYKEY = X'e8bb00eb552c49fac0a86f92'
+>               VERSION = NULL
+
+there was the stock split
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'5ab84e1056043632c0a86fab'   <----- delete this 
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+	select * from mexchange where primarykey=X'9d5d2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = NASDAQ
+>   PRIMARYKEY = X'9d5d2f1d390a440bc0a8015c'	
+	select * from mcorporateaction where aliaskey=X'5ab84e1056043632c0a86fab';
+> Row 1:
+>              ALIASKEY = X'5ab84e1056043632c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UR|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109433464
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'be21277555bd4effc0a86f92'      <----- delete this 
+>               VERSION = NULL
+
+
+
+***********
+look for unapplied CAs
+try AEMDD
+select * from mcorporateaction where aliaskey is null and BB_SECID='AEMDD'  order by BB_EFFECTIVE;
+try AEMD
+select * from mcorporateaction where aliaskey is null and BB_SECID='AEMD'  order by BB_EFFECTIVE;
+
+
+news release from the company website:
+http://aethlonmedical.investorroom.com/2015-04-08-Aethlon-Medical-Announces-Reverse-Stock-Split-and-Nasdaq-Listing-Submission
+Aethlon Medical Announces Reverse Stock Split and Nasdaq Listing Submission
+
+SAN DIEGO, April 8, 2015 /PRNewswire/ -- Aethlon Medical, Inc. (OTCQB:AEMD), a pioneer in developing targeted therapeutic devices to address infectious diseases and cancer, announced today that it will implement a 1-for-50 reverse split of its common stock. The implementation of the reverse stock split is subject to approval by the Financial Industry Regulatory Authority (FINRA). Upon approval by FINRA, the Company's common stock will trade on a split-adjusted basis under the temporary symbol "AEMDD," with the "D" appended to signify that the reverse stock split has occurred. The trading symbol will revert to "AEMD" after approximately 20 trading days. We currently anticipate that FINRA will approve the reverse stock split on April 10, 2015, however there can be no assurance that the effectiveness of the reverse stock split will occur on that date.
+
+so the symbol reverted back
+when?
+
+http://aethlonmedical.investorroom.com/2015-08-06-Aethlon-Medical-AEMD-CEO-Note-Nasdaq-listing-equity-financing-and-therapeutic-pipeline-expansionSAN DIEGO, Aug. 6, 2015 /PRNewswire/ -- Aethlon Medical, Inc. (AEMD), today released the following note authored by its Chairman and CEO, Jim Joyce.
+
+On July 24th, members of our management team and board of directors joined me to ring the closing bell at the Nasdaq Stock Market.  The ceremony, which celebrated our recent Nasdaq listing, followed the completion of a $6 million equity financing and marks a new era for our organization. 
+
+
+look for unapplied CAs
+try AEMDD
+select * from mcorporateaction where aliaskey is null and BB_SECID='AEMDD'  order by BB_EFFECTIVE;
+> Row 4:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|AEMDD US|CP_NEW_TKR|AEMD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106645159
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-11 00:00:00.000000'
+>         BB_IDENTIFIER = AEMDD   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-08 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = AEMDD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-08 00:00:00.000000'
+>            PRIMARYKEY = X'484c2758554d3dcec0a86f92'
+>               VERSION = NULL
+
+try AEMD
+select * from mcorporateaction where aliaskey is null and BB_SECID='AEMD'  order by BB_EFFECTIVE;
+> Row 6:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP| |CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON|019222802|CP_NEW_COMMON|122095231|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109796952
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-14 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-17 00:00:00.000000'
+>            PRIMARYKEY = X'986d3f0055be2635c0a86f92'  
+>               VERSION = NULL
+no CUSIPs given
+
+let's get the companyid
+
+select * from mstock where primarykey=X'81f2043c39e7e9bec0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'5ab84e1056043632c0a86fab'
+>                NAME = Aethlon Medical Inc
+>          PRIMARYKEY = X'81f2043c39e7e9bec0a801dc'
+>              SYMBOL = AEMD
+>           COMPANYID = 10877
+>   WINDOWIDENTITYKEY = NULL
+
+
+COMPANYID = 10877
+
+let's see how prices run:
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 10877
+2015-06-23 (Tue) [5286]: O:6.8000 H:6.9500 L:6.7500 C:6.8500 V:3933 TSO:58518 A:6.8500 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:6.8200 H:7.1900 L:6.5000 C:6.6500 V:48993 TSO:58518 A:6.6500 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:6.6500 H:6.8000 L:6.6500 C:6.8000 V:14092 TSO:58518 A:6.8000 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:6.9000 H:6.9000 L:6.5500 C:6.6500 V:7152 TSO:58518 A:6.6500 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:6.5900 H:6.6500 L:6.5000 C:6.5500 V:15380 TSO:58518 A:6.5500 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:6.8500 H:6.8500 L:6.5000 C:6.5100 V:9134 TSO:58518 A:6.5100 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:6.5100 H:7.2000 L:6.4500 C:7.0000 V:30898 TSO:58518 A:7.0000 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:6.9000 H:7.0000 L:6.5500 C:6.9000 V:9694 TSO:58518 A:6.9000 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:6.8500 H:7.0000 L:6.7500 C:6.7500 V:4929 TSO:58518 A:6.7500 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:6.7500 H:6.7500 L:6.5500 C:6.6000 V:11559 TSO:58518 A:6.6000 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:7.1200 H:7.8500 L:7.0100 C:7.1600 V:71738 TSO:58518 A:7.1600 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:7.3600 H:7.7500 L:7.2400 C:7.5100 V:19143 TSO:58518 A:7.5100 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000  <-- price gets stuck
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-23 (Thu) [5316]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-24 (Fri) [5317]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-28 (Tue) [5321]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-29 (Wed) [5322]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-30 (Thu) [5323]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-07-31 (Fri) [5324]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-01 (Sat) [5325]: <WEEKEND>
+2015-08-02 (Sun) [5326]: <WEEKEND>
+2015-08-03 (Mon) [5327]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-04 (Tue) [5328]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-05 (Wed) [5329]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-06 (Thu) [5330]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-07 (Fri) [5331]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:0 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-08 (Sat) [5332]: <WEEKEND>
+2015-08-09 (Sun) [5333]: <WEEKEND>
+2015-08-10 (Mon) [5334]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-11 (Tue) [5335]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+2015-08-12 (Wed) [5336]: O:7.7400 H:8.4400 L:7.7400 C:8.1200 V:45819 TSO:58518 A:8.1200 R:1.0000 CA:0.0000
+
+
+
+I asked Steve  sent me email
+the ticker change from AEMDD to AEMD happened on 5/11/15
+
+and the cusip he says is 00808Y208  
+
+
+TO DO:
+
+let's back out the exchange change in July and then reapply that later.
+then do the ticker change   
+
+set the identity key
+
+select * from mstock where primarykey=X'81f2043c39e7e9bec0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'5ab84e1056043632c0a86fab'
+>                NAME = Aethlon Medical Inc
+>          PRIMARYKEY = X'81f2043c39e7e9bec0a801dc'
+>              SYMBOL = AEMD
+>           COMPANYID = 10877
+>   WINDOWIDENTITYKEY = NULL
+
+>     PRIMARYKEY = X'51fc4101552d9d3bc0a86f92'  <--- make this the identitykey
+
+update mstock set IDENTITYKEY=X'51fc4101552d9d3bc0a86f92' where PRIMARYKEY = X'81f2043c39e7e9bec0a801dc';
+
+delete from mcorporateaction where primarykey=X'be21277555bd4effc0a86f92';
+delete from mstockalias where primarykey=X'5ab84e1056043632c0a86fab';
+
+let's check again
+select * from mstockalias where stockkey=X'81f2043c39e7e9bec0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'81f3043c39e7e9bec0a801dc'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'c4805f7353fbbed3c0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'73e64092552d9c9bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-04-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'51fc4101552d9d3bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+
+ok let's do the ticker change AEMDD to AEMD on 20150511
+
+/Marketocracy/bin/cahelper -symbol AEMD -effective 20150511 -type CHG_TKR -exchange UQ -oldSymbol AEMDD >& /Users/build/caout/AEMDD.20151015-CHG_TKR-AEMD.out 
+AEMDD.20151015-CHG_TKR-AEMD.out
+stocks1:~/caout build$ tail -f AEMDD.20151015-CHG_TKR-AEMD.out
+D: (10-15 09:22:24.599) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-15 09:22:48.717) cahelper started on 2015-10-15 09:22:48 -0400
+
+D: (10-15 09:22:49.008) {
+    APPLIED = 1; 
+    DATE = 20150511; 
+    "NEW_TICKER" = "AEMD US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "AEMDD US"; 
+    SYMBOL = AEMD; 
+    TYPE = "CHG_TKR"; 
+}
+D: (10-15 09:22:49.317) SUCCESS
+D: (10-15 09:22:49.317) cahelper finished 2015-10-15 09:22:49 -0400
+
+select * from mstockalias where stockkey=X'81f2043c39e7e9bec0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'81f3043c39e7e9bec0a801dc'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'c4805f7353fbbed3c0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'73e64092552d9c9bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-04-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'51fc4101552d9d3bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-05-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'acf75be3561fa8a9c0a86fab'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'acf75be3561fa8a9c0a86fab';
+> Row 1:
+>              ALIASKEY = X'acf75be3561fa8a9c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|AEMDD US|CP_NEW_TKR|AEMD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151015:092248
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-11 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-11 00:00:00.000000'
+>            PRIMARYKEY = X'acee5be3561fa8a8c0a86fab'
+>               VERSION = NULL
+
+what is the current exhange?
+select * from mexchange where PRIMARYKEY =X'6325039339e7e926c0a801dc';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+
+change the exchange to nasdaq
+
+let's reapply this:
+> Row 1:
+>              ALIASKEY = X'5ab84e1056043632c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UR|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109433464
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 174748
+>        BB_COMPANYNAME = Aethlon Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'be21277555bd4effc0a86f92'      <----- delete this 
+>               VERSION = NULL
+
+/Marketocracy/bin/cahelper -symbol AEMD -effective 20150713 -type CHG_LIST -exchange UV -newExchange UR >& /Users/build/caout/AEMD.20151015-CHG_LIST-nasdaq.out 
+D: (10-15 09:31:04.936) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-15 09:31:28.431) cahelper started on 2015-10-15 09:31:28 -0400
+
+D: (10-15 09:31:28.640) {
+    APPLIED = 1; 
+    DATE = 20150713; 
+    "NEW_EXCHANGE" = UR; 
+    NOTES = "N.A."; 
+    "OLD_EXCHANGE" = UV; 
+    SYMBOL = AEMD; 
+    TYPE = "CHG_LIST"; 
+}
+D: (10-15 09:31:28.858) SUCCESS
+D: (10-15 09:31:28.859) cahelper finished 2015-10-15 09:31:28 -0400
+
+
+check 
+select * from mstockalias where stockkey=X'81f2043c39e7e9bec0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'81f3043c39e7e9bec0a801dc'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2014-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'c4805f7353fbbed3c0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y109
+>           DATE = TIMESTAMP '2015-04-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'73e64092552d9c9bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-04-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'51fc4101552d9d3bc0a86f92'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMDD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-05-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'acf75be3561fa8a9c0a86fab'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 00808Y208
+>           DATE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = AETHLON MEDICAL INC
+>     PRIMARYKEY = X'e1c55c63561faab0c0a86fab'
+>       STOCKKEY = X'81f2043c39e7e9bec0a801dc'
+>         SYMBOL = AEMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'e1c55c63561faab0c0a86fab';
+> Row 1:
+>              ALIASKEY = X'e1c55c63561faab0c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UR|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151015:093128
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-13 00:00:00.000000'
+>         BB_IDENTIFIER = AEMD     UV Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AEMD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>            PRIMARYKEY = X'e1bf5c63561faab0c0a86fab'
+>               VERSION = NULL
+
+what exchange?
+select * from mexchange where primarykey=X'9d5d2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = NASDAQ  <------------  there it is 
+>   PRIMARYKEY = X'9d5d2f1d390a440bc0a8015c'
+
+work on prices
+the company ID
+
+select companyID from mstock where primarykey=X'81f2043c39e7e9bec0a801dc';
+
+> Row 1:
+>   COMPANYID = 10877
+
+select * from stockprices where companyid=10877 order by daynumber;
+latest:
+> Row 3747:
+>   DAYNUMBER = 5336  <--- 8/12/15	5336	Wed
+>   COMPANYID = 10877
+>      OPENED = 77400
+>        HIGH = 84400
+>         LOW = 77400
+>      CLOSED = 81200
+>      VOLUME = 45819
+
+
+the ticker change AEMDD to AEMD occurred on  20150511
+
+let's delete all prices from that date
+
+5/11/15	5243	Mon
+
+delete from stockprices where COMPANYID = 10877 and daynumber >= 5243;
+
+let's do the yahoo prices starting on 5/11/15     5243
+
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5399,10877,66600,68500,65100,66100,111400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5398,10877,67100,69000,67100,68000,49400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5397,10877,67200,70700,67200,67900,74600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5394,10877,68700,70000,65100,68500,114400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5393,10877,67100,69600,65500,67800,54800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5392,10877,66000,69700,64700,68700,139800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5391,10877,68000,70000,61500,65300,139800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5390,10877,69000,72000,67800,68600,51600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5387,10877,70000,73500,68000,69300,231000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5386,10877,71600,76700,69900,72400,86100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5385,10877,69200,77000,69200,71600,177300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5384,10877,75600,76000,67400,69100,252700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5383,10877,71900,78600,70000,77400,182800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5380,10877,78100,78500,71000,71300,118400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5379,10877,80700,83500,75000,78400,53700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5378,10877,83300,84400,80700,82800,146800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5377,10877,83500,87300,80600,85200,115300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5376,10877,84000,87000,81400,85100,200200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5373,10877,84500,89800,81400,81400,347300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5372,10877,89500,89500,82200,84700,230700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5371,10877,83400,88200,81400,87600,117200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5370,10877,84000,84700,80000,84300,85200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5369,10877,82200,85000,78900,83600,178200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5366,10877,77000,79000,72500,79000,110000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5365,10877,71900,75300,71900,74900,148800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5364,10877,72600,75000,71100,72000,94800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5363,10877,76500,77300,70800,72400,125000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5359,10877,77700,78400,75100,76100,87100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5358,10877,73700,84100,73700,77300,368300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5357,10877,76000,78500,73100,78500,16400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5356,10877,74800,76000,73200,76000,27800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5355,10877,71500,78000,71000,75900,355000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5352,10877,73000,74000,68000,70500,129700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5351,10877,68500,74200,67500,71500,278300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5350,10877,72100,72100,67500,69200,28900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5349,10877,71000,72900,69500,70700,13200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5348,10877,67200,73500,66000,73500,71000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5345,10877,66300,72200,60700,72200,331100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5344,10877,70500,70500,65500,65800,36600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5343,10877,75000,75000,67500,70700,138900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5342,10877,70300,74400,67200,74400,166500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5341,10877,69900,69900,66900,68900,27000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5338,10877,75000,75000,66500,69900,68400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5337,10877,80200,80200,75000,75200,91300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5336,10877,85000,85000,78200,80000,19500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5335,10877,91700,92600,82000,83100,40300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5334,10877,97600,97600,92200,94200,31100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5331,10877,98000,100800,95000,97600,105400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5330,10877,96000,102000,94500,99300,57000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5329,10877,96500,98200,96000,96300,11400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5328,10877,94500,99200,94500,97000,14100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5327,10877,100000,100000,95000,95000,13400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5324,10877,96200,100000,95000,99900,19200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5323,10877,99700,103300,93500,98000,139100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5322,10877,96000,99900,94000,95500,101400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5321,10877,101000,103900,95000,95800,21600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5320,10877,117500,118000,92700,100000,31400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5317,10877,122500,122500,112500,113800,45700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5316,10877,106000,114000,106000,111000,80200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5315,10877,103400,107500,103300,103800,32700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5314,10877,93600,104400,93600,102200,43700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5313,10877,97500,97500,93000,93600,18000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5310,10877,92500,101400,90000,96100,61900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5309,10877,90500,91900,89000,91900,13800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5308,10877,96300,96300,86000,90500,22900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5307,10877,90000,92000,85000,85000,24300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5306,10877,86500,92000,75000,89400,64800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5303,10877,77400,84400,77400,81200,45800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5302,10877,73600,77500,72400,75100,19100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5301,10877,71200,78500,70100,71600,74300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5300,10877,67500,67500,65500,66000,11600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5299,10877,68500,70000,67500,67500,4900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5295,10877,69000,70000,65500,69000,9700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5294,10877,65100,72000,64500,70000,30900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5293,10877,68500,68500,65000,65100,9100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5292,10877,65900,66500,65000,65500,15400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5289,10877,69000,69000,65500,66500,7200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5288,10877,66500,68000,66500,68000,14100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5287,10877,68200,71900,65000,66500,49000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5286,10877,68000,69500,67500,68500,3900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5285,10877,67700,72000,67700,68300,18100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5282,10877,71000,71000,66500,67700,11300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5281,10877,72500,72500,70000,71000,4400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5280,10877,73000,73000,70300,70300,4500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5279,10877,74500,76000,71200,73000,7100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5278,10877,69000,74500,69000,74500,5500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5275,10877,66500,70000,66500,69000,5200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5274,10877,65800,67500,65000,66000,28200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5273,10877,69800,70000,65000,66000,16700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5272,10877,74000,74000,65000,70000,18700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5271,10877,77000,77000,73100,74000,9000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5268,10877,75100,77300,72500,77000,10700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5267,10877,79000,79000,60000,75100,40800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5266,10877,78500,79900,73000,78300,17600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5265,10877,88000,88000,79000,79500,51100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5264,10877,86000,87100,82000,82100,14700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5261,10877,87500,88300,86800,86800,3400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5260,10877,86300,87400,86100,87400,6400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5259,10877,86000,89900,85700,86300,12300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5258,10877,87000,87000,86000,86500,4400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5254,10877,86000,89700,86000,87500,7900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5253,10877,87500,90000,86000,88500,2700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5252,10877,89900,89900,85100,87500,6000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5251,10877,89000,90000,87800,88100,8400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5250,10877,90000,93000,87500,87500,14700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5247,10877,82000,86900,82000,85500,10300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5246,10877,86500,87500,81500,81700,30200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5245,10877,87500,90000,86500,86600,18000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5244,10877,89900,89900,85900,87500,10400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5243,10877,88200,90000,88200,89500,6200);
+
+ok prices are in
+
+select * from stockprices where companyid=10877  order by daynumber;
+> Row 3798:
+>   DAYNUMBER = 5399
+>   COMPANYID = 10877
+>      OPENED = 66600
+>        HIGH = 68500
+>         LOW = 65100
+>      CLOSED = 66100
+>      VOLUME = 111400
+
+it's there
+
+ok, invalidate prices  
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-05-11
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-10-15
+D: (09:52:05.948) Invalidate all prices >= 2015-05-11 (5243)
+
+done 
+
+check the member and also see who holds AEMD in MAdmin 
+
+Stock:AETHLON MEDICAL INC  Symbol:AEMDD
+Date: 10/15/2015
+
+10 users found
+
+1	calasseter	cqipwz	dconnors	hiromimini	justus5	mduggar	ohnoitsjamie	sly1	vooch3	zpryor	 
+
+
+our member is hiromimini  SUX (short fund)	 	
+
+trades	right curve
+ 	 	
+Here is the share activity on this position, followed by a list of the individual trades for this position.
+You can click on a date from the list of individual trades to see the details of that trade.
+
+ 	 	
+LEDGER
+Date	Start	Change	End	Type
+Jun 18, 2015		-497	-497	Sell
+Total: -497
+ 	 	 
+BUYS
+You have no Buys for this position
+
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 18, 2015	497	$24.85	$0.07	$3,516.12	$7.07
+
+
+Ok this is done - check on 10/16/15  <-------
+see that AEMDD changed to AEMD on 5/11/15 
+see that the exchange changed from OTCBB to nasdaq on 7/ /15
+see that it is pricing.  
+check the member hiromimini  sux fund for this one to be pricing
+
+then invalidate  reprice  and do the ticker change on the new site
+
+select fundkey from mposition where stockkey=X'81f2043c39e7e9bec0a801dc';
+there are 27 fundkeys  save to CA issues AEMDD fundkeys.txt
+
+
+Ok this is done - check on 10/16/15  <-------
+see that AEMDD changed to AEMD on 5/11/15 
+see that the exchange changed from OTCBB to nasdaq on 7/ /15
+see that it is pricing.  
+check the member hiromimini  sux fund for this one to be pricing
+
+then invalidate  reprice  and do the ticker change on the new site
+
+
+10/16/15
+CAs - it is there:
+symbol changes for AEMD	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+14 Apr 15	AEMD	AEMDD	Change in the ticker (trading) symbol from AEMD to AEMDD
+11 May 15	AEMDD	AEMD	Change in the ticker (trading) symbol from AEMDD to AEMD
+ 	 	 
+left curve	  CUSIP changes for AEMD	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+14 Apr 15	00808Y109	00808Y208	Change in any of identification numbers (CUSIP) of a security from 00808Y109 to 00808Y208
+ 	 	 
+left curve	  listing changes for AEMD	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 25, 2014	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that AEMD trades on from OTCBB to OTCBB-OTHER
+Jul 13, 2015	OTCBB-OTHER	UV	NASDAQ-SMALLCAP	UR	Change in the exchange that AEMD trades on from OTCBB-OTHER to NASDAQ-SMALLCAP
+ 	 	 
+left curve	  AEMD had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+14 Apr 15	1 for 50	Split terms:1 for 50
+
+invalidate  reprice, ticker change  the run stratification reload
+
+
+ 	 	 
+
+member 
+
+
+
+
+
+
+
+
+
+
+
+
+

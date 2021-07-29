@@ -1,0 +1,127 @@
+date:  9/1/15
+ticker add Ninoy
+case 3616
+
+Member Name
+Zilvinas Speteliunas
+Username
+spekoliunas
+Fund Symbols
+SLRHF
+Stock Tickers
+NINOY
+
+yahoo
+
+Nikon Corporation (NINOY) -Other OTC
+12.41 Down 0.32(2.51%) 4:00PM EDT
+
+Add to Portfolio
+Prev Close:	12.73
+Open:	12.44
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	14.10
+Beta:	1.25323
+Next Earnings Date:	N/A
+Day's Range:	12.37 - 12.44
+52wk Range:	11.49 - 14.94
+Volume:	26,313
+Avg Vol (3m):	17,302
+Market Cap:	4.92B
+P/E (ttm):	33.01
+EPS (ttm):	0.38
+Div & Yield:	0.36 (2.04%)
+
+select * from mstockalias where symbol='NINOY';
+nothing
+select * from mcorporateaction where BB_SECID='NINOY' order by BB_EFFECTIVE;
+nothing
+
+xignite?     it's there and it has a cusip:  654111202    is good
+
+
+NINOY|Q|654111202|Nikon Corporation|20150901
+
+put this in symmadd.txt on stocks
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+
+select * from mstockalias where symbol='NINOY';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 654111202
+>           DATE = TIMESTAMP '2015-09-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Nikon Corporation
+>     PRIMARYKEY = X'a17939c755e60a76c0a86f92'
+>       STOCKKEY = X'a17839c755e60a76c0a86f92'
+>         SYMBOL = NINOY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mexchange;
+> Row 4:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+update mstockalias set exchangekey=X'6325039339e7e926c0a801dc' where PRIMARYKEY = X'a17939c755e60a76c0a86f92';
+
+I have listed this check on 9/2/15 
+
+it's there!
+
+select * from mticket where STOCKKEY = X'a17839c755e60a76c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-02 14:05:56.000000'
+>        COMMENT = NULL
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'2ae6011c55e6e8b6c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e032940544632b1c0a86f98'
+>       MODIFIED = NULL
+>            NET = 24925.372000
+>         OPENED = TIMESTAMP '2015-09-02 08:16:54.000000'
+>          PRICE = 12.462686
+>     PRIMARYKEY = X'2ae4011c55e6e8b6c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a17839c755e60a76c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = NULL
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'929a011c55e74a6fc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e032940544632b1c0a86f98'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-09-02 15:13:51.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9298011c55e74a6fc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'70863ca1391e0272c0a8015c'
+>       STOCKKEY = X'a17839c755e60a76c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+have tickets already 
+
+closing this out 
+
+
+
+

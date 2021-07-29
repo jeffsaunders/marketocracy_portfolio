@@ -1,0 +1,211 @@
+ONCS
+3/23/16
+CA issues ONCS list.txt
+Need to research and list this 
+yahoo:
+OncoSec Medical Incorporated (ONCS) -NasdaqCM   Watchlist
+2.95 Up 0.38(14.79%) Mar 22, 4:00PM EDT
+
+Prev Close:	2.57
+Open:	2.78
+Bid:	1.00 x 400
+Ask:	2.95 x 700
+1y Target Est:	16.33
+Beta:	3.00624
+Earnings Date:	Jun 7 - Jun 13 (Est.)
+Day's Range:	2.70 - 3.15
+52wk Range:	1.36 - 8.40
+Volume:	1,014,406
+Avg Vol (3m):	100,982
+Market Cap:	50.07M
+P/E (ttm):	N/A
+EPS (ttm):	-1.81
+Div & Yield:	N/A (N/A
+
+historical  4/8/2011
+
+All orders to buy ONCS fail
+Type
+Portfolio Platform |
+Ticket
+4416
+Priority
+Medium
+Status
+Open
+Member Name
+Sangeeta B
+Username
+abharg
+Fund Symbols
+R2BLo|F10101
+Stock Tickers
+N/A
+
+abharg R2BLo  & F10101
+
+Description / Resources:
+Wed 03/23/2016 at 02:04 AM
+
+For fund F10101 entered GTC order to buy 7678 shares of ONCS for a limit price of $2.64 but the Ticket Submission has Failed. This is the second time this has happened for stock ONCS. I had earlier entered a trade for Fund R2BLo around 1st march 2016 to buy 10,778 for a limit price of $1.86 which also failed. I know for a fact that ONCS went below $1.77 after I had entered the order but the submission (and multiple RE-submissions) of the trade kept failing. I finally cancelled the order on 21st march since the stock had risen considerably (now trading around $2.94). I think there is some problem with your platform or the stock feed for ONCS is erroneous.
+
+
+xignite:   success
+http://192.168.111.213/feed/stockLookup.php?symbol=ONCS
+CUSIP:	68234L207  <--- cusip is good 
+ISIN:	
+Valoren:	28272309
+Name:	OncoSec Medical Inc
+
+anything in the database:
+select * from mcorporateaction where BB_SECID='ONCS' order by BB_EFFECTIVE;
+	lots of stuff - let's list it after the split 
+	
+	
+	
+there was a split in its history
+May 18, 2015	1: 20 Stock Split
+
+
+let's list it  on 1/1/16
+ONCS|Q|68234L207|OncoSec Medical Incorporated|20160101
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='ONCS';
+> Row 1:
+>   STOCKKEY = X'92da0c7056f28976c0a86fab'
+select * from mstockalias where STOCKKEY = X'92da0c7056f28976c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68234L207
+>           DATE = TIMESTAMP '2016-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = OncoSec Medical Incorporated
+>     PRIMARYKEY = X'92db0c7056f28976c0a86fab'
+>       STOCKKEY = X'92da0c7056f28976c0a86fab'
+>         SYMBOL = ONCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's get prices from 2016-01-01 and save to CA issues ONCS prices to be loaded.txt
+select * from mstock where primarykey=X'92da0c7056f28976c0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'92db0c7056f28976c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'92da0c7056f28976c0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 29680
+>   WINDOWIDENTITYKEY = NULL
+
+
+abharg R2BLo  and  F10101   tickets for ONCS
+select * from stockprices where companyid= 29680;
+> Row 55:
+>   DAYNUMBER = 5481
+>   COMPANYID = 29680
+>      OPENED = 23000
+>        HIGH = 25300
+>         LOW = 23000
+>      CLOSED = 24300
+>      VOLUME = 34400
+
+
+Hi Brandon, a member submitted a case (4416) regarding him trying to buy stock ONCS.  It us not listed on our site.
+I have just listed it and should be good to trade tomorrow.    He said that he submitted some limit orders which of course were rejected.   
+Can you look at the tickets and get the details?  I can place some backdated trades for him.
+Thanks.   Member abharg   funds:  R2BLo  & F10101
+   
+
+[3/23/16, 6:26:26 AM] Brandon McCarthy: Hey marty, just a few.
+[3/23/16, 6:26:27 AM] Brandon McCarthy: abharg:R2Blo ONCS 10635 BUY 20160303 LIMIT 1.86
+[3/23/16, 6:27:01 AM] Brandon McCarthy: abharg:F10101 ONCS 7678 BUY 20160323 LIMIT 2.64
+[3/23/16, 6:27:01 AM] Martin Fukui: was that a market order?  he mentions some limit orders
+[3/23/16, 6:27:12 AM] Brandon McCarthy: GTC
+[3/23/16, 6:27:27 AM] Brandon McCarthy: the latest one was a limit of 2.64
+[3/23/16, 6:32:31 AM] Brandon McCarthy: the first one had a limit of 1.86
+[3/23/16, 6:32:40 AM] Brandon McCarthy: I tried to edit the message not sure if it showed up on yours
+
+order for 3/3/16  
+2016-03-03,1.76,1.99,1.76,1.90,147100,1.90
+	it did hit that low 
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py abharg R2Blo 20160303 92da0c7056f28976c0a86fab 10635 1.86
+	check prices today
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py abharg F10101 20160323 92da0c7056f28976c0a86fab 7678 2.64
+
+
+the second order would not have filled, the range only got down to 2.67
+OncoSec Medical Incorporated (ONCS) -NasdaqCM
+2.83 Down 0.12(4.07%) 4:00PM EDT
+
+Prev Close:	2.95
+Open:	2.96
+Bid:	1.72 x 500
+Ask:	2.99 x 400
+1y Target Est:	16.33
+Beta:	3.00624
+Earnings Date:	Jun 7 - Jun 13 (Est.)
+Day's Range:	2.67 - 2.96
+52wk Range:	1.36 - 8.40
+Volume:	215,601
+Avg Vol (3m):	100,982
+Market Cap:	48.03M
+P/E (ttm):	N/A
+EPS (ttm):	-1.81
+Div & Yield:	N/A (N/A)
+
+Brandon, tomorrow after ONCS is listed on our site, can on behalf of the member a GTC order to buy 7678 shares of ONCS at
+the limit price of 2.64?   This order would not have executed today because the low price of the day was only 2.67.
+I will enter the backdated trade to buy 10635 ONCS at the price of 1.86.     Thank you. this is for case 4416.   I listed ONCS
+today.
+
+3/24/16 checking o ONCS
+
+it is there on legacy
+xignite: 
+
+order for 3/3/16  
+2016-03-03,1.76,1.99,1.76,1.90,147100,1.90
+	it did hit that low 
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py abharg R2BLo 20160303 92da0c7056f28976c0a86fab 10635 1.86
+Trading 10635.0 shares of OncoSec Medical Incorporated on Mar 03, 2016 at 1.86
+manager login: abharg
+manager: abharg
+fund: R2BLo
+building trade (has to load stock prices first)
+price = 1.86
+buying 10635.0 shares of ONCS at 1.86 on 20160303
+invaldating fund prices from Mar 03, 2016
+Done
+abharg R2BLo for 3/3/16 bought 10635 at the limit price of 1.86
+
+he has it in the strat:  on legacy
+ONCS	click me	$2.83	10,635	$30,097.05	2.88%	$10,103.25	0.00%	50.53%	50.53%	Details 
+
+let's invalidate and then reprice 
+/Marketocracy/bin/dbtool lookup fund abharg
+fund: abharg
+  PK: [29A04A5556B0C03BC0A86FA6]
+  symbol: [R2BLo]
+  managerKey: [29934A5556B0B92EC0A86FA6]
+  loginName: [abharg]
+
+/Marketocracy/bin/fptool invalidateFund 29A04A5556B0C03BC0A86FA6;
+/Marketocracy/bin/fptool priceFund 29A04A5556B0C03BC0A86FA6;
+
+
+
+Cash: $878,097.80	
+10635 * 1.86 = 19781.1 no problem
+	check prices today
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py abharg F10101 20160323 92da0c7056f28976c0a86fab 7678 2.64
+	login new site 
+
+member login: abharg   fund: F10101   shares: 7678 limit: 2.64  
+
+abharg F10101  GTC buy:  7678 shares at the limit price of  2.64   <--- this one is pending status
+(this order was from your 3/23/16 ticket, the price did not hit this target)
+
+DONE

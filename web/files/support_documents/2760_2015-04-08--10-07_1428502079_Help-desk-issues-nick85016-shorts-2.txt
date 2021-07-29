@@ -1,0 +1,163 @@
+date: 4/8/15
+member:  nick85016   shorts in fund
+
+Ticket Number:	2760
+Portfolio Username:	nick85016
+Problem Type:
+Short Position/Long Funds
+Subject:
+shorts in longs
+Description:
+TASR UCO IN NMF2
+Thank you.
+
+member:  nick85016  fund:  NMF2
+
+positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+UCO 	$8.30 	-400 	-$3,320.00 	$929.95 	-3.71% 	13.92% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 20, 2015 		1000 	1000 	Buy
+Mar 26, 2015 	1000 	-500 	500 	Sell
+Apr 06, 2015 	500 	-900 	-400 	Sell
+Total: -400
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 20, 2015 	1,000 	$50.00 	$6,680.00 	$6.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 26, 2015 	500 	$25.00 	$0.07 	$3,772.48 	$7.55
+Apr 6, 2015 	400 	$20.00 	$0.06 	$3,152.54 	$7.88
+Apr 6, 2015 	500 	$25.00 	$0.07 	$4,004.93 	$8.01
+  	  	 
+
+has two sells on 4/6/15 one is for 400 and one for 500.  I removed the 400 share sell and that brought
+the share balance to 0.
+
+TASR 	$24.30 	-600 	-$14,580.00 	$10,111.10 	-0.94% 	11.57% 	Details  	MIDDLE
+  	  	 
+your holdings of TASR 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+NMF2 	-600 	-$14,580.00 	-1.47%
+NMF3 	-799 	-$19,415.70 	-1.90%
+NMF 	0 	N/A 	N/A
+docomize 	0 	N/A 	N/A 
+
+
+NMF2
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 28, 2014 		2500 	2500 	Buy
+Dec 02, 2014 	2500 	-2500 		Sell
+Feb 26, 2015 		1200 	1200 	Buy
+Feb 27, 2015 	1200 	300 	1500 	Buy
+Mar 24, 2015 	1500 	-1000 	500 	Sell
+Apr 06, 2015 	500 	-1100 	-600 	Sell  <-- change this to 500
+Total: -600
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 28, 2014 	2,500 	$125.00 	$52,625.00 	$21.05
+Feb 26, 2015 	200 	$10.00 	$4,584.00 	$22.92
+Feb 26, 2015 	1,000 	$50.00 	$23,225.00 	$23.23
+Feb 27, 2015 	300 	$15.00 	$6,969.00 	$23.23
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 2, 2014 	2,500 	$125.00 	$1.05 	$60,173.95 	$24.07
+Mar 24, 2015 	1,000 	$50.00 	$0.44 	$25,019.56 	$25.02
+Apr 6, 2015 	1,100 	$55.00 	$0.47 	$26,900.54 	$24.46  <--- change this to 500
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py nick85016 NMF2 20150406 TASR -500 24.50
+Trading -500.0 shares of TASER International Inc on Apr 06, 2015 at 24.5
+manager: nick85016 nickolai jermolow
+fund: NMF2 nick85016's2006 Mutual Fund
+building trade (has to load stock prices first)
+price = 24.5
+selling -500.0 shares of TASR at 24.5 on 20150406
+invaldating fund prices from Apr 06, 2015
+Done
+
+
+checking NMF3
+positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+UCO 	$8.33 	-400 	-$3,330.80 	$919.15 	-3.40% 	13.76% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 20, 2015 		1000 	1000 	Buy
+Mar 26, 2015 	1000 	-500 	500 	Sell
+Apr 06, 2015 	500 	-900 	-400 	Sell  <-- change to 500
+Total: -400
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 20, 2015 	1,000 	$50.00 	$6,680.00 	$6.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 26, 2015 	500 	$25.00 	$0.07 	$3,772.48 	$7.55
+Apr 6, 2015 	400 	$20.00 	$0.06 	$3,152.54 	$7.88  <-- remove this 
+Apr 6, 2015 	500 	$25.00 	$0.07 	$4,004.93 	$8.01
+
+TASR 	$24.32 	-799 	-$19,431.60 	$5,380.15 	-0.86% 	10.52% 	Details  	MIDDLE
+  	  	 LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 28, 2014 		1000 	1000 	Buy
+Dec 02, 2014 	1000 	-1000 		Sell
+Feb 26, 2015 		800 	800 	Buy
+Feb 27, 2015 	800 	500 	1300 	Buy
+Mar 24, 2015 	1300 	-1000 	300 	Sell
+Apr 06, 2015 	300 	-1099 	-799 	Sell
+Total: -799
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 28, 2014 	1,000 	$50.00 	$21,050.00 	$21.05
+Feb 26, 2015 	300 	$15.00 	$6,876.00 	$22.92
+Feb 26, 2015 	500 	$25.00 	$11,612.50 	$23.23
+Feb 27, 2015 	500 	$25.00 	$11,615.00 	$23.23
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 2, 2014 	1,000 	$50.00 	$0.42 	$24,069.58 	$24.07
+Mar 24, 2015 	1,000 	$50.00 	$0.44 	$25,019.56 	$25.02
+Apr 6, 2015 	1,099 	$54.95 	$0.47 	$26,876.09 	$24.46  <--- change this to 300
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  nick85016 NMF3 20150406 TASR -300 24.50
+Trading -300.0 shares of TASER International Inc on Apr 06, 2015 at 24.5
+manager: nick85016 nickolai jermolow
+fund: NMF3 nick85016's Mutual Fund march 2014
+building trade (has to load stock prices first)
+price = 24.5
+selling -300.0 shares of TASR at 24.5 on 20150406
+invaldating fund prices from Apr 06, 2015
+Done
+
+let's log out and back in and check once again
+nick85016
+
+NMF is good
+NMF2 is good
+NMF3 is good 
+
+all shorts are gone, closing this out
+

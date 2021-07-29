@@ -1,0 +1,1021 @@
+date: 1/27/15
+
+Ticket Number:	2245
+Portfolio Username:	jlear
+Ticker Symbol:	TECUA
+Corporate Action Type:
+Ticker Symbol Change
+Subject:
+I believe in May of 2014 TECUA 'A' class shares were converted to common shares 1:1. TECU is the new symbol.
+Description:
+Please see http://biz.yahoo.com/e/140430/tecua8-k.html I believe that simply changing my holdings of TECUA to similar shares of TECU will be the correct adjustment. Thank you!
+Thank you.
+
+yahoo
+Tecumseh Products Company (TECUA) -NasdaqGS   Watchlist
+6.11  0.10(1.66%) May 1   <--- old date 
+- Nasdaq Real Time Price
+
+Add to Portfolio
+Prev Close:	6.11
+Open:	6.11
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	15.00
+Beta:	0.47
+Next Earnings Date:	N/A
+Day's Range:	5.87 - 6.18
+52wk Range:	5.86 - 12.22
+Volume:	94,254
+Avg Vol (3m):	77,813
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-2.03
+Div & Yield:	N/A (N/A
+quantum:
+Tecumseh Products Co.
+Ticker Symbol: TECU     CUSIP: 878895200     Exchange: NGS
+
+Company's Online Profile
+BUSINESS:  Tecumseh Products Co. is a global manufacturer of hermetic compressors for residential and commercial refrigerators, freezers, water coolers, dehumidifiers, window air conditioning units and residential and commercial central system air conditioners.
+Previous Ticker Symbol: TECUA    Changed: 5/01/14
+Micro Cap Stock -   Market Value $ 65.4 Million
+
+it's nasdaq - let's see what they have 
+ssue Suspensions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+05/01/2014	TECUA	Q	Tecumseh Products Company Class A Common Stock	N/A	05/02/2014 Reclassification; Each share of Class A Common Stock will be converted into one share of Common Stock (TECU).
+Issue Deletions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+05/09/2014	TECUA	Q	Tecumseh Products Company Class A Common Stock	N/A	05/12/2014 Removed From Listing & Registration
+Financial Status Changes
+
+DL Date	Eff Date	Market	Symbol/Name	Old Financial Status	New Financial Status
+01/11/2007	01/12/2007	G	TECUA/Tecumseh Products Company Class A Common Stock	N - Normal	D - Deficient
+02/07/2007	02/08/2007	G	TECUA/Tecumseh Products Company Class A Common Stock	D - Deficient	N - Normal
+04/09/2007	04/10/2007	G	TECUA/Tecumseh Products Company Class A Common Stock	N - Normal	E - Delinquent
+04/16/2007	04/17/2007	G	TECUA/Tecumseh Products Company Class A Common Stock	E - Delinquent	N - Normal
+
+Analysis
+
+we have both TECUA and TECU on our site 
+let's look at TECU on nasdaq 
+
+
+Name/Symbol Changes
+
+DL Date	Eff Date	Mkt	From: (Old Symbol/Name)	To: (New Symbol/Name)/Comments
+05/01/2014	05/02/2014	Q	TECUB/Tecumseh Products Company Class B Common Stock	TECU/Tecumseh Products Company Common Stock Reclassification; Each share of Class B Common Stock will be converted into one share of Common Stock (TECU). Par value change from $1.00 to no par value.
+
+
+do we have TECUB on our site?
+no not really
+
+let's look at TECU, TECUA and TECUB don't want to create a collision
+*****
+TECU
+*****
+select distinct stockkey from mstockalias where symbol='TECU';
+> Row 1:
+>   STOCKKEY = X'ff560e21390acf8ac0a80116'
+select * from mstockalias where STOCKKEY = X'ff560e21390acf8ac0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ff570e21390acf8ac0a80116'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'ff570e21390acf8ac0a80116';
+21 DVD_CASH
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'd8613afa4d225db0c0a80146'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'd8613afa4d225db0c0a80146';
+> Row 1:
+>              ALIASKEY = X'd8613afa4d225db0c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50901167
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 101776
+>        BB_COMPANYNAME = Tecumseh Products Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = TECUB   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TECUB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'06674f834d1e67d8c0a80146'
+>               VERSION = NULL
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ce3f14f95364229cc0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'ce3f14f95364229cc0a86f92';
+> Row 1:
+>              ALIASKEY = X'ce3f14f95364229cc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|TECUB US|CP_NEW_TKR|TECU US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90674674
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 101776
+>        BB_COMPANYNAME = Tecumseh Products Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>         BB_IDENTIFIER = TECUB   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TECUB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'7bf0397a5362ceefc0a86f92'
+>               VERSION = NULL
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895309
+>           DATE = TIMESTAMP '2014-05-02 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'7ea3167453642322c0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'7ea3167453642322c0a86f92';
+> Row 1:
+>              ALIASKEY = X'7ea3167453642322c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|878895101|CP_NEW_CUSIP|878895309|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US8788951015|CP_NEW_ISIN|US8788953094|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90675322
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 101776
+>        BB_COMPANYNAME = Tecumseh Products Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>         BB_IDENTIFIER = TECUB   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = TECUB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'7bf4397a5362cef1c0a86f92'
+>               VERSION = NULL
+
+
+
+
+TECUA
+select distinct stockkey from mstockalias where symbol='TECUA';
+> Row 1:
+>   STOCKKEY = X'ff520e21390acf80c0a80116'
+select * from mstockalias where STOCKKEY = X'ff520e21390acf80c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895200
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'A'
+>     PRIMARYKEY = X'ff530e21390acf80c0a80116'
+>       STOCKKEY = X'ff520e21390acf80c0a80116'
+>         SYMBOL = TECUA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'ff530e21390acf80c0a80116';
+21 DVD_CASH
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895200
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'A'
+>     PRIMARYKEY = X'd8083afa4d225dafc0a80146'
+>       STOCKKEY = X'ff520e21390acf80c0a80116'
+>         SYMBOL = TECUA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'd8083afa4d225dafc0a80146';
+> Row 1:
+>              ALIASKEY = X'd8083afa4d225dafc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50901163
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 101776
+>        BB_COMPANYNAME = Tecumseh Products Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = TECUA   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TECUA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'068b4f834d1e67dfc0a80146'
+>               VERSION = NULL
+
+
+
+******
+TECUB
+********
+select distinct stockkey from mstockalias where symbol='TECUB';
+> Row 1:
+>   STOCKKEY = X'ff560e21390acf8ac0a80116' 
+select * from mstockalias where STOCKKEY = X'ff560e21390acf8ac0a80116' ;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ff570e21390acf8ac0a80116'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'd8613afa4d225db0c0a80146'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ce3f14f95364229cc0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895309
+>           DATE = TIMESTAMP '2014-05-02 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'7ea3167453642322c0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+
+same thing as TECU
+
+
+assessment:
+1.  TECUB changed to TECU
+2.  need to change the name of TECU on 5/2/14
+Tecumseh Products Company 
+
+3.  TECUA needs to merge into TECU
+
+
+let's do an acquis
+
+who holds TECUA now
+Stock:TECUMSEH PRODUCTS CL'A'  Symbol:TECUA
+Date: 01/27/2015
+
+65 users found
+
+1	DruidKGM	aladdu	alsicl	apayne	arogolsky	aschaefer	augustine	badbooger69	bcm2550	bogumil
+2	bpeters	bunnyluv	carshena	ccurtis	ddowns22	dlundgren	dougalcarlisle	dw8n	ericm	fkluczny
+3	givlhad	hurrlibutz	j_c_12	jctrader	jlear	johnulu	jurac	keith_foulke	kidbiz	krishawkins
+4	krunolfson	lastbooger69	littlebooger69	madarrah	mjohnson6	montimp	mtaguchi	nedyah	neil_nadeau	nmoller
+5	orange	over_invested	pcrawford	pdg	pe221749	phoward	pkasprzak	rhayder	richbooger69	rlong95
+6	rnutt	robebcan	robgalmc	rogerbrookuk	salbee	sarah7meyer	sbudde	shingler	siakhasone	supbro
+7	susan_leary	swoops	terraearth	twoxfour	victorlabo	
+
+/Marketocracy/bin/cahelper -symbol TECU -effective 20140502 -type CHG_NAME -exchange UQ -newName "Tecumseh Products Company" >& /Users/build/caout/TECU.20150127-CHG_NAME.out
+TECU.20150127-CHG_NAME.out
+stocks:~/caout build$ tail -f TECU.20150127-CHG_NAME.out
+D: (01-27 21:42:43.177) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-27 21:43:37.943) cahelper started on 2015-01-27 21:43:37 -0500
+
+D: (01-27 21:43:38.114) {
+    APPLIED = 1; 
+    DATE = 20140502; 
+    "NEW_NAME" = "Tecumseh Products Company"; 
+    NOTES = "N.A."; 
+    "OLD_NAME" = " "; 
+    SYMBOL = TECU; 
+    TYPE = "CHG_NAME"; 
+}
+D: (01-27 21:43:38.464) SUCCESS
+D: (01-27 21:43:38.464) cahelper finished 2015-01-27 21:43:38 -0500
+
+
+/Marketocracy/bin/cahelper -symbol TECUA -effective 20140502 -type ACQUIS -exchange UQ -acqType 2 -acqCash 0 -acqShare 1.0 -purchaser TECU >& /Users/build/caout/TECUA.20150127-ACQUIS-TECU.out
+stocks:~/caout build$ tail -f TECUA.20150127-ACQUIS-TECU.out
+D: (01-27 21:44:47.270) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-27 21:45:42.615) cahelper started on 2015-01-27 21:45:42 -0500
+
+D: (01-27 21:45:46.456) There are [1] open tickets for TECUA on 20140502
+D: (01-27 21:45:46.485) StockFileLoad Version:3.0
+D: (01-27 21:45:46.485) Loading Stock Data
+D: (01-27 21:47:22.874) Building Lookup Index
+D: (01-27 21:47:32.469) Finished Building Index
+D: (01-27 21:47:34.785) Finished Loading Stock Data
+D: (01-27 21:47:35.168) Connection to 192.168.111.157:6666 succeeded
+D: (01-27 21:48:35.453) SavingChanges for Stock Dividend out 101 of 307
+D: (01-27 21:49:12.022) SavingChanges for position sell out 101 of 307
+D: (01-27 21:49:20.312) {
+    "ACQUIRED_STOCK" = TECUA; 
+    "ACQUIRING_STOCK" = TECU; 
+    AMOUNT = 1; 
+    APPLIED = 1; 
+    DATE = 20140502; 
+    FUNDS = (
+        "ccurtis/mo fund", 
+        "nevereverno/Basic Low Index Mutual Fund", 
+        "fauria/defensive Mutual Fund", 
+        "sbudde/Steven Charles Budde Jr.'s Mutual Fund", 
+        "bpeters/Agressive Growth Fund", 
+        "krunolfson/Kent Hunter Runolfson's Mutual Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "pcrawford/Possibility Mutual Fund", 
+        "alsicl/alsicl's Mutual Fund", 
+        "apayne/apayne's Mutual Fund", 
+        "robebcan/Better than Industry", 
+        "twoxfour/Richard's Growth Fund", 
+        "givlhad/The Best Mutual Fund", 
+        "pe221749/Value and Growth", 
+        "rogerbrookuk/Fundamental Fund", 
+        "rogerbrookuk/High Yield Fund", 
+        "nmoller/Niels Moller's Mutual Fund", 
+        "jlear/Aggressive Value S&P1500 - all stocks", 
+        "bunnyluv/bunnyluv's RISING DOGS", 
+        "jlear/Compliant Aggressive Value", 
+        "willblur/willblur's Value Fund", 
+        "ericm/REC Fund", 
+        "mjohnson6/low book value fund", 
+        "pdg/Paul Dino Gaspardo's Fund", 
+        "jslettvoll/SLERRE BOOK VALUE", 
+        "jmoon/Graham Value Fund", 
+        "teddymac/TeddyMac Midcap Short", 
+        "aclassi/aclassi's Shorted Mutual Fund", 
+        "stanglx718/MF2000", 
+        "victorlabo/VictorsShort", 
+        "mwarner/MWarner's Short Fund", 
+        "jilm/Absolute fund manager", 
+        "msage/Shrinking Assets", 
+        "larryjthompson/Larry Thompson's Sell All Mutual Fund", 
+        "aschaefer/Good Dividend Yield", 
+        "wjgraham/OptionVue Short Selling", 
+        "mondoladro/mondoladro's short fund", 
+        "brahmsian/Guilford's Downdraft Fund", 
+        "holdenll/SHORT Fund", 
+        "wmvjohnson/Foundation Going Down", 
+        "jdjuly5/Alpha's Bottom 50", 
+        "keith_foulke/Short", 
+        "royaldmd/royaldmd's Mutual Fund", 
+        "robgalmc/Robgalmc's Mutual Fund", 
+        "madarrah/Stocks on Sales", 
+        "kvnfltn/Omega Fund", 
+        "jlear/GNVI x AV blend", 
+        "jlear/GNV2 x AV blend", 
+        "stockring/StockRing Short Stock Portfolio", 
+        "jlear/Compliant Moderate Growth/Value II", 
+        "kidbiz/Kidbiz's Line to Value", 
+        "tdenker1/tdenker1's Mutual Fund", 
+        "trevoreastman/trevoreastman's Mutual Fund", 
+        "over_invested/HT Mutual Fund", 
+        "bogumil/EXPM II", 
+        "dlundgren/Breakaway Worst Strength", 
+        "susan_leary/Susan Leary's Fund", 
+        "dlundgren/Breakaway Worst Relative", 
+        "dgfrick/dgfrick's Mutual Fund", 
+        "siakhasone/Siakhasone Michigan Index", 
+        "augustine/Inverse Value Fund", 
+        "dw8n/V  SHORT", 
+        "plasma5/Short Bear Fund", 
+        "ddowns22/Dan's Winning Stocks", 
+        "arrored/Arrored's Dividend Fund", 
+        "supbro/supbro's Mutual Fund", 
+        "bcm2550/McCall Value Fund", 
+        "rtareilo/The Short Fund", 
+        "dojistar/DMF II", 
+        "ashishbhatia/ashish's Short Fund", 
+        "kbookman/kbookman's Mutual Fund", 
+        "marymary/How much is that doggy?", 
+        "jefmeister/Bail Out Fund", 
+        "almond_tree/Charism 20 Short Fund- FUND is *DEFUNCT*", 
+        "jaredski/Jared's Bear MI fund", 
+        "rhayder/Short C", 
+        "aladdu/aladdu's Mutual Fund", 
+        "littlebooger69/littlebooger69's Mutual Fund", 
+        "hurrlibutz/Wirtschafts Information", 
+        "carshena/Carshena's Mutual Fund", 
+        "jctrader/Expansion S", 
+        "mgulla/Mutual Fund \"A\"", 
+        "carpi/SC-TEC", 
+        "momentumvalue/going down?", 
+        "fkluczny/AmericanAllShareFund 5", 
+        "pkasprzak/Highest Annual Total Return Fund", 
+        "rguerrieri/marinella bergamaschi fund short", 
+        "phoward/Biggest Gainers", 
+        "badbooger69/badbooger69's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "lastbooger69/lastbooger69's Mutual Fund", 
+        "salbee/STAF Aggressive Gowth", 
+        "drahkola/Short Fund", 
+        "arogolsky/Earthworm Fund", 
+        "nedyah/nedyah's Mutual Fund", 
+        "runforest/runforest's Mutual Fund", 
+        "kosto1929/kosto1929's High Expectation Short Fund", 
+        "joates-larsen/JohnOL Timing Fund", 
+        "albab/GOING DOWN????", 
+        "bagchucker/.", 
+        "momentumvalue/overbought mar29 $690076", 
+        "elboroom/Entrust Growth Fund", 
+        "momentumvalue/not in use", 
+        "momentumvalue/not in use", 
+        "j_c_12/j_c_12's Short Mutual Fund", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "quantboy/Extreme Short Fund", 
+        "t011363/t011363's Short Mutual Fund", 
+        "solomon/solomon's Mutual Fund", 
+        "jurac/jurac's SHORT  Fund", 
+        "troyea/1st Fund", 
+        "neil_nadeau/Random Stocks to watch", 
+        "mtaguchi/IP Infrastructure Fund", 
+        "DruidKGM/Isumbosya's Mutual Fund", 
+        "richbooger69/richbooger69's Mutual Fund", 
+        "montimp/mntn 2nd fund", 
+        "minuet/Shorts 4: Mission from Marketocracy", 
+        "shingler/Shingler Fund", 
+        "swoops/Broke Fund", 
+        "swoops/New Day Fund", 
+        "swoops/October Demise", 
+        "swoops/REIT", 
+        "kbookman/Short 1 week top ETF > 500K and close friday", 
+        "lycos/Lycos Shorts", 
+        "sarah7meyer/Misunderstood", 
+        "hiromimini/Selling into Computational Kaos", 
+        "shingler/Shingler Small Cap Value Fund ", 
+        "novorich/novorich's Mutual Fund", 
+        "mwgirma/Margin of Safety", 
+        "dougalcarlisle/Dougie's BW Fund 2", 
+        "vanmeerten/Van Meerten's Short Value Line Fund", 
+        "hiromimini/Drop your shorts", 
+        "terraearth/2012 Let's Go!", 
+        "mikejer/Top 100 Mutual Fund", 
+        "mikejer/Roaring Tigers Mutual Fund", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "orange/Lowrey Fund: Khaki", 
+        "rlong95/It's mine and I like it", 
+        "krishawkins/Global Macro Value", 
+        "orange/Lowrey Fund: Beige", 
+        "rnutt/Nutt Select Hidden Gems", 
+        "j_c_12/Short Pyramid Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = TECU; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (01-27 21:49:25.642) SUCCESS
+D: (01-27 21:49:25.642) cahelper finished 2015-01-27 21:49:25 -0500
+
+
+
+Let's check the database
+select distinct stockkey from mstockalias where symbol='TECUB';
+> Row 1:
+>   STOCKKEY = X'ff560e21390acf8ac0a80116'
+select * from mstockalias where STOCKKEY = X'ff560e21390acf8ac0a80116' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ff570e21390acf8ac0a80116'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'd8613afa4d225db0c0a80146'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECUB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895101
+>           DATE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'ce3f14f95364229cc0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895309
+>           DATE = TIMESTAMP '2014-05-02 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'B'
+>     PRIMARYKEY = X'7ea3167453642322c0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895309
+>           DATE = TIMESTAMP '2014-05-02 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Tecumseh Products Company
+>     PRIMARYKEY = X'8542639354c84cdac0a86f92'
+>       STOCKKEY = X'ff560e21390acf8ac0a80116'
+>         SYMBOL = TECU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+
+select distinct stockkey from mstockalias where symbol='TECUA';
+> Row 1:
+>   STOCKKEY = X'ff520e21390acf80c0a80116'
+select * from mstockalias where STOCKKEY = X'ff520e21390acf80c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895200
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'A'
+>     PRIMARYKEY = X'ff530e21390acf80c0a80116'
+>       STOCKKEY = X'ff520e21390acf80c0a80116'
+>         SYMBOL = TECUA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895200
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'A'
+>     PRIMARYKEY = X'd8083afa4d225dafc0a80146'
+>       STOCKKEY = X'ff520e21390acf80c0a80116'
+>         SYMBOL = TECUA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878895200
+>           DATE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TECUMSEH PRODUCTS CL'A'
+>     PRIMARYKEY = X'c30b63b754c84e26c0a86f92'
+>       STOCKKEY = X'ff520e21390acf80c0a80116'
+>         SYMBOL = TECUA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'c30b63b754c84e26c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c30b63b754c84e26c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TECUA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|1.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150127:094542
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-02 00:00:00.000000'
+>         BB_IDENTIFIER = TECU     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-02 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TECU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-05-02 00:00:00.000000'
+>            PRIMARYKEY = X'002663b754c84d56c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'002663b754c84d56c0a86f92';
+> Row 1:
+>   _C001 = 286.000000
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'002663b754c84d56c0a86f92') order by loginname;
+> Row 1:
+>   LOGINNAME = DruidKGM
+> Row 2:
+>   LOGINNAME = aclassi
+> Row 3:
+>   LOGINNAME = aladdu
+> Row 4:
+>   LOGINNAME = albab
+> Row 5:
+>   LOGINNAME = almond_tree
+> Row 6:
+>   LOGINNAME = alsicl
+> Row 7:
+>   LOGINNAME = apayne
+> Row 8:
+>   LOGINNAME = arogolsky
+> Row 9:
+>   LOGINNAME = arrored
+> Row 10:
+>   LOGINNAME = aschaefer
+> Row 11:
+>   LOGINNAME = ashishbhatia
+> Row 12:
+>   LOGINNAME = augustine
+> Row 13:
+>   LOGINNAME = badbooger69
+> Row 14:
+>   LOGINNAME = bagchucker
+> Row 15:
+>   LOGINNAME = bcm2550
+> Row 16:
+>   LOGINNAME = bogumil
+> Row 17:
+>   LOGINNAME = bpeters
+> Row 18:
+>   LOGINNAME = brahmsian
+> Row 19:
+>   LOGINNAME = bunnyluv
+> Row 20:
+>   LOGINNAME = carpi
+> Row 21:
+>   LOGINNAME = carshena
+> Row 22:
+>   LOGINNAME = ccurtis
+> Row 23:
+>   LOGINNAME = ddowns22
+> Row 24:
+>   LOGINNAME = dgfrick
+> Row 25:
+>   LOGINNAME = dlundgren
+> Row 26:
+>   LOGINNAME = dojistar
+> Row 27:
+>   LOGINNAME = dougalcarlisle
+> Row 28:
+>   LOGINNAME = drahkola
+> Row 29:
+>   LOGINNAME = dw8n
+> Row 30:
+>   LOGINNAME = elboroom
+> Row 31:
+>   LOGINNAME = ericm
+> Row 32:
+>   LOGINNAME = fauria
+> Row 33:
+>   LOGINNAME = fkluczny
+> Row 34:
+>   LOGINNAME = givlhad
+> Row 35:
+>   LOGINNAME = hiromimini
+> Row 36:
+>   LOGINNAME = holdenll
+> Row 37:
+>   LOGINNAME = hurrlibutz
+> Row 38:
+>   LOGINNAME = j_c_12
+> Row 39:
+>   LOGINNAME = jaredski
+> Row 40:
+>   LOGINNAME = jctrader
+> Row 41:
+>   LOGINNAME = jdjuly5
+> Row 42:
+>   LOGINNAME = jefmeister
+> Row 43:
+>   LOGINNAME = jfrancois
+> Row 44:
+>   LOGINNAME = jilm
+> Row 45:
+>   LOGINNAME = jlear
+> Row 46:
+>   LOGINNAME = jmoon
+> Row 47:
+>   LOGINNAME = joates-larsen
+> Row 48:
+>   LOGINNAME = johnulu
+> Row 49:
+>   LOGINNAME = jslettvoll
+> Row 50:
+>   LOGINNAME = jurac
+> Row 51:
+>   LOGINNAME = kbookman
+> Row 52:
+>   LOGINNAME = keith_foulke
+> Row 53:
+>   LOGINNAME = kidbiz
+> Row 54:
+>   LOGINNAME = kosto1929
+> Row 55:
+>   LOGINNAME = krishawkins
+> Row 56:
+>   LOGINNAME = krunolfson
+> Row 57:
+>   LOGINNAME = kvnfltn
+> Row 58:
+>   LOGINNAME = larryjthompson
+> Row 59:
+>   LOGINNAME = lastbooger69
+> Row 60:
+>   LOGINNAME = littlebooger69
+> Row 61:
+>   LOGINNAME = lycos
+> Row 62:
+>   LOGINNAME = madarrah
+> Row 63:
+>   LOGINNAME = marymary
+> Row 64:
+>   LOGINNAME = mgulla
+> Row 65:
+>   LOGINNAME = mikejer
+> Row 66:
+>   LOGINNAME = minuet
+> Row 67:
+>   LOGINNAME = mjohnson6
+> Row 68:
+>   LOGINNAME = momentumvalue
+> Row 69:
+>   LOGINNAME = mondoladro
+> Row 70:
+>   LOGINNAME = montimp
+> Row 71:
+>   LOGINNAME = msage
+> Row 72:
+>   LOGINNAME = mtaguchi
+> Row 73:
+>   LOGINNAME = mwarner
+> Row 74:
+>   LOGINNAME = mwgirma
+> Row 75:
+>   LOGINNAME = nedyah
+> Row 76:
+>   LOGINNAME = neil_nadeau
+> Row 77:
+>   LOGINNAME = nevereverno
+> Row 78:
+>   LOGINNAME = nmoller
+> Row 79:
+>   LOGINNAME = novorich
+> Row 80:
+>   LOGINNAME = orange
+> Row 81:
+>   LOGINNAME = over_invested
+> Row 82:
+>   LOGINNAME = pcrawford
+> Row 83:
+>   LOGINNAME = pdg
+> Row 84:
+>   LOGINNAME = pe221749
+> Row 85:
+>   LOGINNAME = phoward
+> Row 86:
+>   LOGINNAME = pkasprzak
+> Row 87:
+>   LOGINNAME = plasma5
+> Row 88:
+>   LOGINNAME = quantboy
+> Row 89:
+>   LOGINNAME = rguerrieri
+> Row 90:
+>   LOGINNAME = rhayder
+> Row 91:
+>   LOGINNAME = richbooger69
+> Row 92:
+>   LOGINNAME = rlong95
+> Row 93:
+>   LOGINNAME = rnutt
+> Row 94:
+>   LOGINNAME = robebcan
+> Row 95:
+>   LOGINNAME = robgalmc
+> Row 96:
+>   LOGINNAME = rogerbrookuk
+> Row 97:
+>   LOGINNAME = royaldmd
+> Row 98:
+>   LOGINNAME = rtareilo
+> Row 99:
+>   LOGINNAME = runforest
+> Row 100:
+>   LOGINNAME = salbee
+> Row 101:
+>   LOGINNAME = sarah7meyer
+> Row 102:
+>   LOGINNAME = sbudde
+> Row 103:
+>   LOGINNAME = shingler
+> Row 104:
+>   LOGINNAME = siakhasone
+> Row 105:
+>   LOGINNAME = sln
+> Row 106:
+>   LOGINNAME = solomon
+> Row 107:
+>   LOGINNAME = stanglx718
+> Row 108:
+>   LOGINNAME = stockring
+> Row 109:
+>   LOGINNAME = supbro
+> Row 110:
+>   LOGINNAME = susan_leary
+> Row 111:
+>   LOGINNAME = swoops
+> Row 112:
+>   LOGINNAME = t011363
+> Row 113:
+>   LOGINNAME = tdenker1
+> Row 114:
+>   LOGINNAME = teddymac
+> Row 115:
+>   LOGINNAME = terraearth
+> Row 116:
+>   LOGINNAME = trevoreastman
+> Row 117:
+>   LOGINNAME = troyea
+> Row 118:
+>   LOGINNAME = twoxfour
+> Row 119:
+>   LOGINNAME = vanmeerten
+> Row 120:
+>   LOGINNAME = victorlabo
+> Row 121:
+>   LOGINNAME = willblur
+> Row 122:
+>   LOGINNAME = wjgraham
+> Row 123:
+>   LOGINNAME = wmvjohnson
+
+the member who wrote in  jlear
+
+your holdings of TECUA	
+ 	 	
+Fund	Shares	Value	Portion of fund
+AV500	 0	 N/A	 N/A
+AV15	0	 $.00	 0.00%
+CAV	0	 $.00	 0.00%
+CCG	 0	 N/A	 N/A
+CAG	 0	 N/A	 N/A
+NAV15	 0	 N/A	 N/A
+NAG15	 0	 N/A	 N/A
+NCG10	 0	 N/A	 N/A
+ 	 	[ Trade this stock ]
+
+AV15
+trades	
+ 	 	
+Here is the share activity on this position, followed by a list of the individual trades for this position.
+You can click on a date from the list of individual trades to see the details of that trade.
+
+ 	 	
+LEDGER
+Date	Start	Change	End	Type
+Oct 13, 2003		800	800	Buy
+Feb 08, 2011	800	-800		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 13, 2003	800	$40.00	$32,041.60	$40.05
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Feb 8, 2011	800	$40.00	$0.19	$9,450.08	$11.81
+ 	 	 
+	 dividends	
+ 	 	
+The following is a list of the dividends that have been paid by this position.
+
+ 	 	
+Effective Date	Record Date	Pay Date	Description
+Dec 03, 2003	Dec 05, 2003	Dec 19, 2003	Dividend amount:0.32 per share.
+Mar 10, 2004	Mar 12, 2004	Mar 26, 2004	Dividend amount:0.32 per share.
+Jun 09, 2004	Jun 11, 2004	Jun 25, 2004	Dividend amount:0.32 per share.
+Sep 08, 2004	Sep 10, 2004	Sep 24, 2004	Dividend amount:0.32 per share.
+Dec 01, 2004	Dec 03, 2004	Dec 17, 2004	Dividend amount:0.32 per share.
+Mar 09, 2005	Mar 11, 2005	Mar 25, 2005	Dividend amount:0.32 per share.
+Jun 08, 2005	Jun 10, 2005	Jun 24, 2005	Dividend amount:0.32 per share.
+ 	 	 
+
+TECUA has been acquired	
+ 	 	
+TECUMSEH PRODUCTS CL'A' [TECUA] acquired by Tecumseh Products Company [TECU] on 2014-05-02 00:00:00.
+ 	 	[ Go to TECU ]
+ 	 	 
+
+
+1/28/15 - TECUA appears as being acquired
+jlear  should have gotten tecu for his tecua shares 
+
+
+LEDGER
+Date	Start	Change	End	Type
+May 02, 2014		63870	63870	Corporate Action
+Total: 63,870
+ 	 	
+BUYS
+You have no Buys for this position
+ 	 	
+SELLS
+You have no sells for this position
+
+
+trades on May 02, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	TECUA	63,870	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	TECU	63,870	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+looks good , closing this out

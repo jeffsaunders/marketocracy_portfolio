@@ -1,0 +1,341 @@
+
+date:   6/22/15
+ticker:   HAWKQ
+
+yahoo:nothing
+
+quantum:
+Seahawk Drilling, Inc.
+Ticker Symbol: HAWKQ*     CUSIP: 81201R107     Exchange: NGS
+* NOTE: This security is no longer trading as of 10/06/11
+
+oursite:
+Symbol: HAWKQ 	Name: Seahawk Drilling Inc 	Price: $1.28
+Volume: 	Sector: Energy 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+symbol changes for HAWKQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+24 Feb 11 	HAWK 	HAWKQ 	Change in the ticker (trading) symbol from HAWK to HAWKQ
+  	  	 
+left curve 	  listing changes for HAWKQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Feb 24, 2011 	NASDAQ 	UW 	OTCBB-OTHER 	UV 	Change in the exchange that HAWK trades on from NASDAQ to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Seahawk Drilling Inc  Symbol:HAWKQ
+Date: 06/22/2015
+
+234 users found
+
+1	aakumaran	abar	aclassi	adaher	ade_turris	adiaz	aggiebrad	airforcemb	alacorte	ao
+2	aperskin	argonaut	arjonesy	arogolsky	arvidwillen	awhawk	ayavari	beachbumed	begre@adelphia.net	beisbol77
+3	benchpress550	ber35017	bgitarts	bickley234	bigconsh13	bkalaf	boatay	bobevans	borch	bpowers2
+4	brewcrew	bshennessey	bsommers	bsundell	camqtr	capsaxp007	carol_newell	castaways2006	cbridle	cdinulescu
+5	chrisongena	cnelson1	commanderaugust	coolc405	cowboy_dickrdoo	cowdude	crazyhobbes	creedy	cthiessen1	cubs1225
+6	dan.dzo	daoudim	davidwdover	day3trader	dcawley	debracharles	decoytracker	dkyled	doctorex	donquixote
+7	dorfmeister	dougalcarlisle	dpavic	drass	drk_999	duncan	dykstrad	e_levy	easf	eastkoy
+8	ericp33	esmilio	fablab	finanaliticasector_a	gigi.dam	glangford	glenngrski	gpantazis	gs751	guentert
+9	guruji	gzell	hansthered	hedgpethr	hesterjc	hquiroz	hriel	iblagojevic	iris	ironcondor
+10	jamesoil	jas572	jasch451	jbernstn	jdavidson2	jeffpk23	jgarzik	jjalon	jjones	jmorrnh
+11	joeylemur	johng53	johnmzimmermann	josef_alien	jplaton	jpreidis	jschwieder1	justin_collett83	kazguy	kbowden
+12	kkeller	kkooper	kpalmer	kskrede	kuyeno	lady_bug	larlee	larryl	laurentpoirier	lease_chris
+13	littlemookie1	lkris	longhorn7319	lordgort	lostrobin	lyoncarter	markd1414	mattia.tortorelli@tiscali.it	mavrik	mbishop2
+14	mbrandt9	mcrabb15	mep0903	mfg_engr	mhanna	michellelouie	mikesartor	mikesimm	milkrate	mjtigger
+15	mlaurino	mmacdonald	mrkoller	mtalisman	mzapp	nabootrader	naivetweaker	nancy_delida	nathalie347	nemster
+16	nick85016	npatwa	nsalazar	o_gbroker	og2man	ogrant	orangemush	oroborous	patrick_henry	paulneil
+17	pcrawford	phantastic	polkovnik	psionman	psnogren	pursuit8	q	qfweiwei	qucksilver	rallenza
+18	ralph	ramerman	rb374	rdail1	readk	rfiltz	rllanos	rnutter	robin	rockfish
+19	rockt	roflcoptertje	rogeratplay	ronniejallad	rrothschild	rshy	saifanil	saifl	salban	satyakees
+20	schalfin	scottkingoh	sheim	shmet	sidbaveja	siteline	sjames	smith9319	smootz82	sneeuwwitje
+21	soundview	spacemonkey	sparrinello	spiffyspleen	squishy	staahl66	stanglx718	stvnhild	swayla	swissedge
+22	syoung8	syu1	tacall	tatro	tdcarlson	tiernster	timbo56	tlang2	tom_2727	top_cat
+23	topbooks	tpow1	trex_48001	turannos	ucdballer411	upennstud	vikiby	vsagdeo	wallstbroker23	walzer
+24	wcali1999	wyattmitchell	yrik	yuanzma
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'HAWKQ';  
+> Row 1:
+>   STOCKKEY = X'802565814a945294c0a80146'
+
+select * from mstockalias where stockkey=X'802565814a945294c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2009-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'802665814a945294c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2011-02-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'541f093c4d66eba8c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWKQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2011-02-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'142a09ab4d66ec14c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWKQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='HAWKQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|HAWKQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 58270686
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 15526004
+>        BB_COMPANYNAME = Seahawk Drilling Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-06 00:00:00.000000'
+>         BB_IDENTIFIER = HAWKQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-10-06 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = HAWKQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-10-06 00:00:00.000000'
+>            PRIMARYKEY = X'52254bad4e8e2defc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock HAWKQ
+>>>> dbtool started at 2015-06-22 17:54:12 -0400
+stock: HAWKQ
+  PK       : [802565814A945294C0A80146]
+  companyID: [18625]
+  symbol   : [HAWKQ]
+  name     : [Seahawk Drilling Inc]
+  date     : [2011-02-24 00:00:00]
+  status   : [Active]
+stock: HAWKQ
+  PK       : [802565814A945294C0A80146]
+  companyID: [18625]
+  symbol   : [HAWKQ]
+  name     : [Seahawk Drilling Inc]
+  date     : [2011-02-24 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-22 17:54:13 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18625
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'802565814a945294c0a80146' and shares > 0 order by closed; 
+> Row 220:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-09-22 15:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 12.400000
+>   CURRENTORDER = X'85e203b14e7b844cc0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'532b5a66424ed174c0a80134'
+>       MODIFIED = NULL
+>            NET = 674.780064
+>         OPENED = TIMESTAMP '2011-09-22 14:54:04.000000'
+>          PRICE = 2.720887
+>     PRIMARYKEY = X'85e003b14e7b844cc0a80133'
+>         SECFEE = 0.020000
+>         SHARES = 248.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'802565814a945294c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'802565814a945294c0a80146'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'802565814a945294c0a80146'  and totalshares < 0)));
+no shorts
+
+apply the acquis
+there are 234 members who hold this stock
+delisted: 2011-10-06 
+quantum:  NOTE: This security is no longer trading as of 10/06/11
+last ticket: 2011-09-22 PRICE = 2.720887
+last price:  2012-04-20 (Fri) [4127]: O:1.2800 H:1.2800 L:1.2800 C:1.2800 V:0 TSO:11643 A:1.2800 R:1.0000 CA:0.0000
+
+going with 20111006 1.28
+
+
+/Marketocracy/bin/cahelper -symbol  HAWKQ  -effective 20111006 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.28 -acqShare 0 -purchaser HAWKQ   >& /Users/build/caout/HAWKQ.20150622-DELIST.out 
+D: (06-22 17:57:16.782) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-22 17:57:41.558) cahelper started on 2015-06-22 17:57:41 -0400
+
+D: (06-22 17:57:42.030) There are [0] open tickets for HAWKQ on 20111006
+D: (06-22 17:57:42.363) StockFileLoad Version:4.0
+D: (06-22 17:57:42.363) Loading Stock Data
+D: (06-22 17:58:21.488) Building Lookup Index
+D: (06-22 17:58:26.634) Finished Building Index
+D: (06-22 17:58:30.437) Finished Loading Stock Data
+D: (06-22 17:58:30.541) >>> load new StockPrices file
+D: (06-22 17:58:30.567) <<< load new StockPrices file
+D: (06-22 17:58:30.567) >>> swap StockPrices
+D: (06-22 17:58:30.568) Obtained Stockprices swap mutex
+D: (06-22 17:58:30.568) <<< swap StockPrices
+D: (06-22 17:58:30.569) Stock prices available from 2000-05-01 to 2015-06-19
+D: (06-22 17:58:30.773) Connection to 192.168.111.172:6666 succeeded
+D: (06-22 17:58:32.473) SavingChanges for position sell out 101 of 440
+D: (06-22 17:58:40.675) SavingChanges for position sell out 201 of 440
+D: (06-22 17:58:53.957) SavingChanges for position sell out 301 of 440
+D: (06-22 17:59:03.929) {
+    "ACQUIRED_STOCK" = HAWKQ; 
+    "ACQUIRING_STOCK" = "HAWKQ_FIX"; 
+    AMOUNT = 1.28; 
+    APPLIED = 1; 
+    DATE = 20111006; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "HAWKQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-22 17:59:08.734) SUCCESS
+D: (06-22 17:59:08.734) cahelper finished 2015-06-22 17:59:08 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'802565814a945294c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2009-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'802665814a945294c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2011-02-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'541f093c4d66eba8c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWKQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2011-02-24 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'142a09ab4d66ec14c0a80146'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWKQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 81201R107
+>           DATE = TIMESTAMP '2011-10-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Seahawk Drilling Inc
+>     PRIMARYKEY = X'f2b21ab3558884d6c0a86f92'
+>       STOCKKEY = X'802565814a945294c0a80146'
+>         SYMBOL = HAWKQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'f2b21ab3558884d6c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'f2b21ab3558884d6c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|HAWKQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.280000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150622:055741
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-06 00:00:00.000000'
+>         BB_IDENTIFIER = HAWKQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-10-06 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HAWKQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-06 00:00:00.000000'
+>            PRIMARYKEY = X'f2ac1ab3558884d5c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'f2ac1ab3558884d5c0a86f92';
+> Row 1:
+>   _C001 = 372.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'f2ac1ab3558884d5c0a86f92'));
+there are 372 fundkeys, save to CA issues HAWKQ fundkeys.txt
+
+For Beta case
+HAWKQ no longer trades but is still active on our site - need to delist 
+
+check on 6/23/15   invalidate funds
+check MAdmin  is clearn
+HAWKQ has been acquired 	right curve
+  	  	
+Seahawk Drilling Inc acquired by a private company on 2011-10-06 00:00:00. 
+
+invalidate 
+reprice
+
+closing this out 

@@ -1,0 +1,380 @@
+date: 2/26/15
+From: 	Ethan Lovell <lovellmeister@gmail.com>
+	Subject: 	Stock correction LXRX vs. LEXGD
+	Date: 	February 26, 2015 5:54:40 AM PST
+	To: 	Nancy Moser <help@marketocracy.com>, webmaster@marketocracy.com
+
+Hi -
+
+I'm showing what looks like a mistake in my marketocracy fund (elovell15, password: bowdoin). 
+ Fund's showing holdings of LEXGD at $0.04/sh., where I believe this should still be LXRX at $0.98/sh. 
+ Would you check and make any corrections necessary?
+
+Thanks,
+Ethan
+
+
+select distinct stockkey from mstockalias where symbol='LXRX';
+> Row 1:
+>   STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+
+select * from mstockalias where STOCKKEY = X'8c5410ac390c6d6ec0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = LEXICON GENETICS
+>     PRIMARYKEY = X'8c5510ac390c6d6ec0a8015c'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LEXG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2007-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = LEXICON GENETICS
+>     PRIMARYKEY = X'c3886cc54632ab40c0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2007-04-27 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'abc86cd24632ab8dc0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'abc86cd24632ab8dc0a80146';
+> Row 1:
+>              ALIASKEY = X'abc86cd24632ab8dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Lexicon Genetics Inc|CP_NEW_NAME|Lexicon Pharmaceuticals Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 26120543
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 1177048
+>        BB_COMPANYNAME = Lexicon Pharmaceuticals Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2007-04-27 00:00:00.000000'
+>         BB_IDENTIFIER = LXRX    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LXRX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'8f806ba04632aac4c0a80146'
+>               VERSION = NULL
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53680P100
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'd6403afa4d225dacc0a80146'  <--- set the identitykey here
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'd6403afa4d225dacc0a80146';
+> Row 1:
+>              ALIASKEY = X'd6403afa4d225dacc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50899427
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 1177048
+>        BB_COMPANYNAME = Lexicon Pharmaceuticals Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = LXRX    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LXRX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'07e94f834d1e6816c0a80146'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53680P100
+>           DATE = TIMESTAMP '2015-02-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'3a81239e54ee62ebc0a86f92'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LEXGD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'3a81239e54ee62ebc0a86f92';
+> Row 1:
+>              ALIASKEY = X'3a81239e54ee62ebc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|LEXG US|CP_NEW_TKR|LEXGD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 103079762
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 11382582
+>        BB_COMPANYNAME = Lithium Exploration Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-25 00:00:00.000000'
+>         BB_IDENTIFIER = LEXG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LEXG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>            PRIMARYKEY = X'1fd6521654ed0e17c0a86f92'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53680P209
+>           DATE = TIMESTAMP '2015-02-25 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'1def250954ee6386c0a86f92'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LEXGD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'1def250954ee6386c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1def250954ee6386c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|53680P100|CP_NEW_CUSIP|53680P209|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US53680P1003|CP_NEW_ISIN|US53680P2092|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 103080452
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 11382582
+>        BB_COMPANYNAME = Lithium Exploration Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-25 00:00:00.000000'
+>         BB_IDENTIFIER = LEXG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = LEXG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>            PRIMARYKEY = X'1fda521654ed0e1ac0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'1def250954ee6386c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 20|CP_RATIO|0.050000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.050000|CP_ADJ_DT|20150225|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 103079870
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 11382582
+>        BB_COMPANYNAME = Lithium Exploration Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-25 00:00:00.000000'
+>         BB_IDENTIFIER = LEXG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = LEXG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>            PRIMARYKEY = X'1fd8521654ed0e18c0a86f92'  <--- delete this
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'1fd8521654ed0e18c0a86f92';
+> Row 1:
+>   _C001 = 418.000000
+select distinct loginname,firstname, lastname, email from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'1fd8521654ed0e18c0a86f92');
+save these to CA issues LXRX  LEXGD collision members.txt
+so LEXD came in and hijacked LXRX
+
+lets make the BB_ACTIONID unique
+
+update mcorporateaction set BB_ACTIONID = '103079870:MARTY' where PRIMARYKEY = X'1fd8521654ed0e18c0a86f92';
+select * from mcorporateaction where PRIMARYKEY = X'1fd8521654ed0e18c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1def250954ee6386c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 20|CP_RATIO|0.050000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.050000|CP_ADJ_DT|20150225|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 103079870:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 11382582
+>        BB_COMPANYNAME = Lithium Exploration Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-02-25 00:00:00.000000'
+>         BB_IDENTIFIER = LEXG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = LEXG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-02-24 00:00:00.000000'
+>            PRIMARYKEY = X'1fd8521654ed0e18c0a86f92'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 103079870:MARTY
+
+this seemed to work
+PRIMARYKEY = X'1fd8521654ed0e18c0a86f92'  <--- delete this
+delete from mcorporateaction where PRIMARYKEY = X'1fd8521654ed0e18c0a86f92';
+no longer there
+
+set the identitykey
+PRIMARYKEY = X'd6403afa4d225dacc0a80146' 
+
+select * from mstock where primarykey=X'8c5410ac390c6d6ec0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'1def250954ee6386c0a86f92'
+>                NAME = LEXICON GENETICS
+>          PRIMARYKEY = X'8c5410ac390c6d6ec0a8015c'
+>              SYMBOL = LEXG
+>           COMPANYID = 7786
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-729b
+update mstock set IDENTITYKEY =  X'd6403afa4d225dacc0a80146'  where PRIMARYKEY = X'8c5410ac390c6d6ec0a8015c';
+check
+select * from mstock where primarykey=X'8c5410ac390c6d6ec0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'd6403afa4d225dacc0a80146'
+>                NAME = LEXICON GENETICS
+>          PRIMARYKEY = X'8c5410ac390c6d6ec0a8015c'
+>              SYMBOL = LEXG
+>           COMPANYID = 7786
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-729b
+select * from mstockalias where primarykey=X'd6403afa4d225dacc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53680P100
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'd6403afa4d225dacc0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+
+The following records need to be deleted:
+
+set commit false;
+delete from mstockalias where PRIMARYKEY = X'3a81239e54ee62ebc0a86f92';
+delete from mcorporateaction where PRIMARYKEY = X'1fd6521654ed0e17c0a86f92';
+delete from mstockalias where PRIMARYKEY = X'1def250954ee6386c0a86f92';
+delete from mcorporateaction where PRIMARYKEY = X'1fda521654ed0e1ac0a86f92';
+delete from mcorporateaction where  PRIMARYKEY = X'1fd8521654ed0e18c0a86f92';
+commit;
+set commit true;
+ok, let's check the database again
+
+select * from mstockalias where STOCKKEY = X'8c5410ac390c6d6ec0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = LEXICON GENETICS
+>     PRIMARYKEY = X'8c5510ac390c6d6ec0a8015c'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LEXG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2007-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = LEXICON GENETICS
+>     PRIMARYKEY = X'c3886cc54632ab40c0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 528872104
+>           DATE = TIMESTAMP '2007-04-27 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'abc86cd24632ab8dc0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 53680P100
+>           DATE = TIMESTAMP '2011-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Lexicon Pharmaceuticals Inc
+>     PRIMARYKEY = X'd6403afa4d225dacc0a80146'
+>       STOCKKEY = X'8c5410ac390c6d6ec0a8015c'
+>         SYMBOL = LXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XV
+
+looks good check on 2/27/15
+
+who is this memebr elovell15  login
+
+let's check to see if anyone traded today
+
+select * from mticket where STOCKKEY = X'8c5410ac390c6d6ec0a8015c' and closed >= TIMESTAMP'2015-02-26 00:00:00.000000';
+nothing
+
+select * from mticket where STOCKKEY = X'8c5410ac390c6d6ec0a8015c' order by closed; 
+no trades today - we are good
+
+check on 2/27/15 for LXRX to be back
+
+2/27/15
+LXRX is back
+  symbol changes for LXRX	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+27 Apr 07	LEXG	LXRX	Change in the ticker (trading) symbol from LEXG to LXRX
+ 	 	 
+	  name changes for LXRX	
+ 	 	
+Effective Date	Old Name	New Name	Description
+27 Apr 07	Lexicon Genetics Inc	Lexicon Pharmaceuticals Inc	Change in the name of issuer from Lexicon Genetics Inc to Lexicon Pharmaceuticals Inc
+ 	 	 
+	  listing changes for LXRX	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jan 03, 2011	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that LXRX trades on from NASDAQ to NASDAQ
+
+need to wait until we get a price

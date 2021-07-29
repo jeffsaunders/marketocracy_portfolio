@@ -1,0 +1,527 @@
+CYNA trades not filling,  comes over to CYBA
+
+CA issues CYNA list.txt
+select distinct stockkey from mstockalias where symbol='CYBA';
+there are two
+> CYBA 1:
+>   STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+> CYBA 2:
+>   STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+
+
+
+> CYBA 1:
+>   STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+select * from mstockalias where STOCKKEY = X'7fe510ac390c6d52c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 23243P103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CYBEAR INC
+>     PRIMARYKEY = X'7fe610ac390c6d52c0a8015c'
+>       STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-09-07 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CYBEAR INC
+>     PRIMARYKEY = X'5c0906a739e90b1ec0a801dc'
+>       STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+>         SYMBOL = CYBAD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2000-09-26 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CYBEAR GROUP
+>     PRIMARYKEY = X'64c506a739e90d4dc0a801dc'
+>       STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2002-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CYBEAR GROUP
+>     PRIMARYKEY = X'c001168356ba7461c0a86fab'
+>       STOCKKEY = X'7fe510ac390c6d52c0a8015c'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+
+> CYBA 2:
+>   STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+select * from mstockalias where STOCKKEY = X'8d33043c39e7e9c0c0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'8d34043c39e7e9c0c0a801dc'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2004-04-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'4cb8635b4074b2acffffffff'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2004-04-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'e2dd56fa40760418ffffffff'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'cdf0139544a9cd26c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-07-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'2547267044a9d03fc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-07-03 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'409e2d1944a9d051c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'1ab8607e44ea6586c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'29783e7b44ebb719c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-05-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'e1a316974ddd840bc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'491b0b2f4e2f4184c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-07-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'63420b414e2f41cbc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2015-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'f8f56df655834c1ac0a86f92'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+
+
+
+
+
+
+************ CYNA
+select distinct stockkey from mstockalias where symbol='CYNA';
+> Row 1:
+>   STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+select * from mstockalias where STOCKKEY = X'8d33043c39e7e9c0c0a801dc' order by "date";> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'8d34043c39e7e9c0c0a801dc'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2004-04-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'4cb8635b4074b2acffffffff'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2004-04-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'e2dd56fa40760418ffffffff'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CANYON NATIONAL BANK
+>     PRIMARYKEY = X'cdf0139544a9cd26c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'cdf0139544a9cd26c0a80146' order by BB_EFFECTIVE;
+	> Row 1:
+>              ALIASKEY = X'cdf0139544a9cd26c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CYNA US|CP_NEW_TKR|CYBA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 22319435
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 386012
+>        BB_COMPANYNAME = Canyon Bancorp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>         BB_IDENTIFIER = CYBA    UU Equity
+>             BB_ISSUED = TIMESTAMP '2006-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CYBA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'f90200be44a9cce4c0a80146'
+>               VERSION = NULL
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-07-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'2547267044a9d03fc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-07-03 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'409e2d1944a9d051c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'1ab8607e44ea6586c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2006-08-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'29783e7b44ebb719c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-05-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'e1a316974ddd840bc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBAE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'491b0b2f4e2f4184c0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2011-07-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'63420b414e2f41cbc0a80146'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 138752100
+>           DATE = TIMESTAMP '2015-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Canyon Bancorp
+>     PRIMARYKEY = X'f8f56df655834c1ac0a86f92'
+>       STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+>         SYMBOL = CYBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XB
+
+
+
+Yahoo finance has this for CYNA
+Cynapsus Therapeutics Inc. (CYNA) -NasdaqGM   Watchlist
+16.21 Down 0.13(0.80%) 12:48PM EDT - Nasdaq Real Time Price
+
+
+Assessment - 
+The CYNA to CYBA ticker change is valid and this happened on 2006-07-03  Canyon Bancorp and this is still a live stock
+CYNA is an available ticker, we missed the list of CYNA as 
+Cynapsus Therapeutics, Inc.
+Ticker Symbol: CYNA     CUSIP: 23257Y859     Exchange: NGM
+
+yahoo finance has a first price of  April 26, 2010 
+
+Looks like CYNA is a free ticker to assign - let's check Yahoo and quantum
+
+April 26, 2010 is the first price  on yahoo 
+
+quantum 
+Cynapsus Therapeutics, Inc.
+Ticker Symbol: CYNA     CUSIP: 23257Y859     Exchange: NGM
+
+Company's Online Profile
+BUSINESS:  Cynapsus Therapeutics, Inc. is a specialty central nervous system pharmaceutical company developing and preparing to commercialize a Phase 3, fast-acting, easy-to-use, sublingual thin film for the on-demand turning ON of debilitating OFF episodes associated with Parkinson’s disease.
+   Link to Preliminary IPO Prospectus
+Previous Ticker Symbol: CYNAD    Changed: 6/18/15
+
+
+used to be CYNAD   6/18/15
+
+there is no collision on CYNA
+
+check for unapplied CAs 
+select * from mcorporateaction where aliaskey is null and BB_SECID='CYNA'  order by BB_EFFECTIVE;
+
+
+Need to list CYNA
+
+list date:  20100426 
+xignite: 
+CUSIP:	23257Y859  <--- is correct 
+ISIN:	
+Valoren:	28318670
+Name:	Cynapsus Therapeutics Inc
+
+CYNA|Q|23257Y859|Cynapsus Therapeutics Inc|20100426
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='CYNA';
+> Row 1:
+>   STOCKKEY = X'8d33043c39e7e9c0c0a801dc'
+> Row 2:
+>   STOCKKEY = X'de4206c35783d4d9c0a86fab'
+
+select * from mstockalias where STOCKKEY = X'de4206c35783d4d9c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 23257Y859
+>           DATE = TIMESTAMP '2010-04-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cynapsus Therapeutics Inc
+>     PRIMARYKEY = X'de4306c35783d4d9c0a86fab'
+>       STOCKKEY = X'de4206c35783d4d9c0a86fab'
+>         SYMBOL = CYNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select companyID from mstock where primarykey=X'de4206c35783d4d9c0a86fab'; 
+> Row 1:
+>   COMPANYID = 30207
+
+get historical prices from yahoo finance
+save to CA issues CYNA prices to be loaded.txt
+
+Check on 7/12/16 for CYNA to be listed 
+
+buy 4,337	 shares in BK11 fund 
+
+Symbol: CYNA	Name: Cynapsus Therapeutics Inc	Price: $16.30
+Volume: 9,448	Sector: Unclassified	Change: $0.12
+Short Volume: 935	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 935	 Exchange: NASDAQ	Today: 0.74%
+50 Day Ave: $0.32	Year High: $16.75	High: $16.60
+200 Day Ave: $0.08	Year Low: $0.00	Low: $16.21
+
+research  stock info  CYNA   
+ [NEW QUOTE]       
+Corporate Actions for Cynapsus Therapeutics Inc	  July 12, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+what was the price range for 7/11/16 for CYNA
+Date			Open	High	Low		Close	Volume	Adj Close*
+Jul 11, 2016	16.40	16.75	16.12	16.18	46,700	16.18
+
+7/18/16
+CYNA is now on our site, member Branko bought some as did I:
+Stock:Cynapsus Therapeutics Inc  Symbol:CYNA
+Date: 07/18/2016
+
+2 users found
+
+1	791branko	masters100manager
+
+closing this out 

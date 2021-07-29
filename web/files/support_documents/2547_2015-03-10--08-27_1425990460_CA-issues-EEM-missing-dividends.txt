@@ -1,0 +1,150 @@
+date: 3/9/15
+EEM missing dividends
+
+oursite:
+cash dividends paid by EEM	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+22 Dec 03	24 Dec 03	02 Jan 04	75	$0.69	Dividend amount:0.693144 per share.
+31 Dec 03	05 Jan 04	07 Jan 04	75	$0.12	Dividend amount:0.121008 per share.
+23 Dec 04	28 Dec 04	30 Dec 04	75	$2.41	Dividend amount:2.41294 per share.
+23 Dec 05	28 Dec 05	30 Dec 05	75	$0.99	Dividend amount:0.987526 per share.
+20 Dec 06	22 Dec 06	29 Dec 06	1	$1.57	Dividend amount:1.572514 per share.
+24 Dec 07	27 Dec 07	04 Jan 08	1	$1.95	Dividend amount:1.946794 per share.
+25 Jun 08	27 Jun 08	30 Jun 08	2	$1.55	Dividend amount:1.551765 per share.
+23 Dec 08	26 Dec 08	31 Dec 08	2	$0.34	Dividend amount:0.340423 per share.
+23 Jun 09	25 Jun 09	29 Jun 09	2	$0.25	Dividend amount:0.247284 per share.
+22 Dec 09	24 Dec 09	31 Dec 09	2	$0.32	Dividend amount:0.322891 per share.
+29 Dec 09	31 Dec 09	06 Jan 10	2	$0.01	Dividend amount:0.012012 per share.
+23 Jun 10	25 Jun 10	29 Jun 10	2	$0.26	Dividend amount:0.261603 per share.
+
+dividend.com
+Payout Amount	Declared Date	Ex-Dividend Date	Record Date	Pay Date ▼	Qualified Dividend?	Payout Type	Frequency
+$0.5350	2014-12-16	2014-12-17	2014-12-19	2014-12-24	Unknown	Regular	Semi Annual
+$0.3406	2014-06-24	2014-06-25	2014-06-27	2014-07-02	Unknown	Regular	Semi Annual
+$0.3658	2013-12-17	2013-12-18	2013-12-20	2013-12-30	Unknown	Regular	Semi Annual
+$0.4926	2013-06-26	2013-06-27	2013-07-01	2013-07-05	Unknown	Regular	Semi Annual
+$0.0142	2012-12-26	2012-12-27	2012-12-31	2013-01-03	Unknown	Special	N/A
+$0.2623	2012-12-17	2012-12-18	2012-12-20	2012-12-27	Unknown	Regular	Semi Annual
+$0.4684	2012-06-20	2012-06-21	2012-06-25	2012-06-28	Unknown	Regular	Semi Annual
+$0.3470	2011-12-19	2011-12-20	2011-12-22	2011-12-29	Unknown	Regular	Semi Annual
+$0.4609	2011-06-21	2011-06-22	2011-06-24	2011-06-28	Unknown	Regular	Semi Annual
+$0.0251	2010-12-28	2010-12-29	2010-12-31	2011-01-05	Unknown	Special	N/A
+$0.3594	2010-12-20	2010-12-21	2010-12-23	2010-12-30	Unknown	Regular	Semi Annual
+$0.2616	2010-06-22	2010-06-23	2010-06-25	2010-06-29	Unknown	Regular	Semi Annual
+
+let's apply
+/Marketocracy/bin/cahelper -symbol EEM -effective 20141217 -type DVD_CASH -exchange UN -payDate 20141224 -recordDate 20141219 -amount 0.535 >& /Users/build/caout/EEM.20150309-2014-12.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20140625 -type DVD_CASH -exchange UN -payDate 20140702 -recordDate 20140627 -amount 0.3406 >& /Users/build/caout/EEM.20150309-2014-07.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20131218 -type DVD_CASH -exchange UN -payDate 20131230 -recordDate 20131220 -amount 0.3658 >& /Users/build/caout/EEM.20150309-2013-12.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20130627 -type DVD_CASH -exchange UN -payDate 20130705 -recordDate 20130701 -amount 0.4926 >& /Users/build/caout/EEM.20150309-2013-07.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20121227 -type DVD_CASH -exchange UN -payDate 20130103 -recordDate 20121231 -amount 0.0142 >& /Users/build/caout/EEM.20150309-2013-01.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20121218 -type DVD_CASH -exchange UN -payDate 20121227 -recordDate 20121220 -amount 0.2623 >& /Users/build/caout/EEM.20150309-2012-12.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20120621 -type DVD_CASH -exchange UN -payDate 20120628 -recordDate 20120625 -amount 0.4684 >& /Users/build/caout/EEM.20150309-2012-06.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20111220 -type DVD_CASH -exchange UN -payDate 20111229 -recordDate 20111222 -amount 0.347 >& /Users/build/caout/EEM.20150309-2011-12.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20110622 -type DVD_CASH -exchange UN -payDate 20110628 -recordDate 20110624 -amount 0.4609 >& /Users/build/caout/EEM.20150309-2011-06.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20101229 -type DVD_CASH -exchange UN -payDate 20110105 -recordDate 20101231 -amount 0.0251 >& /Users/build/caout/EEM.20150309-2011-01.out;
+/Marketocracy/bin/cahelper -symbol EEM -effective 20101221 -type DVD_CASH -exchange UN -payDate 20101230 -recordDate 20101223 -amount 0.3594 >& /Users/build/caout/EEM.20150309-2010-12.out;
+EEM.20150309-2010-12.out
+EEM.20150309-2011-01.out
+EEM.20150309-2011-06.out
+EEM.20150309-2011-12.out
+EEM.20150309-2012-06.out
+EEM.20150309-2012-12.out
+EEM.20150309-2013-01.out
+EEM.20150309-2013-07.out
+EEM.20150309-2013-12.out
+EEM.20150309-2014-07.out
+EEM.20150309-2014-12.out
+
+let's invalidate funds that held EEM
+select distinct stockkey from mstockalias where symbol='EEM';
+> Row 1:
+>   STOCKKEY = X'c9510e21390a55d1c0a80116'
+> Row 2:
+>   STOCKKEY = X'6fae47c93f399962c0a80146'
+
+there are two
+> EEM 1:
+>   STOCKKEY = X'c9510e21390a55d1c0a80116'
+select * from mstockalias where STOCKKEY = X'c9510e21390a55d1c0a80116';
+delisted 
+> EEM 2:
+>   STOCKKEY = X'6fae47c93f399962c0a80146'
+select * from mstockalias where STOCKKEY = X'6fae47c93f399962c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464287234
+>           DATE = TIMESTAMP '2003-04-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MSCI Emerging Markets Index Fund (iShares)
+>     PRIMARYKEY = X'6faf47c93f399962c0a80146'
+>       STOCKKEY = X'6fae47c93f399962c0a80146'
+>         SYMBOL = EEM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464287234
+>           DATE = TIMESTAMP '2007-02-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MSCI Emerging Markets Index Fund (iShares)
+>     PRIMARYKEY = X'70f829fd45d67044c0a80146'
+>       STOCKKEY = X'6fae47c93f399962c0a80146'
+>         SYMBOL = EEM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464287234
+>           DATE = TIMESTAMP '2007-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = MSCI Emerging Markets Index Fund (iShares)
+>     PRIMARYKEY = X'ae2746dc4758b7f0c0a80146'
+>       STOCKKEY = X'6fae47c93f399962c0a80146'
+>         SYMBOL = EEM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = LG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464287234
+>           DATE = TIMESTAMP '2011-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MSCI Emerging Markets Index Fund (iShares)
+>     PRIMARYKEY = X'2da624484ea7859dc0a8013c'
+>       STOCKKEY = X'6fae47c93f399962c0a80146'
+>         SYMBOL = EEM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = LG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464287234
+>           DATE = TIMESTAMP '2013-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = iShares MSCI Emerging Markets
+>     PRIMARYKEY = X'cb854ad151d20d65c0a80146'
+>       STOCKKEY = X'6fae47c93f399962c0a80146'
+>         SYMBOL = EEM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = LG
+
+select count(*) from mposition where STOCKKEY = X'6fae47c93f399962c0a80146';
+> Row 1:
+>   _C001 = 1896.000000
+select fundkey from mposition where STOCKKEY = X'6fae47c93f399962c0a80146';
+let's put these into a file  CA issues EEM dividends fundkeys.txt
+I am invalidating all funds that have a position (past present).   Doing 500 at a time, tried to do all 1896 and
+the connection to stocks timed out.  500 works.
+
+done, closing this out
+

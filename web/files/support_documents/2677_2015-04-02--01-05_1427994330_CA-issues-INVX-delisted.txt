@@ -1,0 +1,276 @@
+date:  3/30/15
+ticker INVX
+
+looks to be delisted 
+
+yahoo
+
+quantum: 
+nnovex, Inc.
+Ticker Symbol: INVX*     CUSIP: 457647105     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 10/01/13
+
+
+xignite  no xignite feed data 
+
+our site
+select distinct stockkey from mstockalias where symbol='INVX';
+> Row 1:
+>   STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+select * from mstockalias where STOCKKEY = X'e8ee0e21390a9b3fc0a80116' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'e8ef0e21390a9b3fc0a80116'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2008-03-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'e9c533a147ec51cfc0a80146'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2008-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'161742f94897b4c2c0a80146'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where BB_SECID='INVX' and aliaskey is null order by BB_EFFECTIVE;
+> Row 12:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|INVX|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 82058699
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 104735
+>        BB_COMPANYNAME = Innovex Inc/MN
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = INVX    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-10-01 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = INVX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-10-01 00:00:00.000000'
+>            PRIMARYKEY = X'b8fc15ae524b5d2ec0a80146'
+>               VERSION = NULL
+
+how many people hold this
+INVX  04-01-2015
+Stock:INNOVEX INC  Symbol:INVX
+Date: 04-01-2015
+
+177 users found
+
+1	25	aceone	adrscib	advisestocks	afitzpatrick	agazioglu	aggressive	aghazvinian	aldidm	amarinari
+2	antigastef	auminer	awesome1nyc	ayavari	ayce	bbachelier	bgitarts	bgruber	billyen	bower
+3	bpowers1	brokertfs	bunnyluv	ccolvin	cdemastus	cgnx	cgraydon	cgreenberg1	cheetah	chrisfin
+4	chsanders	cmarshall	colinkayla	cynthia1952	dan8558	danon2004	davesimmon	dennisfurman	dmann	donquixote
+5	drarthurwells	drichmond	e3874m	ekowel	enjolras	fedcut	flajuie	fpurifoy	freilech	fruiz
+6	fsaldivia	gator101	gclout	gcoopersf	germs	gpbax	gummischuh	guud	gyriggs	haegint
+7	handress	hernandez	htrevathan	huyehara	hypedaj	igregor	imperialfleet	ist.martin	j0sh_hs0j	j_eremie
+8	jalis	jensen	jgholson	jlaw	jleb80	jleggiero	jlevy	jlong4	jnagel	joco50
+9	joe34	john97	jonnyknife	jrainey	jstuck	jurac	jysurette	kama	ken5888	kevineanes
+10	kharder	kickinutz	klebeouf	knicholson1	kpearson	kschneck	kseminario1	kuyeno	lma_02906	lsrk
+11	lwroblewski	lysarjun	maae10	marcuzzicarlo	marcy	marketocracy	masters100manager	maxman71	mcrabb15	mcwynar
+12	mhouston	mikep_mm@hotmail.com	mikki33	mjshan	mmerveille1	mo_rocks	mpeterson2	msaal	mtaguchi	mthindman
+13	mweaner	ngirish	novorich	ntrifiro	nyujd	otismo	parhat2	pbradford	pburke	perdana
+14	peterzhu	pferlito	pierce288	pmoresi	priv8pete	przuniga	pvon_savoye	q_tips	rbrower	realreed
+15	rhanks	rhb	richfield	rjohnson	rsak328	rsyke	ruiremax	rwest817	rwolf	schaubey
+16	scratchy	sef_1968	shillard	simgrund	slang	smkite	sparkes	sribe	steinwayp	steve1968nj
+17	swh50	tbarlage	teamfunds	techplusmanager	tjohnston	torcida	trejder	tshepard	weightlifter	wjgraham
+18	wkhan	wleung	wolfmeister07	wrobinson1	xgreenx	xmichael	zuby84
+
+
+check historical prices 
+
+/Marketocracy/bin/dbtool lookup stock INVX
+>>>> dbtool started at 2015-04-01 13:56:32 -0400
+stock: INVX
+  PK       : [E8EE0E21390A9B3FC0A80116]
+  companyID: [2252]
+  symbol   : [INVX]
+  name     : [INNOVEX INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: INVX
+  PK       : [E8EE0E21390A9B3FC0A80116]
+  companyID: [2252]
+  symbol   : [INVX]
+  name     : [INNOVEX INC]
+  date     : [2008-03-27 00:00:00]
+  status   : [Active]
+stock: INVX
+  PK       : [E8EE0E21390A9B3FC0A80116]
+  companyID: [2252]
+  symbol   : [INVX]
+  name     : [INNOVEX INC]
+  date     : [2008-08-04 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-01 13:56:32 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2252
+
+2013-09-30 (Mon) [4655]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:8900 TSO:19397 A:0.0100 R:1.0000 CA:0.0000
+
+/Marketocracy/bin/cahelper -symbol INVX -effective 20131001 -type ACQUIS -exchange UU -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser INVX >& /Users/build/caout/INXX.20150401-ACQUIS.out
+
+mv INXX.20150401-ACQUIS.out INVX.20150401-ACQUIS.out
+INVX.20150401-ACQUIS.out
+stocks:~/caout build$ cat INVX.20150401-ACQUIS.out
+D: (04-01 14:06:06.134) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-01 14:06:32.245) cahelper started on 2015-04-01 14:06:32 -0400
+
+D: (04-01 14:06:38.389) There are [0] open tickets for INVX on 20131001
+D: (04-01 14:06:38.696) StockFileLoad Version:3.0
+D: (04-01 14:06:38.696) Loading Stock Data
+D: (04-01 14:07:23.599) Building Lookup Index
+D: (04-01 14:07:27.946) Finished Building Index
+D: (04-01 14:07:28.940) Finished Loading Stock Data
+D: (04-01 14:07:29.060) Connection to 192.168.111.172:6666 succeeded
+D: (04-01 14:07:31.889) {
+    "ACQUIRED_STOCK" = INVX; 
+    "ACQUIRING_STOCK" = "INVX_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20131001; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "INVX_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-01 14:07:41.037) SUCCESS
+D: (04-01 14:07:41.037) cahelper finished 2015-04-01 14:07:41 -0400
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'e8ee0e21390a9b3fc0a80116' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'e8ef0e21390a9b3fc0a80116'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2008-03-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'e9c533a147ec51cfc0a80146'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2008-08-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'161742f94897b4c2c0a80146'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 457647105
+>           DATE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = INNOVEX INC
+>     PRIMARYKEY = X'dd4f65ca551c33aec0a86f92'
+>       STOCKKEY = X'e8ee0e21390a9b3fc0a80116'
+>         SYMBOL = INVX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45202020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey= X'dd4f65ca551c33aec0a86f92';
+> Row 1:
+>              ALIASKEY = X'dd4f65ca551c33aec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|INVX  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150401:020632
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = INVX_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2013-10-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = INVX_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-10-01 00:00:00.000000'
+>            PRIMARYKEY = X'dd4965ca551c33a8c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'dd4965ca551c33a8c0a86f92';
+> Row 1:
+>   _C001 = 99.000000
+
+check MAdmin again 
+Stock:INNOVEX INC  Symbol:INVX
+Date: 04/01/2015
+
+2 users found
+
+1	teamfunds	techplusmanager
+
+
+shorts - just deleted / untraded
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'dd4965ca551c33a8c0a86f92'));
+save these to CA issues INVX fundkeys.txt
+
+invalidate after checking in the morning 4/2/15
+
+4/2/15
+ LOG IN PLEASE
+  	  	 
+left curve 	  INVX has been acquired 	right curve
+  	  	
+INNOVEX INC acquired by a private company on 2013-10-01 00:00:00. 
+it is there
+run the invalidation step and close ths out

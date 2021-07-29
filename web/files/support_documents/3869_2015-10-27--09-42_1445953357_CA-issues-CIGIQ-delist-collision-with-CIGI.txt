@@ -1,0 +1,1580 @@
+date:  10/25/15
+ticker:  CIGI - looking at this one, it is related to FSRV and FSV
+
+
+select distinct stockkey from mstockalias where symbol='CIGI';
+> Row 1:
+>   STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+
+select * from mstockalias where stockkey=X'af39043c39e7e9ccc0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-06-26 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'af3a043c39e7e9ccc0a801dc'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SRHN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'af3a043c39e7e9ccc0a801dc';
+> Row 1:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_EXCH|OTCBB|CP_NOTES||CP_REASON||CP_TKR|SRHN
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = Searchhound.com Inc
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-06-26 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = NULL
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4cf7064939e7ef87c0a801dc'
+>               VERSION = 1
+> Row 2:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|FreeAirMiles.com Inc|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|2|CP_ADVISORS|N.A.|CP_TKR|27053Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|7266890
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6375258
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-03-23 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-03-09 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-03-23 00:00:00.000000'
+>            PRIMARYKEY = X'b6766a713abc449fc0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'b6766a713abc449fc0a801dc';
+	none
+
+> Row 3:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|JobBank USA Inc|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|2|CP_ADVISORS|N.A.|CP_TKR|27920Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|7274180
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6407938
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-04-02 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-03-20 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-04-02 00:00:00.000000'
+>            PRIMARYKEY = X'9fe404913ac92f1ac0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'9fe404913ac92f1ac0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 4:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|FastCashOffers.com|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|9|CP_ADVISORS|N.A.|CP_TKR|31043Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|7367545
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6883866
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e0f602aa3b4a621dc0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'e0f602aa3b4a621dc0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 5:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|EarlyBirdDomain.com|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|9|CP_ADVISORS|N.A.|CP_TKR|31044Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|7367547
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6883922
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e0f402aa3b4a621cc0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'e0f402aa3b4a621cc0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 6:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|MoneyMessage.com|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|9|CP_ADVISORS|N.A.|CP_TKR|31042Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|7367543
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6883254
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-09 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e0f802aa3b4a621dc0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'e0f802aa3b4a621dc0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+> Row 7:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|TGT INCL 2 WEBSITES: MESIA.COM & UTOPIAD.COM.                                                         9/28/01 |CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|Mesia.com Inc|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|2|CP_ADVISORS|N.A.|CP_TKR|32402Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|7543588
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7176278
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-10-04 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2001-09-28 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-10-04 00:00:00.000000'
+>            PRIMARYKEY = X'64af61ed3bbd14abc0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'64af61ed3bbd14abc0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+
+> Row 8:
+>              ALIASKEY = X'af3a043c39e7e9ccc0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|SpeakGlobally LLC|CP_DEBT|0.000000|CP_CUR_PREMIUM|N.A.|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_UNSOLICITED|0|CP_SH|0.000000|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_NAME|SpeakGlobally LLC|CP_INIT_OFFER_PREMIUM|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|9|CP_ADVISORS|N.A.|CP_TKR|66947Z  US|CP_CASH|0.000000|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_TOT_AMT|0.000000|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|0|CP_ADVISORS_NUM|0|CP_ID_BB_COMP|7620007
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7603553
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-01-07 00:00:00.000000'
+>         BB_IDENTIFIER = SRHN    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-01-07 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = SRHN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-01-07 00:00:00.000000'
+>            PRIMARYKEY = X'a2fc11f13c3a61a2c0a801dc'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'a2fc11f13c3a61a2c0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+
+
+**** second mstockalias ***
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'200d5c873e110914c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'200d5c873e110914c0a80146';
+> Row 1:
+>              ALIASKEY = X'200d5c873e110914c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SRHN US|CP_NEW_TKR|SHND US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9852886
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = SHND    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SHND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd4395c783e11086dc0a80146'
+>               VERSION = NULL
+
+
+
+***  third mstockalias ***
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2002-12-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'fd7e5da53e11098ac0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'fd7e5da53e11098ac0a80146';
+> Row 1:
+>              ALIASKEY = X'fd7e5da53e11098ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 67|CP_RATIO|0.014925|CP_RECORD_DT|20021227|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.014925|CP_ADJ_DT|20021230|CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9852966
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = SHND    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = SHND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd43d5c783e11086ec0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'fd7e5da53e11098ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|812223105|CP_NEW_CUSIP|812223204|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US8122231058|CP_NEW_ISIN|US8122232049|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9852906
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = SearchHound.com Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = SHND    UU Equity
+>             BB_ISSUED = TIMESTAMP '2002-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = SHND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd43b5c783e11086dc0a80146'
+>               VERSION = NULL
+
+*** 4th mstockalias ****
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'94d745573f4ac011c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'94d745573f4ac011c0a80146';
+> Row 1:
+>              ALIASKEY = X'94d745573f4ac011c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SHND US|CP_NEW_TKR|CIGI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12170051
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-08-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4a0b44353f4abf74c0a80146'
+>               VERSION = NULL
+
+***  5th mstockalias ***
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'595a45633f4ac075c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'595a45633f4ac075c0a80146';
+> Row 1:
+>              ALIASKEY = X'595a45633f4ac075c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|SearchHound.com Inc|CP_NEW_NAME|Coach Industries Group Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12170047
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-08-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4a1344353f4abf76c0a80146'
+>               VERSION = NULL
+
+***  6th mstockalias  ***
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2003-08-25 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'eede45683f4ac095c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'eede45683f4ac095c0a80146';
+> Row 1:
+>              ALIASKEY = X'eede45683f4ac095c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|812223204|CP_NEW_CUSIP|18975Y108|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US8122232049|CP_NEW_ISIN|US18975Y1082|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12170055
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-08-22 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4a0d44353f4abf74c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'eede45683f4ac095c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|20030825|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20030825|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12171095
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-08-22 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4a0f44353f4abf75c0a80146'
+>               VERSION = NULL
+
+***  7th mstockalias  ***
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'891145c4462970d6c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'891145c4462970d6c0a80146';
+> Row 1:
+>              ALIASKEY = X'891145c4462970d6c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CIGI US|CP_NEW_TKR|CIGIE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 26010555
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>         BB_IDENTIFIER = CIGIE   UU Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-18 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'147845b24629705bc0a80146'
+>               VERSION = NULL
+
+***  8th mstockalias ***
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'509147544653a0f9c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'509147544653a0f9c0a80146';
+> Row 1:
+>              ALIASKEY = X'509147544653a0f9c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CIGIE US|CP_NEW_TKR|CIGI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 26454625
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2007-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4e9847374653a09ac0a80146'
+>               VERSION = NULL
+
+
+***  9th mstockalias ***
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'5fab475c4653a123c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'5fab475c4653a123c0a80146';
+> Row 1:
+>              ALIASKEY = X'5fab475c4653a123c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 26454637
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    UV Equity
+>             BB_ISSUED = TIMESTAMP '2007-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'4e9a47374653a09ac0a80146'
+>               VERSION = NULL
+
+***  10th mstockalias ****
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2008-06-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'f65519fb4849ec00c0a80146'  <------------------ set the identitykey here (10th mstockalias)
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'f65519fb4849ec00c0a80146';
+> Row 1:
+>              ALIASKEY = X'f65519fb4849ec00c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CIGI US|CP_NEW_TKR|CIGIQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 32036167
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-06-06 00:00:00.000000'
+>         BB_IDENTIFIER = CIGIQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2008-06-05 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'3ddf18874849ebc3c0a80146'
+>               VERSION = NULL
+
+////////////////    this should be the end of the stock  //////////////////////////
+select * from mcorporateaction where aliaskey is null and BB_SECID = 'CIGIQ' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CIGIQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 58029617
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-29 00:00:00.000000'
+>         BB_IDENTIFIER = CIGIQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-28 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CIGIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-09-28 00:00:00.000000'
+>            PRIMARYKEY = X'c28e4abd4e83a160c0a80146'
+>               VERSION = NULL
+
+
+ah ha - this one CIGIQ delisted on 2011-09-29
+let's look up prices and trading history.
+//////////////////  the ones after this are not part of this stock, Coach Industries
+
+***  11th mstockalias ****
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2009-02-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'a8c0644849a60657c0a80146'  <---------- delete this mstockalias 
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'a8c0644849a60657c0a80146';
+> Row 1:
+>              ALIASKEY = X'a8c0644849a60657c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 35960195
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 9919277
+>        BB_COMPANYNAME = Shine Media Acquisition Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-02-25 00:00:00.000000'
+>         BB_IDENTIFIER = SHND    UV Equity
+>             BB_ISSUED = TIMESTAMP '2009-02-24 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SHND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'7af6630149a605eac0a80146'  <------------- delete this mcorporateaction
+>               VERSION = NULL
+
+I think that this is bogus - the SHND symbol is an old one for this stockkey and this is for a completely different
+company 
+
+***  12th mstockalias 
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FirstService Corp
+>     PRIMARYKEY = X'eee67174556e3517c0a86f92'  <-------------- delete this mstockalias 
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'eee67174556e3517c0a86f92';
+> Row 1:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|New FirstService Corp|CP_NEW_NAME|FirstService Corp|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107209719
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 45709005
+>        BB_COMPANYNAME = New FirstService Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-25 00:00:00.000000'
+>            PRIMARYKEY = X'0a4b6d025563a948c0a86f92'  <----------------- delete this mcorporateaction
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FirstService Corp|CP_ID_BB_COMP|45709005|CP_ID_BB_SEC|1001|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150601|CP_RECORD_DT|20150529|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.655113|CP_ADJ_DT|20150602|CP_TKR|FSV US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0093MWSL8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0093JNR91|CP_SPINOFF_ID_BB_SEC_NUM_DES|FSV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102532747
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 119359
+>        BB_COMPANYNAME = Colliers International Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'688a6d42556e3331c0a86f92'  <------------- will be deleted when we reverseCA this 
+>               VERSION = NULL
+
+
+////////////////////////////   Assessment  //////////////////////////
+1.  the 10th mstockalias should be the last one.   mstockalias 11 and 12 are not supposed to be part of this stock
+2.  11th mstockalias is a CHG_LIST for SHND - Shine Media Acquisition Corp  which is an old old ticker of this company
+we need to remove this
+3.  12th mstockalias has two mcorporateaction records - a change name and a spin off.   these need to be backed off
+they actually belong to FSRV.    FSRV spun off FSV and CIGI  on 6/2/15
+4.  make the 10th mstockalias the current one for the identitykey
+5.  unapply the spin off.
+6.  we found the delist unapplied CA for CIGIQ  in the database - need to look at historical prices find the last price then delist
+7.  need to also check for trades done after the delist date not counting the spin off.
+
+let's get the mstock  and identitykey set it to mstockalias 10
+select * from mstock where primarykey=X'af39043c39e7e9ccc0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'eee67174556e3517c0a86f92'
+>                NAME = Searchhound.com Inc
+>          PRIMARYKEY = X'af39043c39e7e9ccc0a801dc'
+>              SYMBOL = SRHN
+>           COMPANYID = 12891
+>   WINDOWIDENTITYKEY = NULL
+
+>     PRIMARYKEY = X'f65519fb4849ec00c0a80146'  <------------------ set the identitykey here (10th mstockalias)
+update mstock set IDENTITYKEY=X'f65519fb4849ec00c0a80146' where PRIMARYKEY = X'af39043c39e7e9ccc0a801dc';
+
+let's remove the 11th mstockalias record and mcorporateaction record
+this was the change list for ticker SHND, again this is an old ticker for this stock and this one was not for our stock
+>            PRIMARYKEY = X'7af6630149a605eac0a80146'  <------------- delete this mcorporateaction
+delete from mcorporateaction where primarykey=X'7af6630149a605eac0a80146';
+now delete the 11th mstockalias
+>     PRIMARYKEY = X'a8c0644849a60657c0a80146'  <---------- delete this mstockalias 
+delete from mstockalias where PRIMARYKEY = X'a8c0644849a60657c0a80146';
+
+Let's get rid of the name change 
+>            PRIMARYKEY = X'0a4b6d025563a948c0a86f92'  <----------------- delete this mcorporateaction
+delete from mcorporateaction where PRIMARYKEY = X'0a4b6d025563a948c0a86f92';
+
+
+Let's get rid of the spin off
+> Row 2:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FirstService Corp|CP_ID_BB_COMP|45709005|CP_ID_BB_SEC|1001|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150601|CP_RECORD_DT|20150529|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.655113|CP_ADJ_DT|20150602|CP_TKR|FSV US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0093MWSL8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0093JNR91|CP_SPINOFF_ID_BB_SEC_NUM_DES|FSV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102532747
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 119359
+>        BB_COMPANYNAME = Colliers International Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'688a6d42556e3331c0a86f92'
+>               VERSION = NULL
+
+first let's make the BB_ACTIONID  more unique
+update mcorporateaction set BB_ACTIONID = '102532747:MARTY' where PRIMARYKEY = X'688a6d42556e3331c0a86f92';
+check it:
+select * from mcorporateaction where PRIMARYKEY = X'688a6d42556e3331c0a86f92';
+> Row 1:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FirstService Corp|CP_ID_BB_COMP|45709005|CP_ID_BB_SEC|1001|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150601|CP_RECORD_DT|20150529|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.655113|CP_ADJ_DT|20150602|CP_TKR|FSV US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0093MWSL8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0093JNR91|CP_SPINOFF_ID_BB_SEC_NUM_DES|FSV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102532747:MARTY
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 119359
+>        BB_COMPANYNAME = Colliers International Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'688a6d42556e3331c0a86f92'
+>               VERSION = NULL
+
+let's look at the mtickets generated
+select count(*) from mticket where sourcekey=X'688a6d42556e3331c0a86f92';
+> Row 1:
+>   _C001 = 6.000000
+select distinct stockkey from mticket where sourcekey=X'688a6d42556e3331c0a86f92';
+> Row 1:
+>   STOCKKEY = X'916271d9556e35c0c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FirstService Corp
+>     PRIMARYKEY = X'916371d9556e35c0c0a86f92'
+>       STOCKKEY = X'916271d9556e35c0c0a86f92'
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select distinct sourcekey from mticket where STOCKKEY = X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   SOURCEKEY = X'688a6d42556e3331c0a86f92'
+select * from mstock where primarykey=X'916271d9556e35c0c0a86f92'; 
+> Row 1:
+>         IDENTITYKEY = X'916371d9556e35c0c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'916271d9556e35c0c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28398
+>   WINDOWIDENTITYKEY = NULL
+
+Assessment of the spin off.   There were 6 tickets generated by this spin off
+select distinct managerkey from mticket where stockkey=X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   MANAGERKEY = X'34c23d2d45a10f2dc0a80135'
+> Row 2:
+>   MANAGERKEY = X'578330663cc71c32c0a801e1'
+> Row 3:
+>   MANAGERKEY = X'b9d81f553bae79c3c0a80118'
+> Row 4:
+>   MANAGERKEY = X'7f882666455a3020c0a80135'
+there are four members who had this spin off
+
+select distinct loginname from mmanager where primarykey in (select  managerkey from mticket where stockkey=X'916271d9556e35c0c0a86f92');
+> Row 1:
+>   LOGINNAME = steve1968nj
+> Row 2:
+>   LOGINNAME = 13oclock
+> Row 3:
+>   LOGINNAME = redwine
+> Row 4:
+>   LOGINNAME = hjstuerenburg
+
+let's get their funds we'll need to invalidate and reprice
+
+select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92';
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92');
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'ef94146445e7845ec0a80133'
+> Row 2:
+>   FUNDKEY = X'cec4026145d861fac0a80133'
+> Row 3:
+>   FUNDKEY = X'237430f5455b77e8c0a80133'
+> Row 4:
+>   FUNDKEY = X'726a28143cc9aa7fc0a80118'
+> Row 5:
+>   FUNDKEY = X'55e918df45a7d78ac0a80134'
+> Row 6:
+>   FUNDKEY = X'8f1728143cc9afaec0a80118'
+
+select symbol from mfund where primarykey in (select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92')));
+> Row 1:
+>   SYMBOL = tiger
+> Row 2:
+>   SYMBOL = tecf
+> Row 3:
+>   SYMBOL = RF2
+> Row 4:
+>   SYMBOL = UVF
+> Row 5:
+>   SYMBOL = STHCF
+> Row 6:
+>   SYMBOL = SMF1
+
+let's look at one member  steve1968nj
+his funds:
+Symbol	Name	Rules	NAV	Today	Value	 
+SMF	Mambo Plastic Fund	Yes	$19.73	-0.00%	$1,973,197.43	Overview 
+SMF0	MamboPEG	Yes	$23.81	0.00%	$2,381,155.44	Overview 
+SMF1	Ultra High Yield Hybrid Fund	Yes	$16.70	0.00%	$1,670,070.45	Overview   <----
+SMF2	Mambo S&P 500 Fund	Yes	$15.73	-0.00%	$1,573,187.19	Overview 
+SMF4	New Direction Fund	Yes	$14.39	-0.00%	$1,438,613.90	Overview 
+SMF6	Mambo Analyst - Contrarian II	Yes	$18.72	-0.00%	$1,871,776.99	Overview 
+
+expand ledger for SMF1  on 20150602 see the spin off
+
+I don't see it
+
+select * from mticket where managerkey=X'34c23d2d45a10f2dc0a80135' and stockkey=X'916271d9556e35c0c0a86f92';
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-01 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'030571d9556e35f2c0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'34c23d2d45a10f2dc0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-06-01 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'030371d9556e35f2c0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'916271d9556e35c0c0a86f92'
+>      SOURCEKEY = X'688a6d42556e3331c0a86f92'
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'34c23d2d45a10f2dc0a80135';
+> Row 1:
+>   LOGINNAME = hjstuerenburg
+select * from mtrade where ticketkey=X'030371d9556e35f2c0a86f92';
+> Row 1:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'030871d9556e35f2c0a86f92'
+>                 PRIMARYKEY = X'030671d9556e35f2c0a86f92'
+>                     SHARES = 61079.000000
+>                  TICKETKEY = X'030371d9556e35f2c0a86f92'
+>                     CLOSED = TIMESTAMP '2015-06-01 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+select fundkey from mposition where primarykey=X'030871d9556e35f2c0a86f92';
+ Row 1:
+>   FUNDKEY = X'55e918df45a7d78ac0a80134'
+select symbol from mfund where primarykey=X'55e918df45a7d78ac0a80134';
+> Row 1:
+>   SYMBOL = UVF
+
+hjstuerenburg  UVF   this one is inactive 
+
+> Row 2:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-01 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'02fd71d9556e35f2c0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'34c23d2d45a10f2dc0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-06-01 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'02fb71d9556e35f2c0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'916271d9556e35c0c0a86f92'
+>      SOURCEKEY = X'688a6d42556e3331c0a86f92'
+>    NOTIFYEMAIL = NULL
+select positionkey from mtrade where ticketkey=X'02fb71d9556e35f2c0a86f92';
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'02fb71d9556e35f2c0a86f92');
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'02fb71d9556e35f2c0a86f92'));
+> Row 1:
+>   SYMBOL = STHCF
+
+ah this is an inactive fund
+
+Ok, back to the work - let's reverse the spin off
+
+> Row 1:
+>              ALIASKEY = X'eee67174556e3517c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|FirstService Corp|CP_ID_BB_COMP|45709005|CP_ID_BB_SEC|1001|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150601|CP_RECORD_DT|20150529|CP_COST|N.A.|CP_CRNCY|CAD|CP_ADJ|0.655113|CP_ADJ_DT|20150602|CP_TKR|FSV US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0093MWSL8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0093JNR91|CP_SPINOFF_ID_BB_SEC_NUM_DES|FSV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102532747:MARTY
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 119359
+>        BB_COMPANYNAME = Colliers International Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = CIGI    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = CIGI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'688a6d42556e3331c0a86f92'
+>               VERSION = NULL
+
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 102532747:MARTY
+untrading action with ID: 102532747:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+[<Ticket Lifetime:Day>:<Ticket Action:Stock Dividend Buy>:FSV]
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+exception:'NoneType' object has no attribute 'invalidatePricesFromDate_'
+
+let's try deleting the mcorporateaction record for the spin
+delete from mcorporateaction where PRIMARYKEY = X'688a6d42556e3331c0a86f92';
+the action is gone
+
+we should be able to get rid of the 12th mstockalias record 
+>     PRIMARYKEY = X'eee67174556e3517c0a86f92'  <-------------- delete this mstockalias 
+delete from mstockalias where PRIMARYKEY = X'eee67174556e3517c0a86f92';
+good
+
+let's get rid of the FSV that spun off altogether
+
+select * from mstockalias where STOCKKEY = X'916271d9556e35c0c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = FirstService Corp
+>     PRIMARYKEY = X'916371d9556e35c0c0a86f92'
+>       STOCKKEY = X'916271d9556e35c0c0a86f92'  <------- this one 
+>         SYMBOL = FSV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+set commit false;
+
+delete from mstock where primarykey=  X'916271d9556e35c0c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'916271d9556e35c0c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'916271d9556e35c0c0a86f92');
+
+delete from mstockalias where stockkey=X'916271d9556e35c0c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'916271d9556e35c0c0a86f92');   
+
+delete from mposition where stockkey=X'916271d9556e35c0c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'916271d9556e35c0c0a86f92');
+
+delete from mticket where stockkey=X'916271d9556e35c0c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'916271d9556e35c0c0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'916271d9556e35c0c0a86f92';  
+
+commit;
+
+set commit true;
+
+**    now it is a regular delist of a stock   CIGIQ
+date:    10/25/15
+ticker:    CIGIQ
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin  
+XXXX  MM/DD/YYYY
+let's use the stockkey
+STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+/Marketocracy/Scripts/build/bin/findFundsForStock.py af39043c39e7e9ccc0a801dc 2015-10-25
+8F1728143CC9AFAEC0A80118, tecf, 13oclock, 14328
+726A28143CC9AA7FC0A80118, tiger, 13oclock, 15362
+237430F5455B77E8C0A80133, RF2, redwine, 134204
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'CIGIQ';  
+> Row 1:
+>   STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+select * from mstockalias where stockkey=X'af39043c39e7e9ccc0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-06-26 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'af3a043c39e7e9ccc0a801dc'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SRHN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'200d5c873e110914c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2002-12-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'fd7e5da53e11098ac0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'94d745573f4ac011c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'595a45633f4ac075c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2003-08-25 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'eede45683f4ac095c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'891145c4462970d6c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'509147544653a0f9c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'5fab475c4653a123c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2008-06-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'f65519fb4849ec00c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CIGIQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CIGIQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 58029617
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 143283
+>        BB_COMPANYNAME = Coach Industries Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-29 00:00:00.000000'
+>         BB_IDENTIFIER = CIGIQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-28 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CIGIQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-09-28 00:00:00.000000'
+>            PRIMARYKEY = X'c28e4abd4e83a160c0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CIGIQ
+>>>> dbtool started at 2015-10-25 09:46:36 -0400
+stock: CIGIQ
+  PK       : [AF39043C39E7E9CCC0A801DC]
+  companyID: [12891]
+  symbol   : [CIGIQ]
+  name     : [Coach Industries Group Inc]
+  date     : [2008-06-06 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-25 09:46:37 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 12891
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'af39043c39e7e9ccc0a801dc' and shares > 0 order by closed; 
+> Row 33:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-03-26 09:53:00.000000'
+>        COMMENT = 
+>     COMMISSION = 169.552250
+>   CURRENTORDER = X'6da26a7e45dde8bcc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'34c23d2d45a10f2dc0a80135'
+>       MODIFIED = NULL
+>            NET = 3560.597251
+>         OPENED = TIMESTAMP '2007-02-22 14:02:20.000000'
+>          PRICE = 0.058295
+>     PRIMARYKEY = X'6da06a7e45dde8bcc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 61079.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'af39043c39e7e9ccc0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'af39043c39e7e9ccc0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'af39043c39e7e9ccc0a801dc'  and totalshares < 0)));
+
+apply the acquis
+delist :  2011-09-29
+there are 3 members who hold this stock
+quantum:  nothing
+last ticket:  2007-03-26 PRICE = 0.058295
+last price:  2011-09-29 (Thu) [3923]: O:0.0008 H:0.0008 L:0.0005 C:0.0005 V:283333 TSO:28888 A:0.0005 R:1.0000 CA:0.0000
+
+going with 20110929 0.0005
+
+/Marketocracy/bin/cahelper -symbol  CIGIQ  -effective 20110929 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0005 -acqShare 0 -purchaser CIGIQ   >& /Users/build/caout/CIGIQ.20151025-DELIST.out 
+CIGIQ.20151025-DELIST.out
+stocks1:~/caout build$ tail -f CIGIQ.20151025-DELIST.out
+D: (10-25 09:49:14.936) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-25 09:49:41.169) cahelper started on 2015-10-25 09:49:41 -0400
+
+D: (10-25 09:49:41.396) There are [0] open tickets for CIGIQ on 20110929
+D: (10-25 09:49:41.645) StockFileLoad Version:4.0
+D: (10-25 09:49:41.645) Loading Stock Data
+D: (10-25 09:50:20.572) Building Lookup Index
+D: (10-25 09:50:26.604) Finished Building Index
+D: (10-25 09:50:30.652) Finished Loading Stock Data
+D: (10-25 09:50:30.773) Connection to 192.168.111.172:6666 succeeded
+D: (10-25 09:50:30.889) {
+    "ACQUIRED_STOCK" = CIGIQ; 
+    "ACQUIRING_STOCK" = "CIGIQ_FIX"; 
+    AMOUNT = 0.0005; 
+    APPLIED = 1; 
+    DATE = 20110929; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CIGIQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-25 09:50:31.624) SUCCESS
+D: (10-25 09:50:31.624) cahelper finished 2015-10-25 09:50:31 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'af39043c39e7e9ccc0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-06-26 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'af3a043c39e7e9ccc0a801dc'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SRHN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2002-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'200d5c873e110914c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2002-12-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'fd7e5da53e11098ac0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = SHND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEARCHHOUND.COM INC
+>     PRIMARYKEY = X'94d745573f4ac011c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 812223204
+>           DATE = TIMESTAMP '2003-08-25 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'595a45633f4ac075c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2003-08-25 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'eede45683f4ac095c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'891145c4462970d6c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'509147544653a0f9c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2007-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'5fab475c4653a123c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2008-06-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'f65519fb4849ec00c0a80146'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 18975Y108
+>           DATE = TIMESTAMP '2011-09-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Coach Industries Group Inc
+>     PRIMARYKEY = X'5f0112b0562cddf5c0a86fab'
+>       STOCKKEY = X'af39043c39e7e9ccc0a801dc'
+>         SYMBOL = CIGIQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25102010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'5f0112b0562cddf5c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'5f0112b0562cddf5c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CIGIQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000500|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151025:094941
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-29 00:00:00.000000'
+>         BB_IDENTIFIER = CIGIQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CIGIQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'5efb12b0562cddf5c0a86fab'
+>               VERSION = NULL
+
+
+
+select count(*) from mticket where sourcekey = X'5efb12b0562cddf5c0a86fab';
+> Row 1:
+>   _C001 = 6.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'5efb12b0562cddf5c0a86fab'));
+there are 6 fundkeys, save to CA issues CIGIQ fundkeys.txt
+
+For Beta case
+CIGIQ no longer trades but is still active on our site - need to delist 
+
+check on 10/26/15   invalidate funds
+check MAdmin
+
+
+10/27/15
+CIGIQ has been acquired	right curve
+ 	 	
+Coach Industries Group Inc acquired by a private company on 2011-09-29 00:00:00.
+ 	 	 
+invalidate  reprice and close 
+
+
+
+look at FSRV  this one changed to CIGIQ
+Symbol: CIGI	Name: Colliers International Group I	Price: $41.83
+Volume: 28,083	Sector: Financials	Change: $0.00
+Short Volume: 31,664	Style: Small Cap : Value	Market Cap: $1,231,391,540
+Avg Volume: 31,664	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $42.95	Year High: $70.17	High: $43.04
+200 Day Ave: $51.24	Year Low: $0.00	Low: $41.72
+
+symbol changes for CIGI	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+02 Jun 15	FSRV	CIGI	Change in the ticker (trading) symbol from FSRV to CIGI
+ 	 	 
+left curve	  CUSIP changes for CIGI	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+02 Jun 15	33761N109	194693107	Change in any of identification numbers (CUSIP) of a security from 33761N109 to 194693107
+ 	 	 
+left curve	  name changes for CIGI	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+27 May 15	FirstService Corp/Canada	Colliers International Group I	Change in the name of issuer from FirstService Corp/Canada to Colliers International Group I
+02 Jun 15	FirstService Corp/Canada	Colliers International Group I	Change in the name of issuer from FirstService Corp/Canada to Colliers International Group I
+ 	 	 
+left curve	  listing changes for CIGI	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jul 03, 2006	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that FSRV trades on from NASDAQ to NASDAQ
+ 	 	 
+left curve	  cash dividends paid by CIGI	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+26 Jun 13	28 Jun 13	10 Jul 13	4	$0.10	Dividend amount:0.1 per share.
+26 Sep 13	30 Sep 13	09 Oct 13	4	$0.10	Dividend amount:0.1 per share.
+27 Dec 13	31 Dec 13	08 Jan 14	4	$0.10	Dividend amount:0.1 per share.
+27 Mar 14	31 Mar 14	09 Apr 14	4	$0.10	Dividend amount:0.1 per share.
+26 Jun 14	30 Jun 14	09 Jul 14	4	$0.10	Dividend amount:0.1 per share.
+26 Sep 14	30 Sep 14	06 Oct 14	4	$0.10	Dividend amount:0.1 per share.
+29 Dec 14	31 Dec 14	07 Jan 15	4	$0.10	Dividend amount:0.1 per share.
+27 Mar 15	31 Mar 15	07 Apr 15	4	$0.10	Dividend amount:0.1 per share.
+ 	 	 
+left curve	  spinoffs by CIGI	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+02 Jun 15	29 May 15	01 Jun 15		FSV	FSV US spun off from FSRV with terms:
+ 	 	 
+left curve	  CIGI had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+13 Dec 04	2 for 1	Split terms:2 for 1
+
+this one can be closed, resume with FSRV file
+
+
+
+
+

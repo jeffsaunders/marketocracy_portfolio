@@ -1,0 +1,719 @@
+date:  11/30/15
+ticker collision for CGA for a member
+
+> Row 715:
+>    LOGINNAME = apuo
+>       SYMBOL = AE08
+>   PRIMARYKEY = X'35d0656449569037c0a80134'
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+CGA	$1.75	-5,000	-$8,750.00	-$500.56	2.94%	0.00%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Nov 23, 2015		-5000	-5000	Sell
+Total: -5,000
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 23, 2015	5,000	$250.00	$0.15	$8,249.44	$1.65
+ 	 	 
+what is CGA  yahoo finance:
+China Green Agriculture, Inc. (CGA) -NYSE
+1.75 Up 0.05(2.94%) 4:00PM EST
+Prev Close:	1.70
+Open:	1.69
+Bid:	1.73 x 300
+Ask:	1.75 x 900
+1y Target Est:	11.00
+Beta:	0.503475
+Next Earnings Date:	N/A
+Day's Range:	1.69 - 1.75
+52wk Range:	1.37 - 2.50
+Volume:	15,794
+Avg Vol (3m):	43,369
+Market Cap:	64.64M
+P/E (ttm):	2.00
+EPS (ttm):	0.88
+Div & Yield:	N/A (N/A
+
+
+select distinct stockkey from mstockalias where symbol='CGA';
+> Row 1:
+>   STOCKKEY = X'0d7f0e21390af410c0a80116'
+> Row 2:
+>   STOCKKEY = X'11af2c0e4a249496c0a80146'
+
+There are two
+******************************************************************************
+> CGA 1:
+>   STOCKKEY = X'0d7f0e21390af410c0a80116'
+******************************************************************************
+select * from mstockalias where stockkey=X'0d7f0e21390af410c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 22087M101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CORUS GROUP PLC
+>     PRIMARYKEY = X'0d800e21390af410c0a80116'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>         SYMBOL = CGA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16943W105
+>           DATE = TIMESTAMP '2007-04-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CORUS GROUP PLC
+>     PRIMARYKEY = X'245d10a547092890c0a8013c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>         SYMBOL = CGA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'245d10a547092890c0a8013c';
+> Row 1:
+>              ALIASKEY = X'245d10a547092890c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CGA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|24.005051|CP_CASH_FLAG|1|CP_SH|24.005051|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20071007:024140
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-04-19 00:00:00.000000'
+>         BB_IDENTIFIER = CGA_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-04-19 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CGA_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-04-19 00:00:00.000000'
+>            PRIMARYKEY = X'243710a547092864c0a8013c'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'243710a547092864c0a8013c';
+> Row 1:
+>   _C001 = 144.000000
+
+this was applied on 2007-04-19
+
+let's look at MAdmin on this date for CGA  04/19/2007
+Stock:CORUS GROUP PLC  Symbol:CGA
+Date: 2007-10-07
+
+0 users found
+
+that's good
+
+let's look at mtickets for this stockkey
+STOCKKEY = X'0d7f0e21390af410c0a80116'
+
+these are ones after 2007-04-19
+select count(*) from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000' order by closed;
+> Row 1:
+>   _C001 = 22.000000
+
+there are 22 of these tickets
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-03-25 15:44:00.000000'
+>        COMMENT = 
+>     COMMISSION = 64.650000
+>   CURRENTORDER = X'5b6b22f849ca3702c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f4684bc248c16c91c0a80135'
+>       MODIFIED = NULL
+>            NET = 4381.065435
+>         OPENED = TIMESTAMP '2009-03-25 09:52:02.000000'
+>          PRICE = 3.388295
+>     PRIMARYKEY = X'5b6922f849ca3702c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 1293.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-03-27 15:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 24.000000
+>   CURRENTORDER = X'517671af49cceb51c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f4684bc248c16c91c0a80135'
+>       MODIFIED = NULL
+>            NET = 1630.125120
+>         OPENED = TIMESTAMP '2009-03-27 11:05:53.000000'
+>          PRICE = 3.396094
+>     PRIMARYKEY = X'517471af49cceb51c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 480.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-04-02 11:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'828f2a1c49d4b602c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3d6f0b023a4384efc0a80118'
+>       MODIFIED = NULL
+>            NET = 3429.786000
+>         OPENED = TIMESTAMP '2009-04-02 08:56:34.000000'
+>          PRICE = 3.429786
+>     PRIMARYKEY = X'828d2a1c49d4b602c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-04-03 15:40:00.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'd04e138849d54594c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3d6f0b023a4384efc0a80118'
+>       MODIFIED = NULL
+>            NET = 3289.378000
+>         OPENED = TIMESTAMP '2009-04-02 19:09:08.000000'
+>          PRICE = 3.289378
+>     PRIMARYKEY = X'd04c138849d54594c0a80135'
+>         SECFEE = 0.020000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-04-13 14:45:00.000000'
+>        COMMENT = 
+>     COMMISSION = 200.000000
+>   CURRENTORDER = X'e39b544349e36097c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f4684bc248c16c91c0a80135'
+>       MODIFIED = NULL
+>            NET = 16682.464000
+>         OPENED = TIMESTAMP '2009-04-13 11:56:07.000000'
+>          PRICE = 4.170616
+>     PRIMARYKEY = X'e399544349e36097c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 4000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-06 13:23:00.000000'
+>        COMMENT = 
+>     COMMISSION = 41.500000
+>   CURRENTORDER = X'd71056d34a01c01cc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'915e714848908878c0a80134'
+>       MODIFIED = NULL
+>            NET = 5105.217120
+>         OPENED = TIMESTAMP '2009-05-06 12:51:40.000000'
+>          PRICE = 6.150864
+>     PRIMARYKEY = X'd70e56d34a01c01cc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 830.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 7:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-07 10:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 113.000000
+>   CURRENTORDER = X'b57244ae4a02011ec0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6832178649480fe6c0a80134'
+>       MODIFIED = NULL
+>            NET = 14418.499420
+>         OPENED = TIMESTAMP '2009-05-06 17:29:02.000000'
+>          PRICE = 6.379867
+>     PRIMARYKEY = X'b57044ae4a02011ec0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 2260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 8:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-13 09:38:00.000000'
+>        COMMENT = 
+>     COMMISSION = 250.000000
+>   CURRENTORDER = X'617f20424a0a61c4c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7b7a153044e60961c0a80134'
+>       MODIFIED = NULL
+>            NET = 34875.515000
+>         OPENED = TIMESTAMP '2009-05-13 01:59:32.000000'
+>          PRICE = 6.975103
+>     PRIMARYKEY = X'617d20424a0a61c4c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 5000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'7b7a153044e60961c0a80134';
+> Row 1:
+>   LOGINNAME = apuo
+select * from mtrade where ticketkey=X'617d20424a0a61c4c0a80133';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'7e035ad84a0ad1b3c0a8011e'
+>                 PRIMARYKEY = X'7e025ad84a0ad1b3c0a8011e'
+>                     SHARES = 5000.000000
+>                  TICKETKEY = X'617d20424a0a61c4c0a80133'
+>                     CLOSED = TIMESTAMP '2009-05-13 09:38:00.000000'
+>                      PRICE = 6.975100
+>   CREATEDBYCORPORATEACTION = 0
+
+
+> Row 9:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-15 15:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 250.000000
+>   CURRENTORDER = X'0e7737774a0dc625c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98de4f40484da0f3c0a80132'
+>       MODIFIED = NULL
+>            NET = 35873.975000
+>         OPENED = TIMESTAMP '2009-05-15 15:44:37.000000'
+>          PRICE = 7.174795
+>     PRIMARYKEY = X'0e7537774a0dc625c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 5000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 10:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-18 09:33:00.000000'
+>        COMMENT = 
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'cfae3cb54a113ad8c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98de4f40484da0f3c0a80132'
+>       MODIFIED = NULL
+>            NET = 15041.008000
+>         OPENED = TIMESTAMP '2009-05-18 06:39:20.000000'
+>          PRICE = 7.520504
+>     PRIMARYKEY = X'cfac3cb54a113ad8c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 11:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-19 09:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 77.000000
+>   CURRENTORDER = X'c734512c4a12b2acc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'915e714848908878c0a80134'
+>       MODIFIED = NULL
+>            NET = 12344.399760
+>         OPENED = TIMESTAMP '2009-05-19 09:22:52.000000'
+>          PRICE = 8.015844
+>     PRIMARYKEY = X'c732512c4a12b2acc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 1540.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 12:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-20 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 15.000000
+>   CURRENTORDER = X'ddc017494a139155c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4ea24dd746f67a16c0a80135'
+>       MODIFIED = NULL
+>            NET = 2637.000000
+>         OPENED = TIMESTAMP '2009-05-20 01:12:53.000000'
+>          PRICE = 8.790000
+>     PRIMARYKEY = X'ddbe17494a139155c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 300.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 13:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-20 11:01:00.000000'
+>        COMMENT = 
+>     COMMISSION = 550.000000
+>   CURRENTORDER = X'f9df51614a141337c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'640b71b239c1485bc0a801e1'
+>       MODIFIED = NULL
+>            NET = 98387.476000
+>         OPENED = TIMESTAMP '2009-05-20 10:27:03.000000'
+>          PRICE = 8.944316
+>     PRIMARYKEY = X'f9dd51614a141337c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 11000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 14:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-20 12:23:00.000000'
+>        COMMENT = 
+>     COMMISSION = 838.000000
+>   CURRENTORDER = X'523c5f834a1417cec0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd35a605145da38bac0a80132'
+>       MODIFIED = NULL
+>            NET = 148315.374160
+>         OPENED = TIMESTAMP '2009-05-20 10:46:38.000000'
+>          PRICE = 8.849366
+>     PRIMARYKEY = X'523a5f834a1417cec0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 16760.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 15:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-29 09:49:00.000000'
+>        COMMENT = 
+>     COMMISSION = 247.500000
+>   CURRENTORDER = X'db272e824a1efb1fc0a80135'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'974244da49a06ed4c0a80134'
+>       MODIFIED = NULL
+>            NET = 40351.573350
+>         OPENED = TIMESTAMP '2009-05-28 16:59:11.000000'
+>          PRICE = 8.151833
+>     PRIMARYKEY = X'db252e824a1efb1fc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 4950.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 16:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-29 11:22:00.000000'
+>        COMMENT = 
+>     COMMISSION = 288.650000
+>   CURRENTORDER = X'909636104a1feebdc0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f4684bc248c16c91c0a80135'
+>       MODIFIED = NULL
+>            NET = 45411.033403
+>         OPENED = TIMESTAMP '2009-05-29 10:18:37.000000'
+>          PRICE = 7.866107
+>     PRIMARYKEY = X'909436104a1feebdc0a80135'
+>         SECFEE = 1.180000
+>         SHARES = 5773.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 17:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-02-22 09:44:00.000000'
+>        COMMENT = 
+>     COMMISSION = 263.500000
+>   CURRENTORDER = X'3a8e6c054b825472c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd35a605145da38bac0a80132'
+>       MODIFIED = NULL
+>            NET = 75714.042250
+>         OPENED = TIMESTAMP '2010-02-22 04:54:58.000000'
+>          PRICE = 14.366991
+>     PRIMARYKEY = X'3a8c6c054b825472c0a80132'
+>         SECFEE = 0.970000
+>         SHARES = 5270.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 18:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-08-12 10:17:00.000000'
+>        COMMENT = 
+>     COMMISSION = 247.500000
+>   CURRENTORDER = X'd3d962a64c634247c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'974244da49a06ed4c0a80134'
+>       MODIFIED = NULL
+>            NET = 51611.987900
+>         OPENED = TIMESTAMP '2010-08-11 20:37:27.000000'
+>          PRICE = 10.426664
+>     PRIMARYKEY = X'd3d762a64c634247c0a80133'
+>         SECFEE = 0.880000
+>         SHARES = 4950.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 19:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-11-01 09:35:00.000000'
+>        COMMENT = 
+>     COMMISSION = 113.000000
+>   CURRENTORDER = X'deb6713a4ccdf282c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6832178649480fe6c0a80134'
+>       MODIFIED = NULL
+>            NET = 16697.733560
+>         OPENED = TIMESTAMP '2010-10-31 18:49:38.000000'
+>          PRICE = 7.388378
+>     PRIMARYKEY = X'deb4713a4ccdf282c0a80135'
+>         SECFEE = 0.290000
+>         SHARES = 2260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 20:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-05-23 09:53:00.000000'
+>        COMMENT = 
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'6fd96c164dd7c90bc0a80134'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'98de4f40484da0f3c0a80132'
+>       MODIFIED = NULL
+>            NET = 12770.010000
+>         OPENED = TIMESTAMP '2011-05-21 10:15:39.000000'
+>          PRICE = 6.385005
+>     PRIMARYKEY = X'6fd76c164dd7c90bc0a80134'
+>         SECFEE = 0.250000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 21:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-05-31 09:35:00.000000'
+>        COMMENT = 
+>     COMMISSION = 250.000000
+>   CURRENTORDER = X'f42254fd4de25efdc0a80134'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'98de4f40484da0f3c0a80132'
+>       MODIFIED = NULL
+>            NET = 23955.730000
+>         OPENED = TIMESTAMP '2011-05-29 10:58:05.000000'
+>          PRICE = 4.791146
+>     PRIMARYKEY = X'f42054fd4de25efdc0a80134'
+>         SECFEE = 0.470000
+>         SHARES = 5000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'98de4f40484da0f3c0a80132';
+> Row 1:
+>   LOGINNAME = stever
+> Row 22:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-06-08 14:35:00.000000'
+>        COMMENT = 
+>     COMMISSION = 15.000000
+>   CURRENTORDER = X'af032fc24defbe7ac0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4ea24dd746f67a16c0a80135'
+>       MODIFIED = NULL
+>            NET = 1288.836300
+>         OPENED = TIMESTAMP '2011-06-08 14:24:58.000000'
+>          PRICE = 4.296121
+>     PRIMARYKEY = X'aeff2fc24defbe7ac0a80135'
+>         SECFEE = 0.030000
+>         SHARES = 300.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0d7f0e21390af410c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+Assessment
+There are 22 tickets that really should be CGA2
+1.   get the ticketkeys and save them
+2.   get the mtrades 
+3.   get the fundkeys
+4.   change the stockkey in mtickets 
+5.   tickle the tickets
+6.   invalidate the funds
+7.   reprice on the new site
+
+1.  get the ticketkeys
+select primarykey from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000';
+there are 22 save to CA issues CGA ticketkeys.txt
+
+2.  get mtrade   
+select count(*) from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000');
+> Row 1:
+>   _C001 = 23.000000   there is one more than mtrade 
+
+3.  get the fundkeys
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000');
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000'));
+there are 12 fundkeys, save to CA issues CGA fundkeys.txt
+
+Delete the mtrades
+delete from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000');
+
+4.  change the stockkey 
+from > CGA 1:
+>   STOCKKEY = X'0d7f0e21390af410c0a80116'
+
+to > CGA 2:
+>   STOCKKEY = X'11af2c0e4a249496c0a80146'
+
+update mticket set STOCKKEY = X'11af2c0e4a249496c0a80146'  where STOCKKEY = X'0d7f0e21390af410c0a80116' and shares > 0 and closed > TIMESTAMP'2007-04-19 00:00:00.000000';
+
+5.  tickle the tickets put these in ticketstotickle
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-11-30 20:35:32 -0500
+<<<< dbtool finished at 2015-11-30 20:36:32 -0500
+
+6.  invalidate the fundkeys
+
+log back in as the member 
+******************************************************************************
+> CGA 2:
+>   STOCKKEY = X'11af2c0e4a249496c0a80146'
+******************************************************************************
+select * from mstockalias where stockkey=X'11af2c0e4a249496c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16943W105
+>           DATE = TIMESTAMP '2009-03-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = China Green Agriculture Inc
+>     PRIMARYKEY = X'11b02c0e4a249496c0a80146'
+>       STOCKKEY = X'11af2c0e4a249496c0a80146'
+>         SYMBOL = CGA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16943W105
+>           DATE = TIMESTAMP '2009-12-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = China Green Agriculture Inc
+>     PRIMARYKEY = X'8d2231014b1d7be6c0a80146'
+>       STOCKKEY = X'11af2c0e4a249496c0a80146'
+>         SYMBOL = CGA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101030
+>       STYLEKEY = XG
+
+He's got 5000 of the 
+	
+Symbol: CGA	Name: CORUS GROUP PLC	  this is the delisted on
+
+and now he has a 5000 share short 
+
+CGA	Name: CORUS GROUP PLC	  in AE08
+LEDGER
+Date	Start	Change	End	Type
+May 13, 2009		5000	5000	Buy
+Total: 5,000
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 13, 2009	5,000	$250.00	$34,875.52	$6.98
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+
+this is good - shorts are gone
+
+
+
+notes for case:
+CGA ticker "collision"  - some members are holding "old" CGA even though they are "new" CGA shares..  Need to move these stocks (stockkeys)
+
+I discovered this on recent trades.  Member apuo fund AE08 had 5000 long in CGA (old) and then on the new site he sold 5000 CGA.  When this got to the legacy database, this became a 5000 share short.  So he held 5000 long "old" CGA and 5000 share short
+I found that some trades were execucted after the acquis of old CGA that got assigned the old CGA stockkey.  I have resolved this. 
+
+invalidate, reprice  and close 

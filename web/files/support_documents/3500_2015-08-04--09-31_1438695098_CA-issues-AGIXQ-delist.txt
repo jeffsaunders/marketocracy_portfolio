@@ -1,0 +1,377 @@
+AGIXQ
+date:  
+ticker:  AGIXQ
+
+yahoo:
+
+quantum:
+AtheroGenics, Inc.
+Ticker Symbol: AGIXQ*     CUSIP: 047439104     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 6/26/09
+
+Company's Online Profile
+BUSINESS:  AtheroGenics, Inc. is an emerging pharmaceutical company focused on the discovery, development and commercialization of novel drugs for the treatment of chronic inflammatory diseases, such as atherosclerosis, asthma and arthritis.
+
+Notes:  Plan of bankruptcy effective 6/22/2009.
+oursite:
+Symbol: AGIXQ 	Name: ATHEROGENICS 	Price: $0.02
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Small Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+AGIXQ has gone bankrupt 	right curve
+  	  	
+Chapter 7
+  	  	 
+left curve 	  symbol changes for AGIXQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+14 Oct 08 	AGIX 	AGIXQ 	Change in the ticker (trading) symbol from AGIX to AGIXQ
+  	  	 
+left curve 	  listing changes for AGIXQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Oct 14, 2008 	NASDAQ 	UQ 	OTCBB-OTHER 	UV 	Change in the exchange that AGIXQ trades on from NASDAQ to OTCBB-OTHER
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:ATHEROGENICS  Symbol:AGIXQ
+Date: 08/02/2015
+
+94 users found
+
+1	04604781	241756	EarningsGuru	acetyllipoic	aghazvinian	agrazz	ajs11	alexngyen	anthonyh	aperdana
+2	aratnikas	augsburg81	balanlatha	bater1973	biostocks	bsauls1	cdalzell	christophe10	crung	csemer
+3	davistv	ddbmmd	de_mols	denebs	dgp	dplozza	echung	ehpark	fatmcb2	fig
+4	fndblsh	funrun45	gchandler	gkemp	gonzalez	greenwood	gunnerdog	herbt	hili	hluetjen
+5	hlutjen	jacob_garrett	jlortiz	joelwoodduck1960	joeman	john97	jon_birdsong	jpeterson01	kama	kevjama
+6	langley	madphycom	maniac_moses	matthiash	mgunters	michaelbacotti	michaelwms	mmosley	moneymecca	moreno770
+7	msport22	mtaguchi	mverlinde	mverline	mvitaly	myronwood	nytrez	palante	paulturcotte	perdana
+8	pharon	phoward	piercegv	qmarable	ren	richfield	rmorse	rob915	rrosenfeld	ryan8120
+9	sales	seantrade	seth_dean	svanness	thoerin	thunderballfists	tingatinga	tomnordlund	trallig	trasch
+10	utterme	varlin	xordox	zero320	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'AGIXQ';  
+> Row 1:
+>   STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+
+select * from mstockalias where stockkey=X'7a34043c39e7e9a6c0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2000-08-09 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'7a35043c39e7e9a6c0a801dc'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-09-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'94563dbd48d06505c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-10-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'173f61f548f54f38c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-10-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'24ab622548f54f73c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='AGIXQ'  order by BB_EFFECTIVE;
+nothing 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock AGIXQ
+>>>> dbtool started at 2015-08-02 23:10:49 -0400
+stock: AGIXQ
+  PK       : [7A34043C39E7E9A6C0A801DC]
+  companyID: [11583]
+  symbol   : [AGIXQ]
+  name     : [ATHEROGENICS]
+  date     : [2008-10-14 00:00:00]
+  status   : [Active]
+stock: AGIXQ
+  PK       : [7A34043C39E7E9A6C0A801DC]
+  companyID: [11583]
+  symbol   : [AGIXQ]
+  name     : [ATHEROGENICS]
+  date     : [2008-10-14 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-02 23:10:50 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 11583
+2009-06-20 (Sat) [3092]: <WEEKEND>
+2009-06-21 (Sun) [3093]: <WEEKEND>
+2009-06-22 (Mon) [3094]: O:0.0106 H:0.0106 L:0.0100 C:0.0100 V:232030 TSO:39518 A:0.0100 R:1.0000 CA:0.0000
+2009-06-23 (Tue) [3095]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:16800 TSO:39518 A:0.0100 R:1.0000 CA:0.0000
+2009-06-24 (Wed) [3096]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:17650 TSO:39518 A:0.0100 R:1.0000 CA:0.0000
+2009-06-25 (Thu) [3097]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:75227 TSO:39518 A:0.0100 R:1.0000 CA:0.0000
+2009-06-26 (Fri) [3098]: O:0.0100 H:0.0200 L:0.0100 C:0.0199 V:263732 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+2009-06-27 (Sat) [3099]: <WEEKEND>
+2009-06-28 (Sun) [3100]: <WEEKEND>
+2009-06-29 (Mon) [3101]: O:0.0199 H:0.0199 L:0.0199 C:0.0199 V:0 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+2009-06-30 (Tue) [3102]: O:0.0100 H:0.0200 L:0.0100 C:0.0199 V:263732 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+2009-07-01 (Wed) [3103]: O:0.0100 H:0.0200 L:0.0100 C:0.0199 V:263732 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+2009-07-02 (Thu) [3104]: O:0.0100 H:0.0200 L:0.0100 C:0.0199 V:263732 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+2009-07-03 (Fri) [3105]: <HOLIDAY>
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7a34043c39e7e9a6c0a801dc' and shares > 0 order by closed; 
+> Row 1578:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-06-26 15:24:00.000000'
+>        COMMENT = 
+>     COMMISSION = 136.299980
+>   CURRENTORDER = X'8c162f794a3179b5c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'97ac41ca455c9e82c0a80134'
+>       MODIFIED = NULL
+>            NET = 2862.299587
+>         OPENED = TIMESTAMP '2009-06-11 17:40:05.000000'
+>          PRICE = 0.013042
+>     PRIMARYKEY = X'8c142f794a3179b5c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 219467.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7a34043c39e7e9a6c0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7a34043c39e7e9a6c0a801dc'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'5f5208633d81fe61c0a801e0'
+>       SYMBOL = HGWCP
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7a34043c39e7e9a6c0a801dc'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = svanness
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 05, 2007 		6700 	6700 	Buy
+Jan 10, 2007 	6700 	-6655 	45 	Sell
+Mar 05, 2007 	45 	1000 	1045 	Buy
+Mar 09, 2007 	1045 	1000 	2045 	Buy
+Mar 14, 2007 	2045 	500 	2545 	Buy
+Mar 21, 2007 	2545 	16900 	19445 	Buy
+Mar 22, 2007 	19445 	-19446 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 5, 2007 	6,700 	$335.00 	$75,766.04 	$11.31
+Mar 5, 2007 	1,000 	$50.00 	$10,682.29 	$10.68
+Mar 9, 2007 	1,000 	$50.00 	$9,189.13 	$9.19
+Mar 14, 2007 	500 	$25.00 	$4,399.84 	$8.80
+Mar 21, 2007 	12,200 	$610.00 	$40,377.41 	$3.31
+Mar 21, 2007 	4,700 	$235.00 	$15,509.14 	$3.30
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness HGWCP 20070321 AGIXQ 1 3.30
+ Trading 1.0 shares of ATHEROGENICS on Mar 21, 2007 at 3.3
+manager login: svanness
+manager: L. VanNess
+fund: HGWCP
+building trade (has to load stock prices first)
+price = 3.3
+buying 1.0 shares of AGIXQ at 3.3 on 20070321
+invaldating fund prices from Mar 21, 2007
+Done
+ 	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 10, 2007 	655 	$32.75 	$0.22 	$7,188.44 	$10.97
+Jan 10, 2007 	6,000 	$300.00 	$2.01 	$65,028.33 	$10.84
+Mar 22, 2007 	19,446 	$972.30 	$2.19 	$70,426.51 	$3.62
+
+apply the acquis
+there are 94 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 6/26/09
+last ticket: 2009-06-26 PRICE = 0.013042
+last price:  2009-06-26 (Fri) [3098]: O:0.0100 H:0.0200 L:0.0100 C:0.0199 V:263732 TSO:39518 A:0.0199 R:1.0000 CA:0.0000
+
+going with 20090626 0.02
+
+/Marketocracy/bin/cahelper -symbol  AGIXQ  -effective 20090626 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.02 -acqShare 0 -purchaser AGIXQ   >& /Users/build/caout/AGIXQ.20150802-DELIST.out 
+stocks:~/caout build$ cat AGIXQ.20150802-DELIST.out
+D: (08-03 01:30:28.901) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-03 01:31:15.092) cahelper started on 2015-08-03 01:31:15 -0400
+
+D: (08-03 01:31:15.367) There are [0] open tickets for AGIXQ on 20090626
+D: (08-03 01:31:15.851) StockFileLoad Version:4.0
+D: (08-03 01:31:15.851) Loading Stock Data
+D: (08-03 01:32:33.222) Building Lookup Index
+D: (08-03 01:32:42.962) Finished Building Index
+D: (08-03 01:32:50.874) Finished Loading Stock Data
+D: (08-03 01:32:50.927) Connection to 192.168.111.172:6666 succeeded
+D: (08-03 01:32:54.710) SavingChanges for position sell out 101 of 483
+D: (08-03 01:33:07.311) {
+    "ACQUIRED_STOCK" = AGIXQ; 
+    "ACQUIRING_STOCK" = "AGIXQ_FIX"; 
+    AMOUNT = 0.02; 
+    APPLIED = 1; 
+    DATE = 20090626; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AGIXQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-03 01:33:16.712) SUCCESS
+D: (08-03 01:33:16.712) cahelper finished 2015-08-03 01:33:16 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'7a34043c39e7e9a6c0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2000-08-09 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'7a35043c39e7e9a6c0a801dc'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-09-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'94563dbd48d06505c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-10-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'173f61f548f54f38c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2008-10-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'24ab622548f54f73c0a80146'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIXQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 047439104
+>           DATE = TIMESTAMP '2009-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ATHEROGENICS
+>     PRIMARYKEY = X'36da5ad655befca3c0a86f92'
+>       STOCKKEY = X'7a34043c39e7e9a6c0a801dc'
+>         SYMBOL = AGIXQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SG
+
+
+select * from mcorporateaction where aliaskey =X'36da5ad655befca3c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'36da5ad655befca3c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AGIXQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.020000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150803:013115
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AGIXQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AGIXQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'36d45ad655befca3c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'36d45ad655befca3c0a86f92';
+> Row 1:
+>   _C001 = 182.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'36d45ad655befca3c0a86f92'));
+there are 182  fundkeys, save to CA issues AGIXQ fundkeys.txt
+
+For Beta case
+AGIXQ no longer trades but is still active on our site - need to delist 
+
+check on 8/4/15   invalidate funds
+check MAdmin  clear 
+
+ AGIXQ has been acquired 	right curve
+  	  	
+ATHEROGENICS acquired by a private company on 2009-06-26 00:00:00. 
+
+invalidate reprice and close 

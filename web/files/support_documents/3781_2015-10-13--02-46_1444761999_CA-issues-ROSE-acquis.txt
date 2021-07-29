@@ -1,0 +1,486 @@
+ROSE
+date:   10/9/15
+ticker:    ROSE
+
+yahoo:
+
+quantum:
+Rosetta Resources, Inc.
+Ticker Symbol: ROSE*     CUSIP: 777779307     Exchange: NGS
+* NOTE: This security is no longer trading as of 7/20/15
+
+Company's Online Profile
+BUSINESS:  Rosetta Resources Inc. is an independent oil and gas company based in Houston, Texas engaged in the exploration, development and exploitation of onshore energy resources in the United States of America. Rosetta is a leading producer in the Eagle Ford Shale in South Texas, one of the nation's largest unconventional resource plays, and hold a large oil-weighted position in the Permian Basin in West Texas.
+Notes:  July 20, 2015 -- Noble Energy, Inc. (NYSE: NBL) today announced that the stockholders of Rosetta Resources Inc. overwhelmingly approved the merger of Rosetta into a subsidiary of Noble Energy. The transaction closed following the shareholder meeting and the merger will be effective at the end of today. In conjunction with the closing, Rosetta will become a wholly owned subsidiary of Noble Energy and James E. Craddock, Rosetta's Chairman, CEO and President will join the Noble Energy Board of Directors. Rosetta stockholders will receive 0.542 shares of Noble Energy common stock for each of their shares. Noble Energy will issue approximately 41 million shares of common stock in the transaction. Noble Energy also assumed the outstanding debt of Rosetta as part of the transaction.
+NBL acquired ROSE type 2 acquis   0.542 shares shares of NBL for each share of ROSE on 20150720
+oursite:
+Symbol: ROSE	Name: Rosetta Resources, Incorporated	Price: $19.98
+Volume:	Sector: Energy	Change:
+Short Volume: 999,999	Style: Small Cap : Value	Market Cap:
+Avg Volume: 3,638,669	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $4.00	Year High: $42.33	High:
+200 Day Ave: $16.80	Year Low: $0.00	Low:
+CAs
+isting changes for ROSE	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jul 03, 2006	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that ROSE trades on from NASDAQ to NASDAQ
+ 	 	 
+it has the red banner but no acquis listed 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=ROSE
+
+check MAdmin
+Stock:Rosetta Resources, Incorporated  Symbol:ROSE
+Date: 10/09/2015
+
+63 users found
+
+1	alui	balgacs	bronxbadboy	bull_bear1980	bullish403	casprewitt	ch05	chis2000	chmaka	chrisongena
+2	clanden11	cmmanfred	coreyxj	daitrader	darthferengi	djay126	ejfx1	ewalton	f.balducci	funnyfabfourfan
+3	greg_davidian	headhunter	hiromimini	isdru7	italyboy_2000	iwatt001	janderson3	jbloggs	jdancy	joeeleonard
+4	jqpublic	jyt459	ksharpless	lfoutz	lwroblewski	makfeo	maple	mkt062	mlear	mmerveille1
+5	najamsiddiqi	orange	pablo4414	paladin	revblc	roverlane50	rugbynut8	ryaniseman	schnok007	sharding
+6	shep_1487	simonemarlia	sln	smilburn	stavon	successisevident	theburritobeast	torodifirenze@gmail.com	ucdballer411	wakem@telus.net
+7	xcentrix	yyzbuckeye	zaheeraa	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'ROSE';  
+> Row 1:
+>   STOCKKEY = X'd011010a449aa6a2c0a80146'
+select * from mstockalias where stockkey=X'd011010a449aa6a2c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2006-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'd012010a449aa6a2c0a80146'
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'4c37150944a9ce51c0a80146'  <---------------- set identitykey here 
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2015-07-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'd022693356116625c0a86fab'  <---------------- delete this 
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey=X'd022693356116625c0a86fab';
+> Row 1:
+>              ALIASKEY = X'd022693356116625c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|ROSE|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109871915
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 9855874
+>        BB_COMPANYNAME = Rosetta Resources Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-21 00:00:00.000000'
+>         BB_IDENTIFIER = ROSE    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ROSE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-20 00:00:00.000000'
+>            PRIMARYKEY = X'027858d255be3ad4c0a86f92'  <---------------- delete this 
+>               VERSION = NULL
+
+first thing to do - remove the delist and the mstockalias and move the identiykey
+select count(*) from mticket where sourcekey=X'027858d255be3ad4c0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+select * from mstock where primarykey=X'd011010a449aa6a2c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'd022693356116625c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'd011010a449aa6a2c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16228
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6cb2
+
+
+update mstock set IDENTITYKEY=X'4c37150944a9ce51c0a80146'  where PRIMARYKEY = X'd011010a449aa6a2c0a80146';
+delete the mcorporateaction and mstockalias 
+delete from mcorporateaction where PRIMARYKEY = X'027858d255be3ad4c0a86f92';
+delete from mstockalias where PRIMARYKEY = X'd022693356116625c0a86fab';
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ROSE'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ROSE
+>>>> dbtool started at 2015-10-09 21:02:55 -0400
+stock: ROSE
+  PK       : [D011010A449AA6A2C0A80146]
+  companyID: [16228]
+  symbol   : [ROSE]
+  name     : [Rosetta Resources, Incorporated]
+  date     : [2006-02-10 00:00:00]
+  status   : [Active]
+stock: ROSE
+  PK       : [D011010A449AA6A2C0A80146]
+  companyID: [16228]
+  symbol   : [ROSE]
+  name     : [Rosetta Resources, Incorporated]
+  date     : [2006-07-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-09 21:02:55 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16228
+2015-07-10 (Fri) [5303]: O:21.4800 H:21.6300 L:21.0500 C:21.1400 V:1579252 TSO:52366 A:21.1400 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:21.1400 H:21.2400 L:20.9200 C:21.0800 V:1879975 TSO:52366 A:21.0800 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:21.1100 H:21.5300 L:21.0500 C:21.4500 V:1334672 TSO:52366 A:21.4500 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:21.3700 H:21.6500 L:20.9000 C:20.9800 V:1668217 TSO:52366 A:20.9800 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:21.0700 H:21.1800 L:20.7000 C:20.7800 V:1733141 TSO:52366 A:20.7800 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:20.8600 H:21.0700 L:20.3400 C:20.7500 V:2166282 TSO:52366 A:20.7500 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18175447 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-23 (Thu) [5316]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-24 (Fri) [5317]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-28 (Tue) [5321]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-29 (Wed) [5322]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+2015-07-30 (Thu) [5323]: O:20.5400 H:20.5500 L:19.9300 C:19.9800 V:18193347 TSO:52366 A:19.9800 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'd011010a449aa6a2c0a80146' and shares > 0 order by closed; 
+> Row 857:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-20 09:30:25.000000'
+>        COMMENT = NULL
+>     COMMISSION = 26.850000
+>   CURRENTORDER = X'6fd4010055a9b077c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7d4207f33bd25467c0a80119'
+>       MODIFIED = NULL
+>            NET = 10933.120000
+>         OPENED = TIMESTAMP '2015-07-17 21:48:39.000000'
+>          PRICE = 20.359628
+>     PRIMARYKEY = X'6fd2010055a9b077c0a86fa6'
+>         SECFEE = 0.200000
+>         SHARES = 537.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'd011010a449aa6a2c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd011010a449aa6a2c0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd011010a449aa6a2c0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 63 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 7/20/15
+last ticket: 2015-07-20  PRICE = 20.359628
+last price: 
+
+NBL acquired ROSE type 2 acquis   0.542 shares shares of NBL for each share of ROSE on 20150720
+
+do we have NBL and is it active?
+select distinct stockkey from mstockalias where symbol='NBL';
+> Row 1:
+>   STOCKKEY = X'bdfc10ac390c6e19c0a8015c'
+select * from mstockalias where stockkey=X'bdfc10ac390c6e19c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 654894104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NOBLE AFFILIATES
+>     PRIMARYKEY = X'bdfd10ac390c6e19c0a8015c'
+>       STOCKKEY = X'bdfc10ac390c6e19c0a8015c'
+>         SYMBOL = NBL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 654894104
+>           DATE = TIMESTAMP '2002-05-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Noble Energy Inc
+>     PRIMARYKEY = X'9bbf076c3ce07692c0a801dc'
+>       STOCKKEY = X'bdfc10ac390c6e19c0a8015c'
+>         SYMBOL = NBL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 655044105
+>           DATE = TIMESTAMP '2002-05-13 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Noble Energy Inc
+>     PRIMARYKEY = X'ff0a084a3ce0776ec0a801dc'
+>       STOCKKEY = X'bdfc10ac390c6e19c0a8015c'
+>         SYMBOL = NBL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = LG
+
+ok we're good to go
+
+/Marketocracy/bin/cahelper -symbol  ROSE  -effective 20150720 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 0.542 -purchaser NBL   >& /Users/build/caout/ROSE-20151009-ACQUIS-NBL.out 
+ROSE-20151009-ACQUIS-NBL.out
+stocks:~/caout build$ cat ROSE-20151009-ACQUIS-NBL.out
+D: (10-09 21:10:50.195) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-09 21:11:14.358) cahelper started on 2015-10-09 21:11:14 -0400
+
+D: (10-09 21:11:14.744) There are [1] open tickets for ROSE on 20150720
+D: (10-09 21:11:14.788) StockFileLoad Version:4.0
+D: (10-09 21:11:14.788) Loading Stock Data
+D: (10-09 21:11:54.619) Building Lookup Index
+D: (10-09 21:11:59.396) Finished Building Index
+D: (10-09 21:12:03.140) Finished Loading Stock Data
+D: (10-09 21:12:03.439) Connection to 192.168.111.172:6666 succeeded
+D: (10-09 21:12:38.850) {
+    "ACQUIRED_STOCK" = ROSE; 
+    "ACQUIRING_STOCK" = NBL; 
+    AMOUNT = 0.542; 
+    APPLIED = 1; 
+    DATE = 20150720; 
+    FUNDS = (
+        "quantboy/Ballast Shorts", 
+        "maple/Capital & Crisis", 
+        "maple/maple's Mutual Fund", 
+        "mlear/cheap small-cap energy fund", 
+        "DELETED_jakerosser1_2010022609390001/On Deck Fund", 
+        "simonemarlia/Aggressive Fund", 
+        "bull_bear1980/bull_bear1980's Mutual Fund", 
+        "coreyxj/Coreys Mutual Fund", 
+        "chis2000/Aggressive Growth Fund", 
+        "bullish403/bullish403's Mutual Fund", 
+        "wakem@telus.net/wakem@telus.net's Mutual Fund", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "isdru7/Cardinal Short Fund", 
+        "isdru7/Cardinal Value Fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "chis2000/New Aggressive Growth", 
+        "j.t.allen/j.t.allen's Mutual Fund", 
+        "italyboy_2000/Ryan's Long Fund", 
+        "janderson3/janderson3's Mutual Fund", 
+        "djay126/djay126's Mutual Fund", 
+        "jqpublic/jqpublic's stock Fund", 
+        "cmmanfred/Screen & Strategy", 
+        "mkt062/mkt062's Mutual Fund", 
+        "najamsiddiqi/Najam Family Fund", 
+        "mlear/King Energy Fund", 
+        "jyt459/jyt459's Top1st Fund", 
+        "schnok007/schnok007's Mutual Fund", 
+        "ch05/ch05's Mutual Fund", 
+        "makfeo/makfeo's Preference Mutual Fund", 
+        "lwroblewski/Guardian Large Cap", 
+        "magic8ball/magic8ball's Long Fund", 
+        "ericspears/ems oil and gas", 
+        "sbrawler3/SVS Ultra Fund", 
+        "paladin/The Donham Micro-cap Growth Fund", 
+        "mlear/Lear's Mutual Fund", 
+        "ksharpless/Value & Growth Fund", 
+        "daitrader/AISIK Fund", 
+        "ryaniseman/RMI FUND", 
+        "iwatt001/iwatt001's Mutual Fund", 
+        "ejfx1/ejfx1's Mutual Fund", 
+        "greg_davidian/Small Cap Mutual Fund", 
+        "rajivvyas/rajivvyas's Mutual Fund", 
+        "stoctoni/SCM Quantitative Equity", 
+        "brpanthers99/Oil & Natural Gas", 
+        "bronxbadboy/bronxbadboy's Mutual Fund", 
+        "jbloggs/Joe's Mid-Cap Value Fund", 
+        "f_racine/f_racine's Mutual Fund", 
+        "wszaroletta/Start Absolute Short 1%", 
+        "hiromimini/Selling into Computational Kaos", 
+        "danfinn00/2/3 Book Value or Less", 
+        "revblc/Short Fund", 
+        "chrisongena/Greenblatt July (short)", 
+        "stavon/diversified", 
+        "stavon/beans", 
+        "lfoutz/Lee Foutz's Mutual Fund", 
+        "lfoutz/Lee Foutz's Mutual Fund", 
+        "gintaraslescinskas/Gintaras Lescinskas LIST Fund", 
+        "torodifirenze@gmail.com/Low PE", 
+        "mmerveille1/Perf 1", 
+        "rugbynut8/rugbynut8's Mutual Fund", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "successisevident/Remote", 
+        "maxoom/MAXOILGASPRESSURE", 
+        "zaheeraa/ZMF Buy and Hold Portfolio", 
+        "orange/Lowrey Fund: Khaki", 
+        "yyzbuckeye/YYZ Fund", 
+        "balgacs/All-Time Highs", 
+        "xcentrix/xcentrix's Bakken Mutual Fund", 
+        "funnyfabfourfan/FunnyFabFourFan Long Fund", 
+        "theburritobeast/sublime total return energy ", 
+        "balgacs/New All Time Highs", 
+        "shep_1487/SPS Capital Management Dedicated Short Bias", 
+        "darthferengi/darthferengi's Institutional Fund", 
+        "alui/AL's Short Fund", 
+        "jeannie/Oil Independents Fund", 
+        "chmaka/CMK\U00b4s BobRod Fund", 
+        "sharding/Sheldon H's Mutual Fund", 
+        "joeeleonard/Mad Money", 
+        "joeeleonard/Margin Fund", 
+        "razmig/ACM ", 
+        "ucdballer411/HT Energy", 
+        "f.balducci/Small Cap Blue Chip", 
+        "jdancy/EPG Energy Sector Fund", 
+        "headhunter/Small/Micro Cap.", 
+        "abeardsley/abeardsley's Mutual Fund", 
+        "clanden11/clanden11's Top Gun Find", 
+        "casprewitt/CasFund", 
+        "ewalton/EdFunds Small & Aggressive", 
+        "smilburn/Loser Reversals", 
+        "willi25794/Bill's Energy Value", 
+        "sln/Overvalued equities (SHORT ONLY)"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = NBL; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-09 21:12:47.757) SUCCESS
+D: (10-09 21:12:47.758) cahelper finished 2015-10-09 21:12:47 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'd011010a449aa6a2c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2006-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'd012010a449aa6a2c0a80146'
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'4c37150944a9ce51c0a80146'
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 777779307
+>           DATE = TIMESTAMP '2015-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Rosetta Resources, Incorporated
+>     PRIMARYKEY = X'710f45e756186605c0a86f92'
+>       STOCKKEY = X'd011010a449aa6a2c0a80146'
+>         SYMBOL = ROSE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey =X'710f45e756186605c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'710f45e756186605c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ROSE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.542000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151009:091114
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-20 00:00:00.000000'
+>         BB_IDENTIFIER = NBL     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NBL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-20 00:00:00.000000'
+>            PRIMARYKEY = X'381445e7561865b2c0a86f92'
+>               VERSION = NULL
+marketocracy@db1#22>
+
+
+select count(*) from mticket where sourcekey = X'381445e7561865b2c0a86f92';
+> Row 1:
+>   _C001 = 182.000000
+
+select distinct stockkey from mticket where sourcekey = X'381445e7561865b2c0a86f92';
+> Row 1:
+>   STOCKKEY = X'd011010a449aa6a2c0a80146'
+> Row 2:
+>   STOCKKEY = X'bdfc10ac390c6e19c0a8015c'
+we have the two stockkeys - outgoing ROSE and incoming NBL
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'381445e7561865b2c0a86f92'));
+there are 91 fundkeys, save to CA issues ROSE fundkeys.txt
+
+For Beta case
+ROSE no longer trades but is still active on our site - need to delist 
+
+check on 10/10/15   invalidate funds
+check MAdmin  clear 
+
+10/13/15
+ROSE has been acquired	right curve
+ 	 	
+Rosetta Resources, Incorporated [ROSE] acquired by Noble Energy Inc [NBL] on 2015-07-20 00:00:00.
+
+invalidate - done
+just need to reprice - close case 
+
+
+
+

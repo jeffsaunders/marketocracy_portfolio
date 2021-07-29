@@ -1,0 +1,735 @@
+date: 4/3/15
+ticker:  ICGN
+
+there were two 1 for 8 splits applied 
+
+> Row 1310:
+>    LOGINNAME = trojancd
+>       SYMBOL = TMF
+>   PRIMARYKEY = X'4219544d3ca93b6bc0a80119'
+ positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ICGN 	$5.99 	-14,324 	-$85,800.76 	-$102,708.22 	0.00% 	-607.47% 	Details  	TOP
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 22, 2010 		19098 	19098 	Buy
+Sep 22, 2010 	19098 	-33422 	-14324 	Corporate Action
+Total: -14,324
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 22, 2010 	19,098 	$805.14 	$16,907.90 	$0.89
+
+select distinct stockkey from mstockalias where symbol='ICGN';
+> Row 1:
+>   STOCKKEY = X'e35109fe43d8410ec0a80146'
+select * from mstockalias where  STOCKKEY = X'e35109fe43d8410ec0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2005-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'e35209fe43d8410ec0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'1de414454c9a845fc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-09-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'f6c514944c9a84cbc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'f6c514944c9a84cbc0a80146';
+> Row 1:
+>              ALIASKEY = X'f6c514944c9a84cbc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|45104P104|CP_NEW_CUSIP|45104P500|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US45104P1049|CP_NEW_ISIN|US45104P5008|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 48349138
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = ICGN    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-21 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ICGN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ecaf5fb54c99322cc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'f6c514944c9a84cbc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 8|CP_RATIO|0.125000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.125000|CP_ADJ_DT|20100922|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48003385
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = ICGN    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-03 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = ICGN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-09-21 00:00:00.000000'
+>            PRIMARYKEY = X'ecab5fb54c99322bc0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'f6c514944c9a84cbc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 8|CP_RATIO|0.125000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.125000|CP_ADJ_DT|20100922|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48003385
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = ICGND   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-03 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = ICGND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-09-21 00:00:00.000000'
+>            PRIMARYKEY = X'a68513194c9a83adc0a80146'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'8de7346f4cbf6e6cc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'8de7346f4cbf6e6cc0a80146';
+	> Row 1:
+>              ALIASKEY = X'8de7346f4cbf6e6cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ICGND US|CP_NEW_TKR|ICGN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49031088
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-10-20 00:00:00.000000'
+>         BB_IDENTIFIER = ICGND   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-10-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ICGND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'46f034974cbe1c3ec0a80146'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'c9b937fe4eab312dc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'c9b937fe4eab312dc0a80146';
+> Row 1:
+>              ALIASKEY = X'c9b937fe4eab312dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ICGN US|CP_NAME|Icagen Inc|CP_ID_BB_COMP|996983|CP_UNIT|Icagen Inc|CP_TOT_AMT|29.402040|CP_ACQUIS_TYP|1|CP_CASH|6.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|7.575191|CP_CUR_PREMIUM|0.166949|CP_PCT_OWNED|11.000000|CP_PCT_SOUGHT|89.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|29.402040|CP_ADVISORS_NUM|2|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;2;3;1;Target Legal Adviser;1;Wilmer Cutler;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;|CP_NOTES|TENDER OFFER EFF 9/2/11 (64%). SUBSEQUENT OFFER EFF: 9/19/11 (70.2%).
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 56306361
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101166
+>        BB_COMPANYNAME = Pfizer Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-28 00:00:00.000000'
+>            PRIMARYKEY = X'3d8832a74eab2d80c0a80146'
+>               VERSION = NULL
+
+
+this is the second stock split 
+> Row 3:
+>              ALIASKEY = X'f6c514944c9a84cbc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 8|CP_RATIO|0.125000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.125000|CP_ADJ_DT|20100922|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48003385
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = ICGND   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-03 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = ICGND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-09-21 00:00:00.000000'
+>            PRIMARYKEY = X'a68513194c9a83adc0a80146'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '48003385:MARTY' where PRIMARYKEY = X'a68513194c9a83adc0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'a68513194c9a83adc0a80146';
+> Row 1:
+>              ALIASKEY = X'f6c514944c9a84cbc0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 8|CP_RATIO|0.125000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.125000|CP_ADJ_DT|20100922|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48003385:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 996983
+>        BB_COMPANYNAME = Icagen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = ICGND   US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-03 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = ICGND
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-09-21 00:00:00.000000'
+>            PRIMARYKEY = X'a68513194c9a83adc0a80146'
+>               VERSION = NULL
+
+how many mtickets are assoeciated with this?
+select count(*) from mticket where sourcekey=X'a68513194c9a83adc0a80146';
+> Row 1:
+>   _C001 = 54.000000
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 48003385:MARTY
+looks like it ran 
+
+let's log back in as the memebr
+
+check the mcorpos
+	select * from mcorporateaction where aliaskey=X'f6c514944c9a84cbc0a80146';
+
+a single 1 for 8 split 
+
+the short is gone, let's see the trades for ICGN
+
+your holdings of ICGN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+GF 	0 	N/A 	N/A
+DSkt 	1,275 	$7,637.25 	0.36%
+WCF 	1,912 	$11,452.88 	0.98%
+Todd 	1,255 	$7,517.45 	0.66%
+TMF 	2,387 	$14,298.13 	0.70%
+DOVER 	1,164 	$6,972.36 	1.05%
+NUBE 	0 	N/A 	N/A 
+
+expand TMF
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 22, 2010 		19098 	19098 	Buy
+Sep 22, 2010 	19098 	-16711 	2387 	Corporate Action
+Total: 2,387
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 22, 2010 	19,098 	$805.14 	$16,907.90 	$0.89
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Sep 22, 2010 	Split terms:1 for 8
+  	  	  
+the acquis should have taken these 
+
+let's invalidate all funds that ever held ICGN
+
+select count(*) from mposition where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN');
+> Row 1:
+>   _C001 = 86.000000
+select fundkey from mposition where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN');
+put these in a file
+CA issues ICGN acquis fundkeys.txt
+
+I invalidated 
+
+let's do his funds:
+/Marketocracy/bin/dbtool lookup fund trojancd
+>>>> dbtool started at 2015-04-03 19:33:08 -0400
+fund: trojancd
+  PK: [2ACA1F1B3B1D9546C0A80118]
+  symbol: [TMF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [69A522563B4D297BC0A801E1]
+  symbol: [WCF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [6B4E22563B4D2CC0C0A801E1]
+  symbol: [TF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [6B5122563B4D2CFCC0A801E1]
+  symbol: [GF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [78154F9D3C8FAC62C0A80118]
+  symbol: [DSkt]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [65354F9D3C8FBB35C0A80118]
+  symbol: [WCF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [1C7D3BB83C9A03A2C0A80118]
+  symbol: [Todd]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [4219544D3CA93B6BC0A80119]
+  symbol: [TMF]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [A89E5F7943C349D7C0A80134]
+  symbol: [DOVER]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+fund: trojancd
+  PK: [352E33BC4E81419DC0A80132]
+  symbol: [NUBE]
+  managerKey: [F1F605463B1D9354C0A801E0]
+  loginName: [trojancd]
+<<<< dbtool finished at 2015-04-03 19:33:08 -0400
+
+/Marketocracy/bin/fptool invalidateFund 4219544D3CA93B6BC0A80119
+/Marketocracy/bin/fptool priceFund 4219544D3CA93B6BC0A80119
+
+let's look at the acquisition CA
+
+> Row 1:
+>              ALIASKEY = X'c9b937fe4eab312dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ICGN US|CP_NAME|Icagen Inc|CP_ID_BB_COMP|996983|CP_UNIT|Icagen Inc|CP_TOT_AMT|29.402040|CP_ACQUIS_TYP|1|CP_CASH|6.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|7.575191|CP_CUR_PREMIUM|0.166949|CP_PCT_OWNED|11.000000|CP_PCT_SOUGHT|89.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|29.402040|CP_ADVISORS_NUM|2|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;2;3;1;Target Legal Adviser;1;Wilmer Cutler;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;|CP_NOTES|TENDER OFFER EFF 9/2/11 (64%). SUBSEQUENT OFFER EFF: 9/19/11 (70.2%).
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 56306361
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101166
+>        BB_COMPANYNAME = Pfizer Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-28 00:00:00.000000'
+>            PRIMARYKEY = X'3d8832a74eab2d80c0a80146'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'3d8832a74eab2d80c0a80146';
+> Row 1:
+>   _C001 = 20.000000
+
+let's back this out and try it again
+update mcorporateaction set BB_ACTIONID = '56306361:MARTY' where PRIMARYKEY = X'3d8832a74eab2d80c0a80146';
+select * from mcorporateaction where PRIMARYKEY = X'3d8832a74eab2d80c0a80146';
+> Row 1:
+>              ALIASKEY = X'c9b937fe4eab312dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ICGN US|CP_NAME|Icagen Inc|CP_ID_BB_COMP|996983|CP_UNIT|Icagen Inc|CP_TOT_AMT|29.402040|CP_ACQUIS_TYP|1|CP_CASH|6.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|7.575191|CP_CUR_PREMIUM|0.166949|CP_PCT_OWNED|11.000000|CP_PCT_SOUGHT|89.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|29.402040|CP_ADVISORS_NUM|2|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;2;3;1;Target Legal Adviser;1;Wilmer Cutler;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;|CP_NOTES|TENDER OFFER EFF 9/2/11 (64%). SUBSEQUENT OFFER EFF: 9/19/11 (70.2%).
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 56306361:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101166
+>        BB_COMPANYNAME = Pfizer Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-28 00:00:00.000000'
+>            PRIMARYKEY = X'3d8832a74eab2d80c0a80146'
+>               VERSION = NULL
+
+we need to manipulate the mstock identitykey
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 56306361:MARTY
+untrading action with ID: 56306361:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:ICGN]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:ICGN]
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN') order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2005-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'e35209fe43d8410ec0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'1de414454c9a845fc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-09-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'f6c514944c9a84cbc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'8de7346f4cbf6e6cc0a80146'  <-- set the identitykey here 
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'c9b937fe4eab312dc0a80146'  <--- delete this 
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+
+select * from mstock where primarykey=X'e35109fe43d8410ec0a80146';
+> Row 1:
+>         IDENTITYKEY = X'c9b937fe4eab312dc0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'e35109fe43d8410ec0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16070
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7539
+update mstock set IDENTITYKEY = X'8de7346f4cbf6e6cc0a80146' where PRIMARYKEY = X'e35109fe43d8410ec0a80146';
+now delete the last mstockalias record
+
+delete from mstockalias where PRIMARYKEY = X'c9b937fe4eab312dc0a80146';
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN') order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2005-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'e35209fe43d8410ec0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'1de414454c9a845fc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-09-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'f6c514944c9a84cbc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'8de7346f4cbf6e6cc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+
+rerun the acquis 
+
+/Marketocracy/bin/cahelper -symbol ICGN -effective 20111028 -type ACQUIS -exchange UU -acqType 1 -acqCash 6.00 -acqShare 0 -purchaser PFE >& /Users/build/caout/ICGN.20150403-ACQUIS-PFE.out
+stocks:~/caout build$ ls | grep ICGN
+ICGN.20150403-ACQUIS-PFE.out
+stocks:~/caout build$ tail -f ICGN.20150403-ACQUIS-PFE.out
+D: (04-03 19:45:31.294) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-03 19:45:56.906) cahelper started on 2015-04-03 19:45:56 -0400
+
+D: (04-03 19:45:58.235) There are [0] open tickets for ICGN on 20111028
+D: (04-03 19:45:58.454) StockFileLoad Version:3.0
+D: (04-03 19:45:58.454) Loading Stock Data
+D: (04-03 19:46:44.381) Building Lookup Index
+D: (04-03 19:46:49.034) Finished Building Index
+D: (04-03 19:46:50.047) Finished Loading Stock Data
+D: (04-03 19:46:50.192) Connection to 192.168.111.172:6666 succeeded
+D: (04-03 19:46:51.061) {
+    "ACQUIRED_STOCK" = ICGN; 
+    "ACQUIRING_STOCK" = PFE; 
+    AMOUNT = 6; 
+    APPLIED = 1; 
+    DATE = 20111028; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = PFE; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-03 19:46:53.934) SUCCESS
+D: (04-03 19:46:53.935) cahelper finished 2015-04-03 19:46:53 -0400
+
+check for the acquis  
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN') order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2005-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'e35209fe43d8410ec0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P104
+>           DATE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'1de414454c9a845fc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-09-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'f6c514944c9a84cbc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGND
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2010-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'8de7346f4cbf6e6cc0a80146'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45104P500
+>           DATE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Icagen, Incorporated
+>     PRIMARYKEY = X'0cf65d60551f2636c0a86f92'
+>       STOCKKEY = X'e35109fe43d8410ec0a80146'
+>         SYMBOL = ICGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XB
+select * from mcorporateaction where aliaskey=X'0cf65d60551f2636c0a86f92';
+> Row 1:
+>              ALIASKEY = X'0cf65d60551f2636c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ICGN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|6.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150403:074556
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-10-28 00:00:00.000000'
+>         BB_IDENTIFIER = PFE     UU Equity
+>             BB_ISSUED = TIMESTAMP '2011-10-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PFE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-28 00:00:00.000000'
+>            PRIMARYKEY = X'0cee5d60551f2634c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'0cee5d60551f2634c0a86f92';
+> Row 1:
+>   _C001 = 46.000000
+
+let's check our member trojancd
+
+your holdings of ICGN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+GF 	0 	N/A 	N/A
+DSkt 	0 	$.00 	0.00%
+WCF 	0 	$.00 	0.00%
+Todd 	0 	$.00 	0.00%
+TMF 	0 	$.00 	0.00%
+DOVER 	0 	$.00 	0.00%
+NUBE 	0 	N/A 	N/A
+  	  	[ Trade this stock ]
+
+cool - all of his funds now have 0 share this is good  - he was short so he didn't get the CA appleid
+
+so we need to invalidate the funds in the morning after checking for the CA
+
+select primarykey from mticket where sourcekey=X'0cee5d60551f2634c0a86f92';
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'0cee5d60551f2634c0a86f92'));
+there are 46 
+save them to the fundkeys file
+
+4/4/15 
+still seeing two 1 for 8
+
+select primarykey from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN') order by mstockalias.date;
+select * from mcorporateaction where BB_ACTIONMNEMONIC='STOCK_SPLT' and aliaskey in (select primarykey from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ICGN'));
+
+4/5/15  checking on the double split 
+good now do the invalidations
+good now, closing this out

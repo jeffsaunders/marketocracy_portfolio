@@ -1,0 +1,1571 @@
+date:  8/3/15  cusip problem
+
+Good Morning, 
+
+For the Buy of TLN (45816W504) this CUSIP is not recognized. Could you please provide the correct security/ CUSIP for this buy? 
+
+Thanks, 
+Dan Jankowski
+
+TLM
+
+trade ticket
+TLN	Intellon Corporation	45816W504	1,200	15.8544	$19,025.28 	$42.00 	$19,067.28 	BTIG	501	
+
+checking this against fidelity
+
+
+here is what quantum has
+Talen Energy Corp.
+Ticker Symbol: TLN     CUSIP: 87422J105     Exchange: NYSE
+
+this one is correct
+
+how about xignite
+87422J105
+
+is good
+
+select distinct stockkey from mstockalias where symbol='TLN';
+> Row 1:
+>   STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+> Row 2:
+>   STOCKKEY = X'94726482499ce5efc0a80146'
+
+there are two
+
+> TLN 1:
+>   STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+select * from mstockalias where stockkey=X'cd8d0e21390a5e7ac0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TAG-IT PACIFIC
+>     PRIMARYKEY = X'cd8e0e21390a5e7ac0a80116'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TAG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2007-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TAG-IT PACIFIC
+>     PRIMARYKEY = X'be29368146a55d9fc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2007-07-23 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'176a36b446a55defc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-07-23 00:00:02.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'16af36b946a55e02c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'858354a24774672cc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-27 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'2e1054b547746763c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'08e82dfa4775b8d0c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2011-02-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'636e74754d6448a9c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+
+different ticker 
+> TLN 2:
+>   STOCKKEY = X'94726482499ce5efc0a80146'
+select * from mstockalias where stockkey=X'94726482499ce5efc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45816W504
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Intellon Corporation
+>     PRIMARYKEY = X'94736482499ce5efc0a80146'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+
+
+yahoo finance:
+Talen Energy Corporation (TLN) -BATS
+Watchlist
+15.56 Down 0.17(1.08%) 10:42AM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	15.73
+Open:	15.69
+Bid:	15.68 x 300
+Ask:	15.70 x 200
+1y Target Est:	21.71
+Beta:	N/A
+Next Earnings Date:	11-Aug-15TLN Earnings announcement
+Day's Range:	15.52 - 15.86
+52wk Range:	13.05 - 27.00
+Volume:	67,171
+Avg Vol (3m):	2,539,280
+Market Cap:	2.00B
+P/E (ttm):	14.38
+EPS (ttm):	1.08
+Div & Yield:	N/A (N/A)
+
+I think that we have a collision - missed acquis and missed listing
+
+when did new TLN list?
+
+quantum again
+
+
+Talen Energy Corp.
+Ticker Symbol: TLN     CUSIP: 87422J105     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Talen Energy Corp. is one of the largest competitive energy and power generation companies in the United States. The Company generates and sells electricity, capacity and related products from a fleet of power plants that uses various fuel sources, such as carbon-free nuclear, natural gas and coal.
+
+Notes:  April 29, 2015 -- PPL Corporation (NYSE: PPL) today announced the timing of and additional details regarding 
+the spinoff of its competitive power generation business, PPL Energy Supply, LLC, to PPL shareowners and the 
+combination of that business with the competitive power generation business (RJS Power) owned by affiliates of
+ Riverstone Holdings LLC to form Talen Energy Corp. Immediately after the spinoff and combination, Talen Energy will 
+be an independent, publicly traded company listed on the NYSE and will own and operate the combined competitive power 
+generation businesses of Energy Supply and RJS Power, with PPL's shareowners owning 65% of Talen Energy's outstanding 
+common stock and affiliates of Riverstone owning the remaining 35%. Talen Energy common stock is expected to begin 
+trading on a when-issued basis on the NYSE under the symbol TLN WI beginning on May 18, 2015. On June 2, 2015, regular 
+way trading of Talen Energy common stock under the symbol TLN is expected to begin. PPL will have no continuing 
+involvement in Talen Energy or its businesses.
+
+
+looks like TLN spun off from PPL   we probably blocked this because olf TLN was never delist 
+
+5/18/15   TLN WI  
+6/2/15   regular way TLN
+
+
+
+Steve sent sent this
+
+ITLN  acquired by ATHR on 12/16/2009
+
+do we have an ITLN
+
+select distinct stockkey from mstockalias where symbol='ITLN';
+> Row 1:
+>   STOCKKEY = X'd7452b2049a3529cc0a80146'
+
+select * from mstockalias where STOCKKEY = X'd7452b2049a3529cc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45816W504
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Intellon Corporation
+>     PRIMARYKEY = X'd7462b2049a3529cc0a80146'
+>       STOCKKEY = X'd7452b2049a3529cc0a80146'
+>         SYMBOL = ITLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'd7462b2049a3529cc0a80146';
+nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45816W504
+>           DATE = TIMESTAMP '2009-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Intellon Corporation
+>     PRIMARYKEY = X'dd403b5b4b295a2ac0a80146'
+>       STOCKKEY = X'd7452b2049a3529cc0a80146'
+>         SYMBOL = ITLN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'dd403b5b4b295a2ac0a80146';
+> Row 1:
+>              ALIASKEY = X'dd403b5b4b295a2ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ITLN    US|CP_NAME|Intellon Corp|CP_ID_BB_COMP|927241|CP_UNIT|Intellon Corp|CP_TOT_AMT|166.701797|CP_ACQUIS_TYP|4|CP_CASH|7.300000|CP_CASH_FLAG|1|CP_SH|0.267000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|48.042992|CP_CUR_PREMIUM|8.404233|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|1|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|207.200089|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;6;3;1;Target Legal Adviser;1;Dechert, Proskauer Rose;13;100.000000;1;Acquirer Legal Adviser;1;Davis Polk, Pillsbury Winthr;13;100.000000;1;Acquirer Financial Adviser;1;Credit Suisse;13;100.000000;1;Legal Adv to Target Financial;1;O'Melveny & Myer;13;100.000000;1;Legal Adv to Acquirer Financia;1;Shearman Sterlng;13;100.000000;1;Target Fairness Opinion;1;Deutsche Bank;13;100.000000;|CP_NOTES|SOURCE:{NSN KPP7YH1ATLIF}. ADDL PYMT OPT: APPROX $3.60 & .135 ATHR US SHRS / ITLN US SHR. TERMINATION FEE: $8.5 MLN.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39679483
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 7003275
+>        BB_COMPANYNAME = Atheros Communications Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2009-12-16 00:00:00.000000'
+>         BB_IDENTIFIER = ATHR    UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-08 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = ATHR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-12-16 00:00:00.000000'
+>            PRIMARYKEY = X'625638fb4b295881c0a80146'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'625638fb4b295881c0a80146';
+> Row 1:
+>   _C001 = 4.000000
+
+
+let's look at the TLN's we have 
+
+Symbol: ITLN 	Name: Intellon Corporation 	Price: $7.33
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Blend 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ITLN has been acquired 	right curve
+  	  	
+Intellon Corporation [ITLN] acquired by Atheros Communications Inc [ATHR] on 2009-12-16 00:00:00. 
+
+ok, so ITLN was acquired on our site 
+
+
+> TLN 2:
+>   STOCKKEY = X'94726482499ce5efc0a80146'
+select * from mstockalias where stockkey=X'94726482499ce5efc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45816W504
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Intellon Corporation
+>     PRIMARYKEY = X'94736482499ce5efc0a80146'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'94736482499ce5efc0a80146';
+nothing
+
+select count(*) from mticket where STOCKKEY = X'94726482499ce5efc0a80146';
+> Row 1:
+>   _C001 = 2.000000
+
+what are these tickets?
+
+select * from mticket where STOCKKEY = X'94726482499ce5efc0a80146';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-30 12:12:19.000000'
+>        COMMENT = NULL
+>     COMMISSION = 746.450000
+>   CURRENTORDER = X'3b4700ff55ba43dec0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'12b420d93b8ae1d3c0a801e0'
+>       MODIFIED = NULL
+>            NET = 234116.607858
+>         OPENED = TIMESTAMP '2015-07-30 11:33:50.000000'
+>          PRICE = 15.682002
+>     PRIMARYKEY = X'3b4500ff55ba43dec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 14929.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'3a16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-31 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 42.000000
+>   CURRENTORDER = X'5a1e0ca455bb8173c0a86f89'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f5bd307b3be6b887c0a801e1'
+>       MODIFIED = NULL
+>            NET = 19067.280000
+>         OPENED = TIMESTAMP '2015-07-31 12:00:00.000000'
+>          PRICE = 15.889400
+>     PRIMARYKEY = X'5a1c0ca455bb8173c0a86f89'
+>         SECFEE = 0.000000
+>         SHARES = 1200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+let's get the companyid
+
+select * from mstock where primarykey=X'94726482499ce5efc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'94736482499ce5efc0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'94726482499ce5efc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 18428
+>   WINDOWIDENTITYKEY = NULL
+
+let's look at pricing
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18428
+2015-06-03 (Wed) [5266]: O:18.9000 H:19.5800 L:18.5300 C:19.0700 V:7753541 TSO:0 A:19.0700 R:1.0000 CA:0.0000
+2015-06-04 (Thu) [5267]: O:18.6000 H:19.3900 L:18.5500 C:19.3000 V:5364702 TSO:0 A:19.3000 R:1.0000 CA:0.0000
+2015-06-05 (Fri) [5268]: O:19.1400 H:19.7200 L:18.8300 C:19.2500 V:3518302 TSO:0 A:19.2500 R:1.0000 CA:0.0000
+2015-06-06 (Sat) [5269]: <WEEKEND>
+2015-06-07 (Sun) [5270]: <WEEKEND>
+2015-06-08 (Mon) [5271]: O:19.0000 H:19.1600 L:18.8000 C:19.0000 V:2873565 TSO:0 A:19.0000 R:1.0000 CA:0.0000
+2015-06-09 (Tue) [5272]: O:18.8000 H:18.8900 L:18.2100 C:18.5200 V:5789928 TSO:0 A:18.5200 R:1.0000 CA:0.0000
+2015-06-10 (Wed) [5273]: O:19.3700 H:19.4100 L:18.8300 C:19.0900 V:7954650 TSO:0 A:19.0900 R:1.0000 CA:0.0000
+2015-06-11 (Thu) [5274]: O:19.0800 H:19.1400 L:18.5500 C:18.6400 V:4429304 TSO:0 A:18.6400 R:1.0000 CA:0.0000
+2015-06-12 (Fri) [5275]: O:18.3600 H:18.5100 L:17.9600 C:18.1300 V:3705872 TSO:0 A:18.1300 R:1.0000 CA:0.0000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+2015-06-15 (Mon) [5278]: O:18.0100 H:18.7100 L:17.9500 C:18.5900 V:2817880 TSO:0 A:18.5900 R:1.0000 CA:0.0000
+2015-06-16 (Tue) [5279]: O:18.6200 H:19.4500 L:18.6200 C:19.2000 V:3933898 TSO:0 A:19.2000 R:1.0000 CA:0.0000
+2015-06-17 (Wed) [5280]: O:19.4700 H:19.5000 L:19.0000 C:19.0300 V:1914313 TSO:0 A:19.0300 R:1.0000 CA:0.0000
+2015-06-18 (Thu) [5281]: O:18.7900 H:19.9300 L:18.7700 C:19.6200 V:2818896 TSO:0 A:19.6200 R:1.0000 CA:0.0000
+2015-06-19 (Fri) [5282]: O:19.6300 H:20.0300 L:19.4900 C:19.5900 V:2830102 TSO:0 A:19.5900 R:1.0000 CA:0.0000
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:19.5900 H:20.2500 L:19.5300 C:19.8000 V:2286685 TSO:0 A:19.8000 R:1.0000 CA:0.0000
+2015-06-23 (Tue) [5286]: O:19.5000 H:19.8000 L:19.4800 C:19.7500 V:1327168 TSO:0 A:19.7500 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:19.7100 H:20.0400 L:19.4900 C:19.5200 V:2774399 TSO:0 A:19.5200 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:19.4800 H:19.7200 L:18.7700 C:18.8000 V:1384930 TSO:0 A:18.8000 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:18.7600 H:19.0600 L:17.8600 C:18.1100 V:8037951 TSO:0 A:18.1100 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:17.5000 H:18.5000 L:17.0000 C:17.4000 V:2972661 TSO:0 A:17.4000 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:17.5800 H:17.6800 L:16.8700 C:17.1600 V:2803371 TSO:0 A:17.1600 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:17.2900 H:17.6600 L:17.1600 C:17.2200 V:2185577 TSO:0 A:17.2200 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:17.2500 H:17.4600 L:16.9000 C:16.9500 V:958588 TSO:0 A:16.9500 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:16.9200 H:17.5600 L:16.9100 C:17.3100 V:2814868 TSO:0 A:17.3100 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:17.3300 H:17.4800 L:16.8000 C:17.2400 V:1822867 TSO:0 A:17.2400 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:16.8700 H:17.2700 L:16.8600 C:17.0100 V:2424589 TSO:0 A:17.0100 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:17.1500 H:17.3600 L:16.9200 C:17.0400 V:2617236 TSO:0 A:17.0400 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:17.1000 H:17.3500 L:16.8500 C:17.2600 V:2947624 TSO:0 A:17.2600 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:17.2000 H:17.6900 L:17.1500 C:17.5800 V:1201422 TSO:0 A:17.5800 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:17.4100 H:18.0200 L:17.4000 C:17.7200 V:1632792 TSO:0 A:17.7200 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:17.5900 H:17.8200 L:17.3000 C:17.3700 V:800721 TSO:0 A:17.3700 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:17.6800 H:17.7500 L:17.2200 C:17.4900 V:763216 TSO:0 A:17.4900 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:17.4900 H:17.6100 L:17.1300 C:17.5100 V:872954 TSO:0 A:17.5100 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:17.5600 H:17.7500 L:17.1200 C:17.3100 V:2166224 TSO:0 A:17.3100 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:17.1700 H:17.4000 L:16.3000 C:16.9500 V:1910677 TSO:0 A:16.9500 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:16.8500 H:17.1400 L:16.8000 C:16.8200 V:848413 TSO:0 A:16.8200 R:1.0000 CA:0.0000
+2015-07-23 (Thu) [5316]: O:16.6000 H:16.6000 L:15.9500 C:15.9900 V:2392035 TSO:0 A:15.9900 R:1.0000 CA:0.0000
+2015-07-24 (Fri) [5317]: O:15.9100 H:15.9300 L:15.1600 C:15.2500 V:1502313 TSO:0 A:15.2500 R:1.0000 CA:0.0000
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:15.1100 H:15.1600 L:14.4500 C:14.7200 V:2061415 TSO:0 A:14.7200 R:1.0000 CA:0.0000
+2015-07-28 (Tue) [5321]: O:14.9000 H:15.4000 L:14.6100 C:15.3600 V:3212282 TSO:0 A:15.3600 R:1.0000 CA:0.0000
+2015-07-29 (Wed) [5322]: O:15.1900 H:15.8000 L:13.0500 C:15.4100 V:1811980 TSO:0 A:15.4100 R:1.0000 CA:0.0000
+2015-07-30 (Thu) [5323]: O:15.1300 H:15.8700 L:15.1000 C:15.7700 V:787333 TSO:0 A:15.7700 R:1.0000 CA:0.0000
+2015-07-31 (Fri) [5324]: O:15.7900 H:16.1000 L:15.6700 C:15.7300 V:1006962 TSO:0 A:15.7300 R:1.0000 CA:0.0000
+
+
+started on 6/3/15
+
+so our two tickets, let's get the details
+
+
+select * from mticket where STOCKKEY = X'94726482499ce5efc0a80146';
+select loginname from mmanager where primarykey in (select  managerkey from mticket where STOCKKEY = X'94726482499ce5efc0a80146');
+> Row 1:
+>   LOGINNAME = ahknaten
+> Row 2:
+>   LOGINNAME = masters100manager
+
+select * from mticket where STOCKKEY = X'94726482499ce5efc0a80146';
+
+
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-30 12:12:19.000000'
+>        COMMENT = NULL
+>     COMMISSION = 746.450000
+>   CURRENTORDER = X'3b4700ff55ba43dec0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'12b420d93b8ae1d3c0a801e0'
+>       MODIFIED = NULL
+>            NET = 234116.607858
+>         OPENED = TIMESTAMP '2015-07-30 11:33:50.000000'
+>          PRICE = 15.682002
+>     PRIMARYKEY = X'3b4500ff55ba43dec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 14929.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'12b420d93b8ae1d3c0a801e0';
+> Row 1:
+>   LOGINNAME = ahknaten
+
+	select * from morder where ticketkey=X'3b4500ff55ba43dec0a86fa6';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'3b4700ff55ba43dec0a86fa6'
+>         SHARES = 14929.000000
+>      TICKETKEY = X'3b4500ff55ba43dec0a86fa6'
+>           TIME = TIMESTAMP '2015-07-30 11:33:50.000000'
+>   AVERAGEPRICE = 15.632002
+>   SHARESFILLED = 14929
+
+
+	select * from mtrade where ticketkey=X'3b4500ff55ba43dec0a86fa6';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'6a4d17f255ba50bcc0a86f9c'
+>                 PRIMARYKEY = X'6a4c17f255ba50bcc0a86f9c'
+>                     SHARES = 14929.000000
+>                  TICKETKEY = X'3b4500ff55ba43dec0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-07-30 12:12:19.000000'
+>                      PRICE = 15.682000
+>   CREATEDBYCORPORATEACTION = 0
+
+	select * from mticketallocation	 where ticketkey=X'3b4500ff55ba43dec0a86fa6';
+> Row 1:
+>      FUNDKEY = X'7a05458e3e496769c0a80133'
+>   PRIMARYKEY = X'3b4800ff55ba43dec0a86fa6'
+>       SHARES = 14929.000000
+>    TICKETKEY = X'3b4500ff55ba43dec0a86fa6'
+
+	select symbol from mfund where primarykey=X'7a05458e3e496769c0a80133';
+> Row 1:
+>   SYMBOL = KAI
+
+  ahknaten  KAI  20150730  buy  TLN 14929    15.632002       <--------- ticket to create 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py ahknaten KAI  20150730  TLN 14929  15.632002
+did not work
+
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'3a16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-31 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 42.000000
+>   CURRENTORDER = X'5a1e0ca455bb8173c0a86f89'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f5bd307b3be6b887c0a801e1'
+>       MODIFIED = NULL
+>            NET = 19067.280000
+>         OPENED = TIMESTAMP '2015-07-31 12:00:00.000000'
+>          PRICE = 15.889400
+>     PRIMARYKEY = X'5a1c0ca455bb8173c0a86f89'
+>         SECFEE = 0.000000
+>         SHARES = 1200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'f5bd307b3be6b887c0a801e1';
+> Row 1:
+>   LOGINNAME = masters100manager
+
+	select * from morder where ticketkey=X'5a1c0ca455bb8173c0a86f89';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'5a1e0ca455bb8173c0a86f89'
+>         SHARES = 1200.000000
+>      TICKETKEY = X'5a1c0ca455bb8173c0a86f89'
+>           TIME = TIMESTAMP '2015-07-31 12:00:00.000000'
+>   AVERAGEPRICE = 15.854400
+>   SHARESFILLED = 1200
+
+	select * from mtrade where ticketkey=X'5a1c0ca455bb8173c0a86f89';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'5a220ca455bb8173c0a86f89'
+>                 PRIMARYKEY = X'7bbc0ca455bb8178c0a86f89'
+>                     SHARES = 1200.000000
+>                  TICKETKEY = X'5a1c0ca455bb8173c0a86f89'
+>                     CLOSED = TIMESTAMP '2015-07-31 12:00:00.000000'
+>                      PRICE = 15.889400
+>   CREATEDBYCORPORATEACTION = 0
+
+	select * from mticketallocation	 where ticketkey=X'5a1c0ca455bb8173c0a86f89';
+> Row 1:
+>      FUNDKEY = X'e33204a73be74198c0a801e9'
+>   PRIMARYKEY = X'5a1f0ca455bb8173c0a86f89'
+>       SHARES = 1200.000000
+>    TICKETKEY = X'5a1c0ca455bb8173c0a86f89'
+
+	select symbol from mfund where primarykey=X'e33204a73be74198c0a801e9';
+
+> Row 1:
+>   SYMBOL = mofqx
+
+masters100manager mofqx 20150731 buy 1200 TLN  15.854400    <--------- ticket to create 
+***************
+So TLN should have spun off from PPL
+
+select distinct stockkey from mstockalias where symbol='PPL';
+> Row 1:
+>   STOCKKEY = X'ae0a1029390b2ff2c0a80116'
+
+select * from mstockalias where STOCKKEY = X'ae0a1029390b2ff2c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 69351T106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PPL CORP
+>     PRIMARYKEY = X'ae0b1029390b2ff2c0a80116'
+>       STOCKKEY = X'ae0a1029390b2ff2c0a80116'
+>         SYMBOL = PPL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = LV
+
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey=X'ae0b1029390b2ff2c0a80116' order by BB_EFFECTIVE;
+
+> Row 1:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 2:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+
+
+should be a spin off
+
+select * from mcorporateaction where BB_SECID='PPL' and aliaskey is null order by BB_EFFECTIVE;
+
+> Row 110:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Talen Energy Corp|CP_ID_BB_COMP|40798446|CP_ID_BB_SEC|1000|CP_TERMS|.1249  : 1|CP_RATIO|0.124900|CP_PAY_DT|20150601|CP_RECORD_DT|20150520|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.927937|CP_ADJ_DT|20150602|CP_TKR|TLN US|CP_DUE_BILL_RED_DT|20150604|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006MF3Q89|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006MF2MS7|CP_SPINOFF_ID_BB_SEC_NUM_DES|TLN|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|Full rate is now: 0.124906 for 1.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92300040
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 101153
+>        BB_COMPANYNAME = PPL Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = PPL     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = PPL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-05 00:00:00.000000'
+>            PRIMARYKEY = X'633d3f29557227eec0a86f92'
+>               VERSION = NULL
+
+
+there it is
+
+effective  20150602
+record  20150520
+pay  20150601
+ratio 0.124900
+
+
+
+have asked Brandon to block trades
+
+
+
+Ok, we have the two trades captured
+
+I am going to delete old TLN 
+
+
+> TLN 2:
+>   STOCKKEY = X'94726482499ce5efc0a80146'
+select * from mstockalias where stockkey=X'94726482499ce5efc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45816W504
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Intellon Corporation
+>     PRIMARYKEY = X'94736482499ce5efc0a80146'
+>       STOCKKEY = X'94726482499ce5efc0a80146'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+let's check this
+select count(*) from mticket where STOCKKEY = X'94726482499ce5efc0a80146';
+> Row 1:
+>   _C001 = 2.000000
+
+
+delete everything@
+set commit false;
+
+delete from mstock where primarykey=  X'94726482499ce5efc0a80146'; 
+
+delete from mwindowstock where stockkey=X'94726482499ce5efc0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'94726482499ce5efc0a80146');
+
+delete from mstockalias where stockkey=X'94726482499ce5efc0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'94726482499ce5efc0a80146');   
+
+delete from mposition where stockkey=X'94726482499ce5efc0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'94726482499ce5efc0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'94726482499ce5efc0a80146');
+
+delete from mticket where stockkey=X'94726482499ce5efc0a80146';    
+
+delete from GFSPOSITION where stockkey=X'94726482499ce5efc0a80146';  
+
+commit;
+
+set commit true;
+
+
+All of TLN old should be gone
+
+select distinct stockkey from mstockalias where symbol='TLN';
+> Row 1:
+>   STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+select * from mstockalias where STOCKKEY = X'cd8d0e21390a5e7ac0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TAG-IT PACIFIC
+>     PRIMARYKEY = X'cd8e0e21390a5e7ac0a80116'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TAG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2007-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TAG-IT PACIFIC
+>     PRIMARYKEY = X'be29368146a55d9fc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 873774103
+>           DATE = TIMESTAMP '2007-07-23 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'176a36b446a55defc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-07-23 00:00:02.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'16af36b946a55e02c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'858354a24774672cc0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-27 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'2e1054b547746763c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2007-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'08e82dfa4775b8d0c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87484F108
+>           DATE = TIMESTAMP '2011-02-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Talon International Inc
+>     PRIMARYKEY = X'636e74754d6448a9c0a80146'
+>       STOCKKEY = X'cd8d0e21390a5e7ac0a80116'
+>         SYMBOL = TALN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = XB
+
+
+this one may be delisted as well, but we have no collision
+
+
+Let's apply the spin off
+
+who holds PPL?  MAdmin
+Stock:PPL CORP  Symbol:PPL
+Date: 08/03/2015
+
+269 users found
+
+1	800newdollar	acmartinez	acrao89	adam_foust	addisonsmith11	adela_cruz1	aencym	agapw	alaieus	alexmatovsky
+2	alpha	andrewkcook	annieting	anthonymoody	appy_6	arrowife622	arudo	ava0313	badbooger69	balciunas4
+3	banderson1	bayleys1	bbelluche	bconeseven	bdwhippl	benanapol	benny	benspot	bk1	bm1
+4	bmathers	bobley	bradlevi	brenda	brokertfs	bstrock	btbaker79	burdick	cburgess	ccachat
+5	ccbt_ebw_3	cdsnyder	cep	cfalcon	chaimshmerel	chaz1975	chiajung1109	chrisp143	chrstieber	claymdean
+6	cnelson1	cr501s09	cr501spring08	cr506f07	cr506w07	csevak	cwacoop	cwennes	daitrader	dalan527
+7	darabian1	dburton	dclement	ddougherty2	denhug	dginty	dgrunner	dickiemj	dlcarey	dmlakova
+8	dominatorx	drass	dsimpson3	ecarter	ecervantes	edwin444pr	efournier	ekrall	eliepano	eminer
+9	epotts	epresa	errolnkeeton	evdawg999	f08cr501	fabio_carradori	fasttom55	fatkins	fiduke	finanaliticaam
+10	fishpond97	fivenine	flajuie	flynnk	forbesnewsletters	fourpillars	gabriel_7	george.balatinos	gfontana	giantbeer
+11	gmbowerman	goofy	guci7	guindojr	gwhaley	h_van_houwelingen	hardrj	hemmerling	hhhpenguin	hrabar_40
+12	huxley94	icesare	ishare	jackf03	jalis	jbowie	jdelandr	jevans2	jfernandez	jgeneroso
+13	jgerloff	jgiuseffi	jhagerson	jhuang3	jkeidan	jkw	jleeper	jm50273	jmcdowell	jmcgowan
+14	jmfunes	jmg229	jmilk	jmussey	jodyf22	johnbash1	jsbaker	jschuler	jt3641	jtaylor3
+15	jubals	juhika	justinsager	jvrfr	jwarczak	kaklock	kalroc	kbumgarner	kcavero321	kg
+16	kim4422	kingston	kodamalover	krjones	kseniab0	kulasoft	kyleahutzler	lagrimas175	laromana	laurentpoirier
+17	lhicks	loki0000	lsoon_fong	magickman	makler	mccarthy10	mech1800	mheath580	mikelef	milkrate
+18	minathig	mjaekel	mmmaize	mrm661014@cs.com	msdv	mseifert	msipics	nacu23	nate1006	nellsworth
+19	nmgiard	nostradamus	nucsteve	orlando865	orrenkt	oyz79	ozed	pboucher	pbourget	pbrown1
+20	pcastagnet	pchwang	pcjg	pcrosetti	phil27	pmanalastas2	pmorse	pnaughton	pneumaddict	portfolioqwerty
+21	pwallick	r_jv	rabockma	rajp	ramcfp	rboonstra	rcarlson2	rebeccapark	richard1979	rloban
+22	rmudd	rnice	robbjen	robertson206	rockfish	ronfudge	rpatzman	rwaldbie	rwick	ryguy12
+23	ryster23	sbz	schalejr	schettini2008	schofara	sclay	sdignan	sema_1970	sendersap	sfish57
+24	shanehart	sjardaneh	slneilson	sofi	speterson1974	ssexton1	ssinger	stcktrdr	stevecrane	stockring
+25	supervelez	syt1989	tefortier	tenth	test199	thanlon	tjmorra	tlaney	tlcholdings	truffles
+26	updowdown	uwf	vinsom68	vooch5	vunguyen	wadedavis	wbauder	whatfreedom	willi25794	wluong
+27	wmorales	wmvjohnson	wskristjan	wwaggener	you_wish	youpapa	yutanaka	yyzbuckeye	zpryor	 
+
+
+select * from mcorporateaction where BB_SECID='PPL' and aliaskey is null order by BB_EFFECTIVE;
+
+> Row 110:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Talen Energy Corp|CP_ID_BB_COMP|40798446|CP_ID_BB_SEC|1000|CP_TERMS|.1249  : 1|CP_RATIO|0.124900|CP_PAY_DT|20150601|CP_RECORD_DT|20150520|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.927937|CP_ADJ_DT|20150602|CP_TKR|TLN US|CP_DUE_BILL_RED_DT|20150604|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006MF3Q89|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006MF2MS7|CP_SPINOFF_ID_BB_SEC_NUM_DES|TLN|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|Full rate is now: 0.124906 for 1.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92300040
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 101153
+>        BB_COMPANYNAME = PPL Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = PPL     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-10 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = PPL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-05 00:00:00.000000'
+>            PRIMARYKEY = X'633d3f29557227eec0a86f92'
+>               VERSION = NULL
+
+
+there it is
+
+effective  20150602
+record  20150520
+pay  20150601
+ratio 0.124900
+
+
+/Marketocracy/bin/cahelper -symbol PPL -effective 20150602 -type SPIN -exchange UN -spinOffSymbol TLN -payDate 20150601 -recordDate 20150520 -name 'Talen Energy Corporation ' -ratio 0.124900 >& /Users/build/caout/PPL.20150803-SPIN-TLN.out
+
+stocks:~/caout build$ tail -f PPL.20150803-SPIN-TLN.out
+D: (08-03 12:15:17.027) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-03 12:16:14.156) cahelper started on 2015-08-03 12:16:14 -0400
+
+D: (08-03 12:16:54.884) Waiting for lock: MDistributedLock(0x123565b0) locked: NO  path: '/tmp/MMarketDataHandler.lock' ownerPid: 9838
+D: (08-03 12:17:02.886) StockFileLoad Version:4.0
+D: (08-03 12:17:02.886) Loading Stock Data
+D: (08-03 12:18:41.253) Building Lookup Index
+D: (08-03 12:18:52.656) Finished Building Index
+D: (08-03 12:19:02.422) Finished Loading Stock Data
+D: (08-03 12:19:02.475) Connection to 192.168.111.172:6666 succeeded
+D: (08-03 12:19:30.307) SavingChanges for Stock Dividend out 101 of 868
+D: (08-03 12:20:32.249) SavingChanges for Stock Dividend out 201 of 868
+D: (08-03 12:21:30.956) SavingChanges for Stock Dividend out 301 of 868
+D: (08-03 12:22:17.440) {
+    APPLIED = 1; 
+    DATE = 20150602; 
+    FUNDS = (
+        "eliepano/Elie Pano's Mutual Fund 1", 
+        "nellsworth/Ellsworth Alternative Energy Fund", 
+        "msipics/Michelle Sipics's Mutual Fund", 
+        "jbowie/Best of the \"B\" Fund", 
+        "chronus/jeff matolyak's Mutual Fund", 
+        "chronus/jeff matolyak's Mutual Fund", 
+        "chronus/jeff matolyak's Mutual Fund", 
+        "dlcarey/Darrin Carey's Alternate Energy Fund", 
+        "jgerloff/Large Cap Stocks", 
+        "pcrosetti/Paul A. Crosetti's Mutual Fund", 
+        "stockguy/Large Cap Value Fund", 
+        "dclement/S & P 500 Select Twenty", 
+        "jwarczak/James Warczak's Mutual Fund", 
+        "adela_cruz1/Optimus Prime Growth Fund", 
+        "pbrown1/patrick j. brown's Mutual Fund", 
+        "jschuler/js vtvst growth", 
+        "gwhaley/Gene Whaley's Growth & Stability Mutual Fund", 
+        "csevak/CMS Premium Fund", 
+        "ecarter/edward carter's Mutual Fund", 
+        "jhuang3/JJH Utilities", 
+        "makler/Billtown Fund", 
+        "eminer/eric miner's Mutual Fund", 
+        "jtaylor3/Taylor Cornerstone Growth", 
+        "bbelluche/ rich fuel fund", 
+        "mjaekel/Jaekel Concentrated Energy Fund", 
+        "thanlon/Big Wish Fund", 
+        "tlaney/terry laney's Mutual Fund", 
+        "tlaney/terry laney's Mutual Fund", 
+        "tlaney/terry laney's Mutual Fund", 
+        "banderson1/Growth Fund", 
+        "banderson1/Aggressive Diversity Fund", 
+        "hardrj/robert hardy's Mutual Fund", 
+        "tjmorra/Morra's True Value Fund", 
+        "pchwang/George Hwang's Mutual Fund ", 
+        "pmanalastas2/Pacifico Manalastas's Mutual Fund", 
+        "ssinger/SMS Utility Fund", 
+        "huxley94/TM Diversified Growth-Value Fund", 
+        "arudo/ASR Diversified 1", 
+        "pboucher/Paul Boucher's Consumer Fund", 
+        "kodamalover/Jon Wu's Mutual Fund", 
+        "wwaggener/William Waggener's Mutual Fund", 
+        "rboonstra/RB1", 
+        "pboucher/Balanced Aggressive Fund", 
+        "ssexton1/High Yield Equity Fund", 
+        "DELETED_2004980/3 Future Factors (long term growth)", 
+        "rcarlson2/Rob Carlson's Mutual Fund", 
+        "cwennes/Christopher Wennes's Mutual Fund", 
+        "mchristy/Behavioral Earnings Fund", 
+        "DELETED_2005846/Troy Swanson's Mutual Fund", 
+        "stevecrane/Crane Quantitative Value Fund", 
+        "mccarthy10/Utility", 
+        "creynes/CDR Formula Growth Mutual Fund", 
+        "dgrunner/dgrunner's Mutual Fund", 
+        "pboucher/Paul Boucher's Mutual Fund", 
+        "pboucher/Aggressive Value Fund", 
+        "pboucher/PGB Growth Fund", 
+        "pcastagnet/POC Fund", 
+        "hewitt/Hewitt Agnosco Fund", 
+        "lhicks/lhicks's Mutual Fund", 
+        "DELETED_2006433/Select Capital Appreciation Fund", 
+        "pboucher/Dot Com Growth Fund", 
+        "epresa/Presa Utilities Fund", 
+        "zkrstevski/Low Risk Broad Industry Fund", 
+        "vagadragon/Vagabond's Diversified Reasonable Growth ", 
+        "DELETED_2003415/Socal420 Growth Fund", 
+        "slewis1/slewis1's Mutual Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "minathig/Large Cap Opportunity Fund", 
+        "epresa/Eduardo Presa Investment Fund", 
+        "rabockma/rabockma's Mutual Fund", 
+        "jalis/Jalis Utility Fund", 
+        "jmann2/jmann2's Utilities Mutual Fund", 
+        "dginty/dginty's Second Mutual Fund", 
+        "ozed/ozed's Mutual Fund", 
+        "hrabar_40/hrabar#40's Mutual Fund", 
+        "cchapman1/Rock 'n' Roll 50 Fund", 
+        "mcancel/Mark C.'s Well Diversified Fund", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "sofi/Sofi New-Income Fund", 
+        "dburton/Burton Analytics Fund", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "sfong/Bottom Feeder", 
+        "sjardaneh/SUPERISK Aggressive Growth", 
+        "sclay/sclay's Mutual Fund", 
+        "hrsmn2wr/PEG PSR Trend Fund", 
+        "wluong/wluong's Mutual Fund", 
+        "schalejr/schalejr's Mutual Fund", 
+        "schalejr/m100", 
+        "schalejr/air line stocks", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "mgough/Biotech-Health-HTech", 
+        "mgough/Safer UPFUND", 
+        "efournier/efournier's Mutual Fund", 
+        "fatkins/value stocks", 
+        "DELETED_2003559/chrrob1's Mutual Fund", 
+        "rwick/Richard Wick's Mutual Fund", 
+        "avolodin/New Natural Resources Fund", 
+        "jgeneroso/Generoso Value Plus Fund", 
+        "pnaughton/pnaughton's Mutual Fund", 
+        "ekrall/Krall's Hella Money Fund", 
+        "bstrock/Bob Strock's Mutual Fund", 
+        "jdberia/JDB Select Sector Utilities", 
+        "jrheaume/J-X  Utility Fund", 
+        "zpryor/Zacks High Dividend Fund", 
+        "jkw/Faith and Prayer", 
+        "wmorales/wmorales's Mutual Fund", 
+        "pneumaddict/102002", 
+        "mkey1/Stable Dividend Mutual Fund", 
+        "fasttom55/FT Pennsylvania Fund", 
+        "jp75/Mutual Fund 302", 
+        "cfalcon/CFalcon's Utilities ", 
+        "bmathers/bmathers's Mutual Fund", 
+        "cdsnyder/Viking Utility Growth", 
+        "sema_1970/Sema04", 
+        "rebeccapark/rebeccapark's Mutual Fund", 
+        "rloban/Momentum", 
+        "jmilk/jmilk's focus value", 
+        "speterson1974/speterson1974's Mutual Fund", 
+        "robbjen/Robb Utility Fund", 
+        "bayleys1/bayleys10fund", 
+        "jsbaker/JSB Money Flow Fund", 
+        "jt3641/jt3641's Mutual Fund", 
+        "pmorse/pmorse's Mutual Fund", 
+        "rockfish/Relipoint Income Reinvestment Fund", 
+        "r_jv/r_jv's Mutual Fund", 
+        "pwallick/Utility Income", 
+        "grand-pas/GP SRI fund - Waste management", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "rwaldbie/rwaldbie's Mutual Fund", 
+        "mchristy/Trend Fund- Long", 
+        "mikelef/mikelef's all cap fund", 
+        "marketbul/Dividend INDEX Fund", 
+        "stcktrdr/Stcktrdr Mutual Fund", 
+        "cep/cep's Mutual Fund", 
+        "mattjasmin/MJ Mutual Fund", 
+        "jevans2/jevans2's Mutual Fund", 
+        "jhagerson/J Hagerson's Strategy Fund", 
+        "benny/benny's Mutual Fund", 
+        "youpapa/Papa's Equity Fund", 
+        "goofy/Goofy's Number 1 Mutual Fund ", 
+        "DELETED_brbernal_2006011902490001/Brandi's Mutual Fund", 
+        "jmfunes/CHIQUITINA", 
+        "guci7/guci7's Mutual Fund", 
+        "sahmed2/sahmed2's Short Mutual Fund", 
+        "slneilson/S&P Dividend Fund", 
+        "lagrimas175/lagrimas175's Mutual Fund", 
+        "rpeek/STRP Top25", 
+        "qrheaume/Short Growth Fund ", 
+        "annieting/annieting's Mutual Fund", 
+        "mrm661014@cs.com/S&P 500 Select Fund", 
+        "alpha/Alpha's Market Makers Fund", 
+        "fishpond97/Fishpond97's Utilities Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "alexmatovsky/Bluechip Income Fund", 
+        "kseniab0/kseniab0's Dividend Fund", 
+        "kg/Value with Growth in the Utilities Sector", 
+        "dickiemj/MJD Fund", 
+        "DELETED_vidi1_2009080313400001/vidi1's Mutual Fund 3", 
+        "loki0000/loki0000's Mutual Fund", 
+        "giantbeer/Giant Growth Fund", 
+        "market_timer/market_timer's Short The Pigs Fund", 
+        "ishare/Capital Group", 
+        "pcjg/pcjg's Mutual Fund", 
+        "nate1006/Utilities Fund", 
+        "kalroc/kalroc's Mutual Fund Schwab", 
+        "nucsteve/SML Utilities Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "lpickup/tostp", 
+        "dknepp1/Eureka Hedge Fund II", 
+        "wmvjohnson/Foundation Large Cap Growth and Income Fund", 
+        "nostradamus/nostradamus's Mutual Fund", 
+        "truffles/Matt", 
+        "ddougherty2/ddougherty2's Mutual Fund", 
+        "spc/Wayne's SER Fund", 
+        "balciunas4/Balciunas Energy Fund", 
+        "jbetz/JBetz Fund A", 
+        "laurentpoirier/LJP Capital Market Neutral Fund", 
+        "milkrate/Zero Fund", 
+        "richard1979/richard1979's Mutual Fund", 
+        "gsourek/INDEED-SHORT", 
+        "flajuie/Bundle Of Regular Income 'N' Growth", 
+        "icesare/icesare's Magellan2", 
+        "coaster/INDEX-Z", 
+        "coaster/IMPACT GROWTH", 
+        "dsimpson3/Contrarian Opportunities Fund", 
+        "nybjl99/nybjl99's short Fund", 
+        "you_wish/Birgit@ownage", 
+        "orlando865/Nano Toys", 
+        "vooch5/T10", 
+        "magickman/magickman's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "kaklock/Rochester Corporate Governance Fund", 
+        "uwf/UW Foundation", 
+        "fabio/QuantFundFS", 
+        "njb0786/CSG Core", 
+        "gmbowerman/Energy Simulation", 
+        "finanaliticaam/1", 
+        "ryguy12/ryguy12's Mutual Fund", 
+        "bradlevi/High Expectation Fund", 
+        "kcavero321/kcavero321's Mutual Fund", 
+        "brenda/brenda's Mutual Fund", 
+        "dalan527/dalan527's Mutual Fund", 
+        "alpha/Alpha's Short Mutual Fund", 
+        "fabio_carradori/Fabio_Carradori's SP500 Fund", 
+        "dlevikl/Day Short", 
+        "nacu23/Nacu23 Energy Fund", 
+        "pbourget/Income Fund#2", 
+        "adam_foust/PINNACLE FUND", 
+        "ramcfp/RAMCFP TAKEOVER FUND", 
+        "h_van_houwelingen/Boxer Short", 
+        "adam_foust/pinnacle dividend portfolio", 
+        "mech1800/mech1800's Mutual Fund", 
+        "krjones/Krjones's A List Mutual Fund", 
+        "evdawg999/evdawg999's Mutual Fund", 
+        "pcjg/PMFDIVIDEND", 
+        "juhika/Juhika's High Yield Fund", 
+        "dmlakova/dmlakova's Mutual Fund", 
+        "adam_foust/pinnacle blue chip fund", 
+        "vinsom68/SAPI Slugs", 
+        "adam_foust/buckeye large cap", 
+        "mrm661014@cs.com/S&P 500 Select II", 
+        "rmudd/Phoenix Fund", 
+        "chaimshmerel/chaimshmerel's Mutual Fund", 
+        "800newdollar/800newdollar's Mutual Fund", 
+        "laromana/laromana's Mutual Fund", 
+        "benanapol/benanapol's Mutual Fund", 
+        "jfernandez/jfernandez's Mutual Fund", 
+        "benanapol/benanapol's Mutual Fund", 
+        "jmussey/Joe's Fund", 
+        "fivenine/Funded Beyond All Recognition", 
+        "mseifert/Seif Water Utility Fund", 
+        "agapw/agapw's Mutual Fund", 
+        "jackf03/jackf03's Mutual Fund", 
+        "twqs/Wostbrock Quantitative Fund", 
+        "rnice/rnice's value fund 2", 
+        "dcassas/Cavebaby 4 Diversified Index", 
+        "nmgiard/Nick's Slug Fund", 
+        "msdv/msdv's Mutual Fund", 
+        "cr506w07/Vegas", 
+        "shanehart/Shane  Hart's Energy Fund", 
+        "stockguru/Finirvana Ganges Fund", 
+        "bobley/bobley's all cap value", 
+        "momentumvalue/BBB DIV Momentum", 
+        "momentumvalue/momentumvalue's Mutual Fund", 
+        "lsoon_fong/Utilities Fund", 
+        "orrenkt/orrenkt's Mutual Fund", 
+        "brokertfs/Harvest Fund", 
+        "orrenkt/Mutual Fund", 
+        "ryster23/RCGGDC", 
+        "appy_6/energy fund", 
+        "engerlina/SeriousShort Fund", 
+        "touareg/Touareg's Mutual Fund (Short)", 
+        "kyleahutzler/Framework", 
+        "andrewkcook/tag 606", 
+        "badbooger69/badbooger69's Mutual Fund", 
+        "orrenkt/newest", 
+        "jkeidan/tiddlypump", 
+        "jgiuseffi/High Risk Momentum", 
+        "wordjam/QESM Backtester", 
+        "lpickup/too fast", 
+        "phil27/Global Energy Fund", 
+        "ccbt_ebw_3/ccbt_ebw_3's Mutual Fund", 
+        "cr506f07/Timothy Loch", 
+        "portfolioqwerty/SP Sector Beater", 
+        "rhelm/rhelm's Get Stued Funf", 
+        "andrewkcook/Short Fund", 
+        "ccachat/ccachat's Mutual Fund", 
+        "wadedavis/Aggressive Growth", 
+        "updowdown/updowdown's utilities fund", 
+        "rheath/RH Quantum", 
+        "jleeper/jleeper's Large Cap Mech Fund", 
+        "ronfudge/ronfudge's Mutual Fund", 
+        "jvrfr/jvrfr's Mutual Fund", 
+        "bmcclard/Relative Value Short", 
+        "bqallen/Allen Agressive Growth Fund", 
+        "burdick/Turtle Fund", 
+        "denhug/denhug's Mutual Fund", 
+        "cnelson1/Nelson Total Return Growth Fund", 
+        "kim4422/K44 Fund", 
+        "schettini2008/schettini2008 Dividend Stocks", 
+        "cburgess/S&P 500 Index", 
+        "jodyf22/JLF Electriic Utilities Fund", 
+        "kingston/kingston's Mutual Fund", 
+        "ryantheoc/Large & Stable Fund", 
+        "cr501spring08/Ustoppable Force", 
+        "svestre/svestre's Short Fund", 
+        "sendersap/sendersap's Mutual Fund", 
+        "daitrader/AISIK Fund", 
+        "invest2success/invest2success's Mutual Fund", 
+        "darabian1/Daniel Arabian", 
+        "btbaker79/BBaker Test Fund ", 
+        "oyz79/Scott's Low Risk Stock", 
+        "providentwind/providentwind's Mutual Fund", 
+        "jarvis_hills/gone south", 
+        "samuelbeaudry/Short everything you want", 
+        "f08cr501/Group Therapy", 
+        "rpatzman/Acuity Short", 
+        "f08cr501/Group with no Name", 
+        "lycos/Lycos Shorts", 
+        "down/down's Mutual Fund", 
+        "pcjg/pcjg's Mutual Fund", 
+        "chrstieber/chrstieber's Baerenstarker Fund", 
+        "wbauder/Quarterly return - Long", 
+        "pcjg/Bottom Fishing 2", 
+        "cr501s09/The  Yahoos", 
+        "gfontana/Market", 
+        "morgan0126/Lee Auer Fund", 
+        "dominatorx/dominatorx's Mutual Fund", 
+        "claymdean/ARGOS clean energy fund", 
+        "schofara/Magic Fund", 
+        "supervelez/Super Velez SP1", 
+        "kulasoft/StockMarketeer Dogs", 
+        "mooncrusher/Charger", 
+        "jmcdowell/Jeff's Incredible Value Fund", 
+        "invest2010/GRAND 12 ", 
+        "pbradford/SB Research", 
+        "stockring/StockRing Dow30 +", 
+        "wskristjan/Going for Broke", 
+        "mmmaize/mmtl", 
+        "jmg229/jmg229's First Mutual Fund", 
+        "jubals/jubals's Mutual Fund", 
+        "tenth/tenth's Mutual Fund", 
+        "yyzbuckeye/YYZ Fund", 
+        "chaz1975/chaztirement fund", 
+        "syt1989/syt1989's Mutual Fund", 
+        "anthonymoody/AM1", 
+        "errolnkeeton/errolnkeeton's Short Fund", 
+        "bm1/DBS", 
+        "bk1/DCF", 
+        "fourpillars/Four Pillars Fund", 
+        "sbz/sbz's Mutual Fund", 
+        "ava0313/ava0313's Mutual Fund", 
+        "acrao89/acrao89's Mutual Fund", 
+        "formy76/Scouter Mutual Fund", 
+        "rajp/eva_frombeginning_impliedless0_5yrgreater0", 
+        "whatfreedom/Yield", 
+        "gabriel_7/American Patriot Fund", 
+        "sdignan/sdignan's Mutual Fund", 
+        "jdelandr/Delandro Core Fund", 
+        "rajp/eva_frombeginning_impliedless0", 
+        "kbumgarner/Phoenix", 
+        "deepsilver/deepsilver's Short Fund", 
+        "helk/Helk's Mutual Fund", 
+        "epotts/High Dividend Fund", 
+        "alaieus/Stable Growth Hedged Fund", 
+        "bdwhippl/bdwhippl's Mutual Fund", 
+        "alaieus/Stable Growth Fund", 
+        "whaleshogi/Whaleshogi's SOS Fund", 
+        "fiduke/Fiduke's Retirement Fund", 
+        "non_denom/Bitty Brew Mutual Fund", 
+        "minishogi/Minishogi's Options Volatility Fund", 
+        "addisonsmith11/addisonsmith11's Mutual Fund", 
+        "acmartinez/acmartinez's Mutual Fund", 
+        "acmartinez/acmartinez's Mutual Fund 3", 
+        "flynnk/Black Tulip Mutual Fund", 
+        "vunguyen/DearbornComp", 
+        "sfish57/Conservative Dividend Mutual Fund", 
+        "hemmerling/Defensive Utilities", 
+        "test199/Logica-95", 
+        "benspot/PEASE", 
+        "bconeseven/Stuff I Use", 
+        "george.balatinos/The Rogue Investment Fund- Short", 
+        "agrizzle/GRIZZ Yield Fund", 
+        "ecervantes/Edgardo's Technology Revenge Fund", 
+        "jm50273/jm50273's Mutual Fund", 
+        "forbesnewsletters/Forbes Dividend Stock Daily", 
+        "jeffjwb7/jeffjwb7's Mutual Fund", 
+        "guindojr/SectorETF", 
+        "chiajung1109/Paragon Ingenuity Fund", 
+        "aencym/aencym's Mutual Fund", 
+        "johnbash1/Utility Mutual Fund", 
+        "rjeddings/Takin' it in the Shorts", 
+        "yutanaka/Exceed Average Yield by 4% ", 
+        "yutanaka/Exceed Average By 3%(After Fee)", 
+        "mheath580/mheath580's Mutual Fund", 
+        "pthurmanb/Enhanced SP500", 
+        "bradlevi/DOGS of the S&P500", 
+        "tlcholdings/tlcholdings's Mutual Fund", 
+        "tefortier/Systematic Portfolio", 
+        "chrisp143/chrisp143's Mutual Fund", 
+        "arrowife622/ArroCompFund", 
+        "cwacoop/cwacoop's Mutual Fund", 
+        "hhhpenguin/hhhpenguin's Mutual Fund", 
+        "robertson206/Aggressive Growth and Expansion Fund", 
+        "hhhpenguin/hhhpenguin's Mutual Fund", 
+        "justinsager/Mike's Blue Chip High Div Low PE", 
+        "wbauder/Yield", 
+        "drass/D500", 
+        "edwin444pr/Dividend Contenders Fund", 
+        "sfish57/Schwab T10", 
+        "willi25794/Bill's Energy Growth", 
+        "sherman76/Gavrila Capital Income Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150601; 
+    RATIO = 0.1249; 
+    "RECORD_DATE" = 20150520; 
+    "SPINOFF_SYMBOL" = TLN; 
+    SYMBOL = PPL; 
+    TYPE = SPIN; 
+}
+D: (08-03 12:22:25.424) SUCCESS
+D: (08-03 12:22:25.425) cahelper finished 2015-08-03 12:22:25 -0400
+
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='PPL' and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'ae0b1029390b2ff2c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Talen Energy Corporation |CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.124900|CP_PAY_DT|20150601|CP_RECORD_DT|20150520|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|TLN US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150803:121614
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = PPL     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PPL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'27f6267855bf93cec0a86f92'
+>               VERSION = NULL
+
+there it is
+select count(*) from mticket where sourcekey=X'27f6267855bf93cec0a86f92';
+> Row 1:
+>   _C001 = 393.000000
+select distinct stockkey from mticket where sourcekey=X'27f6267855bf93cec0a86f92';
+> Row 1:
+>   STOCKKEY = X'2805267855bf93cec0a86f92'
+
+
+our new stockkey
+
+select * from mstockalias where STOCKKEY = X'2805267855bf93cec0a86f92';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Talen Energy Corporation 
+>     PRIMARYKEY = X'2806267855bf93cec0a86f92'
+>       STOCKKEY = X'2805267855bf93cec0a86f92'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+need to add the cusip, the style and the GICS, not to mention the historical prices
+select * from mcorporateaction where aliaskey=X'2806267855bf93cec0a86f92';
+nothing
+
+update mstockalias set cusip='87422J105'  where PRIMARYKEY = X'2806267855bf93cec0a86f92';
+
+Market Cap:	2.01B    mid cap   let's say growth
+
+update mstockalias set STYLEKEY='MG'  where PRIMARYKEY = X'2806267855bf93cec0a86f92';
+
+what about the gics
+Sector:	Utilities
+Industry:	Diversified Utilities
+
+55103010	Multi-Utilities
+	Utility companies with significantly diversified activities in addition to core Electric Utility, Gas Utility and/or Water Utility operations.
+
+update mstockalias set GICSKEY='55103010'  where PRIMARYKEY = X'2806267855bf93cec0a86f92';
+
+ok, let's check this
+
+select * from mstockalias where STOCKKEY = X'2805267855bf93cec0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87422J105
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Talen Energy Corporation 
+>     PRIMARYKEY = X'2806267855bf93cec0a86f92'
+>       STOCKKEY = X'2805267855bf93cec0a86f92'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55103010
+>       STYLEKEY = MG
+
+let's get the mstock and companyid
+listed on 6/2/15
+select * from mstock where primarykey=X'2805267855bf93cec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'2806267855bf93cec0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'2805267855bf93cec0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28599
+>   WINDOWIDENTITYKEY = NULL
+
+
+COMPANYID = 28599
+
+let's get prices from 6/2/15 until 7/31/15
+save to CA issues TLN prices to be loaded
+
+this is done
+
+ok, let's add the prices over in marketdata@stocks
+
+inserting them now
+
+then we have to invalidate prices from 6/2/15
+
+seems good - check the companyid
+
+select * from stockprices where companyid=28599 order by daynumber;
+first
+> Row 1:
+>   DAYNUMBER = 5265
+>   COMPANYID = 28599
+>      OPENED = 187400
+>        HIGH = 189050
+>         LOW = 181000
+>      CLOSED = 187600
+>      VOLUME = 10027600
+
+last
+> Row 43:
+>   DAYNUMBER = 5324
+>   COMPANYID = 28599
+>      OPENED = 157900
+>        HIGH = 161000
+>         LOW = 156700
+>      CLOSED = 157300
+>      VOLUME = 1006800
+
+good - let's invalidate prices 
+
+/Marketocracy/bin/StockPriceBuilder invalidate 20150602
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-06-02
+
+check 
+cat /Marketocracy/Logs/StockPriceBuilder.2015-08-03
+
+D: (13:11:59.275) Invalidate all prices >= 57171-06-24 (20150602)
+D: (13:14:33.312) Invalidate all prices >= 2015-06-02 (5265)
+
+
+Kim says that the first is a no-op
+
+ok, let's try the backdatedtrade
+
+
+
+
+The NEW stockkey for TLN
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87422J105
+>           DATE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Talen Energy Corporation 
+>     PRIMARYKEY = X'2806267855bf93cec0a86f92'
+>       STOCKKEY = X'2805267855bf93cec0a86f92'
+>         SYMBOL = TLN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55103010
+>       STYLEKEY = MG
+
+select count(*) from mticket where STOCKKEY = X'2805267855bf93cec0a86f92';
+> Row 1:
+>   _C001 = 393.000000
+select distinct sourcekey from mticket where STOCKKEY = X'2805267855bf93cec0a86f92';
+> Row 1:
+>   SOURCEKEY = X'27f6267855bf93cec0a86f92'
+
+
+
+
+
+
+
+
+
+
+
+
+
+check in the morning, after nightly load then run these two 
+
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py ahknaten KAI  20150730  TLN 14929  15.632002
+Trading 14929.0 shares of Talen Energy Corporation  on Jul 30, 2015 at 15.632002
+manager login: ahknaten
+manager: Kai Petainen
+fund: KAI
+building trade (has to load stock prices first)
+price = 15.632002
+buying 14929.0 shares of TLN at 15.632002 on 20150730
+invaldating fund prices from Jul 30, 2015
+Done
+
+
+let's reprice these on the new site 
+/Marketocracy/bin/dbtool lookup fund ahknaten
+und: ahknaten
+  PK: [7A05458E3E496769C0A80133]
+  symbol: [KAI]
+  managerKey: [12B420D93B8AE1D3C0A801E0]
+
+/Marketocracy/bin/fptool invalidateFund 7A05458E3E496769C0A80133
+and
+
+
+masters100manager mofqx 20150731 buy 1200 TLN  15.854400    <--------- ticket to create 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py masters100manager mofqx 20150731 TLN 1200  15.854400 
+Trading 1200.0 shares of Talen Energy Corporation  on Jul 31, 2015 at 15.8544
+manager login: masters100manager
+manager: Ken & Mark
+fund: mofqx
+building trade (has to load stock prices first)
+price = 15.8544
+buying 1200.0 shares of TLN at 15.8544 on 20150731
+invaldating fund prices from Jul 31, 2015
+Done
+
+
+/Marketocracy/bin/dbtool lookup fund masters100manager
+fund: masters100manager
+  PK: [E33204A73BE74198C0A801E9]
+  symbol: [mofqx]
+  managerKey: [F5BD307B3BE6B887C0A801E1]
+/Marketocracy/bin/fptool invalidateFund E33204A73BE74198C0A801E9
+
+reprice on the new site
+7A05458E3E496769C0A80133,E33204A73BE74198C0A801E9
+
+has anyone traded this?
+
+select count(*) from mticket where stockkey=X'2805267855bf93cec0a86f92' and sourcekey is null;
+> Row 1:
+>   _C001 = 2.000000
+
+
+just us
+
+ok asked Brandon to turn this back on for trading.
+
+closing this out 

@@ -1,0 +1,959 @@
+date:  6/15/15
+tickers NYLD and NYLD.A in member's fund
+
+NYLD
+Symbol: NYLD 	Name: NRG Yield Inc 	Price: $24.94
+Volume: 319,012 	Sector: Unclassified 	Change: -$0.52
+Short Volume: 312,459 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 312,459 	 Exchange: NYSE 	Today: -2.04%
+50 Day Ave: $10.23 	Year High: $27.87 	High: $25.73
+200 Day Ave: $2.56 	Year Low: $0.00 	Low: $24.93
+
+yahoo
+NRG Yield, Inc. (NYLD) -NYSE
+24.94 Down 0.52(2.04%) Jun 15, 4:02PM EDT
+After Hours : 24.94 0.00 (0.00%) Jun 15, 4:04PM EDT
+
+
+NYLD.A
+Symbol: NYLD.A 	Name: NRG Yield Inc 	Price: $24.51
+Volume: 429,642 	Sector: Utilities 	Change: -$0.22
+Short Volume: 479,384 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 479,384 	 Exchange: NYSE 	Today: -0.89%
+50 Day Ave: $39.52 	Year High: $55.64 	High: $24.72
+200 Day Ave: $46.98 	Year Low: $0.00 	Low: $24.42
+
+NYLD
+select distinct stockkey from mstockalias where symbol='NYLD';
+> Row 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+> Row 2:
+>   STOCKKEY = X'ed81605055567e18c0a86f92'
+there are two
+******************************************************************
+> NYLD 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+list date 7/17/13
+chg tkr 5/15/15 to NYLD.A
+COMPANYID = 24550
+80 tickets, only member generated
+******************************************************************
+select * from mstockalias where STOCKKEY = X'493f0dd851e72098c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2013-07-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'49400dd851e72098c0a80146'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+	select * from mstock where PRIMARYKEY=X'493f0dd851e72098c0a80146';
+	> Row 1:
+	>         IDENTITYKEY = X'eae85f0f55567d92c0a86f92'
+	>                NAME = NULL
+	>          PRIMARYKEY = X'493f0dd851e72098c0a80146'
+	>              SYMBOL = NULL
+	>           COMPANYID = 24550
+	>   WINDOWIDENTITYKEY = NULL
+	select count(*) from mticket where sTOCKKEY = X'493f0dd851e72098c0a80146';
+	> Row 1:
+	>   _C001 = 80.000000
+	select distinct sourcekey from mticket where sTOCKKEY = X'493f0dd851e72098c0a80146';
+	> Row 1:
+	>   SOURCEKEY = NULL
+
+	select * from mcorporateaction where aliaskey=X'49400dd851e72098c0a80146';
+> Row 1:
+>              ALIASKEY = X'49400dd851e72098c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|NYLD|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 79529899
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-17 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-15 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NYLD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-07-15 00:00:00.000000'
+>            PRIMARYKEY = X'513841c851e47e08c0a80146'
+>               VERSION = NULL
+	plus 8 DVD_CASH
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'eae85f0f55567d92c0a86f92'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD.A
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'eae85f0f55567d92c0a86f92';
+> Row 1:
+>              ALIASKEY = X'eae85f0f55567d92c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NYLD US|CP_NEW_TKR|NYLD/A US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106463219
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NYLD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>            PRIMARYKEY = X'c6a0587e55494977c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'eae85f0f55567d92c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150601|CP_PAY_DT|20150615|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.992175|CP_ADJ_DT|20150528|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|Pre-split rate: $0.40 Post-split rate: $0.20
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106646083
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-28 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD/A  US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = NYLD.A
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>            PRIMARYKEY = X'aafb695855679c67c0a86f92'
+>               VERSION = NULL
+
+******************************************************************
+> NYLD 2:
+>   STOCKKEY = X'ed81605055567e18c0a86f92'
+this is the "new" NYLD  class C which listed on 5/15/15
+******************************************************************
+select * from mstockalias where STOCKKEY = X'ed81605055567e18c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'ed82605055567e18c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select count(*) from mticket where STOCKKEY = X'ed81605055567e18c0a86f92';
+	> Row 1:
+	>   _C001 = 6.000000
+	select distinct sourcekey from mticket where STOCKKEY = X'ed81605055567e18c0a86f92';
+	> Row 1:
+	>   SOURCEKEY = NULL
+	select * from mstock where primarykey=X'ed81605055567e18c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'5c3060a255567eb8c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'ed81605055567e18c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28296
+>   WINDOWIDENTITYKEY = NULL
+
+
+	select * from mcorporateaction where aliaskey=X'ed82605055567e18c0a86f92';
+> Row 1:
+>              ALIASKEY = X'ed82605055567e18c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|NYLD|CP_SEC_TYP|16|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106525728
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NYLD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2015-05-14 00:00:00.000000'
+>            PRIMARYKEY = X'a5cd57db55567cc0c0a86f92'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X306
+>           DATE = TIMESTAMP '2015-05-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'5c3060a255567eb8c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'5c3060a255567eb8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'5c3060a255567eb8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|62942X108|CP_NEW_CUSIP|62942X306|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US62942X1081|CP_NEW_ISIN|US62942X3061|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106463297
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = NYLD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>            PRIMARYKEY = X'c6a2587e55494978c0a86f92'
+>               VERSION = NULL
+ plus 1 DVD_CASH
+
+check xignite
+NYLD:  62942X405  agree with fidelity
+NYLD.A 62942X306   agree with fidelity as NULD/A
+
+let's look at prices on our site
+
+NYLD.A  companyID  24550   list date:  2013-07-17  as NYLD
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 24550
+2013-07-17 (Wed) [4580]: O:26.7500 H:27.7100 L:26.5000 C:27.2500 V:15692194 TSO:0 A:24.4500 R:1.0000 CA:2.8000
+2013-07-18 (Thu) [4581]: O:27.3400 H:28.1500 L:27.0000 C:28.0000 V:1562500 TSO:0 A:25.2000 R:1.0000 CA:2.8000
+2013-07-19 (Fri) [4582]: O:27.9500 H:28.1000 L:27.6300 C:27.8800 V:623246 TSO:0 A:25.0800 R:1.0000 CA:2.8000
+through
+2015-05-11 (Mon) [5243]: O:50.9100 H:51.6700 L:48.3100 C:48.6200 V:591054 TSO:0 A:48.6200 R:1.0000 CA:0.0000
+2015-05-12 (Tue) [5244]: O:48.4400 H:49.3100 L:47.7400 C:49.1800 V:533608 TSO:0 A:49.1800 R:1.0000 CA:0.0000
+2015-05-13 (Wed) [5245]: O:49.3500 H:49.5800 L:47.6400 C:47.8600 V:351113 TSO:0 A:47.8600 R:1.0000 CA:0.0000
+2015-05-14 (Thu) [5246]: O:48.1900 H:48.5100 L:47.6800 C:47.8600 V:329144 TSO:0 A:47.8600 R:1.0000 CA:0.0000
+2015-05-15 (Fri) [5247]: O:24.6500 H:26.7300 L:23.8000 C:24.3700 V:215397 TSO:0 A:24.3700 R:1.0000 CA:0.0000
+2015-05-16 (Sat) [5248]: <WEEKEND>
+2015-05-17 (Sun) [5249]: <WEEKEND>
+2015-05-18 (Mon) [5250]: O:24.8500 H:25.0700 L:22.8000 C:23.7000 V:590743 TSO:0 A:23.7000 R:1.0000 CA:0.0000
+2015-05-19 (Tue) [5251]: O:24.4400 H:24.4400 L:23.5200 C:23.7900 V:975752 TSO:0 A:23.7900 R:1.0000 CA:0.0000
+2015-05-20 (Wed) [5252]: O:23.7400 H:23.9500 L:23.3800 C:23.5900 V:395154 TSO:0 A:23.5900 R:1.0000 CA:0.0000
+2015-05-21 (Thu) [5253]: O:23.8500 H:23.8500 L:23.3900 C:23.5800 V:423076 TSO:0 A:23.5800 R:1.0000 CA:0.0000
+2015-05-22 (Fri) [5254]: O:23.4700 H:24.0400 L:23.0700 C:23.9100 V:807415 TSO:0 A:23.9100 R:1.0000 CA:0.0000
+2015-05-23 (Sat) [5255]: <WEEKEND>
+through
+2015-06-11 (Thu) [5274]: O:25.2500 H:25.5900 L:24.6900 C:25.1600 V:311844 TSO:0 A:25.1600 R:1.0000 CA:0.0000
+2015-06-12 (Fri) [5275]: O:24.9300 H:25.1500 L:24.5200 C:24.7300 V:401654 TSO:0 A:24.7300 R:1.0000 CA:0.0000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+2015-06-15 (Mon) [5278]: O:24.7200 H:24.7200 L:24.4200 C:24.5100 V:429642 TSO:0 A:24.5100 R:1.0000 CA:0.0000
+
+
+
+NYLD  companyID  28296  list date: 5/15/15
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 28296
+2015-05-15 (Fri) [5247]: O:24.9400 H:25.5000 L:24.4700 C:24.5000 V:526099 TSO:0 A:24.3000 R:1.0000 CA:0.2000
+2015-05-16 (Sat) [5248]: <WEEKEND>
+2015-05-17 (Sun) [5249]: <WEEKEND>
+2015-05-18 (Mon) [5250]: O:24.4100 H:24.9900 L:23.2000 C:23.7500 V:777459 TSO:0 A:23.5500 R:1.0000 CA:0.2000
+2015-05-19 (Tue) [5251]: O:23.6700 H:24.0200 L:23.4500 C:23.5700 V:1172971 TSO:0 A:23.3700 R:1.0000 CA:0.2000
+
+through
+2015-06-12 (Fri) [5275]: O:25.8800 H:26.0000 L:25.3400 C:25.4600 V:457383 TSO:0 A:25.4600 R:1.0000 CA:0.0000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+2015-06-15 (Mon) [5278]: O:25.6000 H:25.7300 L:24.9300 C:24.9400 V:319012 TSO:0 A:24.9400 R:1.0000 CA:0.0000
+
+
+news from NRG company about the split:
+http://investor.nrgyield.com/phoenix.zhtml?c=251846&p=irol-stockfaq
+
+and from quantum
+Notes:  May 15, 2015-- NRG Yield, Inc. (NYSE:NYLD) announced that it has completed its previously announced 
+recapitalization, whereby its new Class C common stock was distributed to holders of the Class A common stock 
+through a split of each outstanding share of Class A common stock into one share of Class A common stock and one 
+share of Class C common stock that became effective after the close of the market on May 14, 2015. The Class A 
+common stock will continue to trade on the NYSE under a new symbol NYLD.A and the new Class C common stock will 
+begin trading today on the NYSE under the original symbol NYLD. Under the terms of the recapitalization, the Company 
+will amend its Certificate of Incorporation (Amended Certificate) to create the new Class C and Class D common stock 
+and distribute the Class C and Class D common stock to holders of the Class A and Class B common stock, respectively, 
+through a one-for-one stock split. The Class B common stock will remain unlisted and not publicly traded. The Class D 
+common stock will be unlisted and not publicly trade
+
+NYLD  split  ->>>   NYLD.A
+					NYLD
+
+
+yahoo finance  has NYLD-A
+
+Assessment:
+1.  NYLD->NYLDA  Class A  let's update the name so it easier to differentiate
+select distinct stockkey from mstockalias where symbol='NYLD.A';
+> Row 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+select * from mstockalias where STOCKKEY = X'493f0dd851e72098c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2013-07-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'49400dd851e72098c0a80146'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc  <-------  change name, add Class A
+>     PRIMARYKEY = X'eae85f0f55567d92c0a86f92'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD.A
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+update mstockalias set NAME = 'NRG Yield Inc Class A' where PRIMARYKEY = X'eae85f0f55567d92c0a86f92';
+select * from mstockalias where STOCKKEY = X'493f0dd851e72098c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2013-07-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'49400dd851e72098c0a80146'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc Class A
+>     PRIMARYKEY = X'eae85f0f55567d92c0a86f92'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD.A
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+
+check the other one
+select distinct stockkey from mstockalias where symbol='NYLD';
+> Row 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+> Row 2:
+>   STOCKKEY = X'ed81605055567e18c0a86f92'   <---  this is the other one
+
+select * from mstockalias where STOCKKEY = X'ed81605055567e18c0a86f92' ;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'ed82605055567e18c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X306
+>           DATE = TIMESTAMP '2015-05-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'5c3060a255567eb8c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+update mstockalias set NAME = 'NRG Yield Inc Class C' where STOCKKEY = X'ed81605055567e18c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc Class C
+>     PRIMARYKEY = X'ed82605055567e18c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X306
+>           DATE = TIMESTAMP '2015-05-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc Class C
+>     PRIMARYKEY = X'5c3060a255567eb8c0a86f92'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+our member who is short 
+> Row 823:
+>    LOGINNAME = nigelrake50
+>       SYMBOL = NMF
+>   PRIMARYKEY = X'98d46d1f3abf8b10c0a80119'
+
+ are there two NYLD?
+long:  NYLD.A 	click me 	$24.51 	660 	$16,176.60 	0.64% 	-$13,631.34 	-0.89% 	-12.95% 	-12.95% 	Details  
+short: NYLD 	$24.94 	-660 	-$16,460.40 	$435.27 	-2.04% 	0.00% 	Details  	TOP
+
+let's log in and check the trading history
+LEDGER
+Date	Start	Change	End	Type
+Jun 15, 2015		-660	-660	Sell
+Total: -660
+ 	 	 
+BUYS
+You have no Buys for this position
+ 	 	 
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 15, 2015	660	$33.00	$0.30	$16,895.70	$25.60
+
+logged in at the xignite site:
+5/18/2015	23.75	24.41	24.99	23.2	777459	24.5	-0.66	-2.704	-0.75	-3.061	1	0.2	1	USD	None	Valid
+Success		Request	0.443025													7/17/2013	6/15/2015	Success			0													5/15/2015	24.5	24.94	25.496	24.5	526099	47.86	-0.44	-1.764	-23.36	-48.809	1	0.2	1	USD	None	Valid
+Success		Request	0.443025													7/17/2013	6/15/2015	Success			0													5/14/2015	47.86	48.19	48.51	47.68	329144	47.86	-0.33	-0.685	0	0	1	0.2	1	USD	None	Valid
+Success		Request	0.443025													7/17/2013	6/15/2015	Success			0													5/13/2015	47.86	49.35	49.575	47.64	351113	49.18	-1.49	-3.019	-1.32	-2.684	1	0.2	1	USD	None	Valid
+Success		Request	0.443025													7/17/2013	6/15/2015	Success			0													5/12/2015	49.18	48.44	49.31	47.74	534625	48.62
+
+
+this should be NYLD.A
+let's log in as nigelrake50 on the new site and see what he has 
+I do see the -660 NYLD in his NMF on the new site.
+
+
+6/16/15  let's look at the two stockkeys and the trades for each
+
+NYLD.A  class A
+STOCKKEY = X'493f0dd851e72098c0a80146'
+select * from mstockalias where STOCKKEY = X'493f0dd851e72098c0a80146';
+select count(*) from mticket where STOCKKEY = X'493f0dd851e72098c0a80146';
+> Row 1:
+>   _C001 = 80.000000   No need to change any of these
+
+NYLD class C recently listed 
+STOCKKEY = X'ed81605055567e18c0a86f92'
+select count(*) from mticket where STOCKKEY =X'ed81605055567e18c0a86f92';
+> Row 1:
+>   _C001 = 7.000000
+select * from mticket where STOCKKEY =X'ed81605055567e18c0a86f92' and shares > 0 order by closed;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-05-26 11:02:33.000000'
+>        COMMENT = NULL
+>     COMMISSION = 20.000000
+>   CURRENTORDER = X'33b9412355648ad4c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0028418d48d2521fc0a80132'
+>       MODIFIED = NULL
+>            NET = 9672.000000
+>         OPENED = TIMESTAMP '2015-05-26 11:01:40.000000'
+>          PRICE = 24.180000
+>     PRIMARYKEY = X'33b7412355648ad4c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a buy
+select loginname from mmanager where primarykey= X'0028418d48d2521fc0a80132';
+> Row 1:
+>   LOGINNAME = flashrabbit
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'33b7412355648ad4c0a86fa6');
+> Row 1:
+>   SYMBOL = FMF
+
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-05-26 11:02:33.000000'
+>        COMMENT = NULL
+>     COMMISSION = 40.000000
+>   CURRENTORDER = X'33e7412355648ad6c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0028418d48d2521fc0a80132'
+>       MODIFIED = NULL
+>            NET = 19344.000000
+>         OPENED = TIMESTAMP '2015-05-26 11:01:42.000000'
+>          PRICE = 24.180000
+>     PRIMARYKEY = X'33e5412355648ad6c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a buy
+select loginname from mmanager where primarykey= X'0028418d48d2521fc0a80132';
+> Row 1:
+>   LOGINNAME = flashrabbit
+
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'33e5412355648ad6c0a86fa6' );
+> Row 1:
+>   SYMBOL = FBF
+
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-05-26 11:02:33.000000'
+>        COMMENT = NULL
+>     COMMISSION = 40.000000
+>   CURRENTORDER = X'33fe412355648ad7c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0028418d48d2521fc0a80132'
+>       MODIFIED = NULL
+>            NET = 19344.000000
+>         OPENED = TIMESTAMP '2015-05-26 11:01:43.000000'
+>          PRICE = 24.180000
+>     PRIMARYKEY = X'33fc412355648ad7c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a buy
+select loginname from mmanager where primarykey= X'0028418d48d2521fc0a80132';
+> Row 1:
+>   LOGINNAME = flashrabbit
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'33fc412355648ad7c0a86fa6');
+> Row 1:
+>   SYMBOL = FSF
+
+> Row 4:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-05-26 11:04:37.000000'
+>        COMMENT = NULL
+>     COMMISSION = 60.000000
+>   CURRENTORDER = X'33d0412355648ad5c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0028418d48d2521fc0a80132'
+>       MODIFIED = NULL
+>            NET = 29016.000000
+>         OPENED = TIMESTAMP '2015-05-26 11:01:41.000000'
+>          PRICE = 24.180000
+>     PRIMARYKEY = X'33ce412355648ad5c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 1200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a buy
+select loginname from mmanager where primarykey= X'0028418d48d2521fc0a80132';
+> Row 1:
+>   LOGINNAME = flashrabbit
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'33ce412355648ad5c0a86fa6');
+> Row 1:
+>   SYMBOL = FNTTF
+
+
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-15 09:32:39.000000'
+>        COMMENT = NULL
+>     COMMISSION = 33.000000
+>   CURRENTORDER = X'76450118557b6cfac0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'746174173abf89fbc0a801e0'
+>       MODIFIED = NULL
+>            NET = 16895.700000
+>         OPENED = TIMESTAMP '2015-06-12 19:36:26.000000'
+>          PRICE = 25.599545
+>     PRIMARYKEY = X'76430118557b6cfac0a86fa6'
+>         SECFEE = 0.300000
+>         SHARES = 660.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a sell
+select loginname from mmanager where primarykey= X'746174173abf89fbc0a801e0';
+> Row 1:
+>   LOGINNAME = nigelrake50
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'76430118557b6cfac0a86fa6');
+> Row 1:
+>   SYMBOL = NMF
+
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-16 12:46:32.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'632e011c5580528ac0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0028418d48d2521fc0a80132'
+>       MODIFIED = NULL
+>            NET = 12439.780000
+>         OPENED = TIMESTAMP '2015-06-16 12:44:58.000000'
+>          PRICE = 24.879560
+>     PRIMARYKEY = X'632c011c5580528ac0a86fa6'
+>         SECFEE = 0.220000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a sell
+select loginname from mmanager where primarykey= X'0028418d48d2521fc0a80132';
+> Row 1:
+>   LOGINNAME = flashrabbit
+
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'632c011c5580528ac0a86fa6');
+> Row 1:
+>   SYMBOL = FNTTF
+
+
+there is only one trade that needs to be corrected .
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-06-15 09:32:39.000000'
+>        COMMENT = NULL
+>     COMMISSION = 33.000000
+>   CURRENTORDER = X'76450118557b6cfac0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'746174173abf89fbc0a801e0'
+>       MODIFIED = NULL
+>            NET = 16895.700000
+>         OPENED = TIMESTAMP '2015-06-12 19:36:26.000000'
+>          PRICE = 25.599545
+>     PRIMARYKEY = X'76430118557b6cfac0a86fa6'
+>         SECFEE = 0.300000
+>         SHARES = 660.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ed81605055567e18c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+this is a sell
+select loginname from mmanager where primarykey= X'746174173abf89fbc0a801e0';
+> Row 1:
+>   LOGINNAME = nigelrake50
+select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey= X'76430118557b6cfac0a86fa6');
+> Row 1:
+>   SYMBOL = NMF
+
+let's move this over
+select * from mtrade where ticketkey= X'76430118557b6cfac0a86fa6';  we'll delete this
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'cfe25d2d557ed7e4c0a86f9c'
+>                 PRIMARYKEY = X'cfe15d2d557ed7e4c0a86f9c'
+>                     SHARES = 660.000000
+>                  TICKETKEY = X'76430118557b6cfac0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-06-15 09:32:39.000000'
+>                      PRICE = 25.599500
+>   CREATEDBYCORPORATEACTION = 0
+delete from mtrade where ticketkey= X'76430118557b6cfac0a86fa6';   
+done
+select fundkey from mticketallocation  where ticketkey= X'76430118557b6cfac0a86fa6';
+> Row 1:
+>   FUNDKEY = X'98d46d1f3abf8b10c0a80119'
+update the stockkey
+
+update mticket set stockkey=X'493f0dd851e72098c0a80146' where PRIMARYKEY = X'76430118557b6cfac0a86fa6' and stockkey= X'ed81605055567e18c0a86f92';
+
+let's tickle the ticket and then invalidate the fund
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 76430118557b6cfac0a86fa6
+>>>> dbtool started at 2015-06-16 17:00:59 -0400
+<<<< dbtool finished at 2015-06-16 17:02:41 -0400
+
+/Marketocracy/bin/fptool invalidateFund 98d46d1f3abf8b10c0a80119
+
+let's log out and back in 
+ok he is out of NYLD.A and no longer a short, the trades were paired.
+LEDGER
+Date	Start	Change	End	Type
+Jan 21, 2014		2660	2660	Buy
+Jan 24, 2014	2660	-2000	660	Sell
+Jun 15, 2015	660	-660		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 21, 2014	2,660	$133.00	$105,295.78	$39.58
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jan 24, 2014	2,000	$100.00	$1.32	$75,487.83	$37.74
+Jun 15, 2015	660	$33.00	$0.30	$16,895.70	$25.60
+ 	 	 
+
+let'see if we can give the NYLD new as a stock dividend
+if that doesn't work, we'll have to get out the NYLD new and do a spin off and then buy back
+
+/Marketocracy/bin/cahelper -symbol NYLD.A -effective 20150515 -type DVD_STOCK -exchange UU -dividendSymbol NYLD -payDate 20150515 -recordDate 20150515 -percent 100 >& /Users/build/caout/NYLD.A.20150616-DVD_STOCK-NYLD.out 
+NYLD.A.20150616-DVD_STOCK-NYLD.out
+stocks:~/caout build$ tail -f NYLD.A.20150616-DVD_STOCK-NYLD.out
+D: (06-16 17:41:54.020) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-16 17:42:18.495) cahelper started on 2015-06-16 17:42:18 -0400
+
+D: (06-16 17:42:21.267) StockFileLoad Version:4.0
+D: (06-16 17:42:21.268) Loading Stock Data
+D: (06-16 17:42:59.402) Building Lookup Index
+D: (06-16 17:43:03.933) Finished Building Index
+D: (06-16 17:43:07.472) Finished Loading Stock Data
+D: (06-16 17:43:07.592) Connection to 192.168.111.172:6666 succeeded
+D: (06-16 17:43:07.890) {
+    APPLIED = 1; 
+    DATE = 20150515; 
+    FUNDS = (
+        "investorlestrade/Investor Lestrade Stupid Speculative Picks", 
+        "roboinvestor/B. J. Patel MD FACC's Mutual Fund", 
+        "ucdballer411/UCD Long Only", 
+        "bkquantpm/bkquantpm's SCMS1", 
+        "bkquantpm/bkquantpm SMCS", 
+        "nigelrake50/nigelrake50's Mutual Fund", 
+        "nigelrake50/nigelrake50 Energy Fund", 
+        "ucdballer411/HT Energy", 
+        "billyen/Financial x2", 
+        "2004_porsche_911/Smokin' Short Rat 18", 
+        "jaenam/Jae Nam Capital", 
+        "deepsilver/deepsilver's All Star Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150515; 
+    RATIO = 1; 
+    "RECORD_DATE" = 20150515; 
+    SYMBOL = "NYLD.A"; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (06-16 17:43:09.541) SUCCESS
+D: (06-16 17:43:09.542) cahelper finished 2015-06-16 17:43:09 -0400
+
+did it get applied?
+> NYLD 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+
+select * from mstockalias where STOCKKEY = X'493f0dd851e72098c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2013-07-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc
+>     PRIMARYKEY = X'49400dd851e72098c0a80146'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 62942X108
+>           DATE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NRG Yield Inc Class A
+>     PRIMARYKEY = X'eae85f0f55567d92c0a86f92'
+>       STOCKKEY = X'493f0dd851e72098c0a80146'
+>         SYMBOL = NYLD.A
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55101010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'eae85f0f55567d92c0a86f92';
+> Row 1:
+>              ALIASKEY = X'eae85f0f55567d92c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|NYLD US|CP_NEW_TKR|NYLD/A US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106463219
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NYLD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>            PRIMARYKEY = X'c6a0587e55494977c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'eae85f0f55567d92c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150601|CP_PAY_DT|20150615|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.992175|CP_ADJ_DT|20150528|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|Pre-split rate: $0.40 Post-split rate: $0.20
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106646083
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 35861348
+>        BB_COMPANYNAME = NRG Yield Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-28 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD/A  US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = NYLD.A
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>            PRIMARYKEY = X'aafb695855679c67c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'eae85f0f55567d92c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150515|CP_PAY_DT|20150515|CP_AMT|100.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|NYLD    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150616:054218
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = NYLD.A     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NYLD.A
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-15 00:00:00.000000'
+>            PRIMARYKEY = X'72421c715580983ac0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'72421c715580983ac0a86f92';
+> Row 1:
+>   _C001 = 12.000000
+select distinct stockkey from mticket where sourcekey=X'72421c715580983ac0a86f92';
+> Row 1:
+>   STOCKKEY = X'ed81605055567e18c0a86f92'
+this is the new NYLD
+
+who held NYLD on the day before  05/14/2015
+Stock:NRG Yield Inc  Symbol:NYLD.A
+Date: 05/14/2015
+
+7 users found
+
+1	billyen	deepsilver	investorlestrade	jaenam	nigelrake50	roboinvestor	ucdballer411	 	 	 
+
+let's login as nigelrake50  NMF on 5/15/2015   should get the NYLD 
+NYLD	NRG Yield Inc	$24.50	0.6%	660	$0.00	$16,170.00	Details 
+NYLD.A	NRG Yield Inc	$24.37	0.6%	660	$0.00	$16,084.20	Details 
+SMED	SHARPS COMPLIANCE CORP	$5.73	0.4%	1,771	$0.00	$10,147.83	Details 
+GILD	GILEAD SCIENCES	$109.30	0.4%	90	$0.00	$9,837.00	Details 
+ALDR	Alder Biopharmaceuticals Inc	$39.84	0.4%	220	$0.00	$8,764.80	Details 
+WX	WuXi PharmaTech Cayman Inc	$43.34	0.3%	200	$0.00	$8,668.00	Details 
+KITE	Kite Pharma Inc	$50.02	0.3%	140	$0.00	$7,002.80	Details 
+BLCM	Bellicum Pharmaceuticals Inc	$23.02	0.2%	240	$0.00	$5,524.80	Details 
+DDD	3D SYSTEMS	$21.33	0.1%	60	$0.00	$1,279.80	Details 
+ACAS	American Capital, Ltd.	$14.46	0.0%	50	$0.00	$723.00	Details 
+ABAT	Advanced Battery Technologies, Inc.	$0.25	0.0%	500	$0.00	$125.00	Details 
+IPIXQ	IPIX Corp		0.0%	1,000	$0.00	$0.00	Details 
+RVHLQ	RIVIERA HOLDINGS		0.0%	1,000	$0.00	$0.00	Details 
+ 	 	 
+	 trades on May 15, 2015	
+ 	 	
+This is done.  check on 6/17/15 for the new names Class A and C
+
+check the new site  	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	NYLD	660	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+this worked!  
+6/19/16
+NYLD
+ 	
+Symbol: NYLD 	Name: NRG Yield Inc Class C 	Price: $24.42
+Volume: 958,068 	Sector: Unclassified 	Change: $0.00
+Short Volume: 359,965 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 359,965 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $12.21 	Year High: $27.87 	High: $25.36
+200 Day Ave: $3.05 	Year Low: $0.00 	Low: $24.28
+
+NYLD.A
+Symbol: NYLD.A 	Name: NRG Yield Inc Class A 	Price: $24.37
+Volume: 679,896 	Sector: Utilities 	Change: $0.00
+Short Volume: 507,558 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 507,558 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $38.38 	Year High: $55.64 	High: $25.14
+200 Day Ave: $46.66 	Year Low: $22.80 	Low: $24.21
+
+the new names are there members got the stock dividend, 
+
+reprice ? 
+
+select distinct stockkey from mstockalias where symbol='NYLD';
+> Row 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+> Row 2:
+>   STOCKKEY = X'ed81605055567e18c0a86f92'
+
+select distinct stockkey from mstockalias where symbol='NYLD.A';
+> Row 1:
+>   STOCKKEY = X'493f0dd851e72098c0a80146'
+
+select distinct fundkey from mposition where STOCKKEY = X'493f0dd851e72098c0a80146' or STOCKKEY = X'ed81605055567e18c0a86f92';
+there are 29 fundkeys for both sotckkeys
+save to CA issues NYLD and NYLD.A fundkeys
+
+
+invalidate - done!
+reprice  2013-07-17 
+
+closing this out on 6/19/15

@@ -1,0 +1,257 @@
+date:   9/15/15
+ticker:   RALY
+
+yahoo:
+
+quantum:
+Rally Software Development Corp.
+Ticker Symbol: RALY*     CUSIP: 751198102     Exchange: NYSE
+* NOTE: This security is no longer trading as of 7/08/15
+acquis:  $19.50 per share. 
+
+Company's Online Profile
+BUSINESS:  Rally Software Development Corp. is a leading global provider of cloud-based solutions for managing Agile software development. Rally's platform transforms the way organizations manage the software development lifecycle by enabling close alignment of software development and strategic business objectives, facilitating collaboration, increasing transparency, and automating manual processes. Organizations use its solutions to accelerate the pace of innovation, improve productivity and more effectively adapt to rapidly-changing customer needs and competitive dynamics.
+Notes:  July 9, 2015 -- CA Technologies (CA) announced that it has completed the acquisition of Rally Software Development Corp. on July 8th. The two companies entered into a definitive agreement in late May this year, under which CA Technologies agreed to buy Rally Software in an all cash deal worth approximately $480 million or $19.50 per share.
+
+
+oursite:
+Symbol: RALY	Name: Rally Software Development Corp	Price: $19.49
+Volume:	Sector: Information Technology	Change:
+Short Volume: 120,235	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 120,235	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $10.91	Year High: $19.81	High:
+200 Day Ave: $13.08	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=RALY
+
+check MAdmin
+Stock:Rally Software Development Corp  Symbol:RALY
+Date: 09/15/2015
+
+4 users found
+
+1	cheil36	chilfinance	rick007	rishb1993	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'RALY';  
+> Row 1:
+>   STOCKKEY = X'bab12715516e0d81c0a80146'
+select * from mstockalias where stockkey=X'bab12715516e0d81c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751198102
+>           DATE = TIMESTAMP '2013-04-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rally Software Development Corp
+>     PRIMARYKEY = X'bab22715516e0d81c0a80146'
+>       STOCKKEY = X'bab12715516e0d81c0a80146'
+>         SYMBOL = RALY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RALY'  order by BB_EFFECTIVE;
+> Row 16:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|RALY|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109357247
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 15542762
+>        BB_COMPANYNAME = Rally Software Development Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-08 00:00:00.000000'
+>         BB_IDENTIFIER = RALY    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RALY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-08 00:00:00.000000'
+>            PRIMARYKEY = X'b8f01bc055bd4800c0a86f92'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RALY
+>>>> dbtool started at 2015-09-15 13:42:30 -0400
+stock: RALY
+  PK       : [BAB12715516E0D81C0A80146]
+  companyID: [24046]
+  symbol   : [RALY]
+  name     : [Rally Software Development Corp]
+  date     : [2013-04-12 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-15 13:42:30 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 24046
+2015-06-25 (Thu) [5288]: O:19.4600 H:19.4700 L:19.4500 C:19.4500 V:246384 TSO:0 A:19.4500 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:19.4500 H:19.4600 L:19.4400 C:19.4500 V:271926 TSO:0 A:19.4500 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:19.4300 H:19.4700 L:19.4300 C:19.4400 V:316748 TSO:0 A:19.4400 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:19.4600 H:19.4700 L:19.4500 C:19.4500 V:221476 TSO:0 A:19.4500 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:19.4700 H:19.4700 L:19.4500 C:19.4600 V:201088 TSO:0 A:19.4600 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:19.4700 H:19.4700 L:19.4600 C:19.4700 V:134745 TSO:0 A:19.4700 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:19.4600 H:19.4900 L:19.4600 C:19.4800 V:177036 TSO:0 A:19.4800 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000  <---
+2015-07-08 (Wed) [5301]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'bab12715516e0d81c0a80146' and shares > 0 order by closed; 
+> Row 82:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-05-29 09:30:41.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.750000
+>   CURRENTORDER = X'cb5a3d3a556803afc0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'a0cd44a154bff1e5c0a86f98'
+>       MODIFIED = NULL
+>            NET = 10034.878000
+>         OPENED = TIMESTAMP '2015-05-29 02:14:07.000000'
+>          PRICE = 19.485200
+>     PRIMARYKEY = X'cb583d3a556803afc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 515.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'bab12715516e0d81c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+
+select fundkey from mposition where stockkey=X'bab12715516e0d81c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'bab12715516e0d81c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'bab12715516e0d81c0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist: 2015-07-08  
+there are 4 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 7/08/15   $19.50 per share. 
+last ticket:  2015-05-29  PRICE = 19.485200
+last price:  2015-07-07 (Tue) [5300]: O:19.4900 H:19.5100 L:19.4700 C:19.4900 V:307089 TSO:0 A:19.4900 R:1.0000 CA:0.0000  <---
+
+going with 20150707 19.50
+
+/Marketocracy/bin/cahelper -symbol  RALY  -effective 20150707 -type ACQUIS -exchange UN -acqType 1 -acqCash 19.50 -acqShare 0 -purchaser RALY   >& /Users/build/caout/RALY.20150915-ACQUIS.out 
+RALY.20150915-ACQUIS.out
+stocks2:~/caout build$ tail -f RALY.20150915-ACQUIS.out
+D: (09-15 13:46:30.901) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-15 13:46:55.676) cahelper started on 2015-09-15 13:46:55 -0400
+
+D: (09-15 13:46:55.962) There are [0] open tickets for RALY on 20150707
+D: (09-15 13:46:56.362) StockFileLoad Version:4.0
+D: (09-15 13:46:56.363) Loading Stock Data
+D: (09-15 13:47:35.995) Building Lookup Index
+D: (09-15 13:47:41.206) Finished Building Index
+D: (09-15 13:47:44.983) Finished Loading Stock Data
+D: (09-15 13:47:45.105) Connection to 192.168.111.157:6666 succeeded
+D: (09-15 13:47:45.232) {
+    "ACQUIRED_STOCK" = RALY; 
+    "ACQUIRING_STOCK" = "RALY_FIX"; 
+    AMOUNT = 19.5; 
+    APPLIED = 1; 
+    DATE = 20150707; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RALY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-15 13:47:45.836) SUCCESS
+D: (09-15 13:47:45.836) cahelper finished 2015-09-15 13:47:45 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'bab12715516e0d81c0a80146'  order by "date";
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751198102
+>           DATE = TIMESTAMP '2013-04-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rally Software Development Corp
+>     PRIMARYKEY = X'bab22715516e0d81c0a80146'
+>       STOCKKEY = X'bab12715516e0d81c0a80146'
+>         SYMBOL = RALY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 751198102
+>           DATE = TIMESTAMP '2015-07-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Rally Software Development Corp
+>     PRIMARYKEY = X'dfff22e655f8598fc0a86fab'
+>       STOCKKEY = X'bab12715516e0d81c0a80146'
+>         SYMBOL = RALY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey =X'dfff22e655f8598fc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'dfff22e655f8598fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RALY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|19.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150915:014655
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-07 00:00:00.000000'
+>         BB_IDENTIFIER = RALY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RALY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-07 00:00:00.000000'
+>            PRIMARYKEY = X'dff922e655f8598fc0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'dff922e655f8598fc0a86fab';
+> Row 1:
+>   _C001 = 5.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'dff922e655f8598fc0a86fab'));
+there are 5 fundkeys, save to CA issues RALY fundkeys.txt
+
+For Beta case
+RALY no longer trades but is still active on our site - need to delist 
+
+check on 9/16/15   invalidate funds
+check MAdmin
+
+our member cheil36  only had one share 
+
+check on 9/16/15 for the delist / acquis 
+

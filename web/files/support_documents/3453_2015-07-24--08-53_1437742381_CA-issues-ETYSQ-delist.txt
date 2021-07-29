@@ -1,0 +1,309 @@
+date:    7/23/15 
+ticker:   ETYSQ
+
+yahoo: nothing
+
+quantum:  nothing
+
+oursite:
+Symbol: ETYSQ 	Name: ETOYS INC 	Price: $0.00
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for ETYSQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+12 Mar 01 	ETYS 	ETYSQ 	Change in the ticker (trading) symbol from ETYS to ETYSQ
+  	  	 
+left curve 	  listing changes for ETYSQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Mar 12, 2001 	NASDAQ 	UQ 	OTCBB 	UU 	Change in the exchange that ETYSQ trades on from NASDAQ to OTCBB
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:ETOYS INC  Symbol:ETYSQ
+Date: 07/23/2015
+
+138 users found
+
+1	acdc1	ack2k	adingo8mybaby	afurman	ajones	andykurk	argentlupe	arubenstein	avelasco1	bbeamish
+2	bcork	bgallagher	bhatia51	bkiker	bkscolt	blackhole	blovitt	bludgeon9	cdgilm	cfarrar
+3	cfo	chayes	cheath	chen5000	cottsd	cstephens	cweidner	cwilliams2	dbarnes	dbrashears
+4	dchambers	dcoats	dcrosby	dirkdiggler	djrobbins	dopii	dprevost	dprevost1	dwickert	eddymontgomery
+5	epanton	eurokiwi	fng	fsingletary	gbennethum	gdiaz	greenrvr	gsteyn	guentert	gware
+6	gwaterman	gwood1	h22k	hougan	jabrams	jamezd	jdeans	jesymons	jimmy4	jla_rocca1
+7	jmorris	jnyberg	jonathanyun	jpfarm	jrussell	jsherman	jtcnwhn	jwalmsley	jwinske	jyfpb
+8	kackerman	kdavis	kgururajan	khite	kiddragon	klam	kmagouirk	kmartin	krogers160	lcoontz
+9	ldresser	leehower	luzkannon	mandes	marquislawn	mbrletich	mdw	mfarrar	mkjensen	mlogan
+10	mmarino	mmichael	mpopal	mrgrita64	mwetzel	ngoel	njelms	nlilg	ntreu	ooliver
+11	paulp	perhl	pgarcy	pkouracles	pmcelhi427	pprata	rallen0759	rcanns	rcyron	rgarces
+12	rholbrook	rhughes	rstach	rtabib	russhorton	sboysen	sclark	seichel	shoebster	skolcow
+13	smorgan	sokolovm	stiennon	t-chan	tdzsdz	thoge	thyland	tkeyser	tomern	trburke
+14	tteaster	upopat	vicj	visionsaul	vmccrudden	vschurtz	wally_com	wwade
+database
+select distinct stockkey from mstockalias where symbol= 'ETYSQ';  
+> Row 1:
+>   STOCKKEY = X'836310ac390c6d5ac0a8015c'
+
+select * from mstockalias where stockkey=X'836310ac390c6d5ac0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 297862104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'836410ac390c6d5ac0a8015c'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2001-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'd52764d03ad3db00c0a80117'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYSQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 297862104
+>           DATE = TIMESTAMP '2001-03-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'e483669e3ad3de3fc0a80117'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYSQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ETYSQ'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ETYSQ
+>>>> dbtool started at 2015-07-23 20:06:59 -0400
+stock: ETYSQ
+  PK       : [836310AC390C6D5AC0A8015C]
+  companyID: [8555]
+  symbol   : [ETYSQ]
+  name     : [ETOYS INC]
+  date     : [2001-03-12 00:00:00]
+  status   : [Active]
+stock: ETYSQ
+  PK       : [836310AC390C6D5AC0A8015C]
+  companyID: [8555]
+  symbol   : [ETYSQ]
+  name     : [ETOYS INC]
+  date     : [2001-03-12 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-23 20:06:59 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8555
+2001-03-04 (Sun) [62]: <WEEKEND>
+2001-03-05 (Mon) [63]: O:0.0937 H:0.0937 L:0.0937 C:0.0937 V:0 TSO:0 A:0.0937 R:1.0000 CA:0.0000
+2001-03-06 (Tue) [64]: O:0.0937 H:0.0937 L:0.0937 C:0.0937 V:0 TSO:0 A:0.0937 R:1.0000 CA:0.0000
+2001-03-07 (Wed) [65]: O:0.0937 H:0.0937 L:0.0937 C:0.0937 V:0 TSO:0 A:0.0937 R:1.0000 CA:0.0000
+2001-03-08 (Thu) [66]: O:0.0156 H:0.3125 L:0.0156 C:0.0156 V:8121400 TSO:0 A:0.0156 R:1.0000 CA:0.0000
+2001-03-09 (Fri) [67]: O:0.0156 H:0.3125 L:0.0156 C:0.0156 V:0 TSO:0 A:0.0156 R:1.0000 CA:0.0000
+2001-03-10 (Sat) [68]: <WEEKEND>
+2001-03-11 (Sun) [69]: <WEEKEND>
+
+then
+2004-02-05 (Thu) [1130]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2004-02-06 (Fri) [1131]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2004-02-07 (Sat) [1132]: <WEEKEND>
+2004-02-08 (Sun) [1133]: <WEEKEND>
+2004-02-09 (Mon) [1134]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2004-02-10 (Tue) [1135]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'836310ac390c6d5ac0a8015c' and shares > 0 order by closed; 
+> Row 487:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-12-02 14:40:11.000000'
+>        COMMENT = 
+>     COMMISSION = 5.599900
+>   CURRENTORDER = X'99c708663dea4409c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3fc426f8397a326dc0a801e0'
+>       MODIFIED = NULL
+>            NET = 106.398100
+>         OPENED = TIMESTAMP '2002-12-01 12:16:57.000000'
+>          PRICE = 0.014819
+>     PRIMARYKEY = X'99c608663dea4409c0a80132'
+>         SECFEE = 0.010000
+>         SHARES = 7180.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'836310ac390c6d5ac0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'836310ac390c6d5ac0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'836310ac390c6d5ac0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 138 members who hold this stock
+quantum: nothing 
+last ticket: 2002-12-02   PRICE = 0.014819
+last price:  2004-02-10 (Tue) [1135]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+
+
+going with  20040210 0.0001
+
+
+/Marketocracy/bin/cahelper -symbol  ETYSQ  -effective 20040210 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0001 -acqShare 0 -purchaser ETYSQ   >& /Users/build/caout/ETYSQ.20150723-DELIST.out 
+ETYSQ.20150723-DELIST.out
+stocks:~/caout build$ tail -f ETYSQ.20150723-DELIST.out
+D: (07-23 20:12:00.373) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-23 20:12:24.895) cahelper started on 2015-07-23 20:12:24 -0400
+
+D: (07-23 20:12:25.223) There are [0] open tickets for ETYSQ on 20040210
+D: (07-23 20:12:25.474) StockFileLoad Version:4.0
+D: (07-23 20:12:25.474) Loading Stock Data
+D: (07-23 20:13:04.021) Building Lookup Index
+D: (07-23 20:13:09.078) Finished Building Index
+D: (07-23 20:13:12.769) Finished Loading Stock Data
+D: (07-23 20:13:12.891) Connection to 192.168.111.172:6666 succeeded
+D: (07-23 20:13:16.320) SavingChanges for position sell out 101 of 325
+D: (07-23 20:13:24.948) {
+    "ACQUIRED_STOCK" = ETYSQ; 
+    "ACQUIRING_STOCK" = "ETYSQ_FIX"; 
+    AMOUNT = 0.0001; 
+    APPLIED = 1; 
+    DATE = 20040210; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ETYSQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-23 20:13:30.247) SUCCESS
+D: (07-23 20:13:30.247) cahelper finished 2015-07-23 20:13:30 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'836310ac390c6d5ac0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 297862104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'836410ac390c6d5ac0a8015c'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2001-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'd52764d03ad3db00c0a80117'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYSQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 297862104
+>           DATE = TIMESTAMP '2001-03-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'e483669e3ad3de3fc0a80117'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYSQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 297862104
+>           DATE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ETOYS INC
+>     PRIMARYKEY = X'd3f834a455b182e9c0a86f92'
+>       STOCKKEY = X'836310ac390c6d5ac0a8015c'
+>         SYMBOL = ETYSQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'd3f834a455b182e9c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'd3f834a455b182e9c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ETYSQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150723:081224
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-02-10 00:00:00.000000'
+>         BB_IDENTIFIER = ETYSQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ETYSQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-02-10 00:00:00.000000'
+>            PRIMARYKEY = X'd3f234a455b182e8c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'd3f234a455b182e8c0a86f92';
+199 
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'd3f234a455b182e8c0a86f92'));
+there are 199 fundkeys, save to CA issues ETYSQ fundkeys.txt
+
+For Beta case
+ETYSQ no longer trades but is still active on our site - need to delist 
+
+check on 7/24/15   invalidate funds
+check MAdmin  clear 
+
+7/24/15 
+ETYSQ has been acquired 	right curve
+  	  	
+ETOYS INC acquired by a private company on 2004-02-10 00:00:00.
+  	  	 
+invalidate 
+reprice   
+
+closing this out 

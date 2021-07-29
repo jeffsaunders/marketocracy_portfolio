@@ -1,0 +1,729 @@
+ICE - split and DVD_STOCK applied
+CA issues ICE double CA - split and DVD stock.txt
+> Row 1:
+>    LOGINNAME = 2004_porsche_911
+>       SYMBOL = BETAS
+>   PRIMARYKEY = X'a2174c2956ce6bd3c0a86fa6'
+
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+ICE	$57.02	-328	-$18,702.56	$20,452.19	-0.56%	93.60%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Oct 20, 2016		82	82	Buy
+Nov 03, 2016	82	328	410	Corporate Action
+Nov 04, 2016	410	328	738	Corporate Action
+Jan 09, 2017	738	-1066	-328	Sell  <- only has 738
+Total: -328
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 20, 2016	82	$4.10	$21,851.36	$266.48
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jan 9, 2017	1,066	$53.30	$1.07	$61,006.11	$57.23
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+Hexkey: B05700FA587187BAC0A86FA6
+ set commit false;
+update mticket set shares=738 where primarykey=X'B05700FA587187BAC0A86FA6';
+update mtrade set shares=738 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set shares=738 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set sharesfilled=738 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update mticketallocation set shares=738 where ticketkey=X'B05700FA587187BAC0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'B05700FA587187BAC0A86FA6';
+select * from morder where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mtrade where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  B05700FA587187BAC0A86FA6
+
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+/Marketocracy/bin/fptool invalidateFund FUNDKEY	 	
+Effective Date	Description
+Nov 04, 2016	Split terms:5 for 1
+Nov 04, 2016	ICE declared a dividend of 400 percent in stock ICE.
+
+what's going on here
+
+select distinct stockkey from mstockalias where symbol='ICE'; 
+> Row 1:
+>   STOCKKEY = X'979b484b437bf2e3c0a80146'
+select * from mstockalias where stockkey=X'979b484b437bf2e3c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45865V100
+>           DATE = TIMESTAMP '2005-11-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IntercontinentalExchange Inc
+>     PRIMARYKEY = X'979c484b437bf2e3c0a80146'
+>       STOCKKEY = X'979b484b437bf2e3c0a80146'
+>         SYMBOL = ICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = LG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45865V100
+>           DATE = TIMESTAMP '2013-11-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IntercontinentalExchange Group
+>     PRIMARYKEY = X'dea567a1527984fcc0a80146'
+>       STOCKKEY = X'979b484b437bf2e3c0a80146'
+>         SYMBOL = ICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = LG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45865V100
+>           DATE = TIMESTAMP '2013-11-05 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IntercontinentalExchange Group
+>     PRIMARYKEY = X'd7e267a552798514c0a80146'
+>       STOCKKEY = X'979b484b437bf2e3c0a80146'
+>         SYMBOL = ICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = LG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45865V100
+>           DATE = TIMESTAMP '2014-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Intercontinental Exchange Inc
+>     PRIMARYKEY = X'c7f67276538d0096c0a86f92'
+>       STOCKKEY = X'979b484b437bf2e3c0a80146'
+>         SYMBOL = ICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40201040
+>       STYLEKEY = LG
+select * from mcorporateaction where aliaskey=X'c7f67276538d0096c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|IntercontinentalExchange Group|CP_NEW_NAME|Intercontinental Exchange Inc|CP_NOTES|Old Name: IntercontinentalExchange Group Inc
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91137937
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'1fbc6f69538cff13c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140616|CP_PAY_DT|20140630|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.65|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996549|CP_ADJ_DT|20140612|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90994225
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-12 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'9f8a3316539a2f9cc0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140916|CP_PAY_DT|20140930|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.65|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996585|CP_ADJ_DT|20140912|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 94704228
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-09-12 00:00:00.000000'
+>            PRIMARYKEY = X'8855211854137a17c0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141216|CP_PAY_DT|20141231|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.65|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.997117|CP_ADJ_DT|20141212|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98310897
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-12 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-12 00:00:00.000000'
+>            PRIMARYKEY = X'10ba681b548b8192c0a86f92'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150317|CP_PAY_DT|20150331|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.65|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.997183|CP_ADJ_DT|20150313|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102324890
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-13 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-13 00:00:00.000000'
+>            PRIMARYKEY = X'04c9469055036b47c0a86f92'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150616|CP_PAY_DT|20150630|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.75|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996901|CP_ADJ_DT|20150612|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106455593
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-12 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'044512f2557b6333c0a86f92'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150916|CP_PAY_DT|20150930|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.75|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996825|CP_ADJ_DT|20150914|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110760953
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-14 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-14 00:00:00.000000'
+>            PRIMARYKEY = X'ec9a057455f7fd6fc0a86fab'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20151216|CP_PAY_DT|20151231|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.75|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996926|CP_ADJ_DT|20151214|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 114743256
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-28 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'57dc584f566f58b5c0a86fab'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20160316|CP_PAY_DT|20160331|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.85|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996398|CP_ADJ_DT|20160314|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 120149916
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-03-14 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2016-02-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2016-03-14 00:00:00.000000'
+>            PRIMARYKEY = X'f56e0e6e56e74405c0a86fab'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20160616|CP_PAY_DT|20160630|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.85|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996738|CP_ADJ_DT|20160614|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 125104746
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-06-14 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2016-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2016-06-14 00:00:00.000000'
+>            PRIMARYKEY = X'32ed2eaf57608e3ec0a86fab'
+>               VERSION = NULL
+> Row 11:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20160916|CP_PAY_DT|20160930|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.85|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20160914|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 129902832
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7004138
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-09-14 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     US Equity
+>             BB_ISSUED = TIMESTAMP '2016-08-03 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2016-08-03 00:00:00.000000'
+>            PRIMARYKEY = X'b26a6b8557a27aa4c0a86fab'
+>               VERSION = NULL
+> Row 12:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_AMT|400|CP_TKR|ICE|CP_RECORD_DT|20161027|CP_PAY_DT|20161103|CP_FREQ| |CP_ADJ|4|CP_ADJ_DATE||CP_TAX_AMT|N.A.|CP_DVD_CRNCY||CP_DVD_TYP|0|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = EDI1030959_DIV20161103
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ICE US Equity
+>             BB_ISSUED = TIMESTAMP '2016-08-06 00:00:00.000000'
+>          BB_NUMFIELDS = 11
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2016-10-13 00:00:00.000000'
+>            PRIMARYKEY = X'63e04e1f580039b2c0a86fab'
+>               VERSION = NULL
+> Row 13:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|5 for 1|CP_RATIO|5.000000|CP_RECORD_DT|20161104|CP_PAY_DT|20161104|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20161106:073110
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     UN Equity
+>             BB_ISSUED = TIMESTAMP '2016-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2016-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'7b4a68e5581f228ec0a86fab'
+>               VERSION = NULL
+> Row 14:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20161215|CP_PAY_DT|20161230|CP_GROSS_AMT|0.17000|CP_NET_AMT|0.00000|CP_FREQ| |CP_TAX_AMT|N.A.|CP_DVD_CRNCY|USD|CP_DVD_TYP|0|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = EDI969552_DIV20161230
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Intercontinental Exchange Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = ICE US Equity
+>             BB_ISSUED = TIMESTAMP '2016-02-04 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2016-12-12 00:00:00.000000'
+>            PRIMARYKEY = X'd2696695584f61b0c0a86fab'
+>               VERSION = NULL
+
+we have a split and dvd stock
+ugh
+before we back this out, let's make sure that there are no pre-existing shorts
+select mm.loginname, mf.symbol, mf.primarykey from mmanager mm, mfund mf, mportfolio mp where mm.primarykey = mp.managerkey and mp.primarykey = mf.portfoliokey and mf.primarykey in (select  distinct primarykey from mfund where  primarykey in (select fundkey from mposition where totalshares < 0) and active=1 and KINDKEY = X'70443ca1391e026fc0a8015c') order by mm.previouslogin;
+one short take care of it
+
+we have a split and dvd stock
+ugh
+
+> Row 13:
+>              ALIASKEY = X'c7f67276538d0096c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|5 for 1|CP_RATIO|5.000000|CP_RECORD_DT|20161104|CP_PAY_DT|20161104|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20161106:073110
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = ICE     UN Equity
+>             BB_ISSUED = TIMESTAMP '2016-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ICE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2016-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'7b4a68e5581f228ec0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'7b4a68e5581f228ec0a86fab';
+	> Row 1:
+>   _C001 = 1238.000000
+
+select primarykey from mticket where sourcekey=X'7b4a68e5581f228ec0a86fab';
+save to CA issues ICE ticketkeys stock split.out 
+
+let's get the fundkeys 
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'7b4a68e5581f228ec0a86fab'));
+there are 619 fundkeys, save to CA issues ICE fundkeys.txt
+
+ready to back this out 
+update mcorporateaction set BB_ACTIONID = '20161106:073110:MARTY' where PRIMARYKEY = X'7b4a68e5581f228ec0a86fab';
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20161106:073110:MARTY
+
+delete from mcorporateaction where PRIMARYKEY = X'7b4a68e5581f228ec0a86fab';
+	no data - let's invalidate 
+
+log back in as 2004_porsche_911
+trades	right curve
+ 	 	
+Here is the share activity on this position, followed by a list of the individual trades for this position.
+You can click on a date from the list of individual trades to see the details of that trade.
+
+ 	 	
+LEDGER
+Date	Start	Change	End	Type
+Oct 20, 2016		82	82	Buy
+Nov 03, 2016	82	328	410	Corporate Action
+Jan 09, 2017	410	-738	-328	Sell
+Total: -328
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 20, 2016	82	$4.10	$21,851.36	$266.48
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jan 9, 2017	738	$36.90	$0.74	$42,235.00	$57.23
+Hexkey: B05700FA587187BAC0A86FA6
+set commit false;
+update mticket set shares=410 where primarykey=X'B05700FA587187BAC0A86FA6';
+update mtrade set shares=410 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set shares=410 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set sharesfilled=410 where ticketkey=X'B05700FA587187BAC0A86FA6';
+update mticketallocation set shares=410 where ticketkey=X'B05700FA587187BAC0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'B05700FA587187BAC0A86FA6';
+select * from morder where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mtrade where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  B05700FA587187BAC0A86FA6
+
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+/Marketocracy/bin/fptool invalidateFund FUNDKEY
+
+
+anyone else go short? 
+> Row 1:
+>    LOGINNAME = robertson206
+>       SYMBOL = AGE
+>   PRIMARYKEY = X'552d3e9950d11febc0a80134'
+	
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+ICE	$57.02	-280	-$15,965.60	$7,732.52	-0.56%	37.98%	Details 
+trades	right curve
+ 	 	
+Here is the share activity on this position, followed by a list of the individual trades for this position.
+You can click on a date from the list of individual trades to see the details of that trade.
+
+ 	 	
+LEDGER
+Date	Start	Change	End	Type
+Nov 18, 2013		100	100	Buy
+Nov 25, 2013	100	-30	70	Sell
+Nov 03, 2016	70	280	350	Corporate Action
+Nov 21, 2016	350	-630	-280	Sell    630 /5 = 126
+Total: -280
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Nov 18, 2013	100	$5.00	$20,361.00	$203.61
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 25, 2013	30	$1.50	$0.12	$6,524.58	$217.49
+Nov 21, 2016	630	$31.50	$0.61	$34,489.54	$54.75
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Nov 04, 2016	ICE declared a dividend of 400 percent in stock ICE.
+Hexkey: E96500FA58333520C0A86FA6
+
+set commit false;
+update mticket set shares=126 where primarykey=X'E96500FA58333520C0A86FA6';
+update mtrade set shares=126 where ticketkey=X'E96500FA58333520C0A86FA6';
+update morder set shares=126 where ticketkey=X'E96500FA58333520C0A86FA6';
+update morder set sharesfilled=126 where ticketkey=X'E96500FA58333520C0A86FA6';
+update mticketallocation set shares=126 where ticketkey=X'E96500FA58333520C0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'E96500FA58333520C0A86FA6';
+select * from morder where ticketkey=X'E96500FA58333520C0A86FA6';
+select * from mtrade where ticketkey=X'E96500FA58333520C0A86FA6';
+select * from mticketallocation where ticketkey=X'E96500FA58333520C0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  E96500FA58333520C0A86FA6
+
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'E96500FA58333520C0A86FA6';
+/Marketocracy/bin/fptool invalidateFund FUNDKEY
+
+> Row 2:
+>    LOGINNAME = 2004_porsche_911
+>       SYMBOL = BDEBT
+>   PRIMARYKEY = X'ea99630b565f5572c0a86fa6'
+	
+Symbol	Price	Shares	Value	Gains	Today	Inception Return	 	 
+ICE	$57.02	-756	-$43,107.12	$12,149.64	-0.56%	27.90%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Mar 10, 2016		189	189	Buy
+Nov 03, 2016	189	756	945	Corporate Action
+Dec 02, 2016	945	-1531	-586	Sell
+Dec 12, 2016	-586	-170	-756	Sell
+Total: -756
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Mar 10, 2016	189	$3.78	$43,553.42	$230.44
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 2, 2016	1,531	$76.55	$1.51	$86,270.34	$56.35
+Dec 12, 2016	170	$8.50	$0.18	$10,130.12	$59.59
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Nov 04, 2016	ICE declared a dividend of 400 percent in stock ICE.
+
+1531/5 = 306 
+945-306  = 639   change 1531 to 306
+change 170 to 34
+
+change 1531 to 306
+Hexkey: B8180101584113AEC0A86FA6
+set commit false;
+update mticket set shares=306 where primarykey=X'B8180101584113AEC0A86FA6';
+update mtrade set shares=306 where ticketkey=X'B8180101584113AEC0A86FA6';
+update morder set shares=306 where ticketkey=X'B8180101584113AEC0A86FA6';
+update morder set sharesfilled=306 where ticketkey=X'B8180101584113AEC0A86FA6';
+update mticketallocation set shares=306 where ticketkey=X'B8180101584113AEC0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'B8180101584113AEC0A86FA6';
+select * from morder where ticketkey=X'B8180101584113AEC0A86FA6';
+select * from mtrade where ticketkey=X'B8180101584113AEC0A86FA6';
+select * from mticketallocation where ticketkey=X'B8180101584113AEC0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  B8180101584113AEC0A86FA6
+	done 
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'B8180101584113AEC0A86FA6';
+> Row 1:
+>   FUNDKEY = X'ea99630b565f5572c0a86fa6'
+/Marketocracy/bin/fptool invalidateFund ea99630b565f5572c0a86fa6
+
+change 170 to 34
+Hexkey: DA4100FA584CF3C9C0A86FA6
+set commit false;
+update mticket set shares=34 where primarykey=X'DA4100FA584CF3C9C0A86FA6';
+update mtrade set shares=34 where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+update morder set shares=34 where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+update morder set sharesfilled=34 where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+update mticketallocation set shares=34 where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'DA4100FA584CF3C9C0A86FA6';
+select * from morder where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+select * from mtrade where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+select * from mticketallocation where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  DA4100FA584CF3C9C0A86FA6
+	done 
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'DA4100FA584CF3C9C0A86FA6';
+/Marketocracy/bin/fptool invalidateFund ea99630b565f5572c0a86fa6
+
+> Row 3:
+>    LOGINNAME = 2004_porsche_911
+>       SYMBOL = BETAS
+>   PRIMARYKEY = X'a2174c2956ce6bd3c0a86fa6'
+Hexkey: B05700FA587187BAC0A86FA6
+set commit false;
+update mticket set shares=SHARES where primarykey=X'B05700FA587187BAC0A86FA6';
+update mtrade set shares=SHARES where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set shares=SHARES where ticketkey=X'B05700FA587187BAC0A86FA6';
+update morder set sharesfilled=SHARES where ticketkey=X'B05700FA587187BAC0A86FA6';
+update mticketallocation set shares=SHARES where ticketkey=X'B05700FA587187BAC0A86FA6';
+commit;
+set commit true;
+
+check results
+
+select * from mticket where primarykey=X'B05700FA587187BAC0A86FA6';
+select * from morder where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mtrade where ticketkey=X'B05700FA587187BAC0A86FA6';
+select * from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  B05700FA587187BAC0A86FA6
+
+invalidate the fund 
+select fundkey from mticketallocation where ticketkey=X'B05700FA587187BAC0A86FA6';
+> Row 1:
+>   FUNDKEY = X'a2174c2956ce6bd3c0a86fa6'
+marketocracy@db1#65>
+
+/Marketocracy/bin/fptool invalidateFund a2174c2956ce6bd3c0a86fa6
+
+
+1/10/16 
+Symbol: ICE	Name: Intercontinental Exchange Inc	Price: $56.97
+Volume: 610,717	Sector: Financials	Change: -$0.05
+Short Volume: 999,999	Style: Large Cap : Growth	Market Cap:
+Avg Volume: 2,621,672	 Exchange: NYSE	Today: -0.09%
+50 Day Ave: $80.73	Year High: $287.02	High: $57.16
+200 Day Ave: $216.98	Year Low: $0.00	Low: $56.68
+
+research  stock info  ICE   
+ [NEW QUOTE]       
+Corporate Actions for Intercontinental Exchange Inc	  January 10, 2017
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  CUSIP changes for ICE	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+05 Nov 13	45865V100	45866F104	Change in any of identification numbers (CUSIP) of a security from 45865V100 to 45866F104
+ 	 	 
+left curve	  name changes for ICE	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+05 Nov 13	IntercontinentalExchange Inc	IntercontinentalExchange Group	Change in the name of issuer from IntercontinentalExchange Inc to IntercontinentalExchange Group
+02 Jun 14	IntercontinentalExchange Group	Intercontinental Exchange Inc	Change in the name of issuer from IntercontinentalExchange Group to Intercontinental Exchange Inc
+ 	 	 
+left curve	  cash dividends paid by ICE	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+12 Dec 13	16 Dec 13	31 Dec 13	4	$0.65	Dividend amount:0.65 per share.
+13 Mar 14	17 Mar 14	31 Mar 14	4	$0.65	Dividend amount:0.65 per share.
+12 Jun 14	16 Jun 14	30 Jun 14	4	$0.65	Dividend amount:0.65 per share.
+12 Sep 14	16 Sep 14	30 Sep 14	4	$0.65	Dividend amount:0.65 per share.
+12 Dec 14	16 Dec 14	31 Dec 14	4	$0.65	Dividend amount:0.65 per share.
+13 Mar 15	17 Mar 15	31 Mar 15	4	$0.65	Dividend amount:0.65 per share.
+12 Jun 15	16 Jun 15	30 Jun 15	4	$0.75	Dividend amount:0.75 per share.
+14 Sep 15	16 Sep 15	30 Sep 15	4	$0.75	Dividend amount:0.75 per share.
+14 Dec 15	16 Dec 15	31 Dec 15	4	$0.75	Dividend amount:0.75 per share.
+14 Mar 16	16 Mar 16	31 Mar 16	4	$0.85	Dividend amount:0.85 per share.
+14 Jun 16	16 Jun 16	30 Jun 16	4	$0.85	Dividend amount:0.85 per share.
+14 Sep 16	16 Sep 16	30 Sep 16	4	$0.85	Dividend amount:0.85 per share.
+13 Dec 16	15 Dec 16	30 Dec 16	N/A	$0.17	Dividend amount:0.17 per share.
+ 	 	 
+left curve	  stock dividends paid by ICE	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Percent	Symbol	Description
+04 Nov 16	27 Oct 16	03 Nov 16	400	ICE	ICE declared a dividend of 400 percent in stock ICE.
+

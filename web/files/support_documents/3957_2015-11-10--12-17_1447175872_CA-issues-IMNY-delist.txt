@@ -1,0 +1,332 @@
+IMNY
+date:    11/9/15
+ticker:   IMNY
+
+yahoo: nothing 
+
+quantum:
+I-many, Inc.
+Ticker Symbol: IMNY*     CUSIP: 44973Q103     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 6/26/09
+
+Company's Online Profile
+BUSINESS:  I-many, Inc. provides software and Internet-based solutions and related professional services that allow their clients to negotiate and manage complex contract purchasing arrangements which facilitate business-to-business e-commerce.
+Notes:  Cash merger at $0.61 per share per the Other OTC on 6/26/2009.
+IPO - 7/13/2000 - 7.50 Million Shares @ $9.00/share.    Link to IPO Prospectus
+Micro Cap Stock -   Market Value $ 38.1 Million
+
+oursite:
+Symbol: IMNY	Name: I-MANY INC	Price: $0.61
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  IMNY   
+ [NEW QUOTE]       
+Corporate Actions for I-MANY INC	  November 09, 2015
+left curve	  listing changes for IMNY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 25, 2008	NASDAQ	UQ	NASDAQ-SMALLCAP	UR	Change in the exchange that IMNY trades on from NASDAQ to NASDAQ-SMALLCAP
+May 29, 2009	NASDAQ-SMALLCAP	UR	OTCBB-OTHER	UV	Change in the exchange that IMNY trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=IMNY
+
+check MAdmin
+Stock:I-MANY INC  Symbol:IMNY
+Date: 11/09/2015
+
+42 users found
+
+1	adrianf	aperdana	authurtorian	bill.d.kid	bmetivier	bower	cstelmachowski	dhess	dprevost	easylivin
+2	ehickey	elmocorp	golin	hope	hw245	jgaffin1	jleeper	jmfunes	jnorton1	john97
+3	jwachtman	kkiarash	kkonda	ktam	lewtn	liemandt	mcleaver	mfulton	michaelnash	noodlepuck
+4	pamplona	perdana	phoward	rhamaoui	rishabhat	sigj	sjackson2	sloot	smellsmells	soir1111
+5	tschones	yvas	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'IMNY';  
+> Row 1:
+>   STOCKKEY = X'7f98402939753f12c0a80114'
+select * from mstockalias where stockkey=X'7f98402939753f12c0a80114'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2000-07-13 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'7f99402939753f12c0a80114'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2008-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'5c8d40a148b36444c0a80146'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2009-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'4b203d954a2093c4c0a80146'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='IMNY'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock IMNY
+>>>> dbtool started at 2015-11-09 10:16:02 -0500
+stock: IMNY
+  PK       : [7F98402939753F12C0A80114]
+  companyID: [10692]
+  symbol   : [IMNY]
+  name     : [I-MANY INC]
+  date     : [2000-07-13 15:00:00]
+  status   : [Active]
+stock: IMNY
+  PK       : [7F98402939753F12C0A80114]
+  companyID: [10692]
+  symbol   : [IMNY]
+  name     : [I-MANY INC]
+  date     : [2008-08-25 00:00:00]
+  status   : [Active]
+stock: IMNY
+  PK       : [7F98402939753F12C0A80114]
+  companyID: [10692]
+  symbol   : [IMNY]
+  name     : [I-MANY INC]
+  date     : [2009-05-29 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-09 10:16:02 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 10692
+2009-06-14 (Sun) [3086]: <WEEKEND>
+2009-06-15 (Mon) [3087]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:14334 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-16 (Tue) [3088]: O:0.6100 H:0.6200 L:0.6100 C:0.6100 V:156796 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-17 (Wed) [3089]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:12161 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-18 (Thu) [3090]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:56048 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-19 (Fri) [3091]: O:0.6200 H:0.6300 L:0.6000 C:0.6000 V:584800 TSO:53829 A:0.6000 R:1.0000 CA:0.0000
+2009-06-20 (Sat) [3092]: <WEEKEND>
+2009-06-21 (Sun) [3093]: <WEEKEND>
+2009-06-22 (Mon) [3094]: O:0.6000 H:0.6100 L:0.6000 C:0.6000 V:143954 TSO:53829 A:0.6000 R:1.0000 CA:0.0000
+2009-06-23 (Tue) [3095]: O:0.6000 H:0.6150 L:0.6000 C:0.6000 V:45156 TSO:53829 A:0.6000 R:1.0000 CA:0.0000
+2009-06-24 (Wed) [3096]: O:0.6000 H:0.6100 L:0.6000 C:0.6100 V:25022 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-25 (Thu) [3097]: O:0.6000 H:0.6020 L:0.5900 C:0.6020 V:198750 TSO:53829 A:0.6020 R:1.0000 CA:0.0000
+2009-06-26 (Fri) [3098]: O:0.6010 H:0.6100 L:0.6010 C:0.6100 V:73916 TSO:53829 A:0.6100 R:1.0000 CA:0.0000  <---
+2009-06-27 (Sat) [3099]: <WEEKEND>
+2009-06-28 (Sun) [3100]: <WEEKEND>
+2009-06-29 (Mon) [3101]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:0 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-06-30 (Tue) [3102]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:0 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-07-01 (Wed) [3103]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:0 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-07-02 (Thu) [3104]: O:0.6100 H:0.6100 L:0.6100 C:0.6100 V:0 TSO:53829 A:0.6100 R:1.0000 CA:0.0000
+2009-07-03 (Fri) [3105]: <HOLIDAY>
+2009-07-04 (Sat) [3106]: <WEEKEND>
+2009-07-05 (Sun) [3107]: <WEEKEND>
+
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7f98402939753f12c0a80114' and shares > 0 order by closed; 
+> Row 516:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-02-09 14:17:00.000000'
+>        COMMENT = 
+>     COMMISSION = 309.850873
+>   CURRENTORDER = X'd23d0505498728b6c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ad3b00d93b8fc128c0a801e1'
+>       MODIFIED = NULL
+>            NET = 5887.166587
+>         OPENED = TIMESTAMP '2009-02-02 12:09:10.000000'
+>          PRICE = 0.364237
+>     PRIMARYKEY = X'd23b0505498728b6c0a80134'
+>         SECFEE = 0.200000
+>         SHARES = 16163.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7f98402939753f12c0a80114'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7f98402939753f12c0a80114'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7f98402939753f12c0a80114'  and totalshares < 0)));
+
+apply the acquis
+there are 42 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 6/26/09  cash merger 0.61
+last ticket: 2009-02-09  PRICE = 0.364237
+last price:  2009-06-26 (Fri) [3098]: O:0.6010 H:0.6100 L:0.6010 C:0.6100 V:73916 TSO:53829 A:0.6100 R:1.0000 CA:0.0000  <---
+
+going with 20090626 0.61
+
+/Marketocracy/bin/cahelper -symbol  IMNY  -effective 20090626 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.61 -acqShare 0 -purchaser IMNY   >& /Users/build/caout/IMNY.20151109-ACQUIS.out 
+IMNY.20151109-ACQUIS.out
+stocks1:~/caout build$ tail -f IMNY.20151109-ACQUIS.out
+D: (11-09 10:18:34.755) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-09 10:19:31.146) cahelper started on 2015-11-09 10:19:31 -0500
+
+D: (11-09 10:19:31.499) There are [0] open tickets for IMNY on 20090626
+D: (11-09 10:19:32.112) StockFileLoad Version:4.0
+D: (11-09 10:19:32.112) Loading Stock Data
+D: (11-09 10:20:53.515) Building Lookup Index
+D: (11-09 10:21:04.827) Finished Building Index
+D: (11-09 10:21:12.818) Finished Loading Stock Data
+D: (11-09 10:21:12.868) Connection to 192.168.111.172:6666 succeeded
+D: (11-09 10:21:15.114) {
+    "ACQUIRED_STOCK" = IMNY; 
+    "ACQUIRING_STOCK" = "IMNY_FIX"; 
+    AMOUNT = 0.61; 
+    APPLIED = 1; 
+    DATE = 20090626; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "IMNY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-09 10:21:20.996) SUCCESS
+D: (11-09 10:21:20.996) cahelper finished 2015-11-09 10:21:20 -0500
+
+
+Check the results 
+select * from mstockalias where stockkey= X'7f98402939753f12c0a80114'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2000-07-13 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'7f99402939753f12c0a80114'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2008-08-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'5c8d40a148b36444c0a80146'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2009-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'4b203d954a2093c4c0a80146'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44973Q103
+>           DATE = TIMESTAMP '2009-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = I-MANY INC
+>     PRIMARYKEY = X'fba715d05640b983c0a86fab'
+>       STOCKKEY = X'7f98402939753f12c0a80114'
+>         SYMBOL = IMNY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'fba715d05640b983c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'fba715d05640b983c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|IMNY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.610000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151109:101931
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = IMNY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = IMNY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'fba115d05640b983c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'fba115d05640b983c0a86fab';
+> Row 1:
+>   _C001 = 65.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'fba115d05640b983c0a86fab'));
+there are 65 fundkeys, save to CA issues IMNY fundkeys.txt
+
+For Beta case
+IMNY no longer trades but is still active on our site - need to delist   - acquired on 20090626 for 0.61
+
+check on 11/10/15   invalidate funds  
+check MAdmin  clear
+
+IMNY has been acquired	right curve
+ 	 	
+I-MANY INC acquired by a private company on 2009-06-26 00:00:00.
+ 	 	 invalidate reprice and close 
+
+
+

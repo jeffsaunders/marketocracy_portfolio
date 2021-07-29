@@ -1,0 +1,4261 @@
+date: 3/4/16
+case 4381 
+
+EPC trade?
+Type
+General Help | Trading Issue
+Ticket
+4381
+Priority
+Medium
+Status
+Awaiting Response
+Member Name
+Gary Heyland
+Username
+AQAFundManager
+Fund Symbols
+AQALP
+Stock Tickers
+N/A
+Description / Resources:
+Fri 03/04/2016 at 04:30 PM
+
+aqafundmanager AQALP
+/Marketocracy/bin/dbtool lookup fund aqafundmanager
+>>>> dbtool started at 2016-03-07 07:34:58 -0500
+fund: aqafundmanager
+  PK: [B264086456C6201DC0A86FA6]
+  symbol: [AQAlong]
+  managerKey: [B245086456C61CA9C0A86FA6]
+  loginName: [aqafundmanager]
+fund: aqafundmanager
+  PK: [B278086456C6211DC0A86FA6]
+  symbol: [AQALP]
+  managerKey: [B245086456C61CA9C0A86FA6]
+  loginName: [aqafundmanager]
+<<<< dbtool finished at 2016-03-07 07:34:59 -0500
+
+/Marketocracy/bin/fptool invalidateFund B278086456C6211DC0A86FA6
+
+Can yo please check my open order on EPC. Seems like it should have been filled yesterday afternoon or this morning. Thank you.
+
+    Personal
+
+Response By Brandon McCarthy
+Fri 03/04/2016 at 05:04 PM
+
+Hey Gary, it showing as EPCYY in the system for some reason. Very strange. We'll get this sorted it, and back trade it if need be so that it fills when it was supposed to. Might not happen till Monday as we have to source why its showing up as EPCYY in the trading system.
+
+AQAFundManager    AQALP  EPC  came back as  EPCYY
+
+
+Symbol: EPCYY	Name: EPCOS AG ADS	Price: $25.50
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Small Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+
+
+
+research  stock info  EPCYY   
+ [NEW QUOTE]       
+Corporate Actions for EPCOS AG ADS	  March 04, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  EPCYY has been acquired	right curve
+ 	 	
+EPCOS AG ADS acquired by a private company on 2009-12-23 00:00:00.
+ 	 	 
+left curve	  symbol changes for EPCYY	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+30 Nov 07	EPC	EPCYY	Change in the ticker (trading) symbol from EPC to EPCYY
+ 	 	 
+left curve	  listing changes for EPCYY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Nov 30, 2007	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that EPCYY trades on from NYSE to OTCBB-OTHER
+ 	 	 
+left curve	  cash dividends paid by EPCYY	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+02 Mar 01	06 Mar 01	14 Mar 01	N/A	$0.93	Dividend amount:0.93 per share.
+12 Feb 07	14 Feb 07	23 Feb 07	75	$0.26	Dividend amount:0.2601 per share.
+11 Feb 08	13 Feb 08	22 Feb 08	1	$0.44	Dividend amount:0.43581 per share.
+18 May 09	20 May 09	29 May 09	1	$0.40	Dividend amount:0.39726 per share.
+14 Oct 09	16 Oct 09	21 Oct 09	75	$0.63	Dividend amount:0.6264 per share.
+14 Apr 10	16 Apr 10	21 Apr 10	75	$0.55	Dividend amount:0.55 per share.
+
+
+select distinct stockkey from mstockalias where symbol='EPC';
+> Row 1:
+>   STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+
+select * from mstockalias where stockkey=X'b4e410ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29410P107
+>           DATE = TIMESTAMP '2000-07-07 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = EPCOS AG ADS
+>     PRIMARYKEY = X'b4e510ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>         SYMBOL = EPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29410P107
+>           DATE = TIMESTAMP '2007-11-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = EPCOS AG ADS
+>     PRIMARYKEY = X'086a6e3e4750ce96c0a80146'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>         SYMBOL = EPCYY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29410P107
+>           DATE = TIMESTAMP '2007-11-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = EPCOS AG ADS
+>     PRIMARYKEY = X'3a5d6e4f4750cecec0a80146'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>         SYMBOL = EPCYY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29410P107
+>           DATE = TIMESTAMP '2009-12-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = EPCOS AG ADS
+>     PRIMARYKEY = X'3dae5a4c56570b32c0a86fab'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>         SYMBOL = EPCYY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'3dae5a4c56570b32c0a86fab'; 
+	> Row 1:
+>              ALIASKEY = X'3dae5a4c56570b32c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|EPCYY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|25.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151126:083754
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-12-23 00:00:00.000000'
+>         BB_IDENTIFIER = EPCYY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-12-23 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPCYY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-12-23 00:00:00.000000'
+>            PRIMARYKEY = X'3da85a4c56570b32c0a86fab'
+>               VERSION = NULL
+
+check MAdmin on 12/23/2009
+Stock:EPCOS AG ADS  Symbol:EPCYY
+Date: 12/23/2009
+
+0 users found
+
+on the day of the acquis, no one held this 
+check today
+
+EPC changes to EPCYY on 2007-11-30  and then delisted on 2009-12-23 it is no loger active 
+
+nothing on today...
+
+AQAFundManager    AQALP  EPC  came back as  EPCYY
+
+check his fund on legacy
+no EPC or EPCYY  check his recent fills on legacy:
+recent closed tickets	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Close Date	Type	Symbol	Shares	Net Avg. Price	Net	 
+Mar 3, 2016	Buy	TXRH	968	$42.26	$40,907.68	Details 
+Mar 3, 2016	Buy	CAG	951	$43.13	$41,016.63	Details 
+Mar 3, 2016	Buy	CMG	77	$526.33	$40,527.41	Details 
+Mar 3, 2016	Sell	AVG	2,042	$19.7072	$40,242.03	Details 
+Mar 3, 2016	Sell	WMT	599	$65.3088	$39,120.00	Details 
+Mar 1, 2016	Buy	PNK	1,401	$28.8	$40,348.85	Details 
+Mar 1, 2016	Sell	MO	644	$61.6639	$39,711.56	Details 
+Mar 1, 2016	Sell	PBH	793	$48.2803	$38,286.29	Details 
+Feb 29, 2016	Buy	BLMN	2,298	$17.3608	$39,895.12	Details 
+Feb 29, 2016	Buy	NS	1,134	$35.0446	$39,740.62	Details 
+Feb 29, 2016	Buy	MMP	581	$68.451	$39,770.01	Details 
+Feb 29, 2016	Sell	ELLI	468	$84.6685	$39,624.87	Details 
+Feb 29, 2016	Sell	KO	910	$43.4792	$39,566.11	Details 
+Feb 29, 2016	Buy	EPD	1,697	$23.52	$39,913.44	Details 
+
+check open trades 
+all open tickets	right curve
+ 	 	
+Type	Symbol	Open Date	Limit	Current	Shares	Fills	Avg. Paid	Order Type	Last Filled	 
+Buy	EPCYY	Mar 3, 2016	 	$25.50	516	0	$0.00	Good Until Canceled	 	Details Cancel 
+ 	 
+1
+ 	 	 
+any other mtickets?
+select count(*) from mticket where stockkey=X'b4e410ac390c6e04c0a8015c' and opened > TIMESTAMP'2009-12-23 00:00:00.000000' order by opened;
+> Row 1:
+>   _C001 = 14.000000
+
+holy cow 14 mtickets 
+select * from mticket where stockkey=X'b4e410ac390c6e04c0a8015c' and opened > TIMESTAMP'2009-12-23 00:00:00.000000' order by opened;
+first:
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-02-05 12:59:33.000000'
+>        COMMENT = Technical Analysis Indicators|
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'5ce767fe4b4e1ef6c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c6904c8b3e79739ac0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2010-01-13 14:28:54.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'5ce567fe4b4e1ef6c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last:
+> Row 13:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-18 17:01:41.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'8c2800fc564ca7d4c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'91f26c8b44ae6a16c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2015-11-18 11:31:03.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'8c2600fc564ca7d4c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+> Row 14:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = NULL
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'23c600fd56d8a1c5c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b245086456c61ca9c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2016-03-03 15:42:34.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'23c400fd56d8a1c5c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'70863ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+ah it didn't fill good 
+team:    case 4381   member  AQAFundManager entered a buy of EPC (as Edgewell Personal Care Company) on the new site yesterday (3/3/16).
+We don't have this stock listed on legacy.    We have an old stock which no longer trades and had this symbol years ago but that changed to 
+EPCYY on 2007-11-03.  The company is EPCOS AG ADS and this delisted back on 2009-12-23.
+I see the order as open and unfilled on legacy.  
+
+check open trades 
+all open tickets	right curve
+ 	 	
+Type	Symbol	Open Date	Limit	Current	Shares	Fills	Avg. Paid	Order Type	Last Filled	 
+Buy	EPCYY	Mar 3, 2016	 	$25.50	516	0	$0.00	Good Until Canceled	 	Details Cancel 
+ 	 
+So there are two problems.
+1.  We missed the list of new EPC as Edgewell Personal Care Company.  I will enter that now.
+2.  The second more serious problem, I think, is that the order that came over from the new site got translated into
+a buy for EPCYY.   It found EPC but this was not an active ticker.   The latest ticker, even though it was delisted, was EPCYY so that was grabbed. 
+
+I'll do a list for new EPC and once that is up, I can fill the order with the correct stock(key) and give him a fair price for 3/3/16.
+But we need to prevent from orders being taken that would result in the wrong stock.  
+
+
+
+Let's list EPC
+select * from mcorporateaction where BB_SECID='EPC' and aliaskey is null order by BB_EFFECTIVE;
+no lists found.  need to do this myself
+
+Edgewell Personal Care Company (EPC) -NYSE   Watchlist
+80.68 Up 1.45(1.83%) 4:02PM EST
+After Hours : 80.68 0.00 (0.00%) 4:11PM EST
+
+do we have this on xignite ? 
+it is there and the cusip is 28035Q102  <-- that is it 
+
+I will list it on 3/1/2016
+
+EPC|N|28035Q102|Edgewell Personal Care Company|20160301
+put this in symadd.txt
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='EPC';
+> Row 1:
+>   STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+> Row 2:
+>   STOCKKEY = X'6f21670b56da2f50c0a86fab'
+select * from mstockalias where stockkey=X'6f21670b56da2f50c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2016-03-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Company
+>     PRIMARYKEY = X'6f22670b56da2f50c0a86fab'
+>       STOCKKEY = X'6f21670b56da2f50c0a86fab'
+>         SYMBOL = EPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+wait did we have ENR and miss the ticker change
+
+
+Edgewell Personal Care Company
+Ticker Symbol: EPC     CUSIP: 28035Q102     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Edgewell Personal Care Co. manufactures and markets a diversified range of personal care products in the wet shave, skin care, feminine care and infant care categories with well-established brand names such as Schick and Wilkinson Sword men's and women's shaving systems and disposable razors; Edge and Skintimate shave preparations; Playtex, Stayfree, Carefree and o.b. feminine care products; Banana Boat and Hawaiian Tropic sun care products; Playtex infant feeding, Diaper Genie and gloves; and Wet Ones moist wipes.
+Notes:  July 1, 2015 -- Edgewell Personal Care Company (NYSE: EPC) today announced it has begun operating as a standalone business following the completion of the previously announced separation of Energizer's Household Products and Personal Care businesses from Energizer Holdings, Inc. (ENR). Starting today, July 1, 2015, Edgewell will begin regular-way trading on the NYSE under the ticker symbol EPC. Under the terms of the spin-off of the Household Products business, Edgewell common stockholders of record as of the close of business on June 16, 2015, the record date for the distribution, received one share in Energizer Holdings, Inc. the new Household Products company, for each share of Edgewell common stock. Edgewell completed the distribution of Energizer common stock to its shareholders today, July 1, 2015,
+Previous Ticker Symbol: ENR    Changed: 6/30/15
+Previous Name: Energizer Holdings, Inc.    Changed: 6/30/15
+Large Cap Stock -   Market Value $ 6.2 Billion
+
+delete this new EPC  
+STOCKKEY = X'6f21670b56da2f50c0a86fab'
+set commit false;
+
+delete from mstock where primarykey=  X'6f21670b56da2f50c0a86fab'; 
+
+delete from mwindowstock where stockkey=X'6f21670b56da2f50c0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'6f21670b56da2f50c0a86fab');
+
+delete from mstockalias where stockkey=X'6f21670b56da2f50c0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'6f21670b56da2f50c0a86fab');   
+
+delete from mposition where stockkey=X'6f21670b56da2f50c0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'6f21670b56da2f50c0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'6f21670b56da2f50c0a86fab');
+
+delete from mticket where stockkey=X'6f21670b56da2f50c0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'6f21670b56da2f50c0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'6f21670b56da2f50c0a86fab';  
+
+commit;
+
+set commit true;
+
+
+
+
+Symbol: ENR	Name: Edgewell Personal Care Co	Price: $41.54
+Volume: 474,536	Sector: Consumer Staples	Change: $0.66
+Short Volume: 713,076	Style: Mid Cap : Blend	Market Cap: $2,837,235,520
+Avg Volume: 713,076	 Exchange: NYSE	Today: 1.61%
+50 Day Ave: $34.91	Year High: $144.95	High: $41.88
+200 Day Ave: $53.04	Year Low: $28.86	Low: $40.56
+
+research  stock info  ENR   
+ [NEW QUOTE]       
+Corporate Actions for Edgewell Personal Care Co	  March 04, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  CUSIP changes for ENR	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 Jul 15	29266R108	28035Q102	Change in any of identification numbers (CUSIP) of a security from 29266R108 to 28035Q102
+ 	 	 
+left curve	  name changes for ENR	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+01 Jul 15	Energizer Holdings Inc	Edgewell Personal Care Co	Change in the name of issuer from Energizer Holdings Inc to Edgewell Personal Care Co
+ 	 	 
+left curve	  cash dividends paid by ENR	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+20 Aug 12	22 Aug 12	13 Sep 12	4	$0.40	Dividend amount:0.4 per share.
+16 Nov 12	20 Nov 12	12 Dec 12	4	$0.40	Dividend amount:0.4 per share.
+15 Feb 13	20 Feb 13	13 Mar 13	4	$0.40	Dividend amount:0.4 per share.
+17 May 13	21 May 13	11 Jun 13	4	$0.40	Dividend amount:0.4 per share.
+16 Aug 13	20 Aug 13	10 Sep 13	4	$0.50	Dividend amount:0.5 per share.
+18 Nov 13	20 Nov 13	17 Dec 13	4	$0.50	Dividend amount:0.5 per share.
+18 Feb 14	20 Feb 14	12 Mar 14	4	$0.50	Dividend amount:0.5 per share.
+18 Feb 14	20 Feb 14	12 Mar 14	4	$0.50	Dividend amount:0.5 per share.
+19 May 14	21 May 14	11 Jun 14	4	$0.50	Dividend amount:0.5 per share.
+18 Aug 14	20 Aug 14	10 Sep 14	4	$0.50	Dividend amount:0.5 per share.
+18 Aug 14	20 Aug 14	10 Sep 14	4	$0.50	Dividend amount:0.5 per share.
+17 Nov 14	19 Nov 14	16 Dec 14	4	$0.50	Dividend amount:0.5 per share.
+17 Feb 15	19 Feb 15	18 Mar 15	4	$0.50	Dividend amount:0.5 per share.
+17 Feb 15	19 Feb 15	18 Mar 15	4	$0.50	Dividend amount:0.5 per share.
+18 May 15	20 May 15	10 Jun 15	4	$0.50	Dividend amount:0.5 per share.
+17 Aug 15	19 Aug 15	09 Sep 15	4	$0.25	Dividend amount:0.25 per share.
+25 Nov 15	30 Nov 15	16 Dec 15	4	$0.25	Dividend amount:0.25 per share.
+17 Feb 16	19 Feb 16	16 Mar 16	4	$0.25	Dividend amount:0.25 per share.
+
+select distinct stockkey from mstockalias where symbol='EPC';
+> Row 1:
+>   STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+
+ok, let's do this again.  start with ENR that is where EPC originates
+
+select distinct stockkey from mstockalias where symbol='ENR';
+> Row 1:
+>   STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+select * from mstock where primarykey=X'b4c710ac390c6e04c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'2573633d55947337c0a86f92'
+>                NAME = ENERGIZER HOLDINGS
+>          PRIMARYKEY = X'b4c710ac390c6e04c0a8015c'
+>              SYMBOL = ENR
+>           COMPANYID = 10048
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-78e3
+
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENERGIZER HOLDINGS
+>     PRIMARYKEY = X'b4c810ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'b4c810ac390c6e04c0a8015c' order by BB_EFFECTIVE;
+	15 DVD_CASH 
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'c18d63235594730ec0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'c18d63235594730ec0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'c18d63235594730ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Energizer Holdings Inc|CP_NEW_NAME|Edgewell Personal Care Co|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106712765
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-11 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'68ef6d42556e3350c0a86f92'
+>               VERSION = NULL
+	this is not correct I don't think 
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'2573633d55947337c0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'2573633d55947337c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'2573633d55947337c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|29266R108|CP_NEW_CUSIP|28035Q102|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US29266R1086|CP_NEW_ISIN|US28035Q1022|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107734718
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'68eb6d42556e334fc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'2573633d55947337c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150819|CP_PAY_DT|20150909|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.25|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.993833|CP_ADJ_DT|20150817|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109164642
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40174675
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'd94233fe55d267e3c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'2573633d55947337c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20151130|CP_PAY_DT|20151216|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.25|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.992783|CP_ADJ_DT|20151125|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 115797469
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40174675
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-25 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-16 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-11-25 00:00:00.000000'
+>            PRIMARYKEY = X'b8d144d956564bd3c0a86fab'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'2573633d55947337c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20160219|CP_PAY_DT|20160316|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.25|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.993294|CP_ADJ_DT|20160217|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 119914887
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 40174675
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-02-17 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2016-02-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2016-02-17 00:00:00.000000'
+>            PRIMARYKEY = X'a53845f156c50f3dc0a86fab'
+>               VERSION = NULL
+
+
+
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey is null and BB_SECID='ENR' order by BB_EFFECTIVE;
+> Row 1:
+>   BB_ACTIONMNEMONIC = SH_HOLDER_MEET
+> Row 2:
+>   BB_ACTIONMNEMONIC = STOCK_BUY
+> Row 3:
+>   BB_ACTIONMNEMONIC = ACQUIS
+> Row 4:
+>   BB_ACTIONMNEMONIC = EQY_OFFER
+> Row 5:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 6:
+>   BB_ACTIONMNEMONIC = RIGHTS_OFFER
+> Row 7:
+>   BB_ACTIONMNEMONIC = CHG_TKR
+> Row 8:
+>   BB_ACTIONMNEMONIC = SPIN
+> Row 9:
+>   BB_ACTIONMNEMONIC = CHG_ID
+
+there was a spin
+select * from mcorporateaction where aliaskey is null and BB_SECID='ENR' and BB_ACTIONMNEMONIC = 'SPIN' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer SpinCo Inc|CP_ID_BB_COMP|40174675|CP_ID_BB_SEC|1000|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150701|CP_RECORD_DT|20150616|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150701|CP_TKR|ENR-W US|CP_DUE_BILL_RED_DT|20150706|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006FCB019|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006FC9ZZ8|CP_SPINOFF_ID_BB_SEC_NUM_DES|ENR-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90584287
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'68ed6d42556e3350c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings Inc/New|CP_ID_BB_COMP|40174675|CP_ID_BB_SEC|1000|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150701|CP_RECORD_DT|20150616|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150701|CP_TKR|ENR-W US|CP_DUE_BILL_RED_DT|20150706|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006FCB019|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006FC9ZZ8|CP_SPINOFF_ID_BB_SEC_NUM_DES|ENR-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90584287
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-15 00:00:00.000000'
+>            PRIMARYKEY = X'70db6af3557f55d5c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer SpinCo Inc|CP_ID_BB_COMP|40174675|CP_ID_BB_SEC|1000|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20150701|CP_RECORD_DT|20150616|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.741543|CP_ADJ_DT|20150701|CP_TKR|ENR-W US|CP_DUE_BILL_RED_DT|20150706|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006FCB019|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006FC9ZZ8|CP_SPINOFF_ID_BB_SEC_NUM_DES|ENR-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90584287
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'd4584f8455bc2e38c0a86f92'
+>               VERSION = NULL
+
+
+ENR should change name / ticker to EPC  and it should spin off new ENR
+
+on yahoo finance for EPC (the current company) there is a 1349 for 1 stock split  
+and then spin off 1 share of ENR
+
+ul 10, 2015	97.00	98.80	97.00	98.71	810,800	98.45
+Jul 9, 2015	97.37	98.10	96.53	96.71	766,600	96.45
+Jul 8, 2015	96.62	98.65	96.62	97.12	654,500	96.86
+Jul 7, 2015	100.06	101.00	97.79	98.58	972,100	98.32
+Jul 6, 2015	100.00	102.20	99.13	100.68	3,164,800	100.41
+Jul 2, 2015	100.08	102.50	98.70	99.90	1,467,100	99.64
+Jul 1, 2015	97.50	102.50	96.90	101.10	1,310,700	100.83
+Jul 1, 2015	1349: 1000 Stock Split
+Jun 30, 2015	132.49	133.73	130.92	131.55	1,627,800	97.26
+Jun 29, 2015	134.55	134.86	131.64	131.80	1,131,500	97.44
+Jun 26, 2015	135.74	136.17	135.31	135.35	728,200	100.07
+Jun 25, 2015	136.68	136.68	135.57	135.83	820,100	100.42
+
+
+Let's do a ticker change for ENR to EPC on 20150630 first
+then we'll do the stocksplit 
+
+who holds ENR on 7/1/15
+/Marketocracy/Scripts/build/bin/findFundsForStock.py b4c710ac390c6e04c0a8015c 2015-06-30
+F9BC556A3EBBC66AC0A80134, FNZ, jhammond10, 3040
+47E6675A3EBAAF72C0A80133, WMF3, wallstreet16, 3250
+86FD5BE939746D3DC0A801E0, Sparty, dfischer, 2612
+1F16514C3E8B9E1AC0A80133, BMF, biggringo, 350
+E30B141239A41C07C0A801E1, ICDMF, rogerman, 250
+193150603EDE4752C0A80132, MCG, mrm661014@cs.com, 900
+0948137039E47E80C0A80118, HRMF, bcarpenter, 2000
+00993E1539E42F2AC0A80119, AHKMF, akhan, 250
+3DE6169939E76D0FC0A80118, FAF, jdarcel, 4000
+74B025CE39F57B74C0A801E1, KFMF, kfarah, 50
+363E1C0939F822BBC0A801E0, NJMMF, nmcginn, 500
+ACC53F8C39D9FF43C0A80118, JDGMF, grimes2020, 250
+605D3B5839DD02F8C0A80119, JDGTF, grimes2020, 500
+4700235939CCFDC2C0A80118, RSMm, rayden115, 5000
+44C81FC43A088C90C0A801E0, ARMF, arubenstein, 300
+25DA427D3A2411F2C0A80119, DSFXX, sstelmachowski, 454
+CFB964BF3A27F98DC0A801E0, DFFMF, dfell, 1000
+E5360AA73A42ADAEC0A801E1, SUCK, dirkdiggler, 100
+2D45200F3EF1DD44C0A80132, FMF, flynnfund, 1000
+07310E523D8B6FBFC0A801E0, EMF, eknowles, 1000
+774564EC3AF6F2CFC0A801E0, AMF, adeshpande, 5000
+697220733B38D8FEC0A80119, TGEF, tgunderson, 10000
+D80F71293B605649C0A801E1, DNDF, mdilios, 1000
+F30572103B5E141BC0A801E0, JLF, rjessup, 254
+1D4B102A3B701242C0A801E0, DMF, dginty, 200
+E74F0A613D83F46CC0A801E2, AGIFX, nslaughter, 900
+61CD0DE43B4A0DFAC0A80119, MSVF, jmartinelli, 500
+EBD805533BECA594C0A80118, EOF, kholroyd, 300
+32AA38F439D8F364C0A80119, RKMF1, rkudla, 1000
+BC0B45863B985700C0A80118, AMF1, amotes, 1000
+EF6747123BA62632C0A80119, AMF3, amotes, 1000
+F281367A3BA5FF40C0A801E1, AMF2, amotes, 1000
+EF595BCB3BD61DE3C0A80118, MBF, stockstill, 1000
+940D11303A8373BFC0A80118, JOMF, jdrehmer, 1000
+439A246E39FB41A1C0A80119, JDMF, jdrehmer, 500
+6ED63C593CB25352C0A801E1, MMF, mgoldner, 100
+CC912B463C55A8DFC0A801E0, MMF, mdeats, 200
+200C3E2B3C6216A9C0A80119, ACOS, dashtocrash, 1
+ED912C9F3AC96022C0A801E0, NDMF, dtannehill, 1
+1D0925393CE93B81C0A801E1, SMF1, sirape, 700
+721E37493CF69D30C0A801E2, MIF, beny, 1600
+9067411A3D197C95C0A801E1, BMF, bkratz, 1269
+134E4F003DB79241C0A80134, TCHCT, tharrington, 1300
+CCCB2BB43D37E562C0A80119, AJHSF, adaher, 1000
+039F4C283DADF42FC0A80132, Team7, mcfadden2002, 1700
+03974C283DADF39CC0A80132, Team3, mcfadden2002, 1000
+A55031723CA95C73C0A80119, OMF, oakleaf2001, 373
+A52118B63A240CEFC0A80119, AFMF, aferrell, 800
+F3A63F3C3CB58ACAC0A801E0, JMF, jreno, 100
+AA1E046E3A8F8C84C0A80118, NewHi, ttindall, 1
+8E6156073B1CE0D0C0A80118, BBBBB, ttindall, 1300
+E724110D399D7351C0A80118, MJCBE, mchristy, 100
+806C64F03DAD90E8C0A80132, RMF, rduncan000, 1322
+082D4E2939B31F93C0A801E0, JAAMF2, john97, 1
+64C031623D53C9EEC0A80118, PERMA, haegint, 700
+FC9F1B193D5BD448C0A801E2, jtm2, johntlr, 1170
+F89B04FA39C3E7EFC0A80151, BRIFF, sroselius, 203
+C89C739C3DDD51B9C0A80133, TF11, dmtest, 700
+1F9521603B24160DC0A801E1, JTVFII, jteinert, 740
+039D4C283DADF411C0A80132, Team6, mcfadden2002, 100
+AFB108EC3C5ED2C1C0A80119, OE1, dashtocrash, 1
+417F34E73DFC16F7C0A80134, MMF, mparris, 500
+66346AF53BE09709C0A80118, DMF, dtannehill, 1
+FB1A721E3DDAC1CFC0A80135, BYUI, ptannehill, 1
+D4DC0D153CD29060C0A801E1, CMF, crowderr, 1980
+76DB27F13E35A3C6C0A80135, CEE, crhodes, 8000
+20826B373E98DEF8C0A80132, OIL, jsahrmann, 1300
+98D46D1F3ABF8B10C0A80119, NMF, nigelrake50, 1000
+8A3142383AF0CE33C0A80118, HMF, hugothehip, 100
+435F4CFE3C10EE62C0A801E1, WHLAX, bwisda, 400
+471731AD3DCD94E6C0A80135, tchfc, tharrington, 2700
+0F7201333E4A6419C0A80134, MKT, gfontana, 40
+28DE30CD3E5B95F4C0A80134, IMF, inverjach, 600
+217616D73E4AC5C2C0A80132, HLVVV, hyperionfool, 1100
+86A60D9339C8143EC0A80151, PWNVX, pwallick, 750
+8E313B363C6ED1F2C0A801E1, RMF, rhavas, 1000
+D6C670483D5143CDC0A801E0, MCMX, msoileau, 300
+D215640A3E84B5CEC0A80133, STL, gdell, 2700
+1AF003753F2B4241C0A80132, ITON, mastercha, 300
+229A25183DEE586EC0A80135, VAWC, androege, 500
+084E11AA3F5F5C17C0A80133, DRE, 2_plus_2, 200
+7DD1024C3A688C74C0A80118, SSMF, ssrinivasan, 2800
+21C32D8F3FA9342FC0A80134, VMF, vinrock, 100
+B73D584C3FBA5CA9C0A80133, HMF, halesa, 1343
+3D75452C3FBA5D58C0A80132, RMF1, richard66, 1364
+90BD030A3BE06AB7C0A80119, BUFF, bgreenberg, 500
+7EA34B253FFC66F0C0A80134, LMF, ldbku, 700
+596012DD3EED012AC0A80134, DMF, follow17, 1000
+232301CE3F7A5E0DC0A80134, JMF, jcam, 500
+FEEC3C4A408D29FBC0A80133, TMF, tanyapetry, 500
+8B33619640AE75ABC0A80133, SMF, surf_safari, 500
+997965BB40B71701C0A80133, BSF, leo1, 4400
+D0A5605D410E2FC6C0A80134, DVF, eckiecki2002, 630
+78B80EC341518816C0A80132, HARDX, haegint, 100
+C2B23FBF415D7F84C0A80134, LMF, lstrickland, 650
+0F1A5783417E8345C0A80133, RMF, rrosado158, 200
+54C9070441F214A0C0A80134, LLF, fbomb111, 1000
+C166034840966FBCC0A80132, KJIFS, kharder, 1000
+9534047D41E2E664C0A80133, CMF, kodenkan, 600
+F63201C641DEC6D5C0A80133, ZMF, zadok, 2000
+59D4728641FFD571C0A80132, JMF, jbhstl, -3160
+D52E6D7B42000EDCC0A80134, MMF4, mverline, 1000
+68DB6B024200F851C0A80133, SMF, sciencenerd, 847
+13F343D941EFF300C0A80134, TM4, mcfadden1, 500
+37815D2B420265C0C0A80134, TBSH, roscoejohnson, 500
+8A3C6F484203BA5EC0A80134, FMF, fch, 800
+67E56D0A4214D998C0A80134, JMF, jkwalters, 2490
+B28B483A4222E959C0A80133, ZACK, eckiecki2002, 560
+2844210741F2DF77C0A80134, BMF, brylesp@yahoo.com, 340
+EC3551943FA91088C0A80132, SMF, stenz, 800
+C86410584240D8CAC0A80134, RMF, rogstafford, 1840
+E6990665423B7CD5C0A80134, SMF, sja, 2000
+F8606A984267BC4DC0A80133, FMF, farbman, 925
+0CAE4773426FCEB3C0A80132, WMF, winegars, 846
+8A190785427A5DFDC0A80132, BMF, beasy_badboy, 859
+7D3B523E4271271CC0A80133, SMF, smithf, 100
+6D655B4B423A30D4C0A80132, WSOF, usmc2531, 300
+D9960318428D4318C0A80132, NMUF, netrun, -500
+5585061642A11546C0A80133, SLTF, dogonyaro, 200
+FA7606FB4293952CC0A80132, EDGEX, rodj3969, 410
+715510D543140FA6C0A80132, OMF13, oduvall, 1000
+A917327243407911C0A80132, DDM, balimar, 730
+EDF80205436B8699C0A80133, HUH?, dsteadman, 449
+7EE0574F436EE9F0C0A80134, BMF1, bobbob7525, 980
+C94023174326CED7C0A80133, LMF, littleone4u87, 2000
+D7AF162A43A96CE6C0A80133, SMF, specialreese, 1067
+53A927A243B6BF1CC0A80134, SSF, suitedpair, -600
+37DC399843BA8F75C0A80134, TMF, tillery, 1067
+89A74B1A43C27A1BC0A80134, TMF, tilleryj, 1067
+F2790CF043C7BE20C0A80133, CMF1, cool, 1001
+B8CD36DA43DF3B4EC0A80134, IUS, primus, 220
+E6DA4B3543EA4920C0A80134, TMF, toto22, 2720
+5A8D3CAD43D11B5EC0A80134, SMF, siv1322, 1000
+E3636F33440C4C13C0A80133, TMF, tazmaniandevil666, 903
+27794E2744158693C0A80132, TMF, tmiles2292, 930
+CBCC319544319D5AC0A80133, OMF, ongena, 130
+63D5455E441A3F75C0A80133, HMF, happyinvestments, 340
+CA4D466444A539F8C0A80133, SSOV, dsbalcau, 950
+0F44052541E2A0ABC0A80132, JMF1, jcq, 13
+18D01E65445242DDC0A80132, JVS, jvera, -1360
+FE6967BE44E6F181C0A80133, JVS2, jvera, -1170
+E8310344404E6655C0A80132, ABAH, ayce, 420
+3D51206044FA142FC0A80134, DMF, chagbo, 140
+902D4071450DE0BAC0A80134, HAM, hamletwj_is, 250
+1E9766DD437D663CC0A80134, BVF, bigmoneybastard, 450
+55110286451AD95DC0A80132, R57, jflavoie, 500
+FC8801213D6872DCC0A801E0, Slm, smcclurkin, 1000
+CCD5527045312467C0A80132, EJS, ejoestr, 1300
+E511254A453C7943C0A80133, 11962, ndoss, 1300
+9D1846854414C4AFC0A80132, GHM, pburke, 150
+C0833ED745537DFCC0A80135, MMF, mangomonkey1, 1000
+EA243371454A9528C0A80134, MMF, mangomonkey2, 700
+FF384D7845AD4771C0A80135, GMF, gregoryp, 200
+D78B04EF466B364EC0A80133, SMFT, smenk_99, 300
+460A6CC14553788DC0A80133, MMF1, mangomonkey2, 2500
+0B5D02CA45DD8AB2C0A80133, PDSG, proverdude, 120
+4EE73B3545EA92B7C0A80135, VALUE, eliaso, 580
+65C95B8745A3BFC9C0A80132, QMSP, plpierce, 80
+41FE2B7946140406C0A80133, RMF2, roverlane50, 200
+E36B2F7F46382226C0A80135, SPLA, vcube04, 340
+56C947FD458BE538C0A80133, DMCF, dlj, 500
+878302A846393AD7C0A80132, CIT, c2dare, 300
+5CB912EA44BE2A77C0A80133, EMF5, eskyba, 370
+F4301DEF448470A5C0A80132, EMF3, eskyba, 290
+7B45267644844EFFC0A80133, EMF2, eskyba, 280
+F1943B9046658E3FC0A80135, ZMF, zizou.galactico, 2500
+83DE1C213D6A2949C0A801E0, FUSN, lvanness, 10
+6F2333253C8111A0C0A80119, GNI, lvanness, 10
+CE0038613D5D4D68C0A801E0, UO, lvanness, 10
+34674F2641257AD6C0A80133, NDUST, tschones, 610
+382B0DE6467417FCC0A80133, CMF, coreyedmondson, 1190
+E7F1234846952050C0A80133, BMF, bach, 2390
+D20625F94695A319C0A80132, CMFBT, coreyedmondson, 710
+F0B530DD469ADB37C0A80135, MLWT, wangxs1688, 740
+76276A774698C7D7C0A80133, DMF, djk, 1000
+748902AF4675A0E8C0A80133, MDP01, mdp206, 100
+C4D70C0D46999208C0A80133, SIMMI, simmi196, 1000
+DB19406346AD20B1C0A80135, msslf, simmi196, 190
+CBCE3740469C0E60C0A80135, PS, pthubs, 920
+117B02A946520E0CC0A80133, PMF1, pfannenstiel, 10
+29A5E1FF2A420E76FE5DB697, STRAT, strata, 100
+587D3D5841D5B363C0A80133, SMID, rlfitzpatrick, 180
+BC0614CB45EF0790C0A80133, EMF, ed1t1, 100
+F02C006446C9A85DC0A80132, KMF, makelvin, 1000
+FAC5739446C9D442C0A80132, GPF, eugene_07, 100
+F14B120546D86DCEC0A80135, SMF, shawes, 1430
+86944DEB46F97C9AC0A80135, KNMF, keliirain, 788
+96D95FEE46FA5E09C0A80135, EMF, estefy, 200
+4E050C14461B9CC3C0A80135, SMF, ssamana, 20
+EEC241E147562A63C0A80134, MMGF, mauricethomas, 20
+B4A11579438D4440C0A80134, CMF1, control, -300
+E087453F478D77C5C0A80133, AAA, easylivin, 100
+C9875B734762FCC2C0A80133, BWTS, bigwavestudent, -310
+7AFD3E414798BB5AC0A80132, MBBH, toteo, 1560
+6C56240D4798BBD5C0A80135, PMF1, pforbringer, 1570
+2FCF503A4798BC3CC0A80133, SBSL, stockchamp, 1040
+F64F22714798BB17C0A80134, BH, dlr11290, 1570
+FE2E266D467C211DC0A80132, CMAXX, cortmcelroy, 150
+FA2F011F3D2C8004C0A801E0, Jag, sjames, 50
+4C4114CD47BB2B6FC0A80133, STL, rbiedermann, 910
+14A55A8E4599A5B1C0A80135, HAS, waldo08, 480
+8EAC031447A7680EC0A80133, YMF1, youngaric24, 500
+3969621B482903D3C0A80133, CAF, eliijoro1, 140
+2F7E17EA483D793DC0A80134, CYCLE, trunkychristy, 610
+AEAC14F9484C8DF7C0A80134, STF, sameer100, 1070
+A15A67CD48690ED3C0A80135, BWDF, shb600, 100
+E4D2313648777ADDC0A80133, LSR, kames, 250
+1A2B6ADC4895B54CC0A80134, EMF, eashwarabhinav, 3420
+3BC7461E4502D628C0A80134, SMF, thiscoloradokid, 150
+076A706448AD084FC0A80135, BMF, brian.roho, 850
+B0194C13489EB2A7C0A80132, MCAP, jpsandrs, 630
+193D213F48AA02E0C0A80132, CMF, clearsunnysky, 900
+E95F581F48EF78E0C0A80133, PMF3, pnolan20, 330
+4F993D5348F38B5CC0A80135, DMF, dizzymaverick, 500
+7B42723F44C6EFAFC0A80134, HAPPY, dannygrubb, 1480
+C4A050BD4913419FC0A80132, RTAS, cwhaley, -1500
+72F101B5491D0DE3C0A80134, SV, stockdocx99, -1000
+677772F03B89CA8AC0A801E0, DNdiv, dmnieren, 200
+BFCA684B4981B719C0A80135, MMF2, mibrodsky, 2420
+27B011CC49A4A2EBC0A80132, SDGF, cshannon, 1000
+AF774430497A27B2C0A80134, MMF, mibrodsky, 4470
+A3FC5AB84977452FC0A80133, BMF, bpotter, -150
+5C93658B4A1DB440C0A80133, BGSAX, bmc100, 470
+AC762DE94A8B377BC0A80134, HMF, hamilton_allen, 100
+FFE047BF47A3113EC0A80134, jhind, jarvis_hills, 100
+2BBB69BC4985435CC0A80135, RMF, rnoonan2, 120
+D5084D9F4AC509F5C0A80134, SMF, seekingalpha1, 750
+869A3B3A418255E1C0A80132, RIVFX, stanglx718, 240
+8F1A733D4ACA6DB1C0A80133, DRM, 12mcclaind, 800
+209F0E22471BB348C0A80135, NMF, nmedhekar, 520
+FEE62945423E33D6C0A80132, REMF, ryaneblen, 500
+E4C019554B041FA6C0A80133, REVMF, veineryan, 1730
+0DCE0A6E41926F25C0A80133, MMF, murc, 1000
+0D6171824B71AC1FC0A80132, VVZ, vzapletin, 214
+0473566542394729C0A80132, SKG, skuosma, 1650
+21DB09F849A92435C0A80134, DAD, hutnik, 1000
+69E243E64C112971C0A80132, TKLF, tkassum, 480
+460C09BE4C3E06D8C0A80135, VGSCR, thevalueguy, 430
+F17D2EC94C73EEBCC0A80134, IMF1, inversionistas, 800
+2B2168944C7D6F2EC0A80132, WMF, wskristjan, 450
+2DA159A44C7E820DC0A80134, VMF, valuestudent, 675
+1FFA00EF4D08CC0BC0A80133, MMTF, monkeymike, 1000
+C22A4FE04C33BBF3C0A80134, BMF, bigvalue610, 280
+697B21184148973AC0A8013C, BETA, econley, -1000
+C41B63484CA2ADBAC0A80135, AK, kloczko_adam, 500
+C9FE475442D90B14C0A80134, JMF, janushajott, 67
+D7CD0EB04C99F60AC0A80134, JNSBO, jjones16, 680
+3256248E4E164567C0A80133, PMF, paladin58, 130
+8E660A4D4E1C9063C0A80134, bstlf, mike5568, 400
+7FD11FAC4E3CE420C0A80132, AMF2, alphascorpio, 1790
+B3015A6A4E73F8DFC0A80135, SKF, skhoo, 500
+817A2EFB4E984C8FC0A80133, IMF, invtrader, 700
+D0C64BBF50196E05C0A80134, BMF, bricabro1, 280
+A84707AE3A29F4DCC0A80118, SHGV, sharding, 145
+950D6D3650772481C0A80134, NFF, notakilla, 830
+ADD403194E0C8076C0A80134, -3, mytechnicalfriend, -15000
+9A670BED4DBB15BEC0A80133, VBL, valuebull.com, 320
+4C571B764EF815C7C0A80135, TUQXX, theuncle, 227
+FBEF65DF51A18D92C0A80134, REU, boboyle, 740
+4C743BA95281E257C0A80135, MMF, morgane, 380
+EA282D1C5281E279C0A80135, VMF, verschraegen, 400
+BBA14D5C3F03E455C0A80134, RJHRB, rhanks, 260
+7B183A28467FD46AC0A80133, IPIT, iproi, 180
+F8F374F1540151EFC0A86F98, HTEVT, ucdballer411, 350
+808C6571523F2122C0A80132, DANGX, ucdballer411, 300
+0E8F6C5E54E3AD41C0A86F98, LMFn, lakshmiramanan, 200
+
+let's look at this guy
+CCCB2BB43D37E562C0A80119, AJHSF, adaher, 1000
+ENR	click me	$41.54	1,000	$41,540.00	1.51%	$18,090.00	1.61%	77.14%	77.14%	Details 
+LEDGER
+Date	Start	Change	End	Type
+Jul 19, 2002		1000	1000	Buy
+Total: 1,000
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 19, 2002	1,000	$50.00	$23,450.00	$23.45
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+there is no chart
+
+let's look at prices 
+/Marketocracy/bin/dbtool lookup stock ENR
+>>>> dbtool started at 2016-03-04 21:25:54 -0500
+stock: ENR
+  PK       : [B4C710AC390C6E04C0A8015C]
+  companyID: [10048]
+  symbol   : [ENR]
+  name     : [ENERGIZER HOLDINGS]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+stock: ENR
+  PK       : [B4C710AC390C6E04C0A8015C]
+  companyID: [10048]
+  symbol   : [ENR]
+  name     : [Edgewell Personal Care Co]
+  date     : [2015-07-01 00:00:00]
+  status   : [Active]
+stock: ENR
+  PK       : [B4C710AC390C6E04C0A8015C]
+  companyID: [10048]
+  symbol   : [ENR]
+  name     : [Edgewell Personal Care Co]
+  date     : [2015-07-01 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2016-03-04 21:25:54 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 10048
+2015-06-16 (Tue) [5279]: O:133.7700 H:134.5000 L:132.9000 C:133.8900 V:1027243 TSO:69404 A:133.8900 R:1.0000 CA:3.7500
+2015-06-17 (Wed) [5280]: O:134.9300 H:136.6800 L:134.8800 C:135.9800 V:590991 TSO:69404 A:135.9800 R:1.0000 CA:3.7500
+2015-06-18 (Thu) [5281]: O:136.6300 H:137.4300 L:136.1600 C:136.6000 V:729336 TSO:69404 A:136.6000 R:1.0000 CA:3.7500
+2015-06-19 (Fri) [5282]: O:136.2500 H:137.6000 L:136.2500 C:136.8700 V:591320 TSO:69404 A:136.8700 R:1.0000 CA:3.7500
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:137.2100 H:138.3200 L:136.5300 C:138.1900 V:478568 TSO:69404 A:138.1900 R:1.0000 CA:3.7500
+2015-06-23 (Tue) [5286]: O:138.3900 H:138.8600 L:137.4500 C:138.4200 V:519936 TSO:69404 A:138.4200 R:1.0000 CA:3.7500
+2015-06-24 (Wed) [5287]: O:138.0100 H:138.8700 L:136.0300 C:136.0800 V:829806 TSO:69404 A:136.0800 R:1.0000 CA:3.7500
+2015-06-25 (Thu) [5288]: O:136.6800 H:136.6800 L:135.5700 C:135.8300 V:607971 TSO:69404 A:135.8300 R:1.0000 CA:3.7500
+2015-06-26 (Fri) [5289]: O:135.7400 H:136.1700 L:135.3100 C:135.3500 V:539832 TSO:69404 A:135.3500 R:1.0000 CA:3.7500
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:134.5500 H:134.8600 L:131.6400 C:131.8000 V:839427 TSO:69404 A:131.8000 R:1.0000 CA:3.7500
+2015-06-30 (Tue) [5293]: O:132.4900 H:133.7300 L:130.9200 C:131.5500 V:1206741 TSO:69404 A:131.5500 R:1.0000 CA:3.7500
+2015-07-01 (Wed) [5294]: O:33.9000 H:35.6800 L:33.3100 C:34.0500 V:2953465 TSO:69404 A:34.0500 R:1.0000 CA:3.7500
+2015-07-02 (Thu) [5295]: O:34.9900 H:38.2700 L:34.9400 C:36.6500 V:4456437 TSO:69404 A:36.6500 R:1.0000 CA:3.7500
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:36.5400 H:38.9600 L:35.8800 C:36.3900 V:3280064 TSO:69404 A:36.3900 R:1.0000 CA:3.7500
+2015-07-07 (Tue) [5300]: O:36.3500 H:36.8300 L:34.7600 C:35.3100 V:2569734 TSO:69404 A:35.3100 R:1.0000 CA:3.7500
+
+
+
+
+
+adaher
+there was a drop in price from 6/30/15 to 7/1/15 - we need to
+1.  do a ticker change to EPC
+2.  do a 1349 for 1 split
+3.  then spin off ENR   probably need to juggle prices, too 
+people that are holding ENR should now have EPC
+
+Assessment.
+
+This is going to take a lot of work.
+
+The prices we have for ENR need to be moved.   trades for ENR need to be adjusted.   
+
+1.  Let's look at trades done for ENR that are on 7/1/15 or later that have fills 
+these trades got new ENR prices.  
+2.  Do the ticker change from ENR to EPC
+
+
+Let's look at trades see how bad this is.  
+select count(*) from mticket where stockkey=X'b4c710ac390c6e04c0a8015c' and closed > TIMESTAMP'2015-06-30 00:00:00.000000' and shares > 0;
+> Row 1:
+>   _C001 = 11.000000
+
+that isn't that bad! 
+there are only 11 trades executed with shares after 6/30/15.  
+
+select * from mticket where stockkey=X'b4c710ac390c6e04c0a8015c' and closed > TIMESTAMP'2015-06-30 00:00:00.000000' and shares > 0 order by managerkey;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-02 12:50:36.000000'
+>        COMMENT = NULL
+>     COMMISSION = 327.850000
+>   CURRENTORDER = X'd22100d255956a18c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4c411b083e3a93a0c0a80135'
+>       MODIFIED = NULL
+>            NET = 240641.900000
+>         OPENED = TIMESTAMP '2015-07-02 12:43:04.000000'
+>          PRICE = 36.700000
+>     PRIMARYKEY = X'd21f00d255956a18c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 6557.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'4c411b083e3a93a0c0a80135';
+	> Row 1:
+	>   LOGINNAME = sherndon2
+	select fundkey from mticketallocation where ticketkey=X'd21f00d255956a18c0a86fa6';
+	> Row 1:
+	>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'd21f00d255956a18c0a86fa6');
+	> Row 1:
+	>   SYMBOL = WETMF
+	**** see #2 below 
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-09 14:53:10.000000'
+>        COMMENT = NULL
+>     COMMISSION = 327.850000
+>   CURRENTORDER = X'93c90118559ec192c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4c411b083e3a93a0c0a80135'
+>       MODIFIED = NULL
+>            NET = 231732.699945
+>         OPENED = TIMESTAMP '2015-07-09 14:46:42.000000'
+>          PRICE = 35.341269
+>     PRIMARYKEY = X'93c70118559ec192c0a86fa6'
+>         SECFEE = 4.040000
+>         SHARES = 6557.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'4c411b083e3a93a0c0a80135';
+	> Row 1:
+	>   LOGINNAME = sherndon2
+	select fundkey from mticketallocation where ticketkey=X'93c70118559ec192c0a86fa6';
+	> Row 1:
+	>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'93c70118559ec192c0a86fa6');
+	> Row 1:
+	>   SYMBOL = WETMF
+
+sherndon2  WETMF
+LEDGER
+Date	Start	Change	End	Type
+Jul 02, 2015		6557	6557	Buy  <---- this will get moved to new ENR after I spin it off 
+Jul 09, 2015	6557	-6557		Sell    <---- this will get moved to new ENR after I spin it off 
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 2, 2015	6,557	$327.85	$240,641.90	$36.70
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 9, 2015	6,557	$327.85	$4.04	$231,732.70	$35.34
+
+
+analysis - both of these are for NEW ENR   
+(DONE, at least they have been moved, we have to wait for the nightly load then do tickle tickets) 
+****************  ticket 1 and 2 are the same manager ***********
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-12 12:22:05.000000'
+>        COMMENT = NULL
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'247d00fc5644ca90c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'746174173abf89fbc0a801e0'
+>       MODIFIED = NULL
+>            NET = 35949.370000
+>         OPENED = TIMESTAMP '2015-11-12 12:21:16.000000'
+>          PRICE = 35.949370
+>     PRIMARYKEY = X'247b00fc5644ca90c0a86fa6'
+>         SECFEE = 0.630000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'746174173abf89fbc0a801e0';
+	> Row 1:
+	>   LOGINNAME = nigelrake50
+	select fundkey from mticketallocation where ticketkey=X'247b00fc5644ca90c0a86fa6';
+	>   FUNDKEY = X'98d46d1f3abf8b10c0a80119'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'247b00fc5644ca90c0a86fa6');
+	>   SYMBOL = NMF
+	
+	nigelrake50 NMF
+	LEDGER
+Date	Start	Change	End	Type
+May 21, 2003		1000	1000	Buy  <---- this is old leave as is 
+Nov 12, 2015	1000	-1000		Sell  <-- need to change this to EPC afterward  need to adjust the price 
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 21, 2003	1,000	$50.00	$30,419.90	$30.42
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 12, 2015	1,000	$50.00	$0.63	$35,949.37	$35.95
+ 	 	 
+notes:  the buy is old ENR and that will stay put.   The sell is post split.  He'll get 1349 shares and new price.
+we'll sell that 
+*************************************************************************************
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-18 09:31:27.000000'
+>        COMMENT = NULL
+>     COMMISSION = 99.950000
+>   CURRENTORDER = X'a73f4a07564b9d95c0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'94f931ab560aa038c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 71694.876004
+>         OPENED = TIMESTAMP '2015-11-17 16:35:07.000000'
+>          PRICE = 35.865371
+>     PRIMARYKEY = X'a73d4a07564b9d95c0a86fa6'
+>         SECFEE = 1.250000
+>         SHARES = 1999.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'94f931ab560aa038c0a86fa6';
+	>   LOGINNAME = yachtdreams
+	select fundkey from mticketallocation where ticketkey=X'a73d4a07564b9d95c0a86fa6';
+	>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'a73d4a07564b9d95c0a86fa6');
+	>   SYMBOL = YDM
+
+yachtdreams YDM
+LEDGER
+Date	Start	Change	End	Type
+Sep 29, 2015		1999	1999	Buy  <---- new ENR  move to new ENR after I spin it off
+Nov 18, 2015	1999	-1999		Sell  <---- new ENR
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 29, 2015	1,999	$99.95	$79,684.53	$39.86
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 18, 2015	1,999	$99.95	$1.25	$71,694.88	$35.87
+
+the trade above and below 
+
+
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-29 11:35:59.000000'
+>        COMMENT = Technical Analysis|
+>     COMMISSION = 99.950000
+>   CURRENTORDER = X'c494014d560aadbec0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'94f931ab560aa038c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 79684.525806
+>         OPENED = TIMESTAMP '2015-09-29 11:26:54.000000'
+>          PRICE = 39.862194
+>     PRIMARYKEY = X'c492014d560aadbec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 1999.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'94f931ab560aa038c0a86fa6';
+	>   LOGINNAME = yachtdreams
+	select fundkey from mticketallocation where ticketkey=X'c492014d560aadbec0a86fa6';
+	>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'c492014d560aadbec0a86fa6');
+	>   SYMBOL = YDM
+	
+	
+****************  the above two are the same member  yachtdreams  **********************************************
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-08 11:29:43.000000'
+>        COMMENT = NULL
+>     COMMISSION = 10.000000
+>   CURRENTORDER = X'247c00ed55eefe5cc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a18130354738f4c5c0a80134'
+>       MODIFIED = NULL
+>            NET = 8383.850000
+>         OPENED = TIMESTAMP '2015-09-08 11:27:24.000000'
+>          PRICE = 41.919250
+>     PRIMARYKEY = X'247a00ed55eefe5cc0a86fa6'
+>         SECFEE = 0.150000
+>         SHARES = 200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a18130354738f4c5c0a80134';
+	>   LOGINNAME = lakshmiramanan
+	select fundkey from mticketallocation where ticketkey=X'247a00ed55eefe5cc0a86fa6';
+	>   FUNDKEY = X'0e8f6c5e54e3ad41c0a86f98'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'247a00ed55eefe5cc0a86fa6');
+	>   SYMBOL = LMFn
+
+lakshmiramanan LMFn
+LEDGER
+Date	Start	Change	End	Type
+Feb 18, 2015		200	200	Buy   <------------ old ENR
+Sep 08, 2015	200	-200		Sell  <------------ new ENR   need to change to EPC and give new price 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 18, 2015	200	$10.00	$27,196.00	$135.98
+ 	 	 
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Sep 8, 2015	200	$10.00	$0.15	$8,383.85	$41.92
+
+notes:  this member will partipate in the split and he'll have more shares  need to sell those off 
+***********************************************************************************************
+
+> Row 7:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-02-03 11:10:48.000000'
+>        COMMENT = NULL
+>     COMMISSION = 12.000000
+>   CURRENTORDER = X'276800e156b2260bc0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a343687456a7c404c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 21882.000000
+>         OPENED = TIMESTAMP '2016-02-03 11:08:38.000000'
+>          PRICE = 36.470000
+>     PRIMARYKEY = X'276600e156b2260bc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a343687456a7c404c0a86fa6';
+	>   LOGINNAME = gordon0926
+	select fundkey from mticketallocation where ticketkey=X'276600e156b2260bc0a86fa6';
+	>   FUNDKEY = X'a34e687456a7c4f6c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'276600e156b2260bc0a86fa6');
+	>   SYMBOL = GVF
+	
+gordon0926  GVF
+LEDGER
+Date	Start	Change	End	Type
+Feb 03, 2016		600	600	Buy   <---- this moves to new ENR
+Total: 600
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 3, 2016	600	$12.00	$21,882.00	$36.47
+ 	 	
+SELLS
+You have no sells for this position
+
+notes:  single buy this is going to be moved to new ENR 
+************************************************************************************
+ticket
+> Row 8:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-02-05 09:34:55.000000'
+>        COMMENT = NULL
+>     COMMISSION = 46.740000
+>   CURRENTORDER = X'b8d100e056b44ed3c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a3c4036f3b6c1d60c0a80118'
+>       MODIFIED = NULL
+>            NET = 88060.646568
+>         OPENED = TIMESTAMP '2016-02-05 02:27:13.000000'
+>          PRICE = 37.681064
+>     PRIMARYKEY = X'b8cf00e056b44ed3c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 2337.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a3c4036f3b6c1d60c0a80118';
+	>   LOGINNAME = boyplunger
+	select fundkey from mticketallocation where ticketkey=X'b8cf00e056b44ed3c0a86fa6';
+	>   FUNDKEY = X'd4565d5c3c4e4e39c0a80118'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'b8cf00e056b44ed3c0a86fa6');
+	>   SYMBOL = BSF
+	
+boyplunger 	 BSF
+LEDGER
+Date	Start	Change	End	Type
+Feb 05, 2016		2337	2337	Buy  <--- this is new ENR 
+Total: 2,337
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 5, 2016	2,337	$46.74	$88,060.65	$37.68
+ 	 	 
+SELLS
+You have no sells for this position
+
+note:  move this single trade to the new ENR
+******************************************************
+> Row 9:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-29 15:39:46.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'd7f400d556327542c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ac5e5d6d39e3420dc0a80118'
+>       MODIFIED = NULL
+>            NET = 21474.620000
+>         OPENED = TIMESTAMP '2015-10-29 15:36:26.000000'
+>          PRICE = 42.949240
+>     PRIMARYKEY = X'd7f200d556327542c0a86fa6'
+>         SECFEE = 0.380000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'ac5e5d6d39e3420dc0a80118';
+	>   LOGINNAME = mparris
+	select fundkey from mticketallocation where ticketkey=X'd7f200d556327542c0a86fa6';
+	>   FUNDKEY = X'417f34e73dfc16f7c0a80134'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'd7f200d556327542c0a86fa6');
+	>   SYMBOL = MMF
+	
+mparris  MMF
+LEDGER
+Date	Start	Change	End	Type
+Dec 23, 2002		500	500	Buy  <----------  this is old ENR, leave as is 
+Oct 29, 2015	500	-500		Sell   <--------  this will be EPC 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 23, 2002	500	$25.00	$13,260.30	$26.52
+ 	 	 
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 29, 2015	500	$25.00	$0.38	$21,474.62	$42.95
+ 	 	 
+note:  the member will participate in the 1349 to 1000 split and will end up with more shares, we'll
+sell those out  as EPC
+
+************************************************************************************************
+> Row 10:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-06 09:30:21.000000'
+>        COMMENT = NULL
+>     COMMISSION = 13.000000
+>   CURRENTORDER = X'811200ca55990e4bc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'cfac703b39df6a24c0a80118'
+>       MODIFIED = NULL
+>            NET = 9435.230000
+>         OPENED = TIMESTAMP '2015-07-05 07:00:27.000000'
+>          PRICE = 36.289346
+>     PRIMARYKEY = X'811000ca55990e4bc0a86fa6'
+>         SECFEE = 0.170000
+>         SHARES = 260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'cfac703b39df6a24c0a80118';
+	>   LOGINNAME = rhanks
+	select fundkey from mticketallocation where ticketkey=X'811000ca55990e4bc0a86fa6';
+	>   FUNDKEY = X'bba14d5c3f03e455c0a80134'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'811000ca55990e4bc0a86fa6');
+	>   SYMBOL = RJHRB
+
+rhanks  RJHRB
+LEDGER
+Date	Start	Change	End	Type
+Feb 18, 2014		260	260	Buy   <--------- this is old ENR, leave as is 
+Jul 06, 2015	260	-260		Sell  <-------- this will be EPC 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 18, 2014	260	$13.00	$25,110.44	$96.58
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 6, 2015	260	$13.00	$0.17	$9,435.23	$36.29
+ 	 	 
+note:  this member will participate in the 1349 to 1000 split and will have more shares
+we'll adjust the sell to that quantity 
+
+************************************************************************************************	
+> Row 11:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-23 13:35:45.000000'
+>        COMMENT = Sector Looks Better|
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'aa4e00e656535baec0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e5bc1e885611f045c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 17653.000000
+>         OPENED = TIMESTAMP '2015-11-23 13:32:04.000000'
+>          PRICE = 35.306000
+>     PRIMARYKEY = X'aa4c00e656535baec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'e5bc1e885611f045c0a86fa6';
+	>   LOGINNAME = kylekong
+	select fundkey from mticketallocation where ticketkey=X'aa4c00e656535baec0a86fa6';
+	>   FUNDKEY = X'7650097856130cc6c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'aa4c00e656535baec0a86fa6');
+	>   SYMBOL = kfd
+	
+kylekong  kfd 
+LEDGER
+Date	Start	Change	End	Type
+Nov 23, 2015		500	500	Buy    <---- this is new ENR
+Total: 500
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Nov 23, 2015	500	$25.00	$17,653.00	$35.31
+ 	 	 
+SELLS
+You have no sells for this position
+
+note:  this one will be moved to new ENR  
+
+******************  end of tickets 
+Order of things
+1.  do the ticker change for ENR to EPC
+2.  spin off "new" ENR
+3.  apply the 1349 to 1000 to EPC
+
+
+
+1.  TICKER CHANGE 
+/Marketocracy/bin/cahelper -symbol EPC -effective 20150701 -type CHG_TKR -exchange UN -oldSymbol ENR >& /Users/build/caout/ENR.20160305-CHG_TKR-EPC.out 
+D: (03-05 16:56:15.344) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-05 16:57:42.612) cahelper started on 2016-03-05 16:57:42 -0500
+
+D: (03-05 16:57:42.798) {
+    APPLIED = 0; 
+    DATE = 20150701; 
+    NOTES = "N.A."; 
+    SYMBOL = EPC; 
+    TYPE = "CHG_TKR"; 
+}
+D: (03-05 16:57:42.798) SUCCESS
+D: (03-05 16:57:42.798) cahelper finished 2016-03-05 16:57:42 -0500
+
+this did not take - there is no conflict with EPC
+select distinct stockkey from mstockalias where symbol='EPC';
+> Row 1:
+>   STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+select * from mstockalias where stockkey=X'b4e410ac390c6e04c0a8015c' order by "date";
+no conflict  might have to use MARTY
+
+select distinct stockkey from mstockalias where symbol='MARTY';
+> Row 1:
+>   STOCKKEY = X'74a73aac56bfff80c0a86fab'
+select * from mstockalias where STOCKKEY = X'74a73aac56bfff80c0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2016-02-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = 0
+>     PRIMARYKEY = X'74a83aac56bfff80c0a86fab'
+>       STOCKKEY = X'74a73aac56bfff80c0a86fab'
+>         SYMBOL = MARTY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select count(*) from mticket where stockkey=X'74a73aac56bfff80c0a86fab';
+> Row 1:
+>   _C001 = 1.000000
+select loginname from mmanager where primarykey in (select managerkey from mticket where  stockkey=X'74a73aac56bfff80c0a86fab');
+martyfukui
+
+let's remove this altogether
+>   STOCKKEY = X'74a73aac56bfff80c0a86fab'
+set commit false;
+
+delete from mstock where primarykey=  X'74a73aac56bfff80c0a86fab'; 
+
+delete from mwindowstock where stockkey=X'74a73aac56bfff80c0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'74a73aac56bfff80c0a86fab');
+
+delete from mstockalias where stockkey=X'74a73aac56bfff80c0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'74a73aac56bfff80c0a86fab');   
+
+delete from mposition where stockkey=X'74a73aac56bfff80c0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'74a73aac56bfff80c0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'74a73aac56bfff80c0a86fab');
+
+delete from mticket where stockkey=X'74a73aac56bfff80c0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'74a73aac56bfff80c0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'74a73aac56bfff80c0a86fab';  
+
+commit;
+
+set commit true;
+
+Let's do the ENR ticker change to MARTY
+/Marketocracy/bin/cahelper -symbol MARTY -effective 20150701 -type CHG_TKR -exchange UN -oldSymbol ENR >& /Users/build/caout/ENR.20160305-CHG_TKR-MARTY.out 
+D: (03-05 17:24:46.315) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-05 17:26:14.636) cahelper started on 2016-03-05 17:26:14 -0500
+
+D: (03-05 17:26:14.905) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    "NEW_TICKER" = "MARTY US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "ENR US"; 
+    SYMBOL = MARTY; 
+    TYPE = "CHG_TKR"; 
+}
+D: (03-05 17:26:15.261) SUCCESS
+D: (03-05 17:26:15.262) cahelper finished 2016-03-05 17:26:15 -0500
+
+check
+select distinct stockkey from mstockalias where symbol='MARTY';
+> Row 1:
+>   STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENERGIZER HOLDINGS
+>     PRIMARYKEY = X'b4c810ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'c18d63235594730ec0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'2573633d55947337c0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'8d65023256db5d06c0a86fab'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = MARTY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	update mstockalias set symbol='EPC' where PRIMARYKEY = X'8d65023256db5d06c0a86fab';
+	done 
+	select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab';
+	> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|MARTY US|CP_NOTES|N.A.  <--- change
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = MARTY     UN Equity  <--- change
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MARTY  <--- change
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.' where PRIMARYKEY = X'8d5f023256db5d06c0a86fab';
+		done
+	update mcorporateaction set BB_IDENTIFIER = 'EPC     UN Equity' where PRIMARYKEY = X'8d5f023256db5d06c0a86fab';
+		done
+	update mcorporateaction set BB_SECID = 'EPC' where PRIMARYKEY = X'8d5f023256db5d06c0a86fab';
+		done
+	select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab';
+	> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+done 
+
+let's do the SPIN off  RPC spin off of ENR   1349 to 1000
+As previously announced, common stockholders of record as of the close of business on June 16, 2015, the record date for the distribution, received one share of Energizer for each share of Edgewell common stock held as of the record date. 
+/Marketocracy/bin/cahelper -symbol EPC -effective 20150701 -type SPIN -exchange UN -spinOffSymbol ENR -payDate 20150701 -recordDate 20150615 -name 'Energizer Holdings, Inc.'  -ratio 1.349 >& /Users/build/caout/EPC.20160305-SPIN-ENR.out 
+EPC.20160305-SPIN-ENR.out
+stocks1:~/caout build$ tail -f EPC.20160305-SPIN-ENR.out
+D: (03-05 17:36:34.797) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-05 17:38:15.536) cahelper started on 2016-03-05 17:38:15 -0500
+
+D: (03-05 17:38:37.103) StockFileLoad Version:4.0
+D: (03-05 17:38:37.104) Loading Stock Data
+D: (03-05 17:41:04.082) Building Lookup Index
+D: (03-05 17:41:21.362) Finished Building Index
+D: (03-05 17:41:34.161) Finished Loading Stock Data
+D: (03-05 17:41:34.298) Connection to 192.168.111.172:6666 succeeded
+D: (03-05 17:42:46.770) SavingChanges for Stock Dividend out 101 of 819
+D: (03-05 17:45:39.697) SavingChanges for Stock Dividend out 201 of 819
+D: (03-05 17:47:29.347) SavingChanges for Stock Dividend out 301 of 819
+D: (03-05 17:49:18.551) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "jhammond10/Fuzzandzapper.com", 
+        "wallstreet16/wallstreet16's Mutual Fund #3", 
+        "dfischer/Spartan Blend Fund", 
+        "biggringo/biggringo's Mutual Fund", 
+        "save10/HS's Best of the Best Mutual Fund", 
+        "rogerman/Icant Delete's Dead Mutual Fund", 
+        "mrm661014@cs.com/Mid-cap Growth", 
+        "bcarpenter/H&R Mutual Fund", 
+        "akhan/Akhtar Hameed Khan's Mutual Fund", 
+        "jdarcel/First Attempt Fund", 
+        "kfarah/kabalan farah's Mutual Fund", 
+        "nmcginn/Nicholas J McGinn's Mutual Fund", 
+        "grimes2020/JDG Mutual Fund", 
+        "grimes2020/JDG Technology Fund", 
+        "rayden115/ronnie Mutual Fund 2", 
+        "DELETED_2006201/CAMF-SPECULATION II", 
+        "arubenstein/adam rubenstein's Mutual Fund", 
+        "sstelmachowski/STEVE STELMACHOWSKI's Tech & Energy", 
+        "dfell/David F. Fell's Mutual Fund", 
+        "dirkdiggler/MARKETOCRACY SUCKS", 
+        "DELETED_2003197/DENNIS CALLAHAN's Mutual Fund", 
+        "dlinse/Value Focus", 
+        "rstack/valueline", 
+        "DELETED_2006193/SILVERBACK'S Mutual Fund", 
+        "raffg/Raff Strategic Growth", 
+        "flynnfund/flynnfund's Growth & Income Fund", 
+        "eknowles/eknowles's Mutual Fund", 
+        "adeshpande/AMF fund", 
+        "shelton20/Scout Rating Fund", 
+        "tgunderson/tgunderson's energy fund", 
+        "mdilios/Dilios New Divers Fund", 
+        "rjessup/Jessup Long Gain Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "nslaughter/Agothos Growth and Income Fund", 
+        "jmartinelli/Martinelli's Small Cap Value Fund", 
+        "kholroyd/Equanimitas Opportunity Fund", 
+        "stanglx718/Roge Large Cap", 
+        "rkudla/Ronald Kudla's Mutual Fund", 
+        "amotes/amotes's Mutual Fund", 
+        "amotes/amotes's Mutual Fund 2", 
+        "amotes/amotes's Mutual Fund", 
+        "stockstill/Makin' Bacon Fund", 
+        "DELETE_mrleach_40619054/Team #1 \"Money Vacs\"", 
+        "aemble/Brokerage 2", 
+        "DELETED_1-big-spender_2006050312350001/Ronald DeLegge's Mutual Fund", 
+        "jdrehmer/Joshua Drehmer's 2001 Mutual Fund", 
+        "jdrehmer/Joshua Drehmer's Mutual Fund", 
+        "mgoldner/mgoldner' general Mutual Fund", 
+        "mdeats/mdeats's Mutual Fund", 
+        "dashtocrash/A Crock of Stock", 
+        "dtannehill/Need's Mutual Fund", 
+        "sirape/sirape's Mutual Fund", 
+        "cmoss/cmoss's Mutual Fund", 
+        "ahoffard/Small Value", 
+        "rteigen/POWER 2", 
+        "mradiganz/Peoria GAARP Mutual Fund", 
+        "ewilson1/eh", 
+        "beny/Mercor Industry Fund", 
+        "ewilson1/wvf", 
+        "bkratz/bkratz's Mutual Fund", 
+        "mradiganz/Peoria GAARP Fund", 
+        "mradiganz/Peoria GAARP Fund", 
+        "aemble/Anne's Broker Calls", 
+        "tharrington/TCH COMPTECH GROWTH", 
+        "adaher/Adam superfund", 
+        "mcfadden2002/The Doughboys", 
+        "mcfadden2002/Market Miracles", 
+        "oakleaf2001/oakleaf2001's Mutual Fund", 
+        "aferrell/A FERRELL's Mutual Fund", 
+        "longorshort/James Allcap", 
+        "longorshort/RS fund", 
+        "jreno/jreno's Mutual Fund", 
+        "ttindall/New Highs", 
+        "ttindall/B Mutual Fund", 
+        "mchristy/MJC Behavioral Fund", 
+        "rduncan000/rduncan000's Mutual Fund", 
+        "rnice/Ray Nice's Momemtum Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "john97/John97's Mutual Fund", 
+        "haegint/Permanent Portfolio", 
+        "johntlr/mix out of the reccesion", 
+        "sroselius/Big Red Investments Focused Growth Fund", 
+        "trickytrees_00/trickytrees_00's Bargain Fund", 
+        "mchristy/Combination Fund", 
+        "lycos/Lycos Momentum", 
+        "dmtest/Test Fund 11/21/02", 
+        "jteinert/Value Fund II", 
+        "mcfadden2002/Crazy $ People", 
+        "dashtocrash/Odor-eater-1", 
+        "mparris/Dreamin", 
+        "atejani/Rabbitt Analytics & Stock Scouter", 
+        "dtannehill/Changed Economy Considerations", 
+        "ptannehill/Bayou Investments", 
+        "crowderr/crowderr's Mutual Fund", 
+        "crhodes/crhodes's Environmetal Energy", 
+        "bwoyat/Cornerstone VL #1&2", 
+        "jsahrmann/Petroleum", 
+        "nigelrake50/nigelrake50's Mutual Fund", 
+        "hugothehip/hugothehip's Mutual Fund", 
+        "bwisda/High/Low Fund", 
+        "tharrington/tharrington's fuel cell tech fund", 
+        "gfontana/Market", 
+        "inverjach/inverjach's Mutual Fund", 
+        "hyperionfool/Hyperionfool's Mutual Fund", 
+        "pwallick/Value Zone", 
+        "rhavas/rhavas's Mutual Fund", 
+        "drahkola/value fund", 
+        "msoileau/msoileau's  Comstock Mutual Fund", 
+        "gdell/STLFund.com", 
+        "mastercha/The Fund", 
+        "androege/VA World Chance Fund", 
+        "2_plus_2/Dash Riprock Entertainment", 
+        "ssrinivasan/Srilekha Srinivasan's Mutual Fund", 
+        "vinrock/vinrock's Mutual Fund", 
+        "halesa/halesa's Mutual Fund", 
+        "richard66/richard66's Mutual Fund", 
+        "bgreenberg/The Buffalo", 
+        "ldbku/ldbku's Mutual Fund", 
+        "follow17/Dandelion Mutual Fund", 
+        "jrwfin001/JRW Core Equity Fund", 
+        "vladzaff/The Opportunist and Sales Grower", 
+        "jcam/Janice Mutual Fund", 
+        "miked27/MD2 Ltd ", 
+        "tanyapetry/tanyapetry's Mutual Fund", 
+        "surf_safari/5% or less", 
+        "leo1/Blandford Street Fund", 
+        "eckiecki2002/Diamond Value Fund", 
+        "donquixote/donquixote's Short Fund", 
+        "haegint/Hard Assets Fund", 
+        "lstrickland/lstrickland's Mutual Fund", 
+        "dcinokla/SHORTTIMER FUND", 
+        "rrosado158/rrosado158's Mutual Fund", 
+        "harish63/Harish ETFs Short Fund", 
+        "mgulla/Gulla Cloud9 Fund", 
+        "fbomb111/Long Logic Fund", 
+        "mrktoracle/Short Only Hedge Fund", 
+        "kroedel/Gold Coast Short Circuit Fund", 
+        "kharder/KJ Inflation Buster SHORT", 
+        "jfrancois/jfrancois's Short Fund", 
+        "steveoregon25/steveoregon25's Merger Fund", 
+        "kodenkan/Chris's Mutual Fund", 
+        "zadok/zadok's Mutual Fund", 
+        "jbhstl/jbhstl's Mutual Fund", 
+        "mverline/MMF4 Technology Mix", 
+        "sciencenerd/First fund, technology", 
+        "mcfadden1/Team4", 
+        "roscoejohnson/The Buck Stops Here", 
+        "fch/fch's Mutual Fund", 
+        "jkwalters/jkwalters's Mutual Fund", 
+        "mdsofo/Another Fund", 
+        "twqs/Wostbrock Mechanical Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "eckiecki2002/Zack's EPS Revision Fund", 
+        "brylesp@yahoo.com/Pickett Capital Appreciation", 
+        "jctrox/Vette Fund", 
+        "stenz/SS Fund One", 
+        "raffg/Raff Growth Fund", 
+        "rogstafford/rogstafford's Mutual Fund", 
+        "sja/sja's Mutual Fund", 
+        "ramonhuerta/SHF", 
+        "farbman/farbman's Mutual Fund", 
+        "winegars/winegars's Mutual Fund", 
+        "beasy_badboy/beasy_badboy's Mutual Fund", 
+        "smithf/smithf's Mutual Fund", 
+        "usmc2531/Wall Street Opportunity Fund", 
+        "netrun/52% up fund", 
+        "dogonyaro/Summit Long Term Fund", 
+        "kbaldauf/Baldauf Partners", 
+        "DELETED_gheyland_20071211130001/The Heyland HCM Long Fund", 
+        "DELETED_gheyland_20071211130001/gheyland's Green Sea Fund", 
+        "rodj3969/Edge ", 
+        "oduvall/oduvall's Netherlands Fund", 
+        "nyujd/shorts (experimental)", 
+        "nyujd/value traps (experimental)", 
+        "lotus/lotus's Short Fund", 
+        "balimar/Daily Decision Maker", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "dsteadman/Speculative Arbitrage", 
+        "bobbob7525/bobbob7525's Contest Fund", 
+        "oenseling/OE Efficient Stock SHORT Fund", 
+        "littleone4u87/littleone4u87's Mutual Fund", 
+        "specialreese/specialreese's Mutual Fund", 
+        "suitedpair/SuitedShort Fund", 
+        "tillery/tillery's Mutual Fund", 
+        "darryl_buchanan/Darryl's Short Fund", 
+        "tilleryj/tilleryj's Mutual Fund", 
+        "cool/cool's Mutual Fund", 
+        "ghg777/Shotgun Fund", 
+        "primus/Ingenium US", 
+        "toto22/toto22's Mutual Fund", 
+        "siv1322/siv1322's Mutual Fund", 
+        "tazmaniandevil666/tazmaniandevil666's Mutual Fund", 
+        "tmiles2292/tmiles2292's Mutual Fund", 
+        "ongena/Ongena's Fund", 
+        "raytoei/MyMFI Insider Transaction", 
+        "happyinvestments/happyinvestments's Mutual Fund", 
+        "atmo_82/College Kids Mutual Fund", 
+        "DELETED_jakerosser1_2010022609390001/Valley View Fund", 
+        "dsbalcau/Supermodel with Onbalance Volume", 
+        "jcq/jcq's Mutual Fund", 
+        "ljoneill/Mid Cap Longs", 
+        "jvera/jvera's Mutual Fund", 
+        "jvera/Second Short Fund", 
+        "ayce/Ayce's Buy & Hold Fund", 
+        "chagbo/diversified mutual fund", 
+        "ashishbhatia/ashishbhatia's long-term long Fund", 
+        "ndoss/nd ibd 6678", 
+        "hamletwj_is/hamletwj_is's Mutual Fund", 
+        "bigmoneybastard/BMB Velocity Fund", 
+        "jflavoie/Rayon 57", 
+        "smcclurkin/M.A.R.S.", 
+        "ejoestr/ejoestr's Mutual Fund", 
+        "ndoss/nd_119623", 
+        "hiromimini/Drop your shorts", 
+        "pburke/graham", 
+        "mangomonkey1/mangomonkey1's Mutual Fund", 
+        "takara/takara's Mutual Fund", 
+        "takara/takara's The1stAstrologyFund", 
+        "mangomonkey2/mangomonkey2's Mutual Fund", 
+        "gregoryp/gregoryp's Mutual Fund", 
+        "smenk_99/smenk_99's Trader Fund", 
+        "mangomonkey2/mangomonkey2's Mutual Fund", 
+        "proverdude/PD Small growth", 
+        "eliaso/Elias Value Fund", 
+        "plpierce/QM SUPER", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "vcube04/SchwabPickList-01May2007", 
+        "dlj/DJ Mid Cap Focus", 
+        "c2dare/Citadel Capital", 
+        "jweyer1/Pegasus Growth D", 
+        "eskyba/Beta Hedge Mid Cap ", 
+        "eskyba/Beta Hedge NYSE ", 
+        "eskyba/Beta Hedge Large Cap", 
+        "zizou.galactico/CK's Mutual Fund", 
+        "lvanness/Fusion", 
+        "lvanness/Growth and Income", 
+        "lvanness/unique opps", 
+        "tschones/The Industry Fund", 
+        "coreyedmondson/coreyedmondson's Mutual Fund", 
+        "bach/Bach's Mutual Fund", 
+        "pickr2/pickr2's Mutual Fund", 
+        "coreyedmondson/coreyedmondson's Big Time", 
+        "runforest/runforest's Mutual Fund", 
+        "wangxs1688/wangxs1688's Mutual Fund TOP25", 
+        "djk/djk's Mutual Fund", 
+        "mdp206/mdp206's Starter Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "simmi196/Mike Simeone Strat Lab Open Fund 2", 
+        "fomoco123/fomoco123's Mutual Fund", 
+        "pthubs/Power supplies", 
+        "pfannenstiel/pfannenstiel's Mutual Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "ryan4980/Wooton Fund Managment", 
+        "strata/Strata Blend Fund", 
+        "gintaraslescinskas/G. Lescinskas Consumer Goods Fund", 
+        "rlfitzpatrick/SMID", 
+        "ed1t1/ed1t1's Mutual Fund", 
+        "makelvin/Kelvin's Mutual Fund", 
+        "eugene_07/GreatPotential", 
+        "shawes/shawes's Mutual Fund", 
+        "simmi196/Fund", 
+        "keliirain/keliirain's NASCAR Mutual Fund", 
+        "estefy/estefy's Mutual Fund", 
+        "ssamana/ssamana's Mutual Fund", 
+        "barondog/Badlands Short Fund", 
+        "down/down's Mutual Fund", 
+        "mauricethomas/Aggressive Growth Fund", 
+        "control/control's Short Mutual Fund", 
+        "easylivin/Stockscouter 10's 011508", 
+        "bigwavestudent/BigWaveTrading Short Mutual Fund", 
+        "toteo/Matt Bell Buy and Hold", 
+        "pforbringer/Pat Forbringer Buy and Sell-Long", 
+        "pforbringer/Pat Forbringer Buy and Hold", 
+        "stockchamp/stockchamp's buy and sell (long)", 
+        "dlr11290/Buy and Hold", 
+        "cortmcelroy/Cortfolio", 
+        "sjames/Jaguar Index", 
+        "rbiedermann/St. Louis Index Fund", 
+        "waldo08/Horicon All Season Fund", 
+        "joshhill1978/JTH Intrinsic Value Fund", 
+        "neohedge/neohedge's shorts", 
+        "youngaric24/youngaric24's Mutual Fund", 
+        "jarvis_hills/gone south", 
+        "joshhill1978/joshhill1978's Mutual Fund", 
+        "eliijoro1/clean air", 
+        "trunkychristy/Market Cycle Fund", 
+        "sameer100/Sameer's Test Fund", 
+        "kames/Kamak", 
+        "shb600/Brandt Widely Diversified Fund", 
+        "kames/Loser", 
+        "pfaust/The Passe Fund", 
+        "eashwarabhinav/eashwarabhinav's Mutual Fund", 
+        "thiscoloradokid/Small & Mid-Caps for Fall", 
+        "brian.roho/Value", 
+        "jpsandrs/General mid cap fund", 
+        "cfoam/Short Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "clearsunnysky/Clearsunnysky Mutual Fund", 
+        "pnolan20/Hedge Fund", 
+        "dizzymaverick/Maverick Mutual Fund I", 
+        "dannygrubb/The Happy Quant Fund", 
+        "cwhaley/RTA-SHORT", 
+        "stockdocx99/Mike's short test", 
+        "stockdocx99/Steve&Vooch's Short Mutual Fund", 
+        "equitelligent/equitelligent's Mutual Fund", 
+        "gf/ bg invest and trade", 
+        "dmnieren/dmnieren's Mutual Fund", 
+        "mibrodsky/short term ", 
+        "cshannon/Shannon Diversified Global Mutual Fund", 
+        "mibrodsky/long term", 
+        "bpotter/bpotter's Short fund", 
+        "emancer/emancer's Short Fund", 
+        "bmc100/BMC Global Stock  Allocation Fund", 
+        "hamilton_allen/hamilton_allen's Mutual Fund", 
+        "jarvis_hills/industrial", 
+        "gvan_arkel/Diversified Opportunity", 
+        "rnoonan2/rnoonan2's Mutual Fund", 
+        "seekingalpha1/seekingalpha1's Mutual Fund", 
+        "stanglx718/Rog\U00e9 Intrinsic Value Fund", 
+        "12mcclaind/12mcclaind's Mutual Fund", 
+        "nmedhekar/NM Mutual Fund", 
+        "mmetrock/mmetrock's C Wave Down fund", 
+        "ledmondson/ledmondson's Mutual Fund", 
+        "ryaneblen/Ryan Eblen's Mutual Fund", 
+        "veineryan/Ryan Veine's Mutual Fund", 
+        "murc/Murc's Mutual Fund", 
+        "vzapletin/Long Term Growth ", 
+        "fedge/Patience Small Cap ", 
+        "skuosma/SK Aggressive Growth", 
+        "hutnik/Dads Stocks", 
+        "tkassum/tkassum's Long Fund", 
+        "thevalueguy/Screen Results", 
+        "inversionistas/inversionistas's Mutual Fund", 
+        "wskristjan/Going for Broke", 
+        "valuestudent/ValueStudent ", 
+        "monkeymike/MonkeyMike's Technology Fund", 
+        "bigvalue610/bigvalue610's Mutual Fund", 
+        "econley/econley's Short Fund", 
+        "kloczko_adam/Here Goes Nothing", 
+        "janushajott/janushajott's Mutual Fund", 
+        "jjones16/Jones Buyout", 
+        "paladin58/paladin58's Mutual Fund", 
+        "mike5568/bitontissaintlouisfund ", 
+        "alphascorpio/IWY ", 
+        "skhoo/skhoo's Fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "invtrader/Inference Mutual Fund", 
+        "rlong95/Local Mutual Fund", 
+        "bricabro1/bricabro1's Mutual Fund", 
+        "sharding/Sheldon's Growth with Value", 
+        "cubicshogi/Cubicshogi's 200% Spike in Volume Fund", 
+        "notakilla/notakilla's focus 15 fund", 
+        "mytechnicalfriend/Extreme  Short", 
+        "mytechnicalfriend/Short II", 
+        "valuebull.com/ValueBull.com's Fund", 
+        "theuncle/Quantum X Fund", 
+        "jeffjwb7/jeffjwb7'sShort Mutual Fund", 
+        "boboyle/boboyle's Mutual Fund", 
+        "morgane/morgane's Mutual Fund", 
+        "verschraegen/verschraegen's Mutual Fund", 
+        "rhanks/Balanced Fund", 
+        "iproi/Intellectual Property Technology", 
+        "ucdballer411/ucdballer411's Mutual Fund", 
+        "ucdballer411/Green Eye Focused Fund", 
+        "lakshmiramanan/lakshmiramanan's Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150701; 
+    RATIO = 1.349; 
+    "RECORD_DATE" = 20150615; 
+    "SPINOFF_SYMBOL" = ENR; 
+    SYMBOL = EPC; 
+    TYPE = SPIN; 
+}
+D: (03-05 17:49:40.248) SUCCESS
+D: (03-05 17:49:40.249) cahelper finished 2016-03-05 17:49:40 -0500
+
+
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENERGIZER HOLDINGS
+>     PRIMARYKEY = X'b4c810ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'c18d63235594730ec0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'2573633d55947337c0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'8d65023256db5d06c0a86fab'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = EPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+
+select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab';
+> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|(null)|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:053815
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'966a027556db5fd7c0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'966a027556db5fd7c0a86fab';
+	> Row 1:
+>   _C001 = 367.000000
+select distinct stockkey from mticket where sourcekey=X'966a027556db5fd7c0a86fab';
+> Row 1:
+>   STOCKKEY = X'9673027556db5fdcc0a86fab'   <--- this is the stockkey for new ENR which was spun off from EPC
+
+select * from mstockalias where stockkey=X'9673027556db5fdcc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Energizer Holdings, Inc.
+>     PRIMARYKEY = X'9674027556db5fdcc0a86fab'
+>       STOCKKEY = X'9673027556db5fdcc0a86fab'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	update mstockalias set name='Energizer Holdings, Inc. (new)' where PRIMARYKEY = X'9674027556db5fdcc0a86fab';
+select * from mstockalias where stockkey=X'9673027556db5fdcc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Energizer Holdings, Inc. (new)
+>     PRIMARYKEY = X'9674027556db5fdcc0a86fab'
+>       STOCKKEY = X'9673027556db5fdcc0a86fab'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mstock where primarykey=X'9673027556db5fdcc0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'9674027556db5fdcc0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'9673027556db5fdcc0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 29610
+>   WINDOWIDENTITYKEY = NULL
+
+*********************************************
+ENR (new)
+stockkey=  X'9673027556db5fdcc0a86fab' 
+COMPANYID = 29610
+*********************************************
+
+
+*********************************************
+ENR (old)  /  EPC
+stockkey=  X'b4c710ac390c6e04c0a8015c' 
+COMPANYID = 10048
+*********************************************
+
+let's get prices from Yahoo finance for ENR (new) and save them
+CA issues ENR (new) prices to be loaded.txt
+select * from stockprices where companyid=29610;
+nthing
+load prices
+select min(daynumber),max(daynumber)  from stockprices where companyid=29610;
+> Row 1:
+>   _C001 = 5294
+>   _C002 = 5541
+
+good we have ENR (new) listed and prices are there 
+
+Let's move the tickets hr
+
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-02 12:50:36.000000'
+>        COMMENT = NULL
+>     COMMISSION = 327.850000
+>   CURRENTORDER = X'd22100d255956a18c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4c411b083e3a93a0c0a80135'
+>       MODIFIED = NULL
+>            NET = 240641.900000
+>         OPENED = TIMESTAMP '2015-07-02 12:43:04.000000'
+>          PRICE = 36.700000
+>     PRIMARYKEY = X'd21f00d255956a18c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 6557.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'4c411b083e3a93a0c0a80135';
+	> Row 1:
+	>   LOGINNAME = sherndon2
+	select fundkey from mticketallocation where ticketkey=X'd21f00d255956a18c0a86fa6';
+	> Row 1:
+	>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'd21f00d255956a18c0a86fa6');
+	> Row 1:
+	>   SYMBOL = WETMF
+	**** see #2 below 
+*********************************************
+ENR (new)
+stockkey=  X'9673027556db5fdcc0a86fab' 
+COMPANYID = 29610
+*********************************************
+select fundkey from mticketallocation where ticketkey=X'd21f00d255956a18c0a86fa6';
+> Row 1:
+>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+select * from mtrade where ticketkey=X'd21f00d255956a18c0a86fa6';
+	that is it
+delete from mtrade where ticketkey=X'd21f00d255956a18c0a86fa6';
+update mticket set stockkey=  X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'd21f00d255956a18c0a86fa6';
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey d21f00d255956a18c0a86fa6
+***  NEED TO RUN  when new ENR is up 
+/Marketocracy/bin/fptool invalidateFund 7c931b083e3a96a7c0a80135
+
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-09 14:53:10.000000'
+>        COMMENT = NULL
+>     COMMISSION = 327.850000
+>   CURRENTORDER = X'93c90118559ec192c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4c411b083e3a93a0c0a80135'
+>       MODIFIED = NULL
+>            NET = 231732.699945
+>         OPENED = TIMESTAMP '2015-07-09 14:46:42.000000'
+>          PRICE = 35.341269
+>     PRIMARYKEY = X'93c70118559ec192c0a86fa6'
+>         SECFEE = 4.040000
+>         SHARES = 6557.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'4c411b083e3a93a0c0a80135';
+	> Row 1:
+	>   LOGINNAME = sherndon2
+	select fundkey from mticketallocation where ticketkey=X'93c70118559ec192c0a86fa6';
+	> Row 1:
+	>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'93c70118559ec192c0a86fa6');
+	> Row 1:
+	>   SYMBOL = WETMF
+
+sherndon2  WETMF
+LEDGER
+Date	Start	Change	End	Type
+Jul 02, 2015		6557	6557	Buy  <---- this will get moved to new ENR after I spin it off 
+Jul 09, 2015	6557	-6557		Sell    <---- this will get moved to new ENR after I spin it off 
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 2, 2015	6,557	$327.85	$240,641.90	$36.70
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 9, 2015	6,557	$327.85	$4.04	$231,732.70	$35.34
+
+
+analysis - both of these are for NEW ENR   
+select fundkey from mticketallocation where ticketkey=X'93c70118559ec192c0a86fa6';
+> Row 1:
+>   FUNDKEY = X'7c931b083e3a96a7c0a80135'
+select * from mtrade where ticketkey=X'93c70118559ec192c0a86fa6';
+	that's it 
+delete from mtrade where ticketkey=X'93c70118559ec192c0a86fa6';
+update mticket set stockkey=  X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'93c70118559ec192c0a86fa6';
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 93c70118559ec192c0a86fa6
+***  NEED TO RUN  when new ENR is up
+/Marketocracy/bin/fptool invalidateFund 7c931b083e3a96a7c0a80135
+
+*************************************************************************************
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-18 09:31:27.000000'
+>        COMMENT = NULL
+>     COMMISSION = 99.950000
+>   CURRENTORDER = X'a73f4a07564b9d95c0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'94f931ab560aa038c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 71694.876004
+>         OPENED = TIMESTAMP '2015-11-17 16:35:07.000000'
+>          PRICE = 35.865371
+>     PRIMARYKEY = X'a73d4a07564b9d95c0a86fa6'
+>         SECFEE = 1.250000
+>         SHARES = 1999.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'94f931ab560aa038c0a86fa6';
+	>   LOGINNAME = yachtdreams
+	select fundkey from mticketallocation where ticketkey=X'a73d4a07564b9d95c0a86fa6';
+	>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'a73d4a07564b9d95c0a86fa6');
+	>   SYMBOL = YDM
+
+yachtdreams YDM
+LEDGER
+Date	Start	Change	End	Type
+Sep 29, 2015		1999	1999	Buy  <---- new ENR  move to new ENR after I spin it off
+Nov 18, 2015	1999	-1999		Sell  <---- new ENR
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 29, 2015	1,999	$99.95	$79,684.53	$39.86
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 18, 2015	1,999	$99.95	$1.25	$71,694.88	$35.87
+
+select fundkey from mticketallocation where ticketkey=X'a73d4a07564b9d95c0a86fa6';
+> Row 1:
+>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+select * from mtrade where ticketkey=X'a73d4a07564b9d95c0a86fa6';
+	that's it
+delete from mtrade where ticketkey=X'a73d4a07564b9d95c0a86fa6';
+update mticket set stockkey=X'9673027556db5fdcc0a86fab' where primarykey=X'a73d4a07564b9d95c0a86fa6';
+
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey a73d4a07564b9d95c0a86fa6
+***  NEED TO RUN THIS AFTER THE NIGHTLY LOAD
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund  950631ab560aa147c0a86fa6
+
+the trade above and below 
+
+
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-29 11:35:59.000000'
+>        COMMENT = Technical Analysis|
+>     COMMISSION = 99.950000
+>   CURRENTORDER = X'c494014d560aadbec0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'94f931ab560aa038c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 79684.525806
+>         OPENED = TIMESTAMP '2015-09-29 11:26:54.000000'
+>          PRICE = 39.862194
+>     PRIMARYKEY = X'c492014d560aadbec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 1999.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'94f931ab560aa038c0a86fa6';
+	>   LOGINNAME = yachtdreams
+	select fundkey from mticketallocation where ticketkey=X'c492014d560aadbec0a86fa6';
+	>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'c492014d560aadbec0a86fa6');
+	>   SYMBOL = YDM
+select fundkey from mticketallocation where ticketkey=X'c492014d560aadbec0a86fa6';
+> Row 1:
+>   FUNDKEY = X'950631ab560aa147c0a86fa6'
+select * from mtrade where 	ticketkey=X'c492014d560aadbec0a86fa6';
+	that's it 
+delete from mtrade where 	ticketkey=X'c492014d560aadbec0a86fa6';
+update mticket set stockkey=X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'c492014d560aadbec0a86fa6';
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey c492014d560aadbec0a86fa6
+***  NEED TO RUN THIS AFTER THE NIGHTLY LOAD
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund  950631ab560aa147c0a86fa6
+
+**************************
+> Row 7:  mticket
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-02-03 11:10:48.000000'
+>        COMMENT = NULL
+>     COMMISSION = 12.000000
+>   CURRENTORDER = X'276800e156b2260bc0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a343687456a7c404c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 21882.000000
+>         OPENED = TIMESTAMP '2016-02-03 11:08:38.000000'
+>          PRICE = 36.470000
+>     PRIMARYKEY = X'276600e156b2260bc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a343687456a7c404c0a86fa6';
+	>   LOGINNAME = gordon0926
+	select fundkey from mticketallocation where ticketkey=X'276600e156b2260bc0a86fa6';
+	>   FUNDKEY = X'a34e687456a7c4f6c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'276600e156b2260bc0a86fa6');
+	>   SYMBOL = GVF
+	
+gordon0926  GVF
+LEDGER
+Date	Start	Change	End	Type
+Feb 03, 2016		600	600	Buy   <---- this moves to new ENR
+Total: 600
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 3, 2016	600	$12.00	$21,882.00	$36.47
+ 	 	
+SELLS
+You have no sells for this position
+
+notes:  single buy this is going to be moved to new ENR 
+
+select fundkey from mticketallocation where ticketkey=X'276600e156b2260bc0a86fa6';
+> Row 1:
+>   FUNDKEY = X'a34e687456a7c4f6c0a86fa6'
+select * from mtrade where ticketkey=X'276600e156b2260bc0a86fa6';
+	that's it 
+delete from mtrade where ticketkey=X'276600e156b2260bc0a86fa6';
+update mticket set stockkey=X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'276600e156b2260bc0a86fa6';
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 276600e156b2260bc0a86fa6
+***  NEED TO RUN THIS AFTER THE NIGHTLY LOAD
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund  a34e687456a7c4f6c0a86fa6
+
+************************************************************************************
+
+> Row 8:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2016-02-05 09:34:55.000000'
+>        COMMENT = NULL
+>     COMMISSION = 46.740000
+>   CURRENTORDER = X'b8d100e056b44ed3c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a3c4036f3b6c1d60c0a80118'
+>       MODIFIED = NULL
+>            NET = 88060.646568
+>         OPENED = TIMESTAMP '2016-02-05 02:27:13.000000'
+>          PRICE = 37.681064
+>     PRIMARYKEY = X'b8cf00e056b44ed3c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 2337.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a3c4036f3b6c1d60c0a80118';
+	>   LOGINNAME = boyplunger
+	select fundkey from mticketallocation where ticketkey=X'b8cf00e056b44ed3c0a86fa6';
+	>   FUNDKEY = X'd4565d5c3c4e4e39c0a80118'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'b8cf00e056b44ed3c0a86fa6');
+	>   SYMBOL = BSF
+	
+boyplunger 	 BSF
+LEDGER
+Date	Start	Change	End	Type
+Feb 05, 2016		2337	2337	Buy  <--- this is new ENR 
+Total: 2,337
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 5, 2016	2,337	$46.74	$88,060.65	$37.68
+ 	 	 
+SELLS
+You have no sells for this position
+
+note:  move this single trade to the new ENR
+select fundkey from mticketallocation where ticketkey=X'b8cf00e056b44ed3c0a86fa6';
+> Row 1:
+>   FUNDKEY = X'd4565d5c3c4e4e39c0a80118'
+select * from mtrade where ticketkey=X'b8cf00e056b44ed3c0a86fa6';
+	that's it
+delete from mtrade where ticketkey=X'b8cf00e056b44ed3c0a86fa6';
+update mticket set stockkey=X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'b8cf00e056b44ed3c0a86fa6';
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey b8cf00e056b44ed3c0a86fa6
+***  NEED TO RUN THIS AFTER THE NIGHTLY LOAD
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund  d4565d5c3c4e4e39c0a80118
+
+************************************************************************************************	
+> Row 11:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-23 13:35:45.000000'
+>        COMMENT = Sector Looks Better|
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'aa4e00e656535baec0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e5bc1e885611f045c0a86fa6'
+>       MODIFIED = NULL
+>            NET = 17653.000000
+>         OPENED = TIMESTAMP '2015-11-23 13:32:04.000000'
+>          PRICE = 35.306000
+>     PRIMARYKEY = X'aa4c00e656535baec0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'e5bc1e885611f045c0a86fa6';
+	>   LOGINNAME = kylekong
+	select fundkey from mticketallocation where ticketkey=X'aa4c00e656535baec0a86fa6';
+	>   FUNDKEY = X'7650097856130cc6c0a86fa6'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'aa4c00e656535baec0a86fa6');
+	>   SYMBOL = kfd
+	
+kylekong  kfd 
+LEDGER
+Date	Start	Change	End	Type
+Nov 23, 2015		500	500	Buy    <---- this is new ENR
+Total: 500
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Nov 23, 2015	500	$25.00	$17,653.00	$35.31
+ 	 	 
+SELLS
+You have no sells for this position
+
+note:  this one will be moved to new ENR  
+
+select fundkey from mticketallocation where ticketkey=X'aa4c00e656535baec0a86fa6';
+> Row 1:
+>   FUNDKEY = X'7650097856130cc6c0a86fa6'
+select * from mtrade where ticketkey=X'aa4c00e656535baec0a86fa6';
+	that's it
+delete from mtrade where ticketkey=X'aa4c00e656535baec0a86fa6';
+update mticket set stockkey=X'9673027556db5fdcc0a86fab' where PRIMARYKEY = X'aa4c00e656535baec0a86fa6';
+tickle the ticket 
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey aa4c00e656535baec0a86fa6
+***  NEED TO RUN THIS AFTER THE NIGHTLY LOAD
+invalidate the fund 
+/Marketocracy/bin/fptool invalidateFund  7650097856130cc6c0a86fa6
+
+
+
+
+Let's get the new ENR
+we'll call it (new) in the name to help differentiate it 
+done
+
+Let's do the 1349 split for EPC
+As previously announced, common stockholders of record as of the close of business on June 16, 2015, the record date for the distribution, received one share of Energizer for each share of Edgewell common stock held as of the record date. 
+
+-recordDate 20150616
+-payDate 20150701
+
+/Marketocracy/bin/cahelper -symbol EPC -effective 20150701 -type STOCK_SPLT -exchange UN -payDate 20150701 -recordDate 20150616 -ratio 1.349 -terms '1349 for 1000' >& /Users/build/caout/EPC.20160305-STOCK_SPLT.out 
+EPC.20160305-STOCK_SPLT.out
+stocks1:~/caout build$ tail -f EPC.20160305-STOCK_SPLT.out
+D: (03-05 19:12:11.925) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-05 19:13:35.537) cahelper started on 2016-03-05 19:13:35 -0500
+
+D: (03-05 19:13:41.127) There are [0] closed tickets for EPC on 20150701
+D: (03-05 19:13:41.181) There are [0] open tickets for EPC on 20150701
+D: (03-05 19:13:43.009) StockFileLoad Version:4.0
+D: (03-05 19:13:43.010) Loading Stock Data
+D: (03-05 19:16:02.536) Building Lookup Index
+D: (03-05 19:16:21.944) Finished Building Index
+D: (03-05 19:16:36.080) Finished Loading Stock Data
+D: (03-05 19:16:36.178) Connection to 192.168.111.172:6666 succeeded
+D: (03-05 19:16:45.593) SavingChanges for stock split 101 of 819
+D: (03-05 19:17:08.714) SavingChanges for stock split 201 of 819
+D: (03-05 19:17:37.418) SavingChanges for stock split 301 of 819
+D: (03-05 19:17:59.628) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "jhammond10/Fuzzandzapper.com", 
+        "wallstreet16/wallstreet16's Mutual Fund #3", 
+        "dfischer/Spartan Blend Fund", 
+        "biggringo/biggringo's Mutual Fund", 
+        "save10/HS's Best of the Best Mutual Fund", 
+        "rogerman/Icant Delete's Dead Mutual Fund", 
+        "mrm661014@cs.com/Mid-cap Growth", 
+        "bcarpenter/H&R Mutual Fund", 
+        "akhan/Akhtar Hameed Khan's Mutual Fund", 
+        "jdarcel/First Attempt Fund", 
+        "kfarah/kabalan farah's Mutual Fund", 
+        "nmcginn/Nicholas J McGinn's Mutual Fund", 
+        "grimes2020/JDG Mutual Fund", 
+        "grimes2020/JDG Technology Fund", 
+        "rayden115/ronnie Mutual Fund 2", 
+        "DELETED_2006201/CAMF-SPECULATION II", 
+        "arubenstein/adam rubenstein's Mutual Fund", 
+        "sstelmachowski/STEVE STELMACHOWSKI's Tech & Energy", 
+        "dfell/David F. Fell's Mutual Fund", 
+        "dirkdiggler/MARKETOCRACY SUCKS", 
+        "DELETED_2003197/DENNIS CALLAHAN's Mutual Fund", 
+        "dlinse/Value Focus", 
+        "rstack/valueline", 
+        "DELETED_2006193/SILVERBACK'S Mutual Fund", 
+        "raffg/Raff Strategic Growth", 
+        "flynnfund/flynnfund's Growth & Income Fund", 
+        "eknowles/eknowles's Mutual Fund", 
+        "adeshpande/AMF fund", 
+        "shelton20/Scout Rating Fund", 
+        "tgunderson/tgunderson's energy fund", 
+        "mdilios/Dilios New Divers Fund", 
+        "rjessup/Jessup Long Gain Fund", 
+        "dginty/dginty's Mutual Fund", 
+        "nslaughter/Agothos Growth and Income Fund", 
+        "jmartinelli/Martinelli's Small Cap Value Fund", 
+        "kholroyd/Equanimitas Opportunity Fund", 
+        "stanglx718/Roge Large Cap", 
+        "rkudla/Ronald Kudla's Mutual Fund", 
+        "amotes/amotes's Mutual Fund", 
+        "amotes/amotes's Mutual Fund 2", 
+        "amotes/amotes's Mutual Fund", 
+        "stockstill/Makin' Bacon Fund", 
+        "DELETE_mrleach_40619054/Team #1 \"Money Vacs\"", 
+        "aemble/Brokerage 2", 
+        "DELETED_1-big-spender_2006050312350001/Ronald DeLegge's Mutual Fund", 
+        "jdrehmer/Joshua Drehmer's 2001 Mutual Fund", 
+        "jdrehmer/Joshua Drehmer's Mutual Fund", 
+        "mgoldner/mgoldner' general Mutual Fund", 
+        "mdeats/mdeats's Mutual Fund", 
+        "dashtocrash/A Crock of Stock", 
+        "dtannehill/Need's Mutual Fund", 
+        "sirape/sirape's Mutual Fund", 
+        "cmoss/cmoss's Mutual Fund", 
+        "ahoffard/Small Value", 
+        "rteigen/POWER 2", 
+        "mradiganz/Peoria GAARP Mutual Fund", 
+        "ewilson1/eh", 
+        "beny/Mercor Industry Fund", 
+        "ewilson1/wvf", 
+        "bkratz/bkratz's Mutual Fund", 
+        "mradiganz/Peoria GAARP Fund", 
+        "mradiganz/Peoria GAARP Fund", 
+        "aemble/Anne's Broker Calls", 
+        "tharrington/TCH COMPTECH GROWTH", 
+        "adaher/Adam superfund", 
+        "mcfadden2002/The Doughboys", 
+        "mcfadden2002/Market Miracles", 
+        "oakleaf2001/oakleaf2001's Mutual Fund", 
+        "aferrell/A FERRELL's Mutual Fund", 
+        "longorshort/James Allcap", 
+        "longorshort/RS fund", 
+        "jreno/jreno's Mutual Fund", 
+        "ttindall/New Highs", 
+        "ttindall/B Mutual Fund", 
+        "mchristy/MJC Behavioral Fund", 
+        "rduncan000/rduncan000's Mutual Fund", 
+        "rnice/Ray Nice's Momemtum Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "john97/John97's Mutual Fund", 
+        "haegint/Permanent Portfolio", 
+        "johntlr/mix out of the reccesion", 
+        "sroselius/Big Red Investments Focused Growth Fund", 
+        "trickytrees_00/trickytrees_00's Bargain Fund", 
+        "mchristy/Combination Fund", 
+        "lycos/Lycos Momentum", 
+        "dmtest/Test Fund 11/21/02", 
+        "jteinert/Value Fund II", 
+        "mcfadden2002/Crazy $ People", 
+        "dashtocrash/Odor-eater-1", 
+        "mparris/Dreamin", 
+        "atejani/Rabbitt Analytics & Stock Scouter", 
+        "dtannehill/Changed Economy Considerations", 
+        "ptannehill/Bayou Investments", 
+        "crowderr/crowderr's Mutual Fund", 
+        "crhodes/crhodes's Environmetal Energy", 
+        "bwoyat/Cornerstone VL #1&2", 
+        "jsahrmann/Petroleum", 
+        "nigelrake50/nigelrake50's Mutual Fund", 
+        "hugothehip/hugothehip's Mutual Fund", 
+        "bwisda/High/Low Fund", 
+        "tharrington/tharrington's fuel cell tech fund", 
+        "gfontana/Market", 
+        "inverjach/inverjach's Mutual Fund", 
+        "hyperionfool/Hyperionfool's Mutual Fund", 
+        "pwallick/Value Zone", 
+        "rhavas/rhavas's Mutual Fund", 
+        "drahkola/value fund", 
+        "msoileau/msoileau's  Comstock Mutual Fund", 
+        "gdell/STLFund.com", 
+        "mastercha/The Fund", 
+        "androege/VA World Chance Fund", 
+        "2_plus_2/Dash Riprock Entertainment", 
+        "ssrinivasan/Srilekha Srinivasan's Mutual Fund", 
+        "vinrock/vinrock's Mutual Fund", 
+        "halesa/halesa's Mutual Fund", 
+        "richard66/richard66's Mutual Fund", 
+        "bgreenberg/The Buffalo", 
+        "ldbku/ldbku's Mutual Fund", 
+        "follow17/Dandelion Mutual Fund", 
+        "jrwfin001/JRW Core Equity Fund", 
+        "vladzaff/The Opportunist and Sales Grower", 
+        "jcam/Janice Mutual Fund", 
+        "miked27/MD2 Ltd ", 
+        "tanyapetry/tanyapetry's Mutual Fund", 
+        "surf_safari/5% or less", 
+        "leo1/Blandford Street Fund", 
+        "eckiecki2002/Diamond Value Fund", 
+        "donquixote/donquixote's Short Fund", 
+        "haegint/Hard Assets Fund", 
+        "lstrickland/lstrickland's Mutual Fund", 
+        "dcinokla/SHORTTIMER FUND", 
+        "rrosado158/rrosado158's Mutual Fund", 
+        "harish63/Harish ETFs Short Fund", 
+        "mgulla/Gulla Cloud9 Fund", 
+        "fbomb111/Long Logic Fund", 
+        "mrktoracle/Short Only Hedge Fund", 
+        "kroedel/Gold Coast Short Circuit Fund", 
+        "kharder/KJ Inflation Buster SHORT", 
+        "jfrancois/jfrancois's Short Fund", 
+        "steveoregon25/steveoregon25's Merger Fund", 
+        "kodenkan/Chris's Mutual Fund", 
+        "zadok/zadok's Mutual Fund", 
+        "jbhstl/jbhstl's Mutual Fund", 
+        "mverline/MMF4 Technology Mix", 
+        "sciencenerd/First fund, technology", 
+        "mcfadden1/Team4", 
+        "roscoejohnson/The Buck Stops Here", 
+        "fch/fch's Mutual Fund", 
+        "jkwalters/jkwalters's Mutual Fund", 
+        "mdsofo/Another Fund", 
+        "twqs/Wostbrock Mechanical Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "eckiecki2002/Zack's EPS Revision Fund", 
+        "brylesp@yahoo.com/Pickett Capital Appreciation", 
+        "jctrox/Vette Fund", 
+        "stenz/SS Fund One", 
+        "raffg/Raff Growth Fund", 
+        "rogstafford/rogstafford's Mutual Fund", 
+        "sja/sja's Mutual Fund", 
+        "ramonhuerta/SHF", 
+        "farbman/farbman's Mutual Fund", 
+        "winegars/winegars's Mutual Fund", 
+        "beasy_badboy/beasy_badboy's Mutual Fund", 
+        "smithf/smithf's Mutual Fund", 
+        "usmc2531/Wall Street Opportunity Fund", 
+        "netrun/52% up fund", 
+        "dogonyaro/Summit Long Term Fund", 
+        "kbaldauf/Baldauf Partners", 
+        "DELETED_gheyland_20071211130001/The Heyland HCM Long Fund", 
+        "DELETED_gheyland_20071211130001/gheyland's Green Sea Fund", 
+        "rodj3969/Edge ", 
+        "oduvall/oduvall's Netherlands Fund", 
+        "nyujd/shorts (experimental)", 
+        "nyujd/value traps (experimental)", 
+        "lotus/lotus's Short Fund", 
+        "balimar/Daily Decision Maker", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "dsteadman/Speculative Arbitrage", 
+        "bobbob7525/bobbob7525's Contest Fund", 
+        "oenseling/OE Efficient Stock SHORT Fund", 
+        "littleone4u87/littleone4u87's Mutual Fund", 
+        "specialreese/specialreese's Mutual Fund", 
+        "suitedpair/SuitedShort Fund", 
+        "tillery/tillery's Mutual Fund", 
+        "darryl_buchanan/Darryl's Short Fund", 
+        "tilleryj/tilleryj's Mutual Fund", 
+        "cool/cool's Mutual Fund", 
+        "ghg777/Shotgun Fund", 
+        "primus/Ingenium US", 
+        "toto22/toto22's Mutual Fund", 
+        "siv1322/siv1322's Mutual Fund", 
+        "tazmaniandevil666/tazmaniandevil666's Mutual Fund", 
+        "tmiles2292/tmiles2292's Mutual Fund", 
+        "ongena/Ongena's Fund", 
+        "raytoei/MyMFI Insider Transaction", 
+        "happyinvestments/happyinvestments's Mutual Fund", 
+        "atmo_82/College Kids Mutual Fund", 
+        "DELETED_jakerosser1_2010022609390001/Valley View Fund", 
+        "dsbalcau/Supermodel with Onbalance Volume", 
+        "jcq/jcq's Mutual Fund", 
+        "ljoneill/Mid Cap Longs", 
+        "jvera/jvera's Mutual Fund", 
+        "jvera/Second Short Fund", 
+        "ayce/Ayce's Buy & Hold Fund", 
+        "chagbo/diversified mutual fund", 
+        "ashishbhatia/ashishbhatia's long-term long Fund", 
+        "ndoss/nd ibd 6678", 
+        "hamletwj_is/hamletwj_is's Mutual Fund", 
+        "bigmoneybastard/BMB Velocity Fund", 
+        "jflavoie/Rayon 57", 
+        "smcclurkin/M.A.R.S.", 
+        "ejoestr/ejoestr's Mutual Fund", 
+        "ndoss/nd_119623", 
+        "hiromimini/Drop your shorts", 
+        "pburke/graham", 
+        "mangomonkey1/mangomonkey1's Mutual Fund", 
+        "takara/takara's Mutual Fund", 
+        "takara/takara's The1stAstrologyFund", 
+        "mangomonkey2/mangomonkey2's Mutual Fund", 
+        "gregoryp/gregoryp's Mutual Fund", 
+        "smenk_99/smenk_99's Trader Fund", 
+        "mangomonkey2/mangomonkey2's Mutual Fund", 
+        "proverdude/PD Small growth", 
+        "eliaso/Elias Value Fund", 
+        "plpierce/QM SUPER", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "vcube04/SchwabPickList-01May2007", 
+        "dlj/DJ Mid Cap Focus", 
+        "c2dare/Citadel Capital", 
+        "jweyer1/Pegasus Growth D", 
+        "eskyba/Beta Hedge Mid Cap ", 
+        "eskyba/Beta Hedge NYSE ", 
+        "eskyba/Beta Hedge Large Cap", 
+        "zizou.galactico/CK's Mutual Fund", 
+        "lvanness/Fusion", 
+        "lvanness/Growth and Income", 
+        "lvanness/unique opps", 
+        "tschones/The Industry Fund", 
+        "coreyedmondson/coreyedmondson's Mutual Fund", 
+        "bach/Bach's Mutual Fund", 
+        "pickr2/pickr2's Mutual Fund", 
+        "coreyedmondson/coreyedmondson's Big Time", 
+        "runforest/runforest's Mutual Fund", 
+        "wangxs1688/wangxs1688's Mutual Fund TOP25", 
+        "djk/djk's Mutual Fund", 
+        "mdp206/mdp206's Starter Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "simmi196/Mike Simeone Strat Lab Open Fund 2", 
+        "fomoco123/fomoco123's Mutual Fund", 
+        "pthubs/Power supplies", 
+        "pfannenstiel/pfannenstiel's Mutual Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "simmi196/simmi196's Mutual Fund", 
+        "ryan4980/Wooton Fund Managment", 
+        "strata/Strata Blend Fund", 
+        "gintaraslescinskas/G. Lescinskas Consumer Goods Fund", 
+        "rlfitzpatrick/SMID", 
+        "ed1t1/ed1t1's Mutual Fund", 
+        "makelvin/Kelvin's Mutual Fund", 
+        "eugene_07/GreatPotential", 
+        "shawes/shawes's Mutual Fund", 
+        "simmi196/Fund", 
+        "keliirain/keliirain's NASCAR Mutual Fund", 
+        "estefy/estefy's Mutual Fund", 
+        "ssamana/ssamana's Mutual Fund", 
+        "barondog/Badlands Short Fund", 
+        "down/down's Mutual Fund", 
+        "mauricethomas/Aggressive Growth Fund", 
+        "control/control's Short Mutual Fund", 
+        "easylivin/Stockscouter 10's 011508", 
+        "bigwavestudent/BigWaveTrading Short Mutual Fund", 
+        "toteo/Matt Bell Buy and Hold", 
+        "pforbringer/Pat Forbringer Buy and Sell-Long", 
+        "pforbringer/Pat Forbringer Buy and Hold", 
+        "stockchamp/stockchamp's buy and sell (long)", 
+        "dlr11290/Buy and Hold", 
+        "cortmcelroy/Cortfolio", 
+        "sjames/Jaguar Index", 
+        "rbiedermann/St. Louis Index Fund", 
+        "waldo08/Horicon All Season Fund", 
+        "joshhill1978/JTH Intrinsic Value Fund", 
+        "neohedge/neohedge's shorts", 
+        "youngaric24/youngaric24's Mutual Fund", 
+        "jarvis_hills/gone south", 
+        "joshhill1978/joshhill1978's Mutual Fund", 
+        "eliijoro1/clean air", 
+        "trunkychristy/Market Cycle Fund", 
+        "sameer100/Sameer's Test Fund", 
+        "kames/Kamak", 
+        "shb600/Brandt Widely Diversified Fund", 
+        "kames/Loser", 
+        "pfaust/The Passe Fund", 
+        "eashwarabhinav/eashwarabhinav's Mutual Fund", 
+        "thiscoloradokid/Small & Mid-Caps for Fall", 
+        "brian.roho/Value", 
+        "jpsandrs/General mid cap fund", 
+        "cfoam/Short Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "clearsunnysky/Clearsunnysky Mutual Fund", 
+        "pnolan20/Hedge Fund", 
+        "dizzymaverick/Maverick Mutual Fund I", 
+        "dannygrubb/The Happy Quant Fund", 
+        "cwhaley/RTA-SHORT", 
+        "stockdocx99/Mike's short test", 
+        "stockdocx99/Steve&Vooch's Short Mutual Fund", 
+        "equitelligent/equitelligent's Mutual Fund", 
+        "gf/ bg invest and trade", 
+        "dmnieren/dmnieren's Mutual Fund", 
+        "mibrodsky/short term ", 
+        "cshannon/Shannon Diversified Global Mutual Fund", 
+        "mibrodsky/long term", 
+        "bpotter/bpotter's Short fund", 
+        "emancer/emancer's Short Fund", 
+        "bmc100/BMC Global Stock  Allocation Fund", 
+        "hamilton_allen/hamilton_allen's Mutual Fund", 
+        "jarvis_hills/industrial", 
+        "gvan_arkel/Diversified Opportunity", 
+        "rnoonan2/rnoonan2's Mutual Fund", 
+        "seekingalpha1/seekingalpha1's Mutual Fund", 
+        "stanglx718/Rog\U00e9 Intrinsic Value Fund", 
+        "12mcclaind/12mcclaind's Mutual Fund", 
+        "nmedhekar/NM Mutual Fund", 
+        "mmetrock/mmetrock's C Wave Down fund", 
+        "ledmondson/ledmondson's Mutual Fund", 
+        "ryaneblen/Ryan Eblen's Mutual Fund", 
+        "veineryan/Ryan Veine's Mutual Fund", 
+        "murc/Murc's Mutual Fund", 
+        "vzapletin/Long Term Growth ", 
+        "fedge/Patience Small Cap ", 
+        "skuosma/SK Aggressive Growth", 
+        "hutnik/Dads Stocks", 
+        "tkassum/tkassum's Long Fund", 
+        "thevalueguy/Screen Results", 
+        "inversionistas/inversionistas's Mutual Fund", 
+        "wskristjan/Going for Broke", 
+        "valuestudent/ValueStudent ", 
+        "monkeymike/MonkeyMike's Technology Fund", 
+        "bigvalue610/bigvalue610's Mutual Fund", 
+        "econley/econley's Short Fund", 
+        "kloczko_adam/Here Goes Nothing", 
+        "janushajott/janushajott's Mutual Fund", 
+        "jjones16/Jones Buyout", 
+        "paladin58/paladin58's Mutual Fund", 
+        "mike5568/bitontissaintlouisfund ", 
+        "alphascorpio/IWY ", 
+        "skhoo/skhoo's Fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "invtrader/Inference Mutual Fund", 
+        "rlong95/Local Mutual Fund", 
+        "bricabro1/bricabro1's Mutual Fund", 
+        "sharding/Sheldon's Growth with Value", 
+        "cubicshogi/Cubicshogi's 200% Spike in Volume Fund", 
+        "notakilla/notakilla's focus 15 fund", 
+        "mytechnicalfriend/Extreme  Short", 
+        "mytechnicalfriend/Short II", 
+        "valuebull.com/ValueBull.com's Fund", 
+        "theuncle/Quantum X Fund", 
+        "jeffjwb7/jeffjwb7'sShort Mutual Fund", 
+        "boboyle/boboyle's Mutual Fund", 
+        "morgane/morgane's Mutual Fund", 
+        "verschraegen/verschraegen's Mutual Fund", 
+        "rhanks/Balanced Fund", 
+        "iproi/Intellectual Property Technology", 
+        "ucdballer411/ucdballer411's Mutual Fund", 
+        "ucdballer411/Green Eye Focused Fund", 
+        "lakshmiramanan/lakshmiramanan's Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150701; 
+    RATIO = 1.349; 
+    "RECORD_DATE" = 20150616; 
+    SYMBOL = EPC; 
+    TYPE = "STOCK_SPLT"; 
+}
+D: (03-05 19:18:07.174) SUCCESS
+D: (03-05 19:18:07.175) cahelper finished 2016-03-05 19:18:07 -0500
+
+
+*********************************************
+ENR (new)
+stockkey=  X'9673027556db5fdcc0a86fab' 
+COMPANYID = 29610
+*********************************************
+
+
+*********************************************
+ENR (old)  /  EPC
+stockkey=  X'b4c710ac390c6e04c0a8015c' 
+COMPANYID = 10048
+*********************************************
+
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENERGIZER HOLDINGS
+>     PRIMARYKEY = X'b4c810ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'c18d63235594730ec0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'2573633d55947337c0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'8d65023256db5d06c0a86fab'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = EPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab' order by BB_EFFECTIVE;
+	> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR  <--------- here is out change ticker from ENR to EPC
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|(null)|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:053815
+>     BB_ACTIONMNEMONIC = SPIN  <---- here is the spin off of new ENR   from  RPC
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'966a027556db5fd7c0a86fab'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1349 for 1000|CP_RATIO|1.349000|CP_RECORD_DT|20150616|CP_PAY_DT|20150701|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:071335
+>     BB_ACTIONMNEMONIC = STOCK_SPLT   <-------------- here is our 1349 for 1000 split for EPC
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'ae5e067756db762fc0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'ae5e067756db762fc0a86fab';
+	> Row 1:
+	>   _C001 = 734.000000
+	select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'ae5e067756db762fc0a86fab'));
+	there are 367 fundkeys  save to CA issues EPC split fundkeys.txt
+	
+ok, before we started, we looked at members who held ENR (old) on 6/30/15
+this person had 1000 shares 
+940D11303A8373BFC0A80118, JOMF, jdrehmer, 1000
+
+let's see what he has now   first invalidate the funds
+/Marketocracy/bin/fptool invalidateFund 940D11303A8373BFC0A80118
+now log in as 
+jdrehmer  JOMF  let's look at the ledger on 20150701
+
+trades on July 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Split Sell	ENR	1,000	$0.00	$0.00	$0.00	$0.00
+Split Buy	ENR	1,349	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	 	1,349	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+ah this is perfect
+let's analyze each
+the split sell
+Hexkey: B8CF067756DB76E8C0A86FAB
+select stockkey from mticket where primarykey=X'B8CF067756DB76E8C0A86FAB';
+>   STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+	this is ENR/EPC
+the split buy 
+Hexkey: B8D4067756DB76E8C0A86FAB
+select stockkey from mticket where primarykey=X'B8D4067756DB76E8C0A86FAB';
+> Row 1:
+>   STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+	this is ENR/EPC
+and the stock dividend buy  it blew up - can't resolve it that is fine!
+
+***********************
+let's do the ENR (old) tickets    3,6,9,10
+***********************
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-12 12:22:05.000000'
+>        COMMENT = NULL
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'247d00fc5644ca90c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'746174173abf89fbc0a801e0'
+>       MODIFIED = NULL
+>            NET = 35949.370000
+>         OPENED = TIMESTAMP '2015-11-12 12:21:16.000000'
+>          PRICE = 35.949370
+>     PRIMARYKEY = X'247b00fc5644ca90c0a86fa6'
+>         SECFEE = 0.630000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'746174173abf89fbc0a801e0';
+	> Row 1:
+	>   LOGINNAME = nigelrake50
+	select fundkey from mticketallocation where ticketkey=X'247b00fc5644ca90c0a86fa6';
+	>   FUNDKEY = X'98d46d1f3abf8b10c0a80119'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'247b00fc5644ca90c0a86fa6');
+	>   SYMBOL = NMF
+	
+	nigelrake50 NMF
+	LEDGER
+Date	Start	Change	End	Type
+May 21, 2003		1000	1000	Buy  <---- this is old leave as is 
+Nov 12, 2015	1000	-1000		Sell  <-- need to change this to EPC afterward  need to adjust the price 
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 21, 2003	1,000	$50.00	$30,419.90	$30.42
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 12, 2015	1,000	$50.00	$0.63	$35,949.37	$35.95
+ 	 	 
+notes:  the buy is old ENR and that will stay put.   The sell is post split.  He'll get 1349 shares and new price.
+we'll sell that 
+
+ok he should have 1349 shares now, right?
+nigelrake50  NMF  on 20151112   
+
+ENR	Edgewell Personal Care Co	$36.08	0.6%	349	$0.00	$12,591.92	Details   <--- he has 349 left 
+NYLD	NRG Yield Inc Class C	$14.85	0.4%	660	$0.00	$9,801.00	Details 
+JAZZ	Jazz Pharmaceuticals Plc	$134.01	0.3%	50	$0.00	$6,700.50	Details 
+BLCM	Bellicum Pharmaceuticals Inc	$20.86	0.2%	240	$0.00	$5,006.40	Details 
+AMBA	Ambarella Inc	$52.39	0.2%	70	$0.00	$3,667.30	Details 
+FEYE	FireEye Inc	$22.23	0.1%	87	$0.00	$1,934.01	Details 
+Details 
+ 	 	 
+left curve	 trades on November 12, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ENR	1,000	$35.95	$35,949.37	$50.00	$0.63
+
+what is the price of ENR on 2015-11-12?  
+Nov 12, 2015	81.82	82.30	78.26	78.47	1,527,100	78.47
+going with 82.30 
+
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py nigelrake50  NMF 20151112 b4c710ac390c6e04c0a8015c -1349 82.30
+Trading -1349.0 shares of Edgewell Personal Care Co on Nov 12, 2015 at 82.3
+manager login: nigelrake50
+manager: Ronnie Rollans
+fund: NMF
+building trade (has to load stock prices first)
+price = 82.3
+selling -1349.0 shares of ENR at 82.3 on 20151112
+invaldating fund prices from Nov 12, 2015
+Done
+
+
+let's double check this member 
+nigelrake50  NMF  on 20151112   
+trades on November 12, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ENR	1,349	$82.25	$110,953.31	$67.45	$1.94
+
+he is sold out of ENR/RPC at the new quantity and price - ticket 3 is done! 
+
+***********
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-08 11:29:43.000000'
+>        COMMENT = NULL
+>     COMMISSION = 10.000000
+>   CURRENTORDER = X'247c00ed55eefe5cc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a18130354738f4c5c0a80134'
+>       MODIFIED = NULL
+>            NET = 8383.850000
+>         OPENED = TIMESTAMP '2015-09-08 11:27:24.000000'
+>          PRICE = 41.919250
+>     PRIMARYKEY = X'247a00ed55eefe5cc0a86fa6'
+>         SECFEE = 0.150000
+>         SHARES = 200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'a18130354738f4c5c0a80134';
+	>   LOGINNAME = lakshmiramanan
+	select fundkey from mticketallocation where ticketkey=X'247a00ed55eefe5cc0a86fa6';
+	>   FUNDKEY = X'0e8f6c5e54e3ad41c0a86f98'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'247a00ed55eefe5cc0a86fa6');
+	>   SYMBOL = LMFn
+
+lakshmiramanan LMFn
+LEDGER
+Date	Start	Change	End	Type
+Feb 18, 2015		200	200	Buy   <------------ old ENR
+Sep 08, 2015	200	-200		Sell  <------------ new ENR   need to change to EPC and give new price 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 18, 2015	200	$10.00	$27,196.00	$135.98
+ 	 	 
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Sep 8, 2015	200	$10.00	$0.15	$8,383.85	$41.92
+
+notes:  this member will partipate in the split and he'll have more shares  need to sell those off 
+
+let's look at this member lakshmiramanan   LMFn  on 20150908    he should have 200 * 1.349 = 269 shares
+need to adjust the sell to 269
+ENR	Edgewell Personal Care Co	$42.00	0.3%	69	$0.00	$2,898.00	Details   <--- has 69 left after selling 200 
+GNW	Genworth Financial Inc	$5.11	0.3%	500	$0.00	$2,555.00	Details 
+UWTI	VelocityShares 3x Long Crude ETN	$1.19	0.1%	500	$0.00	$595.00	Details 
+HMY	HARMONY GOLD MINING ADR	$0.74	0.0%	100	$0.00	$74.00	Details 
+Details 
+ 	 	 
+left curve	 trades on September 08, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ENR	200	$41.92	$8,383.85	$10.00	$0.15  <---- untrade this, make it 269 
+Sell	UWTI	4,600	$1.15	$5,289.44	$230.00	$0.10
+Sell	GNW	500	$4.97	$2,484.95	$25.00	$0.05
+Sell	HMY	900	$0.73	$654.73	$34.46	$0.02
+
+what is the price on 2015-09-08?  
+Sep 8, 2015	85.32	85.85	84.53	85.32	366,400	85.32
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py lakshmiramanan   LMFn 20150908 b4c710ac390c6e04c0a8015c -269 85.85
+Trading -269.0 shares of Edgewell Personal Care Co on Sep 08, 2015 at 85.85
+manager login: lakshmiramanan
+manager: Venkataramanan
+fund: LMFn
+building trade (has to load stock prices first)
+price = 85.85
+selling -269.0 shares of ENR at 85.85 on 20150908
+invaldating fund prices from Sep 08, 2015
+Done
+
+
+ok, let's check lakshmiramanan   LMFn  on 20150908 
+trades on September 08, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ENR	269	$85.80	$23,079.79	$13.45	$0.41  <----------- new price and new quantity
+Sell	UWTI	4,600	$1.15	$5,289.44	$230.00	$0.10
+Sell	GNW	500	$4.97	$2,484.95	$25.00	$0.05
+Sell	HMY	900	$0.73	$654.73	$34.46	$0.02
+ 	 	 
+
+he is sold out of ENR  done with ticket 6
+
+******************
+ticket 9 
+> Row 9:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-29 15:39:46.000000'
+>        COMMENT = NULL
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'd7f400d556327542c0a86fa6'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ac5e5d6d39e3420dc0a80118'
+>       MODIFIED = NULL
+>            NET = 21474.620000
+>         OPENED = TIMESTAMP '2015-10-29 15:36:26.000000'
+>          PRICE = 42.949240
+>     PRIMARYKEY = X'd7f200d556327542c0a86fa6'
+>         SECFEE = 0.380000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'ac5e5d6d39e3420dc0a80118';
+	>   LOGINNAME = mparris
+	select fundkey from mticketallocation where ticketkey=X'd7f200d556327542c0a86fa6';
+	>   FUNDKEY = X'417f34e73dfc16f7c0a80134'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'd7f200d556327542c0a86fa6');
+	>   SYMBOL = MMF
+	
+mparris  MMF
+LEDGER
+Date	Start	Change	End	Type
+Dec 23, 2002		500	500	Buy  <----------  this is old ENR, leave as is 
+Oct 29, 2015	500	-500		Sell   <--------  this will be EPC 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 23, 2002	500	$25.00	$13,260.30	$26.52
+ 	 	 
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 29, 2015	500	$25.00	$0.38	$21,474.62	$42.95
+ 	 	 
+note:  the member will participate in the 1349 to 1000 split and will end up with more shares, we'll
+sell those out  as EPC
+
+check  mparris  MMF on 20151029   he should have 500 * 1.349 = 674 shares   change the sell to 674
+positions on October 29, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+MELI	MercadoLibre, Incorporated	$95.24	20.5%	3,500	$0.00	$333,340.00	Details 
+SU	SUNCOR ENERGY	$29.48	8.3%	4,560	$0.00	$134,428.80	Details 
+IUSV	iShares Core US Value ETF	$131.26	8.1%	1,000	$0.00	$131,260.00	Details 
+SPY	SPDR S&P 500 ETF Trust	$208.83	6.4%	500	$0.00	$104,415.00	Details 
+PEP	PEPSICO INC	$102.80	6.3%	1,000	$0.00	$102,800.00	Details 
+STJ	ST. JUDE MEDICAL	$63.58	5.5%	1,400	$0.00	$89,012.00	Details 
+PG	PROCTER & GAMBLE	$77.02	4.7%	1,000	$0.00	$77,020.00	Details 
+TD	TORONTO-DOMINION BK	$41.88	3.9%	1,500	$0.00	$62,820.00	Details 
+TEVA	TEVA PHARMACTL INDUS LTD ADS	$60.24	3.7%	1,000	$0.00	$60,240.00	Details 
+ABX	BARRICK GOLD	$7.82	1.0%	2,000	$0.00	$15,640.00	Details 
+ENR	Edgewell Personal Care Co	$43.02	0.5%	174	$0.00	$7,485.48	Details   <---- has 174 left after the 500 sell
+JETMF	Jet Metal Corp	$0.10	0.0%	125	$0.00	$12.50	Details 
+Details 
+ 	 	 
+left curve	 trades on October 29, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	SCCO	4,376	$27.62	$120,863.89	$218.80	$2.11
+Sell	CVX	1,000	$89.78	$89,778.43	$50.00	$1.57
+Sell	SLB	1,000	$78.64	$78,638.63	$50.00	$1.37
+Sell	CEO	500	$115.45	$57,723.99	$25.00	$1.01
+Sell	CNQ	2,400	$23.00	$55,199.03	$120.00	$0.97
+Sell	COP	1,000	$53.46	$53,459.06	$50.00	$0.94
+Sell	PSX	500	$86.50	$43,249.24	$25.00	$0.76
+Sell	ENR	500	$42.95	$21,474.62	$25.00	$0.38  <--- untrade this and make it 674 shares 
+Sell	CVE	1,000	$14.97	$14,969.73	$50.00	$0.27
+Sell	ECA	1,000	$7.62	$7,619.86	$50.00	$0.14
+
+what was the price on 2015-10-29?  
+Oct 29, 2015	85.44	87.00	85.11	86.64	419,000	86.64
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py mparris  MMF 20151029 b4c710ac390c6e04c0a8015c -674 87.00
+Trading -674.0 shares of Edgewell Personal Care Co on Oct 29, 2015 at 87.0
+manager login: mparris
+manager: Michael Parris
+fund: MMF
+building trade (has to load stock prices first)
+price = 87.0
+selling -674.0 shares of ENR at 87.0 on 20151029
+invaldating fund prices from Oct 29, 2015
+Done
+
+check again mparris  MMF 20151029
+trades on October 29, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	SCCO	4,376	$27.62	$120,863.89	$218.80	$2.11
+Sell	CVX	1,000	$89.78	$89,778.43	$50.00	$1.57
+Sell	SLB	1,000	$78.64	$78,638.63	$50.00	$1.37
+Sell	ENR	674	$86.95	$58,603.27	$33.70	$1.03   <----- he is sold out, new quantity and new price 
+Sell	CEO	500	$115.45	$57,723.99	$25.00	$1.01
+Sell	CNQ	2,400	$23.00	$55,199.03	$120.00	$0.97
+Sell	COP	1,000	$53.46	$53,459.06	$50.00	$0.94
+Sell	PSX	500	$86.50	$43,249.24	$25.00	$0.76
+Sell	CVE	1,000	$14.97	$14,969.73	$50.00	$0.27
+Sell	ECA	1,000	$7.62	$7,619.86	$50.00	$0.14
+ 	 	 
+ticket 9 is done! 
+
+************************************************************************************************
+ticket 10
+> Row 10:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-07-06 09:30:21.000000'
+>        COMMENT = NULL
+>     COMMISSION = 13.000000
+>   CURRENTORDER = X'811200ca55990e4bc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'cfac703b39df6a24c0a80118'
+>       MODIFIED = NULL
+>            NET = 9435.230000
+>         OPENED = TIMESTAMP '2015-07-05 07:00:27.000000'
+>          PRICE = 36.289346
+>     PRIMARYKEY = X'811000ca55990e4bc0a86fa6'
+>         SECFEE = 0.170000
+>         SHARES = 260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'cfac703b39df6a24c0a80118';
+	>   LOGINNAME = rhanks
+	select fundkey from mticketallocation where ticketkey=X'811000ca55990e4bc0a86fa6';
+	>   FUNDKEY = X'bba14d5c3f03e455c0a80134'
+	select symbol from mfund where primarykey in (select fundkey from mticketallocation where ticketkey=X'811000ca55990e4bc0a86fa6');
+	>   SYMBOL = RJHRB
+
+rhanks  RJHRB
+LEDGER
+Date	Start	Change	End	Type
+Feb 18, 2014		260	260	Buy   <--------- this is old ENR, leave as is 
+Jul 06, 2015	260	-260		Sell  <-------- this will be EPC 
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 18, 2014	260	$13.00	$25,110.44	$96.58
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 6, 2015	260	$13.00	$0.17	$9,435.23	$36.29
+ 	 	 
+note:  this member will participate in the 1349 to 1000 split and will have more shares
+we'll adjust the sell to that quantity 
+
+look at rhanks  RJHRB on 20150706  he should now have 260 * 1.349 = 350 shares 
+
+ENR	Edgewell Personal Care Co	$36.39	0.1%	90	$0.00	$3,275.10	Details   <-- he has 90 left  
+CRC	California Resources Corp	$5.37	0.0%	228	$0.00	$1,224.36	Details 
+HYH	Halyard Health Inc	$39.99	0.0%	30	$0.00	$1,199.70	Details 
+Details 
+ 	 	 
+left curve	 trades on July 06, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Buy	RL	190	$133.75	$25,412.50	$9.50	$0.00
+Buy	ITT	610	$40.94	$24,973.40	$30.50	$0.00
+Buy	FLS	480	$51.67	$24,801.60	$24.00	$0.00
+Buy	NSC	280	$87.55	$24,514.00	$14.00	$0.00
+Sell	ENR	260	$36.29	$9,435.23	$13.00	$0.17  <--- change this to 350 
+
+what was the price on 2015-07-06?  
+Jul 6, 2015	100.00	102.20	99.13	100.68	3,164,800	100.41
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py rhanks  RJHRB 20150706 b4c710ac390c6e04c0a8015c -350 102.20
+Trading -350.0 shares of Edgewell Personal Care Co on Jul 06, 2015 at 102.2
+manager login: rhanks
+manager: Russell J. Hanks
+fund: RJHRB
+building trade (has to load stock prices first)
+price = 102.2
+selling -350.0 shares of ENR at 102.2 on 20150706
+invaldating fund prices from Jul 06, 2015
+Done
+
+
+check on him again rhanks  RJHRB 20150706
+ trades on July 06, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ENR	350	$102.15	$35,751.87	$17.50	$0.63  <-- he has sold out of ENR new qty and price 
+Buy	RL	190	$133.75	$25,412.50	$9.50	$0.00
+Buy	ITT	610	$40.94	$24,973.40	$30.50	$0.00
+Buy	FLS	480	$51.67	$24,801.60	$24.00	$0.00
+Buy	NSC	280	$87.55	$24,514.00	$14.00	$0.00
+ 	 	 
+
+ticket 10 is done, we're done with the tickets 
+
+************************************************************************************************
+
+
+************************************************************************************************
+
+***********************
+we have to redo the prices for ENR/EPC  also 
+***********************
+
+/Marketocracy/bin/dbtool lookup stock EPC
+stock: EPC
+  PK       : [B4C710AC390C6E04C0A8015C]
+  companyID: [10048]
+  symbol   : [EPC]
+  name     : [Edgewell Personal Care Co]
+  date     : [2015-07-01 00:00:02]
+  status   : [Active]
+<<<< dbtool finished at 2016-03-05 19:50:03 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 10048
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:137.2100 H:138.3200 L:136.5300 C:138.1900 V:478568 TSO:69404 A:138.1900 R:1.0000 CA:3.7500
+2015-06-23 (Tue) [5286]: O:138.3900 H:138.8600 L:137.4500 C:138.4200 V:519936 TSO:69404 A:138.4200 R:1.0000 CA:3.7500
+2015-06-24 (Wed) [5287]: O:138.0100 H:138.8700 L:136.0300 C:136.0800 V:829806 TSO:69404 A:136.0800 R:1.0000 CA:3.7500
+2015-06-25 (Thu) [5288]: O:136.6800 H:136.6800 L:135.5700 C:135.8300 V:607971 TSO:69404 A:135.8300 R:1.0000 CA:3.7500
+2015-06-26 (Fri) [5289]: O:135.7400 H:136.1700 L:135.3100 C:135.3500 V:539832 TSO:69404 A:135.3500 R:1.0000 CA:3.7500
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:134.5500 H:134.8600 L:131.6400 C:131.8000 V:839427 TSO:69404 A:131.8000 R:1.0000 CA:3.7500
+2015-06-30 (Tue) [5293]: O:132.4900 H:133.7300 L:130.9200 C:131.5500 V:1206741 TSO:69404 A:131.5500 R:1.0000 CA:3.7500
+2015-07-01 (Wed) [5294]: O:33.9000 H:35.6800 L:33.3100 C:34.0500 V:2953465 TSO:69404 A:34.0500 R:1.0000 CA:3.7500  <--- right here we have to change 
+2015-07-02 (Thu) [5295]: O:34.9900 H:38.2700 L:34.9400 C:36.6500 V:4456437 TSO:69404 A:36.6500 R:1.0000 CA:3.7500
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:36.5400 H:38.9600 L:35.8800 C:36.3900 V:3280064 TSO:69404 A:36.3900 R:1.0000 CA:3.7500
+2015-07-07 (Tue) [5300]: O:36.3500 H:36.8300 L:34.7600 C:35.3100 V:2569734 TSO:69404 A:35.3100 R:1.0000 CA:3.7500
+2015-07-08 (Wed) [5301]: O:34.6500 H:35.2500 L:34.1200 C:34.9200 V:1749471 TSO:69404 A:34.9200 R:1.0000 CA:3.7500
+2015-07-09 (Thu) [5302]: O:34.9900 H:36.3000 L:34.0400 C:35.8900 V:2234004 TSO:69404 A:35.8900 R:1.0000 CA:3.7500
+2015-07-10 (Fri) [5303]: O:36.2300 H:37.2400 L:35.3200 C:37.0000 V:1197564 TSO:69404 A:37.0000 R:1.0000 CA:3.7500
+
+2015-07-01 (Wed) [5294]:
+
+let's get the prices from yahoo finance for ENR/EPC 
+save to CA issues EPC prices to be loaded.txt
+
+
+				|	
+
+let's delete prices from 5294 for companyid=10048;
+delete from stockprices where daynumber >= 5294 and companyid=10048;
+	done
+select max(daynumber) from stockprices where companyid=10048;
+> Row 1:
+>   _C001 = 5293
+
+let's update the prices 
+	done
+select max(daynumber) from stockprices where companyid=10048;
+> Row 1:
+>   _C001 = 5541
+
+good we have new and fresh prices for ENR (old) / RPC new from 7/1/15
+
+need to invalidate prices from 2015-06-30
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-06-30
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2016-03-05
+D: (20:01:28.056) Invalidate all prices >= 2015-06-30 (5293)
+
+
+Let's check the member who wrote the case
+
+Member Name
+Gary Heyland
+Username
+AQAFundManager
+Fund Symbols
+AQALP
+Stock Tickers
+
+AQAFundManager  AQALP
+
+all open tickets	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Open Date	Limit	Current	Shares	Fills	Avg. Paid	Order Type	Last Filled	 
+Buy	EPCYY	Mar 3, 2016	 	$25.50	516	0	$0.00	Good Until Canceled	 	Details Cancel 
+ 	 
+1
+ 	 	 
+
+
+he wants to buy 516 on 2016-03-03 
+what was the price that day for EPC? 
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Mar 4, 2016	79.23	81.25	79.23	80.68	372,100	80.68
+Mar 3, 2016	78.09	79.37	77.69	79.23	285,100	79.23  <---
+
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py AQAFundManager  AQALP 20160303 b4c710ac390c6e04c0a8015c 516 77.69
+
+must not be mixed case
+
+select * from mmanager where  upper(loginname) = 'AQAFUNDMANAGER';
+> Row 1:
+>                EMAIL = garyheyland@alphaquantanalytics.com
+>            FIRSTNAME = NULL
+>             FULLNAME = NULL
+>       HOMEADDRESSKEY = X'b246086456c61ca9c0a86fa6'
+>             LASTNAME = NULL
+>            LOGINNAME = aqafundmanager
+>        LOGINPASSWORD = NULL
+>         PORTFOLIOKEY = X'b248086456c61ca9c0a86fa6'
+>           PRIMARYKEY = X'b245086456c61ca9c0a86fa6'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'b247086456c61ca9c0a86fa6'
+>    EMAILTROUBLEINDEX = 1
+>        PREVIOUSLOGIN = NULL
+>            LASTLOGIN = NULL
+>           LOGINCOUNT = NULL
+>         LOGINSPACING = NULL
+>   JOINEDMARKETOCRACY = TIMESTAMP '2016-02-18 14:34:01.000000'
+>    ENCRYPTEDPASSWORD = 061AF926CBF2874005071727CC312B952D309248212EF0B6
+>         MEMBERSTATUS = NULL
+
+/Marketocracy/Scripts/build/bin/backdatedtradebykey.py aqafundmanager  AQALP 20160303 b4c710ac390c6e04c0a8015c 516 77.69
+Trading 516.0 shares of Edgewell Personal Care Co on Mar 03, 2016 at 77.69
+manager login: aqafundmanager
+manager: aqafundmanager
+fund: AQALP
+building trade (has to load stock prices first)
+price = 77.69
+buying 516.0 shares of ENR at 77.69 on 20160303
+invaldating fund prices from Mar 03, 2016
+Done
+
+
+aqafundmanager   AQALP 20160303
+ENR	Edgewell Personal Care Co	$40.88	2.1%	516	$0.00	$21,094.08	Details 
+ 	 	 
+left curve	 trades on March 03, 2016	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Buy	CAG	951	$43.13	$41,016.63	$19.02	$0.00
+Buy	TXRH	968	$42.26	$40,907.68	$19.36	$0.00
+Buy	CMG	77	$526.33	$40,527.41	$1.54	$0.00
+Sell	AVG	2,042	$19.71	$40,242.03	$40.84	$0.71
+Buy	ENR	516	$77.71	$40,098.36	$10.32	$0.00
+Sell	WMT	599	$65.31	$39,120.00	$11.98	$0.69
+
+good 
+
+
+we need a price load for this to be complete but we can check on 3/6/16 after the weekend type
+load
+
+check that ENR has changed to EPC
+check that EPC has spun off ENR (new)
+check for new ENR
+check for the 1349 for 1000 split for RPC
+
+new prices for ENR and RPC should come in
+
+
+3/6/16
+EPC on our site:
+ymbol: EPC	Name: Edgewell Personal Care Co	Price: $80.68
+Volume: 372,127	Sector: Consumer Staples	Change: $1.45
+Short Volume: 700,761	Style: Mid Cap : Blend	Market Cap: $2,883,042,160
+Avg Volume: 700,761	 Exchange: NYSE	Today: 1.83%
+50 Day Ave: $35.04	Year High: $107.45	High: $81.25
+200 Day Ave: $47.38	Year Low: $28.86	Low: $79.23
+
+research  stock info  EPC   
+ [NEW QUOTE]       
+Corporate Actions for Edgewell Personal Care Co	  March 06, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for EPC	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+01 Jul 15	ENR	EPC	Change in the ticker (trading) symbol from ENR to EPC
+ 	 	 
+left curve	  CUSIP changes for EPC	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 Jul 15	29266R108	28035Q102	Change in any of identification numbers (CUSIP) of a security from 29266R108 to 28035Q102
+ 	 	 
+left curve	  name changes for EPC	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+01 Jul 15	Energizer Holdings Inc	Edgewell Personal Care Co	Change in the name of issuer from Energizer Holdings Inc to Edgewell Personal Care Co
+ 	 	 
+left curve	  cash dividends paid by EPC	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+20 Aug 12	22 Aug 12	13 Sep 12	4	$0.40	Dividend amount:0.4 per share.
+16 Nov 12	20 Nov 12	12 Dec 12	4	$0.40	Dividend amount:0.4 per share.
+15 Feb 13	20 Feb 13	13 Mar 13	4	$0.40	Dividend amount:0.4 per share.
+17 May 13	21 May 13	11 Jun 13	4	$0.40	Dividend amount:0.4 per share.
+16 Aug 13	20 Aug 13	10 Sep 13	4	$0.50	Dividend amount:0.5 per share.
+18 Nov 13	20 Nov 13	17 Dec 13	4	$0.50	Dividend amount:0.5 per share.
+18 Feb 14	20 Feb 14	12 Mar 14	4	$0.50	Dividend amount:0.5 per share.
+18 Feb 14	20 Feb 14	12 Mar 14	4	$0.50	Dividend amount:0.5 per share.
+19 May 14	21 May 14	11 Jun 14	4	$0.50	Dividend amount:0.5 per share.
+18 Aug 14	20 Aug 14	10 Sep 14	4	$0.50	Dividend amount:0.5 per share.
+18 Aug 14	20 Aug 14	10 Sep 14	4	$0.50	Dividend amount:0.5 per share.
+17 Nov 14	19 Nov 14	16 Dec 14	4	$0.50	Dividend amount:0.5 per share.
+17 Feb 15	19 Feb 15	18 Mar 15	4	$0.50	Dividend amount:0.5 per share.
+17 Feb 15	19 Feb 15	18 Mar 15	4	$0.50	Dividend amount:0.5 per share.
+18 May 15	20 May 15	10 Jun 15	4	$0.50	Dividend amount:0.5 per share.
+17 Aug 15	19 Aug 15	09 Sep 15	4	$0.25	Dividend amount:0.25 per share.
+25 Nov 15	30 Nov 15	16 Dec 15	4	$0.25	Dividend amount:0.25 per share.
+17 Feb 16	19 Feb 16	16 Mar 16	4	$0.25	Dividend amount:0.25 per share.
+ 	 	 
+left curve	  spinoffs by EPC	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+01 Jul 15	15 Jun 15	01 Jul 15	(null)	ENR	ENR US spun off from EPC with terms:(null)  <----  fix these nulls 
+ 	 	 
+left curve	  EPC had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+01 Jul 15	1349 for 1000	Split terms:1349 for 1000
+
+
+
+checking ENR
+Symbol: ENR	Name: Energizer Holdings, Inc. (new)	Price: $41.54
+Volume: 474,536	Sector: Unclassified	Change: $0.66
+Short Volume:	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume:	 Exchange: NYSE	Today: 1.61%
+50 Day Ave:	Year High:	High: $41.88
+200 Day Ave:	Year Low:	Low: $40.56
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  ENR   
+ [NEW QUOTE]       
+Corporate Actions for Energizer Holdings, Inc. (new)	  March 06, 2016
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+it is there 
+
+
+there aer nulls in the split
+
+select distinct stockkey from mstockalias where symbol='EPC';
+> Row 1:
+>   STOCKKEY = X'b4e410ac390c6e04c0a8015c'
+> Row 2:
+>   STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+select * from mstockalias where stockkey=X'b4c710ac390c6e04c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENERGIZER HOLDINGS
+>     PRIMARYKEY = X'b4c810ac390c6e04c0a8015c'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29266R108
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'c18d63235594730ec0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'2573633d55947337c0a86f92'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = ENR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'2573633d55947337c0a86f92';
+	> Row 1:
+>              ALIASKEY = X'2573633d55947337c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|29266R108|CP_NEW_CUSIP|28035Q102|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US29266R1086|CP_NEW_ISIN|US28035Q1022|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107734718
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 1174290
+>        BB_COMPANYNAME = Energizer Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = ENR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ENR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'68eb6d42556e334fc0a86f92'
+>               VERSION = NULL
+29266R108  to 28035Q102
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 28035Q102
+>           DATE = TIMESTAMP '2015-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Edgewell Personal Care Co
+>     PRIMARYKEY = X'8d65023256db5d06c0a86fab'
+>       STOCKKEY = X'b4c710ac390c6e04c0a8015c'
+>         SYMBOL = EPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30301010
+>       STYLEKEY = MB
+	select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab' order by BB_EFFECTIVE;
+	> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|(null)|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:053815
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'966a027556db5fd7c0a86fab'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1349 for 1000|CP_RATIO|1.349000|CP_RECORD_DT|20150616|CP_PAY_DT|20150701|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:071335
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'ae5e067756db762fc0a86fab'
+>               VERSION = NULL
+
+we do have some nulls
+select * from mcorporateaction where aliaskey is not null and BB_ACTIONMNEMONIC = 'SPIN' and BB_EFFECTIVE > TIMESTAMP '2016-01-01 00:00:00.000000';
+
+
+here is one that applied 
+> Row 9:
+>              ALIASKEY = X'1d0c0e21390b2098c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Manitowoc Foodservice Inc|CP_ID_BB_COMP|44264704|CP_ID_BB_SEC|1000|CP_TERMS|1 per 1|CP_RATIO|1.000000|CP_PAY_DT|20160304|CP_RECORD_DT|20160222|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.211334|CP_ADJ_DT|20160304|CP_TKR|MFS-W US|CP_DUE_BILL_RED_DT|20160308|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG0081JXTR0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG0081JXTQ1|CP_SPINOFF_ID_BB_SEC_NUM_DES|MFS-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101980834
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 105200
+>        BB_COMPANYNAME = Manitowoc Co Inc/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2016-03-04 00:00:00.000000'
+>         BB_IDENTIFIER = MTW     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-29 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = MTW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2016-03-03 00:00:00.000000'
+>            PRIMARYKEY = X'88f53b2956d8d10ac0a86fab'
+>               VERSION = NULL
+CP_TERMS|1 per 1|CP_RATIO|1.000000
+
+
+
+
+
+> Row 2:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|(null)|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:053815
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'966a027556db5fd7c0a86fab'
+>               VERSION = NULL
+
+	update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 1|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.' where PRIMARYKEY = X'966a027556db5fd7c0a86fab';
+	
+	check this
+select * from mcorporateaction where aliaskey=X'8d65023256db5d06c0a86fab' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ENR US|CP_NEW_TKR|EPC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:052614
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'8d5f023256db5d06c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Energizer Holdings, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 1|CP_RATIO|1.349000|CP_PAY_DT|20150701|CP_RECORD_DT|20150615|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|ENR US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:053815
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'966a027556db5fd7c0a86fab'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'8d65023256db5d06c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1349 for 1000|CP_RATIO|1.349000|CP_RECORD_DT|20150616|CP_PAY_DT|20150701|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20160305:071335
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = EPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = EPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'ae5e067756db762fc0a86fab'
+>               VERSION = NULL
+
+
+           ENR (old)
+                |
+				|
+       ticker,name,cusip change	
+          ENR (old) to EPC
+    Energizer Holdings Inc to Edgewell Personal Products
+      29266R108  to 28035Q102
+				|   
+      EPC spin off ENR (new)   --------------------------------->  ENR (new)  Energizer Holdings Inc (new)
+				|                                                                |
+       EPC 1349 for 1000 split                                                   |
+				|                                                                |
+				|                                                                |
+                V                                                                V
+               EPC			                                                    ENR (new)
+               
+Wrote case 4386 to document this 
+
+this should be done
+
+aqafundmanager AQALP
+EPC	click me	$78.64	516	$40,578.24	3.98%	$479.88	-0.63%	1.20%	1.20%	Details
+LEDGER
+Date	Start	Change	End	Type
+Mar 03, 2016		516	516	Buy
+Total: 516
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Mar 3, 2016	516	$10.32	$40,098.36	$77.71
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position

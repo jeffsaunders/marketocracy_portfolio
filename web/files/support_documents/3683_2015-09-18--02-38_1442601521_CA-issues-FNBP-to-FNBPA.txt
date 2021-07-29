@@ -1,0 +1,141 @@
+date:  9/18/15
+ype
+Corporate Action | Ticker Symbol Change
+Ticket
+3683
+Priority
+Medium
+Status
+Open
+Member Name
+William Grueneberg
+Username
+boyplunger
+Fund Symbols
+BLPLF
+Stock Tickers
+FNBP
+Description / Resources:
+Thu 09/17/2015 at 12:27 PM
+
+For FNBP in my portfolio blplf, the ticker has added an A and is now FNBPA. And I'd like to sell my shares.
+
+ticker : FNBP
+
+our site:
+Symbol: FNBP	Name: FNBPA Bancorp Inc	Price: $46.60
+Volume: 10	Sector: Financials	Change: $0.00
+Short Volume: 145	Style: Micro Cap : Value	Market Cap: $343,628,400
+Avg Volume: 145	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $47.41	Year High: $47.50	High: $46.60
+200 Day Ave: $38.29	Year Low: $34.00	Low: $46.60
+
+not pricing
+
+yahoo finance:
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Sep 17, 2015	46.60	46.60	46.60	46.60	0	46.60
+
+last price for FNBP  nothing about a ticker change 
+
+http://finance.yahoo.com/news/juniata-valley-financial-corp-acquire-110000683.html
+
+looks like we're acquired
+
+MIFFLINTOWN, Pa., June 26, 2015 /PRNewswire/ -- Juniata Valley Financial Corp. ("Juniata Valley Financial") (OTC Pink: JUVF), the bank holding company of The Juniata Valley Bank ("JVB"), and FNBPA Bancorp, Inc. ("FNBPA Bancorp") (OTC Pink: FNBP), the bank holding company of First National Bank of Port Allegany, have announced the execution of an agreement and plan of merger pursuant to which Juniata Valley Financial will acquire all of the shares of FNBPA Bancorp in a stock and cash transaction.
+
+Under the merger agreement, FNBPA Bancorp shareholders may elect to receive, in exchange for each share of FNBPA Bancorp common stock they own, either cash of $50.34 or 2.7813 shares of Juniata Valley Financial common stock, subject to election and allocation procedures designed to result in the aggregate cash merger consideration representing between 15% and 25% of the total merger consideration issued in the transaction. The transaction is valued at approximately $13.2 million. 
+
+do we have JUVF ?  yes
+Symbol: JUVF	Name: JUNIATA VALLEY NATL BK	Price: $18.65
+Volume: 200	Sector: Financials	Change: $0.00
+Short Volume: 1,006	Style: Micro Cap : Value	Market Cap: $80,978,300
+Avg Volume: 1,006	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $18.09	Year High: $19.95	High: $18.65
+200 Day Ave: $18.28	Year Low: $17.28	Low: $18.65
+
+
+going to JUVF company site
+https://www.jvbonline.com/home/home
+
+let's do a delist process for FNBP
+date:  
+ticker:  
+
+yahoo:
+
+quantum:  nothing useful
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:FNBPA Bancorp Inc  Symbol:FNBP
+Date: 09/18/2015
+
+15 users found
+
+1	Ewhite84	ahmet89	bigbucks4792	boyplunger	cooldollers888	dfama	dubois31	investingiseasy	jdamian_jr	lkeysersoze
+2	mebear	milkrate	nvalencia	oberto	reputation	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'FNBP';  
+
+select * from mstockalias where stockkey=X'STOCK_KEY'     order by "date";
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FNBP'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock FNBP
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2676
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'STOCK_KEY' and shares > 0 order by closed; 
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0)));
+
+apply the acquis
+there are 15 members who hold this stock
+quantum:
+last ticket:
+last price:
+
+
+/Marketocracy/bin/cahelper -symbol  FNBP  -effective YYYYMMDD -type ACQUIS -exchange UN -acqType 1 -acqCash XXX -acqShare 0 -purchaser XXX   >& /Users/build/caout/
+
+Check the results 
+select * from mstockalias where stockkey= X'STOCK_KEY'  order by "date";
+
+
+select * from mcorporateaction where aliaskey =X'ALIASKEY' ;
+
+
+select count(*) from mticket where sourcekey = X'SOURCEKEY';
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'SOURCEKEY'));
+there are XXX fundkeys, save to CA issues FNBP fundkeys.txt
+
+For Beta case
+FNBP no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+
+
+
+

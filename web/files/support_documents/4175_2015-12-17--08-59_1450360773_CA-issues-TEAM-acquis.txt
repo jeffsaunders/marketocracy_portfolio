@@ -1,0 +1,567 @@
+date:  12/10/15
+yahoo:
+Atlassian Corporation Plc (TEAM) -NasdaqGS
+27.78 Up 6.78(32.29%) 4:00PM EST
+After Hours : 28.15 Up 0.37 (1.33%) 7:59PM EST
+
+Prev Close:	21.00
+Open:	27.67
+Bid:	27.84 x 100
+Ask:	28.15 x 100
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	26.50 - 28.50
+52wk Range:	26.50 - 28.50
+Volume:	15,009,116
+Avg Vol (3m):	7,503,650
+Market Cap:	5.78B
+P/E (ttm):	578.75
+EPS (ttm):	0.05
+Div & Yield:	N/A (N/A
+
+just listed 
+
+we have TEAM
+
+
+
+	 	 	 	 	 	 	 	 	 
+
+CA issues XXX delist.txt
+date:  
+ticker:  
+
+yahoo:  nothing
+
+quantum:
+
+oursite:
+Symbol: TEAM	Name: TechTeam Global Inc	Price: $27.78
+Volume: 15,002,435	Sector: Information Technology	Change: $0.00
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High: $28.50
+200 Day Ave: $0.00	Year Low: $0.00	Low: $26.50
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  TEAM   
+ [NEW QUOTE]       
+Corporate Actions for TechTeam Global Inc	  December 10, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  CUSIP changes for TEAM	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+22 May 02	638108100	878311109	Change in any of identification numbers (CUSIP) of a security from 638108100 to 878311109
+ 	 	 
+left curve	  name changes for TEAM	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+22 May 02	NATIONAL TECHTEAM INC	TechTeam Global Inc	Change in the name of issuer from NATIONAL TECHTEAM INC to TechTeam Global Inc
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:TechTeam Global Inc  Symbol:TEAM
+Date: 12/10/2015
+
+30 users found
+
+1	boswinkle	bradhoop	clarkrl2	compagent	dick_jane	djgrimlok	dkyled	dsalvo1	dwhitehouse	edostillio
+2	eihde	hdfund	hornedfrog	hstudley	jexcell	jhageman	lolly	maarten07	mmccroskey	mmills
+3	ophie	patsup	pnaughton	rhanks	richfield	rogerbrookuk	tbarrow	v_ragha	vptitsyn	wulfpup	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'TEAM';  
+> Row 1:
+>   STOCKKEY = X'f4160e21390ab609c0a80116'
+select * from mstockalias where stockkey=X'f4160e21390ab609c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 638108100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NATL TECHTEAM INC
+>     PRIMARYKEY = X'f4170e21390ab609c0a80116'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 638108100
+>           DATE = TIMESTAMP '2002-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TechTeam Global Inc
+>     PRIMARYKEY = X'b3370e0e3cec54d9c0a801dc'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878311109
+>           DATE = TIMESTAMP '2002-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TechTeam Global Inc
+>     PRIMARYKEY = X'39e00e1b3cec55bac0a801dc'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TEAM'  order by BB_EFFECTIVE;
+> Row 26:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|TEAM|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50419621
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 107222
+>        BB_COMPANYNAME = TechTeam Global Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = TEAM    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-13 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = TEAM
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'319e06df4d06acacc0a80146'
+>               VERSION = NULL
+> Row 27:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|4463258Z BZ|CP_NAME|Stefanini International Holdin|CP_ID_BB_COMP|21385798|CP_UNIT|TechTeam Global Inc|CP_TOT_AMT|93.444504|CP_ACQUIS_TYP|1|CP_CASH|8.350000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.009000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|1|CP_INIT_OFFER_PREMIUM|17.680311|CP_CUR_PREMIUM|-0.238943|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|93.444504|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Ropes & Gray;13;100.000000;1;Target Financial Adviser;1;Houlihan Lokey;13;100.000000;1;Acquirer Legal Adviser;1;DLA Piper LLP;13;100.000000;1;Acquirer Financial Adviser;1;Fredericks;13;100.000000;|CP_NOTES|ACTL ACQ'R: STEFANINI IT SOLUTIONS. TENDER OFFER EFF ON 12/10/10 (89.41%)
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 49403926
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 107222
+>        BB_COMPANYNAME = TechTeam Global Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = TEAM    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-11-02 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = TEAM
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-12-13 00:00:00.000000'
+>            PRIMARYKEY = X'11e64dab4d07fec6c0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TEAM
+stock: TEAM
+  PK       : [F4160E21390AB609C0A80116]
+  companyID: [2966]
+  symbol   : [TEAM]
+  name     : [TechTeam Global Inc]
+  date     : [2002-05-22 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-12-10 22:27:49 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2966
+2010-12-10 (Fri) [3630]: O:8.3000 H:8.4500 L:8.0000 C:8.4400 V:23766 TSO:11130 A:8.4400 R:1.0000 CA:0.0000
+2010-12-11 (Sat) [3631]: <WEEKEND>
+2010-12-12 (Sun) [3632]: <WEEKEND>
+2010-12-13 (Mon) [3633]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000  <---
+2010-12-14 (Tue) [3634]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-15 (Wed) [3635]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-16 (Thu) [3636]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-17 (Fri) [3637]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-18 (Sat) [3638]: <WEEKEND>
+2010-12-19 (Sun) [3639]: <WEEKEND>
+2010-12-20 (Mon) [3640]: O:8.3699 H:8.3699 L:8.3699 C:8.3699 V:0 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-21 (Tue) [3641]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-22 (Wed) [3642]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-23 (Thu) [3643]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000
+2010-12-24 (Fri) [3644]: <HOLIDAY>
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f4160e21390ab609c0a80116' and shares > 0 order by closed; 
+
+> Row 553:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-09-20 14:15:00.000000'
+>        COMMENT = 
+>     COMMISSION = 25.500000
+>   CURRENTORDER = X'2a2641ba4c96251ac0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'fde91b143fb03322c0a80133'
+>       MODIFIED = NULL
+>            NET = 3267.004590
+>         OPENED = TIMESTAMP '2010-09-19 10:58:34.000000'
+>          PRICE = 6.405891
+>     PRIMARYKEY = X'2a2441ba4c96251ac0a80133'
+>         SECFEE = 0.060000
+>         SHARES = 510.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+this one below is one for the new stock
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f4160e21390ab609c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f4160e21390ab609c0a80116'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f4160e21390ab609c0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST:  2010-12-14
+there are 30 members who hold this stock
+quantum: nothing 
+last ticket:  2010-09-20   PRICE = 6.405891
+last price:  2010-12-13 (Mon) [3633]: O:8.3900 H:8.4500 L:8.3500 C:8.3699 V:103043 TSO:11130 A:8.3699 R:1.0000 CA:0.0000  <---
+
+going with 20101213 8.35
+
+/Marketocracy/bin/cahelper -symbol  TEAM  -effective 20101213 -type ACQUIS -exchange UN -acqType 1 -acqCash 8.35 -acqShare 0 -purchaser TEAM   >& /Users/build/caout/TEAM.20151210-DELIST
+TEAM.20151210-DELIST
+stocks1:~/caout build$ tail -f TEAM.20151210-DELIST
+D: (12-10 23:09:29.596) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-10 23:10:28.678) cahelper started on 2015-12-10 23:10:28 -0500
+
+D: (12-10 23:10:28.935) There are [0] open tickets for TEAM on 20101213
+D: (12-10 23:10:29.419) StockFileLoad Version:4.0
+D: (12-10 23:10:29.420) Loading Stock Data
+D: (12-10 23:12:09.041) Building Lookup Index
+D: (12-10 23:12:23.068) Finished Building Index
+D: (12-10 23:12:33.387) Finished Loading Stock Data
+D: (12-10 23:12:33.423) Connection to 192.168.111.172:6666 succeeded
+D: (12-10 23:12:36.766) {
+    "ACQUIRED_STOCK" = TEAM; 
+    "ACQUIRING_STOCK" = "TEAM_FIX"; 
+    AMOUNT = 8.35; 
+    APPLIED = 1; 
+    DATE = 20101213; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TEAM_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-10 23:12:40.007) SUCCESS
+D: (12-10 23:12:40.008) cahelper finished 2015-12-10 23:12:40 -0500
+Check the results 
+select * from mstockalias where stockkey= X'f4160e21390ab609c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 638108100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NATL TECHTEAM INC
+>     PRIMARYKEY = X'f4170e21390ab609c0a80116'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 638108100
+>           DATE = TIMESTAMP '2002-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TechTeam Global Inc
+>     PRIMARYKEY = X'b3370e0e3cec54d9c0a801dc'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878311109
+>           DATE = TIMESTAMP '2002-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TechTeam Global Inc
+>     PRIMARYKEY = X'39e00e1b3cec55bac0a801dc'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878311109
+>           DATE = TIMESTAMP '2010-12-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TechTeam Global Inc
+>     PRIMARYKEY = X'6736448f566a4cb4c0a86fab'
+>       STOCKKEY = X'f4160e21390ab609c0a80116'
+>         SYMBOL = TEAM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102010
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'6736448f566a4cb4c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'6736448f566a4cb4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TEAM  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|8.350000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151210:111028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = TEAM_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-13 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TEAM_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-12-13 00:00:00.000000'
+>            PRIMARYKEY = X'6730448f566a4cb4c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'6730448f566a4cb4c0a86fab';
+> Row 1:
+>   _C001 = 57.000000
+
+select distict fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6730448f566a4cb4c0a86fab'));
+there are 57 fundkeys, save to CA issues TEAM fundkeys.txt
+
+For Beta case
+TEAM no longer trades but is still active on our site - need to delist 
+
+check on 12/11/15   invalidate funds
+check MAdmin 
+
+invalidate reprice and close 
+
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey = X'6730448f566a4cb4c0a86fab') order by loginname;
+> Row 1:
+>   LOGINNAME = boswinkle
+> Row 2:
+>   LOGINNAME = bradhoop
+> Row 3:
+>   LOGINNAME = brahmsian
+> Row 4:
+>   LOGINNAME = chushogi
+> Row 5:
+>   LOGINNAME = clarkrl2
+> Row 6:
+>   LOGINNAME = coaster
+> Row 7:
+>   LOGINNAME = compagent
+> Row 8:
+>   LOGINNAME = cpaugh
+> Row 9:
+>   LOGINNAME = cvantoor
+> Row 10:
+>   LOGINNAME = daboomer
+> Row 11:
+>   LOGINNAME = dick_jane
+> Row 12:
+>   LOGINNAME = dkyled
+> Row 13:
+>   LOGINNAME = dsalvo1
+> Row 14:
+>   LOGINNAME = dwhitehouse
+> Row 15:
+>   LOGINNAME = edostillio
+> Row 16:
+>   LOGINNAME = eihde
+> Row 17:
+>   LOGINNAME = ewilson1
+> Row 18:
+>   LOGINNAME = guru
+> Row 19:
+>   LOGINNAME = hdfund
+> Row 20:
+>   LOGINNAME = hiromimini
+> Row 21:
+>   LOGINNAME = hornedfrog
+> Row 22:
+>   LOGINNAME = hstudley
+> Row 23:
+>   LOGINNAME = jexcell
+> Row 24:
+>   LOGINNAME = jhageman
+> Row 25:
+>   LOGINNAME = jwcobb
+> Row 26:
+>   LOGINNAME = lachad
+> Row 27:
+>   LOGINNAME = lolly
+> Row 28:
+>   LOGINNAME = maarten07
+> Row 29:
+>   LOGINNAME = manderson3
+> Row 30:
+>   LOGINNAME = mmccroskey
+> Row 31:
+>   LOGINNAME = mmills
+> Row 32:
+>   LOGINNAME = ophie
+> Row 33:
+>   LOGINNAME = pablo4414
+> Row 34:
+>   LOGINNAME = parhat2
+> Row 35:
+>   LOGINNAME = patchu
+> Row 36:
+>   LOGINNAME = patsup
+> Row 37:
+>   LOGINNAME = pnaughton
+> Row 38:
+>   LOGINNAME = pnutgllry
+> Row 39:
+>   LOGINNAME = przuniga
+> Row 40:
+>   LOGINNAME = rhanks
+> Row 41:
+>   LOGINNAME = richfield
+> Row 42:
+>   LOGINNAME = rjvanden
+> Row 43:
+>   LOGINNAME = rmorse
+> Row 44:
+>   LOGINNAME = rogerbrookuk
+> Row 45:
+>   LOGINNAME = rtareilo
+> Row 46:
+>   LOGINNAME = stanglx718
+> Row 47:
+>   LOGINNAME = tbarrow
+> Row 48:
+>   LOGINNAME = tunabomber
+> Row 49:
+>   LOGINNAME = v_ragha
+> Row 50:
+>   LOGINNAME = vptitsyn
+> Row 51:
+>   LOGINNAME = wulfpup
+
+how about rmorse
+/Marketocracy/bin/dbtool lookup fund rmorse
+>>>> dbtool started at 2015-12-11 14:33:41 -0500
+fund: rmorse
+  PK: [7159050941DCE9D8C0A80133]
+  symbol: [RMF]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+fund: rmorse
+  PK: [21DA201E42A0F306C0A80132]
+  symbol: [BFM]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+fund: rmorse
+  PK: [4FED45C3435DFAC8C0A80132]
+  symbol: [RMF1]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+fund: rmorse
+  PK: [404900F643A73919C0A80132]
+  symbol: [RMF2]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+fund: rmorse
+  PK: [531F00F643A73BF3C0A80132]
+  symbol: [RMF2]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+fund: rmorse
+  PK: [C09B028444530DF0C0A80134]
+  symbol: [RMF3]
+  managerKey: [6D6A050941DCE868C0A80133]
+  loginName: [rmorse]
+<<<< dbtool finished at 2015-12-11 14:33:42 -0500
+
+select symbol from mfund where primarykey in (select  fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6730448f566a4cb4c0a86fab'))) order by symbol;
+> Row 42:
+>   SYMBOL = RMF1
+> Row 43:
+>   SYMBOL = RMF2
+> Row 44:
+
+
+log in as rmorse 
+
+8.35 per share   20101213
+
+weird there were short buys of 0 shares
+
+check the day before the acquis 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4160e21390ab609c0a80116 2010-12-12
+EB4F3B5839DCBE56C0A80119, TABMF, tbarrow, 500
+CF954CEE3A549CC8C0A801E0, DWMF, dwhitehouse, 8880
+FD900349398F5973C0A80118, MAMMF, mmccroskey, 6000
+DFE710013A1D182EC0A80118, VPGF, vptitsyn, 10165
+70BE5B813B44E4E4C0A801E1, EMF, edostillio, 2100
+3A204D213CD317F7C0A80118, EMF, mmills, 1460
+DBE659E93E2F439CC0A80132, PMF, pnaughton, 3000
+63616CA53E4E753FC0A80132, FF, rogerbrookuk, 1500
+0B0F34013F022521C0A80134, WORD, dick_jane, 500
+BA9821DA407A10ADFFFFFFFF, peasf, patsup, 2970
+FFF83EF53D7778A4C0A80119, RHP11, richfield, 28
+558E331C4293EACEC0A80132, EMF, eihde, 300
+C3752CB74081D1BBFFFFFFFF, HMF, hornedfrog, 2000
+2D7C1DBC43B56543C0A80133, WMCF, wulfpup, 5000
+114B33EE3D86EBB8C0A80119, NFOTK, dsalvo1, 1000
+40BA05C1452981B5C0A80132, CD, dkyled, 4550
+B03600D045BA28F4C0A80133, LSF, lolly, -7338
+78EE142C42F9FA79C0A80134, MBVLF, boswinkle, 4500
+45322E0845D5F3B5C0A80135, LSF, jhageman, -1340
+479A325F46C39539C0A80132, HMI, bradhoop, 2600
+70471F0C472F24BAC0A80133, HMF, hdfund, -300
+878E4FF23B691DBEC0A80119, RJHSF, rhanks, 5270
+1863036B47DFC093C0A80132, HMF, hstudley, 50
+ECD56BE545A9638CC0A80134, HRF, clarkrl2, 2080
+200010B848480C13C0A80133, MCVMF, ophie, 2345
+A23810B848481141C0A80133, MCVRW, ophie, 2320
+084466E7485190F5C0A80133, zd1, v_ragha, 1339
+73D1308B4071BE66FFFFFFFF, CSF, compagent, 5000
+28E53804496C4866C0A80134, MMF, maarten07, 2255
+744C13DD4A1A0D54C0A80133, JMF1, jexcell, 280
+
+
+CF954CEE3A549CC8C0A801E0, DWMF, dwhitehouse, 8880
+this member had a ton
+
+8880 * 8.35 = 74148
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+12/13/2010	$768,239.07	$0.00	$21.05	$74,148.00	$164.84	$0.00	$842,243.27	$2,153,449.40	$2,995,692.68	100,000	$29.96	No	Details  it is there
+
+got it - reprice and close 

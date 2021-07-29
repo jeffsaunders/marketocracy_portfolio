@@ -1,0 +1,267 @@
+TSTN
+date:    1/5/15
+ticker:    TSTN
+
+yahoo:  nothing 
+
+quantum:
+Turnstone Systems, Inc.
+Ticker Symbol: TSTN*     CUSIP: 900423104     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 11/10/09
+
+Company's Online Profile
+BUSINESS:  Turnstone Systems, Inc. is a leading provider of loop management solutions that enable local exchange carriers to rapidly deploy and efficiently maintain Digital Subscriber Line services.
+Notes:  Final liquidating payment of $0.014711 per share per the Other OTC on 11/10/2009.
+IPO - 2/1/2000 - 3.00 Million Shares @ $29.00/share.    Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 202 Million
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=TSTN
+
+check MAdmin
+Stock:TURNSTONE SYSTEMS  Symbol:TSTN
+Date: 11/05/2015
+
+45 users found
+
+1	ansonwms	ansonwms2	aramy964228	bahing	bandrews	brewerda	chiragamin	dabairs	danbegood	dbrashears
+2	dpratte	dwang1	givlhad	hardrock375	hazy_venus	hmurray	hoozie	jdavis	jddoom	jfung
+3	joelwoodduck	jpichardo	jtodd	kbrotski	lbailor	lexusrad	makeroyd	mivanis	mkilmain	morrgan
+4	neal	nivany	og88	plee9	pphan	rduchacek	rfarrell	sdesai	simgrund	snowwinter
+5	srubin1	taltourkey	uae4000	wtaylor1	wwei
+
+database
+select distinct stockkey from mstockalias where symbol= 'TSTN';  
+> Row 1:
+>   STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+select * from mstockalias where stockkey=X'9d5810ac390c6d98c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'9d5910ac390c6d98c0a8015c'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2003-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'51ba50843fd1469dc0a80146'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2003-12-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'442b50943fd146d6c0a80146'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TSTN'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TSTN
+stock: TSTN
+  PK       : [9D5810AC390C6D98C0A8015C]
+  companyID: [8143]
+  symbol   : [TSTN]
+  name     : [TURNSTONE SYSTEMS]
+  date     : [2003-12-05 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-05 14:39:13 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8143
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'9d5810ac390c6d98c0a8015c' and shares > 0 order by closed; 
+> Row 248:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2006-04-19 11:24:00.000000'
+>        COMMENT = 
+>     COMMISSION = 2.448764
+>   CURRENTORDER = X'5dd8358a443e9dedc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'47ad4ebe3b5f9067c0a801e0'
+>       MODIFIED = NULL
+>            NET = 46.526516
+>         OPENED = TIMESTAMP '2006-04-13 14:52:29.000000'
+>          PRICE = 0.012374
+>     PRIMARYKEY = X'5dd6358a443e9dedc0a80134'
+>         SECFEE = 0.010000
+>         SHARES = 3760.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9d5810ac390c6d98c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9d5810ac390c6d98c0a8015c'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9d5810ac390c6d98c0a8015c'  and totalshares < 0)));
+no shorts
+
+apply the acquis
+there are 45 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 11/10/09
+	 Final liquidating payment of $0.014711 per share per the Other OTC on 11/10/2009.
+last ticket:2006-04-19 
+last price:  2009-11-10 (Tue) [3235]: O:0.0016 H:0.0100 L:0.0016 C:0.0100 V:19594 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+
+going with 20091110 0.014711 PRICE = 0.012374
+
+
+/Marketocracy/bin/cahelper -symbol  TSTN  -effective 20091110 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.014711 -acqShare 0 -purchaser TSTN   >& /Users/build/caout/TSTN.20151105-DELIST.out 
+TSTN.20151105-DELIST.out
+stocks1:~/caout build$ tail -f TSTN.20151105-DELIST.out
+D: (11-05 14:51:29.793) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-05 14:52:28.465) cahelper started on 2015-11-05 14:52:28 -0500
+
+D: (11-05 14:52:28.707) There are [0] open tickets for TSTN on 20091110
+D: (11-05 14:52:29.285) StockFileLoad Version:4.0
+D: (11-05 14:52:29.286) Loading Stock Data
+D: (11-05 14:54:08.865) Building Lookup Index
+D: (11-05 14:54:22.817) Finished Building Index
+D: (11-05 14:54:33.183) Finished Loading Stock Data
+D: (11-05 14:54:33.312) Connection to 192.168.111.172:6666 succeeded
+D: (11-05 14:54:36.215) {
+    "ACQUIRED_STOCK" = TSTN; 
+    "ACQUIRING_STOCK" = "TSTN_FIX"; 
+    AMOUNT = 0.014711; 
+    APPLIED = 1; 
+    DATE = 20091110; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TSTN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-05 14:54:40.913) SUCCESS
+D: (11-05 14:54:40.913) cahelper finished 2015-11-05 14:54:40 -0500
+Check the results 
+select * from mstockalias where stockkey= X'9d5810ac390c6d98c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'9d5910ac390c6d98c0a8015c'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2003-12-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'51ba50843fd1469dc0a80146'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2003-12-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'442b50943fd146d6c0a80146'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 900423104
+>           DATE = TIMESTAMP '2009-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TURNSTONE SYSTEMS
+>     PRIMARYKEY = X'64960a36563bb37cc0a86fab'
+>       STOCKKEY = X'9d5810ac390c6d98c0a8015c'
+>         SYMBOL = TSTN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'64960a36563bb37cc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'64960a36563bb37cc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TSTN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.014711|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151105:025228
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = TSTN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-11-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TSTN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-11-10 00:00:00.000000'
+>            PRIMARYKEY = X'64900a36563bb37cc0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'64900a36563bb37cc0a86fab';
+> Row 1:
+>   _C001 = 62.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'64900a36563bb37cc0a86fab'));
+there are 62 fundkeys, save to CA issues TSTN fundkeys.txt
+
+For Beta case
+TSTN no longer trades but is still active on our site - need to delist 
+
+check on 11/6/15   invalidate funds
+check MAdmin  clear
+
+TSTN has been acquired	right curve
+ 	 	
+TURNSTONE SYSTEMS acquired by a private company on 2009-11-10 00:00:00.
+
+invalidate, reprice, and close
+
+
+

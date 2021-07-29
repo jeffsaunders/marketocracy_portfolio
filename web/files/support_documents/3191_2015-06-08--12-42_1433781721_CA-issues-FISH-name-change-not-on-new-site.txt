@@ -1,0 +1,110 @@
+date:  6/6/15
+ticker:  FISH
+
+member says that this change to AZUR
+
+select distinct stockkey from mstockalias where symbol='FISH';
+> Row 1:
+>   STOCKKEY = X'0bc70e21390aef16c0a80116'
+> Row 2:
+>   STOCKKEY = X'973c22b451f302dec0a80146'
+
+
+there are two
+
+> FISH 1:
+>   STOCKKEY = X'0bc70e21390aef16c0a80116'
+select * from mstockalias where STOCKKEY = X'0bc70e21390aef16c0a80116';
+delisted 
+> FISH 2:
+>   STOCKKEY = X'973c22b451f302dec0a80146'
+select * from mstockalias where STOCKKEY = X'973c22b451f302dec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Marlin Midstream Partners LP
+>     PRIMARYKEY = X'973d22b451f302dec0a80146'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'43af1932555d13b2c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'43af1932555d13b2c0a86f92';
+> Row 1:
+>              ALIASKEY = X'43af1932555d13b2c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Marlin Midstream Partners LP|CP_NEW_NAME|Azure Midstream Partners LP|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107092200
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 36159751
+>        BB_COMPANYNAME = Marlin Midstream Partners LP
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>         BB_IDENTIFIER = FISH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>            PRIMARYKEY = X'bb394c09555bc1dcc0a86f92'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'e7c21960555d13eac0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'e7c21960555d13eac0a86f92';
+> Row 1:
+>              ALIASKEY = X'e7c21960555d13eac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|57118V100|CP_NEW_CUSIP|05501X100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US57118V1008|CP_NEW_ISIN|US05501X1000|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107092230
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 36159751
+>        BB_COMPANYNAME = Marlin Midstream Partners LP
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>         BB_IDENTIFIER = FISH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>            PRIMARYKEY = X'bb354c09555bc1d8c0a86f92'
+>               VERSION = NULL
+
+check xignite
+Name: 	Azure Midstream Partners LP  it is correct
+
+going to assign this to Brandon
+he resolved it
+

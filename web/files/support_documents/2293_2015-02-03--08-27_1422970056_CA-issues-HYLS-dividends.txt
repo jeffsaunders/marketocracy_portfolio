@@ -1,0 +1,112 @@
+date: 2/2/15
+
+missing dividends
+
+our site - never paid any
+
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+1/21/2015	Cash	0.24	--	1/23/2015	1/30/2015
+12/23/2014	Cash	0.38	--	12/26/2014	12/31/2014
+11/21/2014	Cash	0.24	--	11/25/2014	11/28/2014
+10/21/2014	Cash	0.24	--	10/23/2014	10/31/2014
+9/23/2014	Cash	0.23	--	9/25/2014	9/30/2014
+8/21/2014	Cash	0.22	--	8/25/2014	8/29/2014
+7/22/2014	Cash	0.22	--	7/24/2014	7/31/2014
+6/24/2014	Cash	0.22	--	6/26/2014	6/30/2014
+5/21/2014	Cash	0.22	--	5/23/2014	5/30/2014
+4/22/2014	Cash	0.22	--	4/24/2014	4/30/2014
+3/25/2014	Cash	0.22	--	3/27/2014	3/31/2014
+2/21/2014	Cash	0.22	--	2/25/2014	2/28/2014
+1/22/2014	Cash	0.24	--	1/24/2014	1/31/2014
+12/18/2013	Cash	0.24	--	12/20/2013	12/31/2013
+11/21/2013	Cash	0.24	--	11/25/2013	11/29/2013
+10/22/2013	Cash	0.24	--	10/24/2013	10/31/2013
+9/20/2013	Cash	0.25	--	9/24/2013	9/30/2013
+8/21/2013	Cash	0.26	--	8/23/2013	8/30/2013
+7/23/2013	Cash	0.28	--	7/25/2013	7/31/2013
+6/21/2013	Cash	0.28	--	6/25/2013	6/28/2013
+5/21/2013	Cash	0.28	--	5/23/2013	5/31/2013
+4/23/2013	Cash	0.28	--	4/25/2013	4/30/2013
+3/21/2013	Cash	0.28	3/14/2013	3/25/2013	3/28/2013
+
+select distinct stockkey from mstockalias where symbol='HYLS';
+> Row 1:
+>   STOCKKEY = X'b6652715516e0bf1c0a80146'
+
+select * from mstockalias where STOCKKEY = X'b6652715516e0bf1c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 33738D408
+>           DATE = TIMESTAMP '2013-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = First Trust High Yield Long/Short ETF
+>     PRIMARYKEY = X'b6662715516e0bf1c0a80146'
+>       STOCKKEY = X'b6652715516e0bf1c0a80146'
+>         SYMBOL = HYLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 33738D408
+>           DATE = TIMESTAMP '2013-09-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = First Trust Exchange-Traded Fu
+>     PRIMARYKEY = X'03316aef5227be21c0a80146'
+>       STOCKKEY = X'b6652715516e0bf1c0a80146'
+>         SYMBOL = HYLS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+ok they are being applied 
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20150121 -type DVD_CASH -exchange UN -payDate 20150130 -recordDate 20150123 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2015-01.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20141223 -type DVD_CASH -exchange UN -payDate 20141231 -recordDate 20141226 -amount 0.38 >& /Users/build/caout/HYLS.20140202-2014-12.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20141121 -type DVD_CASH -exchange UN -payDate 20141128 -recordDate 20141125 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2014-11.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20141021 -type DVD_CASH -exchange UN -payDate 20141031 -recordDate 20141023 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2014-10.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140923 -type DVD_CASH -exchange UN -payDate 20140930 -recordDate 20140925 -amount 0.23 >& /Users/build/caout/HYLS.20140202-2014-09.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140821 -type DVD_CASH -exchange UN -payDate 20140829 -recordDate 20140825 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-08.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140722 -type DVD_CASH -exchange UN -payDate 20140731 -recordDate 20140724 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-07.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140624 -type DVD_CASH -exchange UN -payDate 20140630 -recordDate 20140626 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-06.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140521 -type DVD_CASH -exchange UN -payDate 20140530 -recordDate 20140523 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-05.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140422 -type DVD_CASH -exchange UN -payDate 20140430 -recordDate 20140424 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-04.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140325 -type DVD_CASH -exchange UN -payDate 20140331 -recordDate 20140327 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-03.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140221 -type DVD_CASH -exchange UN -payDate 20140228 -recordDate 20140225 -amount 0.22 >& /Users/build/caout/HYLS.20140202-2014-02.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20140122 -type DVD_CASH -exchange UN -payDate 20140131 -recordDate 20140124 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2014-01.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20131218 -type DVD_CASH -exchange UN -payDate 20131231 -recordDate 20131220 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2013-12.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20131121 -type DVD_CASH -exchange UN -payDate 20131129 -recordDate 20131125 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2013-11.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20131022 -type DVD_CASH -exchange UN -payDate 20131031 -recordDate 20131024 -amount 0.24 >& /Users/build/caout/HYLS.20140202-2013-10.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130920 -type DVD_CASH -exchange UN -payDate 20130930 -recordDate 20130924 -amount 0.25 >& /Users/build/caout/HYLS.20140202-2013-09.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130821 -type DVD_CASH -exchange UN -payDate 20130830 -recordDate 20130823 -amount 0.26 >& /Users/build/caout/HYLS.20140202-2013-08.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130723 -type DVD_CASH -exchange UN -payDate 20130731 -recordDate 20130725 -amount 0.28 >& /Users/build/caout/HYLS.20140202-2013-07.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130621 -type DVD_CASH -exchange UN -payDate 20130628 -recordDate 20130625 -amount 0.28 >& /Users/build/caout/HYLS.20140202-2013-06.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130521 -type DVD_CASH -exchange UN -payDate 20130531 -recordDate 20130523 -amount 0.28 >& /Users/build/caout/HYLS.20140202-2013-05.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130423 -type DVD_CASH -exchange UN -payDate 20130430 -recordDate 20130425 -amount 0.28 >& /Users/build/caout/HYLS.20140202-2013-04.out;
+/Marketocracy/bin/cahelper -symbol HYLS -effective 20130321 -type DVD_CASH -exchange UN -payDate 20130328 -recordDate 20130325 -amount 0.28 >& /Users/build/caout/HYLS.20140202-2013-03.out;
+
+HYLS.20140202-2013-03.out
+HYLS.20140202-2013-04.out
+HYLS.20140202-2013-05.out
+HYLS.20140202-2013-06.out
+HYLS.20140202-2013-07.out
+HYLS.20140202-2013-08.out
+HYLS.20140202-2013-09.out
+HYLS.20140202-2013-10.out
+HYLS.20140202-2013-11.out
+HYLS.20140202-2013-12.out
+HYLS.20140202-2014-01.out
+HYLS.20140202-2014-02.out
+HYLS.20140202-2014-03.out
+HYLS.20140202-2014-04.out
+HYLS.20140202-2014-05.out
+HYLS.20140202-2014-06.out
+HYLS.20140202-2014-07.out
+HYLS.20140202-2014-08.out
+HYLS.20140202-2014-09.out
+HYLS.20140202-2014-10.out
+HYLS.20140202-2014-11.out
+HYLS.20140202-2014-12.out
+HYLS.20140202-2015-01.out

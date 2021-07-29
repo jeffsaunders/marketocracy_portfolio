@@ -1,0 +1,312 @@
+PTEC
+date:  
+ticker:  PTEC
+
+yahoo:
+
+quantum:
+Phoenix Technologies Ltd
+Ticker Symbol: PTEC*     CUSIP: 719153108     Exchange: NNM
+* NOTE: This security is no longer trading as of 11/19/10
+
+Company's Online Profile
+BUSINESS:  Phoenix is the global leader in device-enabling and management software products for PCs and other connected digital devices. Its FirstWare(TM) family of "instant on" software activates, secures, connects and recovers digital devices and is designed into millions of industry standard desktop, notebook, server, and information appliance systems sold annually. This enables Phoenix's customers -- specifiers, developers and manufacturers of user-driver microprocessor systems -- to reduce costs and provide high value-added features to their customers. Headquartered in San Jose, California, Phoenix Technologies has offices worldwide.
+Notes:  Nov. 19, 2010 — Phoenix Technologies Ltd. (Nasdaq: PTEC), the global leader in core systems software (CSS), announced that at a special meeting of stockholders held today the Phoenix stockholders approved the Company’s merger with Pharaoh Merger Sub Corp. (“Pharaoh”), a wholly-owned subsidiary of Pharaoh Acquisition LLC (“Parent”), each an affiliate of Marlin Equity Partners (“Marlin”). Pursuant to the terms of the Agreement and Plan of Merger, dated as of August 17, 2010, by and among Phoenix and affiliates of Marlin, as amended October 21, 2010 and November 3, 2010 (the “Marlin Merger Agreement”), as a result of the merger, Phoenix will become a subsidiary of Marlin Equity III, L.P. Approximately 97% of the shares voting at the special meeting of stockholders voted in favor of the adoption of the merger agreement, representing approximately 73% of Phoenix’s total outstanding shares of common stock as of the September 15, 2010 record date.
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=PTEC
+
+check MAdmin
+Stock:PHOENIX TECHNOLOGIES  Symbol:PTEC
+Date: 10/22/2015
+
+55 users found
+
+1	20dave20	3y1r335	aceman61	b_lovelady	bradhark	bradywahl	chloe_msy	clowy699	cmccann77	dalecarden
+2	dhatcher	dnerdo	drmacm	dtmoore	edwardtrafford	erode	eskyba	febodf	gkemp	guitarpsych
+3	guru	h_van_houwelingen	hbeceiro	hcruz	jdavidson2	jmanogue	jtate	jxm763	kitty57	kulasoft
+4	llacomis	lordprime	madstylin	mavsfan89	mbledug	misty_70	mjimenez	nchaviano	newbie34	packbacker
+5	quantboy	quebasura	rfarrell	richfield	rodcovlin	rshuhart	sabeth	slai	staddict444	steele99
+6	thadwin	unstockpicker	valuefocused	war009	wfuller
+
+database
+select distinct stockkey from mstockalias where symbol= 'PTEC';  
+> Row 1:
+>   STOCKKEY = X'f73a0e21390abce1c0a80116'
+select * from mstockalias where stockkey=X'f73a0e21390abce1c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 719153108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PHOENIX TECHNOLOGIES
+>     PRIMARYKEY = X'f73b0e21390abce1c0a80116'
+>       STOCKKEY = X'f73a0e21390abce1c0a80116'
+>         SYMBOL = PTEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'f73b0e21390abce1c0a80116';
+> Row 1:
+>              ALIASKEY = X'f73b0e21390abce1c0a80116'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|Integrity Sciences Inc|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|9|CP_ADVISORS|N.A.|CP_TKR|26071Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|7259312
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6322606
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 106319
+>        BB_COMPANYNAME = PHOENIX TECHNOLOGIES LTD
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-02-27 00:00:00.000000'
+>         BB_IDENTIFIER = PTEC    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-02-27 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PTEC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'6a260f3a3a9c69e6c0a801dc'  <--- delete 
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'6a260f3a3a9c69e6c0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+> Row 2:
+>              ALIASKEY = X'f73b0e21390abce1c0a80116'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|6.000000|CP_NOTES|STK TERMS: $6MLN IN ACQ'R COMMON SHRS.                                                         01/03/02 |CP_UNIT|StorageSoft Inc|CP_DEBT|0.000000|CP_CUR_PREMIUM|N.A.|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_UNSOLICITED|0|CP_SH|0.000000|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_NAME|StorageSoft Inc|CP_INIT_OFFER_PREMIUM|N.A.|CP_CASH_VAL|6.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|3|CP_ADVISORS|N.A.|CP_TKR|66098Z  US|CP_CASH|6.000000|CP_DETAIL_FLAG|0|CP_CASH_FLAG|2|CP_TOT_AMT|12.000000|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|0|CP_ADVISORS_NUM|0|CP_ID_BB_COMP|7616372
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7581214
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 106319
+>        BB_COMPANYNAME = Phoenix Technologies Ltd.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-01-09 00:00:00.000000'
+>         BB_IDENTIFIER = PTEC    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2002-01-03 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PTEC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-01-09 00:00:00.000000'
+>            PRIMARYKEY = X'430f6b853c3d0436c0a801dc'   <--- delete 
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'430f6b853c3d0436c0a801dc';
+> Row 1:
+>   _C001 = 0.000000
+delete these
+delete from mcorporateaction where primarykey=X'6a260f3a3a9c69e6c0a801dc';
+delete from mcorporateaction where primarykey=X'430f6b853c3d0436c0a801dc';
+check
+select * from mcorporateaction where aliaskey=X'f73b0e21390abce1c0a80116';
+nothing good 
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PTEC'  order by BB_EFFECTIVE;
+> Row 21:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|967617Z US|CP_NAME|Marlin Equity Partners|CP_ID_BB_COMP|11933637|CP_UNIT|Phoenix Technologies Ltd|CP_TOT_AMT|107.578400|CP_ACQUIS_TYP|1|CP_CASH|4.200000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|35.113392|CP_CUR_PREMIUM|0.000000|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|4.200000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|107.578400|CP_ADVISORS_NUM|3|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;3;3;1;Target Legal Adviser;1;Morgan Lewis;13;100.000000;1;Target Financial Adviser;1;RBC Capital Mkts;13;100.000000;1;Acquirer Legal Adviser;1;Pepper Hamilton;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 47563148
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 106319
+>        BB_COMPANYNAME = Phoenix Technologies Ltd
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2010-11-24 00:00:00.000000'
+>         BB_IDENTIFIER = PTEC    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-08-17 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PTEC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-11-23 00:00:00.000000'
+>            PRIMARYKEY = X'17d560764cec4ebcc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PTEC
+>>>> dbtool started at 2015-10-11 22:49:12 -0400
+stock: PTEC
+  PK       : [F73A0E21390ABCE1C0A80116]
+  companyID: [3167]
+  symbol   : [PTEC]
+  name     : [PHOENIX TECHNOLOGIES]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-11 22:49:13 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3167
+2010-11-14 (Sun) [3604]: <WEEKEND>
+2010-11-15 (Mon) [3605]: O:4.1800 H:4.1900 L:4.1800 C:4.1900 V:92351 TSO:35018 A:4.1900 R:1.0000 CA:0.0000
+2010-11-16 (Tue) [3606]: O:4.1800 H:4.2000 L:4.1800 C:4.1800 V:315030 TSO:35018 A:4.1800 R:1.0000 CA:0.0000
+2010-11-17 (Wed) [3607]: O:4.1900 H:4.2000 L:4.1900 C:4.1900 V:258568 TSO:35018 A:4.1900 R:1.0000 CA:0.0000
+2010-11-18 (Thu) [3608]: O:4.1900 H:4.2000 L:4.1900 C:4.1900 V:67765 TSO:35018 A:4.1900 R:1.0000 CA:0.0000
+2010-11-19 (Fri) [3609]: O:4.1900 H:4.2000 L:4.1800 C:4.1800 V:1341326 TSO:35018 A:4.1800 R:1.0000 CA:0.0000  <---
+2010-11-20 (Sat) [3610]: <WEEKEND>
+2010-11-21 (Sun) [3611]: <WEEKEND>
+2010-11-22 (Mon) [3612]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-11-23 (Tue) [3613]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-11-24 (Wed) [3614]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-11-25 (Thu) [3615]: <HOLIDAY>
+2010-11-26 (Fri) [3616]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-11-27 (Sat) [3617]: <WEEKEND>
+2010-11-28 (Sun) [3618]: <WEEKEND>
+2010-11-29 (Mon) [3619]: O:4.2000 H:4.2000 L:4.2000 C:4.2000 V:0 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-11-30 (Tue) [3620]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-01 (Wed) [3621]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-02 (Thu) [3622]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-03 (Fri) [3623]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-04 (Sat) [3624]: <WEEKEND>
+2010-12-05 (Sun) [3625]: <WEEKEND>
+2010-12-06 (Mon) [3626]: O:4.2000 H:4.2000 L:4.2000 C:4.2000 V:0 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-07 (Tue) [3627]: O:4.2000 H:4.2000 L:4.2000 C:4.2000 V:0 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+2010-12-08 (Wed) [3628]: O:4.2000 H:4.2000 L:4.2000 C:4.2000 V:0 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f73a0e21390abce1c0a80116' and shares > 0 order by closed; 
+> Row 912:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-11-09 12:15:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1084.500000
+>   CURRENTORDER = X'168418434cd8f643c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2c1f43543a6d4b52c0a80118'
+>       MODIFIED = NULL
+>            NET = 89788.119200
+>         OPENED = TIMESTAMP '2010-11-09 02:20:35.000000'
+>          PRICE = 4.139609
+>     PRIMARYKEY = X'168218434cd8f643c0a80134'
+>         SECFEE = 1.540000
+>         SHARES = 21690.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f73a0e21390abce1c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'STOCf73a0e21390abce1c0a80116K_KEY'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f73a0e21390abce1c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f73a0e21390abce1c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 55 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 11/19/10  merger 
+last ticket:  2010-11-09  PRICE = 4.139609
+last price:  2010-11-24 (Wed) [3614]: O:4.1900 H:4.2000 L:4.1900 C:4.2000 V:99588 TSO:35018 A:4.2000 R:1.0000 CA:0.0000
+
+
+found an acquis in the datavase not applied:  2010-11-24  4.20 cash 
+
+going with 20101124 4.20 
+/Marketocracy/bin/cahelper -symbol  PTEC  -effective 20101124 -type ACQUIS -exchange UN -acqType 1 -acqCash 4.20  -acqShare 0 -purchaser PTEC   >& /Users/build/caout/PTEC.20151011-ACQUIS.out 
+PTEC.20151011-ACQUIS.out
+stocks1:~/caout build$ tail -f PTEC.20151011-ACQUIS.out
+D: (10-12 01:04:43.420) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-12 01:05:07.335) cahelper started on 2015-10-12 01:05:07 -0400
+
+D: (10-12 01:05:07.616) There are [0] open tickets for PTEC on 20101124
+D: (10-12 01:05:08.340) StockFileLoad Version:4.0
+D: (10-12 01:05:08.341) Loading Stock Data
+D: (10-12 01:05:44.597) Building Lookup Index
+D: (10-12 01:05:50.258) Finished Building Index
+D: (10-12 01:05:54.211) Finished Loading Stock Data
+D: (10-12 01:05:54.330) Connection to 192.168.111.172:6666 succeeded
+D: (10-12 01:06:02.253) SavingChanges for position sell out 101 of 332
+D: (10-12 01:06:19.820) {
+    "ACQUIRED_STOCK" = PTEC; 
+    "ACQUIRING_STOCK" = "PTEC_FIX"; 
+    AMOUNT = 4.2; 
+    APPLIED = 1; 
+    DATE = 20101124; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PTEC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-12 01:06:29.025) SUCCESS
+D: (10-12 01:06:29.026) cahelper finished 2015-10-12 01:06:29 -0400
+Check the results 
+select * from mstockalias where stockkey= X'f73a0e21390abce1c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 719153108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PHOENIX TECHNOLOGIES
+>     PRIMARYKEY = X'f73b0e21390abce1c0a80116'
+>       STOCKKEY = X'f73a0e21390abce1c0a80116'
+>         SYMBOL = PTEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 719153108
+>           DATE = TIMESTAMP '2010-11-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PHOENIX TECHNOLOGIES
+>     PRIMARYKEY = X'34d37472561b3f83c0a86fab'
+>       STOCKKEY = X'f73a0e21390abce1c0a80116'
+>         SYMBOL = PTEC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'34d37472561b3f83c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'34d37472561b3f83c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PTEC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|4.200000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151012:010507
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-11-24 00:00:00.000000'
+>         BB_IDENTIFIER = PTEC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-11-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PTEC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-11-24 00:00:00.000000'
+>            PRIMARYKEY = X'34cd7472561b3f83c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'34cd7472561b3f83c0a86fab';
+> Row 1:
+>   _C001 = 110.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'34cd7472561b3f83c0a86fab'));
+there are 110 fundkeys, save to CA issues PTEC fundkeys.txt
+
+For Beta case
+PTEC no longer trades but is still active on our site - need to delist 
+
+check on 10/13/15   invalidate funds
+check MAdmin  clear
+
+10/12/15  it's done
+PTEC has been acquired	right curve
+ 	 	
+PHOENIX TECHNOLOGIES acquired by a private company on 2010-11-24 00:00:00.
+
+done - closing
+
+
+

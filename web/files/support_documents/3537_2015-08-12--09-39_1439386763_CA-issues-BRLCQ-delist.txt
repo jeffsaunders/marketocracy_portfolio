@@ -1,0 +1,597 @@
+
+date:  8/11/15 
+ticker:   BRLCQ
+
+yahoo:
+
+quantum:
+
+oursite:
+Symbol: BRLCQ	Name: Syntax-Brillian Corp	Price: $0.00
+Volume:	Sector: Consumer Discretionary	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs
+ffective Date	Old Symbol	New Symbol	Description
+01 Dec 05	BRLC	BRLCD	Change in the ticker (trading) symbol from BRLC to BRLCD
+30 Dec 05	BRLCD	BRLC	Change in the ticker (trading) symbol from BRLCD to BRLC
+22 Jul 08	BRLC	BRLCQ	Change in the ticker (trading) symbol from BRLC to BRLCQ
+ 	 	 
+	  CUSIP changes for BRLCQ	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 Dec 05	10949P107	87163L103	Change in any of identification numbers (CUSIP) of a security from 10949P107 to 87163L103
+ 	 	 
+	  name changes for BRLCQ	
+ 	 	
+Effective Date	Old Name	New Name	Description
+01 Dec 05	Brillian Corp	Syntax-Brillian Corp	Change in the name of issuer from Brillian Corp to Syntax-Brillian Corp
+ 	 	 
+	  listing changes for BRLCQ	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jul 22, 2008	NASDAQ	UQ	OTCBB-OTHER	UV	Change in the exchange that BRLCQ trades on from NASDAQ to OTCBB-OTHER
+ 	 	 
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Syntax-Brillian Corp  Symbol:BRLCQ
+Date: 08/11/2015
+
+93 users found
+
+1	abatuf	acanete	acremades	aharfo56	akg4y	alioune	apreuss	arfonce	asanolic	asdfg
+2	barbara1123	bigmoneybastard	blender	bluffsgolf	bplain	bpowers1	bull4u	ccornett	cfremstad	cleverrox
+3	cool0606	desdale	dkelsch	dliu	donooats	donpow	dosmanski	epad	freilech	gotmilk9579
+4	grinvaldely	hammer2088	ibrahimz	ir	jah07022	jasonlepes	jctrader	jdennis	jdowen0902	jjcates
+5	jordans_mn	jtanwar	kaveh_anoosh	keithmorgan	kin	knockoutking24	kuyeno	law	loki0000	luckycapital
+6	maciam	mcnallty	mhanna	muwarrior34	mzzdzzy	newinvestor123	northcutt0	nslaughter	ottsruss	peabody1
+7	peter.link	pineyhill	priv8pete	prolific	resource	rhaffner	rmacaraig	robert_mcnee	sales	sallybee
+8	scott_nelson	shancat22	siauway	sidbaveja	skumar3z	smells99	smilder13	stermar86	stevo1	stunis3
+9	superman01	svanness	swvccio	tbgvi	tkarabin	tomlove	toonice430	vooch5	vpeacock	warningbuffet
+10	wbonner	whitehouse	willow	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'BRLCQ';  
+> Row 1:
+>   STOCKKEY = X'c10d3700435863c2c0a80146'
+
+select * from mstockalias where stockkey=X'c10d3700435863c2c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2003-09-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Brillian Corporation
+>     PRIMARYKEY = X'c10e3700435863c2c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2005-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Brillian Corporation
+>     PRIMARYKEY = X'99852e66438fb950c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2005-12-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'aa7a2e72438fb981c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2005-12-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'4c922e75438fb992c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2005-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'd38f5b8e43b5f4afc0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'4af6316348741befc0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'f7853ba84886910ac0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'2f423cf848869150c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BRLCQ'  order by BB_EFFECTIVE;
+nothing 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BRLCQ
+>>>> dbtool started at 2015-08-11 20:09:33 -0400
+stock: BRLCQ
+  PK       : [C10D3700435863C2C0A80146]
+  companyID: [15715]
+  symbol   : [BRLCQ]
+  name     : [Syntax-Brillian Corp]
+  date     : [2008-07-22 00:00:00]
+  status   : [Active]
+stock: BRLCQ
+  PK       : [C10D3700435863C2C0A80146]
+  companyID: [15715]
+  symbol   : [BRLCQ]
+  name     : [Syntax-Brillian Corp]
+  date     : [2008-07-22 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-11 20:09:33 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15715
+
+
+2009-10-31 (Sat) [3225]: <WEEKEND>
+2009-11-01 (Sun) [3226]: <WEEKEND>
+2009-11-02 (Mon) [3227]: O:0.0039 H:0.0039 L:0.0039 C:0.0039 V:0 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-11-03 (Tue) [3228]: O:0.0039 H:0.0039 L:0.0039 C:0.0039 V:0 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-11-04 (Wed) [3229]: O:0.0039 H:0.0039 L:0.0039 C:0.0039 V:0 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-07-15 (Wed) [3117]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:165400 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-16 (Thu) [3118]: O:0.0030 H:0.0035 L:0.0030 C:0.0030 V:231350 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-17 (Fri) [3119]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:90375 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-18 (Sat) [3120]: <WEEKEND>
+2009-07-19 (Sun) [3121]: <WEEKEND>
+2009-07-20 (Mon) [3122]: O:0.0026 H:0.0036 L:0.0026 C:0.0026 V:151780 TSO:93354 A:0.0026 R:1.0000 CA:0.0000
+2009-07-21 (Tue) [3123]: O:0.0025 H:0.0027 L:0.0025 C:0.0027 V:245645 TSO:93354 A:0.0027 R:1.0000 CA:0.0000
+2009-07-22 (Wed) [3124]: O:0.0060 H:0.0060 L:0.0027 C:0.0035 V:156985 TSO:93354 A:0.0035 R:1.0000 CA:0.0000
+2009-07-23 (Thu) [3125]: O:0.0035 H:0.0060 L:0.0030 C:0.0035 V:151456 TSO:93354 A:0.0035 R:1.0000 CA:0.0000
+2009-07-24 (Fri) [3126]: O:0.0035 H:0.0040 L:0.0031 C:0.0035 V:406372 TSO:93354 A:0.0035 R:1.0000 CA:0.0000
+2009-07-25 (Sat) [3127]: <WEEKEND>
+2009-07-26 (Sun) [3128]: <WEEKEND>
+2009-07-27 (Mon) [3129]: O:0.0035 H:0.0036 L:0.0030 C:0.0032 V:241808 TSO:93354 A:0.0032 R:1.0000 CA:0.0000
+2009-07-28 (Tue) [3130]: O:0.0035 H:0.0035 L:0.0030 C:0.0030 V:56335 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-29 (Wed) [3131]: O:0.0035 H:0.0035 L:0.0030 C:0.0030 V:166810 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-30 (Thu) [3132]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:88534 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-07-31 (Fri) [3133]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:9500 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-08-01 (Sat) [3134]: <WEEKEND>
+2009-08-02 (Sun) [3135]: <WEEKEND>
+2009-08-03 (Mon) [3136]: O:0.0030 H:0.0040 L:0.0030 C:0.0030 V:24012 TSO:93354 A:0.0030 R:1.0000 CA:0.0000
+2009-08-04 (Tue) [3137]: O:0.0030 H:0.0030 L:0.0025 C:0.0028 V:422900 TSO:93354 A:0.0028 R:1.0000 CA:0.0000
+2009-08-05 (Wed) [3138]: O:0.0028 H:0.0035 L:0.0028 C:0.0028 V:22112 TSO:93354 A:0.0028 R:1.0000 CA:0.0000
+2009-08-06 (Thu) [3139]: O:0.0028 H:0.0040 L:0.0028 C:0.0035 V:221300 TSO:93354 A:0.0035 R:1.0000 CA:0.0000
+2009-08-07 (Fri) [3140]: O:0.0035 H:0.0036 L:0.0030 C:0.0036 V:24289 TSO:93354 A:0.0036 R:1.0000 CA:0.0000
+2009-08-08 (Sat) [3141]: <WEEKEND>
+2009-08-09 (Sun) [3142]: <WEEKEND>
+2009-08-10 (Mon) [3143]: O:0.0025 H:0.0036 L:0.0025 C:0.0036 V:5050 TSO:93354 A:0.0036 R:1.0000 CA:0.0000
+2009-08-11 (Tue) [3144]: O:0.0036 H:0.0036 L:0.0035 C:0.0036 V:75800 TSO:93354 A:0.0036 R:1.0000 CA:0.0000
+2009-08-12 (Wed) [3145]: O:0.0036 H:0.0040 L:0.0036 C:0.0040 V:72257 TSO:93354 A:0.0040 R:1.0000 CA:0.0000
+2009-08-13 (Thu) [3146]: O:0.0040 H:0.0040 L:0.0040 C:0.0040 V:11270 TSO:93354 A:0.0040 R:1.0000 CA:0.0000
+2009-08-14 (Fri) [3147]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-15 (Sat) [3148]: <WEEKEND>
+2009-08-16 (Sun) [3149]: <WEEKEND>
+2009-08-17 (Mon) [3150]: O:0.0039 H:0.0039 L:0.0039 C:0.0039 V:0 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-18 (Tue) [3151]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-19 (Wed) [3152]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-20 (Thu) [3153]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-21 (Fri) [3154]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-22 (Sat) [3155]: <WEEKEND>
+2009-08-23 (Sun) [3156]: <WEEKEND>
+2009-08-24 (Mon) [3157]: O:0.0039 H:0.0039 L:0.0039 C:0.0039 V:0 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-25 (Tue) [3158]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-26 (Wed) [3159]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-27 (Thu) [3160]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+2009-08-28 (Fri) [3161]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+
+then
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'c10d3700435863c2c0a80146' and shares > 0 order by closed; 
+> Row 1449:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-05-14 13:41:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.099970
+>   CURRENTORDER = X'8a781a854a0c51c3c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e582405c450c05aec0a80134'
+>       MODIFIED = NULL
+>            NET = 1.899430
+>         OPENED = TIMESTAMP '2009-05-14 13:15:47.000000'
+>          PRICE = 0.004821
+>     PRIMARYKEY = X'8a761a854a0c51c3c0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 394.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'c10d3700435863c2c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c10d3700435863c2c0a80146'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'afff5d3f3d2c70ebc0a801e2'
+>       SYMBOL = P
+> Row 2:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'7be34a2c3d4ab113c0a80118'
+>       SYMBOL = SS
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c10d3700435863c2c0a80146'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = svanness
+your holdings of BRLCQ	
+ 	 	
+Fund	Shares	Value	Portion of fund
+SVMF	 0	 N/A	 N/A
+GARP	0	 $.00	 0.00%
+GNI	1	 $.00	 0.00%
+IT	0	 $.00	 0.00%
+P	-1	 -$.00	 -0.00%
+LPC	600	 $2.34	 0.00%
+SS	-1	 -$.00	 -0.00%
+GAMB	0	 $.00	 0.00%
+TE	1	 $.00	 0.00%
+HGWCP	0	 $.00	 0.00%
+LOB	 0	 N/A	 N/A
+STF	 0	 N/A	 N/A
+LVSLF1	 0	 N/A	 N/A
+ 	 	[ Trade this stock ]
+
+
+P fund
+LEDGER
+Date	Start	Change	End	Type
+Jul 21, 2007		825	825	Buy
+Jul 23, 2007	825	17000	17825	Buy
+Jul 25, 2007	17825	-7851	9974	Sell
+Aug 03, 2007	9974	-8975	999	Sell
+Sep 11, 2007	999	-1000	-1	Sell
+Oct 08, 2007	-1		-1	Multiple
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 21, 2007	825	$41.25	$5,342.00	$6.48
+Jul 23, 2007	17,000	$850.00	$113,054.83	$6.65
+Oct 8, 2007	5,800	$290.00	$30,320.97	$5.23
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 25, 2007	7,851	$392.55	$1.47	$47,441.94	$6.04
+Aug 3, 2007	8,975	$448.75	$1.83	$59,122.51	$6.59
+Sep 11, 2007	1,000	$50.00	$0.20	$6,351.36	$6.35   <--- change this to 999
+Oct 8, 2007	5,800	$290.00	$0.91	$29,211.09	$5.04
+handle this short 
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness P 20070911 BRLCQ 1 6.33
+nope it is a multiple transaction
+Trading 1.0 shares of Syntax-Brillian Corp on Sep 11, 2007 at 6.33
+manager login: svanness
+manager: L. VanNess
+fund: P
+building trade (has to load stock prices first)
+price = 6.33
+buying 1.0 shares of BRLCQ at 6.33 on 20070911
+invaldating fund prices from Sep 11, 2007
+Done
+
+SS fund
+LEDGER
+Date	Start	Change	End	Type
+Jul 21, 2007		803	803	Buy
+Jul 23, 2007	803	17000	17803	Buy
+Jul 25, 2007	17803	-7851	9952	Sell
+Aug 03, 2007	9952	-8943	1009	Sell
+Sep 11, 2007	1009	-1010	-1	Sell
+Oct 08, 2007	-1		-1	Multiple
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 21, 2007	803	$40.15	$5,199.54	$6.48
+Jul 23, 2007	17,000	$850.00	$113,054.83	$6.65
+Oct 8, 2007	5,500	$275.00	$28,752.65	$5.23
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 25, 2007	7,851	$392.55	$1.47	$47,441.94	$6.04
+Aug 3, 2007	8,943	$447.15	$1.82	$58,911.71	$6.59
+Sep 11, 2007	1,010	$50.50	$0.20	$6,414.88	$6.35
+Oct 8, 2007	5,500	$275.00	$0.86	$27,700.17	$5.04
+ 	 	 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness SS 20070911 BRLCQ 1 6.33
+Trading 1.0 shares of Syntax-Brillian Corp on Sep 11, 2007 at 6.33
+manager login: svanness
+manager: L. VanNess
+fund: SS
+building trade (has to load stock prices first)
+price = 6.33
+buying 1.0 shares of BRLCQ at 6.33 on 20070911
+invaldating fund prices from Sep 11, 2007
+Done
+
+that should be it 
+no more shorts
+
+
+apply the acquis
+there are 93 members who hold this stock
+quantum:
+last ticket:  2009-05-14  PRICE = 0.004821
+last price:  2009-08-18 (Tue) [3151]: O:0.0040 H:0.0040 L:0.0039 C:0.0039 V:29780 TSO:93354 A:0.0039 R:1.0000 CA:0.0000
+
+going with 20090818  0.0039
+
+/Marketocracy/bin/cahelper -symbol  BRLCQ  -effective 20090818 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0039 -acqShare 0 -purchaser BRLCQ   >& /Users/build/caout/BRLCQ.20150811-DELIST.out 
+BRLCQ.20150811-DELIST.out
+stocks:~/caout build$ tail -f BRLCQ.20150811-DELIST.out
+D: (08-11 20:44:45.163) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-11 20:45:08.342) cahelper started on 2015-08-11 20:45:08 -0400
+
+D: (08-11 20:45:09.768) There are [0] open tickets for BRLCQ on 20090818
+D: (08-11 20:45:10.095) StockFileLoad Version:4.0
+D: (08-11 20:45:10.095) Loading Stock Data
+D: (08-11 20:45:47.471) Building Lookup Index
+D: (08-11 20:45:52.302) Finished Building Index
+D: (08-11 20:45:55.986) Finished Loading Stock Data
+D: (08-11 20:45:56.103) Connection to 192.168.111.172:6666 succeeded
+D: (08-11 20:45:59.118) SavingChanges for position sell out 101 of 395
+D: (08-11 20:46:17.317) {
+    "ACQUIRED_STOCK" = BRLCQ; 
+    "ACQUIRING_STOCK" = "BRLCQ_FIX"; 
+    AMOUNT = 0.0039; 
+    APPLIED = 1; 
+    DATE = 20090818; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BRLCQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-11 20:46:28.084) SUCCESS
+D: (08-11 20:46:28.084) cahelper finished 2015-08-11 20:46:28 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'c10d3700435863c2c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2003-09-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Brillian Corporation
+>     PRIMARYKEY = X'c10e3700435863c2c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2005-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Brillian Corporation
+>     PRIMARYKEY = X'99852e66438fb950c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 10949P107
+>           DATE = TIMESTAMP '2005-12-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'aa7a2e72438fb981c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2005-12-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'4c922e75438fb992c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2005-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'd38f5b8e43b5f4afc0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'4af6316348741befc0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'f7853ba84886910ac0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2008-07-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'2f423cf848869150c0a80146'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87163L103
+>           DATE = TIMESTAMP '2009-08-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Syntax-Brillian Corp
+>     PRIMARYKEY = X'82912f2e55ca9715c0a86f92'
+>       STOCKKEY = X'c10d3700435863c2c0a80146'
+>         SYMBOL = BRLCQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201010
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'82912f2e55ca9715c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'82912f2e55ca9715c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BRLCQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.003900|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150811:084508
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-08-18 00:00:00.000000'
+>         BB_IDENTIFIER = BRLCQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-08-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BRLCQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-08-18 00:00:00.000000'
+>            PRIMARYKEY = X'828b2f2e55ca9714c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'828b2f2e55ca9714c0a86f92';
+> Row 1:
+>   _C001 = 149.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'828b2f2e55ca9714c0a86f92'));
+there are 149 fundkeys, save to CA issues BRLCQ fundkeys.txt
+
+For Beta case
+BRLCQ no longer trades but is still active on our site - need to delist 
+
+check on 8/12/15   invalidate funds
+check MAdmin  clear 
+
+
+BRLCQ has been acquired	
+ 	 	
+Syntax-Brillian Corp acquired by a private company on 2009-08-18 00:00:00.
+
+BRLCQ delist 2009-08-18
+
+invalidate reprice and close 
+

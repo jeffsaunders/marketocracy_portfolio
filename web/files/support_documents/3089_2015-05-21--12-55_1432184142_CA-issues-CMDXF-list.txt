@@ -1,0 +1,95 @@
+date: 5/19/15
+ticker:   CMDXF
+
+need to list this
+
+yahoo:
+Computer Modelling Group Ltd. (CMDXF) -Other OTC
+11.97 0.00(0.00%) 12:14PM EDT
+Add to Portfolio
+Prev Close:	11.97
+Open:	11.97
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	11.97 - 11.97
+52wk Range:	8.49 - 14.20
+Volume:	0
+Avg Vol (3m):	1,606
+Market Cap:	N/A
+P/E (ttm):	35.31
+EPS (ttm):	0.34
+Div & Yield:	N/A (N/A
+
+
+quantum:  down site
+
+xignite:  it's there cusip:  205249105    <--- good
+
+Our site:
+
+select * from mstockalias where symbol='CMDXF';
+nothing
+and nothing useful in the database
+
+CMDXF|Q|205249105|Computer Modelling Group Ltd.|20150519  
+we'll need to change the exchange
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check again
+select distinct stockkey from mstockalias where symbol='CMDXF';
+> Row 1:
+>   STOCKKEY = X'eadb5deb555b6dddc0a86f92'
+select * from mstockalias where STOCKKEY = X'eadb5deb555b6dddc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 205249105
+>           DATE = TIMESTAMP '2015-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Computer Modelling Group Ltd.
+>     PRIMARYKEY = X'eadc5deb555b6dddc0a86f92'
+>       STOCKKEY = X'eadb5deb555b6dddc0a86f92'
+>         SYMBOL = CMDXF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mexchange;
+> Row 4:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+
+update mstockalias set EXCHANGEKEY=X'6325039339e7e926c0a801dc' where PRIMARYKEY = X'eadc5deb555b6dddc0a86f92';
+get marketcap
+N/A - let's use XG
+update mstockalias set STYLEKEY='XG' where PRIMARYKEY = X'eadc5deb555b6dddc0a86f92';
+add the gics
+Computer Modelling Group Ltd. develops and licenses reservoir simulation software to oil and gas companies, consulting firms, and research institutions worldwide. Its products include IMEX, a reservoir simulator that models conventional black oil reservoirs; GEM, a general compositional reservoir simulator for modelling processes, such as gas condensates, volatile oils, gas cycling, WAG processes, and other multi-component reservoir; STARS, a thermal, K-value compositional, chemical reaction, and geomechanics reservoir simulator used for modelling recovery processes; and CMOST, which enhances and accelerates sensitivity analysis, history matching, optimization, and uncertainty analysis. The companys products also include Builder, a Windows based application that enables engineers to create simulation input files for its software products; Results, a set of post-processing applications, which is designed to visualize and report reservoir simulators input and output data into 2D aerial maps, 2D cross-sections, 3D perspectives, stereoscopic 3D formats, and tabular reports; and WinProp, an equation-of-state engineering tool that clarifies property distribution. It also provides support, consulting, training, and contract research services. Computer Modelling Group Ltd. was founded in 1978 and is headquartered in Calgary, Canada.
+45103010	Application Software
+	Companies engaged in developing and producing software designed for specialized applications for the business or consumer market. Includes enterprise and technical software. Excludes companies classified in the Home Entertainment Software Sub-Industry. Also excludes companies producing systems or database management software classified in the Systems Software Sub-Industry.
+update mstockalias set GICSKEY='45103010' where PRIMARYKEY = X'eadc5deb555b6dddc0a86f92';
+check
+select * from mstockalias where STOCKKEY = X'eadb5deb555b6dddc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 205249105
+>           DATE = TIMESTAMP '2015-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Computer Modelling Group Ltd.
+>     PRIMARYKEY = X'eadc5deb555b6dddc0a86f92'
+>       STOCKKEY = X'eadb5deb555b6dddc0a86f92'
+>         SYMBOL = CMDXF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+create case
+3089 - check on 5/20/15 and do a sample buy
+
+5/20/15
+stock is there and in the feed closing this out

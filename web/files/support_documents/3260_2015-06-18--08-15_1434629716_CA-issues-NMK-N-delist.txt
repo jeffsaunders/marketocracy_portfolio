@@ -1,0 +1,220 @@
+date:  6/16/15
+ticker: NMK-N
+
+
+yahoo:
+
+quantum:
+Niagara Mohawk Power Corp., Fixed/Adj Rate Series D Preferred Stock
+Ticker Symbol: NMK-N*     CUSIP: 653522771     Exchange: NYSE
+Security Type:   Traditional Preferred Stock
+* NOTE: This security is no longer trading as of 12/30/04
+
+Security has been Called for:  Thursday, December 30, 2004 
+QUANTUMONLINE.COM SECURITY DESCRIPTION:  Niagara Mohawk Power Corp., Fixed/Adjustable Rate Cumulative Preferred Stock, Series D, liquidation preference $50 per share, redeemable at the company's option on or after 12/31/2004 at $50.00 per share plus accrued and unpaid dividends, not subject to mandatory redemption, and with fixed rate distributions of 6.905% ($3.4525) per annum through 12/31/2004 and adjustable rate distributions thereafter paid quarterly on 3/31, 6/30, 9/30 & 12/31 to holders of record on the date fixed by the board. After 12/31/2004 the adjustable rate will be 1.625% plus the highest of the Treasury Bill Rate, the Ten Year Constant Maturity Rate and the Thirty Years Constant Maturity Rate adjusted quarterly with a minimum of 7.655% and a maximum of 13.655% per annum. In regards to payment of dividends and upon liquidation, the preferred shares rank equally with other preferreds and senior to the common shares of the company. See the IPO prospectus for further information on the preferred stock by clicking on the ‘Link to IPO Prospectus’ provided below. Niagara Mohawk Power Corp. is a wholly-owned subsidiary of National Grid Transco plc (NYSE: NGG) as of December 2001.
+
+oursite:
+Symbol: NMK-N 	Name: NIAGARA MOHAWK PWR CORP PFD D 	Price: $0.00
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: 	Year High: 	High:
+200 Day Ave: 	Year Low: 	Low
+CAs none
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=NMK-N
+
+check MAdmin
+NMK-N  MM/DD/YYYY
+no one
+
+database
+select distinct stockkey from mstockalias where symbol= 'NMK-N';  
+> Row 1:
+>   STOCKKEY = X'beb010ac390c6e1bc0a8015c'
+
+select * from mstockalias where stockkey= X'beb010ac390c6e1bc0a8015c'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 653522771
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NIAGARA MOHAWK PWR CORP PFD D
+>     PRIMARYKEY = X'beb110ac390c6e1bc0a8015c'
+>       STOCKKEY = X'beb010ac390c6e1bc0a8015c'
+>         SYMBOL = NMK-N
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NMK-N'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NMK-N
+>>>> dbtool started at 2015-06-17 02:34:45 -0400
+stock: NMK-N
+  PK       : [BEB010AC390C6E1BC0A8015C]
+  companyID: [9448]
+  symbol   : [NMK-N]
+  name     : [NIAGARA MOHAWK PWR CORP PFD D]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-17 02:34:45 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9448
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'beb010ac390c6e1bc0a8015c' and shares > 0 order by closed; 
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2004-12-07 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 4.500000
+>   CURRENTORDER = X'bb5b39784197db32c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd0c148ff3bde41a1c0a801e0'
+>       MODIFIED = NULL
+>            NET = 4764.400020
+>         OPENED = TIMESTAMP '2004-11-14 17:24:50.000000'
+>          PRICE = 52.937778
+>     PRIMARYKEY = X'bb5939784197db32c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 90.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'beb010ac390c6e1bc0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select loginname from mmanager where primarykey=X'd0c148ff3bde41a1c0a801e0';
+> Row 1:
+>   LOGINNAME = esherron00
+checking this member:  
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'beb010ac390c6e1bc0a8015c' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'beb010ac390c6e1bc0a8015c' and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'beb010ac390c6e1bc0a8015c' and totalshares < 0)));
+
+apply the acquis
+no one on our site holds this tock 
+$50 per share  12/30/04
+quantum:
+last ticket:
+last price:
+
+going with $50 per share 20041230
+
+/Marketocracy/bin/cahelper -symbol  NMK-N  -effective 20041230 -type ACQUIS -exchange UN -acqType 1 -acqCash 50.00 -acqShare 0 -purchaser NMK-N    >& /Users/build/caout/NMK-N.20150617-ACQUIS.out
+NMK-N
+stocks:~/caout build$ tail -f NMK-N
+D: (06-17 02:37:59.252) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-17 02:38:31.886) cahelper started on 2015-06-17 02:38:31 -0400
+
+D: (06-17 02:38:32.554) There are [0] open tickets for NMK-N on 20041230
+D: (06-17 02:38:32.906) StockFileLoad Version:4.0
+D: (06-17 02:38:32.907) Loading Stock Data
+D: (06-17 02:39:10.247) Building Lookup Index
+D: (06-17 02:39:14.977) Finished Building Index
+D: (06-17 02:39:18.639) Finished Loading Stock Data
+D: (06-17 02:39:18.757) Connection to 192.168.111.172:6666 succeeded
+D: (06-17 02:39:18.763) {
+    "ACQUIRED_STOCK" = "NMK-N"; 
+    "ACQUIRING_STOCK" = "NMK-N_FIX"; 
+    AMOUNT = 50; 
+    APPLIED = 1; 
+    DATE = 20041230; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NMK-N_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-17 02:39:19.939) SUCCESS
+D: (06-17 02:39:19.939) cahelper finished 2015-06-17 02:39:19 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'beb010ac390c6e1bc0a8015c'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 653522771
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NIAGARA MOHAWK PWR CORP PFD D
+>     PRIMARYKEY = X'beb110ac390c6e1bc0a8015c'
+>       STOCKKEY = X'beb010ac390c6e1bc0a8015c'
+>         SYMBOL = NMK-N
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 653522771
+>           DATE = TIMESTAMP '2004-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NIAGARA MOHAWK PWR CORP PFD D
+>     PRIMARYKEY = X'72d94321558115e8c0a86f92'
+>       STOCKKEY = X'beb010ac390c6e1bc0a8015c'
+>         SYMBOL = NMK-N
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey = X'72d94321558115e8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'72d94321558115e8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NMK-N  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|50.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150617:023831
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-12-30 00:00:00.000000'
+>         BB_IDENTIFIER = NMK-N_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-12-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NMK-N_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-12-30 00:00:00.000000'
+>            PRIMARYKEY = X'72d34321558115e7c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'72d34321558115e7c0a86f92';
+> Row 1:
+>   _C001 = 1.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'72d34321558115e7c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'5ed339784197cbcec0a80133'
+
+
+check on 6/18/15   
+ NMK-N has been acquired 	right curve
+  	  	
+NIAGARA MOHAWK PWR CORP PFD D acquired by a private company on 2004-12-30 00:00:00. 
+
+invalidate funds
+/Marketocracy/bin/fptool invalidateFund 5ed339784197cbcec0a80133
+
+
+check MAdmin no one
+noting to do on the new site
+
+closing this out 

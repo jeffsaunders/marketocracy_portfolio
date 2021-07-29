@@ -1,0 +1,635 @@
+AVRNQ
+date:   10/14/15
+ticker:  AVRNQ
+
+yahoo:
+
+quantum:  old company
+  
+oursite:
+Symbol: AVRNQ	Name: Aventine Renewable Energy Holdings, Incorporated	Price: $0.24
+Volume:	Sector: Energy	Change:
+Short Volume: 0	Style: Micro Cap : Blend	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+orporate Actions for Aventine Renewable Energy Holdings, Incorporated	  October 14, 2015
+left curve	  symbol changes for AVRNQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+30 Mar 09	AVR	AVRN	Change in the ticker (trading) symbol from AVR to AVRN
+09 Apr 09	AVRN	AVRNQ	Change in the ticker (trading) symbol from AVRN to AVRNQ
+ 	 	 
+left curve	  listing changes for AVRNQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Mar 30, 2009	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that AVRN trades on from NYSE to OTCBB-OTHER
+Dec 24, 2010	 	CV	 	CT	Change in the exchange that AVR trades on from (null) to (null)
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=AVRNQ
+
+check MAdmin
+Stock:Aventine Renewable Energy Holdings, Incorporated  Symbol:AVRNQ
+Date: 10/14/2015
+
+50 users found
+
+1	afratucello	asalvador	bernadin	blockhus	chrisgz3	cluelessinvesting	commtrader7	cszaraz1	dprice	drass
+2	eleblu05	eliijoro1	fabian	ferran	gmdiesel	gregpap	gubay	harleyd9	jack87	jcmacera
+3	joeelefant	jonyuhu	jpak02	kama	kdressel	knox	long42	lwroblewski	marshgerda	mevolution
+4	mimon	mjheath45	mlambert890	mtaguchi	portfolioqwerty	pshao649	quantboy	richfield	rustat82	seanheberling
+5	simonemarlia	simracer	svhall	swiseman	tanechka131	teamfunds	techplusmanager	themeluesi	tjw52	uferry	 	 	 	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'AVRNQ';  
+> Row 1:
+>   STOCKKEY = X'887b553645e5dcf6c0a80146'
+select * from mstockalias where stockkey=X'887b553645e5dcf6c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'887c553645e5dcf6c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'd7c3496349d1799ac0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'7da8498249d179d0c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'f1eb0a8549dea87ec0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2010-12-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'528007184d152de9c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='AVRNQ'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock AVRNQ
+stock: AVRNQ
+  PK       : [887B553645E5DCF6C0A80146]
+  companyID: [16701]
+  symbol   : [AVRNQ]
+  name     : [Aventine Renewable Energy Holdings, Incorporated]
+  date     : [2010-12-24 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-14 22:17:43 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16701
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'887b553645e5dcf6c0a80146' and shares > 0 order by closed; 
+> Row 524:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-03-03 14:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1504.782762
+>   CURRENTORDER = X'1ede58ad4b883033c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8963096c491d7d95c0a80135'
+>       MODIFIED = NULL
+>            NET = 31600.438002
+>         OPENED = TIMESTAMP '2010-02-26 15:33:55.000000'
+>          PRICE = 0.175783
+>     PRIMARYKEY = X'1edc58ad4b883033c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 179770.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'f4bc6bbe518bbe21c0a80146'
+>       SYMBOL = huyehara_hmf1
+> Row 2:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'e737352051938e97c0a80146'
+>       SYMBOL = JoeToms6
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = techplusmanager
+LEDGER
+Date	Start	Change	End	Type
+Jan 09, 2009		2475	2475	Buy
+Apr 16, 2009	2475	-2476	-1	Sell  <-- change to 2475
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 9, 2009	2,475	$75.49	$1,585.24	$0.64
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 16, 2009	2,476	$9.63	$0.01	$182.99	$0.07 <-- change to 2475
+/Marketocracy/Scripts/build/bin/backdatedtrade.py techplusmanager huyehara_hmf1 20090416 AVRNQ -2475 0.08
+Trading -2475.0 shares of Aventine Renewable Energy Holdings, Incorporated on Apr 16, 2009 at 0.08
+manager login: techplusmanager
+manager: Tech Plus Manager
+fund: huyehara_hmf1
+building trade (has to load stock prices first)
+price = 0.08
+selling -2475.0 shares of AVRNQ at 0.08 on 20090416
+invaldating fund prices from Apr 16, 2009
+Done
+	 	 
+
+
+> Row 2:
+>   LOGINNAME = teamfunds
+apply the acquis
+there are 50 members who hold this stock
+quantum:  noting current 
+last ticket:  2010-03-03  PRICE = 0.175783
+last price:
+your holdings of AVRNQ	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+GRQM	0	N/A	N/A
+3M	0	N/A	N/A
+SWAN	0	N/A	N/A
+SWAN2	0	N/A	N/A
+SWANX	0	N/A	N/A
+SWANX2	0	N/A	N/A
+jackweyland_VALUE	0	N/A	N/A
+huyehara_HMF	0	N/A	N/A
+LogicaTeam_Fund	0	N/A	N/A
+JoeToms	0	N/A	N/A
+JoeToms2	618	$145.23	0.00%  <---
+JoeToms3	0	N/A	N/A
+rmcduff_rmg1	0	N/A	N/A
+rmcduff_rmg1_po_1m	0	N/A	N/A
+rmcduff_rmg1_to_1m	0	N/A	N/A
+rmcduff_rmg1_pt_1m_cl	0	N/A	N/A
+rmcduff_rmg1_pt_1m_cp	0	N/A	N/A
+rmg1_pt_1m_cp_1	0	N/A	N/A
+rmg1_pt_1m_cp_2	0	N/A	N/A
+rmg1_pt_1m_cp_3	0	N/A	N/A
+JoeToms4	0	$.00	0.00%
+JoeToms5	618	$145.23	0.01% <---
+JoeToms6	-1	-$0.24	-0.00% <---
+
+JoeToms2
+LEDGER
+Date	Start	Change	End	Type
+Jan 09, 2009		618	618	Buy
+Apr 16, 2009	618	-619	-1	Sell  <-- make this 618
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 9, 2009	618	$18.85	$395.83	$0.64
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 16, 2009	619	$2.41	$0.00	$45.75	$0.07
+/Marketocracy/Scripts/build/bin/backdatedtrade.py teamfunds JoeToms2 20090416 AVRNQ -618 0.07
+Trading -618.0 shares of Aventine Renewable Energy Holdings, Incorporated on Apr 16, 2009 at 0.07
+manager login: teamfunds
+manager: Marketocracy Team Funds
+fund: JoeToms2
+building trade (has to load stock prices first)
+price = 0.07
+selling -618.0 shares of AVRNQ at 0.07 on 20090416
+invaldating fund prices from Apr 16, 2009
+Done
+	 	 	 	 
+
+
+JoeToms5
+/Marketocracy/Scripts/build/bin/backdatedtrade.py teamfunds JoeToms5 20090416 AVRNQ -618 0.07
+Trading -618.0 shares of Aventine Renewable Energy Holdings, Incorporated on Apr 16, 2009 at 0.07
+manager login: teamfunds
+manager: Marketocracy Team Funds
+fund: JoeToms5
+building trade (has to load stock prices first)
+price = 0.07
+selling -618.0 shares of AVRNQ at 0.07 on 20090416
+invaldating fund prices from Apr 16, 2009
+Done
+
+JoeToms6
+LEDGER
+Date	Start	Change	End	Type
+Jan 09, 2009		618	618	Buy
+Apr 16, 2009	618	-619	-1	Sell  <--- this should be 618
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 9, 2009	618	$18.85	$395.83	$0.64
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 16, 2009	619	$2.41	$0.01	$45.74	$0.07
+/Marketocracy/Scripts/build/bin/backdatedtrade.py teamfunds JoeToms6 20090416 AVRNQ -618 0.07
+Trading -618.0 shares of Aventine Renewable Energy Holdings, Incorporated on Apr 16, 2009 at 0.07
+manager login: teamfunds
+manager: Marketocracy Team Funds
+fund: JoeToms6
+building trade (has to load stock prices first)
+price = 0.07
+selling -618.0 shares of AVRNQ at 0.07 on 20090416
+invaldating fund prices from Apr 16, 2009
+Done
+	
+last known price
+/Marketocracy/bin/dbtool lookup stock AVRNQ
+stock: AVRNQ
+  PK       : [887B553645E5DCF6C0A80146]
+  companyID: [16701]
+  symbol   : [AVRNQ]
+  name     : [Aventine Renewable Energy Holdings, Incorporated]
+  date     : [2010-12-24 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-15 00:52:24 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16701
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'887b553645e5dcf6c0a80146' and shares > 0 order by closed; 
+> Row 526:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-03-03 14:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1504.782762
+>   CURRENTORDER = X'1ede58ad4b883033c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8963096c491d7d95c0a80135'
+>       MODIFIED = NULL
+>            NET = 31600.438002
+>         OPENED = TIMESTAMP '2010-02-26 15:33:55.000000'
+>          PRICE = 0.175783
+>     PRIMARYKEY = X'1edc58ad4b883033c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 179770.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'f4bc6bbe518bbe21c0a80146'
+>       SYMBOL = huyehara_hmf1
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'887b553645e5dcf6c0a80146'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = techplusmanager
+
+last known price
+/Marketocracy/bin/dbtool lookup stock XXX
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2676
+2010-03-03 (Wed) [3348]: O:0.1600 H:0.2039 L:0.1600 C:0.1650 V:654540 TSO:42970 A:0.1650 R:1.0000 CA:0.0000
+2010-03-04 (Thu) [3349]: O:0.1850 H:0.1850 L:0.1650 C:0.1650 V:84497 TSO:42970 A:0.1650 R:1.0000 CA:0.0000
+2010-03-05 (Fri) [3350]: O:0.1600 H:0.2150 L:0.1600 C:0.1750 V:189590 TSO:42970 A:0.1750 R:1.0000 CA:0.0000
+2010-03-06 (Sat) [3351]: <WEEKEND>
+2010-03-07 (Sun) [3352]: <WEEKEND>
+2010-03-08 (Mon) [3353]: O:0.1775 H:0.2000 L:0.1700 C:0.1960 V:604141 TSO:42970 A:0.1960 R:1.0000 CA:0.0000
+2010-03-09 (Tue) [3354]: O:0.1945 H:0.2100 L:0.1850 C:0.1900 V:199600 TSO:42970 A:0.1900 R:1.0000 CA:0.0000
+2010-03-10 (Wed) [3355]: O:0.2000 H:0.2300 L:0.1950 C:0.2200 V:315180 TSO:42970 A:0.2200 R:1.0000 CA:0.0000
+2010-03-11 (Thu) [3356]: O:0.2150 H:0.2500 L:0.2150 C:0.2500 V:503148 TSO:42970 A:0.2500 R:1.0000 CA:0.0000
+2010-03-12 (Fri) [3357]: O:0.2500 H:0.2700 L:0.2300 C:0.2300 V:339604 TSO:42970 A:0.2300 R:1.0000 CA:0.0000
+2010-03-13 (Sat) [3358]: <WEEKEND>
+2010-03-14 (Sun) [3359]: <WEEKEND>
+2010-03-15 (Mon) [3360]: O:0.2300 H:0.2400 L:0.2300 C:0.2350 V:66018 TSO:42970 A:0.2350 R:1.0000 CA:0.0000  <---
+2010-03-16 (Tue) [3361]: O:0.2300 H:0.2400 L:0.2300 C:0.2350 V:66018 TSO:42970 A:0.2350 R:1.0000 CA:0.0000
+2010-03-17 (Wed) [3362]: O:0.2300 H:0.2400 L:0.2300 C:0.2350 V:66018 TSO:42970 A:0.2350 R:1.0000 CA:0.0000
+
+
+
+apply the acquis
+there are 50 members who hold this stock
+quantum: nothing 
+last ticket: 2010-03-03 PRICE = 0.175783
+last price:  2010-03-15 (Mon) [3360]: O:0.2300 H:0.2400 L:0.2300 C:0.2350 V:66018 TSO:42970 A:0.2350 R:1.0000 CA:0.0000  <---
+
+going with 20100315 0.235
+
+
+
+/Marketocracy/bin/cahelper -symbol  AVRNQ  -effective 20100315 -type ACQUIS -exchange UN -acqType 1 -acqCash  0.235 -acqShare 0 -purchaser AVRNQ   >& /Users/build/caout/AVRNQ.20151014-DELIST
+AVRNQ.20151014-DELIST
+stocks1:~/caout build$ tail -f AVRNQ.20151014-DELIST
+D: (10-15 01:20:44.103) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-15 01:21:07.935) cahelper started on 2015-10-15 01:21:07 -0400
+
+D: (10-15 01:21:08.111) There are [0] open tickets for AVRNQ on 20100315
+D: (10-15 01:21:08.501) StockFileLoad Version:4.0
+D: (10-15 01:21:08.501) Loading Stock Data
+D: (10-15 01:21:46.115) Building Lookup Index
+D: (10-15 01:21:51.723) Finished Building Index
+D: (10-15 01:21:55.847) Finished Loading Stock Data
+D: (10-15 01:21:55.972) Connection to 192.168.111.172:6666 succeeded
+D: (10-15 01:21:58.426) {
+    "ACQUIRED_STOCK" = AVRNQ; 
+    "ACQUIRING_STOCK" = "AVRNQ_FIX"; 
+    AMOUNT = 0.235; 
+    APPLIED = 1; 
+    DATE = 20100315; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AVRNQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-15 01:22:03.331) SUCCESS
+D: (10-15 01:22:03.332) cahelper finished 2015-10-15 01:22:03 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'887b553645e5dcf6c0a80146'  order by "date";
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'887c553645e5dcf6c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'd7c3496349d1799ac0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'7da8498249d179d0c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'f1eb0a8549dea87ec0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2010-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'cc893ca5561f37c4c0a86fab'  <---- identitykey
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2010-12-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'528007184d152de9c0a80146' <-- delete  
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+select * from mcorporateaction where aliaskey =X'528007184d152de9c0a80146' ;
+> Row 1:
+>              ALIASKEY = X'528007184d152de9c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|CV|CP_NEW_EXCH|CT|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50684818
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 109125
+>        BB_COMPANYNAME = Avion Gold Corp
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-24 00:00:00.000000'
+>         BB_IDENTIFIER = AVR     CN Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = AVR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e12366594d128b08c0a80146'  <-- delete 
+>               VERSION = NULL
+the last one is bogus
+select * from mstock where primarykey=X'887b553645e5dcf6c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'528007184d152de9c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'887b553645e5dcf6c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16701
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7e22
+update mstock set IDENTITYKEY=X'cc893ca5561f37c4c0a86fab' where PRIMARYKEY=X'887b553645e5dcf6c0a80146';
+
+delete the mcorporate and mstockalias
+delete from mcorporateaction where PRIMARYKEY = X'e12366594d128b08c0a80146' ;
+ delete from mstockalias where PRIMARYKEY = X'528007184d152de9c0a80146' ;
+  
+select * from mstockalias where stockkey= X'887b553645e5dcf6c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'887c553645e5dcf6c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'd7c3496349d1799ac0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'7da8498249d179d0c0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2009-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'f1eb0a8549dea87ec0a80146'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05356X403
+>           DATE = TIMESTAMP '2010-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aventine Renewable Energy Holdings, Incorporated
+>     PRIMARYKEY = X'cc893ca5561f37c4c0a86fab'
+>       STOCKKEY = X'887b553645e5dcf6c0a80146'
+>         SYMBOL = AVRNQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102030
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey=X'cc893ca5561f37c4c0a86fab';
+> Row 1:
+>              ALIASKEY = X'cc893ca5561f37c4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AVRNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.235000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151015:012107
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = AVRNQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-03-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AVRNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-03-15 00:00:00.000000'
+>            PRIMARYKEY = X'cc823ca5561f37c3c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'cc823ca5561f37c3c0a86fab';
+> Row 1:
+>   _C001 = 86.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'cc823ca5561f37c3c0a86fab'));
+there are XXX fundkeys, save to CA issues AVRNQ fundkeys.txt
+
+For Beta case
+AVRNQ no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+
+
+

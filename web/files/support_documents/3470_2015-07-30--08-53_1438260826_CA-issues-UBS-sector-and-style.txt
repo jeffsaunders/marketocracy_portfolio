@@ -1,0 +1,141 @@
+date:  7/28/15
+UBS
+UBS Group AG
+Bahnhofstrasse 45
+Zurich, 8001
+Switzerland - Map
+Phone: 41 44 234 11 11
+Fax: 41 44 239 91 11
+Website: http://www.ubs.com
+
+Details	 
+Index Membership:	N/A
+Sector:	Financial
+Industry:	Foreign Money Center Banks
+Full Time Employees:	60,113
+
+select distinct stockkey from mstockalias where symbol='UBS';
+
+> Row 1:
+>   STOCKKEY = X'3c080b4a396b8b99c0a801dc'
+> Row 2:
+>   STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+
+
+there are two
+> Row 1:
+>   STOCKKEY = X'3c080b4a396b8b99c0a801dc'
+select * from mstockalias where stockkey=X'3c080b4a396b8b99c0a801dc' order by "date";
+different ticker now 
+> Row 2:
+>   STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+select * from mstockalias where stockkey=X'25990c7a5463f4bfc0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UBS AG
+>     PRIMARYKEY = X'259a0c7a5463f4bfc0a86f92'
+>       STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+>         SYMBOL = UBS-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = H42097107
+>           DATE = TIMESTAMP '2014-11-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UBS AG
+>     PRIMARYKEY = X'f48f072954790d53c0a86f92'
+>       STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+>         SYMBOL = UBS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+Symbol: UBS 	Name: UBS AG 	Price: $22.52
+Volume: 2,518,905 	Sector: Unclassified 	Change: $0.54
+Short Volume: 999,999 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 1,550,833 	 Exchange: NYSE 	Today: 2.46%
+50 Day Ave: $21.73 	Year High: $23.20 	High: $22.57
+200 Day Ave: $16.27 	Year Low: $0.00 	Low: $22.30
+
+
+40101010	Diversified Banks
+	Large, geographically diverse banks with a national footprint whose revenues are derived primarily from conventional banking operations, have significant business activity in retail banking and small and medium corporate lending, and provide a diverse range of financial services. Excludes banks classified in the Regional Banks and Thrifts & Mortgage Finance Sub-Industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry.
+
+update mstockalias set GICSKEY='40101010' where stockkey=X'25990c7a5463f4bfc0a86f92';
+
+yahoo:  Market Cap:	86.38B
+Large cap - These companies have a market cap between $10 billion to $200 billion. 
+
+update mstockalias set STYLEKEY='LV' where stockkey=X'25990c7a5463f4bfc0a86f92';
+
+select * from mstockalias where stockkey=X'25990c7a5463f4bfc0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UBS AG
+>     PRIMARYKEY = X'259a0c7a5463f4bfc0a86f92'
+>       STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+>         SYMBOL = UBS-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = H42097107
+>           DATE = TIMESTAMP '2014-11-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = UBS AG
+>     PRIMARYKEY = X'f48f072954790d53c0a86f92'
+>       STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+>         SYMBOL = UBS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LV
+cusip is good
+
+
+7/29/15 - legacy site is good and updated
+trying to get a stock quote on the new site
+
+finally got to the new site and viewed the stock - says unclassified.
+
+select distinct stockkey from mstockalias where symbol='UBS';
+> Row 1:
+>   STOCKKEY = X'3c080b4a396b8b99c0a801dc'
+> Row 2:
+>   STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+
+this one  STOCKKEY = X'25990c7a5463f4bfc0a86f92'
+select * from mstockalias where stockkey=X'25990c7a5463f4bfc0a86f92' order by "date";
+that is it
+select fundkey from mposition where STOCKKEY = X'25990c7a5463f4bfc0a86f92';
+there are 8
+save to CA issues UBS fundkeys.txt
+
+let's reprice these from the day the stock listed 
+
+2014-11-12
+
+waiting for this to finish
+
+
+Member Name
+Ron Oswick
+Username
+oswick
+Fund Symbols
+OCEFX
+
+7/30/15 - on our new site, showing as LV Financials, closing this out 

@@ -1,0 +1,918 @@
+date: 1/29/15
+PPC dividend
+
+
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+1/28/2015	Cash	5.77	--	1/30/2015	2/17/2015
+
+email:
+	From: 	Tafel, Cody <ctafel@TSWINVEST.COM>
+	Subject: 	PPC corporate action report
+	Date: 	January 28, 2015 11:45:14 AM PST
+	To: 	info@marketocracy.com
+
+Sorry for some reason I am not able to send a corp action report as I forgot my password…just letting you all know PPC will need an adjustment after today’s move
+ 
+thanks
+ 
+J. Cody Tafel, CMT, CAIA
+Sr. Equity Trader
+ 
+
+ 
+Thompson, Siegel & Walmsley LLC  
+6806 Paragon Place, Suite 300 | Richmond
+
+who is this? 
+
+select * from mmanager where email like 'ctafel%';  nothing
+select * from mmanager where firstname='Cody' and lastname='Tafel';
+> Row 1:
+>                EMAIL = codytafel@hotmail.com
+>            FIRSTNAME = Cody
+>             FULLNAME = J. Cody Tafel
+>       HOMEADDRESSKEY = X'f866257344973881c0a80134'
+>             LASTNAME = Tafel
+>            LOGINNAME = jctrader
+>        LOGINPASSWORD = NULL
+>         PORTFOLIOKEY = X'f868257344973881c0a80134'
+>           PRIMARYKEY = X'f865257344973881c0a80134'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'f867257344973881c0a80134'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2007-04-26 12:20:35.000000'
+>            LASTLOGIN = TIMESTAMP '2007-04-27 08:07:17.000000'
+>           LOGINCOUNT = 342
+>         LOGINSPACING = 199368604.959417
+>   JOINEDMARKETOCRACY = TIMESTAMP '2006-06-19 19:51:29.000000'
+>    ENCRYPTEDPASSWORD = 5B540A6C777AAC81A7C612DC7A89581B
+>         MEMBERSTATUS = 0
+
+loginname= jctrader
+
+let's get the password 
+/Marketocracy/bin/dbtool decryptpassword -loginName jctrader
+Password = ewm42080
+
+member doesn't hold PPC
+
+select distinct stockkey from mstockalias where symbol='PPC';
+> Row 1:
+>   STOCKKEY = X'abc91029390b28fbc0a80116'
+select * from mstockalias where STOCKKEY = X'abc91029390b28fbc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'abca1029390b28fbc0a80116'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = CHX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2003-11-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'0c0418103fc2c65ac0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2008-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'cf8a2ccc4934a511c0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2008-12-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'1b1f4eb14936396cc0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PGPDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2008-12-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'dc5b4ec8493639aec0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PGPDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2009-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'7e3e30734b3a7e4bc0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PGPDQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'd848348750dcdce6c0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PGPDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 721467108
+>           DATE = TIMESTAMP '2012-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PILGRIM'S PRIDE CORP CL B
+>     PRIMARYKEY = X'616f1ce050de2d77c0a80146'
+>       STOCKKEY = X'abc91029390b28fbc0a80116'
+>         SYMBOL = PGPDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = XV
+
+active but with a different ticker symbol 
+> Row 2:
+>   STOCKKEY = X'2c1a04a651244664c0a80146'
+select * from mstockalias where STOCKKEY = X'2c1a04a651244664c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 72147K108
+>           DATE = TIMESTAMP '2009-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Pilgrim's Pride Corporation
+>     PRIMARYKEY = X'2c1b04a651244664c0a80146'
+>       STOCKKEY = X'2c1a04a651244664c0a80146'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'2c1b04a651244664c0a80146';
+nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 72147K108
+>           DATE = TIMESTAMP '2012-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Pilgrim's Pride Corporation
+>     PRIMARYKEY = X'fc0c05ef51244743c0a80146'
+>       STOCKKEY = X'2c1a04a651244664c0a80146'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = MB
+
+select * from mcorporateaction where aliaskey=X'fc0c05ef51244743c0a80146';
+> Row 1:
+>              ALIASKEY = X'fc0c05ef51244743c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UQ|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20130219:104714
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = PPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'fc0605ef51244742c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'fc0c05ef51244743c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150130|CP_PAY_DT|20150217|CP_FREQ|N.A.|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|5.77|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1001|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.844138|CP_ADJ_DT|20150128|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101447446
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 101181
+>        BB_COMPANYNAME = Pilgrim's Pride Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-28 00:00:00.000000'
+>         BB_IDENTIFIER = PPC     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = PPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-28 00:00:00.000000'
+>            PRIMARYKEY = X'd03b09ce54c977a5c0a86f92'
+>               VERSION = NULL
+pay date is 2/17/15
+
+member responded.  
+said he holds PPC in his CMF fund
+jctrader
+
+Thanks Marty! I do hold the PPC in the CMF fund. Thanks for the password and you can change the email on my account to ctafel@gmail.com
+ 
+Best,
+Cody
+
+don't see a CMF fund
+
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where symbol='CMF')) order by loginname;
+
+
+select * from mposition where STOCKKEY = X'2c1a04a651244664c0a80146' and fundkey in (select primarykey from mfund where symbol='CMF');
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'ee7e022354aaa63bc0a86f9c'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'2c1a04a651244664c0a80146'
+>                SYMBOL = NULL
+>           TOTALSHARES = 450.000000
+>               FUNDKEY = X'c24b342454a69f6bc0a86f98'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2015-01-05 09:34:20.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2015-01-05 09:34:20.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 14094.000000
+>        TOTALUSERSELLS = 0.000000
+>        RECENTUSERBUYS = 14094.000000
+>       RECENTUSERSELLS = 0.000000
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+
+there is one.  
+the fundkey is 
+>               FUNDKEY = X'c24b342454a69f6bc0a86f98'
+
+select * from mfund where primarykey=X'c24b342454a69f6bc0a86f98';
+> Row 1:
+>                  DESCRIPTION = Large Cap best ideas
+>                  BASISPOINTS = 0.000000
+>                    BROKERKEY = NULL
+>                 CAPSECTORKEY = NULL
+>                        CUSIP = NULL
+>                 CUSTODIANKEY = NULL
+>                      DATAKEY = NULL
+>                  DIVERSIFIED = NO
+>                    INCEPTION = TIMESTAMP '2015-01-02 12:00:00.000000'
+>                      KINDKEY = X'70443ca1391e026fc0a8015c'
+>                         NAME = Core Mutual Fund
+>                    PARENTKEY = NULL
+>                 PORTFOLIOKEY = X'd76b716239f86d51c0a80118'
+>                   PRIMARYKEY = X'c24b342454a69f6bc0a86f98'
+>                         RISK = NULL
+>                    SECTORKEY = NULL
+>                         SIZE = NULL
+>                     STYLEKEY = NULL
+>                       SYMBOL = CMF
+>         DISQUALIFICATIONDATE = NULL
+>                       ACTIVE = 1
+>                  INITIALCASH = 1000000.000000
+>                INITIALSHARES = 100000.000000
+>   MIRRORDISQUALIFICATIONDATE = NULL
+>       DISQUALIFICATIONREASON = NULL
+
+select * from mportfolio where primarykey = X'd76b716239f86d51c0a80118';
+> Row 1:
+>      KINDKEY = X'70743ca1391e0271c0a8015c'
+>   MANAGERKEY = X'd768716239f86d51c0a80118'
+>         NAME = NULL
+>   PRIMARYKEY = X'd76b716239f86d51c0a80118'
+>       SYMBOL = NULL
+select * from mmanager where primarykey=X'd768716239f86d51c0a80118';
+> Row 1:
+>                EMAIL = codytafel@hotmail.com
+>            FIRSTNAME = James
+>             FULLNAME = James Tafel
+>       HOMEADDRESSKEY = X'd769716239f86d51c0a80118'
+>             LASTNAME = Tafel
+>            LOGINNAME = codytafel
+>        LOGINPASSWORD = ewmewmewm
+>         PORTFOLIOKEY = X'd76b716239f86d51c0a80118'
+>           PRIMARYKEY = X'd768716239f86d51c0a80118'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'd76a716239f86d51c0a80118'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2015-01-29 08:15:07.000000'
+>            LASTLOGIN = TIMESTAMP '2015-01-29 08:50:20.000000'
+>           LOGINCOUNT = 1380
+>         LOGINSPACING = 392225774.001978
+>   JOINEDMARKETOCRACY = TIMESTAMP '2000-10-26 13:45:11.000000'
+>    ENCRYPTEDPASSWORD = B9E9B5F84355393547E9EE1F75EE8917
+>         MEMBERSTATUS = -1
+
+
+ah ha -
+it's codytafel
+get the password 
+/Marketocracy/bin/dbtool decryptpassword -loginName codytafel
+>>>> dbtool started at 2015-01-29 09:41:59 -0500
+Password = jct41879
+<<<< dbtool finished at 2015-01-29 09:42:00 -0500
+
+your holdings of PPC	
+ 	 	
+Fund	Shares	Value	Portion of fund
+TF	 0	 N/A	 N/A
+SF	 0	 N/A	 N/A
+CMF	450	 $12,622.50	 1.25%
+
+he does hold CMF in this account
+
+he would like both of his accounts updated with the email 
+
+Would you like me to update the email address to ctafel@gmail.com in both of these accounts.
+
+update mmanager set email='ctafel@gmail.com' where LOGINNAME = 'codytafel' or LOGINNAME = 'jctrader';
+
+select * from  mmanager where LOGINNAME = 'codytafel' or LOGINNAME = 'jctrader';
+> Row 1:
+>                EMAIL = ctafel@gmail.com
+>            FIRSTNAME = James
+>             FULLNAME = James Tafel
+>       HOMEADDRESSKEY = X'd769716239f86d51c0a80118'
+>             LASTNAME = Tafel
+>            LOGINNAME = codytafel
+>        LOGINPASSWORD = ewmewmewm
+>         PORTFOLIOKEY = X'd76b716239f86d51c0a80118'
+>           PRIMARYKEY = X'd768716239f86d51c0a80118'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'd76a716239f86d51c0a80118'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2015-01-29 08:15:07.000000'
+>            LASTLOGIN = TIMESTAMP '2015-01-29 08:50:20.000000'
+>           LOGINCOUNT = 1380
+>         LOGINSPACING = 392225774.001978
+>   JOINEDMARKETOCRACY = TIMESTAMP '2000-10-26 13:45:11.000000'
+>    ENCRYPTEDPASSWORD = B9E9B5F84355393547E9EE1F75EE8917
+>         MEMBERSTATUS = -1
+> Row 2:
+>                EMAIL = ctafel@gmail.com
+>            FIRSTNAME = Cody
+>             FULLNAME = J. Cody Tafel
+>       HOMEADDRESSKEY = X'f866257344973881c0a80134'
+>             LASTNAME = Tafel
+>            LOGINNAME = jctrader
+>        LOGINPASSWORD = NULL
+>         PORTFOLIOKEY = X'f868257344973881c0a80134'
+>           PRIMARYKEY = X'f865257344973881c0a80134'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'f867257344973881c0a80134'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2007-04-26 12:20:35.000000'
+>            LASTLOGIN = TIMESTAMP '2007-04-27 08:07:17.000000'
+>           LOGINCOUNT = 342
+>         LOGINSPACING = 199368604.959417
+>   JOINEDMARKETOCRACY = TIMESTAMP '2006-06-19 19:51:29.000000'
+>    ENCRYPTEDPASSWORD = 5B540A6C777AAC81A7C612DC7A89581B
+>         MEMBERSTATUS = 0
+
+
+done
+
+member is satisfied
+
+2/18/15
+
+let's check the dividends - for the special one
+select distinct stockkey from mstockalias where symbol='PPC';
+> Row 1:
+>   STOCKKEY = X'abc91029390b28fbc0a80116'
+	select * from mstockalias where STOCKKEY = X'abc91029390b28fbc0a80116';
+different ticker now, ok
+> Row 2:
+>   STOCKKEY = X'2c1a04a651244664c0a80146'
+	select * from mstockalias where STOCKKEY = X'2c1a04a651244664c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 72147K108
+>           DATE = TIMESTAMP '2009-12-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Pilgrim's Pride Corporation
+>     PRIMARYKEY = X'2c1b04a651244664c0a80146'
+>       STOCKKEY = X'2c1a04a651244664c0a80146'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 72147K108
+>           DATE = TIMESTAMP '2012-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Pilgrim's Pride Corporation
+>     PRIMARYKEY = X'fc0c05ef51244743c0a80146'
+>       STOCKKEY = X'2c1a04a651244664c0a80146'
+>         SYMBOL = PPC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = MB
+select * from mcorporateaction where aliaskey=X'fc0c05ef51244743c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'fc0c05ef51244743c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UQ|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20130219:104714
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = PPC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'fc0605ef51244742c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'fc0c05ef51244743c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150130|CP_PAY_DT|20150217|CP_FREQ|N.A.|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|5.77|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1001|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.844138|CP_ADJ_DT|20150128|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101447446
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 101181
+>        BB_COMPANYNAME = Pilgrim's Pride Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-28 00:00:00.000000'
+>         BB_IDENTIFIER = PPC     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = PPC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-28 00:00:00.000000'
+>            PRIMARYKEY = X'd03b09ce54c977a5c0a86f92'
+>               VERSION = NULL
+
+there it is
+login as jctrader
+cash dividends paid by PPC	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+28 Jan 15	30 Jan 15	17 Feb 15	N/A	$5.77	Dividend amount:5.77 per share.
+
+Let's see who holds PPC in MAdmin
+Stock:Pilgrim's Pride Corporation  Symbol:PPC
+Date: 02/18/2015
+
+37 users found
+
+1	2004_porsche_911	advisorcfa	ahknaten	alobato	arts	benpease	buffalo99	codytafel	danpochettes	davegjones
+2	djgrimlok	earningsyield	herbj1958	hiromimini	jimdy	jmcgowan	jordrok	kchamblee	kvogelsang	lot4m
+3	moonrunreport1	pbradford	pfaust	pthurmanb	pvbe	qarel	reveille	rond23	ryno2390	steaua145
+4	steveeven@hotmail.com	tamril	teamfunds	techplusmanager	theuncle	troyea	wolfram
+
+member login:  codytafel
+
+
+
+also 2004_porsche_911
+your holdings of PPC	
+ 	 	
+Fund	Shares	Value	Portion of fund
+sRAT	 0	 N/A	 N/A
+E=MC2	 0	 N/A	 N/A
+GLOBE	 0	 N/A	 N/A
+MMNTM	 0	 N/A	 N/A
+IPO	 0	 N/A	 N/A
+LHLTH	 0	 N/A	 N/A
+NOLTD	 0	 N/A	 N/A
+-BETA	 0	 N/A	 N/A
+OCTNE	2,010	 $55,134.30	 6.08%  <---
+21	 0	 N/A	 N/A
+PRO	 0	 N/A	 N/A
+HEXNE	 0	 N/A	 N/A
+LTECH	 0	 N/A	 N/A
+
+2010 shares * 5.77 = 11597.70
+don't see it on the FundDatePage  
+I see it on the FundTransactionPage
+02/17/2015	$4,788.37	$0.00	$0.13	$11,597.70	$48.76	-$2,314.13	$18,651.57	$881,099.05	$899,750.62	100,000	$9.00	Yes	Details  
+
+let's get the fundkeys and invalidate:
+select fundkey from mposition where primarykey in (select primarykey from mposition where STOCKKEY = X'2c1a04a651244664c0a80146' and totalshares > 0);
+> Row 1:
+>   FUNDKEY = X'354c02c2459a0f49c0a80134'
+> Row 2:
+>   FUNDKEY = X'ca1b02c2459a00d1c0a80134'
+> Row 3:
+>   FUNDKEY = X'b05a4ebd3e9afc50c0a80132'
+> Row 4:
+>   FUNDKEY = X'8d9f21ce3ee4cddbc0a80132'
+> Row 5:
+>   FUNDKEY = X'7336235243bdf2edc0a80132'
+> Row 6:
+>   FUNDKEY = X'073460f251265d61c0a80132'
+> Row 7:
+>   FUNDKEY = X'73274c4651763ad9c0a80146'
+> Row 8:
+>   FUNDKEY = X'de2f73ee4ef52ecbc0a80135'
+> Row 9:
+>   FUNDKEY = X'af065ed1506f5515c0a80135'
+> Row 10:
+>   FUNDKEY = X'fed71f293e789773c0a80132'
+> Row 11:
+>   FUNDKEY = X'e737352051938e97c0a80146'
+> Row 12:
+>   FUNDKEY = X'b6891a7c51bfa6f0c0a80135'
+> Row 13:
+>   FUNDKEY = X'201c041951bf6cc5c0a80132'
+> Row 14:
+>   FUNDKEY = X'0be5382451d2dabbc0a80132'
+> Row 15:
+>   FUNDKEY = X'718267fe51eef6d2c0a80132'
+> Row 16:
+>   FUNDKEY = X'073770c64d3f641ec0a80135'
+> Row 17:
+>   FUNDKEY = X'8d4059e84ef4d291c0a80133'
+> Row 18:
+>   FUNDKEY = X'90ef74a55255b1eec0a80135'
+> Row 19:
+>   FUNDKEY = X'b7fe6c9d5011fa41c0a80134'
+> Row 20:
+>   FUNDKEY = X'b45e34513a11eb2dc0a80119'
+> Row 21:
+>   FUNDKEY = X'1a5e1128528b9f8ac0a80132'
+> Row 22:
+>   FUNDKEY = X'ce7a0dc552af8857c0a86f98'
+> Row 23:
+>   FUNDKEY = X'812d18fd51cb2af5c0a80132'
+> Row 24:
+>   FUNDKEY = X'b02a67b4441fac8ac0a80134'
+> Row 25:
+>   FUNDKEY = X'003b366c51f7fc81c0a80134'
+> Row 26:
+>   FUNDKEY = X'fb1b727c4bd6863ac0a80134'
+> Row 27:
+>   FUNDKEY = X'44a71b7e504d5637c0a80132'
+> Row 28:
+>   FUNDKEY = X'a2ba5f0a457d3906c0a80132'
+> Row 29:
+>   FUNDKEY = X'22412ff7721c6a6678cd169a'
+> Row 30:
+>   FUNDKEY = X'5ed11a1845834383c0a80135'
+> Row 31:
+>   FUNDKEY = X'a22a2f224d472649c0a80134'
+> Row 32:
+>   FUNDKEY = X'5bbf61e045904eb5c0a80132'
+> Row 33:
+>   FUNDKEY = X'd8ee62724adbf71bc0a80135'
+> Row 34:
+>   FUNDKEY = X'bcc549e453b42eeac0a86f98'
+> Row 35:
+>   FUNDKEY = X'ae490d0f530f76a7c0a86f99'
+> Row 36:
+>   FUNDKEY = X'e16419c64f31491fc0a80133'
+> Row 37:
+>   FUNDKEY = X'fb271e1253da32e6c0a86f98'
+> Row 38:
+>   FUNDKEY = X'b500712754052907c0a86f98'
+> Row 39:
+>   FUNDKEY = X'499738904ad8995cc0a80132'
+> Row 40:
+>   FUNDKEY = X'be983d1341723d69c0a80134'
+> Row 41:
+>   FUNDKEY = X'0e7202c84f00b4a0c0a80132'
+> Row 42:
+>   FUNDKEY = X'3efd10774de2b6e4c0a80135'
+> Row 43:
+>   FUNDKEY = X'c49d334b4a5b4809c0a80133'
+> Row 44:
+>   FUNDKEY = X'3e42069154880506c0a86f98'
+> Row 45:
+>   FUNDKEY = X'21f111613cd44c76c0a801e1'
+> Row 46:
+>   FUNDKEY = X'c24b342454a69f6bc0a86f98'
+> Row 47:
+>   FUNDKEY = X'698b216052c475b0c0a86f98'
+> Row 48:
+>   FUNDKEY = X'089403d63a00b025c0a801e1'
+> Row 49:
+>   FUNDKEY = X'301702c2459a0da3c0a80134'
+> Row 50:
+>   FUNDKEY = X'c89f6c1d531d89eec0a86f99'
+> Row 51:
+>   FUNDKEY = X'fc47252454befbf0c0a86f98'
+> Row 52:
+>   FUNDKEY = X'd31f35b554c67b3fc0a86f98'
+> Row 53:
+>   FUNDKEY = X'25d822474288cd06c0a80134'
+> Row 54:
+>   FUNDKEY = X'5d7069f64550b189c0a80132'
+> Row 55:
+>   FUNDKEY = X'6db765d254095600c0a86f98'
+> Row 56:
+>   FUNDKEY = X'774d27b83becc104c0a801e1'
+> Row 57:
+>   FUNDKEY = X'13d2252454bf03d3c0a86f98'
+> Row 58:
+>   FUNDKEY = X'4a465340405f0652ffffffff'
+
+select symbol from mfund where primarykey in ( select fundkey from mposition where primarykey in (select primarykey from mposition where STOCKKEY = X'2c1a04a651244664c0a80146' and totalshares > 0)) order by symbol;
+> Row 1:
+>   SYMBOL = 1WL
+> Row 2:
+>   SYMBOL = 2WL
+> Row 3:
+>   SYMBOL = 3WL
+> Row 4:
+>   SYMBOL = 4WL
+> Row 5:
+>   SYMBOL = 5WL
+> Row 6:
+>   SYMBOL = AC
+> Row 7:
+>   SYMBOL = BCMF
+> Row 8:
+>   SYMBOL = BESPX
+> Row 9:
+>   SYMBOL = BMF1
+> Row 10:
+>   SYMBOL = CA
+> Row 11:
+>   SYMBOL = CAPEX
+> Row 12:
+>   SYMBOL = CBFD
+> Row 13:
+>   SYMBOL = CMF
+> Row 14:
+>   SYMBOL = CSOSF
+> Row 15:
+>   SYMBOL = ECDF
+> Row 16:
+>   SYMBOL = ECF
+> Row 17:
+>   SYMBOL = GRSVQ
+> Row 18:
+>   SYMBOL = GRWTH
+> Row 19:
+>   SYMBOL = IMP
+> Row 20:
+>   SYMBOL = JMF4
+> Row 21:
+>   SYMBOL = JMF5
+> Row 22:
+>   SYMBOL = JoeToms2
+> Row 23:
+>   SYMBOL = JoeToms6
+> Row 24:
+>   SYMBOL = KAIMS
+> Row 25:
+>   SYMBOL = KJV
+> Row 26:
+>   SYMBOL = LCGFX
+> Row 27:
+>   SYMBOL = LMFni
+> Row 28:
+>   SYMBOL = MFs
+> Row 29:
+>   SYMBOL = MMF10
+> Row 30:
+>   SYMBOL = OCTNE
+> Row 31:
+>   SYMBOL = QRSF
+> Row 32:
+>   SYMBOL = RMF
+> Row 33:
+>   SYMBOL = RMF1
+> Row 34:
+>   SYMBOL = RMF1
+> Row 35:
+>   SYMBOL = RTFBI
+> Row 36:
+>   SYMBOL = SFF
+> Row 37:
+>   SYMBOL = SHARF
+> Row 38:
+>   SYMBOL = SLCVF
+> Row 39:
+>   SYMBOL = SMALL
+> Row 40:
+>   SYMBOL = SMF
+> Row 41:
+>   SYMBOL = TFMS1
+> Row 42:
+>   SYMBOL = TKSLF
+> Row 43:
+>   SYMBOL = TMFCH
+> Row 44:
+>   SYMBOL = TMFCY
+> Row 45:
+>   SYMBOL = TOPS
+> Row 46:
+>   SYMBOL = TUFDX
+> Row 47:
+>   SYMBOL = TYCG
+> Row 48:
+>   SYMBOL = ULGSF
+> Row 49:
+>   SYMBOL = UNDRV
+> Row 50:
+>   SYMBOL = VLTL
+> Row 51:
+>   SYMBOL = VMF
+> Row 52:
+>   SYMBOL = WMF4
+> Row 53:
+>   SYMBOL = WP58
+> Row 54:
+>   SYMBOL = WTL2
+> Row 55:
+>   SYMBOL = bio
+> Row 56:
+>   SYMBOL = blend
+> Row 57:
+>   SYMBOL = mcgsx
+> Row 58:
+>   SYMBOL = yahoo
+
+Let's invalidate all the fund which have PPC shares
+/Marketocracy/bin/fptool invalidateFund 003b366c51f7fc81c0a80134;
+/Marketocracy/bin/fptool invalidateFund 073460f251265d61c0a80132;
+/Marketocracy/bin/fptool invalidateFund 073770c64d3f641ec0a80135;
+/Marketocracy/bin/fptool invalidateFund 089403d63a00b025c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 0be5382451d2dabbc0a80132;
+/Marketocracy/bin/fptool invalidateFund 0e7202c84f00b4a0c0a80132;
+/Marketocracy/bin/fptool invalidateFund 13d2252454bf03d3c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 1a5e1128528b9f8ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 201c041951bf6cc5c0a80132;
+/Marketocracy/bin/fptool invalidateFund 21f111613cd44c76c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 22412ff7721c6a6678cd169a;
+/Marketocracy/bin/fptool invalidateFund 25d822474288cd06c0a80134;
+/Marketocracy/bin/fptool invalidateFund 301702c2459a0da3c0a80134;
+/Marketocracy/bin/fptool invalidateFund 354c02c2459a0f49c0a80134;
+/Marketocracy/bin/fptool invalidateFund 3e42069154880506c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 3efd10774de2b6e4c0a80135;
+/Marketocracy/bin/fptool invalidateFund 44a71b7e504d5637c0a80132;
+/Marketocracy/bin/fptool invalidateFund 499738904ad8995cc0a80132;
+/Marketocracy/bin/fptool invalidateFund 4a465340405f0652ffffffff;
+/Marketocracy/bin/fptool invalidateFund 5bbf61e045904eb5c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5d7069f64550b189c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5ed11a1845834383c0a80135;
+/Marketocracy/bin/fptool invalidateFund 698b216052c475b0c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 6db765d254095600c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 718267fe51eef6d2c0a80132;
+/Marketocracy/bin/fptool invalidateFund 73274c4651763ad9c0a80146;
+/Marketocracy/bin/fptool invalidateFund 7336235243bdf2edc0a80132;
+/Marketocracy/bin/fptool invalidateFund 774d27b83becc104c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 812d18fd51cb2af5c0a80132;
+/Marketocracy/bin/fptool invalidateFund 8d4059e84ef4d291c0a80133;
+/Marketocracy/bin/fptool invalidateFund 8d9f21ce3ee4cddbc0a80132;
+/Marketocracy/bin/fptool invalidateFund 90ef74a55255b1eec0a80135;
+/Marketocracy/bin/fptool invalidateFund a22a2f224d472649c0a80134;
+/Marketocracy/bin/fptool invalidateFund a2ba5f0a457d3906c0a80132;
+/Marketocracy/bin/fptool invalidateFund ae490d0f530f76a7c0a86f99;
+/Marketocracy/bin/fptool invalidateFund af065ed1506f5515c0a80135;
+/Marketocracy/bin/fptool invalidateFund b02a67b4441fac8ac0a80134;
+/Marketocracy/bin/fptool invalidateFund b05a4ebd3e9afc50c0a80132;
+/Marketocracy/bin/fptool invalidateFund b45e34513a11eb2dc0a80119;
+/Marketocracy/bin/fptool invalidateFund b500712754052907c0a86f98;
+/Marketocracy/bin/fptool invalidateFund b6891a7c51bfa6f0c0a80135;
+/Marketocracy/bin/fptool invalidateFund b7fe6c9d5011fa41c0a80134;
+/Marketocracy/bin/fptool invalidateFund bcc549e453b42eeac0a86f98;
+/Marketocracy/bin/fptool invalidateFund be983d1341723d69c0a80134;
+/Marketocracy/bin/fptool invalidateFund c24b342454a69f6bc0a86f98;
+/Marketocracy/bin/fptool invalidateFund c49d334b4a5b4809c0a80133;
+/Marketocracy/bin/fptool invalidateFund c89f6c1d531d89eec0a86f99;
+/Marketocracy/bin/fptool invalidateFund ca1b02c2459a00d1c0a80134;
+/Marketocracy/bin/fptool invalidateFund ce7a0dc552af8857c0a86f98;
+/Marketocracy/bin/fptool invalidateFund d31f35b554c67b3fc0a86f98;
+/Marketocracy/bin/fptool invalidateFund d8ee62724adbf71bc0a80135;
+/Marketocracy/bin/fptool invalidateFund de2f73ee4ef52ecbc0a80135;
+/Marketocracy/bin/fptool invalidateFund e16419c64f31491fc0a80133;
+/Marketocracy/bin/fptool invalidateFund e737352051938e97c0a80146;
+/Marketocracy/bin/fptool invalidateFund fb1b727c4bd6863ac0a80134;
+/Marketocracy/bin/fptool invalidateFund fb271e1253da32e6c0a86f98;
+/Marketocracy/bin/fptool invalidateFund fc47252454befbf0c0a86f98;
+/Marketocracy/bin/fptool invalidateFund fed71f293e789773c0a80132;
+
+log back in as 2004_porsche_911
+ugh now no dividends at all in either page
+
+try codytafel
+CMF fund:
+PPC	Pilgrim's Pride Corporation	$26.75	1.2%	450	$2,596.00	$12,037.50	Details 
+
+450 shares * 5.77= 2596   he got it
+
+what about james?
+
+
+2/19/15
+dividend is there in the stockinfopage
+ cash dividends paid by PPC	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+28 Jan 15	30 Jan 15	17 Feb 15	N/A	$5.77	Dividend amount:5.77 per share.
+ 	 	 
+checking james again
+2004_porsche_911  OCTNE fund
+
+2/17/15
+what is the fundkey for OCTNE
+
+select primarykey  from mfund where portfoliokey in (select primarykey from mportfolio where managerkey in (select primarykey from mmanager where loginname='2004_porsche_911')) and symbol='OCTNE';
+> Row 1:
+>   PRIMARYKEY = X'6db765d254095600c0a86f98'
+
+invalidate this
+/Marketocracy/bin/fptool invalidateFund 6db765d254095600c0a86f98
+
+log back in - still no dividends check his history
+LEDGER
+Date	Start	Change	End	Type
+Jan 29, 2015		2010	2010	Buy
+Total: 2,010
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 29, 2015	2,010	$100.50	$58,229.70	$28.97
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+
+28 Jan 15	30 Jan 15	17 Feb 15	N/A	$5.77	Dividend amount:5.77 per share.
+he held the shares on the record date... 
+
+let's try to reprice his fund:
+/Marketocracy/bin/dbtool lookup fund  2004_porsche_911
+
+/Marketocracy/bin/fptool invalidateFund 6DB765D254095600C0A86F98
+/Marketocracy/bin/fptool priceFund 6DB765D254095600C0A86F98
+
+still not there
+
+
+check his OCTNE ledger on 1/29/15 when he bought it and also 1/30/15 - the record date for this CA
+he held the 2010 shares - no end of day pricing though. 
+
+check codytafel again
+he has 450 shares in the CMF fund
+LEDGER
+Date	Start	Change	End	Type
+Jan 05, 2015		450	450	Buy
+Total: 450
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 5, 2015	450	$22.50	$14,094.00	$31.32
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+select * from mticket where stockkey=X'2c1a04a651244664c0a80146' and sourcekey is null order by opened;
+this one is done, closing it out.
+

@@ -1,0 +1,819 @@
+************************************************************************
+> Row 26:  EXTN-W to EXTN
+************************************************************************
+>              ALIASKEY = X'0e335cd7563a9de7c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|EXTN-W US|CP_NEW_TKR|EXTN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109641478
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 43278888
+>        BB_COMPANYNAME = Exterran Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = EXTN-W  US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = EXTN-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-10-20 00:00:00.000000'
+>            PRIMARYKEY = X'6db874445626c566c0a86fab'
+>               VERSION = NULL
+1.  Get the stockkey
+select stockkey from mstockalias where primarykey=X'0e335cd7563a9de7c0a86fab';
+> Row 1:
+>   STOCKKEY = X'1ee25e1456113f66c0a86fab'
+select distinct stockkey from mstockalias where symbol='EXTN';
+> Row 1:
+>   STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+> Row 2:
+>   STOCKKEY = X'1ee25e1456113f66c0a86fab'
+
+there are two
+******************************************************
+> Row 1:
+>   STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+******************************************************
+select * from mstock where primarykey=X'83b710ac390c6d5bc0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'54fa079a46f1eaa5c0a8013c'
+>                NAME = EXTENSITY INC(IPO)
+>          PRIMARYKEY = X'83b710ac390c6d5bc0a8015c'
+>              SYMBOL = EXTN
+>           COMPANYID = 7944
+>   WINDOWIDENTITYKEY = NULL
+select * from mstockalias where STOCKKEY = X'83b710ac390c6d5bc0a8015c' order by "date";
+delisted 
+******************************************************
+> Row 2:
+>   STOCKKEY = X'1ee25e1456113f66c0a86fab'
+listed on 2015-07-20 as EXTN-W  changed to EXTN on 2015-11-04
+******************************************************
+select * from mstock where primarykey=X'1ee25e1456113f66c0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'0e335cd7563a9de7c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'1ee25e1456113f66c0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 28933
+>   WINDOWIDENTITYKEY = NULL
+select * from mstockalias where STOCKKEY = X'1ee25e1456113f66c0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'1ee35e1456113f66c0a86fab'
+>       STOCKKEY = X'1ee25e1456113f66c0a86fab'
+>         SYMBOL = EXTN-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'0e335cd7563a9de7c0a86fab'
+>       STOCKKEY = X'1ee25e1456113f66c0a86fab'
+>         SYMBOL = EXTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select count(*) from mticket where stockkey=X'1ee25e1456113f66c0a86fab';
+> Row 1:
+>   _C001 = 1.000000
+
+one ticket
+select * from mticket where stockkey=X'1ee25e1456113f66c0a86fab';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-12-01 09:30:08.000000'
+>        COMMENT = NULL
+>     COMMISSION = 30.500000
+>   CURRENTORDER = X'2adc5479565d0527c0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'67e35a9239cef2a2c0a80119'
+>       MODIFIED = NULL
+>            NET = 10071.100000
+>         OPENED = TIMESTAMP '2015-11-30 21:25:27.000000'
+>          PRICE = 16.510000
+>     PRIMARYKEY = X'2ada5479565d0527c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 610.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1ee25e1456113f66c0a86fab'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select loginname from mmanager where primarykey = X'67e35a9239cef2a2c0a80119';
+> Row 1:
+>   LOGINNAME = gbader
+select * from mtrade where ticketkey =X'2ada5479565d0527c0a86fa6';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'883b41c1565db311c0a86f9c'
+>                 PRIMARYKEY = X'883a41c1565db311c0a86f9c'
+>                     SHARES = 610.000000
+>                  TICKETKEY = X'2ada5479565d0527c0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-12-01 09:30:08.000000'
+>                      PRICE = 16.510000
+>   CREATEDBYCORPORATEACTION = 0
+
+select * from morder where ticketkey =X'2ada5479565d0527c0a86fa6';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>          PRICE = NULL
+>     PRIMARYKEY = X'2adc5479565d0527c0a86fa6'
+>         SHARES = 610.000000
+>      TICKETKEY = X'2ada5479565d0527c0a86fa6'
+>           TIME = TIMESTAMP '2015-11-30 21:25:27.000000'
+>   AVERAGEPRICE = 16.460000
+>   SHARESFILLED = 610
+
+select * from mticketallocation where ticketkey =X'2ada5479565d0527c0a86fa6';
+> Row 1:
+>      FUNDKEY = X'07631e14565d04a6c0a86fa6'  <--- fund
+>   PRIMARYKEY = X'2add5479565d0527c0a86fa6'
+>       SHARES = 610.000000
+>    TICKETKEY = X'2ada5479565d0527c0a86fa6'
+
+select symbol from mfund where primarykey=X'07631e14565d04a6c0a86fa6';
+> Row 1:
+>   SYMBOL = ACQV
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py gbader ACQV 20151130 EXTN 610 16.46
+**NEED TO RUN after 
+LEDGER
+Date	Start	Change	End	Type
+Dec 01, 2015		610	610	Buy
+Total: 610
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 1, 2015	610	$30.50	$10,071.10	$16.51
+ 	 	 
+SELLS
+You have no sells for this position
+
+Let's untrade this 
+
+Now let's get rid of this altogether 
+> Row 2:
+>   STOCKKEY = X'1ee25e1456113f66c0a86fab'
+listed on 2015-07-20 as EXTN-W  changed to EXTN on 2015-11-04
+should no longer have any mticket
+select count(*) from mticket where STOCKKEY = X'1ee25e1456113f66c0a86fab';
+> Row 1:
+>   _C001 = 1.000000
+select * from mticket where STOCKKEY = X'1ee25e1456113f66c0a86fab';
+it's blank now
+
+delete everything
+set commit false;
+
+delete from mstock where primarykey=  X'1ee25e1456113f66c0a86fab'; 
+
+delete from mwindowstock where stockkey=X'1ee25e1456113f66c0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'1ee25e1456113f66c0a86fab');
+
+delete from mstockalias where stockkey=X'1ee25e1456113f66c0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'1ee25e1456113f66c0a86fab');   
+
+delete from mposition where stockkey=X'1ee25e1456113f66c0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'1ee25e1456113f66c0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'1ee25e1456113f66c0a86fab');
+
+delete from mticket where stockkey=X'1ee25e1456113f66c0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'1ee25e1456113f66c0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'1ee25e1456113f66c0a86fab';  
+
+commit;
+
+set commit true;
+done
+
+
+I wonder if we missed a spin off?
+
+here is one I just worked on, sample 
+CP_TKR|JAX US  was found in the BB_ACTIONDICTIONARY  let's see if we can locate this example
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|JAX US%';
+> Row 1:
+>              ALIASKEY = X'742110ed53b33e34c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|J Alexander's Holdings Inc|CP_ID_BB_COMP|42983047|CP_ID_BB_SEC|1000|CP_TERMS|.1727  : 1|CP_RATIO|0.172720|CP_PAY_DT|20150928|CP_RECORD_DT|20150922|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.857252|CP_ADJ_DT|20150929|CP_TKR|JAX US|CP_DUE_BILL_RED_DT|20151001|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007FJZFD0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007FJZF68|CP_SPINOFF_ID_BB_SEC_NUM_DES|JAX|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|Full spin-off rate is 0.17272 for 1.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 102858639
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 40863800
+>        BB_COMPANYNAME = FNFV Group
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-29 00:00:00.000000'
+>         BB_IDENTIFIER = FNFV    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-18 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = FNFV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'1d342293560b16a0c0a86fab'
+>               VERSION = NULL
+
+ok let's look for EXTN
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|EXTN US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Exterran Corp|CP_ID_BB_COMP|43278888|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20151103|CP_RECORD_DT|20151027|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.605377|CP_ADJ_DT|20151104|CP_TKR|EXTN US|CP_DUE_BILL_RED_DT|20151106|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007K3DT16|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007K3DSJ9|CP_SPINOFF_ID_BB_SEC_NUM_DES|EXTN|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98815944
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Archrock Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = AROC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = AROC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-11-03 00:00:00.000000'
+>            PRIMARYKEY = X'f5bd5c58563a9c06c0a86fab'
+>               VERSION = NULL
+
+so here is one that we did not apply because the ticker already existed 
+CP_PAY_DT|20151103|CP_RECORD_DT|20151027  BB_EFFECTIVE = TIMESTAMP '2015-11-04
+this was on 11/3/15
+
+AROC spun off EXTN  
+
+http://finance.yahoo.com/news/archrock-inc-completes-spin-off-114500017.html
+1 for 2  1 share of EXTN for every 2 AROC
+
+effective 2015-11-04 
+CP_TERMS|1 per 2|
+CP_RATIO|0.500000|
+CP_PAY_DT|20151103|
+CP_RECORD_DT 20151027
+AROC spun off EXTN
+
+/Marketocracy/bin/cahelper -symbol AROC -effective 20151104 -type SPIN -exchange UQ -spinOffSymbol EXTN -payDate 20151103 -recordDate 20151027 -name 'Exterran Corp' -ratio 0.50 >& /Users/build/caout/AROC.20151213-SPIN-EXTN.out 
+AROC.20151213-SPIN-EXTN.out
+stocks1:~/caout build$ tail -f AROC.20151213-SPIN-EXTN.out
+D: (12-14 02:14:23.079) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 02:15:29.470) cahelper started on 2015-12-14 02:15:29 -0500
+
+D: (12-14 02:15:44.399) StockFileLoad Version:4.0
+D: (12-14 02:15:44.400) Loading Stock Data
+D: (12-14 02:17:26.570) Building Lookup Index
+D: (12-14 02:17:38.642) Finished Building Index
+D: (12-14 02:17:47.906) Finished Loading Stock Data
+D: (12-14 02:17:47.968) Connection to 192.168.111.172:6666 succeeded
+D: (12-14 02:18:01.047) SavingChanges for Stock Dividend out 101 of 410
+D: (12-14 02:18:34.945) SavingChanges for Stock Dividend out 201 of 410
+D: (12-14 02:19:49.560) {
+    APPLIED = 1; 
+    DATE = 20151104; 
+    FUNDS = (
+        "reveille/Reveille's Mutual Fund2", 
+        "nathalie347/nathalie347's Mutual Fund", 
+        "mpyra/AVA Value", 
+        "skashin2/sviytoslv kashin's Mutual Fund", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "sdzmrkt/Dart Board Diversified Blend", 
+        "sswanson77/Swanson's Tracking Fund", 
+        "rgp44/RGP Value Fund", 
+        "jhuang3/JJH Utilities", 
+        "mfrayser/Mikey's Short Term Growth Fund", 
+        "mgrippaldi/mgrippaldi's Mutual Fund", 
+        "jdockstader1/52 WEEK HIGH, AND LOW STOCKS  2", 
+        "jdockstader2/TOTAL JASON DOCKSTADER INDEX", 
+        "cfifield/charis aggressive growth fund", 
+        "boatay/contrarian fund", 
+        "efoley/efoley's Mutual Fund Mid Cap", 
+        "sbrown/Energy", 
+        "mfrayser/mfrayser's Mutual Fund", 
+        "patchu/PChu Energy Fund", 
+        "arosenberg/Energy, Utilities & Communications", 
+        "aneedham/Rough Diamonds", 
+        "homerwu/homerwu's Mutual Fund", 
+        "jevans2/jevans2's Mutual Fund", 
+        "lusw/Lutopia Fund", 
+        "ryan715/Growth", 
+        "gwood/All Value Fund", 
+        "sxu/shirley xu's Mutual Fund", 
+        "qrheaume/Q-R  Energy Too Fund", 
+        "wcroner/Positive Growth Mutual Fund", 
+        "enewman/enewman's Mutual Fund2", 
+        "jrepas/Logical Choices", 
+        "haslbauer/p5", 
+        "tjones/Travis's Timothy Fund", 
+        "katka/katka's Mutual Fund", 
+        "cheloko/DIVERSIFIED FUND", 
+        "ehoftman/AiT Diversified Fund", 
+        "richardttu/Richards Energy for Growth Fund", 
+        "jimmymac36/ValGrowth II", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "rweiler/Alternative Energy Fund", 
+        "gman/gman's Contrarian  Mutual Fund", 
+        "leif/Leif's Trick of Technology", 
+        "multizone7/multizone7's Mutual Fund", 
+        "cdalzell/DZ's Total Market Madness Fund", 
+        "ewallhauser/ewallhauser's Mutual Fund", 
+        "savithri/savithri's Mutual Fund", 
+        "kenzomc/Scientific Mutual Fund", 
+        "npatwa/The Unknown Fund", 
+        "zappy3333/Resources Fund", 
+        "jleggiero/John Martin Leggiero's Mutual Fund", 
+        "jereln/Liquidation Value Fund", 
+        "blowke/Camelot Utility Fund", 
+        "ryessup/R-Z  Energy Services Fund", 
+        "DELETE_ldoheny_30130068/Growth and Opportunity Fund", 
+        "sswanson77/Slow and Steady", 
+        "DELETED_2005586/Sean A. HAhn's Mutual Fund", 
+        "plafferty1/Patrick Lafferty's Mutual Fund B", 
+        "t-bone/Leigh Doheny's Mutual Fund", 
+        "gvan_arkel/Disaster Portfolio", 
+        "eward1/Emerson's Mutual Fund", 
+        "brummie/Trevor Varley's Mutual Fund", 
+        "bhanen/BH Sector Fund", 
+        "sblain/Signalwatch fund", 
+        "dmorgn/DMORGN FUND", 
+        "jdamian_jr/JRD Aggressive  Growth Fund", 
+        "multizone7/KuL's Mutual Fund", 
+        "jakerath/jakerath's Mutual Fund", 
+        "jevans2/jevans2's Mutual Fund", 
+        "jlifland/john h. lifland MD's Mutual Fund", 
+        "rbebeau/rbebeau's Mutual Fund", 
+        "boatay/Advance mutual fund", 
+        "aneedham/Tortoise Value", 
+        "rhaffner/Long Term Growth Fund R", 
+        "thesecretplace/Glancey", 
+        "conuslbyrne/Olympus Midcap GAARP", 
+        "statonjr/Staton Aggressive Growth Fund", 
+        "t-bone/T-Bone's Long Term Fund", 
+        "tuke/Tuke's Utility Fund", 
+        "mkulcsar/Small Cap Shenanigans", 
+        "arnab/Arnab's Mutual Fund 2", 
+        "wcoleman/Coleman Mid Cap Fund", 
+        "haag/New Dawn Core Value", 
+        "stamo/Stamo Sector Agressive Growth ", 
+        "rb374/Roger Brown's Mutual Fund", 
+        "nwestphal/Westphal's Wasteland", 
+        "mpyra/michal pyra's Mutual Fund", 
+        "rhaffner/energy first", 
+        "jevans2/jevans2's Mutual Fund", 
+        "rcloutier2/ray cloutier's blend mutual fund", 
+        "ksavage/The Savage Fund", 
+        "tickwhiz/high rollers growth fund", 
+        "svanness/Enery Dynamics", 
+        "chipper4617/Chip Pearson's Mutual Fund", 
+        "jrheaume/J-R Energy Services Fund", 
+        "boatay/Len Boatman's Mutual Fund", 
+        "crademacher/Chuck Rademacher's Mutual Fund", 
+        "avolodin/New Natural Resources Fund", 
+        "vikingsmtw/long term fund", 
+        "debonair/debonair's Mutual Fund", 
+        "jimmymac36/ValGrowth I ", 
+        "gfontana/Market", 
+        "disneyfreak518/disneyfreak518's Mutual Fund", 
+        "trigga126/Kevin Jacobs Strat Lab Open Fund", 
+        "aogilvie/ACO PARTNERS", 
+        "dlanged/Lange Early Opp Buy Fund", 
+        "kchiaro/Charging Bison Mutual Fund", 
+        "cfalcon/CFalcon's ", 
+        "fester/fester's Mutual Fund", 
+        "lmorenciu/Gain/Loss Indicator", 
+        "micingra/micingra's Mutual Fund", 
+        "atapparo/The Topsfield Diamonds Fund", 
+        "chubby/chubby's Short Fund", 
+        "auminer/auminer's Short Fund", 
+        "snussbaum/SNussbaum, SMID Cap Value", 
+        "rpschea/Paladin Momentum Fund", 
+        "DELETED_gheyland_20071211130001/The Heyland HCM Long Fund", 
+        "jrheaume/Teddy Bear Fund ", 
+        "jcalow/jcalow's Shorts", 
+        "jsbaker/JSB Detritus Fund", 
+        "mikki33/Michael Bonn's (mikki33) Real Short Fund", 
+        "eseward/Formations Mutual Fund", 
+        "jhamer/Short-Only Fund", 
+        "amboy/amboy's Mutual Fund", 
+        "pamplona/gimme some mo fund", 
+        "ashishbhatia/ashishbhatia's long-term short Fund", 
+        "qrheaume/Short Capitol Fund ", 
+        "marke60/The Eastman Fund", 
+        "lwilliams3/Short Quality Fund ", 
+        "sbecktol/MEDICAL  FUND", 
+        "tomfalz/tomfalz's Mutual Fund", 
+        "arich/arich's Mutual Fund", 
+        "finanaliticasector_a/energy_3", 
+        "pww746/MTT", 
+        "jpildis/Shorts R Us", 
+        "shepherdjr_is/shepherdjr_IS Fund", 
+        "laurentpoirier/LJP Stat Sector Fund ", 
+        "nicktatouche/thejunkyard Mutual Fund", 
+        "jon_birdsong/jon_birdsong's Mutual Fund", 
+        "mkhari/Top100 S&P400", 
+        "hans4ecb/hans4ecb's Mutual Fund", 
+        "sokolandrey/sokolandrey's Mutual Fund", 
+        "cfalcon/CFalcon's Short Fund", 
+        "brahmsian/Brahmsian's Y Fund", 
+        "ryessup/Short Fund", 
+        "joycerefron/FOCUS Real Short", 
+        "sbecktol/Aerospace Mutual Fund", 
+        "jrpesq/jrpesq's Mutual Fund", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "giddyupdow/giddyupdow's Mutual Fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "royaldmd/royaldmd's Mutual Fund", 
+        "reitmaster/reitmaster's REIT", 
+        "jrheaume/Short Bear Fund ", 
+        "timtrading/Tim Trading Mutual Fund", 
+        "yitzehr/yitzehr's Mutual Fund", 
+        "dblade/dblade's spectrumspeculator  ", 
+        "blue/blue's Mutual Fund", 
+        "ahknaten/Kai Petainen's Energy Shorts", 
+        "jamesoil/jamesoil's Mutual Fund", 
+        "ppongpamorn/Short Term Bollinger Bands Fund", 
+        "mikki33/Michael Bonn's (mikki33) Single Double with Growth", 
+        "bpostma/SG Likes", 
+        "snussbaum/Scott Nussbaum's Mutual Fund", 
+        "cccpc007/cccpc007's Mutual Fund", 
+        "reitmaster/reitmaster's Multi-Sector Fund", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "romero853/romero853's Mutual Fund", 
+        "aristote/aristote's Mutual Fund", 
+        "pjenner/Shadow Stock Mod 1", 
+        "dnerdo/Ones 12-24-2005", 
+        "quantinetics/5I", 
+        "eschmitzva/DSS Enterprises O&G Fund", 
+        "pcgateway/pcgateway's Mutual Fund", 
+        "mgulla/Gulla Short Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "tsielaff/TS Tank Fund", 
+        "kchamblee/bottom of the barrel", 
+        "jmcintire/I WILL WIN!!!", 
+        "ctiesman/Energy Related", 
+        "mdimich/First Mutual Fund", 
+        "kathynz/Portfolio E", 
+        "singh99/wah", 
+        "tara8/Tara's Mutual Fund", 
+        "bvergara/Cardassian Long Bow Assets", 
+        "mchristy/Trend Fund- Long", 
+        "redpep7784/redpep7784's Mutual Fund", 
+        "sarat/FSB Mutual Fund II", 
+        "alder/AFG Top 20 May", 
+        "john97/John97's Mutual Fund", 
+        "thejeweler/Bold New Issue Strength Fund", 
+        "jsrieck/Contrary Ratings Short", 
+        "dabel178/dabel178's Mutual Fund", 
+        "twqs/Wostbrock Mechanical Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "haegint/Diversified Portfolio", 
+        "gcarpenter/gcarpenter's Mutual Fund", 
+        "camqtr/Cavalito Energia do Futuro", 
+        "oclements/oclements's Mutual Fund", 
+        "casteffens/Z-Ratings No.1 Filtered", 
+        "milkrate/Choice Fund", 
+        "starboard_tack/starboard_tack's Mutual Fund", 
+        "trend2000/NORTH COAST NEW AMERICA", 
+        "adkoser/Attain Blend", 
+        "lotus/Energy Fund", 
+        "alliask/QStreet Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "ctiesman/CMF Fund", 
+        "john97/Warrant 1", 
+        "bchatraw/H Short QOE", 
+        "jereln/small cap", 
+        "wwurzba/Wurzbach Small Growth", 
+        "kimberly2110/kimberly2110's Mutual Fund", 
+        "lwilliams3/ Short Bear Fund ", 
+        "jsroland81/Big Jimmys' Growth Fund", 
+        "tuke/Tuke Energy", 
+        "jhaydon/Haydon's Value Fund", 
+        "phishphan/String Cheese Incident", 
+        "mdimich/Sprock Mutual Fund", 
+        "gmudd/III Forks Fund", 
+        "kg/Value with Growth in the Energy Sector", 
+        "nchahal/nchahal's Mutual Fund", 
+        "gmudd/III Forks Fund", 
+        "joycerefron/FOCUS Short", 
+        "grant.may/grant.may's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "cthiessen1/Energy & Resources Fund", 
+        "atejani/Rabbitt Analytics & Stock Scouter", 
+        "rwuethrich/Ryan Innovation", 
+        "willblur/willblur's TA Fund", 
+        "qrheaume/Short Advantage Fund", 
+        "rwuethrich/Wuethrich Small Cap", 
+        "mcfadden1/Idiots in Market", 
+        "nickynash/nickynash's Mutual Fund", 
+        "grant.may/grant.may's Mutual Fund", 
+        "msporter76/MSP Determine FUND", 
+        "daprice/New Deal Fund", 
+        "garyr/Gary's Mutual Fund", 
+        "wally_com/Patons pathetic pitiful pagurian puggim pacifist poultry performance fund", 
+        "barrettrking/Short End Market Fund", 
+        "camqtr/Cavalito Undiscovered Small Caps", 
+        "codyborders/SmallCap Fund", 
+        "kevante/Force Short Mutual Fund", 
+        "hfelicies/hfelicies's Mutual Fund", 
+        "mdimich/Fast Growth Fund", 
+        "eduardk20/eduardk20's Mutual Fund", 
+        "i_hate_this_class/i_hate_this_class's Mutual Fund", 
+        "dorfmeister/dorfmeister's Mutual Fund", 
+        "sneal/Clemson Mutual Fund", 
+        "muresan/muresan's Mutual Fund", 
+        "blotka1234/T3V3+", 
+        "lutek/lutek's Mutual Fund", 
+        "jpg051960/Short  Mutual Fund", 
+        "mgunters/MG Contrarian (short)", 
+        "fmr/RR Candles", 
+        "john13/john13's Mutual Fund", 
+        "vanmeerten/Van Meerten - Short Value Line  Small Cap", 
+        "awhawk/awhawk's Mutual Fund", 
+        "danfinn00/2/3 Book Value or Less", 
+        "andydoe/andydoe's Mutual Fund - 2", 
+        "andydoe/andydoe's Mutual Fund", 
+        "scouzer/Foolcoldfive", 
+        "cg_long_term/weekly short", 
+        "bm1/x", 
+        "avayner/VCM Value and Special Situations Fund", 
+        "torodifirenze@gmail.com/Low PE", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "LordUrle/LordUrle's Winners From Losers", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "whaleshogi/Whaleshogi's 20% Gain", 
+        "nch/Chikhachev Hedge Fund", 
+        "nch/NC Hedge fund", 
+        "minishogi/Minishogi's BPI Ratio Short Fund", 
+        "minishogi/Minishogi's VXN Timer Short Fund", 
+        "whaleshogi/Whaleshogi's NFCF Fund", 
+        "minishogi/Minishogi's CPCE Short Fund", 
+        "791branko/Energy Watchlist {ssn cf}", 
+        "kolata/Raed Kolta's Solidity Short Fund", 
+        "jmoon58/jmoon58's TA Fund", 
+        "szhebu/Santa-October12", 
+        "diddykr/didi's Energy : ssn gel", 
+        "diddykr/didi's EnergyII : dej", 
+        "mattfordcoys/mattfordcoys's Mutual Fund", 
+        "wwasilev/RSI2", 
+        "lsaunders/I-Advantage Growth Model", 
+        "hawkseye/hawkseye's Mutual Fund", 
+        "antonluch/Capital Appreciation ", 
+        "troyea/1 Watch List 1-1-2014 To 5-2-2014 Stocks", 
+        "troyea/2 Watch List 1-1-2014 To 5-9-2014 Stocks", 
+        "troyea/3 Watch List 1-1-2014 To 5-16-2014 Stocks ", 
+        "troyea/4 Watch List 1-1-2014 To 5-23-2014 Stocks", 
+        "troyea/4 Watch List 1-1-2014 To 5-30-2014 Stocks", 
+        "billyen/Consumer x2", 
+        "billyen/Software x2", 
+        "kocheb3/kocheb3's Mutual Fund", 
+        "2004_porsche_911/OIL Short", 
+        "tatianna_renee/Tatianna's Short Fund", 
+        "tatianna_renee/Tatianna's Short Fund", 
+        "kvogelsang/kvogelsang's Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20151103; 
+    RATIO = 0.5; 
+    "RECORD_DATE" = 20151027; 
+    "SPINOFF_SYMBOL" = EXTN; 
+    SYMBOL = AROC; 
+    TYPE = SPIN; 
+}
+D: (12-14 02:20:03.338) SUCCESS
+D: (12-14 02:20:03.338) cahelper finished 2015-12-14 02:20:03 -0500
+check the result
+select distinct stockkey from mstockalias where symbol='EXTN';
+> Row 1:
+>   STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+> Row 2:
+>   STOCKKEY = X'9fc63b94566e6c91c0a86fab'
+select * from mstockalias where STOCKKEY = X'9fc63b94566e6c91c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'9fc73b94566e6c91c0a86fab'
+>       STOCKKEY = X'9fc63b94566e6c91c0a86fab'
+>         SYMBOL = EXTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+that's it.  what is the CUSIP - check xignite
+30227H106    is good
+update mstockalias set cusip='30227H106' where PRIMARYKEY = X'9fc73b94566e6c91c0a86fab'; 
+select * from mstockalias where STOCKKEY = X'9fc63b94566e6c91c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30227H106
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'9fc73b94566e6c91c0a86fab'
+>       STOCKKEY = X'9fc63b94566e6c91c0a86fab'
+>         SYMBOL = EXTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mstock where primarykey=X'9fc63b94566e6c91c0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'9fc73b94566e6c91c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'9fc63b94566e6c91c0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 29331
+>   WINDOWIDENTITYKEY = NULL
+
+
+let's get prices 
+from yahoo finance.
+save to CA issues EXTN prices to be loaded
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5457,29331,145600,149400,138600,139300,228300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5456,29331,151700,154100,147500,151800,140100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5455,29331,154700,158600,149900,152500,128600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5454,29331,155100,157200,150000,151200,131500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5453,29331,163500,167700,151800,152900,155200);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5450,29331,161600,165900,161299.99,165100,110400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5449,29331,161000,165200,159600,163899.99,91400);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5448,29331,166600,169599.99,157700,159200,161800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5447,29331,164800,168899.99,161000,164400.01,258100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5446,29331,164200,166299.99,159900,163700.01,338100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5443,29331,157500,163200,157500,160400.01,95100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5441,29331,163500,164200,158400,160100,222500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5440,29331,162900.01,165700,159900,163200,187800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5439,29331,161500,165499.99,159600,163099.99,154000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5436,29331,164800,166800,155200,162500,492700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5435,29331,163500,169900,150600,162700,265000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5434,29331,167600,168500,158400,166700,301100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5433,29331,173099.99,176500,164200,165700,268600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5432,29331,171000,175300.01,169699.99,174000,204100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5429,29331,178200,189000,165800,171600,446000);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5428,29331,177800.01,182700,176500,182099.99,255500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5427,29331,168099.99,187300,167999.99,181399.99,648700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5426,29331,164500.01,178200,163799.99,168799.99,889900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5422,29331,139100,148100,139000,147100,1047700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5421,29331,149100,152200,136900,139100,1404500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5420,29331,180000,182000.01,146500,153700,1774900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5419,29331,188700.01,190000,182000.01,182000.01,15500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5418,29331,186700,186700,180100,180100,500);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5415,29331,180000,180000,180000,180000,0);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5414,29331,180000,180000,180000,180000,0);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5413,29331,180000,180000,180000,180000,0);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5412,29331,190200,193600.01,180000,180000,1100);
+let's run the member ticket 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py gbader ACQV 20151130 EXTN 610 16.46
+Trading 610.0 shares of Exterran Corp on Nov 30, 2015 at 16.46
+manager login: gbader
+manager: gary bader
+fund: ACQV
+building trade (has to load stock prices first)
+price = 16.46
+buying 610.0 shares of EXTN at 16.46 on 20151130
+invaldating fund prices from Nov 30, 2015
+Done
+
+
+select distinct stockkey from mstockalias where symbol='AROC';
+> Row 1:
+>   STOCKKEY = X'29e96de646f2dcc2c0a80146'
+select * from mstockalias where  STOCKKEY = X'29e96de646f2dcc2c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2007-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'29ea6de646f2dcc2c0a80146'
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = EXH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'0e375cd7563a9de7c0a86fab'
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03957W106
+>           DATE = TIMESTAMP '2015-11-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'db565d02563a9f2ac0a86fab'
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'db565d02563a9f2ac0a86fab';
+> Row 1:
+>              ALIASKEY = X'db565d02563a9f2ac0a86fab'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Exterran Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.500000|CP_PAY_DT|20151103|CP_RECORD_DT|20151027|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|EXTN US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:021529
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = AROC     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AROC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'9fbe3b94566e6c91c0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'db565d02563a9f2ac0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|30225X103|CP_NEW_CUSIP|03957W106|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US30225X1037|CP_NEW_ISIN|US03957W1062|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109641418
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-10-20 00:00:00.000000'
+>            PRIMARYKEY = X'6c9374445626c503c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'9fbe3b94566e6c91c0a86fab';
+there are 299 
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'9fbe3b94566e6c91c0a86fab'));
+there are 299 fundkeys, save to CA issues EXTN fundkeys.txt
+
+for the case 
+
+AROC spun off EXTN - we missed this on our site 
+
+AROC spun off EXTN.  Holders of AROC received 1 share of EXTN for every 2 shares of AROC.   Record date was 20151027 and the pay date was 20151103.
+
+
+12/14/15  tried to tun the backdatedtrade complains about foreign key
+1EE25E1456113F66C0A86FAB
+select * from mstockalias where stockkey=X'1EE25E1456113F66C0A86FAB'; nothing
+select * from mticket where stockkey=X'1EE25E1456113F66C0A86FAB';
+no stockkey either
+
+run it on 12/15/15  back dated trade worked!
+
+check to see if EXTN is there and pricing
+AROC look for the spin off in the CAs
+spinoffs by AROC	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+04 Nov 15	27 Oct 15	03 Nov 15		EXTN	EXTN US spun off from AROC with terms:
+
+ok, closing this out 
+
+
+the spin was on 2015-11-04
+invalidate and reprice and close 

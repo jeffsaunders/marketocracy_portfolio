@@ -1,0 +1,288 @@
+date:  5/22/15
+ticker: PSPT
+
+yahoo:    nothing 
+
+quantum:
+PeopleSupport, Inc.
+Ticker Symbol: PSPT*     CUSIP: 712714302     Exchange: NNM
+* NOTE: This security is no longer trading as of 10/08/08
+
+Company's Online Profile
+BUSINESS:  PeopleSupport, Inc. is an offshore business process outsourcing (BPO) provider that offers customer management services for U.S.-based clients from its facilities in the Philippines. PeopleSupport is one of the largest outsourced service providers in the Philippines based on the size of its workforce, with over 3,100 college-educated, fluent English speaking Philippine personnel. Headquartered in Los Angeles, Calif., PeopleSupport provides services to clients in a variety of industries, including travel and hospitality, technology, telecommunications, retail, consumer products and financial services. PeopleSupport also provides accounts receivable management services and is planning to provide other back office processing services.
+
+Notes:  October 8, 2008 PeopleSupport, Inc., a leading offshore business process outsourcing (BPO) provider, announced that its stockholders have voted to approve the Company’s proposed merger with Essar Services, Mauritius at a special meeting of stockholders held today. Stockholders approved the adoption of an agreement and plan of merger by more than 75% of the shares of common stock outstanding and issued as of August 22, 2008, the record date. As previously announced, the parties entered into a Closing Agreement under which certain significant conditions to closing, including that PeopleSupport’s representations and warranties remain true and that PeopleSupport has not experienced any material adverse effect, will be deemed fully satisfied as of October 14, 2008. Pursuant to the Closing Agreement, the Closing is expected to take place no later than October 31, 2008.
+IPO - 9/30/2004 - 6.82 Million Shares @ $7.00/share.    Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 167 Million 
+
+oursite:
+Symbol: PSPT 	Name: PeopleSupport Inc 	Price: $11.90
+Volume: 	Sector: Industrials 	Change:
+Short Volume: 0 	Style: Micro Cap : Blend 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+none
+
+google search on PSPT merger:
+URL: http://www.streetinsider.com/Hot+List/Aegis+BPO+To+Acquire+PeopleSupport+%28PSPT%29+for+$12.25Share/3872537.html
+Aegis BPO and PeopleSupport, Inc. (Nasdaq: PSPT) announced a definitive agreement to merge through Essar Services (Mauritius), its wholly owned subsidiary, through a cash transaction with an aggregate equity value of approximately $250 million. This strategic combination has been unanimously approved by the Boards of Directors of both companies.
+
+Under the terms of the agreement, Aegis BPO will pay PeopleSupport stockholders $12.25 per share in cash through Essar Services (Mauritius), which represents a premium of approximately 29% over PeopleSupport's closing share price on August 1, 2008, the last trading day prior to today’s announcement.
+looks like 12.25  on 10/08/2008
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=PSPT
+not found
+
+check MAdmin
+PSPT  05/22/2015
+Stock:PeopleSupport Inc  Symbol:PSPT
+Date: 05/22/2015
+
+64 users found
+
+1	abatuf	actionbooger69	babloedorn	bballin014	bhanen	bigger	bishk1301	bughouse26	calbren	chil
+2	clahiji1	coby46	cr250rlover	dchabino	dwiddle	eugene_07	flajuie	fredleblond	frontline	glogsdon
+3	green_generation	hansthered	hedgstrat	hobostockpix	ice9	jeffbourdon	jfrancois	jmpri1	jmrath88	jpotter
+4	kaveh_anoosh	ken5888	kohsuke	liuzonyuan	mariusz106	matdavidallen	matthew.sanchez@marquette.edu	mhanna	nuge2that	phoenix47
+5	raymond7tan	richfield	rmorse	rnice	rooster	rserrell	rsesha	rstein666	sandspider	scott_nelson
+6	scowen77	short_2iq	srlorince25	sullivan47	tbarlage	threeam	tjochim	utterme	vinsom68	volodya
+7	winark	wmartin1	woodarjp83	younggun	 	 	 	 	 	 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'PSPT';  
+> Row 1:
+>   STOCKKEY = X'f5724498415e0c0bc0a80146'
+
+select * from mstockalias where stockkey= X'f5724498415e0c0bc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 712714302
+>           DATE = TIMESTAMP '2004-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PeopleSupport Inc
+>     PRIMARYKEY = X'f5734498415e0c0bc0a80146'
+>       STOCKKEY = X'f5724498415e0c0bc0a80146'
+>         SYMBOL = PSPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = XB
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='PSPT'  order by BB_EFFECTIVE;
+nthing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock PSPT
+>>>> dbtool started at 2015-05-22 08:35:09 -0400
+stock: PSPT
+  PK       : [F5724498415E0C0BC0A80146]
+  companyID: [15330]
+  symbol   : [PSPT]
+  name     : [PeopleSupport Inc]
+  date     : [2004-10-01 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-22 08:35:10 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15330
+2008-11-13 (Thu) [2873]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-14 (Fri) [2874]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-15 (Sat) [2875]: <WEEKEND>
+2008-11-16 (Sun) [2876]: <WEEKEND>
+2008-11-17 (Mon) [2877]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-18 (Tue) [2878]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-19 (Wed) [2879]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-20 (Thu) [2880]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-21 (Fri) [2881]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+2008-11-22 (Sat) [2882]: <WEEKEND>
+2008-11-23 (Sun) [2883]: <WEEKEND>
+2008-11-24 (Mon) [2884]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'f5724498415e0c0bc0a80146' and shares > 0 order by closed; 
+> Row 1100:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-10-30 15:57:00.000000'
+>        COMMENT = 
+>     COMMISSION = 63.000000
+>   CURRENTORDER = X'e4571fa749098177c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2b184d61429ff073c0a80134'
+>       MODIFIED = NULL
+>            NET = 15056.400240
+>         OPENED = TIMESTAMP '2008-10-30 05:42:15.000000'
+>          PRICE = 11.949524
+>     PRIMARYKEY = X'e4551fa749098177c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 1260.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f5724498415e0c0bc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f5724498415e0c0bc0a80146' and totalshares < 0;
+if there are some, then do this  there are 8
+select active, kindkey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f5724498415e0c0bc0a80146' and totalshares < 0);
+nothing, no shorts in active, long funds
+
+last trade:  2008-10-30
+article: looks like 12.25  on 10/08/2008
+last price:
+2008-11-24 (Mon) [2884]: O:11.9000 H:11.9000 L:11.9000 C:11.9000 V:0 TSO:22688 A:11.9000 R:1.0000 CA:0.0000
+
+going with 20081101  12.25
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  PSPT  -effective 20081101 -type ACQUIS -exchange UN -acqType 1 -acqCash 12.25 -acqShare 0 -purchaser PSPT   >& /Users/build/caout/PSPT.20150523-ACQUIS
+PSPT.20150523-ACQUIS
+stocks:~/caout build$ tail -f PSPT.20150523-ACQUIS
+D: (05-23 17:43:48.304) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-23 17:44:35.741) cahelper started on 2015-05-23 17:44:35 -0400
+
+D: (05-23 17:44:39.286) There are [0] open tickets for PSPT on 20081101
+D: (05-23 17:44:39.644) StockFileLoad Version:4.0
+D: (05-23 17:44:39.644) Loading Stock Data
+D: (05-23 17:45:56.545) Building Lookup Index
+D: (05-23 17:46:05.552) Finished Building Index
+D: (05-23 17:46:12.689) Finished Loading Stock Data
+D: (05-23 17:46:12.750) Connection to 192.168.111.172:6666 succeeded
+D: (05-23 17:46:15.676) SavingChanges for position sell out 101 of 316
+D: (05-23 17:46:22.591) {
+    "ACQUIRED_STOCK" = PSPT; 
+    "ACQUIRING_STOCK" = "PSPT_FIX"; 
+    AMOUNT = 12.25; 
+    APPLIED = 1; 
+    DATE = 20081101; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "PSPT_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-23 17:46:32.450) SUCCESS
+D: (05-23 17:46:32.450) cahelper finished 2015-05-23 17:46:32 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'f5724498415e0c0bc0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 712714302
+>           DATE = TIMESTAMP '2004-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PeopleSupport Inc
+>     PRIMARYKEY = X'f5734498415e0c0bc0a80146'
+>       STOCKKEY = X'f5724498415e0c0bc0a80146'
+>         SYMBOL = PSPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 712714302
+>           DATE = TIMESTAMP '2008-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PeopleSupport Inc
+>     PRIMARYKEY = X'de1b205e5560f4c7c0a86f92'
+>       STOCKKEY = X'f5724498415e0c0bc0a80146'
+>         SYMBOL = PSPT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201060
+>       STYLEKEY = XB
+
+
+select * from mcorporateaction where aliaskey = X'de1b205e5560f4c7c0a86f92';
+> Row 1:
+>              ALIASKEY = X'de1b205e5560f4c7c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|PSPT  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|12.250000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150523:054435
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-01 00:00:00.000000'
+>         BB_IDENTIFIER = PSPT_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PSPT_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-11-01 00:00:00.000000'
+>            PRIMARYKEY = X'de15205e5560f4c3c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'de15205e5560f4c3c0a86f92';
+> Row 1:
+>   _C001 = 126.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'de15205e5560f4c3c0a86f92'));
+126 funds - save them to CA issues PSPT fundkeys.txt
+
+check on 5/24/15 and then invalidate 
+5/24/15
+PSPT has been acquired 	right curve
+  	  	
+PeopleSupport Inc acquired by a private company on 2008-11-01 00:00:00. 
+
+check MAdmin  PSPT  05/24/2015 
+Stock:PeopleSupport Inc  Symbol:PSPT
+Date: 05/24/2015
+
+0 users found
+
+let's check a member  jfrancois  BETA  - this is a short fund 
+volodya VM13 fund
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 31, 2006 		780 	780 	Buy
+Jan 30, 2007 	780 	-80 	700 	Sell
+Nov 01, 2008 	700 	-700 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 31, 2006 	780 	$39.00 	$9,938.56 	$12.74
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 30, 2007 	80 	$4.00 	$0.06 	$1,883.94 	$23.55
+
+check on 20081101  volodya VM13
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+11/01/2008 	$132,529.63 	$0.00 	$3.63 	$0.00 	$38.59 	$0.00 	$132,494.68 	$563,334.84 	$695,829.52 	100,000 	$6.96 	Yes 	Details  
+ok no cash - now let's do the invaliation step
+
+
+5/27/15  volodya  VM13   see the shares taken but no cash
+
+trades on November 01, 2008 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	PSPT 	700 	$0.00 	$0.00 	$0.00 	$0.00
+
+try invalidating again
+taking longer, seems to be working now
+
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+11/01/2008 	$132,529.63 	$0.00 	$3.63 	$8,575.00 	$38.59 	$0.00 	$141,069.68 	$563,334.84 	$704,404.52 	100,000 	$7.04 	Yes 	Details
+
+700 * 12.25 = 8575  cash is there 

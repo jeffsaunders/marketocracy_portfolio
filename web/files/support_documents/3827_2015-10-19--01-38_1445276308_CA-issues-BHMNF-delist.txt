@@ -1,0 +1,295 @@
+BHMNF
+date:  
+ticker:  
+
+yahoo:
+
+quantum:  active still
+Birch Mountain Resources Ltd
+Ticker Symbol: BHMNF     CUSIP: 09066X109     Exchange: OTOTC
+
+Company's Online Profile
+BUSINESS:  Birch Mountain is developing the industrial mineral potential of its extensive mineral properties in the oil sands region of northeastern Alberta and believes the strong global demand for oil and the heightened profile of the Alberta oil sands will ensure long-term demand for limestone products from the Muskeg Valley Quarry and the Hammerstone Project.
+Previous Ticker Symbol: BMD    Changed: 8/27/08
+Small Cap Stock -   Market Value $ 201 Million
+oursite:
+Symbol: BHMNF	Name: Birch Mountain Resources Ltd.	Price: $0.01
+Volume:	Sector: Materials	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs
+symbol changes for BHMNF	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+28 Aug 08	BMD	BHMNF	Change in the ticker (trading) symbol from BMD to BHMNF
+ 	 	 
+left curve	  listing changes for BHMNF	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 28, 2008	AMEX	UA	OTCBB-OTHER	UV	Change in the exchange that BHMNF trades on
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Birch Mountain Resources Ltd.  Symbol:BHMNF
+Date: 10/17/2015
+
+60 users found
+
+1	TheBearTruth	abatuf	ari5000	arranoak	bigmoneybastard	blovett	brysonglooker	btrade	ccornett	cdc837
+2	collin2985	diplomat	djay126	drogala2	dsl990	dthompson6	dtorres990	edward123	equitarian2	ffis
+3	fkluczny	gbrooks	harbismi	jandrus	jbowers24	jeroen	kalmeerut	leyshla	lloving	mktwarrior
+4	n_carlson84	nan271	nbillou	nickels	overlords	periodthree	polaskyx5	rdbr001	rmorse	rogeratplay
+5	roverlane50	ryansw	sanaz	schinvst	sjlarocque	spitfire	sruiz	stavinohal	stevo1	stocko
+6	sumetarora	tabdulma	tas	thompske	tunecedemalis	vek	vooch5	wcjmb84	william.f.voelcker	yummaaa	 	 	
+
+database
+select distinct stockkey from mstockalias where symbol= 'BHMNF';  
+> Row 1:
+>   STOCKKEY = X'15ca22c64374ffc3c0a80146'
+select * from mstockalias where stockkey=X'15ca22c64374ffc3c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2005-04-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'15cb22c64374ffc3c0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2008-08-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'78b124e848b7589fc0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BHMNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2008-08-28 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'59ae251e48b758d6c0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BHMNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BHMNF'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BHMNF
+stock: BHMNF
+  PK       : [15CA22C64374FFC3C0A80146]
+  companyID: [15725]
+  symbol   : [BHMNF]
+  name     : [Birch Mountain Resources Ltd.]
+  date     : [2008-08-28 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-17 17:50:48 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15725
+2013-05-03 (Fri) [4505]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:225000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-04 (Sat) [4506]: <WEEKEND>
+2013-05-05 (Sun) [4507]: <WEEKEND>
+2013-05-06 (Mon) [4508]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:1000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-07 (Tue) [4509]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:72075 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-08 (Wed) [4510]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:1600 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-09 (Thu) [4511]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:36300 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-10 (Fri) [4512]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:925 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-11 (Sat) [4513]: <WEEKEND>
+2013-05-12 (Sun) [4514]: <WEEKEND>
+2013-05-13 (Mon) [4515]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:35500 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-14 (Tue) [4516]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000  <--- last oone
+2013-05-15 (Wed) [4517]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-16 (Thu) [4518]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-17 (Fri) [4519]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+2013-05-18 (Sat) [4520]: <WEEKEND>
+2013-05-19 (Sun) [4521]: <WEEKEND>
+2013-05-20 (Mon) [4522]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'15ca22c64374ffc3c0a80146' and shares > 0 order by closed; 
+> Row 992:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-05-21 15:13:00.000000'
+>        COMMENT = 
+>     COMMISSION = 10.643850
+>   CURRENTORDER = X'a90d45544bcea32ac0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e13129b44272ba6bc0a80132'
+>       MODIFIED = NULL
+>            NET = 223.520850
+>         OPENED = TIMESTAMP '2010-04-21 03:03:06.000000'
+>          PRICE = 0.002756
+>     PRIMARYKEY = X'a90b45544bcea32ac0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 81096.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'15ca22c64374ffc3c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'15ca22c64374ffc3c0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'15ca22c64374ffc3c0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 60 members who hold this stock
+quantum:  still active 
+last ticket:  2010-05-21  PRICE = 0.002756
+last price:  2013-05-14 (Tue) [4516]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:3000 TSO:83007 A:0.0100 R:1.0000 CA:0.0000  <--- last oone
+
+going with 20130514 0.01
+
+/Marketocracy/bin/cahelper -symbol  BHMNF  -effective 20130514 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser BHMNF   >& /Users/build/caout/BHMNF.20151017-DELIST.out
+D: (10-17 18:56:41.048) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-17 18:57:05.488) cahelper started on 2015-10-17 18:57:05 -0400
+
+D: (10-17 18:57:05.727) There are [0] open tickets for BHMNF on 20130514
+D: (10-17 18:57:06.103) StockFileLoad Version:4.0
+D: (10-17 18:57:06.103) Loading Stock Data
+D: (10-17 18:57:42.726) Building Lookup Index
+D: (10-17 18:57:48.311) Finished Building Index
+D: (10-17 18:57:52.288) Finished Loading Stock Data
+D: (10-17 18:57:52.405) Connection to 192.168.111.172:6666 succeeded
+D: (10-17 18:57:55.153) {
+    "ACQUIRED_STOCK" = BHMNF; 
+    "ACQUIRING_STOCK" = "BHMNF_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20130514; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BHMNF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-17 18:58:00.878) SUCCESS
+D: (10-17 18:58:00.879) cahelper finished 2015-10-17 18:58:00 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'15ca22c64374ffc3c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2005-04-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'15cb22c64374ffc3c0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BMD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2008-08-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'78b124e848b7589fc0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BHMNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2008-08-28 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'59ae251e48b758d6c0a80146'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BHMNF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09066X109
+>           DATE = TIMESTAMP '2013-05-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Birch Mountain Resources Ltd.
+>     PRIMARYKEY = X'cb6446e55622d241c0a86fab'
+>       STOCKKEY = X'15ca22c64374ffc3c0a80146'
+>         SYMBOL = BHMNF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'cb6446e55622d241c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'cb6446e55622d241c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BHMNF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151017:065705
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-05-14 00:00:00.000000'
+>         BB_IDENTIFIER = BHMNF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BHMNF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-05-14 00:00:00.000000'
+>            PRIMARYKEY = X'cb5e46e55622d241c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'cb5e46e55622d241c0a86fab';
+> Row 1:
+>   _C001 = 90.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'cb5e46e55622d241c0a86fab'));
+there are 90 fundkeys, save to CA issues BHMNF fundkeys.txt
+
+For Beta case
+BHMNF no longer trades but is still active on our site - need to delist 
+
+check on 10/18/15   invalidate funds
+check MAdmin  clear 
+
+BHMNF has been acquired	right curve
+ 	 	
+Birch Mountain Resources Ltd. acquired by a private company on 2013-05-14 00:00:00.
+ 	 	 
+invalidate reprice  close this out 
+
+
+

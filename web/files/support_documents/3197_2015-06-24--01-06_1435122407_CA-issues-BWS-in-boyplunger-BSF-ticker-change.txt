@@ -1,0 +1,186 @@
+date: 6/7/15
+
+
+Ticket Number:	3197
+Portfolio Username:	boyplunger  password: x6mn2j
+Ticker Symbol:	BWS
+Corporate Action Type:
+Ticker Symbol Change
+Subject:
+Bws ticker change
+Description:
+I think BWS, in my portfolio BSF, recently changed to CAL. My user name us Boyplunger. Thanks.
+
+
+BSF fund new site he has:
+
+ BWS $0.00 	3,349 	$0.00 	0.00% 	-$104,053.43 	0.00% 	1.94% 	1.94% 	
+
+expand BWS
+Symbol: BWS 	Name: Caleres Inc 	Price: $31.67
+Volume: 656,010 	Sector: 	Change: $0.00
+Short Volume: 282,212 	Style: 	Market Cap: $1,264,458,500.00
+Avg Volume: 656,010 	Exchange: NYSE 	Today: 0.14%
+50 Day Avg: $28.42 	Year High: 33.67 	High: $31.905
+200 Day Avg: $28.35 	Year Low: 25.3 	Low: $30.91
+
+check the legacy site
+ most recent corporate actions for CAL 	right curve
+  	  	
+Effective Date 	Description
+Dec 19, 2014 	Dividend amount:0.07 per share.
+Mar 19, 2015 	Dividend amount:0.07 per share.
+May 29, 2015 	Change in the ticker (trading) symbol from BWS to CAL
+May 29, 2015 	Change in the name of issuer from Brown Shoe Co Inc to Caleres Inc
+May 29, 2015 	Change in any of identification numbers (CUSIP) of a security from 115736100 to 129500104
+
+let's reprice his fund on the new site  starting on 20150529
+/Marketocracy/bin/dbtool lookup fund  boypluger
+fund: boyplunger
+  PK: [D4565D5C3C4E4E39C0A80118]
+  symbol: [BSF]
+  managerKey: [A3C4036F3B6C1D60C0A80118]
+
+field-fund-keyDone!
+1 Funds Processed
+6 Queries Processed
+/Marketocracy/bin/fptool invalidateFund 
+
+log back in on the new site still showing as BWS
+
+he bought the stock on 5/27/15  let's invalidate the fund then
+D4565D5C3C4E4E39C0A80118  2015-05-27   
+
+
+checking xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=BWS
+http://192.168.111.213/feed/stockLookup.php?symbol=CAL
+
+select distinct stockkey from mstockalias where symbol='BWS';
+> Row 1:
+>   STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+
+select * from mstockalias where STOCKKEY = X'0a7f0e21390aeb99c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 115736100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BROWN SHOE COMPANY INC
+>     PRIMARYKEY = X'0a800e21390aeb99c0a80116'
+>       STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+>         SYMBOL = BWS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504010
+>       STYLEKEY = SB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 115736100
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BROWN SHOE COMPANY INC
+>     PRIMARYKEY = X'7e6134175568eda1c0a86f92'
+>       STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+>         SYMBOL = CAL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504010
+>       STYLEKEY = SB
+select * from mcorporateaction where aliaskey=X'7e6134175568eda1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'7e6134175568eda1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|BWS US|CP_NEW_TKR|CAL US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 106901619
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 100236
+>        BB_COMPANYNAME = Brown Shoe Co Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = BWS     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-14 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = BWS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-14 00:00:00.000000'
+>            PRIMARYKEY = X'e75119c4555527cfc0a86f92'
+>               VERSION = NULL
+
+who holds CAL
+
+select distinct stockkey from mstockalias where symbol='CAL';
+> Row 1:
+>   STOCKKEY = X'0d2f0e21390af31dc0a80116'
+> Row 2:
+>   STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+
+there are two:
+> CAL 1:
+>   STOCKKEY = X'0d2f0e21390af31dc0a80116'
+select * from mstockalias where STOCKKEY = X'0d2f0e21390af31dc0a80116';
+delisted 
+> CAL 2:
+>   STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+select * from mstockalias where STOCKKEY = X'0a7f0e21390aeb99c0a80116';
+ok, this is ours, no problem 
+
+who holds CAL as of today:
+MAdmin
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 115736100
+>           DATE = TIMESTAMP '2015-05-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Caleres Inc
+>     PRIMARYKEY = X'a8ff343b5568ee1bc0a86f92'
+>       STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+>         SYMBOL = CAL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504010
+>       STYLEKEY = SB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 129500104
+>           DATE = TIMESTAMP '2015-05-29 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Caleres Inc
+>     PRIMARYKEY = X'616534495568ee37c0a86f92'
+>       STOCKKEY = X'0a7f0e21390aeb99c0a80116'
+>         SYMBOL = CAL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25504010
+>       STYLEKEY = SB
+
+checking MAdmin
+Stock:Caleres Inc  Symbol:CAL
+Date: 06/08/2015
+
+163 users found
+
+1	100grand2	100grand3	1_100grand	2fast4u1	2fast4u2	2fast4u3	30pointbuck2	30pointbuck3	aalpatnovo	actionbooger69
+2	aharon10	ahbahb	alaieus	alex277	amarie	andrewplatek	anicolas	aperez07	aros5	ash83al
+3	bahama_mamas_1	bahama_mamas_2	barracuda2	barracudas1	bas8203	bazzwell	billy352	blinde	boyplunger	bslebodnik
+4	burdman	bwisda	chefwehbe	chevro	crakalakaloo_lattes1	crakalakaloolatte3	d.blazer	da5id	dabre24	dalplt
+5	daveroggen	dcassas	deprez	destinyfaith	dgreenfi	dhunt1	dickie	divine88	drinehart	drodriguez
+6	dumb	ebfc	edwardtrafford	emintz	eschneider	farmada	garrison2	gdell	gfontana	gkemp
+7	gmccall	gmetrou	greenyard	hansoolee	i_love_kitties	ipsen	jarvis_hills	jcaamano	jcarrigan	jctrader
+8	jdamian_jr	jdrouillet	jerzeymetalhead	jespinal195	jheadlee	jimosbourn	jjulet	jrepas	jrossal059	jsdnyc
+9	jsullivan2	jtkc80	juggernautredrum	kadir	karlynm	kbmann	kg	killians695	klmarcus	knobloch
+10	komkommer	kraftd	leftylb	lkris	magraber	maldito	mangomonkey1	mbellest	mbrandt9	mchopra
+11	meet_the_stockers	mickkilla911	mkaufman	mnbhayes	moneymachine88888	monique	mrgshenzhen	mrm661014@cs.com	mtaguchi	mvrh1
+12	ndk	nevi33	nocdar	oltown1786	onlinebeauties	patrick.hable	pedrolc	pjbarry	prophecy182	rabidbunny
+13	rakeshshri	rcarlson2	reastlan	renato	rfletcher	rjenkins	runningskippy	rweissel	ryno2390	sahmed2
+14	saints1	saints3	saucy_sausage_links	saucysausagelink4	saucysausagelinks1	sharding	sidhynes	sisix	slewis1	soif147147
+15	sspielman	stavon	still1	stokinvstr	stoup	szhebu	thelady	tmucha	traderkr	treichart
+16	tristan	vagadragon	vptitsyn	vsagdeo	w_gibbs	washworth	wmvjohnson	woidka	wwasilev	xauzas
+17	yofromcanada	zbint	zpryor	 	 
+
+Brandon is looking into this 
+he resolved this

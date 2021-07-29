@@ -1,0 +1,305 @@
+CBBO
+CA issues CBBO delist.txt
+date:  12/4/15 
+ticker:   CBBO
+
+yahoo:  nothing
+
+quantum:
+Columbia Bancorp (OR)
+Ticker Symbol: CBBO*     CUSIP: 197231103     Exchange: OTOTC
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 12/27/10
+
+Company's Online Profile
+BUSINESS:  Columbia Bancorp is a bank holding company, headquartered in The Dalles OR, for Columbia River Bank, a community bank serving Oregon and south central Washington.
+Notes:  Plan of dissolution effective 12/28/2010 per the Other OTC. All shares have been cancelled.
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=CBBO
+
+check MAdmin
+Stock:COLUMBIA BANCORP (OR)  Symbol:CBBO
+Date: 12/04/2015
+
+35 users found
+
+1	akira	andrewkcook	badami	blackaction	decoytracker	edwardtrafford	ejrowland	ekisiel3	engedi1	hlwright1
+2	ibozo	jefmeister	jmarquart	jrockne183	lfielding	lporter	lzglobalinvestments	mmakharadze	mqr123	nickrab
+3	olegn	pgodwin	ptesawchuk	sahmed2	sambaseck	skiblader1	sracicot	tas	tdcarlson	the_cursed_investor
+4	trevor.frankel	ttluv06	vooch3	vooch4	wells136
+
+database
+select distinct stockkey from mstockalias where symbol= 'CBBO';  
+> Row 1:
+>   STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+select * from mstockalias where stockkey=X'7c2c10ac390c6d49c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'7c2d10ac390c6d49c0a8015c'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'4711150944a9cdcec0a80146'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2010-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'a3e335d34b69f302c0a80146'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CBBO'  order by BB_EFFECTIVE;
+
+> Row 10:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CBBO|CP_DELIST_REASON|18|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50756047
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 313174
+>        BB_COMPANYNAME = Columbia Bancorp/OR
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = CBBO    US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CBBO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'58f41eff4d19219ec0a80146'
+>               VERSION = NULL
+last known price
+/Marketocracy/bin/dbtool lookup stock CBBO
+stock: CBBO
+  PK       : [7C2C10AC390C6D49C0A8015C]
+  companyID: [8775]
+  symbol   : [CBBO]
+  name     : [COLUMBIA BANCORP (OR)]
+  date     : [2010-02-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-12-05 00:40:51 -0500
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8775
+2010-12-17 (Fri) [3637]: O:0.0045 H:0.0045 L:0.0045 C:0.0045 V:16749 TSO:10062 A:0.0045 R:1.0000 CA:0.0000
+2010-12-18 (Sat) [3638]: <WEEKEND>
+2010-12-19 (Sun) [3639]: <WEEKEND>
+2010-12-20 (Mon) [3640]: O:0.0040 H:0.0060 L:0.0040 C:0.0060 V:32938 TSO:10062 A:0.0060 R:1.0000 CA:0.0000
+2010-12-21 (Tue) [3641]: O:0.0040 H:0.0050 L:0.0040 C:0.0050 V:59487 TSO:10062 A:0.0050 R:1.0000 CA:0.0000
+2010-12-22 (Wed) [3642]: O:0.0100 H:0.0280 L:0.0060 C:0.0061 V:127248 TSO:10062 A:0.0061 R:1.0000 CA:0.0000
+2010-12-23 (Thu) [3643]: O:0.0061 H:0.0300 L:0.0061 C:0.0100 V:235200 TSO:10062 A:0.0100 R:1.0000 CA:0.0000
+2010-12-24 (Fri) [3644]: <HOLIDAY>
+2010-12-25 (Sat) [3645]: <WEEKEND>
+2010-12-26 (Sun) [3646]: <WEEKEND>
+2010-12-27 (Mon) [3647]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2010-12-28 (Tue) [3648]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2010-12-29 (Wed) [3649]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2010-12-30 (Thu) [3650]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2010-12-31 (Fri) [3651]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2011-01-01 (Sat) [3652]: <HOLIDAY>
+2011-01-02 (Sun) [3653]: <WEEKEND>
+2011-01-03 (Mon) [3654]: O:0.0030 H:0.0030 L:0.0030 C:0.0030 V:0 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+2011-01-04 (Tue) [3655]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7c2c10ac390c6d49c0a8015c' and shares > 0 order by closed; 
+> Row 470:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-04-20 13:24:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.497000
+>   CURRENTORDER = X'b47a23a74bcddbcbc0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e42214a239e2ab05c0a80118'
+>       MODIFIED = NULL
+>            NET = 9.443000
+>         OPENED = TIMESTAMP '2010-04-20 12:52:27.000000'
+>          PRICE = 0.023726
+>     PRIMARYKEY = X'b47823a74bcddbcbc0a80132'
+>         SECFEE = 0.010000
+>         SHARES = 398.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7c2c10ac390c6d49c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7c2c10ac390c6d49c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7c2c10ac390c6d49c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 2010-12-28 
+there are 35 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 12/27/10
+last ticket: 2010-04-20  PRICE = 0.023726
+last price: 2010-12-27 (Mon) [3647]: O:0.0030 H:0.0200 L:0.0030 C:0.0030 V:88372 TSO:10062 A:0.0030 R:1.0000 CA:0.0000
+
+going with 20121227 0.0030 
+
+/Marketocracy/bin/cahelper -symbol  CBBO  -effective 20121227 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0030  -acqShare 0 -purchaser CBBO   >& /Users/build/caout/CBBO.20151204-DELIST.out
+CBBO.20151204-DELIST.out
+stocks:~/caout build$ cat CBBO.20151204-DELIST.out
+D: (12-05 00:42:37.173) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-05 00:43:02.019) cahelper started on 2015-12-05 00:43:02 -0500
+
+D: (12-05 00:43:02.315) There are [0] open tickets for CBBO on 20121227
+D: (12-05 00:43:02.949) StockFileLoad Version:4.0
+D: (12-05 00:43:02.949) Loading Stock Data
+D: (12-05 00:43:43.236) Building Lookup Index
+D: (12-05 00:43:48.626) Finished Building Index
+D: (12-05 00:43:52.722) Finished Loading Stock Data
+D: (12-05 00:43:52.907) Connection to 192.168.111.172:6666 succeeded
+D: (12-05 00:43:56.823) {
+    "ACQUIRED_STOCK" = CBBO; 
+    "ACQUIRING_STOCK" = "CBBO_FIX"; 
+    AMOUNT = 0.003; 
+    APPLIED = 1; 
+    DATE = 20121227; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CBBO_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-05 00:44:00.304) SUCCESS
+D: (12-05 00:44:00.305) cahelper finished 2015-12-05 00:44:00 -0500
+
+Check the results 
+select * from mstockalias where stockkey= X'7c2c10ac390c6d49c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'7c2d10ac390c6d49c0a8015c'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'4711150944a9cdcec0a80146'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2010-02-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'a3e335d34b69f302c0a80146'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 197231103
+>           DATE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLUMBIA BANCORP (OR)
+>     PRIMARYKEY = X'd64a655a56627966c0a86f92'
+>       STOCKKEY = X'7c2c10ac390c6d49c0a8015c'
+>         SYMBOL = CBBO
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'd64a655a56627966c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'd64a655a56627966c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CBBO  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.003000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151205:124302
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>         BB_IDENTIFIER = CBBO_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-27 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CBBO_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-12-27 00:00:00.000000'
+>            PRIMARYKEY = X'd644655a56627966c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'd644655a56627966c0a86f92';
+> Row 1:
+>   _C001 = 58.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'd644655a56627966c0a86f92'));
+there are 58 fundkeys, save to CA issues CBBO fundkeys.txt
+
+For Beta case
+CBBO no longer trades but is still active on our site - need to delist 
+
+check on 12/5/15   invalidate funds
+check MAdmin  clear
+CBBO has been acquired	right curve
+ 	 	
+COLUMBIA BANCORP (OR) acquired by a private company on 2012-12-27 00:00:00.
+ 	 	 
+
+
+invalidate reprice and close 
+
+
+

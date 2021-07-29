@@ -1,0 +1,756 @@
+date: 8/19/15
+icket Number:	3556
+Portfolio Username:	rcbasset
+Problem Type:
+Fund Issue
+Subject:
+Arcp
+Description:
+ARCP changed from the Nasdaq to NYSE and the ticker went from ARCP to VER. My account value is correct. However, stratification does not display VER holdings.
+
+member :  rcbasset
+ticker ARCP
+
+oursite:
+Symbol: ARCP	Name: American Realty Capital Properties Inc	Price: $8.60
+Volume:	Sector: Financials	Change:
+Short Volume: 999,999	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 5,645,825	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $7.83	Year High: $13.44	High:
+200 Day Ave: $8.88	Year Low: $0.00	Low:
+
+quantum:
+VEREIT, Inc.
+Ticker Symbol: VER     CUSIP: 92339V100     Exchange: NYSE
+Security Type:   Real Estate Investment Trust (REIT)
+
+Company's Online Profile
+BUSINESS:  VEREIT, Inc. is a full-service real estate operating company with investment management capability. VEREIT owns, acquires, manages, leases and finances a diversified portfolio of retail, restaurant, office and industrial real estate assets. VEREIT’s primary focus is owning and managing single-tenant, freestanding, commercial real estate properties leased primarily to creditworthy tenants targeting properties with long-term net leases that are strategically located.
+Find All Related Securities for VER
+Notes:  July 31, 2015 -- Company name, symbol, cusip and market change from NASDAQ to NYSE_________________Jan. 3, 2014 -- American Realty Capital Properties, Inc. (NASDAQ: ARCP) today closed its previously announced transaction to acquire American Realty Capital Trust IV, Inc. following the approval of the transaction by ARCT IV stockholders at ARCT IV's special meeting. Under the terms of the merger agreement, as amended, ARCP issued the following consideration to ARCT IV stockholders for each ARCT IV share: (1) $9.00 in cash; (2) 0.5190 of a share of ARCP common stock (valued at $6.68 using the ARCP closing price of $12.87 on January 2, 2014, the trading day prior to the closing of the merger and representing 21.9% of the total nominal consideration); and (3) 0.5937 shares of ARCP's 6.70% Series F Cumulative Redeemable Preferred Stock (NASDAQ: ARCPP) (valued at $14.84 based on a liquidation preference of $25.00 per share of perpetual preferred stock and representing 48.6% of the total nominal consideration), for a fixed nominal consideration, as of January 2, 2014, of $30.52. ARCP issued 36.9 million shares of common stock and 42.2 million shares of Series F Preferred Stock to former ARCT IV stockholders at the closing of the merger. ARCP expects the Series F Preferred Stock to commence trading on the NASDAQ Global Select Market on Monday, January 6, 2014, the first full trading day following the closing of the merger. ARCP expects newly issued common shares to be available in former ARCT IV stockholders' accounts on Monday, January 6, 2014 as well.
+IPO - 9/7/2011 - 5.40 Million Shares @ $12.50/share.    Link to IPO Prospectus
+Previous Ticker Symbol: ARCP    Changed: 7/31/15
+
+
+select distinct stockkey from mstockalias where symbol='ARCP';
+> Row 1:
+>   STOCKKEY = X'b36514f54e67f2d5c0a80146'
+select * from mstockalias where stockkey=X'b36514f54e67f2d5c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-09-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'b36614f54e67f2d5c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2013-02-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'7a3328fc516e0da7c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'e5e01a4b55bc0011c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey is null and BB_SECID='ARCP' or BB_SECID='VER' and BB_ACTIONMNEMONIC like 'CHG%';
+nothing useful
+
+select distinct stockkey from mstockalias where symbol='VER';
+no VER
+
+> Row 166:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP| |CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL|N.S.|CP_NEW_SEDOL|N.S.|CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110216660
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'7f8b5fe755b95c7ec0a86f92'
+>               VERSION = NULL
+> Row 167:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP| |CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK|A1JHWT|CP_NEW_WPK|A14XJT|CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110400959
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = VEREIT Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = VER     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = VER
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-30 00:00:00.000000'
+>            PRIMARYKEY = X'26e712f655bbfdb8c0a86f92'
+>               VERSION = NULL
+> Row 168:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|American Realty Capital Proper|CP_NEW_NAME|VEREIT Inc|CP_NOTES|Old Name: American Realty Capital Properties Inc New Name: VEREIT Inc
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110210510
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'55b1670555bf6f3bc0a86f92'
+>               VERSION = NULL
+> Row 169:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|02917T104|CP_NEW_CUSIP|92339V100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US02917T1043|CP_NEW_ISIN|US92339V1008|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110210528
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'55af670555bf6f39c0a86f92'
+>               VERSION = NULL
+> Row 170:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ARCP US|CP_NEW_TKR|VER US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110210492
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'55ad670555bf6f37c0a86f92'
+>               VERSION = NULL
+> Row 171:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP| |CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON|092861953|CP_NEW_COMMON|127215928|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110652412
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = VEREIT Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = VER     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = VER
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-08-03 00:00:00.000000'
+>            PRIMARYKEY = X'aa646c1755c147f5c0a86f92'
+>               VERSION = NULL
+
+from Steve:
+
+name change   
+ticker change
+
+
+who holds ARCP  (MAdmin)
+
+Stock:American Realty Capital Properties Inc  Symbol:ARCP
+Date: 08/19/2015
+
+33 users found
+
+1	bangalore19	celeborn	cjr02d	dennymac	djdoc75	duc998	dwieman	earningsyield	ecrowell	fswab
+2	glang	hollis7	hotmamma	jdrouillet	jmcdowell	jwebb2	jwilder116	lgeraci	martialtrader	mjw
+3	mwelmes73	nurettin	petern00	pmh	quant	rcbasset	rdieter	rjeddings	sagitarius_d	scottsobo
+4	triffidous	wolfsong	xfuller	 	 	 	 	 
+
+Name change
+/Marketocracy/bin/cahelper -symbol ARCP -effective 20150731 -type CHG_NAME -exchange UN  -newName  "VEREIT, Inc."  >& /Users/build/caout/ARCP.20150819-CHG_NAME-VEREIT.out
+D: (08-19 17:18:43.566) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-19 17:19:40.488) cahelper started on 2015-08-19 17:19:40 -0400
+
+D: (08-19 17:19:40.784) {
+    APPLIED = 1; 
+    DATE = 20150731; 
+    "NEW_NAME" = "VEREIT, Inc."; 
+    NOTES = "N.A."; 
+    "OLD_NAME" = " "; 
+    SYMBOL = ARCP; 
+    TYPE = "CHG_NAME"; 
+}
+D: (08-19 17:19:40.937) SUCCESS
+D: (08-19 17:19:40.938) cahelper finished 2015-08-19 17:19:40 -0400
+
+select * from mstockalias where stockkey=X'b36514f54e67f2d5c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-09-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'b36614f54e67f2d5c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2013-02-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'7a3328fc516e0da7c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'e5e01a4b55bc0011c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'e5e01a4b55bc0011c0a86f92';
+> Row 1:
+>              ALIASKEY = X'e5e01a4b55bc0011c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UW|CP_NEW_EXCH|UN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110285232
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-29 00:00:00.000000'
+>            PRIMARYKEY = X'7f8d5fe755b95c80c0a86f92'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2015-07-31 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VEREIT, Inc.
+>     PRIMARYKEY = X'bcc7531755d4f2ecc0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'bcc7531755d4f2ecc0a86f92';
+> Row 1:
+>              ALIASKEY = X'bcc7531755d4f2ecc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME| |CP_NEW_NAME|VEREIT, Inc.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150819:051940
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'bcc1531755d4f2ecc0a86f92'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_NAME|American Realty Capital Properties Inc|CP_NEW_NAME|VEREIT, Inc.|CP_NOTES|N.A.' where PRIMARYKEY = X'bcc1531755d4f2ecc0a86f92';
+
+CUSIP change
+02917T104  old to   92339V100  verified
+check xignite  92339V100  good
+
+/Marketocracy/bin/cahelper -symbol ARCP -effective 20150731 -type CHG_ID -exchange UN  -newCusip  "92339V100"  >& /Users/build/caout/ARCP.20150819-CHG_ID.out
+stocks:~/caout build$ tail -f ARCP.20150819-CHG_ID.out
+D: (08-19 17:27:52.948) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-19 17:28:41.033) cahelper started on 2015-08-19 17:28:41 -0400
+
+D: (08-19 17:28:41.356) {
+    APPLIED = 1; 
+    DATE = 20150731; 
+    "NEW_CUSIP" = 92339V100; 
+    NOTES = "N.A."; 
+    "OLD_CUSIP" = " "; 
+    SYMBOL = ARCP; 
+    TYPE = "CHG_ID"; 
+}
+D: (08-19 17:28:41.586) SUCCESS
+D: (08-19 17:28:41.586) cahelper finished 2015-08-19 17:28:41 -0400
+
+checking
+select * from mstockalias where stockkey=X'b36514f54e67f2d5c0a80146' order by "date";
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92339V100
+>           DATE = TIMESTAMP '2015-07-31 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VEREIT, Inc.
+>     PRIMARYKEY = X'474755cd55d4f509c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'474755cd55d4f509c0a86f92';
+> Row 1:
+>              ALIASKEY = X'474755cd55d4f509c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP|92339V100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150819:052841
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'474155cd55d4f509c0a86f92'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_CUSIP|02917T104|CP_NEW_CUSIP|92339V100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.' where PRIMARYKEY = X'474155cd55d4f509c0a86f92';
+
+good
+
+now do the ticker change
+
+/Marketocracy/bin/cahelper -symbol VER -effective 20150731 -type CHG_TKR -exchange UN -oldSymbol 'ARCP' >& /Users/build/caout/ARCP.20150819-CHG_TKR-VER.out 
+stocks:~/caout build$ tail -f ARCP.20150819-CHG_TKR-VER.out
+    DATE = 20150731; 
+    "NEW_TICKER" = "VER US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "ARCP US"; 
+    SYMBOL = VER; 
+    TYPE = "CHG_TKR"; 
+}
+D: (08-19 17:34:25.222) SUCCESS
+D: (08-19 17:34:25.222) cahelper finished 2015-08-19 17:34:25 -0400
+
+
+ok check this
+
+
+select * from mstockalias where stockkey=X'b36514f54e67f2d5c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-09-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'b36614f54e67f2d5c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2013-02-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'7a3328fc516e0da7c0a80146'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = American Realty Capital Properties Inc
+>     PRIMARYKEY = X'e5e01a4b55bc0011c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'e5e01a4b55bc0011c0a86f92';
+> Row 1:
+>              ALIASKEY = X'e5e01a4b55bc0011c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UW|CP_NEW_EXCH|UN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110285232
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 24020867
+>        BB_COMPANYNAME = American Realty Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-29 00:00:00.000000'
+>            PRIMARYKEY = X'7f8d5fe755b95c80c0a86f92'
+>               VERSION = NULL
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02917T104
+>           DATE = TIMESTAMP '2015-07-31 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VEREIT, Inc.
+>     PRIMARYKEY = X'bcc7531755d4f2ecc0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'bcc7531755d4f2ecc0a86f92';
+> Row 1:
+>              ALIASKEY = X'bcc7531755d4f2ecc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|American Realty Capital Properties Inc|CP_NEW_NAME|VEREIT, Inc.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150819:051940
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'bcc1531755d4f2ecc0a86f92'
+>               VERSION = NULL
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92339V100
+>           DATE = TIMESTAMP '2015-07-31 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VEREIT, Inc.
+>     PRIMARYKEY = X'474755cd55d4f509c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = ARCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'474755cd55d4f509c0a86f92';
+> Row 1:
+>              ALIASKEY = X'474755cd55d4f509c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|02917T104|CP_NEW_CUSIP|92339V100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150819:052841
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = ARCP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ARCP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'474155cd55d4f509c0a86f92'
+>               VERSION = NULL
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92339V100
+>           DATE = TIMESTAMP '2015-07-31 00:00:03.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VEREIT, Inc.
+>     PRIMARYKEY = X'bbb257f555d4f661c0a86f92'
+>       STOCKKEY = X'b36514f54e67f2d5c0a80146'
+>         SYMBOL = VER
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'bbb257f555d4f661c0a86f92';
+> Row 1:
+>              ALIASKEY = X'bbb257f555d4f661c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ARCP US|CP_NEW_TKR|VER US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150819:053424
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = VER     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VER
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'bbac57f555d4f660c0a86f92'
+>               VERSION = NULL
+
+ok, I need to add historical prices - need to get the companyif
+
+select * from mstock where primarykey=X'b36514f54e67f2d5c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'bbb257f555d4f661c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'b36514f54e67f2d5c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 21115
+>   WINDOWIDENTITYKEY = NULL
+
+/Marketocracy/bin/dbtool lookup stock ARCP
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 21115
+2015-07-28 (Tue) [5321]: O:8.5000 H:8.5900 L:8.4900 C:8.5100 V:6250403 TSO:0 A:8.5100 R:1.0000 CA:0.0000
+2015-07-29 (Wed) [5322]: O:8.5500 H:8.7600 L:8.5000 C:8.6900 V:7180671 TSO:0 A:8.6900 R:1.0000 CA:0.0000
+2015-07-30 (Thu) [5323]: O:8.6300 H:8.6700 L:8.5600 C:8.6000 V:4400871 TSO:0 A:8.6000 R:1.0000 CA:0.0000
+2015-07-31 (Fri) [5324]: O:8.6300 H:8.6700 L:8.5600 C:8.6000 V:4406082 TSO:0 A:8.6000 R:1.0000 CA:0.0000  <---  
+2015-08-01 (Sat) [5325]: <WEEKEND>
+2015-08-02 (Sun) [5326]: <WEEKEND>
+2015-08-03 (Mon) [5327]: O:8.6300 H:8.6700 L:8.5600 C:8.6000 V:4406082 TSO:0 A:8.6000 R:1.0000 CA:0.0000
+2015-08-04 (Tue) [5328]: O:8.6300 H:8.6700 L:8.5600 C:8.6000 V:4406082 TSO:0 A:8.6000 R:1.0000 CA:0.0000
+2015-08-05 (Wed) [5329]: O:8.6300 H:8.6700 L:8.5600 C:8.6000 V:4406082 TSO:0 A:8.6000 R:1.0000 CA:0.0000
+
+let's get historical prices from yahoo finance
+CA issues VER prices to be loaded.csv
+
+remove prices for companyID 21115 >= daynumber 5324
+
+connect to marketdata@stocks user eouser;
+select * from stockprices where companyID = 21115;
+
+delete from stockprices where companyID = 21115 and daynumber >= 5324;
+
+add in the stock prices
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5342,21115,87100,88000,86800,87100,3602100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5341,21115,86000,87100,85300,87100,4180700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5338,21115,85900,86300,85200,86000,3647600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5337,21115,86400,87000,85500,86300,3095700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5336,21115,88400,88500,86000,86700,5729300);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5335,21115,86400,89000,85800,87800,5885600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5334,21115,86600,86600,85100,86600,4105600);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5331,21115,87500,87500,84600,86900,4806800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5330,21115,86400,90800,86000,87300,10226100);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5329,21115,87900,88400,86000,86700,4651700);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5328,21115,87900,88500,87600,87700,8835800);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5327,21115,87500,88500,87200,88300,8060900);
+insert into stockprices (DAYNUMBER,COMPANYID,OPENED,HIGH,LOW,CLOSED,VOLUME) values (5324,21115,86800,88200,86800,87600,4625300);
+
+8/19/15	5343	Wed  let's check or prices
+
+select * from stockprices where companyID=21115 order by daynumber;
+> Row 1004:
+>   DAYNUMBER = 5342
+>   COMPANYID = 21115
+>      OPENED = 87100
+>        HIGH = 88000
+>         LOW = 86800
+>      CLOSED = 87100
+>      VOLUME = 3602100
+
+ok, need to invalidate stock prices from 2015-07-31
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-07-31
+
+check the results 
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-08-19
+D: (18:00:05.606) Invalidate all prices >= 2015-07-31 (5324)
+
+let's get all of the fundkeys
+
+select distinct fundkey from mposition where stockkey=X'b36514f54e67f2d5c0a80146';
+there are 79 fundkeys save to CA issues ARCP to VER fundkeys.txt
+
+ok check on 8/20/15
+see that ARCP changed to VER
+CUSIP updated, name changed  should be o NYSE
+
+invalidate and reprice 
+
+8/20/15
+ymbol: VER	Name: VEREIT, Inc.	Price: $8.62
+Volume: 12,323	Sector: Financials	Change: -$0.05
+Short Volume: 999,999	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 6,298,599	 Exchange: NYSE	Today: -0.63%
+50 Day Ave: $8.55	Year High: $13.44	High: $8.67
+200 Day Ave: $9.06	Year Low: $7.38	Low: $8.61
+
+symbol changes for VER	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+31 Jul 15	ARCP	VER	Change in the ticker (trading) symbol from ARCP to VER
+ 	 	 
+left curve	  CUSIP changes for VER	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+31 Jul 15	02917T104	92339V100	Change in any of identification numbers (CUSIP) of a security from 02917T104 to 92339V100
+ 	 	 
+left curve	  name changes for VER	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+31 Jul 15	American Realty Capital Properties Inc	VEREIT, Inc.	Change in the name of issuer from American Realty Capital Properties Inc to VEREIT, Inc.
+ 	 	 
+left curve	  listing changes for VER	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Feb 28, 2013	NASDAQ-SMALLCAP	UR	NASDAQ	UW	Change in the exchange that ARCP trades on from NASDAQ-SMALLCAP to NASDAQ
+Jul 31, 2015	NASDAQ	UW	NYSE	UN	Change in the exchange that ARCP trades on from NASDAQ to NYSE
+ 	 	 
+left curve	  cash dividends paid by VER	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+25 Oct 11	08 Oct 11	15 Oct 11	12	$0.07	Dividend amount:0.0729 per share.
+04 Nov 11	08 Nov 11	15 Nov 11	12	$0.07	Dividend amount:0.0729 per share.
+06 Dec 11	08 Dec 11	15 Dec 11	12	$0.07	Dividend amount:0.0729 per share.
+04 Jan 12	08 Jan 12	15 Jan 12	12	$0.07	Dividend amount:0.0729 per share.
+06 Feb 12	08 Feb 12	15 Feb 12	12	$0.07	Dividend amount:0.0729 per share.
+06 Mar 12	08 Mar 12	15 Mar 12	12	$0.07	Dividend amount:0.0733 per share.
+03 Apr 12	08 Apr 12	15 Apr 12	12	$0.07	Dividend amount:0.0733 per share.
+04 May 12	08 May 12	15 May 12	12	$0.07	Dividend amount:0.0733 per share.
+06 Jun 12	08 Jun 12	15 Jun 12	12	$0.07	Dividend amount:0.07375 per share.
+03 Jul 12	08 Jul 12	15 Jul 12	12	$0.07	Dividend amount:0.07375 per share.
+
+all the changes are there 
+06 Aug 12	08 Aug 12	15 Aug 12	12	$0.07	Dividend amount:0.07375 per share.
+05 Sep 12	08 Sep 12	15 Sep 12	12	$0.07	Dividend amount:0.07417 per share.
+03 Oct 12	08 Oct 12	15 Oct 12	12	$0.07	Dividend amount:0.07417 per share.
+06 Nov 12	08 Nov 12	15 Nov 12	12	$0.07	Dividend amount:0.07417 per share.
+05 Dec 12	08 Dec 12	15 Dec 12	12	$0.07	Dividend amount:0.07458 per share.
+04 Jan 13	08 Jan 13	15 Jan 13	12	$0.07	Dividend amount:0.07458 per share.
+04 Feb 13	08 Feb 13	15 Feb 13	12	$0.07	Dividend amount:0.07458 per share.
+06 Feb 13	08 Feb 13	15 Feb 13	12	$0.07	Dividend amount:0.07458 per share.
+06 Mar 13	08 Mar 13	15 Mar 13	12	$0.08	Dividend amount:0.075 per share.
+06 May 13	08 May 13	15 May 13	12	$0.08	Dividend amount:0.075 per share.
+05 Jun 13	08 Jun 13	15 Jun 13	12	$0.08	Dividend amount:0.075833 per share.
+03 Jul 13	08 Jul 13	15 Jul 13	12	$0.08	Dividend amount:0.07583 per share.
+06 Aug 13	08 Aug 13	15 Aug 13	12	$0.08	Dividend amount:0.07583 per share.
+04 Sep 13	08 Sep 13	15 Sep 13	12	$0.08	Dividend amount:0.07583 per share.
+04 Oct 13	08 Oct 13	15 Oct 13	12	$0.08	Dividend amount:0.07583 per share.
+06 Nov 13	08 Nov 13	15 Nov 13	12	$0.08	Dividend amount:0.07583 per share.
+04 Dec 13	06 Dec 13	13 Dec 13	12	$0.08	Dividend amount:0.07833 per share.
+06 Jan 14	08 Jan 14	15 Jan 14	12	$0.08	Dividend amount:0.07833 per share.
+05 Feb 14	07 Feb 14	14 Feb 14	12	$0.08	Dividend amount:0.08333 per share.
+05 Feb 14	07 Feb 14	14 Feb 14	12	$0.08	Dividend amount:0.08333 per share.
+07 Feb 14	06 Feb 14	06 Feb 14	12	$0.08	Dividend amount:0.08113 per share.
+07 Feb 14	06 Feb 14	06 Feb 14	12	$0.08	Dividend amount:0.08113 per share.
+05 Mar 14	07 Mar 14	14 Mar 14	12	$0.08	Dividend amount:0.083333 per share.
+05 Mar 14	07 Mar 14	14 Mar 14	12	$0.08	Dividend amount:0.083333 per share.
+04 Apr 14	08 Apr 14	15 Apr 14	12	$0.08	Dividend amount:0.083333 per share.
+06 May 14	08 May 14	15 May 14	12	$0.08	Dividend amount:0.083333 per share.
+04 Jun 14	06 Jun 14	13 Jun 14	12	$0.08	Dividend amount:0.083333 per share.
+03 Jul 14	08 Jul 14	15 Jul 14	12	$0.08	Dividend amount:0.083333 per share.
+06 Aug 14	08 Aug 14	15 Aug 14	12	$0.08	Dividend amount:0.083333 per share.
+04 Sep 14	08 Sep 14	15 Sep 14	12	$0.08	Dividend amount:0.083333 per share.
+06 Oct 14	08 Oct 14	15 Oct 14	12	$0.08	Dividend amount:0.083333 per share.
+05 Nov 14	07 Nov 14	14 Nov 14	12	$0.08	Dividend amount:0.083333 per share.
+04 Dec 14	08 Dec 14	15 Dec 14	12	$0.08	Dividend amount:0.083333 per share.
+
+
+
+
+invalidaing not sure if it is really needed, but doing it anyway
+
+repricing 
+doing it from 1/1/14  just to pick up all trades
+
+
+it looks like we may be missing dividends
+
+

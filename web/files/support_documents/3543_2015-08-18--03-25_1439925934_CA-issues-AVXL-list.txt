@@ -1,0 +1,240 @@
+date:  8/13/15
+ticker AVXL   request to list  
+
+avxl
+Type
+
+Portfolio Platform |
+
+Ticket
+
+3543
+
+Priority
+
+Medium
+
+Status
+
+Open
+
+Member Name
+
+Daniel Krasic
+
+Username
+
+diddykr
+
+Fund Symbols
+
+DK07
+
+Stock Tickers
+
+N/A
+
+
+member   diddykr
+fund  DK07
+
+
+
+
+AVXL  is on the 
+yahoo finance:
+Anavex Life Sciences Corp. (AVXL) -Other OTC   Watchlist
+1.23  0.05(3.91%) 3:03PM EDT
+
+Add to Portfolio
+Prev Close:	1.28
+Open:	1.31
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	4.17
+Beta:	-0.62
+Next Earnings Date:	N/A
+Day's Range:	1.20 - 1.34
+52wk Range:	0.15 - 1.67
+Volume:	1,972,461
+Avg Vol (3m):	3,897,930
+Market Cap:	117.54M
+P/E (ttm):	N/A
+EPS (ttm):	-0.28
+Div & Yield:	N/A (N/A
+
+quantum
+nothing
+
+our site - nothing 
+
+Xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=AVXL
+cusip:  032797102
+
+cusip look up NAVEX LIFE SCIENCES	AVXL	   is good
+
+
+select distinct stockkey from mstockalias where symbol='AVXL';
+nothing
+
+select * from mcorporateaction where BB_SECID='AVXL';
+
+let's list it
+I found his order
+Fund	Type	Symbol	Open Date				Limit	Current	Shares	Fills	Order Type	Status	Actions
+DK07	Buy		AVXL	Jul 25, 2015 8:29 AM	$0.00	$1.25	131578	0		GTC
+
+let's list on 7/24/15
+
+AVXL|Q|032797102|Anavex Life Sciences Corp.|20150724
+
+put this in symadd.txt
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+done
+
+select distinct stockkey from mstockalias where symbol='AVXL';
+> Row 1:
+>   STOCKKEY = X'2af515d755ccf623c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'2af515d755ccf623c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 032797102
+>           DATE = TIMESTAMP '2015-07-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Anavex Life Sciences Corp.
+>     PRIMARYKEY = X'2af615d755ccf623c0a86f92'
+>       STOCKKEY = X'2af515d755ccf623c0a86f92'
+>         SYMBOL = AVXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+need to change the exchange  we want OTC
+
+select * from mexchange;
+> Row 4:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'
+
+update mstockalias set EXCHANGEKEY=X'6325039339e7e926c0a801dc' where STOCKKEY = X'2af515d755ccf623c0a86f92';
+
+let's figure ouot style key and GICS
+
+Market Cap:	118.50M
+micro  let's say growth
+update mstockalias set STYLEKEY='XG' where STOCKKEY = X'2af515d755ccf623c0a86f92';
+
+find the sector
+Sector:	Healthcare
+Industry:	Biotechnology
+
+35201010	Biotechnology
+	Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering. Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application.
+
+update mstockalias set GICSKEY='35201010' where STOCKKEY = X'2af515d755ccf623c0a86f92';
+
+
+select * from mstockalias where STOCKKEY = X'2af515d755ccf623c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 032797102
+>           DATE = TIMESTAMP '2015-07-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Anavex Life Sciences Corp.
+>     PRIMARYKEY = X'2af615d755ccf623c0a86f92'
+>       STOCKKEY = X'2af515d755ccf623c0a86f92'
+>         SYMBOL = AVXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+select * from mstock where primarykey=X'2af515d755ccf623c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'2af615d755ccf623c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'2af515d755ccf623c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28650   <---------------- the company ID
+>   WINDOWIDENTITYKEY = NULL
+
+get historical prices from 7/24/15 to today
+
+select * from stockprices where companyid= 28650 ;
+ok saved the prices to CA issues AVXL prices to be loaded.csv
+
+ok it is there.
+
+need to invalidate prices from 2015-07-24
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-07-24
+
+check it
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-08-13
+D: (16:30:29.004) Invalidate all prices >= 2015-07-24 (5317)
+
+Prices
+Date			Open	High	Low		Close	Volume		Adj Close*
+Aug 12, 2015	1.16	1.34	0.98	1.28	6,189,800	1.28
+Aug 11, 2015	1.25	1.27	0.98	1.10	8,756,400	1.10
+Aug 10, 2015	1.46	1.60	1.17	1.20	11,758,200	1.20
+Aug 7, 2015		1.42	1.47	1.27	1.30	7,879,100	1.30
+Aug 6, 2015		1.46	1.67	1.31	1.45	11,302,900	1.45
+Aug 5, 2015		1.50	1.54	1.10	1.50	15,862,600	1.50
+Aug 4, 2015		1.16	1.61	1.13	1.46	16,390,800	1.46
+Aug 3, 2015		0.94	1.19	0.93	1.13	9,448,200	1.13
+Jul 31, 2015	0.81	0.97	0.80	0.91	5,742,800	0.91
+Jul 30, 2015	0.77	0.82	0.77	0.80	2,534,700	0.80
+Jul 29, 2015	0.78	0.87	0.73	0.79	5,629,200	0.79
+Jul 28, 2015	0.95	0.95	0.75	0.78	12,033,900	0.78  <--- give him 0.75
+Jul 27, 2015	0.80	0.95	0.76	0.91	18,782,400	0.91
+Jul 24, 2015	0.69	0.79	0.63	0.76	9,903,200	0.76
+
+
+check on 8/14/15   see that this is on our site
+
+AVXL is on our ite
+
+then do a backdated trade for this member 
+
+DK07	Buy		AVXL	Jul 25, 2015 8:29 AM	$0.00	$1.25	131578	0		GTC
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py diddykr  DK07 20150728 AVXL 131578  0.75
+Trading 131578.0 shares of Anavex Life Sciences Corp. on Jul 28, 2015 at 0.75
+manager login: diddykr
+manager: Daniel Krasic
+fund: DK07
+building trade (has to load stock prices first)
+price = 0.75
+buying 131578.0 shares of AVXL at 0.75 on 20150728
+invaldating fund prices from Jul 28, 2015
+Done
+
+let's invalidate his fund on 2015-07-28
+/Marketocracy/bin/dbtool lookup fund  diddykr
+fund: diddykr
+  PK: [2DA405A65109AEFBC0A80132]
+  symbol: [DK07]
+  managerKey: [B6CF06D142117D91C0A80132]
+  loginName: [diddykr]
+
+
+2DA405A65109AEFBC0A80132   2015-07-28
+
+I have repriced and the checked his fund - they are there.  closing the case out 
+closing this out 
+
+
+
+
+
+
+

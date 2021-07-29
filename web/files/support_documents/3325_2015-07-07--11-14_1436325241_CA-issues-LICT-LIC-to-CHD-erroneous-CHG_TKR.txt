@@ -1,0 +1,531 @@
+date: 6/29/15
+ticker:  LICT 
+problem erroneously changed to  XXXX  canadian CA
+> Row 24:
+>              ALIASKEY = X'faf256ae4d89243bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|LIC CN|CP_NEW_TKR|CHF CN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 52975118
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 19143114
+>        BB_COMPANYNAME = CLI Resources Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = LIC     CN Equity
+>             BB_ISSUED = TIMESTAMP '2011-03-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LIC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-03-21 00:00:00.000000'
+>            PRIMARYKEY = X'7e372e174d87d2d4c0a80146'
+>               VERSION = NULL
+select * from mstockalias where stockkey in (select stockkey from mstockalias where primarykey=X'faf256ae4d89243bc0a80146') order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'645010ac390c6d20c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2005-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'd2f22e6f43740a17c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2005-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'8a812f7943740a38c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2005-11-10 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'89ba2f8643740a59c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2007-06-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'660637ac4671f325c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2007-06-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'4c1137df4671f35fc0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187G104
+>           DATE = TIMESTAMP '2007-06-14 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'e85338eb4671f372c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187G104
+>           DATE = TIMESTAMP '2007-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'20da1c49469c2318c0a80146'  <------ set the identitykey
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187G104
+>           DATE = TIMESTAMP '2011-03-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'faf256ae4d89243bc0a80146'  <-------------- delete this 
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = CHF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+here is this  it happened on 2011-03-22  
+	select * from mcorporateaction where aliaskey=X'faf256ae4d89243bc0a80146';
+	> Row 1:
+>              ALIASKEY = X'faf256ae4d89243bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|LIC CN|CP_NEW_TKR|CHF CN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 52975118
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 19143114
+>        BB_COMPANYNAME = CLI Resources Inc
+>           BB_CURRENCY = CAD
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = LIC     CN Equity
+>             BB_ISSUED = TIMESTAMP '2011-03-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = LIC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-03-21 00:00:00.000000'
+>            PRIMARYKEY = X'7e372e174d87d2d4c0a80146'  <-------------- delete this 
+>               VERSION = NULL
+
+that is it  happened on 2011-03-22 
+LICT corporateaction still trades
+select count(*) from mticket where stockkey= X'644f10ac390c6d20c0a8015c';
+> Row 1:
+>   _C001 = 111.000000
+select * from mticket where stockkey= X'644f10ac390c6d20c0a8015c' order by closed;
+> Row 108:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-04-17 11:50:00.000000'  <-- last filled order 
+>        COMMENT = 
+>     COMMISSION = 0.150000
+>   CURRENTORDER = X'8f0b1eca48045f68c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'102805dd3a27e7b8c0a80119'
+>       MODIFIED = NULL
+>            NET = 12379.460001
+>         OPENED = TIMESTAMP '2008-04-15 03:55:20.000000' 
+>          PRICE = 4126.486667
+>     PRIMARYKEY = X'8f091eca48045f68c0a80133'
+>         SECFEE = 0.390000
+>         SHARES = 3.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 109:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-07-28 18:08:26.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'e6025148488e05bfc0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e17e5148488e030ac0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2008-07-28 13:45:35.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e6005148488e05bfc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 110:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-08-04 16:07:06.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'34db12744c59960cc0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'1f48674d4c2e01e0c0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2010-08-04 12:32:12.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'34d912744c59960cc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 111:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-12-27 16:01:12.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'567d395450b527a0c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b46c2062412bb063c0a80132'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-11-27 15:50:40.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'567b395450b527a0c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+let's see who holds LICT as of today
+Stock:LICT Corp  Symbol:CHF
+Date: 06/30/2015
+
+6 users found
+
+1	aantonelli	hooi11	leolinhares	redsun	sahmed2	tcw126
+
+let's look at one member:  aantonelli  see what he sees 
+
+your holdings of CHF 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+AMF 	5 	$11,745.00 	0.35%
+PNF 	10 	$23,490.00 	0.91% 
+
+AMF expand 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 22, 2004 		530 	530 	Buy
+Nov 10, 2005 	530 	-525 	5 	Corporate Action
+Total: 5
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 22, 2004 	530 	$26.50 	$14,270.99 	$26.93
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Nov 10, 2005 	Split terms:1 for 100
+
+the chart looks like CHF is an active symbol  not really
+check xignite 
+there is data for LICT dated 6/24/15  nothing for CHF
+
+
+let's look at the price historu
+
+STOCKKEY = X'644f10ac390c6d20c0a8015c'
+select * from mstock where primarykey= X'644f10ac390c6d20c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'faf256ae4d89243bc0a80146'
+>                NAME = LYNCH INTERACTIVE CORP
+>          PRIMARYKEY = X'644f10ac390c6d20c0a8015c'
+>              SYMBOL = LIC
+>           COMPANYID = 6793
+>   WINDOWIDENTITYKEY = NULL
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6793
+
+
+the last prices for this companyID
+2011-03-16 (Wed) [3726]: O:2349.0000 H:2349.0000 L:2300.0000 C:2349.0000 V:15 TSO:2752 A:2349.0000 R:1.0000 CA:0.0000
+2011-03-17 (Thu) [3727]: O:2349.0000 H:2349.0000 L:2300.0000 C:2349.0000 V:15 TSO:2752 A:2349.0000 R:1.0000 CA:0.0000
+2011-03-18 (Fri) [3728]: O:2349.0000 H:2349.0000 L:2300.0000 C:2349.0000 V:15 TSO:2752 A:2349.0000 R:1.0000 CA:0.0000
+2011-03-19 (Sat) [3729]: <WEEKEND>
+2011-03-20 (Sun) [3730]: <WEEKEND>
+2011-03-21 (Mon) [3731]: O:2349.0000 H:2349.0000 L:2349.0000 C:2349.0000 V:0 TSO:2752 A:2349.0000 R:1.0000 CA:0.0000
+that is when the ticker changed 
+
+we'll need to back fill these. 
+
+Let's back out the errant CA  need to change the identitykey first 
+
+update mstock set IDENTITYKEY =X'20da1c49469c2318c0a80146'   where PRIMARYKEY = X'644f10ac390c6d20c0a8015c';
+
+now delete the mstockalias and mcorporateaction records for the ticker change
+
+delete from mcorporateaction where PRIMARYKEY = X'7e372e174d87d2d4c0a80146';
+delete from mstockalias where primarykey= X'faf256ae4d89243bc0a80146';
+
+let's look at these again
+select * from mstockalias where stockkey=X'644f10ac390c6d20c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'645010ac390c6d20c0a8015c'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2005-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'd2f22e6f43740a17c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146103
+>           DATE = TIMESTAMP '2005-11-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'8a812f7943740a38c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2005-11-10 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'89ba2f8643740a59c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2007-06-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LYNCH INTERACTIVE CORP
+>     PRIMARYKEY = X'660637ac4671f325c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 551146202
+>           DATE = TIMESTAMP '2007-06-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'4c1137df4671f35fc0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187G104
+>           DATE = TIMESTAMP '2007-06-14 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'e85338eb4671f372c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187G104
+>           DATE = TIMESTAMP '2007-07-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = LICT Corp
+>     PRIMARYKEY = X'20da1c49469c2318c0a80146'
+>       STOCKKEY = X'644f10ac390c6d20c0a8015c'
+>         SYMBOL = LICT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XV
+
+ok the CAs are back in order. 
+need to add prices
+2011-03-21 (Mon) [3731]   is the last day of prices.  go to yahoo finance
+
+3/22/2011 
+set this up in a file:
+CA issues LICT prices to be loaded.txt
+
+loading them now 
+
+ok, check for missing CAs
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='LICT' order by BB_EFFECTIVE;
+> Row 3:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|3|CP_TKR|164259Z US|CP_NAME|Precis Communications LLC|CP_ID_BB_COMP|7980019|CP_UNIT|Cable television system|CP_TOT_AMT|3.735200|CP_ACQUIS_TYP|1|CP_CASH|3.735200|CP_CASH_FLAG|2|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|N.A.|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|N.A.|CP_ADVISORS_NUM|1|CP_SH_FRACTIONAL|N.A.|CP_ADVISORS|;2;1;3;1;Acquirer Financial Adviser(s);1;RBC Daniels;13;100.000000;|CP_ACQ_TKR|LICT US|CP_ACQ_ID_BB_GLOBAL|BBG000C20046|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FQFQB7|CP_ACQ_ID_BB_SEC_NUM_DES|LICT|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|164259Z US|CP_TARGET_ID_BB_GLOBAL|BBG000MHTG37|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001H2H924|CP_TARGET_ID_BB_SEC_NUM_DES|164259Z|CP_TARGET_FEED_SOURCE|US|CP_NOTES|ACTUAL ACQ'R: CENTRAL TELCOM SERVICES LLC.                                                3/22/05
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 103717066
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 933238
+>        BB_COMPANYNAME = LICT Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2005-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = LICT    US Equity
+>             BB_ISSUED = TIMESTAMP '2005-03-22 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = LICT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-03-09 00:00:00.000000'
+>            PRIMARYKEY = X'64122e2d54fe2484c0a86f92'
+>               VERSION = NULL
+
+not sure if this is real or not 
+
+let's check the prices
+companyid = 6793
+select * from stockprices where companyid=6793 order by daynumber;
+> Row 1:
+>   DAYNUMBER = -245
+>   COMPANYID = 6793
+>      OPENED = 1220000
+>        HIGH = 1220000
+>         LOW = 1220000
+>      CLOSED = 1220000
+>      VOLUME = 200
+
+
+> Row 3816:
+>   DAYNUMBER = 5292
+>   COMPANYID = 6793
+>      OPENED = 53250000
+>        HIGH = 53250000
+>         LOW = 53250000
+>      CLOSED = 53250000
+>      VOLUME = 0
+
+
+ok now to invalidate the prices in the database 
+1.  Go to stocks   ssh build@stocks
+
+2. Invalidate prices from 3/22/2011    set the date up in the format yyyy-mm-dd
+/Marketocracy/bin/StockPriceBuilder invalidate 2011-03-22
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-30
+D: (13:24:40.855) Invalidate all prices >= 2011-03-22 (3732)
+
+check for missing dividends
+ looks like no dividends
+
+7/1/15
+the ticker is there, but the chart looks funny
+actually the price looks good, it's the volume.   closing this out 
+
+what is the list date  2000-04-30
+select distinct stockkey from mstockalias where symbol='LICT';
+> Row 1:
+>   STOCKKEY = X'644f10ac390c6d20c0a8015c'
+
+select fundkey from mposition where STOCKKEY = X'644f10ac390c6d20c0a8015c';
+only 28 fundeys save to CA issues LICT funckeys.txt
+
+invalidated - then reprice
+closing this out 

@@ -1,0 +1,312 @@
+date:   7/25/15
+ticker:   BORL
+
+yahoo:
+
+quantum:
+Borland Software Corp.
+Ticker Symbol: BORL*     CUSIP: 099849101     Exchange: NNM
+* NOTE: This security is no longer trading as of 7/28/09
+
+Company's Online Profile
+BUSINESS:  Borland Software Corp. is a leading provider of high performance e-business implementation solutions and Internet access infrastructure and application development tools and services for all major platforms, including Linux, Solaris, and Windows.
+
+Notes:  On May 6, 2009, Borland Software Corp. announced it was to be acquired by Micro Focus for $75 million. The transaction was approved by Borland shareholders on July 22, 2009, with Micro Focus acquiring the company for $1.50/share. Following Micro Focus shareholder approval and the required corporate filings, the transaction was completed in late July 2009.[
+
+
+oursite:
+Symbol: BORL 	Name: BORLAND SOFTWARE CORP 	Price: $1.49
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+symbol changes for BORL 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+22 Jan 01 	INPR 	BORL 	Change in the ticker (trading) symbol from INPR to BORL
+  	  	 
+left curve 	  name changes for BORL 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+22 Jan 01 	Inprise Corporation 	Borland Software Corporation 	Change in the name of issuer from Inprise Corporation to Borland Software Corporation
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:BORLAND SOFTWARE CORP  Symbol:BORL
+Date: 07/25/2015
+
+101 users found
+
+1	ack2k	afitzpatrick	aftermath	andy4251	apreuss	argonaut	awarnick	baron_roja	bgruber	billpritjr
+2	bkalaf	booger69	bradywahl	brasten	brismith70	bsimpson1	bsteab0yz	byoung	capital_strategies_group	cdacunha
+3	chagbo	cnikolov	coreyxj	csimard	dl	dlichtenwalner	dlundgren	dmagie	dmulholand	donquixote
+4	drose	dsmyth	dteetsel	fatboydk	finclplnr	flajuie	fred23	frobozz	fsingletary	gfontana
+5	gigi.dam	gladiator	gonzalez	gpesavento	growthvalue	happymito	ierlikhman	investor5707	isalahuddin	james11
+6	jherek7	jmorrnh	josephcarragher	jsteadman	jsvoren	jweaver2	keypower00	kiwim	klmarcus	ksl
+7	leiferoo	liemandt	lobster1234	maple	marketocracy	mchaddha	mjang	mjmiller	mpiquero	mrestituto
+8	nchaviano	nweiss	ogrant	packbacker	pcastagnet	pscherrer	puredepapa	rdaly	rednax	richepal
+9	richfield	rmorse	rneal	samko	shagnasty	shamus	simonemarlia	snjenga	space238	stanglx718
+10	stellar	switkowski	sylvie	thanlon	trevoreastman	txwylie	tzurinskas	utepark	wcoffey	wcwu
+11	zorian	 	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'BORL';  
+> Row 1:
+>   STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+
+select * from mstockalias where stockkey=X'8a1910ac390c6d69c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45766C102
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INPRISE CORP
+>     PRIMARYKEY = X'8a1a10ac390c6d69c0a8015c'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = INPR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2001-01-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INPRISE CORP
+>     PRIMARYKEY = X'37cb0a8f3a7ab68ec0a80117'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = BORL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 099849101
+>           DATE = TIMESTAMP '2001-01-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BORLAND SOFTWARE CORP
+>     PRIMARYKEY = X'39040a8f3a7ab6a0c0a80117'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = BORL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BORL'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BORL
+>>>> dbtool started at 2015-07-25 23:19:08 -0400
+stock: BORL
+  PK       : [8A1910AC390C6D69C0A8015C]
+  companyID: [8630]
+  symbol   : [BORL]
+  name     : [INPRISE CORP]
+  date     : [2001-01-22 00:00:00]
+  status   : [Active]
+stock: BORL
+  PK       : [8A1910AC390C6D69C0A8015C]
+  companyID: [8630]
+  symbol   : [BORL]
+  name     : [BORLAND SOFTWARE CORP]
+  date     : [2001-01-22 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-25 23:19:09 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 8630
+2009-08-26 (Wed) [3159]: O:1.4900 H:1.5000 L:1.4900 C:1.5000 V:60301 TSO:73115 A:1.5000 R:1.0000 CA:0.0000
+2009-08-27 (Thu) [3160]: O:1.4900 H:1.5000 L:1.4900 C:1.5000 V:60301 TSO:73115 A:1.5000 R:1.0000 CA:0.0000
+2009-08-28 (Fri) [3161]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:1299 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+2009-08-29 (Sat) [3162]: <WEEKEND>
+2009-08-30 (Sun) [3163]: <WEEKEND>
+2009-08-31 (Mon) [3164]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:0 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+2009-09-01 (Tue) [3165]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:0 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+
+
+2009-11-01 (Sun) [3226]: <WEEKEND>
+2009-11-02 (Mon) [3227]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:0 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+2009-11-03 (Tue) [3228]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:0 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+2009-11-04 (Wed) [3229]: O:1.4900 H:1.4900 L:1.4900 C:1.4900 V:0 TSO:73115 A:1.4900 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8a1910ac390c6d69c0a8015c' and shares > 0 order by closed; 
+> Row 1714:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-06-19 09:54:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1250.000000
+>   CURRENTORDER = X'49bc472f4a3a9f59c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'302614f84183c3b8c0a80132'
+>       MODIFIED = NULL
+>            NET = 27732.125000
+>         OPENED = TIMESTAMP '2009-06-18 16:11:05.000000'
+>          PRICE = 1.109285
+>     PRIMARYKEY = X'49ba472f4a3a9f59c0a80135'
+>         SECFEE = 0.750000
+>         SHARES = 25000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8a1910ac390c6d69c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a1910ac390c6d69c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8a1910ac390c6d69c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 101 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 7/28/09   1.50 / share 
+last ticket:  2009-06-19  PRICE = 1.109285
+last price:
+
+going with 20090728 1.50
+
+/Marketocracy/bin/cahelper -symbol  BORL  -effective 20090728 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.50 -acqShare 0 -purchaser BORL   >& /Users/build/caout/BORL.20150725-DELIST.out
+BORL.20150725-DELIST.out
+stocks:~/caout build$ tail -f BORL.20150725-DELIST.out
+D: (07-25 23:23:46.598) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-25 23:24:20.809) cahelper started on 2015-07-25 23:24:20 -0400
+
+D: (07-25 23:24:21.249) There are [0] open tickets for BORL on 20090728
+D: (07-25 23:24:21.692) StockFileLoad Version:4.0
+D: (07-25 23:24:21.692) Loading Stock Data
+D: (07-25 23:25:19.518) Building Lookup Index
+D: (07-25 23:25:26.876) Finished Building Index
+D: (07-25 23:25:32.369) Finished Loading Stock Data
+D: (07-25 23:25:32.408) Connection to 192.168.111.172:6666 succeeded
+D: (07-25 23:25:37.158) SavingChanges for position sell out 101 of 480
+D: (07-25 23:25:47.188) SavingChanges for position sell out 201 of 480
+D: (07-25 23:25:59.896) {
+    "ACQUIRED_STOCK" = BORL; 
+    "ACQUIRING_STOCK" = "BORL_FIX"; 
+    AMOUNT = 1.5; 
+    APPLIED = 1; 
+    DATE = 20090728; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BORL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-25 23:26:05.432) SUCCESS
+D: (07-25 23:26:05.432) cahelper finished 2015-07-25 23:26:05 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8a1910ac390c6d69c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45766C102
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INPRISE CORP
+>     PRIMARYKEY = X'8a1a10ac390c6d69c0a8015c'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = INPR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2001-01-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INPRISE CORP
+>     PRIMARYKEY = X'37cb0a8f3a7ab68ec0a80117'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = BORL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 099849101
+>           DATE = TIMESTAMP '2001-01-22 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BORLAND SOFTWARE CORP
+>     PRIMARYKEY = X'39040a8f3a7ab6a0c0a80117'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = BORL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 099849101
+>           DATE = TIMESTAMP '2009-07-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BORLAND SOFTWARE CORP
+>     PRIMARYKEY = X'78d711e855b452e5c0a86f92'
+>       STOCKKEY = X'8a1910ac390c6d69c0a8015c'
+>         SYMBOL = BORL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103020
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'78d711e855b452e5c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'78d711e855b452e5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BORL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150725:112420
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-07-28 00:00:00.000000'
+>         BB_IDENTIFIER = BORL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-07-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BORL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-07-28 00:00:00.000000'
+>            PRIMARYKEY = X'78d111e855b452e4c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'78d111e855b452e4c0a86f92';
+> Row 1:
+>   _C001 = 213.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'78d111e855b452e4c0a86f92'));
+there are 213 fundkeys, save to CA issues BORL fundkeys.txt
+
+For Beta case
+BORL no longer trades but is still active on our site - need to delist 
+
+check on 7/26/15   invalidate funds
+check MAdmin  clear
+
+7/28/15 
+ BORL has been acquired 	right curve
+  	  	
+BORLAND SOFTWARE CORP acquired by a private company on 2009-07-28 00:00:00. 
+
+invalidate - done 
+reprice 
+
+jut have to reprice and this is done

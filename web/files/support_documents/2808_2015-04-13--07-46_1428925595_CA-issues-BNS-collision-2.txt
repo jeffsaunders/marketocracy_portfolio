@@ -1,0 +1,581 @@
+Ticket Number:	2808
+Portfolio Username:	axamanca
+Problem Type:
+Short Position/Long Funds
+Subject:
+bns share count - CDN account
+Description:
+I had an unusual situation with my bns holdings. I had 1860 shares of bns in my CDN account. I added 55 shares of 
+bns in small increments. Instead of showing a total of 1915, the account showed two bns accounts; one had 55 
+shares, the other had 1860 shares. Now only 55 shares of bns appear in the account?
+
+yahoo
+
+
+select distinct stockkey from mstockalias where symbol='BNS';
+> Row 1:
+>   STOCKKEY = X'09d70e21390ae9d9c0a80116'
+> Row 2:
+>   STOCKKEY = X'250248e6538fa2b8c0a86f92'
+
+There are two:
+> BNS 1:
+>   STOCKKEY = X'09d70e21390ae9d9c0a80116'
+select * from mstockalias where STOCKKEY = X'09d70e21390ae9d9c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 115223109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BROWN & SHARPE MFG'A'
+>     PRIMARYKEY = X'09d80e21390ae9d9c0a80116'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>         SYMBOL = BNS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 055961304
+>           DATE = TIMESTAMP '2001-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BNS COMPANY CL A NEW
+>     PRIMARYKEY = X'c8a3280a3aee2aaec0a80117'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>         SYMBOL = BNS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 064149107
+>           DATE = TIMESTAMP '2002-02-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BNS COMPANY CL A NEW
+>     PRIMARYKEY = X'26b632bc538f9307c0a86f92'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>         SYMBOL = BNS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LV
+	select * from mcorporateaction where aliaskey=X'26b632bc538f9307c0a86f92';
+> Row 1:
+>              ALIASKEY = X'26b632bc538f9307c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BNS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.340000|CP_CASH_FLAG|1|CP_SH|2.340000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20140604:054330
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-02-08 00:00:00.000000'
+>         BB_IDENTIFIER = BNS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-02-08 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BNS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-02-08 00:00:00.000000'
+>            PRIMARYKEY = X'26af32bc538f9302c0a86f92'
+>               VERSION = NULL
+
+old BNS check on the date we acquired  02-08-2002
+Stock:The Bank of Nova Scotia  Symbol:BNS
+Date: 02/08/2002
+
+check MAdmin BNS  02/08/2002
+Stock:BNS COMPANY CL A NEW  Symbol:BNS
+Date: 02/08/2002
+
+0 users found
+ah this is good.
+
+let's see if there are mtickets after this date for the old BNS stockkey
+
+select * from mticket where stockkey=X'09d70e21390ae9d9c0a80116' and closed > TIMESTAMP'2002-02-09 00:00:00.000000' and shares > 0 order by closed;
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-06-16 12:01:00.000000'
+>        COMMENT = 
+>     COMMISSION = 110.000000
+>   CURRENTORDER = X'66cd00b5539f0459c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f6f11d933d04ececc0a80119'
+>       MODIFIED = NULL
+>            NET = 143434.257000
+>         OPENED = TIMESTAMP '2014-06-16 10:51:05.000000'
+>          PRICE = 65.197390
+>     PRIMARYKEY = X'66cb00b5539f0459c0a86f98'
+>         SECFEE = 3.180000
+>         SHARES = 2200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-06-17 10:39:00.000000'
+>        COMMENT = 
+>     COMMISSION = 109.900000
+>   CURRENTORDER = X'4dde53fa539fb2cac0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'f6f11d933d04ececc0a80119'
+>       MODIFIED = NULL
+>            NET = 143860.077408
+>         OPENED = TIMESTAMP '2014-06-16 23:15:22.000000'
+>          PRICE = 65.450445
+>     PRIMARYKEY = X'4ddc53fa539fb2cac0a86f98'
+>         SECFEE = 3.190000
+>         SHARES = 2198.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-08-06 10:20:00.000000'
+>        COMMENT = 
+>     COMMISSION = 10.000000
+>   CURRENTORDER = X'32d149ec53e2384cc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8100398a3a512823c0a80118'
+>       MODIFIED = NULL
+>            NET = 13331.257000
+>         OPENED = TIMESTAMP '2014-08-06 10:14:36.000000'
+>          PRICE = 66.656285
+>     PRIMARYKEY = X'32cf49ec53e2384cc0a86f98'
+>         SECFEE = 0.240000
+>         SHARES = 200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-04 09:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 11.500000
+>   CURRENTORDER = X'7f04498f5408695ac0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8803477a46b1f1fbc0a80132'
+>       MODIFIED = NULL
+>            NET = 15315.030030
+>         OPENED = TIMESTAMP '2014-09-04 09:30:02.000000'
+>          PRICE = 66.587087
+>     PRIMARYKEY = X'7f02498f5408695ac0a86f98'
+>         SECFEE = 0.270000
+>         SHARES = 230.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-04 09:37:00.000000'
+>        COMMENT = 
+>     COMMISSION = 17.000000
+>   CURRENTORDER = X'0337498f54086a56c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8803477a46b1f1fbc0a80132'
+>       MODIFIED = NULL
+>            NET = 22649.160020
+>         OPENED = TIMESTAMP '2014-09-04 09:34:14.000000'
+>          PRICE = 66.615177
+>     PRIMARYKEY = X'0335498f54086a56c0a86f98'
+>         SECFEE = 0.400000
+>         SHARES = 340.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-09 09:33:00.000000'
+>        COMMENT = 
+>     COMMISSION = 52.000000
+>   CURRENTORDER = X'c61c04fa540ef657c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'640331b33fe74da3c0a80133'
+>       MODIFIED = NULL
+>            NET = 67882.721680
+>         OPENED = TIMESTAMP '2014-09-09 08:45:11.000000'
+>          PRICE = 65.271848
+>     PRIMARYKEY = X'c61a04fa540ef657c0a86f98'
+>         SECFEE = 1.190000
+>         SHARES = 1040.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 7:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-01-14 11:50:53.000000'
+>        COMMENT = 
+>     COMMISSION = 178.500000
+>   CURRENTORDER = X'a4e509a454b6980dc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'fafc4bd63a02ea8ac0a80118'
+>       MODIFIED = NULL
+>            NET = 182438.771160
+>         OPENED = TIMESTAMP '2015-01-14 11:23:41.000000'
+>          PRICE = 51.103297
+>     PRIMARYKEY = X'a4e309a454b6980dc0a86f98'
+>         SECFEE = 3.180000
+>         SHARES = 3570.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 8:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-02-17 09:30:18.000000'
+>        COMMENT = 
+>     COMMISSION = 16.000000
+>   CURRENTORDER = X'334673fc54de761bc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'f3296c1d4dacfc75c0a80132'
+>       MODIFIED = NULL
+>            NET = 17289.280000
+>         OPENED = TIMESTAMP '2015-02-13 17:09:31.000000'
+>          PRICE = 54.029000
+>     PRIMARYKEY = X'334473fc54de761bc0a86f98'
+>         SECFEE = 0.320000
+>         SHARES = 320.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+who are the members for these mtickets?
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where stockkey=X'09d70e21390ae9d9c0a80116' and closed > TIMESTAMP'2002-02-09 00:00:00.000000' and shares > 0);
+> Row 1:
+>   LOGINNAME = patman123
+> Row 2:
+>   LOGINNAME = lycos
+> Row 3:
+>   LOGINNAME = jrheaume
+> Row 4:
+>   LOGINNAME = mbarbon
+> Row 5:
+>   LOGINNAME = saluki
+> Row 6:
+>   LOGINNAME = modynoc
+
+
+
+**************************
+> BNS 2:
+>   STOCKKEY = X'250248e6538fa2b8c0a86f92'
+**************************
+select * from mstockalias where STOCKKEY = X'250248e6538fa2b8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 064149107
+>           DATE = TIMESTAMP '2002-06-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = The Bank of Nova Scotia
+>     PRIMARYKEY = X'250348e6538fa2b8c0a86f92'
+>       STOCKKEY = X'250248e6538fa2b8c0a86f92'
+>         SYMBOL = BNS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = LB
+
+member :  axamanca  
+fund:  CDN
+
+BNS 	click me 	$51.22 	1,860 	$95,269.20 	8.46% 	-$2,792.20 	0.41% 	-2.85% 	-2.85% 	Details 
+	this is the old BNS which is delisted 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 15, 2010 		1800 	1800 	Buy
+Nov 01, 2011 	1800 	15 	1815 	Buy
+Jun 01, 2012 	1815 	45 	1860 	Buy
+Total: 1,860
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 15, 2010 	1,800 	$90.00 	$95,048.00 	$52.80
+Nov 1, 2011 	15 	$0.75 	$762.30 	$50.82
+Jun 1, 2012 	45 	$2.25 	$2,251.10 	$50.02
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+
+BNS 	click me 	$51.22 	55 	$2,817.10 	0.25% 	-$70.35 	0.41% 	-2.44% 	-2.44% 	Details 
+	this is the new BNS bank of nova scotia
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 05, 2014 		10 	10 	Buy
+Jan 16, 2015 	10 	15 	25 	Buy
+Feb 03, 2015 	25 	20 	45 	Buy
+Feb 25, 2015 	45 	10 	55 	Buy
+Total: 55
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 5, 2014 	10 	$0.50 	$581.60 	$58.16
+Jan 16, 2015 	15 	$0.75 	$764.85 	$50.99
+Feb 3, 2015 	20 	$1.00 	$1,014.00 	$50.70
+Feb 25, 2015 	10 	$0.50 	$527.00 	$52.70
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+need to change the old to new stockkey 
+
+
+something wrong with his trades 
+
+BNS 	click me 	$51.22 	1,860 	$95,269.20 	8.46% 	-$2,792.20 	0.41% 	-2.85% 	-2.85% 	Details 
+	this is the old BNS which is delisted 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 15, 2010 		1800 	1800 	Buy
+Nov 01, 2011 	1800 	15 	1815 	Buy
+Jun 01, 2012 	1815 	45 	1860 	Buy
+Total: 1,860
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 15, 2010 	1,800 	$90.00 	$95,048.00 	$52.80
+Nov 1, 2011 	15 	$0.75 	$762.30 	$50.82
+Jun 1, 2012 	45 	$2.25 	$2,251.10 	$50.02
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+
+let's get the hex key and look at the trades  for axamanca
+
+1.  first buy of 1800 shares
+Hexkey: 00665FBB4CDFF43FC0A80132
+
+select * from mticket where primarykey=X'00665FBB4CDFF43FC0A80132';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-11-15 09:35:00.000000'
+>        COMMENT = 
+>     COMMISSION = 90.000000
+>   CURRENTORDER = X'00685fbb4cdff43fc0a80132'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'b3640f04481c5db5c0a80133'
+>       MODIFIED = NULL
+>            NET = 95047.999200
+>         OPENED = TIMESTAMP '2010-11-14 09:37:51.000000'
+>          PRICE = 52.804444
+>     PRIMARYKEY = X'00665fbb4cdff43fc0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 1800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'250248e6538fa2b8c0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select distinct name from mstockalias where stockkey=X'250248e6538fa2b8c0a86f92';
+> Row 1:
+>   NAME = The Bank of Nova Scotia
+
+check the mtrade
+select * from mtrade where ticketkey=X'00665fbb4cdff43fc0a80132';
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'a0be31f34ce14611c0a8011e'
+>                 PRIMARYKEY = X'a0bd31f34ce14611c0a8011e'
+>                     SHARES = 1800.000000
+>                  TICKETKEY = X'00665fbb4cdff43fc0a80132'
+>                     CLOSED = TIMESTAMP '2010-11-15 09:35:00.000000'
+>                      PRICE = 52.804400
+>   CREATEDBYCORPORATEACTION = 0
+
+select stockkey from mposition where primarykey=X'a0be31f34ce14611c0a8011e';
+> Row 1:
+>   STOCKKEY = X'09d70e21390ae9d9c0a80116'
+select distinct name from mstockalias where STOCKKEY = X'09d70e21390ae9d9c0a80116';
+> Row 1:
+>   NAME = BROWN & SHARPE MFG'A'
+> Row 2:
+>   NAME = BNS COMPANY CL A NEW
+
+let's get the hexkeys from the three trades:
+1.  Hexkey: 00665FBB4CDFF43FC0A80132
+2.  Hexkey: 6EBA167B4EB03466C0A80135
+3.  Hexkey: FABF436C4FC8EA42C0A80132
+
+let's try deleting the mtrades
+1.  Hexkey: 00665FBB4CDFF43FC0A80132
+delete from mtrade where ticketkey=X'00665FBB4CDFF43FC0A80132';
+2.  Hexkey: 6EBA167B4EB03466C0A80135
+delete from mtrade where ticketkey=X'6EBA167B4EB03466C0A80135';
+3.  Hexkey: FABF436C4FC8EA42C0A80132
+delete from mtrade where ticketkey=X'FABF436C4FC8EA42C0A80132';
+
+let's tickle these tickets
+00665FBB4CDFF43FC0A80132
+6EBA167B4EB03466C0A80135
+FABF436C4FC8EA42C0A80132
+
+put them into tickletickets on stocks
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-04-11 08:37:46 -0400
+<<<< dbtool finished at 2015-04-11 08:38:40 -0400
+
+now let's invalidate the fund  CDN
+/Marketocracy/bin/dbtool lookup fund axamanca
+>>>> dbtool started at 2015-04-11 08:38:44 -0400
+fund: axamanca
+  PK: [B37E0F04481C5E2CC0A80133]
+  symbol: [AMF]
+  managerKey: [B3640F04481C5DB5C0A80133]
+  loginName: [axamanca]
+fund: axamanca
+  PK: [EF4F5FBB4CDFF1DDC0A80132]  <--- here it is
+  symbol: [CDN]
+  managerKey: [B3640F04481C5DB5C0A80133]
+  loginName: [axamanca]
+fund: axamanca
+  PK: [778B3A0B54BA56FBC0A86F98]
+  symbol: [dogs]
+  managerKey: [B3640F04481C5DB5C0A80133]
+  loginName: [axamanca]
+<<<< dbtool finished at 2015-04-11 08:38:45 -0400
+
+/Marketocracy/bin/fptool invalidateFund EF4F5FBB4CDFF1DDC0A80132
+
+log out and back in 
+
+need to delete the mposition for the old stockkey
+select * from mposition where stockkey=X'09d70e21390ae9d9c0a80116' and fundkey=X'EF4F5FBB4CDFF1DDC0A80132';
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'a0be31f34ce14611c0a8011e'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'09d70e21390ae9d9c0a80116'
+>                SYMBOL = NULL
+>           TOTALSHARES = 1860.000000
+>               FUNDKEY = X'ef4f5fbb4cdff1ddc0a80132'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2010-11-15 09:35:00.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2012-06-01 12:14:00.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '4001-01-01 19:00:00.000000'
+>         TOTALUSERBUYS = 98061.318000
+>        TOTALUSERSELLS = 0.000000
+>        RECENTUSERBUYS = 98061.318000
+>       RECENTUSERSELLS = 0.000000
+>               CAYIELD = 0.000000
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 0.000000
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+
+delete from mposition where  PRIMARYKEY = X'a0be31f34ce14611c0a8011e';
+
+
+your holdings of BNS 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+AMF 	0 	N/A 	N/A
+CDN 	1,915 	$98,086.30 	8.53%
+dogs 	0 	N/A 	N/A 
+
+expand:
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 15, 2010 		1800 	1800 	Buy
+Nov 01, 2011 	1800 	15 	1815 	Buy
+Jun 01, 2012 	1815 	45 	1860 	Buy
+Dec 05, 2014 	1860 	10 	1870 	Buy
+Jan 16, 2015 	1870 	15 	1885 	Buy
+Feb 03, 2015 	1885 	20 	1905 	Buy
+Feb 25, 2015 	1905 	10 	1915 	Buy
+Total: 1,915
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 15, 2010 	1,800 	$90.00 	$95,048.00 	$52.80
+Nov 1, 2011 	15 	$0.75 	$762.30 	$50.82
+Jun 1, 2012 	45 	$2.25 	$2,251.10 	$50.02
+Dec 5, 2014 	10 	$0.50 	$581.60 	$58.16
+Jan 16, 2015 	15 	$0.75 	$764.85 	$50.99
+Feb 3, 2015 	20 	$1.00 	$1,014.00 	$50.70
+Feb 25, 2015 	10 	$0.50 	$527.00 	$52.70
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+this is good now  
+
+mposition with old BNS stockkey   where the mticket has the new BNS stockkey
+> BNS 1:  old
+>   STOCKKEY = X'09d70e21390ae9d9c0a80116'
+> BNS 2:  new
+>   STOCKKEY = X'250248e6538fa2b8c0a86f92'
+
+select count(*) from mticket where stockkey=X'250248e6538fa2b8c0a86f92' and primarykey in (select ticketkey from mtrade where positionkey in (select primarykey from mposition where stockkey = X'09d70e21390ae9d9c0a80116'));
+> Row 1:
+>   _C001 = 1967.000000
+
+let's get the primarykeys, we're going to tickle
+save them to CA issues BNS ticketkeys 2.txt
+
+select primarykey from mticket where stockkey=X'250248e6538fa2b8c0a86f92' and primarykey in (select ticketkey from mtrade where positionkey in (select primarykey from mposition where stockkey = X'09d70e21390ae9d9c0a80116'));
+
+select distinct fundkey from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'250248e6538fa2b8c0a86f92' and primarykey in (select ticketkey from mtrade where positionkey in (select primarykey from mposition where stockkey = X'09d70e21390ae9d9c0a80116')));
+save to CA issues BNS fundkeys 2.txt
+
+ok got the fundkeys
+
+let's delete the mtrades
+
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'250248e6538fa2b8c0a86f92' and primarykey in (select ticketkey from mtrade where positionkey in (select primarykey from mposition where stockkey = X'09d70e21390ae9d9c0a80116')));
+
+ok the mtrades are gone
+
+let's tickle the tickets  put the hexkeys into ticketstotickle on stocks
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+now let's invalidate the funds
+
+Done - the tickle tickets didn't seem to finish.  may need to rerun these

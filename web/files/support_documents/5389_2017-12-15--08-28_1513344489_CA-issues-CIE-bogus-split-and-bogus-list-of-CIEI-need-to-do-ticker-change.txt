@@ -1,0 +1,1003 @@
+DATE:2017-12-14 00:00:00
+OLD_EXCHANGE:UN
+NEW_EXCHANGE:UV
+NOTES:N.A.
+APPLIED:1
+SYMBOL:CIE
+TYPE:CHG_LIST
+
+and we also got a list for  CIEI
+
+CA issues CIE bogus split and bogus list of CIEI need to do ticker change.txt
+DATE:2017-12-14 00:00:00
+NEW_EXCHANGE:OTCBB
+NOTES:N.A.
+APPLIED:1
+NEW_LIST:CIEI
+SYMBOL:CIEI
+TYPE:LIST
+select distinct stockkey from mstockalias where symbol='CIEI';
+> Row 1:
+>   STOCKKEY = X'fc9c38145a32fdd7c0a86fab'
+select * from mstockalias where stockkey=X'fc9c38145a32fdd7c0a86fab' order by "date"; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'fc9d38145a32fdd7c0a86fab'
+>       STOCKKEY = X'fc9c38145a32fdd7c0a86fab'
+>         SYMBOL = CIEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+I think this is CIE? 
+update mstockalias set cusip='' where stockkey =X'fc9c38145a32fdd7c0a86fab'; 
+
+look up CIE on bloomberg
+CIE:US
+Cobalt International Energy Inc
+TICKER CHANGE
+CIE:US has changed to a new ticker symbol
+PREV CLOSE
+0.38
+
+we have this on NYSE
+
+select distinct stockkey from mstockalias where symbol='CIE'; 
+> Row 1:
+>   STOCKKEY = X'f4ba3aa74b295952c0a80146'
+select * from mstockalias where stockkey=X'f4ba3aa74b295952c0a80146' order by "date"; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F106
+>           DATE = TIMESTAMP '2009-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'f4bb3aa74b295952c0a80146'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'7cb249bc5948424ec0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'7cb249bc5948424ec0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'7cb249bc5948424ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|19075F106|CP_NEW_CUSIP|19075F304|CP_OLD_ISIN|US19075F1066|CP_NEW_ISIN|US19075F3047|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = EDI331171_ICC20170613
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-06-19 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 5
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-06-15 00:00:00.000000'
+>            PRIMARYKEY = X'5f2d34895942f91ec0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'7cb249bc5948424ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 15|CP_RATIO|0.066666666666667|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.066666666666667|CP_ADJ_DT|20170619| CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = EDI4440986_CONSD20170613
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-06-19 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-06-19 00:00:00.000000'
+>            PRIMARYKEY = X'9b33482c59483f0ec0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'9b33482c59483f0ec0a86fab';
+> Row 1:
+>   _C001 = 108.000000
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'6e5a694759517bc1c0a86fab'  <--- delete this it is duplicate 
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'6e5a694759517bc1c0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'6e5a694759517bc1c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|19075F106|CP_NEW_CUSIP|19075F304|CP_OLD_ISIN|US19075F1066|CP_NEW_ISIN|US19075F3047|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI331171_ICC20170613
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 5
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'ffc1415159405624c0a86fab'  <--- delete this it is duplicate 
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'6e5a694759517bc1c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 15|CP_RATIO|0.066666666666667|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.066666666666667|CP_ADJ_DT|20170626| CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI4440986_CONSD20170613
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'ffd3415159405624c0a86fab'  <----- back this split out (done) 
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'ffd3415159405624c0a86fab';
+	> Row 1:
+>   _C001 = 102.000000
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'0d5238005a32fd0fc0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'0d5238005a32fd0fc0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'0d5238005a32fd0fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI2201_BKRP20171214
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'88a136525a32f82bc0a86fab'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'55a438215a32fe43c0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'55a438215a32fe43c0a86fab'; 
+	> Row 1:
+>              ALIASKEY = X'55a438215a32fe43c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI219034_PRCHG20171214
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'88ab36525a32f82bc0a86fab'
+>               VERSION = NULL
+
+
+no CIEI  currently comes up
+bloomberg
+CIEI:USOTC US
+Cobalt International Energy Inc
+0.42USD+0.04+11.67%
+
+select companyid from mstock where primarykey=X'f4ba3aa74b295952c0a80146';
+> Row 1:
+>   COMPANYID = 18770
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18770
+2017-12-08 (Fri) [6185]: O:0.4500 H:0.5000 L:0.4100 C:0.4300 V:618060 TSO:0 A:0.4300 R:1.0000 CA:0.0000
+2017-12-09 (Sat) [6186]: <WEEKEND>
+2017-12-10 (Sun) [6187]: <WEEKEND>
+2017-12-11 (Mon) [6188]: O:0.4400 H:0.4500 L:0.3900 C:0.4000 V:827883 TSO:0 A:0.4000 R:1.0000 CA:0.0000
+2017-12-12 (Tue) [6189]: O:0.4000 H:0.4100 L:0.3600 C:0.3700 V:1140615 TSO:0 A:0.3700 R:1.0000 CA:0.0000
+2017-12-13 (Wed) [6190]: O:0.3700 H:0.4000 L:0.3500 C:0.3800 V:1011056 TSO:0 A:0.3800 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f4ba3aa74b295952c0a80146' and shares > 0 order by closed; 
+> Row 461:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2017-11-01 09:49:43.000000'
+>        COMMENT = NULL
+>     COMMISSION = 1421.350000
+>   CURRENTORDER = X'5d20010959f9aaf5c0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c01a70a44a41cd9bc0a80133'
+>       MODIFIED = NULL
+>            NET = 27163.886930
+>         OPENED = TIMESTAMP '2017-11-01 07:07:20.000000'
+>          PRICE = 0.955566
+>     PRIMARYKEY = X'5d1e010959f9aaf5c0a86fa6'
+>         SECFEE = 0.670000
+>         SHARES = 28427.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+we have two 1 for 15 splist
+Symbol: CIE	Name: Cobalt International Energy Inc	Price: $0.38
+Volume: 1,011,056	Sector: Energy	Change: $0.00
+Short Volume: 984,014	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 984,014	 Exchange: NYSE	Today: 0.56%
+50 Day Ave: $0.72	Year High: $306.00	High: $0.40
+200 Day Ave: $34.01	Year Low: $0.00	Low: $0.35
+
+research  stock info  CIE   
+ [NEW QUOTE]       
+Corporate Actions for Cobalt International Energy Inc	  December 14, 2017
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  CUSIP changes for CIE	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+19 Jun 17	19075F106	19075F304	Change in any of identification numbers (CUSIP) of a security from 19075F106 to 19075F304
+26 Jun 17	19075F106	19075F304	Change in any of identification numbers (CUSIP) of a security from 19075F106 to 19075F304
+ 	 	 
+left curve	  CIE had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+19 Jun 17	1 for 15	Split terms:1 for 15
+26 Jun 17	1 for 15	Split terms:1 for 15
+ 	 	 
+morning star
+
+Split History  CIE
+Date	Ratio
+06/19/2017	1:15
+
+
+Analysis
+
+CIE did a single 1 or 15 split on 2017-06-19  according to Morningstar
+we did this two times
+once on 2017-06-19 and then again on 2017-06-26
+
+who held CIE on 
+2017-06-18  day before first split
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-06-18
+f4ba3aa74b295952c0a80146
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 2500
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 6914
+91DA11A345DF47FFC0A80135, RSF, maldito, 2560
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 3000
+10F824283B853F71C0A80118, KMF4, kwade, 621
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 6000
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 1640
+2408241E4F242730C0A80133, CMF, changliulc, 6000
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -7000
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 330
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 2000
+163F5836510ACC0FC0A80132, FMF, saf-21, 10
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -1230
+7336235243BDF2EDC0A80132, RMF1, reveille, 10
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 10600
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 4000
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 600
+3C6832713B15847BC0A801E1, FMF, fkuster, 151000
+412532713B158B39C0A801E1, FMF  A, fkuster, 5000
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 146180
+5FB26D0555042249C0A86F98, LPS, yredifis, 4459
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 7219
+E02B4BE656DF8678C0A86FA6, WTM, everythingyoubeenlookingfor, 100
+192241F83FE45242C0A80133, FMF B, fkuster, 97067
+8C34118E41423226C0A80132, FMF1, fkuster, 100000
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 62499
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 100742
+9589269C593E8A8FC0A86FA6, ISO-3, g3algo, 142276
+
+
+2017-06-19  day of first split 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-06-19
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 166
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 460
+91DA11A345DF47FFC0A80135, RSF, maldito, 170
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 200
+10F824283B853F71C0A80118, KMF4, kwade, 41
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 400
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 109
+2408241E4F242730C0A80133, CMF, changliulc, 400
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -467
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 22
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 133
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -83
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 706
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 266
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 40
+3C6832713B15847BC0A801E1, FMF, fkuster, 10066
+412532713B158B39C0A801E1, FMF  A, fkuster, 333
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 9745
+5FB26D0555042249C0A86F98, LPS, yredifis, 297
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 481
+E02B4BE656DF8678C0A86FA6, WTM, everythingyoubeenlookingfor, 6
+192241F83FE45242C0A80133, FMF B, fkuster, 6471
+8C34118E41423226C0A80132, FMF1, fkuster, 6666
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 4166
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 6716
+9589269C593E8A8FC0A86FA6, ISO-3, g3algo, 9485
+
+2017-06-25  day before bogus second split
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-06-25
+f4ba3aa74b295952c0a80146
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 166
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 460
+91DA11A345DF47FFC0A80135, RSF, maldito, 170
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 200
+10F824283B853F71C0A80118, KMF4, kwade, 41
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 400
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 109
+2408241E4F242730C0A80133, CMF, changliulc, 400
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -467
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 22
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 133
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -83
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 706
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 266
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 40
+3C6832713B15847BC0A801E1, FMF, fkuster, 10066
+412532713B158B39C0A801E1, FMF  A, fkuster, 333
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 9745
+5FB26D0555042249C0A86F98, LPS, yredifis, 297
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 481
+E02B4BE656DF8678C0A86FA6, WTM, everythingyoubeenlookingfor, 6
+192241F83FE45242C0A80133, FMF B, fkuster, 6471
+8C34118E41423226C0A80132, FMF1, fkuster, 6666
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 4166
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 6716
+
+2017-06-26  day of bogus split 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-06-26
+f4ba3aa74b295952c0a80146
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 11
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 30
+91DA11A345DF47FFC0A80135, RSF, maldito, 11
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 13
+10F824283B853F71C0A80118, KMF4, kwade, 2
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 26
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 7
+2408241E4F242730C0A80133, CMF, changliulc, 26
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -32
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 1
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 8
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -6
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 47
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 17
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 2
+3C6832713B15847BC0A801E1, FMF, fkuster, 671
+412532713B158B39C0A801E1, FMF  A, fkuster, 22
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 649
+5FB26D0555042249C0A86F98, LPS, yredifis, 19
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 32
+192241F83FE45242C0A80133, FMF B, fkuster, 431
+8C34118E41423226C0A80132, FMF1, fkuster, 444
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 277
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 447
+
+
+
+2017-12-14  now 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-12-14
+f4ba3aa74b295952c0a80146
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 11                                                                                   
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 30
+91DA11A345DF47FFC0A80135, RSF, maldito, 11
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 13
+10F824283B853F71C0A80118, KMF4, kwade, 2
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 26
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 7
+2408241E4F242730C0A80133, CMF, changliulc, 26
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -32
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 1
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 8
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -6
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 47
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 17
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 2
+3C6832713B15847BC0A801E1, FMF, fkuster, 671
+412532713B158B39C0A801E1, FMF  A, fkuster, 22
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 649
+5FB26D0555042249C0A86F98, LPS, yredifis, 19
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 32
+192241F83FE45242C0A80133, FMF B, fkuster, 431
+8C34118E41423226C0A80132, FMF1, fkuster, 444  <---- after bogus second 1 for 15 split 
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 277
+
+
+the second split:
+> Row 2:
+>              ALIASKEY = X'6e5a694759517bc1c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 15|CP_RATIO|0.066666666666667|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.066666666666667|CP_ADJ_DT|20170626| CP_SH_FRACTIONAL|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI4440986_CONSD20170613
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 9
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-06-13 00:00:00.000000'
+>            PRIMARYKEY = X'ffd3415159405624c0a86fab'
+>               VERSION = NULL
+	update mcorporateaction set BB_ACTIONID = 'EDI4440986_CONSD20170613:MARTY' where PRIMARYKEY = X'ffd3415159405624c0a86fab';
+select primarykey from mticket where sourcekey=X'ffd3415159405624c0a86fab'; 
+	save to CA issues CIE bogus split ticketkeys.txt
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'ffd3415159405624c0a86fab'));
+	there are 51 fundkeys save to CA issues CIE bogus split fundkeys.txt
+	
+ok we have the ticketkeys and fundkeys and who held this stock
+back it out
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID EDI4440986_CONSD20170613:MARTY
+seems to have run
+
+delete from mcorporateaction where PRIMARYKEY = X'ffd3415159405624c0a86fab';
+delete from mcorporateaction where PRIMARYKEY = X'ffc1415159405624c0a86fab';
+delete from mstockalias where PRIMARYKEY = X'6e5a694759517bc1c0a86fab';
+
+let's delete the LIST for CIEI
+select * from mstockalias where stockkey=X'fc9c38145a32fdd7c0a86fab' order by "date"; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'fc9d38145a32fdd7c0a86fab'
+>       STOCKKEY = X'fc9c38145a32fdd7c0a86fab'
+>         SYMBOL = CIEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'fc9d38145a32fdd7c0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'fc9d38145a32fdd7c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CIEI|CP_SEC_TYPE|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI7386763_NLIST20171214
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = CIEI US Equity
+>             BB_ISSUED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CIEI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'888b36525a32f82bc0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where stockkey=X'fc9c38145a32fdd7c0a86fab'; 
+	none
+
+delete 
+set commit false;
+
+delete from mstock where primarykey=  X'fc9c38145a32fdd7c0a86fab'; 
+
+delete from mwindowstock where stockkey=X'fc9c38145a32fdd7c0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'fc9c38145a32fdd7c0a86fab');
+
+delete from mstockalias where stockkey=X'fc9c38145a32fdd7c0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'fc9c38145a32fdd7c0a86fab');   
+
+delete from mposition where stockkey=X'fc9c38145a32fdd7c0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'fc9c38145a32fdd7c0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'fc9c38145a32fdd7c0a86fab');
+
+delete from mticket where stockkey=X'fc9c38145a32fdd7c0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'fc9c38145a32fdd7c0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'fc9c38145a32fdd7c0a86fab';  
+
+commit;
+
+set commit true;
+
+*************
+
+let's see where we are  rerun this
+/Marketocracy/Scripts/build/bin/findFundsForStock.py f4ba3aa74b295952c0a80146 2017-12-14
+f4ba3aa74b295952c0a80146
+E80F5DCC3D8E8D34C0A80133, KMF, kschroedz, 166
+AF1E2B1F478F777DC0A80133, SKE, seanketcherside, 460
+91DA11A345DF47FFC0A80135, RSF, maldito, 170
+C9E05E6E3B5EDC0EC0A801E0, MMF, mlear, 200
+10F824283B853F71C0A80118, KMF4, kwade, 41
+12766CBD4E1B793FC0A80135, RAD, a_davidson, 400
+FBAE65B24F26F4C7C0A80133, JMF, jushua, 109
+2408241E4F242730C0A80133, CMF, changliulc, 400
+AFEA0AA04F20D7EFC0A80134, LMF, linlin777, -467
+887014BB4F50EF87C0A80132, DDFSI, bdevore, 22
+F3A157994F0DD9EEC0A80133, WCT, sgchauhan, 133
+5074687B41EE9654C0A80133, SHRTX, rjeddings, -83
+CB3A5BFC5271432FC0A80132, DC, cfgodfrey, 706
+CC5F20C33B8A7E47C0A801E0, DBL5, jvandongen, 266
+4B26529A3D4CA961C0A801E0, AMGRO, lwilliams3, 40
+3C6832713B15847BC0A801E1, FMF, fkuster, 10066
+412532713B158B39C0A801E1, FMF  A, fkuster, 333
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 9745
+5FB26D0555042249C0A86F98, LPS, yredifis, 297
+CA4F504855392EDBC0A86FA6, ZCAP, lzarruk, 481
+E02B4BE656DF8678C0A86FA6, WTM, everythingyoubeenlookingfor, 6
+192241F83FE45242C0A80133, FMF B, fkuster, 6471
+8C34118E41423226C0A80132, FMF1, fkuster, 6666  <---- our test guy 
+3C4100B140683A87FFFFFFFF, BVWP, minuet, 4166
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 6269
+
+
+	
+check the mstockalias 
+select * from mstockalias where stockkey=X'f4ba3aa74b295952c0a80146' order by "date"; 
+marketocracy@db1#64> select * from mstockalias where stockkey=X'f4ba3aa74b295952c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F106
+>           DATE = TIMESTAMP '2009-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'f4bb3aa74b295952c0a80146'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'7cb249bc5948424ec0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'0d5238005a32fd0fc0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'55a438215a32fe43c0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'55a438215a32fe43c0a86fab'; 
+	> Row 1:
+>              ALIASKEY = X'55a438215a32fe43c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = I
+>           BB_ACTIONID = EDI219034_PRCHG20171214
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = Cobalt International Energy Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = CIE US Equity
+>             BB_ISSUED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CIE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'88ab36525a32f82bc0a86fab'
+>               VERSION = NULL
+
+19075F304 is the correct cusip for CIEI  - good!
+
+CHG_TKR
+-------
+replace these with the old and new symbols
+OLD_TICKER  CIE
+NEW_TICKER  CIEI
+
+/Marketocracy/bin/cahelper -symbol  CIEI  -effective 20171214 -type CHG_TKR -exchange UN -oldSymbol CIE   >& /Users/build/caout/CIE.20170616-CHG_TKR-CIEI.out 
+CIE.20170616-CHG_TKR-CIEI.out
+stocks1:~/caout build$ tail -f CIE.20170616-CHG_TKR-CIEI.out
+D: (12-14 19:32:35.372) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 19:33:55.990) cahelper started on 2017-12-14 19:33:55 -0500
+
+D: (12-14 19:33:56.239) {
+    APPLIED = 1; 
+    DATE = 20171214; 
+    "NEW_TICKER" = "CIEI US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "CIE US"; 
+    SYMBOL = CIEI; 
+    TYPE = "CHG_TKR"; 
+}
+D: (12-14 19:33:56.757) SUCCESS
+D: (12-14 19:33:56.757) cahelper finished 2017-12-14 19:33:56 -0500
+
+select * from mstockalias where stockkey=X'f4ba3aa74b295952c0a80146' order by "date"; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F106
+>           DATE = TIMESTAMP '2009-12-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'f4bb3aa74b295952c0a80146'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-06-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'7cb249bc5948424ec0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'0d5238005a32fd0fc0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'55a438215a32fe43c0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 19075F304
+>           DATE = TIMESTAMP '2017-12-14 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Cobalt International Energy Inc
+>     PRIMARYKEY = X'00243a5f5a331874c0a86fab'
+>       STOCKKEY = X'f4ba3aa74b295952c0a80146'
+>         SYMBOL = CIEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'00243a5f5a331874c0a86fab'; 
+> Row 1:
+>              ALIASKEY = X'00243a5f5a331874c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CIE US|CP_NEW_TKR|CIEI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20171214:073355
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2017-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = CIEI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CIEI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2017-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'001e3a5f5a331873c0a86fab'
+>               VERSION = NULL
+
+
+check on 12/15/17 see that the ticker changed from CIE to CIEI
+
+run symbol change
+
+need to do a invalidate and reprice, too because we backed out a bogus 1 for 15 split
+
+12/15/17
+Symbol: CIEI	Name: Cobalt International Energy Inc	Price: $0.42
+Volume: 4,702,133	Sector: Energy	Change: $0.00
+Short Volume: 991,082	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 991,082	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.70	Year High: $20.40	High: $0.61
+200 Day Ave: $3.07	Year Low: $0.00	Low: $0.17
+
+research  stock info  CIEI   
+ [NEW QUOTE]       
+Corporate Actions for Cobalt International Energy Inc	  December 15, 2017
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for CIEI	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+14 Dec 17	CIE	CIEI	Change in the ticker (trading) symbol from CIE to CIEI
+ 	 	 
+left curve	  CUSIP changes for CIEI	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+19 Jun 17	19075F106	19075F304	Change in any of identification numbers (CUSIP) of a security from 19075F106 to 19075F304
+ 	 	 
+left curve	  listing changes for CIEI	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Dec 14, 2017	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that CIE trades on from NYSE to OTCBB-OTHER
+ 	 	 
+left curve	  CIEI had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+19 Jun 17	1 for 15	Split terms:1 for 15
+
+good only one split
+ticker is updated 
+
+invalidate and reprice 
+
+let's reprice 
+
+CIE had a bogus split on 2017-06-26, removed this 
+
+before we do this, let's see what members have on nova
+
+Active Funds Holding CIE
+
+Count	Member ID	Login Name	Password	Name	Manager Key	Fund ID	Fund Symbol	Shares	Fund Key	Last Login	Trans Wizard
+1	162	minuet	ern72i	Kyle Sutkaitis	X'28f34fd240655369ffffffff'	162-2	BVWP	277	X'3c4100b140683a87ffffffff'	07/10/2017 @ 06:21 AM EDT	
+2	412	jvandongen	maytag	Justin VanDongen	X'4aec024539ee1d05c0a801e0'	412-6	DBL5	17	X'cc5f20c33b8a7e47c0a801e0'	12/05/2016 @ 10:16 AM EST	Queued
+3	481	bdevore	budfox	Brenton DeVore	X'3e3f609a39ff2f09c0a801e1'	481-14	DDFSI	1	X'887014bb4f50ef87c0a80132'	12/30/2016 @ 05:09 PM EST	Queued
+4	515	kwade	ticket	Keith Wade	X'ad205ef93a0edcf3c0a80119'	515-10	KMF4	2	X'10f824283b853f71c0a80118'	12/02/2015 @ 12:57 AM EST	
+5	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-1	FMF B	431	X'192241f83fe45242c0a80133'	01/05/2017 @ 12:19 PM EST	Queued
+6	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-2	FMF1	444	X'8c34118e41423226c0a80132'	01/05/2017 @ 12:19 PM EST	Queued
+7	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-3	FMF	671	X'3c6832713b15847bc0a801e1'	01/05/2017 @ 12:19 PM EST	Queued
+8	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-4	FMF A	22	X'412532713b158b39c0a801e1'	01/05/2017 @ 12:19 PM EST	Queued
+9	947	mlear	335175	Mark Lear	X'c33e5e6e3b5ed85ac0a801e0'	947-1	MMF	13	X'c9e05e6e3b5edc0ec0a801e0'	09/03/2015 @ 09:10 PM EDT	
+10	1328	kschroedz	asmygirl	Kevin Schroeder	X'e4aa5dcc3d8e8aafc0a80133'	1328-1	KMF	2,500	X'e80f5dcc3d8e8d34c0a80133'	12/30/2016 @ 04:33 PM EST	Queued
+11	1558	maldito	sake01	Frank Hopkins	X'd8db5cd64480bb7cc0a80133'	1558-7	RSF	2,560	X'91da11a345df47ffc0a80135'	NEVER	
+12	2017	drass	e5lvTt1ddl	Stanislav Drastich	X'8963096c491d7d95c0a80135'	2017-8	MRLX	649	X'3d7054ea4a0b3c3fc0a80135'	12/14/2017 @ 03:36 PM EST	
+13	3249	lzarruk	zaq123	Laurent-Philippe Zarruk	X'af3f6378531f37d1c0a86f99'	3249-3	ZCAP	7,219	X'CA4F504855392EDBC0A86FA6'	10/16/2015 @ 05:56 AM EDT
+
+nova
+12	2017	drass	e5lvTt1ddl	Stanislav Drastich	X'8963096c491d7d95c0a80135'	2017-8	MRLX	649	X'3d7054ea4a0b3c3fc0a80135'	12/14/2017 @ 03:36 PM EST	
+
+legacy
+3D7054EA4A0B3C3FC0A80135, MRLX, drass, 9745
+
+649 * 15 = 9735
+
+repricing from 6/1/17
+
+created a case  5389
+
+
+reprice / reload is done , look at drass MRLX
+146,180   expanded trades and he is good now,    
+
+strange - I better do the the symbol change
+
+CIE to CIEI
+
+position report after symbol change and reload 
+
+Active Funds Holding CIEI
+
+Count	Member ID	Login Name	Password	Name	Manager Key	Fund ID	Fund Symbol	Shares	Fund Key	Last Login	Trans Wizard
+1	162	minuet	ern72i	Kyle Sutkaitis	X'28f34fd240655369ffffffff'	162-2	BVWP	4,166	X'3c4100b140683a87ffffffff'	07/10/2017 @ 06:21 AM EDT	
+2	412	jvandongen	maytag	Justin VanDongen	X'4aec024539ee1d05c0a801e0'	412-6	DBL5	266	X'cc5f20c33b8a7e47c0a801e0'	12/05/2016 @ 10:16 AM EST	Queued
+3	481	bdevore	budfox	Brenton DeVore	X'3e3f609a39ff2f09c0a801e1'	481-14	DDFSI	22	X'887014bb4f50ef87c0a80132'	12/30/2016 @ 05:09 PM EST	Queued
+4	515	kwade	ticket	Keith Wade	X'ad205ef93a0edcf3c0a80119'	515-10	KMF4	41	X'10f824283b853f71c0a80118'	12/02/2015 @ 12:57 AM EST	
+5	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-1	FMF B	6,471	X'192241f83fe45242c0a80133'	01/05/2017 @ 12:19 PM EST	Queued
+6	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-2	FMF1	6,666	X'8c34118e41423226c0a80132'	01/05/2017 @ 12:19 PM EST	Queued
+7	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-3	FMF	10,066	X'3c6832713b15847bc0a801e1'	01/05/2017 @ 12:19 PM EST	Queued
+8	862	fkuster	hamburg	Folker Kuster	X'11dd64743b1581a1c0a801e0'	862-4	FMF A	333	X'412532713b158b39c0a801e1'	01/05/2017 @ 12:19 PM EST	Queued
+9	947	mlear	335175	Mark Lear	X'c33e5e6e3b5ed85ac0a801e0'	947-1	MMF	200	X'c9e05e6e3b5edc0ec0a801e0'	09/03/2015 @ 09:10 PM EDT	
+10	1328	kschroedz	asmygirl	Kevin Schroeder	X'e4aa5dcc3d8e8aafc0a80133'	1328-1	KMF	166	X'e80f5dcc3d8e8d34c0a80133'	12/30/2016 @ 04:33 PM EST	Queued
+11	1558	maldito	sake01	Frank Hopkins	X'd8db5cd64480bb7cc0a80133'	1558-7	RSF	170	X'91da11a345df47ffc0a80135'	NEVER	
+12	2017	drass	e5lvTt1ddl	Stanislav Drastich	X'8963096c491d7d95c0a80135'	2017-8	MRLX	9,745	X'3d7054ea4a0b3c3fc0a80135'	12/14/2017 @ 03:36 PM EST	
+13	3249	lzarruk	zaq123	Laurent-Philippe Zarruk	X'af3f6378531f37d1c0a86f99'	3249-3	ZCAP	481	X'CA4F504855392EDBC0A86FA6'	10/16/2015 @ 05:56 AM EDT	
+14	8411	Everythingyoubeenlookingfor	Newstart1	T Lewis	X'E01E4BE656DF84A2C0A86FA6'	8411-1	WTM	6	X'E02B4BE656DF8678C0A86FA6'	03/08/2016 @ 09:21 PM EST	
+15	9194	Biobullnj	ARar338$	Albert Lupcho	X'00141A0A58657BE9C0A86FA6'	9194-1	Arljr	6,269	X'00211A0A586582B5C0A86FA6'	12/15/2017 @ 07:34 AM EST	
+
+member
+
+has  	6,269 on nova - good! 
+
+00211A0A586582B5C0A86FA6, Arljr, biobullnj, 6269
+
+I think we are good ! 
+
+let's look at this member on legacy
+your holdings of CIEI	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+Arljr	6,269	$2,632.98	0.33%
+ARLJR1	0	N/A	N/A
+
+expand 
+LEDGER
+Date	Start	Change	End	Type
+Dec 30, 2016		50000	50000	Buy
+Mar 22, 2017	50000	10000	60000	Buy
+Mar 23, 2017	60000	20000	80000	Buy
+Apr 04, 2017	80000	5000	85000	Buy
+Apr 06, 2017	85000	15742	100742	Buy
+Jun 19, 2017	100742	-94026	6716	Corporate Action  good 
+Jun 28, 2017	6716	2053	8769	Buy
+Jul 10, 2017	8769	3769	12538	Buy
+Oct 03, 2017	12538	-6269	6269	Sell
+Total: 6,269
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 30, 2016	50,000	$2,500.00	$64,651.15	$1.29
+Mar 22, 2017	10,000	$187.50	$3,937.50	$0.39
+Mar 23, 2017	20,000	$407.00	$8,547.00	$0.43
+Apr 4, 2017	5,000	$124.65	$2,617.65	$0.52
+Apr 6, 2017	2,742	$60.13	$1,262.77	$0.46
+Apr 6, 2017	13,000	$308.47	$6,477.94	$0.50
+Jun 28, 2017	2,053	$102.65	$5,265.95	$2.57
+Jul 10, 2017	3,769	$188.45	$8,605.35	$2.28
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Oct 3, 2017	6,269	$313.45	$0.20	$8,266.03	$1.32
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Jun 19, 2017	Split terms:1 for 15
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18770
+2017-06-09 (Fri) [6003]: O:0.2500 H:0.2600 L:0.2400 C:0.2400 V:8174082 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2017-06-10 (Sat) [6004]: <WEEKEND>
+2017-06-11 (Sun) [6005]: <WEEKEND>
+2017-06-12 (Mon) [6006]: O:0.2400 H:0.2500 L:0.2300 C:0.2300 V:8569982 TSO:0 A:0.2300 R:1.0000 CA:0.0000
+2017-06-13 (Tue) [6007]: O:0.2000 H:0.2400 L:0.2000 C:0.2400 V:12226285 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2017-06-14 (Wed) [6008]: O:0.2300 H:0.2500 L:0.2200 C:0.2300 V:7046470 TSO:0 A:0.2300 R:1.0000 CA:0.0000
+2017-06-15 (Thu) [6009]: O:0.2300 H:0.2300 L:0.2100 C:0.2200 V:8559580 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2017-06-16 (Fri) [6010]: O:0.2300 H:0.2400 L:0.2000 C:0.2100 V:14111954 TSO:0 A:0.2100 R:1.0000 CA:0.0000
+2017-06-17 (Sat) [6011]: <WEEKEND>
+2017-06-18 (Sun) [6012]: <WEEKEND>
+2017-06-19 (Mon) [6013]: O:2.6500 H:4.1000 L:2.6500 C:3.1200 V:900375 TSO:0 A:3.1200 R:1.0000 CA:0.0000  <--- there it is 
+2017-06-20 (Tue) [6014]: O:2.9400 H:3.0500 L:2.7900 C:2.9700 V:1723754 TSO:0 A:2.9700 R:1.0000 CA:0.0000
+2017-06-21 (Wed) [6015]: O:2.9600 H:2.9700 L:2.4600 C:2.6100 V:2909161 TSO:0 A:2.6100 R:1.0000 CA:0.0000
+
+
+we are good, closing this out 12/15/17
+

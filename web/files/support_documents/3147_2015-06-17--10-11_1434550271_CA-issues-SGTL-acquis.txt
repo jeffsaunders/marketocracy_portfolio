@@ -1,0 +1,431 @@
+date: 
+ticker:  SGTL
+
+case: 3147
+
+Type
+Corporate Action | Acquisition
+Ticket
+3147
+Priority
+Medium
+Status
+Open
+Member Name
+Anton Hoffard
+Username
+ahoffard
+Fund Symbols
+AMFTC
+Stock Tickers
+SGTL
+Description / Resources:
+Fri 05/29/2015 at 04:57 PM
+
+acquired by Freescale April 30 2008
+
+yahoo:  nothing
+
+quantum:   nothing 
+
+oursite:
+
+wiki:  On February 4, 2008, Freescale Semiconductor announced that it had entered into a definitive agreement to acquire SigmaTel for $110 million.[2][3] The agreement closed in the second quarter of 2008 and all SGTL shares were purchased by Freescale for $3 each.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Sigmatel Inc  Symbol:SGTL
+Date: 06/14/2015
+
+152 users found
+
+1	abatuf	acanete	acosta	ahmet89	ahoffard	alanzacc	andrew1011	andrewyeh	aobar	aro44
+2	bagricula	benbuffett	biged	billdz	blevesque	bltboy1	bogdanowde_is	bourseinvest	boxxed	bradywahl
+3	brianaprill	carol_newell	cgrugan	chrisg	cipollino	cisaacson	cmiller	dabbler	danielle728	danwsim
+4	dcbrown	ddibalnom	dgp	djdillutional	dmurph	downriggin	draakon	dreadknought40	dsti	dt_nguyen
+5	dwinters	dxc3534	elanstocks	enkeeton	eugeneg	fabian	faosto	fatwallet	ferrellpig	fisherham23
+6	fkluczny	freeflyingfool	gallazinma	gator101	ghosttrader	gonzalez	gunnermcgavin	hanks1415	hillrm2	hoyas332
+7	jaritch	jclorenz	jefe	jim3333	jimmyren	jlowin	johnnyboy22203	jonahall	jonganderson	jriss
+8	kawalacha	keimwj	keith_foulke	kg	kharder	ktanaka	lemmehit	les28409	liyuz	lleanse
+9	long_2iq	longtermtech	lordpiasca	lynndal	lynne_mckee	markettrader	masterodisaster	mdb	melexis1	mezohorney
+10	mikrokid	mjbohyer	mlcole74	mlucas	mmartin6	msmith16	mspiegel	mverline	mvrh	myinvention
+11	mytchell	ongena	parrain	perdana	pjz0001	planco4	pmok	ps_vee	pveneziani	q_tips
+12	quickjr	ralph	rdhoward	rkohut	rodcovlin	rooster	rotimi	rshulman	rudigoeldi	ruediklein
+13	sarat	sborst	sdaltman82	seblanglois	sectorspeculator	shall_we	stevenlberry	stevenlobo	stijn	stijnfunds
+14	superreturns	taipan	tbarlage	threeam	thunderballfists	tjw52	trevoreastman	usna4life	uzelac	valuefocused
+15	vdicarmine	vlad32	vooch	vooch2	vwilliams	w1woody	wildgoose7	woz2000	xhydrocarbon	zenloony
+16	zhongren	zxp	 	 	 	 	 	 	 	 
+database
+select distinct stockkey from mstockalias where symbol= 'SGTL';  
+> Row 1:
+>   STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+
+select * from mstockalias where stockkey= X'3563233d3f6bb5a4c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82661W107
+>           DATE = TIMESTAMP '2003-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sigmatel Inc
+>     PRIMARYKEY = X'3564233d3f6bb5a4c0a80146'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>         SYMBOL = SGTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82661W107
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sigmatel Inc
+>     PRIMARYKEY = X'4d82150944a9ce74c0a80146'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>         SYMBOL = SGTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SGTL'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SGTL
+>>>> dbtool started at 2015-06-14 09:49:42 -0400
+stock: SGTL
+  PK       : [3563233D3F6BB5A4C0A80146]
+  companyID: [15123]
+  symbol   : [SGTL]
+  name     : [Sigmatel Inc]
+  date     : [2003-09-19 00:00:00]
+  status   : [Active]
+stock: SGTL
+  PK       : [3563233D3F6BB5A4C0A80146]
+  companyID: [15123]
+  symbol   : [SGTL]
+  name     : [Sigmatel Inc]
+  date     : [2006-07-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-14 09:49:42 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15123
+2008-11-17 (Mon) [2877]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+2008-11-18 (Tue) [2878]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+2008-11-19 (Wed) [2879]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+2008-11-20 (Thu) [2880]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+2008-11-21 (Fri) [2881]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+2008-11-22 (Sat) [2882]: <WEEKEND>
+2008-11-23 (Sun) [2883]: <WEEKEND>
+2008-11-24 (Mon) [2884]: O:2.9800 H:2.9800 L:2.9800 C:2.9800 V:0 TSO:36026 A:2.9800 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'3563233d3f6bb5a4c0a80146' and shares > 0 order by closed; 
+> Row 2102:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-04-29 16:00:00.000000'
+>        COMMENT = 
+>     COMMISSION = 367.350000
+>   CURRENTORDER = X'46e64a3948174be5c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5c900dbe448063a5c0a80133'
+>       MODIFIED = NULL
+>            NET = 21542.869324
+>         OPENED = TIMESTAMP '2008-04-29 12:25:09.000000'
+>          PRICE = 2.932199
+>     PRIMARYKEY = X'46e44a3948174be5c0a80133'
+>         SECFEE = 0.680000
+>         SHARES = 7347.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last ticket 2008-04-29  price 2.932199
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'3563233d3f6bb5a4c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'3563233d3f6bb5a4c0a80146' and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'94b00fa5408f2032c0a80134'
+>       SYMBOL = JMFmc
+
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'3563233d3f6bb5a4c0a80146' and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = jim3333
+
+
+we have one short to resolve 
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+SGTL 	$2.98 	-11,383 	-$33,921.34 	$25,436.59 	0.00% 	21.24% 	Details  	TOP
+CKXE 	$5.51 	-708 	-$3,901.08 	$2,827.24 	0.00% 	7.65% 	Details  	MIDDLE
+
+jim3333 JMFmc CKXE
+let's just buy the shares out
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  jim3333 JMFmc 20081124 SGTL 11383 0
+
+expanding the trades, kills the session
+select primarykey from mmanager where loginname='jim3333';
+> Row 1:
+>   PRIMARYKEY = X'891e03184070f11affffffff'  <-- managerkey
+get the fundkey for JMFmc
+select primarykey from mfund where symbol='JMFmc';
+> Row 1:
+>   PRIMARYKEY = X'94b00fa5408f2032c0a80134'  <----- fundkey
+let's get the position key for this fund and stockkey
+
+STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+
+select primarykey from mposition where STOCKKEY = X'3563233d3f6bb5a4c0a80146' and fundkey=X'94b00fa5408f2032c0a80134';
+> Row 1:
+>   PRIMARYKEY = X'0efd02bc43e10b68c0a8011e'  <--- position key
+
+select count(*) from mtrade where positionkey=X'0efd02bc43e10b68c0a8011e' ;
+> Row 1:
+>   _C001 = 8.000000
+8 trades
+select * from mtrade where positionkey=X'0efd02bc43e10b68c0a8011e' order by closed;
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'0efc02bc43e10b68c0a8011e'
+>                     SHARES = 4143.000000
+>                  TICKETKEY = X'f45d5f7143e1055fc0a80132'
+>                     CLOSED = TIMESTAMP '2006-02-01 14:26:00.000000'
+>                      PRICE = 11.080700
+>   CREATEDBYCORPORATEACTION = 0
+	select * from mticket where primarykey=X'f45d5f7143e1055fc0a80132';
+	buy
+> Row 2:
+>                    KINDKEY = X'705c3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'364e02bc43e242b9c0a8011e'
+>                     SHARES = 0.000000
+>                  TICKETKEY = X'c8a722de43e24149c0a80133'
+>                     CLOSED = TIMESTAMP '2006-02-02 12:34:00.000000'
+>                      PRICE = 10.718500
+	select * from mticket where primarykey=X'c8a722de43e24149c0a80133';
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'b77d0402442d3fa4c0a8011e'
+>                     SHARES = 260.000000
+>                  TICKETKEY = X'c5a20c49442d39a7c0a80132'
+>                     CLOSED = TIMESTAMP '2006-03-31 09:30:00.000000'
+>                      PRICE = 8.841000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'705f3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'567c0f9844478f85c0a8011e'
+>                     SHARES = 4403.000000
+>                  TICKETKEY = X'd869027b444532a0c0a80133'
+>                     CLOSED = TIMESTAMP '2006-04-20 09:32:00.000000'
+>                      PRICE = 8.949700
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'1c400274444e691cc0a8011e'
+>                     SHARES = 2950.000000
+>                  TICKETKEY = X'bfec23fc444e684fc0a80133'
+>                     CLOSED = TIMESTAMP '2006-04-25 14:23:00.000000'
+>                      PRICE = 8.886000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'f63103a64485d3c6c0a8011f'
+>                     SHARES = 9145.000000
+>                  TICKETKEY = X'575b27654485c69ec0a80132'
+>                     CLOSED = TIMESTAMP '2006-06-06 15:13:00.000000'
+>                      PRICE = 4.955500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 7:
+>                    KINDKEY = X'705f3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'608302a4453d1fc3c0a8011e'
+>                     SHARES = 11739.000000
+>                  TICKETKEY = X'668b36e04511bf4dc0a80134'
+>                     CLOSED = TIMESTAMP '2006-10-16 15:47:00.000000'
+>                      PRICE = 5.949800
+>   CREATEDBYCORPORATEACTION = 0
+> Row 8:
+>                    KINDKEY = X'705f3ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'0efd02bc43e10b68c0a8011e'
+>                 PRIMARYKEY = X'655a060345461178c0a8011e'
+>                     SHARES = 11739.000000
+>                  TICKETKEY = X'd3a70293451aa7c9c0a80134'
+>                     CLOSED = TIMESTAMP '2006-10-30 09:51:31.000000'
+>                      PRICE = 5.949800
+>   CREATEDBYCORPORATEACTION = 0
+
+
+
+
+apply the acquis
+going with $3.00
+last price in database 20081124
+last ticket 2008-04-29  price 2.932199
+
+going with 20081124 3.00
+/Marketocracy/bin/cahelper -symbol  SGTL  -effective 20081124 -type ACQUIS -exchange UN -acqType 1 -acqCash 3.00 -acqShare 0 -purchaser SGTL   >& /Users/build/caout/SGTL.20150614-ACQUIS.out
+SGTL.20150614-ACQUIS.out
+stocks:~/caout build$ tail -f SGTL.20150614-ACQUIS.out
+D: (06-14 10:07:08.059) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-14 10:07:31.829) cahelper started on 2015-06-14 10:07:31 -0400
+
+D: (06-14 10:07:32.266) There are [0] open tickets for SGTL on 20081124
+D: (06-14 10:07:32.804) StockFileLoad Version:4.0
+D: (06-14 10:07:32.805) Loading Stock Data
+D: (06-14 10:08:10.663) Building Lookup Index
+D: (06-14 10:08:15.476) Finished Building Index
+D: (06-14 10:08:19.083) Finished Loading Stock Data
+D: (06-14 10:08:19.200) Connection to 192.168.111.172:6666 succeeded
+D: (06-14 10:08:22.383) SavingChanges for position sell out 101 of 752
+D: (06-14 10:08:41.452) SavingChanges for position sell out 201 of 752
+D: (06-14 10:08:59.579) {
+    "ACQUIRED_STOCK" = SGTL; 
+    "ACQUIRING_STOCK" = "SGTL_FIX"; 
+    AMOUNT = 3; 
+    APPLIED = 1; 
+    DATE = 20081124; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SGTL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-14 10:09:11.764) SUCCESS
+D: (06-14 10:09:11.764) cahelper finished 2015-06-14 10:09:11 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'3563233d3f6bb5a4c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82661W107
+>           DATE = TIMESTAMP '2003-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sigmatel Inc
+>     PRIMARYKEY = X'3564233d3f6bb5a4c0a80146'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>         SYMBOL = SGTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82661W107
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sigmatel Inc
+>     PRIMARYKEY = X'4d82150944a9ce74c0a80146'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>         SYMBOL = SGTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 82661W107
+>           DATE = TIMESTAMP '2008-11-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sigmatel Inc
+>     PRIMARYKEY = X'fe490f4b557d8aa4c0a86f92'
+>       STOCKKEY = X'3563233d3f6bb5a4c0a80146'
+>         SYMBOL = SGTL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SV
+
+
+select * from mcorporateaction where aliaskey = X'fe490f4b557d8aa4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'fe490f4b557d8aa4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SGTL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|3.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150614:100731
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-11-24 00:00:00.000000'
+>         BB_IDENTIFIER = SGTL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-11-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SGTL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-11-24 00:00:00.000000'
+>            PRIMARYKEY = X'fe430f4b557d8aa3c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'fe430f4b557d8aa3c0a86f92';
+> Row 1:
+>   _C001 = 286.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'fe430f4b557d8aa3c0a86f92'));
+286 fundkeys save to CA issues SGTL fundkeys.txt
+
+check on 6/15/15   invalidate funds
+check MAdmin
+
+6/17/15
+ SGTL has been acquired 	right curve
+  	  	
+Sigmatel Inc acquired by a private company on 2008-11-24 00:00:00.
+  	  	 
+MAdmin shows 0 shares 
+ok invalidate and reprice 
+
+use this date: 2008-11-24
+Done!
+26 Funds Processed
+4082 Queries Processed
+
+Username
+ahoffard
+Fund Symbols
+AMFTC  20081124
+
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+11/24/2008 	$627,392.35 	$0.00 	$17.19 	$10,900.00 	$81.36 	$0.00 	$638,228.18 	$887,163.41 	$1,525,391.59 	100,000 	$15.25 	No 	Details  
+ trades on November 24, 2008 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	SGTL 	2,000 	$0.00 	$0.00 	$0.00 	$0.00
+Sell 	SYS 	2,000 	$0.00 	$0.00 	$0.00 	$0.00
+
+2000 * 3 = 6000   on 2008-11-24
+
+it's on the new site, too

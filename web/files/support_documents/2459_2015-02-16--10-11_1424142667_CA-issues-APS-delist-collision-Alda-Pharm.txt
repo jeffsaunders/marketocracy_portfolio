@@ -1,0 +1,1472 @@
+date: 2/14/15
+
+APS - delsited, perhaps a ticker collision because we have a different company 
+
+quantum:
+Alamosa Holdings, Inc.
+Ticker Symbol: APS*     CUSIP: Unknown*      Exchange: NYSE
+* If you know the CUSIP number for this security, please let us know.
+* Symbol changed!! New symbol: ALMO as of 4/17/03
+
+Previous Ticker Symbol: APCS    Changed: 12/06/01
+Micro Cap Stock -   Market Value $ 24.5 Million
+
+and if you click on ALMO
+Alamosa Holdings, Inc.
+Ticker Symbol: ALMO*     CUSIP: Unknown*      Exchange: NNM
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 1/01/04
+
+
+our site:
+APS
+brings up NUVPF
+Symbol: NUVPF	Name: Vanc Pharmaceuticals Inc	Price: $0.15
+Volume: 17,925	Sector: Consumer Discretionary	Change: $0.00
+Short Volume: 38,611	Style: Small Cap : Value	Market Cap: $24,510,900
+Avg Volume: 38,611	 Exchange: OTCBB	Today: 2.10%
+50 Day Ave: $0.17	Year High: $0.22	High: $0.15
+200 Day Ave: $0.13	Year Low: $0.07	Low: $0.14
+
+NUVPF has been acquired	
+ 	 	
+Vanc Pharmaceuticals Inc [NUVPF] acquired by Sprint Corp [S] on 2006-02-02 00:00:00.
+ 	 	[ Go to S ]
+ 	 	 
+	  symbol changes for NUVPF	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+06 Dec 01	APCS	APS	Change in the ticker (trading) symbol from APCS to APS
+17 Apr 03	APS	ALMS	Change in the ticker (trading) symbol from APS to ALMS
+21 Apr 03	ALMS	ALMO	Change in the ticker (trading) symbol from ALMS to ALMO
+15 Mar 04	ALMO	APCS	Change in the ticker (trading) symbol from ALMO to APCS
+19 Feb 10	APCS	APCSF	Change in the ticker (trading) symbol from APCS to APCSF
+08 Mar 12	APCSF	APCSD	Change in the ticker (trading) symbol from APCSF to APCSD
+05 Apr 12	APCSD	APCSF	Change in the ticker (trading) symbol from APCSD to APCSF
+12 Feb 14	APCSF	NUVPF	Change in the ticker (trading) symbol from APCSF to NUVPF
+ 	 	 
+	  CUSIP changes for NUVPF	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+08 Mar 12	01407W106	01407W205	Change in any of identification numbers (CUSIP) of a security from 01407W106 to 01407W205
+26 Jul 13	01407W205	670701101	Change in any of identification numbers (CUSIP) of a security from 01407W205 to 670701101
+07 Aug 14	670701101	92143R105	Change in any of identification numbers (CUSIP) of a security from 670701101 to 92143R105
+ 	 	 
+	  name changes for NUVPF	
+ 	 	
+Effective Date	Old Name	New Name	Description
+15 Feb 01	Alamosa PCS Holdings Inc.	Alamosa Holdings Inc	Change in the name of issuer from Alamosa PCS Holdings Inc. to Alamosa Holdings Inc
+26 Jul 13	Alda Pharmaceuticals Corp	Nuva Pharmaceuticals Inc	Change in the name of issuer from Alda Pharmaceuticals Corp to Nuva Pharmaceuticals Inc
+07 Aug 14	Nuva Pharmaceuticals Inc	Vanc Pharmaceuticals Inc	Change in the name of issuer from Nuva Pharmaceuticals Inc to Vanc Pharmaceuticals Inc
+ 	 	 
+	  listing changes for NUVPF	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Dec 06, 2001	NASDAQ	UQ	NYSE	UN	Change in the exchange that APS trades on from NASDAQ to NYSE
+Apr 17, 2003	NYSE	UN	OTCBB	UU	Change in the exchange that ALMS trades on from NYSE to OTCBB
+Mar 15, 2004	OTCBB	UU	NASDAQ	UQ	Change in the exchange that APCS trades on from OTCBB to NASDAQ
+Mar 26, 2010	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that APCSF trades on from OTCBB to OTCBB-OTHER
+ 	 	 
+	  NUVPF had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+08 Mar 12	1 for 10	Split terms:1 for 10
+
+
+strange, we have a blending
+
+select distinct stockkey from mstockalias where symbol='APS';
+> Row 1:
+>   STOCKKEY = X'612e10ac390c6d18c0a8015c'
+> Row 2:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+
+
+as expected with this behavior there are two APS stockkeys
+*********************************************************************
+> APS 1:
+>   STOCKKEY = X'612e10ac390c6d18c0a8015c'
+*********************************************************************
+select * from mstockalias where STOCKKEY = X'612e10ac390c6d18c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194535100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = COLLEGELINK.COM INCORPORATED
+>     PRIMARYKEY = X'612f10ac390c6d18c0a8015c'
+>       STOCKKEY = X'612e10ac390c6d18c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+what is this?  
+select * from mexchange where primarykey=X'9d592f1d390a440bc0a8015c';
+select * from mcorporateaction where aliaskey=X'612f10ac390c6d18c0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 20
+>         NAME = AMEX
+>   PRIMARYKEY = X'9d592f1d390a440bc0a8015c'
+
+nothing
+any mtickets?   
+select count(*) from mticket where stockkey=X'612e10ac390c6d18c0a8015c';
+> Row 1:
+>   _C001 = 16.000000
+
+let's check historical pricing
+/Marketocracy/bin/dbtool lookup stock APS
+>>>> dbtool started at 2015-02-14 09:43:14 -0500
+stock: APS
+  PK       : [612E10AC390C6D18C0A8015C]
+  companyID: [6779]   <---- this one
+  symbol   : [APS]
+  name     : [COLLEGELINK.COM INCORPORATED]
+  date     : [2000-04-30 15:00:00]
+  status   : [Active]
+stock: APS
+  PK       : [781B10AC390C6D40C0A8015C]
+  companyID: [7853]
+  symbol   : [APS]
+  name     : [ALAMOSA HOLDINGS INC]
+  date     : [2001-12-06 00:00:00]
+  status   : [Active]
+stock: APS
+  PK       : [781B10AC390C6D40C0A8015C]
+  companyID: [7853]
+  symbol   : [APS]
+  name     : [ALAMOSA HOLDINGS INC]
+  date     : [2001-12-06 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-14 09:43:15 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 6779
+2001-05-14 (Mon) [133]: O:0.0600 H:0.0800 L:0.0600 C:0.0800 V:19200 TSO:0 A:0.0800 R:1.0000 CA:0.0000
+2001-05-15 (Tue) [134]: O:0.0800 H:0.0800 L:0.0600 C:0.0700 V:95300 TSO:0 A:0.0700 R:1.0000 CA:0.0000
+2001-05-16 (Wed) [135]: O:0.0700 H:0.0700 L:0.0600 C:0.0700 V:12700 TSO:0 A:0.0700 R:1.0000 CA:0.0000
+2001-05-17 (Thu) [136]: O:0.0700 H:0.0800 L:0.0500 C:0.0600 V:188100 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-18 (Fri) [137]: O:0.0600 H:0.0600 L:0.0500 C:0.0600 V:34300 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-19 (Sat) [138]: <WEEKEND>
+2001-05-20 (Sun) [139]: <WEEKEND>
+2001-05-21 (Mon) [140]: O:0.0600 H:0.0700 L:0.0500 C:0.0600 V:32900 TSO:0 A:0.0600 R:1.0000 CA:0.0000  <--- last day
+2001-05-22 (Tue) [141]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:0 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-23 (Wed) [142]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:0 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-24 (Thu) [143]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:0 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-25 (Fri) [144]: O:0.0600 H:0.0600 L:0.0600 C:0.0600 V:0 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2001-05-26 (Sat) [145]: <WEEKEND>
+
+let's do an acquis  2001-05-21  last price 0.06
+/Marketocracy/bin/cahelper -symbol APS -effective 20010521 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.06 -acqShare 0 -purchaser APS >& /Users/build/caout/APS.20150214-ACQUIS.out
+stocks:~/caout build$ tail -f APS.20150214-ACQUIS.out
+D: (02-14 16:02:01.991) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-14 16:02:25.421) cahelper started on 2015-02-14 16:02:25 -0500
+
+D: (02-14 16:02:25.614) There are [0] open tickets for APS on 20010521
+D: (02-14 16:02:25.768) StockFileLoad Version:3.0
+D: (02-14 16:02:25.768) Loading Stock Data
+D: (02-14 16:03:04.783) Building Lookup Index
+D: (02-14 16:03:08.724) Finished Building Index
+D: (02-14 16:03:09.656) Finished Loading Stock Data
+D: (02-14 16:03:09.773) Connection to 192.168.111.157:6666 succeeded
+D: (02-14 16:03:09.862) {
+    "ACQUIRED_STOCK" = APS; 
+    "ACQUIRING_STOCK" = "APS_FIX"; 
+    AMOUNT = 0.06; 
+    APPLIED = 1; 
+    DATE = 20010521; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "APS_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-14 16:03:10.325) SUCCESS
+D: (02-14 16:03:10.325) cahelper finished 2015-02-14 16:03:10 -0500
+
+check the database 
+select * from mstockalias where STOCKKEY = X'612e10ac390c6d18c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194535100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = COLLEGELINK.COM INCORPORATED
+>     PRIMARYKEY = X'612f10ac390c6d18c0a8015c'
+>       STOCKKEY = X'612e10ac390c6d18c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194535100
+>           DATE = TIMESTAMP '2001-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = COLLEGELINK.COM INCORPORATED
+>     PRIMARYKEY = X'aad2194b54dfb7e1c0a86f92'
+>       STOCKKEY = X'612e10ac390c6d18c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'aad2194b54dfb7e1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'aad2194b54dfb7e1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|APS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.060000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150214:040225
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-05-21 00:00:00.000000'
+>         BB_IDENTIFIER = APS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = APS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-05-21 00:00:00.000000'
+>            PRIMARYKEY = X'aaca194b54dfb7e1c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'aaca194b54dfb7e1c0a86f92';
+> Row 1:
+>   _C001 = 3.000000
+
+*********************************************************************
+> APS 2:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+*********************************************************************
+select * from mstockalias where STOCKKEY = X'781b10ac390c6d40c0a8015c' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011593100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA PCS HLDGS
+>     PRIMARYKEY = X'781c10ac390c6d40c0a8015c'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-02-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'583d5ba93a8cd452c0a80117'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-12-06 00:00:00.000000'   <---- ticker changed into APS here
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'ff5a0f6b3c10326cc0a801dc'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-12-06 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'03cc15c93c103359c0a801dc'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'7dd865f43e9f5d0ec0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'7dd865f43e9f5d0ec0a80146';
+> Row 1:
+>              ALIASKEY = X'7dd865f43e9f5d0ec0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|APS US|CP_NEW_TKR|ALMS US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10994902
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1174564
+>        BB_COMPANYNAME = Alamosa Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = ALMS    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-04-16 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ALMS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'34fc64ce3e9f5c7fc0a80146'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-17 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'f61d65fd3e9f5d4bc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'f61d65fd3e9f5d4bc0a80146';
+> Row 1:
+>              ALIASKEY = X'f61d65fd3e9f5d4bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UU|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 10994898
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 1174564
+>        BB_COMPANYNAME = Alamosa Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = ALMS    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-04-16 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ALMS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2003-04-17 00:00:00.000000'
+>            PRIMARYKEY = X'34fa64ce3e9f5c7ec0a80146'
+>               VERSION = NULL
+
+
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'd9b140b83ea4a31bc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey= X'd9b140b83ea4a31bc0a80146';
+> Row 1:
+>              ALIASKEY = X'd9b140b83ea4a31bc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ALMS US|CP_NEW_TKR|ALMO US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 11002371
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1174564
+>        BB_COMPANYNAME = Alamosa Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-04-21 00:00:00.000000'
+>         BB_IDENTIFIER = ALMO    UU Equity
+>             BB_ISSUED = TIMESTAMP '2003-04-17 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ALMO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'52493f943ea4a27dc0a80146'
+>               VERSION = NULL
+
+
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2004-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'11e538f540566e0dc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'11e538f540566e0dc0a80146';
+> Row 1:
+>              ALIASKEY = X'11e538f540566e0dc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ALMO US|CP_NEW_TKR|APCS US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 13985944
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1174564
+>        BB_COMPANYNAME = Alamosa Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = APCS    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2004-03-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'38de38e740566dc3c0a80146'
+>               VERSION = NULL
+
+
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2004-03-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'226938fe40566e2ac0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'226938fe40566e2ac0a80146';
+> Row 1:
+>              ALIASKEY = X'226938fe40566e2ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UQ|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 13985932
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 1174564
+>        BB_COMPANYNAME = Alamosa Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = APCS    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2004-03-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'38dc38e740566dc2c0a80146'
+>               VERSION = NULL
+
+
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'3adc081f43e2cb82c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <----- goes inactive here 
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'3adc081f43e2cb82c0a80146';
+> Row 1:
+>              ALIASKEY = X'3adc081f43e2cb82c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|APCS    US|CP_NAME|Alamosa Holdings Inc|CP_ID_BB_COMP|1174564|CP_UNIT|Alamosa Holdings Inc|CP_TOT_AMT|4028.798096|CP_ACQUIS_TYP|1|CP_CASH|18.750000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|905.929993|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.934601|CP_CUR_PREMIUM|0.213794|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|4028.798096|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;6;3;1;Target Legal Adviser;1;Skadden Arps;13;100.000000;1;Target Financial Adviser;1;Blackstone Group, UBS;13;100.000000;1;Acquirer Legal Adviser;1;King & Spalding;13;100.000000;1;Acquirer Financial Adviser;1;Citigroup, Lehman Brothers;13;100.000000;1;Legal Adv to Target Financial;1;Latham & Watkins, Simpson Thacher;13;100.000000;1;Information Agent;1;Innisfree M&A;13;0.000000;|CP_NOTES|ADDL TERMS: $1,378.69 + ACCRUED & UNPAID DVDS / SER B PFD SHR. 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 19928770
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101382
+>        BB_COMPANYNAME = Sprint Nextel Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>         BB_IDENTIFIER = S       UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-11-21 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = S
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-02-02 00:00:00.000000'
+>            PRIMARYKEY = X'a735037243e2c747c0a80146'
+>               VERSION = NULL
+Here is where Alamosa Holdings is acquired by Sprint
+check if there are mtickets
+select count(*) from mticket where sourcekey=X'a735037243e2c747c0a80146';
+> Row 1:
+>   _C001 = 132.000000
+check MAdmin   APCS   on 02/02/2006
+Stock:Vanc Pharmaceuticals Inc  Symbol:NUVPF
+Date:  02/02/2006
+
+0 users found
+
+let's check the day before to verify that MAdmin is reporting correctly
+Stock:Vanc Pharmaceuticals Inc  Symbol:NUVPF
+Date:  02/01/2006
+
+57 users found
+
+1	ahknaten	ahoffard	astock	bakerw1	barretda	bigtest	bodessem	boyplunger	buckbrown	case
+2	cool0606	coolperson0808	corleone	cowdude	dasiegle	dcinokla	dcm165	dlundgren	dtwibell	durgin
+3	enuttall	eschmitzva	etalas	george_scombulis	gkemp	gpd288	gummischuh	highlander007	jacob	jfreifeld
+4	jhamer	jmeek	jrainey	jstires	kbladlee	kensouther	kmrwilson	lizmi04	mjang	msoileau
+5	mufassa	nboama	patrick.hable	pbankes	philadopolis	phylo	pmella	richfield	rlackner	rmora127
+6	savithri	stroia	tboey	tsielaff	vooch5	wcrawford	ypunj
+
+**************************  so at this point, Alamos Holdings has been acquired  2/2/2006 no longer exists
+select count(*) from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000';
+> Row 1:
+>   _C001 = 60.000000
+select count(*) from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened > TIMESTAMP'2006-02-02 00:00:00.000000' and opened < TIMESTAMP'2010-02-19 00:00:00.000000';
+> Row 1:
+>   _C001 = 0.000000
+
+let's get these 60 mickets and save them, also get the ticketkeys, mtrades and fundkeys
+
+select * from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000' order by opened;
+
+save these to CA issues Alda Pharma mtickets.txt
+
+select primarykey from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000' order by opened;
+save these to CA issues Alda Pharma ticketkeys.txt
+
+
+get the mtrades 
+select * from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000');
+save these to CA issues Alda Pharma mtrades.txt
+
+get the fund keys
+select  positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000');
+
+select distinct fundkey from mposition where primarykey in (select  positionkey from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000'));
+
+
+save them to CA issues Alda Pham fundkeys.txt
+
+let's delete the mtrades
+delete from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000');
+done
+
+We need to list Alda Pharmaceuticals Corp  
+let's list it on 2010-02-15 as APCS
+select distinct stockkey from mstockalias where symbol='APCS';
+just the one
+APCS|Q|011589108|Alda Pharmaceuticals Corp|20100215
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='APCS';
+> Row 1:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+> Row 2:
+>   STOCKKEY = X'f5844cbd54e03a84c0a86f92'  <---- this is the one to set the mtickets and mstockalias below
+
+update mticket set STOCKKEY = X'f5844cbd54e03a84c0a86f92'  where STOCKKEY = X'781b10ac390c6d40c0a8015c' and opened >= TIMESTAMP'2010-02-19 00:00:00.000000';
+done
+
+
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2010-02-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC   <---- change the name 
+>     PRIMARYKEY = X'4ba516dd4b7f0a95c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'   <--- change the stockkey
+>         SYMBOL = APCSF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <-- change to active 
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+select * from mexchange where primarykey=X'9d5d2f1d390a440bc0a8015c';
+nasdaq
+update mstockalias set name='Alda Pharmaceuticals Corp' where PRIMARYKEY = X'4ba516dd4b7f0a95c0a80146';
+done
+update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'4ba516dd4b7f0a95c0a80146';
+done
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'4ba516dd4b7f0a95c0a80146';
+done
+
+	select * from mcorporateaction where aliaskey=X'4ba516dd4b7f0a95c0a80146';
+> Row 1:
+>              ALIASKEY = X'4ba516dd4b7f0a95c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|APCS US|CP_NEW_TKR|APCSF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 43208481
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-02-19 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   UU Equity
+>             BB_ISSUED = TIMESTAMP '2010-02-18 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'a072147e4b7f0a18c0a80146'
+>               VERSION = NULL
+	
+
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2010-03-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'7caf08e24bad21b1c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set name='Alda Pharmaceuticals Corp' where PRIMARYKEY = X'7caf08e24bad21b1c0a80146';
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'7caf08e24bad21b1c0a80146';
+
+	select * from mcorporateaction where aliaskey=X'7caf08e24bad21b1c0a80146';
+> Row 1:
+>              ALIASKEY = X'7caf08e24bad21b1c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UU|CP_NEW_EXCH|UV|CP_NOTES|Failure to comply with Rule 15c2-11
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 44143167
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-03-26 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-03-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'03df05c04bad20b8c0a80146'
+>               VERSION = NULL
+
+
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2012-03-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'bca96a8e4f594387c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set name='Alda Pharmaceuticals Corp' where PRIMARYKEY = X'bca96a8e4f594387c0a80146' ;
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'bca96a8e4f594387c0a80146' ;
+
+	select * from mcorporateaction where aliaskey=X'bca96a8e4f594387c0a80146';
+> Row 1:
+>              ALIASKEY = X'bca96a8e4f594387c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|APCSF US|CP_NEW_TKR|APCSD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 62308781
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-08 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-03-07 00:00:00.000000'
+>            PRIMARYKEY = X'c87c232d4f57f1b4c0a80146'
+>               VERSION = NULL
+
+
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2012-03-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'c6e36aeb4f594442c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set name='Alda Pharmaceuticals Corp' where PRIMARYKEY = X'c6e36aeb4f594442c0a80146' ;
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'c6e36aeb4f594442c0a80146' ;
+	select * from mcorporateaction where aliaskey=X'c6e36aeb4f594442c0a80146';
+> Row 1:
+>              ALIASKEY = X'c6e36aeb4f594442c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20120308|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 60153006
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-08 00:00:00.000000'
+>         BB_IDENTIFIER = APCSD   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-12-20 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = APCSD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-03-08 00:00:00.000000'
+>            PRIMARYKEY = X'bf4767224f5942a6c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'c6e36aeb4f594442c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|01407W106|CP_NEW_CUSIP|01407W205|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA01407W1068|CP_NEW_ISIN|CA01407W2058|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 62308197
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-08 00:00:00.000000'
+>         BB_IDENTIFIER = APCSD   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = APCSD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-03-07 00:00:00.000000'
+>            PRIMARYKEY = X'bf4967224f5942a6c0a80146'
+>               VERSION = NULL
+
+
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2012-04-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'578b43024f7e1f69c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set name='Alda Pharmaceuticals Corp' where PRIMARYKEY =  X'578b43024f7e1f69c0a80146' ;
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY =  X'578b43024f7e1f69c0a80146';
+	select * from mcorporateaction where aliaskey=X'578b43024f7e1f69c0a80146';
+> Row 1:
+>              ALIASKEY = X'578b43024f7e1f69c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|APCSD US|CP_NEW_TKR|APCSF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 63131108
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-05 00:00:00.000000'
+>         BB_IDENTIFIER = APCSD   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-04 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2012-04-04 00:00:00.000000'
+>            PRIMARYKEY = X'c2c96fe74f7ccd24c0a80146'
+>               VERSION = NULL
+
+
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'dd6222e951f30358c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+	select * from mcorporateaction where aliaskey=X'dd6222e951f30358c0a80146';
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'dd6222e951f30358c0a80146';
+> Row 1:
+>              ALIASKEY = X'dd6222e951f30358c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Alda Pharmaceuticals Corp|CP_NEW_NAME|Nuva Pharmaceuticals Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 79847536
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-25 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-07-25 00:00:00.000000'
+>            PRIMARYKEY = X'754e367c51f1ac16c0a80146'
+>               VERSION = NULL
+
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2013-07-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'9b4422fe51f30381c0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'9b4422fe51f30381c0a80146';
+
+	select * from mcorporateaction where aliaskey=X'9b4422fe51f30381c0a80146';
+> Row 1:
+>              ALIASKEY = X'9b4422fe51f30381c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|01407W205|CP_NEW_CUSIP|670701101|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA01407W2058|CP_NEW_ISIN|CA6707011012|CP_OLD_SEDOL|N.S.|CP_NEW_SEDOL|N.S.|CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 79847546
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Alda Pharmaceuticals Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-25 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-07-25 00:00:00.000000'
+>            PRIMARYKEY = X'754a367c51f1ac14c0a80146'
+>               VERSION = NULL
+
+
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2014-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'0b83299c52fc085dc0a86f91'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'0b83299c52fc085dc0a86f91';
+
+	select * from mcorporateaction where aliaskey=X'0b83299c52fc085dc0a86f91';
+> Row 1:
+>              ALIASKEY = X'0b83299c52fc085dc0a86f91'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|APCSF US|CP_NEW_TKR|NUVPF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 87299468
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Nuva Pharmaceuticals Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-12 00:00:00.000000'
+>         BB_IDENTIFIER = APCSF   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-11 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = APCSF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2014-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'92cd43bb52fab75ec0a86f92'
+>               VERSION = NULL
+
+
+> Row 19:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2014-08-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vanc Pharmaceuticals Inc
+>     PRIMARYKEY = X'14dd68d753e4089ac0a86f92'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = SV
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY = X'14dd68d753e4089ac0a86f92';
+
+	select * from mcorporateaction where aliaskey=X'14dd68d753e4089ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'14dd68d753e4089ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Nuva Pharmaceuticals Inc|CP_NEW_NAME|Vanc Pharmaceuticals Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 94657181
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Nuva Pharmaceuticals Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-07 00:00:00.000000'
+>         BB_IDENTIFIER = NUVPF   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-06 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NUVPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-08-06 00:00:00.000000'
+>            PRIMARYKEY = X'139620eb53e2b510c0a86f92'
+>               VERSION = NULL
+
+
+> Row 20:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92143R105
+>           DATE = TIMESTAMP '2014-08-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vanc Pharmaceuticals Inc
+>     PRIMARYKEY = X'e4f6690453e408cec0a86f92'   <--- point the identitykey here 
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = SV
+update mstockalias set STOCKKEY= X'f5844cbd54e03a84c0a86f92' where PRIMARYKEY =  X'e4f6690453e408cec0a86f92';
+select * from mstock where primarykey=X'f5844cbd54e03a84c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'f5854cbd54e03a84c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f5844cbd54e03a84c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27871
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'e4f6690453e408cec0a86f92'  where PRIMARYKEY = X'f5844cbd54e03a84c0a86f92';
+done
+tickle the tickets
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+let's invalidate the funds
+/Marketocracy/bin/fptool invalidateFund 
+done
+
+
+	select * from mcorporateaction where aliaskey=X'e4f6690453e408cec0a86f92';
+> Row 1:
+>              ALIASKEY = X'e4f6690453e408cec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|670701101|CP_NEW_CUSIP|92143R105|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA6707011012|CP_NEW_ISIN|CA92143R1055|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 94657205
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 1746960
+>        BB_COMPANYNAME = Nuva Pharmaceuticals Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-07 00:00:00.000000'
+>         BB_IDENTIFIER = NUVPF   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-06 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = NUVPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2014-08-06 00:00:00.000000'
+>            PRIMARYKEY = X'139420eb53e2b50dc0a86f92'
+>               VERSION = NULL
+
+
+Assessment - we have a ticker collision
+
+APS-1
+APS original COLLEGELINK.COM INCORPORATED  this one has a missed acquisition
+prices ended on 20010521 trying to apply an acquis, keeps failing
+
+APS-2 
+this is Almaos holdings
+this was properly acquired
+
+then another company came along, Alda pharmaceutical and used one of the
+tickers from Alamosa.
+
+Alda became Nuva Pharmaceuticals Inc and then  Vanc Pharmaceuticals Inc
+
+we need a separate stockkey (list) for this company
+
+
+**************  
+let's look at one of the 60 mtickets
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-03-08 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'88626cd64f5945d0c0a80146'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e42a65913aa7fe48c0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2012-03-08 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'88606cd64f5945d0c0a80146'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>      SOURCEKEY = X'bf4767224f5942a6c0a80146'
+>    NOTIFYEMAIL = NULL
+select loginname from mmanager where primarykey=X'e42a65913aa7fe48c0a80118';
+> Row 1:
+>   LOGINNAME = jhamer
+select * from mtrade where ticketkey=X'88606cd64f5945d0c0a80146';
+> Row 1:
+>                    KINDKEY = X'6333039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'29406ea643c29a4cc0a8011f'
+>                 PRIMARYKEY = X'88636cd64f5945d0c0a80146'
+>                     SHARES = 0.000000
+>                  TICKETKEY = X'88606cd64f5945d0c0a80146'
+>                     CLOSED = TIMESTAMP '2012-03-08 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+select fundkey from mposition where primarykey=X'29406ea643c29a4cc0a8011f';
+> Row 1:
+>   FUNDKEY = X'ccec751b41a65524c0a80133'
+select symbol from mfund where primarykey=X'ccec751b41a65524c0a80133';
+> Row 1:
+>   SYMBOL = SHORT
+
+jhamer  SHORT on 20120308
+
+
+let's investigate 
+select distinct stockkey from mstockalias where symbol='APS';
+> Row 1:
+>   STOCKKEY = X'612e10ac390c6d18c0a8015c'
+> Row 2:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+
+
+> APS 1:
+>   STOCKKEY = X'612e10ac390c6d18c0a8015c'
+select * from mstockalias where STOCKKEY = X'612e10ac390c6d18c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194535100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = COLLEGELINK.COM INCORPORATED
+>     PRIMARYKEY = X'612f10ac390c6d18c0a8015c'
+>       STOCKKEY = X'612e10ac390c6d18c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194535100
+>           DATE = TIMESTAMP '2001-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = COLLEGELINK.COM INCORPORATED
+>     PRIMARYKEY = X'aad2194b54dfb7e1c0a86f92'
+>       STOCKKEY = X'612e10ac390c6d18c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+> APS 2:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+select * from mstockalias where STOCKKEY = X'781b10ac390c6d40c0a8015c' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011593100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA PCS HLDGS
+>     PRIMARYKEY = X'781c10ac390c6d40c0a8015c'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-02-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'583d5ba93a8cd452c0a80117'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-12-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'ff5a0f6b3c10326cc0a801dc'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2001-12-06 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'03cc15c93c103359c0a801dc'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'7dd865f43e9f5d0ec0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-17 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'f61d65fd3e9f5d4bc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2003-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'd9b140b83ea4a31bc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = ALMO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2004-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'11e538f540566e0dc0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2004-03-15 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'226938fe40566e2ac0a80146'
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ALAMOSA HOLDINGS INC
+>     PRIMARYKEY = X'3adc081f43e2cb82c0a80146'   <--- identitykey should point here 
+>       STOCKKEY = X'781b10ac390c6d40c0a8015c'
+>         SYMBOL = APCS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+select * from mstock where primarykey=X'781b10ac390c6d40c0a8015c';
+> Row 1:
+>         IDENTITYKEY = X'e4f6690453e408cec0a86f92'
+>                NAME = Alamosa Holdings Inc
+>          PRIMARYKEY = X'781b10ac390c6d40c0a8015c'
+>              SYMBOL = APCS
+>           COMPANYID = 7853
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'3adc081f43e2cb82c0a80146'   where PRIMARYKEY = X'781b10ac390c6d40c0a8015c';
+	select * from mcorporateaction where aliaskey=X'3adc081f43e2cb82c0a80146';
+> Row 1:
+>              ALIASKEY = X'3adc081f43e2cb82c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|APCS    US|CP_NAME|Alamosa Holdings Inc|CP_ID_BB_COMP|1174564|CP_UNIT|Alamosa Holdings Inc|CP_TOT_AMT|4028.798096|CP_ACQUIS_TYP|1|CP_CASH|18.750000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|905.929993|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|22.934601|CP_CUR_PREMIUM|0.213794|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|4028.798096|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;6;3;1;Target Legal Adviser;1;Skadden Arps;13;100.000000;1;Target Financial Adviser;1;Blackstone Group, UBS;13;100.000000;1;Acquirer Legal Adviser;1;King & Spalding;13;100.000000;1;Acquirer Financial Adviser;1;Citigroup, Lehman Brothers;13;100.000000;1;Legal Adv to Target Financial;1;Latham & Watkins, Simpson Thacher;13;100.000000;1;Information Agent;1;Innisfree M&A;13;0.000000;|CP_NOTES|ADDL TERMS: $1,378.69 + ACCRUED & UNPAID DVDS / SER B PFD SHR. 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 19928770
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101382
+>        BB_COMPANYNAME = Sprint Nextel Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>         BB_IDENTIFIER = S       UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-11-21 00:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = S
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-02-02 00:00:00.000000'
+>            PRIMARYKEY = X'a735037243e2c747c0a80146'
+>               VERSION = NULL
+
+
+select distinct stockkey from mstockalias where symbol='APCS';
+> Row 1:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'
+> Row 2:
+>   STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+there are two
+
+> APCS 1:
+>   STOCKKEY = X'781b10ac390c6d40c0a8015c'   this is Alamosa Holdings which was acquired 
+> APCS 2:
+>   STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+select * from mstockalias where STOCKKEY = X'f5844cbd54e03a84c0a86f92' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2010-02-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'f5854cbd54e03a84c0a86f92'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2010-02-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'4ba516dd4b7f0a95c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2010-03-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'7caf08e24bad21b1c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 011589108
+>           DATE = TIMESTAMP '2012-03-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'bca96a8e4f594387c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2012-03-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'c6e36aeb4f594442c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2012-04-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Alda Pharmaceuticals Corp
+>     PRIMARYKEY = X'578b43024f7e1f69c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 01407W205
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'dd6222e951f30358c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2013-07-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'9b4422fe51f30381c0a80146'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = APCSF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2014-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Nuva Pharmaceuticals Inc
+>     PRIMARYKEY = X'0b83299c52fc085dc0a86f91'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101020
+>       STYLEKEY = SV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670701101
+>           DATE = TIMESTAMP '2014-08-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vanc Pharmaceuticals Inc
+>     PRIMARYKEY = X'14dd68d753e4089ac0a86f92'
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = SV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92143R105
+>           DATE = TIMESTAMP '2014-08-07 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vanc Pharmaceuticals Inc
+>     PRIMARYKEY = X'e4f6690453e408cec0a86f92'   <--- make sure that this is the identity for this one
+>       STOCKKEY = X'f5844cbd54e03a84c0a86f92'
+>         SYMBOL = NUVPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = SV
+select * from mstock where identitykey=X'e4f6690453e408cec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'e4f6690453e408cec0a86f92'   <--- need to change this 
+>                NAME = Alamosa Holdings Inc
+>          PRIMARYKEY = X'781b10ac390c6d40c0a8015c'
+>              SYMBOL = APCS
+>           COMPANYID = 7853
+>   WINDOWIDENTITYKEY = NULL
+> Row 2:
+>         IDENTITYKEY = X'e4f6690453e408cec0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f5844cbd54e03a84c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27871
+>   WINDOWIDENTITYKEY = NULL
+
+this needs to be repaired two sets of mstockalias 
+ok did it above try again 
+select * from mstock where identitykey=X'e4f6690453e408cec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'e4f6690453e408cec0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f5844cbd54e03a84c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27871
+>   WINDOWIDENTITYKEY = NULL
+
+
+
+check on 2/16/15
+APS
+APCS
+NUVPF
+this is still trading
+
+2/16/15 - looks good APS is acquired NUVPF is still trading closing this out

@@ -1,0 +1,648 @@
+date: 2/2/15
+AUXL delising
+
+Ticket Number:	2276
+Portfolio Username:	2004_porsche_911
+Ticker Symbol:	AUXL
+Corporate Action Type:
+Equity Delisted
+Subject:
+AUXL
+Description:
+AUXL (Auxilium Pharmaceuticals, Inc.) is correctly shown that it is no longer available for purchase. The company was (of course) bought out. Marketocracy still shows several members with shares of the stock- which needs to be converted into cash ($33.25 per share).
+Thank you.
+
+yahoo:  Auxilium Pharmaceuticals Inc. (AUXL) -NasdaqGS   Watchlist
+36.47 Jan 29, 4:00PM EST
+
+quantum:
+Auxilium Pharmaceuticals, Inc.
+Ticker Symbol: AUXL*     CUSIP: 05334D107     Exchange: NGS
+* NOTE: This security is no longer trading as of 1/29/15
+Notes:  Jan. 29, 2015 -- Endo International plc (NASDAQ: ENDP) today announced it has completed the acquisition of Auxilium Pharmaceuticals, Inc. in a transaction valued at $2.6 billion when announced on October 9, 2014. In accordance with the terms of the merger, Auxilium shareholders had the opportunity to elect one of three options with respect to transaction consideration: (i) 0.4880 Endo shares per Auxilium share (the Stock Election Consideration), (ii) $33.25 in cash per Auxilium share (the Cash Election Consideration) or (iii) a standard election of $16.625 in cash and 0.2440 Endo shares per Auxilium share (the Standard Election Consideration), subject to proration in the case of elections to receive the Cash Election Consideration or Stock Election Consideration. Of the 54,966,186 shares outstanding that were eligible to make an election, 52,154,714, or 94.9%, elected to receive the Stock Election Consideration. Auxilium common stock will cease to be traded on the NASDAQ Global Market following the close of trading on January 29, 2015.
+
+nasdaqtrader::
+Issue Suspensions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+01/29/2015	AUXL	Q	Auxilium Pharmaceuticals, Inc. Common Stock	N/A	01/30/2015 Acquired by Endo International plc. ($16.625 and 0.2440 shs ENDO/sh)
+01/30/2015	AUXL	Q	Auxilium Pharmaceuticals, Inc. Common Stock	N/A	01/30/2015 Refer to the D/L of 1/29/2015; Revision. Acquired by Endo International plc. ($16.625 and 0.2440 shs ENDP (not ENDO)/sh)
+
+oursite:
+AUXL has been acquired	
+ 	 	
+Auxilium Pharmaceuticals, Inc. [AUXL] acquired by Endo International Plc [ENDP] on 2015-01-30 00:00:00.
+
+select distinct stockkey from mstockalias where symbol='AUXL';
+> Row 1:
+>   STOCKKEY = X'cc75139242d88601c0a80146'
+select * from mstockalias where STOCKKEY = X'cc75139242d88601c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2004-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cc76139242d88601c0a80146'
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'29f229d654cc2356c0a86f92'
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey=X'29f229d654cc2356c0a86f92';
+> Row 1:
+>              ALIASKEY = X'29f229d654cc2356c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AUXL US|CP_NAME|Auxilium Pharmaceuticals Inc|CP_ID_BB_COMP|394583|CP_UNIT|Auxilium Pharmaceuticals Inc|CP_TOT_AMT|2218.447021|CP_ACQUIS_TYP|4|CP_CASH|33.250000|CP_CASH_FLAG|1|CP_SH|0.488000|CP_SH_FLAG|1|CP_DEBT|504.681000|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|68.196877|CP_CUR_PREMIUM|0.206083|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2397.851074|CP_ADVISORS_NUM|7|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;7;3;1;Target Legal Adviser(s);1;Lewis & Bockius, Matheson, Morgan Lewis, Skadden Arps, Willkie Farr;13;100.000000;1;Target Financial Adviser(s);1;Deutsche Bank, Morgan Stanley;13;100.000000;1;Acquirer Legal Adviser(s);1;A&L Goodbody, Sullivan Cromwel;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi;13;100.000000;1;Legal Adv to Target Financial;1;Fried Frank, Kirkland & Ellis;13;100.000000;1;Legal Adv to Acquirer Financia;1;Davis Polk, Gibson Dunn Crut;13;100.000000;1;Acquirer Financial & Fairness;1;Lazard Ltd;13;100.000000;|CP_ACQ_TKR|ENDP US|CP_ACQ_ID_BB_GLOBAL|BBG000C0HQ54|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001GCJZR6|CP_ACQ_ID_BB_SEC_NUM_DES|ENDP|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|AUXL US|CP_TARGET_ID_BB_GLOBAL|BBG000GWYBB7|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FY4YY0|CP_TARGET_ID_BB_SEC_NUM_DES|AUXL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS INCLUDE ALTERNATIVE ELECTION OPTION OF .244 ENDP US SHRS & USD 16.625 IN CASH / AUXL US SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96242378
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 1175643
+>        BB_COMPANYNAME = Endo International PLC
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = ENDP    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = ENDP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'a9f31bf154cc1bf3c0a86f92'
+>               VERSION = NULL
+
+we need to back this out and reapply it correctly with cash and shares of ENDP
+let's make the BB_ACTIONID more unique
+update mcorporateaction set BB_ACTIONID = '96242378:MARTY' where PRIMARYKEY = X'a9f31bf154cc1bf3c0a86f92';
+select * from mcorporateaction where aliaskey=X'29f229d654cc2356c0a86f92';
+> Row 1:
+>              ALIASKEY = X'29f229d654cc2356c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AUXL US|CP_NAME|Auxilium Pharmaceuticals Inc|CP_ID_BB_COMP|394583|CP_UNIT|Auxilium Pharmaceuticals Inc|CP_TOT_AMT|2218.447021|CP_ACQUIS_TYP|4|CP_CASH|33.250000|CP_CASH_FLAG|1|CP_SH|0.488000|CP_SH_FLAG|1|CP_DEBT|504.681000|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|68.196877|CP_CUR_PREMIUM|0.206083|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2397.851074|CP_ADVISORS_NUM|7|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;7;3;1;Target Legal Adviser(s);1;Lewis & Bockius, Matheson, Morgan Lewis, Skadden Arps, Willkie Farr;13;100.000000;1;Target Financial Adviser(s);1;Deutsche Bank, Morgan Stanley;13;100.000000;1;Acquirer Legal Adviser(s);1;A&L Goodbody, Sullivan Cromwel;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi;13;100.000000;1;Legal Adv to Target Financial;1;Fried Frank, Kirkland & Ellis;13;100.000000;1;Legal Adv to Acquirer Financia;1;Davis Polk, Gibson Dunn Crut;13;100.000000;1;Acquirer Financial & Fairness;1;Lazard Ltd;13;100.000000;|CP_ACQ_TKR|ENDP US|CP_ACQ_ID_BB_GLOBAL|BBG000C0HQ54|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001GCJZR6|CP_ACQ_ID_BB_SEC_NUM_DES|ENDP|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|AUXL US|CP_TARGET_ID_BB_GLOBAL|BBG000GWYBB7|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FY4YY0|CP_TARGET_ID_BB_SEC_NUM_DES|AUXL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS INCLUDE ALTERNATIVE ELECTION OPTION OF .244 ENDP US SHRS & USD 16.625 IN CASH / AUXL US SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96242378:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 1175643
+>        BB_COMPANYNAME = Endo International PLC
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = ENDP    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = ENDP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'a9f31bf154cc1bf3c0a86f92'
+>               VERSION = NULL
+
+
+
+let's see if anyone still holds AUXL though per James
+
+MAdmin  no one holds it
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 96242378:MARTY
+untrading action with ID: 96242378:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+[<Ticket Lifetime:Day>:<Ticket Action:Short Buy>:AUXL]
+
+then we have to clean up the database 
+select * from mstockalias where STOCKKEY = X'cc75139242d88601c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2004-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cc76139242d88601c0a80146'  <-- changed the mstock identitykey to here 
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'29f229d654cc2356c0a86f92'   <--- delete this one
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+
+select * from mstock where primarykey=X'cc75139242d88601c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'29f229d654cc2356c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'cc75139242d88601c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 15636
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7e30
+update mstock set IDENTITYKEY = X'cc76139242d88601c0a80146'  where PRIMARYKEY = X'cc75139242d88601c0a80146';
+now delete the last mstockalias
+delete from mstockalias where PRIMARYKEY = X'29f229d654cc2356c0a86f92' ;
+
+check again
+select * from mstockalias where STOCKKEY = X'cc75139242d88601c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2004-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cc76139242d88601c0a80146'
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+
+ok database is cleaned up, ready to re-apply the acquis 
+
+the apply this
+01/30/2015	AUXL	Q	Auxilium Pharmaceuticals, Inc. Common Stock	N/A	01/30/2015 Refer to the D/L of 1/29/2015; Revision. Acquired by Endo International plc. ($16.625 and 0.2440 shs ENDP (not ENDO)/sh)
+
+/Marketocracy/bin/cahelper -symbol AUXL -effective 20150130 -type ACQUIS -exchange UN -acqType 2 -acqCash 16.625 -acqShare 0.2440 -purchaser ENDP >& /Users/build/caout/AUXL.20150202-ACQUIS-redo.out
+AUXL.20150202-ACQUIS-redo.out
+stocks:~/caout build$ tail -f AUXL.20150202-ACQUIS-redo.out
+D: (02-02 14:32:09.472) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-02 14:33:27.728) cahelper started on 2015-02-02 14:33:27 -0500
+
+D: (02-02 14:33:33.105) There are [0] open tickets for AUXL on 20150130
+D: (02-02 14:33:41.875) StockFileLoad Version:3.0
+D: (02-02 14:33:41.875) Loading Stock Data
+D: (02-02 14:35:59.390) Building Lookup Index
+D: (02-02 14:36:13.555) Finished Building Index
+D: (02-02 14:36:16.876) Finished Loading Stock Data
+D: (02-02 14:36:16.936) Connection to 192.168.111.157:6666 succeeded
+D: (02-02 14:38:21.875) SavingChanges for Stock Dividend out 101 of 349
+D: (02-02 14:39:00.910) SavingChanges for position sell out 101 of 349
+D: (02-02 14:39:15.447) {
+    "ACQUIRED_STOCK" = AUXL; 
+    "ACQUIRING_STOCK" = ENDP; 
+    AMOUNT = 0.244; 
+    APPLIED = 1; 
+    DATE = 20150130; 
+    FUNDS = (
+        "asmith8/asmith8's Mutual Fund", 
+        "sssmd/HC Mutual Fund", 
+        "aratnikas/aratnikas's Healthcare Fund", 
+        "skyyhi/A PENNY for your FUNDS", 
+        "richfield/richfield's Charles Short Fund", 
+        "ccmgodfrey/Godfrey Focus Fund", 
+        "jwentworth/jwentworth's Mutual Fund", 
+        "ffis/FFIS Energy ", 
+        "richfield/richfield's Able Long Fund", 
+        "sullivan47/sullivan47's Mutual Fund", 
+        "ajester099/ajester099's MSN Stock Rater", 
+        "atmo_82/This one just might work.", 
+        "chaseboy/chaseboy's shorty", 
+        "nyujd/2009/8 August", 
+        "stampingbull/Aggregate Wisdom1 Low Correlation Strong Bias Fund", 
+        "tleaf/CUT", 
+        "ryanjustis/Health Care Fund", 
+        "madem138/madem138's Mutual Fund", 
+        "cmaye35/Sterling Focus", 
+        "dizsh/Head of the Class", 
+        "jhamer/Short-Only Fund", 
+        "ypaul/Top Downgrades", 
+        "dmlakova/Pula", 
+        "spaceflyer/SF Health Fund", 
+        "bdavanzo/Bob Davanzo's Sell High Mutual Fund", 
+        "topbooks/fg and fr", 
+        "the_barnacle/Barnacle Short Fund", 
+        "hiromimini/Drop your shorts", 
+        "zpryor/Zacks IPO Fund", 
+        "gpk1087/gpk1087's Mutual Fund", 
+        "cshaw1/cshaw1's Mutual Fund", 
+        "rlampkin/StoneGate Value Register Fund", 
+        "bchatraw/R Short Hype", 
+        "tripeq/Trip Wire Short fund", 
+        "jthomasson/Winch Thomasson Dynamic Small Cap", 
+        "mitch_07_7/mitch_07_7's Mutual Fund", 
+        "ryanjustis/Mirror Fund", 
+        "cmaye35/Sterling", 
+        "penn150/penn150's Mutual Fund", 
+        "albab/ARIBA!!!", 
+        "shooter486/Shooter's Split Fund", 
+        "rishabhat/Risha Growth Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "ryanjustis/Gouda for 2008", 
+        "capsaiicin/capsaiicin's Mutual Fund", 
+        "lisarec/Index (xle xlb dvn)", 
+        "lydialee/A+++", 
+        "masmid/vpwrated", 
+        "ryantheoc/Slow & Steady Fund", 
+        "felixlo/Aggressive Contrarian Fund", 
+        "felixlo/Diversified Value", 
+        "rhanks/RJH Short Fund", 
+        "ming.leo/The ONE Fund that Beats All", 
+        "guru/Guru's Short ST", 
+        "felixlo/Conservative Contrarian Fund", 
+        "harris_tia/harris,tia Mutual Fund", 
+        "c4bush/c4bush's Mutual Fund", 
+        "ffis/Beta", 
+        "ashley195114/ashley195114's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "willh07/MASTER FUND", 
+        "indra_e00/indra_e00's Long Reksadana Fund", 
+        "gdurbin/gdurbin's Mutual Fund 1", 
+        "janhendrik/Mohr Short Fund", 
+        "ajstancius/practiced trading two fund", 
+        "volda/Vold Active", 
+        "jkahng/Q Universe", 
+        "jkahng/Q Select", 
+        "rajivvyas/rajivvyas's Mutual Fund", 
+        "scottstockscreener/CONSISTANT GROWTH FUND", 
+        "ssamson89/CANSLIM Discipline Fund", 
+        "c_gumms/c_gumms's Mutual Fund", 
+        "vijaygarimella/Vijay's Mutual Fund", 
+        "farhangp/Beat The Market Fund.", 
+        "etrepani/ET_HCF", 
+        "michaelg/MG_Emerging_Opportunity", 
+        "uferry/ufer health fund", 
+        "swissedge/swissedge's SHORT Mutual Fund", 
+        "tecnocrat/tecnocrat's Mutual Fund", 
+        "roboinvestor/Shorts R Us", 
+        "stoke/ShortingStar", 
+        "ericfernandez/Two Rivers Short Fund", 
+        "ryantheoc/Solid Fundamentals Fund", 
+        "jeatt/Jeatt's Short Fund", 
+        "carlos.martin/Martin's Short Cylce Fund", 
+        "carlos.martin/Martin's Short 3 Months Fund", 
+        "scratchy/scratchy's Mutual Fund", 
+        "pbradford/SB Research", 
+        "ahknaten/Kai Petainen's Health Shorts", 
+        "kchamblee/bottom of the barrel", 
+        "kthompson22/KJT Short 1 Mutual Fund", 
+        "kchamblee/shadowpresident's  Mutual Fund /food processing", 
+        "darbak/Short Fund", 
+        "bdevore/DDFIF", 
+        "jbabka/Anti Top15", 
+        "fabio_carradori/OptionSentimentFound", 
+        "hiromimini/Short Healthcare and Medical", 
+        "msarfaty/msarfaty - V7.1 - long-short, Long Side", 
+        "swissedge/swissedge's Mutual Fund", 
+        "momentumvalue/not in use", 
+        "swissedge/Short Fund+Tech", 
+        "swissedge/FAST Short", 
+        "pmckillop/Biotech Short", 
+        "ahknaten/Kai Petainen's Short Fund", 
+        "wskristjan/Going for Broke", 
+        "lotus/Health Care", 
+        "kperkins/CONTRARIAN FUND", 
+        "cvantoor/cvantoor's Short Fund", 
+        "rbitrage/Here Is To Your Health", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "scraig/scraig's short fund", 
+        "alaieus/Short Hedged Fund", 
+        "longandshortofit/Shortermatic Fund", 
+        "daniele_ignone/Big Consumer Companies", 
+        "csikes1/Panacea Fund", 
+        "mtulett/MT's Short Fund", 
+        "stavon/midas", 
+        "nealiam/Mother Should Know ", 
+        "siala/siala's Mutual Fund", 
+        "valueportfolio/valueportfolio 2", 
+        "csikes1/The Apex Fund ", 
+        "heiandaishogi/Heiandaishogi's Short V at Market Tops Fund", 
+        "wwasilev/+CRSI Universe", 
+        "agrizzle/GRIZZ SCV Fund", 
+        "steveeven@hotmail.com/Google picks", 
+        "orange/Lowrey Tri-Color Fund: White", 
+        "unashogi/Unashogi's Short M Indicators Short Fund", 
+        "rajeev103/rajeev103's Mutual Fund", 
+        "sriramve/Magic", 
+        "dtawil/DT Natural Resources", 
+        "dtawil/DT High Risk Value Fund", 
+        "dtawil/DT Biotech and Pharma. Fund", 
+        "dtawil/DT Go go growth!", 
+        "dtawil/DT Small Cap High Growth Technology", 
+        "rstrode5/rstrode5's Mutual Fund", 
+        "hiromimini/richard's Mutual Fund-valmed", 
+        "bmccarthy/bmccarthy's Mutual Fund", 
+        "joeheidt/joeheidt's Mutual Fund", 
+        "wobrien/wobrien's Mutual Fund", 
+        "LordUrle/LPSTV", 
+        "wvuce1/Sector Rotation Fund", 
+        "bkquantpm/bkquantpm's SCMS1", 
+        "johnnydee/johnnydee's Mutual Fund", 
+        "jorgemb29/Fund of Funds"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = ENDP; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-02 14:39:30.665) SUCCESS
+D: (02-02 14:39:30.665) cahelper finished 2015-02-02 14:39:30 -0500
+
+
+check the database 
+select * from mstockalias where STOCKKEY = X'cc75139242d88601c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2004-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cc76139242d88601c0a80146'
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05334D107
+>           DATE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Auxilium Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'fd4d16d454cfd251c0a86f92'
+>       STOCKKEY = X'cc75139242d88601c0a80146'
+>         SYMBOL = AUXL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey=X'fd4d16d454cfd251c0a86f92';
+> Row 1:
+>              ALIASKEY = X'fd4d16d454cfd251c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AUXL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|16.625000|CP_CASH_FLAG|N.A.|CP_SH|0.244000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150202:023327
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = ENDP     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ENDP
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'bfeb16d454cfd107c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'bfeb16d454cfd107c0a86f92';
+> Row 1:
+>   _C001 = 288.000000
+
+select distinct stockkey from mticket where sourcekey=X'bfeb16d454cfd107c0a86f92';
+> Row 1:
+>   STOCKKEY = X'7dad402939753f03c0a80114'
+> Row 2:
+>   STOCKKEY = X'cc75139242d88601c0a80146'
+
+this is done, check on 2/3/15
+
+2/3/15
+checking this - on 1/30/2015 no one held AUXL - day of acquis
+previous day 1/29/15 we had lots
+Stock:Auxilium Pharmaceuticals, Inc.  Symbol:AUXL
+Date: 01/29/2015
+
+75 users found
+
+1	LordUrle	ajester099	ajstancius	aratnikas	ashley195114	asmith8	bchatraw	bdevore	bmccarthy	c4bush
+2	c_gumms	capsaiicin	ccmgodfrey	cmaye35	csikes1	cvantoor	daniele_ignone	dizsh	dmlakova	dtawil
+3	etrepani	fabio_carradori	farhangp	felixlo	ffis	gdurbin	gpk1087	harris_tia	hiromimini	indra_e00
+4	jbabka	jfrancois	jkahng	joeheidt	johnnydee	jorgemb29	jwentworth	kchamblee	kthompson22	longandshortofit
+5	lotus	madem138	masmid	michaelg	ming.leo	msarfaty	mtulett	nealiam	nyujd	penn150
+6	rajeev103	richfield	rishabhat	rstrode5	ryanjustis	ryantheoc	shooter486	siala	skyyhi	sriramve
+7	ssamson89	sssmd	stavon	sullivan47	swissedge	uferry	valueportfolio	vijaygarimella	volda	willblur
+8	willh07	wobrien	wskristjan	wwasilev	ypaul
+
+check one person jfrancois
+
+BETA
+LEDGER
+Date	Start	Change	End	Type
+Apr 02, 2008		-127382	-127382	Sell
+Jun 04, 2008	-127382	-234343	-361725	Sell
+Jul 17, 2008	-361725	-36263	-397988	Sell
+Jul 28, 2008	-397988	-14698	-412686	Sell
+Jul 30, 2008	-412686	-23204	-435890	Sell
+Aug 01, 2008	-435890	-30330	-466220	Sell
+Aug 14, 2008	-466220	-69200	-535420	Sell
+Aug 26, 2008	-535420	-548	-535968	Multiple
+Sep 16, 2008	-535968	118257	-417711	Buy
+Oct 02, 2008	-417711	113879	-303832	Buy
+Oct 07, 2008	-303832	-62740	-366572	Sell
+Oct 08, 2008	-366572	125951	-240621	Buy
+Oct 24, 2008	-240621	110800	-129821	Buy
+Jan 30, 2015	-129821	129821		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Aug 26, 2008	21,826	$1,091.30	$865,136.76	$39.64
+Sep 16, 2008	118,257	$5,912.85	$4,390,331.57	$37.13
+Oct 2, 2008	52,073	$2,603.65	$1,650,229.51	$31.69
+Oct 2, 2008	61,806	$3,090.30	$1,961,872.13	$31.74
+Oct 8, 2008	58,357	$2,917.85	$1,626,945.77	$27.88
+Oct 8, 2008	67,594	$3,379.70	$1,890,293.04	$27.97
+Oct 24, 2008	110,800	$5,540.00	$2,479,332.93	$22.38
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Apr 2, 2008	127,382	$6,369.10	$116.60	$3,791,506.33	$29.76
+Jun 4, 2008	234,343	$11,717.15	$249.88	$8,127,208.50	$34.68
+Jul 17, 2008	36,263	$1,813.15	$41.56	$1,351,725.23	$37.28
+Jul 28, 2008	14,698	$734.90	$16.41	$533,592.64	$36.30
+Jul 30, 2008	23,204	$1,160.20	$26.34	$856,706.78	$36.92
+Aug 1, 2008	30,330	$1,516.50	$35.09	$1,141,428.97	$37.63
+Aug 14, 2008	69,200	$3,460.00	$88.54	$2,880,299.46	$41.62
+Aug 26, 2008	22,374	$1,118.70	$27.27	$886,935.52	$39.64
+Oct 7, 2008	62,740	$3,137.00	$56.73	$1,844,622.81	$29.40
+ 	 	 
+check the ledger
+-acqType 2 -acqCash 16.625 -acqShare 0.2440 
+129821 * 16.625 = 2158274.125 cash
+,244 * 129821 = 31676.324 shares of ENDP
+
+trades on January 30, 2015	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+BTC	ALGN	203,801	$53.61	$10,925,695.59	$10,190.05	$0.00
+BTC	N	36,056	$94.43	$3,404,590.32	$1,802.80	$0.00
+BTC	CBI	71,816	$33.52	$2,407,145.78	$3,590.80	$0.00
+BTC	EGO	57,895	$4.37	$253,152.02	$2,894.75	$0.00
+BTC	DKS	123	$51.20	$6,296.99	$6.15	$0.00
+Short Sell	ENDP	31,677	$0.00	$0.00	$0.00	$0.00
+Short Buy	AUXL	129,821	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+good closing this out

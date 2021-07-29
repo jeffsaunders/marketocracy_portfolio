@@ -1,0 +1,449 @@
+
+date:   9/18/15  
+ticker:   MADGQ
+
+yahoo:
+Madge Limited (MADGQ) -Other OTC   Watchlist
+0.0001 0.00(0.00%) Sep 14
+
+quantum:  still thinks it is active 
+
+oursite:
+it's delisted but not acquired, members still hold it 
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=MADGQ
+
+let's check histroricla proces
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+looks like prices stopped on 9/8/15
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+
+check MAdmin
+Stock:MADGE NETWORKS N.V.  Symbol:MADGQ
+Date: 09/18/2015
+
+15 users found
+
+1	brianj4992	bsalvaggio	dliles	drarthurwells	dykstrad	ekelly2	jnederveld	john97	otismo	scampbel13
+2	steijelo	swong4	tigris-k	vbarrutia	vlad621
+
+database
+select distinct stockkey from mstockalias where symbol= 'MADGQ';  
+Stock:MADGE NETWORKS N.V.  Symbol:MADGQ
+Date: 09/18/2015
+
+15 users found
+
+1	brianj4992	bsalvaggio	dliles	drarthurwells	dykstrad	ekelly2	jnederveld	john97	otismo	scampbel13
+2	steijelo	swong4	tigris-k	vbarrutia	vlad621
+
+select distinct stockkey from mstockalias where symbol= 'MADGQ';  
+> Row 1:
+>   STOCKKEY = X'ecb20e21390aa477c0a80116'
+
+select * from mstockalias where stockkey=X'ecb20e21390aa477c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'ecb30e21390aa477c0a80116'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2002-06-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'd5c709193d06b08fc0a801dc'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'bd583c3e3e94d0f7c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'3cff3c4f3e94d175c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'51a117c83e9e0b80c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-05-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'f0fc38dc3ed80dbfc0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-05-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'da9538e63ed80dfcc0a80146'   <--- make this the identitykey
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2015-09-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'dcd323b755fb45abc0a86fab'  <-- delete 
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'dcd323b755fb45abc0a86fab';
+> Row 1:
+>              ALIASKEY = X'dcd323b755fb45abc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|MADGQ|CP_DELIST_REASON|17|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 112602774
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 119704
+>        BB_COMPANYNAME = Madge Networks NV
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-17 00:00:00.000000'
+>         BB_IDENTIFIER = MADGQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-16 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = MADGQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-16 00:00:00.000000'
+>            PRIMARYKEY = X'9f292a5355f9f24fc0a86fab'  <--- delete
+>               VERSION = NULL
+
+there is a delist but no acqqios 
+select count(*) from mticket where sourcekey=X'9f292a5355f9f24fc0a86fab';
+no tickets 
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MADGQ'  order by BB_EFFECTIVE;
+nothing useful
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock MADGQ
+stock: MADGQ
+  PK       : [ECB20E21390AA477C0A80116]
+  companyID: [2493]
+  symbol   : [MADGQ]
+  name     : [MADGE NETWORKS N.V.]
+  date     : [2015-09-17 00:00:00]
+  status   : [Delist]
+
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2493
+2015-09-09 (Wed) [5364]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-10 (Thu) [5365]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-11 (Fri) [5366]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-12 (Sat) [5367]: <WEEKEND>
+2015-09-13 (Sun) [5368]: <WEEKEND>
+2015-09-14 (Mon) [5369]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-15 (Tue) [5370]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-16 (Wed) [5371]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2015-09-17 (Thu) [5372]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:4825 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'ecb20e21390aa477c0a80116' and shares > 0 order by closed; 
+> Row 73:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-25 09:46:10.000000'
+>        COMMENT = 
+>     COMMISSION = 0.399500
+>   CURRENTORDER = X'5f6d388654498fe5c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ada9260a3974dcb6c0a801e1'
+>       MODIFIED = NULL
+>            NET = 7.590500
+>         OPENED = TIMESTAMP '2014-10-23 19:31:49.000000'
+>          PRICE = 0.009488
+>     PRIMARYKEY = X'5f6b388654498fe5c0a86f98'
+>         SECFEE = 0.010000
+>         SHARES = 800.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'ecb20e21390aa477c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ecb20e21390aa477c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ecb20e21390aa477c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 25 members who hold this stock
+quantum:  nothing 
+last ticket: 2014-11-25 PRICE = 0.009488
+last price:    9/8/15  .01 
+
+
+>     PRIMARYKEY = X'da9538e63ed80dfcc0a80146'   <--- make this the identitykey
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+
+select * from mstock where primarykey=X'ecb20e21390aa477c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'dcd323b755fb45abc0a86fab'
+>                NAME = MADGE NETWORKS N.V.
+>          PRIMARYKEY = X'ecb20e21390aa477c0a80116'
+>              SYMBOL = MADGF
+>           COMPANYID = 2493
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY=X'da9538e63ed80dfcc0a80146'   where PRIMARYKEY = X'ecb20e21390aa477c0a80116';
+delete from mcorporateaction where primarykey=X'9f292a5355f9f24fc0a86fab';
+delete from mstockalias  where primarykey=X'dcd323b755fb45abc0a86fab';
+
+going with 20150908 
+
+/Marketocracy/bin/cahelper -symbol  MADGQ  -effective 20150908 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser MADGQ   >& /Users/build/caout/MADGQ.20150918-DELIST.out
+MADGQ.20150918-DELIST.out
+stocks2:~/caout build$ tail -f MADGQ.20150918-DELIST.out
+D: (09-18 16:26:43.605) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-18 16:27:07.605) cahelper started on 2015-09-18 16:27:07 -0400
+
+D: (09-18 16:27:07.839) There are [0] open tickets for MADGQ on 20150908
+D: (09-18 16:27:08.170) StockFileLoad Version:4.0
+D: (09-18 16:27:08.171) Loading Stock Data
+D: (09-18 16:27:49.255) Building Lookup Index
+D: (09-18 16:27:54.274) Finished Building Index
+D: (09-18 16:27:58.171) Finished Loading Stock Data
+D: (09-18 16:27:58.289) Connection to 192.168.111.157:6666 succeeded
+D: (09-18 16:27:59.053) {
+    "ACQUIRED_STOCK" = MADGQ; 
+    "ACQUIRING_STOCK" = "MADGQ_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20150908; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MADGQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-18 16:28:00.780) SUCCESS
+D: (09-18 16:28:00.780) cahelper finished 2015-09-18 16:28:00 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'ecb20e21390aa477c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'ecb30e21390aa477c0a80116'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2002-06-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'd5c709193d06b08fc0a801dc'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'bd583c3e3e94d0f7c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-09 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'3cff3c4f3e94d175c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-04-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'51a117c83e9e0b80c0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-05-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'f0fc38dc3ed80dbfc0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2003-05-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'da9538e63ed80dfcc0a80146'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = N5424G106
+>           DATE = TIMESTAMP '2015-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MADGE NETWORKS N.V.
+>     PRIMARYKEY = X'8a230c9d55fc739bc0a86fab'
+>       STOCKKEY = X'ecb20e21390aa477c0a80116'
+>         SYMBOL = MADGQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'8a230c9d55fc739bc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'8a230c9d55fc739bc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MADGQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150918:042707
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-08 00:00:00.000000'
+>         BB_IDENTIFIER = MADGQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-08 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MADGQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-08 00:00:00.000000'
+>            PRIMARYKEY = X'8a1d0c9d55fc739bc0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'8a1d0c9d55fc739bc0a86fab';
+> Row 1:
+>   _C001 = 29.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8a1d0c9d55fc739bc0a86fab'));
+there are 29 fundkeys, save to CA issues MADGQ fundkeys.txt
+
+For Beta case
+MADGQ no longer trades but is still active on our site - need to delist 
+
+check on 9/19/15   invalidate funds
+check MAdmin  clear 
+ 
+
+9/22/15
+MADGQ has been acquired	right curve
+ 	 	
+MADGE NETWORKS N.V. acquired by a private company on 2015-09-08 00:00:00.
+
+invalidate done
+reprice 
+ 	 	 
+
+
+

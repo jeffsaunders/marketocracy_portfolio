@@ -1,0 +1,213 @@
+date:  6/19/15
+CF and PATK splits not reflecting
+
+select distinct stockkey from mstockalias where symbol='CF';
+> Row 1:
+>   STOCKKEY = X'b0d110ac390c6dfbc0a8015c'
+select * from mstockalias where STOCKKEY = X'b0d110ac390c6dfbc0a8015c';
+delisted
+> Row 2:
+>   STOCKKEY = X'8f126a5242fc0388c0a80146'
+select * from mstockalias where STOCKKEY = X'8f126a5242fc0388c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125269100
+>           DATE = TIMESTAMP '2005-08-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CF Industries Holdings Inc
+>     PRIMARYKEY = X'8f136a5242fc0388c0a80146'
+>       STOCKKEY = X'8f126a5242fc0388c0a80146'
+>         SYMBOL = CF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101030
+>       STYLEKEY = LB
+select * from mcorporateaction where aliaskey=X'8f136a5242fc0388c0a80146';
+> Row 41:
+>              ALIASKEY = X'8f136a5242fc0388c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|5 for 1|CP_RATIO|5.000000|CP_RECORD_DT|20150601|CP_PAY_DT|20150617|CP_STOCK_SPLT_TYP|3000|CP_ADJ|5.000000|CP_ADJ_DT|20150618|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106972786
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 9785761
+>        BB_COMPANYNAME = CF Industries Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-18 00:00:00.000000'
+>         BB_IDENTIFIER = CF      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-15 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = CF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-15 00:00:00.000000'
+>            PRIMARYKEY = X'a1ca57db55567ab9c0a86f92'
+>               VERSION = NULL
+
+select fundkey from mposition where STOCKKEY = X'8f126a5242fc0388c0a80146' and totalshares > 0;
+974 fundkeys      save to CA issues CF and PATK fundkeys to invalidate.txt
+
+select distinct stockkey from mstockalias where symbol='PATK';
+> Row 1:
+>   STOCKKEY = X'f4520e21390ab695c0a80116'
+select * from mstockalias where STOCKKEY = X'f4520e21390ab695c0a80116';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 703343103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PATRICK INDUS
+>     PRIMARYKEY = X'f4530e21390ab695c0a80116'
+>       STOCKKEY = X'f4520e21390ab695c0a80116'
+>         SYMBOL = PATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20102010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 703343103
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = PATRICK INDUS
+>     PRIMARYKEY = X'ffa51e6952e0cdccc0a86f92'
+>       STOCKKEY = X'f4520e21390ab695c0a80116'
+>         SYMBOL = PATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20102010
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'ffa51e6952e0cdccc0a86f92';
+> Row 1:
+>              ALIASKEY = X'ffa51e6952e0cdccc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85683750
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 105990
+>        BB_COMPANYNAME = Patrick Industries Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>         BB_IDENTIFIER = PATK    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = PATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'2cc6632852e0aa93c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'ffa51e6952e0cdccc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|3 for 2|CP_RATIO|1.500000|CP_RECORD_DT|20150515|CP_PAY_DT|20150529|CP_STOCK_SPLT_TYP|3000|CP_ADJ|1.500000|CP_ADJ_DT|20150601|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106234495
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 105990
+>        BB_COMPANYNAME = Patrick Industries Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>         BB_IDENTIFIER = PATK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-27 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = PATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-06 00:00:00.000000'
+>            PRIMARYKEY = X'0ff62082554a9c5cc0a86f92'
+>               VERSION = NULL
+
+2015-06-01
+select fundkey from mposition where STOCKKEY = X'f4520e21390ab695c0a80116' and totalshares > 0;
+38 fundkeys, group them with the above 
+2015-06-01 for PAKT and 2015-06-18 for CF
+Done!
+213 Funds Processed
+1491 Queries Processed
+
+
+check mroach
+CF
+your holdings of CF 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+MRMFV 	0 	N/A 	N/A
+MRMFG 	0 	$.00 	0.00%
+MMFMC 	1,125 	$71,145.00 	1.97%  <-- expand   good on new site 
+MRMFL 	0 	N/A 	N/A
+MMFWW 	0 	N/A 	N/A
+MMFBS 	0 	N/A 	N/A
+MRMFS 	0 	N/A 	N/A
+MMFrp 	0 	N/A 	N/A
+MMFFF 	0 	N/A 	N/A
+mrmfc 	1,090 	$68,931.60 	2.21%  <-- expand   good on new site 
+MMFCF 	0 	N/A 	N/A
+MRMFH 	0 	N/A 	N/A
+MMFGA 	0 	N/A 	N/A
+MRSLF1 	0 	$.00 	0.00%
+MMFAV 	0 	N/A 	N/A 
+
+MMFMC
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 14, 2008 		164 	164 	Buy
+Sep 02, 2008 	164 	-164 		Sell
+Jan 13, 2010 		180 	180 	Buy
+Mar 16, 2010 	180 	-180 		Sell
+Dec 16, 2011 		152 	152 	Buy
+May 15, 2012 	152 	-152 		Sell
+Feb 13, 2015 		225 	225 	Buy
+Jun 18, 2015 	225 	900 	1125 	Corporate Action
+Total: 1,12
+
+mrmfc
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 13, 2015 		218 	218 	Buy
+Jun 18, 2015 	218 	872 	1090 	Corporate Action
+Total: 1,090
+
+PAKT
+your holdings of PATK 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+MRMFV 	0 	N/A 	N/A
+MRMFG 	2,040 	$76,357.20 	1.85%     <--- same qty on new site 
+MMFMC 	991 	$37,093.13 	1.03%   <--- same qty on new site 
+MRMFL 	0 	N/A 	N/A
+MMFWW 	0 	N/A 	N/A
+MMFBS 	0 	N/A 	N/A
+MRMFS 	0 	N/A 	N/A
+MMFrp 	0 	N/A 	N/A
+MMFFF 	0 	N/A 	N/A
+mrmfc 	0 	N/A 	N/A
+MMFCF 	0 	N/A 	N/A
+MRMFH 	0 	N/A 	N/A
+MMFGA 	0 	N/A 	N/A
+MRSLF1 	0 	N/A 	N/A
+MMFAV 	0 	N/A 	N/A 
+
+MRMFG LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 23, 2015 		1360 	1360 	Buy
+Jun 01, 2015 	1360 	680 	2040 	Corporate Action
+Total: 2,040
+
+MMFMC LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 23, 2015 		661 	661 	Buy
+Jun 01, 2015 	661 	330 	991 	Corporate Action
+Total: 991
+
+ok, the share quantities agree between the old and new sites
+
+CF
+MMFMC 	1,125 	
+mrmfc 	1,090 
+
+PATK
+MRMFG 	2,040 	
+MMFMC   991

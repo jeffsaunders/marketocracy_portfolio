@@ -1,0 +1,543 @@
+ANVGQ: Symbol: Does NOT exist or is NOT avaliable?!
+Type
+Corporate Action | Equity Delisted
+Ticket
+3891
+Priority
+Medium
+Status
+Open
+Member Name
+Kishore Nayar
+Username
+the_indian_oracle
+Fund Symbols
+TIOA+
+Stock Tickers
+ANVGQ
+Description / Resources:
+Wed 10/28/2015 at 01:30 AM
+
+The legacy system shows this symbol exists in my portfolio. The new system does not. Today I tried to place an order and the system came back and said "Symbol: Does NOT exist or is NOT avaliable." Can you please clarify? Thank you.
+
+Additional Information:
+
+Stock Ticker: ANVGQ
+
+    Personal
+    Community
+
+Response By Brandon McCarthy
+Wed 10/28/2015 at 12:21 PM
+
+Hey Kishore, looks like that stock was delisted which is why its not showing on the new site. I'll have Marty look into why it is still showing on legacy. 
+
+Our site:
+Symbol: ANVGQ	Name: Allied Nevada Gold Corp	Price: $0.04
+Volume:	Sector: Materials	Change:
+Short Volume: 213,092	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 213,092	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.05	Year High: $2.04	High:
+200 Day Ave: $0.25	Year Low: $0.00	Low:
+
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+
+
+
+research  stock info  ANVGQ   
+ [NEW QUOTE]       
+Corporate Actions for Allied Nevada Gold Corp	  November 04, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for ANVGQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+10 Mar 15	ANV	ANVGQ	Change in the ticker (trading) symbol from ANV to ANVGQ
+ 	 	 
+left curve	  listing changes for ANVGQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Mar 10, 2015	AMEX	UA	OTCBB-OTHER	UV	Change in the exchange that ANVGQ trades on from AMEX to OTCBB-OTHER
+
+select distinct stockkey from mstockalias where symbol='ANVGQ';
+> Row 1:
+>   STOCKKEY = X'dad529cc4643da06c0a80146'
+select * from mstockalias where STOCKKEY = X'dad529cc4643da06c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2007-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'dad629cc4643da06c0a80146'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'ec436c6f54ff7618c0a86f92'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'2dad6c8954ff7673c0a86f92'  <--- make this the identitykey
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-10-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'8e87646456296b25c0a86fab'  <--------- delete this 
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- -went inactive here
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'8e87646456296b25c0a86fab';
+> Row 1:
+>              ALIASKEY = X'8e87646456296b25c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|ANVGQ|CP_DELIST_REASON|3|CP_NOTES|Mandatory Exchange event. Plan of Bankruptcy effective, all shares cancelled. Holders of Interest Equity will receive 0.05742988 New Warrant per Share of Common Stock.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 114463486
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 11935978
+>        BB_COMPANYNAME = Allied Nevada Gold Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-22 00:00:00.000000'
+>         BB_IDENTIFIER = ANVGQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ANVGQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-10-22 00:00:00.000000'
+>            PRIMARYKEY = X'ad88635556296af9c0a86fab'  <--------- delete this 
+>               VERSION = NULL
+
+did it delist?
+
+quantum:
+Allied Nevada Gold Corp.
+Ticker Symbol: ANVGQ*     CUSIP: 019344100     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 10/22/15
+
+Company's Online Profile
+BUSINESS:  Allied Nevada is a US-based gold mining and exploration company, which operates their wholly owned Hycroft gold mine located near Winnemucca, Nevada. The Company also owns more than 100 advanced and early stage exploration properties located throughout the State of Nevada. The Company's focus is on internal growth strategies, including the development of the Hycroft mine from a run-of-mine heap leach operation to a world-class, large-scale heap leach a milling operation. This will be accomplished through a logically staged growth plan involving the acceleration of the current mining rate for the heap leach operation. The ultimate goal is to construct a milling operating to process the large sulfide mineralization.
+Notes:  10/22/2015 -- OTC Updates notes: Mandatory Exchange event. Plan of Bankruptcy effective, all shares cancelled. Holders of Interest Equity will receive 0.05742988 New Warrant per Share of Common Stock.
+
+MAdmin
+Stock:Allied Nevada Gold Corp  Symbol:ANVGQ
+Date: 11/04/2015
+
+252 users found
+
+1	2autumn	aabney	aandeelgh	abollinger	acfrancisco	acmartinez	addie312	ag999silver	akak123	aliao
+2	allenduck	am153	amboy	amoloney1	anderty	andreribeiro	ant	aritza	asa_skater	asterdw
+3	atlasblue	audigger13	babdul	balgacs	bbelluche	bbtest2	bcooke	benmackay	bernie	bilanzhai
+4	billyen	blivingston	boilergrad	bpowers	bquortrup1	brianinutah	brpanthers99	calman318	campagveloce	captain63
+5	captnemo	cassiar	ccj81129	chendrix	chmaka	chobe	chromerider	ck1	cl505	cleaverc
+6	cluongo	cpaherb	cridder	csupapodok	damron	david18	db	dbyun	dirk123	divosevic
+7	djplan	dkriewaldt	doppelaar	dpence	dphillips	drac	dtawil	dtorres990	echung	edfrank
+8	editedby	elliottwave1	erode	fats14	fintelecon3000	fkluczny	flajuie	flashkonijn	flekx92	floraliu
+9	fredcorp	frolland	fulco	game27	gbinc	geewhiz	geez	georgesoros	georgianna	gilgamesh
+10	gilgameshloco	goldencross	goldrusher	greensail	gteti	gundam999	guud	hakdageldmo	hihosilver50_00	hleopold
+11	hlesi	hoffj	holmgren	hookipa	hurleyse	hurrlibutz	hvan_bragt	ichiban	izajoe	jackburton
+12	jam	jax0777	jayprince	jbowers24	jdberia	jdirand	jgfeller	jleibert	jmarks	jmcgregor
+13	jnelsen	johnkingla	jonpsantos	jorgen5	joseph.crowder@gmail.com	jovianic	jprobyn	jt3641	jwatson	kaiserbhuyan
+14	kalib	kama	karatekid22	kgmoney	kikola	kirilov	klaatu	ksherrell1	kwade	landisman
+15	le_palais_contarini	leeeno	lemmyduit	lincsbarn	maxoom	mboldero	mdhfb11	mecstriker	medlerajm	miguel261
+16	milkrate	mkusek	mlagarde	mlogan	mohamed	moneyshowdigest	moq	mriegelman	mverlinde	mvoloshen
+17	mycash	nabootrader	nazal	netrun	newbie	nikkidodi	njacoby	nlgravity	nodirnazarov	nrudolph
+18	nsultan	nsxpower	nuno	nwatrading	nyk281	origenal	oriordanbrian	oros	papavalium	pepper404
+19	pheaslip	phillynole	phorwitz	phoward	pitzke	pmcclain	profrjb	psilow	quant99	ratutony
+20	razz	redwine	renetrudel	revblc	rhester	rmeyers	rreedom	rtshapiro	sandrax1	sandries
+21	sasha.shtern	satansmunchkin	sbishoprick	scanlonized	seilers	sgeri	sharkattack	shleung	silhouette	skoch
+22	stock_engineer	stocko	supersoups	sweemy	teamfunds	terraearth	tfischer	the_future	the_indian_oracle	thebeast
+23	thescobrafund	timbo56	tmjigal	tondeuse	toomadd	trade4fun	trex_48001	trialuser	tstevens622	tunecedemalis
+24	uferry	uinetwork	unclejim	unknowinglyforgotten	varian	verhayden	vgallas	vimalchacko	vooch5	waardecreatie
+25	wavetiming	waynetr	wetcoast	wghiler	winkiedinkie	wmorales	wo_neill	wollac	woodburys	wstocker
+26	wthefox	zhachris	 	 
+
+there is a delist 
+
+let's remove that then apply the acquis / real delist
+select * from mstock where primarykey=X'dad529cc4643da06c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'8e87646456296b25c0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'dad529cc4643da06c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 17132
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7ec0
+
+>     PRIMARYKEY = X'2dad6c8954ff7673c0a86f92'  <--- make this the identitykey
+
+update mstock set IDENTITYKEY=X'2dad6c8954ff7673c0a86f92'  where PRIMARYKEY = X'dad529cc4643da06c0a80146';
+now delete the mcorporaction and mstockalias related to the delist
+delete from mcorporateaction where primarykey=X'ad88635556296af9c0a86fab'; 
+delete from mstockalias where primarykey=X'8e87646456296b25c0a86fab'; 
+
+ok let's start again fresh
+
+database
+select distinct stockkey from mstockalias where symbol= 'ANVGQ';  
+> Row 1:
+>   STOCKKEY = X'dad529cc4643da06c0a80146'
+select * from mstockalias where stockkey=X'dad529cc4643da06c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2007-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'dad629cc4643da06c0a80146'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'ec436c6f54ff7618c0a86f92'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'2dad6c8954ff7673c0a86f92'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID=''  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ANVGQ
+>>>> dbtool started at 2015-11-04 14:54:49 -0500
+stock: ANVGQ
+  PK       : [DAD529CC4643DA06C0A80146]
+  companyID: [17132]
+  symbol   : [ANVGQ]
+  name     : [Allied Nevada Gold Corp]
+  date     : [2015-03-10 00:00:00]
+  status   : [Active]
+stock: ANVGQ
+  PK       : [DAD529CC4643DA06C0A80146]
+  companyID: [17132]
+  symbol   : [ANVGQ]
+  name     : [Allied Nevada Gold Corp]
+  date     : [2015-03-10 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-04 14:54:50 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17132
+2015-10-15 (Thu) [5400]: O:0.0500 H:0.0500 L:0.0400 C:0.0500 V:101024 TSO:73548 A:0.0500 R:1.0000 CA:0.0000
+2015-10-16 (Fri) [5401]: O:0.0400 H:0.0500 L:0.0400 C:0.0400 V:344821 TSO:73548 A:0.0400 R:1.0000 CA:0.0000
+2015-10-17 (Sat) [5402]: <WEEKEND>
+2015-10-18 (Sun) [5403]: <WEEKEND>
+2015-10-19 (Mon) [5404]: O:0.0500 H:0.0500 L:0.0400 C:0.0400 V:144540 TSO:73548 A:0.0400 R:1.0000 CA:0.0000
+2015-10-20 (Tue) [5405]: O:0.0400 H:0.0400 L:0.0400 C:0.0400 V:75975 TSO:73548 A:0.0400 R:1.0000 CA:0.0000
+2015-10-21 (Wed) [5406]: O:0.0500 H:0.0500 L:0.0400 C:0.0400 V:237136 TSO:73548 A:0.0400 R:1.0000 CA:0.0000
+2015-10-22 (Thu) [5407]: O:0.0400 H:0.0400 L:0.0400 C:0.0400 V:275093 TSO:73548 A:0.0400 R:1.0000 CA:0.0000  <----
+2015-10-23 (Fri) [5408]: O:0.0400 H:0.0400 L:0.0400 C:0.0400 V:275093 TSO:73548 A:0.0400 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'dad529cc4643da06c0a80146' and shares > 0 order by closed; 
+> Row 2183:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-10-21 08:00:57.000000'
+>        COMMENT = NULL
+>     COMMISSION = 28.806897
+>   CURRENTORDER = X'8b1001185625d261c0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'31ce63e44cea7324c0a80134'
+>       MODIFIED = NULL
+>            NET = 604.944836
+>         OPENED = TIMESTAMP '2015-10-20 01:34:25.000000'
+>          PRICE = 0.044322
+>     PRIMARYKEY = X'8b0e01185625d261c0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 13649.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'dad529cc4643da06c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dad529cc4643da06c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'dad529cc4643da06c0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST 10/22/2015 
+there are 252 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 10/22/15
+last ticket:  2015-10-21  PRICE = 0.044322
+last price:  2015-10-22 (Thu) [5407]: O:0.0400 H:0.0400 L:0.0400 C:0.0400 V:275093 TSO:73548 A:0.0400 R:1.0000 CA:0.0000  <----
+
+going with 20151022 0.040
+
+/Marketocracy/bin/cahelper -symbol  ANVGQ  -effective 20151022 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.040 -acqShare 0 -purchaser ANVGQ   >& /Users/build/caout/ANVGQ.20151104-DELIST.out 
+ANVGQ.20151104-DELIST.out
+stocks1:~/caout build$ tail -f ANVGQ.20151104-DELIST.out
+D: (11-04 15:38:37.996) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-04 15:39:25.795) cahelper started on 2015-11-04 15:39:25 -0500
+
+D: (11-04 15:39:26.292) There are [0] open tickets for ANVGQ on 20151022
+D: (11-04 15:39:27.260) StockFileLoad Version:4.0
+D: (11-04 15:39:27.260) Loading Stock Data
+D: (11-04 15:40:45.662) Building Lookup Index
+D: (11-04 15:40:57.455) Finished Building Index
+D: (11-04 15:41:05.737) Finished Loading Stock Data
+D: (11-04 15:41:05.795) Connection to 192.168.111.172:6666 succeeded
+D: (11-04 15:41:05.909) >>> load new StockPrices file
+D: (11-04 15:41:05.951) <<< load new StockPrices file
+D: (11-04 15:41:05.952) >>> swap StockPrices
+D: (11-04 15:41:05.952) Obtained Stockprices swap mutex
+D: (11-04 15:41:05.952) <<< swap StockPrices
+D: (11-04 15:41:05.952) Stock prices available from 2000-05-01 to 2015-11-03
+D: (11-04 15:41:11.223) SavingChanges for position sell out 101 of 712
+D: (11-04 15:43:40.393) SavingChanges for position sell out 201 of 712
+D: (11-04 15:43:54.395) SavingChanges for position sell out 301 of 712
+D: (11-04 15:44:16.116) SavingChanges for position sell out 401 of 712
+D: (11-04 15:44:32.334) {
+    "ACQUIRED_STOCK" = ANVGQ; 
+    "ACQUIRING_STOCK" = "ANVGQ_FIX"; 
+    AMOUNT = 0.04; 
+    APPLIED = 1; 
+    DATE = 20151022; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ANVGQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-04 15:44:47.418) SUCCESS
+D: (11-04 15:44:47.418) cahelper finished 2015-11-04 15:44:47 -0500
+
+
+Check the results 
+select * from mstockalias where stockkey= X'dad529cc4643da06c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2007-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'dad629cc4643da06c0a80146'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'ec436c6f54ff7618c0a86f92'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-03-10 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'2dad6c8954ff7673c0a86f92'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 019344100
+>           DATE = TIMESTAMP '2015-10-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Allied Nevada Gold Corp
+>     PRIMARYKEY = X'8e9c5475563a6cfec0a86fab'
+>       STOCKKEY = X'dad529cc4643da06c0a80146'
+>         SYMBOL = ANVGQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104030
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'8e9c5475563a6cfec0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'8e9c5475563a6cfec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ANVGQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.040000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151104:033925
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-22 00:00:00.000000'
+>         BB_IDENTIFIER = ANVGQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-22 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ANVGQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-10-22 00:00:00.000000'
+>            PRIMARYKEY = X'8e965475563a6cfdc0a86fab'
+>               VERSION = NULL
+
+
+
+
+select count(*) from mticket where sourcekey = X'8e965475563a6cfdc0a86fab';
+> Row 1:
+>   _C001 = 464.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8e965475563a6cfdc0a86fab'));
+there are XXX fundkeys, save to CA issues ANVCG fundkeys.txt
+
+For Beta case
+ANVCG no longer trades but is still active on our site - need to delist 
+
+check on 11/5/15   invalidate funds
+
+ ANVGQ has been acquired	right curve
+ 	 	
+Allied Nevada Gold Corp acquired by a private company on 2015-10-22 00:00:00.
+ 	 	 
+
+
+check MAdmin  have one member
+
+Stock:Allied Nevada Gold Corp  Symbol:ANVGQ
+Date: 11/05/2015
+
+1 users found
+teamfunds	  SWAN
+
+LEDGER
+Date	Start	Change	End	Type
+Nov 30, 2009		-3391	-3391	Sell
+Oct 08, 2010	-3391	-3321	-6712	Sell
+Nov 19, 2010	-6712	-4509	-11221	Sell
+Dec 02, 2010	-11221	-4153	-15374	Sell
+Oct 22, 2015	-15374	-1113304	-1128678	Corporate Action  <--- cahelper went WILD
+Total: -1,128,678
+ 	 	
+BUYS
+You have no Buys for this position
+
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 30, 2009	3,391	$169.56	$1.12	$42,986.76	$12.68
+Oct 8, 2010	3,321	$166.07	$1.50	$86,953.31	$26.18
+Nov 19, 2010	4,509	$225.43	$2.02	$118,659.16	$26.32
+Dec 2, 2010	4,153	$207.64	$2.02	$118,970.02	$28.65
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+Effective Date	Description
+Oct 22, 2015	Allied Nevada Gold Corp acquired by a private company on 2015-10-22 00:00:00.
+
+have to update the share qty
+get the hex key  Hexkey: AB6D5475563A6E20C0A86FAB
+
+select * from mticket where primarykey= X'AB6D5475563A6E20C0A86FAB';
+select * from morder where ticketkey =X'AB6D5475563A6E20C0A86FAB';
+select * from mtrade where ticketkey =X'AB6D5475563A6E20C0A86FAB';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=SHARES where ticketkey =X'AB6D5475563A6E20C0A86FAB';
+update morder set shares=SHARES where ticketkey =X'AB6D5475563A6E20C0A86FAB';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   
+
+logout and back in you'll need to expand for the change to take 
+
+actually there were noting but sells and shorts - that's why cahelper acted wildly
+
+I backed out all of the trades and now the share balance is 0 for teamfunds SWAN for ANVGQ
+
+let's invalidate 
+then reprice and close  good now 
+
+
+
+
+

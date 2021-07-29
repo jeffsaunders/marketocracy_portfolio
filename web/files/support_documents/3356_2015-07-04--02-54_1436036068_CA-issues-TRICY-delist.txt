@@ -1,0 +1,424 @@
+
+date:   7/2/15
+ticker:  TRICY
+
+this started as an erroneously applied ticker change, I backed that out.  now I found that this stock is delisted 
+
+yahoo:  nothing 
+
+quantum:
+TRICOM S.A. ADR
+Ticker Symbol: TRICY*     CUSIP: 89612A100     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 3/28/07
+
+Company's Online Profile
+BUSINESS:  TRICOM S.A. is the sole alternate provider of diversified telecom services in the Dominican Republic providing Intl long distance, basic local service, national long distance, cellular, paging and Internet service.
+
+Notes:  ADR program termimation on 3/28/2007.
+
+oursite:  still shows wrong data 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:TRICOM SA ADR  Symbol:TDR.H
+Date: 07/02/2015
+
+15 users found
+
+1	alexandertyler	carlosjgonzalez	ckamla	danemcoll	delskl	efournier	gfontana	glamirand	go_stanford	ijbsega
+2	jamesmader	jsenior007	pureblues	stanglx718	uselessname	 	 	 	 	 
+
+still showing as TDR.H  which is a bogus ticker (canadian)
+
+database
+select distinct stockkey from mstockalias where symbol= 'TRICY';  
+> Row 1:
+>   STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+
+select * from mstockalias where stockkey=X'c5be10ac390c6e2cc0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'c5bf10ac390c6e2cc0a8015c'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TDR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'dc5d3d2640a2d770c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'c7b43d2c40a2d78ec0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'6cf5418940ac119dc0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'edb1418f40ac11bac0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-07-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'6d750bc540ff2003c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-08-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'b1ea2e684126ad01c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-08-20 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'62a52f754126ad23c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TRICY'  order by BB_EFFECTIVE;
+noting 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TRICY
+>>>> dbtool started at 2015-07-02 09:13:22 -0400
+stock: TRICY
+  PK       : [C5BE10AC390C6E2CC0A8015C]
+  companyID: [9074]
+  symbol   : [TRICY]
+  name     : [TRICOM SA ADR]
+  date     : [2004-05-19 00:00:00]
+  status   : [Active]
+stock: TRICY
+  PK       : [C5BE10AC390C6E2CC0A8015C]
+  companyID: [9074]
+  symbol   : [TRICY]
+  name     : [TRICOM SA ADR]
+  date     : [2004-05-19 00:00:01]
+  status   : [Active]
+stock: TRICY
+  PK       : [C5BE10AC390C6E2CC0A8015C]
+  companyID: [9074]
+  symbol   : [TRICY]
+  name     : [TRICOM SA ADR]
+  date     : [2004-08-20 00:00:00]
+  status   : [Active]
+stock: TRICY
+  PK       : [C5BE10AC390C6E2CC0A8015C]
+  companyID: [9074]
+  symbol   : [TRICY]
+  name     : [TRICOM SA ADR]
+  date     : [2004-08-20 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-02 09:13:22 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9074
+2007-12-05 (Wed) [2529]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-06 (Thu) [2530]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-07 (Fri) [2531]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-08 (Sat) [2532]: <WEEKEND>
+2007-12-09 (Sun) [2533]: <WEEKEND>
+2007-12-10 (Mon) [2534]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-11 (Tue) [2535]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-12 (Wed) [2536]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-13 (Thu) [2537]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+2007-12-14 (Fri) [2538]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'c5be10ac390c6e2cc0a8015c' and shares > 0 order by closed; 
+> Row 103:
+>      ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-09-16 09:39:00.000000'
+>        COMMENT = Sector Looks Better|Asset Allocation|
+>     COMMISSION = 88.470950
+>   CURRENTORDER = X'a098011b4329ae29c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6e5b0c3439dc78a5c0a80119'
+>       MODIFIED = NULL
+>            NET = 1680.948056
+>         OPENED = TIMESTAMP '2005-09-15 13:23:53.000000'
+>          PRICE = 0.194419
+>     PRIMARYKEY = X'a096011b4329ae29c0a80133'
+>         SECFEE = 0.080000
+>         SHARES = 8646.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'c5be10ac390c6e2cc0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c5be10ac390c6e2cc0a8015c'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c5be10ac390c6e2cc0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 15 members who hold this stock
+quantum: This security is no longer trading as of 3/28/07
+last ticket: 2005-09-16 PRICE = 0.194419 
+last price:  2007-12-14 (Fri) [2538]: O:0.0010 H:0.0010 L:0.0010 C:0.0010 V:0 TSO:0 A:0.0010 R:1.0000 CA:0.0000
+
+going with 20071214  0.0010
+
+/Marketocracy/bin/cahelper -symbol  TRICY  -effective 20071214 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0010 -acqShare 0 -purchaser TRICY   >& /Users/build/caout/TRICY.20150703-DELIST.out 
+D: (07-03 12:58:14.193) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-03 12:59:02.860) cahelper started on 2015-07-03 12:59:02 -0400
+
+D: (07-03 12:59:04.213) There are [0] open tickets for TRICY on 20071214
+D: (07-03 12:59:04.453) StockFileLoad Version:4.0
+D: (07-03 12:59:04.453) Loading Stock Data
+D: (07-03 13:00:22.161) Building Lookup Index
+D: (07-03 13:00:31.454) Finished Building Index
+D: (07-03 13:00:39.195) Finished Loading Stock Data
+D: (07-03 13:00:39.240) Connection to 192.168.111.172:6666 succeeded
+D: (07-03 13:00:39.877) {
+    "ACQUIRED_STOCK" = TRICY; 
+    "ACQUIRING_STOCK" = "TRICY_FIX"; 
+    AMOUNT = 0.001; 
+    APPLIED = 1; 
+    DATE = 20071214; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TRICY_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-03 13:00:42.230) SUCCESS
+D: (07-03 13:00:42.230) cahelper finished 2015-07-03 13:00:42 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'c5be10ac390c6e2cc0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'c5bf10ac390c6e2cc0a8015c'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TDR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'dc5d3d2640a2d770c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-12 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'c7b43d2c40a2d78ec0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRIC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'6cf5418940ac119dc0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-05-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'edb1418f40ac11bac0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-07-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'6d750bc540ff2003c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-08-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'b1ea2e684126ad01c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2004-08-20 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'62a52f754126ad23c0a80146'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89612A100
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = TRICOM SA ADR
+>     PRIMARYKEY = X'f24456485596bf58c0a86f92'
+>       STOCKKEY = X'c5be10ac390c6e2cc0a8015c'
+>         SYMBOL = TRICY
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- inactive 
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'f24456485596bf58c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'f24456485596bf58c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TRICY  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.001000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150703:125902
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = TRICY_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRICY_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'f23e56485596bf56c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'f23e56485596bf56c0a86f92';
+> Row 1:
+>   _C001 = 20.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'f23e56485596bf56c0a86f92'));
+there are 20 fundkeys, save to CA issues TRICY fundkeys.txt
+
+For Beta case
+TRICY no longer trades but is still active on our site - need to delist 
+
+check on 7/4/15     invalidate funds
+check MAdmin  clear
+ok invalidate 
+reprice now  and close
+

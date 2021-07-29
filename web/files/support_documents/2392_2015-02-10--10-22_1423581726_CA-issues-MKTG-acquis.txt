@@ -1,0 +1,338 @@
+date: 2/9/15
+
+from razmig   2392 / 2395
+
+Please keep this email for your records:
+
+Ticket Number:	2392
+Portfolio Username:	razmig
+Problem Type:
+Trading Issue
+Subject:
+Trading Issues
+Description:
+Appears trades I placed Thursday night weren't filled, for example I reduced CROC to 8.25% one view shows correct 
+size (sell wizard) yet stratification shows original size. 
+
+RPC shows $65k available cash, buy wizard shows -357k. 
+
+
+Is this due to the work in progress, it might sort itself out? Beta version doesn't show any open orders and in 
+the older version the My Funds heading isn't swipeable on an IPad. I've attempted to close MKTG for over a year, 
+BARS seems to be my new zombie stock. Bars started with 633 leaving 548 shares up filled. Time in force was 
+GTC again don't see it as an open order. MKTG is stuck as well. Best, Razmig
+Thank you.
+
+let's look at these:
+*******************************************
+MKTG  it's in the file opne on our site not in the real world
+
+yahoo:
+Responsys, Inc. (MKTG) -NasdaqGS   Watchlist
+26.98  0.01(0.04%) Feb 6 - Nasdaq Real Time Price
+
+Add to Portfolio
+Prev Close:	26.98
+Open:	26.98
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	26.67
+Beta:	1.88
+Next Earnings Date:	N/A
+Day's Range:	26.98 - 27.06
+52wk Range:	6.32 - 27.79
+Volume:	3,743,115
+Avg Vol (3m):	1,231,420
+Market Cap:	N/A
+P/E (ttm):	1,686.25
+EPS (ttm):	0.02
+Div & Yield:	N/A (N/A)
+
+our site:
+Symbol: MKTG	Name: Responsys Inc	Price: $12.78
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+CAs
+listing changes for MKTG	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Apr 29, 2011	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that MKTG trades on from NASDAQ to NASDAQ
+ 	 	 
+
+quantum nothing
+
+xignite:    nothing
+
+
+MAdmin:
+Stock:Responsys Inc  Symbol:MKTG
+Date: 02/09/2015
+
+5 users found
+
+1	billkang77	cluongo	gnouf	jwebb2	razmig	 	 	 	 	 
+
+
+log in as razmig
+your holdings of MKTG	
+ 	 	
+Fund	Shares	Value	Portion of fund
+RPC	 0	 N/A	 N/A
+RBMF	3,645	 $46,583.10	 4.49%   <--- expand 
+ACM	 0	 N/A	
+
+LEDGER
+Date	Start	Change	End	Type
+Dec 30, 2013		3645	3645	Buy
+Total: 3,645
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Dec 30, 2013	3,645	$182.25	$100,072.61	$27.45
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+*********  look at the database
+
+select distinct stockkey from mstockalias where symbol='MKTG';
+> Row 1:
+>   STOCKKEY = X'a7413f294db0b16dc0a80146'
+
+select * from mstockalias where STOCKKEY = X'a7413f294db0b16dc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Responsys Inc
+>     PRIMARYKEY = X'a7423f294db0b16dc0a80146'
+>       STOCKKEY = X'a7413f294db0b16dc0a80146'
+>         SYMBOL = MKTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 761248103
+>           DATE = TIMESTAMP '2011-04-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Responsys Inc
+>     PRIMARYKEY = X'42193f854dbb3dd8c0a80146'
+>       STOCKKEY = X'a7413f294db0b16dc0a80146'
+>         SYMBOL = MKTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+
+nasdaqtrader
+ssue Deletions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+02/14/2014	MKTG	Q	Responsys, Inc. Common Stock	N/A	02/18/2014 Removed From Listing & Registration
+
+let's look at the prices
+/Marketocracy/bin/dbtool lookup stock MKTG
+>>>> dbtool started at 2015-02-09 12:28:11 -0500
+stock: MKTG
+  PK       : [A7413F294DB0B16DC0A80146]
+  companyID: [20460]
+  symbol   : [MKTG]
+  name     : [Responsys Inc]
+  date     : [2011-04-21 00:00:00]
+  status   : [Active]
+stock: MKTG
+  PK       : [A7413F294DB0B16DC0A80146]
+  companyID: [20460]
+  symbol   : [MKTG]
+  name     : [Responsys Inc]
+  date     : [2011-04-29 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-09 12:28:12 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20460
+2012-04-19 (Thu) [4126]: O:12.5900 H:12.8000 L:12.3350 C:12.4000 V:137338 TSO:0 A:12.4000 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:12.5100 H:12.6500 L:12.3900 C:12.4100 V:119163 TSO:0 A:12.4100 R:1.0000 CA:0.0000
+2012-04-21 (Sat) [4128]: <WEEKEND>
+2012-04-22 (Sun) [4129]: <WEEKEND>
+2012-04-23 (Mon) [4130]: O:12.2600 H:12.2600 L:12.0400 C:12.1800 V:84462 TSO:0 A:12.1800 R:1.0000 CA:0.0000
+2012-04-24 (Tue) [4131]: O:12.1700 H:12.1700 L:11.8000 C:11.9000 V:326537 TSO:0 A:11.9000 R:1.0000 CA:0.0000
+2012-04-25 (Wed) [4132]: O:12.0800 H:12.4800 L:12.0300 C:12.4000 V:103222 TSO:0 A:12.4000 R:1.0000 CA:0.0000
+2012-04-26 (Thu) [4133]: O:12.3800 H:12.4500 L:11.8100 C:12.3000 V:182531 TSO:0 A:12.3000 R:1.0000 CA:0.0000
+2012-04-27 (Fri) [4134]: O:12.3200 H:12.5400 L:12.2100 C:12.4300 V:247629 TSO:0 A:12.4300 R:1.0000 CA:0.0000
+2012-04-28 (Sat) [4135]: <WEEKEND>
+2012-04-29 (Sun) [4136]: <WEEKEND>
+2012-04-30 (Mon) [4137]: O:12.4500 H:12.7900 L:12.2500 C:12.7800 V:137568 TSO:0 A:12.7800 R:1.0000 CA:0.0000  <-- prices stop abruptly
+
+4/30/2012 closing price is 12.78
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+02/14/2014	MKTG	Q	Responsys, Inc. Common Stock	N/A	02/18/2014 Removed From Listing & Registration
+
+ssue Suspensions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+02/06/2014	MKTG	Q	Responsys, Inc. Common Stock	N/A	02/07/2014 Acquired by Oracle Corporation ($27.00/sh).
+
+
+acquired by Oracle for $27  
+
+/Marketocracy/bin/cahelper -symbol MKTG -effective 20140206 -type ACQUIS -exchange UQ -acqType 1 -acqCash 27.00 -acqShare 0 -purchaser ORCL >& /Users/build/caout/MKTG.20150209-ACQUIS.out
+
+MKTG.20150209-ACQUIS.out
+stocks:~/caout build$ tail -f MKTG.20150209-ACQUIS.out
+D: (02-09 12:48:52.980) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-09 12:49:17.472) cahelper started on 2015-02-09 12:49:17 -0500
+
+D: (02-09 12:49:18.218) There are [1] open tickets for MKTG on 20140206
+D: (02-09 12:49:18.236) StockFileLoad Version:3.0
+D: (02-09 12:49:18.236) Loading Stock Data
+D: (02-09 12:50:00.076) Building Lookup Index
+D: (02-09 12:50:05.332) Finished Building Index
+D: (02-09 12:50:06.416) Finished Loading Stock Data
+D: (02-09 12:50:06.704) Connection to 192.168.111.157:6666 succeeded
+D: (02-09 12:50:07.294) {
+    "ACQUIRED_STOCK" = MKTG; 
+    "ACQUIRING_STOCK" = ORCL; 
+    AMOUNT = 27; 
+    APPLIED = 1; 
+    DATE = 20140206; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = ORCL; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-09 12:50:08.602) SUCCESS
+D: (02-09 12:50:08.603) cahelper finished 2015-02-09 12:50:08 -0500
+
+
+check the database
+select * from mstockalias where STOCKKEY = X'a7413f294db0b16dc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-04-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Responsys Inc
+>     PRIMARYKEY = X'a7423f294db0b16dc0a80146'
+>       STOCKKEY = X'a7413f294db0b16dc0a80146'
+>         SYMBOL = MKTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 761248103
+>           DATE = TIMESTAMP '2011-04-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Responsys Inc
+>     PRIMARYKEY = X'42193f854dbb3dd8c0a80146'
+>       STOCKKEY = X'a7413f294db0b16dc0a80146'
+>         SYMBOL = MKTG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 761248103
+>           DATE = TIMESTAMP '2014-02-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Responsys Inc
+>     PRIMARYKEY = X'1519433854d8f34fc0a86f92'
+>       STOCKKEY = X'a7413f294db0b16dc0a80146'
+>         SYMBOL = MKTG
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'1519433854d8f34fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'1519433854d8f34fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MKTG  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|27.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150209:124917
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-06 00:00:00.000000'
+>         BB_IDENTIFIER = ORCL     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-06 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ORCL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-02-06 00:00:00.000000'
+>            PRIMARYKEY = X'1505433854d8f31dc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'1505433854d8f31dc0a86f92';
+> Row 1:
+>   _C001 = 8.000000
+
+check on 2/10/15
+
+member razmig had 
+
+RBMF	3,645	* 27 = 98415   on 2/6/14
+
+2/10/15
+MKTG shows that it has been acquired:
+ MKTG has been acquired	
+ 	 	
+Responsys Inc [MKTG] acquired by ORACLE CORP [ORCL] on 2014-02-06 00:00:00.
+
+he should get 
+RBMF	3,645	* 27 = 98415   on 2/6/14
+
+shares have been taken but no cash - need to invalidate 
+ trades on February 06, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	MKTG	3,645	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+need to invalidate"
+/Marketocracy/bin/dbtool lookup fund razmig
+>>>> dbtool started at 2015-02-10 09:40:14 -0500
+fund: razmig
+  PK: [336A0ECF3FC87002C0A80134]
+  symbol: [RPC]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [ACAE66FF3AA5D75DC0A801E1]  <---- this one
+  symbol: [RBMF]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+fund: razmig
+  PK: [E7A506E84F00CAF2C0A80132]
+  symbol: [ACM]
+  managerKey: [A12D1B823AA5D65DC0A80119]
+  loginName: [razmig]
+<<<< dbtool finished at 2015-02-10 09:40:15 -0500
+
+/Marketocracy/bin/fptool invalidateFund ACAE66FF3AA5D75DC0A801E1
+
+it's pricing now
+
+RBMF ledger on 2/6/14 - he got the cash for MKTG
+
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+02/06/2014	$177,567.91	$0.00	$4.86	$98,415.00	$47.73	$0.00	$275,940.04	$700,349.99	$976,290.03	100,000	$9.76	Yes	Details 
+
+closing this out

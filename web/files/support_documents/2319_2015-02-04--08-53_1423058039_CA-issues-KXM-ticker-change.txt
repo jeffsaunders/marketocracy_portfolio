@@ -1,0 +1,236 @@
+date: 2/4/15
+KXM	Kobex Minerals Inc		0.0%	316	$0.00	$0.00	Details 
+yahoo  nothing as KXM - trying 
+Kobex Capital Corp. (KBXMF) -Other OTC
+0.41  0.00(0.24%) 9:33AM EST
+
+quantum
+Kobex Minerals, Inc.
+Ticker Symbol: KBXMF     CUSIP: 49989C105     Exchange: OTOTC
+
+Company's Online Profile
+BUSINESS:  Kobex Minerals Inc. (Kobex) is a Canadian company listed on the Toronto Venture Exchange and the NYSE Amex Exchange. The company was formed in September 2009 by the combination of Kobex Resources Inc., IMA Exploration Inc., and International Barytex Resources Ltd. The combination of these companies into Kobex and brought together a highly experienced board and management consisting of capable professionals with significant development and mine management experience. Kobex seeks to identify, acquire, and develop deposits which have the potential to be world class, in the lower cost quartile and in an acceptable risk environment.
+Previous Ticker Symbol: KXM    Changed: 6/03/13
+Previous Name: IMA Exploration, Inc.    Changed: 10/27/09
+Micro Cap Stock -   Market Value $ 27.6 Million
+
+xignite  nothing as KXM  chcking KBXMF  is there and the cusip is 49989C105
+
+This looks like a ticker change that we missed   
+select * from mstockalias where symbol='KXM';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2009-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = IMA Exploration, Inc.
+>     PRIMARYKEY = X'e23033344ac51950c0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2009-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kobex Minerals Inc
+>     PRIMARYKEY = X'59ee33bf4ac519c0c0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49989C105
+>           DATE = TIMESTAMP '2009-10-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kobex Minerals Inc
+>     PRIMARYKEY = X'b5df33d04ac519dac0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+
+select distinct stockkey from mstockalias where symbol='KBXMF';
+nothing
+
+how many people hold KXM?
+MAdmin
+Stock:Kobex Minerals Inc  Symbol:KXM
+Date: 02/03/2015
+
+24 users found
+
+1	bertrossaert	castaways2006	chris_nairn	danohd44	david_golden	eschmitzva	goldismoney	goldman	jmcgregor	kadir
+2	kain	mferri	mocalliou	newscan	njacoby	rogeratplay	rsesha	simonemarlia	stock_engineer	superman01
+3	thewenk	tmages	tunecedemalis	wildgoose7
+
+new ticker KBXMF
+Previous Ticker Symbol: KXM    Changed: 6/03/13
+
+/Marketocracy/bin/cahelper -symbol KBXMF -effective 20130603 -type CHG_TKR -exchange UN -oldSymbol KXM >& /Users/build/caout/KXM.20150203-CHG_TKR.out
+D: (02-03 21:17:09.715) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-03 21:17:32.861) cahelper started on 2015-02-03 21:17:32 -0500
+
+D: (02-03 21:17:33.176) {
+    APPLIED = 1; 
+    DATE = 20130603; 
+    "NEW_TICKER" = "KBXMF US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "KXM US"; 
+    SYMBOL = KBXMF; 
+    TYPE = "CHG_TKR"; 
+}
+D: (02-03 21:17:33.442) SUCCESS
+D: (02-03 21:17:33.442) cahelper finished 2015-02-03 21:17:33 -0500
+
+select distinct stockkey from mstockalias where symbol='KBXMF';
+> Row 1:
+>   STOCKKEY = X'47be6f0d41b13351c0a80146'
+select * from mstockalias where STOCKKEY = X'47be6f0d41b13351c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2002-08-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = IMA Exploration, Inc.
+>     PRIMARYKEY = X'47bf6f0d41b13351c0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = IMXPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2005-07-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = IMA Exploration, Inc.
+>     PRIMARYKEY = X'42fd0ab242cc8d0cc0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = IMR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2005-07-06 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = IMA Exploration, Inc.
+>     PRIMARYKEY = X'eea70abd42cc8d2cc0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = IMR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2009-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = IMA Exploration, Inc.
+>     PRIMARYKEY = X'e23033344ac51950c0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 449664101
+>           DATE = TIMESTAMP '2009-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kobex Minerals Inc
+>     PRIMARYKEY = X'59ee33bf4ac519c0c0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49989C105
+>           DATE = TIMESTAMP '2009-10-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kobex Minerals Inc
+>     PRIMARYKEY = X'b5df33d04ac519dac0a80146'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KXM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49989C105
+>           DATE = TIMESTAMP '2013-06-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Kobex Minerals Inc
+>     PRIMARYKEY = X'aa16330154d1813dc0a86f92'
+>       STOCKKEY = X'47be6f0d41b13351c0a80146'
+>         SYMBOL = KBXMF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15104020
+>       STYLEKEY = XG
+select * from mcorporateaction where aliaskey=X'aa16330154d1813dc0a86f92';
+> Row 1:
+>              ALIASKEY = X'aa16330154d1813dc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|KXM US|CP_NEW_TKR|KBXMF US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150203:091732
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-03 00:00:00.000000'
+>         BB_IDENTIFIER = KBXMF     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = KBXMF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-06-03 00:00:00.000000'
+>            PRIMARYKEY = X'aa10330154d1813cc0a86f92'
+>               VERSION = NULL
+
+check on 2/4/15
+
+2/4/15  - the ticker change is there
+Jun 03, 2013	Change in the ticker (trading) symbol from KXM to KBXMF
+
+let's see who held KBXMF on 06/04/2013
+Stock:Kobex Minerals Inc  Symbol:KBXMF
+Date: 06/04/2013
+
+24 users found
+
+1	bertrossaert	castaways2006	chris_nairn	danohd44	david_golden	eschmitzva	goldismoney	goldman	jmcgregor	kadir
+2	kain	mferri	mocalliou	newscan	njacoby	rogeratplay	rsesha	simonemarlia	stock_engineer	superman01
+3	thewenk	tmages	tunecedemalis	wildgoose7
+
+check one of them to see if we're getting prices 
+chris_nairn
+
+/Marketocracy/bin/dbtool decryptpassword -loginName chris_nairn
+Password = 2srtr2
+
+CMF fund on 6/4/13  it's got a price
+and on 2/3/15 it has a price - all of the stocks in his CMF fund have prices 
+
+we can close this out
+

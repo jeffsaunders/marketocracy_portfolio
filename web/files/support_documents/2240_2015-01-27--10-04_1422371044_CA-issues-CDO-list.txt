@@ -1,0 +1,62 @@
+date:  1/26/15
+
+GDO  need to list this   case 2240
+
+check 
+yahoo
+Western Asset Global Corporate Defined Opportunity Fund Inc. (GDO) -NYSE   Watchlist
+17.77  0.01(0.06%) 4:02PM EST
+
+quantum
+Western Asset Global Corporate Defined Opportunity Fund
+Ticker Symbol: GDO     CUSIP: 95790C107     Exchange: NYSE
+Security Type:   Closed-End ETF  ---  ETF SubType:   Global Income Fund
+IPO - 11/25/2009 - 14.00 Million Shares @ $20.00/share.    Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 280 Million
+
+xignite  we get it and the cusip is 95790C107    cusip is good
+
+let's list it
+
+GDO|N|95790C107|Western Asset Global Corporate Defined Opportunity Fund Inc.|20091125
+
+add to symmadd.txt
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check the database
+
+select distinct stockkey from mstockalias where symbol='GDO';
+> Row 1:
+>   STOCKKEY = X'726340a954c6c12fc0a86f92'
+select * from mstockalias where STOCKKEY = X'726340a954c6c12fc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 95790C107
+>           DATE = TIMESTAMP '2009-11-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Western Asset Global Corporate Defined Opportunity Fund Inc.
+>     PRIMARYKEY = X'726440a954c6c12fc0a86f92'
+>       STOCKKEY = X'726340a954c6c12fc0a86f92'
+>         SYMBOL = GDO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'726440a954c6c12fc0a86f92';
+nothing
+
+check on 1/27/15 to see if this is on our site and do a test buy
+
+1/27/15 
+
+GDO is now on our site
+entered a test buy 10 shares   
+
+ok, my test order to buy 10 GDO executed - it's on our site and tradable
+
+closing this out  1/27/15  case 2240
+
+
+

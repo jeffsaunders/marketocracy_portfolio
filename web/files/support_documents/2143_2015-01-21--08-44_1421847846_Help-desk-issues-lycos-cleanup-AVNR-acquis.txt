@@ -1,0 +1,1524 @@
+date:  1/20/15
+clean up for constatine lycos
+
+From: 	Constantine Lycos <constantine.lycos@gmail.com>
+	Subject: 	Lycos Value portfolio clean up
+	Date: 	January 20, 2015 11:43:48 AM PST
+	To: 	help@marketocracy.com Help <help@marketocracy.com>
+
+Dear Marketocracy,
+ 
+I am trying to clean up one of my funds but can’t seem to be able to do it on-line.
+ 
+I have a position on AVNR which doesn’t trade any more. Can you take this out of the portfolio please? 
+I don’t know what the fair price for this would be but you would need to be very careful with the price as at the 
+quoted price of $16.96 it represents 32.1% of my portfolio, having run up by 433%...
+ 
+Also, the portfolio is showing 3 short positions, due to duplicate orders I placed on the beta platform:
+TGT, THO and TRW
+ 
+Thanks and regards,
+ 
+Constantine Lycos
+
+select * from mmanager where email ='constantine.lycos@gmail.com>'; 
+nothing
+
+select * from mmanager where upper(lastname)='LYCOS';
+> Row 1:
+>                EMAIL = constantine.lycos@gmail.com
+>            FIRSTNAME = Constantine
+>             FULLNAME = Constantine Lycos
+>       HOMEADDRESSKEY = X'fafd4bd63a02ea8ac0a80118'
+>             LASTNAME = Lycos
+>            LOGINNAME = lycos
+>        LOGINPASSWORD = oxford
+>         PORTFOLIOKEY = X'faff4bd63a02ea8ac0a80118'
+>           PRIMARYKEY = X'fafc4bd63a02ea8ac0a80118'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'fafe4bd63a02ea8ac0a80118'
+>    EMAILTROUBLEINDEX = 1
+>        PREVIOUSLOGIN = TIMESTAMP '2015-01-14 13:23:42.000000'
+>            LASTLOGIN = TIMESTAMP '2015-01-20 14:22:09.000000'
+>           LOGINCOUNT = 1420
+>         LOGINSPACING = 395368111.578978
+>   JOINEDMARKETOCRACY = TIMESTAMP '2000-11-03 11:42:26.000000'
+>    ENCRYPTEDPASSWORD = E498C5F05C18A7D4
+>         MEMBERSTATUS = -1
+
+login:  lycos
+
+check AVNR
+
+yahoo:
+Avanir Pharmaceuticals, Inc. (AVNR) -NasdaqGS   Watchlist
+16.96 0.00(0.00%) Jan 12
+
+Add to Portfolio
+Prev Close:	16.96
+Open:	16.96
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	16.50
+Beta:	-0.19
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	3.02 - 17.05
+Volume:	0
+Avg Vol (3m):	6,279,110
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.31
+Div & Yield:	N/A (N/A
+
+quantum:
+Avanir Pharmaceuticals, Inc.
+Ticker Symbol: AVNR     CUSIP: 05348P401     Exchange: NGS
+
+Company's Online Profile
+BUSINESS:  Avanir Pharmaceuticals, Inc. is a biopharmaceutical company focused on bringing innovative medicines to patients with central nervous system disorders of high unmet medical need. As part of their commitment, they have extensively invested in their pipeline and are dedicated to advancing medicines that can substantially improve the lives of patients and their loved ones.
+Small Cap Stock -   Market Value $ 352 Million
+
+xignite still has it but with 1/12/15 date
+oursite:
+ symbol changes for AVNR	
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+18 Jan 06	AVN	AVN.R	Change in the ticker (trading) symbol from AVN to AVN.R
+11 Apr 06	AVN.R	AVNR	Change in the ticker (trading) symbol from AVN.R to AVNR
+ 	 	 
+	  CUSIP changes for AVNR	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+18 Jan 06	05348P104	05348P401	Change in any of identification numbers (CUSIP) of a security from 05348P104 to 05348P401
+ 	 	 
+	  listing changes for AVNR	
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Apr 11, 2006	AMEX	UA	NASDAQ	UQ	Change in the exchange that AVNR trades on from AMEX to NASDAQ
+Jan 03, 2012	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that AVNR trades on from NASDAQ to NASDAQ
+ 	 	 
+	  AVNR had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+18 Jan 06	1 for 4	Split terms:1 for 4
+
+**************  db *****************
+let's see what we have in the database
+
+select distinct stockkey from mstockalias where symbol='AVNR';
+> Row 1:
+>   STOCKKEY = X'614510ac390c6d18c0a8015c'
+
+select * from mstockalias where STOCKKEY = X'614510ac390c6d18c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'614610ac390c6d18c0a8015c'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P401
+>           DATE = TIMESTAMP '2006-04-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'0c4c463d443c5fe5c0a80146'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVNR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P104
+>           DATE = TIMESTAMP '2006-01-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'6b25727b43cf0112c0a80146'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVN.R
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P401
+>           DATE = TIMESTAMP '2006-01-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'9f98728943cf0155c0a80146'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVN.R
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P401
+>           DATE = TIMESTAMP '2006-04-11 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'7d384645443c6006c0a80146'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVNR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P401
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'2f8d048f4f0391e1c0a80146'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVNR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+member holdings:
+ your holdings of AVNR	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	63,600	 $1,078,655.94	 32.06%
+LG	 0	 N/A	 N/A
+LBC	 0	 N/A	 N/A
+
+select * from mcorporateaction where BB_SECID='AVNR' and aliaskey is null;
+> Row 29:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|4578 JP|CP_NAME|Otsuka Holdings Co Ltd|CP_ID_BB_COMP|15047869|CP_UNIT|Avanir Pharmaceuticals Inc|CP_TOT_AMT|3169.733887|CP_ACQUIS_TYP|1|CP_CASH|17.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|24.246300|CP_CUR_PREMIUM|0.235854|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|17.000000|CP_ARBITRAGE_PROF|0.040001|CP_CUR_TOT_VAL|3169.734131|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Latham & Watkins;13;100.000000;1;Target Financial Adviser;1;Centerview;13;100.000000;1;Acquirer Legal Adviser;1;Skadden Arps;13;100.000000;1;Acquirer Financial Adviser;1;Goldmn Sachs(Jp);13;100.000000;|CP_ACQ_TKR|4578 JP|CP_ACQ_ID_BB_GLOBAL|BBG000DZLC98|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001HG45V3|CP_ACQ_ID_BB_SEC_NUM_DES|4578|CP_ACQ_FEED_SOURCE|JP|CP_TARGET_TKR|AVNR US|CP_TARGET_ID_BB_GLOBAL|BBG000C4GMF5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FF3496|CP_TARGET_ID_BB_SEC_NUM_DES|AVNR|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 99425423
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 105026
+>        BB_COMPANYNAME = Avanir Pharmaceuticals Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = AVNR    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-02 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = AVNR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+
+
+
+wait it is on nasdaq
+Issue Suspensions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+01/13/2015	AVNR	Q	Avanir Pharmaceuticals, Inc Common Stock	N/A	01/14/2015 Acquired by Bigarade Corporation ($17.00/sh)
+
+
+who holds it now
+Stock:AVANIR PHARMACEUTICALS'A'  Symbol:AVNR
+Date: 01/20/2015
+
+169 users found
+
+1	04604781	adamsonk	aharon10	aharrell	alweldon	amgray	anda259	anthonyh	apcruz	apreuss
+2	aratnikas	ardenr	aserradas	atulbhasin2002	avaino	awalsh	azimmerman	b_boyy	babiaga	bahrke83
+3	bassman705	bhayden	bigglesworth	botoole	bryan01	bulldogger	camqtr	cesarg13	cgraydon	cjv17
+4	cmark	dcassas	djacoby	dlhii	dmcdona	dr._wiley	dudmeister	dylmdel	fig	follow17
+5	freemarketmule	gdell	george_scombulis	glennyap1	gnestor	golfb4beer	greenab	gregorama	gsagnes	guido
+6	hallinvestments	harkema	invs715828	jacobs05	jakaila	jarbeau	jclark1	jdwoud47	jfalkowski1	jhoffman
+7	jhoffman1	jholdn	jleb80	jmolnar	johnb	jon.hermesch	jpereira	jrichards1	jsanchez3	jts325
+8	jvanness	kadir	kikola	knemls	kobayashi	ktyree	lhstauffer	lisarec	lodro	lparenteau
+9	lseltzer	lvanness	lycos	m_davis	majolie	mangodad	mariusz106	marketcat	marmstrong	martialtrader
+10	mathteam	matwgood@gmail.com	mbrippe	mdaly	megatron99	meleke	mgglover	mgunters	mjimenez	mlangdon
+11	mnytrouble	mpatel5	mthompson6	mvashi	myeh	nenz	nenz1	neurodoc	newlife1	nhaefelin
+12	npetal	nsultan	orange4	p_lin	patpat	phillynole	phoward	pladypus	planco4	prags
+13	psnogren	pugtails	rebel	reedster5	richardk	rodthrower18	rom75	rosmith	rsaba	rterry
+14	sanaz	sandersen	satorino	shuynh	skashin2	skihawk24	sliebeskind	sneer	socman	sofi
+15	spopovic	sriccio	stagneth	staka	stefjb	stetsongifford	svanness	tallman1	tamburitzan	tazjazz55
+16	tdees40	tdushole	thoerin	thomasan2000	threeam	tletty	tporter	trippa	tshields	utepark
+17	vic929	vinsmack	wander	woodiwea	wvuce1	zaronson	zkrstevski	zpryor	zzzclay	 
+
+
+let's apply it
+/Marketocracy/bin/cahelper -symbol AVNR -effective 20150114 -type ACQUIS -exchange UQ -acqType 1 -acqCash 17.00 -acqShare 0 -purchaser AVNR -terms 'AVNR acquired by Otsuka Holdings Co Ltd for $17/share' >& /Users/build/caout/AVNR.20150120-ACQUIS.out
+ AVNR.20150120-ACQUIS.out
+stocks:~/caout build$ tail -f AVNR.20150120-ACQUIS.out
+D: (01-20 15:32:06.195) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-20 15:32:39.751) cahelper started on 2015-01-20 15:32:39 -0500
+
+D: (01-20 15:32:45.942) There are [2] open tickets for AVNR on 20150114
+D: (01-20 15:32:45.982) StockFileLoad Version:3.0
+D: (01-20 15:32:45.982) Loading Stock Data
+D: (01-20 15:33:42.721) Building Lookup Index
+D: (01-20 15:33:48.716) Finished Building Index
+D: (01-20 15:33:50.094) Finished Loading Stock Data
+D: (01-20 15:33:50.374) Connection to 192.168.111.157:6666 succeeded
+D: (01-20 15:34:00.216) SavingChanges for position sell out 101 of 631
+D: (01-20 15:34:11.114) SavingChanges for position sell out 201 of 631
+D: (01-20 15:34:18.409) {
+    "ACQUIRED_STOCK" = AVNR; 
+    "ACQUIRING_STOCK" = "AVNR_FIX"; 
+    AMOUNT = 17; 
+    APPLIED = 1; 
+    DATE = 20150114; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AVNR_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (01-20 15:34:29.892) SUCCESS
+D: (01-20 15:34:29.892) cahelper finished 2015-01-20 15:34:29 -0500
+
+
+check the database again
+select * from mstockalias where STOCKKEY = X'614510ac390c6d18c0a8015c';
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05348P401
+>           DATE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = AVANIR PHARMACEUTICALS'A'
+>     PRIMARYKEY = X'd651725754bebbaec0a86f92'
+>       STOCKKEY = X'614510ac390c6d18c0a8015c'
+>         SYMBOL = AVNR
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey=X'd651725754bebbaec0a86f92';
+> Row 1:
+>              ALIASKEY = X'd651725754bebbaec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AVNR  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|17.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:033239
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = AVNR_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AVNR_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'd63a725754bebb67c0a86f92'
+>               VERSION = NULL
+
+let's check lycos
+your holdings of AVNR	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	0	 $.00	 0.00%  <--- expand 
+LG	 0	 N/A	 N/A
+LBC	 0	 N/A	 N/A
+
+
+he has no shares now 
+LEDGER
+Date	Start	Change	End	Type
+Jan 07, 2014		63600	63600	Buy
+Jan 14, 2015	63600	-63600		Corporate Action
+Total: 0
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 7, 2014	63,600	$3,180.00	$206,254.42	$3.24
+ 	 	
+SELLS
+You have no sells for this position
+
+on 1/21/15
+check his LV ledger on 1/14/2015 - he had 63600 shares * 17 = 1081200
+
+
+ok, other things 
+
+
+
+Also, the portfolio is showing 3 short positions, due to duplicate orders I placed on the beta platform:
+TGT, THO and TRW
+
+
+TGT
+your holdings of TGT	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	-3,160	 -$232,607.60	 -10.17%  <--- expand 
+LG	2,900	 $213,469.00	 7.15%
+
+LBC	 0	 N/A	 N/A
+
+LEDGER
+Date	Start	Change	End	Type
+Sep 13, 2011		1850	1850	Buy
+Sep 15, 2011	1850	940	2790	Buy
+Sep 28, 2011	2790	-220	2570	Sell
+Jan 13, 2012	2570	-2570		Sell
+Jan 24, 2013		3160	3160	Buy
+Jan 14, 2015	3160	-3160		Sell
+Jan 20, 2015		-3160	-3160	Sell
+Total: -3,160
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 13, 2011	1,850	$92.50	$92,919.30	$50.23
+Sep 15, 2011	940	$47.00	$48,585.60	$51.69
+Jan 24, 2013	3,160	$158.00	$194,448.06	$61.53
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Sep 28, 2011	220	$11.00	$0.22	$11,082.98	$50.38
+Jan 13, 2012	2,570	$128.50	$2.46	$127,664.10	$49.67
+Jan 14, 2015	3,160	$158.00	$4.06	$232,973.73	$73.73
+Jan 20, 2015	3,160	$158.00	$4.05	$232,224.35	$73.49  <--- get rid of this
+
+ok next one 
+THO
+your holdings of THO	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	-3,960	 -$215,703.97	 -8.56%  <--- expand 
+LG	0	 $.00	 0.00%
+LBC	 0	 N/A	 N/A
+LEDGER
+Date	Start	Change	End	Type
+Jan 24, 2013		3960	3960	Buy
+Jan 14, 2015	3960	-3960		Sell
+Jan 20, 2015		-3960	-3960	Sell
+Total: -3,960
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 24, 2013	3,960	$198.00	$161,852.30	$40.87
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jan 14, 2015	3,960	$198.00	$3.74	$214,341.16	$54.13
+Jan 20, 2015	3,960	$198.00	$3.72	$213,559.08	$53.93  <--- duplidate - removed 
+
+ and last one  TRW
+your holdings of TRW	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	0	 $.00	 0.00%
+LG	 0	 N/A	 N/A
+LBC	 0	 N/A	 N/A  
+not short
+
+
+check AVNR again
+Stock:AVANIR PHARMACEUTICALS'A'  Symbol:AVNR
+Date: 01/20/2015
+
+1 users found
+
+1	svanness
+
+your holdings of AVNR	
+ 	 	
+Fund	Shares	Value	Portion of fund
+SVMF	-3	 -$50.88	 -0.00%
+GARP	0	 $.00	 0.00%
+GNI	-2	 -$33.92	 -0.00%
+IT	-2	 -$33.92	 -0.00%
+P	-2	 -$33.92	 -0.00%
+LPC	-1	 -$16.96	 -0.00%
+SS	-1	 -$16.96	 -0.00%
+GAMB	-4	 -$67.84	 -0.01%
+TE	-2	 -$33.92	 -0.00%
+HGWCP	0	 $.00	 0.00%
+LOB	 0	 N/A	 N/A
+STF	-2	 -$33.92	 -0.01%
+LVSLF1	-1	 -$16.96	 -0.00%
+
+*********  SVMF **********************************************
+LEDGER
+Date	Start	Change	End	Type
+Apr 18, 2007		19000	19000	Buy
+May 01, 2007	19000	29100	48100	Buy
+May 08, 2007	48100	-43000	5100	Sell
+May 09, 2007	5100	863	5963	Buy
+Jun 04, 2007	5963	825	6788	Buy
+Jun 08, 2007	6788	33300	40088	Buy
+Jul 05, 2007	40088	-30000	10088	Sell
+Jul 31, 2007	10088	1440	11528	Buy
+Aug 29, 2007	11528	69	11597	Buy
+Oct 08, 2007	11597	1800	13397	Buy
+Mar 04, 2008	13397	-1299	12098	Sell
+May 15, 2008	12098	4847	16945	Buy
+May 21, 2008	16945	-1197	15748	Sell
+May 27, 2008	15748	277	16025	Multiple
+Jun 06, 2008	16025	-2159	13866	Sell
+Jun 27, 2008	13866	-6289	7577	Sell
+Jul 17, 2008	7577	-2464	5113	Sell
+Apr 17, 2009	5113	-5116	-3	Sell   <--- sold 3 too mahy
+Total: -3
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Apr 18, 2007	19,000	$950.00	$89,380.67	$4.70
+May 1, 2007	29,100	$1,455.00	$100,891.50	$3.47
+May 9, 2007	863	$43.15	$2,617.86	$3.03
+Jun 4, 2007	825	$41.25	$2,749.04	$3.33
+Jun 8, 2007	33,300	$1,665.00	$118,173.87	$3.55
+Jul 31, 2007	1,440	$72.00	$3,024.85	$2.10
+Aug 29, 2007	69	$3.45	$150.17	$2.18
+Oct 8, 2007	1,800	$90.00	$4,744.02	$2.64
+May 15, 2008	4,847	$242.35	$6,510.88	$1.34
+May 27, 2008	1,070	$53.50	$1,439.63	$1.35
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+May 8, 2007	43,000	$2,150.00	$4.19	$134,300.42	$3.12
+Jul 5, 2007	30,000	$1,500.00	$2.42	$77,137.87	$2.57
+Mar 4, 2008	1,299	$64.95	$0.05	$1,485.08	$1.14
+May 21, 2008	1,197	$59.85	$0.05	$1,408.46	$1.18
+May 27, 2008	793	$39.65	$0.03	$957.83	$1.21
+Jun 6, 2008	2,159	$107.95	$0.08	$2,567.88	$1.19
+Jun 27, 2008	6,289	$314.45	$0.20	$6,295.53	$1.00
+Jul 17, 2008	2,464	$108.89	$0.07	$2,068.82	$0.84
+Apr 17, 2009	5,116	$130.26	$0.07	$2,475.01	$0.48   <--- change this to 5113
+
+***  when I click to look at this trade, this comes up:  *******************
+fund trades	
+ 	 	
+Name	Symbol	Quantity
+Demographic trends	SVMF	5,116    change this to 5113 shares 
+Growth and Income	GNI	6,394  change this to 6392 shares 
+Growth at a reasonable price	GARP	7,514  keep at 7514  
+High Grow with Capital preservation	HGWCP	7,887   keep this at 7887
+Information Technology	IT	12,879  change this to 12877 shares 
+L. VanNess Strat Lab Open Fund	LVSLF1	3,977   change this to 3976 
+Low priced stocks	LPC	7,766  change this to 7765 
+Predator	P	6,696  change to 6694
+Special Situations	SS	7,605  change to 7604
+Telecom	TE	7,914  change to 7912 
+The Gambler's Fund	GAMB	7,553  change to 7549
+
+*************************************************** 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness SVMF 20090417 AVNR -5113 0.53
+Trading -5113.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: SVMF Demographic trends
+building trade (has to load stock prices first)
+price = 0.53
+selling -5113.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GNI 20090417 AVNR -6392 0.53
+Trading -6392.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: GNI Growth and Income
+building trade (has to load stock prices first)
+price = 0.53
+selling -6392.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GARP 20090417 AVNR -7514 0.53
+Trading -7514.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: GARP Growth at a reasonable price
+building trade (has to load stock prices first)
+price = 0.53
+selling -7514.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  HGWCP 20090417 AVNR -7887 0.53
+Trading -7887.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: HGWCP High Grow with Capital preservation
+building trade (has to load stock prices first)
+price = 0.53
+selling -7887.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  IT 20090417 AVNR -12877 0.53
+Trading -12877.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: IT Information Technology
+building trade (has to load stock prices first)
+price = 0.53
+selling -12877.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  LVSLF1 20090417 AVNR -3976 0.53
+Trading -3976.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: LVSLF1 L. VanNess Strat Lab Open Fund
+building trade (has to load stock prices first)
+price = 0.53
+selling -3976.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin//backdatedtrade.py svanness  LPC 20090417 AVNR -7765 0.53
+Trading -7765.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: LPC Low priced stocks
+building trade (has to load stock prices first)
+price = 0.53
+selling -7765.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  P 20090417 AVNR -6694 0.53
+Trading -6694.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: P Predator
+building trade (has to load stock prices first)
+price = 0.53
+selling -6694.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  SS 20090417 AVNR -7604 0.53
+Trading -7604.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: SS Special Situations
+building trade (has to load stock prices first)
+price = 0.53
+selling -7604.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  TE 20090417 AVNR -7912 0.53
+Trading -7912.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: TE Telecom
+building trade (has to load stock prices first)
+price = 0.53
+selling -7912.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  GAMB 20090417 AVNR -7549 0.53
+Trading -7549.0 shares of AVANIR PHARMACEUTICALS'A' on Apr 17, 2009 at 0.53
+manager: svanness L. VanNess
+fund: GAMB The Gambler's Fund
+building trade (has to load stock prices first)
+price = 0.53
+selling -7549.0 shares of AVNR at 0.53 on 20090417
+invaldating fund prices from Apr 17, 2009
+Done
+
+
+then STF has -2 
+Jul 29, 2008	4988	-4990	-2	Sell
+/Marketocracy/Scripts/build/bin/backdatedtrade.py svanness  STF 20080729 AVNR -4988 0.86
+
+log out and log back in
+
+Trading -4988.0 shares of AVANIR PHARMACEUTICALS'A' on Jul 29, 2008 at 0.86
+manager: svanness L. VanNess
+fund: STF Stock Traders Fund
+building trade (has to load stock prices first)
+price = 0.86
+selling -4988.0 shares of AVNR at 0.86 on 20080729
+invaldating fund prices from Jul 29, 2008
+Done
+
+
+yeah, got everyone to 0  
+ your holdings of AVNR	
+ 	 	
+Fund	Shares	Value	Portion of fund
+SVMF	0	 $.00	 0.00%
+GARP	0	 $.00	 0.00%
+GNI	0	 $.00	 0.00%
+IT	0	 $.00	 0.00%
+P	0	 $.00	 0.00%
+LPC	0	 $.00	 0.00%
+SS	0	 $.00	 0.00%
+GAMB	0	 $.00	 0.00%
+TE	0	 $.00	 0.00%
+HGWCP	0	 $.00	 0.00%
+LOB	 0	 N/A	 N/A
+STF	0	 $.00	 0.00%
+LVSLF1	0	 $.00	 0.00%
+ 	 	[ Trade this stock ]
+
+Let's invalidate all funds that were affected by the AVNR acquis
+
+> Row 1:
+>              ALIASKEY = X'd651725754bebbaec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AVNR  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|17.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150120:033239
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = AVNR_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AVNR_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'd63a725754bebb67c0a86f92'  <---- sourcekey
+>               VERSION = NULL
+
+get the sourcekey and replace it in this string 
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd63a725754bebb67c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'0126641839734367c0a801e1'
+> Row 2:
+>   FUNDKEY = X'8d2142d539771345c0a801e0'
+> Row 3:
+>   FUNDKEY = X'57f401194035a695c0a80132'
+> Row 4:
+>   FUNDKEY = X'1e403fe33ece0b4ec0a80132'
+> Row 5:
+>   FUNDKEY = X'8bf35fe2399f3772c0a801e0'
+> Row 6:
+>   FUNDKEY = X'55f455dc39a211abc0a801e1'
+> Row 7:
+>   FUNDKEY = X'66d330eb39721262c0a80118'
+> Row 8:
+>   FUNDKEY = X'657c33f339c6c5b6c0a801e1'
+> Row 9:
+>   FUNDKEY = X'6eaf354d39cac026c0a801e0'
+> Row 10:
+>   FUNDKEY = X'e101625f39d23a5cc0a80119'
+> Row 11:
+>   FUNDKEY = X'949a17803986cf7cc0a80118'
+> Row 12:
+>   FUNDKEY = X'22a10c5639d79835c0a80118'
+> Row 13:
+>   FUNDKEY = X'3eb40c8c3eb68566c0a80133'
+> Row 14:
+>   FUNDKEY = X'eee762b939db9c1cc0a80118'
+> Row 15:
+>   FUNDKEY = X'4cfe6c8d39df4138c0a80119'
+> Row 16:
+>   FUNDKEY = X'3a566c8d39df3b40c0a80119'
+> Row 17:
+>   FUNDKEY = X'5b7c6c8d39df467cc0a80119'
+> Row 18:
+>   FUNDKEY = X'64f96c8d39df4a22c0a80119'
+> Row 19:
+>   FUNDKEY = X'406705a539efc71dc0a801e0'
+> Row 20:
+>   FUNDKEY = X'aeb14ad339e6f811c0a80118'
+> Row 21:
+>   FUNDKEY = X'd60b367d3a0349abc0a801e1'
+> Row 22:
+>   FUNDKEY = X'1210382039f1df90c0a80118'
+> Row 23:
+>   FUNDKEY = X'596012dd3eed012ac0a80134'
+> Row 24:
+>   FUNDKEY = X'0ec732bb3a0d803ac0a80119'
+> Row 25:
+>   FUNDKEY = X'51a804fb3a06c3e9c0a80119'
+> Row 26:
+>   FUNDKEY = X'1305471539e4de7fc0a80119'
+> Row 27:
+>   FUNDKEY = X'6177303c3a1c725cc0a801e1'
+> Row 28:
+>   FUNDKEY = X'514630743a21d351c0a801e1'
+> Row 29:
+>   FUNDKEY = X'54cd30743a21d7efc0a801e1'
+> Row 30:
+>   FUNDKEY = X'908a59393a22e288c0a80118'
+> Row 31:
+>   FUNDKEY = X'b0a706e53a240869c0a801e1'
+> Row 32:
+>   FUNDKEY = X'878c3cd13a24b8a8c0a801e1'
+> Row 33:
+>   FUNDKEY = X'90d369513a25cdaac0a801e1'
+> Row 34:
+>   FUNDKEY = X'f60935423a271a91c0a801e1'
+> Row 35:
+>   FUNDKEY = X'dab152ce3a102776c0a80118'
+> Row 36:
+>   FUNDKEY = X'4e78219339e76a6bc0a80119'
+> Row 37:
+>   FUNDKEY = X'183f0dc33a3a90e7c0a801e0'
+> Row 38:
+>   FUNDKEY = X'bebb051939ef4927c0a801e0'
+> Row 39:
+>   FUNDKEY = X'd1b36a473a426101c0a801e1'
+> Row 40:
+>   FUNDKEY = X'8fb44dc03a156389c0a80118'
+> Row 41:
+>   FUNDKEY = X'ff044e903a44f55ac0a80119'
+> Row 42:
+>   FUNDKEY = X'42c438003a4d1421c0a80118'
+> Row 43:
+>   FUNDKEY = X'488d53623a1ddaadc0a801e0'
+> Row 44:
+>   FUNDKEY = X'81bf13103a4f2934c0a801e1'
+> Row 45:
+>   FUNDKEY = X'4e7b03f93a54f33ac0a801e1'
+> Row 46:
+>   FUNDKEY = X'f2023a923a53796ac0a801e0'
+> Row 47:
+>   FUNDKEY = X'e8ff048c397c76aac0a80118'
+> Row 48:
+>   FUNDKEY = X'd538339a3a0df806c0a80119'
+> Row 49:
+>   FUNDKEY = X'df0e2dbc40659283ffffffff'
+> Row 50:
+>   FUNDKEY = X'ff5e02003a8b4980c0a80118'
+> Row 51:
+>   FUNDKEY = X'b2e239783a92be0bc0a801e0'
+> Row 52:
+>   FUNDKEY = X'4fcf1f833aac59dfc0a801e1'
+> Row 53:
+>   FUNDKEY = X'f8243f033ab6b580c0a80119'
+> Row 54:
+>   FUNDKEY = X'e55d29313a2b0249c0a801e1'
+> Row 55:
+>   FUNDKEY = X'8d3452e23b163d0ac0a801e0'
+> Row 56:
+>   FUNDKEY = X'c152191a3b38cc4dc0a801e1'
+> Row 57:
+>   FUNDKEY = X'eb3237c63b549149c0a80119'
+> Row 58:
+>   FUNDKEY = X'e48c19963b603c4dc0a801e1'
+> Row 59:
+>   FUNDKEY = X'f13006543b6043e4c0a801e0'
+> Row 60:
+>   FUNDKEY = X'6ee419963b604e3fc0a801e1'
+> Row 61:
+>   FUNDKEY = X'6de8611b3b609cd1c0a801e0'
+> Row 62:
+>   FUNDKEY = X'1e6e60313b5ddcb6c0a80118'
+> Row 63:
+>   FUNDKEY = X'45d814233b61a8b6c0a801e1'
+> Row 64:
+>   FUNDKEY = X'2f7a59b93b55bc0fc0a80119'
+> Row 65:
+>   FUNDKEY = X'0e9f61413b70fa4dc0a801e1'
+> Row 66:
+>   FUNDKEY = X'102e51a93b8ed65ac0a801e0'
+> Row 67:
+>   FUNDKEY = X'54a902673b98c600c0a801e0'
+> Row 68:
+>   FUNDKEY = X'321317c63baa8812c0a80119'
+> Row 69:
+>   FUNDKEY = X'e52308973bab48cac0a801e0'
+> Row 70:
+>   FUNDKEY = X'e8631d473bb33734c0a80118'
+> Row 71:
+>   FUNDKEY = X'114241e73bcefd24c0a801e1'
+> Row 72:
+>   FUNDKEY = X'a29141ee3b829abdc0a801e0'
+> Row 73:
+>   FUNDKEY = X'2b6c20483bf32adbc0a80119'
+> Row 74:
+>   FUNDKEY = X'5cd72d753b6f04d1c0a80118'
+> Row 75:
+>   FUNDKEY = X'3bfe070b3c0be954c0a80119'
+> Row 76:
+>   FUNDKEY = X'830e61e23973421bc0a801e0'
+> Row 77:
+>   FUNDKEY = X'e1ef20aa3c2056c5c0a80119'
+> Row 78:
+>   FUNDKEY = X'eb2303883b101413c0a80119'
+> Row 79:
+>   FUNDKEY = X'1a4b06163c4900b3c0a80119'
+> Row 80:
+>   FUNDKEY = X'153a2f223da32904c0a80132'
+> Row 81:
+>   FUNDKEY = X'16f244d13b5de64ac0a801e1'
+> Row 82:
+>   FUNDKEY = X'7ac747b7399c11ebc0a80118'
+> Row 83:
+>   FUNDKEY = X'6bf8733d3a03ad78c0a801e0'
+> Row 84:
+>   FUNDKEY = X'15d7656a3d3da146c0a80119'
+> Row 85:
+>   FUNDKEY = X'c76073c54087db50ffffffff'
+> Row 86:
+>   FUNDKEY = X'614e33cd3d460755c0a801e2'
+> Row 87:
+>   FUNDKEY = X'612a32ce39c7af3bc0a801e1'
+> Row 88:
+>   FUNDKEY = X'0e5b083740809202ffffffff'
+> Row 89:
+>   FUNDKEY = X'01d537773de16f3fc0a80134'
+> Row 90:
+>   FUNDKEY = X'c5f727663da0fd48c0a80135'
+> Row 91:
+>   FUNDKEY = X'3c9817693e111038c0a80132'
+> Row 92:
+>   FUNDKEY = X'3baa3aec3e1d41d8c0a80133'
+> Row 93:
+>   FUNDKEY = X'5d3a4b8a3bb0f137c0a801e1'
+> Row 94:
+>   FUNDKEY = X'dea82db53b7acaa7c0a80118'
+> Row 95:
+>   FUNDKEY = X'201103683bb4bf49c0a80118'
+> Row 96:
+>   FUNDKEY = X'720054aa3e4c0c2ac0a80135'
+> Row 97:
+>   FUNDKEY = X'635a54aa3e4c0768c0a80135'
+> Row 98:
+>   FUNDKEY = X'1da35eb03e372e1fc0a80134'
+> Row 99:
+>   FUNDKEY = X'415c64cf3e4dd323c0a80133'
+> Row 100:
+>   FUNDKEY = X'a8bc74fe3f0dd2f1c0a80133'
+> Row 101:
+>   FUNDKEY = X'22f1338f3f62128ec0a80132'
+> Row 102:
+>   FUNDKEY = X'7351511f3e652760c0a80135'
+> Row 103:
+>   FUNDKEY = X'f60019093e7e4d46c0a80134'
+> Row 104:
+>   FUNDKEY = X'a23659173f54ccfdc0a80133'
+> Row 105:
+>   FUNDKEY = X'7898533f3fbf8a76c0a80134'
+> Row 106:
+>   FUNDKEY = X'eebc076a3ff1e61fc0a80132'
+> Row 107:
+>   FUNDKEY = X'3ebd6e19400c8b74c0a80133'
+> Row 108:
+>   FUNDKEY = X'8f7412e23ed4b4e8c0a80134'
+> Row 109:
+>   FUNDKEY = X'698e035a40229102c0a80132'
+> Row 110:
+>   FUNDKEY = X'cc5d4cd73e66510ec0a80133'
+> Row 111:
+>   FUNDKEY = X'fff705af3f5f5ebac0a80132'
+> Row 112:
+>   FUNDKEY = X'fae61a1440913347c0a80132'
+> Row 113:
+>   FUNDKEY = X'499c14db40c1a84ec0a80133'
+> Row 114:
+>   FUNDKEY = X'f28e74b040db35b3c0a80132'
+> Row 115:
+>   FUNDKEY = X'1bb26683410182b5c0a80132'
+> Row 116:
+>   FUNDKEY = X'bc452eeb41011f51c0a80132'
+> Row 117:
+>   FUNDKEY = X'7439329d41070e78c0a80134'
+> Row 118:
+>   FUNDKEY = X'067a5dad40eea54bc0a80134'
+> Row 119:
+>   FUNDKEY = X'dd42736a3ea81877c0a80133'
+> Row 120:
+>   FUNDKEY = X'1fa55f4c40c769e0c0a80134'
+> Row 121:
+>   FUNDKEY = X'c8e44441410fd421c0a80133'
+> Row 122:
+>   FUNDKEY = X'9233178a4147cbf2c0a80133'
+> Row 123:
+>   FUNDKEY = X'c7c568c340980f17c0a80133'
+> Row 124:
+>   FUNDKEY = X'54b2454f413e0cafc0a80132'
+> Row 125:
+>   FUNDKEY = X'4d5d62214188f9a3c0a80134'
+> Row 126:
+>   FUNDKEY = X'3c03422541658db9c0a80134'
+> Row 127:
+>   FUNDKEY = X'5e4b70b74190276ac0a80133'
+> Row 128:
+>   FUNDKEY = X'4cdb3e2941aceb57c0a80134'
+> Row 129:
+>   FUNDKEY = X'ef7834a241c89cdac0a80132'
+> Row 130:
+>   FUNDKEY = X'2f9c38d041d304a4c0a80133'
+> Row 131:
+>   FUNDKEY = X'3bb9489541d6efb9c0a80132'
+> Row 132:
+>   FUNDKEY = X'81e22c3f39f0c0acc0a801e0'
+> Row 133:
+>   FUNDKEY = X'8c2a1b5641dd572cc0a80133'
+> Row 134:
+>   FUNDKEY = X'1866176942006ea1c0a80134'
+> Row 135:
+>   FUNDKEY = X'3cf6107b3df94ac8c0a80135'
+> Row 136:
+>   FUNDKEY = X'eea7611642175363c0a80132'
+> Row 137:
+>   FUNDKEY = X'7a8a0337420a982cc0a80134'
+> Row 138:
+>   FUNDKEY = X'1932527e42441418c0a80132'
+> Row 139:
+>   FUNDKEY = X'87b718f2426a7189c0a80132'
+> Row 140:
+>   FUNDKEY = X'749333364256d314c0a80132'
+> Row 141:
+>   FUNDKEY = X'5c002c23431b55e4c0a80132'
+> Row 142:
+>   FUNDKEY = X'88454bd4403621b9c0a80133'
+> Row 143:
+>   FUNDKEY = X'5a351c2d4331a53bc0a80132'
+> Row 144:
+>   FUNDKEY = X'1ca52c5b42dbba36c0a80132'
+> Row 145:
+>   FUNDKEY = X'c4ac1a86436fea1bc0a80132'
+> Row 146:
+>   FUNDKEY = X'7671626e43c19be1c0a80133'
+> Row 147:
+>   FUNDKEY = X'd6c4026e43c2d8d0c0a80132'
+> Row 148:
+>   FUNDKEY = X'a99849e444207abfc0a80132'
+> Row 149:
+>   FUNDKEY = X'2557011244245953c0a80133'
+> Row 150:
+>   FUNDKEY = X'911c2eb344410a74c0a80134'
+> Row 151:
+>   FUNDKEY = X'72a2571a42136a30c0a80132'
+> Row 152:
+>   FUNDKEY = X'2a2d0378443db04dc0a80134'
+> Row 153:
+>   FUNDKEY = X'e2d0025d4448c256c0a80132'
+> Row 154:
+>   FUNDKEY = X'd6100f2a4451c286c0a80132'
+> Row 155:
+>   FUNDKEY = X'793811944456b0a9c0a80134'
+> Row 156:
+>   FUNDKEY = X'ea5f026a4461f36ec0a80134'
+> Row 157:
+>   FUNDKEY = X'4a28033d41e2de11c0a80133'
+> Row 158:
+>   FUNDKEY = X'9b244f4e417284d8c0a80134'
+> Row 159:
+>   FUNDKEY = X'c2e311fc41b84f15c0a80134'
+> Row 160:
+>   FUNDKEY = X'dcb47509445d08e1c0a80134'
+> Row 161:
+>   FUNDKEY = X'9a8832d03fddcddfc0a80134'
+> Row 162:
+>   FUNDKEY = X'045b194c452ec86dc0a80134'
+> Row 163:
+>   FUNDKEY = X'7a63599d4537cfa1c0a80134'
+> Row 164:
+>   FUNDKEY = X'5e8b3a2445398489c0a80132'
+> Row 165:
+>   FUNDKEY = X'f65a180a450e1b71c0a80133'
+> Row 166:
+>   FUNDKEY = X'89cb3b994508c4e6c0a80133'
+> Row 167:
+>   FUNDKEY = X'f222026f446242d7c0a80134'
+> Row 168:
+>   FUNDKEY = X'1501025d44366b85c0a80133'
+> Row 169:
+>   FUNDKEY = X'8a321b414535486cc0a80133'
+> Row 170:
+>   FUNDKEY = X'2b77329f427b5d25c0a80133'
+> Row 171:
+>   FUNDKEY = X'21eb41fb3c1b8880c0a80118'
+> Row 172:
+>   FUNDKEY = X'82eb02c94554beb5c0a80133'
+> Row 173:
+>   FUNDKEY = X'b2bc5806455c801fc0a80135'
+> Row 174:
+>   FUNDKEY = X'7f5669ce44d8ddd9c0a80132'
+> Row 175:
+>   FUNDKEY = X'33fa4eb94595382ac0a80132'
+> Row 176:
+>   FUNDKEY = X'92b117114605eb74c0a80132'
+> Row 177:
+>   FUNDKEY = X'9f1e12c43d40cab5c0a801e0'
+> Row 178:
+>   FUNDKEY = X'12eb1b6d3d4f4ab7c0a80118'
+> Row 179:
+>   FUNDKEY = X'3c701efa3d3da5f0c0a801e0'
+> Row 180:
+>   FUNDKEY = X'7b7a411a3d194e80c0a801e1'
+> Row 181:
+>   FUNDKEY = X'907c371d418a9cf2c0a8013c'
+> Row 182:
+>   FUNDKEY = X'53d720ad45104a38c0a80134'
+> Row 183:
+>   FUNDKEY = X'25001d5f45121996c0a80134'
+> Row 184:
+>   FUNDKEY = X'c8ef542b45d1245bc0a80133'
+> Row 185:
+>   FUNDKEY = X'c1111b673bed6501c0a80119'
+> Row 186:
+>   FUNDKEY = X'83de1c213d6a2949c0a801e0'
+> Row 187:
+>   FUNDKEY = X'accb63e33e67981fc0a80135'
+> Row 188:
+>   FUNDKEY = X'6f2333253c8111a0c0a80119'
+> Row 189:
+>   FUNDKEY = X'ce0038613d5d4d68c0a801e0'
+> Row 190:
+>   FUNDKEY = X'12642df53c716574c0a801e0'
+> Row 191:
+>   FUNDKEY = X'2a884a8441dc5ae5c0a80134'
+> Row 192:
+>   FUNDKEY = X'66e84e3b41dc52ffc0a80134'
+> Row 193:
+>   FUNDKEY = X'793474794244df20c0a80133'
+> Row 194:
+>   FUNDKEY = X'98ea4809460bfe49c0a80134'
+> Row 195:
+>   FUNDKEY = X'e730016445fab183c0a80132'
+> Row 196:
+>   FUNDKEY = X'00b36bfd461b9b95c0a80132'
+> Row 197:
+>   FUNDKEY = X'9a9600cc45635456c0a80132'
+> Row 198:
+>   FUNDKEY = X'cd501c3f452668c4c0a80132'
+> Row 199:
+>   FUNDKEY = X'9002405b42aea1b8c0a80133'
+> Row 200:
+>   FUNDKEY = X'b7b76da3461fb7cfc0a80134'
+> Row 201:
+>   FUNDKEY = X'0a7040154625c763c0a80133'
+> Row 202:
+>   FUNDKEY = X'bbea029f463b81f2c0a80135'
+> Row 203:
+>   FUNDKEY = X'3de42f3c464b09c5c0a80133'
+> Row 204:
+>   FUNDKEY = X'd9511ed2433dc5ddc0a80132'
+> Row 205:
+>   FUNDKEY = X'efed1a28465ede81c0a80133'
+> Row 206:
+>   FUNDKEY = X'a6b25ff5464b9e7cc0a80132'
+> Row 207:
+>   FUNDKEY = X'23fc45d146cc5750c0a80133'
+> Row 208:
+>   FUNDKEY = X'3b2a1f3046d217a5c0a80135'
+> Row 209:
+>   FUNDKEY = X'e5676bac3d587f22c0a801e2'
+> Row 210:
+>   FUNDKEY = X'669c03e945e61159c0a80135'
+> Row 211:
+>   FUNDKEY = X'f011427747f5b98ec0a80134'
+> Row 212:
+>   FUNDKEY = X'fad960c4484db297c0a80135'
+> Row 213:
+>   FUNDKEY = X'611249a239e70c1bc0a80119'
+> Row 214:
+>   FUNDKEY = X'1ffd4fc14a8fa1ddc0a80133'
+> Row 215:
+>   FUNDKEY = X'296a054b4ae8f2d5c0a80132'
+> Row 216:
+>   FUNDKEY = X'5a7417694847880dc0a80135'
+> Row 217:
+>   FUNDKEY = X'0c143a1c4ad4fd34c0a80132'
+> Row 218:
+>   FUNDKEY = X'26eb14c542dccb5dc0a80132'
+> Row 219:
+>   FUNDKEY = X'41dc047f4c1a32f9c0a80135'
+> Row 220:
+>   FUNDKEY = X'20b103124c28921fc0a80134'
+> Row 221:
+>   FUNDKEY = X'7a4410d93e050e69c0a80133'
+> Row 222:
+>   FUNDKEY = X'1f2062703fe4b2f8c0a80133'
+> Row 223:
+>   FUNDKEY = X'7a4210d93e050e4ac0a80133'
+> Row 224:
+>   FUNDKEY = X'6e2510d93e05094bc0a80133'
+> Row 225:
+>   FUNDKEY = X'2dec04e8439196e4c0a80134'
+> Row 226:
+>   FUNDKEY = X'f28b0aa341bb0b7fc0a80132'
+> Row 227:
+>   FUNDKEY = X'1b2923573a1cfaacc0a80119'
+> Row 228:
+>   FUNDKEY = X'844932c34ced6fe7c0a80132'
+> Row 229:
+>   FUNDKEY = X'de98429a4cf4271ac0a80133'
+> Row 230:
+>   FUNDKEY = X'1e3a628e4d2fb02ac0a80134'
+> Row 231:
+>   FUNDKEY = X'e83167b4453ccd90c0a80132'
+> Row 232:
+>   FUNDKEY = X'eada2dbe4c2c0b5ec0a80135'
+> Row 233:
+>   FUNDKEY = X'35d1231c4d570120c0a80134'
+> Row 234:
+>   FUNDKEY = X'f21966544d896850c0a80132'
+> Row 235:
+>   FUNDKEY = X'5800462a3e9fc0a4c0a80132'
+> Row 236:
+>   FUNDKEY = X'92292c0c4d9c8892c0a80134'
+> Row 237:
+>   FUNDKEY = X'246201644dda68c1c0a80134'
+> Row 238:
+>   FUNDKEY = X'7a5069a94926e5a2c0a80133'
+> Row 239:
+>   FUNDKEY = X'6ef702f64e944c0cc0a80133'
+> Row 240:
+>   FUNDKEY = X'6fde268f4ee2c429c0a80134'
+> Row 241:
+>   FUNDKEY = X'fbe832834f1960f8c0a80133'
+> Row 242:
+>   FUNDKEY = X'e0db453a4c55618ec0a80135'
+> Row 243:
+>   FUNDKEY = X'e7c1315e50aa4e6ec0a80134'
+> Row 244:
+>   FUNDKEY = X'891b46634fc7ba0dc0a80133'
+> Row 245:
+>   FUNDKEY = X'1e3724e23e92fd89c0a80132'
+> Row 246:
+>   FUNDKEY = X'f2262b4247bf8046c0a80135'
+> Row 247:
+>   FUNDKEY = X'b354088c39c61f63c0a80151'
+> Row 248:
+>   FUNDKEY = X'87d6212a414897dfc0a8013c'
+> Row 249:
+>   FUNDKEY = X'0f3d50174e433973c0a80132'
+> Row 250:
+>   FUNDKEY = X'1f650a573b20ef8ac0a801e0'
+> Row 251:
+>   FUNDKEY = X'8e0816e9532251fdc0a86f99'
+> Row 252:
+>   FUNDKEY = X'4c76488748ff21cec0a80133'
+> Row 253:
+>   FUNDKEY = X'7ac466b542ea668cc0a80134'
+> Row 254:
+>   FUNDKEY = X'e74526ab42a6a036c0a80132'
+> Row 255:
+>   FUNDKEY = X'5f2b3d775218d40dc0a80132'
+> Row 256:
+>   FUNDKEY = X'fd62375752f7ab41c0a86f98'
+> Row 257:
+>   FUNDKEY = X'f43954264cd5f7f6c0a80132'
+> Row 258:
+>   FUNDKEY = X'ef7d058354179640c0a86f98'
+> Row 259:
+>   FUNDKEY = X'4fd75a72543bd2b2c0a86f98'
+> Row 260:
+>   FUNDKEY = X'15c92b8a452c2b71c0a80132'
+> Row 261:
+>   FUNDKEY = X'001f1fbc3ac55dbbc0a801e0'
+> Row 262:
+>   FUNDKEY = X'46c0307a412a3a42c0a80134'
+
+
+save these to a file :  CA issues AVNR fundkeys to invalidate.txt
+then edit and change to this:
+/Marketocracy/bin/fptool invalidateFund 001f1fbc3ac55dbbc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 00b36bfd461b9b95c0a80132;
+/Marketocracy/bin/fptool invalidateFund 0126641839734367c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 01d537773de16f3fc0a80134;
+/Marketocracy/bin/fptool invalidateFund 045b194c452ec86dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 067a5dad40eea54bc0a80134;
+/Marketocracy/bin/fptool invalidateFund 0a7040154625c763c0a80133;
+/Marketocracy/bin/fptool invalidateFund 0c143a1c4ad4fd34c0a80132;
+/Marketocracy/bin/fptool invalidateFund 0e5b083740809202ffffffff;
+/Marketocracy/bin/fptool invalidateFund 0e9f61413b70fa4dc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 0ec732bb3a0d803ac0a80119;
+/Marketocracy/bin/fptool invalidateFund 0f3d50174e433973c0a80132;
+/Marketocracy/bin/fptool invalidateFund 102e51a93b8ed65ac0a801e0;
+/Marketocracy/bin/fptool invalidateFund 114241e73bcefd24c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 1210382039f1df90c0a80118;
+/Marketocracy/bin/fptool invalidateFund 12642df53c716574c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 12eb1b6d3d4f4ab7c0a80118;
+/Marketocracy/bin/fptool invalidateFund 1305471539e4de7fc0a80119;
+/Marketocracy/bin/fptool invalidateFund 1501025d44366b85c0a80133;
+/Marketocracy/bin/fptool invalidateFund 153a2f223da32904c0a80132;
+/Marketocracy/bin/fptool invalidateFund 15c92b8a452c2b71c0a80132;
+/Marketocracy/bin/fptool invalidateFund 15d7656a3d3da146c0a80119;
+/Marketocracy/bin/fptool invalidateFund 16f244d13b5de64ac0a801e1;
+/Marketocracy/bin/fptool invalidateFund 183f0dc33a3a90e7c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 1866176942006ea1c0a80134;
+/Marketocracy/bin/fptool invalidateFund 1932527e42441418c0a80132;
+/Marketocracy/bin/fptool invalidateFund 1a4b06163c4900b3c0a80119;
+/Marketocracy/bin/fptool invalidateFund 1b2923573a1cfaacc0a80119;
+/Marketocracy/bin/fptool invalidateFund 1bb26683410182b5c0a80132;
+/Marketocracy/bin/fptool invalidateFund 1ca52c5b42dbba36c0a80132;
+/Marketocracy/bin/fptool invalidateFund 1da35eb03e372e1fc0a80134;
+/Marketocracy/bin/fptool invalidateFund 1e3724e23e92fd89c0a80132;
+/Marketocracy/bin/fptool invalidateFund 1e3a628e4d2fb02ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 1e403fe33ece0b4ec0a80132;
+/Marketocracy/bin/fptool invalidateFund 1e6e60313b5ddcb6c0a80118;
+/Marketocracy/bin/fptool invalidateFund 1f2062703fe4b2f8c0a80133;
+/Marketocracy/bin/fptool invalidateFund 1f650a573b20ef8ac0a801e0;
+/Marketocracy/bin/fptool invalidateFund 1fa55f4c40c769e0c0a80134;
+/Marketocracy/bin/fptool invalidateFund 1ffd4fc14a8fa1ddc0a80133;
+/Marketocracy/bin/fptool invalidateFund 201103683bb4bf49c0a80118;
+/Marketocracy/bin/fptool invalidateFund 20b103124c28921fc0a80134;
+/Marketocracy/bin/fptool invalidateFund 21eb41fb3c1b8880c0a80118;
+/Marketocracy/bin/fptool invalidateFund 22a10c5639d79835c0a80118;
+/Marketocracy/bin/fptool invalidateFund 22f1338f3f62128ec0a80132;
+/Marketocracy/bin/fptool invalidateFund 23fc45d146cc5750c0a80133;
+/Marketocracy/bin/fptool invalidateFund 246201644dda68c1c0a80134;
+/Marketocracy/bin/fptool invalidateFund 25001d5f45121996c0a80134;
+/Marketocracy/bin/fptool invalidateFund 2557011244245953c0a80133;
+/Marketocracy/bin/fptool invalidateFund 26eb14c542dccb5dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 296a054b4ae8f2d5c0a80132;
+/Marketocracy/bin/fptool invalidateFund 2a2d0378443db04dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 2a884a8441dc5ae5c0a80134;
+/Marketocracy/bin/fptool invalidateFund 2b6c20483bf32adbc0a80119;
+/Marketocracy/bin/fptool invalidateFund 2b77329f427b5d25c0a80133;
+/Marketocracy/bin/fptool invalidateFund 2dec04e8439196e4c0a80134;
+/Marketocracy/bin/fptool invalidateFund 2f7a59b93b55bc0fc0a80119;
+/Marketocracy/bin/fptool invalidateFund 2f9c38d041d304a4c0a80133;
+/Marketocracy/bin/fptool invalidateFund 321317c63baa8812c0a80119;
+/Marketocracy/bin/fptool invalidateFund 33fa4eb94595382ac0a80132;
+/Marketocracy/bin/fptool invalidateFund 35d1231c4d570120c0a80134;
+/Marketocracy/bin/fptool invalidateFund 3a566c8d39df3b40c0a80119;
+/Marketocracy/bin/fptool invalidateFund 3b2a1f3046d217a5c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3baa3aec3e1d41d8c0a80133;
+/Marketocracy/bin/fptool invalidateFund 3bb9489541d6efb9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3bfe070b3c0be954c0a80119;
+/Marketocracy/bin/fptool invalidateFund 3c03422541658db9c0a80134;
+/Marketocracy/bin/fptool invalidateFund 3c701efa3d3da5f0c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 3c9817693e111038c0a80132;
+/Marketocracy/bin/fptool invalidateFund 3cf6107b3df94ac8c0a80135;
+/Marketocracy/bin/fptool invalidateFund 3de42f3c464b09c5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 3eb40c8c3eb68566c0a80133;
+/Marketocracy/bin/fptool invalidateFund 3ebd6e19400c8b74c0a80133;
+/Marketocracy/bin/fptool invalidateFund 406705a539efc71dc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 415c64cf3e4dd323c0a80133;
+/Marketocracy/bin/fptool invalidateFund 41dc047f4c1a32f9c0a80135;
+/Marketocracy/bin/fptool invalidateFund 42c438003a4d1421c0a80118;
+/Marketocracy/bin/fptool invalidateFund 45d814233b61a8b6c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 46c0307a412a3a42c0a80134;
+/Marketocracy/bin/fptool invalidateFund 488d53623a1ddaadc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 499c14db40c1a84ec0a80133;
+/Marketocracy/bin/fptool invalidateFund 4a28033d41e2de11c0a80133;
+/Marketocracy/bin/fptool invalidateFund 4c76488748ff21cec0a80133;
+/Marketocracy/bin/fptool invalidateFund 4cdb3e2941aceb57c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4cfe6c8d39df4138c0a80119;
+/Marketocracy/bin/fptool invalidateFund 4d5d62214188f9a3c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4e78219339e76a6bc0a80119;
+/Marketocracy/bin/fptool invalidateFund 4e7b03f93a54f33ac0a801e1;
+/Marketocracy/bin/fptool invalidateFund 4fcf1f833aac59dfc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 4fd75a72543bd2b2c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 514630743a21d351c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 51a804fb3a06c3e9c0a80119;
+/Marketocracy/bin/fptool invalidateFund 53d720ad45104a38c0a80134;
+/Marketocracy/bin/fptool invalidateFund 54a902673b98c600c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 54b2454f413e0cafc0a80132;
+/Marketocracy/bin/fptool invalidateFund 54cd30743a21d7efc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 55f455dc39a211abc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 57f401194035a695c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5800462a3e9fc0a4c0a80132;
+/Marketocracy/bin/fptool invalidateFund 596012dd3eed012ac0a80134;
+/Marketocracy/bin/fptool invalidateFund 5a351c2d4331a53bc0a80132;
+/Marketocracy/bin/fptool invalidateFund 5a7417694847880dc0a80135;
+/Marketocracy/bin/fptool invalidateFund 5b7c6c8d39df467cc0a80119;
+/Marketocracy/bin/fptool invalidateFund 5c002c23431b55e4c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5cd72d753b6f04d1c0a80118;
+/Marketocracy/bin/fptool invalidateFund 5d3a4b8a3bb0f137c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 5e4b70b74190276ac0a80133;
+/Marketocracy/bin/fptool invalidateFund 5e8b3a2445398489c0a80132;
+/Marketocracy/bin/fptool invalidateFund 5f2b3d775218d40dc0a80132;
+/Marketocracy/bin/fptool invalidateFund 611249a239e70c1bc0a80119;
+/Marketocracy/bin/fptool invalidateFund 612a32ce39c7af3bc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 614e33cd3d460755c0a801e2;
+/Marketocracy/bin/fptool invalidateFund 6177303c3a1c725cc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 635a54aa3e4c0768c0a80135;
+/Marketocracy/bin/fptool invalidateFund 64f96c8d39df4a22c0a80119;
+/Marketocracy/bin/fptool invalidateFund 657c33f339c6c5b6c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 669c03e945e61159c0a80135;
+/Marketocracy/bin/fptool invalidateFund 66d330eb39721262c0a80118;
+/Marketocracy/bin/fptool invalidateFund 66e84e3b41dc52ffc0a80134;
+/Marketocracy/bin/fptool invalidateFund 698e035a40229102c0a80132;
+/Marketocracy/bin/fptool invalidateFund 6bf8733d3a03ad78c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 6de8611b3b609cd1c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 6e2510d93e05094bc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6eaf354d39cac026c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 6ee419963b604e3fc0a801e1;
+/Marketocracy/bin/fptool invalidateFund 6ef702f64e944c0cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 6f2333253c8111a0c0a80119;
+/Marketocracy/bin/fptool invalidateFund 6fde268f4ee2c429c0a80134;
+/Marketocracy/bin/fptool invalidateFund 720054aa3e4c0c2ac0a80135;
+/Marketocracy/bin/fptool invalidateFund 72a2571a42136a30c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7351511f3e652760c0a80135;
+/Marketocracy/bin/fptool invalidateFund 7439329d41070e78c0a80134;
+/Marketocracy/bin/fptool invalidateFund 749333364256d314c0a80132;
+/Marketocracy/bin/fptool invalidateFund 7671626e43c19be1c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7898533f3fbf8a76c0a80134;
+/Marketocracy/bin/fptool invalidateFund 793474794244df20c0a80133;
+/Marketocracy/bin/fptool invalidateFund 793811944456b0a9c0a80134;
+/Marketocracy/bin/fptool invalidateFund 7a4210d93e050e4ac0a80133;
+/Marketocracy/bin/fptool invalidateFund 7a4410d93e050e69c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7a5069a94926e5a2c0a80133;
+/Marketocracy/bin/fptool invalidateFund 7a63599d4537cfa1c0a80134;
+/Marketocracy/bin/fptool invalidateFund 7a8a0337420a982cc0a80134;
+/Marketocracy/bin/fptool invalidateFund 7ac466b542ea668cc0a80134;
+/Marketocracy/bin/fptool invalidateFund 7ac747b7399c11ebc0a80118;
+/Marketocracy/bin/fptool invalidateFund 7b7a411a3d194e80c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 7f5669ce44d8ddd9c0a80132;
+/Marketocracy/bin/fptool invalidateFund 81bf13103a4f2934c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 81e22c3f39f0c0acc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 82eb02c94554beb5c0a80133;
+/Marketocracy/bin/fptool invalidateFund 830e61e23973421bc0a801e0;
+/Marketocracy/bin/fptool invalidateFund 83de1c213d6a2949c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 844932c34ced6fe7c0a80132;
+/Marketocracy/bin/fptool invalidateFund 878c3cd13a24b8a8c0a801e1;
+/Marketocracy/bin/fptool invalidateFund 87b718f2426a7189c0a80132;
+/Marketocracy/bin/fptool invalidateFund 87d6212a414897dfc0a8013c;
+/Marketocracy/bin/fptool invalidateFund 88454bd4403621b9c0a80133;
+/Marketocracy/bin/fptool invalidateFund 891b46634fc7ba0dc0a80133;
+/Marketocracy/bin/fptool invalidateFund 89cb3b994508c4e6c0a80133;
+/Marketocracy/bin/fptool invalidateFund 8a321b414535486cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 8bf35fe2399f3772c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 8c2a1b5641dd572cc0a80133;
+/Marketocracy/bin/fptool invalidateFund 8d2142d539771345c0a801e0;
+/Marketocracy/bin/fptool invalidateFund 8d3452e23b163d0ac0a801e0;
+/Marketocracy/bin/fptool invalidateFund 8e0816e9532251fdc0a86f99;
+/Marketocracy/bin/fptool invalidateFund 8f7412e23ed4b4e8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 8fb44dc03a156389c0a80118;
+/Marketocracy/bin/fptool invalidateFund 9002405b42aea1b8c0a80133;
+/Marketocracy/bin/fptool invalidateFund 907c371d418a9cf2c0a8013c;
+/Marketocracy/bin/fptool invalidateFund 908a59393a22e288c0a80118;
+/Marketocracy/bin/fptool invalidateFund 90d369513a25cdaac0a801e1;
+/Marketocracy/bin/fptool invalidateFund 911c2eb344410a74c0a80134;
+/Marketocracy/bin/fptool invalidateFund 92292c0c4d9c8892c0a80134;
+/Marketocracy/bin/fptool invalidateFund 9233178a4147cbf2c0a80133;
+/Marketocracy/bin/fptool invalidateFund 92b117114605eb74c0a80132;
+/Marketocracy/bin/fptool invalidateFund 949a17803986cf7cc0a80118;
+/Marketocracy/bin/fptool invalidateFund 98ea4809460bfe49c0a80134;
+/Marketocracy/bin/fptool invalidateFund 9a8832d03fddcddfc0a80134;
+/Marketocracy/bin/fptool invalidateFund 9a9600cc45635456c0a80132;
+/Marketocracy/bin/fptool invalidateFund 9b244f4e417284d8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 9f1e12c43d40cab5c0a801e0;
+/Marketocracy/bin/fptool invalidateFund a23659173f54ccfdc0a80133;
+/Marketocracy/bin/fptool invalidateFund a29141ee3b829abdc0a801e0;
+/Marketocracy/bin/fptool invalidateFund a6b25ff5464b9e7cc0a80132;
+/Marketocracy/bin/fptool invalidateFund a8bc74fe3f0dd2f1c0a80133;
+/Marketocracy/bin/fptool invalidateFund a99849e444207abfc0a80132;
+/Marketocracy/bin/fptool invalidateFund accb63e33e67981fc0a80135;
+/Marketocracy/bin/fptool invalidateFund aeb14ad339e6f811c0a80118;
+/Marketocracy/bin/fptool invalidateFund b0a706e53a240869c0a801e1;
+/Marketocracy/bin/fptool invalidateFund b2bc5806455c801fc0a80135;
+/Marketocracy/bin/fptool invalidateFund b2e239783a92be0bc0a801e0;
+/Marketocracy/bin/fptool invalidateFund b354088c39c61f63c0a80151;
+/Marketocracy/bin/fptool invalidateFund b7b76da3461fb7cfc0a80134;
+/Marketocracy/bin/fptool invalidateFund bbea029f463b81f2c0a80135;
+/Marketocracy/bin/fptool invalidateFund bc452eeb41011f51c0a80132;
+/Marketocracy/bin/fptool invalidateFund bebb051939ef4927c0a801e0;
+/Marketocracy/bin/fptool invalidateFund c1111b673bed6501c0a80119;
+/Marketocracy/bin/fptool invalidateFund c152191a3b38cc4dc0a801e1;
+/Marketocracy/bin/fptool invalidateFund c2e311fc41b84f15c0a80134;
+/Marketocracy/bin/fptool invalidateFund c4ac1a86436fea1bc0a80132;
+/Marketocracy/bin/fptool invalidateFund c5f727663da0fd48c0a80135;
+/Marketocracy/bin/fptool invalidateFund c76073c54087db50ffffffff;
+/Marketocracy/bin/fptool invalidateFund c7c568c340980f17c0a80133;
+/Marketocracy/bin/fptool invalidateFund c8e44441410fd421c0a80133;
+/Marketocracy/bin/fptool invalidateFund c8ef542b45d1245bc0a80133;
+/Marketocracy/bin/fptool invalidateFund cc5d4cd73e66510ec0a80133;
+/Marketocracy/bin/fptool invalidateFund cd501c3f452668c4c0a80132;
+/Marketocracy/bin/fptool invalidateFund ce0038613d5d4d68c0a801e0;
+/Marketocracy/bin/fptool invalidateFund d1b36a473a426101c0a801e1;
+/Marketocracy/bin/fptool invalidateFund d538339a3a0df806c0a80119;
+/Marketocracy/bin/fptool invalidateFund d60b367d3a0349abc0a801e1;
+/Marketocracy/bin/fptool invalidateFund d6100f2a4451c286c0a80132;
+/Marketocracy/bin/fptool invalidateFund d6c4026e43c2d8d0c0a80132;
+/Marketocracy/bin/fptool invalidateFund d9511ed2433dc5ddc0a80132;
+/Marketocracy/bin/fptool invalidateFund dab152ce3a102776c0a80118;
+/Marketocracy/bin/fptool invalidateFund dcb47509445d08e1c0a80134;
+/Marketocracy/bin/fptool invalidateFund dd42736a3ea81877c0a80133;
+/Marketocracy/bin/fptool invalidateFund de98429a4cf4271ac0a80133;
+/Marketocracy/bin/fptool invalidateFund dea82db53b7acaa7c0a80118;
+/Marketocracy/bin/fptool invalidateFund df0e2dbc40659283ffffffff;
+/Marketocracy/bin/fptool invalidateFund e0db453a4c55618ec0a80135;
+/Marketocracy/bin/fptool invalidateFund e101625f39d23a5cc0a80119;
+/Marketocracy/bin/fptool invalidateFund e1ef20aa3c2056c5c0a80119;
+/Marketocracy/bin/fptool invalidateFund e2d0025d4448c256c0a80132;
+/Marketocracy/bin/fptool invalidateFund e48c19963b603c4dc0a801e1;
+/Marketocracy/bin/fptool invalidateFund e52308973bab48cac0a801e0;
+/Marketocracy/bin/fptool invalidateFund e55d29313a2b0249c0a801e1;
+/Marketocracy/bin/fptool invalidateFund e5676bac3d587f22c0a801e2;
+/Marketocracy/bin/fptool invalidateFund e730016445fab183c0a80132;
+/Marketocracy/bin/fptool invalidateFund e74526ab42a6a036c0a80132;
+/Marketocracy/bin/fptool invalidateFund e7c1315e50aa4e6ec0a80134;
+/Marketocracy/bin/fptool invalidateFund e83167b4453ccd90c0a80132;
+/Marketocracy/bin/fptool invalidateFund e8631d473bb33734c0a80118;
+/Marketocracy/bin/fptool invalidateFund e8ff048c397c76aac0a80118;
+/Marketocracy/bin/fptool invalidateFund ea5f026a4461f36ec0a80134;
+/Marketocracy/bin/fptool invalidateFund eada2dbe4c2c0b5ec0a80135;
+/Marketocracy/bin/fptool invalidateFund eb2303883b101413c0a80119;
+/Marketocracy/bin/fptool invalidateFund eb3237c63b549149c0a80119;
+/Marketocracy/bin/fptool invalidateFund eea7611642175363c0a80132;
+/Marketocracy/bin/fptool invalidateFund eebc076a3ff1e61fc0a80132;
+/Marketocracy/bin/fptool invalidateFund eee762b939db9c1cc0a80118;
+/Marketocracy/bin/fptool invalidateFund ef7834a241c89cdac0a80132;
+/Marketocracy/bin/fptool invalidateFund ef7d058354179640c0a86f98;
+/Marketocracy/bin/fptool invalidateFund efed1a28465ede81c0a80133;
+/Marketocracy/bin/fptool invalidateFund f011427747f5b98ec0a80134;
+/Marketocracy/bin/fptool invalidateFund f13006543b6043e4c0a801e0;
+/Marketocracy/bin/fptool invalidateFund f2023a923a53796ac0a801e0;
+/Marketocracy/bin/fptool invalidateFund f21966544d896850c0a80132;
+/Marketocracy/bin/fptool invalidateFund f222026f446242d7c0a80134;
+/Marketocracy/bin/fptool invalidateFund f2262b4247bf8046c0a80135;
+/Marketocracy/bin/fptool invalidateFund f28b0aa341bb0b7fc0a80132;
+/Marketocracy/bin/fptool invalidateFund f28e74b040db35b3c0a80132;
+/Marketocracy/bin/fptool invalidateFund f43954264cd5f7f6c0a80132;
+/Marketocracy/bin/fptool invalidateFund f60019093e7e4d46c0a80134;
+/Marketocracy/bin/fptool invalidateFund f60935423a271a91c0a801e1;
+/Marketocracy/bin/fptool invalidateFund f65a180a450e1b71c0a80133;
+/Marketocracy/bin/fptool invalidateFund f8243f033ab6b580c0a80119;
+/Marketocracy/bin/fptool invalidateFund fad960c4484db297c0a80135;
+/Marketocracy/bin/fptool invalidateFund fae61a1440913347c0a80132;
+/Marketocracy/bin/fptool invalidateFund fbe832834f1960f8c0a80133;
+/Marketocracy/bin/fptool invalidateFund fd62375752f7ab41c0a86f98;
+/Marketocracy/bin/fptool invalidateFund ff044e903a44f55ac0a80119;
+/Marketocracy/bin/fptool invalidateFund ff5e02003a8b4980c0a80118;
+/Marketocracy/bin/fptool invalidateFund fff705af3f5f5ebac0a80132;
+
+now run each of these in a terminal window on stocks
+
+all funds are invalidated
+ check lycos
+
+StockInfoPage  says that it's delisted - good
+AVNR has been acquired	
+StockActionsPage good	 	
+AVANIR PHARMACEUTICALS'A' acquired by a private company on 2015-01-14 00:00:00.
+
+your holdings of AVNR	
+ 	 	
+Fund	Shares	Value	Portion of fund
+LV	0	 $.00	 0.00%  <---- expand 
+LG	 0	 N/A	 N/A
+LBC	 0	 N/A	 N/A
+
+expanding LV
+LEDGER
+Date	Start	Change	End	Type
+Jan 07, 2014		63600	63600	Buy
+Jan 14, 2015	63600	-63600		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jan 7, 2014	63,600	$3,180.00	$206,254.42	$3.24
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+check for the cash
+
+1/14/2015 LV fund.    63600 * 17 = 1081200
+01/14/2015	$430,215.98	$0.00	$11.79	$1,081,200.00	$176.54	$365,387.88	$1,145,863.35	$2,226,462.00	$3,372,325.35	100,000	$33.72	Yes	Details 
+
+The member got the cash  - and all funds are invalidated - closing this out  - case 2143

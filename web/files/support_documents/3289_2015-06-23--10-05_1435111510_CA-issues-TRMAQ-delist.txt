@@ -1,0 +1,311 @@
+date:    6/22/15
+ticker:   TRMAQ
+
+yahoo:  nothing
+
+quantum:  nothing
+
+oursite:
+Symbol: TRMAQ 	Name: Trico Marine Services, Incorporated 	Price: $0.04
+Volume: 	Sector: Energy 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for TRMAQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+08 Sep 10 	TRMA 	TRMAQ 	Change in the ticker (trading) symbol from TRMA to TRMAQ
+  	  	 
+left curve 	  listing changes for TRMAQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Sep 08, 2010 	NASDAQ 	UQ 	OTCBB-OTHER 	UV 	Change in the exchange that TRMAQ trades on from NASDAQ to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Trico Marine Services, Incorporated  Symbol:TRMAQ
+Date: 06/22/2015
+
+53 users found
+
+1	800newdollar	adonatel	argonaut	arv_99	beachbumed	bharryz	bradhark	burgess	dannygrubb	dclaw
+2	ddprez	dgo	edmchua	enteck	esoteric	hbeceiro	housteven	jacksonrj_is	jhegemon	jmikula
+3	jo_brien1	johnmzimmermann	johnstonsa_is	jubals	jules	kchamblee	kerzha	lz049	marchus	mhorsestud
+4	milkrate	mkremer	mrelijahwhite	msaal	muwakwe	mynameizbrent	nick85016	priv8pete	quantboy	revblc
+5	rjjackso	rmkidd125	rserrell	rtshapiro	rw_mull	tacall	taniwha	tdrumgo	tfreem1	vchiang
+6	venatorperitus	wallstbroker23	wallstreetace
+
+database
+select distinct stockkey from mstockalias where symbol= 'TRMAQ';  
+> Row 1:
+>   STOCKKEY = X'e28109fe43d840bfc0a80146'
+
+
+select * from mstockalias where stockkey=X'e28109fe43d840bfc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2005-10-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'e28209fe43d840bfc0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'd91072864c87fa33c0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMAQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2010-09-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'c91773d14c87faaec0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMAQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TRMAQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|TRMAQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 61258672
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 9547853
+>        BB_COMPANYNAME = Trico Marine Services Inc/United States
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-01-31 00:00:00.000000'
+>         BB_IDENTIFIER = TRMAQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-01-31 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = TRMAQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-01-31 00:00:00.000000'
+>            PRIMARYKEY = X'8e4332c04f287ba9c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TRMAQ
+>>>> dbtool started at 2015-06-22 18:06:58 -0400
+stock: TRMAQ
+  PK       : [E28109FE43D840BFC0A80146]
+  companyID: [16018]
+  symbol   : [TRMAQ]
+  name     : [Trico Marine Services, Incorporated]
+  date     : [2010-09-08 00:00:00]
+  status   : [Active]
+stock: TRMAQ
+  PK       : [E28109FE43D840BFC0A80146]
+  companyID: [16018]
+  symbol   : [TRMAQ]
+  name     : [Trico Marine Services, Incorporated]
+  date     : [2010-09-08 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-22 18:06:58 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16018
+2012-04-12 (Thu) [4119]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'e28109fe43d840bfc0a80146' and shares > 0 order by closed; 
+> Row 608:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-09-23 16:01:56.000000'
+>        COMMENT = 
+>     COMMISSION = 1.800000
+>   CURRENTORDER = X'caf261da4e5535ffc0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'41342e813f0b643dc0a80134'
+>       MODIFIED = NULL
+>            NET = 37.800000
+>         OPENED = TIMESTAMP '2011-08-24 13:33:51.000000'
+>          PRICE = 0.037800
+>     PRIMARYKEY = X'caf061da4e5535ffc0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = doc_comm@yahoo.com
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'e28109fe43d840bfc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e28109fe43d840bfc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e28109fe43d840bfc0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 53 members who hold this stock
+delist: 2012-01-31
+quantum:  nothing
+last ticket: 2011-09-23 PRICE = 0.037800
+last price:  2012-04-20 (Fri) [4127]: O:0.0390 H:0.0390 L:0.0390 C:0.0390 V:0 TSO:19446 A:0.0390 R:1.0000 CA:0.0000
+
+going with 20120131  0.0390
+
+/Marketocracy/bin/cahelper -symbol  TRMAQ  -effective 20120131 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0390 -acqShare 0 -purchaser TRMAQ   >& /Users/build/caout/TRMAQ.20150622-DELIST.out 
+TRMAQ.20150622-DELIST.out
+stocks:~/caout build$ tail -f TRMAQ.20150622-DELIST.out
+D: (06-22 18:09:59.344) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-22 18:10:24.311) cahelper started on 2015-06-22 18:10:24 -0400
+
+D: (06-22 18:10:24.580) There are [0] open tickets for TRMAQ on 20120131
+D: (06-22 18:10:25.007) StockFileLoad Version:4.0
+D: (06-22 18:10:25.007) Loading Stock Data
+D: (06-22 18:11:03.583) Building Lookup Index
+D: (06-22 18:11:08.679) Finished Building Index
+D: (06-22 18:11:12.427) Finished Loading Stock Data
+D: (06-22 18:11:12.546) Connection to 192.168.111.172:6666 succeeded
+D: (06-22 18:11:15.951) {
+    "ACQUIRED_STOCK" = TRMAQ; 
+    "ACQUIRING_STOCK" = "TRMAQ_FIX"; 
+    AMOUNT = 0.039; 
+    APPLIED = 1; 
+    DATE = 20120131; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TRMAQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-22 18:11:20.869) SUCCESS
+D: (06-22 18:11:20.870) cahelper finished 2015-06-22 18:11:20 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'e28109fe43d840bfc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2005-10-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'e28209fe43d840bfc0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2010-09-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'd91072864c87fa33c0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMAQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2010-09-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'c91773d14c87faaec0a80146'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMAQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 896106200
+>           DATE = TIMESTAMP '2012-01-31 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Trico Marine Services, Incorporated
+>     PRIMARYKEY = X'c1a41d7f558887d0c0a86f92'
+>       STOCKKEY = X'e28109fe43d840bfc0a80146'
+>         SYMBOL = TRMAQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'c1a41d7f558887d0c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'c1a41d7f558887d0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TRMAQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.039000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150622:061024
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-01-31 00:00:00.000000'
+>         BB_IDENTIFIER = TRMAQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-01-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRMAQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-01-31 00:00:00.000000'
+>            PRIMARYKEY = X'c19e1d7f558887d0c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'c19e1d7f558887d0c0a86f92';
+> Row 1:
+>   _C001 = 89.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'c19e1d7f558887d0c0a86f92'));
+there are 89 fundkeys, save to CA issues TRMAQ fundkeys.txt
+
+For Beta case
+TRMAQ no longer trades but is still active on our site - need to delist 
+
+check on 6/23/15   invalidate funds
+check MAdmin  it is clear
+ TRMAQ has been acquired 	right curve
+  	  	
+Trico Marine Services, Incorporated acquired by a private company on 2012-01-31 00:00:00.
+  	  	 
+invalidate
+reprice 
+closing this out 

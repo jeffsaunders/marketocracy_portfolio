@@ -1,0 +1,300 @@
+date:   6/6/15
+ticker: INTN
+
+yahoo:
+
+quantum:  still shows active
+
+oursite:
+Symbol: INTN 	Name: INTAC International, Inc. 	Price: $8.62
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low
+CAs
+ symbol changes for INTN 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+10 May 05 	INTN 	INTNE 	Change in the ticker (trading) symbol from INTN to INTNE
+14 Jul 05 	INTNE 	INTN 	Change in the ticker (trading) symbol from INTNE to INTN
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+INTN  MM/DD/YYYY
+Stock:INTAC International, Inc.  Symbol:INTN
+Date: 06/06/2015
+
+16 users found
+
+1	aragon9197	bater1973	countrybill	gviersen	humbahe	jfrancois	ku4a	lwilliams3	maxman71	mchea
+2	milano	quantboy	rmorse	stocks06	vooch	werty
+
+database
+select distinct stockkey from mstockalias where symbol= 'INTN';  
+> Row 1:
+>   STOCKKEY = X'a61b14d2421e5748c0a80146'
+
+select * from mstockalias where stockkey= X'a61b14d2421e5748c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2003-06-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'a61c14d2421e5748c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2005-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'822f214d42816790c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2005-07-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'6ce2066042d718f5c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='INTN'  order by BB_EFFECTIVE;
+nothing useful
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock INTN
+>>>> dbtool started at 2015-06-07 02:24:02 -0400
+stock: INTN
+  PK       : [A61B14D2421E5748C0A80146]
+  companyID: [15480]
+  symbol   : [INTN]
+  name     : [INTAC International, Inc.]
+  date     : [2003-06-05 00:00:00]
+  status   : [Active]
+stock: INTN
+  PK       : [A61B14D2421E5748C0A80146]
+  companyID: [15480]
+  symbol   : [INTN]
+  name     : [INTAC International, Inc.]
+  date     : [2005-07-14 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-07 02:24:02 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 15480
+2007-12-09 (Sun) [2533]: <WEEKEND>
+2007-12-10 (Mon) [2534]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+2007-12-11 (Tue) [2535]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+2007-12-12 (Wed) [2536]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+2007-12-13 (Thu) [2537]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+2007-12-14 (Fri) [2538]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'a61b14d2421e5748c0a80146' and shares > 0 order by closed; 
+> Row 180:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-10-02 10:34:00.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'b867164447024d76c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'88f0036840575139c0a80133'
+>       MODIFIED = NULL
+>            NET = 8435.400000
+>         OPENED = TIMESTAMP '2007-10-02 09:53:58.000000'
+>          PRICE = 8.435400
+>     PRIMARYKEY = X'b865164447024d76c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = ku4a@yahoo.com
+
+last ticket 2007-10-02
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'a61b14d2421e5748c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a61b14d2421e5748c0a80146' and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a61b14d2421e5748c0a80146' and totalshares < 0)));
+
+apply the acquis
+last ticket 2007-10-02
+last price:
+2007-12-14 (Fri) [2538]: O:8.6199 H:8.6199 L:8.6199 C:8.6199 V:0 TSO:22940 A:8.6199 R:1.0000 CA:0.0000
+
+going with 20071214 8.6199
+
+/Marketocracy/bin/cahelper -symbol  INTN  -effective 20071214 -type ACQUIS -exchange UN -acqType 1 -acqCash 8.6199 -acqShare 0 -purchaser INTN   >& /Users/build/caout/INTN.20150607-ACQUIS.out 
+INTN.20150607-ACQUIS.out
+stocks:~/caout build$ tail -f INTN.20150607-ACQUIS.out
+D: (06-07 07:06:15.179) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-07 07:06:40.213) cahelper started on 2015-06-07 07:06:40 -0400
+
+D: (06-07 07:06:40.495) There are [0] open tickets for INTN on 20071214
+D: (06-07 07:06:41.533) StockFileLoad Version:4.0
+D: (06-07 07:06:41.534) Loading Stock Data
+D: (06-07 07:07:20.129) Building Lookup Index
+D: (06-07 07:07:25.149) Finished Building Index
+D: (06-07 07:07:28.980) Finished Loading Stock Data
+D: (06-07 07:07:29.099) Connection to 192.168.111.172:6666 succeeded
+D: (06-07 07:07:29.926) {
+    "ACQUIRED_STOCK" = INTN; 
+    "ACQUIRING_STOCK" = "INTN_FIX"; 
+    AMOUNT = 8.6199; 
+    APPLIED = 1; 
+    DATE = 20071214; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "INTN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-07 07:07:32.977) SUCCESS
+D: (06-07 07:07:32.977) cahelper finished 2015-06-07 07:07:32 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'a61b14d2421e5748c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2003-06-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'a61c14d2421e5748c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2005-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'822f214d42816790c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTNE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2005-07-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'6ce2066042d718f5c0a80146'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 45811T100
+>           DATE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = INTAC International, Inc.
+>     PRIMARYKEY = X'b98e173b557425c0c0a86f92'
+>       STOCKKEY = X'a61b14d2421e5748c0a80146'
+>         SYMBOL = INTN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203030
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'b98e173b557425c0c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'b98e173b557425c0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|INTN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|8.619900|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150607:070640
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-12-14 00:00:00.000000'
+>         BB_IDENTIFIER = INTN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-12-14 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = INTN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-12-14 00:00:00.000000'
+>            PRIMARYKEY = X'b988173b557425c0c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'b988173b557425c0c0a86f92';
+> Row 1:
+>   _C001 = 26.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'b988173b557425c0c0a86f92'));
+26 fundkeys save to CA issues INTN fundkeys.txt
+
+check on 6/8/15   invalidate funds reprice
+
+acquis is there
+check jfrancois  BETA
+cash:  8.61990  on 20071214
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jul 06, 2006 		-842 	-842 	Sell
+Dec 14, 2007 	-842 	842 		Corporate Action
+Total: 0
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 6, 2006 	842 	$42.10 	$0.21 	$6,697.77 	$7.95
+short fund
+
+6/10/15
+ INTN has been acquired 	right curve
+  	  	
+INTAC International, Inc. acquired by a private company on 2007-12-14 00:00:00.
+  	  	 
+left curve 	  symbol changes for INTN 	right curve
+check MAdmin  no one 
+
+acquis is there, 
+closing this out

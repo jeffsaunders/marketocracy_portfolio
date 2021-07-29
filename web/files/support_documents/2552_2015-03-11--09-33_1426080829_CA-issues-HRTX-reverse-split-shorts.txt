@@ -1,0 +1,213 @@
+date: 3/11/15
+ticker:  HRTX
+this looks like a manually applied reverse split that caused members to go short 
+
+> Row 1613:
+>    LOGINNAME = jleb80
+>       SYMBOL = LHRF
+>   PRIMARYKEY = X'8bce071a4f2817ccc0a80133'
+positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+HRTX 	$14.62 	-90,250 	-$1,319,454.99 	-$47,110.49 	0.48% 	-74.77% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 08, 2013 		95000 	95000 	Buy
+Jan 23, 2014 	95000 	-90250 	4750 	Corporate Action
+Mar 07, 2014 	4750 	-95000 	-90250 	Sell
+Total: -90,250
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 8, 2013 	95,000 	$3,000.15 	$63,003.10 	$0.66
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 7, 2014 	95,000 	$4,750.00 	$23.32 	$1,335,349.88 	$14.06
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Jan 23, 2014 	Split terms:split terms: 1 for 20
+
+looks like another reverse split that caused members to go short
+
+>    LOGINNAME = jleb80
+>       fund = LHRF
+ticker:  HRTX
+
+
+select distinct stockkey from mstockalias where symbol='HRTX';
+> Row 1:
+>   STOCKKEY = X'd1460e21390a66b9c0a80116'
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='STOCK_SPLT' and aliaskey in (select primarykey from mstockalias where STOCKKEY = X'd1460e21390a66b9c0a80116') order by BB_EFFECTIVE;
+
+> Row 1:
+>              ALIASKEY = X'f76f4ee546579552c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 4|CP_RATIO|0.250000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.250000|CP_ADJ_DT|20070525|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 26500724
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 102144
+>        BB_COMPANYNAME = AP Pharma Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-05-25 00:00:00.000000'
+>         BB_IDENTIFIER = APPAD   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-05-24 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = APPAD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'11aa4d94465794b4c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'2bcf1d2052e1ab5cc0a87091'
+>   BB_ACTIONDICTIONARY = CP_TERMS|split terms: 1 for 20|CP_RATIO|0.050000|CP_RECORD_DT|20140123|CP_PAY_DT|20140123|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20140603:072235
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-23 00:00:00.000000'
+>         BB_IDENTIFIER = HRTX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-23 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HRTX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-23 00:00:00.000000'
+>            PRIMARYKEY = X'b91d6287538daffbc0a86f92'
+>               VERSION = NULL
+
+it's this second one that is causing the problems
+get the parameters
+<STOCKKEY_TO_CHANGE>  X'd1460e21390a66b9c0a80116'
+<SPLIT_DATE>  2014-01-23
+<APPLIED_DATE> 2014-06-03
+<SPLIT_RATIO> 0.050000
+
+select primarykey  from mticket where STOCKKEY = X'd1460e21390a66b9c0a80116' and closed > TIMESTAMP'2014-01-23 00:00:00.000000' and closed < TIMESTAMP'2014-06-03 00:00:00.000000' and shares > 0 and sourcekey is null order by closed;
+> Row 1:
+>   PRIMARYKEY = X'ecc73f1f52e28f42c0a86f9c'
+> Row 2:
+>   PRIMARYKEY = X'4046327a52e7faf0c0a86f9c'
+> Row 3:
+>   PRIMARYKEY = X'ef100c6152efc9c6c0a86f98'
+> Row 4:
+>   PRIMARYKEY = X'635600f252f9b0cbc0a86f99'
+> Row 5:
+>   PRIMARYKEY = X'acbd6e7753063fddc0a86f99'
+> Row 6:
+>   PRIMARYKEY = X'b7f35f4c53551018c0a86f99'
+> Row 7:
+>   PRIMARYKEY = X'a04c023e53678984c0a86f99'
+> Row 8:
+>   PRIMARYKEY = X'fcc400dd53720e40c0a86f99'
+> Row 9:
+>   PRIMARYKEY = X'0a5c0117537a1524c0a86f99'
+> Row 10:
+>   PRIMARYKEY = X'1fa7635f5384f602c0a86f98'
+
+prepare these to be tickled 
+
+ecc73f1f52e28f42c0a86f9c
+4046327a52e7faf0c0a86f9c
+ef100c6152efc9c6c0a86f98
+635600f252f9b0cbc0a86f99
+acbd6e7753063fddc0a86f99
+b7f35f4c53551018c0a86f99
+a04c023e53678984c0a86f99
+fcc400dd53720e40c0a86f99
+0a5c0117537a1524c0a86f99
+1fa7635f5384f602c0a86f98
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey  from mticket where STOCKKEY = X'd1460e21390a66b9c0a80116' and closed > TIMESTAMP'2014-01-23 00:00:00.000000' and closed < TIMESTAMP'2014-06-03 00:00:00.000000' and shares > 0 and sourcekey is null));
+> Row 1:
+>   FUNDKEY = X'9ff46ace4bd5313dc0a80134'
+> Row 2:
+>   FUNDKEY = X'8bce071a4f2817ccc0a80133'
+> Row 3:
+>   FUNDKEY = X'84ff663450f9efb5c0a80135'
+> Row 4:
+>   FUNDKEY = X'79bd27b83becc18cc0a801e1'
+prepare these to be invalidated
+/Marketocracy/bin/fptool invalidateFund 9ff46ace4bd5313dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8bce071a4f2817ccc0a80133;
+/Marketocracy/bin/fptool invalidateFund 84ff663450f9efb5c0a80135;
+/Marketocracy/bin/fptool invalidateFund 79bd27b83becc18cc0a801e1;
+
+set commit false;
+update mticket set shares=shares*0.050000 where STOCKKEY = X'd1460e21390a66b9c0a80116' and closed > TIMESTAMP'2014-01-23 00:00:00.000000' and closed < TIMESTAMP'2014-06-03 00:00:00.000000' and shares > 0 and sourcekey is null;
+update morder set SHARESFILLED = SHARESFILLED*0.050000  where ticketkey in (select primarykey from mticket where STOCKKEY = X'd1460e21390a66b9c0a80116' and closed > TIMESTAMP'2014-01-23 00:00:00.000000' and closed < TIMESTAMP'2014-06-03 00:00:00.000000' and shares > 0 and sourcekey is null);
+update mtrade set shares = shares*0.050000  where ticketkey in (select primarykey from mticket where STOCKKEY = X'd1460e21390a66b9c0a80116' and closed > TIMESTAMP'2014-01-23 00:00:00.000000' and closed < TIMESTAMP'2014-06-03 00:00:00.000000' and shares > 0 and sourcekey is null);
+commit;
+set commit true;
+
+let's tickle the tickets
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-03-11 09:28:16 -0400
+<<<< dbtool finished at 2015-03-11 09:29:11 -0400
+
+
+let's invalidate
+/Marketocracy/bin/fptool invalidateFund 9ff46ace4bd5313dc0a80134;
+/Marketocracy/bin/fptool invalidateFund 8bce071a4f2817ccc0a80133;
+/Marketocracy/bin/fptool invalidateFund 84ff663450f9efb5c0a80135;
+/Marketocracy/bin/fptool invalidateFund 79bd27b83becc18cc0a801e1;
+
+log out and log back in as the member .
+>    LOGINNAME = jleb80
+>       SYMBOL = LHRF
+short is gone, let's look at trading for HRTX
+
+your holdings of HRTX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+JLMF1 	0 	N/A 	N/A
+JLVF 	0 	N/A 	N/A
+LSWF 	0 	N/A 	N/A
+LMTF 	0 	N/A 	N/A
+LFOC 	0 	N/A 	N/A
+LFFD 	0 	N/A 	N/A
+BMTF 	0 	N/A 	N/A
+LEMF 	0 	N/A 	N/A
+LSVF 	0 	N/A 	N/A
+JLMF 	0 	N/A 	N/A
+LHGF 	0 	N/A 	N/A
+LHRF 	0 	$.00 	0.00%  <--- expand 
+LBIO 	0 	N/A 	N/A
+LMBF 	0 	N/A 	N/A 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 08, 2013 		95000 	95000 	Buy
+Jan 23, 2014 	95000 	-90250 	4750 	Corporate Action
+Mar 07, 2014 	4750 	-4750 		Sell
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 8, 2013 	95,000 	$3,000.15 	$63,003.10 	$0.66
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 7, 2014 	4,750 	$237.50 	$1.17 	$66,767.49 	$14.06
+
+
+perfect!   he is sold out and shares = 0.
+
+closing this out 

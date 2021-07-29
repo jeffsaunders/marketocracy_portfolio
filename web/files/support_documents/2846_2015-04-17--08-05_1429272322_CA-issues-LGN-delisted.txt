@@ -1,0 +1,343 @@
+date:  4/16/15
+ticker  LGN
+
+yahoo:  nothing
+
+quantum:
+Lodgian, Inc.
+Ticker Symbol: LGN*     CUSIP: 54021P205     Exchange: AMEX
+* NOTE: This security is no longer trading as of 4/20/10
+
+Company's Online Profile
+BUSINESS:  Lodgian, Inc. is one of the largest owners and operators of full-service hotels in the United States. The Company owns or manages over 100 hotels, containing approximately 20,000 rooms located in 32 states and Canada. Lodgian, based in Atlanta, emerged from bankruptcy in November 2002.
+Find All Related Securities for LGN
+
+Notes:  April 15, 2010 -- Lodgian, Inc. (NYSE Amex Equities: LGN), one of the nation’s largest independent hotel owners and operators, announced that at the special meeting of Lodgian’s stockholders held today, the stockholders voted to adopt the merger agreement entered into by Lodgian with LSREF Lodging Investments, LLC (“LSREF”) and LSREF Lodging Merger Co., Inc., affiliates of Lone Star Funds, and approve the merger pursuant to which Lodgian will be acquired by LSREF. The proposed merger was announced on January 22, 2010 and is anticipated to close on April 19, 2010, subject to satisfaction of various closing conditions of the parties pursuant to the terms of the merger agreement. Under the terms of the merger agreement, Lodgian stockholders will receive $2.50 per share in cash, without interest and less any applicable withholding taxes, in exchange for each share of common stock held. Upon closing of the transaction, Lodgian anticipates that its common stock will be de-listed from the NYSE Amex.
+IPO - 11/26/2002 - 12.00 Million Shares @ $/share.    Link to IPO Prospectus
+Micro Cap Stock -   Market Value $ 40.8 Million 
+
+terms:  $2.50 per share in cash    on 4/20/2010
+oursite:
+CUSIP changes for LGN 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+30 Apr 04 	54021P205 	54021P403 	Change in any of identification numbers (CUSIP) of a security from 54021P205 to 54021P403
+  	  	 
+left curve 	  LGN had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+30 Apr 04 	1 for 3 	Split terms:1 for 3
+
+
+MAdmin  LGN
+Stock:Lodgian, Inc.  Symbol:LGN
+Date: 04/16/2015
+
+25 users found
+
+1	blink	crossy	cstelmachowski	go_stanford	hugemagic	jak27	jr4notaxes	jreigstad	jrossal059	jtmuncey
+2	justin123	kpsheeha	malpost	mberger	mecstriker	plan_b	plundstedt001	red7canyon	redbooger69	rep62ar
+3	rjmayerhoff	samko	theuptick	topher	tsurani
+
+crossy:
+your holdings of LGN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+CSWF 	0 	N/A 	N/A
+CFSF 	0 	N/A 	N/A
+CWBF 	0 	N/A 	N/A
+CTCF 	0 	N/A 	N/A
+CDSF 	1 	$2.49 	0.00%
+CIAF 	1 	$2.49 	0.00%
+CEOF 	0 	N/A 	N/A
+CLVF 	0 	N/A 	N/A
+CTXF 	0 	N/A 	N/A 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'LGN';  
+> Row 1:
+>   STOCKKEY = X'493c134d3fb57673c0a80146'
+
+select * from mstockalias where stockkey= X'493c134d3fb57673c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2003-01-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'493d134d3fb57673c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 54021P403
+>           DATE = TIMESTAMP '2004-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'ecdd16de409305d7c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 54021P403
+>           DATE = TIMESTAMP '2004-07-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'652a66ba40ecaaf4c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='LGN'  order by BB_EFFECTIVE;
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock LGN
+>>>> dbtool started at 2015-04-16 23:17:34 -0400
+stock: LGN
+  PK       : [493C134D3FB57673C0A80146]
+  companyID: [9382]
+  symbol   : [LGN]
+  name     : [Lodgian, Inc.]
+  date     : [2003-01-28 00:00:00]
+  status   : [Active]
+stock: LGN
+  PK       : [493C134D3FB57673C0A80146]
+  companyID: [9382]
+  symbol   : [LGN]
+  name     : [Lodgian, Inc.]
+  date     : [2004-04-30 00:00:00]
+  status   : [Active]
+stock: LGN
+  PK       : [493C134D3FB57673C0A80146]
+  companyID: [9382]
+  symbol   : [LGN]
+  name     : [Lodgian, Inc.]
+  date     : [2004-07-07 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-16 23:17:34 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9382
+2010-04-27 (Tue) [3403]: O:2.5089 H:2.5099 L:2.4900 C:2.4900 V:72793 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-04-28 (Wed) [3404]: O:2.5089 H:2.5099 L:2.4900 C:2.4900 V:72793 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-04-29 (Thu) [3405]: O:2.5089 H:2.5099 L:2.4900 C:2.4900 V:72793 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-04-30 (Fri) [3406]: O:2.5089 H:2.5099 L:2.4900 C:2.4900 V:72793 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-01 (Sat) [3407]: <WEEKEND>
+2010-05-02 (Sun) [3408]: <WEEKEND>
+2010-05-03 (Mon) [3409]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-04 (Tue) [3410]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-05 (Wed) [3411]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-06 (Thu) [3412]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-07 (Fri) [3413]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-08 (Sat) [3414]: <WEEKEND>
+2010-05-09 (Sun) [3415]: <WEEKEND>
+2010-05-10 (Mon) [3416]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-11 (Tue) [3417]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-12 (Wed) [3418]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-13 (Thu) [3419]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-14 (Fri) [3420]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-15 (Sat) [3421]: <WEEKEND>
+2010-05-16 (Sun) [3422]: <WEEKEND>
+2010-05-17 (Mon) [3423]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-18 (Tue) [3424]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-19 (Wed) [3425]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-20 (Thu) [3426]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-21 (Fri) [3427]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-22 (Sat) [3428]: <WEEKEND>
+2010-05-23 (Sun) [3429]: <WEEKEND>
+2010-05-24 (Mon) [3430]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-25 (Tue) [3431]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-26 (Wed) [3432]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-27 (Thu) [3433]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-28 (Fri) [3434]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-05-29 (Sat) [3435]: <WEEKEND>
+2010-05-30 (Sun) [3436]: <WEEKEND>
+2010-05-31 (Mon) [3437]: <HOLIDAY>
+2010-06-01 (Tue) [3438]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-06-02 (Wed) [3439]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+2010-06-03 (Thu) [3440]: O:2.4900 H:2.4900 L:2.4900 C:2.4900 V:0 TSO:21685 A:2.4900 R:1.0000 CA:0.0000
+
+let's see when the last trade was executed
+select * from mticket where stockkey= X'493c134d3fb57673c0a80146' and shares > 0 order by closed;
+> Row 254:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-09-28 15:02:00.000000'
+>        COMMENT = 
+>     COMMISSION = 750.000000
+>   CURRENTORDER = X'995d29e64aba6f19c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'91842c5f43e0f020c0a80132'
+>       MODIFIED = NULL
+>            NET = 29155.095000
+>         OPENED = TIMESTAMP '2009-09-23 14:55:21.000000'
+>          PRICE = 1.943673
+>     PRIMARYKEY = X'995b29e64aba6f19c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 15000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+apply the acquis
+
+terms:  $2.50 per share in cash    on 4/20/2010
+
+
+/Marketocracy/bin/cahelper -symbol  LGN  -effective 20100420 -type ACQUIS -exchange UN -acqType 1 -acqCash 2.50 -acqShare 0 -purchaser LGN   >& /Users/build/caout/LGN.20150416-ACQUIS.out
+LGN.20150416-ACQUIS.out
+stocks:~/caout build$ tail -f LGN.20150416-ACQUIS.out
+D: (04-16 23:21:16.734) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-16 23:21:42.118) cahelper started on 2015-04-16 23:21:42 -0400
+
+D: (04-16 23:21:42.396) There are [0] open tickets for LGN on 20100420
+D: (04-16 23:21:42.676) StockFileLoad Version:3.0
+D: (04-16 23:21:42.676) Loading Stock Data
+D: (04-16 23:22:25.712) Building Lookup Index
+D: (04-16 23:22:30.054) Finished Building Index
+D: (04-16 23:22:31.055) Finished Loading Stock Data
+D: (04-16 23:22:31.362) Connection to 192.168.111.172:6666 succeeded
+D: (04-16 23:22:32.487) {
+    "ACQUIRED_STOCK" = LGN; 
+    "ACQUIRING_STOCK" = "LGN_FIX"; 
+    AMOUNT = 2.5; 
+    APPLIED = 1; 
+    DATE = 20100420; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "LGN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-16 23:22:34.812) SUCCESS
+D: (04-16 23:22:34.813) cahelper finished 2015-04-16 23:22:34 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'493c134d3fb57673c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2003-01-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'493d134d3fb57673c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 54021P403
+>           DATE = TIMESTAMP '2004-04-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'ecdd16de409305d7c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 54021P403
+>           DATE = TIMESTAMP '2004-07-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'652a66ba40ecaaf4c0a80146'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 54021P403
+>           DATE = TIMESTAMP '2010-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Lodgian, Inc.
+>     PRIMARYKEY = X'a65d20da55307c46c0a86f92'
+>       STOCKKEY = X'493c134d3fb57673c0a80146'
+>         SYMBOL = LGN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'a65d20da55307c46c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a65d20da55307c46c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|LGN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150416:112142
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-04-20 00:00:00.000000'
+>         BB_IDENTIFIER = LGN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-04-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = LGN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-04-20 00:00:00.000000'
+>            PRIMARYKEY = X'a65720da55307c46c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'a65720da55307c46c0a86f92';
+> Row 1:
+>   _C001 = 39.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'a65720da55307c46c0a86f92'));
+there are 39  save them to CA issues LGN fundkeys.txt
+
+check on 4/17/15  
+cross CIAF had 1 share  * 2.50 = 2.50  on 20100420 
+
+4/17/15 
+LGN has been acquired 	right curve
+  	  	
+Lodgian, Inc. acquired by a private company on 2010-04-20 00:00:00.
+  	  	 
+let's invalidate 
+
+checking his ledger:
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+04/20/2010 	-$48.12 	$0.00 	-$0.01 	$2.50 	$220.11 	$0.00 	-$265.74 	$4,087,484.45 	$4,087,218.71 	100,000 	$40.87 	Yes 	Details
+
+he got it
+
+expand that date:
+trades on April 20, 2010 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	LGN 	1 	$0.00 	$0.00 	$0.00 	$0.00
+
+it's done, closing this out 

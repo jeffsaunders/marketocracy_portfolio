@@ -1,0 +1,300 @@
+date:  6/4/15
+ticker: NUC
+
+
+yahoo:  stale 
+ (NUC) -NYSE
+15.16 Down 0.03(0.20%) Jun 6 - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	N/A
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	15.12 - 15.23
+52wk Range:	4.98 - 15.23
+Volume:	72,016
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	4.53
+EPS (ttm):	3.35
+Div & Yield:	1.05 (6.00%
+
+quantum:
+Nuveen California Quality Income Municipal Fund
+Ticker Symbol: NUC*     CUSIP: 670985100     Exchange: NYSE
+Security Type:   Closed-End ETF  ---  ETF SubType:   State Tax-Exempt Income Fund
+* NOTE: This security is no longer trading as of 6/06/14
+
+Company's Online Profile
+FUND DESCRIPTION:  Nuveen California Quality Income Municipal Fund is diversified, closed-end management investment company. The Fund seeks current income exempt from both regular Federal income taxes and California personal income tax, and its secondary investment objective is the enhancement of portfolio value relative to the California municipal bond market through investments in tax-exempt California Municipal Obligations. The Fund will invest substantially all of its assets in a diversified portfolio of tax-exempt California Municipal Obligations rated within the four highest grades, except that 20% of the Fund's assets may be invested in unrated California Municipal Obligation which are considered to be of comparable quality. The Fund's investment advisor is Nuveen Advisory Corp.
+
+Notes:  June 9, 2014 -- Nuveen Investments, a leading global provider of investment services to institutions as well as 
+individual investors, today announced that the reorganizations of certain Nuveen California and Massachusetts closed-end 
+funds were completed prior to the opening of the New York Stock Exchange on June 9. 
+
+As part of previously announced reorganizations, the funds have been merged as follows: 
+Acquired Funds Symbol Acquiring Fund Symbol 
+Nuveen California Dividend Advantage Municipal Fund NAC   <---- acquiring fund   on our site - with prices
+Nuveen California Performance Plus Municipal Fund, Inc. NCP   1.01618550  on our site with no prices
+Nuveen California Municipal Market Opportunity Fund, Inc. NCO  1.04765986 on our site with no prices
+Nuveen California Investment Quality Municipal Fund, Inc. NQC  1.03165896 on our site with no prices
+Nuveen California Quality Income Municipal Fund, Inc. NUC 1.06123458 on our site with no prices
+Nuveen California Select Quality Municipal Fund, Inc. NVC  1.04696102 on our site with no prices
+
+Acquired Fund Symbol Acquiring Fund Symbol 
+Nuveen California AMT-Free Municipal Income Fund NKX     <---- acquiring fund   on our site - with prices
+Nuveen California Premium Income Municipal Fund NCU  1.02299895 on our site with no prices
+
+Acquired Funds Symbol Acquiring Fund Symbol 
+Nuveen Massachusetts Premium Income Municipal Fund NMT     <---- acquiring fund- with prices
+Nuveen Massachusetts Dividend Advantage Municipal Fund NMB  0.99141407 on our site with no prices
+Nuveen Massachusetts AMT-Free Municipal Income Fund NGX 0.96093745 on our site with no prices
+
+In the mergers, the acquiring funds NAC, NKX and NMT acquired substantially all of the assets and liabilities of the 
+acquired funds NCP, NCO, NQC, NUC, NVC, NCU, NMB and NGX, as set forth above, in tax-free transactions in exchange for 
+an equal aggregate value of newly-issued common shares. The exchanges took place based upon the funds’ closing net asset 
+values on June 6, 2014. The exchange ratios at which common shares of each acquired fund were exchanged for common 
+shares of the acquiring funds are listed below: 
+
+Fund Exchange Ratio 
+Nuveen California Performance Plus Municipal Fund, Inc. 1.01618550 
+Nuveen California Municipal Market Opportunity Fund, Inc. 1.04765986 
+Nuveen California Investment Quality Municipal Fund, Inc. 1.03165896 
+Nuveen California Quality Income Municipal Fund, Inc. 1.06123458 
+Nuveen California Select Quality Municipal Fund, Inc. 1.04696102 
+Nuveen California Premium Income Municipal Fund 1.02299895 
+Nuveen Massachusetts Dividend Advantage Municipal Fund 0.99141407 
+Nuveen Massachusetts AMT-Free Municipal Income Fund 0.96093745 
+
+Additionally, preferred shareholders of each acquired fund received an equivalent number of newly issued preferred 
+shares from the acquiring fund, with substantially the same terms as their previous preferred shares.
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=NUC
+
+check MAdmin
+NUC  06/04/2015
+Stock:NUVEEN CA QUAL INCOME MUNI  Symbol:NUC
+Date: 06/04/2015
+
+6 users found
+
+1	apreuss	jchaney	lwadley	mibrown	shaqdiese1	timothya
+
+database
+select distinct stockkey from mstockalias where symbol= 'NUC';  
+> Row 1:
+>   STOCKKEY = X'ab611029390b27cbc0a80116'
+
+select * from mstockalias where stockkey= X'ab611029390b27cbc0a80116'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670985100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NUVEEN CA QUAL INCOME MUNI
+>     PRIMARYKEY = X'ab621029390b27cbc0a80116'
+>       STOCKKEY = X'ab611029390b27cbc0a80116'
+>         SYMBOL = NUC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NUC'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NUC
+>>>> dbtool started at 2015-06-04 11:11:43 -0400
+stock: NUC
+  PK       : [AB611029390B27CBC0A80116]
+  companyID: [5753]
+  symbol   : [NUC]
+  name     : [NUVEEN CA QUAL INCOME MUNI]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-04 11:11:43 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5753
+2014-05-31 (Sat) [4898]: <WEEKEND>
+2014-06-01 (Sun) [4899]: <WEEKEND>
+2014-06-02 (Mon) [4900]: O:15.4700 H:15.4800 L:15.3900 C:15.4400 V:89750 TSO:22020 A:15.4400 R:1.0000 CA:6.0719
+2014-06-03 (Tue) [4901]: O:15.4200 H:15.5000 L:15.4200 C:15.4400 V:60984 TSO:22020 A:15.4400 R:1.0000 CA:6.0719
+2014-06-04 (Wed) [4902]: O:15.3000 H:15.3300 L:15.1600 C:15.2400 V:158533 TSO:22020 A:15.2400 R:1.0000 CA:6.0719
+2014-06-05 (Thu) [4903]: O:15.2000 H:15.2000 L:15.1200 C:15.1900 V:92904 TSO:22020 A:15.1900 R:1.0000 CA:6.0719
+2014-06-06 (Fri) [4904]: O:15.2000 H:15.2300 L:15.1200 C:15.1400 V:72305 TSO:22020 A:15.1400 R:1.0000 CA:6.0719
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'ab611029390b27cbc0a80116' and shares > 0 order by closed; 
+> Row 39:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-01-03 10:27:00.000000'
+>        COMMENT = 
+>     COMMISSION = 72.500000
+>   CURRENTORDER = X'e59e50674f030f12c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c01a70a44a41cd9bc0a80133'
+>       MODIFIED = NULL
+>            NET = 23050.126050
+>         OPENED = TIMESTAMP '2012-01-03 09:22:10.000000'
+>          PRICE = 15.896639
+>     PRIMARYKEY = X'e59c50674f030f12c0a80135'
+>         SECFEE = 0.450000
+>         SHARES = 1450.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ab611029390b27cbc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last ticket 2012-01-03
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'ab611029390b27cbc0a80116' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ab611029390b27cbc0a80116' and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ab611029390b27cbc0a80116' and totalshares < 0)));
+no shorts 
+
+apply the acquis
+last ticket 2012-01-03
+* NOTE: This security is no longer trading as of 6/06/14
+NAC   <---- acquiring fund   on our site - with prices
+Nuveen California Quality Income Municipal Fund, Inc. NUC 1.06123458 on our site with no prices
+
+20140606   NAC acquired NUC  holders got 1.06123458  shares of NAC
+
+/Marketocracy/bin/cahelper -symbol  NUC  -effective 20140606 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 1.06123458 -purchaser NAC   >& /Users/build/caout/NUC.20150604-ACQUIS-NAC.out
+NUC.20150604-ACQUIS-NAC.out
+stocks:~/caout build$ tail -f NUC.20150604-ACQUIS-NAC.out
+D: (06-04 12:39:18.472) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-04 12:39:43.311) cahelper started on 2015-06-04 12:39:43 -0400
+
+D: (06-04 12:39:43.580) There are [0] open tickets for NUC on 20140606
+D: (06-04 12:39:47.461) StockFileLoad Version:4.0
+D: (06-04 12:39:47.461) Loading Stock Data
+D: (06-04 12:40:27.509) Building Lookup Index
+D: (06-04 12:40:32.293) Finished Building Index
+D: (06-04 12:40:36.092) Finished Loading Stock Data
+D: (06-04 12:40:36.224) Connection to 192.168.111.172:6666 succeeded
+D: (06-04 12:40:38.086) {
+    "ACQUIRED_STOCK" = NUC; 
+    "ACQUIRING_STOCK" = NAC; 
+    AMOUNT = 1.061235; 
+    APPLIED = 1; 
+    DATE = 20140606; 
+    FUNDS = (
+        "jchaney/The Chaney 450 Dividend", 
+        "jchaney/CHANEY Select Portfolio", 
+        "jchaney/CHANEY Long-Term Value Fund", 
+        "jdberia/JDB Select Index Funds", 
+        "timothya/Diversification beats the Market", 
+        "jchaney/Chaney All-Inclusive MDS", 
+        "shaqdiese1/shaqdiese1's Mutual Fund", 
+        "ryessup/Short Fund", 
+        "apreuss/axel preuss's Mutual Fund", 
+        "apreuss/Fund Nr 2", 
+        "apreuss/apreuss's Mutual Fund", 
+        "apreuss/Fund Nr 3", 
+        "lwadley/OLD SKOOL", 
+        "mibrown/mibrown's Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = NAC; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-04 12:40:41.374) SUCCESS
+D: (06-04 12:40:41.375) cahelper finished 2015-06-04 12:40:41 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'ab611029390b27cbc0a80116'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670985100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NUVEEN CA QUAL INCOME MUNI
+>     PRIMARYKEY = X'ab621029390b27cbc0a80116'
+>       STOCKKEY = X'ab611029390b27cbc0a80116'
+>         SYMBOL = NUC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 670985100
+>           DATE = TIMESTAMP '2014-06-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NUVEEN CA QUAL INCOME MUNI
+>     PRIMARYKEY = X'd71e0b5e55707f85c0a86f92'
+>       STOCKKEY = X'ab611029390b27cbc0a80116'
+>         SYMBOL = NUC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'd71e0b5e55707f85c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'd71e0b5e55707f85c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NUC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|1.061235|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150604:123943
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-06 00:00:00.000000'
+>         BB_IDENTIFIER = NAC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-06 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NAC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-06 00:00:00.000000'
+>            PRIMARYKEY = X'b2bf0b5e55707f4fc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'b2bf0b5e55707f4fc0a86f92';
+> Row 1:
+>   _C001 = 28.000000
+select distinct stockkey from mticket where sourcekey = X'b2bf0b5e55707f4fc0a86f92';
+> Row 1:
+>   STOCKKEY = X'bdd410ac390c6e19c0a8015c'
+> Row 2:
+>   STOCKKEY = X'ab611029390b27cbc0a80116'
+
+good so we have sells and buys for this change which is what we expect 
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'b2bf0b5e55707f4fc0a86f92'));
+14 fundkeys affected   CA issues NUC fundkeys 2.txt
+
+check on 6/5/15   invalidate funds both sets for dividends and acquis 
+check MAdmin
+
+6/7/15 
+ NUC has been acquired 	right curve
+  	  	
+NUVEEN CA QUAL INCOME MUNI [NUC] acquired by NUVEEN CA DIV ADVTG MUNI FD [NAC] on 2014-06-06 00:00:00. 
+invalidate and reprice 
+Done!
+2 Funds Processed
+232 Queries Processed
+
+closing this out 

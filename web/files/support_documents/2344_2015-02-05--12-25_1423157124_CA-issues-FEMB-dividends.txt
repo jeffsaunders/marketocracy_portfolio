@@ -1,0 +1,108 @@
+date: 2/4/15
+FEMB
+
+our site - never paid dividends
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+01/21/2015	Cash	0.1521	--	01/23/2015	01/30/2015
+12/23/2014	Cash	0.21	--	12/26/2014	12/31/2014
+11/21/2014	Cash	0.09	--	11/25/2014	11/28/2014
+
+let's apply them
+/Marketocracy/bin/cahelper -symbol FEMB -effective 20150121 -type DVD_CASH -exchange UN -payDate 20150130 -recordDate 20150123 -amount 0.1521 >& /Users/build/caout/FEMB.20150204-2015-01.out;
+/Marketocracy/bin/cahelper -symbol FEMB -effective 20141223 -type DVD_CASH -exchange UN -payDate 20141231 -recordDate 20141226 -amount 0.21 >& /Users/build/caout/FEMB.20150204-2014-12.out;
+/Marketocracy/bin/cahelper -symbol FEMB -effective 20141121 -type DVD_CASH -exchange UN -payDate 20141128 -recordDate 20141125 -amount 0.09 >& /Users/build/caout/FEMB.20150204-2014-11.out;
+FEMB.20150204-2014-11.out
+FEMB.20150204-2014-12.out
+FEMB.20150204-2015-01.out
+
+select distinct stockkey from mstockalias where symbol='FEMB';
+> Row 1:
+>   STOCKKEY = X'dd5c5e04545abc04c0a86f92'
+select * from mstockalias where STOCKKEY = X'dd5c5e04545abc04c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 33739P202
+>           DATE = TIMESTAMP '2014-11-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = First Trust Emerging Markets Local Currency Bond ETF
+>     PRIMARYKEY = X'dd5d5e04545abc04c0a86f92'
+>       STOCKKEY = X'dd5c5e04545abc04c0a86f92'
+>         SYMBOL = FEMB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='FEMB' and BB_ACTIONMNEMONIC='DVD_CASH' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'dd5d5e04545abc04c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141125|CP_PAY_DT|20141128|CP_FREQ|4|CP_NET_AMT|0.090000|CP_TAX_AMT| |CP_GROSS_AMT|0.090000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150204:014712
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-11-21 00:00:00.000000'
+>         BB_IDENTIFIER = FEMB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FEMB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-11-21 00:00:00.000000'
+>            PRIMARYKEY = X'3d0b6f6854d26930c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'dd5d5e04545abc04c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141226|CP_PAY_DT|20141231|CP_FREQ|4|CP_NET_AMT|0.210000|CP_TAX_AMT| |CP_GROSS_AMT|0.210000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150204:014646
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-23 00:00:00.000000'
+>         BB_IDENTIFIER = FEMB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-23 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FEMB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-12-23 00:00:00.000000'
+>            PRIMARYKEY = X'd3f46f6754d26916c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'dd5d5e04545abc04c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150123|CP_PAY_DT|20150130|CP_FREQ|4|CP_NET_AMT|0.152100|CP_TAX_AMT| |CP_GROSS_AMT|0.152100|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150204:014620
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = FEMB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FEMB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'38956f5954d268fcc0a86f92'
+>               VERSION = NULL
+
+they are in the database, check on 2/5/15
+2/5/15
+	cash dividends paid by FEMB	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+21 Nov 14	25 Nov 14	28 Nov 14	4	$0.09	Dividend amount:0.09 per share.
+23 Dec 14	26 Dec 14	31 Dec 14	4	$0.21	Dividend amount:0.21 per share.
+21 Jan 15	23 Jan 15	30 Jan 15	4	$0.15	Dividend amount:0.1521 per share.
+
+they are there closing

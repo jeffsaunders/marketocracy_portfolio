@@ -1,0 +1,404 @@
+
+date:   7/3/15
+ticker:   MIVI
+
+this one is in crossy's CVLF fund not pricing
+	
+yahoo: nothing
+
+quantum:  nothing useful
+
+oursite:
+Symbol: MIVI 	Name: MIV Therapeutics Inc 	Price: $0.01
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for MIVI 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+19 Oct 01 	DBSH 	DBSHE 	Change in the ticker (trading) symbol from DBSH to DBSHE
+19 Nov 01 	DBSHE 	DBSH 	Change in the ticker (trading) symbol from DBSHE to DBSH
+11 Mar 02 	DBSH 	MIVT 	Change in the ticker (trading) symbol from DBSH to MIVT
+30 Jun 08 	MIVT 	MIVI 	Change in the ticker (trading) symbol from MIVT to MIVI
+23 Apr 09 	MIVI 	MIVIE 	Change in the ticker (trading) symbol from MIVI to MIVIE
+26 May 09 	MIVIE 	MIVI 	Change in the ticker (trading) symbol from MIVIE to MIVI
+  	  	 
+left curve 	  CUSIP changes for MIVI 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+11 Mar 02 	24021M106 	55306V106 	Change in any of identification numbers (CUSIP) of a security from 24021M106 to 55306V106
+30 Jun 08 	55306V106 	55306V205 	Change in any of identification numbers (CUSIP) of a security from 55306V106 to 55306V205
+  	  	 
+left curve 	  name changes for MIVI 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+11 Mar 02 	DBS Holdings Inc 	MIV Therapeutics Inc 	Change in the name of issuer from DBS Holdings Inc to MIV Therapeutics Inc
+  	  	 
+left curve 	  listing changes for MIVI 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+May 26, 2009 	OTCBB 	UU 	OTCBB-OTHER 	UV 	Change in the exchange that MIVI trades on from OTCBB to OTCBB-OTHER
+  	  	 
+left curve 	  MIVI had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+30 Jun 08 	1 for 10 	Split terms:1 for 10
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:MIV Therapeutics Inc  Symbol:MIVI
+Date: 07/03/2015
+
+18 users found
+
+1	ajs11	bushes	coaster	controlchaos	crossy	drwolf	flajuie	fly	hkraatz	infliktor
+2	jbrumley	jvolentine	kobayashi	kpirani	labrador	lflohr	mbledug	weightlifter
+
+database
+select distinct stockkey from mstockalias where symbol= 'MIVI';  
+> Row 1:
+>   STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+
+select * from mstockalias where stockkey=X'8d97043c39e7e9c0c0a801dc'     order by "date";
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MIVI'  order by BB_EFFECTIVE;
+> Row 8:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|MIVI|CP_DELIST_REASON|17|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 86432094
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 1411754
+>        BB_COMPANYNAME = MIV Therapeutics Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = MIVI    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = MIVI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'8ff8081452e0bf66c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock MIVI
+>>>> dbtool started at 2015-07-03 21:02:54 -0400
+stock: MIVI
+  PK       : [8D97043C39E7E9C0C0A801DC]
+  companyID: [14006]
+  symbol   : [MIVI]
+  name     : [MIV Therapeutics Inc]
+  date     : [2008-06-30 00:00:00]
+  status   : [Active]
+stock: MIVI
+  PK       : [8D97043C39E7E9C0C0A801DC]
+  companyID: [14006]
+  symbol   : [MIVI]
+  name     : [MIV Therapeutics Inc]
+  date     : [2008-06-30 00:00:01]
+  status   : [Active]
+stock: MIVI
+  PK       : [8D97043C39E7E9C0C0A801DC]
+  companyID: [14006]
+  symbol   : [MIVI]
+  name     : [MIV Therapeutics Inc]
+  date     : [2009-05-26 00:00:00]
+  status   : [Active]
+stock: MIVI
+  PK       : [8D97043C39E7E9C0C0A801DC]
+  companyID: [14006]
+  symbol   : [MIVI]
+  name     : [MIV Therapeutics Inc]
+  date     : [2009-05-26 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-03 21:02:55 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 14006
+2014-01-12 (Sun) [4759]: <WEEKEND>
+2014-01-13 (Mon) [4760]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+2014-01-14 (Tue) [4761]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+2014-01-15 (Wed) [4762]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+2014-01-16 (Thu) [4763]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+2014-01-17 (Fri) [4764]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'8d97043c39e7e9c0c0a801dc' and shares > 0 order by closed; 
+> Row 193:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-06-16 14:41:00.000000'
+>        COMMENT = 
+>     COMMISSION = 200.378351
+>   CURRENTORDER = X'9de619884a1c1124c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'da5604b13b30fee2c0a801e1'
+>       MODIFIED = NULL
+>            NET = 3807.188673
+>         OPENED = TIMESTAMP '2009-05-26 11:56:20.000000'
+>          PRICE = 0.194482
+>     PRIMARYKEY = X'9de419884a1c1124c0a80135'
+>         SECFEE = 0.110000
+>         SHARES = 19576.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'8d97043c39e7e9c0c0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8d97043c39e7e9c0c0a801dc'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'8d97043c39e7e9c0c0a801dc'  and totalshares < 0)));
+
+apply the acquis
+DELIST 2014-01-21 
+there are 10 members who hold this stock
+quantum:  nothing useful 
+last ticket:2009-06-16    PRICE = 0.194482
+last price:  2014-01-17 (Fri) [4764]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:22820 TSO:20286 A:0.0100 R:1.0000 CA:0.0000
+
+going with 20140121 0.0100 
+
+/Marketocracy/bin/cahelper -symbol  MIVI  -effective 20140121 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0100  -acqShare 0 -purchaser MIVI   >& /Users/build/caout/MIVI.20150703-DELIST.out
+D: (07-03 21:23:12.340) Install Tiger valueForKey: hack for NSArray and NSSet
+
+D: (07-03 21:23:58.824) cahelper started on 2015-07-03 21:23:58 -0400
+
+D: (07-03 21:23:59.138) There are [0] open tickets for MIVI on 20140121
+D: (07-03 21:23:59.423) StockFileLoad Version:4.0
+D: (07-03 21:23:59.423) Loading Stock Data
+D: (07-03 21:25:17.007) Building Lookup Index
+D: (07-03 21:25:26.114) Finished Building Index
+D: (07-03 21:25:33.645) Finished Loading Stock Data
+D: (07-03 21:25:33.711) Connection to 192.168.111.172:6666 succeeded
+D: (07-03 21:25:34.483) {
+    "ACQUIRED_STOCK" = MIVI; 
+    "ACQUIRING_STOCK" = "MIVI_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20140121; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MIVI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-03 21:25:36.572) SUCCESS
+D: (07-03 21:25:36.572) cahelper finished 2015-07-03 21:25:36 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'8d97043c39e7e9c0c0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = DBS HOLDINGS INC
+>     PRIMARYKEY = X'8d98043c39e7e9c0c0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = DBSH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2001-10-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = DBS HOLDINGS INC
+>     PRIMARYKEY = X'3d211fd73bd0dc1dc0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = DBSHE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2001-11-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = DBS HOLDINGS INC
+>     PRIMARYKEY = X'8d1152a03bf9c8dbc0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = DBSH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2002-03-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = DBS HOLDINGS INC
+>     PRIMARYKEY = X'5bf7026a3c8d7209c0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2002-03-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'4c5a38ac3c8d7406c0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V106
+>           DATE = TIMESTAMP '2002-03-11 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'243f39623c8d7510c0a801dc'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V106
+>           DATE = TIMESTAMP '2008-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'f9d758234869902bc0a80146'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V205
+>           DATE = TIMESTAMP '2008-06-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'028c587548699087c0a80146'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V205
+>           DATE = TIMESTAMP '2009-04-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'960d01fe49f11e15c0a80146'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V205
+>           DATE = TIMESTAMP '2009-05-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'380709c34a1cba22c0a80146'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V205
+>           DATE = TIMESTAMP '2009-05-26 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'46a809e24a1cba5ac0a80146'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 55306V205
+>           DATE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = MIV Therapeutics Inc
+>     PRIMARYKEY = X'feda752f559735afc0a86f92'
+>       STOCKKEY = X'8d97043c39e7e9c0c0a801dc'
+>         SYMBOL = MIVI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'feda752f559735afc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'feda752f559735afc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MIVI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150703:092358
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = MIVI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MIVI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'fed4752f559735aec0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'fed4752f559735aec0a86f92';
+> Row 1:
+>   _C001 = 32.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'fed4752f559735aec0a86f92'));
+there are 32 fundkeys, save to CA issues MIVI fundkeys.txt
+
+For Beta case
+MIVI no longer trades but is still active on our site - need to delist 
+
+check on 7/4/15   invalidate funds 
+check MAdmin   check crossy CLVF
+
+7/6/15  
+MIVI has been acquired 	right curve
+  	  	
+MIV Therapeutics Inc acquired by a private company on 2014-01-21 00:00:00. 
+MAdmin is clear
+invalidate
+closing this out 

@@ -1,0 +1,439 @@
+RTSA
+date:   10/21/15 
+ticker:   RTSA
+
+yahoo:
+
+quantum:
+iPath Short Extended Russell 2000 Total Return Index ETN due on 11/30/2020
+Ticker Symbol: RTSA*     CUSIP: 06740P502     Exchange: NYSEA
+* NOTE: This security is no longer trading as of 9/21/12
+
+Company's Online Profile
+BUSINESS:  iPath Short Extended Russell 2000 Total Return Index Exchange Traded Note (ETN) due on November 30, 2020 is issued by Barclays Bank PLC and is part of the Global Medium-Term Notes, Series A . INVESTMENT OBJECTIVE: The iPath Short Extended Russell 2000 Total Return Index ETN is linked to a leveraged return on the inverse performance of the Russell 2000 Total Return Index. INDEX DESCRIPTION: The Russell 2000 Total Return Index is designed to track the performance of the small-cap segment of the U.S. equity market. It is a subset of the Russell 3000 Index and includes the 2,000 smallest companies included in the Russell 3000 Index as measured by total market capitalization. As of October 29, 2010, the Index represented approximately 10.0% of the total market capitalization of the Russell 3000 Index and is reconstituted annually by the index sponsor according to the Index methodology, with the objective of reflecting in the Index performance new and growing equities meeting the criteria for inclusion and removing from the Index performance equities with a sufficiently large market capitalization to no longer constitute the small-cap segment. RETURNS AND MATURITY: The return on the Securities may be positive or negative and is directly linked to the performance of the Index, which is based on a variety of market and economic factors, interest rates in the markets and economic, financial, political, regulatory, judicial or other events that affect the markets generally. If you hold your ETNs to maturity, November 30, 2020, you will receive a cash payment in U.S. dollars at maturity in an amount equal to the closing indicative note value of your ETNs on the final valuation date. REDEMPTION AND FEES: You may redeem your ETNs on any optional redemption date during the term of the ETNs. If you redeem your Securities you will receive a cash payment in U.S. dollars for each ETN on the applicable optional redemption date in an amount equal to the closing indicative note value of your ETNs on the applicable valuation date. Issued in denominations of $50 you must redeem at least 25,000 ETNs of the same series at one time and you must comply with the redemption procedures in order to redeem your Securities. Fee Rate is 0.50% per annum accrued on a daily basis. For calculations of daily finance charge, financing rate, daily investor fees and other information on this ETN please click on Link to IPO Prospectus provided.
+Notes:  9/17/2012 Barclays Bank PLC announced today the automatic redemption of its iPath Short Extended Russell 2000 TR Index Exchange Traded Note. The ETNs are being redeemed as the result of an automatic termination event occurring on September 13, 2012, the automatic termination date. As described in the prospectus, an automatic termination event occurs when the intraday indicative note value of the ETNs on any trading day is equal to or less than the automatic termination level of $15.00.
+oursite:
+ymbol: RTSA	Name: iPath Short Extended Russell 2000 TR Index ETN	Price: $14.80
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: AMEX	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+CAs
+ listing changes for RTSA	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Oct 17, 2011	NYSE	UN	AMEX	UA	Change in the exchange that RTSA trades on from NYSE to AMEX
+ 	 	 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:iPath Short Extended Russell 2000 TR Index ETN  Symbol:RTSA
+Date: 10/21/2015
+
+6 users found
+
+1	airwolf67	jmurphy2	joshuabordenjr	kjabusch	reveille	yangke	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'RTSA';  
+> Row 1:
+>   STOCKKEY = X'5530199d4cf58a0ec0a80146'
+select * from mstockalias where stockkey=X'5530199d4cf58a0ec0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-11-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = iPath Short Extended Russell 2000 TR Index ETN
+>     PRIMARYKEY = X'5531199d4cf58a0ec0a80146'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>         SYMBOL = RTSA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = iPath Short Extended Russell 2000 TR Index ETN
+>     PRIMARYKEY = X'8cd866c34f1dd274c0a8013c'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>         SYMBOL = RTSA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RTSA'  order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UP|CP_TKR|RTSA|CP_DELIST_REASON|5|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 68887793
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 22527055
+>        BB_COMPANYNAME = iPath Short Extended Russell 2000 TR Index ETN
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-09-21 00:00:00.000000'
+>         BB_IDENTIFIER = RTSA    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RTSA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2012-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'bc1036c35057a58fc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RTSA
+>>>> dbtool started at 2015-10-22 02:43:32 -0400
+stock: RTSA
+  PK       : [5530199D4CF58A0EC0A80146]
+  companyID: [19640]
+  symbol   : [RTSA]
+  name     : [iPath Short Extended Russell 2000 TR Index ETN]
+  date     : [2010-11-30 00:00:00]
+  status   : [Active]
+stock: RTSA
+  PK       : [5530199D4CF58A0EC0A80146]
+  companyID: [19640]
+  symbol   : [RTSA]
+  name     : [iPath Short Extended Russell 2000 TR Index ETN]
+  date     : [2011-10-17 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-22 02:43:32 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19640
+2012-09-05 (Wed) [4265]: O:22.2200 H:22.8000 L:21.8500 C:22.3500 V:25707 TSO:0 A:22.3500 R:1.0000 CA:0.0000
+2012-09-06 (Thu) [4266]: O:21.2600 H:21.2600 L:18.7400 C:19.2200 V:87254 TSO:0 A:19.2200 R:1.0000 CA:0.0000
+2012-09-07 (Fri) [4267]: O:18.8800 H:19.0000 L:17.5000 C:18.0000 V:32836 TSO:0 A:18.0000 R:1.0000 CA:0.0000
+2012-09-08 (Sat) [4268]: <WEEKEND>
+2012-09-09 (Sun) [4269]: <WEEKEND>
+2012-09-10 (Mon) [4270]: O:18.4400 H:18.7800 L:17.5000 C:18.7000 V:22831 TSO:0 A:18.7000 R:1.0000 CA:0.0000
+2012-09-11 (Tue) [4271]: O:19.0500 H:19.0500 L:17.7100 C:18.1500 V:18294 TSO:0 A:18.1500 R:1.0000 CA:0.0000
+2012-09-12 (Wed) [4272]: O:17.4000 H:18.7000 L:17.1400 C:18.1500 V:11159 TSO:0 A:18.1500 R:1.0000 CA:0.0000
+2012-09-13 (Thu) [4273]: O:18.6000 H:18.6000 L:14.5200 C:14.9700 V:59337 TSO:0 A:14.9700 R:1.0000 CA:0.0000
+2012-09-14 (Fri) [4274]: O:14.8100 H:14.9500 L:14.8000 C:14.8000 V:86578 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+2012-09-15 (Sat) [4275]: <WEEKEND>
+2012-09-16 (Sun) [4276]: <WEEKEND>
+2012-09-17 (Mon) [4277]: O:14.9300 H:14.9500 L:14.8000 C:14.8000 V:28883 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+2012-09-18 (Tue) [4278]: O:14.8000 H:14.8900 L:14.8000 C:14.8000 V:10234 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+2012-09-19 (Wed) [4279]: O:14.8000 H:14.8500 L:14.8000 C:14.8000 V:5285 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'5530199d4cf58a0ec0a80146' and shares > 0 order by closed; 
+> Row 46:
+>      ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-09-05 12:51:00.000000'
+>        COMMENT = Earnings Announcement|Bad News|Asset Allocation|Rule Compliance|Market Indicators|Analyst Recommendation|Tax Planning|
+>     COMMISSION = 67.800000
+>   CURRENTORDER = X'736239b05047448cc0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'a21962be3e897ae0c0a80134'
+>       MODIFIED = NULL
+>            NET = 30241.577800
+>         OPENED = TIMESTAMP '2012-09-05 08:24:44.000000'
+>          PRICE = 22.302049
+>     PRIMARYKEY = X'736039b05047448cc0a80134'
+>         SECFEE = 0.680000
+>         SHARES = 1356.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'5530199d4cf58a0ec0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'5530199d4cf58a0ec0a80146'  and totalshares < 0);
+no shorts 
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'5530199d4cf58a0ec0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist: 2012-09-21
+there are 6 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 9/21/12
+last ticket:  2012-09-05  PRICE = 22.302049
+last price:  2012-09-19 (Wed) [4279]: O:14.8000 H:14.8500 L:14.8000 C:14.8000 V:5285 TSO:0 A:14.8000 R:1.0000 CA:0.0000
+
+going with 20120919 14.80
+
+/Marketocracy/bin/cahelper -symbol  RTSA  -effective 20120919 -type ACQUIS -exchange UN -acqType 1 -acqCash 14.80 -acqShare 0 -purchaser RTSA   >& /Users/build/caout/RTSA.20151021-DELIST.out 
+RTSA.20151021-DELIST.out
+stocks1:~/caout build$ tail -f RTSA.20151021-DELIST.out
+D: (10-22 02:48:01.121) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-22 02:48:31.081) cahelper started on 2015-10-22 02:48:31 -0400
+
+D: (10-22 02:48:31.485) There are [0] open tickets for RTSA on 20120919
+D: (10-22 02:48:32.209) StockFileLoad Version:4.0
+D: (10-22 02:48:32.209) Loading Stock Data
+D: (10-22 02:49:10.931) Building Lookup Index
+D: (10-22 02:49:17.042) Finished Building Index
+D: (10-22 02:49:21.062) Finished Loading Stock Data
+D: (10-22 02:49:21.185) Connection to 192.168.111.172:6666 succeeded
+D: (10-22 02:49:21.386) {
+    "ACQUIRED_STOCK" = RTSA; 
+    "ACQUIRING_STOCK" = "RTSA_FIX"; 
+    AMOUNT = 14.8; 
+    APPLIED = 1; 
+    DATE = 20120919; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RTSA_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-22 02:49:22.451) SUCCESS
+D: (10-22 02:49:22.451) cahelper finished 2015-10-22 02:49:22 -0400
+Check the results 
+select * from mstockalias where stockkey= X'5530199d4cf58a0ec0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-11-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = iPath Short Extended Russell 2000 TR Index ETN
+>     PRIMARYKEY = X'5531199d4cf58a0ec0a80146'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>         SYMBOL = RTSA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = iPath Short Extended Russell 2000 TR Index ETN
+>     PRIMARYKEY = X'8cd866c34f1dd274c0a8013c'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>         SYMBOL = RTSA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = iPath Short Extended Russell 2000 TR Index ETN
+>     PRIMARYKEY = X'7ee50cf9562886bfc0a86fab'
+>       STOCKKEY = X'5530199d4cf58a0ec0a80146'
+>         SYMBOL = RTSA
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'7ee50cf9562886bfc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'7ee50cf9562886bfc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RTSA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|14.800000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151022:024831
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-09-19 00:00:00.000000'
+>         BB_IDENTIFIER = RTSA_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-09-19 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RTSA_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-09-19 00:00:00.000000'
+>            PRIMARYKEY = X'7edf0cf9562886bfc0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'7edf0cf9562886bfc0a86fab';
+> Row 1:
+>   _C001 = 10.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'7edf0cf9562886bfc0a86fab'));
+there are 10 fundkeys, save to CA issues RTSA fundkeys.txt
+
+For Beta case
+RTSA no longer trades but is still active on our site - need to delist 
+
+check on 10/22/15   invalidate funds
+check MAdmin  
+
+Username
+kjabusch
+Fund Symbols
+KMF
+
+your holdings of RTSA	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+KMF	0	$.00	0.00%
+KJSH	0	N/A	N/A
+
+expand KMF 
+LEDGER
+Date	Start	Change	End	Type
+Mar 02, 2012		3780	3780	Buy
+Sep 19, 2012	3780	-3780		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Mar 2, 2012	3,780	$189.00	$107,466.19	$28.43
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+Hexkey: 7FE20CF9562886F1C0A86FAB
+select * from mcorporateaction where primarykey in(select sourcekey from mticket where primarykey=X'7FE20CF9562886F1C0A86FAB');
+> Row 1:
+>              ALIASKEY = X'7ee50cf9562886bfc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RTSA  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|14.800000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151022:024831
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-09-19 00:00:00.000000'
+>         BB_IDENTIFIER = RTSA_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-09-19 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RTSA_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-09-19 00:00:00.000000'
+>            PRIMARYKEY = X'7edf0cf9562886bfc0a86fab'
+>               VERSION = NULL
+
+check for the acquis - then invaldiate 
+cash on 20120919 for member  kjabusch  KMF
+
+3780 * 14.80 = 55944
+
+10/22/15
+RTSA has been acquired	right curve
+ 	 	
+iPath Short Extended Russell 2000 TR Index ETN acquired by a private company on 2012-09-19 00:00:00.
+ 	 	 
+MAdmin is good - invalidate
+
+reprice on the new site 
+2012-09-19
+
+
+cash is not there, probably did this one too late in the evening, check again on 10/23/15
+but let's log in as the member on the new site   kjabusch  KMF
+
+invalidate the funds again
+done
+
+log back in  
+kjabusch  KMF   20120919    should get 3780 * 14.80 = 55944
+
+et's try regular portfolio
+/Marketocracy/bin/dbtool decryptpassword -loginName kjabusch
+>>>> dbtool started at 2015-10-23 09:07:03 -0400
+Password = eromorp
+<<<< dbtool finished at 2015-10-23 09:07:04 -0400
+
+let's make sure his specific fund is getitng invalidated
+
+/Marketocracy/bin/dbtool lookup fund kjabusch
+>>>> dbtool started at 2015-10-23 09:48:50 -0400
+fund: kjabusch
+  PK: [AC0623704151A6C3C0A80134]
+  symbol: [KMF]
+  managerKey: [852B23704151A477C0A80134]
+  loginName: [kjabusch]
+fund: kjabusch
+  PK: [A02D42484BBA6ABBC0A80134]
+  symbol: [KSF]
+  managerKey: [852B23704151A477C0A80134]
+  loginName: [kjabusch]
+fund: kjabusch
+  PK: [DEBA5EAE562557C3C0A86FA6]
+  symbol: [KJSH]
+  managerKey: [852B23704151A477C0A80134]
+  loginName: [kjabusch]
+<<<< dbtool finished at 2015-10-23 09:48:50 -0400
+/Marketocracy/bin/fptool invalidateFund AC0623704151A6C3C0A80134
+
+
+still no cash in either PortfolioAdmin or regular Portfolio
+the trade is there:
+trades on September 19, 2012	right curve
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	RTSA	3,780	$0.00	$0.00	$0.00	$0.00
+
+
+it is there now:
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+09/19/2012	$840,710.98	$0.00	$23.03	$55,944.00	$148.53	$0.00	$896,529.49	$1,845,002.50	$2,741,531.99	100,000	$27.42	No	Details 
+
+reprice   2012-09-19
+
+
+it just says sell for the ledger there is no sell acquis
+
+select distinct actionkey from mticket;
+> Row 1:
+>   ACTIONKEY = X'6333039339e7e927c0a801dc'
+> Row 2:
+>   ACTIONKEY = X'6336039339e7e927c0a801dc'
+> Row 3:
+>   ACTIONKEY = X'70563ca1391e0270c0a8015c'
+> Row 4:
+>   ACTIONKEY = X'70593ca1391e0270c0a8015c'
+> Row 5:
+>   ACTIONKEY = X'705f3ca1391e0270c0a8015c'
+> Row 6:
+>   ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+> Row 7:
+>   ACTIONKEY = X'6339039339e7e927c0a801dc'
+> Row 8:
+>   ACTIONKEY = X'059e3ba840d73045c0a8020c'
+> Row 9:
+>   ACTIONKEY = X'9e84669940d1e2bcc0a8020c'
+> Row 10:
+>   ACTIONKEY = X'83613bb540d73054c0a8020c'
+> Row 11:
+>   ACTIONKEY = X'31e2671940d1e35ac0a8020c'
+
+closing this out 
+
+
+ 	 	 
+
+
+
+
+
+

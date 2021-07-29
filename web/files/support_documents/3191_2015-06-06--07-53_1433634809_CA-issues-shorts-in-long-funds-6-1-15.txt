@@ -1,0 +1,4942 @@
+select mm.loginname, mf.symbol, mf.primarykey from mmanager mm, mfund mf, mportfolio mp where mm.primarykey = mp.managerkey and mp.primarykey = mf.portfoliokey and mf.primarykey in (select  distinct primarykey from mfund where  primarykey in (select fundkey from mposition where totalshares < 0) and active=1 and KINDKEY = X'70443ca1391e026fc0a8015c') order by mm.previouslogin;
+
+> Row 862:
+>    LOGINNAME = bazzwell
+>       SYMBOL = BLTF2
+>   PRIMARYKEY = X'0d752bf44df214bbc0a80134'
+
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+HPQ 	$33.76 	-1,500 	-$50,640.00 	$37,692.87 	1.08% 	22.68% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 16, 2011 		1450 	1450 	Buy
+Mar 28, 2012 	1450 	1400 	2850 	Buy
+Dec 17, 2012 	2850 	2940 	5790 	Buy
+Dec 18, 2012 	5790 	2810 	8600 	Buy
+Mar 07, 2013 	8600 	-5600 	3000 	Sell
+May 23, 2013 	3000 	-1000 	2000 	Sell
+May 30, 2013 	2000 	-500 	1500 	Sell
+Jun 01, 2015 	1500 	-3000 	-1500 	Sell
+Total: -1,500
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 16, 2011 	1,450 	$72.50 	$50,102.76 	$34.55
+Mar 28, 2012 	1,400 	$70.00 	$33,069.61 	$23.62
+Dec 17, 2012 	2,940 	$147.00 	$43,025.29 	$14.63
+Dec 18, 2012 	2,810 	$140.50 	$39,977.40 	$14.23
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 7, 2013 	5,600 	$280.00 	$2.63 	$116,965.58 	$20.89
+May 23, 2013 	1,000 	$50.00 	$0.54 	$24,045.88 	$24.05
+May 30, 2013 	500 	$25.00 	$0.22 	$12,554.78 	$25.11
+Jun 1, 2015 	1,500 	$75.00 	$0.88 	$50,209.82 	$33.47
+Jun 1, 2015 	1,500 	$75.00 	$0.88 	$50,209.82 	$33.47  <--- double sell remove this and invalidate 
+field-fund-keyDone!
+1 Funds Processed
+6 Queries Processed
+done
+
+*****
+> Row 833:  DONE  was ORA
+>    LOGINNAME = smartassets
+>       SYMBOL = SMF7
+>   PRIMARYKEY = X'5da00c0d4b2b9b0ec0a80133'
+
+> Row 834:  DONE
+>    LOGINNAME = smartassets
+>       SYMBOL = SMF6
+>   PRIMARYKEY = X'85f60b184ae09f72c0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+BP 	$40.95 	-1,000 	-$40,950.00 	-$14,600.50 	-1.23% 	-26.33% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 09, 2009 		500 	500 	Buy
+Feb 02, 2010 	500 	500 	1000 	Buy
+Sep 30, 2010 	1000 	-1000 		Sell
+Oct 04, 2010 		-1000 	-1000 	Sell
+Total: -1,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 9, 2009 	500 	$25.00 	$28,217.40 	$56.43
+Feb 2, 2010 	500 	$25.00 	$27,227.00 	$54.45
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Sep 30, 2010 	1,000 	$50.00 	$0.70 	$41,028.36 	$41.03
+Oct 4, 2010 	1,000 	$50.00 	$0.70 	$40,765.51 	$40.77  <-- extra sell
+combo
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+smartassets's Mutual Fund 	SMF6 	1,000  <--- remove this 
+smartassets's Mutual Fund 	SMF7 	250  <--- keep
+  	  	 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py smartassets SMF7 20101004 BP -250 40.77
+Trading -250.0 shares of BP PLC on Oct 04, 2010 at 40.77
+manager: smartassets GREG WILLIAMS
+fund: SMF7
+building trade (has to load stock prices first)
+price = 40.77
+selling -250.0 shares of BP at 40.77 on 20101004
+invaldating fund prices from Oct 04, 2010
+Done
+
+
+
+> Row 835:  DONE 
+>    LOGINNAME = smartassets
+>       SYMBOL = SMF3
+>   PRIMARYKEY = X'4bee385a4a6865ecc0a80134'
+> Row 836:  DONE 
+>    LOGINNAME = smartassets
+>       SYMBOL = SMF2
+>   PRIMARYKEY = X'54172de0499c3212c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ORA 	$37.45 	-16 	-$599.20 	-$203.69 	0.94% 	-6.61% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 20, 2009 		100 	100 	Buy
+Oct 05, 2010 	100 	-116 	-16 	Sell
+Total: -16
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 20, 2009 	100 	$5.00 	$3,082.00 	$30.82
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Oct 5, 2010 	16 	$0.80 	$0.01 	$479.53 	$29.97  <--- remove this 
+Oct 5, 2010 	100 	$5.00 	$0.05 	$2,997.98 	$29.98
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+smartassets's Mutual Fund 	SMF2 	16
+smartassets's Mutual Fund 	SMF3 	836
+smartassets's Mutual Fund 	SMF7 	523
+
+holdings
+your holdings of ORA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+SMF 	0 	$.00 	0.00%
+SMF1 	0 	N/A 	N/A
+SMF2 	-16 	-$599.20 	-0.06%  <--- remove 
+SMF3 	-836 	-$31,308.20 	-1.88%   <--- remove 
+SMF5 	0 	N/A 	N/A
+SMF4 	0 	N/A 	N/A
+SMF6 	0 	N/A 	N/A
+SMF7 	-523 	-$19,586.35 	-1.90%   <--- remove 
+SMF8 	0 	N/A 	N/A
+  	  	[ Trade this stock ]
+we can remove this entire trade 
+> Row 837:  DONE
+>    LOGINNAME = dswomley
+>       SYMBOL = usrvf
+>   PRIMARYKEY = X'99e8648a3c222a7bc0a80119'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+SWKS 	$109.45 	-1 	-$109.45 	$41,603.02 	0.08% 	0.00% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 26, 2002 		4562 	4562 	Corporate Action
+Nov 14, 2002 	4562 	-4563 	-1 	Sell
+Total: -1
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 14, 2002 	4,563 	$228.15 	$1.22 	$40,115.77 	$8.79  <-- change to 4562
+/Marketocracy/Scripts/build/bin/backdatedtrade.py dswomley usrvf 20021114 SWKS -4562 8.79
+Trading -4562.0 shares of Skyworks Solutions Inc on Nov 14, 2002 at 8.79
+manager: dswomley Dave Swomley
+fund: usrvf
+building trade (has to load stock prices first)
+price = 8.79
+selling -4562.0 shares of SWKS at 8.79 on 20021114
+invaldating fund prices from Nov 14, 2002
+Done
+
+
+> Row 838:  DONE
+>    LOGINNAME = yj7777
+>       SYMBOL = YMF
+>   PRIMARYKEY = X'c6db4dab43f17bb7c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+UEC 	$2.92 	-9,553 	-$27,894.76 	-$47,753.59 	-2.34% 	-38.06% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 25, 2011 		30000 	30000 	Buy
+Aug 09, 2011 	30000 	-39553 	-9553 	Sell  <--- only has 30000
+Total: -9,553
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 25, 2011 	30,000 	$1,500.00 	$125,485.59 	$4.18
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 9, 2011 	15,000 	$750.00 	$0.81 	$41,086.86 	$2.74
+Aug 9, 2011 	24,553 	$1,227.65 	$1.27 	$64,539.90 	$2.63  <-- make this 15000
+Trading -15000.0 shares of URANIUM ENERGY CORP on Aug 09, 2011 at 2.63
+manager: yj7777 Yuri Jossa
+fund: YMF
+building trade (has to load stock prices first)
+price = 2.63
+selling -15000.0 shares of UEC at 2.63 on 20110809
+invaldating fund prices from Aug 09, 2011
+Done
+
+
+> Row 839:  DONE 
+>    LOGINNAME = awesome1nyc
+>       SYMBOL = TRADE
+>   PRIMARYKEY = X'829e39cd3dee9c9dc0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+SXC 	$16.09 	-630 	-$10,136.70 	$8,620.67 	-1.05% 	0.00% 	Details  	TOP  just remove 
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+AGGRESSIVE 	AGG 	1,590
+Trade20 	TRADE 	630
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 27, 2008 		-630 	-630 	Sell
+Total: -630
+  	  	 
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 27, 2008 	630 	$31.50 	$0.58 	$18,757.37 	$29.77
+/Marketocracy/Scripts/build/bin/backdatedtrade.py awesome1nyc AGG 20080327 SXC -1590 29.77
+Trading -1590.0 shares of SunCoke Energy Inc on Mar 27, 2008 at 29.77
+manager: awesome1nyc Bill Flounoy
+fund: AGG
+building trade (has to load stock prices first)
+price = 29.77
+selling -1590.0 shares of SXC at 29.77 on 20080327
+invaldating fund prices from Mar 27, 2008
+Done
+
+> Row 840:  DONE 
+>    LOGINNAME = ray_collinsworth
+>       SYMBOL = LCF
+>   PRIMARYKEY = X'b21951d84d4b04fac0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+SPXS 	$17.84 	-3,000 	-$53,520.00 	$61,227.56 	-0.56% 	81.65% 	Details  	TOP
+EDGER
+Date 	Start 	Change 	End 	Type
+Feb 07, 2011 		5000 	5000 	Buy
+Feb 24, 2011 	5000 	-9000 	-4000 	Multiple
+Feb 25, 2011 	-4000 	1000 	-3000 	Buy
+Total: -3,000
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 7, 2011 	5,000 	$250.00 	$37,665.51 	$7.53
+Feb 25, 2011 	1,000 	$50.00 	$37,318.94 	$37.32
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 24, 2011 	5,000 	$250.00 	$3.65 	$189,732.15 	$37.95
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 24, 2011 	Split terms:1 for 5
+20110224 LCF
+trades on February 24, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	SPXS 	5,000 	$37.95 	$189,732.15 	$250.00 	$3.65  <-- change to 1000
+Split Sell 	SPXS 	5,000 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	SPXS 	1,000 	$0.00 	$0.00 	$0.00 	$0.00
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  ray_collinsworth LCF 20110224 SPXS -1000 37.95
+Trading -1000.0 shares of Direxion Daily S&P 500 Bear 3X on Feb 24, 2011 at 37.95
+manager: ray_collinsworth Ray  Collinsworth
+fund: LCF
+building trade (has to load stock prices first)
+price = 37.95
+selling -1000.0 shares of SPXS at 37.95 on 20110224
+invaldating fund prices from Feb 24, 2011
+Done
+
+
+TZA 	$9.94 	-34 	-$337.96 	$4,889.53 	-0.90% 	2.41% 	Details  	MIDDLE
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 07, 2011 		5000 	5000 	Buy
+Feb 24, 2011 	5000 	-8334 	-3334 	Multiple
+Feb 25, 2011 	-3334 	3300 	-34 	Buy
+Total: -34
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 7, 2011 	5,000 	$250.00 	$69,334.14 	$13.87
+Feb 25, 2011 	3,300 	$165.00 	$133,483.52 	$40.45
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 24, 2011 	5,000 	$250.00 	$4.00 	$208,045.17 	$41.61
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 24, 2011 	Split terms:1 for 3
+20110224 LCF
+trades on February 24, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	TZA 	5,000 	$41.61 	$208,045.17 	$250.00 	$4.00  <-- change to 1666
+Split Buy 	TZA 	1,666 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	TZA 	5,000 	$0.00 	$0.00 	$0.00 	$0.00
+/Marketocracy/Scripts/build/bin/backdatedtrade.py ray_collinsworth LCF 20110224  TZA -1666 41.61
+Trading -1666.0 shares of Direxion Shares ETF Trust - Shs Direxion Small Cap 3x Shares on Feb 24, 2011 at 41.61
+manager: ray_collinsworth Ray  Collinsworth
+fund: LCF
+building trade (has to load stock prices first)
+price = 41.61
+selling -1666.0 shares of TZA at 41.61 on 20110224
+invaldating fund prices from Feb 24, 2011
+Done
+
+
+> Row 841:  DONE 
+>    LOGINNAME = method
+>       SYMBOL = ALMF
+>   PRIMARYKEY = X'04924ebf3a5143eec0a801e1'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+SWKS 	$109.45 	-1 	-$109.45 	$12,906.93 	0.08% 	0.00% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 26, 2002 		3509 	3509 	Corporate Action
+Aug 02, 2002 	3509 	-3510 	-1 	Sell
+Total: -1
+  	  	 
+BUYS
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 2, 2002 	3,510 	$175.50 	$0.37 	$11,788.23 	$3.36  <-- only has 3509
+/Marketocracy/Scripts/build/bin/backdatedtrade.py method ALMF 20020802 SWKS -3509 3.36
+Trading -3509.0 shares of Skyworks Solutions Inc on Aug 02, 2002 at 3.36
+manager: method Asheef Lalani
+fund: ALMF
+building trade (has to load stock prices first)
+price = 3.36
+selling -3509.0 shares of SWKS at 3.36 on 20020802
+invaldating fund prices from Aug 02, 2002
+Done
+  	  	 
+
+> Row 842:  DONE 
+>    LOGINNAME = myrna213
+>       SYMBOL = MMF
+>   PRIMARYKEY = X'410205e44f21bfdac0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+AVP 	$6.68 	-11,020 	-$73,613.60 	$120,162.38 	-0.60% 	60.06% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 10, 2012 		-11020 	-11020 	Multiple
+Total: -11,020
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 10, 2012 	11,020 	$551.00 	$200,080.17 	$18.16
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 10, 2012 	11,020 	$551.00 	$3.80 	$197,060.33 	$17.88
+Feb 10, 2012 	11,020 	$551.00 	$3.79 	$196,795.82 	$17.86  <--- dup
+
+> Row 843:
+>    LOGINNAME = h_van_houwelingen
+>       SYMBOL = HVHRBF
+>   PRIMARYKEY = X'a70831cc3bae2afcc0a80119'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+NYX 	$45.29 	-50 	-$2,264.50 	$34,049.40 	0.00% 	0.00% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 08, 2006 		450 	450 	Corporate Action
+Apr 13, 2006 	450 	-500 	-50 	Sell
+Total: -50
+  	  	 
+BUYS
+
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Apr 13, 2006 	500 	$25.00 	$1.12 	$36,313.88 	$72.63  <-- only has 450
+/Marketocracy/Scripts/build/bin/backdatedtrade.py h_van_houwelingen HVHRBF 20060413 NYX -450 72.63
+Trading -450.0 shares of NYSE Euronext on Apr 13, 2006 at 72.63
+manager: h_van_houwelingen Hans van Houwelingen
+fund: HVHRBF
+building trade (has to load stock prices first)
+price = 72.63
+selling -450.0 shares of NYX at 72.63 on 20060413
+invaldating fund prices from Apr 13, 2006
+Done
+  	  	 
+
+> Row 844:  DONE 
+>    LOGINNAME = rabies
+>       SYMBOL = RSF
+>   PRIMARYKEY = X'67a2361c3ec4da87c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+EXP 	$82.80 	-96 	-$7,948.80 	-$2,385.66 	-0.81% 	0.00% 	Details  	TOP  <-- just remove 
+
+> Row 845:  DONE
+>    LOGINNAME = evines
+>       SYMBOL = EMN
+>   PRIMARYKEY = X'c6e050ef4cfe54e8c0a80132'
+log in again
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+FAZ 	$11.50 	-3,366 	-$38,709.00 	$81,994.37 	-0.61% 	98.17% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 07, 2010 		7720 	7720 	Buy
+Feb 24, 2011 	7720 	-11086 	-3366 	Multiple
+Total: -3,366
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 7, 2010 	7,720 	$386.00 	$83,523.00 	$10.82
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 24, 2011 	4,910 	$245.50 	$3.93 	$204,226.05 	$41.59
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 24, 2011 	Split terms:1 for 5
+EMN  20110224 
+trades on February 24, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	FAZ 	4,910 	$41.59 	$204,226.05 	$245.50 	$3.93
+Split Sell 	FAZ 	7,720 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	FAZ 	1,544 	$0.00 	$0.00 	$0.00 	$0.00
+let's do 1/5 of 4910 = 982
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  evines EMN 20110224 FAZ -982 41.59
+Trading -982.0 shares of Direxion Financial Bear 3x Shares on Feb 24, 2011 at 41.59
+manager: evines Erick Vines
+fund: EMN
+building trade (has to load stock prices first)
+price = 41.59
+selling -982.0 shares of FAZ at 41.59 on 20110224
+invaldating fund prices from Feb 24, 2011
+Done
+
+
+
+SPXS 	$17.84 	-4,046 	-$72,180.64 	$69,214.38 	-0.56% 	82.81% 	Details  	MIDDLE
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 07, 2010 		8820 	8820 	Buy
+Feb 24, 2011 	8820 	-12866 	-4046 	Multiple
+Total: -4,046
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 7, 2010 	8,820 	$441.00 	$83,581.05 	$9.48
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 24, 2011 	5,810 	$290.50 	$4.33 	$224,975.84 	$38.72
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 24, 2011 	Split terms:1 for 5
+  	  	  
+EMN 20110224
+trades on February 24, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	TZA 	2,190 	$42.61 	$93,325.99 	$109.50 	$1.80
+Split Sell 	TZA 	4,920 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	TZA 	1,639 	$0.00 	$0.00 	$0.00 	$0.00
+2190 /5 = 438
+/Marketocracy/Scripts/build/bin/backdatedtrade.py evines EMN 20110224 SPXS -438 38.72
+Trading -438.0 shares of Direxion Daily S&P 500 Bear 3X on Feb 24, 2011 at 38.72
+manager: evines Erick Vines
+fund: EMN
+building trade (has to load stock prices first)
+price = 38.72
+selling -438.0 shares of SPXS at 38.72 on 20110224
+invaldating fund prices from Feb 24, 2011
+Trading -730.0 shares of Direxion Shares ETF Trust - Shs Direxion Small Cap 3x Shares on Feb 24, 2011 at 1.8
+manager: evines Erick Vines
+fund: EMN
+building trade (has to load stock prices first)
+price = 1.8
+selling -730.0 shares of TZA at 1.8 on 20110224
+invaldating fund prices from Feb 24, 2011
+Done
+
+TZA 	$9.94 	-551 	-$5,476.94 	$4,464.87 	-0.90% 	5.35% 	Details  	BOTTOM
+trades on February 24, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	TZA 	2,190 	$42.61 	$93,325.99 	$109.50 	$1.80
+Split Sell 	TZA 	4,920 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	TZA 	1,639 	$0.00 	$0.00 	$0.00 	$0.00
+
+1 for 3 
+2190/3= 730
+/Marketocracy/Scripts/build/bin/backdatedtrade.py evines EMN 20110224 TZA -730 1.80
+> Row 846:  DONE 
+>    LOGINNAME = waynetr
+>       SYMBOL = WMF
+>   PRIMARYKEY = X'95921f2f3fe1ed35c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+NETM 	$7.20 	-300 	-$2,160.00 	$7,455.55 	0.00% 	16.67% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 18, 2003 		3299 	3299 	Buy
+Dec 30, 2003 	3299 	1000 	4299 	Buy
+Jan 14, 2004 	4299 	-4299 		Sell
+Jan 20, 2006 		2000 	2000 	Buy
+Apr 26, 2006 	2000 	-950 	1050 	Sell
+Nov 07, 2006 	1050 	2000 	3050 	Buy
+Jun 19, 2008 	3050 	-3050 		Corporate Action
+Jul 07, 2008 		-300 	-300 	Sell
+Total: -300
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 18, 2003 	3,299 	$164.95 	$16,915.55 	$5.13
+Dec 30, 2003 	1,000 	$50.00 	$5,396.28 	$5.40
+Jan 20, 2006 	2,000 	$100.00 	$11,858.20 	$5.93
+Nov 7, 2006 	2,000 	$100.00 	$10,550.91 	$5.28
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 14, 2004 	4,299 	$214.95 	$1.19 	$25,028.87 	$5.82
+Apr 26, 2006 	950 	$47.50 	$0.17 	$5,202.75 	$5.48
+Jul 7, 2008 	300 	$15.00 	$0.07 	$2,144.93 	$7.15  <--- remove 
+
+> Row 847:  DONE 
+>    LOGINNAME = clarkrl2
+>       SYMBOL = CVF
+>   PRIMARYKEY = X'b2fc6f3d3eb3b13ec0a80133'
+e are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+EXP 	$82.80 	-29 	-$2,401.20 	-$667.63 	-0.81% 	0.00% 	Details  	TOP  <-- just remove 
+  	  	 
+ 
+
+> Row 848:  DONE 
+>    LOGINNAME = mkusek
+>       SYMBOL = MF
+>   PRIMARYKEY = X'fe671d6c3e1e41fac0a80135'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+GADZQ 	$0.01 	-1,070 	-$7.49 	-$33,770.45 	0.00% 	-99.93% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jul 10, 2003 		5000 	5000 	Buy
+Feb 17, 2005 	5000 	-5000 		Corporate Action
+Jul 25, 2005 		-1070 	-1070 	Sell
+Total: -1,070
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jul 10, 2003 	5,000 	$250.00 	$33,793.45 	$6.76
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 25, 2005 	1,070 	$1.60 	$0.01 	$30.49 	$0.03  <-- remove 
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 17, 2005 	GADZOOKS INC acquired by a private company on 2005-02-17 00:00:00.
+  	  	 
+> Row 849:  DONE 
+>    LOGINNAME = mitywarrior
+>       SYMBOL = MMF
+>   PRIMARYKEY = X'654306ad4d1caa09c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+C 	$54.45 	-260 	-$14,157.00 	-$2,666.70 	0.68% 	-135.80% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 30, 2010 		10 	10 	Buy
+Jan 03, 2011 	10 	100 	110 	Buy
+Jan 06, 2011 	110 	100 	210 	Buy
+Jan 20, 2011 	210 	190 	400 	Buy
+May 09, 2011 	400 	-660 	-260 	Multiple
+Total: -260
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 30, 2010 	10 	$0.50 	$48.05 	$4.81
+Jan 3, 2011 	100 	$5.00 	$490.00 	$4.90
+Jan 6, 2011 	100 	$5.00 	$506.00 	$5.06
+Jan 20, 2011 	190 	$9.50 	$919.60 	$4.84
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 9, 2011 	300 	$15.00 	$0.26 	$13,453.94 	$44.85
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+May 09, 2011 	Split terms:1 for 10
+MMF  20110509 
+trades on May 09, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	C 	300 	$44.85 	$13,453.94 	$15.00 	$0.26
+Split Buy 	C 	40 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	C 	400 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+change the sell to 30  (1/10 of 300)
+/Marketocracy/Scripts/build/bin/backdatedtrade.py mitywarrior MMF 20110509 C -30 44.85
+Trading -30.0 shares of CITIGROUP INC on May 09, 2011 at 44.85
+manager: mitywarrior Keith Hayes
+fund: MMF
+building trade (has to load stock prices first)
+price = 44.85
+selling -30.0 shares of C at 44.85 on 20110509
+invaldating fund prices from May 09, 2011
+Done
+
+*************
+> Row 810:  DONE
+>    LOGINNAME = scastro
+>       SYMBOL = SCZ
+>   PRIMARYKEY = X'13c56e8544c0f5a2c0a80133'
+> Row 811:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = SCZ1
+>   PRIMARYKEY = X'20d91b4944bcf5c6c0a80133'
+> Row 812:  DONE
+>    LOGINNAME = scastro
+>       SYMBOL = SCZ4
+>   PRIMARYKEY = X'c18d6e8544c0fd0dc0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+VSTNQ 	$0.68 	-3 	-$2.04 	$5,832.91 	0.00% 	1.37% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 04, 2006 		1300 	1300 	Buy
+Aug 18, 2006 	1300 	-650 	650 	Sell
+Aug 21, 2006 	650 	650 	1300 	Buy
+Aug 22, 2006 	1300 	128 	1428 	Buy
+Aug 23, 2006 	1428 	-27 	1401 	Multiple
+Aug 24, 2006 	1401 	1400 	2801 	Buy
+Aug 29, 2006 	2801 	-1400 	1401 	Sell
+Aug 30, 2006 	1401 	-1050 	351 	Sell
+Aug 31, 2006 	351 	-220 	131 	Sell
+Sep 12, 2006 	131 	-23 	108 	Sell
+Sep 13, 2006 	108 	-6 	102 	Sell
+Sep 21, 2006 	102 	2099 	2201 	Buy
+Sep 22, 2006 	2201 	2200 	4401 	Buy
+Sep 25, 2006 	4401 	-741 	3660 	Multiple
+Sep 26, 2006 	3660 	-3539 	121 	Sell
+Sep 27, 2006 	121 	-62 	59 	Sell
+Oct 04, 2006 	59 	592 	651 	Buy
+Oct 05, 2006 	651 	1950 	2601 	Buy
+Oct 06, 2006 	2601 	-2477 	124 	Sell
+Oct 10, 2006 	124 	84 	208 	Buy
+Oct 11, 2006 	208 	1073 	1281 	Buy
+Oct 12, 2006 	1281 	-1151 	130 	Sell
+Oct 18, 2006 	130 	4941 	5071 	Buy
+Oct 19, 2006 	5071 	-4944 	127 	Sell
+Oct 23, 2006 	127 	1194 	1321 	Buy
+Oct 24, 2006 	1321 	10560 	11881 	Buy
+Oct 25, 2006 	11881 	-11755 	126 	Sell
+Oct 31, 2006 	126 	21184 	21310 	Buy
+Nov 01, 2006 	21310 	-2651 	18659 	Sell
+Nov 03, 2006 	18659 	-297 	18362 	Sell
+Nov 06, 2006 	18362 	-18228 	134 	Sell
+Nov 08, 2006 	134 	-137 	-3 	Sell  <--- only has 134
+Total: -3
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 4, 2006 	1,300 	$65.00 	$11,116.59 	$8.55
+Aug 21, 2006 	650 	$32.50 	$5,537.33 	$8.52
+Aug 22, 2006 	128 	$6.40 	$1,054.12 	$8.24
+Aug 23, 2006 	1,373 	$68.65 	$11,712.12 	$8.53
+Aug 24, 2006 	1,400 	$70.00 	$11,487.23 	$8.21
+Sep 21, 2006 	8 	$0.40 	$74.07 	$9.26
+Sep 21, 2006 	991 	$49.55 	$9,124.19 	$9.21
+Sep 21, 2006 	1,100 	$55.00 	$10,058.73 	$9.14
+Sep 22, 2006 	2,200 	$110.00 	$18,488.93 	$8.40
+Sep 25, 2006 	4,400 	$220.00 	$36,274.37 	$8.24
+Oct 4, 2006 	592 	$29.60 	$4,676.54 	$7.90
+Oct 5, 2006 	1,950 	$97.50 	$15,391.79 	$7.89
+Oct 10, 2006 	4 	$0.20 	$31.81 	$7.95
+Oct 10, 2006 	80 	$4.00 	$631.13 	$7.89
+Oct 11, 2006 	80 	$4.00 	$634.02 	$7.93
+Oct 11, 2006 	993 	$49.65 	$7,813.26 	$7.87
+Oct 18, 2006 	2,406 	$120.30 	$19,108.17 	$7.94
+Oct 18, 2006 	2,535 	$126.75 	$20,094.50 	$7.93
+Oct 23, 2006 	1,194 	$59.70 	$9,098.01 	$7.62
+Oct 24, 2006 	2,640 	$132.00 	$20,105.31 	$7.62
+Oct 24, 2006 	7,920 	$396.00 	$59,902.60 	$7.56
+Oct 31, 2006 	1,744 	$87.20 	$12,612.45 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,607.97 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,602.73 	$7.23
+Oct 31, 2006 	1,742 	$87.10 	$12,593.64 	$7.23
+Oct 31, 2006 	2,842 	$142.10 	$20,637.30 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,637.56 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,631.60 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,630.89 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,629.73 	$7.26
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 18, 2006 	650 	$32.50 	$0.18 	$5,850.23 	$9.00
+Aug 23, 2006 	1,400 	$70.00 	$0.36 	$11,783.40 	$8.42
+Aug 29, 2006 	1,400 	$70.00 	$0.35 	$11,476.66 	$8.20
+Aug 30, 2006 	1,050 	$52.50 	$0.28 	$9,025.44 	$8.60
+Aug 31, 2006 	220 	$11.00 	$0.06 	$1,897.99 	$8.63
+Sep 12, 2006 	23 	$1.15 	$0.01 	$214.51 	$9.33
+Sep 13, 2006 	6 	$0.30 	$0.00 	$59.10 	$9.85
+Sep 25, 2006 	5,141 	$257.05 	$1.34 	$43,431.26 	$8.45
+Sep 26, 2006 	3,539 	$176.95 	$0.91 	$29,413.19 	$8.31
+Sep 27, 2006 	62 	$3.10 	$0.02 	$535.22 	$8.63
+Oct 6, 2006 	2,477 	$123.85 	$0.61 	$19,880.21 	$8.03
+Oct 12, 2006 	1,151 	$57.55 	$0.28 	$8,937.32 	$7.76
+Oct 19, 2006 	4,944 	$247.20 	$1.21 	$39,253.05 	$7.94
+Oct 25, 2006 	837 	$41.85 	$0.20 	$6,405.68 	$7.65
+Oct 25, 2006 	1,289 	$64.45 	$0.31 	$9,856.54 	$7.65
+Oct 25, 2006 	370 	$18.50 	$0.09 	$2,880.67 	$7.79
+Oct 25, 2006 	1,060 	$53.00 	$0.26 	$8,250.91 	$7.78
+Oct 25, 2006 	1,097 	$54.85 	$0.26 	$8,539.32 	$7.78
+Oct 25, 2006 	1,160 	$58.00 	$0.28 	$9,030.36 	$7.78
+Oct 25, 2006 	1,339 	$66.95 	$0.32 	$10,425.16 	$7.79
+Oct 25, 2006 	1,387 	$69.35 	$0.33 	$10,799.17 	$7.79
+Oct 25, 2006 	216 	$10.80 	$0.05 	$1,662.68 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,709.04 	$7.71
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,702.11 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,703.17 	$7.70
+Nov 1, 2006 	2,651 	$132.55 	$0.61 	$19,867.85 	$7.49
+Nov 3, 2006 	297 	$14.85 	$0.07 	$2,193.53 	$7.39
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,996.25 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,997.57 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,995.47 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,994.78 	$7.46
+Nov 8, 2006 	137 	$6.85 	$0.04 	$1,065.82 	$7.78 <--- only has 134
+combo?
+no
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ4 20061108 VSTNQ -134 7.78
+Trading -134.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.78
+manager: scastro Sergio Castro
+fund: SCZ4
+building trade (has to load stock prices first)
+price = 7.78
+selling -134.0 shares of VSTNQ at 7.78 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+
+> Row 813:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = SCZ3
+>   PRIMARYKEY = X'821c1b4944bce828c0a80133'
+> Row 814:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = AMD3
+>   PRIMARYKEY = X'd4d61f3444a178d3c0a80134'
+> Row 815:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = ORCL1
+>   PRIMARYKEY = X'7025455944c5184bc0a80134'
+> Row 816:  DONE
+>    LOGINNAME = scastro
+>       SYMBOL = AMD1
+>   PRIMARYKEY = X'a0481f3444a1476ac0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+VSTNQ 	$0.68 	-6 	-$4.08 	$5,896.19 	0.00% 	1.45% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 04, 2006 		1300 	1300 	Buy
+Aug 18, 2006 	1300 	-650 	650 	Sell
+Aug 21, 2006 	650 	650 	1300 	Buy
+Aug 22, 2006 	1300 	127 	1427 	Buy
+Aug 23, 2006 	1427 	-27 	1400 	Multiple
+Aug 28, 2006 	1400 	1400 	2800 	Buy
+Aug 29, 2006 	2800 	-1400 	1400 	Sell
+Aug 30, 2006 	1400 	-1050 	350 	Sell
+Aug 31, 2006 	350 	-220 	130 	Sell
+Sep 12, 2006 	130 	-23 	107 	Sell
+Sep 13, 2006 	107 	-6 	101 	Sell
+Sep 21, 2006 	101 	2099 	2200 	Buy
+Sep 22, 2006 	2200 	2200 	4400 	Buy
+Sep 25, 2006 	4400 	-2138 	2262 	Multiple
+Sep 26, 2006 	2262 	-2143 	119 	Sell
+Sep 27, 2006 	119 	-62 	57 	Sell
+Oct 04, 2006 	57 	592 	649 	Buy
+Oct 05, 2006 	649 	1950 	2599 	Buy
+Oct 06, 2006 	2599 	-2477 	122 	Sell
+Oct 10, 2006 	122 	134 	256 	Buy
+Oct 11, 2006 	256 	1023 	1279 	Buy
+Oct 12, 2006 	1279 	-1151 	128 	Sell
+Oct 18, 2006 	128 	4941 	5069 	Buy
+Oct 19, 2006 	5069 	-4944 	125 	Sell
+Oct 23, 2006 	125 	1194 	1319 	Buy
+Oct 24, 2006 	1319 	10560 	11879 	Buy
+Oct 25, 2006 	11879 	-11755 	124 	Sell
+Oct 31, 2006 	124 	21184 	21308 	Buy
+Nov 01, 2006 	21308 	-2652 	18656 	Sell
+Nov 03, 2006 	18656 	-297 	18359 	Sell
+Nov 06, 2006 	18359 	-18228 	131 	Sell
+Nov 08, 2006 	131 	-137 	-6 	Sell
+Total: -6
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 4, 2006 	1,300 	$65.00 	$11,116.59 	$8.55
+Aug 21, 2006 	650 	$32.50 	$5,537.33 	$8.52
+Aug 22, 2006 	127 	$6.35 	$1,045.88 	$8.24
+Aug 23, 2006 	1,373 	$68.65 	$11,712.12 	$8.53
+Aug 28, 2006 	1,400 	$70.00 	$11,242.00 	$8.03
+Sep 21, 2006 	8 	$0.40 	$74.07 	$9.26
+Sep 21, 2006 	991 	$49.55 	$9,124.19 	$9.21
+Sep 21, 2006 	1,100 	$55.00 	$10,058.73 	$9.14
+Sep 22, 2006 	2,200 	$110.00 	$18,488.93 	$8.40
+Sep 25, 2006 	2,200 	$110.00 	$18,137.19 	$8.24
+Oct 4, 2006 	592 	$29.60 	$4,676.54 	$7.90
+Oct 5, 2006 	1,950 	$97.50 	$15,391.79 	$7.89
+Oct 10, 2006 	4 	$0.20 	$31.81 	$7.95
+Oct 10, 2006 	130 	$6.50 	$1,025.58 	$7.89
+Oct 11, 2006 	130 	$6.50 	$1,030.29 	$7.93
+Oct 11, 2006 	893 	$44.65 	$7,026.43 	$7.87
+Oct 18, 2006 	2,406 	$120.30 	$19,104.79 	$7.94
+Oct 18, 2006 	2,535 	$126.75 	$20,100.67 	$7.93
+Oct 23, 2006 	1,194 	$59.70 	$9,096.21 	$7.62
+Oct 24, 2006 	2,640 	$132.00 	$20,102.44 	$7.61
+Oct 24, 2006 	7,920 	$396.00 	$59,853.79 	$7.56
+Oct 31, 2006 	1,744 	$87.20 	$12,612.45 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,607.97 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,602.73 	$7.23
+Oct 31, 2006 	1,742 	$87.10 	$12,593.64 	$7.23
+Oct 31, 2006 	2,842 	$142.10 	$20,637.30 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,637.56 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,631.60 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,630.89 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,629.73 	$7.26
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 18, 2006 	650 	$32.50 	$0.18 	$5,850.23 	$9.00
+Aug 23, 2006 	1,400 	$70.00 	$0.36 	$11,783.40 	$8.42
+Aug 29, 2006 	1,400 	$70.00 	$0.35 	$11,476.66 	$8.20
+Aug 30, 2006 	1,050 	$52.50 	$0.28 	$9,025.44 	$8.60
+Aug 31, 2006 	220 	$11.00 	$0.06 	$1,897.99 	$8.63
+Sep 12, 2006 	23 	$1.15 	$0.01 	$214.51 	$9.33
+Sep 13, 2006 	6 	$0.30 	$0.00 	$59.10 	$9.85
+Sep 25, 2006 	4,338 	$216.90 	$1.13 	$36,647.50 	$8.45
+Sep 26, 2006 	2,143 	$107.15 	$0.55 	$17,810.81 	$8.31
+Sep 27, 2006 	62 	$3.10 	$0.02 	$535.22 	$8.63
+Oct 6, 2006 	2,477 	$123.85 	$0.61 	$19,880.21 	$8.03
+Oct 12, 2006 	1,151 	$57.55 	$0.28 	$8,937.32 	$7.76
+Oct 19, 2006 	4,944 	$247.20 	$1.21 	$39,259.54 	$7.94
+Oct 25, 2006 	837 	$41.85 	$0.20 	$6,405.68 	$7.65
+Oct 25, 2006 	1,289 	$64.45 	$0.31 	$9,856.54 	$7.65
+Oct 25, 2006 	370 	$18.50 	$0.09 	$2,880.67 	$7.79
+Oct 25, 2006 	1,060 	$53.00 	$0.26 	$8,250.91 	$7.78
+Oct 25, 2006 	1,096 	$54.80 	$0.26 	$8,531.53 	$7.78
+Oct 25, 2006 	1,160 	$58.00 	$0.28 	$9,030.36 	$7.78
+Oct 25, 2006 	1,339 	$66.95 	$0.32 	$10,425.16 	$7.79
+Oct 25, 2006 	1,388 	$69.40 	$0.33 	$10,806.96 	$7.79
+Oct 25, 2006 	216 	$10.80 	$0.05 	$1,662.68 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,709.04 	$7.71
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,702.11 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,703.17 	$7.70
+Nov 1, 2006 	2,652 	$132.60 	$0.61 	$19,875.35 	$7.49
+Nov 3, 2006 	297 	$14.85 	$0.07 	$2,193.53 	$7.39
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,996.25 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,997.57 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,995.47 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,994.78 	$7.46
+Nov 8, 2006 	137 	$6.85 	$0.04 	$1,065.82 	$7.78  <--- make this 131
+combo?  no 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD1 20061108 VSTNQ -131 7.78
+
+> Row 817:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = AMD4
+>   PRIMARYKEY = X'5d414fa644a02a14c0a80132'
+
+> Row 818:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = AMD7
+>   PRIMARYKEY = X'e0f466c944884720c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+DDAIF 	$94.18 	-1 	-$94.18 	$50,041.53 	0.00% 	12.22% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 17, 2006 		130 	130 	Buy
+Nov 21, 2006 	130 	300 	430 	Buy
+Nov 22, 2006 	430 	-363 	67 	Sell
+Jan 19, 2007 	67 	-51 	16 	Sell
+Jan 25, 2007 	16 	1034 	1050 	Buy
+Jan 29, 2007 	1050 	-988 	62 	Sell
+Feb 09, 2007 	62 	-63 	-1 	Sell
+Feb 27, 2007 	-1 	899 	898 	Buy
+Feb 28, 2007 	898 	-96 	802 	Sell
+Mar 21, 2007 	802 	-751 	51 	Sell
+Apr 05, 2007 	51 	-40 	11 	Sell
+Nov 15, 2007 	11 	8 	19 	Buy
+Nov 28, 2007 	19 	-1 	18 	Sell
+Nov 03, 2009 	18 	5495 	5513 	Buy
+Nov 06, 2009 	5513 	-1965 	3548 	Sell
+Nov 13, 2009 	3548 	-3043 	505 	Sell
+Nov 16, 2009 	505 	-207 	298 	Sell
+Dec 07, 2009 	298 	-200 	98 	Sell
+Jan 11, 2010 	98 	-99 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 17, 2006 	130 	$6.50 	$7,879.52 	$60.61
+Nov 21, 2006 	300 	$15.00 	$17,998.85 	$60.00
+Jan 25, 2007 	334 	$16.70 	$21,092.19 	$63.15
+Jan 25, 2007 	700 	$35.00 	$43,971.70 	$62.82
+Feb 27, 2007 	289 	$14.45 	$20,014.29 	$69.25
+Feb 27, 2007 	610 	$30.50 	$41,170.28 	$67.49
+Nov 15, 2007 	7 	$0.35 	$694.97 	$99.28
+Nov 15, 2007 	1 	$0.05 	$99.51 	$99.51
+Nov 3, 2009 	5,495 	$274.75 	$256,599.09 	$46.70
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 22, 2006 	363 	$18.15 	$0.68 	$22,031.91 	$60.69
+Jan 19, 2007 	51 	$2.55 	$0.10 	$3,229.03 	$63.31
+Jan 29, 2007 	74 	$3.70 	$0.14 	$4,678.38 	$63.22
+Jan 29, 2007 	116 	$5.80 	$0.23 	$7,325.31 	$63.15
+Jan 29, 2007 	200 	$10.00 	$0.39 	$12,603.27 	$63.02
+Jan 29, 2007 	198 	$9.90 	$0.38 	$12,476.48 	$63.01
+Jan 29, 2007 	200 	$10.00 	$0.39 	$12,602.96 	$63.01
+Jan 29, 2007 	200 	$10.00 	$0.39 	$12,603.56 	$63.02
+Feb 9, 2007 	63 	$3.15 	$0.12 	$4,044.97 	$64.21
+Feb 28, 2007 	96 	$4.80 	$0.20 	$6,540.93 	$68.13
+Mar 21, 2007 	751 	$37.55 	$1.76 	$57,360.70 	$76.38
+Apr 5, 2007 	40 	$2.00 	$0.10 	$3,331.70 	$83.29
+Nov 28, 2007 	1 	$0.05 	$0.00 	$101.45 	$101.45
+Nov 6, 2009 	1,965 	$98.25 	$2.50 	$97,105.55 	$49.42
+Nov 13, 2009 	3,043 	$152.15 	$3.97 	$154,489.06 	$50.77
+Nov 16, 2009 	207 	$10.35 	$0.29 	$11,111.20 	$53.68
+Dec 7, 2009 	200 	$10.00 	$0.28 	$10,767.63 	$53.84
+Jan 11, 2010 	99 	$4.95 	$0.14 	$5,355.51 	$54.10  <-- make this 98
+combo trade?
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+scastro's Mutual Fund 	SCZ2 	98  <-- ok
+scastro's Mutual Fund 	SCZ3 	99  <-- ok
+scastro's Mutual Fund 	SCZ1 	99  <-- ok
+scastro's Mutual Fund 	AMD3 	99 <-- ok
+scastro's Mutual Fund 	AMD5 	99 <-- ok
+scastro's Mutual Fund 	AMD1 	99  <--  ok
+scastro's Mutual Fund 	AMD4 	99  <-- ok
+scastro's Mutual Fund 	SCZ4 	199  <-- ok
+scastro's Mutual Fund 	ORCL1 	199  <-- make this 198
+scastro's Mutual Fund 	AMD7 	99 <-- make this 98
+scastro's Mutual Fund 	SCZ 	199  <--- ok
+scastro's Mutual Fund 	AMD6 	99  <--- ok
+scastro's Mutual Fund 	SNE 	199  <--- ok
+scastro's Mutual Fund 	AMD2 	99  <--- ok
+scastro's Mutual Fund 	INTC1 	199  <--- ok
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ2 20100111 DDAIF -98 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ3 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ1 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD3 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD5 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD1 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD4 20100111 DDAIF -99 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ4 20100111 DDAIF -199 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro ORCL1 20100111 DDAIF -198 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD7 20100111 DDAIF -98 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ 20100111 DDAIF -199 54.10
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD6 20100111 DDAIF -99 54.10
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SNE 20100111 DDAIF -199 54.10
+Trading -199.0 shares of Daimler AG on Jan 11, 2010 at 54.1
+manager: scastro Sergio Castro
+fund: SNE
+building trade (has to load stock prices first)
+price = 54.1
+selling -199.0 shares of DDAIF at 54.1 on 20100111
+invaldating fund prices from Jan 11, 2010
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD2 20100111 DDAIF -99 54.10
+Trading -99.0 shares of Daimler AG on Jan 11, 2010 at 54.1
+manager: scastro Sergio Castro
+fund: AMD2
+building trade (has to load stock prices first)
+price = 54.1
+selling -99.0 shares of DDAIF at 54.1 on 20100111
+invaldating fund prices from Jan 11, 2010
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro INTC1 20100111 DDAIF -199 54.10
+Trading -199.0 shares of Daimler AG on Jan 11, 2010 at 54.1
+manager: scastro Sergio Castro
+fund: INTC1
+building trade (has to load stock prices first)
+price = 54.1
+selling -199.0 shares of DDAIF at 54.1 on 20100111
+invaldating fund prices from Jan 11, 2010
+Done
+
+
+holdings
+your holdings of DDAIF 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+INTC1 	0 	$.00 	0.00%
+AMD5 	0 	$.00 	0.00%
+AMD7 	-1 	-$94.18 	-0.01%
+AMD6 	1 	$94.18 	0.01%
+AMD4 	1 	$94.18 	0.01%
+AMD2 	1 	$94.18 	0.01%
+AMD1 	1 	$94.18 	0.01%
+AMD3 	0 	$.00 	0.00%
+SCZ3 	1 	$94.18 	0.01%
+SCZ2 	9 	$847.62 	0.11%  <---
+SCZ1 	1 	$94.18 	0.01%
+SCZ 	1 	$94.18 	0.01%
+SCZ4 	1 	$94.18 	0.01%
+ORCL1 	-1 	-$94.18 	-0.01%
+SNE 	0 	$.00 	0.00%
+
+log out and back in
+
+
+> Row 819:  DONE   was VSTNQ
+>    LOGINNAME = scastro
+>       SYMBOL = AMD5
+>   PRIMARYKEY = X'ca0a66c944884671c0a80133'
+
+> Row 820:  DONE   was VSTNQ
+>    LOGINNAME = scastro
+>       SYMBOL = AMD2
+>   PRIMARYKEY = X'94651f3444a1432fc0a80134'
+
+> Row 821:  DONE    was VSTNQ
+>    LOGINNAME = scastro
+>       SYMBOL = SNE
+>   PRIMARYKEY = X'978e102544f5b1e3c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+VSTNQ 	$0.68 	-4 	-$2.72 	$5,297.98 	0.00% 	1.44% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 31, 2006 		130 	130 	Buy
+Sep 12, 2006 	130 	-23 	107 	Sell
+Sep 13, 2006 	107 	-6 	101 	Sell
+Sep 21, 2006 	101 	2099 	2200 	Buy
+Sep 22, 2006 	2200 	2200 	4400 	Buy
+Sep 25, 2006 	4400 	-2138 	2262 	Multiple
+Sep 26, 2006 	2262 	-2143 	119 	Sell
+Sep 27, 2006 	119 	-62 	57 	Sell
+Oct 04, 2006 	57 	592 	649 	Buy
+Oct 05, 2006 	649 	1950 	2599 	Buy
+Oct 06, 2006 	2599 	-2477 	122 	Sell
+Oct 10, 2006 	122 	294 	416 	Buy
+Oct 11, 2006 	416 	863 	1279 	Buy
+Oct 12, 2006 	1279 	-1151 	128 	Sell
+Oct 18, 2006 	128 	4941 	5069 	Buy
+Oct 19, 2006 	5069 	-4944 	125 	Sell
+Oct 23, 2006 	125 	1194 	1319 	Buy
+Oct 24, 2006 	1319 	10560 	11879 	Buy
+Oct 25, 2006 	11879 	-11754 	125 	Sell
+Oct 31, 2006 	125 	21184 	21309 	Buy
+Nov 01, 2006 	21309 	-2651 	18658 	Sell
+Nov 03, 2006 	18658 	-297 	18361 	Sell
+Nov 06, 2006 	18361 	-18228 	133 	Sell
+Nov 08, 2006 	133 	-137 	-4 	Sell
+Total: -4
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 31, 2006 	130 	$6.50 	$1,141.40 	$8.78
+Sep 21, 2006 	8 	$0.40 	$74.07 	$9.26
+Sep 21, 2006 	991 	$49.55 	$9,124.19 	$9.21
+Sep 21, 2006 	1,100 	$55.00 	$10,058.73 	$9.14
+Sep 22, 2006 	2,200 	$110.00 	$18,488.93 	$8.40
+Sep 25, 2006 	2,200 	$110.00 	$18,137.19 	$8.24
+Oct 4, 2006 	592 	$29.60 	$4,676.54 	$7.90
+Oct 5, 2006 	1,950 	$97.50 	$15,391.79 	$7.89
+Oct 10, 2006 	4 	$0.20 	$31.81 	$7.95
+Oct 10, 2006 	290 	$14.50 	$2,287.83 	$7.89
+Oct 11, 2006 	290 	$14.50 	$2,298.34 	$7.93
+Oct 11, 2006 	573 	$28.65 	$4,508.56 	$7.87
+Oct 18, 2006 	2,406 	$120.30 	$19,108.17 	$7.94
+Oct 18, 2006 	2,535 	$126.75 	$20,094.50 	$7.93
+Oct 23, 2006 	1,194 	$59.70 	$9,098.01 	$7.62
+Oct 24, 2006 	2,640 	$132.00 	$20,105.31 	$7.62
+Oct 24, 2006 	7,920 	$396.00 	$59,902.60 	$7.56
+Oct 31, 2006 	1,744 	$87.20 	$12,612.45 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,607.97 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,602.73 	$7.23
+Oct 31, 2006 	1,742 	$87.10 	$12,593.64 	$7.23
+Oct 31, 2006 	2,842 	$142.10 	$20,637.30 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,637.56 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,631.60 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,630.89 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,629.73 	$7.26
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Sep 12, 2006 	23 	$1.15 	$0.01 	$214.51 	$9.33
+Sep 13, 2006 	6 	$0.30 	$0.00 	$59.10 	$9.85
+Sep 25, 2006 	4,338 	$216.90 	$1.13 	$36,647.50 	$8.45
+Sep 26, 2006 	2,143 	$107.15 	$0.55 	$17,810.81 	$8.31
+Sep 27, 2006 	62 	$3.10 	$0.02 	$535.22 	$8.63
+Oct 6, 2006 	2,477 	$123.85 	$0.61 	$19,880.21 	$8.03
+Oct 12, 2006 	1,151 	$57.55 	$0.28 	$8,937.32 	$7.76
+Oct 19, 2006 	4,944 	$247.20 	$1.21 	$39,253.05 	$7.94
+Oct 25, 2006 	837 	$41.85 	$0.20 	$6,405.68 	$7.65
+Oct 25, 2006 	1,288 	$64.40 	$0.30 	$9,848.90 	$7.65
+Oct 25, 2006 	370 	$18.50 	$0.09 	$2,880.67 	$7.79
+Oct 25, 2006 	1,060 	$53.00 	$0.26 	$8,250.91 	$7.78
+Oct 25, 2006 	1,097 	$54.85 	$0.26 	$8,539.32 	$7.78
+Oct 25, 2006 	1,159 	$57.95 	$0.28 	$9,022.57 	$7.78
+Oct 25, 2006 	1,339 	$66.95 	$0.32 	$10,425.16 	$7.79
+Oct 25, 2006 	1,388 	$69.40 	$0.33 	$10,806.96 	$7.79
+Oct 25, 2006 	216 	$10.80 	$0.05 	$1,662.68 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,709.04 	$7.71
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,702.11 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,703.17 	$7.70
+Nov 1, 2006 	2,651 	$132.55 	$0.61 	$19,867.85 	$7.49
+Nov 3, 2006 	297 	$14.85 	$0.07 	$2,193.53 	$7.39
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,996.25 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,997.57 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,995.47 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,994.78 	$7.46
+Nov 8, 2006 	137 	$6.85 	$0.03 	$1,072.22 	$7.83  <--- make this 133
+combo trade? 
+  	  	
+Name 	Symbol 	Quantity
+scastro's Mutual Fund 	SCZ2 	137 <-- make this 192
+scastro's Mutual Fund 	SCZ3 	137  <-- make this 134
+scastro's Mutual Fund 	SCZ1 	137  <-- make this 131
+scastro's Mutual Fund 	AMD2 	137 <-- make this 131
+scastro's Mutual Fund 	ORCL1 	137 <-- make this 131
+scastro's Mutual Fund 	SNE 	137   <--- make this 133
+scastro's Mutual Fund 	SCZ 	137  <-- make this 133
+scastro's Mutual Fund 	AMD3 	137  <-- make this 132 
+scastro's Mutual Fund 	AMD4 	137  ,-- make this 136
+scastro's Mutual Fund 	AMD1 	137  <-- make this 131
+scastro's Mutual Fund 	SCZ4 	137  <-- make this 134
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ2 20061108 VSTNQ -192 7.83
+Trading -192.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SCZ2
+building trade (has to load stock prices first)
+price = 7.83
+selling -192.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ3 20061108 VSTNQ -134 7.83
+Trading -134.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SCZ3
+building trade (has to load stock prices first)
+price = 7.83
+selling -134.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ1 20061108 VSTNQ -131 7.83
+Trading -131.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SCZ1
+building trade (has to load stock prices first)
+price = 7.83
+selling -131.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD2 20061108 VSTNQ -131 7.83
+Trading -131.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: AMD2
+building trade (has to load stock prices first)
+price = 7.83
+selling -131.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro ORCL1 20061108 VSTNQ -131 7.83
+Trading -131.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: ORCL1
+building trade (has to load stock prices first)
+price = 7.83
+selling -131.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SNE 20061108 VSTNQ -133 7.83
+Trading -133.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SNE
+building trade (has to load stock prices first)
+price = 7.83
+selling -133.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ 20061108 VSTNQ -133 7.83
+Trading -133.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SCZ
+building trade (has to load stock prices first)
+price = 7.83
+selling -133.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD3 20061108 VSTNQ -132 7.83
+Trading -132.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: AMD3
+building trade (has to load stock prices first)
+price = 7.83
+selling -132.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD4 20061108 VSTNQ -136 7.83
+Trading -136.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: AMD4
+building trade (has to load stock prices first)
+price = 7.83
+selling -136.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD1 20061108 VSTNQ -137 7.83
+Trading -137.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: AMD1
+building trade (has to load stock prices first)
+price = 7.83
+selling -137.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro SCZ4 20061108 VSTNQ -137 7.83
+Trading -137.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.83
+manager: scastro Sergio Castro
+fund: SCZ4
+building trade (has to load stock prices first)
+price = 7.83
+selling -137.0 shares of VSTNQ at 7.83 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+
+
+
+holdings
+ your holdings of VSTNQ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+INTC1 	0 	$.00 	0.00%
+AMD5 	0 	$.00 	0.00%
+AMD7 	0 	$.00 	0.00%
+AMD6 	0 	$.00 	0.00%
+AMD4 	-1 	-$0.68 	-0.00%  <-- 
+AMD2 	-6 	-$4.08 	-0.00%  <---
+AMD1 	-6 	-$4.08 	-0.00%  <-- 
+AMD3 	-5 	-$3.40 	-0.00%  <--
+SCZ3 	-3 	-$2.04 	-0.00%  <-- 
+SCZ2 	55 	$37.40 	0.00%  <--  
+SCZ1 	-6 	-$4.08 	-0.00%  <---
+SCZ 	-4 	-$2.72 	-0.00% <---
+SCZ4 	-3 	-$2.04 	-0.00%  <-- 
+ORCL1 	-6 	-$4.08 	-0.00% <---
+SNE 	-4 	-$2.72 	-0.00% 
+
+let's log out and then come back in 
+
+> Row 822:  DONE 
+>    LOGINNAME = scastro
+>       SYMBOL = INTC1
+>   PRIMARYKEY = X'0dbd65c242971dedc0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+VSTNQ 	$0.68 	-3 	-$2.04 	$5,787.36 	0.00% 	1.35% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 16, 2006 		396 	396 	Buy
+May 18, 2006 	396 	-395 	1 	Sell
+Aug 04, 2006 	1 	1299 	1300 	Buy
+Aug 18, 2006 	1300 	-650 	650 	Sell
+Aug 21, 2006 	650 	650 	1300 	Buy
+Aug 22, 2006 	1300 	127 	1427 	Buy
+Aug 23, 2006 	1427 	-27 	1400 	Multiple
+Aug 24, 2006 	1400 	1400 	2800 	Buy
+Aug 29, 2006 	2800 	-1400 	1400 	Sell
+Aug 30, 2006 	1400 	-1050 	350 	Sell
+Aug 31, 2006 	350 	-220 	130 	Sell
+Sep 12, 2006 	130 	-23 	107 	Sell
+Sep 13, 2006 	107 	-6 	101 	Sell
+Sep 21, 2006 	101 	2099 	2200 	Buy
+Sep 22, 2006 	2200 	2200 	4400 	Buy
+Sep 25, 2006 	4400 	-741 	3659 	Multiple
+Sep 26, 2006 	3659 	-3539 	120 	Sell
+Sep 27, 2006 	120 	-62 	58 	Sell
+Oct 04, 2006 	58 	592 	650 	Buy
+Oct 05, 2006 	650 	1950 	2600 	Buy
+Oct 06, 2006 	2600 	-2477 	123 	Sell
+Oct 10, 2006 	123 	4 	127 	Buy
+Oct 11, 2006 	127 	1152 	1279 	Buy
+Oct 12, 2006 	1279 	-1150 	129 	Sell
+Oct 18, 2006 	129 	4941 	5070 	Buy
+Oct 19, 2006 	5070 	-4944 	126 	Sell
+Oct 23, 2006 	126 	1194 	1320 	Buy
+Oct 24, 2006 	1320 	10560 	11880 	Buy
+Oct 25, 2006 	11880 	-11753 	127 	Sell
+Oct 31, 2006 	127 	21184 	21311 	Buy
+Nov 01, 2006 	21311 	-2652 	18659 	Sell
+Nov 03, 2006 	18659 	-297 	18362 	Sell
+Nov 06, 2006 	18362 	-18228 	134 	Sell
+Nov 08, 2006 	134 	-137 	-3 	Sell
+Total: -3
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 16, 2006 	396 	$19.80 	$2,969.80 	$7.50
+Aug 4, 2006 	1,299 	$64.95 	$11,108.03 	$8.55
+Aug 21, 2006 	650 	$32.50 	$5,537.33 	$8.52
+Aug 22, 2006 	127 	$6.35 	$1,045.88 	$8.24
+Aug 23, 2006 	1,373 	$68.65 	$11,712.12 	$8.53
+Aug 24, 2006 	1,400 	$70.00 	$11,487.23 	$8.21
+Sep 21, 2006 	8 	$0.40 	$74.07 	$9.26
+Sep 21, 2006 	991 	$49.55 	$9,124.19 	$9.21
+Sep 21, 2006 	1,100 	$55.00 	$10,058.73 	$9.14
+Sep 22, 2006 	2,200 	$110.00 	$18,488.93 	$8.40
+Sep 25, 2006 	4,400 	$220.00 	$36,274.37 	$8.24
+Oct 4, 2006 	592 	$29.60 	$4,676.54 	$7.90
+Oct 5, 2006 	1,950 	$97.50 	$15,391.79 	$7.89
+Oct 10, 2006 	4 	$0.20 	$31.81 	$7.95
+Oct 11, 2006 	1,152 	$57.60 	$9,064.33 	$7.87
+Oct 18, 2006 	2,406 	$120.30 	$19,108.63 	$7.94
+Oct 18, 2006 	2,535 	$126.75 	$20,101.47 	$7.93
+Oct 23, 2006 	1,194 	$59.70 	$9,096.73 	$7.62
+Oct 24, 2006 	2,640 	$132.00 	$20,102.44 	$7.61
+Oct 24, 2006 	7,920 	$396.00 	$59,854.74 	$7.56
+Oct 31, 2006 	1,744 	$87.20 	$12,612.45 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,607.97 	$7.23
+Oct 31, 2006 	1,744 	$87.20 	$12,602.73 	$7.23
+Oct 31, 2006 	1,742 	$87.10 	$12,593.64 	$7.23
+Oct 31, 2006 	2,842 	$142.10 	$20,637.30 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,637.56 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,631.60 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,630.89 	$7.26
+Oct 31, 2006 	2,842 	$142.10 	$20,629.73 	$7.26
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 18, 2006 	216 	$10.80 	$0.05 	$1,585.19 	$7.34
+May 18, 2006 	179 	$8.95 	$0.04 	$1,278.02 	$7.14
+Aug 18, 2006 	650 	$32.50 	$0.18 	$5,850.23 	$9.00
+Aug 23, 2006 	1,400 	$70.00 	$0.36 	$11,783.40 	$8.42
+Aug 29, 2006 	1,400 	$70.00 	$0.35 	$11,476.66 	$8.20
+Aug 30, 2006 	1,050 	$52.50 	$0.28 	$9,025.44 	$8.60
+Aug 31, 2006 	220 	$11.00 	$0.06 	$1,897.99 	$8.63
+Sep 12, 2006 	23 	$1.15 	$0.01 	$214.51 	$9.33
+Sep 13, 2006 	6 	$0.30 	$0.00 	$59.10 	$9.85
+Sep 25, 2006 	5,141 	$257.05 	$1.34 	$43,431.26 	$8.45
+Sep 26, 2006 	3,539 	$176.95 	$0.91 	$29,413.19 	$8.31
+Sep 27, 2006 	62 	$3.10 	$0.02 	$535.22 	$8.63
+Oct 6, 2006 	2,477 	$123.85 	$0.61 	$19,880.21 	$8.03
+Oct 12, 2006 	1,150 	$57.50 	$0.28 	$8,929.56 	$7.76
+Oct 19, 2006 	4,944 	$247.20 	$1.21 	$39,252.06 	$7.94
+Oct 25, 2006 	837 	$41.85 	$0.20 	$6,405.68 	$7.65
+Oct 25, 2006 	1,288 	$64.40 	$0.30 	$9,848.90 	$7.65
+Oct 25, 2006 	370 	$18.50 	$0.09 	$2,880.67 	$7.79
+Oct 25, 2006 	1,060 	$53.00 	$0.26 	$8,250.91 	$7.78
+Oct 25, 2006 	1,096 	$54.80 	$0.26 	$8,531.53 	$7.78
+Oct 25, 2006 	1,160 	$58.00 	$0.28 	$9,030.36 	$7.78
+Oct 25, 2006 	1,339 	$66.95 	$0.32 	$10,425.16 	$7.79
+Oct 25, 2006 	1,387 	$69.35 	$0.33 	$10,799.17 	$7.79
+Oct 25, 2006 	216 	$10.80 	$0.05 	$1,662.68 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,709.04 	$7.71
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,702.11 	$7.70
+Oct 25, 2006 	1,000 	$50.00 	$0.24 	$7,703.17 	$7.70
+Nov 1, 2006 	2,652 	$132.60 	$0.61 	$19,875.35 	$7.49
+Nov 3, 2006 	297 	$14.85 	$0.07 	$2,193.53 	$7.39
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,996.25 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,997.57 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,995.47 	$7.46
+Nov 6, 2006 	4,557 	$227.85 	$1.05 	$33,994.78 	$7.46
+Nov 8, 2006 	137 	$6.85 	$0.03 	$1,068.10 	$7.80  <-- make this 134
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+scastro's Mutual Fund 	INTC1 	137   <-- make this 134
+scastro's Mutual Fund 	AMD5 	137     <-- make this 134
+scastro's Mutual Fund 	AMD6 	2,650  <--- leave as is 
+scastro's Mutual Fund 	AMD7 	137  <--- make this 132
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro INTC1 20061108 VSTNQ -134 7.80
+Trading -134.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.8
+manager: scastro Sergio Castro
+fund: INTC1
+building trade (has to load stock prices first)
+price = 7.8
+selling -134.0 shares of VSTNQ at 7.8 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD5 20061108 VSTNQ -134 7.80
+Trading -134.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.8
+manager: scastro Sergio Castro
+fund: AMD5
+building trade (has to load stock prices first)
+price = 7.8
+selling -134.0 shares of VSTNQ at 7.8 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD6 20061108 VSTNQ -2650 7.80
+Trading -2650.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.8
+manager: scastro Sergio Castro
+fund: AMD6
+building trade (has to load stock prices first)
+price = 7.8
+selling -2650.0 shares of VSTNQ at 7.8 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py scastro AMD7 20061108 VSTNQ -132 7.80
+Trading -132.0 shares of VISTEON CORP  on Nov 08, 2006 at 7.8
+manager: scastro Sergio Castro
+fund: AMD7
+building trade (has to load stock prices first)
+price = 7.8
+selling -132.0 shares of VSTNQ at 7.8 on 20061108
+invaldating fund prices from Nov 08, 2006
+Done
+	  	 
+check holdings
+your holdings of VSTNQ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+INTC1 	-3 	-$2.04 	-0.00%
+AMD5 	-3 	-$2.04 	-0.00%  <---  
+AMD7 	-5 	-$3.40 	-0.00%  <---- 
+AMD6 	0 	$.00 	0.00%  <---- good 
+AMD4 	-1 	-$0.68 	-0.00%
+AMD2 	-6 	-$4.08 	-0.00%
+AMD1 	-6 	-$4.08 	-0.00%
+AMD3 	-5 	-$3.40 	-0.00%
+SCZ3 	-3 	-$2.04 	-0.00%
+SCZ2 	55 	$37.40 	0.00%
+SCZ1 	-6 	-$4.08 	-0.00%
+SCZ 	-4 	-$2.72 	-0.00%
+SCZ4 	-3 	-$2.04 	-0.00%
+ORCL1 	-6 	-$4.08 	-0.00%
+SNE 	-4 	-$2.72 	-0.00%
+
+> Row 823:  DONE
+>    LOGINNAME = ivy170
+>       SYMBOL = IMF
+>   PRIMARYKEY = X'a90146f34e69566cc0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+MCD 	$96.22 	-963 	-$92,659.86 	-$4,522.91 	0.00% 	-1.41% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 02, 2011 		-963 	-963 	Multiple
+Total: -963
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 2, 2011 	1,000 	$50.00 	$92,550.60 	$92.55
+Nov 2, 2011 	963 	$48.15 	$89,111.55 	$92.54
+Nov 2, 2011 	1,000 	$50.00 	$92,513.50 	$92.51
+Nov 2, 2011 	500 	$25.00 	$46,234.56 	$92.47
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 2, 2011 	1,000 	$50.00 	$1.78 	$92,433.58 	$92.43
+Nov 2, 2011 	3,426 	$171.30 	$6.08 	$316,113.58 	$92.27  <-- change this to 2463
+
+total buys 3463
+total sells 4426  change this to 2463
+/Marketocracy/Scripts/build/bin/backdatedtrade.py ivy170 IMF 20111102 MCD -2463 92.27
+Trading -2463.0 shares of MCDONALD'S CORP on Nov 02, 2011 at 92.27
+manager: ivy170 Yue Lou
+fund: IMF
+building trade (has to load stock prices first)
+price = 92.27
+selling -2463.0 shares of MCD at 92.27 on 20111102
+invaldating fund prices from Nov 02, 2011
+Done
+
+
+> Row 824:  DONE
+>    LOGINNAME = kamimura
+>       SYMBOL = G50
+>   PRIMARYKEY = X'cbe24ff5486cf6a7c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+BIL 	$45.71 	-1,180 	-$53,937.80 	-$335.88 	0.00% 	-0.18% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 21, 2009 		1130 	1130 	Buy
+Jan 29, 2009 	1130 	-570 	560 	Sell
+Mar 05, 2009 	560 	480 	1040 	Buy
+Mar 11, 2009 	1040 	1040 	2080 	Buy
+Mar 18, 2009 	2080 	-1020 	1060 	Sell
+May 07, 2009 	1060 	1350 	2410 	Buy
+Jun 11, 2009 	2410 	-3590 	-1180 	Sell
+Total: -1,180
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 21, 2009 	1,130 	$56.50 	$51,872.54 	$45.90
+Mar 5, 2009 	480 	$24.00 	$22,046.40 	$45.93
+Mar 11, 2009 	1,040 	$52.00 	$47,752.83 	$45.92
+May 7, 2009 	1,350 	$67.50 	$61,948.53 	$45.89
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 29, 2009 	570 	$28.50 	$0.81 	$26,115.25 	$45.82
+Mar 18, 2009 	1,020 	$51.00 	$0.27 	$46,715.73 	$45.80
+Jun 11, 2009 	1,180 	$59.00 	$1.40 	$54,032.62 	$45.79  <--- remove this 
+Jun 11, 2009 	2,410 	$120.50 	$2.84 	$110,358.62 	$45.79
+
+> Row 825:  DONE 
+>    LOGINNAME = holdenll
+>       SYMBOL = TRADE
+>   PRIMARYKEY = X'e9805f94411177adc0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+C 	$54.45 	-1,240 	-$67,518.00 	$993.05 	0.00% 	0.67% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 16, 2006 		1030 	1030 	Buy
+Aug 17, 2006 	1030 	60 	1090 	Buy
+Sep 08, 2006 	1090 	580 	1670 	Buy
+Oct 10, 2006 	1670 	-1670 		Sell
+Jun 20, 2007 		1240 	1240 	Buy
+Jun 25, 2007 	1240 	-2480 	-1240 	Sell
+Total: -1,240
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 16, 2006 	1,030 	$51.50 	$50,144.80 	$48.68
+Aug 17, 2006 	60 	$3.00 	$2,909.40 	$48.49
+Sep 8, 2006 	580 	$29.00 	$28,170.00 	$48.57
+Jun 20, 2007 	1,240 	$62.00 	$66,991.80 	$54.03
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Oct 10, 2006 	1,670 	$83.50 	$2.62 	$85,100.58 	$50.96
+Jun 25, 2007 	1,240 	$62.00 	$1.98 	$64,410.82 	$51.94
+Jun 25, 2007 	1,240 	$62.00 	$1.99 	$64,450.55 	$51.98  <-- remove 
+
+> Row 826:  DONE 
+>    LOGINNAME = dreid
+>       SYMBOL = DMF
+>   PRIMARYKEY = X'909f374e3d08e0fec0a801e1'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ABY 	$38.10 	-1 	-$38.10 	$5,045.10 	-0.88% 	20.94% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Sep 18, 2007 		12670 	12670 	Buy
+Oct 29, 2007 	12670 	-12671 	-1 	Corporate Action
+Total: -1
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Sep 18, 2007 	12,670 	$633.50 	$24,087.60 	$1.90
+  	  	 
+SELLS
+You have no sells for this position
+20071029 DMF  
+trades on October 29, 2007 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	ABY 	12,671 	$0.00 	$0.00 	$0.00 	$0.00  <--------------
+Stock Dividend Buy 	ABWTQ 	793 	$0.00 	$0.00 	$0.00 	$0.00
+Hexkey: 7FFE508847294B2CC0A8013C
+select * from mticket where primarykey= X'7FFE508847294B2CC0A8013C';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'8000508847294b2cc0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4bc564aa398627c1c0a801e0'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'7ffe508847294b2cc0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'054f0e21390add01c0a80116'
+>      SOURCEKEY = X'a86a508847294abfc0a8013c'
+>    NOTIFYEMAIL = NULL
+select * from morder where ticketkey= X'7ffe508847294b2cc0a8013c' ;
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'8000508847294b2cc0a8013c'
+>         SHARES = 12671.000000  <--- change to 12670
+>      TICKETKEY = X'7ffe508847294b2cc0a8013c'
+>           TIME = TIMESTAMP '2007-10-29 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+
+select * from mtrade  where ticketkey= X'7ffe508847294b2cc0a8013c' ;
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'09643de446f02e86c0a8011e'
+>                 PRIMARYKEY = X'8001508847294b2cc0a8013c'
+>                     SHARES = 12671.000000  <--- change to 12670
+>                  TICKETKEY = X'7ffe508847294b2cc0a8013c'
+>                     CLOSED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+set commit false;
+update mtrade set shares=12670 where ticketkey= X'7ffe508847294b2cc0a8013c' ;
+update morder set shares=12670 where ticketkey= X'7ffe508847294b2cc0a8013c' ;
+commit;
+set commit true;
+
+tickle and invalidate
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  7FFE508847294B2CC0A8013C
+invalidate
+/Marketocracy/bin/fptool invalidateFund 909f374e3d08e0fec0a801e1
+log back in 
+
+**** ok check on ABY shorts
+select distinct stockkey from mstockalias where symbol='ABY';
+> Row 1:
+>   STOCKKEY = X'054f0e21390add01c0a80116'
+select * from mstockalias where STOCKKEY = X'054f0e21390add01c0a80116';
+delisted - check this one
+select count(*) from mposition where STOCKKEY = X'054f0e21390add01c0a80116' and totalshares <> 0;
+> Row 1:
+>   _C001 = 1.000000
+select * from mposition where STOCKKEY = X'054f0e21390add01c0a80116' and totalshares <> 0;
+> Row 1:
+>         INITIALSHARES = 0.000000
+>                  NAME = NULL
+>            PRIMARYKEY = X'09663de446f02e86c0a8011e'
+>             SECTORKEY = NULL
+>              STOCKKEY = X'054f0e21390add01c0a80116'
+>                SYMBOL = NULL
+>           TOTALSHARES = 1.000000
+>               FUNDKEY = X'6abc382d3ae774cec0a801e0'
+>                 LABEL = NULL
+>             RATIONALE = NULL
+>   FIRSTTRADETIMESTAMP = TIMESTAMP '2007-09-18 15:31:00.000000'
+>    LASTTRADETIMESTAMP = TIMESTAMP '2007-10-29 00:00:00.000000'
+>   LASTCLOSEDTIMESTAMP = TIMESTAMP '2007-10-29 00:00:00.000000'
+>         TOTALUSERBUYS = 24087.595840
+>        TOTALUSERSELLS = 0.000000
+>        RECENTUSERBUYS = 0.000000
+>       RECENTUSERSELLS = 0.000000
+>               CAYIELD = 29166.187929
+>                CACOST = 0.000000
+>         RECENTCAYIELD = 29166.187929
+>          RECENTCACOST = 0.000000
+>            LASTCACALC = NULL
+>                  KIND = 0
+
+select symbol from mfund where primarykey= X'6abc382d3ae774cec0a801e0';
+> Row 1:
+>   SYMBOL = DMF1
+select portfoliokey from mfund where primarykey= X'6abc382d3ae774cec0a801e0';
+select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey= X'6abc382d3ae774cec0a801e0');
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where primarykey= X'6abc382d3ae774cec0a801e0'));
+> Row 1:
+>   LOGINNAME = dreid
+he is long should have 0
+dreid DMF1  expanding
+LEDGER
+Date 	Start 	Change 	End 	Type
+Sep 18, 2007 		12670 	12670 	Buy
+Oct 29, 2007 	12670 	-12669 	1 	Corporate Action  <--- this should be 12670
+Total: 1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Sep 18, 2007 	12,670 	$633.50 	$24,087.60 	$1.90
+20071029  DMF1  get the hex key
+Hexkey: 8004508847294B2CC0A8013C
+select * from mticket where primarykey= X'8004508847294B2CC0A8013C';
+select * from morder where ticketkey =X'8004508847294B2CC0A8013C';
+select * from mtrade where ticketkey =X'8004508847294B2CC0A8013C';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'8006508847294b2cc0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4bc564aa398627c1c0a801e0'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'8004508847294b2cc0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'054f0e21390add01c0a80116'
+>      SOURCEKEY = X'a86a508847294abfc0a8013c'
+>    NOTIFYEMAIL = NULL
+marketocracy@db1#25> der where ticketkey =X'8004508847294B2CC0A8013C';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'8006508847294b2cc0a8013c'
+>         SHARES = 12669.000000
+>      TICKETKEY = X'8004508847294b2cc0a8013c'
+>           TIME = TIMESTAMP '2007-10-29 00:00:00.000000'
+>   AVERAGEPRICE = 0.000000
+>   SHARESFILLED = 0
+marketocracy@db1#26> ade where ticketkey =X'8004508847294B2CC0A8013C';
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'09663de446f02e86c0a8011e'
+>                 PRIMARYKEY = X'8007508847294b2cc0a8013c'
+>                     SHARES = 12669.000000
+>                  TICKETKEY = X'8004508847294b2cc0a8013c'
+>                     CLOSED = TIMESTAMP '2007-10-29 00:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=12670 where ticketkey =X'8004508847294b2cc0a8013c';
+update morder set shares=12670 where ticketkey =X'8004508847294b2cc0a8013c';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 8004508847294b2cc0a8013c
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+/Marketocracy/bin/dbtool lookup fund dreid
+>>>> dbtool started at 2015-06-02 08:00:01 -0400
+fund: dreid
+  PK: [6ABC382D3AE774CEC0A801E0]
+  symbol: [DMF1]
+  managerKey: [4BC564AA398627C1C0A801E0]
+  loginName: [dreid]
+fund: dreid
+  PK: [909F374E3D08E0FEC0A801E1]
+  symbol: [DMF]
+  managerKey: [4BC564AA398627C1C0A801E0]
+  loginName: [dreid]
+<<<< dbtool finished at 2015-06-02 08:00:01 -0400
+
+/Marketocracy/bin/fptool invalidateFund   6ABC382D3AE774CEC0A801E0
+
+logout and back in 
+ok good now - let's check his ledger for stocks that no longer trde
+
+**********
+> Row 2:
+>   STOCKKEY = X'2779070a539b82eec0a86f92'
+select * from mstockalias where STOCKKEY = X'2779070a539b82eec0a86f92';
+active 
+
+> Row 827:  DONE 
+>    LOGINNAME = pindikov
+>       SYMBOL = IIP
+>   PRIMARYKEY = X'8a203e52426f68b2c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+EONGY 	$14.60 	-3,000 	-$43,800.00 	$86,577.65 	-0.61% 	28.82% 	Details  	TOP
+EDGER
+Date 	Start 	Change 	End 	Type
+Jan 18, 2007 		3000 	3000 	Buy
+Jan 22, 2007 	3000 	-3000 		Sell
+Feb 27, 2007 		1000 	1000 	Buy
+Mar 01, 2007 	1000 	-1000 		Sell
+Mar 07, 2007 		3000 	3000 	Buy
+Mar 12, 2007 	3000 	-6000 	-3000 	Sell
+Total: -3,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 18, 2007 	3,000 	$150.00 	$128,022.21 	$42.67
+Feb 27, 2007 	600 	$30.00 	$25,919.80 	$43.20
+Feb 27, 2007 	400 	$20.00 	$17,262.20 	$43.16
+Mar 7, 2007 	3,000 	$150.00 	$129,239.47 	$43.08
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 22, 2007 	3,000 	$150.00 	$3.93 	$127,715.87 	$42.57
+Mar 1, 2007 	1,000 	$50.00 	$1.31 	$42,379.69 	$42.38
+Mar 12, 2007 	3,000 	$150.00 	$4.01 	$130,311.79 	$43.44
+Mar 12, 2007 	3,000 	$150.00 	$4.01 	$130,413.98 	$43.47 <-- dup
+> Row 828:  DONE
+>    LOGINNAME = scary
+>       SYMBOL = SMCP!
+>   PRIMARYKEY = X'33652d5a3c959e49c0a80118'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+CSUN 	$1.68 	-5,000 	-$8,400.00 	-$5,732.85 	-2.89% 	-17.73% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 24, 2008 		500 	500 	Buy
+Jun 26, 2008 	500 	500 	1000 	Buy
+Jul 01, 2008 	1000 	1000 	2000 	Buy
+Jul 02, 2008 	2000 	-2000 		Sell
+Dec 09, 2008 		1000 	1000 	Buy
+Jan 15, 2009 	1000 	1000 	2000 	Buy
+Feb 06, 2009 	2000 	1500 	3500 	Buy
+Feb 10, 2009 	3500 	1500 	5000 	Buy
+Feb 17, 2009 	5000 	-5000 		Sell
+Feb 18, 2009 		-5000 	-5000 	Sell
+Total: -5,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 24, 2008 	500 	$25.00 	$5,324.70 	$10.65
+Jun 26, 2008 	500 	$25.00 	$4,579.84 	$9.16
+Jul 1, 2008 	1,000 	$50.00 	$7,697.68 	$7.70
+Dec 9, 2008 	1,000 	$50.00 	$3,300.40 	$3.30
+Jan 15, 2009 	1,000 	$50.00 	$3,244.58 	$3.24
+Feb 6, 2009 	1,500 	$75.00 	$4,343.82 	$2.90
+Feb 10, 2009 	1,500 	$75.00 	$3,837.20 	$2.56
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 2, 2008 	2,000 	$100.00 	$0.44 	$14,112.36 	$7.06
+Feb 17, 2009 	5,000 	$250.00 	$0.34 	$10,685.83 	$2.14
+Feb 18, 2009 	5,000 	$250.00 	$0.33 	$10,197.21 	$2.0  <--- remove
+
+> Row 829:
+>    LOGINNAME = momentumvalue
+>       SYMBOL = MMF10
+>   PRIMARYKEY = X'6770219647162512c0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+PKT 	$11.48 	-6,689 	-$76,789.72 	-$11,136.80 	-0.17% 	-11.27% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 25, 2011 		154090 	154090 	Buy
+Feb 07, 2011 	154090 	-160779 	-6689 	Multiple
+Total: -6,689
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 25, 2011 	154,090 	$4,706.92 	$98,845.28 	$0.64
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 7, 2011 	22,098 	$1,104.90 	$2.80 	$164,501.65 	$7.44  	  <-- change to 2209  	
+/Marketocracy/Scripts/build/bin/backdatedtrade.py momentumvalue MMF10 20110207 PKT -2209 7.44
+Trading -2209.0 shares of PROCERA NETWORKS INC on Feb 07, 2011 at 7.44
+manager: momentumvalue ralph babbitt
+fund: MMF10
+building trade (has to load stock prices first)
+price = 7.44
+selling -2209.0 shares of PKT at 7.44 on 20110207
+invaldating fund prices from Feb 07, 2011
+Done
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Feb 07, 2011 	Split terms:1 for 10  	  	 
+20110207 MMF10
+trades on February 07, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	PKT 	22,098 	$7.44 	$164,501.65 	$1,104.90 	$2.80
+Sell 	CBAK 	42,150 	$1.88 	$79,238.62 	$2,107.50 	$1.57
+Buy 	UMC 	14,830 	$3.47 	$51,391.78 	$741.50 	$0.00
+Buy 	CIM 	11,920 	$4.31 	$51,377.73 	$596.00 	$0.00
+Buy 	CPSL 	22,910 	$1.88 	$43,083.84 	$1,145.50 	$0.00
+Buy 	BPOP 	12,420 	$3.41 	$42,297.09 	$621.00 	$0.00
+Sell 	SNTS 	11,810 	$3.26 	$38,478.16 	$590.50 	$0.76
+Sell 	OBQI 	70,200 	$0.53 	$36,889.79 	$1,941.57 	$0.75
+Split Buy 	PKT 	15,409 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	PKT 	154,090 	$0.00 	$0.00 	$0.00 	$0.00
+*******  check to see if anyone else is short in ABY
+
+
+> Row 830:  DONE
+>    LOGINNAME = scarlo
+>       SYMBOL = PAM
+>   PRIMARYKEY = X'26d5676e49f79afdc0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+BDX 	$140.82 	-1,250 	-$176,025.01 	-$78,323.21 	0.22% 	-35.76% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 05, 2009 		1500 	1500 	Buy
+May 18, 2009 	1500 	-750 	750 	Sell
+Jul 10, 2009 	750 	-750 		Sell
+Jun 28, 2010 		350 	350 	Buy
+Jul 23, 2010 	350 	-350 		Sell
+Dec 03, 2010 		1250 	1250 	Buy
+Sep 06, 2011 	1250 	-2500 	-1250 	Sell
+Total: -1,250
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 5, 2009 	500 	$25.00 	$31,027.80 	$62.06
+May 5, 2009 	1,000 	$50.00 	$62,053.90 	$62.05
+Jun 28, 2010 	350 	$17.50 	$24,319.72 	$69.48
+Dec 3, 2010 	1,250 	$62.50 	$101,636.31 	$81.31
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 18, 2009 	750 	$37.50 	$1.25 	$48,451.25 	$64.60
+Jul 10, 2009 	750 	$37.50 	$1.31 	$50,852.69 	$67.80
+Jul 23, 2010 	350 	$17.50 	$0.40 	$23,295.57 	$66.56
+Sep 6, 2011 	1,250 	$62.50 	$1.85 	$96,090.51 	$76.87
+Sep 6, 2011 	1,250 	$62.50 	$1.89 	$98,049.50 	$78.44  <-- dup
+
+
+MSFT 	$47.23 	-4,000 	-$188,920.00 	-$88,244.52 	0.79% 	-86.10% 	Details  	MIDDLE
+ LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 11, 2011 		4000 	4000 	Buy
+Sep 06, 2011 	4000 	-8000 	-4000 	Sell
+Total: -4,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 11, 2011 	4,000 	$200.00 	$102,495.92 	$25.62
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Sep 6, 2011 	4,000 	$200.00 	$1.94 	$100,487.46 	$25.12
+Sep 6, 2011 	4,000 	$200.00 	$1.98 	$102,683.94 	$25.67 <--- dup remove 
+ 	  	 
+
+> Row 831:  DONE
+>    LOGINNAME = lpraj789
+>       SYMBOL = RAJMF
+>   PRIMARYKEY = X'4ea33ebb484580a5c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+C 	$54.45 	-6,606 	-$359,696.71 	-$65,644.56 	0.68% 	-215.59% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 17, 2010 		7340 	7340 	Buy
+May 09, 2011 	7340 	-13946 	-6606 	Multiple
+Total: -6,606
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 17, 2010 	7,340 	$367.00 	$30,448.81 	$4.15
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 9, 2011 	7,340 	$367.00 	$6.24 	$324,500.59 	$44.21
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+May 09, 2011 	Split terms:1 for 10
+RAJMF 20110509 
+trades on May 09, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	C 	7,340 	$44.21 	$324,500.59 	$367.00 	$6.24  <-- change to 734
+Split Sell 	C 	7,340 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	C 	734 	$0.00 	$0.00 	$0.00 	$0.00
+/Marketocracy/Scripts/build/bin/backdatedtrade.py lpraj789 RAJMF 20110509 C -734 44.21
+Trading -734.0 shares of CITIGROUP INC on May 09, 2011 at 44.21
+manager: lpraj789 raj lanka
+fund: RAJMF
+building trade (has to load stock prices first)
+price = 44.21
+selling -734.0 shares of C at 44.21 on 20110509
+invaldating fund prices from May 09, 2011
+Done
+
+
+> Row 832:  DONE 
+>    LOGINNAME = geobear
+>       SYMBOL = TGF
+>   PRIMARYKEY = X'd5d1267e483f92a9c0a80135'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+MBT 	$10.15 	-750 	-$7,612.50 	-$8,880.80 	-2.96% 	-33.78% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 02, 2008 		300 	300 	Buy
+May 03, 2010 	300 	450 	750 	Corporate Action
+Jan 26, 2012 	750 	-1500 	-750 	Sell
+Total: -750
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 2, 2008 	300 	$15.00 	$26,288.70 	$87.63
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 26, 2012 	750 	$37.50 	$0.25 	$12,508.55 	$16.68
+Jan 26, 2012 	750 	$37.50 	$0.25 	$12,511.85 	$16.68  <-- dup
+****************  6/2/15 ****> Row 800:
+>    LOGINNAME = 6packjack
+>       SYMBOL = TMP
+>   PRIMARYKEY = X'bd505069423c5f4ec0a80134'
+> Row 801:
+>    LOGINNAME = asw
+>       SYMBOL = AMF
+>   PRIMARYKEY = X'0f3a43894e5e6126c0a80132'
+> Row 802:
+>    LOGINNAME = rrockw
+>       SYMBOL = FOCUS
+>   PRIMARYKEY = X'af3205633971c5dac0a80118'
+> Row 803:
+>    LOGINNAME = apreuss
+>       SYMBOL = Adsma
+>   PRIMARYKEY = X'c5624efe3e33fd30c0a80135'
+> Row 804:
+>    LOGINNAME = apreuss
+>       SYMBOL = APMF
+>   PRIMARYKEY = X'47ff46393a052db4c0a80118'
+> Row 805:
+>    LOGINNAME = apreuss
+>       SYMBOL = AMF1
+>   PRIMARYKEY = X'5a7417694847880dc0a80135'
+> Row 806:
+>    LOGINNAME = apreuss
+>       SYMBOL = AkpT
+>   PRIMARYKEY = X'f0743bd23eaf2a5bc0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ZAZA 	$1.27 	-1 	-$1.27 	$41,387.48 	0.00% 	17.15% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 30, 2005 		55 	55 	Buy
+Jan 06, 2006 	55 	333 	388 	Buy
+Feb 28, 2006 	388 	222 	610 	Buy
+Mar 07, 2006 	610 	888 	1498 	Buy
+Apr 04, 2006 	1498 	111 	1609 	Buy
+Apr 05, 2006 	1609 	204 	1813 	Buy
+Apr 10, 2006 	1813 	444 	2257 	Buy
+May 09, 2006 	2257 	-591 	1666 	Sell
+May 12, 2006 	1666 	-1555 	111 	Sell
+Jun 15, 2006 	111 	2222 	2333 	Buy
+Jul 17, 2006 	2333 	-2222 	111 	Sell
+Mar 26, 2007 	111 	-111 		Sell
+Jul 21, 2007 		111 	111 	Buy
+Jan 30, 2008 	111 	444 	555 	Buy
+Aug 11, 2008 	555 	-555 		Sell
+May 05, 2009 		1259 	1259 	Buy
+May 11, 2009 	1259 	-81 	1178 	Multiple
+May 12, 2009 	1178 	-36 	1142 	Sell
+May 14, 2009 	1142 	1612 	2754 	Buy
+May 26, 2009 	2754 	19390 	22144 	Buy
+May 29, 2009 	22144 	-1062 	21082 	Sell
+Jun 01, 2009 	21082 	-2222 	18860 	Sell
+Jun 03, 2009 	18860 	7 	18867 	Buy
+Jun 04, 2009 	18867 	-2222 	16645 	Sell
+Jun 05, 2009 	16645 	-49 	16596 	Sell
+Jun 08, 2009 	16596 	-9935 	6661 	Sell
+Jun 09, 2009 	6661 	5555 	12216 	Buy
+Jun 12, 2009 	12216 	-5416 	6800 	Multiple
+Jun 15, 2009 	6800 	122 	6922 	Buy
+Jun 19, 2009 	6922 	-2222 	4700 	Sell
+Jun 23, 2009 	4700 	488 	5188 	Buy
+Jun 24, 2009 	5188 	-710 	4478 	Sell
+Jun 25, 2009 	4478 	-33 	4445 	Sell
+Jul 24, 2009 	4445 	-1965 	2480 	Sell
+Aug 12, 2009 	2480 	-2222 	258 	Sell
+Aug 17, 2009 	258 	-222 	36 	Sell
+Aug 20, 2014 	36 	-37 	-1 	Corporate Action
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 30, 2005 	55 	$2.75 	$1,338.82 	$24.34
+Jan 6, 2006 	333 	$16.65 	$8,407.33 	$25.25
+Feb 28, 2006 	222 	$11.10 	$6,813.90 	$30.69
+Mar 7, 2006 	888 	$44.40 	$26,471.65 	$29.81
+Apr 4, 2006 	111 	$5.55 	$3,534.27 	$31.84
+Apr 5, 2006 	204 	$10.20 	$6,348.04 	$31.12
+Apr 10, 2006 	444 	$22.20 	$14,607.29 	$32.90
+Jun 15, 2006 	2,222 	$111.10 	$59,908.13 	$26.96
+Jul 21, 2007 	111 	$5.55 	$1,620.60 	$14.60
+Jan 30, 2008 	444 	$22.20 	$4,134.15 	$9.31
+May 5, 2009 	1,259 	$62.95 	$4,424.90 	$3.51
+May 11, 2009 	32 	$1.60 	$107.20 	$3.35
+May 14, 2009 	1,224 	$61.20 	$4,242.68 	$3.47
+May 14, 2009 	388 	$19.40 	$1,346.96 	$3.47
+May 26, 2009 	19,390 	$969.50 	$65,522.28 	$3.38
+Jun 3, 2009 	7 	$0.35 	$30.96 	$4.42
+Jun 9, 2009 	5,555 	$277.75 	$28,213.02 	$5.08
+Jun 12, 2009 	14 	$0.70 	$82.04 	$5.86
+Jun 15, 2009 	122 	$6.10 	$736.04 	$6.03
+Jun 23, 2009 	488 	$24.40 	$3,379.85 	$6.93
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 9, 2006 	591 	$29.55 	$0.54 	$17,640.07 	$29.85
+May 12, 2006 	1,555 	$77.75 	$1.38 	$44,940.97 	$28.90
+Jul 17, 2006 	2,222 	$111.10 	$1.76 	$57,161.43 	$25.73
+Mar 26, 2007 	111 	$5.55 	$0.06 	$2,038.61 	$18.37
+Aug 11, 2008 	555 	$27.75 	$0.13 	$4,178.37 	$7.53
+May 11, 2009 	113 	$5.65 	$0.01 	$403.94 	$3.57
+May 12, 2009 	36 	$1.80 	$0.00 	$121.95 	$3.39
+May 29, 2009 	1,062 	$53.10 	$0.10 	$3,957.57 	$3.73
+Jun 1, 2009 	2,222 	$111.10 	$0.23 	$8,639.00 	$3.89
+Jun 4, 2009 	2,222 	$111.10 	$0.29 	$11,248.64 	$5.06
+Jun 5, 2009 	49 	$2.45 	$0.01 	$245.17 	$5.00
+Jun 8, 2009 	9,935 	$496.75 	$1.27 	$49,076.22 	$4.94
+Jun 12, 2009 	5,430 	$271.50 	$0.85 	$32,623.19 	$6.01
+Jun 19, 2009 	2,222 	$111.10 	$0.39 	$15,248.46 	$6.86
+Jun 24, 2009 	155 	$7.75 	$0.03 	$1,061.60 	$6.85
+Jun 24, 2009 	555 	$27.75 	$0.10 	$3,810.94 	$6.87
+Jun 25, 2009 	33 	$1.65 	$0.01 	$229.16 	$6.94
+Jul 24, 2009 	1,965 	$98.25 	$0.35 	$13,590.75 	$6.92
+Aug 12, 2009 	2,222 	$111.10 	$0.39 	$15,175.16 	$6.83
+Aug 17, 2009 	222 	$11.10 	$0.03 	$1,266.40 	$5.70
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Aug 20, 2014 	Split terms:1 for 10
+
+20140820 
+ trades on August 20, 2014 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Sell 	ZAZA 	41 	$0.00 	$0.00 	$0.00 	$0.00   <--- change to 36
+Split Buy 	ZAZA 	4 	$0.00 	$0.00 	$0.00 	$0.00
+Hexkey: C51000B453F5288AC0A86F92
+select * from mticket where primarykey= X'C51000B453F5288AC0A86F92';
+select * from morder where ticketkey =X'C51000B453F5288AC0A86F92';
+select * from mtrade where ticketkey =X'C51000B453F5288AC0A86F92';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=36 where ticketkey =X'C51000B453F5288AC0A86F92';
+update morder set shares=36 where ticketkey =X'C51000B453F5288AC0A86F92';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey C51000B453F5288AC0A86F92
+
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+
+/Marketocracy/bin/fptool invalidateFund   f0743bd23eaf2a5bc0a80134
+
+logout and back in   ok - 4 shares now - good
+
+
+TWM 	$35.31 	-1 	-$35.31 	$112,414.23 	0.00% 	2.47% 	Details 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 27, 2007 		633 	633 	Multiple
+Nov 28, 2007 	633 	555 	1188 	Multiple
+Nov 29, 2007 	1188 	-1111 	77 	Sell
+Nov 30, 2007 	77 	-77 		Sell
+Dec 04, 2007 				Multiple
+Dec 05, 2007 				Multiple
+Dec 06, 2007 		1244 	1244 	Buy
+Dec 07, 2007 	1244 	-1244 		Sell
+Dec 12, 2007 				Multiple
+Dec 13, 2007 		697 	697 	Multiple
+Dec 17, 2007 	697 	-666 	31 	Sell
+Dec 19, 2007 	31 	-31 		Sell
+Dec 26, 2007 		33 	33 	Buy
+Dec 27, 2007 	33 	-11 	22 	Sell
+Jan 02, 2008 	22 	-23 	-1 	Sell
+Jan 16, 2008 	-1 	3 	2 	Multiple
+Feb 15, 2008 	2 	2020 	2022 	Buy
+Feb 20, 2008 	2022 	111 	2133 	Buy
+Feb 21, 2008 	2133 	11 	2144 	Buy
+Feb 22, 2008 	2144 	-222 	1922 	Sell
+Feb 25, 2008 	1922 	23 	1945 	Buy
+Feb 29, 2008 	1945 	1 	1946 	Buy
+Mar 04, 2008 	1946 	-1659 	287 	Multiple
+Mar 05, 2008 	287 	500 	787 	Multiple
+Mar 06, 2008 	787 	675 	1462 	Buy
+Mar 07, 2008 	1462 	-1463 	-1 	Multiple
+Mar 10, 2008 	-1 	1666 	1665 	Buy
+Mar 14, 2008 	1665 	-1555 	110 	Sell
+May 30, 2008 	110 	-111 	-1 	Sell
+Jun 03, 2008 	-1 	222 	221 	Buy
+Jun 05, 2008 	221 		221 	Multiple
+Jun 06, 2008 	221 	-222 	-1 	Sell
+Jun 10, 2008 	-1 	222 	221 	Buy
+Jun 11, 2008 	221 	3222 	3443 	Buy
+Jun 12, 2008 	3443 	1388 	4831 	Buy
+Jun 13, 2008 	4831 	855 	5686 	Buy
+Jun 16, 2008 	5686 	-5687 	-1 	Sell
+Jun 23, 2008 	-1 	1133 	1132 	Multiple
+Jun 24, 2008 	1132 	-1111 	21 	Sell
+Jun 27, 2008 	21 	-22 	-1 	Sell
+Jul 01, 2008 	-1 		-1 	Multiple
+Jul 08, 2008 	-1 	222 	221 	Buy
+Jul 14, 2008 	221 	1114 	1335 	Buy
+Jul 15, 2008 	1335 	3 	1338 	Buy
+Jul 18, 2008 	1338 	-1222 	116 	Sell
+Aug 19, 2008 	116 	-111 	5 	Sell
+Oct 02, 2008 	5 	-6 	-1 	Sell
+Oct 06, 2008 	-1 	3044 	3043 	Multiple
+Oct 07, 2008 	3043 	-667 	2376 	Multiple
+Oct 08, 2008 	2376 	-2377 	-1 	Sell
+Oct 15, 2008 	-1 	444 	443 	Multiple
+Oct 16, 2008 	443 	-333 	110 	Sell
+Oct 17, 2008 	110 	2444 	2554 	Buy
+Oct 22, 2008 	2554 	-222 	2332 	Sell
+Oct 24, 2008 	2332 	-444 	1888 	Sell
+Oct 27, 2008 	1888 	-1887 	1 	Sell
+Oct 30, 2008 	1 	1066 	1067 	Buy
+Nov 06, 2008 	1067 	-44 	1023 	Sell
+Nov 14, 2008 	1023 	-558 	465 	Multiple
+Nov 18, 2008 	465 	-22 	443 	Sell
+Nov 19, 2008 	443 	277 	720 	Multiple
+Nov 20, 2008 	720 	185 	905 	Buy
+Nov 21, 2008 	905 	-301 	604 	Multiple
+Nov 25, 2008 	604 	-605 	-1 	Sell  <-- only has 604
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 27, 2007 	444 	$22.20 	$33,995.57 	$76.57
+Nov 27, 2007 	222 	$11.10 	$17,011.74 	$76.63
+Nov 28, 2007 	222 	$11.10 	$15,820.38 	$71.26
+Nov 28, 2007 	555 	$27.75 	$39,323.53 	$70.85
+Nov 28, 2007 	111 	$5.55 	$7,871.45 	$70.91
+Dec 4, 2007 	188 	$9.40 	$13,849.47 	$73.67
+Dec 4, 2007 	244 	$12.20 	$17,961.08 	$73.61
+Dec 5, 2007 	2,222 	$111.10 	$159,259.06 	$71.67
+Dec 5, 2007 	2,222 	$111.10 	$160,534.33 	$72.25
+Dec 5, 2007 	1,111 	$55.55 	$79,904.54 	$71.92
+Dec 5, 2007 	333 	$16.65 	$23,715.33 	$71.22
+Dec 5, 2007 	2,222 	$111.10 	$157,814.76 	$71.02
+Dec 6, 2007 	111 	$5.55 	$7,553.55 	$68.05
+Dec 6, 2007 	1,111 	$55.55 	$75,573.73 	$68.02
+Dec 6, 2007 	22 	$1.10 	$1,495.56 	$67.98
+Dec 12, 2007 	111 	$5.55 	$7,617.69 	$68.63
+Dec 13, 2007 	333 	$16.65 	$23,669.64 	$71.08
+Dec 13, 2007 	222 	$11.10 	$15,794.23 	$71.15
+Dec 13, 2007 	222 	$11.10 	$15,750.84 	$70.95
+Dec 13, 2007 	222 	$11.10 	$15,716.98 	$70.80
+Dec 26, 2007 	33 	$1.65 	$2,146.65 	$65.05
+Jan 16, 2008 	214 	$10.70 	$17,744.77 	$82.92
+Jan 16, 2008 	255 	$12.75 	$21,198.33 	$83.13
+Jan 16, 2008 	255 	$12.75 	$21,209.38 	$83.17
+Jan 16, 2008 	45 	$2.25 	$3,729.79 	$82.88
+Feb 15, 2008 	5 	$0.25 	$417.15 	$83.43
+Feb 15, 2008 	222 	$11.10 	$18,507.92 	$83.37
+Feb 15, 2008 	44 	$2.20 	$3,678.87 	$83.61
+Feb 15, 2008 	1 	$0.05 	$83.47 	$83.47
+Feb 15, 2008 	3 	$0.15 	$249.53 	$83.18
+Feb 15, 2008 	66 	$3.30 	$5,491.57 	$83.21
+Feb 15, 2008 	14 	$0.70 	$1,164.10 	$83.15
+Feb 15, 2008 	222 	$11.10 	$18,458.76 	$83.15
+Feb 15, 2008 	11 	$0.55 	$911.35 	$82.85
+Feb 15, 2008 	111 	$5.55 	$9,210.40 	$82.98
+Feb 15, 2008 	111 	$5.55 	$9,215.56 	$83.02
+Feb 15, 2008 	111 	$5.55 	$9,200.79 	$82.89
+Feb 15, 2008 	111 	$5.55 	$9,215.81 	$83.03
+Feb 15, 2008 	222 	$11.10 	$18,394.29 	$82.86
+Feb 15, 2008 	22 	$1.10 	$1,818.30 	$82.65
+Feb 15, 2008 	22 	$1.10 	$1,819.07 	$82.69
+Feb 15, 2008 	100 	$5.00 	$8,226.88 	$82.27
+Feb 15, 2008 	111 	$5.55 	$9,138.67 	$82.33
+Feb 15, 2008 	222 	$11.10 	$18,271.81 	$82.31
+Feb 15, 2008 	111 	$5.55 	$9,151.11 	$82.44
+Feb 15, 2008 	22 	$1.10 	$1,812.68 	$82.39
+Feb 15, 2008 	4 	$0.20 	$329.76 	$82.44
+Feb 15, 2008 	22 	$1.10 	$1,813.92 	$82.45
+Feb 15, 2008 	2 	$0.10 	$164.96 	$82.48
+Feb 15, 2008 	3 	$0.15 	$247.71 	$82.57
+Feb 15, 2008 	70 	$3.50 	$5,778.71 	$82.55
+Feb 15, 2008 	55 	$2.75 	$4,543.70 	$82.61
+Feb 20, 2008 	111 	$5.55 	$8,998.23 	$81.07
+Feb 21, 2008 	11 	$0.55 	$904.42 	$82.22
+Feb 25, 2008 	1 	$0.05 	$83.16 	$83.16
+Feb 25, 2008 	22 	$1.10 	$1,825.10 	$82.96
+Feb 29, 2008 	1 	$0.05 	$84.26 	$84.26
+Mar 4, 2008 	555 	$27.75 	$48,719.29 	$87.78
+Mar 4, 2008 	3,333 	$166.65 	$293,194.40 	$87.97
+Mar 4, 2008 	1,111 	$55.55 	$97,851.27 	$88.07
+Mar 4, 2008 	2,333 	$116.65 	$207,784.07 	$89.06
+Mar 4, 2008 	66 	$3.30 	$5,853.97 	$88.70
+Mar 5, 2008 	111 	$5.55 	$9,662.18 	$87.05
+Mar 5, 2008 	555 	$27.75 	$48,273.19 	$86.98
+Mar 5, 2008 	11 	$0.55 	$951.36 	$86.49
+Mar 5, 2008 	111 	$5.55 	$9,603.36 	$86.52
+Mar 6, 2008 	225 	$11.25 	$20,129.65 	$89.47
+Mar 6, 2008 	225 	$11.25 	$20,115.19 	$89.40
+Mar 6, 2008 	225 	$11.25 	$20,100.37 	$89.34
+Mar 7, 2008 	1,444 	$72.20 	$128,990.34 	$89.33
+Mar 7, 2008 	2,222 	$111.10 	$203,326.53 	$91.51
+Mar 7, 2008 	444 	$22.20 	$40,434.62 	$91.07
+Mar 7, 2008 	222 	$11.10 	$20,197.07 	$90.98
+Mar 10, 2008 	555 	$27.75 	$52,340.86 	$94.31
+Mar 10, 2008 	1,111 	$55.55 	$104,714.53 	$94.25
+Jun 3, 2008 	222 	$11.10 	$15,554.59 	$70.07
+Jun 5, 2008 	111 	$5.55 	$7,366.17 	$66.36
+Jun 10, 2008 	222 	$11.10 	$15,721.26 	$70.82
+Jun 11, 2008 	2,222 	$111.10 	$160,969.32 	$72.44
+Jun 11, 2008 	1,000 	$50.00 	$72,469.65 	$72.47
+Jun 12, 2008 	1,300 	$65.00 	$93,140.98 	$71.65
+Jun 12, 2008 	88 	$4.40 	$6,335.23 	$71.99
+Jun 13, 2008 	855 	$42.75 	$60,929.23 	$71.26
+Jun 23, 2008 	1,800 	$90.00 	$127,915.15 	$71.06
+Jun 23, 2008 	444 	$22.20 	$31,857.60 	$71.75
+Jul 1, 2008 	2,222 	$111.10 	$182,313.52 	$82.05
+Jul 8, 2008 	222 	$11.10 	$18,958.63 	$85.40
+Jul 14, 2008 	3 	$0.15 	$252.48 	$84.16
+Jul 14, 2008 	1,111 	$55.55 	$93,972.61 	$84.58
+Jul 15, 2008 	3 	$0.15 	$252.00 	$84.00
+Oct 6, 2008 	66 	$3.30 	$6,296.58 	$95.40
+Oct 6, 2008 	200 	$10.00 	$19,079.57 	$95.40
+Oct 6, 2008 	700 	$35.00 	$67,744.72 	$96.78
+Oct 6, 2008 	1,300 	$65.00 	$126,319.19 	$97.17
+Oct 6, 2008 	1,111 	$55.55 	$105,094.45 	$94.59
+Oct 6, 2008 	1,111 	$55.55 	$105,257.13 	$94.74
+Oct 7, 2008 	444 	$22.20 	$43,942.21 	$98.97
+Oct 15, 2008 	555 	$27.75 	$60,333.61 	$108.71
+Oct 15, 2008 	444 	$22.20 	$48,012.50 	$108.14
+Oct 17, 2008 	1,333 	$66.65 	$132,707.62 	$99.56
+Oct 17, 2008 	1,111 	$55.55 	$117,504.02 	$105.76
+Oct 30, 2008 	22 	$1.10 	$2,409.13 	$109.51
+Oct 30, 2008 	44 	$2.20 	$4,866.04 	$110.59
+Oct 30, 2008 	1,000 	$50.00 	$106,173.37 	$106.17
+Nov 14, 2008 	22 	$1.10 	$2,560.87 	$116.40
+Nov 19, 2008 	1,111 	$55.55 	$157,617.47 	$141.87
+Nov 19, 2008 	55 	$2.75 	$7,649.40 	$139.08
+Nov 19, 2008 	222 	$11.10 	$31,581.82 	$142.26
+Nov 20, 2008 	184 	$9.20 	$28,749.76 	$156.25
+Nov 20, 2008 	1 	$0.05 	$156.31 	$156.31
+Nov 21, 2008 	143 	$7.15 	$24,684.66 	$172.62
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 27, 2007 	33 	$1.65 	$0.08 	$2,541.58 	$77.02
+Nov 28, 2007 	333 	$16.65 	$0.73 	$23,696.06 	$71.16
+Nov 29, 2007 	1,111 	$55.55 	$2.40 	$78,063.16 	$70.26
+Nov 30, 2007 	77 	$3.85 	$0.17 	$5,416.52 	$70.34
+Dec 4, 2007 	188 	$9.40 	$0.43 	$13,858.17 	$73.71
+Dec 4, 2007 	244 	$12.20 	$0.55 	$17,971.20 	$73.65
+Dec 5, 2007 	5,555 	$277.75 	$12.28 	$399,429.20 	$71.90
+Dec 5, 2007 	333 	$16.65 	$0.73 	$23,653.35 	$71.03
+Dec 5, 2007 	1,555 	$77.75 	$3.41 	$110,753.50 	$71.22
+Dec 5, 2007 	666 	$33.30 	$1.47 	$47,829.41 	$71.82
+Dec 5, 2007 	1 	$0.05 	$0.01 	$71.77 	$71.77
+Dec 7, 2007 	1,244 	$62.20 	$2.59 	$84,341.39 	$67.80
+Dec 12, 2007 	111 	$5.55 	$0.24 	$7,679.94 	$69.19
+Dec 13, 2007 	302 	$15.10 	$0.66 	$21,486.01 	$71.15
+Dec 17, 2007 	666 	$33.30 	$1.52 	$49,407.35 	$74.19
+Dec 19, 2007 	31 	$1.55 	$0.07 	$2,286.29 	$73.75
+Dec 27, 2007 	11 	$0.55 	$0.03 	$725.75 	$65.98
+Jan 2, 2008 	23 	$1.15 	$0.05 	$1,665.53 	$72.41
+Jan 16, 2008 	766 	$38.30 	$1.94 	$63,236.24 	$82.55
+Feb 22, 2008 	222 	$11.10 	$0.58 	$18,992.08 	$85.55
+Mar 4, 2008 	1,947 	$97.35 	$5.27 	$171,476.01 	$88.07
+Mar 4, 2008 	444 	$22.20 	$1.20 	$39,055.05 	$87.96
+Mar 4, 2008 	2,222 	$111.10 	$6.06 	$197,229.45 	$88.76
+Mar 4, 2008 	4,444 	$222.20 	$11.80 	$384,023.45 	$86.41
+Mar 5, 2008 	266 	$13.30 	$0.70 	$22,764.51 	$85.58
+Mar 5, 2008 	22 	$1.10 	$0.06 	$1,882.26 	$85.56
+Mar 7, 2008 	555 	$27.75 	$1.55 	$50,304.12 	$90.64
+Mar 7, 2008 	2,350 	$117.50 	$6.53 	$212,499.66 	$90.43
+Mar 7, 2008 	2 	$0.10 	$0.01 	$180.70 	$90.35
+Mar 7, 2008 	111 	$5.55 	$0.32 	$10,254.21 	$92.38
+Mar 7, 2008 	555 	$27.75 	$1.58 	$51,353.49 	$92.53
+Mar 7, 2008 	2,222 	$111.10 	$6.32 	$205,607.10 	$92.53
+Mar 14, 2008 	1,555 	$77.75 	$4.35 	$141,576.01 	$91.05
+May 30, 2008 	111 	$5.55 	$0.23 	$7,566.93 	$68.17
+Jun 5, 2008 	111 	$5.55 	$0.23 	$7,409.37 	$66.75
+Jun 6, 2008 	111 	$5.55 	$0.23 	$7,325.77 	$66.00
+Jun 6, 2008 	44 	$2.20 	$0.09 	$2,994.19 	$68.05
+Jun 6, 2008 	55 	$2.75 	$0.12 	$3,738.35 	$67.97
+Jun 6, 2008 	12 	$0.60 	$0.03 	$813.77 	$67.81
+Jun 16, 2008 	5,687 	$284.35 	$12.05 	$392,094.23 	$68.95
+Jun 23, 2008 	1,111 	$55.55 	$2.46 	$80,191.25 	$72.18
+Jun 24, 2008 	1,111 	$55.55 	$2.55 	$82,946.34 	$74.66
+Jun 27, 2008 	22 	$1.10 	$0.05 	$1,722.01 	$78.27
+Jul 1, 2008 	2,222 	$111.10 	$5.48 	$178,397.80 	$80.29
+Jul 18, 2008 	1,222 	$61.10 	$2.85 	$92,826.13 	$75.96
+Aug 19, 2008 	111 	$5.55 	$0.23 	$7,597.72 	$68.45
+Oct 2, 2008 	6 	$0.30 	$0.02 	$488.56 	$81.43
+Oct 6, 2008 	1,111 	$55.55 	$3.44 	$111,841.31 	$100.67
+Oct 6, 2008 	333 	$16.65 	$0.97 	$31,528.50 	$94.68
+Oct 7, 2008 	1,111 	$55.55 	$3.33 	$108,265.61 	$97.45
+Oct 8, 2008 	2,377 	$118.85 	$8.10 	$263,761.11 	$110.96
+Oct 15, 2008 	555 	$27.75 	$1.87 	$60,718.82 	$109.40
+Oct 16, 2008 	333 	$16.65 	$1.24 	$40,403.55 	$121.33
+Oct 22, 2008 	222 	$11.10 	$0.74 	$24,043.85 	$108.31
+Oct 24, 2008 	444 	$22.20 	$1.90 	$61,854.53 	$139.31
+Oct 27, 2008 	666 	$33.30 	$2.76 	$89,729.94 	$134.73
+Oct 27, 2008 	666 	$33.30 	$2.73 	$88,761.69 	$133.28
+Oct 27, 2008 	333 	$16.65 	$1.37 	$44,621.29 	$134.00
+Oct 27, 2008 	222 	$11.10 	$0.91 	$29,742.18 	$133.97
+Nov 6, 2008 	44 	$2.20 	$0.14 	$4,618.84 	$104.97
+Nov 14, 2008 	580 	$29.00 	$2.13 	$69,206.82 	$119.32
+Nov 18, 2008 	22 	$1.10 	$0.09 	$2,857.24 	$129.87
+Nov 19, 2008 	1,111 	$55.55 	$4.71 	$153,186.89 	$137.88
+Nov 21, 2008 	444 	$22.20 	$2.34 	$75,951.08 	$171.06
+Nov 25, 2008 	161 	$8.05 	$0.63 	$20,601.79 	$127.96 <---  make it 160
+Nov 25, 2008 	444 	$22.20 	$1.76 	$57,415.76 	$129.31  
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	161  <---  make it 160
+NewFund 	AMF1 	11  <--- ok 
+apreuss's Mutual Fund 	AMF 	77  <---- ok
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20081125 TWM -160 127.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AMF1 20081125 TWM -11 127.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AMF 20081125 TWM -77 127.96
+
+
+
+
+NUVA 	$49.85 	-2 	-$99.70 	$12,340.66 	0.00% 	2.40% 	Details 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jul 01, 2008 		11 	11 	Multiple
+Jul 02, 2008 	11 	1061 	1072 	Multiple
+Jul 08, 2008 	1072 	-888 	184 	Sell
+Jul 14, 2008 	184 	222 	406 	Buy
+Jul 18, 2008 	406 	-63 	343 	Sell
+Jul 21, 2008 	343 	-109 	234 	Sell
+Jul 22, 2008 	234 	-111 	123 	Sell
+Jul 23, 2008 	123 	-122 	1 	Sell
+Jul 24, 2008 	1 	865 	866 	Multiple
+Jul 25, 2008 	866 	-868 	-2 	Sell
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jul 1, 2008 	8,888 	$444.40 	$387,885.37 	$43.64
+Jul 2, 2008 	1,440 	$72.00 	$64,390.90 	$44.72
+Jul 14, 2008 	222 	$11.10 	$10,247.38 	$46.16
+Jul 24, 2008 	1,111 	$55.55 	$51,607.63 	$46.45
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 1, 2008 	8,877 	$443.85 	$12.06 	$392,130.40 	$44.17
+Jul 2, 2008 	222 	$11.10 	$0.30 	$9,778.26 	$44.05
+Jul 2, 2008 	157 	$7.85 	$0.21 	$6,922.48 	$44.09
+Jul 8, 2008 	888 	$44.40 	$1.29 	$42,092.29 	$47.40
+Jul 18, 2008 	63 	$3.15 	$0.09 	$2,972.63 	$47.18
+Jul 21, 2008 	109 	$5.45 	$0.15 	$5,027.99 	$46.13
+Jul 22, 2008 	111 	$5.55 	$0.16 	$5,253.64 	$47.33
+Jul 23, 2008 	122 	$6.10 	$0.18 	$5,843.01 	$47.89
+Jul 24, 2008 	246 	$12.30 	$0.36 	$11,623.76 	$47.25
+Jul 25, 2008 	868 	$43.40 	$1.38 	$44,927.18 	$51.76  <-- change to 866
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080725 NUVA -866 51.76
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	868 <-- change to 866
+Fund Nr 3 	axpmf 	1,611  <-- ok 
+Fund Nr1 	Adsma 	1,600  <-- ok 
+apreuss's Mutual Fund 	AMF 	866  <-- ok  no longer around
+apreuss's Mutual Fund 	AncF 	1,611  <-- ok 
+axel preuss's Mutual Fund 	APMF 	10  <-- ok 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080725 NUVA -866 51.76
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss axpmf 20080725 NUVA -1611 51.76
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20080725 NUVA -1600 51.76
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AncF 20080725 NUVA -1611 51.76
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20080725 NUVA -10 51.76
+
+
+your holdings of NUVA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	12 	$600.48 	0.02%
+AkpT 	-2 	-$100.08 	-0.00%
+AMF1 	0 	$.00 	0.00% 
+
+
+
+PPD 	$66.49 	-1 	-$66.49 	$31,461.23 	0.00% 	9.05% 	Details   delisted 
+your holdings of PPD 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	-1 	-$66.49 	-0.00%
+AMF1 	0 	N/A 	N/A 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 30, 2006 		2075 	2075 	Buy
+Nov 06, 2006 	2075 	333 	2408 	Buy
+Nov 09, 2006 	2408 	1444 	3852 	Buy
+Nov 13, 2006 	3852 	-1844 	2008 	Sell
+Nov 24, 2006 	2008 	-2008 		Sell
+Mar 05, 2007 		2222 	2222 	Buy
+Mar 08, 2007 	2222 	444 	2666 	Buy
+Mar 12, 2007 	2666 	1111 	3777 	Buy
+Mar 14, 2007 	3777 	-2777 	1000 	Sell
+May 03, 2007 	1000 	-1000 		Sell
+Dec 20, 2007 		366 	366 	Buy
+Dec 21, 2007 	366 	-366 		Sell
+Jul 01, 2011 		-1 	-1 	Corporate Action  <-- remove this
+20110701  
+trades on July 01, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	FTO 	12 	$0.00 	$0.00 	$0.00 	$0.00
+Stock Dividend Buy 	HFC 	5 	$0.00 	$0.00 	$0.00 	$0.00
+Sell 	PPD 	1 	$0.00 	$0.00 	$0.00 	$0.00  <-- remove this 
+
+
+
+ZILG 	$3.59 	-1 	-$3.59 	$2.64 	0.00% 	4.54% 	Details   delisted 
+your holdings of ZILG 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-1 	-$3.59 	-0.00%
+Adsma 	1 	$3.59 	0.00%
+AkpT 	-1 	-$3.59 	-0.00%
+AMF1 	0 	N/A 	N/A
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 27, 2007 		17 	17 	Buy
+Feb 19, 2010 	17 	-18 	-1 	Corporate Action  <-- make this 17 shares 
+Total: -1
+20100219  get the hexkey	  	 
+trades on February 19, 2010 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	ZILG 	18 	$0.00 	$0.00 	$0.00 	$0.00
+Hexkey: DC0B1B6A4B7F0BF3C0A80146
+select * from mticket where primarykey= X'DC0B1B6A4B7F0BF3C0A80146';
+select * from morder where ticketkey =X'DC0B1B6A4B7F0BF3C0A80146';
+select * from mtrade where ticketkey =X'DC0B1B6A4B7F0BF3C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=17 where ticketkey =X'DC0B1B6A4B7F0BF3C0A80146';
+update morder set shares=17 where ticketkey =X'DC0B1B6A4B7F0BF3C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey DC0B1B6A4B7F0BF3C0A80146
+
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund f0743bd23eaf2a5bc0a80134
+
+logout and back in 
+
+your holdings of ZILG 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-1 	-$3.59 	-0.00%
+Adsma 	1 	$3.59 	0.00%
+AkpT 	-1 	-$3.59 	-0.00%
+AMF1 	0 	N/A 	N/A 
+
+
+let's fix APMF and Adsma
+APMF fund
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 27, 2007 		19 	19 	Buy
+Feb 19, 2010 	19 	-20 	-1 	Corporate Action
+20100219  Hexkey: DC231B6A4B7F0BF3C0A80146
+get the hex key
+
+select * from mticket where primarykey= X'DC231B6A4B7F0BF3C0A80146';
+select * from morder where ticketkey =X'DC231B6A4B7F0BF3C0A80146';
+select * from mtrade where ticketkey =X'DC231B6A4B7F0BF3C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=19 where ticketkey =X'DC231B6A4B7F0BF3C0A80146';
+update morder set shares=19 where ticketkey =X'DC231B6A4B7F0BF3C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey DC231B6A4B7F0BF3C0A80146
+
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+/Marketocracy/bin/dbtool lookup fund  apreuss
+fund: apreuss
+  PK: [47FF46393A052DB4C0A80118]
+  symbol: [APMF]
+  managerKey: [22035B733A052D1FC0A80119]
+  loginName: [apreuss]
+
+/Marketocracy/bin/fptool invalidateFund   47FF46393A052DB4C0A80118
+
+logout and back in  this one is done
+Adsma fund
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 27, 2007 		1610 	1610 	Buy
+Jan 22, 2008 	1610 	-1217 	393 	Sell
+Feb 05, 2008 	393 	222 	615 	Buy
+Feb 19, 2010 	615 	-614 	1 	Corporate Action  <-- change to 615
+
+20100219
+I untraded it by accident
+what did members get?
+select distinct stockkey from mstockalias where symbol='ZILG';
+select primarykey from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ZILG');
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20100219 ZILG -615 3.5858
+
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='ACQUIS' and aliaskey in (select primarykey from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ZILG'));
+> Row 1:
+>              ALIASKEY = X'd8341b6a4b7f0badc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ZILG    US|CP_NAME|Zilog Inc|CP_ID_BB_COMP|7733463|CP_UNIT|Zilog Inc|CP_TOT_AMT|26.251600|CP_ACQUIS_TYP|1|CP_CASH|3.585800|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|25.626213|CP_CUR_PREMIUM|-0.116991|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|26.251600|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|2|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Skadden Arps;13;100.000000;1;Target Financial Adviser;1;Oppenheimer & Co;13;100.000000;1;Acquirer Legal Adviser;1;Latham & Watkins;13;100.000000;1;Legal Adv to Target Financial;1;Dewey & LeBoeuf;13;100.000000;|CP_NOTES|SOURCE:{ NSN KUAAU13V7U9T <GO>}. TERMINATION FEE: $1.9 MLN.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 41560627
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 340655
+>        BB_COMPANYNAME = IXYS Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2010-02-19 00:00:00.000000'
+>         BB_IDENTIFIER = IXYS    UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-12-07 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = IXYS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-02-19 00:00:00.000000'
+>            PRIMARYKEY = X'a034147e4b7f0a0fc0a80146'
+>               VERSION = NULL
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20100219 ZILG -615 3.5858
+Trading -615.0 shares of Zilog on Feb 19, 2010 at 3.5858
+manager: apreuss axel preuss
+fund: Adsma
+building trade (has to load stock prices first)
+price = 3.5858
+selling -615.0 shares of ZILG at 3.5858 on 20100219
+invaldating fund prices from Feb 19, 2010
+Done
+
+logout and back in last time
+your holdings of ZILG 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	0 	N/A 	N/A 
+good no longer any ZILG
+
+LDSH 	$56.17 	-1 	-$56.17 	$6,277.23 	0.00% 	2.03% 	Details   delisted 
+your holdings of LDSH 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	-2 	-$112.34 	-0.00%
+AkpT 	-1 	-$56.17 	-0.00%
+AMF1 	0 	N/A 	N/A 
+
+AkpT LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 15, 2006 		888 	888 	Buy
+Dec 26, 2006 	888 	2585 	3473 	Buy
+Dec 28, 2006 	3473 	666 	4139 	Buy
+Jan 11, 2007 	4139 	-3694 	445 	Sell
+Jan 12, 2007 	445 	44 	489 	Buy
+Jan 23, 2007 	489 	-444 	45 	Sell
+Feb 28, 2007 	45 	55 	100 	Buy
+Jun 06, 2007 	100 	1111 	1211 	Buy
+Jun 20, 2007 	1211 	222 	1433 	Buy
+Jul 26, 2007 	1433 	-303 	1130 	Sell
+Jul 30, 2007 	1130 	-888 	242 	Sell
+Nov 06, 2007 	242 	-111 	131 	Sell
+Nov 07, 2007 	131 	-122 	9 	Sell
+Dec 06, 2007 	9 	1111 	1120 	Multiple
+Dec 12, 2007 	1120 	-1111 	9 	Sell
+May 10, 2011 	9 	-10 	-1 	Corporate Action  <--- make this 9
+20110510   Hexkey: 84025CC24DC9BFE4C0A80146
+get the hex key
+
+select * from mticket where primarykey= X'84025CC24DC9BFE4C0A80146';
+select * from morder where ticketkey =X'84025CC24DC9BFE4C0A80146';
+select * from mtrade where ticketkey =X'84025CC24DC9BFE4C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=9 where ticketkey =X'84025CC24DC9BFE4C0A80146';
+update morder set shares=9 where ticketkey =X'84025CC24DC9BFE4C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 84025CC24DC9BFE4C0A80146
+
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+let's do the other one first
+Adsma 	-2 	-$112.34 	-0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 15, 2006 		444 	444 	Buy
+Dec 26, 2006 	444 	562 	1006 	Buy
+Jan 11, 2007 	1006 	-777 	229 	Sell
+Jan 12, 2007 	229 	222 	451 	Buy
+Jan 23, 2007 	451 	-222 	229 	Sell
+Jun 04, 2007 	229 	333 	562 	Buy
+Sep 27, 2007 	562 	1650 	2212 	Buy
+Nov 06, 2007 	2212 	-1444 	768 	Sell
+Nov 07, 2007 	768 	-766 	2 	Sell
+May 10, 2011 	2 	-4 	-2 	Corporate Action  <-- make this 2
+20110510  Hexkey: 83F65CC24DC9BFE4C0A80146
+get the hex key
+
+select * from mticket where primarykey= X'83F65CC24DC9BFE4C0A80146';
+select * from morder where ticketkey =X'83F65CC24DC9BFE4C0A80146';
+select * from mtrade where ticketkey =X'83F65CC24DC9BFE4C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=2 where ticketkey =X'83F65CC24DC9BFE4C0A80146';
+update morder set shares=2 where ticketkey =X'83F65CC24DC9BFE4C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 83F65CC24DC9BFE4C0A80146
+
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+
+/Marketocracy/bin/fptool invalidateFund   C5624EFE3E33FD30C0A80135
+
+logout and back in 
+your holdings of LDSH 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	-0.00%
+AkpT 	0 	$.00 	-0.00%
+AMF1 	0 	N/A 	N/A 
+good
+
+WINN 	$9.51 	-1 	-$9.51 	-$1,553.97 	0.00% 	-6.87% 	Details  delisted
+your holdings of WINN 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-1 	-$9.51 	-0.00%
+Adsma 	6 	$57.06 	0.00%
+AkpT 	-1 	-$9.51 	-0.00%
+AMF1 	0 	N/A 	N/A 
+
+APMF 	-1 	-$9.51 	-0.00%
+20120312  Hexkey: EE7E2C664F5E7F14C0A80146
+get the hex key
+
+select * from mticket where primarykey= X'EE7E2C664F5E7F14C0A80146';
+select * from morder where ticketkey =X'EE7E2C664F5E7F14C0A80146';
+select * from mtrade where ticketkey =X'EE7E2C664F5E7F14C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=12 where ticketkey =X'EE7E2C664F5E7F14C0A80146';
+update morder set shares=12 where ticketkey =X'EE7E2C664F5E7F14C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey EE7E2C664F5E7F14C0A80146
+
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+
+/Marketocracy/bin/fptool invalidateFund   47FF46393A052DB4C0A80118
+
+logout and back in 
+
+
+Adsma 	6 	$57.06 	0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 30, 2008 		3996 	3996 	Buy
+May 13, 2008 	3996 	1446 	5442 	Buy
+May 22, 2008 	5442 	111 	5553 	Buy
+May 23, 2008 	5553 	1111 	6664 	Buy
+Jun 04, 2008 	6664 	-2546 	4118 	Sell
+Jun 06, 2008 	4118 	33 	4151 	Buy
+Jun 09, 2008 	4151 	-1795 	2356 	Sell
+Jun 11, 2008 	2356 	-2350 	6 	Sell  <-- make this 2356
+Total: 6
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 30, 2008 	3,996 	$199.80 	$71,049.97 	$17.78
+May 13, 2008 	333 	$16.65 	$6,164.83 	$18.51
+May 13, 2008 	1,111 	$55.55 	$20,494.74 	$18.45
+May 13, 2008 	2 	$0.10 	$36.26 	$18.13
+May 22, 2008 	111 	$5.55 	$1,976.51 	$17.81
+May 23, 2008 	1,111 	$55.55 	$20,050.33 	$18.05
+Jun 6, 2008 	33 	$1.65 	$588.41 	$17.83
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2008 	2,546 	$127.30 	$1.41 	$45,575.82 	$17.90
+Jun 9, 2008 	1,795 	$89.75 	$0.95 	$30,770.18 	$17.14
+Jun 11, 2008 	2,350 	$117.50 	$1.17 	$37,877.16 	$16.12 <-- make this 2356
+ fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	555
+Fund Nr 3 	axpmf 	4,533
+Fund Nr1 	Adsma 	2,350
+apreuss's Mutual Fund 	AMF 	605
+apreuss's Mutual Fund 	AncF 	544
+axel preuss's Mutual Fund 	APMF 	5,111
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080611 WINN -555 16.12
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss axpmf 20080611 WINN -4533 16.12
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20080611 WINN -2356 16.12
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AncF 20080611 WINN -544 16.12
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20080611 WINN -5111 16.12
+
+
+
+AkpT 	-1 	-$9.51 	-0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 22, 2008 		111 	111 	Buy
+May 23, 2008 	111 	1111 	1222 	Buy
+Jun 04, 2008 	1222 	-254 	968 	Sell
+Jun 06, 2008 	968 	33 	1001 	Buy
+Jun 09, 2008 	1001 	-436 	565 	Sell
+Jun 11, 2008 	565 	-555 	10 	Sell
+Mar 12, 2012 	10 	-11 	-1 	Corporate Action <--- make it 10
+20120312  Hexkey: EEA02C664F5E7F15C0A80146
+get the hex key
+
+select * from mticket where primarykey= X'EEA02C664F5E7F15C0A80146';
+select * from morder where ticketkey =X'EEA02C664F5E7F15C0A80146';
+select * from mtrade where ticketkey =X'EEA02C664F5E7F15C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=10 where ticketkey =X'EEA02C664F5E7F15C0A80146';
+update morder set shares=10 where ticketkey =X'EEA02C664F5E7F15C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey EEA02C664F5E7F15C0A80146
+
+
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+
+select * from mticket where primarykey= PRIMARYKEY_OF_MTICKET;
+select * from morder where ticketkey =PRIMARYKEY_OF_MTICKET;
+select * from mtrade where ticketkey =PRIMARYKEY_OF_MTICKET;
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=SHARES where ticketkey =PRIMARYKEY_OF_MTICKET;
+update morder set shares=SHARES where ticketkey =PRIMARYKEY_OF_MTICKET;
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 
+
+put the tickeykey in ticketstotickle   on stocks using vim
+
+then tickle the ticket  make sure that this runs  might have to do it twie
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+make sure that this runs
+
+
+invalidate the fund
+
+select fundkey from mposition where primarykey= ;
+
+/Marketocracy/bin/fptool invalidateFund   
+
+logout and back in 
+
+done! 
+
+
+NAFC 	$28.29 	-3 	-$84.87 	$3,183.28 	0.00% 	0.25% 	Details  	MIDDLE delist 
+your holdings of NAFC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	6 	$169.74 	0.01%
+Adsma 	-3 	-$84.87 	-0.00%
+AkpT 	-3 	-$84.87 	-0.00%
+AMF1 	1 	$28.29 	0.00% 
+
+APMF 	6 	$169.74 	0.01%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 23, 2008 		111 	111 	Buy
+Jul 22, 2008 	111 	806 	917 	Buy
+Jul 24, 2008 	917 	4093 	5010 	Buy
+Jul 29, 2008 	5010 	-2058 	2952 	Sell
+Aug 11, 2008 	2952 	-2222 	730 	Sell
+Aug 18, 2008 	730 	1 	731 	Buy
+Aug 19, 2008 	731 	111 	842 	Buy
+Sep 09, 2008 	842 	-444 	398 	Sell
+Sep 25, 2008 	398 	-222 	176 	Sell
+Sep 30, 2008 	176 	111 	287 	Buy
+Oct 07, 2008 	287 	-222 	65 	Sell
+Nov 10, 2008 	65 	94 	159 	Buy
+Nov 12, 2008 	159 	-135 	24 	Sell
+Nov 18, 2008 	24 	-11 	13 	Sell
+Nov 28, 2008 	13 	330 	343 	Buy
+Dec 01, 2008 	343 	-14 	329 	Sell
+Dec 03, 2008 	329 	-213 	116 	Sell
+Dec 17, 2008 	116 	-111 	5 	Sell
+Dec 23, 2008 	5 	609 	614 	Buy
+Dec 26, 2008 	614 	1191 	1805 	Buy
+Jan 02, 2009 	1805 	-712 	1093 	Sell
+Jan 07, 2009 	1093 	-93 	1000 	Sell
+Jan 30, 2009 	1000 	-443 	557 	Sell
+Feb 02, 2009 	557 	-553 	4 	Sell
+Feb 03, 2009 	4 	2202 	2206 	Buy
+Feb 06, 2009 	2206 	-748 	1458 	Sell
+Feb 18, 2009 	1458 	-1962 	-504 	Sell
+Feb 20, 2009 	-504 	888 	384 	Buy
+Mar 04, 2009 	384 	-366 	18 	Sell
+Mar 06, 2009 	18 	-11 	7 	Sell
+Feb 16, 2010 	7 	66 	73 	Buy
+Nov 20, 2013 	73 	-67 	6 	Corporate Action  <-- make this 73
+20131120   Hexkey: 21030A8B528D4E3FC0A80146
+get the hex key
+
+select * from mticket where primarykey= X'21030A8B528D4E3FC0A80146';
+select * from morder where ticketkey =X'21030A8B528D4E3FC0A80146';
+select * from mtrade where ticketkey =X'21030A8B528D4E3FC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=73 where ticketkey =X'21030A8B528D4E3FC0A80146';
+update morder set shares=73 where ticketkey =X'21030A8B528D4E3FC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 21030A8B528D4E3FC0A80146
+
+
+/Marketocracy/bin/fptool invalidateFund   47FF46393A052DB4C0A80118
+
+logout and back in 
+
+
+
+Adsma 	-3 	-$84.87 	-0.00%
+Hexkey: 20FD0A8B528D4E3FC0A80146  10  make it 7
+get the hex key
+
+select * from mticket where primarykey= X'20FD0A8B528D4E3FC0A80146';
+select * from morder where ticketkey =X'20FD0A8B528D4E3FC0A80146';
+select * from mtrade where ticketkey =X'20FD0A8B528D4E3FC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=7 where ticketkey =X'20FD0A8B528D4E3FC0A80146';
+update morder set shares=7 where ticketkey =X'20FD0A8B528D4E3FC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 20FD0A8B528D4E3FC0A80146
+
+/Marketocracy/bin/fptool invalidateFund   C5624EFE3E33FD30C0A80135
+
+
+AkpT 	-3 	-$84.87 	-0.00%
+Sep 14, 2010 	216 	-211 	5 	Sell
+Nov 19, 2010 	5 	922 	927 	Buy
+Nov 20, 2013 	927 	-930 	-3 	Corporate Action  <-- make it 927
+20131120   Hexkey: 1F000A8B528D4E3EC0A80146
+select * from mticket where primarykey= X'1F000A8B528D4E3EC0A80146';
+select * from morder where ticketkey =X'1F000A8B528D4E3EC0A80146';
+select * from mtrade where ticketkey =X'1F000A8B528D4E3EC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=927 where ticketkey =X'1F000A8B528D4E3EC0A80146';
+update morder set shares=927 where ticketkey =X'1F000A8B528D4E3EC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 1F000A8B528D4E3EC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+
+
+
+AMF1 	1 	$28.29 	0.00% 
+Mar 06, 2009 	68 	-66 	2 	Sell
+May 18, 2010 	2 	444 	446 	Buy
+Sep 14, 2010 	446 	-444 	2 	Sell
+Nov 20, 2013 	2 	-1 	1 	Corporate Action  <--- make this 2 
+20131120  Hexkey: 21F90A8B528D4E40C0A80146
+select * from mticket where primarykey= X'21F90A8B528D4E40C0A80146';
+select * from morder where ticketkey =X'21F90A8B528D4E40C0A80146';
+select * from mtrade where ticketkey =X'21F90A8B528D4E40C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=2 where ticketkey =X'21F90A8B528D4E40C0A80146';
+update morder set shares=2 where ticketkey =X'21F90A8B528D4E40C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  21F90A8B528D4E40C0A80146
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   2ACE227241DEE571C0A80134
+
+logout and back in 
+ your holdings of NAFC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	-0.00%
+AMF1 	0 	$.00 	0.00% 
+
+good! 
+
+
+GEOY 	$35.83 	-2 	-$71.66 	-$2,382.88 	0.00% 	-2.06% 	Details   delisted 
+your holdings of GEOY 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	5 	$179.15 	0.01%
+AkpT 	-2 	-$71.66 	-0.00%
+AMF1 	0 	N/A 	N/A
+
+Adsma 	5 	$179.15 	0.01%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 05, 2008 		3047 	3047 	Multiple
+Mar 06, 2008 	3047 	-1617 	1430 	Sell
+Mar 13, 2008 	1430 	-1111 	319 	Sell
+Nov 11, 2009 	319 	-313 	6 	Sell
+Feb 01, 2013 	6 	-1 	5 	Corporate Action  <-- -make this 6
+20130201
+20130201  Hexkey: 6B552FC8510C549CC0A80146
+select * from mticket where primarykey= X'6B552FC8510C549CC0A80146';
+select * from morder where ticketkey =X'6B552FC8510C549CC0A80146';
+select * from mtrade where ticketkey =X'6B552FC8510C549CC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=6 where ticketkey =X'6B552FC8510C549CC0A80146';
+update morder set shares=6 where ticketkey =X'6B552FC8510C549CC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 6B552FC8510C549CC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+
+AkpT 	-2 	-$71.66 	-0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 05, 2008 		1244 	1244 	Multiple
+Mar 06, 2008 	1244 	-914 	330 	Sell
+Mar 13, 2008 	330 	-111 	219 	Sell
+Nov 11, 2009 	219 	-220 	-1 	Sell   <-- make this 218
+Feb 01, 2013 	-1 	-1 	-2 	Corporate Action
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 5, 2008 	22 	$1.10 	$757.05 	$34.41
+Mar 5, 2008 	3,333 	$166.65 	$114,748.56 	$34.43
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 5, 2008 	450 	$22.50 	$0.47 	$15,407.16 	$34.24
+Mar 5, 2008 	1,661 	$83.05 	$1.74 	$56,708.25 	$34.14
+Mar 6, 2008 	132 	$6.60 	$0.14 	$4,485.66 	$33.98
+Mar 6, 2008 	444 	$22.20 	$0.47 	$15,242.46 	$34.33
+Mar 6, 2008 	5 	$0.25 	$0.01 	$169.94 	$33.99
+Mar 6, 2008 	333 	$16.65 	$0.35 	$11,314.26 	$33.98
+Mar 13, 2008 	111 	$5.55 	$0.10 	$3,344.90 	$30.13
+Nov 11, 2009 	220 	$11.00 	$0.17 	$6,460.15 	$29.36  <-- make this 218
+
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	220 <-- make this 218
+Fund Nr 3 	axpmf 	88  <-- ok
+Fund Nr1 	Adsma 	313 <-- ok
+axel preuss's Mutual Fund 	APMF 	77 <-- ok
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20091111 GEOY -218 29.36
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss axpmf 20091111 GEOY -88 29.36
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20091111 GEOY -313 29.36
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20091111 GEOY -77 29.36
+
+   your holdings of GEOY 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.01%
+AkpT 	0 	$.00 	0.00%
+AMF1 	0 	N/A 	N/A 
+good 	  	 
+
+
+
+QNTA 	$2.80 	-1 	-$2.80 	$4.06 	0.00% 	26.13% 	Details   delisted
+ your holdings of QNTA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	N/A 	N/A
+Adsma 	1 	$2.80 	0.00%
+AkpT 	-1 	-$2.80 	-0.00%
+AMF1 	0 	N/A 	N/A 
+
+Adsma 	1 	$2.80 	0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 02, 2007 		8 	8 	Buy
+Oct 13, 2008 	8 	-7 	1 	Corporate Action  <-- make it 8
+Total: 1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 2, 2007 	8 	$0.40 	$17.76 	$2.22  
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Oct 13, 2008 	Quanta Capital Holdings Ltd acquired by a private company on 2008-10-13 00:00:00.
+20081013
+Hexkey: C68F3ACD49CC1792C0A8013C
+select * from mticket where primarykey= X'C68F3ACD49CC1792C0A8013C';
+select * from morder where ticketkey =X'C68F3ACD49CC1792C0A8013C';
+select * from mtrade where ticketkey =X'C68F3ACD49CC1792C0A8013C';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=8 where ticketkey =X'C68F3ACD49CC1792C0A8013C';
+update morder set shares=8 where ticketkey =X'C68F3ACD49CC1792C0A8013C';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey C68F3ACD49CC1792C0A8013C
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   C5624EFE3E33FD30C0A80135
+
+logout and back in 
+
+
+
+
+AkpT 	-1 	-$2.80 	-0.00%
+20081013  Hexkey: C6893ACD49CC1792C0A8013C
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 02, 2007 		7 	7 	Buy
+Oct 13, 2008 	7 	-8 	-1 	Corporate Action  <-- make it 7
+Total: -1
+select * from mticket where primarykey= X'C6893ACD49CC1792C0A8013C';
+select * from morder where ticketkey =X'C6893ACD49CC1792C0A8013C';
+select * from mtrade where ticketkey =X'C6893ACD49CC1792C0A8013C';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=7 where ticketkey =X'C6893ACD49CC1792C0A8013C';
+update morder set shares=7 where ticketkey =X'C6893ACD49CC1792C0A8013C';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey C6893ACD49CC1792C0A8013C
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+your holdings of QNTA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	N/A 	N/A
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	-0.00%
+AMF1 	0 	N/A 	N/A 
+good! 
+
+**********
+MTXX 	$8.74 	-3 	-$26.23 	-$2,852.97 	0.00% 	-2.23% 	Details   delsited 
+your holdings of MTXX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	2 	$17.49 	0.00%
+Aug 11, 2008 	3229 	535 	3764 	Buy
+Sep 19, 2008 	3764 	-2641 	1123 	Sell
+Oct 06, 2008 	1123 	-888 	235 	Sell
+Feb 22, 2011 	235 	-233 	2 	Corporate Action  <-- make this 235
+20110222  Hexkey: 48B074FC4D64499AC0A80146
+select * from mticket where primarykey= X'48B074FC4D64499AC0A80146';
+select * from morder where ticketkey =X'48B074FC4D64499AC0A80146';
+select * from mtrade where ticketkey =X'48B074FC4D64499AC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=235 where ticketkey =X'48B074FC4D64499AC0A80146';
+update morder set shares=235 where ticketkey =X'48B074FC4D64499AC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 48B074FC4D64499AC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   47FF46393A052DB4C0A80118
+
+logout and back in 
+Adsma 	-12 	-$104.94 	-0.00%
+Aug 26, 2008 	3884 	233 	4117 	Buy
+Sep 02, 2008 	4117 	22 	4139 	Buy
+Sep 19, 2008 	4139 	-2862 	1277 	Sell
+Oct 06, 2008 	1277 	-1111 	166 	Sell
+Feb 22, 2011 	166 	-178 	-12 	Corporate Action  <-- make this 166
+20110222
+Hexkey: 489C74FC4D64499AC0A80146  
+select * from mticket where primarykey= X'489C74FC4D64499AC0A80146';
+select * from morder where ticketkey =X'489C74FC4D64499AC0A80146';
+select * from mtrade where ticketkey =X'489C74FC4D64499AC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=166 where ticketkey =X'489C74FC4D64499AC0A80146';
+update morder set shares=166 where ticketkey =X'489C74FC4D64499AC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 489C74FC4D64499AC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   C5624EFE3E33FD30C0A80135
+
+logout and back in 
+
+AkpT 	-3 	-$26.23 	-0.00%
+Aug 26, 2008 	261 	333 	594 	Buy
+Sep 19, 2008 	594 	-264 	330 	Sell
+Oct 06, 2008 	330 	-222 	108 	Sell
+Feb 22, 2011 	108 	-111 	-3 	Corporate Action  <-- make it 108
+20110222  Hexkey: 488A74FC4D64499AC0A80146
+select * from mticket where primarykey= X'488A74FC4D64499AC0A80146';
+select * from morder where ticketkey =X'488A74FC4D64499AC0A80146';
+select * from mtrade where ticketkey =X'488A74FC4D64499AC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=108 where ticketkey =X'488A74FC4D64499AC0A80146';
+update morder set shares=108 where ticketkey =X'488A74FC4D64499AC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 488A74FC4D64499AC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+AMF1 	8 	$69.96 	0.00% 
+Aug 26, 2008 	172 	333 	505 	Buy
+Sep 19, 2008 	505 	-264 	241 	Sell
+Oct 06, 2008 	241 	-222 	19 	Sell
+Feb 22, 2011 	19 	-11 	8 	Corporate Action  <-- make this 19 
+20110222  Hexkey: 48B674FC4D64499AC0A80146
+select * from mticket where primarykey= X'48B674FC4D64499AC0A80146';
+select * from morder where ticketkey =X'48B674FC4D64499AC0A80146';
+select * from mtrade where ticketkey =X'48B674FC4D64499AC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=19 where ticketkey =X'48B674FC4D64499AC0A80146';
+update morder set shares=19 where ticketkey =X'48B674FC4D64499AC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 48B674FC4D64499AC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   2ACE227241DEE571C0A80134
+
+logout and back in 
+your holdings of MTXX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	-0.00%
+AkpT 	0 	$.00 	-0.00%
+AMF1 	0 	$.00 	0.00% 
+good
+
+***********
+DRLCQ 	$0.11 	-4 	-$0.46 	-$20,617.84 	0.00% 	-4.94% 	Details  active 
+your holdings of DRLCQ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-4 	-$0.46 	-0.00%
+May 29, 2008 	2272 	-1111 	1161 	Sell
+May 30, 2008 	1161 	-183 	978 	Sell
+Jun 05, 2008 	978 	-777 	201 	Sell
+Jun 10, 2008 	201 	-200 	1 	Sell
+Jul 01, 2013 	1 	-5 	-4 	Corporate Action  <-- make it 1 
+Jul 01, 2013 	Split terms:1 for 20
+20130701   Hexkey: C085505E51D212C0C0A80146
+select * from mticket where primarykey= X'C085505E51D212C0C0A80146';
+select * from morder where ticketkey =X'C085505E51D212C0C0A80146';
+select * from mtrade where ticketkey =X'C085505E51D212C0C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=1 where ticketkey =X'C085505E51D212C0C0A80146';
+update morder set shares=1 where ticketkey =X'C085505E51D212C0C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey C085505E51D212C0C0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   47FF46393A052DB4C0A80118
+
+logout and back in 
+
+Adsma 	-1 	-$0.12 	-0.00%
+Jun 05, 2008 	660 	-333 	327 	Sell
+Jun 10, 2008 	327 	-330 	-3 	Sell
+Jul 17, 2008 	-3 	40 	37 	Buy
+Jul 01, 2013 	37 	-38 	-1 	Corporate Action  <-- make it 37
+20130701  Hexkey: C091505E51D212C0C0A80146
+select * from mticket where primarykey= X'C091505E51D212C0C0A80146';
+select * from morder where ticketkey =X'C091505E51D212C0C0A80146';
+select * from mtrade where ticketkey =X'C091505E51D212C0C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=37 where ticketkey =X'C091505E51D212C0C0A80146';
+update morder set shares=37 where ticketkey =X'C091505E51D212C0C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey C091505E51D212C0C0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/fptool invalidateFund   C5624EFE3E33FD30C0A80135
+
+logout and back in 
+
+
+
+AkpT 	-4 	-$0.46 	-0.00%
+May 23, 2008 	2272 	2369 	4641 	Buy
+May 29, 2008 	4641 	-1977 	2664 	Sell
+May 30, 2008 	2664 	-595 	2069 	Multiple
+Jun 05, 2008 	2069 	-1222 	847 	Sell
+Jun 10, 2008 	847 	-850 	-3 	Sell  <-- change to 846
+Jul 01, 2013 	-3 	-1 	-4 	Corporate Action
+20130701
+the CA has a sell of 1  need to have 1 share remaining going into the CA 
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	850 <-- change to 846
+Fund Nr 3 	axpmf 	741  <-- ok
+Fund Nr1 	Adsma 	330  <-- ok
+apreuss's Mutual Fund 	AMF 	984  <-- ok  not active 
+apreuss's Mutual Fund 	AncF 	331  <-- ok
+axel preuss's Mutual Fund 	APMF 	200  <-- ok
+  	  	 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080610 DRLCQ -846 15.75
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss axpmf 20080610 DRLCQ -741 15.75
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20080610 DRLCQ -330 15.75
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AncF 20080610 DRLCQ -331 15.75
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20080610 DRLCQ -200 15.75
+log out and back in  check DRLCQ
+good
+
+*******
+SDD 	$35.57 	-2 	-$71.14 	-$2,960.38 	0.00% 	-2.79% 	Details 
+your holdings of SDD 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+Adsma 	-2 	-$71.28 	-0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 07, 2008 		183 	183 	Multiple
+Mar 15, 2008 	183 	-2 	181 	Sell
+Mar 18, 2008 	181 	111 	292 	Buy
+Mar 25, 2008 	292 	-288 	4 	Sell
+Mar 27, 2008 	4 	-6 	-2 	Sell
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 7, 2008 	111 	$5.55 	$9,581.47 	$86.32
+Mar 7, 2008 	1,111 	$55.55 	$96,338.45 	$86.71
+Mar 18, 2008 	111 	$5.55 	$9,118.88 	$82.15
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 7, 2008 	1,000 	$50.00 	$2.63 	$85,630.09 	$85.63
+Mar 7, 2008 	39 	$1.95 	$0.10 	$3,363.84 	$86.25
+Mar 15, 2008 	2 	$0.10 	$0.01 	$172.55 	$86.27
+Mar 25, 2008 	22 	$1.10 	$0.05 	$1,670.85 	$75.95
+Mar 25, 2008 	44 	$2.20 	$0.10 	$3,341.70 	$75.95
+Mar 25, 2008 	222 	$11.10 	$0.52 	$16,791.82 	$75.64
+Mar 27, 2008 	6 	$0.30 	$0.01 	$455.75 	$75.96  <----  should be 4
+combo trade:
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	6   <-- make it 4 
+Fund Nr 3 	axpmf 	6  <--- ok 
+Fund Nr1 	Adsma 	6  <-- make it 4 
+TailLess 	TLS 	8  <-- ok 
+apreuss's Mutual Fund 	AMF 	6 <-- ok   not active 
+apreuss's Mutual Fund 	AMF1 	21 <-- ok 
+apreuss's Mutual Fund 	AncF 	21 <-- ok 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080327 SDD -4 75.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss axpmf 20080327 SDD -6 75.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20080327 SDD -4 75.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss TLS 20080327 SDD -8 75.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AMF1 20080327 SDD -21 75.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AncF 20080327 SDD -21 75.96
+
+let's log out and back in 
+AkpT 	-2 	-$71.28 	-0.00%
+ your holdings of SDD 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	0 	N/A 	N/A 
+
+
+GOGL 	$4.08 	-1 	-$4.08 	-$7,461.67 	0.00% 	-7.06% 	Details   active 
+your holdings of GOGL 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	25 	$103.00 	0.01%
+Adsma 	2 	$8.24 	0.00%
+AkpT 	-1 	-$4.12 	-0.00%  <----
+AMF1 	0 	N/A 	N/A 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 29, 2007 		835 	835 	Buy
+Nov 30, 2007 	835 	1037 	1872 	Buy
+Dec 04, 2007 	1872 	1993 	3865 	Buy
+Dec 05, 2007 	3865 	-44 	3821 	Multiple
+Dec 07, 2007 	3821 	-555 	3266 	Sell
+Dec 10, 2007 	3266 	-685 	2581 	Sell
+Dec 17, 2007 	2581 	291 	2872 	Buy
+Jan 03, 2008 	2872 	-233 	2639 	Sell
+Jan 14, 2008 	2639 	-175 	2464 	Sell
+Jan 15, 2008 	2464 	-108 	2356 	Sell
+Jan 16, 2008 	2356 	-981 	1375 	Sell
+Jan 17, 2008 	1375 	-621 	754 	Sell
+Jan 18, 2008 	754 	-755 	-1 	Sell  <-- make it 754
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 29, 2007 	11 	$0.55 	$283.03 	$25.73
+Nov 29, 2007 	111 	$5.55 	$2,839.95 	$25.59
+Nov 29, 2007 	200 	$10.00 	$5,139.40 	$25.70
+Nov 29, 2007 	513 	$25.65 	$13,240.03 	$25.81
+Nov 30, 2007 	1,037 	$51.85 	$26,433.29 	$25.49
+Dec 4, 2007 	111 	$5.55 	$2,681.55 	$24.16
+Dec 4, 2007 	1,882 	$94.10 	$45,623.16 	$24.24
+Dec 5, 2007 	32 	$1.60 	$755.95 	$23.62
+Dec 5, 2007 	47 	$2.35 	$1,123.55 	$23.91
+Dec 17, 2007 	11 	$0.55 	$288.35 	$26.21
+Dec 17, 2007 	100 	$5.00 	$2,619.40 	$26.19
+Dec 17, 2007 	180 	$9.00 	$4,691.13 	$26.06
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 5, 2007 	123 	$6.15 	$0.09 	$2,950.07 	$23.98
+Dec 7, 2007 	555 	$27.75 	$0.44 	$14,354.80 	$25.86
+Dec 10, 2007 	685 	$34.25 	$0.56 	$18,221.55 	$26.60
+Jan 3, 2008 	25 	$1.25 	$0.02 	$602.58 	$24.10
+Jan 3, 2008 	208 	$10.40 	$0.16 	$5,039.22 	$24.23
+Jan 14, 2008 	175 	$8.75 	$0.12 	$3,964.15 	$22.65
+Jan 15, 2008 	11 	$0.55 	$0.01 	$247.96 	$22.54
+Jan 15, 2008 	31 	$1.55 	$0.02 	$697.79 	$22.51
+Jan 15, 2008 	24 	$1.20 	$0.02 	$540.22 	$22.51
+Jan 15, 2008 	15 	$0.75 	$0.01 	$337.24 	$22.48
+Jan 15, 2008 	27 	$1.35 	$0.02 	$607.03 	$22.48
+Jan 16, 2008 	24 	$1.20 	$0.02 	$533.50 	$22.23
+Jan 16, 2008 	69 	$3.45 	$0.05 	$1,551.22 	$22.48
+Jan 16, 2008 	444 	$22.20 	$0.31 	$9,856.50 	$22.20
+Jan 16, 2008 	444 	$22.20 	$0.30 	$9,763.52 	$21.99
+Jan 17, 2008 	146 	$7.30 	$0.10 	$3,115.88 	$21.34
+Jan 17, 2008 	294 	$14.70 	$0.19 	$6,170.08 	$20.99
+Jan 17, 2008 	181 	$9.05 	$0.12 	$3,784.74 	$20.91
+Jan 18, 2008 	555 	$27.75 	$0.36 	$11,734.40 	$21.14 <-- make it 754
+Jan 18, 2008 	200 	$10.00 	$0.13 	$4,188.74 	$20.94 <-- make it 754    or 199
+ fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	200  <--- make it 199
+apreuss's Mutual Fund 	AMF1 	222 ok
+axel preuss's Mutual Fund 	APMF 	133 ok
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AMF1 20080118 GOGL -222 20.94
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080118 GOGL -199 20.94
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20080118 GOGL -133 20.94
+
+done 
+
+
+ZIXI 	$4.59 	-3 	-$13.77 	-$4,229.80 	0.00% 	-9.07% 	Details  	BOTTOM
+your holdings of ZIXI 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-1 	-$4.65 	-0.00%
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 07, 2008 		10110 	10110 	Buy
+Mar 10, 2008 	10110 	-4522 	5588 	Sell
+Mar 11, 2008 	5588 	-2419 	3169 	Sell
+Mar 12, 2008 	3169 	-3170 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 7, 2008 	2,222 	$111.10 	$9,448.10 	$4.25
+Mar 7, 2008 	1,111 	$55.55 	$4,724.07 	$4.25
+Mar 7, 2008 	1,111 	$55.55 	$4,716.37 	$4.25
+Mar 7, 2008 	1,111 	$55.55 	$4,694.26 	$4.23
+Mar 7, 2008 	111 	$5.55 	$453.28 	$4.08
+Mar 7, 2008 	4,444 	$222.20 	$18,267.48 	$4.11
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 10, 2008 	2,055 	$102.75 	$0.24 	$7,578.87 	$3.69
+Mar 10, 2008 	1,701 	$85.05 	$0.20 	$6,268.48 	$3.69
+Mar 10, 2008 	106 	$5.30 	$0.01 	$389.51 	$3.67
+Mar 10, 2008 	660 	$33.00 	$0.08 	$2,427.62 	$3.68
+Mar 11, 2008 	22 	$1.10 	$0.00 	$82.99 	$3.77
+Mar 11, 2008 	2,385 	$119.25 	$0.28 	$9,008.02 	$3.78
+Mar 11, 2008 	1 	$0.05 	$0.00 	$3.74 	$3.74
+Mar 11, 2008 	11 	$0.55 	$0.00 	$41.21 	$3.75
+Mar 12, 2008 	3,170 	$158.50 	$0.39 	$12,423.05 	$3.92  <-- make this 3169
+combo trade
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	3,550   <--- make this 3547
+Fund Nr1 	Adsma 	3,550  <-- make this 3548
+axel preuss's Mutual Fund 	APMF 	3,170 <-- make this 3169
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20080312 ZIXI -3547 3.92
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20080312 ZIXI -3548 3.92
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20080312 ZIXI -3169 3.92
+your holdings of ZIXI 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	0 	N/A 	N/A 
+
+good
+
+
+Adsma 	-2 	-$9.30 	-0.00%
+AkpT 	-3 	-$13.95 	-0.00%
+AMF1 	0 	N/A 	N/A 
+
+done
+
+
+GLNG 	$48.26 	-3 	-$144.78 	-$1,438.31 	0.00% 	-10.65% 	Details 
+your holdings of GLNG 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	N/A 	N/A
+Adsma 	4 	$192.88 	0.01%
+AkpT 	-3 	-$144.66 	-0.00%
+AMF1 	0 	N/A 	N/A
+ 
+expamd AkpT
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 11, 2007 		624 	624 	Buy
+Dec 17, 2007 	624 	-627 	-3 	Sell
+Total: -3
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 11, 2007 	269 	$13.45 	$5,992.86 	$22.28
+Dec 11, 2007 	22 	$1.10 	$465.86 	$21.18
+Dec 11, 2007 	333 	$16.65 	$7,047.45 	$21.16
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 17, 2007 	1 	$0.05 	$0.00 	$19.50 	$19.50   
+Dec 17, 2007 	26 	$1.30 	$0.02 	$507.07 	$19.50   <-- change this to 23 
+Dec 17, 2007 	600 	$30.00 	$0.36 	$11,686.06 	$19.48
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	26   change to 23 
+apreuss's Castaway 	ACAF 	33
+raptor 	hecht 	3
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss AkpT 20071215 GLNG -23 19.48
+logout and back in 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 11, 2007 		1498 	1498 	Buy
+Dec 12, 2007 	1498 	-888 	610 	Sell
+Dec 17, 2007 	610 	-605 	5 	Sell
+Dec 18, 2007 	5 	44 	49 	Buy
+Dec 19, 2007 	49 	1111 	1160 	Buy
+Dec 20, 2007 	1160 	-1156 	4 	Sell
+Total: 4
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 11, 2007 	307 	$15.35 	$6,822.51 	$22.22
+Dec 11, 2007 	191 	$9.55 	$4,255.15 	$22.28
+Dec 11, 2007 	666 	$33.30 	$14,128.25 	$21.21
+Dec 11, 2007 	334 	$16.70 	$7,068.62 	$21.16
+Dec 18, 2007 	44 	$2.20 	$918.17 	$20.87
+Dec 19, 2007 	1,111 	$55.55 	$22,684.12 	$20.42
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Dec 12, 2007 	888 	$44.40 	$0.59 	$19,001.05 	$21.40
+Dec 17, 2007 	5 	$0.25 	$0.01 	$97.49 	$19.50
+Dec 17, 2007 	600 	$30.00 	$0.36 	$11,686.06 	$19.48
+Dec 20, 2007 	1,156 	$57.80 	$0.72 	$23,462.77 	$20.30
+this is fine
+
+
+IOC 	$47.88 	-2 	-$95.76 	-$78,182.10 	0.00% 	-14.45% 	active
+Fund 	Shares 	Value 	Portion of fund
+APMF 	9 	$428.85 	0.02%
+Adsma 	-1 	-$47.65 	-0.00%
+AkpT 	-2 	-$95.30 	-0.00%
+AMF1 	5 	$238.25 	0.02% 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 05, 2007 		444 	444 	Buy
+May 29, 2007 	444 	-111 	333 	Sell
+Jun 04, 2007 	333 	-44 	289 	Sell
+Jun 19, 2007 	289 	-199 	90 	Sell
+Jun 25, 2007 	90 	333 	423 	Buy
+Jun 29, 2007 	423 	22 	445 	Buy
+Jul 02, 2007 	445 	-222 	223 	Sell
+Jul 05, 2007 	223 	1111 	1334 	Buy
+Jul 17, 2007 	1334 	111 	1445 	Buy
+Jul 31, 2007 	1445 	-999 	446 	Sell
+Feb 15, 2008 	446 	-333 	113 	Sell
+May 01, 2009 	113 	-111 	2 	Sell
+Jun 09, 2009 	2 	6271 	6273 	Buy
+Jun 10, 2009 	6273 	55 	6328 	Buy
+Jun 12, 2009 	6328 	22 	6350 	Multiple
+Jun 16, 2009 	6350 	1377 	7727 	Buy
+Jun 17, 2009 	7727 	-72 	7655 	Sell
+Jun 18, 2009 	7655 	-3389 	4266 	Sell
+Jun 19, 2009 	4266 	-444 	3822 	Sell
+Jun 22, 2009 	3822 	-2699 	1123 	Sell
+Aug 10, 2009 	1123 	-333 	790 	Sell
+Feb 24, 2010 	790 	-791 	-1 	Sell  <-- make this 790
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 5, 2007 	444 	$22.20 	$12,805.03 	$28.84
+Jun 25, 2007 	333 	$16.65 	$14,170.39 	$42.55
+Jun 29, 2007 	22 	$1.10 	$460.96 	$20.95
+Jul 5, 2007 	1,111 	$55.55 	$30,363.25 	$27.33
+Jul 17, 2007 	111 	$5.55 	$2,369.85 	$21.35
+Jun 9, 2009 	1,111 	$55.55 	$40,585.92 	$36.53
+Jun 9, 2009 	5,160 	$258.00 	$187,448.81 	$36.33
+Jun 10, 2009 	55 	$2.75 	$1,982.75 	$36.05
+Jun 12, 2009 	333 	$16.65 	$11,890.43 	$35.71
+Jun 12, 2009 	133 	$6.65 	$4,785.57 	$35.98
+Jun 16, 2009 	222 	$11.10 	$7,390.65 	$33.29
+Jun 16, 2009 	1,155 	$57.75 	$38,459.11 	$33.30
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 29, 2007 	111 	$5.55 	$0.12 	$3,893.53 	$35.08
+Jun 4, 2007 	44 	$2.20 	$0.05 	$1,670.19 	$37.96
+Jun 19, 2007 	199 	$9.95 	$0.25 	$8,075.04 	$40.58
+Jul 2, 2007 	222 	$11.10 	$0.17 	$5,372.82 	$24.20
+Jul 31, 2007 	999 	$49.95 	$0.65 	$20,828.50 	$20.85
+Feb 15, 2008 	333 	$16.65 	$0.21 	$6,613.51 	$19.86
+May 1, 2009 	111 	$5.55 	$0.10 	$3,890.22 	$35.05
+Jun 12, 2009 	444 	$22.20 	$0.41 	$15,899.67 	$35.81
+Jun 17, 2009 	72 	$3.60 	$0.06 	$2,300.34 	$31.95
+Jun 18, 2009 	3,389 	$169.45 	$2.81 	$109,120.36 	$32.20
+Jun 19, 2009 	444 	$22.20 	$0.33 	$12,885.00 	$29.02
+Jun 22, 2009 	477 	$23.85 	$0.32 	$12,370.02 	$25.93
+Jun 22, 2009 	2,222 	$111.10 	$1.49 	$57,692.87 	$25.96
+Aug 10, 2009 	333 	$16.65 	$0.25 	$9,441.30 	$28.35
+Feb 24, 2010 	791 	$39.55 	$0.64 	$49,561.67 	$62.66  <-- make this 790
+
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 3 	axpmf 	77
+Fund Nr1 	Adsma 	791
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20100224 IOC -790 62.66
+
+expand AkpT
+LEDGER
+Date 	Start 	Change 	End 	Type
+Oct 30, 2006 		333 	333 	Buy
+Nov 01, 2006 	333 	667 	1000 	Multiple
+Nov 09, 2006 	1000 	222 	1222 	Buy
+Nov 13, 2006 	1222 	-1221 	1 	Sell
+Apr 04, 2007 	1 	219 	220 	Buy
+Apr 16, 2007 	220 	-100 	120 	Sell
+May 22, 2007 	120 	222 	342 	Buy
+May 29, 2007 	342 	-55 	287 	Sell
+Jun 04, 2007 	287 	-44 	243 	Sell
+Jun 19, 2007 	243 	-200 	43 	Sell
+Jun 29, 2007 	43 	44 	87 	Buy
+May 01, 2009 	87 	-55 	32 	Sell
+Jun 05, 2009 	32 	1000 	1032 	Buy
+Jun 09, 2009 	1032 	5555 	6587 	Buy
+Jun 10, 2009 	6587 	7149 	13736 	Buy
+Jun 12, 2009 	13736 	-1111 	12625 	Sell
+Jun 17, 2009 	12625 	-71 	12554 	Sell
+Jun 18, 2009 	12554 	-6779 	5775 	Sell
+Jun 19, 2009 	5775 	-1333 	4442 	Sell
+Jun 22, 2009 	4442 	-4444 	-2 	Sell  <--- make this 4442
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Oct 30, 2006 	333 	$16.65 	$6,328.00 	$19.00
+Nov 1, 2006 	1,000 	$50.00 	$18,721.38 	$18.72
+Nov 9, 2006 	222 	$11.10 	$4,217.30 	$19.00
+Apr 4, 2007 	219 	$10.95 	$6,142.95 	$28.05
+May 22, 2007 	222 	$11.10 	$6,670.70 	$30.05
+Jun 29, 2007 	44 	$2.20 	$921.92 	$20.95
+Jun 5, 2009 	1,000 	$50.00 	$37,592.32 	$37.59
+Jun 9, 2009 	5,555 	$277.75 	$202,802.36 	$36.51
+Jun 10, 2009 	3,666 	$183.30 	$132,146.86 	$36.05
+Jun 10, 2009 	3,483 	$174.15 	$125,538.08 	$36.04
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 1, 2006 	333 	$16.65 	$0.20 	$6,218.03 	$18.67
+Nov 13, 2006 	666 	$33.30 	$0.41 	$13,319.59 	$20.00
+Nov 13, 2006 	555 	$27.75 	$0.38 	$12,457.98 	$22.45
+Apr 16, 2007 	100 	$5.00 	$0.09 	$2,969.30 	$29.69
+May 29, 2007 	22 	$1.10 	$0.02 	$771.69 	$35.08
+May 29, 2007 	33 	$1.65 	$0.04 	$1,219.31 	$36.95
+Jun 4, 2007 	44 	$2.20 	$0.05 	$1,670.19 	$37.96
+Jun 19, 2007 	200 	$10.00 	$0.25 	$8,115.62 	$40.58
+May 1, 2009 	55 	$2.75 	$0.05 	$1,927.59 	$35.05
+Jun 12, 2009 	1,111 	$55.55 	$1.03 	$39,784.99 	$35.81
+Jun 17, 2009 	71 	$3.55 	$0.06 	$2,268.39 	$31.95
+Jun 18, 2009 	6,779 	$338.95 	$5.62 	$218,272.92 	$32.20
+Jun 19, 2009 	1,333 	$66.65 	$1.00 	$38,684.03 	$29.02
+Jun 22, 2009 	2,222 	$111.10 	$1.49 	$57,623.02 	$25.93  <-- make this 2220
+Jun 22, 2009 	2,222 	$111.10 	$1.49 	$57,692.87 	$25.96
+combo:
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	2,222 <-- make this 2220  
+Fund Nr1 	Adsma 	2,222  <-- ok
+NewFund 	AMF1 	1,111 <-- ok
+axel preuss's Mutual Fund 	APMF 	2,222  <-- ok
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20090622 IOC -2220 25.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss Adsma 20090622 IOC -1124 25.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AMF1 20090622 IOC -1111 25.96
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20090622 IOC -2231 25.96
+
+your holdings of IOC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	2,231 	$106,173.29 	5.63%
+Adsma 	1,124 	$53,491.16 	1.94%
+AkpT 	0 	$.00 	0.00%
+AMF1 	5 	$237.95 	0.02% 
+
+your holdings of IOC 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	5 	$237.95 	0.02% 
+
+done 
+********
+TRX 	$0.31 	-2 	-$0.62 	-$8,275.78 	0.00% 	-17.29% 	Details 
+your holdings of TRX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	-1 	-$0.29 	-0.00%
+Adsma 	15 	$4.35 	0.00%
+AkpT 	-2 	-$0.58 	-0.00%
+AMF1 	1 	$.29 	0.00% 
+
+expand APMF
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 23, 2009 		4444 	4444 	Buy
+Feb 24, 2009 	4444 	33 	4477 	Buy
+Mar 04, 2009 	4477 	-2212 	2265 	Sell
+Mar 06, 2009 	2265 	-1747 	518 	Sell
+Mar 19, 2009 	518 	-519 	-1 	Sell
+Mar 23, 2009 	-1 	3333 	3332 	Buy
+Mar 25, 2009 	3332 	-94 	3238 	Sell
+Mar 26, 2009 	3238 	-862 	2376 	Sell
+Apr 01, 2009 	2376 	-659 	1717 	Sell
+Apr 17, 2009 	1717 	-1711 	6 	Sell
+May 21, 2009 	6 	-7 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 23, 2009 	4,444 	$222.20 	$19,943.80 	$4.49
+Feb 24, 2009 	33 	$1.65 	$148.17 	$4.49
+Mar 23, 2009 	2,222 	$111.10 	$11,456.16 	$5.16
+Mar 23, 2009 	1,111 	$55.55 	$5,759.95 	$5.18
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 4, 2009 	2,212 	$110.60 	$0.27 	$8,681.14 	$3.92
+Mar 6, 2009 	1,747 	$87.35 	$0.22 	$7,056.65 	$4.04
+Mar 19, 2009 	519 	$25.95 	$0.02 	$2,556.42 	$4.93
+Mar 25, 2009 	94 	$4.70 	$0.00 	$447.79 	$4.76
+Mar 26, 2009 	862 	$43.10 	$0.02 	$4,156.82 	$4.82
+Apr 1, 2009 	659 	$32.95 	$0.02 	$2,941.06 	$4.46
+Apr 17, 2009 	1,711 	$85.55 	$0.14 	$4,908.37 	$2.87
+May 21, 2009 	7 	$0.35 	$0.01 	$22.25 	$3.18  <-- make this 6
+combo:
+fund trades 	
+  	  	
+Name 	Symbol 	Quantity
+apreuss's Mutual Fund 	AMF 	2  <-- leave as is 
+axel preuss's Mutual Fund 	APMF 	7  <-- make this 6
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss APMF 20090521 TRX -6 3.18
+EDGER
+Date 	Start 	Change 	End 	Type
+Feb 23, 2009 		5555 	5555 	Buy
+Feb 24, 2009 	5555 	90 	5645 	Buy
+Mar 04, 2009 	5645 	-2949 	2696 	Sell
+Mar 06, 2009 	2696 	-1922 	774 	Sell
+Mar 19, 2009 	774 	-766 	8 	Sell
+Mar 23, 2009 	8 	4333 	4341 	Buy
+Mar 25, 2009 	4341 	-103 	4238 	Multiple
+Mar 26, 2009 	4238 	-1130 	3108 	Sell
+Apr 01, 2009 	3108 	-876 	2232 	Sell
+Apr 16, 2009 	2232 	-2222 	10 	Sell
+May 01, 2009 	10 	-12 	-2 	Sell  <--- make this 10
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 23, 2009 	5,555 	$277.75 	$24,929.75 	$4.49
+Feb 24, 2009 	90 	$4.50 	$404.10 	$4.49
+Mar 23, 2009 	4,333 	$216.65 	$22,464.32 	$5.18
+Mar 25, 2009 	16 	$0.80 	$77.60 	$4.85
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Mar 4, 2009 	2,949 	$147.45 	$0.36 	$11,573.55 	$3.92
+Mar 6, 2009 	1,922 	$96.10 	$0.24 	$7,763.53 	$4.04
+Mar 19, 2009 	66 	$3.30 	$0.00 	$325.09 	$4.93
+Mar 19, 2009 	700 	$35.00 	$0.02 	$3,454.46 	$4.93
+Mar 25, 2009 	119 	$5.95 	$0.00 	$566.88 	$4.76
+Mar 26, 2009 	1,130 	$56.50 	$0.03 	$5,449.19 	$4.82
+Apr 1, 2009 	876 	$43.80 	$0.02 	$3,909.51 	$4.46
+Apr 16, 2009 	2,222 	$111.10 	$0.17 	$6,524.93 	$2.94
+May 1, 2009 	12 	$0.60 	$0.00 	$33.48 	$2.79  <--- make this 10
+ fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	12  <-- 10
+Fund Nr 3 	axpmf 	79  no longer around
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20090501 TRX -10 2.79
+  your holdings of TRX 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	15 	$4.35 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	1 	$.29 	0.00% 
+good  	  	 
+
+*****  stopped here 
+INUV 	$2.65 	-1 	-$2.65 	-$228.07 	0.00% 	-24.92% 	Details 
+your holdings of INUV 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	N/A 	N/A
+Adsma 	1 	$2.59 	0.00%
+AkpT 	-1 	-$2.59 	-0.00%  <--
+AMF1 	0 	N/A 	N/A 
+
+AkpT LEDGER
+Date 	Start 	Change 	End 	Type
+Sep 26, 2006 		396 	396 	Buy
+Oct 09, 2006 	396 	40 	436 	Buy
+Nov 06, 2007 	436 	-435 	1 	Sell
+Dec 13, 2010 	1 	-2 	-1 	Corporate Action
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Sep 26, 2006 	396 	$19.80 	$831.19 	$2.10
+Oct 9, 2006 	40 	$2.00 	$84.00 	$2.10
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 6, 2007 	435 	$21.75 	$0.02 	$689.77 	$1.59
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Dec 13, 2010 	Split terms:1 for 10
+20101213  Hexkey: BE7709E34D06AF59C0A80146
+trades on December 13, 2010 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Split Sell 	INUV 	2 	$0.00 	$0.00 	$0.00 	$0.00  <-- change to 1 
+Split Buy 	RES 	435 	$0.00 	$0.00 	$0.00 	$0.00
+Split Buy 	INUV 	0 	$0.00 	$0.00 	$0.00 	$0.00
+Split Sell 	RES 	290 	$0.00 	$0.00 	$0.00 	$0.00
+
+select * from mticket where primarykey= X'BE7709E34D06AF59C0A80146';
+select * from morder where ticketkey =X'BE7709E34D06AF59C0A80146';
+select * from mtrade where ticketkey =X'BE7709E34D06AF59C0A80146';
+
+
+update the shares field
+
+set commit false;
+update mtrade set shares=1 where ticketkey =X'BE7709E34D06AF59C0A80146';
+update morder set shares=1 where ticketkey =X'BE7709E34D06AF59C0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey BE7709E34D06AF59C0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+invalidate the fund
+/Marketocracy/bin/dbtool lookup fund apreuss
+/Marketocracy/bin/fptool invalidateFund   F0743BD23EAF2A5BC0A80134
+
+logout and back in 
+good
+
+MZZ 	$36.59 	-1 	-$36.59 	-$53,341.78 	0.00% 	-8.62% 	Details 
+your holdings of MZZ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	$.00 	0.00%
+Adsma 	2 	$72.36 	0.00%
+AkpT 	-1 	-$36.18 	-0.00%
+AMF1 	-2 	-$72.36 	-0.00% 
+
+AkpT
+Aug 7, 2009 	3,560 	$178.00 	$2.74 	$106,269.70 	$29.85
+May 18, 2010 	555 	$27.75 	$0.17 	$9,614.58 	$17.32
+May 20, 2010 	53 	$2.65 	$0.02 	$1,037.43 	$19.57  <-- make this 52
+combo
+fund trades 	right curve
+  	  	
+Name 	Symbol 	Quantity
+Fund Nr 2 	AkpT 	53  <-- make this 52 
+Fund Nr1 	Adsma 	56    <-- ok 
+NewFund 	AMF1 	37    <-- make this -36
+axel preuss's Mutual Fund 	APMF 	98  <-- ok 
+  	  	 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss AkpT 20100520 MZZ -52 19.57
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss Adsma 20100520 MZZ -58 19.57
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss AMF1 20100520 MZZ -36 19.57
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss APMF 20100520 MZZ -35 19.57
+your holdings of MZZ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	63 	$2,279.34 	0.12%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	-1 	-$36.18 	-0.00% 
+May 18, 2010 	111 	$5.55 	$0.03 	$1,922.92 	$17.32
+May 20, 2010 	36 	$1.80 	$0.02 	$702.70 	$19.52  <--- make it 35
+/Marketocracy/Scripts/build/bin/backdatedtrade.py  apreuss AMF1 20100520 MZZ -35 19.57
+your holdings of MZZ 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	63 	$2,279.34 	0.12%
+Adsma 	0 	$.00 	0.00%
+AkpT 	0 	$.00 	0.00%
+AMF1 	0 	$.00 	0.00% 
+
+good
+
+AMF1
+MSTR 	$176.14 	-3,280 	-$577,739.20 	-$82,152.01 	0.00% 	-26.74% 	Details  
+your holdings of MSTR 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+APMF 	0 	N/A 	N/A
+Adsma 	0 	N/A 	N/A
+AkpT 	-3,280 	-$583,184.01 	-19.30%
+AMF1 	0 	N/A 	N/A
+
+AkpT expand 
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jul 07, 2009 		6000 	6000 	Buy
+Nov 06, 2009 	6000 	-9280 	-3280 	Sell
+Total: -3,280
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jul 7, 2009 	6,000 	$300.00 	$307,277.15 	$51.21
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Nov 6, 2009 	3,281 	$164.05 	$7.35 	$285,531.84 	$87.03  <--- make this 1 share 
+Nov 6, 2009 	5,999 	$299.95 	$13.31 	$517,332.50 	$86.24
+/Marketocracy/Scripts/build/bin/backdatedtrade.py apreuss AkpT 20091106 MSTR -1 87.03
+
+> Row 807:  DONE 
+>    LOGINNAME = bradonsu2004
+>       SYMBOL = BMF
+>   PRIMARYKEY = X'5e7326ff42465674c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+MIDD 	$108.15 	-500 	-$54,075.00 	-$2,788.38 	0.00% 	-8.15% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Sep 13, 2005 		500 	500 	Buy
+Jan 19, 2006 	500 	-1000 	-500 	Sell
+Total: -500
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Sep 13, 2005 	500 	$25.00 	$34,212.08 	$68.42
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 19, 2006 	500 	$25.00 	$1.79 	$42,749.35 	$85.50
+Jan 19, 2006 	500 	$25.00 	$1.79 	$42,749.35 	$85.50  <--- dup  	  	 
+
+
+> Row 808:  DONE 
+>    LOGINNAME = smoore
+>       SYMBOL = WDRST
+>   PRIMARYKEY = X'48c0035b3e54da13c0a80132'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+EXP 	$84.26 	-96 	-$8,088.96 	-$2,756.37 	1.76% 	0.00% 	Details  	TOP
+  	  	 
+
+> Row 809:  DONE 
+>    LOGINNAME = dojowiz
+>       SYMBOL = DMF
+>   PRIMARYKEY = X'99fa311f43951d49c0a80134'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ASYS 	$10.74 	-1,500 	-$16,110.00 	$10,803.93 	-2.27% 	8.61% 	Details  	TOP
+EDGER
+Date 	Start 	Change 	End 	Type
+Jul 11, 2007 		2000 	2000 	Buy
+Jul 23, 2007 	2000 	1000 	3000 	Buy
+Jul 24, 2007 	3000 	-3000 		Multiple
+Nov 30, 2010 		2500 	2500 	Buy
+Dec 01, 2010 	2500 	-4000 	-1500 	Sell
+Total: -1,500
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jul 11, 2007 	2,000 	$100.00 	$25,190.99 	$12.60
+Jul 23, 2007 	1,000 	$50.00 	$12,697.08 	$12.70
+Jul 24, 2007 	3,000 	$150.00 	$36,490.53 	$12.16
+Nov 30, 2010 	2,500 	$125.00 	$51,096.89 	$20.44
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jul 24, 2007 	6,000 	$300.00 	$2.11 	$68,341.95 	$11.39
+Dec 1, 2010 	1,500 	$75.00 	$0.54 	$31,673.57 	$21.12
+Dec 1, 2010 	1,000 	$50.00 	$0.36 	$20,923.51 	$20.92
+Dec 1, 2010 	1,500 	$75.00 	$0.54 	$31,450.39 	$20.97  <---remove 
+
+******    6/3/15
+
+**************  6/5/15  *
+> Row 825:
+>    LOGINNAME = moneymaker24
+>       SYMBOL = CTWF
+>   PRIMARYKEY = X'e40240844a426586c0a80133'
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 27, 2012 		8000 	8000 	Buy
+Mar 06, 2012 	8000 	2750 	10750 	Buy
+May 04, 2012 	10750 	8700 	19450 	Buy
+Sep 26, 2012 	19450 	-3450 	16000 	Sell
+Oct 01, 2012 	16000 	-3000 	13000 	Sell
+Apr 23, 2013 	13000 	-3000 	10000 	Sell
+Jun 24, 2013 	10000 	2200 	12200 	Buy
+Oct 13, 2014 	12200 	-4200 	8000 	Sell
+Jun 05, 2015 	8000 	-16000 	-8000 	Sell
+Total: -8,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 27, 2012 	8,000 	$400.00 	$63,127.75 	$7.89
+Mar 6, 2012 	2,750 	$137.50 	$21,532.50 	$7.83
+May 4, 2012 	8,700 	$435.00 	$68,730.00 	$7.90
+Jun 24, 2013 	2,200 	$110.00 	$27,170.00 	$12.35
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Sep 26, 2012 	3,450 	$172.50 	$0.69 	$30,359.31 	$8.80
+Oct 1, 2012 	3,000 	$150.00 	$0.62 	$27,235.39 	$9.08
+Apr 23, 2013 	3,000 	$150.00 	$0.81 	$35,849.19 	$11.95
+Oct 13, 2014 	4,200 	$210.00 	$1.22 	$69,508.78 	$16.55
+Jun 5, 2015 	8,000 	$400.00 	$2.38 	$135,917.62 	$16.99
+Jun 5, 2015 	8,000 	$400.00 	$2.38 	$135,917.62 	$16.99  <---
+
+> Row 826:  DONE 
+>    LOGINNAME = pathfinder
+>       SYMBOL = PMF
+>   PRIMARYKEY = X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+HYT 	$11.13 	-1,000 	-$11,130.00 	-$273.10 	-1.07% 	-2.21% 	Details  	TOP
+ LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 04, 2014 		1000 	1000 	Buy
+Jun 04, 2015 	1000 	-2000 	-1000 	Sell
+Total: -1,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 4, 2014 	1,000 	$50.00 	$12,331.74 	$12.33
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	1,000 	$50.00 	$0.20 	$11,159.80 	$11.16
+Jun 4, 2015 	1,000 	$50.00 	$0.20 	$11,159.80 	$11.16  <-- remove 
+ 	  	 
+> Row 827:  DONE 
+>    LOGINNAME = topflite
+>       SYMBOL = VAMVT
+>   PRIMARYKEY = X'537748803e29d3c3c0a80134'
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+FNHC 	$25.65 	-11,000 	-$282,150.00 	-$5,754.58 	0.87% 	-2.02% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 12, 2014 		11000 	11000 	Buy
+Jun 05, 2015 	11000 	-22000 	-11000 	Sell
+Total: -11,000
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 12, 2014 	11,000 	$550.00 	$285,087.10 	$25.92
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 5, 2015 	11,000 	$550.00 	$4.89 	$280,380.17 	$25.49
+Jun 5, 2015 	11,000 	$550.00 	$4.91 	$281,102.35 	$25.55  <-- remove
+
+> Row 828:
+>    LOGINNAME = cornerofberkshareandseescandy
+>       SYMBOL = ANG
+>   PRIMARYKEY = X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+NXPI 	$106.97 	-980 	-$104,835.50 	-$2,386.45 	0.22% 	-2.20% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 28, 2015 		980 	980 	Buy
+Jun 04, 2015 	980 	-1960 	-980 	Sell
+Total: -980
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 28, 2015 	980 	$49.00 	$108,482.47 	$110.70
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	980 	$49.00 	$1.84 	$105,465.76 	$107.62
+Jun 4, 2015 	980 	$49.00 	$1.84 	$105,465.76 	$107.62  <--- remove 
+  	  	 
+> Row 829:
+>    LOGINNAME = ahoffard
+>       SYMBOL = AMFBM
+>   PRIMARYKEY = X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ECH 	$39.59 	-228 	-$9,026.52 	-$1,119.80 	-0.48% 	-11.09% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 15, 2015 		228 	228 	Buy
+Jun 05, 2015 	228 	-456 	-228 	Sell
+Total: -228
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 15, 2015 	228 	$11.40 	$10,095.84 	$44.28
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 5, 2015 	456 	$22.80 	$0.32 	$18,002.56 	$39.48  <--- only has 228 shares 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py ahoffard AMFBM 20150605 ECH -228 39.48
+Trading -228.0 shares of iShares MSCI Chile Capped ETF on Jun 05, 2015 at 39.48
+manager: ahoffard Anton Hoffard
+fund: AMFBM
+building trade (has to load stock prices first)
+price = 39.48
+selling -228.0 shares of ECH at 39.48 on 20150605
+invaldating fund prices from Jun 05, 2015
+Done
+
+> Row 830:  DONE 
+>    LOGINNAME = rkern
+>       SYMBOL = HSW
+>   PRIMARYKEY = X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+LUV 	$37.17 	-460 	-$17,098.20 	-$1,428.69 	-0.40% 	-7.60% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 01, 2014 		460 	460 	Buy
+Jun 04, 2015 	460 	-920 	-460 	Sell
+Total: -460
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 1, 2014 	460 	$23.00 	$18,802.27 	$40.87
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	460 	$23.00 	$0.31 	$17,235.89 	$37.47  <--- remove 
+Jun 4, 2015 	460 	$23.00 	$0.31 	$17,235.89 	$37.47
+  	  	 
+
+> Row 831:  DONE 
+>    LOGINNAME = rkern
+>       SYMBOL = STF
+>   PRIMARYKEY = X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+AFFX 	$11.84 	-60 	-$710.40 	-$75.96 	1.20% 	-9.67% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 18, 2015 		60 	60 	Buy
+Jun 04, 2015 	60 	-120 	-60 	Sell
+Total: -60
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 18, 2015 	60 	$3.00 	$785.12 	$13.09
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	60 	$3.00 	$0.02 	$709.78 	$11.83
+Jun 4, 2015 	60 	$3.00 	$0.02 	$709.78 	$11.83  <--- remove 
+
+> Row 832:  DONE
+>    LOGINNAME = mcherol1
+>       SYMBOL = MMF
+>   PRIMARYKEY = X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+FEYE 	$51.03 	-100 	-$5,103.00 	$2,093.16 	6.42% 	20.87% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 16, 2015 		100 	100 	Buy
+Mar 30, 2015 	100 	100 	200 	Buy
+Apr 01, 2015 	200 	50 	250 	Buy
+Apr 22, 2015 	250 	-50 	200 	Sell
+Jun 04, 2015 	200 	-100 	100 	Sell
+Jun 05, 2015 	100 	-200 	-100 	Sell
+Total: -100
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 16, 2015 	100 	$5.00 	$4,120.20 	$41.20
+Mar 30, 2015 	100 	$5.00 	$3,991.00 	$39.91
+Apr 1, 2015 	50 	$2.50 	$1,920.00 	$38.40
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Apr 22, 2015 	50 	$2.50 	$0.04 	$2,178.46 	$43.57
+Jun 4, 2015 	100 	$5.00 	$0.09 	$4,949.08 	$49.49  <--remove
+Jun 5, 2015 	200 	$10.00 	$0.18 	$10,099.82 	$50.50
+
+> Row 833:  DONE 
+>    LOGINNAME = br0wnsdawg
+>       SYMBOL = EFBO
+>   PRIMARYKEY = X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+LOCO 	$20.88 	-147 	-$3,069.36 	-$8,936.78 	0.00% 	-18.74% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Aug 08, 2014 		400 	400 	Buy
+Aug 14, 2014 	400 	50 	450 	Buy
+Aug 15, 2014 	450 	60 	510 	Buy
+Aug 19, 2014 	510 	-510 		Sell
+Apr 24, 2015 		813 	813 	Buy
+Apr 28, 2015 	813 	101 	914 	Buy
+May 04, 2015 	914 	-61 	853 	Sell
+May 15, 2015 	853 	147 	1000 	Buy
+May 28, 2015 	1000 	-1000 		Sell
+Jun 04, 2015 		-147 	-147 	Sell
+Total: -147
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Aug 8, 2014 	400 	$20.00 	$14,736.64 	$36.84
+Aug 14, 2014 	50 	$2.50 	$1,601.14 	$32.02
+Aug 15, 2014 	60 	$3.00 	$1,995.42 	$33.26
+Apr 24, 2015 	813 	$40.65 	$22,879.58 	$28.14
+Apr 28, 2015 	101 	$5.05 	$2,848.20 	$28.20
+May 15, 2015 	147 	$7.35 	$3,627.96 	$24.68
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Aug 19, 2014 	510 	$25.50 	$0.27 	$15,483.73 	$30.36
+May 4, 2015 	61 	$3.05 	$0.03 	$1,610.37 	$26.40
+May 28, 2015 	1,000 	$50.00 	$0.38 	$21,609.62 	$21.61
+Jun 4, 2015 	147 	$7.35 	$0.06 	$3,117.81 	$21.21  <--- remove 
+
+> Row 834:  DONE 
+>    LOGINNAME = tshields
+>       SYMBOL = TSBMF
+>   PRIMARYKEY = X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 15, 2015 		1000 	1000 	Buy
+Jun 04, 2015 	1000 	-1400 	-400 	Sell
+Total: -400
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 15, 2015 	1,000 	$50.00 	$40,924.77 	$40.92
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	1,400 	$70.00 	$0.98 	$55,854.58 	$39.90  <-- only has 1000 shares
+/Marketocracy/Scripts/build/bin/backdatedtrade.py tshields TSBMF 20150604 HWKN -1000 39.90
+Trading -1000.0 shares of HAWKINS INC on Jun 04, 2015 at 39.9
+manager: tshields Ted C Shields
+fund: TSBMF
+building trade (has to load stock prices first)
+price = 39.9
+selling -1000.0 shares of HWKN at 39.9 on 20150604
+invaldating fund prices from Jun 04, 2015
+Done
+
+> Row 835:
+>    LOGINNAME = tshields
+>       SYMBOL = TSEMF
+>   PRIMARYKEY = X'0f3550174e4338aac0a80132',X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+DHIL 	$194.40 	-50 	-$9,720.00 	$1,412.80 	0.28% 	3.77% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 15, 2015 		200 	200 	Buy
+Jun 04, 2015 	200 	-250 	-50 	Sell
+Total: -50
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 15, 2015 	200 	$10.00 	$37,461.80 	$187.31
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	250 	$12.50 	$0.85 	$48,594.60 	$194.38  <-- change to 200
+/Marketocracy/Scripts/build/bin/backdatedtrade.py tshields TSEMF 20150604 DHIL -200 194.38
+Trading -200.0 shares of Diamond Hill Investment Group  Incorporated on Jun 04, 2015 at 194.38
+manager: tshields Ted C Shields
+fund: TSEMF
+building trade (has to load stock prices first)
+price = 194.38
+selling -200.0 shares of DHIL at 194.38 on 20150604
+invaldating fund prices from Jun 04, 2015
+Done
+  	  	 
+
+> Row 836:
+>    LOGINNAME = nick85016
+>       SYMBOL = docomize
+>   PRIMARYKEY = X'64c641f05522b16fc0a86fa6',X'0f3550174e4338aac0a80132',X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+JUNO 	$68.36 	-325 	-$22,217.00 	-$1,911.72 	6.81% 	-7.31% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 20, 2015 		455 	455 	Buy
+Jun 04, 2015 	455 	-780 	-325 	Sell
+Total: -325
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 20, 2015 	455 	$22.75 	$26,139.80 	$57.45
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	345 	$17.25 	$0.35 	$19,906.15 	$57.70  <--- remove 
+Jun 4, 2015 	435 	$21.75 	$0.47 	$26,538.92 	$61.01  <-- change to 455
+/Marketocracy/Scripts/build/bin/backdatedtrade.py nick85016 docomize 20150604 JUNO -455 61.01
+Trading -455.0 shares of Juno Therapeutics Inc on Jun 04, 2015 at 61.01
+manager: nick85016 nickolai jermolow
+fund: docomize
+building trade (has to load stock prices first)
+price = 61.01
+selling -455.0 shares of JUNO at 61.01 on 20150604
+invaldating fund prices from Jun 04, 2015
+Done
+
+
+> Row 837:  ** in progress 
+>    LOGINNAME = cvantoor
+>       SYMBOL = Star
+>   PRIMARYKEY = X'aeba6a464c50351dc0a80132',X'64c641f05522b16fc0a86fa6',X'0f3550174e4338aac0a80132',X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+ECT 	$3.17 	-110 	-$348.70 	$9.89 	-1.55% 	0.00% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 04, 2015 		-110 	-110 	Sell
+Total: -110
+  	  	 
+  	  	
+BUYS
+You have no Buys for this position
+  	  	 
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 4, 2015 	110 	$5.50 	$0.01 	$358.59 	$3.26  	  	 
+
+select distinct stockkey from mstockalias where symbol='ECT';
+> Row 1:
+>   STOCKKEY = X'b44810ac390c6e03c0a8015c'
+select * from mstockalias where STOCKKEY = X'b44810ac390c6e03c0a8015c';
+> Row 2:
+>   STOCKKEY = X'fcc06a9753aec783c0a86f92'
+select * from mstockalias where STOCKKEY = X'fcc06a9753aec783c0a86f92';
+going to need some external work, he has the old ECT
+
+> Row 838:  DONE
+>    LOGINNAME = jtheos1
+>       SYMBOL = TGF
+>   PRIMARYKEY = X'ff9d5c024c04370ec0a80135'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+BGS 	$29.84 	-1 	-$29.84 	$21,234.74 	0.03% 	215.99% 	Details  	TOP
+ EDGER
+Date 	Start 	Change 	End 	Type
+Jun 29, 2010 		900 	900 	Buy
+May 13, 2015 	900 	-900 		Sell
+Jun 05, 2015 		-1 	-1 	Sell
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 29, 2010 	900 	$45.00 	$9,831.31 	$10.92
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 13, 2015 	900 	$45.00 	$0.47 	$26,512.03 	$29.46
+Jun 5, 2015 	1 	$0.05 	$0.01 	$29.86 	$29.86 	   <-------- remove this 	 
+
+> Row 839:  DONE 
+>    LOGINNAME = razmig
+>       SYMBOL = RPC
+>   PRIMARYKEY = X'336a0ecf3fc87002c0a80134',X'aeba6a464c50351dc0a80132',X'64c641f05522b16fc0a86fa6',X'0f3550174e4338aac0a80132',X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+EZJ 	$101.06 	-325 	-$32,844.50 	$2,822.00 	-1.30% 	0.69% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 26, 2015 		1199 	1199 	Buy
+Mar 30, 2015 	1199 	1573 	2772 	Buy
+Apr 21, 2015 	2772 	1320 	4092 	Buy
+May 08, 2015 	4092 	-542 	3550 	Sell
+May 11, 2015 	3550 	-3275 	275 	Sell
+May 12, 2015 	275 	-275 		Sell
+Jun 05, 2015 		-325 	-325 	Sell
+Total: -325
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 26, 2015 	1,199 	$59.95 	$118,254.03 	$98.63
+Mar 30, 2015 	1,573 	$78.65 	$154,951.90 	$98.51
+Apr 21, 2015 	1,320 	$66.00 	$138,153.50 	$104.66
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 8, 2015 	542 	$27.10 	$0.94 	$53,710.39 	$99.10
+May 11, 2015 	3,275 	$163.75 	$5.80 	$332,974.79 	$101.67
+May 12, 2015 	275 	$13.75 	$0.48 	$27,531.08 	$100.11
+Jun 5, 2015 	325 	$16.25 	$0.58 	$32,809.48 	$100.95  <--- sold after he was sold out
+
+> Row 840:  DONE 
+>    LOGINNAME = razmig
+>       SYMBOL = RBMF,
+>   PRIMARYKEY = X'acae66ff3aa5d75dc0a801e1',X'336a0ecf3fc87002c0a80134',X'aeba6a464c50351dc0a80132',X'64c641f05522b16fc0a86fa6',X'0f3550174e4338aac0a80132',X'049850174e433710c0a80132',X'de364c64536ba7cec0a86f99',X'42d60e323b152cc5c0a80118',X'454d52023b022cdbc0a80119',X'28e21bd744b7a6d4c0a80132',X'7d8b1e2240914e01c0a80132',X'ad3351d554e76063c0a86f98',X'2bcf232046a93a6fc0a80133',X'e40240844a426586c0a80133'
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+GREK 	$11.67 	-5,875 	-$68,561.25 	$2,535.28 	-2.83% 	3.42% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 08, 2015 		5875 	5875 	Buy
+May 13, 2015 	5875 	-5875 		Sell
+Jun 04, 2015 		-5875 	-5875 	Sell
+Total: -5,875
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+May 8, 2015 	5,875 	$293.75 	$74,025.59 	$12.60
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 13, 2015 	5,875 	$293.75 	$1.26 	$72,038.40 	$12.26
+Jun 4, 2015 	5,875 	$293.75 	$1.28 	$73,083.72 	$12.44  <-- sold again
+  	  	   	  	 
+ield-fund-keyDone!
+14 Funds Processed
+84 Queries Processed
+
+***************  6/6/15
+> Row 825:  DONE
+>    LOGINNAME = mcherol1
+>       SYMBOL = MMF
+>   PRIMARYKEY = X'42d60e323b152cc5c0a80118'
+
+We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+FEYE 	$51.03 	-100 	-$5,103.00 	$2,093.16 	6.42% 	20.87% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Mar 16, 2015 		100 	100 	Buy
+Mar 30, 2015 	100 	100 	200 	Buy
+Apr 01, 2015 	200 	50 	250 	Buy
+Apr 22, 2015 	250 	-50 	200 	Sell
+Jun 04, 2015 	200 	-100 	100 	Sell
+Jun 05, 2015 	100 	-200 	-100 	Sell
+Total: -100
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Mar 16, 2015 	100 	$5.00 	$4,120.20 	$41.20
+Mar 30, 2015 	100 	$5.00 	$3,991.00 	$39.91
+Apr 1, 2015 	50 	$2.50 	$1,920.00 	$38.40
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Apr 22, 2015 	50 	$2.50 	$0.04 	$2,178.46 	$43.57
+Jun 4, 2015 	100 	$5.00 	$0.09 	$4,949.08 	$49.49  <-- remove 
+Jun 5, 2015 	200 	$10.00 	$0.18 	$10,099.82 	$50.50
+
+field-fund-keyDone!
+1 Funds Processed
+6 Queries Processed

@@ -1,0 +1,860 @@
+date:  2/2/15
+look into strange behavior with regards to ATK
+
+member James
+Twenty-One (21) fund.
+
+historical prices with ATK from yahoo finance
+
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Feb 2, 2015	130.40	132.60	128.97	131.42	578,000	131.42
+Jan 30, 2015	131.71	133.53	130.00	130.31	629,700	130.31
+Jan 29, 2015	124.00	133.50	123.48	132.71	764,900	132.71
+Jan 29, 2015	0.32 Dividend
+Jan 28, 2015	132.55	132.63	127.31	127.99	455,900	127.67
+Jan 27, 2015	130.76	133.22	130.06	131.37	409,900	131.04
+Jan 26, 2015	130.95	133.33	129.01	132.75	512,000	132.42
+Jan 23, 2015	127.73	131.84	127.25	131.84	904,000	131.51
+Jan 22, 2015	125.28	128.42	124.83	128.22	421,300	127.90
+Jan 21, 2015	124.47	125.68	121.50	124.82	601,000	124.51
+
+let's log in as James
+2004_porsche_911
+
+on 1/31/15 there is no price for ATK in the ledger
+
+if I enter the symbol in the Stock Info box it doesn't show that he held or holds shares
+
+select distinct stockkey from mstockalias where symbol='ATK';
+> Row 1:
+>   STOCKKEY = X'074f0e21390ae2b4c0a80116'
+> Row 2:
+>   STOCKKEY = X'313d5cc654cad00fc0a86f92'
+
+
+There are two ATKs 
+*********************************************************
+> Row 1:
+>   STOCKKEY = X'074f0e21390ae2b4c0a80116'
+*********************************************************
+select * from mstockalias where STOCKKEY = X'074f0e21390ae2b4c0a80116'; 
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALLIANT TECHSYSTEMS
+>     PRIMARYKEY = X'07500e21390ae2b4c0a80116'   <--- set the aliaskey here 
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = ATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'07500e21390ae2b4c0a80116' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT||CP_NOTES||CP_RECORD_DT|20001128|CP_TERMS||CP_TYPA|3000|CP_ADJ||CP_RATIO|1.5|CP_PAY_DT|20001128
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-11-28 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 8
+>              BB_RCODE = NULL
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'7184012e3a24c151c0a80114'
+>               VERSION = 1
+> Row 2:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_TYP|3000|CP_ADJ_DT|20010910|CP_NOTES|N.A.|CP_RECORD_DT|20010817|CP_TERMS|3 for 2|CP_ADJ|1.500000|CP_RATIO|1.500000|CP_PAY_DT|20010907
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7007487
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc.
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-09-10 03:00:00.000000'
+>         BB_IDENTIFIER = ATK     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-08-08 03:00:00.000000'
+>          BB_NUMFIELDS = 8
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'019f6f453b9d7094c0a801dc'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|9|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|3|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|SAFETY COMPONENTS INTL INC|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_TYP|9|CP_ADVISORS|N.A.|CP_TKR|SAFY    US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|0|CP_TOT_AMT|N.A.|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|0.000000|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|143252
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7179682
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-09-28 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-09-28 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'b1866d4f3bb52bafc0a801dc'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|2.900000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_DEBT|N.A.|CP_CUR_PREMIUM|N.A.|CP_DT_FLAG|0|CP_SH_FLAG|2|CP_UNSOLICITED|2|CP_SH|2.900000|CP_FLAG|3|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_NAME|Blount International Inc.-Ne|CP_INIT_OFFER_PREMIUM|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|2|CP_ADVISORS|;2;1;3;1;Seller Financial Advisor;1;LEHMAN BROTHERS;13;N.A.;|CP_TKR|BLT     US|CP_CASH|N.A.|CP_DETAIL_FLAG|1|CP_CASH_FLAG|N.A.|CP_TOT_AMT|251.128403|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|N.A.|CP_ADVISORS_NUM|1|CP_ID_BB_COMP|898242
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7272154
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc.
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-12-10 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-10-25 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-12-10 00:00:00.000000'
+>            PRIMARYKEY = X'839436fc3c15775bc0a801dc'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020611|CP_NOTES|N.A.|CP_RECORD_DT|20020517|CP_TERMS| |CP_STOCK_SPLT_TYP|3000|CP_ADJ|1.500000|CP_RATIO|1.500000|CP_PAY_DT|20020610
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8100885
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-06-11 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-05-09 00:00:00.000000'
+>          BB_NUMFIELDS = 8
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-05-09 00:00:00.000000'
+>            PRIMARYKEY = X'f56a05a73d06ac2fc0a801dc'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20110208|CP_PAY_DT|20110304|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20110204|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 49473564
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-02-04 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2010-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'59f4055c4cd33420c0a80146'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20110606|CP_PAY_DT|20110630|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.997135|CP_ADJ_DT|20110602|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 54186916
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-03 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-06-02 00:00:00.000000'
+>            PRIMARYKEY = X'a7761a454de80f4ec0a80146'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20110907|CP_PAY_DT|20110929|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.996796|CP_ADJ_DT|20110902|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 56670798
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-02 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-08-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-09-02 00:00:00.000000'
+>            PRIMARYKEY = X'e52649414e615a54c0a80146'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20111207|CP_PAY_DT|20111229|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996571|CP_ADJ_DT|20111205|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 58906734
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-12-05 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-12-05 00:00:00.000000'
+>            PRIMARYKEY = X'8d3516074edd54bdc0a80146'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120307|CP_PAY_DT|20120329|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.996639|CP_ADJ_DT|20120305|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 61264528
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-05 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-01-31 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-03-05 00:00:00.000000'
+>            PRIMARYKEY = X'ee6e49c64f554eebc0a80146'
+>               VERSION = NULL
+> Row 11:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120611|CP_PAY_DT|20120628|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995875|CP_ADJ_DT|20120607|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 63938555
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-06-07 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-06-07 00:00:00.000000'
+>            PRIMARYKEY = X'ee7a72f64fd12c75c0a80146'
+>               VERSION = NULL
+> Row 12:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120905|CP_PAY_DT|20120927|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20120831|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 67257287
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-08-31 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-08-31 00:00:00.000000'
+>            PRIMARYKEY = X'5be365eb50413b2fc0a80146'
+>               VERSION = NULL
+> Row 13:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20121121|CP_PAY_DT|20121213|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995556|CP_ADJ_DT|20121119|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 70349617
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-11-19 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-11-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-11-19 00:00:00.000000'
+>            PRIMARYKEY = X'09ca43e250aac18fc0a80146'
+>               VERSION = NULL
+> Row 14:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130305|CP_PAY_DT|20130328|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20130301|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73611162
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-03-01 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-01 00:00:00.000000'
+>            PRIMARYKEY = X'533b2908510c50c9c0a80146'
+>               VERSION = NULL
+> Row 15:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130603|CP_PAY_DT|20130627|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996685|CP_ADJ_DT|20130530|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 76629999
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-05-30 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-05-30 00:00:00.000000'
+>            PRIMARYKEY = X'33a32a4b51a7d7fbc0a80146'
+>               VERSION = NULL
+> Row 16:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130904|CP_PAY_DT|20130926|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997371|CP_ADJ_DT|20130830|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 80022859
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-30 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'4a5a19935221224bc0a80146'
+>               VERSION = NULL
+> Row 17:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131120|CP_PAY_DT|20131212|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997772|CP_ADJ_DT|20131118|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 83425687
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-11-18 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-11-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-11-18 00:00:00.000000'
+>            PRIMARYKEY = X'fbfd6619528aa6fcc0a80146'
+>               VERSION = NULL
+> Row 18:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140304|CP_PAY_DT|20140327|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20140228|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 86791801
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-28 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'e758091b52eae4bbc0a86f92'
+>               VERSION = NULL
+> Row 19:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140304|CP_PAY_DT|20140327|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997605|CP_ADJ_DT|20140228|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 86791801
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-28 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>            PRIMARYKEY = X'847e586e53111ffbc0a86f92'
+>               VERSION = NULL
+> Row 20:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140602|CP_PAY_DT|20140626|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997405|CP_ADJ_DT|20140529|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90871208
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-06 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'440814535387ba28c0a86f92'
+>               VERSION = NULL
+> Row 21:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140903|CP_PAY_DT|20140925|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997484|CP_ADJ_DT|20140829|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 94314131
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-29 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-08-29 00:00:00.000000'
+>            PRIMARYKEY = X'3b905657540102a7c0a86f92'
+>               VERSION = NULL
+> Row 22:
+>              ALIASKEY = X'07500e21390ae2b4c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141119|CP_PAY_DT|20141211|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.997116|CP_ADJ_DT|20141117|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 97990117
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-11-17 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-10-28 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-11-17 00:00:00.000000'
+>            PRIMARYKEY = X'9a4d0c44546a88d0c0a86f92'
+>               VERSION = NULL
+
+lots of mcorporateactions
+	select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey=X'07500e21390ae2b4c0a80116';
+> Row 1:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+> Row 2:
+>   BB_ACTIONMNEMONIC = ACQUIS
+> Row 3:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+
+*********************************************************
+> Row 2:
+>   STOCKKEY = X'313d5cc654cad00fc0a86f92'
+*********************************************************
+select * from mstockalias where STOCKKEY = X'313d5cc654cad00fc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-01-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliant Techsystems Inc
+>     PRIMARYKEY = X'313e5cc654cad00fc0a86f92'
+>       STOCKKEY = X'313d5cc654cad00fc0a86f92'
+>         SYMBOL = ATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'313e5cc654cad00fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'313e5cc654cad00fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|ATK|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101198016
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-29 00:00:00.000000'
+>         BB_IDENTIFIER = OA-W    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = OA-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 29000
+>            BB_UPDATED = TIMESTAMP '2015-01-23 00:00:00.000000'
+>            PRIMARYKEY = X'ac3743b954c2e0d0c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'313e5cc654cad00fc0a86f92'   <--- change the aliaskey
+
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150202|CP_PAY_DT|20150206|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.32|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.997500|CP_ADJ_DT|20150129|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101696015
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-29 00:00:00.000000'
+>         BB_IDENTIFIER = ATK     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-22 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = ATK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-29 00:00:00.000000'
+>            PRIMARYKEY = X'efa3517354caca26c0a86f92'
+>               VERSION = NULL
+
+I think that this second ATK was an erroneous spin off
+let's see
+select count(*) from mticket where stockkey= X'313d5cc654cad00fc0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+
+let's delete the entire stock record, but we need to move the DVD_CASH over.
+update mcorporateaction set ALIASKEY = X'07500e21390ae2b4c0a80116'   where PRIMARYKEY = X'efa3517354caca26c0a86f92';
+done
+
+
+	select * from mcorporateaction where aliaskey=X'313e5cc654cad00fc0a86f92';
+> Row 1:
+>              ALIASKEY = X'313e5cc654cad00fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|ATK|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101198016
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 100040
+>        BB_COMPANYNAME = Alliant Techsystems Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-29 00:00:00.000000'
+>         BB_IDENTIFIER = OA-W    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = OA-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 29000
+>            BB_UPDATED = TIMESTAMP '2015-01-23 00:00:00.000000'
+>            PRIMARYKEY = X'ac3743b954c2e0d0c0a86f92'  <---  delete this
+>               VERSION = NULL
+
+delete everything 
+*********************************************************
+> Row 2:
+>   STOCKKEY = X'313d5cc654cad00fc0a86f92'
+*********************************************************
+set commit false;
+
+delete from mstock where primarykey=  X'313d5cc654cad00fc0a86f92'; 
+
+delete from mwindowstock where stockkey=X'313d5cc654cad00fc0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'313d5cc654cad00fc0a86f92');
+
+delete from mstockalias where stockkey=X'313d5cc654cad00fc0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'313d5cc654cad00fc0a86f92');   
+
+delete from mposition where stockkey=X'313d5cc654cad00fc0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'313d5cc654cad00fc0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'313d5cc654cad00fc0a86f92');
+
+delete from mticket where stockkey=X'313d5cc654cad00fc0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'313d5cc654cad00fc0a86f92';  
+
+commit;
+
+set commit true;
+done
+
+we should only have one ATK now
+
+select distinct stockkey from mstockalias where symbol='ATK';
+> Row 1:
+>   STOCKKEY = X'074f0e21390ae2b4c0a80116'
+select * from mstockalias where STOCKKEY = X'074f0e21390ae2b4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALLIANT TECHSYSTEMS
+>     PRIMARYKEY = X'07500e21390ae2b4c0a80116'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = ATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey=X'07500e21390ae2b4c0a80116';
+there are 23 now
+
+check on 2/3/15 - see that James' ATK is pricing again
+I found this on the quantumonline.com site    
+Notes:  Jan. 31, 2015 -- Alliant Techsystems Inc (ATK: NYSE) announced its stockholders approved the issuance of ATK common stock to Orbital Sciences Corp. (ORB: NYSE) stockholders in connection with the previously announced merger between ATK’s Aerospace and Defense Groups and Orbital. As a result, the planned spinoff remains on track for 2/9. On the closing date, ATK stockholders as of the close of business on February 2, 2015, the record date for the distribution, will receive two shares of Vista Outdoor common stock for every one share of ATK common stock they hold on the record date. As a result, on the closing date, ATK stockholders will own 100 percent of Vista Outdoor. Beginning on February 10, 2015, shares of Vista Outdoor common stock will trade under the ticker symbol VSTO on the New York Stock Exchange (NYSE). The spin-off will be immediately followed by the merger. In connection with the merger, Orbital shareholders will receive 0.449 shares of ATK common stock for each share of Orbital common stock that they hold. As a result, on the closing date, ATK shareholders will own approximately 53.8 percent of the combined company on a fully diluted basis and Orbital shareholders will own the remaining approximately 46.2 percent of the combined company on a fully diluted basis. Following closing, ATK will be renamed Orbital ATK, Inc. and, beginning on February 10, shares of Orbital ATK common stock will trade under the new ticker symbol OA on the NYSE. Shares of Orbital common stock are expected to be delisted after the close of trading on February 9.
+
+2/3/15 - checking james' 21 fund
+let's try invalidating his fund
+
+/Marketocracy/bin/dbtool lookup fund 2004_porsche_911
+fund: 2004_porsche_911
+  PK: [B5CB28B554120500C0A86F98]
+  symbol: [21]
+  managerKey: [3BB8746A50106D7BC0A80135]
+  loginName: [2004_porsche_911]
+
+/Marketocracy/bin/fptool invalidateFund  B5CB28B554120500C0A86F98
+/Marketocracy/bin/fptool priceFund B5CB28B554120500C0A86F98
+
+still no prices 
+1/28 and 1/29 are fine
+
+1/30 and beyond no prices in 21 ledger
+
+let's get the companyID for ATK
+/Marketocracy/bin/dbtool lookup stock ATK
+>>>> dbtool started at 2015-02-03 09:21:34 -0500
+stock: ATK
+  PK       : [074F0E21390AE2B4C0A80116]
+  companyID: [4196]
+  symbol   : [ATK]
+  name     : [ALLIANT TECHSYSTEMS]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-03 09:21:34 -0500
+
+connect to marketdata@stocks user eouser;
+
+select * from stockprices where companyid=4196;
+> Row 3727:
+>   DAYNUMBER = 5128
+>   COMPANYID = 4196
+>      OPENED = 1195700
+>        HIGH = 1217700
+>         LOW = 1195200
+>      CLOSED = 1206900
+>      VOLUME = 292914
+> Row 3728:
+>   DAYNUMBER = 5132
+>   COMPANYID = 4196
+>      OPENED = 1206900
+>        HIGH = 1247500
+>         LOW = 1196100
+>      CLOSED = 1245200
+>      VOLUME = 439320
+> Row 3729:
+>   DAYNUMBER = 5133
+>   COMPANYID = 4196
+>      OPENED = 1244700
+>        HIGH = 1256800
+>         LOW = 1215000
+>      CLOSED = 1248200
+>      VOLUME = 601004
+> Row 3730:
+>   DAYNUMBER = 5134
+>   COMPANYID = 4196
+>      OPENED = 1252800
+>        HIGH = 1284200
+>         LOW = 1248300
+>      CLOSED = 1282200
+>      VOLUME = 421269
+> Row 3731:
+>   DAYNUMBER = 5135
+>   COMPANYID = 4196
+>      OPENED = 1277300
+>        HIGH = 1318400
+>         LOW = 1272500
+>      CLOSED = 1318400
+>      VOLUME = 904028
+> Row 3732:
+>   DAYNUMBER = 5138
+>   COMPANYID = 4196
+>      OPENED = 1309500
+>        HIGH = 1333300
+>         LOW = 1290100
+>      CLOSED = 1327500
+>      VOLUME = 512121
+> Row 3733:
+>   DAYNUMBER = 5139
+>   COMPANYID = 4196
+>      OPENED = 1307600
+>        HIGH = 1332200
+>         LOW = 1300600
+>      CLOSED = 1313700
+>      VOLUME = 409941
+> Row 3734:
+>   DAYNUMBER = 5140
+>   COMPANYID = 4196
+>      OPENED = 1325500
+>        HIGH = 1326300
+>         LOW = 1273100
+>      CLOSED = 1279900
+>      VOLUME = 455857
+
+here are the last ones - what are the days?
+
+/Users/build/bin/daynumber.py 3734
+Thu 2011-03-24 (3734)   that is werid, so old 
+
+
+select distinct stockkey from mstockalias where symbol='ATK';
+> Row 1:
+>   STOCKKEY = X'074f0e21390ae2b4c0a80116'
+
+select * from mstockalias where STOCKKEY = X'074f0e21390ae2b4c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018804104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ALLIANT TECHSYSTEMS
+>     PRIMARYKEY = X'07500e21390ae2b4c0a80116'
+>       STOCKKEY = X'074f0e21390ae2b4c0a80116'
+>         SYMBOL = ATK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'07500e21390ae2b4c0a80116';
+it's current
+
+
+let's check the max day number for our stock
+select * from mstock where primarykey=X'074f0e21390ae2b4c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'07500e21390ae2b4c0a80116'
+>                NAME = ALLIANT TECHSYSTEMS
+>          PRIMARYKEY = X'074f0e21390ae2b4c0a80116'
+>              SYMBOL = ATK
+>           COMPANYID = 4196
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7e4a
+
+
+select min(daynumber) from stockprices where companyid = 4196;
+> Row 1:
+>   _C001 = -245
+select max(daynumber) from stockprices where companyid = 4196;
+> Row 1:
+>   _C001 = 5140
+/Users/build/bin/daynumber.py 5140
+stocks:~ build$ /Users/build/bin/daynumber.py 5140
+Wed 2015-01-28 (5140)
+
+
+
+[2/3/15 7:15:45 AM] Kim Ray: If you run Marketocracy/Scripts/stocks/daily/stock-price-importer.rb -h, it shows you the help, but basically it's
+[2/3/15 7:16:24 AM] Kim Ray: /Marketocracy/Scripts/stocks/daily/stock-price-importer.rb -s <symbol> -b 20150129 -e 20150202
+[2/3/15 7:16:46 AM] Kim Ray: To invalidate
+[2/3/15 7:17:02 AM] Kim Ray: /Marketocracy/bin/StockPriceBuilder invalidate 2015-01-29
+
+let's try this:
+/Marketocracy/Scripts/stocks/daily/stock-price-importer.rb -s ATK -b 20150129 -e 20150202
+Import prices for ATK from 2015-01-29 (5141) to 2015-02-02 (5145)
+Saving StockPrice records for 2015-01-29..
+1 stock price records saved
+Stock prices created successfully for 2015-01-29.
+Saving StockPrice records for 2015-01-30..
+1 stock price records saved
+Stock prices created successfully for 2015-01-30.
+Saving StockPrice records for 2015-02-02..
+1 stock price records saved
+Stock prices created successfully for 2015-02-02.
+SUCCESS
+
+that worked wel
+let's check the max date 
+
+select max(daynumber) from stockprices where companyid = 4196;
+> Row 1:
+>   _C001 = 5145
+
+woo hoo they are  there
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2015-01-29
+
+invalidate the prices from 1/29/15 this should be picked up on Wed 2/4/15
+
+2/4/15 checking prices 
+let's check James  2004_porsche_911
+/Marketocracy/bin/dbtool decryptpassword -loginName 2004_porsche_911
+Password = (1)upOnwxxx
+
+his 21 fund has ATK
+LEDGER
+Date	Start	Change	End	Type
+Sep 12, 2014		360	360	Buy
+Total: 360
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 12, 2014	360	$18.00	$47,765.45	$132.68
+ 	 	 	
+SELLS
+You have no sells for this position
+
+check the ledger 
+on 2/4/15 it is priced!
+check the first date that he got it  20140912   it is pricing on this day, also

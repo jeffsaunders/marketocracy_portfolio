@@ -1,0 +1,359 @@
+HUFCQ
+date:  11/25/15
+ticker:   HUFCQ
+
+yahoo: nothing
+
+quantum: nothing
+
+oursite:
+Symbol: HUFCQ	Name: HUFFY CORP	Price: $0.00
+Volume:	Sector: Consumer Discretionary	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+ 
+		
+
+
+research  stock info  HUFCQ   
+ [NEW QUOTE]       
+Corporate Actions for HUFFY CORP	  November 25, 2015
+left curve	  symbol changes for HUFCQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+16 Aug 04	HUF	HUFC	Change in the ticker (trading) symbol from HUF to HUFC
+01 Nov 04	HUFC	HUFCQ	Change in the ticker (trading) symbol from HUFC to HUFCQ
+ 	 	 
+left curve	  listing changes for HUFCQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 16, 2004	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that HUFC trades on from NYSE to OTCBB-OTHER
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=HUFCQ
+
+check MAdmin
+Stock:HUFFY CORP  Symbol:HUFCQ
+Date: 11/25/2015
+
+37 users found
+
+1	adamson	ajmorris	anoodle	archangel	bear36	bronsonr	bsnh	cwooley	dchambers	dmtest
+2	genpitaly	gfontana	grahamnewman	jkroening	josue	juliuspleaser	kgreen2861	leana	licheng_apl	matias
+3	mhutts	mjohnson6	mlandsberg	nortie	nsharp	nvelez343	paulmeyer	renova	rkarplus	rrobertson
+4	stefan17	stock_picker	thanlon	thehatinthecat	tivison	vitaminc6779	wasa892	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'HUFCQ';  
+> Row 1:
+>   STOCKKEY = X'16a30e21390b0de1c0a80116'
+select * from mstockalias where stockkey=X'16a30e21390b0de1c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'16a40e21390b0de1c0a80116'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'27f66a03412166f3c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-08-16 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'70546a0941216712c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'a7c81e4741771861c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'8b9b3be74186f87ec0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='HUFCQ'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock HUFCQ
+>>>> dbtool started at 2015-11-25 19:05:50 -0500
+stock: HUFCQ
+  PK       : [16A30E21390B0DE1C0A80116]
+  companyID: [5177]
+  symbol   : [HUFCQ]
+  name     : [HUFFY CORP]
+  date     : [2004-11-01 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-25 19:05:50 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5177
+2005-10-06 (Thu) [1739]: O:0.0170 H:0.0230 L:0.0170 C:0.0230 V:349300 TSO:0 A:0.0230 R:1.0000 CA:0.0000
+2005-10-07 (Fri) [1740]: O:0.0250 H:0.0300 L:0.0190 C:0.0210 V:891000 TSO:0 A:0.0210 R:1.0000 CA:0.0000
+2005-10-08 (Sat) [1741]: <WEEKEND>
+2005-10-09 (Sun) [1742]: <WEEKEND>
+2005-10-10 (Mon) [1743]: O:0.0180 H:0.0200 L:0.0180 C:0.0180 V:90100 TSO:0 A:0.0180 R:1.0000 CA:0.0000
+2005-10-11 (Tue) [1744]: O:0.0180 H:0.0190 L:0.0180 C:0.0180 V:96400 TSO:0 A:0.0180 R:1.0000 CA:0.0000
+2005-10-12 (Wed) [1745]: O:0.0200 H:0.0200 L:0.0150 C:0.0200 V:79600 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2005-10-13 (Thu) [1746]: O:0.0200 H:0.0200 L:0.0150 C:0.0175 V:208100 TSO:0 A:0.0175 R:1.0000 CA:0.0000
+2005-10-14 (Fri) [1747]: O:0.0175 H:0.0200 L:0.0050 C:0.0055 V:5513100 TSO:0 A:0.0055 R:1.0000 CA:0.0000
+2005-10-15 (Sat) [1748]: <WEEKEND>
+2005-10-16 (Sun) [1749]: <WEEKEND>
+2005-10-17 (Mon) [1750]: O:0.0060 H:0.0060 L:0.0025 C:0.0040 V:2776300 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+2005-10-18 (Tue) [1751]: O:0.0040 H:0.0040 L:0.0040 C:0.0040 V:0 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+2005-10-19 (Wed) [1752]: O:0.0040 H:0.0040 L:0.0040 C:0.0040 V:0 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+2005-10-20 (Thu) [1753]: O:0.0040 H:0.0040 L:0.0040 C:0.0040 V:0 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'16a30e21390b0de1c0a80116' and shares > 0 order by closed; 
+> Row 389:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2005-10-10 14:32:00.000000'
+>        COMMENT = 
+>     COMMISSION = 6.010643
+>   CURRENTORDER = X'cd6920e4434a7b4ec0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'c59549d642700c5dc0a80134'
+>       MODIFIED = NULL
+>            NET = 126.223502
+>         OPENED = TIMESTAMP '2005-10-10 10:31:42.000000'
+>          PRICE = 0.020615
+>     PRIMARYKEY = X'cd6720e4434a7b4ec0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 6123.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'16a30e21390b0de1c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'16a30e21390b0de1c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'16a30e21390b0de1c0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 37 members who hold this stock
+quantum:  nothing
+last ticket:  2005-10-10  PRICE = 0.020615
+last price:  2005-10-17 (Mon) [1750]: O:0.0060 H:0.0060 L:0.0025 C:0.0040 V:2776300 TSO:0 A:0.0040 R:1.0000 CA:0.0000
+
+going with 20051017 0.0040
+
+/Marketocracy/bin/cahelper -symbol  HUFCQ  -effective 20051017 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0040 -acqShare 0 -purchaser HUFCQ   >& /Users/build/caout/HUFCQ.20151125-DELIST.out
+HUFCQ.20151125-DELIST.out
+stocks1:~/caout build$ tail -f HUFCQ.20151125-DELIST.out
+D: (11-25 19:08:23.828) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-25 19:08:48.834) cahelper started on 2015-11-25 19:08:48 -0500
+
+D: (11-25 19:08:49.056) There are [0] open tickets for HUFCQ on 20051017
+D: (11-25 19:08:49.463) StockFileLoad Version:4.0
+D: (11-25 19:08:49.464) Loading Stock Data
+D: (11-25 19:09:29.595) Building Lookup Index
+D: (11-25 19:09:35.669) Finished Building Index
+D: (11-25 19:09:40.163) Finished Loading Stock Data
+D: (11-25 19:09:40.288) Connection to 192.168.111.172:6666 succeeded
+D: (11-25 19:09:42.367) {
+    "ACQUIRED_STOCK" = HUFCQ; 
+    "ACQUIRING_STOCK" = "HUFCQ_FIX"; 
+    AMOUNT = 0.004; 
+    APPLIED = 1; 
+    DATE = 20051017; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "HUFCQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-25 19:09:46.553) SUCCESS
+D: (11-25 19:09:46.554) cahelper finished 2015-11-25 19:09:46 -0500
+Check the results 
+select * from mstockalias where stockkey= X'16a30e21390b0de1c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'16a40e21390b0de1c0a80116'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'27f66a03412166f3c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-08-16 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'70546a0941216712c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-10-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'a7c81e4741771861c0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2004-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'8b9b3be74186f87ec0a80146'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 444356109
+>           DATE = TIMESTAMP '2005-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = HUFFY CORP
+>     PRIMARYKEY = X'6a02458b56564d91c0a86fab'
+>       STOCKKEY = X'16a30e21390b0de1c0a80116'
+>         SYMBOL = HUFCQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25202010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'6a02458b56564d91c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'6a02458b56564d91c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|HUFCQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.004000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151125:070848
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-10-17 00:00:00.000000'
+>         BB_IDENTIFIER = HUFCQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-10-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HUFCQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2005-10-17 00:00:00.000000'
+>            PRIMARYKEY = X'69fc458b56564d90c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'69fc458b56564d90c0a86fab';
+> Row 1:
+>   _C001 = 65.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'69fc458b56564d90c0a86fab'));
+there are XXX fundkeys, save to CA issues HUFCQ fundkeys.txt
+
+For Beta case
+HUFCQ no longer trades but is still active on our site - need to delist 
+
+check on 11/26/15   invalidate funds
+check MAdmin   clear
+
+HUFCQ has been acquired	right curve
+ 	 	
+HUFFY CORP acquired by a private company on 2005-10-17 00:00:00.
+
+
+invalidate reprice and close 
+
+
+

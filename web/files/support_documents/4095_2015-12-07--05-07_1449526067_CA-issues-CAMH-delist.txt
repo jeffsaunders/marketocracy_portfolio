@@ -1,0 +1,572 @@
+CAMH
+something is strange here, maybe a ticker collision.  this one came up in the stocks not pricing list 
+CAMH	38  
+it's active on yahoo  but our site has it as delisted.  let's investigate
+CA issues CAMH delist.txt
+date:   11/30/15
+ticker:   CAMH
+
+yahoo:  
+Cambridge Heart Inc. (CAMH) -Other OTC   Watchlist
+0.00 May 28, 3:46PM EDT
+Pre-Market : NaN
+
+Prev Close:	0.00
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	0.50
+Beta:	1.69
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	0.00 - 0.03
+Volume:	0
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.06
+Div & Yield:	N/A (N/A
+
+May 28  what year? 
+
+quantum:
+Cambridge Heart, Inc.
+Ticker Symbol: CAMH     CUSIP: 131910101     Exchange: OTOTC
+
+Company's Online Profile
+BUSINESS:  Cambridge Heart, Inc. is a healthcare company engaged in the research, development and commercialization of products for the non-invasive diagnosis of cardiac disease. The company’s mission is to reduce the incidence of sudden cardiac arrest by developing accurate, non-invasive technologies to identify individuals at risk of life-threatening arrhythmias.
+Micro Cap Stock -   Market Value $ 20 Million
+
+oursite:
+Symbol: CAMH	Name: CAMBRIDGE HEART	Price: $0.01
+Volume:	Sector: Health Care	Change:
+Short Volume: 0	Style: Micro Cap : Blend	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.01	High:
+200 Day Ave: $0.01	Year Low: $0.00	Low:
+
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+
+
+
+research  stock info  CAMH   
+ [NEW QUOTE]       
+Corporate Actions for CAMBRIDGE HEART	  November 30, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for CAMH	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+19 Apr 13	CAMH	CAMHE	Change in the ticker (trading) symbol from CAMH to CAMHE
+21 May 13	CAMHE	CAMH	Change in the ticker (trading) symbol from CAMHE to CAMH
+ 	 	 
+left curve	  listing changes for CAMH	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Nov 19, 2002	NASDAQ	UQ	NASDAQ-SMALLCAP	UR	Change in the exchange that CAMH trades on from NASDAQ to NASDAQ-SMALLCAP
+May 08, 2003	NASDAQ-SMALLCAP	UR	OTCBB	UU	Change in the exchange that CAMH trades on from NASDAQ-SMALLCAP to OTCBB
+May 21, 2013	OTCBB	UU	OTCBB-OTHER	UV	Change in the exchange that CAMHE trades on from OTCBB to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:CAMBRIDGE HEART  Symbol:CAMH
+Date: 11/30/2015
+
+28 users found
+
+1	afratucello	amaurer	billgoliber	brewhaus	cmmackinnon	ganga_financial_group	gsilcott	holdings	jbriss	jpl1868
+2	jpreble	jrbill94	jrubin@bear.com	kbladlee	lego	leran	magic_money	mbledug	mkotliar	mutziglk
+3	psawlani	rsulliv99	scarface4711	soaqkingred	tarters	tgadoury	traumtaenzer	wmckenzie	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'CAMH';  
+> Row 1:
+>   STOCKKEY = X'd6da0e21390a72bec0a80116'
+
+select * from mstockalias where stockkey=X'd6da0e21390a72bec0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'd6db0e21390a72bec0a80116'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2002-11-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'9e1350c53ddaff62c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2003-05-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'586822073ebb0c5cc0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2003-05-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'0d2323263ebb0cd5c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-04-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'9e1449e65171c6cfc0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMHE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'90e856c4519bfd04c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-05-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'cd865713519bfda2c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2015-07-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'e9a9716255feb165c0a86fab'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'e9a9716255feb165c0a86fab';
+> Row 1:
+>              ALIASKEY = X'e9a9716255feb165c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CAMH|CP_DELIST_REASON|6|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109357409
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 194258
+>        BB_COMPANYNAME = Cambridge Heart Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-08 00:00:00.000000'
+>         BB_IDENTIFIER = CAMH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CAMH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-08 00:00:00.000000'
+>            PRIMARYKEY = X'b8ec1bc055bd47fcc0a86f92'
+>               VERSION = NULL
+
+ah we applied the delist 
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CAMH'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CAMH
+stock: CAMH
+  PK       : [D6DA0E21390A72BEC0A80116]
+  companyID: [1095]
+  symbol   : [CAMH]
+  name     : [CAMBRIDGE HEART]
+  date     : [2015-07-08 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-11-30 09:08:16 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 1095
+2015-04-27 (Mon) [5229]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:100000 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-04-28 (Tue) [5230]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:20000 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-04-29 (Wed) [5231]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:700 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-04-30 (Thu) [5232]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:228000 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-01 (Fri) [5233]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:228000 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-02 (Sat) [5234]: <WEEKEND>
+2015-05-03 (Sun) [5235]: <WEEKEND>
+2015-05-04 (Mon) [5236]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-05 (Tue) [5237]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-06 (Wed) [5238]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-07 (Thu) [5239]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-08 (Fri) [5240]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-09 (Sat) [5241]: <WEEKEND>
+2015-05-10 (Sun) [5242]: <WEEKEND>
+2015-05-11 (Mon) [5243]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-12 (Tue) [5244]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-13 (Wed) [5245]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-14 (Thu) [5246]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-15 (Fri) [5247]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-16 (Sat) [5248]: <WEEKEND>
+2015-05-17 (Sun) [5249]: <WEEKEND>
+2015-05-18 (Mon) [5250]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-19 (Tue) [5251]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-20 (Wed) [5252]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-21 (Thu) [5253]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-22 (Fri) [5254]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-23 (Sat) [5255]: <WEEKEND>
+2015-05-24 (Sun) [5256]: <WEEKEND>
+2015-05-25 (Mon) [5257]: <HOLIDAY>
+2015-05-26 (Tue) [5258]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-27 (Wed) [5259]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:12500 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-28 (Thu) [5260]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:0 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-05-29 (Fri) [5261]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000 <---
+2015-05-30 (Sat) [5262]: <WEEKEND>
+2015-05-31 (Sun) [5263]: <WEEKEND>
+2015-06-01 (Mon) [5264]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-02 (Tue) [5265]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-03 (Wed) [5266]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-04 (Thu) [5267]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-05 (Fri) [5268]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-06 (Sat) [5269]: <WEEKEND>
+2015-06-07 (Sun) [5270]: <WEEKEND>
+2015-06-08 (Mon) [5271]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-09 (Tue) [5272]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-10 (Wed) [5273]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-11 (Thu) [5274]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-12 (Fri) [5275]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+2015-06-15 (Mon) [5278]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-16 (Tue) [5279]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-17 (Wed) [5280]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-18 (Thu) [5281]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-19 (Fri) [5282]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-23 (Tue) [5286]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-23 (Thu) [5316]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-24 (Fri) [5317]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-28 (Tue) [5321]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+2015-07-29 (Wed) [5322]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'd6da0e21390a72bec0a80116' and shares > 0 order by closed; 
+> Row 379:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-05-16 11:56:00.000000'
+>        COMMENT = 
+>     COMMISSION = 23.345000
+>   CURRENTORDER = X'74fc6a3c4fb14c97c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'13c5715545ecba50c0a80135'
+>       MODIFIED = NULL
+>            NET = 443.555000
+>         OPENED = TIMESTAMP '2012-05-14 14:19:03.000000'
+>          PRICE = 0.073926
+>     PRIMARYKEY = X'74fa6a3c4fb14c97c0a80133'
+>         SECFEE = 0.020000
+>         SHARES = 6000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'd6da0e21390a72bec0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd6da0e21390a72bec0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'd6da0e21390a72bec0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST:  
+there are 38 members who hold this stock
+quantum:
+last ticket:  2012-05-16  PRICE = 0.073926
+last price:  2015-05-29 (Fri) [5261]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:64910 A:0.0100 R:1.0000 CA:0.0000 <---
+
+going with 20150529  0.0100
+
+
+/Marketocracy/bin/cahelper -symbol  CAMH  -effective 20150529 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0100 -acqShare 0 -purchaser CAMH   >& /Users/build/caout/CAMH.20151130-DELIST.out 
+CAMH.20151130-DELIST.out
+stocks1:~/caout build$ tail -f CAMH.20151130-DELIST.out
+D: (11-30 09:13:29.876) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-30 09:13:55.316) cahelper started on 2015-11-30 09:13:55 -0500
+
+D: (11-30 09:13:55.606) There are [0] open tickets for CAMH on 20150529
+D: (11-30 09:13:56.057) StockFileLoad Version:4.0
+D: (11-30 09:13:56.057) Loading Stock Data
+D: (11-30 09:14:36.584) Building Lookup Index
+D: (11-30 09:14:44.544) Finished Building Index
+D: (11-30 09:14:48.981) Finished Loading Stock Data
+D: (11-30 09:14:49.099) Connection to 192.168.111.172:6666 succeeded
+D: (11-30 09:14:51.195) {
+    "ACQUIRED_STOCK" = CAMH; 
+    "ACQUIRING_STOCK" = "CAMH_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20150529; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CAMH_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-30 09:14:57.488) SUCCESS
+D: (11-30 09:14:57.488) cahelper finished 2015-11-30 09:14:57 -0500
+Check the results 
+select * from mstockalias where stockkey= X'd6da0e21390a72bec0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'd6db0e21390a72bec0a80116'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2002-11-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'9e1350c53ddaff62c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2003-05-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'586822073ebb0c5cc0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2003-05-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'0d2323263ebb0cd5c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-04-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'9e1449e65171c6cfc0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMHE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'90e856c4519bfd04c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2013-05-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'cd865713519bfda2c0a80146'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'83cd0207565c59a3c0a86fab'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+select * from mcorporateaction where aliaskey =X'83cd0207565c59a3c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'83cd0207565c59a3c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CAMH  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151130:091355
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = CAMH_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CAMH_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'83c60207565c59a3c0a86fab'
+>               VERSION = NULL
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 131910101
+>           DATE = TIMESTAMP '2015-07-08 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CAMBRIDGE HEART
+>     PRIMARYKEY = X'e9a9716255feb165c0a86fab'
+>       STOCKKEY = X'd6da0e21390a72bec0a80116'
+>         SYMBOL = CAMH
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey =X'e9a9716255feb165c0a86fab' ;
+
+
+select count(*) from mticket where sourcekey = X'83c60207565c59a3c0a86fab';
+> Row 1:
+>   _C001 = 47.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'83c60207565c59a3c0a86fab'));
+there are 28 fundkeys, save to CA issues CAMH fundkeys.txt
+
+For Beta case
+CAMH no longer trades but is still active on our site - need to delist 
+
+check on 12/1/15   invalidate funds
+check MAdmin  clear
+
+CAMH has been acquired	right curve
+ 	 	
+CAMBRIDGE HEART acquired by a private company on 2015-05-29 00:00:00.
+
+
+invalidate reprice and close 
+
+
+

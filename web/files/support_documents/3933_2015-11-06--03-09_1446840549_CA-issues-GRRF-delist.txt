@@ -1,0 +1,236 @@
+GRRF	
+date:   11/5/15
+ticker:    GRRF
+
+yahoo:
+
+quantum:  nothing 
+
+oursite:
+Symbol: GRRF	Name: China GrenTech Corporation Limited	Price: $3.11
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+no CAs
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=GRRF
+
+check MAdmin
+Stock:China GrenTech Corporation Limited  Symbol:GRRF
+Date: 11/05/2015
+
+35 users found
+
+1	accessstock	aggiee2007	beachbumed	cherrypicks	colbyhouse	energiel	genegibbs	greenab	houstonji_is	jkusy
+2	jlee929	joeelefant	joeylemur	jubals	kctodd	lou.liu	mateok05	mcheng	mike10613	njanderson25
+3	northcutt0	pooyamahmoudian	proforma	pxdesai	reallyk	revblc	reveille	schaubey	seariver	shanecal
+4	sndege	sprydawg	svanness	vrodrigo	vukota	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'GRRF';  
+> Row 1:
+>   STOCKKEY = X'4d1e5d1b45c4c4a0c0a80146'
+select * from mstockalias where stockkey=X'4d1e5d1b45c4c4a0c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16938P107
+>           DATE = TIMESTAMP '2006-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = China GrenTech Corporation Limited
+>     PRIMARYKEY = X'4d1f5d1b45c4c4a0c0a80146'
+>       STOCKKEY = X'4d1e5d1b45c4c4a0c0a80146'
+>         SYMBOL = GRRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GRRF'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GRRF
+>>>> dbtool started at 2015-11-05 14:06:20 -0500
+stock: GRRF
+  PK       : [4D1E5D1B45C4C4A0C0A80146]
+  companyID: [16471]
+  symbol   : [GRRF]
+  name     : [China GrenTech Corporation Limited]
+  date     : [2006-03-30 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-05 14:06:20 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16471
+2012-04-04 (Wed) [4111]: O:3.0900 H:3.0900 L:3.0800 C:3.0800 V:42341 TSO:24079 A:3.0800 R:1.0000 CA:0.0000
+2012-04-05 (Thu) [4112]: O:3.0500 H:3.1000 L:3.0500 C:3.0800 V:34403 TSO:24079 A:3.0800 R:1.0000 CA:0.0000
+2012-04-06 (Fri) [4113]: <HOLIDAY>
+2012-04-07 (Sat) [4114]: <WEEKEND>
+2012-04-08 (Sun) [4115]: <WEEKEND>
+2012-04-09 (Mon) [4116]: O:3.0600 H:3.1000 L:3.0600 C:3.0700 V:10299 TSO:24079 A:3.0700 R:1.0000 CA:0.0000
+2012-04-10 (Tue) [4117]: O:3.0600 H:3.0900 L:3.0600 C:3.0800 V:18890 TSO:24079 A:3.0800 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:3.0900 H:3.1100 L:3.0800 C:3.1000 V:57812 TSO:24079 A:3.1000 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:3.1000 H:3.1100 L:3.0900 C:3.1100 V:16413 TSO:24079 A:3.1100 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:3.1000 H:3.1200 L:3.1000 C:3.1000 V:70800 TSO:24079 A:3.1000 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:3.1000 H:3.1300 L:3.1000 C:3.1200 V:144618 TSO:24079 A:3.1200 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:3.1100 H:3.1400 L:3.1000 C:3.1100 V:213674 TSO:24079 A:3.1100 R:1.0000 CA:0.0000  <---
+2012-04-18 (Wed) [4125]: O:3.1100 H:3.1400 L:3.1000 C:3.1100 V:213674 TSO:24079 A:3.1100 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:3.1100 H:3.1400 L:3.1000 C:3.1100 V:213674 TSO:24079 A:3.1100 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:3.1100 H:3.1400 L:3.1000 C:3.1100 V:213674 TSO:24079 A:3.1100 R:1.0000 CA:0.0000
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'4d1e5d1b45c4c4a0c0a80146' and shares > 0 order by closed; 
+> Row 425:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-02-10 13:43:00.000000'
+>        COMMENT = 
+>     COMMISSION = 34.600000
+>   CURRENTORDER = X'4aed1af94f353eb4c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8803477a46b1f1fbc0a80132'
+>       MODIFIED = NULL
+>            NET = 2008.159916
+>         OPENED = TIMESTAMP '2012-02-10 10:58:44.000000'
+>          PRICE = 2.901965
+>     PRIMARYKEY = X'4aeb1af94f353eb4c0a80133'
+>         SECFEE = 0.040000
+>         SHARES = 692.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'4d1e5d1b45c4c4a0c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'4d1e5d1b45c4c4a0c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4d1e5d1b45c4c4a0c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'4d1e5d1b45c4c4a0c0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 35 members who hold this stock
+quantum:  noting 
+last ticket:  2012-02-10  PRICE = 2.901965
+last price:  2012-04-17 (Tue) [4124]: O:3.1100 H:3.1400 L:3.1000 C:3.1100 V:213674 TSO:24079 A:3.1100 R:1.0000 CA:0.0000  <---
+
+going with 20120417 3.11
+
+/Marketocracy/bin/cahelper -symbol  GRRF  -effective 20120417 -type ACQUIS -exchange UN -acqType 1 -acqCash GRRF -acqShare 0 -purchaser 3.11   >& /Users/build/caout/GRRF.20151105-DELIST.out 
+GRRF.20151105-DELIST.out
+stocks1:~/caout build$ tail -f GRRF.20151105-DELIST.out
+D: (11-05 14:21:34.760) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-05 14:22:33.705) cahelper started on 2015-11-05 14:22:33 -0500
+
+D: (11-05 14:22:34.929) There are [0] open tickets for GRRF on 20120417
+D: (11-05 14:22:35.316) StockFileLoad Version:4.0
+D: (11-05 14:22:35.321) Loading Stock Data
+D: (11-05 14:24:15.158) Building Lookup Index
+D: (11-05 14:24:29.044) Finished Building Index
+D: (11-05 14:24:39.445) Finished Loading Stock Data
+D: (11-05 14:24:39.481) Connection to 192.168.111.172:6666 succeeded
+D: (11-05 14:24:42.007) {
+    "ACQUIRED_STOCK" = GRRF; 
+    "ACQUIRING_STOCK" = "3.11"; 
+    AMOUNT = 0; 
+    APPLIED = 1; 
+    DATE = 20120417; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "3.11"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-05 14:24:47.981) SUCCESS
+D: (11-05 14:24:47.982) cahelper finished 2015-11-05 14:24:47 -0500
+Check the results 
+select * from mstockalias where stockkey= X'4d1e5d1b45c4c4a0c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16938P107
+>           DATE = TIMESTAMP '2006-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = China GrenTech Corporation Limited
+>     PRIMARYKEY = X'4d1f5d1b45c4c4a0c0a80146'
+>       STOCKKEY = X'4d1e5d1b45c4c4a0c0a80146'
+>         SYMBOL = GRRF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16938P107
+>           DATE = TIMESTAMP '2012-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = China GrenTech Corporation Limited
+>     PRIMARYKEY = X'c9df097b563bac7ac0a86fab'
+>       STOCKKEY = X'4d1e5d1b45c4c4a0c0a80146'
+>         SYMBOL = GRRF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45201020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'c9df097b563bac7ac0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'c9df097b563bac7ac0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GRRF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151105:022233
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = 3.11     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = 3.11
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-17 00:00:00.000000'
+>            PRIMARYKEY = X'c9d9097b563bac79c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'c9d9097b563bac79c0a86fab';
+> Row 1:
+>   _C001 = 64.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'c9d9097b563bac79c0a86fab'));
+there are 64 fundkeys, save to CA issues GRRF fundkeys.txt
+
+For Beta case
+GRRF no longer trades but is still active on our site - need to delist 
+
+check on 11/6/15   invalidate funds
+check MAdmin  clear
+
+ GRRF has been acquired	right curve
+ 	 	
+China GrenTech Corporation Limited acquired by a private company on 2012-04-17 00:00:00.
+
+invalidate reprice and close 
+
+
+

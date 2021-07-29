@@ -1,0 +1,390 @@
+date:  3/4/15
+ticker HBI
+
+4 for 1 split today  several members wrote in
+
+splits calendar from yahoo
+Splits Calendar - March 2015
+Calendars: U.S. Earnings | Conf. Calls | Surprises | Splits | IPO | Economic
+Previous Month | March 2015 | Next Month
+Payable	Ex Date	Company	Symbol	Optionable?	Ratio	Announced	Add To My
+Calendar
+Mar 03	Mar 04	Hanesbrands	HBI	Y	4-1	Jan 28	 
+ 	Mar 04	NJ Resources	NJR	Y	2-1	Jan 21	 
+Mar 10	Mar 11	Rollins	ROL	Y	3-2	Jan 27	Add
+Mar 18	Mar 19	Visa	V	Y	4-1	Jan 29	Add
+Mar 27	Mar 30	Gildan Activewear	GIL	Y	2-1	Feb 04	Add
+
+select distinct stockkey from mstockalias where symbol='HBI';
+> Row 1:
+>   STOCKKEY = X'157b0e21390b0a7cc0a80116'
+> Row 2:
+>   STOCKKEY = X'fe4722a944ff8811c0a80146'
+
+
+there are two:
+> HBI 1:
+>   STOCKKEY = X'157b0e21390b0a7cc0a80116'
+select * from mstockalias where STOCKKEY = X'157b0e21390b0a7cc0a80116';
+delisted 
+> HBI 2:
+>   STOCKKEY = X'fe4722a944ff8811c0a80146'
+select * from mstockalias where STOCKKEY = X'fe4722a944ff8811c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 410345102
+>           DATE = TIMESTAMP '2006-09-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Hanesbrands Inc
+>     PRIMARYKEY = X'fe4822a944ff8811c0a80146'
+>       STOCKKEY = X'fe4722a944ff8811c0a80146'
+>         SYMBOL = HBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = LG
+select * from mcorporateaction where aliaskey=X'fe4822a944ff8811c0a80146' order by BB_EFFECTIVE;
+lots of dvd cash no split   check unapplied ones
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='HBI' order by BB_EFFECTIVE;
+
+check MAdmin for 2015--03-04
+Stock:Hanesbrands Inc  Symbol:HBI
+Date: 03/04/2015
+
+430 users found
+
+1	14246	2_2-buffett	2_plus_2	5prime	DividendValueInvestor	abhishek002	abowker416	acmusat	ada41dad	aem18
+2	afernandez	aferrell1	ages5	agiampietro	agleason	ahsen	alacorte	alanbz2	alistair	amarburger
+3	amelan	amichelini	anieves089	apayne	apreuss	arcdoc	arosenberg	aschaefer	ashley52	ayala2228
+4	babyrocco	bachelorjwinc	bappp	basilakos	beny	bgraham	bigrascal	billtown	billyen	bkoffman
+5	blove	bltboy1	bluehfl	bluewing	bobbyg1955	bobevans	boboyle	bolo24	brandi768	brettg98
+6	bri1211	brubly	bsnh	bulldog357	bunnyluv	bwoyat	byrom	camqtr	capital_strategies_group	carloslove
+7	carlullerich	cbologna	cbryden	ccarrington	cdefranceschi	cds_jr	charlotte	christopher	chuckcraig	cifdog
+8	clarkrl2	cmanger	cmartin3	cmc308	cmorrison1	cmorrison_iii	cmrodrig	coachstroke	colinkayla	collin2985
+9	cologne	colthz	corpraider	cowdude	cpaugh	crazykid	crippledpolicia	crowderr	csimpson	csmith2
+10	cstafford	ctiesman	cussins	cwhittington	cyrus1223	dakcapital	danilors	danpochettes	daqist	dari
+11	daveta	daytraderpc	dboyd1	dchappell	dchappell1	dcolera	dedstroke2	delavejb_is	deverhar	dfaerberboeck
+12	dhartman	dino_andronikidis	djarvill	dleid	dlundgren	dnrinehart	doc_zeke	docdavidw	drs1000	drs1001
+13	dsanford	dsantiago	dslguy	eagle51834	eandres	eb2568	efoley	eftan	elundberg	encyclopediajake
+14	enhanced	ericm	eriley16	explorer7	falco	fasttom55	fatpitch	fbphenom	fernandograu	ferrariman60
+15	fmagazino	folly	fsu6827	garrisdk	garyheyland	gedwards	generallarrylee	gkoeck	gmcil	gordy7272
+16	goshia	governor	gp	gregss	gtinta	gwilliamson1	haegint	hale7990	hammersmn	hao
+17	harbak	harpua21	hartless71	hawkskywalker	hayesja_is	helpontheway	hendro	henry757	hernandez	hilltop21
+18	hioffshore	hrick	hysites	i_love_kitties	ibraganza	iburstein	icalledherdesire	indofdx	infocisco	jacob_reynolds
+19	jaenam	jalexander	jamal	jasonshang	jbowie	jcalder469	jcesare	jck_ss	jdamian_jr	jdattoli
+20	jespinal195	jespinosa1	jessih	jgervais1	jgiles	jguinn	jhelmus	jimfink	jimyy	jkliora
+21	jkmack	jl0525	jlindholm	jlynch	jmendl	jmilk	jmoon	joehead	johnmstone	jordangirl128
+22	jqc	jsenior007	jsitte	jskarphol	jtaylor3	judy	jurac	justin123	jverrillo	jwpconsulting
+23	jzeunik	karakaya	katelyn17	kfnst	kikola	kimeric	king_sean	kkalisch	km2004	konetzni314
+24	kortegel	kpduty	krieder	kurssprung	kyle	kzack	ladymerlin	laffer	larryl	laurab
+25	ldoheny1	leo	lgibson1	liws	longood	lordby	lorie	lstrickland	luis439	lveale
+26	lwroblewski	lycurgus	majenifuja	manny732	mapei	maple	marczucker	markitmark	maxan	mbarbon
+27	mcfadden2002	mcfadden4	mcrassus	mcsiguy	mde_ridder	memlong	mfac	mgoldner	mhaisekar	mike_connor723
+28	mikelef	mikeytrousers	minathig	mitchsmith	mj2345unc	mjz119	mkulcsar	ml5304	mlavergne	mmarcewicz
+29	mr.money	mrjones	mrx	msayres	msnow	mstover1	mverlinde	mw9033	nanci	nathanielwhite
+30	ndgolz	neese	newjannissary	nick410s	ninareeva	nlg	nodax	nole74_99	nora.coombs@ge.com	nshanske
+31	nsync	ocanta	og2man	oroborean	orpheum	osbunr	outsidetrader	paigec48	pangeanamerican	pani5ue
+32	pdimopoulos	pencils2	philadopolis	phollingshead	pjbarry	pjmcnamara	pkenin	plundstedt001	pnaughton	porkfat
+33	portfolio12345	pspark	qpr	quadtay	rabockma	rbloemers	reesegreens	rellimhj	rerica	revblc
+34	reyesbrandon812	rfc	rgeraci2	rgerber	rgp44	rhastaman	rhayder	richardk	riverguy	rjcraiu
+35	rjk	rkennedy	rmoore1	rogeriopedrozo	roland	roysuman	rsamson	rtoic	rwilberg	rwwaldon
+36	sabeth	samsam	samt29	sbarnes	schaco	schaubey	screwdafed	seblanglois	sharaswindler	sherndon2
+37	simracer	siraalap	skilgore76	slaujr	smallcap	smoknjay	smoore	soldteeth	sony88	sorengi
+38	spike021	sroy	ssrj	sstannard-stockton	stack888	stanglx718	stefano2012	stellar	stemar	stevenlberry
+39	strata	streets	stroszek	sts6	swab	syarnell	sydfest	tafkadave	teriksen	tgmmoney
+40	tims	tkeyser	tlawson	tmarotta	tonys_37167	trejder	tschenk1	tv_weber	ulchie	unbeekabee
+41	valuevester	vector1990	vholmwood	vinsom68	vintage	vlapuma	voland	vryknottyboy	vwismer	wallcom
+42	wallstreet16	weckman	wellsgbw	wgern	wildcurlgirl	williads	wkulis	wkusakabe	wnious	wova4
+43	wpicaco	wstarrett	wwasilev	xauzas	xpassageintimex	yabt	yodasminion	yofromcanada	zekolla	zentrade
+
+check the database 
+select * from mstockalias where STOCKKEY = X'fe4722a944ff8811c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 410345102
+>           DATE = TIMESTAMP '2006-09-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Hanesbrands Inc
+>     PRIMARYKEY = X'fe4822a944ff8811c0a80146'
+>       STOCKKEY = X'fe4722a944ff8811c0a80146'
+>         SYMBOL = HBI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = LG
+
+select * from mcorporateaction where aliaskey=X'fe4822a944ff8811c0a80146' order by BB_EFFECTIVE;
+> Row 10:
+>              ALIASKEY = X'fe4822a944ff8811c0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|4 for 1|CP_RATIO|4.000000|CP_RECORD_DT|20150209|CP_PAY_DT|20150303|CP_STOCK_SPLT_TYP|3000|CP_ADJ|4.000000|CP_ADJ_DT|20150304|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101899119
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 10811127
+>        BB_COMPANYNAME = Hanesbrands Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-04 00:00:00.000000'
+>         BB_IDENTIFIER = HBI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = HBI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-28 00:00:00.000000'
+>            PRIMARYKEY = X'd37009ce54c97a57c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'd37009ce54c97a57c0a86f92';
+> Row 1:
+>   _C001 = 1366.000000
+
+select count(*) from mticket where stockkey=X'fe4722a944ff8811c0a80146' and sourcekey is null and closed >= TIMESTAMP'2015-03-04 00:00:00.000000';
+> Row 1:
+>   _C001 = 1.000000
+
+one trade
+select * from mticket where stockkey=X'fe4722a944ff8811c0a80146' and sourcekey is null and closed >= TIMESTAMP'2015-03-04 00:00:00.000000';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-03-04 09:31:32.000000'
+>        COMMENT = 
+>     COMMISSION = 1.000000
+>   CURRENTORDER = X'd2d43dac54f65897c0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'7514023e3fe9d73cc0a80134'
+>       MODIFIED = NULL
+>            NET = 638.516000
+>         OPENED = TIMESTAMP '2015-03-03 19:57:59.000000'
+>          PRICE = 31.925800
+>     PRIMARYKEY = X'd2d23dac54f65897c0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 20.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'fe4722a944ff8811c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+sold 20 shares at 31.925
+select loginname from mmanager where primarykey=X'7514023e3fe9d73cc0a80134';
+> Row 1:
+>   LOGINNAME = laurab
+
+your holdings of HBI	
+ 	 	
+Fund	Shares	Value	Portion of fund
+dmf	 0	 N/A	 N/A
+LMF	 0	 N/A	 N/A
+pve	9,160	 $296,051.20	 9.96%
+LFP	7,340	 $237,228.80	 9.96%
+REIT	 0	 N/A	 N/A
+B	 0	 N/A	 N/A
+LMF1	 0	 N/A	 N/A
+Mom	 0	 N/A	 N/A
+Money	 0	 N/A	 N/A
+LowPE	 0	 N/A	 N/A
+bam	 0	 N/A	 N/A
+TRD	 0	 N/A	 N/A
+G_etf	 0	 N/A	 N/A
+
+pve
+LEDGER
+Date	Start	Change	End	Type
+Jun 17, 2014		651	651	Buy
+Jun 19, 2014	651	650	1301	Buy
+Jun 20, 2014	1301	650	1951	Buy
+Jun 23, 2014	1951	680	2631	Buy
+Jun 24, 2014	2631	539	3170	Buy
+Jun 26, 2014	3170	-170	3000	Sell
+Jun 27, 2014	3000	-30	2970	Sell
+Jul 28, 2014	2970	-70	2900	Sell
+Aug 26, 2014	2900	-30	2870	Sell
+Sep 04, 2014	2870	-90	2780	Sell
+Sep 05, 2014	2780	-30	2750	Sell
+Sep 15, 2014	2750	-20	2730	Sell
+Sep 26, 2014	2730	-80	2650	Sell
+Oct 02, 2014	2650	-20	2630	Sell
+Oct 03, 2014	2630	-40	2590	Sell
+Oct 09, 2014	2590	-20	2570	Sell
+Oct 22, 2014	2570	-20	2550	Sell
+Dec 03, 2014	2550	-10	2540	Sell
+Dec 05, 2014	2540	-40	2500	Sell
+Dec 16, 2014	2500	-20	2480	Sell
+Dec 24, 2014	2480	-20	2460	Sell
+Jan 21, 2015	2460	30	2490	Buy
+Jan 29, 2015	2490	-30	2460	Sell
+Feb 06, 2015	2460	-20	2440	Sell
+Feb 10, 2015	2440	-30	2410	Sell
+Feb 26, 2015	2410	-100	2310	Sell
+Mar 03, 2015	2310	-20	2290	Sell
+Mar 04, 2015	2290	6870	9160	Corporate Action
+Total: 9,160
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jun 17, 2014	251	$12.55	$21,530.61	$85.78
+Jun 17, 2014	400	$20.00	$34,870.80	$87.18
+Jun 19, 2014	650	$32.50	$56,474.80	$86.88
+Jun 20, 2014	650	$32.50	$57,129.55	$87.89
+Jun 23, 2014	680	$34.00	$60,064.70	$88.33
+Jun 24, 2014	539	$26.95	$47,940.18	$88.94
+Jan 21, 2015	30	$1.50	$3,196.80	$106.56
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 26, 2014	170	$8.50	$0.37	$16,627.63	$97.81
+Jun 27, 2014	30	$1.50	$0.07	$2,943.83	$98.13
+Jul 28, 2014	70	$3.50	$0.13	$7,094.37	$101.35
+Aug 26, 2014	30	$1.50	$0.06	$3,105.42	$103.51
+Sep 4, 2014	70	$3.50	$0.14	$7,517.51	$107.39
+Sep 4, 2014	20	$1.00	$0.04	$2,146.16	$107.31
+Sep 5, 2014	30	$1.50	$0.06	$3,223.44	$107.45
+Sep 15, 2014	20	$1.00	$0.04	$2,130.96	$106.55
+Sep 26, 2014	80	$4.00	$0.15	$8,757.91	$109.47
+Oct 2, 2014	20	$1.00	$0.04	$2,161.16	$108.06
+Oct 3, 2014	40	$2.00	$0.08	$4,434.22	$110.86
+Oct 9, 2014	20	$1.00	$0.04	$2,216.36	$110.82
+Oct 22, 2014	20	$1.00	$0.04	$2,172.36	$108.62
+Dec 3, 2014	10	$0.50	$0.02	$1,133.38	$113.34
+Dec 5, 2014	30	$1.50	$0.06	$3,400.74	$113.36
+Dec 5, 2014	10	$0.50	$0.02	$1,135.98	$113.60
+Dec 16, 2014	20	$1.00	$0.04	$2,185.96	$109.30
+Dec 24, 2014	20	$1.00	$0.04	$2,222.96	$111.15
+Jan 29, 2015	30	$1.50	$0.07	$3,475.73	$115.86
+Feb 6, 2015	20	$1.00	$0.05	$2,305.15	$115.26
+Feb 10, 2015	30	$1.50	$0.07	$3,478.13	$115.94
+Feb 26, 2015	80	$4.00	$0.18	$10,254.22	$128.18
+Feb 26, 2015	20	$1.00	$0.05	$2,554.75	$127.74
+Mar 3, 2015	20	$1.00	$0.05	$2,551.95	$127.60
+
+LFP
+LEDGER
+Date	Start	Change	End	Type
+Jun 17, 2014		381	381	Buy
+Jun 18, 2014	381	380	761	Buy
+Jun 19, 2014	761	260	1021	Buy
+Jun 20, 2014	1021	390	1411	Buy
+Jun 23, 2014	1411	370	1781	Buy
+Jun 24, 2014	1781	360	2141	Buy
+Jun 26, 2014	2141	109	2250	Buy
+Jul 23, 2014	2250	-20	2230	Sell
+Aug 26, 2014	2230	-20	2210	Sell
+Sep 02, 2014	2210	-40	2170	Sell
+Sep 03, 2014	2170	-20	2150	Sell
+Sep 04, 2014	2150	-40	2110	Sell
+Sep 08, 2014	2110	10	2120	Multiple
+Sep 26, 2014	2120	-40	2080	Sell
+Oct 02, 2014	2080	-20	2060	Sell
+Oct 03, 2014	2060	-40	2020	Sell
+Oct 09, 2014	2020	-10	2010	Sell
+Jan 29, 2015	2010	-40	1970	Sell
+Feb 06, 2015	1970	-20	1950	Sell
+Feb 26, 2015	1950	-90	1860	Sell
+Feb 27, 2015	1860	-20	1840	Sell
+Mar 04, 2015	1840	5500	7340	Multiple
+Total: 7,340
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jun 17, 2014	121	$6.05	$10,385.39	$85.83
+Jun 17, 2014	260	$13.00	$22,667.00	$87.18
+Jun 18, 2014	380	$19.00	$33,072.39	$87.03
+Jun 19, 2014	260	$13.00	$22,603.07	$86.93
+Jun 20, 2014	390	$19.50	$34,247.84	$87.82
+Jun 23, 2014	370	$18.50	$32,694.80	$88.36
+Jun 24, 2014	360	$18.00	$32,049.08	$89.03
+Jun 26, 2014	59	$2.95	$5,777.87	$97.93
+Jun 26, 2014	50	$2.50	$4,893.90	$97.88
+Sep 8, 2014	30	$1.50	$3,263.60	$108.79
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 23, 2014	20	$1.00	$0.05	$1,958.55	$97.93
+Aug 26, 2014	20	$1.00	$0.04	$2,070.28	$103.51
+Sep 2, 2014	20	$1.00	$0.04	$2,052.76	$102.64
+Sep 2, 2014	20	$1.00	$0.04	$2,074.96	$103.75
+Sep 3, 2014	20	$1.00	$0.04	$2,080.94	$104.05
+Sep 4, 2014	20	$1.00	$0.04	$2,096.96	$104.85
+Sep 4, 2014	20	$1.00	$0.04	$2,149.76	$107.49
+Sep 8, 2014	20	$1.00	$0.04	$2,173.76	$108.69
+Sep 26, 2014	40	$2.00	$0.08	$4,378.96	$109.47
+Oct 2, 2014	20	$1.00	$0.04	$2,161.16	$108.06
+Oct 3, 2014	40	$2.00	$0.08	$4,434.22	$110.86
+Oct 9, 2014	10	$0.50	$0.02	$1,108.18	$110.82
+Jan 29, 2015	20	$1.00	$0.05	$2,320.35	$116.02
+Jan 29, 2015	20	$1.00	$0.04	$2,317.16	$115.86
+Feb 6, 2015	20	$1.00	$0.05	$2,305.15	$115.26
+Feb 26, 2015	90	$4.50	$0.20	$11,536.00	$128.18
+Feb 27, 2015	20	$1.00	$0.05	$2,552.55	$127.63
+Mar 4, 2015	20	$1.00	$0.02	$638.52	$31.93
+
+sold 20 shares at the correct price
+
+check the site  on 3/5/15
+ cash dividends paid by HBI	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+16 May 13	20 May 13	03 Jun 13	4	$0.20	Dividend amount:0.2 per share.
+09 Aug 13	13 Aug 13	03 Sep 13	4	$0.20	Dividend amount:0.2 per share.
+06 Nov 13	08 Nov 13	03 Dec 13	4	$0.20	Dividend amount:0.2 per share.
+13 Feb 14	18 Feb 14	11 Mar 14	4	$0.30	Dividend amount:0.3 per share.
+13 Feb 14	18 Feb 14	11 Mar 14	4	$0.30	Dividend amount:0.3 per share.
+09 May 14	13 May 14	03 Jun 14	4	$0.30	Dividend amount:0.3 per share.
+08 Aug 14	12 Aug 14	03 Sep 14	4	$0.30	Dividend amount:0.3 per share.
+14 Nov 14	18 Nov 14	09 Dec 14	4	$0.30	Dividend amount:0.3 per share.
+05 Feb 15	09 Feb 15	03 Mar 15	4	$0.40	Dividend amount:0.4 per share.
+ 	 	 
+	  HBI had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+04 Mar 15	4 for 1	Split terms:4 for 1
+
+
+have there been more dividends?  no
+
+check member garyheyland AQAGP
+cash dividends paid by HBI	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+16 May 13	20 May 13	03 Jun 13	4	$0.20	Dividend amount:0.2 per share.
+09 Aug 13	13 Aug 13	03 Sep 13	4	$0.20	Dividend amount:0.2 per share.
+06 Nov 13	08 Nov 13	03 Dec 13	4	$0.20	Dividend amount:0.2 per share.
+13 Feb 14	18 Feb 14	11 Mar 14	4	$0.30	Dividend amount:0.3 per share.
+13 Feb 14	18 Feb 14	11 Mar 14	4	$0.30	Dividend amount:0.3 per share.
+09 May 14	13 May 14	03 Jun 14	4	$0.30	Dividend amount:0.3 per share.
+08 Aug 14	12 Aug 14	03 Sep 14	4	$0.30	Dividend amount:0.3 per share.
+14 Nov 14	18 Nov 14	09 Dec 14	4	$0.30	Dividend amount:0.3 per share.
+05 Feb 15	09 Feb 15	03 Mar 15	4	$0.40	Dividend amount:0.4 per share.
+ 	 	 
+	  HBI had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+04 Mar 15	4 for 1	Split terms:4 for 1
+
+
+LEDGER
+Date	Start	Change	End	Type
+Feb 26, 2015		190	190	Buy
+Mar 04, 2015	190	570	760	Corporate Action
+Total: 760
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Feb 26, 2015	190	$9.50	$24,373.20	$128.28
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+HBI	click me	$32.32	760	$24,563.20	2.44%	$570.00	0.00%	2.34%	2.34%	Details
+
+looks good
+
+closing this out

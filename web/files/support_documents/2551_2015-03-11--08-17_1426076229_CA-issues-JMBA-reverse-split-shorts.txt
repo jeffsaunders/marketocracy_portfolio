@@ -1,0 +1,241 @@
+date: 3/11/15
+JMBA - reverse split manually applied,  members went short with their post split trades
+
+> Row 1616:
+>    LOGINNAME = jleb80
+>       SYMBOL = LEMF
+>   PRIMARYKEY = X'f2262b4247bf8046c0a80135'
+positions/stratification 	right curve
+  	  	[download spreadsheet]
+  	  	We are showing some short positions in your account! This most likely indicates some sort of error in our system, perhaps due to a corporate action. Please email the your login name and the stock symbols below to help@marketocracy.com.
+  	  	
+Symbol 	Price 	Shares 	Value 	Gains 	Today 	Inception Return 	  	 
+JMBA 	$14.09 	-22,400 	-$315,616.00 	$95,184.20 	-1.40% 	151.96% 	Details  	TOP
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 28, 2012 		28000 	28000 	Buy
+Jun 03, 2013 	28000 	-22400 	5600 	Corporate Action
+Jun 07, 2013 	5600 	-23000 	-17400 	Sell
+Jun 12, 2013 	-17400 	-5000 	-22400 	Sell
+Total: -22,400
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 28, 2012 	28,000 	$1,400.00 	$62,637.04 	$2.24
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 7, 2013 	23,000 	$1,150.00 	$6.78 	$388,364.30 	$16.89
+Jun 12, 2013 	5,000 	$250.00 	$1.49 	$85,071.84 	$17.01
+
+looks like a reverse split and then member sold pre-split quantities check this
+select distinct stockkey from mstockalias where symbol='JMBA';
+> Row 1:
+>   STOCKKEY = X'0efb00fc4465354dc0a80146'
+select * from mstockalias where STOCKKEY = X'0efb00fc4465354dc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 817628100
+>           DATE = TIMESTAMP '2005-07-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Services Acquisition Corp. International
+>     PRIMARYKEY = X'0efc00fc4465354dc0a80146'
+>       STOCKKEY = X'0efb00fc4465354dc0a80146'
+>         SYMBOL = SVI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 817628100
+>           DATE = TIMESTAMP '2006-11-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Services Acquisition Corp. International
+>     PRIMARYKEY = X'ed492852456e4a45c0a80146'
+>       STOCKKEY = X'0efb00fc4465354dc0a80146'
+>         SYMBOL = JMBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 817628100
+>           DATE = TIMESTAMP '2006-11-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Services Acquisition Corp. International
+>     PRIMARYKEY = X'361d2bd2456e4a6fc0a80146'
+>       STOCKKEY = X'0efb00fc4465354dc0a80146'
+>         SYMBOL = JMBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 817628100
+>           DATE = TIMESTAMP '2006-11-29 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Jamba Inc
+>     PRIMARYKEY = X'ce162d53456e4a85c0a80146'
+>       STOCKKEY = X'0efb00fc4465354dc0a80146'
+>         SYMBOL = JMBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 47023A309
+>           DATE = TIMESTAMP '2006-11-29 00:00:03.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Jamba Inc
+>     PRIMARYKEY = X'd5222f36456e4a9ac0a80146'
+>       STOCKKEY = X'0efb00fc4465354dc0a80146'
+>         SYMBOL = JMBA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = XG
+select * from mcorporateaction where BB_ACTIONMNEMONIC='STOCK_SPLT' and aliaskey in (select primarykey from mstockalias where STOCKKEY = X'0efb00fc4465354dc0a80146');
+> Row 1:
+>              ALIASKEY = X'd5222f36456e4a9ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_TERMS|(null)|CP_RATIO|0.200000|CP_RECORD_DT|20130603|CP_PAY_DT|20130603|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20130620:064054
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-03 00:00:00.000000'
+>         BB_IDENTIFIER = JMBA     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = JMBA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-06-03 00:00:00.000000'
+>            PRIMARYKEY = X'475336e651c384f6c0a80146'
+>               VERSION = NULL
+
+get the parameters
+<STOCKKEY_TO_CHANGE>  X'0efb00fc4465354dc0a80146'
+<SPLIT_DATE>   2013-06-03
+<APPLIED_DATE>:  2013-06-20  
+<SPLIT_RATIO>  0.200000
+
+how many members are short?
+select count(*) from mposition where STOCKKEY = X'0efb00fc4465354dc0a80146' and totalshares < 0;
+2 people
+
+select primarykey  from mticket where STOCKKEY = X'0efb00fc4465354dc0a80146' and closed > TIMESTAMP'2013-06-03 00:00:00.000000' and closed < TIMESTAMP'2013-06-20 00:00:00.000000' and shares > 0 and sourcekey is null order by closed;
+> Row 1:
+>   PRIMARYKEY = X'a03d3f0c51ad8ea3c0a80134'
+> Row 2:
+>   PRIMARYKEY = X'31e0523951af42e5c0a80135'
+> Row 3:
+>   PRIMARYKEY = X'401305e451b0dde6c0a80134'
+> Row 4:
+>   PRIMARYKEY = X'3477212951b22768c0a80134'
+> Row 5:
+>   PRIMARYKEY = X'd9fc026e51b8a223c0a80135'
+> Row 6:
+>   PRIMARYKEY = X'a4636ede51bf7f43c0a80132'
+let's get these ready to tickle - strip off the X' and trailing '
+a03d3f0c51ad8ea3c0a80134
+31e0523951af42e5c0a80135
+401305e451b0dde6c0a80134
+3477212951b22768c0a80134
+d9fc026e51b8a223c0a80135
+a4636ede51bf7f43c0a80132
+
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey  from mticket where STOCKKEY = X'0efb00fc4465354dc0a80146' and closed > TIMESTAMP'2013-06-03 00:00:00.000000' and closed < TIMESTAMP'2013-06-20 00:00:00.000000' and shares > 0 and sourcekey is null));
+> Row 1:
+>   FUNDKEY = X'f2262b4247bf8046c0a80135'
+> Row 2:
+>   FUNDKEY = X'cb994d2c4a68b3b8c0a80134'
+> Row 3:
+>   FUNDKEY = X'4579175a50fe4937c0a80132'
+> Row 4:
+>   FUNDKEY = X'b6c7523951af3855c0a80135'
+> Row 5:
+>   FUNDKEY = X'01116199423cb274c0a80134'
+let's get these ready to invalidate
+/Marketocracy/bin/fptool invalidateFund f2262b4247bf8046c0a80135;
+/Marketocracy/bin/fptool invalidateFund cb994d2c4a68b3b8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4579175a50fe4937c0a80132;
+/Marketocracy/bin/fptool invalidateFund b6c7523951af3855c0a80135;
+/Marketocracy/bin/fptool invalidateFund 01116199423cb274c0a80134;
+
+set commit false;
+update mticket set shares=shares*0.200000 where STOCKKEY = X'0efb00fc4465354dc0a80146' and closed > TIMESTAMP'2013-06-03 00:00:00.000000' and closed < TIMESTAMP'2013-06-20 00:00:00.000000' and shares > 0 and sourcekey is null;
+update morder set SHARESFILLED = SHARESFILLED*0.200000  where ticketkey in (select primarykey from mticket where STOCKKEY = X'0efb00fc4465354dc0a80146' and closed > TIMESTAMP'2013-06-03 00:00:00.000000' and closed < TIMESTAMP'2013-06-20 00:00:00.000000' and shares > 0 and sourcekey is null);
+update mtrade set shares = shares*0.200000  where ticketkey in (select primarykey from mticket where STOCKKEY = X'0efb00fc4465354dc0a80146' and closed > TIMESTAMP'2013-06-03 00:00:00.000000' and closed < TIMESTAMP'2013-06-20 00:00:00.000000' and shares > 0 and sourcekey is null);
+commit;
+set commit true;
+
+let's tickle
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-03-11 08:06:50 -0400
+<<<< dbtool finished at 2015-03-11 08:07:40 -0400
+
+
+let's invalidate 
+/Marketocracy/bin/fptool invalidateFund f2262b4247bf8046c0a80135;
+/Marketocracy/bin/fptool invalidateFund cb994d2c4a68b3b8c0a80134;
+/Marketocracy/bin/fptool invalidateFund 4579175a50fe4937c0a80132;
+/Marketocracy/bin/fptool invalidateFund b6c7523951af3855c0a80135;
+/Marketocracy/bin/fptool invalidateFund 01116199423cb274c0a80134;
+
+done - check the member 
+
+>    LOGINNAME = jleb80
+>       SYMBOL = LEMF
+
+
+your holdings of JMBA 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+JLMF1 	0 	N/A 	N/A
+JLVF 	0 	N/A 	N/A
+LSWF 	0 	N/A 	N/A
+LMTF 	0 	N/A 	N/A
+LFOC 	0 	N/A 	N/A
+LFFD 	0 	N/A 	N/A
+BMTF 	0 	N/A 	N/A
+LEMF 	0 	$.00 	0.00%  <--- expand 
+LSVF 	0 	N/A 	N/A
+JLMF 	0 	N/A 	N/A
+LHGF 	0 	N/A 	N/A
+LHRF 	0 	N/A 	N/A
+LBIO 	0 	N/A 	N/A
+LMBF 	0 	N/A 	N/A 
+
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 28, 2012 		28000 	28000 	Buy
+Jun 03, 2013 	28000 	-22400 	5600 	Corporate Action
+Jun 07, 2013 	5600 	-4600 	1000 	Sell
+Jun 12, 2013 	1000 	-1000 		Sell
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 28, 2012 	28,000 	$1,400.00 	$62,637.04 	$2.24
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 7, 2013 	4,600 	$230.00 	$1.36 	$77,672.86 	$16.89
+Jun 12, 2013 	1,000 	$50.00 	$0.30 	$17,014.37 	$17.01
+
+
+looks perfect closing this out 

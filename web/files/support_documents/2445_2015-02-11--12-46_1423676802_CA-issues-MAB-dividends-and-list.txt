@@ -1,0 +1,841 @@
+date: 2/9/15
+
+MAB missing dividends
+
+select distinct stockkey from mstockalias where symbol='MAB';
+> Row 1:
+>   STOCKKEY = X'cab50e21390a58dec0a80116'
+
+select * from mstockalias where STOCKKEY = X'cab50e21390a58dec0a80116';> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595915109
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MID-AMERICA BANCORP
+>     PRIMARYKEY = X'cab60e21390a58dec0a80116'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>         SYMBOL = MAB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'cab60e21390a58dec0a80116';
+> Row 1:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.23|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.23|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.23|CP_RECORD_DT|20000823|CP_PAY_DT|20000823|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-08-23 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5d6c064939e7f058c0a801dc'
+>               VERSION = 1
+> Row 2:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.23|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.23|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.23|CP_RECORD_DT|20000517|CP_PAY_DT|20000517|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-05-17 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'05f9064939e7ed45c0a801dc'
+>               VERSION = 1
+> Row 3:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.23|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.23|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.23|CP_RECORD_DT|20001129|CP_PAY_DT|20001129|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-11-29 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd6ae33ec3a25e03bc0a80114'
+>               VERSION = 1
+> Row 4:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT||CP_NOTES||CP_RECORD_DT|20001130|CP_TERMS||CP_TYPA|3000|CP_ADJ||CP_RATIO|1.03|CP_PAY_DT|20001130
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-11-30 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 8
+>              BB_RCODE = NULL
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e526735a3a27145bc0a80114'
+>               VERSION = 1
+> Row 5:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010220|CP_NOTES|N.A.|CP_NET_AMT|0.240000|CP_ADJ|N.A.|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.240000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010222|CP_PAY_DT|20010309|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6218290
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 105177
+>        BB_COMPANYNAME = MID-AMERICA BANCORP
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-02-20 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2001-01-22 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'dfc36f003a932f72c0a801dc'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010516|CP_NOTES|N.A.|CP_NET_AMT|0.240000|CP_ADJ|N.A.|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.240000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010518|CP_PAY_DT|20010608|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6550328
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 105177
+>        BB_COMPANYNAME = MID-AMERICA BANCORP
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-05-16 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2001-04-26 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5dd846d73b033131c0a801dc'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010822|CP_NOTES|N.A.|CP_NET_AMT|0.240000|CP_ADJ|1.000000|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.240000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010824|CP_PAY_DT|20010907|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6909511
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 105177
+>        BB_COMPANYNAME = Mid-America Bancorp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-22 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'2e960af43b846438c0a801dc'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20011129|CP_NOTES|N.A.|CP_NET_AMT|0.240000|CP_ADJ|1.000000|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.240000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20011203|CP_PAY_DT|20011214|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7373391
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 105177
+>        BB_COMPANYNAME = Mid-America Bancorp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-11-29 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-19 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'd0141e453c06f70ec0a801dc'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'cab60e21390a58dec0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020131|CP_NOTES|N.A.|CP_NET_AMT|0.240000|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|4|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.240000|CP_PAR_PCT| |CP_RECORD_DT|20020204|CP_PAY_DT|20020213|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7685127
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 105177
+>        BB_COMPANYNAME = Mid-America Bancorp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-01-31 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2002-01-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'dda133513c5a05d4c0a801dc'
+>               VERSION = NULL
+
+
+
+***** second mstockalias record 
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595915109
+>           DATE = TIMESTAMP '2002-03-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MID-AMERICA BANCORP
+>     PRIMARYKEY = X'81d205fe3c8d7749c0a801dc'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>         SYMBOL = MAB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- delisted
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'81d205fe3c8d7749c0a801dc';
+MAB has been acquired	
+ 	 	
+MID-AMERICA BANCORP [MAB] acquired by BB&T CORP [BBT] on 2002-03-11 00:00:00.
+ 	 	[ Go to BBT ]
+ 	 	 
+	  cash dividends paid by MAB	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+17 May 00	17 May 00	17 May 00	N/A	$0.23	Dividend amount:0.23 per share.
+23 Aug 00	23 Aug 00	23 Aug 00	N/A	$0.23	Dividend amount:0.23 per share.
+29 Nov 00	29 Nov 00	29 Nov 00	N/A	$0.23	Dividend amount:0.23 per share.
+20 Feb 01	22 Feb 01	09 Mar 01	4	$0.24	Dividend amount:0.24 per share.
+16 May 01	18 May 01	08 Jun 01	4	$0.24	Dividend amount:0.24 per share.
+22 Aug 01	24 Aug 01	07 Sep 01	4	$0.24	Dividend amount:0.24 per share.
+29 Nov 01	03 Dec 01	14 Dec 01	4	$0.24	Dividend amount:0.24 per share.
+31 Jan 02	04 Feb 02	13 Feb 02	4	$0.24	Dividend amount:0.24 per share.
+23 Jan 03	27 Jan 03	31 Jan 03	12	$0.08	Dividend amount:0.075 per share.
+20 Feb 03	24 Feb 03	03 Mar 03	12	$0.08	Dividend amount:0.075 per share.
+20 Mar 03	24 Mar 03	31 Mar 03	12	$0.08	Dividend amount:0.075 per share.
+22 Apr 03	24 Apr 03	30 Apr 03	12	$0.08	Dividend amount:0.075 per share.
+21 May 03	23 May 03	30 May 03	12	$0.08	Dividend amount:0.075 per share.
+19 Jun 03	23 Jun 03	30 Jun 03	12	$0.08	Dividend amount:0.075 per share.
+22 Jul 03	24 Jul 03	31 Jul 03	12	$0.08	Dividend amount:0.075 per share.
+21 Aug 03	25 Aug 03	29 Aug 03	12	$0.08	Dividend amount:0.075 per share.
+22 Sep 03	24 Sep 03	30 Sep 03	12	$0.08	Dividend amount:0.075 per share.
+22 Oct 03	24 Oct 03	30 Oct 03	12	$0.08	Dividend amount:0.079 per share.
+20 Nov 03	24 Nov 03	01 Dec 03	12	$0.08	Dividend amount:0.079 per share.
+22 Dec 03	24 Dec 03	30 Dec 03	12	$0.08	Dividend amount:0.079 per share.
+23 Dec 03	26 Dec 03	31 Dec 03	N/A	$0.09	Dividend amount:0.0945 per share.
+23 Dec 03	26 Dec 03	31 Dec 03	N/A	$0.13	Dividend amount:0.1304 per share.
+22 Jan 04	26 Jan 04	30 Jan 04	12	$0.08	Dividend amount:0.079 per share.
+19 Feb 04	23 Feb 04	27 Feb 04	12	$0.08	Dividend amount:0.079 per share.
+22 Mar 04	24 Mar 04	31 Mar 04	12	$0.08	Dividend amount:0.079 per share.
+22 Apr 04	26 Apr 04	30 Apr 04	12	$0.08	Dividend amount:0.079 per share.
+20 May 04	24 May 04	28 May 04	12	$0.08	Dividend amount:0.079 per share.
+22 Jun 04	24 Jun 04	30 Jun 04	12	$0.08	Dividend amount:0.079 per share.
+22 Jul 04	26 Jul 04	30 Jul 04	12	$0.08	Dividend amount:0.079 per share.
+23 Aug 04	25 Aug 04	31 Aug 04	12	$0.08	Dividend amount:0.079 per share.
+22 Sep 04	24 Sep 04	30 Sep 04	12	$0.08	Dividend amount:0.079 per share.
+21 Oct 04	25 Oct 04	29 Oct 04	12	$0.08	Dividend amount:0.079 per share.
+22 Nov 04	24 Nov 04	30 Nov 04	12	$0.08	Dividend amount:0.079 per share.
+21 Dec 04	23 Dec 04	30 Dec 04	12	$0.08	Dividend amount:0.079 per share.
+20 Jan 05	24 Jan 05	31 Jan 05	12	$0.08	Dividend amount:0.079 per share.
+17 Feb 05	22 Feb 05	28 Feb 05	12	$0.08	Dividend amount:0.079 per share.
+22 Mar 05	24 Mar 05	31 Mar 05	12	$0.08	Dividend amount:0.079 per share.
+20 Apr 05	22 Apr 05	29 Apr 05	12	$0.08	Dividend amount:0.079 per share.
+19 May 05	23 May 05	31 May 05	12	$0.08	Dividend amount:0.079 per share.
+21 Jun 05	23 Jun 05	30 Jun 05	12	$0.08	Dividend amount:0.079 per share.
+20 Jul 05	22 Jul 05	29 Jul 05	12	$0.08	Dividend amount:0.079 per share.
+22 Aug 05	24 Aug 05	31 Aug 05	12	$0.08	Dividend amount:0.079 per share.
+21 Sep 05	23 Sep 05	30 Sep 05	12	$0.08	Dividend amount:0.079 per share.
+20 Oct 05	24 Oct 05	31 Oct 05	12	$0.08	Dividend amount:0.079 per share.
+21 Nov 05	23 Nov 05	30 Nov 05	12	$0.08	Dividend amount:0.079 per share.
+20 Dec 05	22 Dec 05	29 Dec 05	12	$0.08	Dividend amount:0.079 per share.
+20 Jan 06	24 Jan 06	31 Jan 06	12	$0.06	Dividend amount:0.064 per share.
+16 Feb 06	21 Feb 06	28 Feb 06	12	$0.06	Dividend amount:0.064 per share.
+22 Mar 06	24 Mar 06	31 Mar 06	12	$0.06	Dividend amount:0.064 per share.
+19 Apr 06	21 Apr 06	28 Apr 06	12	$0.06	Dividend amount:0.064 per share.
+22 May 06	24 May 06	31 May 06	12	$0.06	Dividend amount:0.064 per share.
+21 Jun 06	23 Jun 06	30 Jun 06	12	$0.06	Dividend amount:0.060667 per share.
+20 Jul 06	24 Jul 06	31 Jul 06	12	$0.06	Dividend amount:0.060667 per share.
+22 Aug 06	24 Aug 06	31 Aug 06	12	$0.06	Dividend amount:0.060667 per share.
+20 Sep 06	22 Sep 06	29 Sep 06	12	$0.06	Dividend amount:0.060667 per share.
+20 Oct 06	24 Oct 06	31 Oct 06	12	$0.06	Dividend amount:0.060667 per share.
+20 Nov 06	22 Nov 06	30 Nov 06	12	$0.06	Dividend amount:0.057334 per share.
+19 Dec 06	21 Dec 06	28 Dec 06	12	$0.06	Dividend amount:0.057334 per share.
+22 Jan 07	24 Jan 07	31 Jan 07	12	$0.06	Dividend amount:0.057334 per share.
+16 Feb 07	21 Feb 07	28 Feb 07	12	$0.06	Dividend amount:0.057334 per share.
+21 Mar 07	23 Mar 07	30 Mar 07	12	$0.06	Dividend amount:0.057334 per share.
+19 Apr 07	23 Apr 07	30 Apr 07	12	$0.06	Dividend amount:0.057334 per share.
+22 May 07	24 May 07	31 May 07	12	$0.06	Dividend amount:0.057334 per share.
+20 Jun 07	22 Jun 07	29 Jun 07	12	$0.06	Dividend amount:0.057334 per share.
+20 Jul 07	24 Jul 07	31 Jul 07	12	$0.06	Dividend amount:0.055667 per share.
+22 Aug 07	24 Aug 07	31 Aug 07	12	$0.06	Dividend amount:0.055667 per share.
+19 Sep 07	21 Sep 07	28 Sep 07	12	$0.06	Dividend amount:0.055667 per share.
+22 Oct 07	24 Oct 07	31 Oct 07	12	$0.06	Dividend amount:0.055667 per share.
+22 Oct 07	24 Oct 07	31 Oct 07	12	$0.06	Dividend amount:0.055667 per share.
+20 Nov 07	23 Nov 07	30 Nov 07	12	$0.06	Dividend amount:0.055667 per share.
+19 Dec 07	21 Dec 07	28 Dec 07	12	$0.06	Dividend amount:0.055667 per share.
+22 Jan 08	24 Jan 08	31 Jan 08	12	$0.06	Dividend amount:0.055667 per share.
+20 Feb 08	22 Feb 08	29 Feb 08	12	$0.06	Dividend amount:0.055667 per share.
+19 Mar 08	24 Mar 08	31 Mar 08	12	$0.06	Dividend amount:0.055667 per share.
+21 Apr 08	23 Apr 08	30 Apr 08	12	$0.06	Dividend amount:0.055667 per share.
+13 May 08	15 May 08	22 May 08	12	$0.06	Dividend amount:0.055667 per share.
+19 Jun 08	23 Jun 08	30 Jun 08	12	$0.06	Dividend amount:0.055667 per share.
+22 Jul 08	24 Jul 08	31 Jul 08	12	$0.06	Dividend amount:0.055667 per share.
+20 Aug 08	22 Aug 08	29 Aug 08	12	$0.06	Dividend amount:0.056917 per share.
+19 Sep 08	23 Sep 08	30 Sep 08	12	$0.06	Dividend amount:0.056917 per share.
+22 Oct 08	24 Oct 08	31 Oct 08	12	$0.06	Dividend amount:0.056917 per share.
+19 Nov 08	21 Nov 08	28 Nov 08	12	$0.06	Dividend amount:0.056917 per share.
+22 Dec 08	24 Dec 08	31 Dec 08	12	$0.06	Dividend amount:0.056917 per share.
+21 Jan 09	23 Jan 09	30 Jan 09	12	$0.06	Dividend amount:0.056917 per share.
+18 Feb 09	20 Feb 09	27 Feb 09	12	$0.06	Dividend amount:0.063167 per share.
+20 Mar 09	24 Mar 09	31 Mar 09	12	$0.06	Dividend amount:0.063167 per share.
+21 Apr 09	23 Apr 09	30 Apr 09	12	$0.07	Dividend amount:0.0665 per share.
+20 May 09	22 May 09	29 May 09	12	$0.07	Dividend amount:0.0665 per share.
+19 Jun 09	23 Jun 09	30 Jun 09	12	$0.07	Dividend amount:0.0665 per share.
+22 Jul 09	24 Jul 09	31 Jul 09	12	$0.07	Dividend amount:0.0665 per share.
+20 Aug 09	24 Aug 09	31 Aug 09	12	$0.07	Dividend amount:0.069167 per share.
+21 Sep 09	23 Sep 09	30 Sep 09	12	$0.07	Dividend amount:0.069167 per share.
+21 Oct 09	23 Oct 09	30 Oct 09	12	$0.07	Dividend amount:0.069167 per share.
+19 Nov 09	23 Nov 09	30 Nov 09	12	$0.07	Dividend amount:0.069167 per share.
+22 Dec 09	24 Dec 09	31 Dec 09	12	$0.07	Dividend amount:0.069167 per share.
+20 Jan 10	22 Jan 10	29 Jan 10	12	$0.07	Dividend amount:0.069167 per share.
+17 Feb 10	19 Feb 10	26 Feb 10	12	$0.07	Dividend amount:0.07 per share.
+22 Mar 10	24 Mar 10	31 Mar 10	12	$0.07	Dividend amount:0.07 per share.
+21 Apr 10	23 Apr 10	30 Apr 10	12	$0.07	Dividend amount:0.07 per share.
+19 May 10	21 May 10	28 May 10	12	$0.07	Dividend amount:0.07 per share.
+21 Jun 10	23 Jun 10	30 Jun 10	12	$0.07	Dividend amount:0.07 per share.
+ 	 	 
+	  MAB had some stock splits	
+ 	 	
+Effective Date	Terms	Description
+30 Nov 00	1.03	Split terms:1.03
+
+this may not be the correct company
+yahoo
+Eaton Vance Massachusetts Municipal Bond Fund (MAB) -NYSE MKT   Watchlist
+15.00  0.07(0.47%) 10:05AM EST
+
+quantum
+Eaton Vance Insured Massachusetts Municipal Bond Fund
+Ticker Symbol: MAB     CUSIP: 27828K108     Exchange: AMEX
+Security Type:   Closed-End ETF  ---  ETF SubType:   State Tax-Exempt Income Fund
+
+Company's Online Profile
+FUND DESCRIPTION:  Eaton Vance Insured Massachusetts Municipal Bond Fund is a non-diversified, closed-end management investment company. The Fund's investment objective is to provide current income exempt from federal income tax, including alternative minimum tax, and in the form of an investment exempt from Massachusetts personal income tax. The Fund will seek to achieve its investment objective by investing primarily in high grade Massachusetts municipal obligations that are insured as to the timely payment of principal and interest and are not subject to alternative minimum tax. The Fund's investment adviser is Eaton Vance Management.
+IPO - 11/27/2002 - 1.55 Million Shares @ $15.00/share.    Link to IPO Prospectus
+Micro Cap Stock -   Market Value $ 23.2 Million
+
+xignite
+
+
+
+
+
+We didn't list the new MAB
+
+> Row 1:
+>              ALIASKEY = X'81d205fe3c8d7749c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|0.000000|CP_CUR_TOT_VAL|393.096741|CP_NOTES|CASH TERMS FINALISED FROM $8.31/SHR EFF 03/11/02.                                                         03/11/02 |CP_UNIT|MidAmerica Bancorp|CP_DEBT|0.000000|CP_CUR_PREMIUM|4.427304|CP_DT_FLAG|0|CP_SH_FLAG|1|CP_UNSOLICITED|0|CP_SH|0.718700|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_ARBITRAGE_PROF|0.000000|CP_NAME|MidAmerica Bancorp|CP_INIT_OFFER_PREMIUM|31.153999|CP_CASH_VAL|8.340000|CP_PCT_SOUGHT|100.000000|CP_ACQUIS_TYP|3|CP_ADVISORS|;2;1;3;1;Acquirer Legal Adviser;1;WOMBLE CARLYLE;13;100.000000;|CP_TKR|MAB     US|CP_CASH|8.340000|CP_DETAIL_FLAG|0|CP_CASH_FLAG|1|CP_TOT_AMT|354.307495|CP_STAT|3|CP_CRNCY|USD|CP_ACCOUNTING_METHOD|1|CP_ADVISORS_NUM|1|CP_ID_BB_COMP|105177
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7335800
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101372
+>        BB_COMPANYNAME = BB&T Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-03-11 00:00:00.000000'
+>         BB_IDENTIFIER = BBT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-11-08 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = BBT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2002-03-11 00:00:00.000000'
+>            PRIMARYKEY = X'6bfe441a3c8d7029c0a801dc'
+>               VERSION = NULL
+
+were the any mtickets generated by this CA?
+select count(*) from mticket where sourcekey=X'6bfe441a3c8d7029c0a801dc';
+> Row 1:
+>   _C001 = 16.000000
+
+So MAB-1 was acquired on 3/11/2002
+
+new MAB listed on 11/27/2002 
+
+******************************************************************************************
+ths first MAB was acquired and then we didn't list the new one  - dividends came in and
+were put onto MAB 1
+******************************************************************************************
+> Row 2:
+>              ALIASKEY = X'81d205fe3c8d7749c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20030127|CP_PAY_DT|20030131|CP_FREQ|12|CP_NET_AMT|0.075000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.075000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20030123|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 10022682
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7888582
+>        BB_COMPANYNAME = Eaton Vance Insured Massachusetts Municipal Bond F
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-01-23 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2003-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2003-01-17 00:00:00.000000'
+>            PRIMARYKEY = X'1ed526a23e30ac8dc0a80146'
+>               VERSION = NULL
+
+
+Let's look at the holdings of MAB on 03/11/2002
+MAdmin
+Stock:MID-AMERICA BANCORP  Symbol:MAB
+Date: 03/11/2002
+
+0 users found
+
+This is a good sign
+
+Assessment:
+1.  there are two companies which use the ticker MAB.   
+MAB-1  MID-AMERICA BANCORP
+we have MAB-1 on our site.  It delsited on 3/11/2002 correctly and there are no members who hold this stock
+on that date - the CA generated 11 mtickets so this stock has been properly delsited
+However, we never listed MAB_2.    dividends from MAB-2 came in and were applied to MAB-1
+
+MAB-2  Eaton Vance Insured Massachusetts Municipal Bond
+We need to list this stock on 
+quantum
+Eaton Vance Insured Massachusetts Municipal Bond Fund
+Ticker Symbol: MAB     CUSIP: 27828K108     Exchange: AMEX
+Security Type:   Closed-End ETF  ---  ETF SubType:   State Tax-Exempt Income Fund
+
+Company's Online Profile
+FUND DESCRIPTION:  Eaton Vance Insured Massachusetts Municipal Bond Fund is a non-diversified, closed-end management investment company. The Fund's investment objective is to provide current income exempt from federal income tax, including alternative minimum tax, and in the form of an investment exempt from Massachusetts personal income tax. The Fund will seek to achieve its investment objective by investing primarily in high grade Massachusetts municipal obligations that are insured as to the timely payment of principal and interest and are not subject to alternative minimum tax. The Fund's investment adviser is Eaton Vance Management.
+IPO - 11/27/2002 - 1.55 Million Shares @ $15.00/share.    Link to IPO Prospectus
+Micro Cap Stock -   Market Value $ 23.2 Million
+
+xignite - we have it and the cusip is 27828K108   cusip is good
+market is NYSE
+
+let's look at historical prices
+/Marketocracy/bin/dbtool lookup stock MAB
+>>>> dbtool started at 2015-02-09 22:44:50 -0500
+stock: MAB
+  PK       : [CAB50E21390A58DEC0A80116]
+  companyID: [318]
+  symbol   : [MAB]
+  name     : [MID-AMERICA BANCORP]
+  date     : [2000-04-28 15:00:00]
+  status   : [Active]
+stock: MAB
+  PK       : [CAB50E21390A58DEC0A80116]
+  companyID: [318]
+  symbol   : [MAB]
+  name     : [MID-AMERICA BANCORP]
+  date     : [2002-03-11 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-02-09 22:44:50 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 318
+2002-03-04 (Mon) [427]: O:35.1500 H:35.5500 L:35.1500 C:35.5500 V:23100 TSO:0 A:29.1569 R:1.0000 CA:6.3931
+2002-03-05 (Tue) [428]: O:35.3700 H:35.7000 L:35.3700 C:35.6599 V:9100 TSO:0 A:29.2668 R:1.0000 CA:6.3931
+2002-03-06 (Wed) [429]: O:35.4500 H:35.8500 L:35.1000 C:35.8400 V:20100 TSO:0 A:29.4469 R:1.0000 CA:6.3931
+2002-03-07 (Thu) [430]: O:35.8400 H:35.9000 L:35.5000 C:35.5500 V:6400 TSO:0 A:29.1569 R:1.0000 CA:6.3931
+2002-03-08 (Fri) [431]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:56000 TSO:0 A:29.2069 R:1.0000 CA:6.3931  <--- last price / trade for MAB1
+2002-03-09 (Sat) [432]: <WEEKEND>
+2002-03-10 (Sun) [433]: <WEEKEND>
+2002-03-11 (Mon) [434]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:29.2069 R:1.0000 CA:6.3931
+2002-03-12 (Tue) [435]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:29.2069 R:1.0000 CA:6.3931
+2002-03-13 (Wed) [436]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:29.2069 R:1.0000 CA:6.3931
+2002-03-14 (Thu) [437]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:29.2069 R:1.0000 CA:6.3931
+2002-03-15 (Fri) [438]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:29.2069 R:1.0000 CA:6.3931
+
+*** then there is break in the prices / trades
+
+2012-04-16 (Mon) [4123]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:35.6000 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:35.6000 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:35.6000 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:35.6000 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:35.7600 H:35.7800 L:35.5000 C:35.6000 V:0 TSO:0 A:35.6000 R:1.0000 CA:0.0000
+2012-04-21 (Sat) [4128]: <WEEKEND>
+2012-04-22 (Sun) [4129]: <WEEKEND>
+2012-04-23 (Mon) [4130]: O:16.0000 H:16.0000 L:15.4600 C:15.6600 V:7805 TSO:0 A:15.6600 R:1.0000 CA:0.0000  <--- first active day 
+2012-04-24 (Tue) [4131]: O:16.0000 H:16.0000 L:15.8600 C:15.8600 V:427 TSO:0 A:15.8600 R:1.0000 CA:0.0000
+2012-04-25 (Wed) [4132]: O:16.2400 H:16.2400 L:15.8800 C:15.8900 V:5480 TSO:0 A:15.8900 R:1.0000 CA:0.0000
+2012-04-26 (Thu) [4133]: O:15.9300 H:15.9700 L:15.9300 C:15.9700 V:1691 TSO:0 A:15.9700 R:1.0000 CA:0.0000
+2012-04-27 (Fri) [4134]: O:16.2000 H:16.2000 L:15.7600 C:15.9700 V:8178 TSO:0 A:15.9700 R:1.0000 CA:0.0000
+2012-04-28 (Sat) [4135]: <WEEKEND>
+2012-04-29 (Sun) [4136]: <WEEKEND>
+2012-04-30 (Mon) [4137]: O:16.2400 H:16.2400 L:15.9700 C:15.9700 V:575 TSO:0 A:15.9700 R:1.0000 CA:0.0000
+2012-05-01 (Tue) [4138]: O:16.2400 H:16.2500 L:15.9300 C:15.9300 V:4127 TSO:0 A:15.9300 R:1.0000 CA:0.0000
+2012-05-02 (Wed) [4139]: O:16.2400 H:16.2400 L:15.8500 C:15.9900 V:4786 TSO:0 A:15.9900 R:1.0000 CA:0.0000
+2012-05-03 (Thu) [4140]: O:16.2500 H:16.2500 L:16.0300 C:16.1200 V:2288 TSO:0 A:16.1200 R:1.0000 CA:0.0000
+
+MAB-2 trades / prices started on 4/23/12
+yahoo finance historical prices began on 1/24/2003
+
+select * from mticket where STOCKKEY = X'cab50e21390a58dec0a80116' order by closed;
+> Row 35:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-03-11 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'81d805fe3c8d7749c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'767d05273a00bdcfc0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2002-03-11 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'81d705fe3c8d7749c0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>      SOURCEKEY = X'6bfe441a3c8d7029c0a801dc'
+>    NOTIFYEMAIL = NULL
+> Row 36:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2002-03-11 16:32:11.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'467a20983c8c3765c0a80118'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'8eb3355c3b5cccd2c0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2002-03-10 23:49:41.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'467920983c8c3765c0a80118'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+this is good we have no trades that need to be moved from old MAB to new MAB@
+
+let's list new MAB
+ 
+MAB|N|27828K108|Eaton Vance Massachusetts Municipal Bond Fund|20021127
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+ok the new MAB (MAB-2) has been listed
+
+select distinct stockkey from mstockalias where symbol='MAB';
+> Row 1:
+>   STOCKKEY = X'cab50e21390a58dec0a80116'
+select * from mstockalias where STOCKKEY = X'cab50e21390a58dec0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595915109
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MID-AMERICA BANCORP
+>     PRIMARYKEY = X'cab60e21390a58dec0a80116'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>         SYMBOL = MAB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'cab60e21390a58dec0a80116';
+	All of the CAs here belong to MAB1
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 595915109
+>           DATE = TIMESTAMP '2002-03-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MID-AMERICA BANCORP
+>     PRIMARYKEY = X'81d205fe3c8d7749c0a801dc'
+>       STOCKKEY = X'cab50e21390a58dec0a80116'
+>         SYMBOL = MAB
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'81d205fe3c8d7749c0a801dc';
+this has the ACQUIS and then 93 DVD_CASH that need to be moved to MAB-2
+select count(*) from mcorporateaction where aliaskey= X'81d205fe3c8d7749c0a801dc' and BB_ACTIONMNEMONIC='DVD_CASH';
+> Row 1:
+>   _C001 = 93.000000
+
+
+****** the following is the new MAB-2 newly created *****
+> Row 2:
+>   STOCKKEY = X'ac3e132754d98128c0a86f92'
+select * from mstockalias where STOCKKEY = X'ac3e132754d98128c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 27828K108
+>           DATE = TIMESTAMP '2002-11-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Eaton Vance Massachusetts Municipal Bond Fund
+>     PRIMARYKEY = X'ac3f132754d98128c0a86f92'   <-- set the aliaskey to here 
+>       STOCKKEY = X'ac3e132754d98128c0a86f92'
+>         SYMBOL = MAB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+now we need to move over the dividends from MAB1 to MAB-2
+update mcorporateaction set aliaskey= X'ac3f132754d98128c0a86f92'   where aliaskey= X'81d205fe3c8d7749c0a801dc' and BB_ACTIONMNEMONIC='DVD_CASH';
+done
+
+select * from mcorporateaction where aliaskey=X'ac3f132754d98128c0a86f92';
+> Row 93:
+>              ALIASKEY = X'ac3f132754d98128c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100623|CP_PAY_DT|20100630|CP_FREQ|12|CP_NET_AMT|0.070000|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.070000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1008|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.995146|CP_ADJ_DT|20100621|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 45670360
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 7888582
+>        BB_COMPANYNAME = Eaton Vance Massachusetts Municipal Bond Fund
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-06-21 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UA Equity
+>             BB_ISSUED = TIMESTAMP '2010-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2010-06-21 00:00:00.000000'
+>            PRIMARYKEY = X'4a1043894c1fd33bc0a80146'
+>               VERSION = NULL
+
+last one paid was 20100630
+
+now let's add the new ones
+
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+2/18/2015	Cash	0.063333	2/2/2015	2/20/2015	2/27/2015
+1/21/2015	Cash	0.063333	1/2/2015	1/23/2015	1/30/2015
+12/22/2014	Cash	0.063333	12/1/2014	12/24/2014	12/31/2014
+11/19/2014	Cash	0.063333	11/3/2014	11/21/2014	11/28/2014
+10/22/2014	Cash	0.063333	10/1/2014	10/24/2014	10/31/2014
+9/19/2014	Cash	0.063333	9/2/2014	9/23/2014	9/30/2014
+8/20/2014	Cash	0.063333	8/1/2014	8/22/2014	8/29/2014
+7/22/2014	Cash	0.063333	6/30/2014	7/24/2014	7/31/2014
+6/19/2014	Cash	0.063333	5/30/2014	6/23/2014	6/30/2014
+5/21/2014	Cash	0.063333	4/30/2014	5/23/2014	5/30/2014
+4/21/2014	Cash	0.063333	3/31/2014	4/23/2014	4/30/2014
+3/20/2014	Cash	0.063333	2/28/2014	3/24/2014	3/31/2014
+2/19/2014	Cash	0.063333	1/31/2014	2/21/2014	2/28/2014
+1/22/2014	Cash	0.063333	12/31/2013	1/24/2014	1/31/2014
+12/20/2013	Cash	0.063333	11/29/2013	12/24/2013	12/31/2013
+11/20/2013	Cash	0.063333	10/31/2013	11/22/2013	11/29/2013
+10/22/2013	Cash	0.063333	9/30/2013	10/24/2013	10/31/2013
+9/19/2013	Cash	0.063333	8/30/2013	9/23/2013	9/30/2013
+8/21/2013	Cash	0.063333	7/31/2013	8/23/2013	8/30/2013
+7/22/2013	Cash	0.063333	6/28/2013	7/24/2013	7/31/2013
+6/19/2013	Cash	0.063333	5/31/2013	6/21/2013	6/28/2013
+5/22/2013	Cash	0.063333	4/30/2013	5/24/2013	5/31/2013
+4/19/2013	Cash	0.063333	3/28/2013	4/23/2013	4/30/2013
+3/19/2013	Cash	0.063333	2/28/2013	3/21/2013	3/28/2013
+2/19/2013	Cash	0.063333	1/31/2013	2/21/2013	2/28/2013
+1/22/2013	Cash	0.07	12/31/2012	1/24/2013	1/31/2013
+12/20/2012	Cash	0.07	11/30/2012	12/24/2012	12/31/2012
+11/20/2012	Cash	0.07	10/31/2012	11/23/2012	11/30/2012
+10/22/2012	Cash	0.07	9/28/2012	10/24/2012	10/31/2012
+9/19/2012	Cash	0.07	8/31/2012	9/21/2012	9/28/2012
+8/22/2012	Cash	0.07	7/31/2012	8/24/2012	8/31/2012
+7/20/2012	Cash	0.07	6/29/2012	7/24/2012	7/31/2012
+6/20/2012	Cash	0.07	5/31/2012	6/22/2012	6/29/2012
+5/22/2012	Cash	0.07	4/30/2012	5/24/2012	5/31/2012
+4/19/2012	Cash	0.07	3/30/2012	4/23/2012	4/30/2012
+3/21/2012	Cash	0.07	2/29/2012	3/23/2012	3/30/2012
+2/17/2012	Cash	0.07	1/31/2012	2/22/2012	2/29/2012
+1/20/2012	Cash	0.07	12/30/2011	1/24/2012	1/31/2012
+12/21/2011	Cash	0.07	11/30/2011	12/23/2011	12/30/2011
+11/21/2011	Cash	0.07	10/31/2011	11/23/2011	11/30/2011
+10/20/2011	Cash	0.07	9/30/2011	10/24/2011	10/31/2011
+9/21/2011	Cash	0.07	8/31/2011	9/23/2011	9/30/2011
+8/22/2011	Cash	0.07	7/29/2011	8/24/2011	8/31/2011
+7/20/2011	Cash	0.07	6/30/2011	7/22/2011	7/29/2011
+6/21/2011	Cash	0.07	5/31/2011	6/23/2011	6/30/2011
+5/20/2011	Cash	0.07	4/29/2011	5/24/2011	5/31/2011
+4/19/2011	Cash	0.07	3/31/2011	4/21/2011	4/29/2011
+3/22/2011	Cash	0.07	2/28/2011	3/24/2011	3/31/2011
+2/16/2011	Cash	0.07	1/31/2011	2/18/2011	2/28/2011
+1/20/2011	Cash	0.07	12/31/2010	1/24/2011	1/31/2011
+12/21/2010	Cash	0.07	11/30/2010	12/23/2010	12/31/2010
+11/19/2010	Cash	0.07	10/29/2010	11/23/2010	11/30/2010
+10/20/2010	Cash	0.07	9/30/2010	10/22/2010	10/29/2010
+9/21/2010	Cash	0.07	8/31/2010	9/23/2010	9/30/2010
+8/20/2010	Cash	0.07	7/30/2010	8/24/2010	8/31/2010
+7/21/2010	Cash	0.07	6/30/2010	7/23/2010	7/30/2010
+6/21/2010	Cash	0.07	5/28/2010	6/23/2010	6/30/2010  <-- this is the last one we paid 
+
+let's apply the dividends
+/Marketocracy/bin/cahelper -symbol MAB -effective 20150121 -type DVD_CASH -exchange UN -payDate 20150130 -recordDate 20150123 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2015-01.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20141222 -type DVD_CASH -exchange UN -payDate 20141231 -recordDate 20141224 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-12.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20141119 -type DVD_CASH -exchange UN -payDate 20141128 -recordDate 20141121 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-11.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20141022 -type DVD_CASH -exchange UN -payDate 20141031 -recordDate 20141024 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-10.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140919 -type DVD_CASH -exchange UN -payDate 20140930 -recordDate 20140923 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-09.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140820 -type DVD_CASH -exchange UN -payDate 20140829 -recordDate 20140822 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-08.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140722 -type DVD_CASH -exchange UN -payDate 20140731 -recordDate 20140724 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-07.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140619 -type DVD_CASH -exchange UN -payDate 20140630 -recordDate 20140623 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-06.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140521 -type DVD_CASH -exchange UN -payDate 20140530 -recordDate 20140523 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-05.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140421 -type DVD_CASH -exchange UN -payDate 20140430 -recordDate 20140423 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-04.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140320 -type DVD_CASH -exchange UN -payDate 20140331 -recordDate 20140324 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-03.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140219 -type DVD_CASH -exchange UN -payDate 20140228 -recordDate 20140221 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-02.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20140122 -type DVD_CASH -exchange UN -payDate 20140131 -recordDate 20140124 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2014-01.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20131220 -type DVD_CASH -exchange UN -payDate 20131231 -recordDate 20131224 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-12.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20131120 -type DVD_CASH -exchange UN -payDate 20131129 -recordDate 20131122 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-11.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20131022 -type DVD_CASH -exchange UN -payDate 20131031 -recordDate 20131024 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-10.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130919 -type DVD_CASH -exchange UN -payDate 20130930 -recordDate 20130923 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-09.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130821 -type DVD_CASH -exchange UN -payDate 20130830 -recordDate 20130823 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-08.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130722 -type DVD_CASH -exchange UN -payDate 20130731 -recordDate 20130724 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-07.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130619 -type DVD_CASH -exchange UN -payDate 20130628 -recordDate 20130621 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-06.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130522 -type DVD_CASH -exchange UN -payDate 20130531 -recordDate 20130524 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-05.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130419 -type DVD_CASH -exchange UN -payDate 20130430 -recordDate 20130423 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-04.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130319 -type DVD_CASH -exchange UN -payDate 20130328 -recordDate 20130321 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-03.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130219 -type DVD_CASH -exchange UN -payDate 20130228 -recordDate 20130221 -amount 0.063333 >& /Users/build/caout/MAB.20050209-2013-02.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20130122 -type DVD_CASH -exchange UN -payDate 20130131 -recordDate 20130124 -amount 0.07 >& /Users/build/caout/MAB.20050209-2013-01.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20121220 -type DVD_CASH -exchange UN -payDate 20121231 -recordDate 20121224 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-12.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20121120 -type DVD_CASH -exchange UN -payDate 20121130 -recordDate 20121123 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-11.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20121022 -type DVD_CASH -exchange UN -payDate 20121031 -recordDate 20121024 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-10.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120919 -type DVD_CASH -exchange UN -payDate 20120928 -recordDate 20120921 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-09.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120822 -type DVD_CASH -exchange UN -payDate 20120831 -recordDate 20120824 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-08.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120720 -type DVD_CASH -exchange UN -payDate 20120731 -recordDate 20120724 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-07.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120620 -type DVD_CASH -exchange UN -payDate 20120629 -recordDate 20120622 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-06.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120522 -type DVD_CASH -exchange UN -payDate 20120531 -recordDate 20120524 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-05.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120419 -type DVD_CASH -exchange UN -payDate 20120430 -recordDate 20120423 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-04.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120321 -type DVD_CASH -exchange UN -payDate 20120330 -recordDate 20120323 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-03.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120217 -type DVD_CASH -exchange UN -payDate 20120229 -recordDate 20120222 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-02.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20120120 -type DVD_CASH -exchange UN -payDate 20120131 -recordDate 20120124 -amount 0.07 >& /Users/build/caout/MAB.20050209-2012-01.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20111221 -type DVD_CASH -exchange UN -payDate 20111230 -recordDate 20111223 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-12.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20111121 -type DVD_CASH -exchange UN -payDate 20111130 -recordDate 20111123 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-11.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20111020 -type DVD_CASH -exchange UN -payDate 20111031 -recordDate 20111024 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-10.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110921 -type DVD_CASH -exchange UN -payDate 20110930 -recordDate 20110923 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-09.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110822 -type DVD_CASH -exchange UN -payDate 20110831 -recordDate 20110824 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-08.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110720 -type DVD_CASH -exchange UN -payDate 20110729 -recordDate 20110722 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-07.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110621 -type DVD_CASH -exchange UN -payDate 20110630 -recordDate 20110623 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-06.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110520 -type DVD_CASH -exchange UN -payDate 20110531 -recordDate 20110524 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-05.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110419 -type DVD_CASH -exchange UN -payDate 20110429 -recordDate 20110421 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-04.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110322 -type DVD_CASH -exchange UN -payDate 20110331 -recordDate 20110324 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-03.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110216 -type DVD_CASH -exchange UN -payDate 20110228 -recordDate 20110218 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-02.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20110120 -type DVD_CASH -exchange UN -payDate 20110131 -recordDate 20110124 -amount 0.07 >& /Users/build/caout/MAB.20050209-2011-01.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20101221 -type DVD_CASH -exchange UN -payDate 20101231 -recordDate 20101223 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-12.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20101119 -type DVD_CASH -exchange UN -payDate 20101130 -recordDate 20101123 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-11.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20101020 -type DVD_CASH -exchange UN -payDate 20101029 -recordDate 20101022 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-10.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20100921 -type DVD_CASH -exchange UN -payDate 20100930 -recordDate 20100923 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-09.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20100820 -type DVD_CASH -exchange UN -payDate 20100831 -recordDate 20100824 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-08.out;
+/Marketocracy/bin/cahelper -symbol MAB -effective 20100721 -type DVD_CASH -exchange UN -payDate 20100730 -recordDate 20100723 -amount 0.07 >& /Users/build/caout/MAB.20050209-2010-07.out;
+MAB.20050209-2010-07.out
+MAB.20050209-2010-08.out
+MAB.20050209-2010-09.out
+MAB.20050209-2010-10.out
+MAB.20050209-2010-11.out
+MAB.20050209-2010-12.out
+MAB.20050209-2011-01.out
+MAB.20050209-2011-02.out
+MAB.20050209-2011-03.out
+MAB.20050209-2011-04.out
+MAB.20050209-2011-05.out
+MAB.20050209-2011-06.out
+MAB.20050209-2011-07.out
+MAB.20050209-2011-08.out
+MAB.20050209-2011-09.out
+MAB.20050209-2011-10.out
+MAB.20050209-2011-11.out
+MAB.20050209-2011-12.out
+MAB.20050209-2012-01.out
+MAB.20050209-2012-02.out
+MAB.20050209-2012-03.out
+MAB.20050209-2012-04.out
+MAB.20050209-2012-05.out
+MAB.20050209-2012-06.out
+MAB.20050209-2012-07.out
+MAB.20050209-2012-08.out
+MAB.20050209-2012-09.out
+MAB.20050209-2012-10.out
+MAB.20050209-2012-11.out
+MAB.20050209-2012-12.out
+MAB.20050209-2013-01.out
+MAB.20050209-2013-02.out
+MAB.20050209-2013-03.out
+MAB.20050209-2013-04.out
+MAB.20050209-2013-05.out
+MAB.20050209-2013-06.out
+MAB.20050209-2013-07.out
+MAB.20050209-2013-08.out
+MAB.20050209-2013-09.out
+MAB.20050209-2013-10.out
+MAB.20050209-2013-11.out
+MAB.20050209-2013-12.out
+MAB.20050209-2014-01.out
+MAB.20050209-2014-02.out
+MAB.20050209-2014-03.out
+MAB.20050209-2014-04.out
+MAB.20050209-2014-05.out
+MAB.20050209-2014-06.out
+MAB.20050209-2014-07.out
+MAB.20050209-2014-08.out
+MAB.20050209-2014-09.out
+MAB.20050209-2014-10.out
+MAB.20050209-2014-11.out
+MAB.20050209-2014-12.out
+MAB.20050209-2015-01.out
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='MAB' and BB_ACTIONMNEMONIC='DVD_CASH' order by BB_EFFECTIVE;
+> Row 156:
+>              ALIASKEY = X'ac3f132754d98128c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150123|CP_PAY_DT|20150130|CP_FREQ|4|CP_NET_AMT|0.063333|CP_TAX_AMT| |CP_GROSS_AMT|0.063333|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150210:011647
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = MAB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MAB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'934745a854d9a24fc0a86f92'
+>               VERSION = NULL
+
+dividends are in the database 
+check on 2/11/15
+
+
+

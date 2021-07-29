@@ -1,0 +1,584 @@
+
+date:  
+ticker:    VNBCQ
+ 
+yahoo:
+
+quantum:
+Vineyard National Bancorp
+Ticker Symbol: VNBCQ*     CUSIP: 927426106     Exchange: OTOTC
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 8/16/11
+
+Company's Online Profile
+BUSINESS:  Vineyard National Bancorp is a financial holding company headquartered in Corona, and the parent company of Vineyard Bank, N.A., also headquartered in Corona. The company operates through 16 full-service banking centers and five loan production offices in the counties of Los Angeles, Marin, Monterey, Orange, Riverside, San Bernardino, San Diego, Santa Clara and Ventura, Calif.
+Notes:  Plan of bankruptcy effect - all shares have been cancelled per the Other OTC on 8/16/2011. ____________ Bankruptcy per the Other OTC on 8/5/2009.
+oursite:
+Symbol: VNBCQ	Name: Vineyard National Bancorp	Price: $0.01
+Volume:	Sector: Financials	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VNBCQ
+
+check MAdmin
+Stock:Vineyard National Bancorp  Symbol:VNBCQ
+Date: 08/24/2015
+
+74 users found
+
+1	acanete	alexgogoss	andreandli	ava	avela	awesome1	bavaro	birovljev	bmckenna1	bsettles
+2	buffetfan	calbren	carlo_cg	castaways2006	cpineda	cxwx	darthraw	davidpham	deadsox	doctor_cash_flow
+3	donmtch	dubois31	flajuie	fpower	gbrown	goorara	greggorysmith	gyriggs	investingiseasy	jclorenz
+4	jdamian_jr	jmartz	jrunkle	kidbiz	kms111	larszxc	lenirp@yahoo.com	maksfeof	mberner	mvrh
+5	nategibson	nicholaf	oakleaf2001	otbpif	pavement.artist	quantinetics	raccoon	ram1805	reignman	rexcurtisbush
+6	rgip	richfield	rmc2fc	samko	sholtkamp	smilburn	smokhaus	smokinburt	spatel7	spydrjoat
+7	sroselius	steinarryen	stockguy	svinik	tcampbell1	tchannon	trassam	umdinvest	utterme	vegas
+8	vooch3	yan	yves1	zxp	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'VNBCQ';  
+> Row 1:
+>   STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+select * from mstockalias where stockkey=X'b5a5043c39e7e9cec0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'b5a6043c39e7e9cec0a801dc'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2002-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'95cb24293dd1c568c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'5107150944a9cebac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'f9d61ce949f66429c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'1a5c035b4a7b44dac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VNBCQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|VNBCQ|CP_DELIST_REASON|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 56998040
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 107717
+>        BB_COMPANYNAME = Vineyard National Bancorp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = VNBCQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-08-16 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = VNBCQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-08-16 00:00:00.000000'
+>            PRIMARYKEY = X'e48e46e84e4af050c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VNBCQ
+>>>> dbtool started at 2015-08-24 12:40:00 -0400
+stock: VNBCQ
+  PK       : [B5A5043C39E7E9CEC0A801DC]
+  companyID: [12138]
+  symbol   : [VNBCQ]
+  name     : [Vineyard National Bancorp]
+  date     : [2009-08-06 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-24 12:40:00 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 12138
+2011-08-01 (Mon) [3864]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:315 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-02 (Tue) [3865]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:315 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-03 (Wed) [3866]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:315 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-04 (Thu) [3867]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:315 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-05 (Fri) [3868]: O:0.0050 H:0.0074 L:0.0050 C:0.0050 V:47232 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-06 (Sat) [3869]: <WEEKEND>
+2011-08-07 (Sun) [3870]: <WEEKEND>
+2011-08-08 (Mon) [3871]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:3000 TSO:10140 A:0.0050 R:1.0000 CA:1.1235
+2011-08-09 (Tue) [3872]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:100 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-10 (Wed) [3873]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:100 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-11 (Thu) [3874]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:2660 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-12 (Fri) [3875]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:2660 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-13 (Sat) [3876]: <WEEKEND>
+2011-08-14 (Sun) [3877]: <WEEKEND>
+2011-08-15 (Mon) [3878]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:0 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-16 (Tue) [3879]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:1000 TSO:10140 A:0.0051 R:1.0000 CA:1.1235  <-----
+2011-08-17 (Wed) [3880]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:1000 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+2011-08-18 (Thu) [3881]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:1000 TSO:10140 A:0.0051 R:1.0000 CA:1.1235
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b5a5043c39e7e9cec0a801dc' and shares > 0 order by closed; 
+> Row 963:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-10-08 12:24:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.125500
+>   CURRENTORDER = X'1889195e4cae57f3c0a80133'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'0350615d3e84b7f9c0a80132'
+>       MODIFIED = NULL
+>            NET = 2.384500
+>         OPENED = TIMESTAMP '2010-10-07 19:29:55.000000'
+>          PRICE = 0.003974
+>     PRIMARYKEY = X'1887195e4cae57f3c0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b5a5043c39e7e9cec0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5a5043c39e7e9cec0a801dc'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b5a5043c39e7e9cec0a801dc'  and totalshares < 0)));
+
+apply the acquis
+delist: 2011-08-17
+there are 74 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 8/16/11
+last ticket:  2010-10-08  PRICE = 0.003974
+last price:  2011-08-16 (Tue) [3879]: O:0.0051 H:0.0051 L:0.0051 C:0.0051 V:1000 TSO:10140 A:0.0051 R:1.0000 CA:1.1235  <-----
+
+going with 20110816  0.0051
+
+/Marketocracy/bin/cahelper -symbol  VNBCQ  -effective 20110816 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0051 -acqShare 0 -purchaser VNBCQ   >& /Users/build/caout/VNBCQ.20150824-DELIST.out 
+VNBCQ.20150824-DELIST.out
+stocks:~/caout build$ tail -f VNBCQ.20150824-DELIST.out
+D: (08-24 12:46:14.141) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-24 12:47:12.207) cahelper started on 2015-08-24 12:47:12 -0400
+
+D: (08-24 12:47:13.616) There are [0] open tickets for VNBCQ on 20090816
+D: (08-24 12:47:14.175) StockFileLoad Version:4.0
+D: (08-24 12:47:14.175) Loading Stock Data
+D: (08-24 12:48:54.883) Building Lookup Index
+D: (08-24 12:49:06.891) Finished Building Index
+D: (08-24 12:49:16.730) Finished Loading Stock Data
+D: (08-24 12:49:16.931) Connection to 192.168.111.172:6666 succeeded
+D: (08-24 12:49:21.445) SavingChanges for position sell out 101 of 333
+D: (08-24 12:49:31.327) {
+    "ACQUIRED_STOCK" = VNBCQ; 
+    "ACQUIRING_STOCK" = "VNBCQ_FIX"; 
+    AMOUNT = 0.0051; 
+    APPLIED = 1; 
+    DATE = 20090816; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VNBCQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-24 12:49:39.256) SUCCESS
+D: (08-24 12:49:39.256) cahelper finished 2015-08-24 12:49:39 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'b5a5043c39e7e9cec0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'b5a6043c39e7e9cec0a801dc'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2002-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'95cb24293dd1c568c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'5107150944a9cebac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'f9d61ce949f66429c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'1a5c035b4a7b44dac0a80146'  <--- set identitykey here
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'6434113855db4a91c0a86f92'  <--- delete this one 
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'6434113855db4a91c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'6434113855db4a91c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VNBCQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.005100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150824:124712
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-08-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNBCQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-08-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VNBCQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-08-16 00:00:00.000000'
+>            PRIMARYKEY = X'642e113855db4a90c0a86f92'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20150824:124712
+this is the wrong date
+/Marketocracy/bin/cahelper -symbol  VNBCQ  -effective 20110816 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0051 -acqShare 0 -purchaser VNBCQ   >& /Users/build/caout/VNBCQ.20150824-DELIST.out 
+
+need to adjust the mstockalias and identitykey
+
+select * from mstock where primarykey=X'b5a5043c39e7e9cec0a801dc';
+> Row 1:
+>         IDENTITYKEY = X'6434113855db4a91c0a86f92'
+>                NAME = Vineyard National Bancorp
+>          PRIMARYKEY = X'b5a5043c39e7e9cec0a801dc'
+>              SYMBOL = VNBC
+>           COMPANYID = 12138
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-687b
+
+update mstock set identitykey=X'1a5c035b4a7b44dac0a80146'   where PRIMARYKEY = X'b5a5043c39e7e9cec0a801dc' ;
+delete the last mstockalias
+
+delete from mstockalias where primarykey=X'6434113855db4a91c0a86f92';
+
+select * from mstockalias where stockkey= X'b5a5043c39e7e9cec0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'b5a6043c39e7e9cec0a801dc'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2002-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'95cb24293dd1c568c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'5107150944a9cebac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'f9d61ce949f66429c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'1a5c035b4a7b44dac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+
+try this again with the correct date
+/Marketocracy/bin/cahelper -symbol  VNBCQ  -effective 20110816 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0051 -acqShare 0 -purchaser VNBCQ   >& /Users/build/caout/VNBCQ.20150824-DELIST.out 
+
+VNBCQ.20150824-DELIST.out
+stocks:~/caout build$ tail -f VNBCQ.20150824-DELIST.out
+D: (08-24 17:29:00.388) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-24 17:29:57.628) cahelper started on 2015-08-24 17:29:57 -0400
+
+D: (08-24 17:29:58.030) There are [0] open tickets for VNBCQ on 20110816
+D: (08-24 17:29:58.620) StockFileLoad Version:4.0
+D: (08-24 17:29:58.620) Loading Stock Data
+D: (08-24 17:31:40.822) Building Lookup Index
+D: (08-24 17:31:53.206) Finished Building Index
+D: (08-24 17:32:02.818) Finished Loading Stock Data
+D: (08-24 17:32:02.923) Connection to 192.168.111.172:6666 succeeded
+D: (08-24 17:32:07.097) SavingChanges for position sell out 101 of 333
+D: (08-24 17:32:13.922) {
+    "ACQUIRED_STOCK" = VNBCQ; 
+    "ACQUIRING_STOCK" = "VNBCQ_FIX"; 
+    AMOUNT = 0.0051; 
+    APPLIED = 1; 
+    DATE = 20110816; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VNBCQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-24 17:32:17.493) SUCCESS
+D: (08-24 17:32:17.494) cahelper finished 2015-08-24 17:32:17 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'b5a5043c39e7e9cec0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2000-10-13 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'b5a6043c39e7e9cec0a801dc'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2002-11-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'95cb24293dd1c568c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'5107150944a9cebac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'f9d61ce949f66429c0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2009-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'1a5c035b4a7b44dac0a80146'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 927426106
+>           DATE = TIMESTAMP '2011-08-16 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Vineyard National Bancorp
+>     PRIMARYKEY = X'4d9d621855db8cd6c0a86f92'
+>       STOCKKEY = X'b5a5043c39e7e9cec0a801dc'
+>         SYMBOL = VNBCQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'4d9d621855db8cd6c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'4d9d621855db8cd6c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VNBCQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.005100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150824:052957
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-08-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNBCQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-08-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VNBCQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-08-16 00:00:00.000000'
+>            PRIMARYKEY = X'4d97621855db8cd5c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'4d97621855db8cd5c0a86f92';
+> Row 1:
+>   _C001 = 138.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'4d97621855db8cd5c0a86f92'));
+there are XXX fundkeys, save to CA issues VNBCQ fundkeys.txt
+
+For Beta case
+VNBCQ no longer trades but is still active on our site - need to delist 
+
+check on 8/25/15   invalidate funds
+check MAdmin  clear
+
+VNBCQ has been acquired	right curve
+ 	 	
+Vineyard National Bancorp acquired by a private company on 2011-08-16 00:00:00.
+
+invaldiate  reprice  closing this out 

@@ -1,0 +1,162 @@
+date: 3/4/15
+request from mapsyntax to add SPHS
+Name:	Sophiris Bio Inc
+Market:	NASDAQ
+MarketIdentificationCode:	XNAS
+MostLiquidExchange:	
+CategoryOrIndustry:	Biotechnology
+mTimeStamp:	1425487482
+CUSIP:	83578Q209
+symbol: SPHS
+yahoo:
+Sophiris Bio, Inc. (SPHS) -NasdaqGM
+0.82  0.11(15.21%) 11:45AM EST - Nasdaq Real Time Price
+
+Add to Portfolio
+Prev Close:	0.71
+Open:	0.65
+Bid:	0.81 x 100
+Ask:	0.82 x 700
+1y Target Est:	3.60
+Beta:	3.09
+Next Earnings Date:	N/A
+Day's Range:	0.65 - 0.83
+52wk Range:	0.42 - 4.01
+Volume:	937,229
+Avg Vol (3m):	540,455
+Market Cap:	13.73M  <---- 
+P/E (ttm):	N/A
+EPS (ttm):	-1.88
+Div & Yield:	N/A (N/A
+
+Sector:	Healthcare
+Industry:	Drugs - Generic
+Full Time Employees:	10
+
+Business Summary	 
+Sophiris Bio, Inc., a clinical-stage biopharmaceutical company, focuses on the research, development, and commercialization of products for the treatment of urological diseases. Its primary product candidate includes PRX302, which is in Phase III clinical trial for treatment for the symptoms of benign prostatic hyperplasia (BPH), as well as for the treatment of prostate cancer. Sophiris Bio, Inc. has a strategic relationship with Kissei Pharmaceutical Co., Ltd. or the development and commercialization of PRX302 and other products for the treatment of the symptoms of BPH, prostate cancer, prostatitis, or other diseases of the prostate; and license agreement with UVIC Industry Partnerships Inc. and The Johns Hopkins University with respect to the use of PRX302 for the development of therapeutics for the symptoms of BPH, and other non-cancer diseases and conditions of the prostate. The company was formerly known as Protox Therapeutics Inc. and changed its name to Sophiris Bio, Inc. in April 2012. Sophiris Bio, Inc. is based in La Jolla, California.
+
+quantum:
+Sophiris Bio, Inc.
+Ticker Symbol: SPHS     CUSIP: 83578Q209     Exchange: NGM
+
+Company's Online Profile
+BUSINESS:  Sophiris Bio, Inc. is a a clinical-stage biopharmaceutical company focused on developing innovative products for the treatment of urological diseases. Sophiris Bio, a Canadian urology company with operations based in San Diego, is developing a late-stage, highly targeted treatment for benign prostatic hyperplasia (BPH or enlarged prostate), a large unsatisfied market. PRX302, the company’s lead candidate for BPH, is designed to be as efficacious as pharmaceuticals, less invasive than the surgical interventions, and without the sexual side effects seen with existing treatments.
+IPO - 8/16/2013 - 13.00 Million Shares @ $/share.    Link to IPO Prospectus
+Previous Ticker Symbol: PTXRF    Changed: 8/15/13
+Previous Name: Protox Therapeutics, Inc.    Changed: 4/02/12
+Micro Cap Stock -   Market Value $ 61.4 Million
+
+select distinct stockkey from mstockalias where symbol='SPHS';
+nothing
+select * from mcorporateaction where BB_SECID='SPHS';
+nothing useful, although we do have some records
+
+let's use cahelper so that we have an EQY_LIST
+use today as the date of listing 20150304
+
+/Marketocracy/bin/cahelper -symbol SPHS -effective 20150304 -type EQY_LIST -exchange UQ >& /Users/build/caout/SPHS.20150203-EQY_LIST.out
+stocks:~/caout build$ tail -f SPHS.20150203-EQY_LIST.out
+D: (03-04 12:00:56.521) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-04 12:01:20.150) cahelper started on 2015-03-04 12:01:20 -0500
+
+D: (03-04 12:01:23.804) {
+    APPLIED = 1; 
+    DATE = 20150304; 
+    "NEW_EXCHANGE" = NASDAQ; 
+    "NEW_LIST" = SPHS; 
+    NOTES = "N.A."; 
+    SYMBOL = SPHS; 
+    TYPE = "EQY_LIST"; 
+}
+D: (03-04 12:01:24.571) SUCCESS
+D: (03-04 12:01:24.571) cahelper finished 2015-03-04 12:01:24 -0500
+
+select distinct stockkey from mstockalias where symbol='SPHS';
+> Row 1:
+>   STOCKKEY = X'973e35b254f73a60c0a86f92'
+select * from mstockalias where STOCKKEY = X'973e35b254f73a60c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-03-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = 0
+>     PRIMARYKEY = X'973f35b254f73a60c0a86f92'
+>       STOCKKEY = X'973e35b254f73a60c0a86f92'
+>         SYMBOL = SPHS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'973f35b254f73a60c0a86f92';
+> Row 1:
+>              ALIASKEY = X'973f35b254f73a60c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|SPHS|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150304:120120
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-04 00:00:00.000000'
+>         BB_IDENTIFIER = SPHS     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SPHS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-03-04 00:00:00.000000'
+>            PRIMARYKEY = X'973435b254f73a60c0a86f92'
+>               VERSION = NULL
+
+update the cusip
+83578Q209  is good
+update mstockalias set CUSIP = '83578Q209' where PRIMARYKEY = X'973f35b254f73a60c0a86f92';
+Market Cap:	13.73M  <----   XG
+update mstockalias set STYLEKEY = 'XG' where PRIMARYKEY = X'973f35b254f73a60c0a86f92';
+the GICS
+35202010	Pharmaceuticals
+	Companies engaged in the research, development or production of pharmaceuticals. Includes veterinary drugs.
+update mstockalias set GICSKEY = '35202010' where PRIMARYKEY = X'973f35b254f73a60c0a86f92';
+check:
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 83578Q209
+>           DATE = TIMESTAMP '2015-03-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = 0
+>     PRIMARYKEY = X'973f35b254f73a60c0a86f92'
+>       STOCKKEY = X'973e35b254f73a60c0a86f92'
+>         SYMBOL = SPHS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XG
+
+
+we need a name Sophiris Bio, Inc. 
+update mstockalias set NAME = 'Sophiris Bio, Inc.' where PRIMARYKEY = X'973f35b254f73a60c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 83578Q209
+>           DATE = TIMESTAMP '2015-03-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Sophiris Bio, Inc.
+>     PRIMARYKEY = X'973f35b254f73a60c0a86f92'
+>       STOCKKEY = X'973e35b254f73a60c0a86f92'
+>         SYMBOL = SPHS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XG
+check on 3/5/15
+The stock appears on our site and my test buy worked
+
+select count(*) from mticket where  STOCKKEY = X'973e35b254f73a60c0a86f92';
+> Row 1:
+>   _C001 = 1.000000
+
+
+closing this out 3/7/15

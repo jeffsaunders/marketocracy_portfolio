@@ -1,0 +1,332 @@
+
+date:   7/30/15
+ticker:   NFLDQ
+
+yahoo:
+
+quantum:
+Northfield Laboratories, Inc.
+Ticker Symbol: NFLDQ*     CUSIP: 666135108     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 10/01/09
+
+Company's Online Profile
+BUSINESS:  Northfield Laboratories is a leading developer of an oxygen-carrying blood substitute. Its product, PolyHeme(TM), is the only blood substitute that has been rapidly and safely infused in sufficiently massive quantities to be considered useful in the treatment of large volume blood loss in trauma and surgical settings. PolyHeme requires no cross matching, making it immediately available and compatible with all blood types. It has an extended shelf life of over 12 months and does not transmit disease.
+
+Notes:  Bank of bankruptcy effective 9/25/2009 per the Other OTC on 10/1/2009.
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:NORTHFIELD LABORATORIES  Symbol:NFLDQ
+Date: 07/30/2015
+
+104 users found
+
+1	1302751	adamiani1	aefa0533	ahlpo	alexdeac	aobar	armand242	atrout	bbqporkmogul	beldar59
+2	bg88888	bkrause	blivingston	bmrboy	brodav	caldera	captlowtide	ccornett	clemvic	closingbell
+3	cool0606	coolperson0808	cwhaley	dag	danilo	djean	dmoneyaura	dyddgroup	edzolt	ehickey
+4	ekk315	ferran	fiyerbirdie	fschettini	ghoupt	goodwintrading	hebrews17	interactivefunder	investor5707	jacktynch
+5	jamiroman	jbarnes2	jillious	jlortiz	johnick06	jpatt	jvolentine	jyt459	kobayashi	l.davis@shell.com
+6	langley	lazfx	lcarter	lsoon_fong1	maksfeof	marketcat	mavaro	mcarvalho65	mdrury	meleke
+7	mgrinyer	mjohnsto	mluther	moonpi	neilt	nsultan	p_lin	pdorn	penggijb	pkts
+8	pryan	psychekiller	raccoon	ralphthefrog	redsoxrule	rosty	rshapiro1	rustico	saikiran	sallymcbeaver
+9	scap	schettini2008	scottjsandersmd	scotty211	sdtrond	shelupinin	ssjohnq	stanplatz	stock	stonecoldtl
+10	stubslovesthemarkets	subman	svetlin	swatson1	tecnocrat	tlaughran	tpeichel	tryloki2000	ttindall	vooch3
+11	williamwarner	xandy	zen_olias	zzzclay	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'NFLDQ';  
+> Row 1:
+>   STOCKKEY = X'f1560e21390aaff1c0a80116'
+
+select * from mstockalias where stockkey=X'f1560e21390aaff1c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'f1570e21390aaff1c0a80116'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'da241c644a248829c0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'2ff926c84a31b71ec0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'd86127fd4a31b754c0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NFLDQ'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NFLDQ
+>>>> dbtool started at 2015-07-30 13:05:25 -0400
+stock: NFLDQ
+  PK       : [F1560E21390AAFF1C0A80116]
+  companyID: [2790]
+  symbol   : [NFLDQ]
+  name     : [NORTHFIELD LABORATORIES]
+  date     : [2009-06-11 00:00:00]
+  status   : [Active]
+stock: NFLDQ
+  PK       : [F1560E21390AAFF1C0A80116]
+  companyID: [2790]
+  symbol   : [NFLDQ]
+  name     : [NORTHFIELD LABORATORIES]
+  date     : [2009-06-11 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-30 13:05:25 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2790
+2009-09-24 (Thu) [3188]: O:0.0450 H:0.0475 L:0.0429 C:0.0431 V:286002 TSO:27038 A:0.0431 R:1.0000 CA:0.0000
+2009-09-25 (Fri) [3189]: O:0.0431 H:0.0440 L:0.0429 C:0.0429 V:94350 TSO:27038 A:0.0429 R:1.0000 CA:0.0000
+2009-09-26 (Sat) [3190]: <WEEKEND>
+2009-09-27 (Sun) [3191]: <WEEKEND>
+2009-09-28 (Mon) [3192]: O:0.0450 H:0.0520 L:0.0429 C:0.0480 V:234513 TSO:27038 A:0.0480 R:1.0000 CA:0.0000
+2009-09-29 (Tue) [3193]: O:0.0480 H:0.0500 L:0.0429 C:0.0429 V:90520 TSO:27038 A:0.0429 R:1.0000 CA:0.0000
+2009-09-30 (Wed) [3194]: O:0.0429 H:0.0470 L:0.0410 C:0.0410 V:140455 TSO:27038 A:0.0410 R:1.0000 CA:0.0000
+2009-10-01 (Thu) [3195]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-02 (Fri) [3196]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-03 (Sat) [3197]: <WEEKEND>
+2009-10-04 (Sun) [3198]: <WEEKEND>
+2009-10-05 (Mon) [3199]: O:0.0380 H:0.0380 L:0.0380 C:0.0380 V:0 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-06 (Tue) [3200]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-07 (Wed) [3201]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-08 (Thu) [3202]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-09 (Fri) [3203]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-10 (Sat) [3204]: <WEEKEND>
+2009-10-11 (Sun) [3205]: <WEEKEND>
+2009-10-12 (Mon) [3206]: O:0.0380 H:0.0380 L:0.0380 C:0.0380 V:0 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-13 (Tue) [3207]: O:0.0380 H:0.0380 L:0.0380 C:0.0380 V:0 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-14 (Wed) [3208]: O:0.0380 H:0.0380 L:0.0380 C:0.0380 V:0 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+2009-10-15 (Thu) [3209]: O:0.0380 H:0.0380 L:0.0380 C:0.0380 V:0 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f1560e21390aaff1c0a80116' and shares > 0 order by closed; 
+> Row 1889:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-09-04 15:55:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1.480959
+>   CURRENTORDER = X'7b1536234aa15936c0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'13c5715545ecba50c0a80135'
+>       MODIFIED = NULL
+>            NET = 28.138225
+>         OPENED = TIMESTAMP '2009-09-04 14:15:18.000000'
+>          PRICE = 0.045828
+>     PRIMARYKEY = X'7b1336234aa15936c0a80133'
+>         SECFEE = 0.010000
+>         SHARES = 614.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f1560e21390aaff1c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f1560e21390aaff1c0a80116'  and totalshares < 0);
+noshorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f1560e21390aaff1c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 104 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 10/01/09
+last ticket: 2009-09-04 PRICE = 0.045828
+last price:  2009-10-02 (Fri) [3196]: O:0.0400 H:0.0445 L:0.0380 C:0.0380 V:290438 TSO:27038 A:0.0380 R:1.0000 CA:0.0000
+
+going with 20091002  0.0380
+
+
+/Marketocracy/bin/cahelper -symbol  NFLDQ  -effective 20091002 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0380 -acqShare 0 -purchaser NFLDQ   >& /Users/build/caout/NFLDQ.20150730-DELIST.out 
+NFLDQ.20150730-DELIST.out
+stocks:~/caout build$ tail -f NFLDQ.20150730-DELIST.out
+D: (07-30 13:08:51.553) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-30 13:09:37.216) cahelper started on 2015-07-30 13:09:37 -0400
+
+D: (07-30 13:09:37.604) There are [0] open tickets for NFLDQ on 20091002
+D: (07-30 13:09:38.069) StockFileLoad Version:4.0
+D: (07-30 13:09:38.069) Loading Stock Data
+D: (07-30 13:10:53.728) Building Lookup Index
+D: (07-30 13:11:03.916) Finished Building Index
+D: (07-30 13:11:11.532) Finished Loading Stock Data
+D: (07-30 13:11:11.561) Connection to 192.168.111.172:6666 succeeded
+D: (07-30 13:11:15.006) SavingChanges for position sell out 101 of 477
+D: (07-30 13:11:27.629) {
+    "ACQUIRED_STOCK" = NFLDQ; 
+    "ACQUIRING_STOCK" = "NFLDQ_FIX"; 
+    AMOUNT = 0.038; 
+    APPLIED = 1; 
+    DATE = 20091002; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NFLDQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-30 13:11:39.983) SUCCESS
+D: (07-30 13:11:39.984) cahelper finished 2015-07-30 13:11:39 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'f1560e21390aaff1c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'f1570e21390aaff1c0a80116'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'da241c644a248829c0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'2ff926c84a31b71ec0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-06-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'd86127fd4a31b754c0a80146'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLDQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 666135108
+>           DATE = TIMESTAMP '2009-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NORTHFIELD LABORATORIES
+>     PRIMARYKEY = X'd93c47f255ba5a51c0a86f92'
+>       STOCKKEY = X'f1560e21390aaff1c0a80116'
+>         SYMBOL = NFLDQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35201010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'd93c47f255ba5a51c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'd93c47f255ba5a51c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NFLDQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.038000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150730:010937
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = NFLDQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-10-02 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NFLDQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-10-02 00:00:00.000000'
+>            PRIMARYKEY = X'd93647f255ba5a51c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'd93647f255ba5a51c0a86f92';
+> Row 1:
+>   _C001 = 185.000000
+
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'd93647f255ba5a51c0a86f92'));
+there are 185 fundkeys, save to CA issues NFLDQ fundkeys.txt
+
+For Beta case
+NFLDQ no longer trades but is still active on our site - need to delist 
+
+check on 7/31/15   invalidate funds
+check MAdmin  clear 
+
+ NFLDQ has been acquired 	right curve
+  	  	
+NORTHFIELD LABORATORIES acquired by a private company on 2009-10-02 00:00:00. 
+
+invalidate, reprice and close 

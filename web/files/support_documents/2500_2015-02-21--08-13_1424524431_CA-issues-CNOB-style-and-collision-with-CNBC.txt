@@ -1,0 +1,2209 @@
+date:  2/19/15
+CNOB  ticker collision
+there are two active stockkeys for CNOC
+
+yahoo:
+since 5/30/1996
+
+select distinct stockkey from mstockalias where symbol='CNOB';
+> Row 1:
+>   STOCKKEY = X'00915127511ad43cc0a80146'
+> Row 2:
+>   STOCKKEY = X'013a0e21390ad397c0a80116'
+
+
+there are two
+
+********************************************************************************
+> CNOB 1:
+>   STOCKKEY = X'00915127511ad43cc0a80146'
+
+********************************************************************************
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+	select * from mexchange where primarykey=X'9d5d2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = NASDAQ
+>   PRIMARYKEY = X'9d5d2f1d390a440bc0a8015c'
+
+	select * from mcorporateaction where aliaskey=X'00925127511ad43cc0a80146';
+> Row 1:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|CNOB|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73925401
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'd340667a5119814fc0a80146'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'002f1e6952e0cdd5c0a86f92';
+> Row 1:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85683540
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'2fb5632852e0ab6ac0a86f92'
+>               VERSION = NULL
+
+check for mtickets
+select count(*) from mticket where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   _C001 = 9.000000
+select * from mticket where STOCKKEY = X'00915127511ad43cc0a80146' order by opened;
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-02-14 11:48:00.000000'
+>        COMMENT = 
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'4200324c511c1f13c0a80132'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'858922af5107266bc0a80132'
+>       MODIFIED = NULL
+>            NET = 58540.062000
+>         OPENED = TIMESTAMP '2013-02-13 18:17:39.000000'
+>          PRICE = 29.270031
+>     PRIMARYKEY = X'41fe324c511c1f13c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-16 13:00:00.000000'
+>        COMMENT = 
+>     COMMISSION = 17.000000
+>   CURRENTORDER = X'15da1ac451944657c0a80132'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'3fda153350ff35cac0a80132'
+>       MODIFIED = NULL
+>            NET = 9749.799880
+>         OPENED = TIMESTAMP '2013-05-15 22:37:11.000000'
+>          PRICE = 28.675882
+>     PRIMARYKEY = X'15d81ac451944657c0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 340.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-16 13:00:00.000000'
+>        COMMENT = 
+>     COMMISSION = 17.000000
+>   CURRENTORDER = X'2c951d7f5194d147c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3fda153350ff35cac0a80132'
+>       MODIFIED = NULL
+>            NET = 9749.799880
+>         OPENED = TIMESTAMP '2013-05-16 08:29:59.000000'
+>          PRICE = 28.675882
+>     PRIMARYKEY = X'2c931d7f5194d147c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 340.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-16 13:00:00.000000'
+>        COMMENT = 
+>     COMMISSION = 17.000000
+>   CURRENTORDER = X'34ea1d7f5194d2c3c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3fda153350ff35cac0a80132'
+>       MODIFIED = NULL
+>            NET = 9749.799880
+>         OPENED = TIMESTAMP '2013-05-16 08:36:19.000000'
+>          PRICE = 28.675882
+>     PRIMARYKEY = X'34e81d7f5194d2c3c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 340.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-05-16 15:57:00.000000'
+>        COMMENT = 
+>     COMMISSION = 7.000000
+>   CURRENTORDER = X'dcd63cb15195344fc0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'3fda153350ff35cac0a80132'
+>       MODIFIED = NULL
+>            NET = 4070.800020
+>         OPENED = TIMESTAMP '2013-05-16 15:32:31.000000'
+>          PRICE = 29.077143
+>     PRIMARYKEY = X'dcd43cb15195344fc0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 140.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-08-26 14:48:00.000000'
+>        COMMENT = 
+>     COMMISSION = 6.000000
+>   CURRENTORDER = X'bb5e4ce5521b4604c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'28f34fd240655369ffffffff'
+>       MODIFIED = NULL
+>            NET = 3925.899960
+>         OPENED = TIMESTAMP '2013-08-26 08:11:48.000000'
+>          PRICE = 32.715833
+>     PRIMARYKEY = X'bb5c4ce5521b4604c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 120.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 7:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-09-30 10:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 6.000000
+>   CURRENTORDER = X'e3f60e4b5246b000c0a80132'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'28f34fd240655369ffffffff'
+>       MODIFIED = NULL
+>            NET = 4138.720000
+>         OPENED = TIMESTAMP '2013-09-28 06:31:28.000000'
+>          PRICE = 34.489333
+>     PRIMARYKEY = X'e3f40e4b5246b000c0a80132'
+>         SECFEE = 0.080000
+>         SHARES = 120.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 8:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-10-11 11:58:00.000000'
+>        COMMENT = 
+>     COMMISSION = 30.000000
+>   CURRENTORDER = X'c6d9619152558a3dc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'87270f27476e0913c0a80135'
+>       MODIFIED = NULL
+>            NET = 20517.819600
+>         OPENED = TIMESTAMP '2013-10-09 12:54:21.000000'
+>          PRICE = 34.196366
+>     PRIMARYKEY = X'c6d7619152558a3dc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 9:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-10-22 15:32:00.000000'
+>        COMMENT = 
+>     COMMISSION = 30.000000
+>   CURRENTORDER = X'a0e73da852654ffec0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'87270f27476e0913c0a80135'
+>       MODIFIED = NULL
+>            NET = 22578.086000
+>         OPENED = TIMESTAMP '2013-10-21 12:02:06.000000'
+>          PRICE = 37.630143
+>     PRIMARYKEY = X'a0e53da852654ffec0a80135'
+>         SECFEE = 0.400000
+>         SHARES = 600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+********************************************************************************
+> CNOB 2:
+>   STOCKKEY = X'013a0e21390ad397c0a80116'
+********************************************************************************
+select * from mstockalias where STOCKKEY = X'013a0e21390ad397c0a80116';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'013b0e21390ad397c0a80116'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mexchange where primarykey=X'9d5d2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = NASDAQ
+>   PRIMARYKEY = X'9d5d2f1d390a440bc0a8015c'
+
+	select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey=X'013b0e21390ad397c0a80116';
+> Row 1:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 2:
+>   BB_ACTIONMNEMONIC = DVD_STOCK
+> Row 3:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+
+	select * from mcorporateaction where aliaskey=X'013b0e21390ad397c0a80116';
+	these are center bancorp dividends
+
+
+
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'4891150944a9cdf0c0a80146'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey=X'4891150944a9cdf0c0a80146';
+> Row 1:
+>   BB_ACTIONMNEMONIC = CHG_LIST
+> Row 2:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+
+	select * from mcorporateaction where aliaskey=X'4891150944a9cdf0c0a80146';
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'73f910ed53b33e32c0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'73f910ed53b33e32c0a86f92';
+
+> Row 1:
+>              ALIASKEY = X'73f910ed53b33e32c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CNBC US|CP_NEW_TKR|CNOB US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106119
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1da8711053b1eac1c0a86f92'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2014-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'a77c113c53b33ee0c0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'a77c113c53b33ee0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a77c113c53b33ee0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Center Bancorp Inc|CP_NEW_NAME|ConnectOne Bancorp Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106107
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1db0711053b1eac6c0a86f92'
+>               VERSION = NULL
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'57c9126d53b33f0ac0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'57c9126d53b33f0ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|151408101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US1514081017|CP_NEW_ISIN|US20786W1071|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106125
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1daa711053b1eac3c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140711|CP_PAY_DT|20140801|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996124|CP_ADJ_DT|20140709|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91943550
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'881f393e53bdc62ac0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141017|CP_PAY_DT|20141103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995906|CP_ADJ_DT|20141015|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96522168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'c4a50d57543efc38c0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150119|CP_PAY_DT|20150202|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20150114|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101204034
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'fe731d5354b70179c0a86f92'
+>               VERSION = NULL
+
+let's remove the ticker change and the name change
+then apply an acquis of CNBC on 7/1/14 and give equal shares of CNOB
+
+
+delete these two items
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'73f910ed53b33e32c0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'73f910ed53b33e32c0a86f92';
+
+> Row 1:
+>              ALIASKEY = X'73f910ed53b33e32c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CNBC US|CP_NEW_TKR|CNOB US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106119
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1da8711053b1eac1c0a86f92'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2014-07-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'a77c113c53b33ee0c0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'a77c113c53b33ee0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a77c113c53b33ee0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Center Bancorp Inc|CP_NEW_NAME|ConnectOne Bancorp Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106107
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1db0711053b1eac6c0a86f92'
+>               VERSION = NULL
+set commit false;
+delete from mcorporateaction where PRIMARYKEY = X'1db0711053b1eac6c0a86f92'; 
+delete from mstockalias where PRIMARYKEY = X'a77c113c53b33ee0c0a86f92';
+delete from mcorporateaction where  PRIMARYKEY = X'1da8711053b1eac1c0a86f92';
+delete from mstockalias where PRIMARYKEY = X'73f910ed53b33e32c0a86f92';
+commit;
+set commit true;
+done
+
+check CNOB 2 again
+********************************************************************************
+> CNOB 2:
+>   STOCKKEY = X'013a0e21390ad397c0a80116'
+********************************************************************************
+select * from mstockalias where STOCKKEY = X'013a0e21390ad397c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'013b0e21390ad397c0a80116'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'4891150944a9cdf0c0a80146'   <--- set the identitykey here 
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'4891150944a9cdf0c0a80146';
+chg list and dvd cash - these stay put
+select * from mstock where primarykey=X'013a0e21390ad397c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'57c9126d53b33f0ac0a86f92'
+>                NAME = CENTER BANCORP
+>          PRIMARYKEY = X'013a0e21390ad397c0a80116'
+>              SYMBOL = CNBC
+>           COMPANYID = 3807
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7b8d
+
+update mstock set IDENTITYKEY = X'4891150944a9cdf0c0a80146'     where PRIMARYKEY = X'013a0e21390ad397c0a80116';
+done
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'57c9126d53b33f0ac0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'57c9126d53b33f0ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|151408101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US1514081017|CP_NEW_ISIN|US20786W1071|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106125
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1daa711053b1eac3c0a86f92'   <--- delete this one 
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'   <-- move this
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140711|CP_PAY_DT|20140801|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996124|CP_ADJ_DT|20140709|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91943550
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'881f393e53bdc62ac0a86f92'
+>               VERSION = NULL
+update mcorporateaction set ALIASKEY = X'002f1e6952e0cdd5c0a86f92'  where PRIMARYKEY = X'881f393e53bdc62ac0a86f92';
+done
+> Row 3:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'  <-- move this
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141017|CP_PAY_DT|20141103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995906|CP_ADJ_DT|20141015|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96522168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'c4a50d57543efc38c0a86f92'
+>               VERSION = NULL
+update mcorporateaction set ALIASKEY = X'002f1e6952e0cdd5c0a86f92'  where PRIMARYKEY = X'c4a50d57543efc38c0a86f92';
+done
+> Row 4:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'  <-- move this
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150119|CP_PAY_DT|20150202|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20150114|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101204034
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'fe731d5354b70179c0a86f92'
+>               VERSION = NULL
+update mcorporateaction set ALIASKEY = X'002f1e6952e0cdd5c0a86f92'  where PRIMARYKEY = X'fe731d5354b70179c0a86f92';
+done
+
+now delete these two records
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'57c9126d53b33f0ac0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+> Row 1:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|151408101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US1514081017|CP_NEW_ISIN|US20786W1071|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106125
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1daa711053b1eac3c0a86f92'   <--- delete this one 
+>               VERSION = NULL
+delete from mcorporateaction where PRIMARYKEY = X'1daa711053b1eac3c0a86f92'  ;
+delete from  mstockalias where PRIMARYKEY = X'57c9126d53b33f0ac0a86f92';
+
+select count(*) from mticket where stockkey= X'013a0e21390ad397c0a80116';
+> Row 1:
+>   _C001 = 380.000000
+
+
+select * from mticket where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000';
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-08 15:55:00.000000'
+>        COMMENT = 
+>     COMMISSION = 44.050000
+>   CURRENTORDER = X'ba1810c9540d9e80c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'31cf53063dc2c580c0a80133'
+>       MODIFIED = NULL
+>            NET = 16883.529812
+>         OPENED = TIMESTAMP '2014-09-08 08:18:08.000000'
+>          PRICE = 19.164052
+>     PRIMARYKEY = X'ba1610c9540d9e80c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 881.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-10-17 15:06:00.000000'
+>        COMMENT = 
+>     COMMISSION = 44.050000
+>   CURRENTORDER = X'444d4df054413ab7c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'31cf53063dc2c580c0a80133'
+>       MODIFIED = NULL
+>            NET = 16284.350108
+>         OPENED = TIMESTAMP '2014-10-17 11:50:15.000000'
+>          PRICE = 18.483939
+>     PRIMARYKEY = X'444b4df054413ab7c0a86f98'
+>         SECFEE = 0.290000
+>         SHARES = 881.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-10-23 10:20:00.000000'
+>        COMMENT = 
+>     COMMISSION = 106.000000
+>   CURRENTORDER = X'82fe3ee75446fbd8c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'28f34fd240655369ffffffff'
+>       MODIFIED = NULL
+>            NET = 38977.869560
+>         OPENED = TIMESTAMP '2014-10-21 20:35:36.000000'
+>          PRICE = 18.385788
+>     PRIMARYKEY = X'82fc3ee75446fbd8c0a86f98'
+>         SECFEE = 0.690000
+>         SHARES = 2120.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-02-17 11:18:08.000000'
+>        COMMENT = Good Price|
+>     COMMISSION = 85.000000
+>   CURRENTORDER = X'd759245354dfcf6bc0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'336a135a3a9488c3c0a801e1'
+>       MODIFIED = NULL
+>            NET = 31506.849700
+>         OPENED = TIMESTAMP '2015-02-14 17:42:51.000000'
+>          PRICE = 18.533441
+>     PRIMARYKEY = X'd757245354dfcf6bc0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 1700.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-02-17 09:30:00.000000'
+>        COMMENT = 
+>     COMMISSION = 5.000000
+>   CURRENTORDER = X'b3dc291454e15003c0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'8e40291454e14c6ec0a86f98'
+>       MODIFIED = NULL
+>            NET = 1850.000000
+>         OPENED = TIMESTAMP '2015-02-15 21:03:47.000000'
+>          PRICE = 18.500000
+>     PRIMARYKEY = X'b3da291454e15003c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 100.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select primarykey from mticket where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000';
+> Row 1:
+>   PRIMARYKEY = X'ba1610c9540d9e80c0a86f98'
+> Row 2:
+>   PRIMARYKEY = X'444b4df054413ab7c0a86f98'
+> Row 3:
+>   PRIMARYKEY = X'82fc3ee75446fbd8c0a86f98'
+> Row 4:
+>   PRIMARYKEY = X'd757245354dfcf6bc0a86f98'
+> Row 5:
+>   PRIMARYKEY = X'b3da291454e15003c0a86f98'
+
+
+get the mtrades
+select * from mtrade where ticketkey in (select primarykey from mticket where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000');
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'c491076e540e0b2ec0a86f9c'
+>                 PRIMARYKEY = X'c490076e540e0b2ec0a86f9c'
+>                     SHARES = 881.000000
+>                  TICKETKEY = X'ba1610c9540d9e80c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-09-08 15:55:00.000000'
+>                      PRICE = 19.164100
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'c491076e540e0b2ec0a86f9c'
+>                 PRIMARYKEY = X'15d457aa54416c50c0a86f9c'
+>                     SHARES = 881.000000
+>                  TICKETKEY = X'444b4df054413ab7c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-10-17 15:06:00.000000'
+>                      PRICE = 18.483900
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'c72920c3523ca1e1c0a8011e'
+>                 PRIMARYKEY = X'f9360eca54491293c0a86f9c'
+>                     SHARES = 2120.000000
+>                  TICKETKEY = X'82fc3ee75446fbd8c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-10-23 10:20:00.000000'
+>                      PRICE = 18.385800
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'99c75a2854e35437c0a86f9c'
+>                 PRIMARYKEY = X'99c65a2854e35437c0a86f9c'
+>                     SHARES = 100.000000
+>                  TICKETKEY = X'b3da291454e15003c0a86f98'
+>                     CLOSED = TIMESTAMP '2015-02-17 09:30:00.000000'
+>                      PRICE = 18.500000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'9f9b5a2854e36d5bc0a86f9c'
+>                 PRIMARYKEY = X'9f9a5a2854e36d5bc0a86f9c'
+>                     SHARES = 600.000000
+>                  TICKETKEY = X'd757245354dfcf6bc0a86f98'
+>                     CLOSED = TIMESTAMP '2015-02-17 11:18:08.000000'
+>                      PRICE = 18.533400
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'9f9d5a2854e36d5bc0a86f9c'
+>                 PRIMARYKEY = X'9f9c5a2854e36d5bc0a86f9c'
+>                     SHARES = 1100.000000
+>                  TICKETKEY = X'd757245354dfcf6bc0a86f98'
+>                     CLOSED = TIMESTAMP '2015-02-17 11:18:08.000000'
+>                      PRICE = 18.533400
+>   CREATEDBYCORPORATEACTION = 0
+
+get the fund keys then delete these mtickets
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000'));
+> Row 1:
+>   FUNDKEY = X'4666172350b5ae57c0a80135'
+> Row 2:
+>   FUNDKEY = X'856710c9540d9be7c0a86f98'
+> Row 3:
+>   FUNDKEY = X'8e60291454e14d57c0a86f98'
+> Row 4:
+>   FUNDKEY = X'ace20f3c3d5a046dc0a801e2'
+> Row 5:
+>   FUNDKEY = X'14cf31653d3e5aa5c0a801e0'
+
+
+delete the mtrades 
+
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000');
+done
+
+now move the stockkeys over
+
+update mticket set stockkey=X'00915127511ad43cc0a80146'  where stockkey= X'013a0e21390ad397c0a80116' and opened > TIMESTAMP'2014-07-01 00:00:00.000000';
+
+ok the mtickets have been moved over
+
+let's tickle the tickets
+
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey  ba1610c9540d9e80c0a86f98;
+>>>> dbtool started at 2015-02-19 23:03:41 -0500
+<<<< dbtool finished at 2015-02-19 23:04:27 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 444b4df054413ab7c0a86f98;
+>>>> dbtool started at 2015-02-19 23:04:05 -0500
+<<<< dbtool finished at 2015-02-19 23:05:56 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 82fc3ee75446fbd8c0a86f98;
+>>>> dbtool started at 2015-02-19 23:04:18 -0500
+<<<< dbtool finished at 2015-02-19 23:05:12 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey d757245354dfcf6bc0a86f98;
+>>>> dbtool started at 2015-02-19 23:06:14 -0500
+<<<< dbtool finished at 2015-02-19 23:07:00 -0500
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey b3da291454e15003c0a86f98;
+>>>> dbtool started at 2015-02-19 23:06:20 -0500
+<<<< dbtool finished at 2015-02-19 23:07:43 -0500
+
+
+let's invalidate the funds
+
+/Marketocracy/bin/fptool invalidateFund 4666172350b5ae57c0a80135;
+/Marketocracy/bin/fptool invalidateFund 856710c9540d9be7c0a86f98;
+/Marketocracy/bin/fptool invalidateFund 8e60291454e14d57c0a86f98;
+/Marketocracy/bin/fptool invalidateFund ace20f3c3d5a046dc0a801e2;
+/Marketocracy/bin/fptool invalidateFund 14cf31653d3e5aa5c0a801e0;
+
+
+let's apply the acquis for CNBC on 7/1/2014
+/Marketocracy/bin/cahelper -symbol CNBC -effective 20140701 -type ACQUIS -exchange UQ -acqType 2 -acqCash 0 -acqShare 1.0 -purchaser CNOB >& /Users/build/caout/CNBC.20150219-ACQUIS-CNOB.out
+
+CNBC.20150219-ACQUIS-CNOB.out
+stocks:~/caout build$ tail -f CNBC.20150219-ACQUIS-CNOB.out
+D: (02-19 23:10:51.362) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-19 23:11:14.427) cahelper started on 2015-02-19 23:11:14 -0500
+
+D: (02-19 23:11:14.594) There are [0] open tickets for CNBC on 20140701
+D: (02-19 23:11:19.588) StockFileLoad Version:3.0
+D: (02-19 23:11:19.588) Loading Stock Data
+D: (02-19 23:11:59.381) Building Lookup Index
+D: (02-19 23:12:03.288) Finished Building Index
+D: (02-19 23:12:04.284) Finished Loading Stock Data
+D: (02-19 23:12:04.403) Connection to 192.168.111.157:6666 succeeded
+D: (02-19 23:12:17.270) Cannot Find DVD_STOCK :CNBC onDate:2004-06-01 12:00:00 -0400 for Original STOCK :ConnectOne Bancorp Inc
+D: (02-19 23:12:17.270) Cannot Find DVD_STOCK :CNBC onDate:2005-06-15 12:00:00 -0400 for Original STOCK :ConnectOne Bancorp Inc
+D: (02-19 23:12:17.280) Cannot Find DVD_STOCK :CNBC onDate:2002-06-01 12:00:00 -0400 for Original STOCK :ConnectOne Bancorp Inc
+D: (02-19 23:12:17.955) {
+    "ACQUIRED_STOCK" = CNBC; 
+    "ACQUIRING_STOCK" = CNOB; 
+    AMOUNT = 1; 
+    APPLIED = 1; 
+    DATE = 20140701; 
+    FUNDS = (
+        "ade_turris/Alfredo de Turris's Mutual Fund", 
+        "etalas/etalas's Split Fund", 
+        "bananaslug/Mosquito Fund", 
+        "cdreynes/Reynes Mutual Fund - CAPITAL APPRECIATION", 
+        "jdockstader2/TOTAL JASON DOCKSTADER INDEX", 
+        "kkalisch/Small & Micro Fund", 
+        "ndk/The Teflon-Plated Anti-Stock Market Fund", 
+        "bananaslug/BananaSlug Financials Fund", 
+        "jmarquart/Value Fund", 
+        "rweissel/Copycat Fund", 
+        "jmilk/jmilk's financial fund", 
+        "bigrascal/Crimson Tide Fund", 
+        "bigrascal/Cameron Wealth Fund", 
+        "klandragan/klandragan's Financ. Fund", 
+        "carolinegrimonprez/carolinegrimonprez's Mutual Fund", 
+        "j_j_big_ca_h/j_j_big_ca_h's Mutual Fund", 
+        "hayden/hayden's Mutual Fund", 
+        "tcarboneau/52NASD", 
+        "mwarner/MWarner's Short Fund", 
+        "nlg/nlg's Mutual Fund", 
+        "hypedaj/Small Cap ", 
+        "drlaz/PIM's Best S/C Mid-Momentum", 
+        "hiromimini/Selling into Computational Kaos", 
+        "watcher/Test Short Fund", 
+        "bollmann/Bollmann Short Signal Fund", 
+        "hoochkitty/Shorty", 
+        "hoochkitty/Short MF", 
+        "rnice/rnice's value", 
+        "cfoam/Short Fund", 
+        "newlife1/Newlife Mutual Fund", 
+        "drac/Drac's Short Squeeze", 
+        "qy19999/qy19999's Mutual Fund", 
+        "mwolf12/Wolf's Advisory Fund", 
+        "hotmamma/hotmamma's income Mutual Fund ", 
+        "mwolf12/Wolf Advisory Fund II", 
+        "djean/djean's Diversified Equity", 
+        "djean/djean's Long Growth Fund", 
+        "pginvestments/pginvestments's Mutual Fund", 
+        "tylerhug927/Top 100 Stocks", 
+        "alexm/Upgrades", 
+        "minuet/Value II", 
+        "steve1968nj/Mambo Analyst - Bull", 
+        "gnouf/Top Value", 
+        "gnouf/Pitbull Investor"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = CNOB; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-19 23:12:21.740) SUCCESS
+D: (02-19 23:12:21.740) cahelper finished 2015-02-19 23:12:21 -0500
+
+
+looks good
+
+let's check the database again
+
+select distinct stockkey from mstockalias where symbol='CNOB';
+> Row 1:
+>   STOCKKEY = X'00915127511ad43cc0a80146'
+
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+	update mstockalias set STYLEKEY='SV' where STOCKKEY = X'00915127511ad43cc0a80146';
+	select * from mcorporateaction where aliaskey=X'00925127511ad43cc0a80146';
+> Row 1:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|CNOB|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73925401
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'd340667a5119814fc0a80146'
+>               VERSION = NULL
+
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'002f1e6952e0cdd5c0a86f92';
+> Row 1:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85683540
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'2fb5632852e0ab6ac0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140711|CP_PAY_DT|20140801|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996124|CP_ADJ_DT|20140709|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91943550
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'881f393e53bdc62ac0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141017|CP_PAY_DT|20141103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995906|CP_ADJ_DT|20141015|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96522168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'c4a50d57543efc38c0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150119|CP_PAY_DT|20150202|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20150114|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101204034
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'fe731d5354b70179c0a86f92'
+>               VERSION = NULL
+
+
+select distinct stockkey from mstockalias where symbol='CNBC';
+> Row 1:
+>   STOCKKEY = X'013a0e21390ad397c0a80116'
+select * from mstockalias where STOCKKEY = X'013a0e21390ad397c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'013b0e21390ad397c0a80116'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	update mstockalias set STYLEKEY='SV' where STOCKKEY = X'013a0e21390ad397c0a80116';
+	select count(*) from mcorporateaction where aliaskey=X'013b0e21390ad397c0a80116';
+	> Row 1:
+	>   _C001 = 29.000000
+	select distinct BB_ACTIONMNEMONIC  from mcorporateaction where aliaskey=X'013b0e21390ad397c0a80116';
+> Row 1:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 2:
+>   BB_ACTIONMNEMONIC = DVD_STOCK
+> Row 3:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'4891150944a9cdf0c0a80146'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select count(*) from mcorporateaction where aliaskey=X'4891150944a9cdf0c0a80146';
+	> Row 1:
+	>   _C001 = 18.000000
+
+	select distinct BB_ACTIONMNEMONIC  from mcorporateaction where aliaskey=X'4891150944a9cdf0c0a80146';
+	> Row 1:
+	>   BB_ACTIONMNEMONIC = CHG_LIST
+	> Row 2:
+	>   BB_ACTIONMNEMONIC = DVD_CASH
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 151408101
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CENTER BANCORP
+>     PRIMARYKEY = X'9dd154e454e6b420c0a86f92'
+>       STOCKKEY = X'013a0e21390ad397c0a80116'
+>         SYMBOL = CNBC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'9dd154e454e6b420c0a86f92';
+> Row 1:
+>              ALIASKEY = X'9dd154e454e6b420c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CNBC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|1.000000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150219:111114
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'f9b454e454e6b3e2c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'f9b454e454e6b3e2c0a86f92';
+> Row 1:
+>   _C001 = 88.000000
+
+This looks good 
+who held CNBC on 06/30/2014 day before the acquis
+Stock:ConnectOne Bancorp Inc  Symbol:CNOB
+Date: 06/30/2014
+
+26 users found
+
+1	ade_turris	alexm	bananaslug	bigrascal	carolinegrimonprez	djean	drac	drlaz	etalas	gnouf
+2	hayden	hoochkitty	hotmamma	j_j_big_ca_h	jmarquart	jmilk	klandragan	minuet	mwolf12	ndk
+3	newlife1	nlg	qy19999	rnice	rweissel	watcher
+check on 2/20/15  to see that CNBC is acquired and holders got CNOB
+dividends   and check for style of SV
+
+2/20/15
+I see that the style is updated for James
+checking the acquis - it's applied  - let's look at a member
+
+ade_turris
+your holdings of CNBC	
+ 	 	
+Fund	Shares	Value	Portion of fund
+ADTMF	0	 $.00	 0.00%   <----- expand 
+AF	 0	 N/A	 N/A
+DT	 0	 N/A	 N/A
+V	 0	 N/A	 N/A
+N	 0	 N/A	 N/A
+MHS	 0	 N/A	 N/A
+US E. 2000	 0	 N/A	 N/A
+IF	 0	 N/A	 N/A
+2001D	 0	 N/A	 N/A
+
+ADTMF 
+LEDGER
+Date	Start	Change	End	Type
+Sep 28, 2000		250	250	Buy
+Jun 01, 2001	250	12	262	Corporate Action
+Jun 01, 2002	262	13	275	Corporate Action
+Jun 03, 2003	275	275	550	Corporate Action
+Jun 01, 2004	550	27	577	Corporate Action
+Jun 15, 2005	577	28	605	Corporate Action
+Jul 01, 2014	605	-605		Corporate Action
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 28, 2000	250	$12.50	$3,781.25	$15.13
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+check this fund for CNOB
+ADTMF on 7/1/2014
+
+trades on July 01, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	CNBC	605	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	CNOB	605	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+we sold off his CNBC and he got an equal number of CNOB
+
+looks good closing this out
+wait, let's check dividends for CNOB
+we paid:
+cash dividends paid by CNOB	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+09 Jul 14	11 Jul 14	01 Aug 14	4	$0.08	Dividend amount:0.075 per share.
+15 Oct 14	17 Oct 14	03 Nov 14	4	$0.08	Dividend amount:0.075 per share.
+14 Jan 15	19 Jan 15	02 Feb 15	4	$0.08	Dividend amount:0.075 per share.
+
+that's it?
+
+select distinct stockkey from mstockalias where symbol='CNOB';
+> Row 1:
+>   STOCKKEY = X'00915127511ad43cc0a80146'
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey=X'00925127511ad43cc0a80146';
+
+> Row 1:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|CNOB|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73925401
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'd340667a5119814fc0a80146'
+>               VERSION = NULL
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey=X'002f1e6952e0cdd5c0a86f92';
+> Row 1:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85683540
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'2fb5632852e0ab6ac0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140711|CP_PAY_DT|20140801|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996124|CP_ADJ_DT|20140709|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91943550
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'881f393e53bdc62ac0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141017|CP_PAY_DT|20141103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995906|CP_ADJ_DT|20141015|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96522168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'c4a50d57543efc38c0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150119|CP_PAY_DT|20150202|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20150114|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101204034
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'fe731d5354b70179c0a86f92'
+>               VERSION = NULL
+
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+1/14/2015	Cash	0.075	--	1/19/2015	2/2/2015
+10/15/2014	Cash	0.075	--	10/17/2014	11/3/2014
+7/9/2014	Cash	0.075	5/29/2014	7/11/2014	8/1/2014
+4/9/2014	Cash	0.075	3/25/2014	4/11/2014	5/1/2014 <-- last one to  pay
+1/15/2014	Cash	0.075	12/19/2013	1/17/2014	2/3/2014
+10/15/2013	Cash	0.075	8/29/2013	10/17/2013	11/1/2013
+7/10/2013	Cash	0.075	5/20/2013	7/12/2013	8/1/2013
+4/10/2013	Cash	0.055	2/27/2013	4/12/2013	5/1/2013  <--- first one to pay
+1/11/2013	Cash	0.055	11/28/2012	1/15/2013	2/1/2013
+10/15/2012	Cash	0.055	8/23/2012	10/17/2012	11/1/2012
+7/11/2012	Cash	0.055	5/24/2012	7/13/2012	8/1/2012
+4/11/2012	Cash	0.03	2/22/2012	4/13/2012	5/1/2012
+1/11/2012	Cash	0.03	11/30/2011	1/13/2012	2/1/2012
+10/11/2011	Cash	0.03	8/18/2011	10/13/2011	11/1/2011
+7/12/2011	Cash	0.03	5/24/2011	7/14/2011	8/1/2011
+4/12/2011	Cash	0.03	2/25/2011	4/14/2011	5/2/2011
+1/11/2011	Cash	0.03	11/30/2010	1/13/2011	2/1/2011
+10/13/2010	Cash	0.03	8/26/2010	10/15/2010	11/1/2010
+7/13/2010	Cash	0.03	5/27/2010	7/15/2010	8/2/2010
+4/13/2010	Cash	0.03	2/25/2010	4/15/2010	5/3/2010
+1/12/2010	Cash	0.03	11/19/2009	1/14/2010	2/1/2010
+10/14/2009	Cash	0.03	8/25/2009	10/16/2009	11/2/2009
+7/14/2009	Cash	0.03	--	7/16/2009	8/3/2009
+4/14/2009	Cash	0.09	2/26/2009	4/16/2009	5/1/2009
+1/13/2009	Cash	0.09	11/20/2008	1/15/2009	2/2/2009
+10/14/2008	Cash	0.09	8/28/2008	10/16/2008	11/3/2008
+7/15/2008	Cash	0.09	--	7/17/2008	8/1/2008
+4/15/2008	Cash	0.09	2/28/2008	4/17/2008	5/1/2008
+1/16/2008	Cash	0.09	--	1/18/2008	2/1/2008
+10/16/2007	Cash	0.09	--	10/18/2007	11/1/2007
+7/16/2007	Cash	0.09	--	7/18/2007	8/1/2007
+4/16/2007	Cash	0.09	--	4/18/2007	5/1/2007
+1/12/2007	Cash	0.09	--	1/17/2007	2/1/2007
+10/16/2006	Cash	0.09	--	10/18/2006	11/1/2006
+7/14/2006	Cash	0.09	--	7/18/2006	8/1/2006
+4/13/2006	Cash	0.09	--	4/18/2006	5/1/2006
+1/17/2006	Cash	0.09	--	1/19/2006	2/1/2006
+10/17/2005	Cash	0.09	--	10/19/2005	11/1/2005
+7/14/2005	Cash	0.09	--	7/18/2005	8/1/2005
+4/14/2005	Cash	0.09	--	4/18/2005	5/2/2005
+1/13/2005	Cash	0.09	--	1/18/2005	2/1/2005
+10/14/2004	Cash	0.09	--	10/18/2004	11/1/2004
+7/15/2004	Cash	0.09	--	7/19/2004	8/1/2004
+4/14/2004	Cash	0.09	--	4/16/2004	5/3/2004
+12/16/2003	Cash	0.09	--	12/18/2003	1/2/2004
+10/15/2003	Cash	0.09	--	10/17/2003	11/1/2003
+7/16/2003	Cash	0.09	--	7/18/2003	8/1/2003
+4/15/2003	Cash	0.17	--	4/15/2003	--
+12/16/2002	Cash	0.17	--	12/16/2002	--
+10/16/2002	Cash	0.17	--	10/16/2002	--
+7/16/2002	Cash	0.17	--	7/16/2002	--
+4/16/2002	Cash	0.15	--	4/16/2002	--
+12/14/2001	Cash	0.15	--	12/14/2001	--
+10/16/2001	Cash	0.15	--	10/16/2001	--
+7/16/2001	Cash	0.15	--	7/16/2001	--
+4/16/2001	Cash	0.15	--	4/16/2001	--
+12/14/2000	Cash	0.15	--	12/14/2000	--
+10/16/2000	Cash	0.15	--	10/16/2000	--
+7/14/2000	Cash	0.15	--	7/14/2000	--
+4/14/2000	Cash	0.15	--	4/14/2000	--
+1/13/2000	Cash	0.15	--	1/13/2000	--
+10/14/1999	Cash	0.15	--	10/14/1999	--
+7/14/1999	Cash	0.143	--	7/14/1999	--
+4/14/1999	Cash	0.15	--	4/14/1999	--
+12/16/1998	Cash	0.15	--	12/16/1998	--
+11/2/1998	Cash	0.15	--	11/2/1998	--
+7/15/1998	Cash	0.1333	--	7/15/1998	--
+4/15/1998	Cash	0.2	--	4/15/1998	--
+12/18/1997	Cash	0.2	--	12/18/1997	--
+
+let's apply the ones since we listed the stock up to the ones already applied
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20140409 -type DVD_CASH -exchange UN -payDate 20140510 -recordDate 20140411 -amount 0.075 >& /Users/build/caout/CNOB.20150220-2014-05.out;
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20140115 -type DVD_CASH -exchange UN -payDate 20140203 -recordDate 20140117 -amount 0.075 >& /Users/build/caout/CNOB.20150220-2014-02.out;
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20131015 -type DVD_CASH -exchange UN -payDate 20131101 -recordDate 20131017 -amount 0.075 >& /Users/build/caout/CNOB.20150220-2013-11.out;
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20130710 -type DVD_CASH -exchange UN -payDate 20130801 -recordDate 20130712 -amount 0.075 >& /Users/build/caout/CNOB.20150220-2013-08.out;
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20130410 -type DVD_CASH -exchange UN -payDate 20130501 -recordDate 20130412 -amount 0.055 >& /Users/build/caout/CNOB.20150220-2013-05.out;
+
+CNOB.20150220-2013-05.out
+CNOB.20150220-2013-08.out
+CNOB.20150220-2013-11.out
+CNOB.20150220-2014-02.out
+CNOB.20150220-2014-05.out
+
+
+check the database 
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey in (select primarykey from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146') order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|CNOB|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 73925401
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-11 00:00:00.000000'
+>            PRIMARYKEY = X'd340667a5119814fc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130412|CP_PAY_DT|20130501|CP_FREQ|4|CP_NET_AMT|0.055000|CP_TAX_AMT| |CP_GROSS_AMT|0.055000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:082836
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-04-10 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-04-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-04-10 00:00:00.000000'
+>            PRIMARYKEY = X'a0aa135454e73684c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130712|CP_PAY_DT|20130801|CP_FREQ|4|CP_NET_AMT|0.075000|CP_TAX_AMT| |CP_GROSS_AMT|0.075000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:082810
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-10 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-07-10 00:00:00.000000'
+>            PRIMARYKEY = X'0695135154e7366ac0a86f92'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'00925127511ad43cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131017|CP_PAY_DT|20131101|CP_FREQ|4|CP_NET_AMT|0.075000|CP_TAX_AMT| |CP_GROSS_AMT|0.075000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:082744
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-10-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'55b9134854e73650c0a86f92'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85683540
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 15525916
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-31 00:00:00.000000'
+>            PRIMARYKEY = X'2fb5632852e0ab6ac0a86f92'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140117|CP_PAY_DT|20140203|CP_FREQ|4|CP_NET_AMT|0.075000|CP_TAX_AMT| |CP_GROSS_AMT|0.075000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:082718
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-15 00:00:00.000000'
+>            PRIMARYKEY = X'e4d2134554e73636c0a86f92'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140411|CP_PAY_DT|20140510|CP_FREQ|4|CP_NET_AMT|0.075000|CP_TAX_AMT| |CP_GROSS_AMT|0.075000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:082652
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-09 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-04-09 00:00:00.000000'
+>            PRIMARYKEY = X'9ab8133a54e7361cc0a86f92'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140711|CP_PAY_DT|20140801|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996124|CP_ADJ_DT|20140709|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 91943550
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-09 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-09 00:00:00.000000'
+>            PRIMARYKEY = X'881f393e53bdc62ac0a86f92'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141017|CP_PAY_DT|20141103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995906|CP_ADJ_DT|20141015|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 96522168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'c4a50d57543efc38c0a86f92'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'002f1e6952e0cdd5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150119|CP_PAY_DT|20150202|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.075|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995944|CP_ADJ_DT|20150114|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101204034
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = ConnectOne Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-14 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-08 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-14 00:00:00.000000'
+>            PRIMARYKEY = X'fe731d5354b70179c0a86f92'
+>               VERSION = NULL
+
+do we need to change the CUSIP?
+
+here is the old CA to change the cusip when the ticker changed from CNBC to CNOB
+> Row 1:
+>              ALIASKEY = X'57c9126d53b33f0ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|151408101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US1514081017|CP_NEW_ISIN|US20786W1071|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93106125
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 132342
+>        BB_COMPANYNAME = Center Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNBC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = CNBC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'1daa711053b1eac3c0a86f92'
+>               VERSION = NULL
+
+
+yes we do need to change the cusip for CNOB to 20786W107
+
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20140701 -type CHG_ID -exchange UN -newCusip 20786W107 >& /Users/build/caout/CNOB.20150220-CHG_ID.out
+stocks:~/caout build$ tail -f CNOB.20150220-CHG_ID.out
+D: (02-20 08:54:19.876) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-20 08:54:43.046) cahelper started on 2015-02-20 08:54:43 -0500
+
+D: (02-20 08:54:43.222) {
+    APPLIED = 1; 
+    DATE = 20140701; 
+    "NEW_CUSIP" = 20786W107; 
+    NOTES = "N.A."; 
+    "OLD_CUSIP" = " "; 
+    SYMBOL = CNOB; 
+    TYPE = "CHG_ID"; 
+}
+D: (02-20 08:54:43.514) SUCCESS
+D: (02-20 08:54:43.514) cahelper finished 2015-02-20 08:54:43 -0500
+
+
+hmm, looks like we could put in the old cusip
+
+let's try adding that in the CP_ACTIONDICTIONARY
+
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey=X'002f1e6952e0cdd5c0a86f92';
+all the DVD_CASH are there 
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'972b1a8d54e73ca3c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+select * from mcorporateaction where aliaskey= X'972b1a8d54e73ca3c0a86f92';
+> Row 1:
+>              ALIASKEY = X'972b1a8d54e73ca3c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:085443
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'97251a8d54e73ca3c0a86f92'
+>               VERSION = NULL
+
+let's see if there is an -oldCusip parm for cahelper
+first let's delete the mstockalias and mcorporateaction that just got applied
+
+select * from mstock where primarykey= X'00915127511ad43cc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'972b1a8d54e73ca3c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'00915127511ad43cc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 23735
+>   WINDOWIDENTITYKEY = NULL
+
+update mstock set IDENTITYKEY =X'002f1e6952e0cdd5c0a86f92'  where PRIMARYKEY = X'00915127511ad43cc0a80146';
+delete from mcorporateaction where PRIMARYKEY = X'97251a8d54e73ca3c0a86f92';
+delete from mstockalias where PRIMARYKEY =  X'972b1a8d54e73ca3c0a86f92';
+
+ok, let's apply it again this time with an -oldCusip
+
+-oldCusip 20786U101
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20140701 -type CHG_ID -exchange UN -newCusip 20786W107 -oldCusip 20786U101 >& /Users/build/caout/CNOB.20150220-CHG_ID.out
+D: (02-20 09:03:11.869) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-20 09:03:35.656) cahelper started on 2015-02-20 09:03:35 -0500
+
+D: (02-20 09:03:35.865) {
+    APPLIED = 1; 
+    DATE = 20140701; 
+    "NEW_CUSIP" = 20786W107; 
+    NOTES = "N.A."; 
+    "OLD_CUSIP" = " "; 
+    SYMBOL = CNOB; 
+    TYPE = "CHG_ID"; 
+}
+D: (02-20 09:03:36.358) SUCCESS
+D: (02-20 09:03:36.358) cahelper finished 2015-02-20 09:03:36 -0500
+
+
+still didn't pick it up
+try reversing the order
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'241b1d7854e73eb7c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+
+	select * from mcorporateaction where aliaskey=X'241b1d7854e73eb7c0a86f92';
+> Row 1:
+>              ALIASKEY = X'241b1d7854e73eb7c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:090335
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'24151d7854e73eb7c0a86f92'
+>               VERSION = NULL
+
+update mstock set IDENTITYKEY =X'002f1e6952e0cdd5c0a86f92'  where PRIMARYKEY = X'00915127511ad43cc0a80146';
+delete from mcorporateaction  where PRIMARYKEY = X'24151d7854e73eb7c0a86f92';
+delete from mstockalias where PRIMARYKEY =  X'241b1d7854e73eb7c0a86f92';
+
+try again, change the order of parms
+/Marketocracy/bin/cahelper -symbol CNOB -effective 20140701 -type CHG_ID -exchange UN -oldCusip 20786U101 -newCusip 20786W107  >& /Users/build/caout/CNOB.20150220-CHG_ID.out
+
+^C
+stocks:~/caout build$ tail -f CNOB.20150220-CHG_ID.out
+D: (02-20 09:07:20.030) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-20 09:07:42.835) cahelper started on 2015-02-20 09:07:42 -0500
+
+D: (02-20 09:07:43.108) {
+    APPLIED = 1; 
+    DATE = 20140701; 
+    "NEW_CUSIP" = 20786W107; 
+    NOTES = "N.A."; 
+    "OLD_CUSIP" = " "; 
+    SYMBOL = CNOB; 
+    TYPE = "CHG_ID"; 
+}
+D: (02-20 09:07:43.450) SUCCESS
+D: (02-20 09:07:43.450) cahelper finished 2015-02-20 09:07:43 -0500
+
+ok, there is no parm let's update the BB_ACTIONDICTIONARY  see if that works 
+select * from mstockalias where STOCKKEY = X'00915127511ad43cc0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2013-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'00925127511ad43cc0a80146'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786U101
+>           DATE = TIMESTAMP '2014-01-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'002f1e6952e0cdd5c0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 20786W107
+>           DATE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ConnectOne Bancorp Inc
+>     PRIMARYKEY = X'2ef11eda54e73fafc0a86f92'
+>       STOCKKEY = X'00915127511ad43cc0a80146'
+>         SYMBOL = CNOB
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey=X'2ef11eda54e73fafc0a86f92';
+> Row 1:
+>              ALIASKEY = X'2ef11eda54e73fafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:090742
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'2eeb1eda54e73faec0a86f92'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_CUSIP|20786U101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.' where PRIMARYKEY = X'2eeb1eda54e73faec0a86f92';
+
+select * from mcorporateaction where aliaskey=X'2ef11eda54e73fafc0a86f92';
+> Row 1:
+>              ALIASKEY = X'2ef11eda54e73fafc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|20786U101|CP_NEW_CUSIP|20786W107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150220:090742
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = CNOB     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CNOB
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'2eeb1eda54e73faec0a86f92'
+>               VERSION = NULL
+
+
+check on 2/21/15
+1.  see that dividends are there
+2.  cusip CA is there, should list the old and new on the stock info page
+
+2/21/15 - the changes are there, closing this out

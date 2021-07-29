@@ -1,0 +1,1191 @@
+TISI
+date:    10/22/15
+ticker:   TISI
+
+this is in the list of tickers that is not pricing.   It appears we have a collision on TISI. 
+On our site the one that comes up is  Team, Incorporated.   Lurking in the background is TEAM, INC.
+
+yahoo:
+Team, Inc. (TISI) -NYSE
+32.81 Up 1.15(3.63%) 3:17PM EDT - NYSE Real Time Price
+Prev Close:	31.66
+Open:	31.94
+Bid:	32.71 x 100
+Ask:	32.74 x 100
+1y Target Est:	41.20
+Beta:	0.728492
+Earnings Date:	Jan 4 - Jan 8 (Est.)
+Day's Range:	31.70 - 32.81
+52wk Range:	30.81 - 47.55
+Volume:	64,404
+Avg Vol (3m):	116,709
+Market Cap:	711.26M
+P/E (ttm):	20.61
+EPS (ttm):	1.59
+Div & Yield:	N/A (N/A)
+
+currently trades on NYSE - look up history
+been trading since 3-17-1992   coninuous/
+
+Team also announced that the Board of Directors has approved a two-for-one stock split in the form of a 100 percent stock dividend payable on August 29, 2007 to all shareholders of record on August 15, 2007. 
+2 for 1 split
+record date:  8/15/2007
+split date:  8/29/2007
+
+
+
+quantum:
+Team, Inc.
+Ticker Symbol: TISI     CUSIP: 878155100     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Team, Inc., headquartered in Alvin, Texas, is a leading provider of specialty industrial services required in inspection and assessment, and maintaining and installing high-temperature and high-pressure piping systems and vessels that are utilized extensively in the refining, petrochemical, power, pipeline and other heavy industries. Team offers these services in over 100 locations throughout the world.
+Mid Cap Stock -   Market Value $ 606 Million
+Click for current TISI price quote from the NYSE
+
+oursite:
+Symbol: TISI	Name: Team, Incorporated	Price: $32.61
+Volume: 60,057	Sector: Industrials	Change: $0.95
+Short Volume: 130,411	Style: Unclassified Market Cap : Unclassified Style	Market Cap: $282,312,220
+Avg Volume: 130,411	 Exchange: NYSE	Today: 3.00%
+50 Day Ave: $39.48	Year High: $47.55	High: $32.68
+200 Day Ave: $39.94	Year Low: $30.81	Low: $31.70
+CAs
+TISI has been delisted	right curve
+ 	 	
+TISI is being removed from listing on NASDAQ for the following reason Reorganization.
+ 	 	 
+left curve	  listing changes for TISI	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jan 03, 2012	NASDAQ	UW	NYSE	UN	Change in the exchange that TISI trades on from NASDAQ to NYSE
+ 	 	 
+left curve	  TISI had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+30 Aug 07	(null)	Split terms:(null)
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+XXXX  MM/DD/YYYY
+
+database
+select distinct stockkey from mstockalias where symbol= 'TISI';  
+> Row 1:
+>   STOCKKEY = X'b1bd043c39e7e9cdc0a801dc'
+> Row 2:
+>   STOCKKEY = X'85f7553645e5dbf3c0a80146'
+> Row 3:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+
+there are three
+> TISI 1:
+>   STOCKKEY = X'b1bd043c39e7e9cdc0a801dc'
+select * from mstockalias where stockkey=X'b1bd043c39e7e9cdc0a801dc'     order by "date";
+different ticker and it is delisted not a problem
+************************************************************************************
+> TISI 2:
+>   STOCKKEY = X'85f7553645e5dbf3c0a80146'
+CUSIP = 878155100
+COMPANYID = 16540
+listed:  2007-02-27
+89 total tickets
+4 for the stock split    2007-08-29 or 30
+85 member tickets
+Prices from our database:
+first one:  2007-02-27 (Tue) [2248]: O:34.5500 H:35.2700 L:34.0900 C:34.4400 V:38500 TSO:0 A:17.2200 R:2.0000 CA:0.0000
+last one: 2015-10-21 (Wed) [5406]: O:33.0300 H:33.5300 L:31.6500 C:31.6600 V:89288 TSO:8917 A:31.6600 R:1.0000 CA:0.0000
+
+we're going to move these trades over to TISI-3
+1.  get all mtickets minus the ones for the split.   there are two members who had the split applied.
+	we'll need to get all of the primarykeys (ticketkeys) to tickle
+2.  get the mtrades for these, too.    We'll be deleting these.
+3.  get all the fundkeys we'll need to invalidate and reprice
+4.  change the stockkey in the mtickets from TISI-2  to TISI-3
+5.  delete every thing associated with TISI-2
+6.  tickle the tickets
+7.  invalidate the funds
+************************************************************************************
+select * from mstock where primarykey=X'85f7553645e5dbf3c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'2fa5048f4f0391e2c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'85f7553645e5dbf3c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 16540
+>   WINDOWIDENTITYKEY = NULL
+
+select * from mstockalias where stockkey=X'85f7553645e5dbf3c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Team, Incorporated
+>     PRIMARYKEY = X'85f8553645e5dbf3c0a80146'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>         SYMBOL = TISI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'85f8553645e5dbf3c0a80146';
+	nothing
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2007-05-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Team, Incorporated
+>     PRIMARYKEY = X'dac55be1464bbc33c0a8013c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>         SYMBOL = TISI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'dac55be1464bbc33c0a8013c';
+> Row 1:
+>              ALIASKEY = X'dac55be1464bbc33c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|TISI|CP_EQY_DELIST_REASON|20|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070516:102139
+>     BB_ACTIONMNEMONIC = EQY_DELIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-05-15 00:00:00.000000'
+>         BB_IDENTIFIER = TISI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-05-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-05-15 00:00:00.000000'
+>            PRIMARYKEY = X'dabf5be1464bbc33c0a8013c'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'dac55be1464bbc33c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_TERMS|(null)|CP_RATIO|2.000000|CP_RECORD_DT|20070815|CP_PAY_DT|20070829|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070831:073216
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-30 00:00:00.000000'
+>         BB_IDENTIFIER = TISI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'6e32145946d8a500c0a8013c'
+>               VERSION = NULL
+
+there is a delist and a stock split both manually applied 
+stock split is 2 for 1 
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Team, Incorporated
+>     PRIMARYKEY = X'2fa5048f4f0391e2c0a80146'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>         SYMBOL = TISI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'2fa5048f4f0391e2c0a80146';
+> Row 1:
+>              ALIASKEY = X'2fa5048f4f0391e2c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UW|CP_NEW_EXCH|UN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 60363867
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 107320
+>        BB_COMPANYNAME = Team Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>         BB_IDENTIFIER = TISI    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'74290bd84efba733c0a80146'
+>               VERSION = NULL
+
+change list UW to UN
+
+let's see how many mtickets and the type 
+select count(*) from mticket where stockkey=X'85f7553645e5dbf3c0a80146';
+> Row 1:
+>   _C001 = 89.000000
+select distinct sourcekey from mticket where stockkey=X'85f7553645e5dbf3c0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+	select count(*) from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null;
+> Row 1:
+>   _C001 = 85.000000
+	
+> Row 2:
+>   SOURCEKEY = X'6e32145946d8a500c0a8013c'   this is the 2 for 1 split which is included with TISI-2 above
+	select count(*) from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c' ;
+	> Row 1:
+	>   _C001 = 4.000000   - only 4 mtickets with the split 
+
+Let's look at prices in the database 
+COMPANYID = 16540
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16540
+2007-02-27 (Tue) [2248]: O:34.5500 H:35.2700 L:34.0900 C:34.4400 V:38500 TSO:0 A:17.2200 R:2.0000 CA:0.0000
+2007-02-28 (Wed) [2249]: O:33.7299 H:34.7400 L:33.7100 C:34.1599 V:48500 TSO:8765 A:17.0799 R:2.0000 CA:0.0000
+...
+2007-05-08 (Tue) [2318]: O:36.2500 H:36.7900 L:35.3299 C:36.7900 V:23700 TSO:8917 A:18.3950 R:2.0000 CA:0.0000
+2007-05-09 (Wed) [2319]: O:36.6300 H:36.8600 L:34.5900 C:36.4799 V:8800 TSO:8917 A:18.2399 R:2.0000 CA:0.0000
+2007-05-10 (Thu) [2320]: O:36.0900 H:37.0000 L:35.4200 C:35.4300 V:21900 TSO:8917 A:17.7150 R:2.0000 CA:0.0000
+2007-05-11 (Fri) [2321]: O:35.6500 H:36.1900 L:35.0800 C:35.5600 V:7400 TSO:8917 A:17.7800 R:2.0000 CA:0.0000
+2007-05-12 (Sat) [2322]: <WEEKEND>
+2007-05-13 (Sun) [2323]: <WEEKEND>
+2007-05-14 (Mon) [2324]: O:34.4000 H:37.4099 L:34.4000 C:36.0000 V:17300 TSO:8917 A:18.0000 R:2.0000 CA:0.0000
+2007-05-15 (Tue) [2325]: O:34.4000 H:37.4099 L:34.4000 C:36.0000 V:0 TSO:8917 A:18.0000 R:2.0000 CA:0.0000  <--- vol goes to 0
+2007-05-16 (Wed) [2326]: O:34.4000 H:37.4099 L:34.4000 C:36.0000 V:0 TSO:8917 A:18.0000 R:2.0000 CA:0.0000
+2007-05-17 (Thu) [2327]: O:34.4000 H:37.4099 L:34.4000 C:36.0000 V:0 TSO:8917 A:18.0000 R:2.0000 CA:0.0000
+2007-05-18 (Fri) [2328]: O:34.4000 H:37.4099 L:34.4000 C:36.0000 V:0 TSO:8917 A:18.0000 R:2.0000 CA:0.0000
+...
+2012-01-17 (Tue) [4033]: O:29.2100 H:29.2100 L:29.2100 C:29.2100 V:0 TSO:8917 A:29.2100 R:1.0000 CA:0.0000
+2012-01-18 (Wed) [4034]: O:29.2100 H:29.2100 L:29.2100 C:29.2100 V:0 TSO:8917 A:29.2100 R:1.0000 CA:0.0000
+2012-01-19 (Thu) [4035]: O:29.2100 H:29.2100 L:29.2100 C:29.2100 V:0 TSO:8917 A:29.2100 R:1.0000 CA:0.0000
+2012-01-20 (Fri) [4036]: O:29.2100 H:29.2100 L:29.2100 C:29.2100 V:0 TSO:8917 A:29.2100 R:1.0000 CA:0.0000
+2012-01-21 (Sat) [4037]: <WEEKEND>
+2012-01-22 (Sun) [4038]: <WEEKEND>
+2012-01-23 (Mon) [4039]: O:29.1100 H:29.3500 L:28.6400 C:28.9100 V:95247 TSO:8917 A:28.9100 R:1.0000 CA:0.0000  <-- picks up again
+2012-01-24 (Tue) [4040]: O:28.7700 H:29.0300 L:28.5000 C:28.9700 V:65668 TSO:8917 A:28.9700 R:1.0000 CA:0.0000
+2012-01-25 (Wed) [4041]: O:28.9000 H:29.4300 L:28.7200 C:29.3100 V:52759 TSO:8917 A:29.3100 R:1.0000 CA:0.0000
+2012-01-26 (Thu) [4042]: O:29.5000 H:29.5000 L:28.7500 C:29.1000 V:98143 TSO:8917 A:29.1000 R:1.0000 CA:0.0000
+2012-01-27 (Fri) [4043]: O:29.0000 H:29.4700 L:28.9900 C:29.1300 V:68940 TSO:8917 A:29.1300 R:1.0000 CA:0.0000
+...
+2015-10-16 (Fri) [5401]: O:34.0200 H:34.1100 L:33.0200 C:33.3300 V:92647 TSO:8917 A:33.3300 R:1.0000 CA:0.0000
+2015-10-17 (Sat) [5402]: <WEEKEND>
+2015-10-18 (Sun) [5403]: <WEEKEND>
+2015-10-19 (Mon) [5404]: O:33.1500 H:33.4400 L:32.6000 C:33.0800 V:135536 TSO:8917 A:33.0800 R:1.0000 CA:0.0000
+2015-10-20 (Tue) [5405]: O:33.0300 H:33.5300 L:32.7700 C:33.1800 V:91994 TSO:8917 A:33.1800 R:1.0000 CA:0.0000
+2015-10-21 (Wed) [5406]: O:33.0300 H:33.5300 L:31.6500 C:31.6600 V:89288 TSO:8917 A:31.6600 R:1.0000 CA:0.0000
+
+let's put these in a file:   CA issues TISI-2 prices companyID 16540.txt
+
+Let's look at trades for TISI-2  STOCKKEY = X'85f7553645e5dbf3c0a80146'
+
+first the stock split tickets, there are 4
+select * from mticket where STOCKKEY = X'85f7553645e5dbf3c0a80146' and sourcekey =X'6e32145946d8a500c0a8013c';
+> Row 1:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'6e51145946d8a501c0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ad205ef93a0edcf3c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'6e4c145946d8a501c0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = X'6e32145946d8a500c0a8013c'
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'6333039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'6e7b145946d8a526c0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2a9052db44b1c0dfc0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'6e79145946d8a526c0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = X'6e32145946d8a500c0a8013c'
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'6336039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'6e72145946d8a526c0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ad205ef93a0edcf3c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'6e70145946d8a526c0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = X'6e32145946d8a500c0a8013c'
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'6336039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'6e80145946d8a526c0a8013c'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'2a9052db44b1c0dfc0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'6e7e145946d8a526c0a8013c'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = X'6e32145946d8a500c0a8013c'
+>    NOTIFYEMAIL = NULL
+
+select distinct managerkey from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c';
+> Row 1:
+>   MANAGERKEY = X'ad205ef93a0edcf3c0a80119'
+> Row 2:
+>   MANAGERKEY = X'2a9052db44b1c0dfc0a80134'
+
+select loginname from mmanager where primarykey in (select distinct managerkey from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c');
+> Row 1:
+>   LOGINNAME = kwade
+> Row 2:
+>   LOGINNAME = cherylsjohnson
+
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c');
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c'));
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY = X'6e32145946d8a500c0a8013c')));
+> Row 1:
+>   SYMBOL = KMF1
+> Row 2:
+>   SYMBOL = NCRLX
+
+so the 2 for 1 split was done for two managers
+kwade  and cherylsjohnson
+and two funds
+KMF1 and  NCRLX
+
+kwade  KMF1   ledger 20070830
+
+TISI	Team, Incorporated	$36.00	0.8%	514	$0.00	$18,504.00	Details 
+trades on August 30, 2007	right curve
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Split Buy	TISI	514	$0.00	$0.00	$0.00	$0.00
+Split Sell	TISI	257	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+look at the trades for this 
+LEDGER
+Date	Start	Change	End	Type
+Mar 26, 2007		257	257	Buy   20070326
+Aug 30, 2007	257	257	514	Corporate Action
+Total: 514
+ 	 	 
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Mar 26, 2007	257	$12.85	$9,809.70	$38.17
+ 	 	 
+SELLS
+You have no sells for this position
+
+And cherylsjohnson   NCRLX
+TISI	Team, Incorporated	$36.00	14.1%	3,900	$0.00	$140,400.00	Details
+trades on August 30, 2007	right curve
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Split Buy	TISI	3,900	$0.00	$0.00	$0.00	$0.00
+Split Sell	TISI	1,950	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+look at the trades total
+LEDGER
+Date	Start	Change	End	Type
+May 10, 2007		3900	3900	Buy
+Jun 08, 2007	3900	-1950	1950	Sell
+Aug 30, 2007	1950	1950	3900	Corporate Action
+May 20, 2008	3900	-1390	2510	Sell
+Nov 08, 2011	2510	-220	2290	Sell
+Dec 04, 2013	2290	-210	2080	Sell
+Feb 10, 2014	2080	-420	1660	Sell
+Aug 28, 2015	1660	136	1796	Buy
+Total: 1,796
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+May 10, 2007	1,950	$97.50	$71,740.50	$36.79
+May 10, 2007	1,950	$97.50	$71,739.15	$36.79
+Aug 28, 2015	136	$6.80	$5,759.88	$42.35
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jun 8, 2007	1,950	$97.50	$2.53	$82,031.71	$42.07
+May 20, 2008	1,390	$69.50	$1.19	$38,593.45	$27.77
+Nov 8, 2011	220	$11.00	$0.11	$5,561.87	$25.28
+Dec 4, 2013	210	$10.50	$0.14	$8,014.46	$38.16
+Feb 10, 2014	420	$21.00	$0.31	$17,696.01	$42.13
+ 	 	 
+left curve	 corporate actions	right curve
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Aug 30, 2007	Split terms:(null)
+
+let's look at all of the trades for this one
+select count(*) from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null and shares > 0;
+> Row 1:
+>   _C001 = 82.000000
+let's get the first and the last
+select * from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null and shares > 0 order by closed;
+first   TISI-2  member generated trade 
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-03-05 10:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 49.500000
+>   CURRENTORDER = X'218a549e45ec3398c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'59fc03483fd6cd43c0a80132'
+>       MODIFIED = NULL
+>            NET = 32203.091250
+>         OPENED = TIMESTAMP '2007-03-05 10:13:28.000000'
+>          PRICE = 32.528375
+>     PRIMARYKEY = X'2188549e45ec3398c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 990.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = przuniga@yahoo.com
+
+most recent  TISI-2  member generated trade
+> Row 82:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-09-22 11:59:10.000000'
+>        COMMENT = NULL
+>     COMMISSION = 68.200000
+>   CURRENTORDER = X'2dab00e85601394bc0a86fa6'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e63017ba3989e7d8c0a80118'
+>       MODIFIED = NULL
+>            NET = 57339.316408
+>         OPENED = TIMESTAMP '2015-09-22 07:19:39.000000'
+>          PRICE = 42.037622
+>     PRIMARYKEY = X'2da900e85601394bc0a86fa6'
+>         SECFEE = 0.000000
+>         SHARES = 1364.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'85f7553645e5dbf3c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+**************************************************************************************************
+> TISI 3:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+companyID  524
+CUSIP = 878155100
+listed: 2000-04-28 as TMI
+manually applied CAs
+	change ticker  2006-12-28  TMI  TISI  <----  became TISI on 12-28-2006
+	change list   2006-12-28  UA  UQ
+price in our database 
+first price: 2000-05-01 (Mon) [-245]: O:2.1250 H:2.1250 L:2.1250 C:2.1250 V:200 TSO:8358 A:2.1250 R:1.0000 CA:0.0000
+last price:  2012-01-02 (Mon) [4018]: O:29.7500 H:29.7500 L:29.7500 C:29.7500 V:0 TSO:8663 A:29.7500 R:1.0000 CA:0.0000  <-- last one
+tickets:  1115  member-generated tickets only
+
+this is the one we want to keep.  need to add prices beyond 2012-01-02 to present 
+************************************************************************************
+select * from mstock where primarykey=X'cded0e21390a5f50c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'377e0435464c7531c0a8013c'
+>                NAME = TEAM, INC
+>          PRIMARYKEY = X'cded0e21390a5f50c0a80116'
+>              SYMBOL = TMI
+>           COMPANYID = 524
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6a0e
+
+select * from mstockalias where stockkey=X'cded0e21390a5f50c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'cdee0e21390a5f50c0a80116'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'cdee0e21390a5f50c0a80116';
+nothing
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'58310427464c74f3c0a8013c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'58310427464c74f3c0a8013c';
+> Row 1:
+>              ALIASKEY = X'58310427464c74f3c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UA|CP_NEW_EXCH|UQ|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070517:112954
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = TMI     UA Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TMI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'582b0427464c74f2c0a8013c'
+>               VERSION = NULL
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'377e0435464c7531c0a8013c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TISI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'377e0435464c7531c0a8013c';
+> Row 1:
+>              ALIASKEY = X'377e0435464c7531c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|TMI US|CP_NEW_TKR|TISI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070517:113055
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>         BB_IDENTIFIER = TISI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-12-28 00:00:00.000000'
+>            PRIMARYKEY = X'37740435464c752fc0a8013c'
+>               VERSION = NULL
+
+let's look at tickets associated with TISI-3
+select count(*) from mticket where stockkey=X'cded0e21390a5f50c0a80116';
+> Row 1:
+>   _C001 = 1115.000000
+select distinct sourcekey from mticket where stockkey=X'cded0e21390a5f50c0a80116';
+> Row 1:
+>   SOURCEKEY = NULL
+
+let's look at the first and the last tickets that filled
+select * from mticket where stockkey=X'cded0e21390a5f50c0a80116' and shares >0 order by closed;
+first ticket for TISI-3
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2000-10-19 18:17:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 15.000000
+>   CURRENTORDER = X'7edf049039ee5e79c0a801e0'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'8c8a052f39ee56ffc0a80118'
+>       MODIFIED = NULL
+>            NET = 783.750000
+>         OPENED = TIMESTAMP '2000-10-18 22:37:45.000000'
+>          PRICE = 2.612500
+>     PRIMARYKEY = X'7ed9049039ee5e79c0a801e0'
+>         SECFEE = 0.000000
+>         SHARES = 300.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+last mticket for TISI-3
+> Row 1037:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-09-21 12:46:00.000000'
+>        COMMENT = 
+>     COMMISSION = 1.500000
+>   CURRENTORDER = X'a1044a8f4c98e03dc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ea6b29773b5e703fc0a801e0'
+>       MODIFIED = NULL
+>            NET = 485.489990
+>         OPENED = TIMESTAMP '2010-09-21 12:41:33.000000'
+>          PRICE = 16.183000
+>     PRIMARYKEY = X'a1024a8f4c98e03dc0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 30.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+member only tickets
+
+Let's see what we have as far as prices in our system
+companyID  524
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 524
+2000-05-01 (Mon) [-245]: O:2.1250 H:2.1250 L:2.1250 C:2.1250 V:200 TSO:8358 A:2.1250 R:1.0000 CA:0.0000  <--- first price
+2000-05-02 (Tue) [-244]: O:2.1250 H:2.1250 L:2.0000 C:2.1250 V:5700 TSO:8358 A:2.1250 R:1.0000 CA:0.0000
+2000-05-03 (Wed) [-243]: O:2.1250 H:2.1250 L:2.1250 C:2.1250 V:0 TSO:8358 A:2.1250 R:1.0000 CA:0.0000
+2000-05-04 (Thu) [-242]: O:2.1250 H:2.2500 L:2.1250 C:2.2500 V:1000 TSO:8358 A:2.2500 R:1.0000 CA:0.0000
+2000-05-05 (Fri) [-241]: O:2.2500 H:2.3750 L:2.2500 C:2.3750 V:1400 TSO:8358 A:2.3750 R:1.0000 CA:0.0000
+2000-05-06 (Sat) [-240]: <WEEKEND>
+2000-05-07 (Sun) [-239]: <WEEKEND>
+2000-05-08 (Mon) [-238]: O:2.2500 H:2.2500 L:2.0000 C:2.2500 V:6700 TSO:8358 A:2.2500 R:1.0000 CA:0.0000
+2000-05-09 (Tue) [-237]: O:2.3750 H:2.3750 L:2.2500 C:2.3750 V:800 TSO:8358 A:2.3750 R:1.0000 CA:0.0000
+...
+2007-08-20 (Mon) [2422]: O:47.4900 H:48.0900 L:46.6400 C:46.9500 V:50400 TSO:8663 A:46.9500 R:1.0000 CA:0.0000
+2007-08-21 (Tue) [2423]: O:46.9300 H:46.9900 L:45.1599 C:46.3100 V:32900 TSO:8663 A:46.3100 R:1.0000 CA:0.0000
+2007-08-22 (Wed) [2424]: O:46.9400 H:48.1900 L:45.8501 C:46.8499 V:48600 TSO:8663 A:46.8499 R:1.0000 CA:0.0000
+2007-08-23 (Thu) [2425]: O:46.8400 H:46.8400 L:45.0900 C:45.8100 V:32900 TSO:8663 A:45.8100 R:1.0000 CA:0.0000
+2007-08-24 (Fri) [2426]: O:45.9900 H:46.7200 L:45.1000 C:45.8100 V:29500 TSO:8663 A:45.8100 R:1.0000 CA:0.0000
+2007-08-25 (Sat) [2427]: <WEEKEND>
+2007-08-26 (Sun) [2428]: <WEEKEND>
+2007-08-27 (Mon) [2429]: O:45.7100 H:47.1599 L:43.1001 C:43.5000 V:54100 TSO:8663 A:43.5000 R:1.0000 CA:0.0000
+2007-08-28 (Tue) [2430]: O:42.9400 H:43.4500 L:41.4799 C:41.8300 V:65200 TSO:8663 A:41.8300 R:1.0000 CA:0.0000
+2007-08-29 (Wed) [2431]: O:41.9000 H:43.3800 L:41.8400 C:43.0700 V:78300 TSO:8663 A:43.0700 R:1.0000 CA:0.0000
+2007-08-30 (Thu) [2432]: O:21.3700 H:23.4500 L:20.1800 C:22.9000 V:111300 TSO:8663 A:22.9000 R:1.0000 CA:0.0000  <=== 2 for 1 split 
+2007-08-31 (Fri) [2433]: O:23.1500 H:23.5799 L:22.1000 C:23.4600 V:148500 TSO:8663 A:23.4600 R:1.0000 CA:0.0000
+...
+
+2011-12-27 (Tue) [4012]: O:28.8100 H:29.3900 L:28.6300 C:29.3300 V:86396 TSO:8663 A:29.3300 R:1.0000 CA:0.0000
+2011-12-28 (Wed) [4013]: O:29.3700 H:29.4200 L:28.9900 C:29.0000 V:46512 TSO:8663 A:29.0000 R:1.0000 CA:0.0000
+2011-12-29 (Thu) [4014]: O:29.0600 H:29.4800 L:29.0600 C:29.3600 V:91596 TSO:8663 A:29.3600 R:1.0000 CA:0.0000
+2011-12-30 (Fri) [4015]: O:29.4200 H:29.9400 L:29.3700 C:29.7500 V:89183 TSO:8663 A:29.7500 R:1.0000 CA:0.0000
+2011-12-31 (Sat) [4016]: <WEEKEND>
+2012-01-01 (Sun) [4017]: <HOLIDAY>
+2012-01-02 (Mon) [4018]: O:29.7500 H:29.7500 L:29.7500 C:29.7500 V:0 TSO:8663 A:29.7500 R:1.0000 CA:0.0000  <-- last one
+
+first price: 2000-05-01 (Mon) [-245]: O:2.1250 H:2.1250 L:2.1250 C:2.1250 V:200 TSO:8358 A:2.1250 R:1.0000 CA:0.0000
+last price:  2012-01-02 (Mon) [4018]: O:29.7500 H:29.7500 L:29.7500 C:29.7500 V:0 TSO:8663 A:29.7500 R:1.0000 CA:0.0000  <-- last one
+
+let's put these in a file:   CA issues TISI-3 prices companyID 524.txt
+********
+
+
+
+10/23/15
+> TISI 2:
+>   STOCKKEY = X'85f7553645e5dbf3c0a80146'
+CUSIP = 878155100
+COMPANYID = 16540
+listed:  2007-02-27
+89 total tickets
+4 for the stock split    2007-08-29 or 30
+85 member tickets
+Prices from our database:
+first one:  2007-02-27 (Tue) [2248]: O:34.5500 H:35.2700 L:34.0900 C:34.4400 V:38500 TSO:0 A:17.2200 R:2.0000 CA:0.0000
+last one: 2015-10-21 (Wed) [5406]: O:33.0300 H:33.5300 L:31.6500 C:31.6600 V:89288 TSO:8917 A:31.6600 R:1.0000 CA:0.0000
+
+we're going to move these trades over to TISI-3
+1.  get all mtickets minus the ones for the split.   there are two members who had the split applied.
+	we'll need to get all of the primarykeys (ticketkeys) to tickle
+2.  get the mtrades for these, too.    We'll be deleting these.
+3.  get all the fundkeys we'll need to invalidate and reprice
+4.  change the stockkey in the mtickets from TISI-2  to TISI-3
+5.  delete every thing associated with TISI-2
+6.  tickle the tickets
+7.  invalidate the funds
+
+select count(*) from mticket where stockkey=X'85f7553645e5dbf3c0a80146';
+> Row 1:
+>   _C001 = 89.000000
+4 of these are the split
+select count(*) from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null;
+> Row 1:
+>   _C001 = 85.000000
+there we go - let's get the entire ticket and save them ticketkeys
+select * from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null order by closed;
+save to CA issues TISI-2 mtickets.txt
+
+get the ticketkeys - we'll need these to tickle later
+
+select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null order by closed;
+save these to CA issues TISI-2 ticketkeys.txt
+
+we need to get the fundkeys
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null);
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null));
+there are 35 funds
+save to CA issues TISI-2 fundkeys.txt
+
+we're going to need to get the mtrades and then delete them before we move over the mticket stockkeys
+
+select * from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null);
+there are 84 mtrades 
+save them in case
+CA issues TISI-2 mtrades.txt
+
+
+let's back out the stock split 
+> Row 2:
+>              ALIASKEY = X'dac55be1464bbc33c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_TERMS|(null)|CP_RATIO|2.000000|CP_RECORD_DT|20070815|CP_PAY_DT|20070829|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070831:073216
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-30 00:00:00.000000'
+>         BB_IDENTIFIER = TISI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'6e32145946d8a500c0a8013c'
+>               VERSION = NULL
+
+
+let's make it really unique
+update mcorporateaction set BB_ACTIONID = '20070831:073216:MARTY' where PRIMARYKEY = X'6e32145946d8a500c0a8013c';
+select * from  mcorporateaction where PRIMARYKEY = X'6e32145946d8a500c0a8013c';
+> Row 1:
+>              ALIASKEY = X'dac55be1464bbc33c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_TERMS|(null)|CP_RATIO|2.000000|CP_RECORD_DT|20070815|CP_PAY_DT|20070829|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20070831:073216:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-08-30 00:00:00.000000'
+>         BB_IDENTIFIER = TISI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TISI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'6e32145946d8a500c0a8013c'
+>               VERSION = NULL
+
+details for later reapplying the split
+effective  20070830
+-recordDate 20070815
+-payDate 20070829
+-ration 2
+-terms '2 for 1'
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 20070831:073216:MARTY
+done
+
+Let's delete the mtrades
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146' and sourcekey is null);
+ok - the mtrades are gone!
+
+need to move the trades from TISI-2 to TISI-3  
+
+> Row 2:
+>   STOCKKEY = X'85f7553645e5dbf3c0a80146'
+> Row 3:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+
+
+let's check 
+select count(*) from mticket where STOCKKEY = X'85f7553645e5dbf3c0a80146';
+89
+select count(*) from mticket where STOCKKEY = X'cded0e21390a5f50c0a80116';
+1115
+
+update mticket set stockkey=X'cded0e21390a5f50c0a80116' where STOCKKEY = X'85f7553645e5dbf3c0a80146';
+
+check TISI-2 should be none left 
+select count(*) from mticket where STOCKKEY = X'85f7553645e5dbf3c0a80146';
+
+none left
+let's tickle the tickets
+put the ticketkeys into the file
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-10-23 19:41:25 -0400
+<<<< dbtool finished at 2015-10-23 19:42:45 -0400
+
+
+then invalidate the funds
+
+I think that we'll see both ones now
+kwade  KMF1   ledger 20070830
+
+kwade should have a single trade in the new TISI-3
+select primarykey from mmanager where loginname='kwade';
+> Row 1:
+>   PRIMARYKEY = X'ad205ef93a0edcf3c0a80119'
+select * from mticket where managerkey=X'ad205ef93a0edcf3c0a80119' and stockkey=X'cded0e21390a5f50c0a80116';
+
+ ticket detail for TISI	right curve
+ 	 	
+Opened	Action	Shares Ordered	Limit	Shares Filled	Expires
+ 12:39:34 on Mar 26, 2007	 Buy	 621	 	 621	 GTC
+ 	 	 
+left curve	 completion	right curve
+ 	 	This ticket was opened at 12:39:34 on Mar 26, 2007 and completed at 15:12:00 on Mar 26, 2007
+left curve	 fees	right curve
+ 	 	
+Shares	621
+SEC Fee	$0.00
+Commission	$31.05
+Net	$23,703.59
+Net Avg. Price	$38.17
+ 	 	Note: Per standard industry practice, price above is the Net Average Price, which includes the stated fees and commissions. The price can be a few cents above or below any limit price, or the high/low for the day.
+ 	 	 
+left curve	 fund trades	right curve
+ 	 	
+Name	Symbol	Quantity
+homer fund 1	KMF1	257
+kwade's Mutual Fund	KMF11	313
+stoploss	KMF9	51
+ 	 	 
+left curve	 reverse ticket [ADMIN ONLY]	right curve
+ 	 	
+Hexkey: 4EBC372A4607F746C0A80133
+
+select stockkey from mticket where primarykey=X'4EBC372A4607F746C0A80133';
+> Row 1:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+
+delete all occurrences of TISI-2 stockkey
+> Row 2:
+>   STOCKKEY = X'85f7553645e5dbf3c0a80146'
+set commit false;
+
+delete from mstock where primarykey=  X'85f7553645e5dbf3c0a80146'; 
+
+delete from mwindowstock where stockkey=X'85f7553645e5dbf3c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'85f7553645e5dbf3c0a80146');
+
+delete from mstockalias where stockkey=X'85f7553645e5dbf3c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'85f7553645e5dbf3c0a80146');   
+
+delete from mposition where stockkey=X'85f7553645e5dbf3c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'85f7553645e5dbf3c0a80146');
+
+delete from mticket where stockkey=X'85f7553645e5dbf3c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'85f7553645e5dbf3c0a80146';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'85f7553645e5dbf3c0a80146';  
+
+commit;
+
+set commit true;
+
+select distinct stockkey from mstockalias where symbol='TISI';
+> Row 1:
+>   STOCKKEY = X'b1bd043c39e7e9cdc0a801dc'
+> Row 2:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+
+select count(*) from mticket where STOCKKEY = X'cded0e21390a5f50c0a80116';
+> Row 1:
+>   _C001 = 1204.000000
+
+good
+
+we need to add prices 
+> TISI 3:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+companyID  524
+
+select min(daynumber) from stockprices where companyID= 524;
+> Row 1:
+>   _C001 = -245
+
+select max(daynumber) from stockprices where companyID= 524;
+> Row 1:
+>   _C001 = 4018  1/2/12	4018	Mon
+
+2012-01-03
+
+invalidate from 2012-01-03
+
+/Marketocracy/bin/StockPriceBuilder invalidate 2012-01-03
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-10-23
+
+D: (20:49:47.294) Invalidate all prices >= 2012-01-03 (4019)
+details for later reapplying the split
+effective  20070830
+-recordDate 20070815
+-payDate 20070829
+-ration 2
+-terms '2 for 1'
+
+/Marketocracy/bin/cahelper -symbol TISI -effective 20070830 -type STOCK_SPLT -exchange UN -payDate 20070829  -recordDate 20070815 -ratio 2 -terms '2 for 1' >& /Users/build/caout/TISI.20151023-STOCK+SPLT.out 
+TISI.20151023-STOCK+SPLT.out
+stocks1:~/caout build$ tail -f TISI.20151023-STOCK+SPLT.out
+D: (10-23 20:55:26.916) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-23 20:55:52.532) cahelper started on 2015-10-23 20:55:52 -0400
+
+D: (10-23 20:55:53.087) There are [0] closed tickets for TISI on 20070830
+D: (10-23 20:55:53.103) There are [1] open tickets for TISI on 20070830
+D: (10-23 20:55:53.144) StockFileLoad Version:4.0
+D: (10-23 20:55:53.144) Loading Stock Data
+D: (10-23 20:56:32.489) Building Lookup Index
+D: (10-23 20:56:38.482) Finished Building Index
+D: (10-23 20:56:42.476) Finished Loading Stock Data
+D: (10-23 20:56:42.745) Connection to 192.168.111.172:6666 succeeded
+D: (10-23 20:56:47.104) SavingChanges for stock split 101 of 311
+D: (10-23 20:56:55.309) {
+    APPLIED = 1; 
+    DATE = 20070830; 
+    FUNDS = (
+        "mchristy/Timing- Long ", 
+        "cxwx/Hidden Gems Philosophy", 
+        "pwheaton/Paul Wheaton's Mutual Fund", 
+        "lenirp@yahoo.com/Phil Chart Look Mutual Fund", 
+        "stock_insider/Volume Gainers", 
+        "patsweeney/patsweeney's Mutual Fund", 
+        "rnice/Accelerator Fund", 
+        "rnice/rnice's Offensivel Fund", 
+        "smalik/smalik's Mutual Fund", 
+        "rteigen/Millenium Fund", 
+        "rteigen/POWER 2", 
+        "rteigen/Sonic", 
+        "dforde/dforde's Mutual Fund", 
+        "colbyhouse/MSN Top Rated Micro-Cap", 
+        "dervish/dervish's Mutual Fund 2", 
+        "adamleung/adamleung's Mutual Fund", 
+        "mikep00/Microcap Mutual Fund", 
+        "madjak/Jack Augustine's Mutual Fund", 
+        "madjak/Jennifer's Mutual Fund", 
+        "madjak/Alicia's Mutual Fund", 
+        "madjak/Janus's Mutual Fund", 
+        "madjak/Elizabeth's Mutual Fund", 
+        "madjak/Nick''s Mutual Fund", 
+        "madjak/Jack Augustine's Mutual Fund", 
+        "madjak/Stupidity  Strikes Mutual Fund", 
+        "madjak/music's Mutual Fund", 
+        "kenimo/Kenneth Edward Villafane's Mutual Fund", 
+        "mvrh1/FSB 100", 
+        "mwolfe2/mwolfe2's Mutual Fund", 
+        "dbrooks1/dbrooks1's Low Priced Small Cap Fund", 
+        "jdamian_jr/jdamian_jr's Industrial goods fund", 
+        "soif147147/8974annie", 
+        "soif147147/nelson fund", 
+        "fmoslehi/Stable Growth Fund", 
+        "gmoney/gmoney's Mutual Fund", 
+        "cabro57/Octane Value Small-Cap Fund", 
+        "jsenior007/Senior Aggressive Growth Fund", 
+        "dubois31/dubois31's Mutual Fund", 
+        "rnice/Raymond T. Nice's Mutual Fund", 
+        "jhm5/MoneyMaker", 
+        "dilauren/UNDERVALUED", 
+        "dilauren/BEGINNERSLUCK", 
+        "blue/STOCKS2DOUBLE", 
+        "brahmsian/Brahmsian's Classic Growth Fund", 
+        "jiffypop/jiffypop's Mutual Fund", 
+        "alzahr/Alzahr Mutual Fund", 
+        "hornedfrog/hornedfrog's Mutual Fund", 
+        "ahknaten/Kai Petainen's Shorts2", 
+        "milkrate/Consensus Fund", 
+        "jhamer/Short", 
+        "b_boyy/b_boyy's Mutual Fund", 
+        "bradegan/International Funds", 
+        "togifoot/togifoot's Mutual Fund", 
+        "trpugh/Pugh Aggressive Growth", 
+        "kperkins/Growth fund", 
+        "rangerdon/ASE 20%", 
+        "jmdavi4/jmdavi4's Portfolio", 
+        "chrisstock/chrisstock's Mutual Fund", 
+        "hchueh1/decticated equity", 
+        "saikiran/Ado Type Fund", 
+        "vooch4/Test L2", 
+        "tgsherwood/tgsherwood's Mutual Fund", 
+        "rnice/rnice's ValTech Fund", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "fbezdek/Frantuv Mutual Fund", 
+        "aanton/The Small Fund", 
+        "bbonomini/BB-Growth & Income", 
+        "bbonomini/bbonomini's Mutual Fund", 
+        "smallcap/smallcap's Mutual Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "samuelwilson/100 Fund", 
+        "james23/james23's Mutual Fund", 
+        "rhelm/rhelm's Get Stued Funf", 
+        "msmith3/Tech & Fundmental Fund", 
+        "rkern/rkern's Mutual Fund", 
+        "amer/Amer's Mutual Fund", 
+        "spitfire/spitfire's Mutual Fund", 
+        "laurentpoirier/LJP Stat Sector Fund ", 
+        "laurentpoirier/LJP Stat Sector Fund II", 
+        "dtwtrader/dtwtrader's Mutual Fund", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "jehan/GURU", 
+        "ksullvan/ksullvan's Mutual Fund", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "leggyredhead/Leggyredhead's Mutual Fund", 
+        "h2ofowler38/h2ofowler38's VelocityFund", 
+        "countrybill/CountryBill's Appalachia Mutual Fund", 
+        "ghkramer/ghkramer's Mutual Fund", 
+        "rayseakan/The PEG Investor", 
+        "ecm/ecm's Mutual Fund", 
+        "trunkychristy/Beta Fund", 
+        "mebear/Fund no. 3", 
+        "brooksdj_is/brooksdj_is's Mutual Fund", 
+        "fmoslehi/fmoslehi's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "jellenb/Shangri-la Mutual Fund", 
+        "fmoslehi/Quantitative Fund II", 
+        "eddie6962/eddie6962's Mutual Fund", 
+        "jramer8/JR SmallerCap Growth", 
+        "steoli/steoli's Mutual Fund", 
+        "jramer8/JR50", 
+        "hiromimini/Zero appreciation potential-financial", 
+        "bkquantpm/bkquantpm's SCMS1", 
+        "cherylsjohnson/Amazing NonCorrelation Fund", 
+        "kwade/homer fund 1", 
+        "bkquantpm/bkquantpm SMCS"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20070829; 
+    RATIO = 2; 
+    "RECORD_DATE" = 20070815; 
+    SYMBOL = TISI; 
+    TYPE = "STOCK_SPLT"; 
+}
+D: (10-23 20:57:00.180) SUCCESS
+D: (10-23 20:57:00.180) cahelper finished 2015-10-23 20:57:00 -0400
+
+select distinct stockkey from mstockalias where symbol='TISI';
+> Row 1:
+>   STOCKKEY = X'b1bd043c39e7e9cdc0a801dc'
+> Row 2:
+>   STOCKKEY = X'cded0e21390a5f50c0a80116'
+
+select * from mstockalias where STOCKKEY = X'cded0e21390a5f50c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'cdee0e21390a5f50c0a80116'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'58310427464c74f3c0a8013c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 878155100
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TEAM, INC
+>     PRIMARYKEY = X'377e0435464c7531c0a8013c'
+>       STOCKKEY = X'cded0e21390a5f50c0a80116'
+>         SYMBOL = TISI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201050
+>       STYLEKEY = XB
+
+are there any shorts?
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'cded0e21390a5f50c0a80116'  and totalshares < 0);
+no one went short
+
+check on 10/24/15
+see that the stock is pricing
+
+10/24/15  looks good  
+get everyone who has ever held TISA
+STOCKKEY= X'cded0e21390a5f50c0a80116'
+select fundkey from mposition where STOCKKEY=X'cded0e21390a5f50c0a80116';
+there 311 fundkeys save to CA issues TISI all fundkeys after fix.txt
+
+reprice since 2000-01-01 all fundkeys for TISI

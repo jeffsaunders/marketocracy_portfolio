@@ -1,0 +1,938 @@
+STRP-W
+date:  11/18/15
+ticker:   STRP-W
+
+yahoo:  nothing
+
+quantum: nothing
+
+oursite:
+Symbol: STRP-W	Name: Straight Path Communications	Price: $0.00
+Volume:	Sector: Unclassified	Change:
+Short Volume:	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume:	 Exchange: NYSE	Today: 0.00%
+50 Day Ave:	Year High:	High:
+200 Day Ave:	Year Low:	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+research  stock info  STRP-W   
+ [NEW QUOTE]       
+Corporate Actions for Straight Path Communications	  November 18, 2015
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+XXXX  MM/DD/YYYY
+
+database
+select distinct stockkey from mstockalias where symbol= 'STRP-W';  
+> Row 1:
+>   STOCKKEY = X'afe7408551faec5dc0a80146'
+
+
+select * from mstockalias where stockkey=X'afe7408551faec5dc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Straight Path Communications
+>     PRIMARYKEY = X'afe8408551faec5dc0a80146'
+>       STOCKKEY = X'afe7408551faec5dc0a80146'
+>         SYMBOL = STRP-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select count(*) from mticket where stockkey=X'afe7408551faec5dc0a80146';
+> Row 1:
+>   _C001 = 91.000000
+select distinct sourcekey from mticket where stockkey=X'afe7408551faec5dc0a80146';
+> Row 1:
+>   SOURCEKEY = X'fc1543dc51f9947bc0a80146'
+	select count(*) from mticket where SOURCEKEY = X'fc1543dc51f9947bc0a80146';
+	> Row 1:
+	>   _C001 = 72.000000
+> Row 2:
+>   SOURCEKEY = NULL
+	select count(*) from mticket where SOURCEKEY is null and stockkey=X'afe7408551faec5dc0a80146';
+	> Row 1:
+	>   _C001 = 19.000000
+	select count(*) from mticket where SOURCEKEY is null and stockkey=X'afe7408551faec5dc0a80146' and shares > 0;
+	> Row 1:
+	>   _C001 = 0.000000
+	no one has been able to trade this on their own
+
+what is this sourcekey?
+select * from mcorporateaction where primarykey=X'fc1543dc51f9947bc0a80146';
+> Row 1:
+>              ALIASKEY = X'688b644e49a6067ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Straight Path Communications|CP_ID_BB_COMP|35387499|CP_ID_BB_SEC|3000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20130731|CP_RECORD_DT|20130725|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.845186|CP_ADJ_DT|20130801|CP_TKR|STRP-W US|CP_DUE_BILL_RED_DT|20130805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004JKTFF5|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004JKTCV4|CP_SPINOFF_ID_BB_SEC_NUM_DES|STRP-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 76830369
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 171484
+>        BB_COMPANYNAME = IDT Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = IDT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-07 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = IDT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2013-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'fc1543dc51f9947bc0a80146'
+>               VERSION = NULL
+
+	IDT spun off STRP-W  on 20130801  CP_PAY_DT|20130731
+	select distinct closed from mticket where sourcekey=X'fc1543dc51f9947bc0a80146';
+> Row 1:
+>   CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+
+let's find a member who got shares as a spin off
+select loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'fc1543dc51f9947bc0a80146') order by loginname;
+> Row 1:
+>   LOGINNAME = DELETED_2006171
+> Row 2:
+>   LOGINNAME = DELETED_2006319
+> Row 3:
+>   LOGINNAME = DELETED_budtower_2009072012050004
+> Row 4:
+>   LOGINNAME = adamhersh
+> Row 5:
+>   LOGINNAME = annanshogi
+> Row 6:
+>   LOGINNAME = asabir
+> Row 7:
+>   LOGINNAME = bplain
+> Row 8:
+>   LOGINNAME = browe
+> Row 9:
+>   LOGINNAME = cford
+> Row 10:
+>   LOGINNAME = chucknz
+> Row 11:
+>   LOGINNAME = dcblue
+> Row 12:
+>   LOGINNAME = dcinokla
+> Row 13:
+>   LOGINNAME = dclark
+> Row 14:
+>   LOGINNAME = dennishuynh
+> Row 15:
+>   LOGINNAME = dgson
+> Row 16:
+>   LOGINNAME = dmdyne99
+> Row 17:
+>   LOGINNAME = dmitri70
+> Row 18:
+>   LOGINNAME = dochoss36
+> Row 19:
+>   LOGINNAME = dpolson
+> Row 20:
+>   LOGINNAME = ebasalyga
+> Row 21:
+>   LOGINNAME = en68
+> Row 22:
+>   LOGINNAME = epuca
+> Row 23:
+>   LOGINNAME = etistounet
+> Row 24:
+>   LOGINNAME = fgieschen
+> Row 25:
+>   LOGINNAME = frobozz
+> Row 26:
+>   LOGINNAME = handshogi
+> Row 27:
+>   LOGINNAME = hiromimini
+> Row 28:
+>   LOGINNAME = ingiebaby
+> Row 29:
+>   LOGINNAME = jhudock1
+> Row 30:
+>   LOGINNAME = johnbethel
+> Row 31:
+>   LOGINNAME = julianbeggs
+> Row 32:
+>   LOGINNAME = jwaldichuk
+> Row 33:
+>   LOGINNAME = kapalino
+> Row 34:
+>   LOGINNAME = kcavan
+> Row 35:
+>   LOGINNAME = ltvalue4580
+> Row 36:
+>   LOGINNAME = martin82
+> Row 37:
+>   LOGINNAME = mbrand
+> Row 38:
+>   LOGINNAME = mchristy
+> Row 39:
+>   LOGINNAME = mdavis
+> Row 40:
+>   LOGINNAME = mike@cushcapital
+> Row 41:
+>   LOGINNAME = mmelendez
+> Row 42:
+>   LOGINNAME = mshields
+> Row 43:
+>   LOGINNAME = nicsun
+> Row 44:
+>   LOGINNAME = phillips7521
+> Row 45:
+>   LOGINNAME = ranky23
+> Row 46:
+>   LOGINNAME = rgani
+> Row 47:
+>   LOGINNAME = rpaton
+> Row 48:
+>   LOGINNAME = rsmall
+> Row 49:
+>   LOGINNAME = s-abacus
+> Row 50:
+>   LOGINNAME = sfong
+> Row 51:
+>   LOGINNAME = sgavigan
+> Row 52:
+>   LOGINNAME = slewis
+> Row 53:
+>   LOGINNAME = stoke
+> Row 54:
+>   LOGINNAME = svanness
+> Row 55:
+>   LOGINNAME = tgalione
+> Row 56:
+>   LOGINNAME = titan
+> Row 57:
+>   LOGINNAME = tooyevaar
+> Row 58:
+>   LOGINNAME = trand
+> Row 59:
+>   LOGINNAME = tteaster
+> Row 60:
+>   LOGINNAME = tylerhug927
+> Row 61:
+>   LOGINNAME = unknowinglyforgotten
+> Row 62:
+>   LOGINNAME = vah
+> Row 63:
+>   LOGINNAME = wbreno
+> Row 64:
+>   LOGINNAME = wholeleaf
+> Row 65:
+>   LOGINNAME = zebriod
+
+svanness was one member who received it
+select primarykey from mmanager where loginname='svanness';
+> Row 1:
+>   PRIMARYKEY = X'ddc8246c39cbf833c0a801e0'
+
+select primarykey from mticket where managerkey=X'ddc8246c39cbf833c0a801e0' and sourcekey=X'fc1543dc51f9947bc0a80146';
+> Row 1:
+>   PRIMARYKEY = X'4915408551faecdac0a80146'
+select positionkey from mtrade where ticketkey =X'4915408551faecdac0a80146';
+> Row 1:
+>   POSITIONKEY = X'491a408551faecdac0a80146'
+select fundkey from mposition where primarykey = X'491a408551faecdac0a80146';
+> Row 1:
+>   FUNDKEY = X'ab7c1f373d75100fc0a80119'
+select symbol from mfund where primarykey = X'ab7c1f373d75100fc0a80119';
+> Row 1:
+>   SYMBOL = TE
+
+svanness  TE  on 20130731
+IDT	IDT CORP CLASS B	$20.67	0.5%	381	$0.00	$7,875.27	Details 
+
+ trades on July 31, 2013	right curve
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	STRP-W	190	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+1 for 2 
+
+381 (IDT) / 2 = 190  STRP-W
+
+let's see what his ledger has in the most recent
+STRP-W	Straight Path Communications		0.0%	190	$0.00	$0.00	Details 
+
+still has it
+
+****************
+Let's se
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='STRP-W'  order by BB_EFFECTIVE;
+nothing
+
+do we have a STRP  (without the W)
+yahoo  started on 7/24/13
+Straight Path Communications Inc. (STRP) -NYSE MKT
+9.28 Up 0.73(8.54%) 11:53AM EST - Nasdaq Real Time Price
+Prev Close:	8.55
+Open:	8.66
+Bid:	9.55 x 300
+Ask:	9.61 x 100
+1y Target Est:	68.00
+Beta:	0.499682
+Earnings Date:	Dec 8 - Dec 14 (Est.)
+Day's Range:	8.34 - 9.75
+52wk Range:	8.34 - 50.00
+Volume:	490,065
+Avg Vol (3m):	518,688
+Market Cap:	112.41M
+P/E (ttm):	N/A
+EPS (ttm):	-0.17
+Div & Yield:	N/A (N/A
+select * from mcorporateaction where aliaskey is null and BB_SECID='STRP'  order by BB_EFFECTIVE;
+
+our site:
+Symbol: STRP	Name: Straight Path Communications Inc	Price: $9.36
+Volume: 488,720	Sector: Telecommunication Services	Change: $0.81
+Short Volume: 654,192	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 654,192	 Exchange: AMEX	Today: 9.45%
+50 Day Ave: $33.56	Year High: $50.00	High: $9.78
+200 Day Ave: $26.09	Year Low: $8.55	Low: $8.34
+
+research  stock info  STRP   
+ [NEW QUOTE]       
+Corporate Actions for Straight Path Communications Inc	  November 18, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for STRP	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+01 Aug 13	STRPw	STRP	Change in the ticker (trading) symbol from STRPw to STRP
+
+
+
+
+
+let's look at the STRPw side
+select distinct stockkey from mstockalias where symbol='STRPw';
+> Row 1:
+>   STOCKKEY = X'd2396ccb51ef09e7c0a80146'
+select * from mstockalias where stockkey=X'd2396ccb51ef09e7c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-07-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Straight Path Communications Inc
+>     PRIMARYKEY = X'd23a6ccb51ef09e7c0a80146'
+>       STOCKKEY = X'd2396ccb51ef09e7c0a80146'
+>         SYMBOL = STRPw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'd23a6ccb51ef09e7c0a80146';
+> Row 1:
+>              ALIASKEY = X'd23a6ccb51ef09e7c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UA|CP_TKR|STRPw|CP_SEC_TYP|3|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79633197
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 35387499
+>        BB_COMPANYNAME = Straight Path Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-07-23 00:00:00.000000'
+>         BB_IDENTIFIER = STRPw   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-18 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = STRPw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2013-07-18 00:00:00.000000'
+>            PRIMARYKEY = X'3d925b9251e871f6c0a80146'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 862578101
+>           DATE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Straight Path Communications Inc
+>     PRIMARYKEY = X'7d643b2651fae934c0a80146'
+>       STOCKKEY = X'd2396ccb51ef09e7c0a80146'
+>         SYMBOL = STRP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'7d643b2651fae934c0a80146';
+> Row 1:
+>              ALIASKEY = X'7d643b2651fae934c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|STRPw US|CP_NEW_TKR|STRP US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 79633972
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 35387499
+>        BB_COMPANYNAME = Straight Path Communications Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = STRPw   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-18 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = STRPw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2013-07-18 00:00:00.000000'
+>            PRIMARYKEY = X'3d945b9251e871f6c0a80146'
+>               VERSION = NULL
+
+
+so the ticker change happened on 20130801
+
+select count(*) from mticket where stockkey=X'd2396ccb51ef09e7c0a80146';
+> Row 1:
+>   _C001 = 90.000000   tickets total
+select distinct sourcekey from mticket where stockkey=X'd2396ccb51ef09e7c0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+all are null so they are all member generated 
+
+let's get them all look at first and last
+select * from mticket where stockkey=X'd2396ccb51ef09e7c0a80146' order by closed;
+First one
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-09-13 16:00:00.000000'
+>        COMMENT = 
+>     COMMISSION = 71.750000
+>   CURRENTORDER = X'00023f595233211ec0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'bd656dba504e2fefc0a80134'
+>       MODIFIED = NULL
+>            NET = 7488.850285
+>         OPENED = TIMESTAMP '2013-09-13 10:28:46.000000'
+>          PRICE = 5.218711
+>     PRIMARYKEY = X'00003f595233211ec0a80132'
+>         SECFEE = 0.000000
+>         SHARES = 1435.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd2396ccb51ef09e7c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+Last one
+> Row 90:
+>      ACTIONKEY = X'83613bb540d73054c0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-13 09:34:26.000000'
+>        COMMENT = 
+>     COMMISSION = 28.000000
+>   CURRENTORDER = X'065b60195645287bc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98671e253cd2f094c0a801e0'
+>       MODIFIED = NULL
+>            NET = 5628.000000
+>         OPENED = TIMESTAMP '2015-11-12 19:02:03.000000'
+>          PRICE = 10.050000
+>     PRIMARYKEY = X'065960195645287bc0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 560.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'd2396ccb51ef09e7c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+STRP-W  (STRP-1)  the spin off
+stockkey  afe7408551faec5dc0a80146
+companyid   24639   select companyid from mstock where primarykey=X'afe7408551faec5dc0a80146';
+came to like on 20130731
+91 tickets generated  by the CA
+	72 tickets from the spin off
+	19 member generated, no fills
+no members traded on their own
+
+STRPw / STRP
+stockkey  d2396ccb51ef09e7c0a80146
+companyid  24579    select companyid from mstock where primarykey=X'd2396ccb51ef09e7c0a80146';
+listed on  2013-07-23   as STRPw
+ticker change on   2013-08-01  STRPw to STRP
+90 member generated tickets   no CA generated tickets
+
+
+
+Let's do this
+do a stock dividend  IDT giving STRPw  on 20130731
+payDate 20130731
+effective  20130801
+-recordDate 20130725
+
+/Marketocracy/bin/cahelper -symbol IDT -effective 20130801 -type DVD_STOCK -exchange UN -dividendSymbol STRPw -payDate 20130731 -recordDate 20130725 -percent 50 >& /Users/build/caout/IDT.20151118-DVD_STOCK-STRPw.out 
+IDT.20151118-DVD_STOCK-STRPw.out
+stocks1:~/caout build$ tail -f IDT.20151118-DVD_STOCK-STRPw.out
+D: (11-18 12:59:52.085) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-18 13:00:15.963) cahelper started on 2015-11-18 13:00:15 -0500
+
+D: (11-18 13:00:17.324) StockFileLoad Version:4.0
+D: (11-18 13:00:17.324) Loading Stock Data
+D: (11-18 13:00:54.054) Building Lookup Index
+D: (11-18 13:00:59.735) Finished Building Index
+D: (11-18 13:01:03.583) Finished Loading Stock Data
+D: (11-18 13:01:03.702) Connection to 192.168.111.172:6666 succeeded
+D: (11-18 13:01:18.179) SavingChanges for Stock Dividend out 101 of 225
+D: (11-18 13:01:37.692) {
+    APPLIED = 1; 
+    DATE = 20130801; 
+    FUNDS = (
+        "dcinokla/Carter Wire Fund", 
+        "mbrand/mbrand's Mutual Fund", 
+        "avicere/Vicere Small Cap Aggressive Growth", 
+        "asabir/Abe Sabir's Large Cap Mutual Fund", 
+        "dmitri70/Technology Growth Mutual Fund", 
+        "etistounet/etistounet's Mutual Fund", 
+        "mdavis/mdavis tech fund", 
+        "dgson/dgsons Mutual Fund", 
+        "asabir/Abe Sabir's Value Fund", 
+        "dennishuynh/Hermes Fund", 
+        "wbreno/William Reno's Value Fund", 
+        "asabir/Abe Sabir's Mutual Fund", 
+        "DELETED_2006319/pickles growth fund", 
+        "epuca/Millenium Biotech", 
+        "titan/Titan Mutual Fund 1", 
+        "johnbethel/Bethel Value Fund", 
+        "svanness/Industrials", 
+        "sgavigan/Sean Gavigan's Mutual Fund", 
+        "trand/Multi-Sector Growth Fund", 
+        "sfong/Northwind Value Fund", 
+        "martin82/Tech Rebound Fund", 
+        "kcavan/Kevin S. Cavanaugh's Mutual Fund", 
+        "cford/clair ford's Mutual Fund", 
+        "trand/High Tech Aggressive Growth Fund", 
+        "DELETED_2006171/Tactical Allocation", 
+        "julianbeggs/JB_Telecoms", 
+        "asabir/Abe Sabir's Internet Fund", 
+        "lkris/Investors Distressed Companies Fund", 
+        "asabir/Abe Sabir's fiber optic fund", 
+        "zebriod/Raymond May's Mutual Fund", 
+        "jdaly/Daly's Doubles", 
+        "bplain/Plain's Best Value Fund", 
+        "browe/bob rowe's Mutual Fund", 
+        "dpolson/David Polson's Mutual Fund", 
+        "jhudock1/John A. Hudock's Mutual Fund", 
+        "DELETED_budtower_2009072012050004/Tower Opportunity Fund ", 
+        "slewis/Internet Fund", 
+        "phannah/Mid Cap Value Fund", 
+        "tooyevaar/ted ooyevaar's Mutual Fund", 
+        "wholeleaf/Medium Growth - medium price", 
+        "rgani/RG Tiger Fund", 
+        "bplain/BP's Best Buy Fund", 
+        "tteaster/Thomas H. Teaster's telecomm Fund", 
+        "frobozz/Denali Fund (small-to-mid-cap)", 
+        "rpaton/Homer's Fund", 
+        "mmelendez/Marc Melendez's Mutual Fund", 
+        "chucknz/Purely Technical", 
+        "kapalino/Kaplan's Aggressive Growth", 
+        "svanness/Telecom", 
+        "nicsun/Nicsun's Telco Mutual Fund", 
+        "avicere/Vicere Growth & Value Fund ", 
+        "rsmall/Cornucopia II", 
+        "adamhersh/tech fund", 
+        "vah/vah's Mutual Fund", 
+        "tgalione/tgalione's Mutual Fund", 
+        "jwaldichuk/Waldichuk Equity Fund", 
+        "jwaldichuk/Waldichuk Value Fund", 
+        "unknowinglyforgotten/Biggie", 
+        "mshields/Liberty Growth Fund", 
+        "stoke/High Five Select", 
+        "s-abacus/s-abacus's Mutual Fund", 
+        "ebasalyga/Developing Market and Momentum Mutual Fund", 
+        "ingiebaby/ingiebaby's Mutual Fund", 
+        "dmdyne99/Profitable High Dividend Stocks", 
+        "en68/Emener Short Mutual Fund", 
+        "dochoss36/UpandAway Fund", 
+        "hiromimini/RedHot MicroCap Fund", 
+        "mike@cushcapital/mike@cushcapital's Mutual Fund", 
+        "dclark/Maidstone Fund", 
+        "fgieschen/Value57", 
+        "ranky23/ranky23's Mutual Fund", 
+        "ltvalue4580/Value Long Term", 
+        "phillips7521/Rain Growth 15", 
+        "handshogi/Handshogi's SIPro Index Fund", 
+        "annanshogi/Annanshogi's SIPro Index 48 Stock Version Fund", 
+        "tylerhug927/Top 100 Stocks", 
+        "mchristy/Long-Term Value Fund", 
+        "dcblue/HEAT", 
+        "disgruntledmoose42/disgruntledmoose42's Mutual Fund", 
+        "bxb22/bxb22's Mutual Fund", 
+        "stan93/High tech falls Growth Fund", 
+        "hyllus/Shqip\U00ebria Mutual Fund", 
+        "orange/Lowrey Fund: Beige", 
+        "tstillwagon1/money maker", 
+        "svanness/Venture Capital Opportunities", 
+        "donwonjohnson/DonWonJohnson's Mutual Fund", 
+        "mpollak/mpollak's Mutual Fund", 
+        "cthiessen/CT Technology Fund", 
+        "vlad621/vlad621's Mutual Fund 4", 
+        "svanness/Business services", 
+        "stan93/Tampa Bay Diversified Growth Fund", 
+        "ahoffard/Cyclical", 
+        "svanness/Growth at a reasonable price", 
+        "cgraydon/Graydon Sector Value Fund", 
+        "eschrotenboer/Minnesota Analytics", 
+        "lordgort/Crazy", 
+        "mtucker/MIke Tucker's Wirecom Fund", 
+        "pusakaboy/Carlos Ark Management", 
+        "dshirley/dshirley's Mutual Fund", 
+        "tireseus/tireseus's Mutual Fund", 
+        "lsaunders/I-Advantage Multi-Sector Portfolio", 
+        "mvrh1/IBD New High Fund 2", 
+        "fvenuti/fvenuti's Mutual Fund", 
+        "avolodin/Alex's Growth Fund", 
+        "hyllus/?'s Mutual Fund", 
+        "jdamian_jr/JRD Tech Fund", 
+        "tireseus/tireseus's Bottom Fisher", 
+        "puredepapa/GLOBAL FUND", 
+        "fvenuti/IBD Fund Source", 
+        "zackl/zackl's Mutual Fund", 
+        "jlaw/jlaw's hi-tech 2", 
+        "arts/Art's Value Fund", 
+        "DELETED_2006119/wskillman's Mutual Fund", 
+        "svanness/Internet opportunities", 
+        "bprice/Bprice's Tax Efficient Growth Mutual Fund", 
+        "frodrigues/Small Cap Value Felix Fund", 
+        "anson27/Anson Ogle's Mutual Fund", 
+        "jlaw/jlaw's Buy and Hold Growth & Value", 
+        "tgibbs/DEVELOPING STRATEGY FUND", 
+        "rsyke/Growth Opportunity Fund", 
+        "moneywinds/The MONEY WINDS Fund", 
+        "vlad621/vlad621's Mutual Fund 5", 
+        "smallcapmaven/smallcapmaven's Mutual Fund", 
+        "crasch/Iron Books Value Fund", 
+        "michaelswagler/cedar street value fund", 
+        "dbedell/Foundation Growth Fund", 
+        "tchiu1/TC Money Machine", 
+        "msullivan4/Undervalued Net", 
+        "jjalon/jejalon's Mutual Fund", 
+        "donwonjohnson/Geezus Mutual Fund", 
+        "dmountain/strong buy fund", 
+        "douglashuang/Squeezer Special Opportunities", 
+        "mguertin/TechFest 2002", 
+        "donwonjohnson/Swollen Nut Mutual Fart", 
+        "pmayer/True Value Fund", 
+        "fmoslehi/Fundamental Fund", 
+        "cdoster/cdoster's Mutual Fund", 
+        "dshirley/buyandholdholdholdfund", 
+        "asalvador/AGS Growth Fund", 
+        "mpando/Diversified 090902", 
+        "dmlakova/dmlakova's Mutual Fund", 
+        "gracec/Grace Technology Fund B", 
+        "aguitta/GUITTA Far East \"CONQUISTADOR\"", 
+        "hyllus/Albforums Mutual Fund", 
+        "DELETE_maureenide_30130071/MACD Mutual Fund", 
+        "fmagazino/fmagazino's small cap fund", 
+        "jlaw/jlaw's Technology, Media,  and Telecom Fund", 
+        "hyllus/!'s Mutual Fund", 
+        "pwiltzius/pwiltzius's Mutual Fund", 
+        "matt30/Chase Telecom Fund", 
+        "aguitta/Guitta's Top Opportunties", 
+        "pbrenneman/Strong Tech Growth", 
+        "eschneider/Speculative Mutual Fund", 
+        "gracec/Grace Gourmet Blend", 
+        "mbaird/mbaird's Mutual Fund", 
+        "nverghese/nverghese's Mutual Fund", 
+        "damer1/Damer's Growth Fund", 
+        "aguitta/Guitta's Emerging Markets", 
+        "benzito/BRIZER", 
+        "tbyrne/tbyrne's Mutual Fund", 
+        "jeffjwb7/jeffjwb7's Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20130731; 
+    RATIO = 0.5; 
+    "RECORD_DATE" = 20130725; 
+    SYMBOL = IDT; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (11-18 13:01:54.315) SUCCESS
+D: (11-18 13:01:54.315) cahelper finished 2015-11-18 13:01:54 -0500
+
+select distinct stockkey from mstockalias where symbol='IDT';
+> Row 1:
+>   STOCKKEY = X'e7920e21390a97a4c0a80116'
+select * from mstockalias where stockkey=X'e7920e21390a97a4c0a80116' order by "date";
+delisted 
+> Row 2:
+>   STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+select * from mstockalias where stockkey=X'd2082d263bbc2ab0c0a801dc' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 448947309
+>           DATE = TIMESTAMP '2001-05-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IDT CORP CLASS B
+>     PRIMARYKEY = X'd2092d263bbc2ab0c0a801dc'
+>       STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+>         SYMBOL = IDT.B
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 448947309
+>           DATE = TIMESTAMP '2003-03-19 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IDT CORP CLASS B
+>     PRIMARYKEY = X'591342563e792f7cc0a80146'
+>       STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+>         SYMBOL = IDT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 448947309
+>           DATE = TIMESTAMP '2003-06-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IDT CORP CLASS B
+>     PRIMARYKEY = X'b0ba558a3ee69137c0a80146'
+>       STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+>         SYMBOL = IDT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 448947507
+>           DATE = TIMESTAMP '2009-02-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = IDT CORP CLASS B
+>     PRIMARYKEY = X'688b644e49a6067ac0a80146'
+>       STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+>         SYMBOL = IDT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'688b644e49a6067ac0a80146';
+here is my stock dividend
+> Row 26:
+>              ALIASKEY = X'688b644e49a6067ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130725|CP_PAY_DT|20130731|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|STRPw    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151118:010015
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = IDT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-08-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = IDT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-08-01 00:00:00.000000'
+>            PRIMARYKEY = X'ee7a1f1a564cbcafc0a86fab'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'ee7a1f1a564cbcafc0a86fab';
+	> Row 1:
+	>   _C001 = 161.000000
+	select count(*) from mticket where managerkey in (select primarykey from mmanager where loginname='svanness') and sourcekey=X'ee7a1f1a564cbcafc0a86fab';
+	> Row 1:
+	>   _C001 = 6.000000
+	select primarykey from mticket where managerkey in (select primarykey from mmanager where loginname='svanness') and sourcekey=X'ee7a1f1a564cbcafc0a86fab';
+> Row 1:
+>   PRIMARYKEY = X'71ec1f1a564cbceec0a86fab'
+> Row 2:
+>   PRIMARYKEY = X'71d21f1a564cbcedc0a86fab'
+> Row 3:
+>   PRIMARYKEY = X'71a21f1a564cbcedc0a86fab'
+> Row 4:
+>   PRIMARYKEY = X'f7dc1f1a564cbce0c0a86fab'
+> Row 5:
+>   PRIMARYKEY = X'29531f1a564cbce5c0a86fab'
+> Row 6:
+>   PRIMARYKEY = X'7d991f1a564cbcfac0a86fab'
+
+select * from mtrade where ticketkey in (select primarykey from mticket where managerkey in (select primarykey from mmanager where loginname='svanness') and sourcekey=X'ee7a1f1a564cbcafc0a86fab');
+> Row 1:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'f7e11f1a564cbce0c0a86fab'
+>                 PRIMARYKEY = X'f7df1f1a564cbce0c0a86fab'
+>                     SHARES = 2000.000000
+>                  TICKETKEY = X'f7dc1f1a564cbce0c0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+> Row 2:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'71f11f1a564cbceec0a86fab'
+>                 PRIMARYKEY = X'71ef1f1a564cbceec0a86fab'
+>                     SHARES = 50.000000
+>                  TICKETKEY = X'71ec1f1a564cbceec0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+> Row 3:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'71a71f1a564cbcedc0a86fab'
+>                 PRIMARYKEY = X'71a51f1a564cbcedc0a86fab'
+>                     SHARES = 1000.000000
+>                  TICKETKEY = X'71a21f1a564cbcedc0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+> Row 4:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'29581f1a564cbce5c0a86fab'
+>                 PRIMARYKEY = X'29561f1a564cbce5c0a86fab'
+>                     SHARES = 190.000000
+>                  TICKETKEY = X'29531f1a564cbce5c0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+	select symbol from mfund where primarykey in (select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'29531f1a564cbce5c0a86fab'));
+	> Row 1:
+	>   SYMBOL = TE
+>   CREATEDBYCORPORATEACTION = 1
+> Row 5:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'71d71f1a564cbcedc0a86fab'
+>                 PRIMARYKEY = X'71d51f1a564cbcedc0a86fab'
+>                     SHARES = 50.000000
+>                  TICKETKEY = X'71d21f1a564cbcedc0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+> Row 6:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'7d9e1f1a564cbcfac0a86fab'
+>                 PRIMARYKEY = X'7d9c1f1a564cbcfac0a86fab'
+>                     SHARES = 50.000000
+>                  TICKETKEY = X'7d991f1a564cbcfac0a86fab'
+>                     CLOSED = TIMESTAMP '2013-07-31 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+
+let's look at svanness TE fund on 20130731
+
+ trades on July 31, 2013	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	STRP-W	190	$0.00	$0.00	$0.00	$0.00  <--- now to delete this one 
+Stock Dividend Buy	STRP	190	$0.00	$0.00	$0.00	$0.00  <--- he got it!  
+
+let's look at his stratification for today
+
+STRP	click me	$9.15	190	$1,738.50	0.09%	$1,738.50	7.02%	0.00%	0.00%	Details 
+STRP-W	click me	$0.00	190	$0.00	0.00%	$0.00	0.00%	0.00%	0.00%	Details 
+
+this is good he has it today
+
+let's get rid of the spin off path
+STOCKKEY = X'afe7408551faec5dc0a80146'
+
+the spin off CA
+> Row 1:
+>              ALIASKEY = X'688b644e49a6067ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Straight Path Communications|CP_ID_BB_COMP|35387499|CP_ID_BB_SEC|3000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20130731|CP_RECORD_DT|20130725|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.845186|CP_ADJ_DT|20130801|CP_TKR|STRP-W US|CP_DUE_BILL_RED_DT|20130805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004JKTFF5|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004JKTCV4|CP_SPINOFF_ID_BB_SEC_NUM_DES|STRP-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 76830369
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 171484
+>        BB_COMPANYNAME = IDT Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = IDT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-07 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = IDT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2013-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'fc1543dc51f9947bc0a80146'
+>               VERSION = NULL
+
+let's do the delete thing for STOCKKEY = X'afe7408551faec5dc0a80146'
+
+set commit false;
+
+delete from mstock where primarykey=  X'afe7408551faec5dc0a80146'; 
+
+delete from mwindowstock where stockkey=X'afe7408551faec5dc0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'afe7408551faec5dc0a80146');
+
+delete from mstockalias where stockkey=X'afe7408551faec5dc0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'afe7408551faec5dc0a80146');   
+
+delete from mposition where stockkey=X'afe7408551faec5dc0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'afe7408551faec5dc0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'afe7408551faec5dc0a80146');
+
+delete from mticket where stockkey=X'afe7408551faec5dc0a80146';    
+
+delete from GFSPOSITION where stockkey=X'afe7408551faec5dc0a80146';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'afe7408551faec5dc0a80146';  
+
+commit;
+
+set commit true;
+
+select * from mcorporateaction where PRIMARYKEY = X'fc1543dc51f9947bc0a80146';
+> Row 1:
+>              ALIASKEY = X'688b644e49a6067ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Straight Path Communications|CP_ID_BB_COMP|35387499|CP_ID_BB_SEC|3000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20130731|CP_RECORD_DT|20130725|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.845186|CP_ADJ_DT|20130801|CP_TKR|STRP-W US|CP_DUE_BILL_RED_DT|20130805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004JKTFF5|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004JKTCV4|CP_SPINOFF_ID_BB_SEC_NUM_DES|STRP-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 76830369
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 171484
+>        BB_COMPANYNAME = IDT Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = IDT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-07 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = IDT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3000
+>            BB_UPDATED = TIMESTAMP '2013-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'fc1543dc51f9947bc0a80146'
+>               VERSION = NULL
+
+delete this 
+delete from mcorporateaction where PRIMARYKEY = X'fc1543dc51f9947bc0a80146';
+done
+
+let's invalidate everyone who held IDT stock
+>       STOCKKEY = X'd2082d263bbc2ab0c0a801dc'
+
+select fundkey from mposition where STOCKKEY = X'd2082d263bbc2ab0c0a801dc';
+save to CA issues IDT stock dividend STRP.txt
+ 	 	 

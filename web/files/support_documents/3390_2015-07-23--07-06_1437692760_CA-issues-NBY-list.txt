@@ -1,0 +1,555 @@
+NBY   request to list on our site:
+
+Type
+Portfolio Platform |
+Ticket
+3390
+Priority
+Medium
+Status
+Open
+Member Name sandeep arora
+Username sarora
+Fund Symbols MOSTS
+Stock Tickers
+N/A
+
+
+
+NovaBay Pharmaceuticals, Inc. (NBY) -NYSE MKT
+Watchlist
+0.6098 Down 0.0002(0.03%) 2:42PM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	0.61
+Open:	0.61
+Bid:	0.6086 x 100
+Ask:	0.61 x 3100
+1y Target Est:	1.80
+Beta:	-0.85
+Earnings Date:	Jul 30 - Aug 3 (Est.)
+Day's Range:	0.58 - 0.6148
+52wk Range:	0.42 - 1.30
+Volume:	53,562
+Avg Vol (3m):	446,479
+Market Cap:	37.32M
+P/E (ttm):	N/A
+EPS (ttm):	-0.32
+Div & Yield:	N/A (N/A
+
+select distinct stockkey from mstockalias where symbol='NBY';
+> Row 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+select * from mstockalias where  STOCKKEY = X'651310ac390c6d22c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NBC CAPITAL CORP
+>     PRIMARYKEY = X'651410ac390c6d22c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3e476ef644a48644c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'18b66f9f44a48654c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3724056c471d2ccdc0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+Cadence Financial Corporation
+Ticker Symbol: CADE*     CUSIP: 628729105     Exchange: AMEX
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 3/04/11
+
+Company's Online Profile
+BUSINESS:  Cadence Financial Corporation is a $1.6 billion bank holding company of Cadence Bank, N.A., providing full financial services, including banking, trust services, mortgage services and investment products in Mississippi, Tennessee, Alabama, Florida and Georgia.
+
+Notes:  March 4, 2011 --STARKVILLE, Miss.--(BUSINESS WIRE)--Cadence Financial Corporation and Community Bancorp LLC (CBC) today announced that CBC completed its acquisition of Cadence Financial Corporation and has invested $144 million in Cadence Bank. The new funding will be used to strengthen Cadence Bank’s capital base, develop new products, enhance customer service and expand community investments across Cadence Bank’s five-state market area.
+Previous Ticker Symbol: NBY    Changed: 6/28/06
+Previous Name: NBC Capital Corp.    Changed: 6/28/06 
+
+
+10/26/2007  list date  
+
+cusip from xignite
+66987P102   this is correct
+
+NBY|N|66987P102|NovaBay Pharmaceuticals, Inc.|20071026    <--- build this string  put in file symadd.txt file on stocks
+
+/Marketocracy/bin/nstool -fileName symadd.txt   <--- this creates the record 
+
+
+select distinct stockkey from mstockalias where symbol='NBY';   <-- check the result  
+> Row 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'   <-- the old one (now CABE)
+> Row 2:
+>   STOCKKEY = X'cb201c5f55a02008c0a86f92'   <-- the new one we just listed 
+select * from mstockalias where  STOCKKEY = X'cb201c5f55a02008c0a86f92';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2007-10-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NovaBay Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cb211c5f55a02008c0a86f92'
+>       STOCKKEY = X'cb201c5f55a02008c0a86f92'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+in raw form, need to add Stylekey and GICS 
+
+select * from mstockalias where STOCKKEY = X'651310ac390c6d22c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = NBC CAPITAL CORP
+>     PRIMARYKEY = X'651410ac390c6d22c0a8015c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'651410ac390c6d22c0a8015c' order by BB_EFFECTIVE;
+	lots of DVD_CASH 
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 628729105
+>           DATE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3e476ef644a48644c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'3e476ef644a48644c0a80146' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'3e476ef644a48644c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|NBC Capital Corp|CP_NEW_NAME|Cadence Financial Corp|CP_NOTES|NAME CHANGE PENDING. 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 21464768
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 348182
+>        BB_COMPANYNAME = Cadence Financial Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2006-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = NBY     UA Equity
+>             BB_ISSUED = TIMESTAMP '2006-04-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = NBY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2006-06-28 00:00:00.000000'
+>            PRIMARYKEY = X'282d680f44a485c8c0a80146'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'18b66f9f44a48654c0a80146'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'3724056c471d2ccdc0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2006-12-28 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Cadence Financial Corp
+>     PRIMARYKEY = X'b3ee0578471d2d04c0a8013c'
+>       STOCKKEY = X'651310ac390c6d22c0a8015c'
+>         SYMBOL = CADE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35202010
+>       STYLEKEY = XV
+
+old NBY change   happened on  20061228
+our new NBY listed on   20071026
+
+we need to delist CADE  
+
+7/11/15
+checking NBY
+
+it is there
+Name: NovaBay Pharmaceuticals, Inc.
+price 0.02
+
+select distinct stockkey from mstockalias where symbol='NBY';
+> Row 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+> Row 2:
+>   STOCKKEY = X'cb201c5f55a02008c0a86f92'
+
+
+There are two
+> NBY 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+select * from mstockalias where STOCKKEY = X'651310ac390c6d22c0a8015c' order by "date";
+this is the old one (CADE)
+> NBY 2:
+>   STOCKKEY = X'cb201c5f55a02008c0a86f92'
+select * from mstockalias where STOCKKEY = X'cb201c5f55a02008c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2007-10-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NovaBay Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cb211c5f55a02008c0a86f92'
+>       STOCKKEY = X'cb201c5f55a02008c0a86f92'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mstock where primarykey=X'cb201c5f55a02008c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cb211c5f55a02008c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'cb201c5f55a02008c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28578
+>   WINDOWIDENTITYKEY = NULL
+update mstock set SYMBOL = 'NBY' where PRIMARYKEY = X'cb201c5f55a02008c0a86f92';
+update mstock set NAME = 'NovaBay Pharmaceuticals, Inc.' where PRIMARYKEY = X'cb201c5f55a02008c0a86f92';
+select * from mstock where primarykey=X'cb201c5f55a02008c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cb211c5f55a02008c0a86f92'
+>                NAME = NovaBay Pharmaceuticals, Inc.
+>          PRIMARYKEY = X'cb201c5f55a02008c0a86f92'
+>              SYMBOL = NBY
+>           COMPANYID = 28578
+>   WINDOWIDENTITYKEY = NULL
+
+check stockprices
+
+select * from stockprices where companyid=  28578;
+> Row 1:
+>   DAYNUMBER = 5303  <  7/10/15
+>   COMPANYID = 28578
+>      OPENED = 6100
+>        HIGH = 6200
+>         LOW = 5800
+>      CLOSED = 6200
+>      VOLUME = 72462
+
+
+we have one day 
+
+let's add the previous days   we listed it on 2007-10-26 
+let's get historical prices from yahoo finance
+CA issues NBY historical prices to be loaded.csv
+
+select * from stockprices where companyid=  28578 order by daynumber;
+first one:
+> Row 1:
+>   DAYNUMBER = 2489  <--10/26/07	2489	Fri
+>   COMPANYID = 28578
+>      OPENED = 42000
+>        HIGH = 42500
+>         LOW = 36200
+>      CLOSED = 36200
+>      VOLUME = 319400
+
+last one:
+> Row 1939:
+>   DAYNUMBER = 5303
+>   COMPANYID = 28578
+>      OPENED = 6100
+>        HIGH = 6200
+>         LOW = 5800
+>      CLOSED = 6200
+>      VOLUME = 72462
+
+
+hve to invalidate stock prices from 2007-10-26
+1.  Go to stocks   ssh build@stocks
+
+2. Invalidate prices from 7/1/2010    set the date up in the format yyyy-mm-dd
+/Marketocracy/bin/StockPriceBuilder invalidate 2007-10-26
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-07-11
+D: (09:28:49.729) Invalidate all prices >= 2007-10-26 (2489)
+
+let's wait to see 
+
+
+*******  member order 
+
+who is the member who was trying to buy?
+
+Username sarora
+Fund Symbols MOSTS
+
+on the legacy site:
+
+all open tickets 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Open Date 		Limit 	Current 	Shares 	Fills 	Avg. Paid 	Order Type 	Last Filled 	 
+Buy 	CADE 	Jun 30, 2015 	$0.64 	$2.49 	74,829 	0 	$0.00 	Good Until Canceled 	  	Details Cancel 
+Buy 	CADE 	Jun 23, 2015 	$0.63 	$2.49 	80,120 	0 	$0.00 	Good Until Canceled 	  	Details Cancel 
+Buy 	TLOG 	Jun 19, 2015 	$2.27 	$2.80 	22,112 	18,160 	$2.27 	Good Until Canceled 	  	Details Cancel  
+
+checking yahoo finance for historical prices:
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Jul 10, 2015	0.61	0.62	0.58	0.62	72,500	0.62
+Jul 9, 2015	0.59	0.63	0.58	0.61	151,100	0.61
+Jul 8, 2015	0.59	0.62	0.57	0.57	101,600	0.57
+Jul 7, 2015	0.63	0.63	0.55	0.58	619,100	0.58
+Jul 6, 2015	0.65	0.67	0.61	0.64	212,700	0.64
+Jul 2, 2015	0.63	0.66	0.62	0.65	77,500	0.65
+Jul 1, 2015	0.62	0.65	0.62	0.63	40,800	0.63
+Jun 30, 2015	0.64	0.64	0.62	0.62	97,100	0.62 <---  price match
+Jun 29, 2015	0.65	0.66	0.63	0.64	222,200	0.64
+Jun 26, 2015	0.69	0.69	0.65	0.66	368,500	0.66
+Jun 25, 2015	0.67	0.71	0.65	0.70	365,100	0.70
+Jun 24, 2015	0.67	0.68	0.65	0.67	230,300	0.67
+Jun 23, 2015	0.68	0.70	0.65	0.66	275,900	0.66  <--- price did not hit 
+Jun 22, 2015	0.67	0.72	0.67	0.68	158,900	0.68
+
+let's do these orders
+
+6/23/2015   buy 80,120   NBY  0.63   <----- no price match
+6/30/2015   buy 74,829   NBY  0.64   <---- we have a price match for this day, volume was 97100 shares that day
+give him 10% = 9710 shares 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py sarora  MOSTS  20150630 NBY 9710 0.64
+Trading 9710.0 shares of NovaBay Pharmaceuticals, Inc. on Jun 30, 2015 at 0.64
+manager: sarora Sandeep Arora
+fund: MOSTS
+building trade (has to load stock prices first)
+price = 0.64
+buying 9710.0 shares of NBY at 0.64 on 20150630
+Traceback (most recent call last):
+  File "/Marketocracy/Scripts/build/bin/backdatedtrade.py", line 111, in ?
+    buildTrade(ec,mgr,fund,stock,date,sharecount,price)
+  File "/Marketocracy/Scripts/build/bin/backdatedtrade.py", line 43, in buildTrade
+    ticket.closeOn_(date)
+objc.error: MRPCTimeoutException - serverName:FundPrice timeout:10.000000
+
+
+
+7/13/15
+NBY is there on the old site.   Entered two buys   10 shares from the old site and 5 shares from the new site
+
+7/14/15  my two buy orders executed, one from the old and one from the new site.
+let's check the member see if he bought any
+
+sarora  no holdings
+
+I updated the case, waiting to hear from him
+closing this out
+
+
+response
+
+sarora 
+Hi Brandon,
+
+I wanted to buy 80120 NBY for my portfolio MoSTS @0.62 or 0.63  and 74829 for Con3Lo at a similar price (but honestly I cannot remember).
+
+I hope this helps.
+
+Thanks and Regards,
+
+buy 80120  NBY   MoSTS  at 0.62  
+
+buy 74829 NBY  Con3Lo  0.62  
+
+on or before 7/10/15
+
+look at historical pricing
+
+select distinct stockkey from mstockalias where symbol='NBY';
+> Row 1:
+>   STOCKKEY = X'651310ac390c6d22c0a8015c'
+> Row 2:
+>   STOCKKEY = X'cb201c5f55a02008c0a86f92'
+select * from mstockalias where  STOCKKEY = X'cb201c5f55a02008c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 66987P102
+>           DATE = TIMESTAMP '2007-10-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = NovaBay Pharmaceuticals, Inc.
+>     PRIMARYKEY = X'cb211c5f55a02008c0a86f92'
+>       STOCKKEY = X'cb201c5f55a02008c0a86f92'
+>         SYMBOL = NBY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's look at his orders 
+
+select * from mstock where primarykey=X'cb201c5f55a02008c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cb211c5f55a02008c0a86f92'
+>                NAME = NovaBay Pharmaceuticals, Inc.
+>          PRIMARYKEY = X'cb201c5f55a02008c0a86f92'
+>              SYMBOL = NBY
+>           COMPANYID = 28578
+>   WINDOWIDENTITYKEY = NULL
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 28578
+2015-06-30 (Tue) [5293]: O:0.6400 H:0.6400 L:0.6200 C:0.6200 V:97100 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:0.6200 H:0.6500 L:0.6200 C:0.6300 V:40800 TSO:0 A:0.6300 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:0.6300 H:0.6600 L:0.6200 C:0.6500 V:77500 TSO:0 A:0.6500 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:0.6500 H:0.6700 L:0.6100 C:0.6400 V:212700 TSO:0 A:0.6400 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:0.6300 H:0.6300 L:0.5500 C:0.5800 V:619100 TSO:0 A:0.5800 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:0.5900 H:0.6200 L:0.5700 C:0.5700 V:101600 TSO:0 A:0.5700 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:0.5900 H:0.6300 L:0.5800 C:0.6100 V:151100 TSO:0 A:0.6100 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:0.6100 H:0.6200 L:0.5800 C:0.6200 V:72462 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:0.5800 H:0.6200 L:0.5800 C:0.6200 V:75674 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:0.6200 H:0.6200 L:0.5900 C:0.6200 V:86825 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-15 (Wed) [5308]: O:0.6100 H:0.6400 L:0.5900 C:0.6200 V:182892 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-16 (Thu) [5309]: O:0.6200 H:0.6200 L:0.5900 C:0.6200 V:121101 TSO:0 A:0.6200 R:1.0000 CA:0.0000
+2015-07-17 (Fri) [5310]: O:0.6200 H:0.6600 L:0.6000 C:0.6600 V:138874 TSO:0 A:0.6600 R:1.0000 CA:0.0000
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:0.6600 H:0.6800 L:0.5900 C:0.6000 V:218835 TSO:0 A:0.6000 R:1.0000 CA:0.0000
+2015-07-21 (Tue) [5314]: O:0.5700 H:0.6400 L:0.5700 C:0.6300 V:64611 TSO:0 A:0.6300 R:1.0000 CA:0.0000
+2015-07-22 (Wed) [5315]: O:0.6300 H:0.6700 L:0.6100 C:0.6500 V:96397 TSO:0 A:0.6500 R:1.0000 CA:0.0000
+
+
+let's do this on 7/6/15
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py sarora MOSTS 20150706 NBY 80120 0.62
+Trading 80120.0 shares of NovaBay Pharmaceuticals, Inc. on Jul 06, 2015 at 0.62
+manager login: sarora
+manager: Sandeep Arora
+fund: MOSTS
+building trade (has to load stock prices first)
+price = 0.62
+buying 80120.0 shares of NBY at 0.62 on 20150706
+invaldating fund prices from Jul 06, 2015
+Done
+bought NBY on 7/6/15 at 0.62
+MOSTS   80120  shares 
+CON3LO  74829  shares 
+
+/Marketocracy/Scripts/build/bin/backdatedtrade.py sarora CON3LO 20150706 NBY 74829 0.62
+Trading 74829.0 shares of NovaBay Pharmaceuticals, Inc. on Jul 06, 2015 at 0.62
+manager login: sarora
+manager: Sandeep Arora
+fund: CON3LO
+building trade (has to load stock prices first)
+price = 0.62
+buying 74829.0 shares of NBY at 0.62 on 20150706
+invaldating fund prices from Jul 06, 2015
+Done
+
+let's invalidate both funds
+
+/Marketocracy/bin/dbtool lookup fund sarora
+fund: sarora
+  PK: [5BEC22FF55684902C0A86FA6]
+  symbol: [CON3LO]
+  managerKey: [252D2A7742EFB1B8C0A80132]
+  loginName: [sarora]
+
+fund: sarora
+  PK: [684900DF5530AB38C0A86FA6]
+  symbol: [MOSTS]
+  managerKey: [252D2A7742EFB1B8C0A80132]
+  loginName: [sarora]
+
+/Marketocracy/bin/fptool invalidateFund 5BEC22FF55684902C0A86FA6;
+/Marketocracy/bin/fptool invalidateFund 684900DF5530AB38C0A86FA6;
+
+let's reprice  on 2015-07-06  
+5BEC22FF55684902C0A86FA6,684900DF5530AB38C0A86FA6
+
+I see the shares in the funds on the new sites, closing this out 

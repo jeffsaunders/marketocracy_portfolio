@@ -1,0 +1,377 @@
+GEGQQ
+date:   10/8/15 
+ticker:   GEGQQ
+
+yahoo:
+
+quantum: nothing
+
+oursite:
+Symbol: GEGQQ	Name: Global Power Equipment Group Inc.	Price: $1.20
+Volume:	Sector: Industrials	Change:
+Short Volume: 0	Style: Micro Cap : Blend	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs
+GEGQQ has gone bankrupt	right curve
+ 	 	
+Chapter 11
+ 	 	 
+left curve	  symbol changes for GEGQQ	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+02 Oct 06	GEG	GEGQQ	Change in the ticker (trading) symbol from GEG to GEGQQ
+ 	 	 
+left curve	  listing changes for GEGQQ	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Oct 02, 2006	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that GEGQQ trades on from NYSE to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=GEGQQ
+
+check MAdmin
+Stock:Global Power Equipment Group Inc.  Symbol:GEGQQ
+Date: 10/08/2015
+
+56 users found
+
+1	aemble	amboy	aragon9197	arich	bdouglas1	bkalaf	botchmanov	bubbachance	cfilstead	cgbpackrat
+2	chinaman	crk007	davidaiii	dean-uhk	dfly1	efurman	flexoffset	gcastro694	geekmeister	georginho
+3	geovest	gml	grete65416	hyllus	isiah	jayphillips	jlewis7	joekaos	joeledgerton	johnjbower
+4	kathynz	kathywi	kirilov	laromana	lokater	lwroblewski	mhorsestud	mkusek	mpatterson3	mr.d
+5	nicholaf	observe	pagreen31	pgavin	phannah	pmoore	pwasko	rduchacek	rhaffner	rshanbour
+6	skyyhi	sperez	stephen4s	suzana	thesecretplace	wderosa	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'GEGQQ';  
+> Row 1:
+>   STOCKKEY = X'1d1218673b453e18c0a801dc'
+select * from mstockalias where stockkey=X'1d1218673b453e18c0a801dc'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2001-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'1d1318673b453e18c0a801dc'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-09-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'cbb42239451dcffdc0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'84e712a64521c49fc0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEGQQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'abcb12ac4521c4c6c0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEGQQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GEGQQ'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GEGQQ
+>>>> dbtool started at 2015-10-08 09:59:53 -0400
+stock: GEGQQ
+  PK       : [1D1218673B453E18C0A801DC]
+  companyID: [13574]
+  symbol   : [GEGQQ]
+  name     : [Global Power Equipment Group Inc.]
+  date     : [2006-10-02 00:00:00]
+  status   : [Active]
+stock: GEGQQ
+  PK       : [1D1218673B453E18C0A801DC]
+  companyID: [13574]
+  symbol   : [GEGQQ]
+  name     : [Global Power Equipment Group Inc.]
+  date     : [2006-10-02 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-08 09:59:53 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 13574
+2008-01-23 (Wed) [2578]: O:1.2000 H:1.2000 L:1.1000 C:1.1500 V:47320 TSO:47131 A:1.1500 R:1.0000 CA:0.0000
+2008-01-24 (Thu) [2579]: O:1.1500 H:1.2000 L:0.9600 C:1.1500 V:136684 TSO:47131 A:1.1500 R:1.0000 CA:0.0000
+2008-01-25 (Fri) [2580]: O:1.1700 H:1.1700 L:1.1500 C:1.1700 V:12916 TSO:47131 A:1.1700 R:1.0000 CA:0.0000
+2008-01-26 (Sat) [2581]: <WEEKEND>
+2008-01-27 (Sun) [2582]: <WEEKEND>
+2008-01-28 (Mon) [2583]: O:1.2400 H:1.2400 L:1.1500 C:1.2000 V:21350 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+2008-01-29 (Tue) [2584]: O:1.2400 H:1.2400 L:1.1500 C:1.2000 V:21350 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+2008-01-30 (Wed) [2585]: O:1.2000 H:1.2500 L:1.1500 C:1.2000 V:45174 TSO:47131 A:1.2000 R:1.0000 CA:0.0000  <---
+2008-01-31 (Thu) [2586]: O:1.2000 H:1.2500 L:1.1500 C:1.2000 V:45174 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+2008-02-01 (Fri) [2587]: O:1.2000 H:1.2000 L:1.2000 C:1.2000 V:0 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+2008-02-02 (Sat) [2588]: <WEEKEND>
+2008-02-03 (Sun) [2589]: <WEEKEND>
+2008-02-04 (Mon) [2590]: O:1.2000 H:1.2000 L:1.2000 C:1.2000 V:0 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+2008-02-05 (Tue) [2591]: O:1.2000 H:1.2000 L:1.2000 C:1.2000 V:0 TSO:47131 A:1.2000 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'1d1218673b453e18c0a801dc' and shares > 0 order by closed; 
+> Row 775:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2007-12-10 12:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 280.000000
+>   CURRENTORDER = X'9dc4516b475cbcf3c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd8cf5d463d3f26d8c0a80118'
+>       MODIFIED = NULL
+>            NET = 6103.800000
+>         OPENED = TIMESTAMP '2007-12-09 23:13:39.000000'
+>          PRICE = 1.089964
+>     PRIMARYKEY = X'9dc2516b475cbcf3c0a80134'
+>         SECFEE = 0.200000
+>         SHARES = 5600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL\
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'1d1218673b453e18c0a801dc'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1d1218673b453e18c0a801dc'  and totalshares < 0);
+> Row 1:
+>       ACTIVE = 1
+>      KINDKEY = X'70443ca1391e026fc0a8015c'
+>   PRIMARYKEY = X'5a00029e44ad1ea6c0a80132'
+>       SYMBOL = MMF4
+one short
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1d1218673b453e18c0a801dc'  and totalshares < 0)));
+> Row 1:
+>   LOGINNAME = mhorsestud
+your holdings of GEGQQ	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+MMF	0	N/A	N/A
+MMF1	0	N/A	N/A
+MMF2	0	N/A	N/A
+MMF3	0	N/A	N/A
+MMF4	-1	-$1.20	-0.00%  <-- expand 
+MMF5	1	$1.20	0.00%
+MMF6	0	N/A	N/A
+MMF7	0	N/A	N/A
+MMF8	0	N/A	N/A
+MMF9	0	N/A	N/A
+MMF10	0	N/A	N/A
+
+LEDGER
+Date	Start	Change	End	Type
+Jul 26, 2006		10000	10000	Buy
+Jul 27, 2006	10000	-5907	4093	Sell
+Aug 02, 2006	4093	-4094	-1	Sell
+Total: -1
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jul 26, 2006	10,000	$500.00	$26,888.96	$2.69
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Jul 27, 2006	5,907	$295.35	$0.47	$15,003.04	$2.54
+Aug 2, 2006	4,094	$204.70	$0.33	$10,608.19	$2.59
+ 	 	 
+
+let's buy 1 share 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py mhorsestud MMF4 20060726 GEGQQ 1 2.71
+Trading 1.0 shares of Global Power Equipment Group Inc. on Jul 26, 2006 at 2.71
+manager login: mhorsestud
+manager: michael watkins
+fund: MMF4
+building trade (has to load stock prices first)
+price = 2.71
+buying 1.0 shares of GEGQQ at 2.71 on 20060726
+invaldating fund prices from Jul 26, 2006
+
+shrt is gone
+
+apply the acquis
+there are 56 members who hold this stock
+quantum:  nothing
+last ticket:  2007-12-10   PRICE = 1.089964
+last price:  2008-01-30 (Wed) [2585]: O:1.2000 H:1.2500 L:1.1500 C:1.2000 V:45174 TSO:47131 A:1.2000 R:1.0000 CA:0.0000  <---
+
+going with 20080130 1.2000
+
+/Marketocracy/bin/cahelper -symbol  GEGQQ  -effective 20080130 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.2000 -acqShare 0 -purchaser GEGQQ   >& /Users/build/caout/GEGQQ.20151008-DELIST.out 
+GEGQQ.20151008-DELIST.out
+stocks1:~/caout build$ tail -f GEGQQ.20151008-DELIST.out
+D: (10-08 10:15:22.856) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-08 10:15:47.758) cahelper started on 2015-10-08 10:15:47 -0400
+
+D: (10-08 10:15:48.143) There are [0] open tickets for GEGQQ on 20080130
+D: (10-08 10:15:53.455) StockFileLoad Version:4.0
+D: (10-08 10:15:53.455) Loading Stock Data
+D: (10-08 10:16:31.266) Building Lookup Index
+D: (10-08 10:16:36.953) Finished Building Index
+D: (10-08 10:16:41.068) Finished Loading Stock Data
+D: (10-08 10:16:41.189) Connection to 192.168.111.172:6666 succeeded
+D: (10-08 10:16:43.849) {
+    "ACQUIRED_STOCK" = GEGQQ; 
+    "ACQUIRING_STOCK" = "GEGQQ_FIX"; 
+    AMOUNT = 1.2; 
+    APPLIED = 1; 
+    DATE = 20080130; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GEGQQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-08 10:16:55.026) SUCCESS
+D: (10-08 10:16:55.026) cahelper finished 2015-10-08 10:16:55 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'1d1218673b453e18c0a801dc'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2001-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'1d1318673b453e18c0a801dc'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-09-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'cbb42239451dcffdc0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'84e712a64521c49fc0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEGQQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2006-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'abcb12ac4521c4c6c0a80146'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEGQQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 37941P108
+>           DATE = TIMESTAMP '2008-01-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Global Power Equipment Group Inc.
+>     PRIMARYKEY = X'e83020a456167a94c0a86fab'
+>       STOCKKEY = X'1d1218673b453e18c0a801dc'
+>         SYMBOL = GEGQQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20104020
+>       STYLEKEY = XB
+
+select * from mcorporateaction where aliaskey =X'e83020a456167a94c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'e83020a456167a94c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GEGQQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.200000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151008:101547
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = GEGQQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-01-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GEGQQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-01-30 00:00:00.000000'
+>            PRIMARYKEY = X'e82a20a456167a93c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'e82a20a456167a93c0a86fab';
+> Row 1:
+>   _C001 = 100.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'e82a20a456167a93c0a86fab'));
+there are 100 fundkeys, save to CA issues GEGQQ fundkeys.txt
+
+For Beta case
+GEGQQ no longer trades but is still active on our site - need to delist 
+
+check on 10/9/15   invalidate funds
+check MAdmin
+
+10/12/15
+ GEGQQ has been acquired	right curve
+ 	 	
+Global Power Equipment Group Inc. acquired by a private company on 2008-01-30 00:00:00.
+
+
+
+
+

@@ -1,0 +1,1049 @@
+date:  11/11/15
+looked a SPIN emails - one was not applied DRI  - decided to poke around
+1.  check to see if we have DRI on our site and if it is valid (with respect to the real world)
+
+select distinct stockkey from mstockalias where symbol='DRI';
+> Row 1:
+>   STOCKKEY = X'101b0e21390afb24c0a80116'
+select * from mstockalias where stockkey=X'101b0e21390afb24c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 237194105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DARDEN RESTAURANTS
+>     PRIMARYKEY = X'101c0e21390afb24c0a80116'
+>       STOCKKEY = X'101b0e21390afb24c0a80116'
+>         SYMBOL = DRI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = MV
+
+Our site:
+Symbol: DRI	Name: DARDEN RESTAURANTS	Price: $54.68
+Volume: 2,861,271	Sector: Consumer Discretionary	Change: $0.00
+Short Volume: 999,999	Style: Mid Cap : Value	Market Cap: $7,634,202,880
+Avg Volume: 1,837,595	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $66.45	Year High: $75.60	High: $55.19
+200 Day Ave: $66.88	Year Low: $53.23	Low: $53.38
+
+research  stock info  DRI   
+ [NEW QUOTE]       
+Corporate Actions for DARDEN RESTAURANTS	  November 11, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  cash dividends paid by DRI	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+05 Oct 00	05 Oct 00	05 Oct 00	N/A	$0.04	Dividend amount:0.04 per share.
+06 Apr 01	10 Apr 01	01 May 01	2	$0.04	Dividend amount:0.04 per share.
+05 Oct 01	10 Oct 01	01 Nov 01	2	$0.04	Dividend amount:0.04 per share.
+08 Apr 02	10 Apr 02	01 May 02	2	$0.04	Dividend amount:0.04 per share.
+08 Oct 02	10 Oct 02	01 Nov 02	2	$0.04	Dividend amount:0.04 per share.
+08 Apr 03	10 Apr 03	01 May 03	2	$0.04	Dividend amount:0.04 per share.
+08 Oct 03	10 Oct 03	01 Nov 03	2	$0.04	Dividend amount:0.04 per share.
+06 Apr 04	09 Apr 04	01 May 04	2	$0.04	Dividend amount:0.04 per share.
+06 Oct 04	08 Oct 04	01 Nov 04	2	$0.04	Dividend amount:0.04 per share.
+06 Apr 05	08 Apr 05	01 May 05	2	$0.04	Dividend amount:0.04 per share.
+05 Oct 05	10 Oct 05	01 Nov 05	2	$0.20	Dividend amount:0.2 per share.
+06 Apr 06	10 Apr 06	01 May 06	2	$0.20	Dividend amount:0.2 per share.
+05 Oct 06	10 Oct 06	01 Nov 06	2	$0.23	Dividend amount:0.23 per share.
+05 Apr 07	10 Apr 07	01 May 07	2	$0.23	Dividend amount:0.23 per share.
+06 Jul 07	10 Jul 07	01 Aug 07	4	$0.18	Dividend amount:0.18 per share.
+05 Oct 07	10 Oct 07	01 Nov 07	4	$0.18	Dividend amount:0.18 per share.
+08 Jan 08	10 Jan 08	01 Feb 08	4	$0.18	Dividend amount:0.18 per share.
+08 Apr 08	10 Apr 08	01 May 08	4	$0.18	Dividend amount:0.18 per share.
+08 Jul 08	10 Jul 08	01 Aug 08	4	$0.20	Dividend amount:0.2 per share.
+08 Oct 08	10 Oct 08	03 Nov 08	4	$0.20	Dividend amount:0.2 per share.
+07 Jan 09	09 Jan 09	02 Feb 09	4	$0.20	Dividend amount:0.2 per share.
+07 Apr 09	10 Apr 09	01 May 09	4	$0.20	Dividend amount:0.2 per share.
+08 Jul 09	10 Jul 09	03 Aug 09	4	$0.25	Dividend amount:0.25 per share.
+07 Oct 09	09 Oct 09	02 Nov 09	4	$0.25	Dividend amount:0.25 per share.
+06 Jan 10	08 Jan 10	01 Feb 10	4	$0.25	Dividend amount:0.25 per share.
+07 Apr 10	09 Apr 10	03 May 10	4	$0.25	Dividend amount:0.25 per share.
+07 Apr 10	09 Apr 10	03 May 10	4	$0.25	Dividend amount:0.25 per share.
+07 Jul 10	09 Jul 10	02 Aug 10	4	$0.32	Dividend amount:0.32 per share.
+06 Oct 10	08 Oct 10	01 Nov 10	4	$0.32	Dividend amount:0.32 per share.
+06 Jan 11	10 Jan 11	01 Feb 11	4	$0.32	Dividend amount:0.32 per share.
+06 Apr 11	08 Apr 11	02 May 11	4	$0.32	Dividend amount:0.32 per share.
+07 Jul 11	11 Jul 11	01 Aug 11	4	$0.43	Dividend amount:0.43 per share.
+06 Oct 11	11 Oct 11	01 Nov 11	4	$0.43	Dividend amount:0.43 per share.
+06 Jan 12	10 Jan 12	01 Feb 12	4	$0.43	Dividend amount:0.43 per share.
+05 Apr 12	10 Apr 12	01 May 12	4	$0.43	Dividend amount:0.43 per share.
+06 Jul 12	10 Jul 12	01 Aug 12	4	$0.50	Dividend amount:0.5 per share.
+05 Oct 12	10 Oct 12	01 Nov 12	4	$0.50	Dividend amount:0.5 per share.
+08 Oct 12	10 Oct 12	01 Nov 12	4	$0.50	Dividend amount:0.5 per share.
+08 Jan 13	10 Jan 13	01 Feb 13	4	$0.50	Dividend amount:0.5 per share.
+08 Jul 13	10 Jul 13	01 Aug 13	4	$0.55	Dividend amount:0.55 per share.
+08 Oct 13	10 Oct 13	01 Nov 13	4	$0.55	Dividend amount:0.55 per share.
+08 Jan 14	10 Jan 14	03 Feb 14	4	$0.55	Dividend amount:0.55 per share.
+08 Apr 14	10 Apr 14	01 May 14	4	$0.55	Dividend amount:0.55 per share.
+08 Jul 14	10 Jul 14	01 Aug 14	4	$0.55	Dividend amount:0.55 per share.
+08 Oct 14	10 Oct 14	03 Nov 14	4	$0.55	Dividend amount:0.55 per share.
+07 Jan 15	09 Jan 15	02 Feb 15	4	$0.55	Dividend amount:0.55 per share.
+08 Apr 15	10 Apr 15	01 May 15	4	$0.55	Dividend amount:0.55 per share.
+08 Jul 15	10 Jul 15	03 Aug 15	4	$0.55	Dividend amount:0.55 per share.
+07 Oct 15	09 Oct 15	02 Nov 15	4	$0.55	Dividend amount:0.55 per share.
+ 	 	 
+left curve	  DRI had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+02 May 02	3 for 2	Split terms:3 for 2
+
+what was the spin off?
+
+http://finance.yahoo.com/news/darden-completes-spin-off-four-223000219.html
+ORLANDO, Fla., Nov. 9, 2015 /PRNewswire/ -- Darden Restaurants, Inc. (DRI) ("Darden") announced today that it successfully completed its previously announced spin-off of select real estate and restaurant assets into Four Corners Property Trust, Inc. (NYSE:FCPT) ("FCPT").  FCPT has become an independent, public company that intends to elect and qualify to be treated as a real estate investment trust (REIT) effective January 1, 2016. 
+
+Under the terms of the spin-off, Darden shareholders received one common share of FCPT for every three shares of Darden common stock held as of the record date, which was the close of business on November 2, 2015.  Darden shareholders will receive cash in lieu of fractional FCPT shares.  The spin-off is expected to be tax-free to Darden shareholders.  Darden has received opinions from Skadden, Arps, Slate, Meagher & Flom LLP and KPMG LLP that the spin-off will qualify as tax-free and has received a private letter ruling from the Internal Revenue Service on certain issues relevant to the qualification of the spin-off as tax-free.
+
+In connection with the spin-off, Darden received cash proceeds from FCPT of $315 million, which it anticipates using, together with cash on hand, to retire approximately $1 billion in debt in the near future while maintaining its investment grade credit profile.
+
+the new symbol is NYSE:FCPT
+
+one share of FCPT for every three shares of DRI as of the record date of November 2, 2015
+
+
+does FCPT trade in the real world?
+check Yahoo finance:
+Four Corners Property Trust, In (FCPT) -NYSE   Watchlist
+20.38 Up 1.13(5.87%) Nov 10, 4:00PM EST
+
+Prev Close:	19.25
+Open:	19.85
+Bid:	18.89 x 300
+Ask:	22.00 x 100
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	18.93 - 22.17
+52wk Range:	18.88 - 22.17
+Volume:	11,957,817
+Avg Vol (3m):	10,878,500
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	N/A
+Div & Yield:	N/A (N/A)
+
+yes it does as of 11/10/15
+
+maybe we have an FCPT already in the database and that is why the SPIN did not happen?
+select distinct stockkey from mstockalias where symbol='FCPT';
+> Row 1:
+>   STOCKKEY = X'd643510f5632a83fc0a86fab'
+select * from mstockalias where stockkey=X'd643510f5632a83fc0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-10-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Four Corners Property Trust Inc
+>     PRIMARYKEY = X'd644510f5632a83fc0a86fab'
+>       STOCKKEY = X'd643510f5632a83fc0a86fab'
+>         SYMBOL = FCPT-W  <--------------------- ah we listed as -W 
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Four Corners Property Trust Inc
+>     PRIMARYKEY = X'86285ae45642879dc0a86fab'
+>       STOCKKEY = X'd643510f5632a83fc0a86fab'
+>         SYMBOL = FCPT  <------------------------ then did a ticker change to this, would have been a collision if the spin off went through
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's see if anyone holds this   any mtickets?
+select count(*) from mticket where stockkey=X'd643510f5632a83fc0a86fab';
+> Row 1:
+>   _C001 = 0.000000
+
+Let's get rid of this stockkey altogether since no one holds it 
+STOCKKEY = X'd643510f5632a83fc0a86fab'
+
+set commit false;
+
+delete from mstock where primarykey=  X'd643510f5632a83fc0a86fab'; 
+
+delete from mwindowstock where stockkey=X'd643510f5632a83fc0a86fab';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'd643510f5632a83fc0a86fab');
+
+delete from mstockalias where stockkey=X'd643510f5632a83fc0a86fab';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'd643510f5632a83fc0a86fab');   
+
+delete from mposition where stockkey=X'd643510f5632a83fc0a86fab'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'd643510f5632a83fc0a86fab');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'd643510f5632a83fc0a86fab');
+
+delete from mticket where stockkey=X'd643510f5632a83fc0a86fab';    
+
+delete from GFSPOSITION where stockkey=X'd643510f5632a83fc0a86fab';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'd643510f5632a83fc0a86fab';  
+
+commit;
+
+set commit true;
+
+ok, let's make sure that it's done and gone
+
+select distinct stockkey from mstockalias where symbol='FCPT';
+nothing
+
+
+
+how many people hold DRI
+Stock:DARDEN RESTAURANTS  Symbol:DRI
+Date: 11/11/2015
+
+406 users found
+
+1	11029956	13kbjones	14246	2nd2none	44evergiven	aamerh	aanaz	accutrading	acorred	adamstutt
+2	adinvesting	aessma	airting5	ajf0809	ajgirard	ajpadula	ajpck2clk	akassebaum	alacorte	alanb9
+3	amarburger	amarshall	americandream	andrepaes	andrewfelder	anieves089	annetomsky	ant	antman2387	aoninvest
+4	apmitchell	apreuss	aristote	armyguy1417	arrowife622	atjohns	b_boyy	bananaslug	bas8203	bclopton
+5	bdonnelly713	bds71	bedens	bekricm	bell0217	ben24143	biceps	bigdogplaybook	billgooding	bkalaf
+6	bkquantpm	blaze9999	bluebelly83	bluedevil	bobevans	bogie	boohong	bpc	bpowers	bradlevi
+7	bronsonr	brotherlyfund	bteo	btodd	buckeye_mike	budzo3000	bwatkins	bwenderlich	c.p	carobinson24
+8	cbedevian	cbrodbeck	cburgess	cdreynes	cds_hott_property	chapp	charleshawtrey	chazears	christopherstephen	cleareyez
+9	clintwooldridge	cmarks	cmartinez1	cmcbroom	cmdowns	cmuchmore	compagent	cosmicrose	cowboy58	craimondi
+10	criordan	crummer	csarra	cschier	csimpson	cstafford	cyi	dagair	damanp	daveykun3
+11	davidwood4	davihoi	daytraderpc	dbarbetta	dbeiter	dbkv	dcassas	deadsox	dell	dennimotto
+12	dihde	dimaizumi	djadams	dmitric77	dmnieren	dmoffet	dmoore4	dmtest	dmueller1	dns2
+13	doctor_cash_flow	don_daily	drass	drodriguez	dsanford	dullmer	dvrana	dwillingham	dysangel	edaa
+14	edwin444pr	efournier	emilyabutler	epolirer	ericmefron@earthlink.net	erinrose930	esov	etrotta	ewalton	extesy
+15	extremebrick	eyespy	f.balducci	fabio	flajuie	fmagazino	foxrcan51	fpinizzotto	fpmiralph	franzmeister
+16	fresh58	futurebob	gabbage	ganga_financial_group	gbrown	gcrunner	gdenizard	geraldsylva	gfontana	gizz9947
+17	gmoriguchi	goofy	greg_davidian	gweatherbee	heisslocken	hemmy12	henryl65	hoodoos119	hotmamma	hquiroz
+18	hrick	hugo_ramos	hungche	hungerme	hwright	hxy0829	icesare	ijbsega	imirza	invest2010
+19	investmentss	investorlestrade	jambartel	james23	jamilalkhatib	jargenti	jarvis_hills	javo	jawright	jax0777
+20	jb5econ	jcantlon	jcarlock	jcesare	jdamian_jr	jdavidbeers	jdberia	jdockstader2	jdogg	jedemt
+21	jennasimmons	jereln	jespinal195	jfucci	jgaffney	jgregg78	jhagedorn	jhoffman	jhoffman2	jimmyhoofa
+22	jjh0517	jknapp	jmb	jmcgregor	jmilk	jmirabella	jmoore1	jmorrnh	jmurphy2	joedigi70
+23	joehead	jonblake	jordanb69	jpatalinghug	jpmgator	jpsmith	jreingold	jringer	jristheone	jrowe
+24	jstarr1	jstires	jtorres	judy	kainer	kaiserbhuyan	katelyn17	kathrynjoanna	katje30	kcavero321
+25	kibler	killabeees	kinchimaker	kirsty	kleponis	kminchan	kms111	kneyer	kogelet	kulananda
+26	ladymerlin	lamar	laromana	larou	larryl	lastbooger69	lazyfrog	lebear	lhester06	lianos74
+27	libertyone	liesel_hannah	lmayhew	lordgodking	lporter	lspahr	luckyddawg	lukasek	luvnpeas	lward3
+28	lydiah	makayla16	manny732	markbna	martintremblay1	matthew.sanchez@marquette.edu	mbaeu1	mcclayau	menelyik	mer1030
+29	mikep_mm@hotmail.com	milkrate	mirkotoscano	misterflak	mitywarrior	mjs3	mjz119	mkulcsar	mpisula	mr.pinche
+30	mrktoracle	mrogers2	mrosa	msoileau	mverlinde	myeh	nan271	natalieb	natekane2001	nathalie347
+31	ncms2001	nealiam	non_denom	nrablicki	nramirez	nrouton	nslaughter	nyujd	onlydeeps	outlanderclaire
+32	pavao	pdx	pedelen	powerbear1	prmorris	procrustes	professor_k	prophecy182	przuniga	pschaff
+33	psparke	pspringston	pvengineer	qcheng790	qwerty613	rallen0759	randy11259	raskos	rayen36	raytoei
+34	rbrayton	rchappell	rdf	redbooger69	regleo	rellimhj	rf12	rfranke	rgonzalez846	rh53036
+35	rhanks	rhasu83	riskfile	rjd1836	rlinthicum	rlubberman	rmchan	rnutter	rockie18	rogeratplay
+36	ronnielu	rprosser	rrosas	rrshah	rsilvestri	rstack	rtoic	rtsamuel3	sbeatty	scottliu
+37	shamanbob	shibby401k	shovden	showmethemoney	shpooja	simi	simonemarlia	sjpillette	sk8ndive	snickerson
+38	sommcorp091243	sony88	stealthy	steveoregon25	stockdoc99	stockdocx99	stockiq	straighttalk	sunspot9557	sylvie
+39	teddyc	tgsherwood	thefletch	theuncle	thiscoloradokid	thisisit	titan368	tmarotta	tmeserve	ttindall
+40	twolfe	ulchie	unnava	upon	usmc2531	varian	venturer	vooch2	vooch5	vraddict
+41	wbauder	wwagner	zainlatif	zeusnft	zildjian2564	zpryor
+
+Let's check to make sure that xignite has FCPT
+
+http://192.168.111.213/feed/stockLookup.php?symbol=FCPT
+it's there but no CUSIP
+
+let's check with Steve 
+35086T109    
+check fidelity  it is correct
+
+let's do the spin 
+
+DRI
+-spinOffSymbol FCPT
+-payDate 20151110
+-recordDate  20151102
+-name 'Four Corners Property Trust, Inc.'
+-ratio 0.33333
+exchange  NYSE
+cusip: 35086T109
+
+/Marketocracy/bin/cahelper -symbol DRI -effective 20151110 -type SPIN -exchange UN -spinOffSymbol FCPT -payDate 20151110 -recordDate  20151102 -name 'Four Corners Property Trust, Inc.'  -ratio 0.33333 >& /Users/build/caout/DRI.20151111-SPIN-FCPT.out 
+stocks1:~/caout build$ tail -f DRI.20151111-SPIN-FCPT.out
+D: (11-11 09:16:54.494) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-11 09:17:23.937) cahelper started on 2015-11-11 09:17:23 -0500
+
+D: (11-11 09:17:30.625) StockFileLoad Version:4.0
+D: (11-11 09:17:30.625) Loading Stock Data
+D: (11-11 09:18:11.218) Building Lookup Index
+D: (11-11 09:18:16.193) Finished Building Index
+D: (11-11 09:18:19.722) Finished Loading Stock Data
+D: (11-11 09:18:19.842) Connection to 192.168.111.172:6666 succeeded
+D: (11-11 09:18:41.717) SavingChanges for Stock Dividend out 101 of 1451
+D: (11-11 09:19:30.782) SavingChanges for Stock Dividend out 201 of 1451
+D: (11-11 09:20:15.405) SavingChanges for Stock Dividend out 301 of 1451
+D: (11-11 09:20:52.604) SavingChanges for Stock Dividend out 401 of 1451
+D: (11-11 09:21:22.073) SavingChanges for Stock Dividend out 501 of 1451
+D: (11-11 09:22:04.441) SavingChanges for Stock Dividend out 601 of 1451
+D: (11-11 09:22:20.242) {
+    APPLIED = 1; 
+    DATE = 20151110; 
+    FUNDS = (
+        "dwillingham/Willingham", 
+        "dmoore4/Fifth Street Capital", 
+        "pvengineer/Blue Chip", 
+        "dvrana/DKV Growth Fund", 
+        "jrowe/Jeffrey Rowe's Mutual Fund", 
+        "DELETE_ddunlap_40619030/ Harvard Value Fund", 
+        "drodriguez/Dexrod 20 Fund", 
+        "lazyfrog/LF's Choice Fund", 
+        "jhoffman/Garrison Blue Chip Mutual Fund", 
+        "csarra/christian sarra's Mutual Fund#8", 
+        "billgooding/bill gooding's Mutual Fund", 
+        "zildjian2564/BPJ Consumer Fund", 
+        "ewalton/The EdFund", 
+        "dbarbetta/Harvard Fund", 
+        "rallen0759/ALLEN LARGE BLEND", 
+        "hrick/Harrison Restaurant Fund", 
+        "kneyer/Kenneth Eric Neyer Jr.'s Mutual Fund", 
+        "rlinthicum/RL Super Value Fund", 
+        "jmoore1/Global Strategies", 
+        "bteo/B Teo's Mutual Fund", 
+        "cbrodbeck/DEFENCE", 
+        "bdevore/S&P Tops", 
+        "lporter/Lanny's Growth & Value Mutual Fund", 
+        "cosmicrose/cosmicrose's Mutual Fund", 
+        "bkalaf/BD Kalaf's Income Acceleration Fund", 
+        "rlubberman/Dumpster Diving For Stocks", 
+        "rlubberman/Bob's Contrarian Mutual Fund", 
+        "phinolerun/Eric  VanDonge's Mutual Fund", 
+        "lspahr/Orion Fund", 
+        "fivestarr/Frank Falco's Aggresive Fund.", 
+        "fivestarr/All Season Growth Fund", 
+        "fivestarr/Fivestarr's New Era Fund!", 
+        "apmitchell/APM Hospitality Fund", 
+        "tbengtsson/Thomas Bengtsson's Capital Appreciation Fund", 
+        "joehead/joehead's select equity", 
+        "hwright/High ROE Value Fund", 
+        "wwagner/william wagner's Mutual Fund", 
+        "rchappell/rchappell's Mutual Fund", 
+        "dysangel/Randal William Gosch's Mutual Fund", 
+        "jpatalinghug/jpatalinghug's Mutual Fund", 
+        "shelton20/Scout Rating Fund", 
+        "lamar/Generation Lifestyle Baby Boomer Fund", 
+        "shamanbob/Gifford Growth (Non Politically Correct)", 
+        "rbrayton/Contrarian Timer", 
+        "crummer/Crummer Fund", 
+        "jdberia/JDB Select Services", 
+        "esov/Contrarian Opportunity Fund", 
+        "futurebob/futurebob's Mutual Fund", 
+        "hungche/CheHung Fund II", 
+        "ki1park/Ki Park Diversified Fund", 
+        "jhoffman2/Entertainment Mutual Fund", 
+        "lward3/lward3's Mutual Fund", 
+        "gmoriguchi/GTM Aggressive Growth Mutual Fund", 
+        "jmirabella/Mirabella Special Portfolio", 
+        "btodd/Makinmoney", 
+        "mrogers2/mrogers2's Mutual Fund", 
+        "jreingold/Saratoga Fund", 
+        "mrogers2/mrogers2's Mutual Fund", 
+        "rburkett/rburkett's Mutual Fund Two", 
+        "DELETED_2005879/White Trash Fund of America", 
+        "dns2/david scott's Mutual Fund", 
+        "mcancel/Mark C.'s Well Diversified Fund", 
+        "cdreynes/Reynes Value Mutual Fund ", 
+        "cdreynes/Reynes Mid Cap Mutual Fund  ", 
+        "amarshall/Ann's Mutual Fund", 
+        "panther/S&P500 Outperformance fund", 
+        "jmorrnh/jmorrnh's Mutual Fund", 
+        "eziedrich/White Lion", 
+        "DELETED_2005957/TimSubZero's Mutual Fund", 
+        "gbrown/All-Cap GARP Retail Fund", 
+        "kathrynjoanna/kathrynjoanna's Mutual Fund", 
+        "jgaffney/Chartist Equity Fund", 
+        "dclark1/Growth and Earnings Fund", 
+        "mkulcsar/Food Fund", 
+        "ttindall/New Highs", 
+        "twolfe/Wolfe's Mutual Fund", 
+        "djadams/djadams's Mutual Fund", 
+        "csimpson/CVS time the market", 
+        "tstephens/Food & Retuarant Fund", 
+        "cmartinez1/cmartinez1's Mutual Fund", 
+        "cmartinez1/cmartinez1's Mutual Fund", 
+        "csimpson/csimpson's Mutual Fund", 
+        "efournier/efournier's Mutual Fund", 
+        "munder12/Mechanical Momentum Investing 2", 
+        "thefletch/The Fletcher Eat Out Fund", 
+        "trickytrees_00/trickytrees_00's FOG Fund", 
+        "powerbear1/Weinhandl Strategic Asset Mutual Fund", 
+        "cmoss/cmoss's Mutual Fund", 
+        "dagair/Splits Fund", 
+        "rprosser/roger prosser's Mutual Fund", 
+        "jtorres/Core Holdings", 
+        "szhebu/eastern growth", 
+        "raskos/raskos mighty fund", 
+        "davidwood4/Big Loser 2", 
+        "jknapp/jknapp's Mutual Fund", 
+        "codytafel/Tafel Long Term Fund", 
+        "rholt/Holt Capital Opportunity", 
+        "gmeeks/Long Live Larry", 
+        "lebear/Barron's 500 Best of All", 
+        "mlyzan/Asset Protection Fund", 
+        "dullmer/Value ", 
+        "rtoic/rtoic's Mutual Fund", 
+        "cyi/cyi's Mutual Fund", 
+        "dsanford/Restaurant Fund", 
+        "alacorte/alacorte's Mutual Fund", 
+        "kms111/PlusStockFund-14-06-2002", 
+        "qrheaume/Q-T  Food Fund", 
+        "icesare/icesare's value select", 
+        "msmith16/ss671", 
+        "jambartel/The Champion Fund", 
+        "dlundgren/Discretionary", 
+        "ant/&#65279;Other Persons Money", 
+        "ladymerlin/ladymerlin's Whatever Interests Me Fund", 
+        "csimpson/csimpson's Bottom Fishing", 
+        "jgalaviz/Vincent II", 
+        "jpsmith/WSJ Best Analyst Strong Buys", 
+        "jhitesman/jhitesman's Mutual Fund", 
+        "jdockstader2/UNBEATABLE", 
+        "gweatherbee/RK-Downers", 
+        "snickerson/SN Retail and Consumer", 
+        "pschaff/pschaff's Mutual Fund", 
+        "shelton20/shelton20's Mutual Fund", 
+        "msoileau/msoileau's  Comstock Mutual Fund", 
+        "nslaughter/The Diversified Ideas Fund", 
+        "jmorrnh/jmorrnh's Mutual Fund", 
+        "jfucci/jfucci's Mutual Fund", 
+        "andrewfelder/andrewfelder's Mutual Fund", 
+        "daytraderpc/AG Mutual Fund", 
+        "lporter/lporter's Mutual Fund", 
+        "jdavidbeers/MacroTrend Fund", 
+        "straighttalk/straighttalk's Mutual Fund", 
+        "dmtest/Cumulative 11/09/02 test", 
+        "tmarotta/tmarotta's Mutual Fund", 
+        "snickerson/SMF G&I 1", 
+        "biceps/biceps's Consumer Fund", 
+        "pittzbt12/pittzbt12's Mutual Fund", 
+        "zpryor/All About Eating", 
+        "rholt/Holt Opportunity Fund", 
+        "jereln/Jerel Novick's Mutual Fund", 
+        "tmarotta/tmarotta's value fund", 
+        "bwatkins/BW Food Fund", 
+        "cbedevian/S&P500", 
+        "tmarotta/tmarotta's equity income", 
+        "mojo702/Mojo702's XDEV Mutual Fund", 
+        "ganga_financial_group/Ganga Financial Group's Stable Growth Fund", 
+        "straighttalk/straighttalk's Mutual Fund", 
+        "americandream/AD50V", 
+        "jcesare/jcesare' value fund", 
+        "biceps/biceps's War Fund", 
+        "mikep_mm@hotmail.com/mikep_mm@hotmail.com's Blend Value & Growth", 
+        "jcesare/jcesare's hedge fund", 
+        "gfontana/Market", 
+        "amarburger/Alexander Sloan Marburger's Mutual Fund", 
+        "amarburger/ASM Medical/Science", 
+        "bwenderlich/bwenderlich's Mutual Fund", 
+        "rtsamuel3/rtsamuel3's 7-75-25-500-RA", 
+        "hoodoos119/The Scott Mutual Fund", 
+        "jdamian_jr/jdamian consumer discretionary fund", 
+        "jmoore1/The Moore Mind", 
+        "davidwood4/2003", 
+        "craimondi/The Raimondi Fund", 
+        "msoileau/MSOILEAU VALUE FUND", 
+        "jheller/The Consumer Fund", 
+        "fmagazino/fmagazino's all weather fund", 
+        "akassebaum/akassebaum's Mutual Fund", 
+        "dmcgirr/Daniel McGirr Twenty-Five Fund", 
+        "dmueller1/dmueller1's Mutual Fund", 
+        "pjenner/Consumer Discretionary", 
+        "fmagazino/fmagazino's total return", 
+        "ijbsega/ijbsega's Mutual Fund", 
+        "007maximus/VBO5", 
+        "bwatkins/Small times,big money", 
+        "jordanb69/S&P Leaders Fund", 
+        "jringer/jringer's Mutual Fund", 
+        "lianos74/Above the Index", 
+        "dennimotto/The Paycheck Be Gone Fund", 
+        "jmilk/jmilk's mid cap value", 
+        "msoileau/Small Cap", 
+        "jax0777/Sugar Maple Mamma's Fund", 
+        "pedelen/Mill River Fund", 
+        "larryl/larryl's value fund", 
+        "ncsy3k/Screen1 Fund", 
+        "lmayhew/lmayhew Restaraunt Stock", 
+        "ropr0001/American Medium Risk Fund", 
+        "erinrose930/erinrose930", 
+        "bobevans/bobevans's all cap fund", 
+        "ozman456/ozman456's Mutual Fund", 
+        "markbna/ChaChing Mutual Fund", 
+        "bds71/bds71's Mutual Fund", 
+        "prophecy182/prophecy182's Mutual Fund", 
+        "mverlinde/rock red lobster", 
+        "hquiroz/NEW AGE FUND", 
+        "sbeatty/sbeatty's Mutual Fund", 
+        "jmilk/jmilk's capital appreciation", 
+        "edaa/Global Hybrid Investment Management LLP", 
+        "jmb/jmb's Mutual Fund", 
+        "fmagazino/fmagazino's core equity", 
+        "jthomasson/Thomasson Equity", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "leakb/Steak & Black Onions", 
+        "sylvie/3 etoiles ascendantes", 
+        "tmeserve/tmeserve's Mutual Fund", 
+        "sommcorp091243/K.M. Sommerhauser:  Mutual Fund #3: Karl Fund:", 
+        "sommcorp091243/K.M. Sommerhauser: DOW UNLEASHED", 
+        "mpisula/NorthCoast Value Fund", 
+        "willblur/willblur's TA Fund", 
+        "pspringston/pspringston's Mutual Fund", 
+        "mjz119/mjz119's Mutual Fund", 
+        "ulchie/Ulchie's Food Fund", 
+        "simonemarlia/simonemarlia's Mutual Fund", 
+        "ulchie/Ulchie's Volatile Fund", 
+        "lhester06/Consumer Sector", 
+        "dysangel/dysangel's Mutual Fund", 
+        "jgoldstein/500 Contrarian Index", 
+        "tmeserve/Big Bet", 
+        "rellimhj/Consumer Disc Fund", 
+        "chubby/chubby's Short Fund", 
+        "pnutgllry/pnutgllry's Short Fund", 
+        "dhohner/QuantValue Fund", 
+        "ljoneill/LJO Mid Cap Fund", 
+        "extesy/extesy's Mutual Fund", 
+        "lturner/lturner's Short Fund", 
+        "hungerme/HungerMe's Homo Friendly Fund", 
+        "b_boyy/b_boyy's Mutual Fund", 
+        "mverlinde/Fall Downers", 
+        "nrouton/nrouton's Mutual Fund", 
+        "apreuss/Fund Nr 2", 
+        "apreuss/Fund Nr1", 
+        "44evergiven/smart girl", 
+        "apreuss/apreuss's Mutual Fund", 
+        "apreuss/axel preuss's Mutual Fund", 
+        "apreuss/Fund Nr 3", 
+        "lwilliams3/Short Quality Fund ", 
+        "sallymcbeaver/Lifetime Achievement Fund", 
+        "mgulla/Gulla Cloud9 Fund", 
+        "bdevore/Hybrid", 
+        "bobtrade/bobtrade's Mutual Fund", 
+        "dmnieren/dmnieren's Mutual Fund", 
+        "zainlatif/Fundamental Pickings", 
+        "rstack/vlt1", 
+        "armyguy1417/armyguy1417's Mutual Fund", 
+        "sjpillette/sjpillette's Mutual Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "jmcdowell/Jeff's Recreation/Leisure Fund", 
+        "milkrate/Energy Fund II", 
+        "mr.pinche/xtreme growth", 
+        "prmorris/PillBaseline031505", 
+        "kleponis/Premier Small Cap", 
+        "wahoobird/Wahoo Get Shorty ", 
+        "brian1/brian1's Mutual Fund", 
+        "growthvalue/growthvalue's Short Fund", 
+        "sbeatty/sbeatty's Mutual Fund", 
+        "liesel_hannah/liesel_hannah's Mutual Fund", 
+        "aessma/Essmaster Mutual Fund", 
+        "jedemt/Jed's Mutual Fund", 
+        "aamerh/aamerh's Mutual Fund", 
+        "liesel_hannah/liesel_hannah's Mutual Fund", 
+        "lordgodking/LGK Capital Appreciation II", 
+        "lordgodking/LGK Capital Appreciation IV", 
+        "natekane2001/Best Value fund", 
+        "jrheaume/Short Bear Fund ", 
+        "geraldsylva/Sylva Mutual Fund", 
+        "jstarr1/Briar Value", 
+        "strzalka/Iron Curtain Value Fund", 
+        "cstafford/Cstafford's Restaurant Fund", 
+        "11029956/Consumer Produducts", 
+        "accutrading/AccuSignal Bull Fund B", 
+        "mrktoracle/Market Oracle's Growth Fund", 
+        "accutrading/AccuSignal Bull Fund A", 
+        "fpmiralph/fpmiralph's Mutual Fund", 
+        "ronnielu/Ronnie's Mutual Fund", 
+        "2nd2none/CDS HIGH OGTANE FUND", 
+        "apreuss/apreuss's Mutual Fund", 
+        "2nd2none/CDS HOSPITALITY SERVICES GROWTH FUND", 
+        "aanaz/aanaz's Mutual Fund", 
+        "carobinson24/Everyday Fund", 
+        "ryessup/Short Bear Fund", 
+        "ryessup/Short Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "mer1030/mer1030's Mutual Fund", 
+        "mer1030/mer1030's Mutual Fund", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "bclopton/BDI", 
+        "etrotta/Brighton", 
+        "skyyhi/skyyhi's Short Fund", 
+        "scottliu/scottliu's Mutual Fund", 
+        "stockguru/Finirvana Ganges Fund", 
+        "imirza/Imrans Good Food Fund", 
+        "kainer/Valueline #1s", 
+        "goofy/Goofy's First Mutual Fund", 
+        "tgsherwood/tgsherwood's Mutual Fund", 
+        "milkrate/Equity T Fund", 
+        "milkrate/Marginal Correlation Fund", 
+        "nrablicki/Barra Growth Select", 
+        "adamstutt/Adam's Food Fare Fund", 
+        "judy/judy's Mutual Fund", 
+        "adamstutt/try 2", 
+        "fjpenney/Penney S&P 500", 
+        "over_invested/Shorty short", 
+        "carobinson24/Black Fund", 
+        "outlanderclaire/outlanderclaire's Mutual Fund", 
+        "icesare/icesare's Magellan 2", 
+        "ajf0809/Galt Fund", 
+        "icesare/icesare's Magellan2", 
+        "shovden/shovden's Mutual Fund", 
+        "coaster/IMPACT GROWTH", 
+        "james23/james23's Mutual Fund", 
+        "simi/simi's FMS", 
+        "sk8ndive/sk8ndive's Mutual Fund", 
+        "flajuie/Kiss My S&P", 
+        "gsourek/INDEED-SHORT", 
+        "vooch2/Leather 50 Rules", 
+        "kcavero321/kcavero321's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "nan271/nan271's Mutual Fund", 
+        "nan271/nan271's Mutual Fund", 
+        "rgonzalez846/rgonzalez846's Mutual Fund", 
+        "DELETED_moonrunreport1_20071211130001/Bear Beater", 
+        "vooch5/T10", 
+        "nan271/nan271's Mutual Fund", 
+        "nslaughter/Agothos Large Cap", 
+        "bluedevil/Let's Go Short!", 
+        "sony88/sony88's Mutual Fund", 
+        "vraddict/VR's Beer Fund", 
+        "martintremblay1/martintremblay1's Mutual Fund", 
+        "jhagedorn/jhagedorn's Mutual Fund", 
+        "daveykun3/MAD MONEY", 
+        "bas8203/X2", 
+        "chazears/Entertainment Mutual Fund", 
+        "onlydeeps/Reverse Scaling", 
+        "fabio/Fabio Serra's Mutual Fund", 
+        "cschier/Schier Short Fund I", 
+        "lwilson1/ddd", 
+        "fabio/QuantFundFS", 
+        "daveykun3/$1", 
+        "jimmyhoofa/Americans-are-fat-asses-fund", 
+        "bronsonr/Doubtfire Shop 'n Spend Fund", 
+        "14246/the cramer fund", 
+        "rjd1836/Kramerica Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "rmchan/Rusty's Mutual Fund", 
+        "astro/astro's Mutual Fund", 
+        "takara/takara's Mutual Fund", 
+        "qcheng790/qcheng790's Mutual Fund", 
+        "gurucandidate/gurucandidate's Short Only Fund", 
+        "milano/ButterflyFund", 
+        "msnow/msnow's Mutual Fund", 
+        "mizuno_mp-14/mizuno_mp-14's Short Ideas", 
+        "cstelmachowski/SPRECAP Short", 
+        "ggun/Ground Floor Rock Bottom Fund", 
+        "freewater/Freewater Trail of Dead Fund", 
+        "greg_davidian/Mid Cap Mutual Fund", 
+        "ashishbhatia/ashish's Short Fund", 
+        "jmurphy2/jmurphy2's Mutual Fund", 
+        "jpmgator/More Divs/Less Shares Fund", 
+        "dbeiter/Arch Capital Short", 
+        "damanp/Short Positions", 
+        "upon/upon's True Fund", 
+        "harbek1/Top picks", 
+        "scratchy/scratchy's Mutual Fund", 
+        "kaiserbhuyan/kaiserbhuyan's Mutual Fund", 
+        "jb5econ/FOODFUND", 
+        "dvrana/Momentum Short", 
+        "usmc2531/Let's Eat Out Fund", 
+        "nramirez/NRamirez's Mutual Fund", 
+        "laromana/laromana's Mutual Fund", 
+        "katelyn17/katelyn17's Mutual Fund", 
+        "jespinal195/jespinal195's Mutual Fund", 
+        "epolirer/Popular Stuff", 
+        "manny732/manny732's Mutual Fund", 
+        "joshhill1978/joshhill1978's Mutual Fund", 
+        "cowboy58/cowboy58's Mutual Fund", 
+        "troyea/1st Fund", 
+        "cfalcon/CFalcon's Short Fund", 
+        "cfalcon/CFalcon's ", 
+        "hemmy12/hemmy12's Mutual Fund A", 
+        "anieves089/anieves089's Mutual Fund", 
+        "eyespy/eyespy's Mutual Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "joedigi70/joedigi70's Mutual Fund", 
+        "joshhill1978/Restaurant Fund", 
+        "boohong/boohong's Mutual Fund", 
+        "damanp/Tech Crash", 
+        "libertyone/LibertyOne's Mutual Fund", 
+        "milkrate/Antifreeze", 
+        "titan368/titan368's Mutual Fund", 
+        "testcenter/SP500 Tracker ", 
+        "aristote/aristote's Mutual Fund", 
+        "kogelet/Ted ", 
+        "jonblake/jonblake's Mutual Fund", 
+        "redbooger69/redbooger69's Mutual Fund", 
+        "riskfile/Barlow Capital Growth Fund-Long", 
+        "lastbooger69/lastbooger69's Mutual Fund", 
+        "acorred/ASCI", 
+        "jargenti/jargenti's Mutual Fund ( long )", 
+        "gabbage/gabbage's consumers choice", 
+        "gabbage/gabbage's Value Fund", 
+        "hortonpt/HPTShort", 
+        "DELETED_jakerosser1_2010022609390001/Valley View Two", 
+        "jmcgregor/mini skirt fund", 
+        "mbaeu1/MBAEU1", 
+        "lolly/Lolly's Mutual Fund", 
+        "killabeees/Rolls' Mutual Fund", 
+        "criordan/criordan's Mutual Fund", 
+        "jennasimmons/jennasimmons's Mutual Fund", 
+        "adinvesting/adinvesting's Mutual Fund", 
+        "adinvesting/The Day Trader Fund", 
+        "trademaster/Short TradeMaster Fund", 
+        "chapp/Beat the Market", 
+        "nathalie347/nathalie347's Mutual Fund", 
+        "chris_nairn/chris_nairn's short Fund", 
+        "buckeye_mike/buckeye_mike's Mutual Fund", 
+        "stealthy/Stealth Wealth Value Fund", 
+        "jsavey/jsavey's Mutual Fund", 
+        "menelyik/tadios", 
+        "takara/TAKARA's Bad Stars Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "dbkv/dbkv's Mutual Fund", 
+        "fpinizzotto/Health and Consumer Mutual Fund", 
+        "andrepaes/Long US Market", 
+        "dmitric77/Asset Accumulation", 
+        "hrick/Harrison's Basket of Whims", 
+        "brotherlyfund/Mass Mutual Fund", 
+        "ajgirard/Girard Short Fund", 
+        "zildjian2564/Short Fund Experiment", 
+        "drac/drac's Crammer shorts", 
+        "ozman456/ozman456's Mutual Fund", 
+        "ericspears/ericspears's Mutual Fund", 
+        "blaze9999/bird's Mutual Fund", 
+        "franzmeister/franzmeister's short  Mutual Fund", 
+        "cds_hott_property/cds_hott_property's Mutual Fund", 
+        "airting5/airting5's Mutual Fund", 
+        "ben24143/ben24143's Mutual Fund", 
+        "rhanks/Mixed Growth Fund", 
+        "providentwind/providentwind's Mutual Fund", 
+        "qwerty613/qwerty613's Mutual Fund", 
+        "venturer/venturer's Mutual Fund II", 
+        "rogeratplay/rogeratplay's follow the money", 
+        "cburgess/S&P 500 Index", 
+        "ericspears/ericspears's Mutual Fund 2", 
+        "fresh58/fresh58's Mutual Fund", 
+        "rockie18/rockie18's Mutual Fund", 
+        "rockie18/macy's", 
+        "raytoei/Quattro-Magic-Insider", 
+        "alui/AL's Short Fund", 
+        "bekricm/Big Money", 
+        "bedens/Micah", 
+        "jdogg/jdogg's Mutual Fund", 
+        "dell/dell's Mutual Fund", 
+        "tradingaccount/Yen4Alpha - TP", 
+        "antman2387/Anthony Roberts' Mutual Fund", 
+        "markasaro/Large Cap Growth", 
+        "alanb9/stockdox tracking fund", 
+        "stockdocx99/stockdocx99's Mutual Fund", 
+        "katje30/Katje1", 
+        "walrusbt/BT Value Fund ", 
+        "markasaro/Asaro Magic Formula Fund", 
+        "mikeaidekman/MA Short Fund", 
+        "luckyddawg/luckyddawg's Unlucky Baddawg Fund", 
+        "stockdoc99/Valuation Centric Stock Fund", 
+        "jjohnson7/jjohnson7's Mutual Fund", 
+        "rh53036/Hollo Growth", 
+        "rsilvestri/Silvi Fund", 
+        "thiscoloradokid/Moving Off the Bottom", 
+        "emilyabutler/emilyabutler's Mutual Fund", 
+        "geldrausch/geldrausch's Mutual Fund Short", 
+        "przuniga/Envoy", 
+        "christopherstephen/christopherstephen's Mutual Fund", 
+        "gizz9947/gizz9947's retierment", 
+        "matthew.sanchez@marquette.edu/Secure Advantage Fund", 
+        "gdenizard/The Reset Button", 
+        "cmdowns/cmdowns's Mutual Fund", 
+        "bigdogplaybook/bigdogplaybook's Mutual Fund", 
+        "showmethemoney/showmethemoney's Mutual Fund", 
+        "luckyddawg/rebounders", 
+        "musclext/SHORTY'S Mutual Fund", 
+        "markasaro/Deep Value Fund", 
+        "jkbrandow/flf short", 
+        "rnutter/50 stocks", 
+        "larou/Hansen Value", 
+        "cvantoor/Chuck' s Short Fund", 
+        "extremebrick/TK Wolfpack Reverse Opportunity Fund", 
+        "stanglx718/Four Foot Nothing Short Fund", 
+        "stanglx718/How Much?! Short Fund", 
+        "bhessel/Kitty Short Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "jristheone/The One", 
+        "stoke/ShortingStar", 
+        "mnibmgip07/TA TREND SHORT FUND", 
+        "kbookman/Short 1 week top ETF > 500K and close friday", 
+        "rayen36/Sunny Day Fund", 
+        "jgregg78/Cemetery HF30", 
+        "jcantlon/Nunu Opportunity", 
+        "psparke/S&P High IQ", 
+        "stockiq/S&P 500 High IQ", 
+        "cleareyez/ClearView Short", 
+        "mcclayau/Buy Fund", 
+        "psparke/S&P 500 Q-Rank", 
+        "doctor_cash_flow/Doctor Cash Flow's Short Fund", 
+        "jcarlock/JC Fund #1", 
+        "nyujd/shorts breakdown. (experimental)", 
+        "dmoffet/Hermes Mutual Fund", 
+        "dmoffet/Goliath Mutual Fund", 
+        "myeh/short fund", 
+        "gabbage/gabbage's Best of Eight", 
+        "eschneider/Eschneider's Short Fund", 
+        "drass/Donkey engine", 
+        "spaceflyer/SF Consumer Fund", 
+        "shibby401k/shibby401k's Mutual Fund", 
+        "quantuck/1440 Opportunity Short Fund (QMG is Long Fund)", 
+        "sdignan/Shorting for dollars", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "pdx/pdx dividend growth fund", 
+        "luckyretriever/Short Program Trend", 
+        "gbader/gbader's Mutual Fund", 
+        "woodridge/Woodridge's Mutual Fund", 
+        "gcrunner/Authority Mutual Fund", 
+        "aoninvest/small large fund", 
+        "foxrcan51/foxrcan51's Mutual Fund", 
+        "ewalton/Aggressive Dividend Strategy", 
+        "dimaizumi/dimaizumi's Mutual Fund", 
+        "qpr/QPR Mutual Fund", 
+        "unnava/Raghavendra Unnava's Mutual Fund", 
+        "qpr/QPR Total Return Mutual Fund", 
+        "rrshah/All Cap Fund", 
+        "atjohns/Norse Force Growth & Income Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "jarvis_hills/utilities", 
+        "jarvis_hills/stavon", 
+        "dihde/dihde's Mutual Fund", 
+        "dihde/BAM, BERK, FUR", 
+        "dihde/Daniel M. Ihde's Value Fund", 
+        "varian/WAYSIDE", 
+        "nealiam/Aberdeen", 
+        "misterflak/Flaks Fund", 
+        "budzo3000/budzo3000's Mutual Fund", 
+        "qpr/Price Target Research 2", 
+        "qpr/PT Fund 3", 
+        "bthakkar/bthakkar's Mutual Fund Day short", 
+        "javo/Javo's Mutual Fund", 
+        "gabbage/gabbage's Super Fund", 
+        "steveoregon25/steveoregon25's Opportunity Fund", 
+        "mooncrusher/Dividend", 
+        "dcassas/Cavebaby Trader", 
+        "don_daily/don_daily's Mutual Fund", 
+        "varian/CANNONBALL", 
+        "bpowers/Big Pimpin Non Tech Fund", 
+        "clintwooldridge/clintwooldridge's Mutual Fund", 
+        "rdf/Foster Dividend Fund", 
+        "invest2010/Criterion RMO", 
+        "deadsox/MidCap Fund", 
+        "procrustes/Tiger Strategic Short", 
+        "sunspot9557/sunspot9557 Entertainment fund", 
+        "bluebelly83/Jen's Mutual Fund", 
+        "randy11259/randy11259's Mutual Fund", 
+        "mrosa/mrosa's Mutual Fund", 
+        "ajpck2clk/ajpck2clk's Mutual Fund", 
+        "investmentss/The Bench", 
+        "mitywarrior/mitywarrior's Real Fund", 
+        "rhasu83/rhasu83's Mutual Fund", 
+        "judkinsshogi/Judkinsshogi's Value on the Move - PEG with Est Growth Fund", 
+        "regleo/regleo's Mutual Fund", 
+        "garyheyland/Heyland Capital Short Fund", 
+        "sstclair/sstclair's Mutual Fund", 
+        "cmcbroom/cmcbroom's Mutual Fund", 
+        "jcantlon/Nunu Blue Chip Growth", 
+        "rrosas/rrosas's Mutual Fund", 
+        "lydiah/lydiah's Mutual Fund", 
+        "jamilalkhatib/Petra Investment Management", 
+        "professor_k/FYEX2PMFA11", 
+        "heisslocken/heisslocken's Mutual Fund", 
+        "compagent/Compagent Rebound Fund", 
+        "professor_k/FYEX10FA11", 
+        "hotmamma/hotmamma's income Mutual Fund ", 
+        "investorlestrade/Mid & Small Cap", 
+        "investorlestrade/Dividends with Low P/E", 
+        "investorlestrade/Michael's Value Index Score", 
+        "hotmamma/Brandon's Hot Mutual Fund", 
+        "hxy0829/hxy0829's Mutual Fund", 
+        "jjh0517/jjh0517's Mutual Fund", 
+        "thisisit/This Mutual Fund", 
+        "thisisit/thisisit's Personal Fund", 
+        "mirkotoscano/mirkotoscano's Mutual Fund", 
+        "minishogi/Minishogi's Options Volatility Fund", 
+        "bell0217/bell0217's Mutual Fund", 
+        "mjs3/mjs3's Equity Growth Fund", 
+        "hugo_ramos/Somar Dividend Growth Mutual Fund", 
+        "cmarks/SSP", 
+        "pnutgllry/pnutgllry's Mutual Fund", 
+        "bdonnelly713/bdonnelly713's Mutual Fund", 
+        "morningstar/EveningStar Capital", 
+        "bogie/Yield Screen Fund 3", 
+        "teddyc/Retirement Income Fund", 
+        "cfoam/Short Fund", 
+        "ncms2001/NCMS2001 Fund 2", 
+        "annetomsky/Anne's Ca$h Money", 
+        "henryl65/Legion Value Fund", 
+        "jrpesq/jrpesq's Mutual Fund", 
+        "davihoi/davihoi's Mutual Fund", 
+        "kulananda/Conservative Balanced Growth", 
+        "coolnquiet/coolnquiet's Mutual Fund", 
+        "13kbjones/13kbjones's Mutual Fund", 
+        "pavao/Pavao's Dividend Mutual Fund", 
+        "charleshawtrey/Trailing PE Fund", 
+        "bradlevi/DOGS of the S&P500", 
+        "bananaslug/Dividend Growth", 
+        "theuncle/theuncle's food and drink ", 
+        "cmuchmore/Stro/Munch Fund", 
+        "razmig/ACM ", 
+        "kminchan/kminchan's Mutual Fund", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "kibler/Kibler Fund", 
+        "gabbage/Jans Deep Value", 
+        "wbauder/Yield", 
+        "drass/D500", 
+        "luvnpeas/Luv's Shorts", 
+        "arrowife622/ArroCompFund", 
+        "rknatty/S&P 500 bottom 20 monthly", 
+        "rknatty/S&P 500 bottom 20 bi-weekly", 
+        "rknatty/S&P 500 Bottom 20 weekly", 
+        "f.balducci/f.balducci's Mutual Fund", 
+        "jstires/bang", 
+        "jstires/jstires's Mutual Fund", 
+        "rf12/rf12's Mutual Fund", 
+        "kinchimaker/S9 Investments ", 
+        "bpc/BPC Turnaround Fund", 
+        "cschier/Schier Select Short Fund", 
+        "ericmefron@earthlink.net/IGZKS-5-50", 
+        "raitpngman/raitpngman's Test fund", 
+        "non_denom/Brendon,s Mutual Fund", 
+        "makayla16/makayla16's Mutual Fund", 
+        "shpooja/shpooja's Mutual Fund", 
+        "jawright/jawright's Mutual Fund", 
+        "natalieb/natalieb's Mutual Fund", 
+        "edwin444pr/Dividend Challengers Fund", 
+        "edwin444pr/Dividend Contenders Fund", 
+        "rfranke/Basement Fund", 
+        "bkquantpm/QRG bkquantpm's LCM1", 
+        "bkquantpm/bkquantpm's Mutual Fund", 
+        "c.p/Long Term Dividend Income Fund", 
+        "lukasek/LuMax's Mutual Fund", 
+        "ajpadula/Padula Fund", 
+        "zeusnft/ZeusNFT Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20151110; 
+    RATIO = 0.33333; 
+    "RECORD_DATE" = 20151102; 
+    "SPINOFF_SYMBOL" = FCPT; 
+    SYMBOL = DRI; 
+    TYPE = SPIN; 
+}
+D: (11-11 09:22:24.307) SUCCESS
+D: (11-11 09:22:24.308) cahelper finished 2015-11-11 09:22:24 -0500
+
+let's check to see if FCPT was created
+
+select distinct stockkey from mstockalias where symbol='FCPT';
+> Row 1:
+>   STOCKKEY = X'd30270df56434df4c0a86fab'
+it is there
+
+select * from mstockalias where STOCKKEY = X'd30270df56434df4c0a86fab' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Four Corners Property Trust, Inc.
+>     PRIMARYKEY = X'd30370df56434df4c0a86fab'
+>       STOCKKEY = X'd30270df56434df4c0a86fab'
+>         SYMBOL = FCPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+it is there - need to set the CUSIP
+update mstockalias set CUSIP='35086T109' where PRIMARYKEY = X'd30370df56434df4c0a86fab';
+
+what exchange is this on, should be NYSE
+select * from mexchange where primarykey=X'9d5b2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 20
+>         NAME = NYSE
+>   PRIMARYKEY = X'9d5b2f1d390a440bc0a8015c'
+
+We don't have the GICS or style set.  
+have to do this
+
+how many mtickets were created?
+select count(*) from mticket where stockkey=X'd30270df56434df4c0a86fab';
+> Row 1:
+>   _C001 = 644.000000
+select distinct sourcekey from mticket where stockkey=X'd30270df56434df4c0a86fab';
+> Row 1:
+>   SOURCEKEY = X'd2fc70df56434df3c0a86fab'
+only tickets generated by the SPIN
+
+let's look at DRI, the company which spun off FCPT
+select distinct stockkey from mstockalias where symbol='DRI';
+> Row 1:
+>   STOCKKEY = X'101b0e21390afb24c0a80116'
+select * from mstockalias where stockkey=X'101b0e21390afb24c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 237194105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DARDEN RESTAURANTS
+>     PRIMARYKEY = X'101c0e21390afb24c0a80116'
+>       STOCKKEY = X'101b0e21390afb24c0a80116'
+>         SYMBOL = DRI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'101c0e21390afb24c0a80116' order by BB_EFFECTIVE;
+> Row 51:
+>              ALIASKEY = X'101c0e21390afb24c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Four Corners Property Trust, Inc.|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.333330|CP_PAY_DT|20151110|CP_RECORD_DT|20151102|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|FCPT US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151111:091723
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-10 00:00:00.000000'
+>         BB_IDENTIFIER = DRI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = DRI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-10 00:00:00.000000'
+>            PRIMARYKEY = X'd2fc70df56434df3c0a86fab'
+>               VERSION = NULL
+
+Let's get the fundkeys for those mtickets that were generated
+
+select primarykey from mticket where sourcekey=X'd2fc70df56434df3c0a86fab';
+there are 644 fundkeys  save to CA issues FCPT spin off from DRI fundkeys.txt
+
+write the case
+On 11/10/15  DRI spun off FCPT.   Holders got 1 share of FCPT for each share of DRI held on the record date
+of 11/2/15.   I have applied this manually.    I will need to invalidate the funds and reprice as of the pay date
+of 11/10/15   case is 3967
+
+
+

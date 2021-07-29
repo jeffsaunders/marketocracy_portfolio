@@ -1,0 +1,100 @@
+date: 11/4/15
+New ITEQ list - could not list this because there was an old ITEQ there and not delisted.
+Here is the new one that did not apply
+
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|ITEQ|CP_SEC_TYP|66|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 115008793
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 47206722
+>        BB_COMPANYNAME = BlueStar TA-BIGTECH Israel Technology ETF
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-11-03 00:00:00.000000'
+>         BB_IDENTIFIER = ITEQ    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-11-02 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ITEQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-11-02 00:00:00.000000'
+>            PRIMARYKEY = X'735363c25637fb11c0a86fab'
+>               VERSION = NULL
+
+
+name: BlueStar TA-BIGTech Israel Technology ETF
+
+on xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=ITEQ not found yet
+
+Let's check on this in the morning to see if xignite has this 
+
+11/4/15 - ITEQ is on xignite we can list it
+
+ITEQ|Q||BlueStar TA-BIGTech Israel Technology ETF|20151104
+
+put this in symadd.txt   
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='ITEQ';
+> Row 1:
+>   STOCKKEY = X'e95e0e21390a9c4fc0a80116'
+> Row 2:
+>   STOCKKEY = X'56f7452d5639f579c0a86fab'
+good there are two - one just delisted
+
+select * from mstockalias where STOCKKEY = X'56f7452d5639f579c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BlueStar TA-BIGTech Israel Technology ETF
+>     PRIMARYKEY = X'56f8452d5639f579c0a86fab'
+>       STOCKKEY = X'56f7452d5639f579c0a86fab'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+update mstockalias set cusip=NULL where PRIMARYKEY = X'56f8452d5639f579c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BlueStar TA-BIGTech Israel Technology ETF
+>     PRIMARYKEY = X'56f8452d5639f579c0a86fab'
+>       STOCKKEY = X'56f7452d5639f579c0a86fab'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+ask Steve for the CUSIP  he sent it  30304R886
+
+update mstockalias set CUSIP='30304R886' where PRIMARYKEY = X'56f8452d5639f579c0a86fab';
+
+select * from mstockalias where STOCKKEY = X'56f7452d5639f579c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30304R886
+>           DATE = TIMESTAMP '2015-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = BlueStar TA-BIGTech Israel Technology ETF
+>     PRIMARYKEY = X'56f8452d5639f579c0a86fab'
+>       STOCKKEY = X'56f7452d5639f579c0a86fab'
+>         SYMBOL = ITEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+it's there on our site, closing this out
+
+
+

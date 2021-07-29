@@ -1,0 +1,1360 @@
+date:  7/31/15
+ticker:  BAX missing split
+yahoo finance: Jul 1, 2015	1841: 1000 Stock Split
+
+BAX stock split not reflected
+Type
+Corporate Action | Stock Split
+Ticket
+3498
+Priority
+Medium
+Status
+Open
+Member Name
+Michael Roach
+Username
+mroach
+Fund Symbols
+MRMFL
+Stock Tickers
+BAX
+Description / Resources:
+Thu 07/30/2015 at 05:19 PM
+
+doesn't appear to be adjusted for split
+
+Additional Information:
+
+Stock Ticker: BAX
+
+
+select distinct stockkey from mstockalias where symbol='BAX';
+> Row 1:
+>   STOCKKEY = X'08870e21390ae5d8c0a80116'
+
+select * from mstockalias where STOCKKEY = X'08870e21390ae5d8c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 071813109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BAXTER INTERNATIONAL
+>     PRIMARYKEY = X'08880e21390ae5d8c0a80116'
+>       STOCKKEY = X'08870e21390ae5d8c0a80116'
+>         SYMBOL = BAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = LB
+
+select * from mcorporateaction where aliaskey=X'08880e21390ae5d8c0a80116' order by BB_EFFECTIVE;
+48
+select distinct BB_ACTIONMNEMONIC, BB_EFFECTIVE from mcorporateaction where aliaskey=X'08880e21390ae5d8c0a80116' order by BB_EFFECTIVE;
+> Row 1:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2000-12-13 15:00:00.000000'
+> Row 2:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+>        BB_EFFECTIVE = TIMESTAMP '2001-05-31 00:00:00.000000'
+> Row 3:
+>   BB_ACTIONMNEMONIC = ACQUIS
+>        BB_EFFECTIVE = TIMESTAMP '2001-08-20 00:00:00.000000'
+> Row 4:
+>   BB_ACTIONMNEMONIC = ACQUIS
+>        BB_EFFECTIVE = TIMESTAMP '2001-10-30 00:00:00.000000'
+> Row 5:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2001-12-12 00:00:00.000000'
+> Row 6:
+>   BB_ACTIONMNEMONIC = ACQUIS
+>        BB_EFFECTIVE = TIMESTAMP '2002-03-07 00:00:00.000000'
+> Row 7:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2002-12-11 00:00:00.000000'
+> Row 8:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2003-12-10 00:00:00.000000'
+> Row 9:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2004-12-08 00:00:00.000000'
+> Row 10:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2005-12-07 00:00:00.000000'
+> Row 11:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2006-12-06 00:00:00.000000'
+> Row 12:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2007-03-07 00:00:00.000000'
+> Row 13:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2007-06-06 00:00:00.000000'
+> Row 14:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2007-09-06 00:00:00.000000'
+> Row 15:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2007-12-06 00:00:00.000000'
+> Row 16:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2008-03-06 00:00:00.000000'
+> Row 17:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2008-06-06 00:00:00.000000'
+> Row 18:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2008-09-08 00:00:00.000000'
+> Row 19:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2008-12-08 00:00:00.000000'
+> Row 20:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2009-03-06 00:00:00.000000'
+> Row 21:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2009-06-08 00:00:00.000000'
+> Row 22:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2009-09-08 00:00:00.000000'
+> Row 23:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2009-12-08 00:00:00.000000'
+> Row 24:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2010-03-08 00:00:00.000000'
+> Row 25:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2010-06-08 00:00:00.000000'
+> Row 26:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2010-09-08 00:00:00.000000'
+> Row 27:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2010-12-08 00:00:00.000000'
+> Row 28:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2011-03-08 00:00:00.000000'
+> Row 29:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2011-06-08 00:00:00.000000'
+> Row 30:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2011-09-07 00:00:00.000000'
+> Row 31:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2011-12-07 00:00:00.000000'
+> Row 32:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2012-03-07 00:00:00.000000'
+> Row 33:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2012-06-06 00:00:00.000000'
+> Row 34:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2012-09-05 00:00:00.000000'
+> Row 35:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2012-12-05 00:00:00.000000'
+> Row 36:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2013-03-06 00:00:00.000000'
+> Row 37:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2013-06-05 00:00:00.000000'
+> Row 38:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2013-09-04 00:00:00.000000'
+> Row 39:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2013-12-04 00:00:00.000000'
+> Row 40:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2014-03-05 00:00:00.000000'
+> Row 41:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2014-06-04 00:00:00.000000'
+> Row 42:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2014-09-03 00:00:00.000000'
+> Row 43:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2014-12-03 00:00:00.000000'
+> Row 44:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2015-03-09 00:00:00.000000'
+> Row 45:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+>        BB_EFFECTIVE = TIMESTAMP '2015-05-28 00:00:00.000000'
+> Row 46:
+>   BB_ACTIONMNEMONIC = SPIN
+>        BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BAX' and BB_ACTIONMNEMONIC = 'STOCK_SPLT';
+not there 
+
+terms of BAX split 
+https://www.stocksplithistory.com/baxter-international/
+BAX Split History Table
+Date 	Ratio
+11/18/1983	2 for 1
+05/31/2001	2 for 1
+12/01/1992	100000 for 90823
+07/01/2015	1841 for 1000  <---
+
+select * from mstock where primarykey=X'08870e21390ae5d8c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'08880e21390ae5d8c0a80116'
+>                NAME = BAXTER INTERNATIONAL
+>          PRIMARYKEY = X'08870e21390ae5d8c0a80116'
+>              SYMBOL = BAX
+>           COMPANYID = 4274
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7dec
+
+let's check the pricing 
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4274
+2015-06-24 (Wed) [5287]: O:70.9500 H:71.9400 L:70.8700 C:71.6400 V:10434894 TSO:602861 A:71.6400 R:1.0000 CA:13.8715
+2015-06-25 (Thu) [5288]: O:71.3000 H:72.5400 L:71.1500 C:72.3400 V:9415933 TSO:602861 A:72.3400 R:1.0000 CA:13.8715
+2015-06-26 (Fri) [5289]: O:72.2900 H:72.8400 L:71.6900 C:71.9200 V:13047732 TSO:602861 A:71.9200 R:1.0000 CA:13.8715
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:71.1500 H:71.8600 L:70.6000 C:70.6500 V:6687424 TSO:602861 A:70.6500 R:1.0000 CA:13.8715
+2015-06-30 (Tue) [5293]: O:71.1300 H:71.1500 L:69.8000 C:69.9300 V:9941271 TSO:602861 A:69.9300 R:1.0000 CA:13.8715
+2015-07-01 (Wed) [5294]: O:37.5500 H:38.9400 L:37.4300 C:38.8600 V:24435196 TSO:602861 A:38.8600 R:1.0000 CA:13.8715  <-- there the price drops
+2015-07-02 (Thu) [5295]: O:38.7700 H:38.8500 L:38.2000 C:38.3000 V:20251642 TSO:602861 A:38.3000 R:1.0000 CA:13.8715
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:38.1500 H:38.4100 L:37.7500 C:38.0400 V:17511750 TSO:602861 A:38.0400 R:1.0000 CA:13.8715
+2015-07-07 (Tue) [5300]: O:37.8900 H:38.0000 L:36.4800 C:37.1100 V:17082119 TSO:602861 A:37.1100 R:1.0000 CA:13.8715
+2015-07-08 (Wed) [5301]: O:36.9800 H:37.1500 L:36.4000 C:36.5000 V:7799124 TSO:602861 A:36.5000 R:1.0000 CA:13.8715
+2015-07-09 (Thu) [5302]: O:37.0800 H:37.0900 L:36.7300 C:37.0200 V:9725238 TSO:602861 A:37.0200 R:1.0000 CA:13.8715
+2015-07-10 (Fri) [5303]: O:37.3400 H:37.7200 L:36.9300 C:37.6100 V:10101150 TSO:602861 A:37.6100 R:1.0000 CA:13.8715
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:37.7300 H:37.7300 L:37.2900 C:37.6000 V:8965145 TSO:602861 A:37.6000 R:1.0000 CA:13.8715
+2015-07-14 (Tue) [5307]: O:37.4800 H:37.7900 L:37.3300 C:37.7300 V:11630881 TSO:602861 A:37.7300 R:1.0000 CA:13.8715
+2015-07-15 (Wed) [5308]: O:37.7600 H:37.8100 L:37.5300 C:37.7000 V:11409404 TSO:602861 A:37.7000 R:1.0000 CA:13.8715
+2015-07-16 (Thu) [5309]: O:37.7600 H:37.8300 L:37.5400 C:37.7700 V:8280312 TSO:602861 A:37.7700 R:1.0000 CA:13.8715
+2015-07-17 (Fri) [5310]: O:37.7400 H:37.8300 L:37.2700 C:37.3600 V:8858242 TSO:602861 A:37.3600 R:1.0000 CA:13.8715
+2015-07-18 (Sat) [5311]: <WEEKEND>
+2015-07-19 (Sun) [5312]: <WEEKEND>
+2015-07-20 (Mon) [5313]: O:37.4300 H:37.7500 L:37.2600 C:37.6600 V:12162816 TSO:602861 A:37.6600 R:1.0000 CA:13.8715
+2015-07-21 (Tue) [5314]: O:37.6500 H:37.8900 L:37.6000 C:37.8500 V:7290911 TSO:602861 A:37.8500 R:1.0000 CA:13.8715
+2015-07-22 (Wed) [5315]: O:37.7300 H:37.8600 L:37.6500 C:37.7100 V:7254469 TSO:602861 A:37.7100 R:1.0000 CA:13.8715
+2015-07-23 (Thu) [5316]: O:37.8000 H:38.2100 L:37.7600 C:37.9700 V:10271823 TSO:602861 A:37.9700 R:1.0000 CA:13.8715
+2015-07-24 (Fri) [5317]: O:37.8000 H:37.9700 L:37.5900 C:37.6400 V:6612555 TSO:602861 A:37.6400 R:1.0000 CA:13.8715
+2015-07-25 (Sat) [5318]: <WEEKEND>
+2015-07-26 (Sun) [5319]: <WEEKEND>
+2015-07-27 (Mon) [5320]: O:37.6000 H:37.9000 L:37.5000 C:37.7000 V:8896592 TSO:602861 A:37.7000 R:1.0000 CA:13.8715
+2015-07-28 (Tue) [5321]: O:37.9600 H:38.1500 L:37.6800 C:38.0900 V:8295111 TSO:602861 A:38.0900 R:1.0000 CA:13.8715
+2015-07-29 (Wed) [5322]: O:38.1800 H:38.7600 L:38.0500 C:38.5000 V:8411352 TSO:602861 A:38.5000 R:1.0000 CA:13.8715
+2015-07-30 (Thu) [5323]: O:37.8200 H:40.0700 L:37.7100 C:40.0100 V:14478557 TSO:602861 A:40.0100 R:1.0000 CA:13.8715
+
+1841 for 1000
+ratio = 1.841
+not sure what the recordDate is - Kim is checking Raw data
+
+
+/Marketocracy/bin/cahelper -symbol BAX -effective 20150701 -type STOCK_SPLT -exchange UQ -payDate 20150701 -recordDate 20150701 -ratio 1.841 -terms '1.841 for 1' >& /Users/build/caout/BAX.20150731-SPLIT.out
+BAX.20150731-SPLIT.out
+stocks:~/caout build$ tail -f BAX.20150731-SPLIT.out
+D: (07-31 09:36:37.619) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-31 09:37:23.488) cahelper started on 2015-07-31 09:37:23 -0400
+
+D: (07-31 09:37:24.979) There are [0] closed tickets for BAX on 20150701
+D: (07-31 09:37:48.024) There are [0] open tickets for BAX on 20150701
+D: (07-31 09:37:49.296) StockFileLoad Version:4.0
+D: (07-31 09:37:49.306) Loading Stock Data
+D: (07-31 09:39:06.002) Building Lookup Index
+D: (07-31 09:39:14.942) Finished Building Index
+D: (07-31 09:39:22.445) Finished Loading Stock Data
+D: (07-31 09:39:22.522) Connection to 192.168.111.172:6666 succeeded
+D: (07-31 09:39:35.658) SavingChanges for stock split 101 of 1872
+D: (07-31 09:40:08.074) SavingChanges for stock split 201 of 1872
+D: (07-31 09:40:45.492) SavingChanges for stock split 301 of 1872
+D: (07-31 09:41:19.126) SavingChanges for stock split 401 of 1872
+D: (07-31 09:41:49.053) SavingChanges for stock split 501 of 1872
+D: (07-31 09:42:20.023) SavingChanges for stock split 601 of 1872
+D: (07-31 09:42:51.096) SavingChanges for stock split 701 of 1872
+D: (07-31 09:43:20.455) SavingChanges for stock split 801 of 1872
+D: (07-31 09:43:54.016) SavingChanges for stock split 901 of 1872
+D: (07-31 09:44:23.372) SavingChanges for stock split 1001 of 1872
+D: (07-31 09:44:41.070) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "keif/Keif's Health Science Fund", 
+        "tduong1/Young Value Trust", 
+        "sneer/Neer Healthcare Fund", 
+        "jcesare/jcesare's focus fund", 
+        "gwright64/WFS Value Blend", 
+        "snag/Value", 
+        "snag/Growth", 
+        "dscherr/DiBS Fund", 
+        "blossoms/Relative Strength Plus", 
+        "zappy3333/Boomer Fund", 
+        "ablazinob/ablazinob's Mutual Fund", 
+        "tcgreen/Precept Bull Fund", 
+        "DELETED_2004194/Byron Managed Growth Stock Fund", 
+        "bill.d.kid/biltechmed", 
+        "donohue76/Dave's Top Ten List", 
+        "donohue76/David Patrick Donohue's Mutual Fund", 
+        "rickgruber/rickgruber's Mutual Fund", 
+        "donohue76/Daves Biotech Medical Fund", 
+        "elantagne/Ernest Lantagne's Mutual Fund", 
+        "repple/EPCO CAPITAL FUND", 
+        "apratt/Adam Pratt's Mutual Fund", 
+        "boardwlk/Ornithopter Large Cap Growth", 
+        "shawnshelto/Shawns Index", 
+        "vermalet/vermalet's Mutual Fund", 
+        "jfreeburg/SectorWatch Fund", 
+        "aspatz1/aspatz1's Mutual Fund", 
+        "bighurt456/Brent's Bull Mutual Fund", 
+        "DELETED_2004646/kenneth alfred valdes's Mutual Fund", 
+        "crademacher/Chuck Rademacher's Mutual Fund", 
+        "jeff82/Jeffrey Richard Elver's Mutual Fund", 
+        "fxmart/Federico Xavier Martinez Rivera's Mutual Fund", 
+        "dfoster/Foster's Relative Strength Large Cap Fund", 
+        "carbalb/Salomon Smith Barney", 
+        "klloyd5/Kevin Dickson's Mutual Fund", 
+        "cruiser/Financial/Health", 
+        "scott1964/Scott1964's Mutual Fund", 
+        "jdrazdowski/concord", 
+        "rhb/rambo20", 
+        "clacich/Christopher P. Lacich, Esquire's Mutual Fund", 
+        "hoftman/Hoftman's Long Picks", 
+        "sdunkin/Scott Dunkin's Rx Fund", 
+        "tsimon/Troy Simon's Mutual Fund", 
+        "DELETE_ddunlap_40619030/ Marco Polo World Fund", 
+        "ompfsp/OMP Health & Technology", 
+        "wilyflyer/Midwest Chicago Fund", 
+        "joeledgerton/SSGA", 
+        "rkwan1/Fortune Fund", 
+        "mckqn/Kathleen McKeown's Mutual Fund", 
+        "nodax/nodax's Mutual Fund", 
+        "drzeke/drzeke's Mutual Fund", 
+        "drzeke/NewFund", 
+        "drzeke/drzeke's Mutual Fund", 
+        "koram/Aaron Koral's Health Care & Biotechnology Mutual Fund", 
+        "jbingman/The Khicken 15 Fund", 
+        "leadsag/Richard Goodenbour's Mutual Fund", 
+        "rtsuda/Cedar Growth Fund", 
+        "lkris/Investors Large Blend  Fund", 
+        "psnogren/Paul Snogren's Mutual Fund", 
+        "DELETE_ddunlap_40619030/World's Best Managed Companies Fund", 
+        "hoftman/hoftman.com's Long Picks", 
+        "DELETED_2006269/Rock Growth Fund", 
+        "vholmwood/Holmwood S&P 100 Fund", 
+        "ybaxamusa/Yusuf Baxamusa's Mutual Fund", 
+        "rfiqueroa/Fiqueroa/Franceschini  Health and Communication", 
+        "mj2345unc/Biotech", 
+        "scotdog/scott mckinney's Mutual Fund", 
+        "scotdog/scott mckinney's Mutual Fund", 
+        "scotdog/scott mckinney's Mutual Fund", 
+        "mruscoe/mruscoe's Mutual Fund", 
+        "bbelluche/surprise mutual fund", 
+        "bbelluche/october fund", 
+        "bbelluche/bob  belluche's Mutual Fund", 
+        "gfranceschini/barbarastar health and biotechnology", 
+        "jbspencer/jbspencer's Mutual Fund", 
+        "dod/MEDICAL GROWTH", 
+        "gkoeck/Equity Return Fund", 
+        "sseifried1/DTX Volcano Fund", 
+        "gkirk/Kirk Appreciation Fund", 
+        "ooliver/odette  oliver's Mutual Fund", 
+        "jrussell/JAY RUSSELL's Mutual Fund - Growth", 
+        "metzloffsr/james metzloff's Mutual Fund", 
+        "mjshan/Plus Ultra Momentum 3", 
+        "rellswor/Red Ivy HealthCare Fund", 
+        "jbowie/Health and Technology Fund", 
+        "paquino/Magnum Fund", 
+        "wolfgame/GP Focus", 
+        "priv8pete/Tech 10 Value Fund", 
+        "rjindra/Omaha Titans Fund", 
+        "dchappell1/Donald Chappell", 
+        "mgibbons/Value Fund3", 
+        "jhtoad2001/SITBACK", 
+        "jhtoad2001/JEFFREY HUGH TODD's Mutual Fund", 
+        "jimjim56/Jim Olson's Mutual Fund", 
+        "mturner1/MICHAEL  P.  TURNER's Mutual Fund", 
+        "enanni/Eusebio NANNI's Tactical Trading Mutual Fund", 
+        "jhtoad2001/HEALTHLINKS", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "davidwood4/Ledgerwood's Mutual Fund", 
+        "thebax/Richard Anthony Baxter's Mutual Fund", 
+        "lonnis/Lonnis's General Fund", 
+        "wolfgame/G P's Domestic Wisdom", 
+        "hkwong/Variable-Cap Growth", 
+        "ggasdia/Gary's Healthcare Fund", 
+        "aberkowitz/21st Century American 500 Fund", 
+        "tstephens/Clarke Anthony Stephens's MPB", 
+        "mshah1/Moiza Shah's Mutual Fund", 
+        "herrmannation/herrmannation's Mutual Fund", 
+        "ssexton1/A&B Equity Fund", 
+        "bobalou/Robert Klatch's Mutual Fund", 
+        "preacher667/Market Performer I", 
+        "jgore/Xtreme Value Fund", 
+        "DELETED_2005478/Richard J. Roberts's Mutual Fund", 
+        "tsalamone/Todd Salamone's Mutual Fund", 
+        "prainey/PLR Aggressive Growth", 
+        "wdelong/Virtual Horizon", 
+        "rperotti/ron perotti's Mutual Fund", 
+        "tmarotta/tony marotta's Mutual Fund", 
+        "leb1981/Leos Medical Fund", 
+        "jgaisford/Jim Gaisford's Mutual Fund", 
+        "cpatty/Carl Patty True HealthCare Fund", 
+        "dhammocks/dlh low priced stock fund", 
+        "jhart1/Momentum Fund", 
+        "DELETED_2003997/frank fondo's Mutual Fund", 
+        "doc_evans7/doc_evans7's Mutual Fundbiotech", 
+        "rgerber/Partnerships A", 
+        "apanjwani/Anil's Mutual Fund", 
+        "polloc5240/PMF Dividend Value Barbell", 
+        "bill.d.kid/bill.d.kid's newFund", 
+        "jo_connor/IBD Fund", 
+        "jstern/JULIAN STERN's Mutual Fund", 
+        "alanlast/Dogs", 
+        "dlawson/David William Lawson's Mutual Fund", 
+        "gladiator/albert  ramirez's Mutual Fund", 
+        "jbonds1/JAB Life Fund", 
+        "dpthapa/dpthapa's Mutual Fund", 
+        "rosech/Chadron's Mutual Fund", 
+        "sgunstream/Stephen's Practice Fund", 
+        "wzbinden/wzbinden's Mutual Fund", 
+        "jlacroix1/lacroix life science fund", 
+        "jzimmer/jzimmer's Mutual Fund", 
+        "spentzos/Spentzos Fund", 
+        "klandragan/klandragan's Mutual Fund", 
+        "dickpierce/Dickmeister Science Fund", 
+        "shags/Shags's Mutual Fund", 
+        "rzalis/Z Fund", 
+        "delfenbein/delfenbein's Mutual Fund", 
+        "DELETED_2006222/Quantcatch Mutual Fund", 
+        "tweener/Stummy Global Healthcare ", 
+        "asanzone/Venidad Pharm/Health Fund", 
+        "jazzone/JazzOne Healthcare Value Fund", 
+        "mbutler1/Juggernaut Fund", 
+        "minathig/Large Cap Opportunity Fund", 
+        "butler/d", 
+        "nlu/nlu's Mutual Fund 2", 
+        "dhammocks/lee growth & Income fund", 
+        "bdcheung/bdcheung's Health Science Fund", 
+        "rabockma/rabockma's Mutual Fund", 
+        "jbarringer/JAB Cheap Growth", 
+        "jbarringer/JAB Health Sciences", 
+        "jcargill/Cargill Large Cap Mutual Fund", 
+        "nlu/Large Cap", 
+        "nlu/Technology", 
+        "vmanzella/VPM BALANCED FUND", 
+        "cmartinez/Phoenix Rising", 
+        "efoley/efoley's Mutual Fund 25", 
+        "bdavidhizar/ML Intern Fund", 
+        "rcalice/More money", 
+        "beisbol/Epi-Bio-Tech Fund", 
+        "jlyon/Fight for Life Fund", 
+        "gman/gman's Mutual Fund", 
+        "mmickel/mmickel's Mutual Fund", 
+        "pmurtagh/pmurtagh's Mutual Fund", 
+        "DELETED_2006339/The Holding Cell", 
+        "darktrader/darktrader's Mutual Fund", 
+        "cfoam/Marc Lichtenfeld's Healthcare", 
+        "cpaolino/CT Flex Fund", 
+        "tsandoval/Mile High Growth Fund", 
+        "DELETED_2006339/Psychic Predictions Fund", 
+        "sofi/Sofi's Healthcare Fund", 
+        "ki1park/C-Fund III", 
+        "rknutsvig/Invest by the Rules Mutual Fund", 
+        "cwilliams/Colin Williams' Magellan Fund", 
+        "cfifield/charis growth fund", 
+        "hpobric/Seinar I", 
+        "cfifield/charis equity & income fund", 
+        "wcollins/Collins Aggressive Allocation Fund", 
+        "doppelaar/health ", 
+        "lpatierno/lpatierno's Mutual Fund", 
+        "doppelaar/Charts 1", 
+        "jkliora/Chicago Growth Fund", 
+        "csmith2/Future Growth Fund", 
+        "rfiqueroa/Select  long trends.", 
+        "pgavin/Gavin Millionaire Overnight Fund", 
+        "mcollins2/MCILLIO'S Mutual Fund", 
+        "pternes/The PT Venture Fund", 
+        "cmorrison_iii/cmorrison iii's Mutual Fund", 
+        "cmorrison1/cmorrison1's Mutual Fund", 
+        "grumpypole_delist/grumpypole biotwo", 
+        "thehumblegenius/THG Large Cap 15", 
+        "bmcdonald/Brad McDonald's Mutual Fund", 
+        "dclark1/Growth and Earnings Fund", 
+        "mitm01/Plymouth Health Care  Fund", 
+        "mitm01/Plymouth Health Index  Fund", 
+        "sgude/SG Growth Fund", 
+        "davidwood4/I'm a Loser", 
+        "stan93/Tampa Bay Diversified Growth Fund", 
+        "stan93/Buccaneer Growth Fund", 
+        "stan93/Stans Mutual Fund", 
+        "jambone/jambone watch fund", 
+        "gordon1/gordon1's Mutual Fund", 
+        "jpeshoff2/Top Fund", 
+        "dinoand/Biotech and nanotech investing", 
+        "tiandi/UBS-Warburg Extreme  Fund", 
+        "mcorley/MRC Health Care Fund", 
+        "apliel/IMA Mime LLC.", 
+        "efournier/efournier's Mutual Fund", 
+        "lmorenciu/Big Foot", 
+        "nmink/nmink's core fund", 
+        "jojo85/jojo85's Boomer Fund", 
+        "grumpypole_delist/All Bio-Med", 
+        "mrubiera/Rubiera Old Folk Fund", 
+        "dryan/dryan's Mutual Fund", 
+        "bturner1/bturner1's Mutual Fund", 
+        "agreenhouse/Diversified Healthcare fund", 
+        "leoblackheart/LeoBlackHeart's Fundamental with Technical timing Mutual Fund", 
+        "gordon1/gordon1's Mutual Fund", 
+        "gordon1/gordon1's Mutual Fund", 
+        "spocsstocks/spocsstocks's Mutual Fund", 
+        "rjcraiu/Craiu Focus Fund", 
+        "jbonds1/JBonds1 Fund", 
+        "zpryor/Zacks Medical Fund", 
+        "icesare/isidoro cesare's Mutual Fund", 
+        "joliger2/joliger2's Mutual Fund", 
+        "hriel/Optimal Growth Fund", 
+        "avelasco/Biotech Fund", 
+        "cdalton/braintree fund", 
+        "marlin79/Marlin Growth Fund", 
+        "rcote/Richard Michael Cote's Mutual Fund", 
+        "mgough/Up fund", 
+        "schmidtben/Speculator Fund", 
+        "juser/Money Maker Value Fund", 
+        "rstack/green light", 
+        "dmurphy5/dmurphy5's Mutual Fund", 
+        "nlussier/nlussier's Mutual Fund", 
+        "DELETED_2005752/Medical Equipment Fund", 
+        "tj/Noble Aggressive", 
+        "dwu8/David's Growth & Income Fund", 
+        "stockshakers/stockshakers aggressive Mutual Fund", 
+        "stockshakers/diversified Mutual Fund", 
+        "stockshakers/stockshakers's 2002 Mutual Fund", 
+        "stockshakers/stockshakers's Mutual Fund II", 
+        "cubed/cubed's Mutual Fund", 
+        "lebear/Barron's 500 Best of All", 
+        "mhiggins1/market leaders", 
+        "boyplunger/boyplunger's analyst upgrade Fund", 
+        "multizone7/KuL's Mutual Fund", 
+        "jarnopp/jarnopp ehealthcare fund", 
+        "ahoffard/NASDAQ Growth", 
+        "madrin/Technology Professional Fund", 
+        "boogamil/Clark's Dividend Fund", 
+        "hazelton43/Managed Trend Portfolios: MTP50 Market Leadership Equity Portfolio", 
+        "DELETE_demastus_40619031/Butterbean's Mutual Fund", 
+        "alacorte/alacorte's value fund", 
+        "alacorte/alacorte's garp fund", 
+        "vlapuma/vlapuma's Mutual Fund", 
+        "stan93/Stockshakers Agr. Value Mutual Fund", 
+        "j_rocket/Midas Fund", 
+        "dsophia/Doug  Sophia's Mutual Fund", 
+        "vwederath/vweds medical fund", 
+        "butler11/Aggressive Growth Mutual Fund", 
+        "eschmitzva/DSS Enterprises 933 Fund", 
+        "alacorte/alacorte's Mutual Fund", 
+        "lotusfinance/l4h30", 
+        "lotusfinance/l4h25", 
+        "lotusfinance/l4h20", 
+        "dkonopka/dkonopka's Growth and Income Mutual Fund", 
+        "mcleff/Mak Health Care Fund", 
+        "cfoam/Short Fund", 
+        "srgc/Cyprus Point Deep Value Fund", 
+        "ewickersheimer/E-Wick's Total Growth Fund", 
+        "lfranceschini/lfranceschini's healthcare Fund", 
+        "tre_svn/tre_svn's Mutual Fund", 
+        "lotusfinancialinvest/l4h20", 
+        "lotusfinancialinvest/l4h30", 
+        "lotusfinancialinvest/Steven Hsiao July 2002 Portfolio", 
+        "lotusfinancialinvest/l4h25", 
+        "lotusfinancialinvest/Steven Hsiao July 2002 Portfolio", 
+        "fcesare/fcesare's agressive growth", 
+        "mvrh1/Lycos Most Down Daily", 
+        "icesare/icesare's value select", 
+        "gmcil/North American ", 
+        "alacorte/alacorte's blend fund", 
+        "dbanas/Efficient Fund", 
+        "skorfhage/Agressive Value Growth Fund", 
+        "fredricktoo/Terrace High Tech Future", 
+        "esecours/The Lotus Medical Fund", 
+        "mrubiera/Ruby's Kill The Bear Fund", 
+        "tporter/insider buys", 
+        "nlussier/nlussier's Mutual Fund", 
+        "mnye1/Halcyon Fund of Babylon", 
+        "fcesare/fcesare's focus fund", 
+        "rtoic/rtoic's capital appreciation", 
+        "nmink/nmink's s&P500 value fund", 
+        "gfranceschini/barbarastar growth and income", 
+        "rfiqueroa/Life Sciences Fund", 
+        "leadsag/leadsag's Mutual Fund", 
+        "aratnikas/aratnikas's Healthcare Fund", 
+        "accape/accape's Health Fund", 
+        "lotusfinance/l4h15", 
+        "mcfadden2002/Mr. Leach", 
+        "codytafel/ JCT Total Return", 
+        "mcfadden2002/Crazy $ People", 
+        "emonk/Experiment #13", 
+        "mikelef/mikelef's new value fund", 
+        "dvignola/Dominators Mutual Fund", 
+        "DELETE_demastus_40619031/Chuck's Mutual Fund", 
+        "DELETE_demastus_40619031/Devil Horse Mutual Fund", 
+        "timothya/Trouncing the Dow Fund", 
+        "cburton/CBurton's Mutual Fund", 
+        "DELETE_demastus_40619031/Devil Horse Mutual Fund", 
+        "dhartley/Global Healthcare Fund", 
+        "ebarnard/Fortune 1 Fund", 
+        "apeck/Water Street Value", 
+        "rnice/rnice's S&P Technically Undervalued Fund", 
+        "rgiaim1/Divergent Healthcare", 
+        "okunin/Oleg Kunin's Mutual Fund", 
+        "jedmundson/jedmundson's Mutual Fund", 
+        "suzanne/suzanne's Mutual Fund", 
+        "iagobg23/Iago's Dividend Income Fund", 
+        "ijbsega/ijbsega's Mutual Fund", 
+        "mistyflag/MistyFlag's Mutual Fund", 
+        "gfranceschini/gfranceschini's Mutual Fund-income", 
+        "gfontana/Market", 
+        "bseguin/Bernard Seguin's Mutual Fund", 
+        "direstrait/direstrait's Mutual Fund H", 
+        "pcopeland/pcopeland's Health Care Fund", 
+        "bwenderlich/bwenderlich's Mutual Fund5", 
+        "pmuehlman/BioTech Fund", 
+        "rmurphy2/rmurphy2's Mutual Fund", 
+        "rmurphy2/rmurphy2's Mutual Fund", 
+        "jloch/jloch's Mutual Fund", 
+        "fmagazino/fmagazino's growth and value", 
+        "tduong1/Young Portfolio", 
+        "moreno770/MONTEALLEGRE 0018", 
+        "jcesare/jcesare' value fund", 
+        "jreger/Chief Bromden's Fund", 
+        "beeshine@aol.com/beeshine's Mutual Fund", 
+        "jdamian_jr/jdamian_jr's Health Care Fund", 
+        "cshaw4/cshaw4's Mutual Fund", 
+        "nt21/QCM Strategy 1 Fund", 
+        "hcruz/hcruz's Davonshire Fund", 
+        "DELETE_demastus_40619031/SAB2 Mutual Fund", 
+        "cyberwulff/cyberwulff's Mutual Fund", 
+        "msnow/msnow's Mutual Fund", 
+        "alui/AL's Growth Fund", 
+        "DELETE_philmie_40619003/Philmie's Value Fund", 
+        "manderson3/Matt Anderson's April Fund", 
+        "fmagazino/fmagazino' science&technology", 
+        "glim888/Lim Value Fund", 
+        "pdavis68/BioMed Fund", 
+        "cradomsky/cradomsky's Mutual Fund", 
+        "cgraydon/Kudzu Health Sciences Fund", 
+        "jmoore1/The Moore Mind", 
+        "jsahrmann/Iridium", 
+        "rajeev103/High Octane Growth Fund", 
+        "DELETE_philmie_40619003/Philmie's Growth Fund", 
+        "DELETE_philmie_40619003/Philmie's Value Fund", 
+        "rtobler/Tobler Focused Fund", 
+        "vlapuma/vlapuma's twenty fund", 
+        "dullom/dullom's Incomel Fund", 
+        "fcesare/fcesare's value fund", 
+        "mehmet_gokcedag/Quantitative Strategies Fund", 
+        "DELETE_connection4_40619056/Newtongoog Market Monkeys", 
+        "dkonopka/David Konopka's Mutual Fund", 
+        "rdaries/The Core Catapult Fund", 
+        "fmagazino/fmagazino's total return", 
+        "jstewart7/Diversified Health", 
+        "dmadurzak/Dividend Growth Fund", 
+        "cpilat/SpizzleFund", 
+        "williads/williads's Mutual Fund", 
+        "jordanb69/S&P Leaders Fund", 
+        "adamhersh/Blended Fund", 
+        "jerryg21/jerryg21's Mutual Fund", 
+        "szledz/szledz's Mutual Fund", 
+        "jb1/Growth at Reasonable Prices", 
+        "kpark0/Long/Short Volatility", 
+        "coaster/Fountain", 
+        "coaster/INDEX-Z", 
+        "coaster/INDEX 2", 
+        "coaster/IMPACT GROWTH", 
+        "coaster/Renaissance Fund", 
+        "rigmarole/rigmarole's Mutual Fund", 
+        "rshuhart/rshuhart's Mutual Fund", 
+        "zildjian2564/BPJ Multi-Cap Fund", 
+        "morgenselmer/morgenselmer's Mutual Fund", 
+        "paradigm_shift/Equilibrium Dividend Fund", 
+        "samrpit/samrpit's Mutual Fund", 
+        "aes523/aes523's Mutual Fund", 
+        "gmccall/Gorilla Portfolio", 
+        "larou/Hansen Holdings High Yield", 
+        "kirsty/kirsty's Mutual Fund", 
+        "jmilk/jmilk's health care fund", 
+        "haegint/Diversified Portfolio", 
+        "bayleys1/bayleys1's Mutual Fund20", 
+        "avicere/BTSM#2", 
+        "theerabc/BCT Value Fund", 
+        "haegint/Permanent Portfolio", 
+        "icesare/isidoro cesare's Mutual Fund", 
+        "gilfry/NLG's Mutual Fund", 
+        "lgibson1/Patient Value Mutual Fund", 
+        "bobevans/bobevans's all cap fund", 
+        "nursemink/nursemink's healthcare fund", 
+        "jp75/SS FUND", 
+        "mrsummers4/Richard Summers Mutual Fund", 
+        "atulbhasin2002/atulbhasin2002's Mutual Fund", 
+        "towanda/towanda's Mutual Fund", 
+        "jema/jema's Mutual Fund", 
+        "sneakypie/sneakypie's Mutual Fund", 
+        "phuster/Rigel2020 Telecomms On Steroids", 
+        "mystocks/mystocks's Mutual Fund", 
+        "bobevans/bobevans's new millenium", 
+        "vezzy/vezzy's Mutual Fund", 
+        "skinnybill/Value Ratio Index", 
+        "steinacker/steinacker's Mutual Fund", 
+        "gkalisch/GoKal's Stock Rater", 
+        "annemarie/Pot O' Gold", 
+        "paradigm_shift/Equilibrium Health Care Fund", 
+        "tmateo/TAM HEALTH SCIENCE MUTUAL FUNDS", 
+        "rockfish/Relipoint IC Promethus", 
+        "tokara/tokara's Mutual Fund", 
+        "vlapuma/vlapuma's science&technology", 
+        "ndgolz/Down and Out, but Good Stocks", 
+        "mikelef/mikelef's Mutual Fund", 
+        "msporter76/MSP Determine FUND", 
+        "priv8pete/S&P 500 Value Fund", 
+        "giljoy/giljoy's Mutual Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "DELETE_bbicreator_40619052/CD Mutual Fund", 
+        "lkris/Investors 500 Fund", 
+        "saddlebag_99/saddlebag_99's Mutual Fund", 
+        "mrm661014@cs.com/Alpha Fund", 
+        "shortee/shortee's Mutual Fund", 
+        "jbyron/Lundi", 
+        "drstock/MWM Diversified", 
+        "michaelmidas/Healthcare A-Go-Go", 
+        "tbell/Barra Growth Healthcare Index Fund", 
+        "dciccone/Drug and Terror Fund!", 
+        "cdefranceschi/Craig DeFranceschi's Fifty Five", 
+        "mpearson12/Matt Pearson", 
+        "harmlss/American Hero - Balanced", 
+        "kibs/DVO Stock Plus", 
+        "harmlss/American Hero Fund", 
+        "kotterhome/kotterhome's Mutual Fund", 
+        "slegar/Slegar's Mutual Fund", 
+        "cs04898/Short Testing Fund", 
+        "mendelson/Money Powerful Stocks", 
+        "coxbuyside1/Buyside Multi Cap GARP", 
+        "jrheaume/Teddy Bear Fund ", 
+        "ljoneill/LJO Large Cap Core Growth Fund", 
+        "jfurches/Quant Fund", 
+        "eandres/Eduardo Andres's Mutual Fund", 
+        "piercegv/Pierce Agressive Value", 
+        "jfurches/jfurches's Mutual Fund", 
+        "willblur/willblur's UnSector Fund", 
+        "crazy_horse/Thunderbird Fund", 
+        "piercegv/Pierce Conservative Growth", 
+        "salban/salban's world stock fund", 
+        "kred7111/kred7111's Mutual Fund", 
+        "rcalhou/The Good Guys Fund", 
+        "calamosstar/calamosstar's Mutual Fund", 
+        "calamosstar/calamosstar's Mutual Fund", 
+        "rreiman/Forbes Tracker Fund", 
+        "slapfish318/Lake Forest Fund", 
+        "mendelson/R&D Values", 
+        "asabata/Sabata Healthcare Fund", 
+        "fps/FPS Bottom Up Fund", 
+        "asabata/Sabata Value Fund", 
+        "fps/FPS Health Care Sector", 
+        "acanete/Abanico Corto Fund (inactive)", 
+        "qrheaume/Short Advantage Fund", 
+        "starboard_tack/starboard_tack's Mutual Fund", 
+        "achen/UNITED SHORT SALES FUND", 
+        "gator101/FM Short C", 
+        "gator101/FM ShortA", 
+        "da14jones/CURRENT", 
+        "santanatwins/Santana Absurd Mid Value Fund", 
+        "gczech/gczech's short Mutual Fund", 
+        "rjeddings/Takin' it in the Shorts", 
+        "compton07/compton07's Mutual Fund", 
+        "wjrosie/2005 Magazine Fund", 
+        "heliosdiem/Brown Sugar Morgan Fund", 
+        "patberg/patberg's Mutual Fund", 
+        "darryl_buchanan/Darryl's Short Fund", 
+        "mendelson/Smart Money 2005 Best", 
+        "patberg/patberg's Mutual Fund", 
+        "smcat/Business Momentum Quant Fund", 
+        "huangq02/huangq02's Short Mutual Fund", 
+        "johnbr/johnbr's windsor2", 
+        "nimenees35/nimenees Health & Biotech Mutual Fund", 
+        "pgrommit/pgrommit's Mutual Fund", 
+        "blue/blue's Mutual Fund", 
+        "welshmoney/Welsh Short Fund", 
+        "ppongpamorn/Short Term Bollinger Bands Fund", 
+        "icesare/icesare's large cap growth", 
+        "erikace03/erikace03's Mutual Fund", 
+        "adiabatic/adiabatic's Short Fund", 
+        "bryanwashere/bryanwashere's Mutual Fund", 
+        "jeffyy99/jeffyy99's Mutual Fund", 
+        "narden/monkey biz I", 
+        "salban/salban's all weather fund", 
+        "imroark/Roark Index Fund", 
+        "jedemt/The Flower Garden", 
+        "eschmitzva/DSS Enterprises Ultimate Investors Fund 200", 
+        "finnmauritzen/beaters", 
+        "jedemt/Trees and Things", 
+        "cgates0521/cgates0521's Mutual Fund", 
+        "pjb123/pjb123's Mutual Fund", 
+        "cgates0521/cgates0521's Mutual Fund", 
+        "mrktoracle/Market Oracle's Growth Fund", 
+        "shivkumarc/Large cap overvalued fund", 
+        "ssturner/Sturn's Bear Fund", 
+        "aschaefer/Morgan Stanley", 
+        "jbloggs/Joe's Pharma & Science Fund", 
+        "vryknottyboy/Quantum Short Fund", 
+        "jrandlett/Retirement", 
+        "jrheaume/Mama Bear Fund ", 
+        "ripper/RIP Dividend Fund", 
+        "menelyik/tadios", 
+        "gigi.dam/gigi.dam's Mutual Fund", 
+        "morganstanley664/US Model Portfolio", 
+        "nch/Chikhachev Hedge Fund", 
+        "alder/Alder Weighted Passive", 
+        "alder/Alder Equal Passive", 
+        "jdjuly5/Alpha's Value All Cap", 
+        "engjim/Hardy River Asset Management 2", 
+        "sgeri/Health Sector", 
+        "nrablicki/Barra Growth Select", 
+        "nrablicki/Nate's Mutual Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "oduvall/oduvall's stocks in the news", 
+        "qrheaume/Short ETF Fund ", 
+        "spc/Wayne's SER Fund", 
+        "wliao15/SectorRotationFund", 
+        "ccpalarca/ccpalarca's Mutual Fund", 
+        "adi_20055/adi_20055's Mutual Fund", 
+        "coaster/COASTER'S BIOTECH", 
+        "msnow/msnow's Mutual Fund", 
+        "jack.leech@us.army.mil/MAJ Leech's Mutual Fund", 
+        "jrheaume/Brown Bear Fund ", 
+        "wgr424/The Graham Group I Fund", 
+        "jstewart7/Morgan 2006 Pix", 
+        "jfurches/Hatteras Health Care ", 
+        "dknepp1/Eureka Hedge Fund IV", 
+        "sk8ndive/sk8ndive's Mutual Fund", 
+        "sayteller/sayteller's Mutual Fund", 
+        "hypedaj/Dividend Fund", 
+        "arogolsky/RFID Shotgun Fund", 
+        "soxgal/Soxgal's Healthcare Mutual Fund", 
+        "perkdogz/biotech future fund", 
+        "kay1234/kay1234's Mutual Fund", 
+        "ramonhuerta/NYSE SHARP SHORT", 
+        "nole74_99/Noles multicap value", 
+        "mike_connor723/ChicagoLand Trading", 
+        "gsf-11930/gsf-11930's Mutual Fund", 
+        "bigteam1/bigteam1's Mutual Fund", 
+        "portefeuille2/portefeuille2's Mutual Fund", 
+        "portefeuille2/portefeuille2's Mutual Fund", 
+        "goldenguys/goldenguys's Mutual Fund", 
+        "bigteam1/bigteam1's Mutual Fund", 
+        "teamptf/PTF-A", 
+        "teamptf/PTF-B", 
+        "bigteam2/bigteam2's Mutual Fund", 
+        "bigteam11930/bigteam11930's Mutual Fund", 
+        "jkmn/jkmn's Mutual Fund", 
+        "bigteam3/bigteam3's Mutual Fund", 
+        "bigteam11930/bigteam11930's Mutual Fund", 
+        "accarien/accarien's Mutual Fund A", 
+        "accarien/accarien's Mutual Fund B", 
+        "evy/GSF 11930 B", 
+        "topfund/GSF 11930A", 
+        "hema_linh/hema_linh's Mutual Fund", 
+        "roiheenok/Portefeuille A", 
+        "madmax06/madmax06's Mutual Fund", 
+        "travailgsf11930/travailgsf11930's Mutual Fund", 
+        "gestion/gestion's Mutual Fund", 
+        "maxhandfield/GSF 11930B", 
+        "maxhandfield/GSF 11930A", 
+        "ptf/ptfa's Mutual Fund", 
+        "roiheenok/Portefeuille B", 
+        "evy/GSF 11930 A", 
+        "portef/portef's Mutual Fund", 
+        "madmax06/madmax06's Mutual Fund", 
+        "accarien/accarien's Mutual Fund A", 
+        "finance_ul/Portefeuille B", 
+        "bullmarket/bullmarket's Mutual Fund", 
+        "topfund/GSF 11930B", 
+        "portef/portef's Mutual Fund", 
+        "gsf-11930a/gsf-11930a's Mutual Fund", 
+        "bullmarket/bullmarket's Mutual Fund", 
+        "finance_ul/Portefeuille A", 
+        "gestion/gestion's Mutual Fund", 
+        "ptf/ptf's Mutual Fund", 
+        "easyriders/GSFA13,5", 
+        "portefeuille/Portefeuille", 
+        "marilyn_gagnon/marilyn_gagnon's Mutual Fund", 
+        "portefeuille/Portefeuille 15,5%", 
+        "antoinegr/Portefeuille A", 
+        "jkmn/jkmn's Mutual Fund", 
+        "martindavid/Portefeuille A", 
+        "antoinegr/Portefeuille B", 
+        "jkmn/jkmn's Mutual Fund", 
+        "easyriders/GSFB15,5", 
+        "jack1212/GSFA", 
+        "martindavid/portefeuille B", 
+        "teamgsf/teamgsf's Mutual Fund2", 
+        "teamgsf/teamgsf's Mutual Fund", 
+        "chantal/ A", 
+        "teamg/GSF-11930-A", 
+        "hema_linh/hema_linh's Mutual Fund", 
+        "chantal/B", 
+        "hema_linh/hema_linh's Mutual Fund", 
+        "teamg/GSF-11930-B", 
+        "laval830/laval830's Mutual Fund", 
+        "laval830/laval830's Mutual Fund", 
+        "hibou06/Fond-A", 
+        "hibou06/fond b", 
+        "lou19/lou19's Mutual Fund", 
+        "travailgsf11930/Portefeuille 13,5%", 
+        "travailgsf11930/Portefeuille 15,5%", 
+        "lou19/PTF A", 
+        "lou19/PTF A", 
+        "lou19/PTF B", 
+        "gomez/enowegg", 
+        "gomez/enowegg2", 
+        "yvmor/P1", 
+        "yvmor/P2", 
+        "enowee/enoweegg ", 
+        "enowee/enoweegg1", 
+        "djplan/djplan's Mutual Fund", 
+        "rellimhj/Health Care Fund", 
+        "math/portefeuille A", 
+        "math/portefeuille B", 
+        "golfarchi/Den's A", 
+        "golfarchi/Den's B", 
+        "larryloy/larryloy's Mutual Fund", 
+        "stevel/GSF11930A", 
+        "stevel/GSF 11930 (A)", 
+        "metal/metal's fundman", 
+        "xellenx/xellenx's fund", 
+        "cadrs/cadrs's Mutual Fund", 
+        "pnormanb/No brainer", 
+        "johnr/Johnr's Mutual Fund 2", 
+        "don_powell/Powell Mutual Fund", 
+        "don_powell/DAP Mutual Fund", 
+        "aptadrian/US Risk Managed Mutual Fund", 
+        "burgess/Burgess Mutual Fund", 
+        "burgess/Genesis Mutual Fund", 
+        "indrayudha/indrayudha.net Sustainability Fund - United States", 
+        "lwilson1/sb fund", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "takara/takara's Mutual Fund", 
+        "milkrate/Cedar Fund", 
+        "cnelson1/Nelson Total Return Growth Fund", 
+        "lou19/lou19's Mutual Fund", 
+        "mcwcep/mcwcep1", 
+        "manrif/Health Care", 
+        "stevetroy/SCH A RANKED - S&P500 ONLY", 
+        "peepaw2/peepaw2's Mutual Fund", 
+        "sgeri/Large-Cap Growth Fund", 
+        "aagrant/2SDS2", 
+        "smucar/smucar's Mutual Fund", 
+        "dmoffet/SPHINX", 
+        "rainmkr07/rainmkr07's TV Mutual Fund", 
+        "ritwick/Life", 
+        "jalis/Jalis Healthcare Fund", 
+        "upon/upon's Cancer Fund", 
+        "thai/thai's Mutual Fund", 
+        "jfurches/Hatteras Health Care Fund", 
+        "andrew.hartman/Andy's Mutual Fund", 
+        "wbloomer/Chartist Fund", 
+        "cmdrwd/cmdrwd's Mutual Fund", 
+        "stockdestroyer/stockdestroyer's Mutual Fund", 
+        "stevenlberry/Top First Percentile Fund", 
+        "rceballo704/rceballo704's Mutual Fund", 
+        "jthomasson/Thomasson Large Cap", 
+        "acdaman/Daman Global Value Fund", 
+        "mangam/Buckeye Fund", 
+        "kmehdi/kmehdi's Mutual Fund", 
+        "msi_ham/msi_ham's Drugs&Biotech", 
+        "fauria/rango%", 
+        "genexmc/genexmc's Mutual Fund", 
+        "fmyburgh/Covering fund", 
+        "hiromimini/Short Healthcare and Medical", 
+        "srombolli/Mkt Short Fund", 
+        "senth/senth's Mutual Fund", 
+        "blink/Indigo Blanket", 
+        "smubull/Kaiser CFD", 
+        "franciscoaragon/franciscoaragon's Mutual Fund", 
+        "mpearson12/Rod Brind'Amour", 
+        "mpearson12/Mark Pearson", 
+        "mpearson12/Julie Pearson", 
+        "mpearson12/Alex Ovechkin", 
+        "bahamamamas3/bahamamamas3's Mutual Fund", 
+        "rharrison/Galactic Expansion Mutual Fund", 
+        "ashleyfcla/ashleyfcla's Mutual Fund", 
+        "bmcclard/Relative Value Short", 
+        "sparticus/sparticus's Mutual Fund", 
+        "kelly_k_7/kelly_k_7's Mutual Fund", 
+        "bmiko728/bmiko728's trading short", 
+        "raitpngman/raitpngman's Value Fund", 
+        "pww746/MStox Fund", 
+        "yuwa.parameswaran/yuwa.parameswaran's Mutual Fund", 
+        "minuet/Speculator's Shorts", 
+        "ltkickass/ltkickass's Mutual Fund", 
+        "waterboys/Shadow Select Fund", 
+        "gman2006/gman2006's Mutual Fund", 
+        "zamit/zamit's Mutual Fund", 
+        "testcenter/P_UofC", 
+        "roman_totale/Chicago Fund", 
+        "mpearson12/Sidney Crosby", 
+        "jasch451/EMA5L", 
+        "roverlane50/roverlane50's Mutual Fund", 
+        "bohuspc/Louis's Picks 15k", 
+        "vcube04/SchwabPickList-01May2007", 
+        "wbloomer/Navellier Blue Chip Growth", 
+        "gvolivier/Short Term Fund ", 
+        "eskyba/Beta Hedge NYSE ", 
+        "eskyba/Beta Hedge Large Cap", 
+        "tjvh/Bio, Medical & Pharma", 
+        "traderkr/Value Mutual Fund", 
+        "tacall/Anthem Healthcare Enterprise Fund", 
+        "stockguru/Finirvana Ganges Fund", 
+        "tedewing/BlueSky", 
+        "sickel2/sickel2's Mutual Fund", 
+        "hortonpt/HPTLong", 
+        "nosliwde/US Market Picks Group H", 
+        "borse/CG Fund 2", 
+        "freewater/Freewater Market Leader Fund", 
+        "jimyy/Medical Investor", 
+        "deyrick1/Vicar 1 Long", 
+        "n6zrn/n6zrn's Mutual Fund", 
+        "azaki/azaki's Mutual Fund", 
+        "lperezp/Chata's Biotechnology Mutual Fund", 
+        "magicman/Global Variant Perspectives ", 
+        "rheath/rheath's Mutual Fund", 
+        "rheath/rheath's Mutual Fund 2", 
+        "fashak/fashak's Mutual Fund", 
+        "mauricethomas/Aggressive Growth Fund", 
+        "davidian121/Davidian S&P 500 Leaders", 
+        "yerc/YERC", 
+        "rj_condon/rj_condon's Consumer Staples Fund", 
+        "waynoooo/Analyst fund", 
+        "underparmike/Pelican State Technology Fund", 
+        "j_j/Sleep and Keep", 
+        "bqallen/Allen Agressive Growth Fund", 
+        "sdip60/sdip60's Mutual Fund", 
+        "slocket/LMG  Mutual Fund", 
+        "rml0407/Biotech Long Summer Fund", 
+        "emmanuel1/ETF Investments long", 
+        "illinicee/JDM's Mutual Fund", 
+        "kaddo/kaddo's Mutual Fund", 
+        "mdista/MD Short And Sweet ", 
+        "cburgess/S&P 500 Index", 
+        "msl1980/Fund 3", 
+        "adam_foust/growth", 
+        "noshoes/noshoes's short fund", 
+        "pdx/pdx dividend growth fund", 
+        "cawlef/cawlef's Mutual Fund", 
+        "traderkr/Low Implied Volatility Fund", 
+        "fb07/Sector Timing Short Fund", 
+        "evensgood/evensgood's Mutual Fund", 
+        "v.malafouris/V.M. Large Cap", 
+        "ivanval/ivanval's Mutual Fund", 
+        "gotthelf/Gotthelf's Mutual Fund Growth", 
+        "louis504842/louis504842's Mutual Fund", 
+        "jgunna11/Russell 1K Tax Efficient Strategy", 
+        "cyberick/Option Trade", 
+        "samuelbeaudry/samuelbeaudry's Mutual Fund", 
+        "cgelder/TechniTrader Fund", 
+        "mimon/Victors & Victims", 
+        "triplethedow/triplethedow's Mutual Fund", 
+        "avalanche33/Avalanche General Mutual Fund", 
+        "sombrehombre/Sombre ADR Fund", 
+        "vsagdeo/Vivek's Tech Mutual Fund", 
+        "mikeaidekman/MA Short Fund", 
+        "bananaslug/Shorts V4", 
+        "beuler/LNavellier", 
+        "ch222/CH-Long-Fund", 
+        "ronryan/ronryan's Mutual Fund", 
+        "jackzhou/jackzhou's Mutual Fund", 
+        "atapparo/The Topsfield Value Stock Fund", 
+        "ewm1969/Navigence Health Care Fund", 
+        "rajivvyas/rajivvyas's Mutual Fund", 
+        "mburfiendt/S&P 500", 
+        "yuyun/yuyun's Mutual Fund", 
+        "gi0tto/gi0tto's Mutual Fund of DOOM", 
+        "bschnoor/Nebulous Rex Growth Fund", 
+        "lantos99/lantos99's Mutual Fund", 
+        "zachzachz/First fund", 
+        "gintaraslescinskas/Gintaras Lescinskas's E&P Fund", 
+        "jpsandrs/Large cap fund", 
+        "joed/joed's Mutual Fund", 
+        "claytonpearson/Clayton's Mid-Large Cap Growth Fund", 
+        "asmith/Smith Diversified Fund", 
+        "asmith/Stock Watch Portfolio", 
+        "vsagdeo/Viveks Healthcare fund", 
+        "plpierce/S&P 100 TRACKING B&H", 
+        "ffoldvary/Foldvary's Mutual Fund", 
+        "asmith/Smith Defensive Fund", 
+        "wszaroletta/Start Absolute Long 1% S&P 500", 
+        "kevineanes/Eanes Fund N", 
+        "faulkner3/faulkner3's Mutual Fund", 
+        "jlferndz@gamil.com/Long Fund", 
+        "jhelfrich/JHELFRICH Short Fund", 
+        "lou19/Crisis Fund", 
+        "poockie84/poock's undervalued stocks", 
+        "rwuethrich/Wuethrich Total Return", 
+        "rwuethrich/Ryan Breakthrough", 
+        "zildjian2564/BPJ Focused Value Fund", 
+        "michael_meyers/Michael Meyers Mutual Fund", 
+        "michael_meyers/Michael Meyers Mutual Fund II", 
+        "gmentor_zach/Mentorship Alaska", 
+        "bh222/bh222's Mutual Fund", 
+        "briandbutler/Survive the downturn - Equity fund", 
+        "tkobrien/Finance 190", 
+        "chrstieber/chrstieber's Agenda 2010", 
+        "rogeratplay/rogeratplay's Mutual Fund watch list", 
+        "balgacs/BCM - Quarterly Value (All)", 
+        "aglover/aglover's Mutual Fund", 
+        "kboyd/Boring Growth ", 
+        "apreuss/Fund Nr1", 
+        "wbauder/Quarterly return - Long", 
+        "longboard/Longboard Value Fund", 
+        "lmharold/Harold Health Care", 
+        "fcolaizzi/Health Sciences Fund", 
+        "arogolsky/Brave New World Fund", 
+        "bkeats/bkeats's Top Ten", 
+        "elovellcba/elovellcba's Mutual Fund", 
+        "ventrue/Ventrue Fund I", 
+        "jsmcgraw/Merit 50", 
+        "thovland420/Fortune Top 9 2010", 
+        "elovell15/MDE_HealthCare", 
+        "grahamgem/grahamgem's Mutual Fund", 
+        "gallo6/Monster Fund", 
+        "rstack/vlt1", 
+        "ecervantes/Edgardo's Industrial & Health Care Fund", 
+        "sdk_dc/Scott K Fund I", 
+        "profilevalue/GST Fund", 
+        "gfontana/m100 Movements Fund", 
+        "bschnoor/Model Portfolio", 
+        "fb07/Sector Timing Fund", 
+        "longshort/LongShort's Buy The Dip Mutual Fund", 
+        "crukks/crukks's Mutual Fund", 
+        "zshaftal/zshaftal's Mutual Fund", 
+        "heeyult/Heeyult's Monthly High Fund", 
+        "dlindbergh/S&P500", 
+        "mr.sunflower/Sunflower Fundamental Fund", 
+        "mr.sunflower/Sunflower Market Timing Fund", 
+        "mr.sunflower/Sunflower Growth Fund", 
+        "jjohnson7/jjohnson7's Mutual Fund", 
+        "pbob/Pbob Focus Fund", 
+        "anthonybassili/Capax Absolute Return Fund", 
+        "jipibelanger/Test Mutual Fund", 
+        "don_daily/don_daily's Mutual Fund", 
+        "singh99/bubbly", 
+        "jipibelanger/Watchdog Mutual Fund", 
+        "jipibelanger/Chimera Mutual Fund", 
+        "kpedo/kpedo's Mutual Fund 2", 
+        "kpedo/Douglas Heller's Mutual Fund", 
+        "kpedo/kpedo's S&P 500 Mutual Fund", 
+        "barkermd/Barkermd's Passive Management", 
+        "zachem47/zachem47's Mutual Fund", 
+        "tobyhovland/2010 pick", 
+        "captainhook88/healthcare fund", 
+        "cgaros/cgaros's Mutual Fund", 
+        "gomezab/gomezab's Mutual Fund", 
+        "fundamental/GPS's SPecial Fund", 
+        "fundamental/FundAmental's Mutual Fund", 
+        "scotts99/Fortune 2010", 
+        "mudrow/Large Cap Fund", 
+        "gnashrak/Teknium Fund", 
+        "cld12287/CSammons Mutual Fund", 
+        "newlife1/Newlife Mutual Fund", 
+        "julietkikata/julietkikata's Mutual Fund", 
+        "theuncle/Healthcare", 
+        "rancid514/foreign/income stuff", 
+        "rancid514/Vision Management", 
+        "rancid514/MarketMomentum", 
+        "gxm321/SHORT V V", 
+        "julyfourteenth/Ketul's Growth Fund", 
+        "longshort/LongShort's Synthetic Market Neutral Fund", 
+        "rvanzo/05/06/10", 
+        "h2ofowler38/JTCValue Mutual Fund", 
+        "torinx/ddd", 
+        "vanmeerten/Van Meerten - Short Value Line  Small Cap", 
+        "lg/Value Added", 
+        "ccapitalmanagement/ccapitalmanagement's Long Side", 
+        "torinx/asdfa", 
+        "alangelici/Deane Lewis Fund", 
+        "dave321/Value + Yield ", 
+        "themistocles/Pharmaceutical Index", 
+        "sykorabr/Sykorabr Money Maker", 
+        "rancid514/rancid514's Mutual Fund", 
+        "foxrcan51/foxrcan51's Mutual Fund", 
+        "gustrot/gustrot's health fund", 
+        "rnoonan2/rnoonan2's Mutual Fund", 
+        "etl328/Model Portfolio", 
+        "wbham/Large Cap Dividend Growth", 
+        "stockring/StockRing.com Managed Portfolio", 
+        "qpr/SmartConsesnsus", 
+        "gfranceschini/barbarastar/blu ", 
+        "ljoneill/CFO Growth, High Quality", 
+        "slider_187/Versatile Mutual Fund", 
+        "istanbul/istanbul's Iyi sirketler", 
+        "wmartin1/magazine fund", 
+        "eclectic/eclectic's Mutual Fund", 
+        "phar/phar's Pharmaceutical Pork", 
+        "rhanks/Balanced Fund", 
+        "dhancock/Mannheim Rocket Mutual Fund", 
+        "tradelessearnmore/Value Mutual Fund (Ms-est)", 
+        "wallace15/Joseph Wallace Future Value Fund", 
+        "avolodin/S&P Best Fund", 
+        "dcblue/Hurricanes", 
+        "aronhalt/Valley Forge Fund", 
+        "searchlight/Harvest Value", 
+        "invest2010/InvestApril2", 
+        "mheath580/mortgage money 1", 
+        "mheath580/mortgage money 2", 
+        "qpr/QPR Fund", 
+        "loubiz72/loubiz72's Mutual Fund", 
+        "jp75/HY equities", 
+        "jdelandr/Delandro Core Fund", 
+        "garyheyland/Heyland Capital Short Fund", 
+        "downloader/Solid value growth", 
+        "kkreitzberg@scu.edu/kkreitzberg@scu.edu's Mutual Fund", 
+        "wordjam/pananampalataya", 
+        "guindojr/SectorETF", 
+        "scratchy/Health Care", 
+        "mshields/MS Albany Growth Fund", 
+        "mmetcalf1991/mmetcalf1991's Mutual Fund", 
+        "skygarden/Bebe", 
+        "boboyle/boboyle's Mutual Fund", 
+        "jerrywu/jerrywu's Mutual Fund", 
+        "dsg/Blend", 
+        "cvarela/cvarela's Mutual Fund", 
+        "stanglx718/Roge Total Income", 
+        "mewesley/Mewesley's Top Rated", 
+        "mchristy/Long-Term Value Fund", 
+        "jvb/jvb's Mutual Fund", 
+        "agrizzle/GRIZZ Yield Fund", 
+        "mheath580/mheath580's Mutual Fund", 
+        "allen.lewis.tx/GoldBacon Equity Fund", 
+        "milesray/milesray's Mutual Fund", 
+        "rfreed2641/Bobsadviceforstocks", 
+        "aencym/aencym's Mutual Fund", 
+        "lwilson1/s fund", 
+        "ewilson1/s", 
+        "annetomsky/Anne's Ca$h Money", 
+        "unlinvestors123/unlinvestors123's Mutual Fund", 
+        "mjsiwa/mjsiwa's Mutual Fund", 
+        "youngmoneybull/YoungMoneyFund", 
+        "canslim/Total Return Portfolio", 
+        "razmig/ACM ", 
+        "rfreed2641/S&P 100 Momentum Fund", 
+        "bradlevi/McGaughey's Power Ranking ", 
+        "hiromimini/BioGARP", 
+        "knut91/The Human fund", 
+        "pspark/Z-Score Fund Top 50", 
+        "knut91/KMF Yield & Value", 
+        "push2cool/Push2cool's Psion Project", 
+        "oricchiot/Tiffany's Mutual Fund", 
+        "coachdotson/coachdotson's Mutual Fund", 
+        "rockfish/Relipoint Income Reinvestment Fund", 
+        "unashogi/Unashogi's Ray Dalio Fund", 
+        "srgc/Cyprus Point Value Fund", 
+        "srgc/CPCM Value I", 
+        "holup3409/Phoenix Select Value Fund", 
+        "jwebb2/Webb Dividend Income Fund", 
+        "bhickman/BILL HICKMAN's Omnivore Fund", 
+        "investorlestrade/Investor Lestrade Stupid Speculative Picks", 
+        "delta598/PC Consolidated", 
+        "vege/vege's Mutual Fund", 
+        "jmcdowell/Jeff's Incredible Value Fund", 
+        "justinsager/Mike's Blue Chip High Div Low PE", 
+        "cherylsjohnson/The Castle Fund", 
+        "cookwillcook/cookwillcook's Mutual Fund", 
+        "jeffjwb7/jeffjwb7's Mutual Fund", 
+        "drass/D500", 
+        "glang/SP Beater", 
+        "orange/Lowrey Fund: Gray", 
+        "glang/GCL-IRA", 
+        "gbader/Short Side Hedge", 
+        "steve1968nj/Ultra High Yield Hybrid Fund", 
+        "ebariigathiani/BARII GATHIANI VALUE FUND", 
+        "jchauvette/Ymalah's Mutual Fund", 
+        "paintgod111/Brick House Focused Equity Fund", 
+        "sriramve/Trend fund", 
+        "jprokup/jprokup's 401k Fund", 
+        "mikeumd/Sector fund", 
+        "mikeumd/Best of Breed Buy list", 
+        "sagitarius_d/Sagitarius Momentum Fund", 
+        "chasten/Exponent", 
+        "erchapatevalueadvisors/ERCHPATE VALUE ADVISORS FUND", 
+        "owenbernard/AMB Underwood Value Fund", 
+        "gbader/7 Sectors Fund", 
+        "erbargainvas/ERBARGAINVAS VALUE FUND", 
+        "kadir/Undervalued Health Care Companies"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150701; 
+    RATIO = 1.841; 
+    "RECORD_DATE" = 20150701; 
+    SYMBOL = BAX; 
+    TYPE = "STOCK_SPLT"; 
+}
+D: (07-31 09:44:54.809) SUCCESS
+D: (07-31 09:44:54.809) cahelper finished 2015-07-31 09:44:54 -0400
+
+
+check the database again
+
+select * from mstockalias where STOCKKEY = X'08870e21390ae5d8c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 071813109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BAXTER INTERNATIONAL
+>     PRIMARYKEY = X'08880e21390ae5d8c0a80116'
+>       STOCKKEY = X'08870e21390ae5d8c0a80116'
+>         SYMBOL = BAX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = LB
+
+
+select * from mcorporateaction where aliaskey=X'08880e21390ae5d8c0a80116' order by BB_EFFECTIVE;
+> Row 49:
+>              ALIASKEY = X'08880e21390ae5d8c0a80116'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1.841 for 1|CP_RATIO|1.841000|CP_RECORD_DT|20150701|CP_PAY_DT|20150701|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150731:093723
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = BAX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BAX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'649554f155bb7a13c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'649554f155bb7a13c0a86f92';
+> Row 1:
+>   _C001 = 2014.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'649554f155bb7a13c0a86f92'));
+there are 1007 fundkeys, save to CA issues BAX split fundkeys.txt
+
+
+Username
+mroach
+Fund Symbols
+MRMFL
+
+check his fund on 20150701

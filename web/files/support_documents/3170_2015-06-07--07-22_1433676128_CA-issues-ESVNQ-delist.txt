@@ -1,0 +1,377 @@
+date:  6/3/15   ** need to run prices **
+ticker: ESVNQ  
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+ESVNQ  06/3/2015
+Stock:ENCOMPASS SERVICES CORP  Symbol:ESVNQ
+Date: 06/03/2015
+
+30 users found
+
+1	ahightower	babiaga	calbrecht	chightower	coachstroke	colinkayla	dalders	davester	dbrashears	dprice1
+2	dreid	edsanger	erniethek	fpabadie	ghaupt1	jbuckwalter	jlevitats	jthiele	khoecker	panan777
+3	parvalue	rmcclure	rytsam	sarey	spatrick	tigris-k	wall_main	wskowron	wyang	yuwa1978	 	 	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'ESVNQ';  
+> Row 1:
+>   STOCKKEY = X'b54210ac390c6e05c0a8015c'
+
+select * from mstockalias where stockkey=X'b54210ac390c6e05c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464286566
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'b54310ac390c6e05c0a8015c'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'b55a02083d9bc91ac0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'9d7803bc3d9bcbb0c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-11-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'14d74f133ddafd67c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+lets set the status key to active 
+update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY = X'14d74f133ddafd67c0a80146';
+select * from mcorporateaction where aliaskey=X'14d74f133ddafd67c0a80146';
+> Row 1:
+>              ALIASKEY = X'14d74f133ddafd67c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9513558
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 302901
+>        BB_COMPANYNAME = Encompass Services Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2002-11-19 00:00:00.000000'
+>         BB_IDENTIFIER = ESVN    UV Equity
+>             BB_ISSUED = TIMESTAMP '2002-11-19 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = ESVN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'a7354d4f3ddafbeec0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'a7354d4f3ddafbeec0a80146';
+none
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-11-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'f638633c3ddef268c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVNQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc' where PRIMARYKEY =  X'f638633c3ddef268c0a80146';
+
+select * from mcorporateaction where aliaskey=X'f638633c3ddef268c0a80146';
+> Row 1:
+>              ALIASKEY = X'f638633c3ddef268c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ESVN US|CP_NEW_TKR|ESVNQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 9538438
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 302901
+>        BB_COMPANYNAME = Encompass Services Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-11-22 00:00:00.000000'
+>         BB_IDENTIFIER = ESVNQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2002-11-21 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = ESVNQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'7c51609f3ddef04ec0a80146'
+>               VERSION = NULL
+
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ESVNQ'  order by BB_EFFECTIVE;
+nothign useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ESVNQ
+>>>> dbtool started at 2015-06-04 00:20:30 -0400
+stock: ESVNQ
+  PK       : [B54210AC390C6E05C0A8015C]
+  companyID: [9611]
+  symbol   : [ESVNQ]
+  name     : [ENCOMPASS SERVICES CORP]
+  date     : [2002-11-22 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-06-04 00:20:31 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9611
+2002-09-25 (Wed) [632]: O:0.1100 H:0.1400 L:0.1100 C:0.1400 V:223300 TSO:0 A:0.1400 R:1.0000 CA:0.0000
+2002-09-26 (Thu) [633]: O:0.1400 H:0.1500 L:0.1200 C:0.1300 V:214800 TSO:0 A:0.1300 R:1.0000 CA:0.0000
+2002-09-27 (Fri) [634]: O:0.1300 H:0.1500 L:0.1300 C:0.1500 V:175300 TSO:0 A:0.1500 R:1.0000 CA:0.0000
+2002-09-28 (Sat) [635]: <WEEKEND>
+2002-09-29 (Sun) [636]: <WEEKEND>
+2002-09-30 (Mon) [637]: O:0.1500 H:0.1500 L:0.1300 C:0.1400 V:216000 TSO:0 A:0.1400 R:1.0000 CA:0.0000
+2002-10-01 (Tue) [638]: O:0.1500 H:0.1700 L:0.1300 C:0.1400 V:139000 TSO:0 A:0.1400 R:1.0000 CA:0.0000
+
+/Marketocracy/bin/dbtool lookup stock ESVN
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b54210ac390c6e05c0a8015c' and shares > 0 order by closed; 
+> Row 332:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2003-05-29 14:36:08.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.143800
+>   CURRENTORDER = X'a85f48863ed57078c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'729557d63a1c67ddc0a80118'
+>       MODIFIED = NULL
+>            NET = 2.732200
+>         OPENED = TIMESTAMP '2003-05-28 22:29:12.000000'
+>          PRICE = 0.000563
+>     PRIMARYKEY = X'a85d48863ed57078c0a80134'
+>         SECFEE = 0.010000
+>         SHARES = 4850.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'b54210ac390c6e05c0a8015c') order by BB_EFFECTIVE ;
+> Row 1:
+>   BB_ACTIONMNEMONIC = CHG_LIST
+> Row 2:
+>   BB_ACTIONMNEMONIC = CHG_TKR
+> Row 3:
+>   BB_ACTIONMNEMONIC = BANCR
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b54210ac390c6e05c0a8015c' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b54210ac390c6e05c0a8015c' and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b54210ac390c6e05c0a8015c' and totalshares < 0)));
+no shorts 
+
+apply the acquis
+last price:
+2002-10-01 (Tue) [638]: O:0.1500 H:0.1700 L:0.1300 C:0.1400 V:139000 TSO:0 A:0.1400 R:1.0000 CA:0.0000
+last trade 2003-05-29
+
+let's go with the day after the last trade  20030530 0.14
+
+/Marketocracy/bin/cahelper -symbol  ESVNQ  -effective 20030530 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.14 -acqShare 0 -purchaser ESVNQ   >& /Users/build/caout/ESVNQ.20150604-ACQUIS.out
+ESVNQ.20150604-ACQUIS.out
+stocks:~/caout build$ tail -f ESVNQ.20150604-ACQUIS.out
+D: (06-04 07:16:49.745) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-04 07:17:22.649) cahelper started on 2015-06-04 07:17:22 -0400
+
+D: (06-04 07:17:22.982) There are [0] open tickets for ESVNQ on 20030530
+D: (06-04 07:17:24.360) StockFileLoad Version:4.0
+D: (06-04 07:17:24.360) Loading Stock Data
+D: (06-04 07:18:12.662) Building Lookup Index
+D: (06-04 07:18:17.538) Finished Building Index
+D: (06-04 07:18:21.251) Finished Loading Stock Data
+D: (06-04 07:18:21.373) Connection to 192.168.111.172:6666 succeeded
+D: (06-04 07:18:25.723) {
+    "ACQUIRED_STOCK" = ESVNQ; 
+    "ACQUIRING_STOCK" = "ESVNQ_FIX"; 
+    AMOUNT = 0.14; 
+    APPLIED = 1; 
+    DATE = 20030530; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ESVNQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-04 07:18:32.063) SUCCESS
+D: (06-04 07:18:32.063) cahelper finished 2015-06-04 07:18:32 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey=X'b54210ac390c6e05c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 464286566
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'b54310ac390c6e05c0a8015c'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'b55a02083d9bc91ac0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'9d7803bc3d9bcbb0c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-11-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'14d74f133ddafd67c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2002-11-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'f638633c3ddef268c0a80146'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVNQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29255U104
+>           DATE = TIMESTAMP '2003-05-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = ENCOMPASS SERVICES CORP
+>     PRIMARYKEY = X'065323dd557033c2c0a86f92'
+>       STOCKKEY = X'b54210ac390c6e05c0a8015c'
+>         SYMBOL = ESVNQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey = X'065323dd557033c2c0a86f92';
+> Row 1:
+>              ALIASKEY = X'065323dd557033c2c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ESVNQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.140000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150604:071722
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-05-30 00:00:00.000000'
+>         BB_IDENTIFIER = ESVNQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-05-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ESVNQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2003-05-30 00:00:00.000000'
+>            PRIMARYKEY = X'064d23dd557033c2c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey =X'064d23dd557033c2c0a86f92' ;
+> Row 1:
+>   _C001 = 57.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'064d23dd557033c2c0a86f92'));
+57 fundkeys save to CA issues ESVNQ fundkeys.txt
+
+check on 6/5/15 then invalidate
+
+6/7/15 
+ESVNQ has been acquired 	right curve
+  	  	
+ENCOMPASS SERVICES CORP acquired by a private company on 2003-05-30 00:00:00. 
+invalidate - done
+reprice  2003-05-30
+Done!
+1 Funds Processed
+280 Queries Processed
+
+closing this out 

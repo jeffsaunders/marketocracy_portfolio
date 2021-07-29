@@ -1,0 +1,464 @@
+VIAS
+date:  9/10/15
+ticker:   VIAS
+
+yahoo:
+
+quantum:
+Viasystems Group, Inc.
+Ticker Symbol: VIAS*     CUSIP: 92553H803     Exchange: NGM
+* NOTE: This security is no longer trading as of 6/01/15
+
+Company's Online Profile
+BUSINESS:  Viasystems Group, Inc. is a worldwide provider of complex multi-layer, rigid printed circuit boards (PCBs) and electro-mechanical solutions (E-M Solutions). Its PCBs serve as the “electronic backbone” of electronic equipment, and its E-M Solutions products and services integrate PCBs and other components into electronic equipment, including metal enclosures, cabinets, racks and sub-racks, backplanes, cable assemblies and busbars.
+Notes:  June 1, 2015 -- TTM Technologies, Inc. (Nasdaq:TTMI) announced today that the company has completed its acquisition of Viasystems Group, Inc. TTM acquired all of the outstanding shares of Viasystems for a combined consideration of $11.33 in cash and 0.706 shares of TTM common stock per Viasystems' share of common stock. In connection with the closing of the acquisition, Viasystems' common stock will cease to be publicly traded on the NASDAQ stock market as of June 1, 2015.
+
+oursite:
+Symbol: VIAS	Name: Viasystems Group, Inc.	Price: $18.27
+Volume:	Sector: Information Technology	Change:
+Short Volume: 13,384	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 13,384	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $11.33	Year High: $18.47	High:
+200 Day Ave: $15.71	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=VIAS
+
+check MAdmin
+Stock:Viasystems Group, Inc.  Symbol:VIAS
+Date: 09/10/2015
+
+91 users found
+
+1	accutrading	adiaz1	alanivy	andglori	andylee	aoshmyansky	arafferty	asukiasyan	atarijunky	bigfang
+2	bjohnson	bodybag2001	bogumil	bradywahl	brilliantfool	brubinson	castaways2006	chipper4617	cmartin3	coachstroke
+3	cob111	csevak	cshaw1	diverpl	dlundgren	dsurucu	dvignola	eckiecki2002	elitebull	elsg
+4	financialking	freilech	garneja	glangford	grasshopper	herbt	hudxo2	hwelbergen	jbernstn	jeffcraig
+5	jemmorey	jhankin	job3rd	john97	jubals	jzawatson	kang	kfravel	kleinphi	krishawkins
+6	kvincent	lbanhart	longshort	lsmith1	lwells	mike5568	mkashani	mliram	nero_claudius_caesar	newbie34
+7	ngalabow	nwsklare	ohnoitsjamie	orkunsahmali	overley	pamplona	panther	pboucher	phannah	phtk3
+8	pnidi	posterboy13	qfweiwei	quantinetics	randjt	randytampa	raystonn	rdog	rmurray1	rnke2003
+9	rshanbour	rytsam	seracuzza	smacdonald	stone_cold	takara	tjenkins	traderkr	tryder	unclejim
+10	vooch4	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'VIAS';  
+> Row 1:
+>   STOCKKEY = X'02ba0e21390ad702c0a80116'
+> Row 2:
+>   STOCKKEY = X'c30f523c4be84d54c0a80146'
+
+there are two
+> Row 1:
+>   STOCKKEY = X'02ba0e21390ad702c0a80116'
+select * from mstockalias where stockkey=X'02ba0e21390ad702c0a80116'     order by "date";
+this one is delisted already
+
+> Row 2:
+>   STOCKKEY = X'c30f523c4be84d54c0a80146'
+select * from mstockalias where stockkey=X'c30f523c4be84d54c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92553H803
+>           DATE = TIMESTAMP '2010-02-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Viasystems Group, Inc.
+>     PRIMARYKEY = X'c310523c4be84d54c0a80146'
+>       STOCKKEY = X'c30f523c4be84d54c0a80146'
+>         SYMBOL = VIAS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203020
+>       STYLEKEY = UU
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VIAS'  order by BB_EFFECTIVE;
+> Row 13:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UQ|CP_TKR|VIAS|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107648832
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 8016467
+>        BB_COMPANYNAME = Viasystems Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-02 00:00:00.000000'
+>         BB_IDENTIFIER = VIAS    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = VIAS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>            PRIMARYKEY = X'57223202556ce3b5c0a86f92'
+>               VERSION = NULL
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VIAS
+
+stock: VIAS
+  PK       : [C30F523C4BE84D54C0A80146]
+  companyID: [18955]
+  symbol   : [VIAS]
+  name     : [Viasystems Group, Inc.]
+  date     : [2010-02-17 00:00:00]
+  status   : [Active]
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18955
+2015-05-23 (Sat) [5255]: <WEEKEND>
+2015-05-24 (Sun) [5256]: <WEEKEND>
+2015-05-25 (Mon) [5257]: <HOLIDAY>
+2015-05-26 (Tue) [5258]: O:18.2800 H:18.2800 L:18.0900 C:18.1400 V:5037 TSO:0 A:18.1400 R:1.0000 CA:0.0000
+2015-05-27 (Wed) [5259]: O:18.4700 H:18.4700 L:18.1300 C:18.3300 V:10644 TSO:0 A:18.3300 R:1.0000 CA:0.0000
+2015-05-28 (Thu) [5260]: O:18.2300 H:18.3700 L:18.2300 C:18.2700 V:4968 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+2015-05-29 (Fri) [5261]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000  <--- last price
+2015-05-30 (Sat) [5262]: <WEEKEND>
+2015-05-31 (Sun) [5263]: <WEEKEND>
+2015-06-01 (Mon) [5264]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+2015-06-02 (Tue) [5265]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+2015-06-03 (Wed) [5266]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+2015-06-04 (Thu) [5267]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+2015-06-05 (Fri) [5268]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'c30f523c4be84d54c0a80146' and shares > 0 order by closed; 
+> Row 22:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-22 14:54:00.000000'
+>        COMMENT = 
+>     COMMISSION = 100.000000
+>   CURRENTORDER = X'b7e46c5354206db2c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'146b3cd254061e36c0a86f98'
+>       MODIFIED = NULL
+>            NET = 31883.060000
+>         OPENED = TIMESTAMP '2014-09-22 14:42:58.000000'
+>          PRICE = 15.941530
+>     PRIMARYKEY = X'b7e26c5354206db2c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 2000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'c30f523c4be84d54c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'c30f523c4be84d54c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c30f523c4be84d54c0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'c30f523c4be84d54c0a80146'  and totalshares < 0)));
+
+apply the acquis
+delist: 2015-06-02 
+there are 91 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 6/01/15   acquis type 3 
+last ticket:  2014-09-22  PRICE = 15.941530
+last price:  2015-05-29 (Fri) [5261]: O:18.2400 H:18.4300 L:18.1000 C:18.2700 V:27883 TSO:0 A:18.2700 R:1.0000 CA:0.0000  <--- last price
+
+
+going to be type 3  cash + shares
+20150601 $11.33 in cash and 0.706 shares of TTMI   
+
+do we have a TTMI?
+select distinct stockkey from mstockalias where symbol='TTMI';
+> Row 1:
+>   STOCKKEY = X'7e96043c39e7e9b3c0a801dc'
+select * from mstockalias where STOCKKEY = X'7e96043c39e7e9b3c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87305R109
+>           DATE = TIMESTAMP '2000-09-25 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TTM TECHNOLOGIES
+>     PRIMARYKEY = X'7e97043c39e7e9b3c0a801dc'
+>       STOCKKEY = X'7e96043c39e7e9b3c0a801dc'
+>         SYMBOL = TTMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203020
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 87305R109
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TTM TECHNOLOGIES
+>     PRIMARYKEY = X'44f6150944a9cd97c0a80146'
+>       STOCKKEY = X'7e96043c39e7e9b3c0a801dc'
+>         SYMBOL = TTMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203020
+>       STYLEKEY = SV
+
+we have it 
+/Marketocracy/bin/cahelper -symbol  VIAS  -effective 20150601 -type ACQUIS -exchange UN -acqType 3 -acqCash 11.33 -acqShare 0.706 -purchaser TTMI   >& /Users/build/caout/VIAS.20150910-ACQUIS-TTMI.out
+VIAS.20150910-ACQUIS-TTMI.out
+stocks2:~/caout build$ tail -f VIAS.20150910-ACQUIS-TTMI.out
+D: (09-10 21:36:24.627) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-10 21:36:48.149) cahelper started on 2015-09-10 21:36:48 -0400
+
+D: (09-10 21:36:48.415) There are [0] open tickets for VIAS on 20150601
+D: (09-10 21:36:50.469) StockFileLoad Version:4.0
+D: (09-10 21:36:50.469) Loading Stock Data
+D: (09-10 21:37:29.332) Building Lookup Index
+D: (09-10 21:37:34.776) Finished Building Index
+D: (09-10 21:37:38.789) Finished Loading Stock Data
+D: (09-10 21:37:38.926) Connection to 192.168.111.157:6666 succeeded
+D: (09-10 21:37:47.549) SavingChanges for Stock Dividend out 101 of 165
+D: (09-10 21:37:58.237) >>> load new StockPrices file
+D: (09-10 21:37:58.261) <<< load new StockPrices file
+D: (09-10 21:37:58.261) >>> swap StockPrices
+D: (09-10 21:37:58.261) Obtained Stockprices swap mutex
+D: (09-10 21:37:58.261) <<< swap StockPrices
+D: (09-10 21:37:58.262) Stock prices available from 2000-05-01 to 2015-09-09
+D: (09-10 21:37:59.252) SavingChanges for position sell out 101 of 165
+D: (09-10 21:38:05.628) {
+    "ACQUIRED_STOCK" = VIAS; 
+    "ACQUIRING_STOCK" = TTMI; 
+    AMOUNT = "CASH 11.33: SHARES 0.706"; 
+    APPLIED = 1; 
+    DATE = 20150601; 
+    FUNDS = (
+        "staka/Staka's Short Fund", 
+        "hiromimini/VLAD", 
+        "jdamian_jr/JRD Tech Fund", 
+        "nwsklare/Natek Technology Fund", 
+        "jzawatson/Jolanda Zawatson's Mutual Fund", 
+        "vooch4/Test SS", 
+        "pboucher/pboucher's Mutual Fund", 
+        "luckybluesman/luckybluesman's Mutual Fund", 
+        "ohnoitsjamie/Aw Yeah!", 
+        "jhankin/Place Trade Unlimited Zillions", 
+        "john97/John97's Mutual Fund", 
+        "glangford/Gregg Alan Langford's Mutual Fund", 
+        "posterboy13/Contrarian Value Fund", 
+        "bigfang/Mayuran's Mutual Tech Fund", 
+        "nero_claudius_caesar/Diversified Aggressive Growth Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "unclejim/james sirotnik's Mutual Fund", 
+        "elitebull/EliteBull Agressive Growth", 
+        "alanivy/Learning Contrarians", 
+        "kang/KH Technology Fund", 
+        "accutrading/AccuSignal Bull Fund B", 
+        "tryder/Technology and Fair Value Fund", 
+        "monkie/Monkie's Mutual Fund", 
+        "asukiasyan/aram sukiasyan's Mutual Fund", 
+        "mwyatt/Mark Wyatt's Stock Picks", 
+        "steele99/steele99's Mutual Fund", 
+        "arafferty/arafferty's Mutual Fund", 
+        "rytsam/Low Priced Growth Fund", 
+        "prodigy81/Kunkle Diversified Growth Fund", 
+        "dvignola/Dominators Mutual Fund", 
+        "equitymerc/Earnings Research Fund", 
+        "newbie34/newbie34's Mutual Fund", 
+        "dsurucu/Electronics-Semiconductors - Growth", 
+        "raystonn/Raystonn Aggressive Growth Fund", 
+        "phannah/Small Cap Value Fund", 
+        "vc_angel/Tech Focus", 
+        "kvincent/KVkiwi Mutual Fund", 
+        "andylee/Andrew Lee's Small-Mid Cap Fund", 
+        "orange/orange's Short Fund", 
+        "unclejim/james sirotnik's Mutual Fund", 
+        "tbierman1/Growth Fund", 
+        "bjohnson/Brad Johnson's Mutual Fund", 
+        "brubinson/Brad Rubinson's Mutual Fund", 
+        "kulananda/Small Cap Agressive Growth ", 
+        "schasworth/White Cat Mutual Fund", 
+        "dvignola/Dominator Tech Fund", 
+        "rskokan/Skokan3", 
+        "bigfang/Mayuran's EEFund", 
+        "lwells/Wizard 2", 
+        "ohnoitsjamie/Diversified with emphasis on Nano and Semiconductors", 
+        "corav/Carl Orav's Fast Growth", 
+        "unclejim/james sirotnik's Mutual Fund", 
+        "grasshopper/Sandpiper", 
+        "eckiecki2002/Stoertebeker 2", 
+        "rmurray1/richard murray growth fund", 
+        "bigfang/Mayuran's Mutual Fund", 
+        "smacdonald/new ideas", 
+        "diverpl/Technology Rebound", 
+        "daprice/New Deal Fund", 
+        "jemmorey/Sphinx Diversified Growth Fund", 
+        "stone_cold/Bloodied Noses", 
+        "rbitrage/A few IPOs", 
+        "et3000/ET3000 - Electronics Industry, Growth Equity Fund", 
+        "diverpl/Aggressive Growth Tech Fund II", 
+        "bigfang/Aggresive Growth Mutual Fund", 
+        "kleinphi/kleinphi's Mutual Fund", 
+        "ohnoitsjamie/My First Fund (high risk)", 
+        "kthompson22/Kyle Thompson's Mutual Fund Z", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "garneja/garneja's Mutual Fund", 
+        "tjenkins/FV5 1 Yr < -50", 
+        "ohnoitsjamie/The Trillium Fund", 
+        "bigfang/Mayuran's Mutual Fund", 
+        "financialking/Danny Wang's Mutual Fund", 
+        "mkashani/mohammad kashani's Mutual Fund", 
+        "chipper4617/Chip Pearson's Mutual Fund", 
+        "clarkbar04/Jeremy Clark's Mutual Fund", 
+        "lbanhart/lbanhart's Mutual Fund", 
+        "cob111/cob111's Mutual Fund", 
+        "bradywahl/small cap: value", 
+        "aoshmyansky/Short Term Picks", 
+        "ferran/ferran's Mutual Fund", 
+        "lsmith1/Lee  Smith's Mutual Fund", 
+        "accutrading/AccuSignal Bull Fund A", 
+        "biedrzycki/Biedrzycki Small Cap Technology Fund", 
+        "coachstroke/Michael Stephen Weatherspoon's Mutual Fund", 
+        "rosie/big downs", 
+        "overley/Overley's Mutual Fund", 
+        "hwelbergen/Hwelbergen", 
+        "csevak/CMS Chip Fund", 
+        "randytampa/randytampa's Mutual Fund", 
+        "rshanbour/Richard Shanbour's Mutual Fund", 
+        "mlagarde/mlagarde's Mutual Fund", 
+        "jefmeister/Bail Out Fund", 
+        "grasshopper/The Grasshopper Fund", 
+        "cmartin3/CM Growth # 2", 
+        "jeffcraig/Jeff Craig's Mutual Fund", 
+        "randjt/Jason T Rand's Small Caps Fund", 
+        "phtk3/PKAG Mutual Fund", 
+        "lpickup/too fast", 
+        "adiaz1/angelo diaz's growth Fund", 
+        "geordie/geordie's shorts", 
+        "pamplona/New Tech Fund", 
+        "traderkr/Traderkr's Mutual Fund", 
+        "tcarboneau/52 wk low fund", 
+        "herbt/Cross Currents Technology Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "hudxo2/D&K's Mutual Fund", 
+        "rnke2003/rnke2003's Mutual Fund", 
+        "jubals/jubals's ZLONG Mutual Fund", 
+        "kfravel/Kevin D. Fravel's Mutual Fund", 
+        "bozwood/Best Tech Fund", 
+        "atarijunky/Atarijunky's Focused Analytic Discipline Fund", 
+        "kchamblee/bottom of the barrel", 
+        "seracuzza/seracuzza's Mutual Fund", 
+        "ewm1969/Navigus Mixed Cap Shadow Fund", 
+        "mondoladro/mondoladro's short fund", 
+        "spaceflyer/SF Tech Fund", 
+        "cstelmachowski/Second Quant", 
+        "castaways2006/Michael Murphy challenge", 
+        "panther/FS Reasonable Growth Fund", 
+        "ngalabow/ngalabow's Mutual Fund", 
+        "qfweiwei/AAII Model Stock Portfolio", 
+        "wmvjohnson/Foundation Going Down", 
+        "harish63/harish Least Value Short Fund", 
+        "fkluczny/banking and finance short", 
+        "mliram/Cornerstone Growth II", 
+        "rnice/rnice's Short Fund #2", 
+        "jbernstn/jbernstn's Mutual Fund", 
+        "longshort/LongShort's Buy The Dip Mutual Fund", 
+        "mgulla/Gulla Short Earnings Fund", 
+        "brilliantfool/Soldotna Aggressive Growth Exponentials", 
+        "psparke/StockRank - Short Fund", 
+        "cfalcon/CFalcon's Short Fund", 
+        "bogumil/Vinci", 
+        "bodybag2001/bodybag2001's Mutual Fund", 
+        "pnidi/Solar Power Fund", 
+        "dlundgren/Breakaway Worst Safety", 
+        "holdenll/SHORT Fund", 
+        "rdog/Quick Cash", 
+        "cshaw1/Beta", 
+        "orkunsahmali/orkunsahmali's Mutual Fund", 
+        "quantinetics/5J", 
+        "rnke2003/rnke2003's Mutual Fund", 
+        "freilech/Freilech's First Fund", 
+        "elsg/FundC", 
+        "cfalcon/CFalcon's ", 
+        "job3rd/job3rd's Mutual Fund", 
+        "pamplona/mBlasters", 
+        "brian1/brian1's Mutual Fund", 
+        "timingizeverything/Redy 2 Short  Mutual Fund", 
+        "andglori/High Upgrowth Patterns", 
+        "mike5568/bitontissaintlouisfund ", 
+        "takara/TAKARA`s CEO Bad Stars Mutual Fund", 
+        "hiromimini/Drop your shorts", 
+        "krishawkins/Louis Navellier's Shorts", 
+        "codyryannewton/codyryannewton's Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = "CASH AND SHARES"; 
+    SYMBOL = TTMI; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-10 21:38:07.332) SUCCESS
+D: (09-10 21:38:07.333) cahelper finished 2015-09-10 21:38:07 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'c30f523c4be84d54c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92553H803
+>           DATE = TIMESTAMP '2010-02-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Viasystems Group, Inc.
+>     PRIMARYKEY = X'c310523c4be84d54c0a80146'
+>       STOCKKEY = X'c30f523c4be84d54c0a80146'
+>         SYMBOL = VIAS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 92553H803
+>           DATE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Viasystems Group, Inc.
+>     PRIMARYKEY = X'f9316b7255f23076c0a86fab'
+>       STOCKKEY = X'c30f523c4be84d54c0a80146'
+>         SYMBOL = VIAS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203020
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'f9316b7255f23076c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'f9316b7255f23076c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VIAS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|11.330000|CP_CASH_FLAG|1|CP_SH|0.706000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150910:093648
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-01 00:00:00.000000'
+>         BB_IDENTIFIER = TTMI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TTMI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-01 00:00:00.000000'
+>            PRIMARYKEY = X'91f36b7255f23030c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'91f36b7255f23030c0a86fab';
+> Row 1:
+>   _C001 = 314.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'91f36b7255f23030c0a86fab'));
+there are 157 fundkeys, save to CA issues VIAS fundkeys.txt
+
+For Beta case
+VIAS no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+
+VIAS has been acquired	right curve
+ 	 	
+Viasystems Group, Inc. [VIAS] acquired by TTM TECHNOLOGIES [TTMI] on 2015-06-01 00:00:00.
+
+

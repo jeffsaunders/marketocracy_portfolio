@@ -1,0 +1,1220 @@
+date:  7/22/15
+ticker AOI
+
+looks like we applied a 1 for 10 split twice.  Here is what Yahoo finance has:
+
+Prices
+Date	Open	High	Low	Close	Volume	Adj Close*
+Jul 21, 2015	22.42	23.30	22.29	23.16	64,200	23.16
+Jul 20, 2015	22.81	23.72	22.30	22.56	113,400	22.56
+Jul 17, 2015	24.56	24.66	22.31	22.81	158,100	22.81
+Jul 16, 2015	23.24	26.47	23.02	24.69	167,900	24.69
+Jul 15, 2015	24.88	25.24	22.79	23.29	112,600	23.29
+Jul 14, 2015	25.93	25.99	24.74	24.88	126,500	24.88
+Jul 13, 2015	24.91	26.00	24.56	25.94	185,100	25.94
+Jul 10, 2015	23.54	24.75	23.54	24.48	64,500	24.48
+Jul 9, 2015	23.19	24.08	23.04	23.48	71,800	23.48
+Jul 8, 2015	24.07	24.29	22.68	23.00	111,700	23.00
+Jul 7, 2015	24.70	24.96	23.85	24.14	90,900	24.14
+Jul 6, 2015	24.66	25.31	24.35	24.58	190,300	24.58
+Jul 2, 2015	24.50	25.35	24.38	24.90	155,300	24.90
+Jul 1, 2015	23.77	24.50	23.03	24.38	149,400	24.38
+Jun 30, 2015	21.41	24.80	21.41	23.91	233,700	23.91
+Jun 29, 2015	24.00	24.00	20.89	21.41	350,400	21.41
+Jun 29, 2015	1: 10 Stock Split  <----------------------------------------
+Jun 26, 2015	2.27	2.41	2.20	2.32	6,783,700	23.20
+Jun 25, 2015	2.32	2.37	2.21	2.25	57,100	22.50
+Jun 24, 2015	2.43	2.43	2.25	2.30	62,500	23.00
+
+
+need to check our site and back one out
+
+select distinct stockkey from mstockalias where symbol='AOI';
+> Row 1:
+>   STOCKKEY = X'06c30e21390ae111c0a80116'
+> Row 2:
+>   STOCKKEY = X'0fd30e21390afa48c0a80116'
+
+
+there are two
+> AOI 1:
+>   STOCKKEY = X'06c30e21390ae111c0a80116'
+select * from mstockalias where STOCKKEY = X'06c30e21390ae111c0a80116';
+delisted not affecting this 
+> AOI 2:
+>   STOCKKEY = X'0fd30e21390afa48c0a80116'
+select * from mstockalias where STOCKKEY = X'0fd30e21390afa48c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'0fd40e21390afa48c0a80116'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = DMN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'17d0469542895099c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'2b9b469e428950c4c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772103
+>           DATE = TIMESTAMP '2005-05-16 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'07e446a1428950d2c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'e8ef0cda558ddafdc0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8ef0cda558ddafdc0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'e8ef0cda558ddafdc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20150626|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107452859
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a1cd6b3055834a34c0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'a1cd6b3055834a34c0a86f92';
+> Row 1:
+>   _C001 = 678.000000
+select managerkey from mticket where sourcekey=X'a1cd6b3055834a34c0a86f92';
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'a1cd6b3055834a34c0a86f92') order by loginname;
+> Row 2:
+>              ALIASKEY = X'e8ef0cda558ddafdc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|018772103|CP_NEW_CUSIP|018772301|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US0187721032|CP_NEW_ISIN|US0187723012|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108437434
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a1cf6b3055834a34c0a86f92'
+>               VERSION = NULL
+
+
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'7fbd5ae65591cf6ec0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'7fbd5ae65591cf6ec0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'7fbd5ae65591cf6ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20150629|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107452859
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-22 00:00:00.000000'
+>            PRIMARYKEY = X'145528e455889095c0a86f92'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'145528e455889095c0a86f92';
+> Row 1:
+>   _C001 = 678.000000
+
+
+> Row 2:
+>              ALIASKEY = X'7fbd5ae65591cf6ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|018772103|CP_NEW_CUSIP|018772301|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US0187721032|CP_NEW_ISIN|US0187723012|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108437434
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-22 00:00:00.000000'
+>            PRIMARYKEY = X'54e513665589e3e0c0a86f92'
+>               VERSION = NULL
+
+
+Looking at one member, zpryor
+your holdings of AOI 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+FOSI 	0 	N/A 	N/A
+avmf 	57 	$1,261.98 	0.02%
+ZMF 	0 	N/A 	N/A
+ZHDF 	0 	N/A 	N/A
+ZDAF 	0 	N/A 	N/A
+RBSA 	0 	N/A 	N/A
+IISD 	0 	N/A 	N/A
+ZPF 	0 	N/A 	N/A
+AAE 	0 	N/A 	N/A 
+
+expand avmf
+LEDGER
+Date 	Start 	Change 	End 	Type
+May 16, 2005 		5709 	5709 	Corporate Action
+Jun 26, 2015 	5709 	-5139 	570 	Corporate Action
+Jun 29, 2015 	570 	-513 	57 	Corporate Action
+Total: 57
+  	  	 
+  	  	
+BUYS
+
+You have no Buys for this position
+  	  	 
+  	  	
+SELLS
+
+You have no sells for this position
+
+there are 282 members affected. 
+
+
+ok here is the second 1 for 10 split 
+
+PRIMARYKEY = X'145528e455889095c0a86f92'
+
+this is the sourcekey
+
+select primarykey from mticket where sourcekey=X'145528e455889095c0a86f92';
+there are 678.  
+let's get the fundkeys
+select count(*) from mticketallocation where ticketkey=X'145528e455889095c0a86f92';
+there are none and that was expected
+
+get the fundkeys
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'145528e455889095c0a86f92');
+there are 678 positionkeys
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'145528e455889095c0a86f92'));
+there are XXXX save to CA issues AOI fundkeys.txt
+ok.
+
+we don't need to tickle these
+
+I wonder if there is an update position or something like that
+
+
+there are two directories - dbtool and fptool
+
+/Marketocracy/bin/dbtool lookup fund 
+/Marketocracy/bin/fptool invalidateFund 
+
+/Marketocracy/bin/dbtool
+USAGE: dbtool <command> [options]
+
+Commands and options:
+  repricefund -- Do invalidatePrices on a specific fund
+    -user -- User to reprice
+  dumpUser -- Detailed dump of user info to stdout
+    -user -- User's login name
+  checkdb -- Make sure we can connect to db
+  deleteManager -- Delete a manager and all dependent objects
+    -loginName -- login name of the manager to delete
+  mergePositions -- Merge duplicate positions on all funds
+    -fundKey -- fund key check and merge positions
+    -keyList -- list of fundKeys to check and merge positions
+  login -- Execute login stuff for a user
+    -primaryKey -- Primary Key of user to reprice (in pierce Hex)
+  listUsers -- List users by email and address
+  listM100Subscriptions -- List M100Subscriptions
+  listSubscriptionlessBuyers -- List Subscriptionless Buyers from Product.db
+  correctShareCount -- Ensure that MPosition.shareCount is correct
+    -loginName -- Only correct positions for a single user
+    -positionKey -- Only correct a single position
+    -stockKey -- Only correct positions for a single stock
+  setManagerPreference -- Set a preference for a manager
+    -loginName -- login name of the manager
+    -preferencePath -- path for the preference (eg. preferences.communication.receiveEmail)
+    -value -- new preference value
+  showbuyersummaries -- Show m100 buyer info
+  showsubscriptionstats -- Show m100 subscription statistics
+  tickletickets -- Touch and reclose all tickets
+    -byTicketCount -- Do all users in order of ticket count (descending)
+    -skipbroker -- Don't fix missing broker (YES|NO)
+    -spawnIndex -- This particular spawn
+    -spawnTotal -- Total Number of spawns
+    -user -- Just do a single user
+    -userList -- Filename of list of login names to process (one per line)
+  ticklebyticket -- Touch and reclose tickets- ticket based, use tickletickets for manager based
+    -date -- After and including date
+    -ticketKey -- Just do a single ticket
+    -ticketList -- Filename of list of ticket keys to process (one per line)
+  fixFundSymbols -- Make all users fund symbols unique
+    -spawnIndex -- This particular spawn
+    -spawnTotal -- Total Number of spawns
+    -user -- Just do a single user
+    -userList -- Filename of list of login names to process (one per line)
+  cleanLoginName -- Cleanup login names
+    -save YES -- actually do it
+  createsubscription -- Create a subscription for a buyer
+    -autorenew YES|NO -- Autorenew
+    -date YYYYMMDD -- Start date of subscription (default today)
+    -freetrial YES:NO -- Free trial
+    -months -- Number of months of subscription (default 3)
+    -user -- Just do a single user
+    -userList -- Filename of list of login names to process (one per line)
+    price -- Price
+  cleanUpBuyers -- Delete buyers that don't have managers
+    -buyerKey -- primary key of buyer to delete
+    -doAll -- delete all buyers without managers
+  encryptcards -- Encrypt the credit card numbers and save them
+  decryptcc -- Decrypt a credit card number from the encrypted data
+    -encryptedValue -- Value in encryptedCardNumber field
+    -key -- Primary key of credit card object
+  decryptpassword -- Decrypt a password from the encrypted string
+    -encryptedValue -- Value in encryptedPassword field
+    -fileName -- File name of logins
+    -loginName -- Manager login name
+  deletealerts -- Delete all manager alerts for a specified category before a specified date.
+    -category -- Category of alerts to delete
+    -date -- Before and including date (YYYYMMDD)
+  generatePrimaryKey -- Generate a unique primary key value
+  showstockinfo -- -symbol symbol to return cusip or -cusip cusip to return ticker
+    -cusip -- Cusip
+    -symbol -- Stock symbol
+  lookup -- Lookup values in the database
+
+fptool
+/Marketocracy/bin/fptool
+ping - Test connectivity to the server
+serverInfo - Generic information about the server
+updateEveryone - Bring all fund prices up-to-date
+aggregateStatisticsForKey <fundkey> <YYYYMMDD> - Dump the aggregate statistics for a key. Date is optional
+  If not specified, maxDate is used
+alphaBetaStatisticsForKey <fundkey> <YYYYMMDD> - Dump the alpha/beta statistics for a key. Date is optional
+  If not specified, maxDate is used
+priceRunForKey <fundkey> - Dump the raw price data for a key
+priceRunForKeyOnDate <fundkey> YYYY-MM-DD - Dump the raw price data for a key, ensuring that it is priced up to at least a given date
+priceFund <fundkey> - Price fund to the max day number
+priceManager <loginName> - Price all funds for manager to the max day number
+invalidateFund <fundkey> <YYYY-MM-DD> - Invalidate a fund.  Date is optional
+  If not specified, fund is invalidated from inception
+invalidateAllFunds <YYYY-MM-DD> - Invalidate all funds from a given date forward
+reloadDailyState - Refetch all daily information from the database
+maxDate - show the latest date the server can calculate prices for.
+dailyReturnsForKey <fundkey> - Display the daily returns for a key
+insertInServer <fundkey> - Insert a fundKey into the server's list of valid fund keys
+
+
+ok, let's try reverseCA
+
+> Row 1:
+>              ALIASKEY = X'7fbd5ae65591cf6ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20150629|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107452859
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-22 00:00:00.000000'
+>            PRIMARYKEY = X'145528e455889095c0a86f92'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '107452859:MARTY' where PRIMARYKEY = X'145528e455889095c0a86f92';
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 107452859:MARTY
+
+it sure looks like it ran successfully
+
+let's invalidate the funds
+done
+
+now log back in and see if he is back to 570 shares   zpryor
+your holdings of AOI 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+FOSI 	0 	N/A 	N/A
+avmf 	570 	$12,078.30 	0.21%
+ZMF 	0 	N/A 	N/A
+ZHDF 	0 	N/A 	N/A
+ZDAF 	0 	N/A 	N/A
+RBSA 	0 	N/A 	N/A
+IISD 	0 	N/A 	N/A
+ZPF 	0 	N/A 	N/A
+AAE 	0 	N/A 	N/A
+
+good he is back to 570 shares
+
+send the file to brandon
+
+2015-06-22
+
+
+closing this out.
+
+
+wait let's double check prices
+
+STOCKKEY = X'0fd30e21390afa48c0a80116'
+
+select * from mstock where primarykey=X'0fd30e21390afa48c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'7fbd5ae65591cf6ec0a86f92'
+>                NAME = DIMON INC
+>          PRIMARYKEY = X'0fd30e21390afa48c0a80116'
+>              SYMBOL = DMN
+>           COMPANYID = 4741
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7eb9
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4741
+2015-06-22 (Mon) [5285]: O:2.2500 H:2.3000 L:2.1800 C:2.2900 V:510098 TSO:89088 A:2.2900 R:1.0000 CA:0.0000
+2015-06-23 (Tue) [5286]: O:2.3000 H:2.4500 L:2.2900 C:2.4200 V:677016 TSO:89088 A:2.4200 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:2.4300 H:2.4300 L:2.2500 C:2.3000 V:607393 TSO:89088 A:2.3000 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:2.3200 H:2.3700 L:2.2100 C:2.2500 V:571565 TSO:89088 A:2.2500 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:2.2700 H:2.4100 L:2.2000 C:2.3200 V:6681332 TSO:89088 A:2.3200 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:24.0000 H:24.0000 L:20.8900 C:21.4100 V:353509 TSO:89088 A:21.4100 R:1.0000 CA:0.0000  <--- new price
+2015-06-30 (Tue) [5293]: O:21.4100 H:24.8000 L:21.4100 C:23.9100 V:233862 TSO:89088 A:23.9100 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:23.7700 H:24.5000 L:23.0300 C:24.3800 V:149404 TSO:89088 A:24.3800 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:24.5000 H:25.3500 L:24.3800 C:24.9000 V:155267 TSO:89088 A:24.9000 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+
+
+let's find the remaining split
+select * from mstockalias where stockkey=X'0fd30e21390afa48c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'0fd40e21390afa48c0a80116'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = DMN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'17d0469542895099c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'2b9b469e428950c4c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772103
+>           DATE = TIMESTAMP '2005-05-16 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'07e446a1428950d2c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'e8ef0cda558ddafdc0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8ef0cda558ddafdc0a86f92';
+> Row 1:
+>              ALIASKEY = X'e8ef0cda558ddafdc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20150626|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107452859
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a1cd6b3055834a34c0a86f92'
+>               VERSION = NULL
+
+Need to back this out as well
+
+update mcorporateaction set BB_ACTIONID = '107452859:MARTY'   where PRIMARYKEY = X'a1cd6b3055834a34c0a86f92';
+done
+> Row 2:
+>              ALIASKEY = X'e8ef0cda558ddafdc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|018772103|CP_NEW_CUSIP|018772301|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US0187721032|CP_NEW_ISIN|US0187723012|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108437434
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a1cf6b3055834a34c0a86f92'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'7fbd5ae65591cf6ec0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+
+
+ok, let's back this one out.
+select * from  mcorporateaction  where PRIMARYKEY = X'a1cd6b3055834a34c0a86f92';
+> Row 1:
+>              ALIASKEY = X'e8ef0cda558ddafdc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.100000|CP_ADJ_DT|20150626|CP_SH_FRACTIONAL|2|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 107452859:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 156956
+>        BB_COMPANYNAME = Alliance One International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a1cd6b3055834a34c0a86f92'
+>               VERSION = NULL
+
+I think it's the same fundkeys
+select count(*) from mticket where sourcekey=X'a1cd6b3055834a34c0a86f92';
+> Row 1:
+>   _C001 = 678.000000
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 107452859:MARTY
+
+ok, this one backed out too
+
+check again:
+select * from mstockalias where stockkey=X'0fd30e21390afa48c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'0fd40e21390afa48c0a80116'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = DMN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'17d0469542895099c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'2b9b469e428950c4c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772103
+>           DATE = TIMESTAMP '2005-05-16 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'07e446a1428950d2c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'e8ef0cda558ddafdc0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'e8ef0cda558ddafdc0a86f92';
+	CHG_ID only, no split
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'7fbd5ae65591cf6ec0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'7fbd5ae65591cf6ec0a86f92';
+	CHG_ID only, no split
+
+ok, let's reappy the split
+
+/Marketocracy/bin/cahelper -symbol AOI -effective 20150629 -type STOCK_SPLT -exchange UQ -payDate 20150629 -recordDate 20150629 -ratio 0.1 -terms '1 for 10' >& /Users/build/caout/AOI.20150722-reverse_SPLIT.out
+stocks:~/caout build$ tail -f AOI.20150722-reverse_SPLIT.out
+D: (07-22 13:48:22.609) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-22 13:48:47.327) cahelper started on 2015-07-22 13:48:47 -0400
+
+D: (07-22 13:48:48.221) There are [0] closed tickets for AOI on 20150629
+D: (07-22 13:48:55.024) There are [0] open tickets for AOI on 20150629
+D: (07-22 13:48:55.462) StockFileLoad Version:4.0
+D: (07-22 13:48:55.462) Loading Stock Data
+D: (07-22 13:49:33.257) Building Lookup Index
+D: (07-22 13:49:38.039) Finished Building Index
+D: (07-22 13:49:41.816) Finished Loading Stock Data
+D: (07-22 13:49:41.947) Connection to 192.168.111.172:6666 succeeded
+D: (07-22 13:49:42.304) >>> load new StockPrices file
+D: (07-22 13:49:42.328) <<< load new StockPrices file
+D: (07-22 13:49:42.328) >>> swap StockPrices
+D: (07-22 13:49:42.328) Obtained Stockprices swap mutex
+D: (07-22 13:49:42.328) <<< swap StockPrices
+D: (07-22 13:49:42.328) Stock prices available from 2000-05-01 to 2015-07-21
+D: (07-22 13:49:45.864) SavingChanges for stock split 101 of 722
+D: (07-22 13:50:00.216) SavingChanges for stock split 201 of 722
+D: (07-22 13:50:16.926) SavingChanges for stock split 301 of 722
+D: (07-22 13:50:33.683) {
+    APPLIED = 1; 
+    DATE = 20150629; 
+    FUNDS = (
+        "baneasa/North Shore General Fund", 
+        "tony_camean/tony_camean's gut feel Mutual Fund", 
+        "lookright2000/lookright2000's VALUE Fund", 
+        "dmoose42/Kevin's Fund", 
+        "bbtest2/DURKOP MAVERICK PENNY-ANTE FUND", 
+        "dfaile/David Faile's Hot Sectors Fund", 
+        "jhilborn/JCH Value Fund III", 
+        "jhilborn/JCH Value Fund", 
+        "jhilborn/JCH Value II", 
+        "jhilborn/Jason Hilborn's Mutual Fund", 
+        "dogden1/Don Ogden's Mutual Fund", 
+        "philfox/Phils First Choice", 
+        "tbo/tbo 2000 ", 
+        "econceicao/ATF Portfolio", 
+        "mjshan/Plus Ultra Momentum 2", 
+        "DELETED_2005533/Darryl Strawberry Legal Defense Fund", 
+        "sahmed2/Shabbir Ahmed's small cap mutual fund", 
+        "mshery/mike shery's Mutual Fund", 
+        "delskl/WHEAT FUND", 
+        "djking/Flying Pigs Fund", 
+        "sahmed2/Shabbir Ahmed's Diversified Mutual Fund", 
+        "greed/greed's Mutual Fund", 
+        "greed/greed's Mutual Fund", 
+        "dwinslow/dwinslow's Mutual Fund", 
+        "DELETED_2006432/jkoskinen's Mutual Fund", 
+        "zbint/zbint's Mutual Fund", 
+        "jburtanas/Jalis Platnium Value Fund", 
+        "jimmyhoofa/Sin Fund", 
+        "dfoster2/dfoster2's Mutual Fund", 
+        "dgrimes99/Stick to the Basics", 
+        "ken7764/Ken's Growth and Income", 
+        "dmoffet/CRESUS", 
+        "rbahr/rbahr's Small Cap Fund", 
+        "rbahr/rbahr's Prime Fund", 
+        "nevi33/High Yield Dividend", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "macmanc/Netology Tobacco Holdings", 
+        "gazpacho/Gazpacho's Fallen Angels", 
+        "jdamian_jr/JRD Small Cap Fund", 
+        "vs001g/The Shah Tycoon Fund", 
+        "zjhafeez/zjhafeez's Mutual Fund", 
+        "ahknaten/ahknaten's Mutual Fund", 
+        "amuirhead/Dreamer Fund", 
+        "emonk/Emonk Value Fund", 
+        "fzhang/fzhang's Mutual Fund", 
+        "bpowers2/Big Pimpin Sin Fund", 
+        "cfilstead/cfilstead's Mutual Fund", 
+        "eschneider/Diamond Theory", 
+        "dmiller1/high growth", 
+        "ltremblay/Small Cap Sin 60", 
+        "jhaydon/Haydon's Value Fund", 
+        "bwisda/Wisda's Global Select Fund", 
+        "anoodle/blended global fund", 
+        "cfrazier/cfrazier's Mutual Fund", 
+        "breed/Reed's Timing Magic", 
+        "wforeman/Wesley's Mutual Fund", 
+        "bbtest2/Durkop Maverick Widows & Orphans Fund", 
+        "wforeman/Wesley's Mutual Fund", 
+        "dmoffet/Medici Mutual Fund", 
+        "mkey1/Cash Flow Mutual Fund", 
+        "dmiller1/Growth Fund", 
+        "butcher/The Butcher's Fun and Diversion Fund", 
+        "bsmith/Tron House Memorial Fund", 
+        "cohen23/Dr. Evil Fund", 
+        "deadsox/Ricks Small Cap", 
+        "xxrayeyes/DividendPlays.com Mutual Fund", 
+        "sasha_mol/Significant event strategy", 
+        "wizerd5761/Dan's Mutual Fund", 
+        "askajan/Alex Kajan's Mutual Fund", 
+        "jsenior007/Senior Consumer Goods Fund", 
+        "jlear/Aggressive Value S&P1500 - all stocks", 
+        "swans82/The 666 Fund", 
+        "mike7131_99/mike7131_99's Mutual Fund", 
+        "mike_20gt/mike_20gt's Mutual Fund", 
+        "jgrant4/Squeeze the Lemon Fund", 
+        "hkwong/Highly Undervalued", 
+        "javy/Aeropostale, inc", 
+        "sp500sp600/sp500sp600's Mutual Fund", 
+        "efvenable/EMF Value", 
+        "bunnyluv/bunnyluv's DOG FUND", 
+        "olesh88/Olesh Small Cap Blend Fund", 
+        "ecarlson1/EC Value Fund", 
+        "joeymag/joeymag's Mutual Fund", 
+        "jpcast/jpcast's Mutual Fund", 
+        "misterugly/misterugly's Mutual Fund", 
+        "blaine82002/Blaine Fund 2", 
+        "pbritton/pbritton's Mutual Fund", 
+        "stock_picker/stock_picker's Mutual Fund", 
+        "og2man/og2man's Sin Fund", 
+        "kleinphi/kleinphi's Mutual Fund", 
+        "jp75/SS FUND", 
+        "jp75/Mutual Fund 302", 
+        "jp75/jp75's Mutual Fund", 
+        "jp75/BIG LOSERS FUND", 
+        "tdsbu/tdsbu's Mutual Fund", 
+        "abowen/A.G. Bowen's Mutual Fund", 
+        "abowen/abowen's Mutual Fund", 
+        "acorson/Corson Opportunity Fund", 
+        "dalesuchomel/Roman Limited Fund", 
+        "baden123/K-Dogg's Mutual Fund", 
+        "DELETED_jakerosser1_2010022609390001/Harvest Fund", 
+        "kfravel/Kevin D. Fravel's Mutual Fund", 
+        "bsteele/bsteele's Mutual Fund", 
+        "basilakos/basilakos's Long Term Global Value ", 
+        "dubarry/Undervalued Companies", 
+        "bigrascal/I Love Dividends Fund", 
+        "ber35017/ber35017's Mutual Fund", 
+        "loki0000/loki0000's Mutual Fund", 
+        "bweber/Bill's Value Fund", 
+        "mashellb/MUTUALS", 
+        "abelcuskelly/Marketocracy Fund", 
+        "genniebonn/COLLEGE FUND", 
+        "khernandez33/Portfolio #1", 
+        "leakb/Dream of Horses SCV", 
+        "boogamil/Clark's A2M Mutual Fund", 
+        "dreid/dreid's Mutual Fund", 
+        "colinkayla/March 05 buy list", 
+        "dwmillert/trump 2", 
+        "gwesrn/gwesrn's Mutual Fund", 
+        "colinkayla/HiLo Value ", 
+        "bigrascal/Cameron Wealth Fund", 
+        "jedemt/The Construct", 
+        "jrfuda/JRFuda Fund", 
+        "rpr/Bad Invesments", 
+        "hernandez/hernandez's Mutual Fund", 
+        "miduso/SYC Mutual Fund", 
+        "raver10/raver10's Mutual Fund", 
+        "djkell/djkell's Mutual Fund", 
+        "tharrington/TCH ALL CAP", 
+        "ericeric/Private fund", 
+        "dcraze/RLX Fund", 
+        "elitewardog/EWD 10 DOW industrials", 
+        "tglover/Commodity Related Stocks", 
+        "dtran1/Safety First", 
+        "samko/Turnaround Fund", 
+        "cpetro/cpetro's Mutual Fund", 
+        "eburgess/Paria Fund", 
+        "lusw/Lutopia Fund", 
+        "miten/miten's Balanced Mutual Fund", 
+        "bdevore/Growth & Value Model", 
+        "jverrillo/Value Fund", 
+        "mistyflag/MistyFlag's Value Fund", 
+        "alncasal/alncasal's Mutual Fund", 
+        "cdalzell/DZ's Total Market Madness Fund", 
+        "staris/staris's Mutual Fund", 
+        "mistyflag/MistyFlag's Mutual Fund", 
+        "jmcintire/I Will Win", 
+        "dfoster2/safe yet sexy", 
+        "jmcleod/JM IT'S YOUR LIFE FUND", 
+        "tryder/Safe Harbor Fund", 
+        "sstelmachowski1/Steven G. Stelmachowski's Growth Fund", 
+        "eburgess/Pisgah Fund", 
+        "aspenton/aspenton's Mutual Fund", 
+        "realreed/larry joe reed's Mutual Fund", 
+        "vptitsyn/PINTO Mutual Fund", 
+        "jweatherby/jweatherby's Mutual Fund", 
+        "ericeric/eric liu's Mutual Fund", 
+        "skashin2/sviytoslv kashin's Mutual Fund", 
+        "rweissel/Copycat Fund", 
+        "r47593/R-Squared Mutual Fund", 
+        "bmoore/SEGV-Plus", 
+        "ahargrea/Hoser's Real Return Fund", 
+        "masteryy/masteryy's Mutual Fund", 
+        "amaiken/amaiken's Mutual Fund", 
+        "sangong/sangong's Mutual Fund", 
+        "nslaughter/The Diversified Ideas Fund", 
+        "rprice/Rocky Price's Mutual Fund", 
+        "jmcintire/PEG Fund", 
+        "catchthetrend/Trend Fund #1", 
+        "nick4753/Nick Catalano's Mutual Fund", 
+        "ndgolz/Down and Out, but Good Stocks", 
+        "jmcintire/You Will Lose", 
+        "twoxfour/Richard's Growth Fund", 
+        "dfoster2/love to love ya baby", 
+        "tuke/tuke's 8th Mutual Fund", 
+        "jmcintire/jmcintire's Mutual Fund 2", 
+        "cmourick/everything you're not supposed to do...", 
+        "zrosenberg1/zrosenberg1's Mutual Fund", 
+        "bmoore/SEGV", 
+        "mthorpe1/No Ethics Fund", 
+        "russelllake/Russell Lake's Mutual Fund", 
+        "dburton/Burton Analytics Fund", 
+        "tonywatts/Tony's Portfolio", 
+        "nick4753/Nick Catalano's Mutual Fund", 
+        "dfoster2/Where have all the good times gone", 
+        "amuirhead/Kingston Fund", 
+        "b_lovelady/GOODGUY", 
+        "pedrolc/pedro l. cabrera's growth Mutual Fund", 
+        "rumancer/rumancer's Mutual Fund", 
+        "smilie_121/smilie_121's Mutual Fund", 
+        "zpryor/american vices  MUTUAL FUND", 
+        "kirt9122/Kirt's Mutual Fund", 
+        "mufassa/Sin Stocks", 
+        "jdrunning/Justin Drew Scanlan's Mutual Fund", 
+        "katka/Katka's growth fund", 
+        "e972321/Growth", 
+        "patrick332/patrick332's Mutual Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "terrible_tom/Contrarian Fund", 
+        "clefler/CLefler Locals", 
+        "future/short", 
+        "kennethto/Kenneth To's Mutual Fund", 
+        "maschenbrener1/maschenbrener1's Mutual Fund", 
+        "clangmead1/clangmead shorts", 
+        "maschenbrener1/MJA", 
+        "jblanchard3/jblanchard3's Mutual Fund", 
+        "boogamil/Clark's Crap the Bed Mutual Fund", 
+        "hernandez/hernandez's Mutual Fund", 
+        "evanc/The HeRB Fund", 
+        "hernandez/hernandez's Mutual Fund", 
+        "xcool/xcool's Mutual Fund", 
+        "dardashti/Deep Value [ps1roeNA]", 
+        "tazmandevil2/tazmandevil2's Mutual Fund", 
+        "lnw2m/lnw2m's Mutual Fund", 
+        "rweaver/Rob's Value Fund", 
+        "schaefer/Schaefer's Mutual Fund", 
+        "milkrate/Zero Fund", 
+        "mkusek/Debauchery Fund", 
+        "tjenkins/RINGERS", 
+        "dlundgren/Breakaway Worst Strength", 
+        "josephp162/Cohasset Fund II Low Priced Stock", 
+        "dlundgren/Breakaway Worst Relative", 
+        "chinaman/chinaman's rehab fund class A", 
+        "wollac/Wollac's ETF Fund", 
+        "ithriveonsnapple/ithriveonsnapple's Mutual Fund", 
+        "sarahchua/Timothy's Mutual Fund", 
+        "jhagedorn/jhagedorn's Mutual Fund", 
+        "topbooks/bw", 
+        "humordoc/humordoc's Mutual Fund", 
+        "collin2985/collin2985's Mutual Fund", 
+        "atmo_82/Alcohol Tobacco & Firearms", 
+        "grant.may/Cigar Stocks", 
+        "knobloch/Knobloch's QuantPure Mutual  Fund", 
+        "oscar08/Oscar's Mutual Fund", 
+        "crosscheck6666/crosscheck6666's Mutual Fund", 
+        "rnapoli/Bald Eagle Fund", 
+        "mickkilla911/mickkilla911's Mutual Fund", 
+        "jespinal195/jespinal195's Mutual Fund", 
+        "rceballo704/rceballo704's Mutual Fund", 
+        "cassandi/Cassandi Small Cap Fund", 
+        "traderinsd/traderinsd's Mutual Fund", 
+        "danflans/Fast Times Momentum Fund Duo", 
+        "mike10613/Michael J Maynard's Fund 3", 
+        "mike10613/Mike10613's extreme fund", 
+        "sssmith79/entergy", 
+        "castaways2006/2007 B-Sides", 
+        "aposner/MyGo", 
+        "lingram/Yahoo Mutual Fund", 
+        "ndl958/32H E92 Break SP1500 + vline", 
+        "stretcho/stretcho's Mutual Fund", 
+        "atarijunky/Atarijunky Sin Fund", 
+        "lsaunders/Low Price/Sales Strategy", 
+        "lsaunders/I-Advantage Low Price Stock Fund", 
+        "takara/takara's The1stAstrologyFund", 
+        "abelcrab/abelcrab's Mutual Fund", 
+        "abelcrab/Around 10 and Under Stocks Fund", 
+        "jgsm-kc/jgsm-kc's Test Fund", 
+        "ramonhuerta/SP FILTER + GA", 
+        "carderock/Techno Mutual Fund", 
+        "venatorperitus/Non-Cyclicals", 
+        "timo123/timo123's Mutual Fund", 
+        "orangeyellow3682/Viking Tobacco Fund", 
+        "jbabka/Anti Top15", 
+        "money462/money462's Mutual Fund", 
+        "tdawg5213/TDAWG Opp Fund", 
+        "s1485609/Stag B Fund", 
+        "acainvest/acainvest's MC Fund", 
+        "lingram/Levi's Another Yahoo Fund", 
+        "llarry/llarry's Mutual Fund", 
+        "lingfeng/lingfeng's Mutual Fund", 
+        "jhelfrich/JHELFRICH Short Fund", 
+        "lucadisca/Borsanti.it strategy 4", 
+        "lucadisca/Borsanti.it fund best picks", 
+        "richfield/richfield's Able Short Fund", 
+        "harish63/harish Least Value Short Fund", 
+        "harish63/Harish ETFs Short Fund", 
+        "mebear/fund no. 1", 
+        "cstelmachowski/Diver Short", 
+        "DELETED_jakerosser1_2010022609390001/Valley View Two", 
+        "king_of_pain/KoP's 401k  Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "enroncfo/Hidden Value Fund", 
+        "bengaltiger/Full Value II", 
+        "leggj2000/Small Semi-annual Fund", 
+        "sappy02/sappy02's Mutual Fund", 
+        "mhutch/Hammond's Gold and Precious MetalsFund", 
+        "billmega/billmega's Mutual Fund 3", 
+        "micro_mini_man/My First Fund", 
+        "robeco50/robo50's Mutual Fund", 
+        "robeco50/Robo50's Economic Rebound", 
+        "ant/ant's Mutual Fund", 
+        "rfink13/Cheap and sweet fund", 
+        "gfontana/Market", 
+        "jr227/JR Mutual Fund Long", 
+        "alan_he/alan_he's Mutual Fund", 
+        "rep62ar/Grand Ole' Party Fund", 
+        "milkem82/milkem82's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "heiko/heiko's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "justin_collett83/justin_collett83's Mutual Fund", 
+        "vijaygarimella/Vijay's Mutual Fund", 
+        "alexg/17VF", 
+        "personpj/SKB", 
+        "tarave/New Value Fund", 
+        "artieb/artieb's Mutual Fund", 
+        "fedge/Patience Small Cap ", 
+        "personpj/P2", 
+        "nslaughter/Agothos Focussed Equity", 
+        "troodon/Troodon's Mutual Fund", 
+        "paperstacker/NP Special Situations Fund", 
+        "yofromcanada/Sin Fund", 
+        "openmind/Openmind", 
+        "guruji/guruji's Mutual Fund", 
+        "messaye/Franchise Economics", 
+        "przuniga/Phoenix", 
+        "commanderaugust/commanderaugust's Mutual Fund", 
+        "mwgirma/Margin of Safety", 
+        "messaye/Growth", 
+        "messaye/BENCHMARK", 
+        "kstavrou/kstavrou's Consumer Non-Cyclical Mutual Fund", 
+        "bboyken/Brian Boyken's Small Cap Fund I", 
+        "bboyken/Brian Boyken's Small Cap Fund II", 
+        "teamfunds/DELETE_20110112063927_SWAN2", 
+        "mwgirma/Pure Value", 
+        "messaye/Earnings Power Value", 
+        "messaye/Sense", 
+        "mwgirma/Concentrated", 
+        "ccassara/The Next Big One", 
+        "nigist/Nigist's Value Fund", 
+        "mwgirma/V", 
+        "jamerson/Quay Fund", 
+        "tstevens622/Sunflower Opportunity Fund", 
+        "agrizzle/Grizz Small Cap Value", 
+        "alaska/Fireweed", 
+        "bs2015/bs2015's Fund", 
+        "rmeyers/Aggressive Penny Stock"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150629; 
+    RATIO = 0.1; 
+    "RECORD_DATE" = 20150629; 
+    SYMBOL = AOI; 
+    TYPE = "STOCK_SPLT"; 
+}
+D: (07-22 13:50:53.420) SUCCESS
+D: (07-22 13:50:53.420) cahelper finished 2015-07-22 13:50:53 -0400
+
+
+
+
+check the results
+
+select * from mstockalias where stockkey=X'0fd30e21390afa48c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'0fd40e21390afa48c0a80116'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = DMN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DIMON INC
+>     PRIMARYKEY = X'17d0469542895099c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 254394109
+>           DATE = TIMESTAMP '2005-05-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'2b9b469e428950c4c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772103
+>           DATE = TIMESTAMP '2005-05-16 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'07e446a1428950d2c0a80146'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'e8ef0cda558ddafdc0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 018772301
+>           DATE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alliance One International Inc
+>     PRIMARYKEY = X'7fbd5ae65591cf6ec0a86f92'
+>       STOCKKEY = X'0fd30e21390afa48c0a80116'
+>         SYMBOL = AOI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey=X'7fbd5ae65591cf6ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'7fbd5ae65591cf6ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 10|CP_RATIO|0.100000|CP_RECORD_DT|20150629|CP_PAY_DT|20150629|CP_STOCK_SPLT_TYP|3000|CP_ADJ| |CP_ADJ_DT| |CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150722:014847
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = AOI     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AOI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-29 00:00:00.000000'
+>            PRIMARYKEY = X'b05f5ea155afd77fc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey=X'b05f5ea155afd77fc0a86f92';
+> Row 1:
+>   _C001 = 680.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'b05f5ea155afd77fc0a86f92'));
+there are AOI fundkeys, save to CA issues XXX fundkeys new split.txt
+done
+
+let's invalidate and then ask Brandon to reprice again
+
+once the invalidation is done, let's log in as zpryor - the split should now be on 6/26/15 and he should have 570 shares
+if that is correct, then ask Brando to reprice again
+
+showing 570 shares on....  the 29th!
+
+great
+
+let Brandon now and send the fundkeys
+closing this out

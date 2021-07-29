@@ -1,0 +1,263 @@
+
+date:   7/29/15 
+ticker:  CHRTD
+
+yahoo:
+
+quantum:
+
+oursite:
+Symbol: CHRTD 	Name: CHARTERED SEMICONDUCTOR MANU W 	Price: $15.89
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Small Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+symbol changes for CHRTD 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+21 May 09 	CHRT 	CHRTD 	Change in the ticker (trading) symbol from CHRT to CHRTD
+  	  	 
+left curve 	  CHRTD had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+21 May 09 	(null) 	Split terms:(null)
+
+
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:CHARTERED SEMICONDUCTOR MANU W  Symbol:CHRTD
+Date: 07/29/2015
+
+98 users found
+
+1	4tigres	ace_chiu	aharon-ezer	amarburger	andylee	ansonwms	ansonwms2	aoliveira	bdrumgoole	bholms
+2	billybourbon	bogumil	botchmanov	bradmoodie	burninbuddha	carmen	cfifield	cherrypicks	climsk	cottonda
+3	cowboy_dickrdoo	deja269	dfoster2	dhasty	dmann	donquixote	drcharles	droth	drzeke	ecy20
+4	efeldman	eric1982	gator101	gators1	gkemp	isildur21367	isledive	jamesmader	jgaffin1	jmarine
+5	jmg33	jomachines	joycerefron	jprestidge	jtaplett	jtgeo	jvsoto	kengdagu	kgso24	kittee3
+6	ktdinc	lisa_villeneuve	loosegun	manus116	mbalboa	mcahill	mchristy	megakillerj	mike10613	mkuron
+7	mmkarim	mossanimal	msal	mtalisman	myocracy	ngoel	njoseph	obaechtiger	ochwee_cheng	og88
+8	ongsiapco	pengfei	phantym	philip	pikachu	pw818	quiksilver	radzathome	rbalachandran	roym
+9	saagi	scraig	sgallacher14	shifali12	shussain	spacemonkey	sszymanski	stanleyc	stumbo	trash_collector
+10	upon	vincent_ong	whix	williamwarner	winston_chng	wisehart77	woog16	yaseranwar	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'CHRTD';  
+> Row 1:
+>   STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+
+select * from mstockalias where stockkey=X'7d5510ac390c6d4cc0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16133R106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CHARTERED SEMICONDUCTOR MANU W
+>     PRIMARYKEY = X'7d5610ac390c6d4cc0a8015c'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>         SYMBOL = CHRT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16133R205
+>           DATE = TIMESTAMP '2009-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CHARTERED SEMICONDUCTOR MANU W
+>     PRIMARYKEY = X'a8ca0e964a29d6ddc0a8013c'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>         SYMBOL = CHRTD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CHRTD'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CHRTD
+>>>> dbtool started at 2015-07-29 19:42:20 -0400
+stock: CHRTD
+  PK       : [7D5510AC390C6D4CC0A8015C]
+  companyID: [7260]
+  symbol   : [CHRTD]
+  name     : [CHARTERED SEMICONDUCTOR MANU W]
+  date     : [2009-05-21 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-29 19:42:20 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7260
+2009-11-02 (Mon) [3227]: O:15.8900 H:15.8900 L:15.8900 C:15.8900 V:0 TSO:25432 A:15.8900 R:1.0000 CA:0.0000
+2009-11-03 (Tue) [3228]: O:15.8900 H:15.8900 L:15.8900 C:15.8900 V:0 TSO:25432 A:15.8900 R:1.0000 CA:0.0000
+2009-11-04 (Wed) [3229]: O:15.8900 H:15.8900 L:15.8900 C:15.8900 V:0 TSO:25432 A:15.8900 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7d5510ac390c6d4cc0a8015c' and shares > 0 order by closed; 
+> Row 1188:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-06-17 13:44:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 14.000000
+>   CURRENTORDER = X'3f0b5c9c4a39128fc0a80133'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd8da4b04397a4ce9c0a801e0'
+>       MODIFIED = NULL
+>            NET = 4293.079960
+>         OPENED = TIMESTAMP '2009-06-17 11:58:07.000000'
+>          PRICE = 15.332428
+>     PRIMARYKEY = X'3f095c9c4a39128fc0a80133'
+>         SECFEE = 0.120000
+>         SHARES = 280.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7d5510ac390c6d4cc0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7d5510ac390c6d4cc0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7d5510ac390c6d4cc0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 98 members who hold this stock
+quantum:
+last ticket:  2009-06-17  15.332428
+last price:  2009-11-04 (Wed) [3229]: O:15.8900 H:15.8900 L:15.8900 C:15.8900 V:0 TSO:25432 A:15.8900 R:1.0000 CA:0.0000
+
+going with 20091104  15.89  
+
+
+/Marketocracy/bin/cahelper -symbol  CHRTD  -effective 20091104 -type ACQUIS -exchange UN -acqType 1 -acqCash 15.89   -acqShare 0 -purchaser CHRTD   >& /Users/build/caout/CHRTD.20150729-DELIST.out 
+CHRTD.20150729-DELIST.out
+stocks:~/caout build$ tail -f CHRTD.20150729-DELIST.out
+D: (07-29 19:46:04.083) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-29 19:46:49.631) cahelper started on 2015-07-29 19:46:49 -0400
+
+D: (07-29 19:46:49.931) There are [0] open tickets for CHRTD on 20091104
+D: (07-29 19:46:50.374) StockFileLoad Version:4.0
+D: (07-29 19:46:50.374) Loading Stock Data
+D: (07-29 19:48:07.120) Building Lookup Index
+D: (07-29 19:48:16.138) Finished Building Index
+D: (07-29 19:48:23.443) Finished Loading Stock Data
+D: (07-29 19:48:23.550) Connection to 192.168.111.172:6666 succeeded
+D: (07-29 19:48:27.296) SavingChanges for position sell out 101 of 361
+D: (07-29 19:48:37.927) {
+    "ACQUIRED_STOCK" = CHRTD; 
+    "ACQUIRING_STOCK" = "CHRTD_FIX"; 
+    AMOUNT = 15.89; 
+    APPLIED = 1; 
+    DATE = 20091104; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CHRTD_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-29 19:48:42.715) SUCCESS
+D: (07-29 19:48:42.715) cahelper finished 2015-07-29 19:48:42 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'7d5510ac390c6d4cc0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16133R106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CHARTERED SEMICONDUCTOR MANU W
+>     PRIMARYKEY = X'7d5610ac390c6d4cc0a8015c'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>         SYMBOL = CHRT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16133R205
+>           DATE = TIMESTAMP '2009-05-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CHARTERED SEMICONDUCTOR MANU W
+>     PRIMARYKEY = X'a8ca0e964a29d6ddc0a8013c'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>         SYMBOL = CHRTD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16133R205
+>           DATE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CHARTERED SEMICONDUCTOR MANU W
+>     PRIMARYKEY = X'6647725055b965e9c0a86f92'
+>       STOCKKEY = X'7d5510ac390c6d4cc0a8015c'
+>         SYMBOL = CHRTD
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+
+
+select * from mcorporateaction where aliaskey =X'6647725055b965e9c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'6647725055b965e9c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CHRTD  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|15.890000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150729:074649
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = CHRTD_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CHRTD_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'6641725055b965e9c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'6641725055b965e9c0a86f92';
+ Row 1:
+>   _C001 = 174.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'6641725055b965e9c0a86f92'));
+there are 174 fundkeys, save to CA issues CHRTD fundkeys.txt
+
+For Beta case
+CHRTD no longer trades but is still active on our site - need to delist 
+
+check on 7/30/15   invalidate funds
+check MAdmin
+
+
+7/30/15
+ CHRTD has been acquired 	right curve
+  	  	
+CHARTERED SEMICONDUCTOR MANU W acquired by a private company on 2009-11-04 00:00:00. 
+
+invalidate, reprice and close 

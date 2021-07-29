@@ -1,0 +1,70 @@
+date:  3/13/15
+
+icket Number:	2566
+Portfolio Username:	2004_porsche_911
+Ticker Symbol:	CRD.B
+Corporate Action Type:
+Other
+Subject:
+CRD.B
+Description:
+CRD.B (CRAWFORD & CO CL'B') has Style: Unclassified Market Cap : Unclassified Style but its style should be closer 
+to Small Cap : Blend.
+
+
+select distinct stockkey from mstockalias where symbol='CRD.B';
+> Row 1:
+>   STOCKKEY = X'b25c10ac390c6dfec0a8015c'
+
+select * from mstockalias where STOCKKEY = X'b25c10ac390c6dfec0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 224633107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CRAWFORD & CO CL'B'
+>     PRIMARYKEY = X'b25d10ac390c6dfec0a8015c'
+>       STOCKKEY = X'b25c10ac390c6dfec0a8015c'
+>         SYMBOL = CRD.B
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = CRDB
+>        GICSKEY = 40301010
+>       STYLEKEY = UU
+
+update mstockalias set STYLEKEY='SB' where  STOCKKEY = X'b25c10ac390c6dfec0a8015c';
+check the cusip   is good.  dividends?   they are already paid
+select * from mstockalias where STOCKKEY = X'b25c10ac390c6dfec0a8015c';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 224633107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CRAWFORD & CO CL'B'
+>     PRIMARYKEY = X'b25d10ac390c6dfec0a8015c'
+>       STOCKKEY = X'b25c10ac390c6dfec0a8015c'
+>         SYMBOL = CRD.B
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = CRDB
+>        GICSKEY = 40301010
+>       STYLEKEY = SB
+
+check on 3/14/15 
+not there for some reason
+check on 3/15/15
+select * from mstockalias where STOCKKEY = X'b25c10ac390c6dfec0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 224633107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CRAWFORD & CO CL'B'
+>     PRIMARYKEY = X'b25d10ac390c6dfec0a8015c'
+>       STOCKKEY = X'b25c10ac390c6dfec0a8015c'
+>         SYMBOL = CRD.B
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = CRDB
+>        GICSKEY = 40301010
+>       STYLEKEY = SB
+
+now it's there - closing this out 

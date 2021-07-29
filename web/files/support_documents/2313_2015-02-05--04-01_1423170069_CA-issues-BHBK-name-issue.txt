@@ -1,0 +1,112 @@
+date:  2/5/15
+name issue with BHBK
+
+did this one as a style update, there is confusing on the name now
+
+yahoo:  Hyde Park Bancorp, MHC (BHBK) -NasdaqGS
+13.43  0.24(1.82%) 12:48PM EST - Nasdaq Real Time Price
+
+quantum: 
+Blue Hills Bancorp, Inc.
+Ticker Symbol: BHBK     CUSIP: 095573101     Exchange: NCM
+Security Type:   Bank Holding Company
+
+Company's Online Profile
+BUSINESS:  Blue Hills Bancorp, Inc. is the holding company for Blue Hills Bank and Nantucket Bank, a division of
+ Blue Hills Bank. The Company has assets of over $1.5 billion and operates 9 branch offices in Brookline, Dedham, 
+Hyde Park, Nantucket, Norwood and West Roxbury, Massachusetts. Blue Hills Bank is a full service, community bank 
+with its main office in Hyde Park, MA. The bank provides consumer and commercial deposit and loan products to 
+Eastern Massachusetts through a growing branch network and eCommerce channels. The bank offers commercial and 
+industrial and commercial real estate loans in addition to cash management services and commercial deposit accounts. 
+The bank also serves consumers through a full suite of consumer banking products including checking accounts, 
+mortgage loans, equity lines of credit and traditional savings and certificate of deposit accounts. The bank has 
+invested substantially in online technology including online account opening and funding, online mortgage 
+applications, online banking, mobile banking, bill pay and mobile deposits. Previously known as Hyde Park Savings 
+Bank, Blue Hills Bank has been serving area residents for over 140 years.
+
+Notes:  July 21, 2014 Blue Hills Bancorp, Inc. (the Company), a Maryland corporation and the holding company for 
+Blue Hills Bank (the Bank), announced today the completion of the Company’s stock offering and the mutual-to-stock 
+conversion of Hyde Park Bancorp, MHC (the MHC). Shares of Blue Hills Bancorp, Inc. common stock is expected to begin 
+trading on Tuesday, July 22, 2014, on the NASDAQ Global Select Market under the symbol BHBK.
+   Link to IPO Prospectus
+Small Cap Stock -   Market Value $ 366 Million
+
+
+nasdaq trader
+Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	First Date Traded
+07/22/2014	BHBK	Q	Blue Hills Bancorp, Inc. Common Stock	Y	07/22/2014
+Anticipated Security Additions
+
+DL Date	Symbol	Market	Company Name	IPO	Effective Date/Comments
+07/21/2014	BHBK	Q	Blue Hills Bancorp, Inc. Common Stock	Y	07/22/2014 Pending completion of underwriting agreement
+
+
+check the database
+select distinct stockkey from mstockalias where symbol='BHBK';
+> Row 1:
+>   STOCKKEY = X'f1903bd053ceee24c0a86f92'
+
+
+select * from mstockalias where STOCKKEY = X'f1903bd053ceee24c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 095573101
+>           DATE = TIMESTAMP '2014-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Blue Hills Bancorp Inc
+>     PRIMARYKEY = X'f1913bd053ceee24c0a86f92'
+>       STOCKKEY = X'f1903bd053ceee24c0a86f92'
+>         SYMBOL = BHBK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = SV
+need to change the sector - forgot tis
+40101010	Diversified Banks
+	Large, geographically diverse banks with a national footprint whose revenues are derived primarily from conventional banking operations, have significant business activity in retail banking and small and medium corporate lending, and provide a diverse range of financial services. Excludes banks classified in the Regional Banks and Thrifts & Mortgage Finance Sub-Industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry.
+update mstockalias set GICSKEY='40101010'  where STOCKKEY = X'f1903bd053ceee24c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 095573101
+>           DATE = TIMESTAMP '2014-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Blue Hills Bancorp Inc
+>     PRIMARYKEY = X'f1913bd053ceee24c0a86f92'
+>       STOCKKEY = X'f1903bd053ceee24c0a86f92'
+>         SYMBOL = BHBK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101010
+>       STYLEKEY = SV
+
+
+select * from mcorporateaction where aliaskey=X'f1913bd053ceee24c0a86f92';
+> Row 1:
+>              ALIASKEY = X'f1913bd053ceee24c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|BHBK|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 93924523
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 40299727
+>        BB_COMPANYNAME = Blue Hills Bancorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-22 00:00:00.000000'
+>         BB_IDENTIFIER = BHBK    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = BHBK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-07-21 00:00:00.000000'
+>            PRIMARYKEY = X'3ce1714853cd99f2c0a86f92'
+>               VERSION = NULL
+
+let's look for unapplied CAs for this
+select * from mcorporateaction where aliaskey is null and BB_SECID='BHBK';
+nothing use full
+
+select * from mstockalias where name like 'Hyde Park B%';
+this is good, closing it out

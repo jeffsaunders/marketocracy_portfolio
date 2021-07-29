@@ -1,0 +1,454 @@
+date:  8/3/15  spin offs from bloomberg.  I suspect there are problems 
+
+RECORD_DATE:20150722
+APPLIED:1
+NOTES:N.A.
+RATIO:0.5
+SYMBOL:EXH
+SPINOFF_SYMBOL:EXTN-W
+DATE:2015-08-03 00:00:00
+PAY_DATE:20150731
+TYPE:SPIN
+
+EXH spun off EXTN-W
+
+
+select distinct stockkey from mstockalias where symbol='EXH';
+> Row 1:
+>   STOCKKEY = X'29e96de646f2dcc2c0a80146'
+
+select * from mstockalias where STOCKKEY = X'29e96de646f2dcc2c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2007-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'29ea6de646f2dcc2c0a80146'  <--------- make this the identitykey
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = EXH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'29ea6de646f2dcc2c0a80146';
+	DVD CASH
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'9aa4288a55bff3f5c0a86f92'   <---------- delete 
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'9aa4288a55bff3f5c0a86f92';
+> Row 1:
+>              ALIASKEY = X'9aa4288a55bff3f5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|EXH US|CP_NEW_TKR|AROC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109588655
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>            PRIMARYKEY = X'95793fb355bd632bc0a86f92'  <---------- delete 
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03957W106
+>           DATE = TIMESTAMP '2015-08-03 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'a05f29dc55bff516c0a86f92'
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey=X'a05f29dc55bff516c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|30225X103|CP_NEW_CUSIP|03957W106|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US30225X1037|CP_NEW_ISIN|US03957W1062|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109641418
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9052a455bd7167c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Exterran Corp|CP_ID_BB_COMP|43278888|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20150731|CP_RECORD_DT|20150722|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150803|CP_TKR|EXTN-W US|CP_DUE_BILL_RED_DT|20150805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007K3DT16|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007K3DSJ9|CP_SPINOFF_ID_BB_SEC_NUM_DES|EXTN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98815944
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9252a455bd7169c0a86f92'
+>               VERSION = NULL
+
+So, EXH changed ticker to AROC
+
+select count(*) from mticket where sourcekey=X'7b9252a455bd7169c0a86f92';
+> Row 1:
+>   _C001 = 299.000000
+
+select distinct stockkey from mticket where sourcekey=X'7b9252a455bd7169c0a86f92';
+> Row 1:
+>   STOCKKEY = X'f3402dcf55bff7edc0a86f92'
+
+select * from mstockalias where STOCKKEY = X'f3402dcf55bff7edc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'f3412dcf55bff7edc0a86f92'
+>       STOCKKEY = X'f3402dcf55bff7edc0a86f92'
+>         SYMBOL = EXTN-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+let's see if there is a EXTN also
+
+select distinct stockkey from mstockalias where symbol='EXTN';
+> Row 1:
+>   STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+
+select * from mstockalias where STOCKKEY = X'83b710ac390c6d5bc0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 302255104
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EXTENSITY INC
+>     PRIMARYKEY = X'83b810ac390c6d5bc0a8015c'
+>       STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+>         SYMBOL = EXTN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 302255104
+>           DATE = TIMESTAMP '2003-03-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = EXTENSITY INC
+>     PRIMARYKEY = X'54fa079a46f1eaa5c0a8013c'
+>       STOCKKEY = X'83b710ac390c6d5bc0a8015c'
+>         SYMBOL = EXTN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+looks like no collision
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='EXTN';
+
+
+news:  looks like this was delayed
+http://www.exterran.com/exh/news/article/2070838
+
+
+let's back out the spin off
+
+select * from mcorporateaction where aliaskey=X'a05f29dc55bff516c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|30225X103|CP_NEW_CUSIP|03957W106|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US30225X1037|CP_NEW_ISIN|US03957W1062|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109641418
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9052a455bd7167c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Exterran Corp|CP_ID_BB_COMP|43278888|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20150731|CP_RECORD_DT|20150722|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150803|CP_TKR|EXTN-W US|CP_DUE_BILL_RED_DT|20150805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007K3DT16|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007K3DSJ9|CP_SPINOFF_ID_BB_SEC_NUM_DES|EXTN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98815944
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9252a455bd7169c0a86f92'
+>               VERSION = NULL
+
+make this more unique
+
+update mcorporateaction set BB_ACTIONID = '98815944:MARTY' where PRIMARYKEY = X'7b9252a455bd7169c0a86f92';
+
+
+was terms 1 for 2
+cp ration 0.5
+effective 2015-08-03
+CP_PAY_DT 20150731 
+CP_RECORD_DT 20150722
+
+select * from mcorporateaction where PRIMARYKEY = X'7b9252a455bd7169c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Exterran Corp|CP_ID_BB_COMP|43278888|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20150731|CP_RECORD_DT|20150722|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150803|CP_TKR|EXTN-W US|CP_DUE_BILL_RED_DT|20150805|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG007K3DT16|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG007K3DSJ9|CP_SPINOFF_ID_BB_SEC_NUM_DES|EXTN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98815944:MARTY
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9252a455bd7169c0a86f92'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID  98815944:MARTY
+
+took exceptions - need to probably delete all occurrences of EXTN-W
+
+select * from mstockalias where symbol='EXTN-W';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Corp
+>     PRIMARYKEY = X'f3412dcf55bff7edc0a86f92'
+>       STOCKKEY = X'f3402dcf55bff7edc0a86f92'
+>         SYMBOL = EXTN-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+let's delete everything associated with this STOCKKEY = X'f3402dcf55bff7edc0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'f3402dcf55bff7edc0a86f92'; 
+
+delete from mwindowstock where stockkey=X'f3402dcf55bff7edc0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'f3402dcf55bff7edc0a86f92');
+
+delete from mstockalias where stockkey=X'f3402dcf55bff7edc0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'f3402dcf55bff7edc0a86f92');   
+
+delete from mposition where stockkey=X'f3402dcf55bff7edc0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'f3402dcf55bff7edc0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'f3402dcf55bff7edc0a86f92');
+
+delete from mticket where stockkey=X'f3402dcf55bff7edc0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'f3402dcf55bff7edc0a86f92';  
+
+commit;
+
+set commit true;
+
+
+done.   
+
+select distinct stockkey from mstockalias where symbol='EXH';
+ Row 1:
+>   STOCKKEY = X'29e96de646f2dcc2c0a80146'
+
+
+select * from mstockalias where STOCKKEY = X'29e96de646f2dcc2c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2007-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'29ea6de646f2dcc2c0a80146'   <--- make this the identitykey
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = EXH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'9aa4288a55bff3f5c0a86f92'  <-- delete 
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'9aa4288a55bff3f5c0a86f92';
+> Row 1:
+>              ALIASKEY = X'9aa4288a55bff3f5c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|EXH US|CP_NEW_TKR|AROC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109588655
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-13 00:00:00.000000'
+>            PRIMARYKEY = X'95793fb355bd632bc0a86f92'  <--- delete 
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 03957W106
+>           DATE = TIMESTAMP '2015-08-03 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'a05f29dc55bff516c0a86f92'  <--delete 
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = AROC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'a05f29dc55bff516c0a86f92';
+> Row 1:
+>              ALIASKEY = X'a05f29dc55bff516c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|30225X103|CP_NEW_CUSIP|03957W106|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US30225X1037|CP_NEW_ISIN|US03957W1062|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109641418
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 13070762
+>        BB_COMPANYNAME = Exterran Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-03 00:00:00.000000'
+>         BB_IDENTIFIER = EXH     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = EXH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-14 00:00:00.000000'
+>            PRIMARYKEY = X'7b9052a455bd7167c0a86f92'  <-- delerte 
+>               VERSION = NULL
+
+	
+set the identitykey
+>     PRIMARYKEY = X'29ea6de646f2dcc2c0a80146'   <--- make this the identitykey
+select * from mstock where primarykey=X'29e96de646f2dcc2c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'a05f29dc55bff516c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'29e96de646f2dcc2c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 17660
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-7855
+
+update mstock set IDENTITYKEY = X'29ea6de646f2dcc2c0a80146'  where PRIMARYKEY = X'29e96de646f2dcc2c0a80146';
+now let's delete the other mstockalias and mcorporateaction records
+
+delete from mcorporateaction where primarykey=X'7b9052a455bd7167c0a86f92'; done 
+delete from mstockalias where primarykey=X'a05f29dc55bff516c0a86f92';
+
+delete from mcorporateaction where primarykey=X'95793fb355bd632bc0a86f92';  
+delete from mstockalias where primarykey=X'9aa4288a55bff3f5c0a86f92';
+
+check again
+select * from mstockalias where STOCKKEY = X'29e96de646f2dcc2c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 30225X103
+>           DATE = TIMESTAMP '2007-08-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Exterran Holdings, Incorporated
+>     PRIMARYKEY = X'29ea6de646f2dcc2c0a80146'
+>       STOCKKEY = X'29e96de646f2dcc2c0a80146'
+>         SYMBOL = EXH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10101020
+>       STYLEKEY = MV
+
+
+only this one
+
+looks good, the spin off and ticker change did not get applied.
+
+closing this out 

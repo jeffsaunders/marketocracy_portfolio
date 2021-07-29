@@ -1,0 +1,376 @@
+date:  5/29/15
+ticker:  CHRM  delist 
+
+case:
+Ticket Number:	3143
+Portfolio Username:	waynoooo
+Ticker Symbol:	CHRM
+Corporate Action Type:
+Acquisition
+Subject:
+Still in profile without appropriate payout
+Description:
+CHRM was acquired back in Sep 14 (link: http://finance.yahoo.com/news/charm-communications-inc-announces-completion-200100768.html) for 4.70 a share. Could you please update my fund to reflect this? Thanks
+
+yahoo:
+Charm Communications Inc. (CHRM) -NasdaqGM
+Watchlist
+4.63 0.00(0.00%) Sep 24 - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	4.63
+Open:	4.63
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	5.00
+Beta:	1.84
+Next Earnings Date:	N/A
+Day's Range:	4.63 - 4.63
+52wk Range:	4.14 - 5.33
+Volume:	2,200
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	463.00
+EPS (ttm):	0.01
+Div & Yield:	N/A (N/A)
+
+
+quantum:
+Charm Communications, Inc.
+Ticker Symbol: CHRM*     CUSIP: 16112R101     Exchange: NGM
+* NOTE: This security is no longer trading as of 9/24/14
+
+Company's Online Profile
+BUSINESS:  Charm Communications Inc. is a leading advertising agency in China. Charm operates its business under three brands: Charm Advertising, Charm Interactive, and Shangxing Media. Under the Charm Advertising and Charm Interactive brands, Charm offers integrated advertising agency services from planning and managing advertising campaigns to creating and placing advertisements. Under the Shangxing Media brand, Charm has established a portfolio of television advertising media resources through its exclusive arrangements with premium national television channels, which include not only advertising time but also opportunities for placing branded content. Charm's clients include well-recognized brand names in China across many industries, as well as emerging domestic leading brands. In January 2010, Charm formed a joint venture with international 4A advertising group Aegis Media, its strategic investor, to operate its brand "Vizeum" in China. In October 2010, Charm also formed a joint venture with Wasu Digital Group to operate all advertising-related businesses across Wasu's IPTV, 3G mobile TV and broadband TV network platforms.
+
+Notes:  Sept. 24, 2014 -- Charm Communications Inc. (NASDAQ: CHRM) a leading advertising agency in China, announced today the completion of the merger contemplated by the previously announced agreement and plan of merger among Engadin Parent Limited (Parent), Engadin Merger Limited and the Company. As a result of the merger, Charm became a wholly owned subsidiary of Parent. The Company also announced today that it has requested that trading of its ADSs on the Nasdaq Global Market ("Nasdaq") be suspended as of the close of trading on September 24, 2014. The Company requested Nasdaq to file a Form 25 with the Securities and Exchange Commission (the "SEC") to delist the Company's ADSs and deregister the Company's registered securities.
+IPO - 5/5/2010 - 7.81 Million ADRs @ $9.50/ADR.    Link to IPO Prospectus
+Mid Cap Stock -   Market Value $ 820 Million 
+
+9/24/14 - 4.70  payout
+
+oursite:
+Symbol: CHRM 	Name: Charm Communications Inc 	Price: $4.63
+Volume: 	Sector: Consumer Discretionary 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $4.64 	High:
+200 Day Ave: $0.71 	Year Low: $0.00 	Low:
+CAs
+cash dividends paid by CHRM 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+22 Mar 12 	26 Mar 12 	16 Apr 12 	75 	$0.32 	Dividend amount:0.32 per share.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=CHRM  nothibng 
+
+check MAdmin
+CHRM  05/29/2015
+Stock:Charm Communications Inc  Symbol:CHRM
+Date: 05/29/2015
+
+9 users found
+
+1	bsiega6289	colorado	dontgoshane	greenab	jreg87	pattiann1632	robidi	stlewis	waynoooo	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'CHRM';  
+> Row 1:
+>   STOCKKEY = X'89d3043c39e7e9c0c0a801dc'
+> Row 2:
+>   STOCKKEY = X'5e6d35614be1e065c0a80146'
+
+there are two
+> CHRM 1:
+>   STOCKKEY = X'89d3043c39e7e9c0c0a801dc'
+select * from mstockalias where STOCKKEY = X'89d3043c39e7e9c0c0a801dc';
+delisted
+> CHRM 2:
+>   STOCKKEY = X'5e6d35614be1e065c0a80146'
+select * from mstockalias where STOCKKEY = X'5e6d35614be1e065c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16112R101
+>           DATE = TIMESTAMP '2010-05-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Charm Communications Inc
+>     PRIMARYKEY = X'5e6e35614be1e065c0a80146'
+>       STOCKKEY = X'5e6d35614be1e065c0a80146'
+>         SYMBOL = CHRM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401010
+>       STYLEKEY = UU
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CHRM'  order by BB_EFFECTIVE;
+> Row 23:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|Charm Communications Inc|CP_TOT_AMT|14.674340|CP_ACQUIS_TYP|1|CP_CASH|4.700000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|0.000000|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREMIUM|N.A.|CP_PCT_OWNED|55.299999|CP_PCT_SOUGHT|44.700001|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|4.700000|CP_ARBITRAGE_PROF|-999998.000000|CP_CUR_TOT_VAL|14.674336|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser;1;Gunderson Dettme, Maples & Calder;13;100.000000;1;Target Financial Adviser;1;China Renaissan;13;100.000000;1;Acquirer Legal Adviser;1;Conyers Dill, DLA Piper LLP, Simpson Thacher, Weil Gotshal;13;100.000000;1;Legal Adv to Target Financial;1;Davis Polk;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|CCINZ CH|CP_TARGET_ID_BB_GLOBAL|BBG000Q7YYV9|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FLMBP8|CP_TARGET_ID_BB_SEC_NUM_DES|CCINZ|CP_TARGET_FEED_SOURCE| |CP_NOTES|PRIVATE INVSTR: MR HE DANG. ACTL ACQ'R: ENGADIN PARENT LTD & ENGADIN MERGER LTD.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81984261
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 17612594
+>        BB_COMPANYNAME = Charm Communications Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-09-30 00:00:00.000000'
+>         BB_IDENTIFIER = CHRM    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-19 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CHRM
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-05-21 00:00:00.000000'
+>            PRIMARYKEY = X'848d6b96537d2ec3c0a86f92'
+>               VERSION = NULL
+
+it's there just not applied   6/30/2014   all cash 4.70 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CHRM
+stock: CHRM
+  PK       : [5E6D35614BE1E065C0A80146]
+  companyID: [18949]
+  symbol   : [CHRM]
+  name     : [Charm Communications Inc]
+  date     : [2010-05-05 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-05-29 14:26:02 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18949
+2014-09-16 (Tue) [5006]: O:4.6300 H:4.6300 L:4.6200 C:4.6200 V:3915 TSO:0 A:4.6200 R:1.0000 CA:0.0000
+2014-09-17 (Wed) [5007]: O:4.6200 H:4.6200 L:4.6200 C:4.6200 V:2705 TSO:0 A:4.6200 R:1.0000 CA:0.0000
+2014-09-18 (Thu) [5008]: O:4.6200 H:4.6200 L:4.6200 C:4.6200 V:3905 TSO:0 A:4.6200 R:1.0000 CA:0.0000
+2014-09-19 (Fri) [5009]: O:4.6200 H:4.6300 L:4.6200 C:4.6300 V:7756 TSO:0 A:4.6300 R:1.0000 CA:0.0000
+2014-09-20 (Sat) [5010]: <WEEKEND>
+2014-09-21 (Sun) [5011]: <WEEKEND>
+2014-09-22 (Mon) [5012]: O:4.6300 H:4.6300 L:4.6100 C:4.6200 V:177042 TSO:0 A:4.6200 R:1.0000 CA:0.0000
+2014-09-23 (Tue) [5013]: O:4.6200 H:4.6400 L:4.6200 C:4.6300 V:31583 TSO:0 A:4.6300 R:1.0000 CA:0.0000
+2014-09-24 (Wed) [5014]: O:4.6300 H:4.6300 L:4.6300 C:4.6300 V:2205 TSO:0 A:4.6300 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'5e6d35614be1e065c0a80146' and shares > 0 order by closed; 
+> Row 119:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-05-21 14:52:00.000000'
+>        COMMENT = 
+>     COMMISSION = 26.800000
+>   CURRENTORDER = X'8cc41919537bc536c0a86f99'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'358d20e7493c29a8c0a80132'
+>       MODIFIED = NULL
+>            NET = 2368.505776
+>         OPENED = TIMESTAMP '2014-05-20 17:12:22.000000'
+>          PRICE = 4.418854
+>     PRIMARYKEY = X'8cc21919537bc536c0a86f99'
+>         SECFEE = 0.060000
+>         SHARES = 536.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'5e6d35614be1e065c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last trades 5/21/14
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'5e6d35614be1e065c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'5e6d35614be1e065c0a80146' and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=STOCK_KEY and totalshares < 0)));
+No shorts
+
+apply the acquis
+last trade:
+quantum:  
+historical prices
+2014-09-24 (Wed) [5014]: O:4.6300 H:4.6300 L:4.6300 C:4.6300 V:2205 TSO:0 A:4.6300 R:1.0000 CA:0.0000
+
+going with 20140924  4.70
+
+/Marketocracy/bin/cahelper -symbol  CHRM  -effective 20140924 -type ACQUIS -exchange UN -acqType 1 -acqCash 4.70 -acqShare 0 -purchaser CHRM   >& /Users/build/caout/CHRM.20150529-ACQUIS.out
+CHRM.20150529-ACQUIS.out
+stocks:~/caout build$ tail -f CHRM.20150529-ACQUIS.out
+D: (05-29 14:30:23.953) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-29 14:30:49.575) cahelper started on 2015-05-29 14:30:49 -0400
+
+D: (05-29 14:30:49.892) There are [0] open tickets for CHRM on 20140924
+D: (05-29 14:30:50.770) StockFileLoad Version:4.0
+D: (05-29 14:30:50.770) Loading Stock Data
+D: (05-29 14:31:32.029) Building Lookup Index
+D: (05-29 14:31:37.106) Finished Building Index
+D: (05-29 14:31:41.141) Finished Loading Stock Data
+D: (05-29 14:31:41.261) Connection to 192.168.111.172:6666 succeeded
+D: (05-29 14:31:41.612) {
+    "ACQUIRED_STOCK" = CHRM; 
+    "ACQUIRING_STOCK" = "CHRM_FIX"; 
+    AMOUNT = 4.7; 
+    APPLIED = 1; 
+    DATE = 20140924; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CHRM_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (05-29 14:31:43.246) SUCCESS
+D: (05-29 14:31:43.246) cahelper finished 2015-05-29 14:31:43 -0400
+
+
+Check the results 
+select * from mstockalias where STOCKKEY = X'5e6d35614be1e065c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16112R101
+>           DATE = TIMESTAMP '2010-05-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Charm Communications Inc
+>     PRIMARYKEY = X'5e6e35614be1e065c0a80146'
+>       STOCKKEY = X'5e6d35614be1e065c0a80146'
+>         SYMBOL = CHRM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 16112R101
+>           DATE = TIMESTAMP '2014-09-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Charm Communications Inc
+>     PRIMARYKEY = X'39d55b305568b059c0a86f92'
+>       STOCKKEY = X'5e6d35614be1e065c0a80146'
+>         SYMBOL = CHRM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401010
+>       STYLEKEY = UU
+
+
+
+select * from mcorporateaction where aliaskey =X'39d55b305568b059c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'39d55b305568b059c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CHRM  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|4.700000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150529:023049
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-09-24 00:00:00.000000'
+>         BB_IDENTIFIER = CHRM_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-24 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CHRM_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-09-24 00:00:00.000000'
+>            PRIMARYKEY = X'39cf5b305568b059c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'39cf5b305568b059c0a86f92';
+> Row 1:
+>   _C001 = 11.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'39cf5b305568b059c0a86f92'));
+11 fundkeys   save to CA issues CHRM fundkeys.txt
+
+let's check our member 
+
+check the member waynoooo
+your holdings of CHRM 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+AMF 	0 	N/A 	N/A
+HKT 	0 	$.00 	0.00%  <-- expand 
+WHTF 	0 	N/A 	N/A
+WTAF 	0 	N/A 	N/A
+TSF3 	0 	N/A 	N/A
+WLPF 	0 	N/A 	N/A
+WUPG 	0 	N/A 	N/A
+WDIV 	0 	N/A 	N/A
+WSPF 	0 	N/A 	N/A
+DIV12 	0 	N/A 	N/A
+RLM 	0 	N/A 	N/A
+
+HKT LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 16, 2013 		24870 	24870 	Buy
+Sep 24, 2014 	24870 	-24870 		Corporate Action
+Total: 0
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 16, 2013 	24,870 	$1,243.50 	$108,688.04 	$4.37
+  	  	 
+SELLS
+You have no sells for this position
+
+check for this on 5/30/15
+member waynoooo HKT fund date: 20140924    shares 24870 * $4.70= $116889.00
+
+6/1/15
+ CHRM has been acquired 	right curve
+  	  	
+Charm Communications Inc acquired by a private company on 2014-09-24 00:00:00.
+  	  	 
+left curve 	  cash dividends paid by CHRM 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+22 Mar 12 	26 Mar 12 	16 Apr 12 	75 	$0.32 	Dividend amount:0.32 per share.
+  	  	 
+
+acquis is there on the old site 
+let's invalidate ok
+log in as waynoooo
+
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+09/24/2014 	$1,125,865.60 	$0.00 	$30.85 	$116,889.00 	$268.45 	$0.00 	$1,242,517.00 	$3,699,688.63 	$4,942,205.63 	100,000 	$49.42 	Yes
+
+expand
+trades on September 24, 2014 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	CHRM 	24,870 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+cash is there in the legacy site.
+
+now let's reprice all funds involved on the new site
+Done!
+3 Funds Processed
+63 Queries Processed
+
+let's log in on the new site as waynoooo
+get password BIGBEAR68
+
+I don't see the cash paid or the transaction of disposing of the CHRM  The shares are in his HKT fund the day before.
+/Marketocracy/bin/dbtool lookup fund waynoooo
+fund: waynoooo
+  PK: [611F32C94203D902C0A80133]
+  symbol: [HKT]
+  managerKey: [EF7107AA40650D41FFFFFFFF]
+  loginName: [waynoooo]
+
+try repricing thsi one 
+Feld-fund-keyDone!
+1 Funds Processed
+21 Queries Processed
+
+6/1/15
+20140924
+2014-09-24  4.70  * 24870 = $116,889.00   cash is there on the old and mew site  HKT fund
+dividends are there on the new site 
+
+closing this out

@@ -1,0 +1,305 @@
+date: 6/15/15 
+ticker: GEJ
+
+yahoo:  nothing
+
+quantum:  nothing 
+
+oursite: 
+Symbol: GEJ 	Name: GENERAL ELEC CAP COR 	Price: $25.16
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+CUSIP changes for GEJ 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+01 Jan 02 		369622451 	Change in any of identification numbers (CUSIP) of a security from to 369622451
+  	  	 
+left curve 	  name changes for GEJ 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+01 Jan 02 		GENERAL ELEC CAP COR 	Change in the name of issuer from to GENERAL ELEC CAP COR
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:GENERAL ELEC CAP COR  Symbol:GEJ
+Date: 06/15/2015
+
+3 users found
+
+1	advisorcfa	castaways2006	rnutt	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'GEJ';  
+> Row 1:
+>   STOCKKEY = X'7b9a4f2d46993835c0a80146'
+
+select * from mstockalias where stockkey= X'7b9a4f2d46993835c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = GENERAL ELEC CAP COR
+>           DATE = TIMESTAMP '2002-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = 369622451
+>     PRIMARYKEY = X'7b9b4f2d46993835c0a80146'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = GENERAL ELEC CAP COR
+>           DATE = TIMESTAMP '2002-01-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENERAL ELEC CAP COR
+>     PRIMARYKEY = X'86f51da6469c7e9cc0a8013c'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 369622451
+>           DATE = TIMESTAMP '2002-01-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENERAL ELEC CAP COR
+>     PRIMARYKEY = X'721d4416469c96c2c0a8013c'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GEJ'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GEJ
+>>>> dbtool started at 2015-06-15 17:12:01 -0400
+stock: GEJ
+  PK       : [7B9A4F2D46993835C0A80146]
+  companyID: [17444]
+  symbol   : [GEJ]
+  name     : [369622451]
+  date     : [2002-01-01 00:00:00]
+  status   : [Active]
+stock: GEJ
+  PK       : [7B9A4F2D46993835C0A80146]
+  companyID: [17444]
+  symbol   : [GEJ]
+  name     : [GENERAL ELEC CAP COR]
+  date     : [2002-01-01 00:00:01]
+  status   : [Active]
+stock: GEJ
+  PK       : [7B9A4F2D46993835C0A80146]
+  companyID: [17444]
+  symbol   : [GEJ]
+  name     : [GENERAL ELEC CAP COR]
+  date     : [2002-01-01 00:00:02]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-15 17:12:01 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17444
+2012-04-09 (Mon) [4116]: O:25.3299 H:25.4300 L:25.3200 C:25.3400 V:46375 TSO:0 A:25.3400 R:1.0000 CA:0.0000
+2012-04-10 (Tue) [4117]: O:25.3500 H:25.4360 L:25.3200 C:25.3500 V:52661 TSO:0 A:25.3500 R:1.0000 CA:0.0000
+2012-04-11 (Wed) [4118]: O:25.4000 H:25.4400 L:25.3299 C:25.3400 V:54219 TSO:0 A:25.3400 R:1.0000 CA:0.0000
+2012-04-12 (Thu) [4119]: O:25.3900 H:25.5300 L:25.3700 C:25.5000 V:74191 TSO:0 A:25.5000 R:1.0000 CA:0.0000
+2012-04-13 (Fri) [4120]: O:25.4300 H:25.4899 L:25.4100 C:25.4600 V:22370 TSO:0 A:25.4600 R:1.0000 CA:0.0000
+2012-04-14 (Sat) [4121]: <WEEKEND>
+2012-04-15 (Sun) [4122]: <WEEKEND>
+2012-04-16 (Mon) [4123]: O:25.4600 H:25.5880 L:25.4200 C:25.4899 V:50548 TSO:0 A:25.4899 R:1.0000 CA:0.0000
+2012-04-17 (Tue) [4124]: O:25.5000 H:25.5500 L:25.4400 C:25.4700 V:27445 TSO:0 A:25.4700 R:1.0000 CA:0.0000
+2012-04-18 (Wed) [4125]: O:25.4500 H:25.5700 L:25.4500 C:25.5300 V:31395 TSO:0 A:25.5300 R:1.0000 CA:0.0000
+2012-04-19 (Thu) [4126]: O:25.1800 H:25.2100 L:25.1100 C:25.1300 V:88169 TSO:0 A:25.1300 R:1.0000 CA:0.0000
+2012-04-20 (Fri) [4127]: O:25.1600 H:25.1800 L:25.0600 C:25.1600 V:77870 TSO:0 A:25.1600 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'7b9a4f2d46993835c0a80146' and shares > 0 order by closed; 
+> Row 12:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-16 11:18:00.000000'
+>        COMMENT = 
+>     COMMISSION = 25.000000
+>   CURRENTORDER = X'94955c224f88836cc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'e2d553b241fad2b6c0a80133'
+>       MODIFIED = NULL
+>            NET = 12787.434000
+>         OPENED = TIMESTAMP '2012-04-13 15:50:04.000000'
+>          PRICE = 25.574868
+>     PRIMARYKEY = X'94935c224f88836cc0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'7b9a4f2d46993835c0a80146' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7b9a4f2d46993835c0a80146' and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'7b9a4f2d46993835c0a80146' and totalshares < 0)));
+
+apply the acquis
+quantum:  nothing 
+last ticket: 2012-04-16     price 25.574868
+last price:  2012-04-20 (Fri) [4127]: O:25.1600 H:25.1800 L:25.0600 C:25.1600 V:77870 TSO:0 A:25.1600 R:1.0000 CA:0.0000
+
+going with 20120420 25.16
+
+/Marketocracy/bin/cahelper -symbol  GEJ  -effective 20120420 -type ACQUIS -exchange UN -acqType 1 -acqCash 25.16 -acqShare 0 -purchaser GEJ   >& /Users/build/caout/GEJ.20150615-DELIST.out 
+
+
+GEJ.20150615-DELIST.out
+stocks:~/caout build$ tail -f GEJ.20150615-DELIST.out
+D: (06-15 17:19:47.017) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-15 17:20:18.498) cahelper started on 2015-06-15 17:20:18 -0400
+
+D: (06-15 17:20:18.783) There are [0] open tickets for GEJ on 20120420
+D: (06-15 17:20:18.994) StockFileLoad Version:4.0
+D: (06-15 17:20:18.994) Loading Stock Data
+D: (06-15 17:21:06.953) Building Lookup Index
+D: (06-15 17:21:13.064) Finished Building Index
+D: (06-15 17:21:17.724) Finished Loading Stock Data
+D: (06-15 17:21:17.846) Connection to 192.168.111.172:6666 succeeded
+D: (06-15 17:21:17.895) {
+    "ACQUIRED_STOCK" = GEJ; 
+    "ACQUIRING_STOCK" = "GEJ_FIX"; 
+    AMOUNT = 25.16; 
+    APPLIED = 1; 
+    DATE = 20120420; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GEJ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-15 17:21:18.548) SUCCESS
+D: (06-15 17:21:18.548) cahelper finished 2015-06-15 17:21:18 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'7b9a4f2d46993835c0a80146'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = GENERAL ELEC CAP COR
+>           DATE = TIMESTAMP '2002-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = 369622451
+>     PRIMARYKEY = X'7b9b4f2d46993835c0a80146'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = GENERAL ELEC CAP COR
+>           DATE = TIMESTAMP '2002-01-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENERAL ELEC CAP COR
+>     PRIMARYKEY = X'86f51da6469c7e9cc0a8013c'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 369622451
+>           DATE = TIMESTAMP '2002-01-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENERAL ELEC CAP COR
+>     PRIMARYKEY = X'721d4416469c96c2c0a8013c'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 369622451
+>           DATE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENERAL ELEC CAP COR
+>     PRIMARYKEY = X'0a174ab7557f4192c0a86f92'
+>       STOCKKEY = X'7b9a4f2d46993835c0a80146'
+>         SYMBOL = GEJ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'0a174ab7557f4192c0a86f92';
+> Row 1:
+>              ALIASKEY = X'0a174ab7557f4192c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GEJ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|25.160000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150615:052018
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-04-20 00:00:00.000000'
+>         BB_IDENTIFIER = GEJ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GEJ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-04-20 00:00:00.000000'
+>            PRIMARYKEY = X'0a114ab7557f4192c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'0a114ab7557f4192c0a86f92';
+> Row 1:
+>   _C001 = 3.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'0a114ab7557f4192c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'c7e9494143b14534c0a80132'
+> Row 2:
+>   FUNDKEY = X'22412ff7721c6a6678cd169a'
+> Row 3:
+>   FUNDKEY = X'e70653b241fad354c0a80133'
+save to CA issues GEJ fundkeys.txt
+check on 6/16/15   invalidate funds
+advisorcfa TKSLF fund  2012-04-20 
+
+check MAdmin
+
+6/17/15
+GEJ has been acquired 	right curve
+  	  	
+GENERAL ELEC CAP COR acquired by a private company on 2012-04-20 00:00:00. 
+
+invalidate
+done
+reprice
+check MAdmin no one
+closing this out 
+

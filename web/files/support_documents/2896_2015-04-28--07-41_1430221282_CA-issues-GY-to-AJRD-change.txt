@@ -1,0 +1,580 @@
+date:  4/28/15
+ticker GY   change
+problem:  Ticker GY has changed to AJRD, affecting mkoza_TGF.  (from Dan)
+yahoo:
+nothing
+
+quantum:
+GenCorp, Inc.
+Ticker Symbol: GY     CUSIP: 368682100     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  GenCorp, Inc. is a manufacturer of aerospace and defense products and systems with a real estate segment that includes activities related to the re-zoning, entitlement, sale, and leasing of its excess real estate assets.
+
+Small Cap Stock -   Market Value $ 313 Million
+Click for current GY price quote from the NYSE
+
+
+
+our site:
+Symbol: GY 	Name: GENCORP 	Price: $20.80
+Volume: 257,579 	Sector: Industrials 	Change: $0.00
+Short Volume: 498,097 	Style: Small Cap : Blend 	Market Cap: $1,216,800,000
+Avg Volume: 498,097 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $20.99 	Year High: $23.39 	High: $20.97
+200 Day Ave: $18.27 	Year Low: $15.11 	Low: $20.76
+
+
+CAs
+Corporate Actions for GENCORP 	  April 27, 2015
+left curve 	  cash dividends paid by GY 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+28 Jul 00 	28 Jul 00 	28 Jul 00 	N/A 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 00 	30 Oct 00 	30 Oct 00 	N/A 	$0.03 	Dividend amount:0.03 per share.
+30 Jan 01 	01 Feb 01 	28 Feb 01 	4 	$0.03 	Dividend amount:0.03 per share.
+27 Apr 01 	01 May 01 	31 May 01 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 01 	01 Aug 01 	31 Aug 01 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 01 	01 Nov 01 	30 Nov 01 	4 	$0.03 	Dividend amount:0.03 per share.
+07 Feb 02 	11 Feb 02 	28 Feb 02 	4 	$0.03 	Dividend amount:0.03 per share.
+29 Apr 02 	01 May 02 	31 May 02 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 02 	01 Aug 02 	30 Aug 02 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 02 	01 Nov 02 	29 Nov 02 	4 	$0.03 	Dividend amount:0.03 per share.
+13 Feb 03 	18 Feb 03 	28 Feb 03 	4 	$0.03 	Dividend amount:0.03 per share.
+29 Apr 03 	01 May 03 	30 May 03 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 03 	01 Aug 03 	29 Aug 03 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 03 	03 Nov 03 	28 Nov 03 	4 	$0.03 	Dividend amount:0.03 per share.
+11 Feb 04 	16 Feb 04 	27 Feb 04 	4 	$0.03 	Dividend amount:0.03 per share.
+20 May 04 	24 May 04 	28 May 04 	4 	$0.03 	Dividend amount:0.03 per share.
+
+Let's see what we have in the database
+
+select distinct stockkey from mstockalias where symbol='GY';
+> Row 1:
+>   STOCKKEY = X'15130e21390b096ac0a80116'
+select * from mstockalias where STOCKKEY = X'15130e21390b096ac0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 368682100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENCORP
+>     PRIMARYKEY = X'15140e21390b096ac0a80116'
+>       STOCKKEY = X'15130e21390b096ac0a80116'
+>         SYMBOL = GY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = SB
+select * from mcorporateaction where aliaskey= X'15140e21390b096ac0a80116' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.03|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.03|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.03|CP_RECORD_DT|20000728|CP_PAY_DT|20000728|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-07-28 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'6f76064939e7f1c0c0a801dc'
+>               VERSION = 1
+> Row 2:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_NOTES||CP_NET_AMT|0.03|CP_PAR_PCT||CP_BONUS_AMT||CP_FREQ||CP_TAX_AMT|0.03|CP_FOREIGN_AMT||CP_REINVEST_RATIO||CP_GROSS_AMT|0.03|CP_RECORD_DT|20001030|CP_PAY_DT|20001030|CP_DVD_TYPA|1000|CP_DVD_CRNCY||CP_FRANKED_AMT||CP_STOCK_OPT|N|CP_PX|
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = NULL
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-10-30 15:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 16
+>              BB_RCODE = NULL
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'5c4c015b39fed6eec0a80114'
+>               VERSION = 1
+> Row 3:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010130|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|N.A.|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010201|CP_PAY_DT|20010228|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6207097
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = Gencorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'3d254a1b3a777feac0a801dc'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010427|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|N.A.|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010501|CP_PAY_DT|20010531|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6443156
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = Gencorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-04-27 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-03-28 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'98fa4e2a3aea247ac0a801dc'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20010730|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20010801|CP_PAY_DT|20010831|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6928498
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = Gencorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-07-20 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1ebe30a33b661a4ac0a801dc'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20011030|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT|N.A.|CP_FREQ|4|CP_TAX_RT|N.A.|CP_TAX_AMT|N.A.|CP_FOREIGN_AMT|N.A.|CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT|N.A.|CP_RECORD_DT|20011101|CP_PAY_DT|20011130|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT|N.A.|CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7117168
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = Gencorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-09-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'262769f43bdf69e1c0a801dc'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020207|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|4|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT| |CP_RECORD_DT|20020211|CP_PAY_DT|20020228|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 7701565
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = Gencorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-02-07 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-01-31 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-01-31 00:00:00.000000'
+>            PRIMARYKEY = X'5d7820513c63401dc0a801dc'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020429|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|4|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT| |CP_RECORD_DT|20020501|CP_PAY_DT|20020531|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7930651
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-04-29 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-03-27 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'62d671673ccdfb54c0a801dc'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020730|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|4|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT| |CP_RECORD_DT|20020801|CP_PAY_DT|20020830|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8514569
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-07-12 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-07-15 00:00:00.000000'
+>            PRIMARYKEY = X'5c9657163d474553c0a801dc'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20021030|CP_NOTES|N.A.|CP_NET_AMT|0.030000|CP_ADJ|1.000000|CP_BONUS_AMT| |CP_FREQ|4|CP_TAX_RT| |CP_TAX_AMT| |CP_FOREIGN_AMT| |CP_REINVEST_RATIO|N.A.|CP_GROSS_AMT|0.030000|CP_PAR_PCT| |CP_RECORD_DT|20021101|CP_PAY_DT|20021129|CP_DVD_TYP|1000|CP_DVD_CRNCY|USD|CP_FRANKED_AMT| |CP_STOCK_OPT|U|CP_PX|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8939464
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'83594ea23dc09d8ec0a80146'
+>               VERSION = NULL
+> Row 11:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20030218|CP_PAY_DT|20030228|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20030213|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10223130
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-02-13 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-02-05 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'e2be26693e4c5bc1c0a80146'
+>               VERSION = NULL
+> Row 12:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20030501|CP_PAY_DT|20030530|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20030429|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 10795623
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-04-29 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-03-26 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'67856da33eaf2e5dc0a80146'
+>               VERSION = NULL
+> Row 13:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20030801|CP_PAY_DT|20030829|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20030730|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 11820750
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-07-11 00:00:00.000000'
+>          BB_NUMFIELDS = 20
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'35633c303f287869c0a80146'
+>               VERSION = NULL
+> Row 14:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20031103|CP_PAY_DT|20031128|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20031030|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 12459679
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2003-10-30 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2003-09-24 00:00:00.000000'
+>          BB_NUMFIELDS = 20
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'ba623fc63fa1d07ec0a80146'
+>               VERSION = NULL
+> Row 15:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20040216|CP_PAY_DT|20040227|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20040211|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 13634744
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-02-11 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-02-04 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'525b41ab402aec78c0a80146'
+>               VERSION = NULL
+> Row 16:
+>              ALIASKEY = X'15140e21390b096ac0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20040524|CP_PAY_DT|20040528|CP_FREQ|4|CP_NET_AMT|0.030000|CP_TAX_AMT| |CP_GROSS_AMT|0.030000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20040520|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 14618972
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2004-05-20 00:00:00.000000'
+>         BB_IDENTIFIER = GY      UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-05-12 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2004-05-12 00:00:00.000000'
+>            PRIMARYKEY = X'5f85309740ad62bec0a80146'
+>               VERSION = NULL
+
+select distinct stockkey from mstockalias where symbol='AJRD';
+nothing
+
+
+CUSIP = 
+our site: 368682100  nothing comes up
+check what quantum has  368682100
+Steve confirms that this is the correct cusip
+
+let's look for dividends
+looks like no missing dividends
+
+let's prepare the name change and the ticker change CAs
+
+change name
+/Marketocracy/bin/cahelper -symbol GY -effective 20150427 -type CHG_NAME -exchange UQ -newName "AEROJET ROCKETDYNE HOLDINGS" >& /Users/build/caout/GY.20150427-CHG_NAME.out
+
+change ticker
+/Marketocracy/bin/cahelper -symbol AJRD -effective 20150427 -type CHG_TKR -exchange UQ -oldSymbol GY >& /Users/build/caout/GY.20150427-CHG_TKR_to_AJRD.out
+
+
+let's see if the changes came in
+they are in the bloomberg feed 
+
+let's check again now
+select * from mstockalias where STOCKKEY = X'15130e21390b096ac0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 368682100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENCORP
+>     PRIMARYKEY = X'15140e21390b096ac0a80116'
+>       STOCKKEY = X'15130e21390b096ac0a80116'
+>         SYMBOL = GY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = SB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 368682100
+>           DATE = TIMESTAMP '2015-04-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = GENCORP
+>     PRIMARYKEY = X'34834b0c553ec302c0a86f92'
+>       STOCKKEY = X'15130e21390b096ac0a80116'
+>         SYMBOL = AJRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = SB
+	select * from mcorporateaction where aliaskey=X'34834b0c553ec302c0a86f92';
+> Row 1:
+>              ALIASKEY = X'34834b0c553ec302c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|GY US|CP_NEW_TKR|AJRD US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 105161868
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-27 00:00:00.000000'
+>         BB_IDENTIFIER = GY      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>            PRIMARYKEY = X'2224547a55245f65c0a86f92'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 368682100
+>           DATE = TIMESTAMP '2015-04-27 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aerojet Rocketdyne Holdings In
+>     PRIMARYKEY = X'decf4c7e553ec3f1c0a86f92'
+>       STOCKKEY = X'15130e21390b096ac0a80116'
+>         SYMBOL = AJRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = SB
+	select * from mcorporateaction where aliaskey=X'decf4c7e553ec3f1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'decf4c7e553ec3f1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|GenCorp Inc|CP_NEW_NAME|Aerojet Rocketdyne Holdings In|CP_NOTES|Full new name:  Aerojet Rocketdyne Holdings Inc
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 105161850
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-27 00:00:00.000000'
+>         BB_IDENTIFIER = GY      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>            PRIMARYKEY = X'2228547a55245f67c0a86f92'
+>               VERSION = NULL
+
+
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 007800105
+>           DATE = TIMESTAMP '2015-04-27 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Aerojet Rocketdyne Holdings In
+>     PRIMARYKEY = X'f2464c89553ec42bc0a86f92'
+>       STOCKKEY = X'15130e21390b096ac0a80116'
+>         SYMBOL = AJRD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20101010
+>       STYLEKEY = SB
+	select * from mcorporateaction where aliaskey=X'f2464c89553ec42bc0a86f92';
+> Row 1:
+>              ALIASKEY = X'f2464c89553ec42bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|368682100|CP_NEW_CUSIP|007800105|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US3686821006|CP_NEW_ISIN|US0078001056|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 105161892
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 100644
+>        BB_COMPANYNAME = GenCorp Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-27 00:00:00.000000'
+>         BB_IDENTIFIER = GY      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-04-07 00:00:00.000000'
+>            PRIMARYKEY = X'2226547a55245f66c0a86f92'
+>               VERSION = NULL
+
+
+ticker change, name change and CUSIP change
+
+check on 4/28/15  let Dan know
+
+ticker:  GY to AJRD
+name change: GenCorp Inc  to Aerojet Rocketdyne Holdings In
+cusip change:  368682100 to 007800105
+
+4/28/15 the change is there closing this out/
+symbol changes for AJRD 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+27 Apr 15 	GY 	AJRD 	Change in the ticker (trading) symbol from GY to AJRD
+  	  	 
+left curve 	  CUSIP changes for AJRD 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+27 Apr 15 	368682100 	007800105 	Change in any of identification numbers (CUSIP) of a security from 368682100 to 007800105
+  	  	 
+left curve 	  name changes for AJRD 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+27 Apr 15 	GenCorp Inc 	Aerojet Rocketdyne Holdings In 	Change in the name of issuer from GenCorp Inc to Aerojet Rocketdyne Holdings In
+  	  	 
+left curve 	  cash dividends paid by AJRD 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+28 Jul 00 	28 Jul 00 	28 Jul 00 	N/A 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 00 	30 Oct 00 	30 Oct 00 	N/A 	$0.03 	Dividend amount:0.03 per share.
+30 Jan 01 	01 Feb 01 	28 Feb 01 	4 	$0.03 	Dividend amount:0.03 per share.
+27 Apr 01 	01 May 01 	31 May 01 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 01 	01 Aug 01 	31 Aug 01 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 01 	01 Nov 01 	30 Nov 01 	4 	$0.03 	Dividend amount:0.03 per share.
+07 Feb 02 	11 Feb 02 	28 Feb 02 	4 	$0.03 	Dividend amount:0.03 per share.
+29 Apr 02 	01 May 02 	31 May 02 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 02 	01 Aug 02 	30 Aug 02 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 02 	01 Nov 02 	29 Nov 02 	4 	$0.03 	Dividend amount:0.03 per share.
+13 Feb 03 	18 Feb 03 	28 Feb 03 	4 	$0.03 	Dividend amount:0.03 per share.
+29 Apr 03 	01 May 03 	30 May 03 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Jul 03 	01 Aug 03 	29 Aug 03 	4 	$0.03 	Dividend amount:0.03 per share.
+30 Oct 03 	03 Nov 03 	28 Nov 03 	4 	$0.03 	Dividend amount:0.03 per share.
+11 Feb 04 	16 Feb 04 	27 Feb 04 	4 	$0.03 	Dividend amount:0.03 per share.
+20 May 04 	24 May 04 	28 May 04 	4 	$0.03 	Dividend amount:0.03 per share.

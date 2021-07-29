@@ -1,0 +1,832 @@
+date:   12/14/15
+UE-W to UE
+
+> Row 17:
+>              ALIASKEY = X'207153ae54b9a74fc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|UE-W US|CP_NEW_TKR|UE US|CP_NOTES|End of when issued trading.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 100576795
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 39980720
+>        BB_COMPANYNAME = Urban Edge Properties
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>         BB_IDENTIFIER = UE-W    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-24 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = UE-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-24 00:00:00.000000'
+>            PRIMARYKEY = X'640e2a45549b5266c0a86f92'
+>               VERSION = NULL
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|UE US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Urban Edge Properties|CP_ID_BB_COMP|39980720|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20150115|CP_RECORD_DT|20150107|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.905714|CP_ADJ_DT|20150116|CP_TKR|UE US|CP_DUE_BILL_RED_DT|20150121|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006BFYQN0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006BFYQM1|CP_SPINOFF_ID_BB_SEC_NUM_DES|UE|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 89898602
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 101608
+>        BB_COMPANYNAME = Vornado Realty Trust
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNO     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-11 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = VNO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-15 00:00:00.000000'
+>            PRIMARYKEY = X'5c304dd154b9a565c0a86f92'
+>               VERSION = NULL
+'
+
+we do have an unapplied stock UE.   do we have this on or site?
+parent company is VNO 
+
+
+
+Symbol: VNO	Name: VORNADO REALTY TRUST	Price: $97.65
+Volume: 941,637	Sector: Financials	Change: $1.05
+Short Volume: 731,197	Style: Large Cap : Blend	Market Cap: $17,341,921,800
+Avg Volume: 731,197	 Exchange: NYSE	Today: 1.09%
+50 Day Ave: $97.24	Year High: $126.62	High: $97.71
+200 Day Ave: $98.93	Year Low: $84.60	Low: $95.71
+
+do we have anyone holding UE-W / UE  
+select distinct stockkey from mstockalias where primarykey=X'207153ae54b9a74fc0a86f92';
+> Row 1:
+>   STOCKKEY = X'b07b5f1b54ab26bec0a86f92'
+select * from mstockalias where STOCKKEY = X'b07b5f1b54ab26bec0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-01-05 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Urban Edge Properties
+>     PRIMARYKEY = X'b07c5f1b54ab26bec0a86f92'
+>       STOCKKEY = X'b07b5f1b54ab26bec0a86f92'
+>         SYMBOL = UE-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 91704F104
+>           DATE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Urban Edge Properties
+>     PRIMARYKEY = X'207153ae54b9a74fc0a86f92'
+>       STOCKKEY = X'b07b5f1b54ab26bec0a86f92'
+>         SYMBOL = UE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mstock where primarykey=X'b07b5f1b54ab26bec0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'207153ae54b9a74fc0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'b07b5f1b54ab26bec0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 27634 <----------------------- companyID
+>   WINDOWIDENTITYKEY = NULL
+
+select count(*) from mticket where stockkey=X'b07b5f1b54ab26bec0a86f92';
+> Row 1:
+>   _C001 = 0.000000
+
+no one holds this we can simply delete it 
+STOCKKEY = X'b07b5f1b54ab26bec0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'b07b5f1b54ab26bec0a86f92'; 
+
+delete from mwindowstock where stockkey=X'b07b5f1b54ab26bec0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'b07b5f1b54ab26bec0a86f92');
+
+delete from mstockalias where stockkey=X'b07b5f1b54ab26bec0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'b07b5f1b54ab26bec0a86f92');   
+
+delete from mposition where stockkey=X'b07b5f1b54ab26bec0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'b07b5f1b54ab26bec0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'b07b5f1b54ab26bec0a86f92');
+
+delete from mticket where stockkey=X'b07b5f1b54ab26bec0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'b07b5f1b54ab26bec0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'b07b5f1b54ab26bec0a86f92';  
+
+commit;
+
+set commit true;
+
+
+select distinct stockkey from mstockalias where primarykey=X'207153ae54b9a74fc0a86f92';
+nothing
+we still have price history for COMPANYID = 27634 <----------------------- companyID
+select min(daynumber), max(daynumber) from stockprices where COMPANYID = 27634;
+> Row 1:
+>   _C001 = 5117
+>   _C002 = 5457
+
+select distinct stockkey from mstockalias where symbol='VNO';
+> Row 1:
+>   STOCKKEY = X'b7171029390b49a1c0a80116'
+select * from mstockalias where stockkey=X'b7171029390b49a1c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929042109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = VORNADO REALTY TRUST
+>     PRIMARYKEY = X'b7181029390b49a1c0a80116'
+>       STOCKKEY = X'b7171029390b49a1c0a80116'
+>         SYMBOL = VNO
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40402010
+>       STYLEKEY = LB
+	select * from mcorporateaction where aliaskey=X'b7181029390b49a1c0a80116' order by BB_EFFECTIVE;
+lots of stuff.
+
+this is the unapplied SPIN
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|UE US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Urban Edge Properties|CP_ID_BB_COMP|39980720|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20150115|CP_RECORD_DT|20150107|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.905714|CP_ADJ_DT|20150116|CP_TKR|UE US|CP_DUE_BILL_RED_DT|20150121|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG006BFYQN0|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG006BFYQM1|CP_SPINOFF_ID_BB_SEC_NUM_DES|UE|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 89898602
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 101608
+>        BB_COMPANYNAME = Vornado Realty Trust
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNO     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-11 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = VNO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-15 00:00:00.000000'
+>            PRIMARYKEY = X'5c304dd154b9a565c0a86f92'
+>               VERSION = NULL
+'
+-symbol VNO
+-effective 20150116
+-type SPIN
+-spinOffSymbol UE
+-payDate  20150115
+-recordDate 20150107
+-ratio 0.500000
+-name 'Urban Edge Properties'
+
+/Marketocracy/bin/cahelper -symbol VNO  -effective 20150116 -type SPIN -exchange UQ -spinOffSymbol UE -payDate  20150115 -recordDate 20150107 -name 'Urban Edge Properties' -ratio 0.500000 >& /Users/build/caout/VNO.20151214-SPIN-UE.out 
+D: (12-14 22:19:32.986) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 22:20:31.716) cahelper started on 2015-12-14 22:20:31 -0500
+
+D: (12-14 22:20:44.303) StockFileLoad Version:4.0
+D: (12-14 22:20:44.303) Loading Stock Data
+D: (12-14 22:22:24.595) Building Lookup Index
+D: (12-14 22:22:36.606) Finished Building Index
+D: (12-14 22:22:45.963) Finished Loading Stock Data
+D: (12-14 22:22:46.020) Connection to 192.168.111.172:6666 succeeded
+	select distinct stockkey from mstockalias where symbol='EGICF';
+D: (12-14 22:23:23.850) SavingChanges for Stock Dividend out 101 of 830
+D: (12-14 22:23:58.913) SavingChanges for Stock Dividend out 201 of 830
+D: (12-14 22:25:05.008) SavingChanges for Stock Dividend out 301 of 830
+D: (12-14 22:25:38.621) SavingChanges for Stock Dividend out 401 of 830
+D: (12-14 22:26:07.265) {
+    APPLIED = 1; 
+    DATE = 20150116; 
+    FUNDS = (
+        "rdoud/RD Growth and Income Fund", 
+        "rogerman/Icant Delete's Dead Mutual Fund", 
+        "ghavens/Havens Real Estate & Gaming Fund", 
+        "jguinn/JD Guinn's Mutual Fund", 
+        "fshu/The fund", 
+        "eastcoastceo/Hawken Value Blend I", 
+        "rmcclure/Ryan McClure's Mutual Fund", 
+        "jteinert/Jay's Financial Fund", 
+        "dlinse/Select Real Estate", 
+        "quatto/quatto's Mutual Fund", 
+        "jpakula/GP Safety Fund", 
+        "dobiedon/Donna's Income Fund", 
+        "dnolten/Nolten Experimental Fund", 
+        "mcorley/MRC Real Estate Fund", 
+        "pcrawford/Possibility Mutual Fund", 
+        "chillman/CJH Health, Pharamceutical and Biotech Fund", 
+        "chillman/Carolyn J Hillman's Real Estate Fund", 
+        "chillman/CJH Health Fund", 
+        "chillman/CJH Natural Resources Fund", 
+        "chillman/CJH Oil & Utility", 
+        "dobiedon/RANKEN STRONG", 
+        "dobiedon/Life File", 
+        "alee4/APL Real Estate Fund", 
+        "kkooper/ Kooper's Antelope Fund", 
+        "jmcleod/J M  NEW FINANCIAL FUND", 
+        "dobiedon/Donna First Mutual Fund", 
+        "wcarter/Carter Equity Income Fund", 
+        "florica/Balance 5", 
+        "jpaschke/Focused REIT", 
+        "jht/GCF AO", 
+        "betatester/beta tester's Mutual Fund", 
+        "rprince77/rprince77's Mutual Fund", 
+        "jvhovig/J. V. Hovig Solid Growth Fund", 
+        "jdberia/JDB Select Services", 
+        "pbrenneman/pbrenneman's Mutual Fund", 
+        "jnakamura/jnakamura's Mutual Fund", 
+        "bigbob/bigbob's Mutual Fund", 
+        "jmcknight1/McKnight Mutual Fund", 
+        "coolperson0606/coolperson0606's Mutual Fund", 
+        "mkaraus/This Should Do It", 
+        "ssingleton/ssingleton's TopHoldings", 
+        "DELETE_soho2oma_30130090/soho2oma's defensive value fund", 
+        "dnolten/Nolten Growth Fund", 
+        "bwisda/Wisda REIT Fund", 
+        "jonthompson/One armed bandit", 
+        "rdieter/RD REIT", 
+        "mowens/mowens's Real Estate Fund", 
+        "jpakula/jpakula's Mutual Fund", 
+        "bullwinkle/bullwinkle's REIT Fund", 
+        "DELETE_scoobydewdew_30130086/scoobydewdew's Realty Fund", 
+        "scott1964/Scott1964's Mutual Fund", 
+        "feicht/Feicht Equity Fund", 
+        "feicht/Feicht Stability Fund", 
+        "rcutrupi/Cutrupi Dow Plus", 
+        "DELETED_2004660/J. Henry Value Fund", 
+        "DELETED_2004660/J. Henry Select Mutual Fund", 
+        "munder12/Mechanical Momentum Investing", 
+        "bstangby/Only Going Up Fund", 
+        "kochmm/the best balanced fund", 
+        "kochmm/Verismo Fund", 
+        "jbarker/World Class Mutual Fund", 
+        "seabatid/Medium REIT Mutual Fund", 
+        "hrsmn2wr/REO Mutual Fund", 
+        "stanglx718/Real Estate & Land Development", 
+        "DELETED_wstevenson_200610121124001/william stevenson's Mutual Fund", 
+        "zpryor/Zacks High Dividend Fund", 
+        "slick2502/Gifford Financial Sector Fund", 
+        "beuler/2015 fidelity ETF", 
+        "neroclaudiuscaesar/Nero Diversified Growth Fund", 
+        "vestor22/vestor22's Mutual Fund", 
+        "jambartel/JB's Real Estate Related Fund", 
+        "slick2502/Gifford Total Return Fund", 
+        "slick2502/Gifford REIT Fund", 
+        "jspencelee/Spence's Value Fund", 
+        "jspencelee/Spence's RE,B,I fund", 
+        "llove4/Thug Love Mutual Fund", 
+        "cchamblee/plantation", 
+        "heber/TopStocks Mutual Fund", 
+        "btucker/total domestic return", 
+        "llove4/Love Balance Fund", 
+        "kenzomc/Chaos Mutual Fund", 
+        "sdonaldson/sdonaldson's Value Hound Fund", 
+        "glang/glang's REIT Blue Fund", 
+        "e/Long Term Fund", 
+        "rtsamuel3/rtsamuel3's 5-75-25-200", 
+        "dblade/etf demo fund", 
+        "dad1098/Flash2Fund", 
+        "cfilstead/cfilstead's Mutual Fund", 
+        "bjones4/Bill Jones REIT Fund", 
+        "slick2502/Gifford Income Fund", 
+        "thenich/TH Fund", 
+        "drose/drose's  Black Squirrel", 
+        "gfontana/Market", 
+        "DELETE_philmie_40619003/Philmie's Blend Fund", 
+        "mbrace/mbrace's  REIT Mutual Fund", 
+        "mvoloshen/Dividend Income Fund II", 
+        "ken7764/Ken's Equity Income", 
+        "dns2/dns2's Mutual Fund", 
+        "dhorn/Dave's Dividend Fund", 
+        "fishpond97/Fishpond97's REIT Fund", 
+        "paradigm_shift/Equilibrium Dividend Fund", 
+        "DELETED_drunkenbear_2009111209450001/Drunk and Faithful", 
+        "tacall/Anthem Dividend Fund", 
+        "sahmed2/sahmed2's dividend fund", 
+        "drcharles/Broadband Communications Fund", 
+        "sahmed2/sahmed2's Dividend Fund", 
+        "jfurches/jonathan's Mutual Fund", 
+        "bhamilton1/Hamilton High Yield Fund", 
+        "tglover/Realestate Bubble Fund", 
+        "mpapadopoulos/Markos Papadopoulos's Mutual Fund", 
+        "giabarba/Roaring Tiger Aggressive Growth Fund", 
+        "esit/Edward K. Sit's U.S. Equity Fund", 
+        "jtmuncey/Grutz's Mutual Fund", 
+        "lynndal/FolioFN", 
+        "ejrowland/ejrowland's Mutual Fund", 
+        "dalesuchomel/Roman Fund", 
+        "mikki33/Mikki33 Mechanical Trading Strategy", 
+        "ltgguy/ltgguy's other Fund", 
+        "mburic/Buric Growing Value Fund", 
+        "sullivan47/ADX indicator uptrend", 
+        "axixic01/Poso Mutual Fund", 
+        "licheng_apl/Licheng Large Cap Dividend Fund", 
+        "ogaldez/ogaldez's Mutual Fund", 
+        "ccraft1/Crafton Relative Dividend Value Fund", 
+        "chunghan/chunghan's Mutual Fund", 
+        "kharder/KJ Inflation Buster SHORT", 
+        "trino/Trino's High Yield Dividend Fund", 
+        "calamosstar/Finance 2", 
+        "calamosstar/calamosstar's Mutual Fund 2", 
+        "ebertm/EbertM's Mutual Fund", 
+        "gpakulak/Chart Busters Mutual Fund", 
+        "mikki33_2000/m-REIT 50 Index Fund", 
+        "laurab/Steady as we go", 
+        "sfmyer20/sfmyer20's DIV Fund", 
+        "jimyy/Jims Real Estate", 
+        "shussain2/SaifBank funds", 
+        "rcutrupi/Cutrupi Brandys  Dow Plus", 
+        "ryessup/Short Bear Fund", 
+        "jkmarsh/Marshall Income Fund", 
+        "abarzaghi/VALUEN", 
+        "jdberia/JDB Select Real Estate", 
+        "ryessup/Short Fund", 
+        "voodoo99/voodoo99's Mutual Fund", 
+        "marketj/marketj's Mutual Fund", 
+        "timesplitter02/Go Mike", 
+        "qrheaume/Short ETF Fund ", 
+        "jkmf/jkmf's Mutual Fund", 
+        "doctordangerous/Heyer Standards inc.", 
+        "sef_1968/F...'d Co. Fund", 
+        "proverdude/proverdude's REIT Fund", 
+        "kvolpus/kvolpus's Mutual Fund", 
+        "stever6000/stever6000's Large Cap Mutual Fund", 
+        "jdrouillet/Mate Amargo", 
+        "sphillips/REIT Fund", 
+        "qrheaume/Short Capitol Fund ", 
+        "jmcdowell/Jeff's First Short Fund", 
+        "direstrait/direstrait's Mutual Fund Short", 
+        "kroedel/Gold Coast Short Circuit Fund", 
+        "mt_suit/Fire of Orodruin", 
+        "dcooper07/dcooper07's Mutual Fund", 
+        "lwroblewski/BuySell Bear Fund", 
+        "whoatib/whoatib's Mutual Fund", 
+        "rostberg/rostberg's Over valued Fund", 
+        "compton07/compton07's Mutual Fund", 
+        "ahmet89/Ahmedigo's REIT Fund", 
+        "scraig/scraig's short fund", 
+        "lrabier/lrabier's short only fund", 
+        "voltage4/Troy's Mutual Fund", 
+        "airpfaff/Technology Growth & Convertibles", 
+        "tony22042/Robberbaron", 
+        "aporia/APORIA", 
+        "kinshade/kinshade's Mutual Fund", 
+        "sexi/sexi's Mutual Fund", 
+        "derave/derave's Worst Potential Change", 
+        "faboo28/faboo28's Mutual Fund", 
+        "rjd1836/New SHORT Trading Fund", 
+        "dsti/dsti's shorts", 
+        "ksl/LOF", 
+        "steveoregon25/steveoregon25's Merger Fund", 
+        "rollercoaster/Realty Income & Growth Fund", 
+        "irvine/GS Long Fund 2", 
+        "dwm/BENYS", 
+        "wynnemun/WM Index", 
+        "dwilber/don wilber's Mutual Fund", 
+        "hchueh1/Howie's beat RMS REIT FUND", 
+        "artnoc/artnoc's Kewl Shorts", 
+        "timingizeverything/Redy 2 Short  Mutual Fund", 
+        "thegate12/Real Estate", 
+        "rputnam332/rputnam332's Mutual Fund", 
+        "spparks/spparks's Mutual Fund", 
+        "jakebrown78/RidicUlusMLTPLS", 
+        "wfdavis/WFD Short A Fund", 
+        "whix/whix's Mutual Fund real estate", 
+        "figgypops/FIGGYPOP'S MAD MONEY FUND", 
+        "seans/Sean's Long Fund", 
+        "dardenmba83/Virginia Venture Fund", 
+        "jgoodyearbayou/Insiders Mutual Fund", 
+        "xerirex/XerireX Fund", 
+        "swang/Swangs Financial Industry", 
+        "jasonl36/jasonl36's REIT Fund", 
+        "wmvjohnson/Foundation MultiCap Fund", 
+        "whatabasscando/AOCSD", 
+        "bsundell/Bryans Income Fund", 
+        "dknepp1/Eureka Hedge Fund III", 
+        "rsteer/Bundle 3", 
+        "brett1478/AGA Long Fund", 
+        "cuhotelie1/oys2's Mutual Fund", 
+        "finarea/FINAREA Venice Fund", 
+        "aerarii_reditus/Polaron Value Fund", 
+        "kulasoft/Mad Money Fund", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "mvoloshen/MV Agressive Growth Fund", 
+        "mvoloshen/Technical Agressive Growth Fund", 
+        "johnboyny/johnboyny's Mutual Fund", 
+        "huckdisc/Huckdisc's Uncommon Value Fund", 
+        "huckdisc/huckdisc's Grow your Dough Slow Fund", 
+        "slee4/stephen lee's Mutual Fund", 
+        "eschmitzva/DSS Enterprises New Dawn Fund", 
+        "sensor75/sensor75's Mutual Fund", 
+        "nyujd/breakdowns", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "haleultimate/haleultimate's Short Fund", 
+        "mcbockalds/mcbockalds's Mutual Fund", 
+        "djackinstupid/djackinstupid's Large Cap Fund", 
+        "miked27/Mike's Diversified Fund", 
+        "miked27/Focus Fund", 
+        "milkrate/Zero Fund", 
+        "jsambors/jsambors Shorties", 
+        "blueship01/1er", 
+        "kramerdalvi/kramerdalvi's Mutual Fund", 
+        "jrheaume/Brown Bear Fund ", 
+        "dnjoroge/Zebra fund", 
+        "shaunna/Shaunna's Mutual Fund", 
+        "coaster/IMPACT GROWTH", 
+        "coaster/COASTER'S BIOTECH", 
+        "kvnfltn/Omega Fund", 
+        "yaseranwar/Yaser Anwar's Fund", 
+        "yaseranwar/Yaser Anwar's Mutual Fund", 
+        "jmak/REIT Sector", 
+        "capek/Mari Diversify", 
+        "gazpacho/Anthem Short", 
+        "tonkatoy2k2/tonkatoy2k2's Mutual Fund", 
+        "ramonhuerta/NYSE SHARP SHORT", 
+        "nrablicki/Barra Growth Select", 
+        "mikeytrousers/Jeff Meyers Mutual Fund", 
+        "champagnem/Mercury", 
+        "dihde/dihde's Mutual Fund", 
+        "harpstein/Harpstein's Mutual Fund - Long", 
+        "poorfessor3000/Poorfessor's Mutual Fund", 
+        "finanaliticaam/3", 
+        "sneidich/The Mutual Fund", 
+        "14246/the cramer fund", 
+        "ssgtagc/ssgtagc's Mutual Fund", 
+        "whippleguru/whippleguru's Mutual Fund", 
+        "ffis/FFIS Solo", 
+        "rlosanno/rlosanno's Mutual Fund", 
+        "apreuss/apreuss's Castaway", 
+        "mdr7u/mdr7u's Mutual Fund", 
+        "dskuncaitis/DK Short Fund", 
+        "dihde/REIT's and Real Estate", 
+        "apoth/Apoth REIT Fund", 
+        "freeye/reye trust ", 
+        "apreuss/apreuss's Mutual Fund", 
+        "apreuss/Fund Nr 3", 
+        "giracasa/GG's Corners Fund", 
+        "omarm1984/omarm1984's Mutual Fund", 
+        "dwoloch/dwoloch's Mutual Fund", 
+        "lpickup/too fast", 
+        "enteck/N&J Seg 1 Fund", 
+        "solyt/solyt's Mutual Fund", 
+        "simpleinvestor/Simply Unbiased Fund", 
+        "cmccann77/cmccann77's Mutual Fund", 
+        "jerzeyrican6689/jerzeyrican6689's Mutual Fund", 
+        "jthomasson/Thomasson Large Cap", 
+        "apreuss/apreuss's Mutual Fund", 
+        "apreuss/Fund Nr 2", 
+        "gholds/Gholds Mutual Fund", 
+        "argentina/argentina's Mutual Fund", 
+        "freeye/best of", 
+        "markus1980/markus1980's Mutual Fund", 
+        "aclassi/aclassi's high yield only", 
+        "aclassi/Dividend Heavy", 
+        "gholds/GHold's breathlessly overhyped short fund", 
+        "profilevalue/TRW Short Fund", 
+        "buffaloslim/BuffaloSlim's Mutual Fund", 
+        "isledive/Mystic Seven", 
+        "fredleblond/Yoda Mutual Fund", 
+        "vippy93/vippy93's Mutual Fund", 
+        "akeroydm/Akeroyd LTG", 
+        "drlaz/PIM's Best L/C Mid-Momentum", 
+        "kscruggs/kscruggs's Mutual Fund", 
+        "whipsaw/whipsaw's Short Fund", 
+        "brentpennell/Brent's Mutual Fund", 
+        "bentwrench/Financial Sector Fund", 
+        "nt21/QCM Value Fund", 
+        "gibsonator02/gibsonator02's Mutual Fund", 
+        "maaser/Maaser's 10 Stocks to Own Forever", 
+        "castaways2006/2007 B-Sides", 
+        "mr_spock/Various Diversified Holdings", 
+        "razgriz33/razgriz33's Mutual Fund", 
+        "r0b3m4n/r0b3m4n's Mutual Fund", 
+        "flajuie/Bundle Of Regular Income 'N' Growth", 
+        "glang/GCL-IRA", 
+        "regshih/regshih's Mutual Fund", 
+        "apreuss/Fund Nr1", 
+        "eckiecki2002/MaxDollar 2", 
+        "apreuss/TailLess", 
+        "apreuss/axel preuss's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "jasonhmuir/jasonhmuir's Mutual Fund", 
+        "jatput/jatput's Mutual Fund - short", 
+        "gchar19845/gchar19845's Mutual Fund", 
+        "regshih/regshih's Mutual Fund", 
+        "pmvai1/pmvai1's Mutual Fund", 
+        "apreuss/apreuss's Mutual Fund", 
+        "apreuss/apreuss's Mutual Fund", 
+        "scratchy/scratchy's Mutual Fund", 
+        "cherylsjohnson/Large Cap Success", 
+        "lz049/lz049's Mutual Fund", 
+        "gvan_arkel/Dropped", 
+        "renato/SHORT Mutual Fund", 
+        "DELETED_borisp_2009111209450006/The Camel's Back", 
+        "lwilliams3/Short Investment Fund ", 
+        "mebear/Underdog 1", 
+        "srombolli/Mkt Short Fund", 
+        "andrewkcook/andrewkcook's Mutual Fund", 
+        "jjohnson7/jjohnson7's Mutual Fund", 
+        "petter/PDI Short", 
+        "vanmeerten/Van Meerten - Short Value Line  Small Cap", 
+        "andrewkcook/ta0601", 
+        "lleanse/LPI REIT", 
+        "baruch/Utopia Value Fund", 
+        "rogeriopedrozo/Protection Mutual Fund", 
+        "pjhoehne/JT Hoehne Memorial Fund", 
+        "haleultimate/Subprime Short", 
+        "mccu1984/Guy McCumber's Mutual Fund", 
+        "pjhoehne/Jeremy Hoehne Memorial Fund", 
+        "nbillou/NB All Short Fund", 
+        "glang/George Lang Strat Lab Open Fund", 
+        "nbillou/SHRT2", 
+        "chris_nairn/chris_nairn's short Fund", 
+        "laurab/Dividend Mutual Fund", 
+        "ahoffard/shorts", 
+        "ahoffard/INTEREST RATES", 
+        "yszolomicki/Yarek Szolomicki Short Fund", 
+        "heightscapital/Heights Capital Partners Shorts", 
+        "rpatzman/Get shorty", 
+        "darryl_buchanan/Darryl's Short Fund", 
+        "chestnut/The Chestnut Fund", 
+        "dzmarket/dzmarket's Mutual Fund", 
+        "morrissett.twh/morrissett.twh's Mutual Fund", 
+        "smenk_99/smenk_99's Mutual Fund", 
+        "morrissett.twh/morrissett.twh's Mutual Fund", 
+        "kpersaud/KP I", 
+        "kpersaud/KP II", 
+        "asalvador/AGS Financial Fund", 
+        "minuet/The Falling Knife Short Portfolio", 
+        "bhamilton1/Hamilton Real Estate and Financial Services Fund", 
+        "hrick/Harrison's Basket of Whims", 
+        "franzmeister/franzmeister's short  Mutual Fund", 
+        "kpersaud/KPIII", 
+        "myeh/short fund", 
+        "orangey17/Bobby's short fund", 
+        "conflationary/conflationary's REIT sandbox", 
+        "okie918/okie918's Mutual Fund", 
+        "aekiko/aekiko's Mutual Fund", 
+        "mdista/MD Short And Sweet ", 
+        "avolodin/Real Estate Global Mutual Fund", 
+        "cburgess/S&P 500 Index", 
+        "kha42980/kha42980's Mutual Fund", 
+        "sand_down/Short Fund", 
+        "geogam/geogam's Mutual Fund", 
+        "okie918/HighYieldandREITFund", 
+        "vel007/vel007's Mutual Fund", 
+        "benpenner/Real Estate investments", 
+        "dondotters/dondotters's Mutual Fund", 
+        "elysejordan/Elyse Jordan's Mutual Fund", 
+        "blotka1234/T3V3", 
+        "ricardowong/Geminilaki SF", 
+        "neurotrader/The State Street Bull", 
+        "d_poquette/JKILLA", 
+        "nyhex/Naked Shorts", 
+        "Buzzsaw/Dean Sawyer Strat Lab Open Fund", 
+        "thestocksurfer/WIPEOUT", 
+        "rwsalisbury/abcdef", 
+        "trevorbicking/Global Multi-Asset Strategy Fund", 
+        "patientbe/real estate value investor", 
+        "ekeating/Daily Vendors", 
+        "hammerr/WV Capital Management Short", 
+        "freebirdro/bear", 
+        "asmith/Smith Financial Fund", 
+        "huyehara/huyehara's Mutual Fund", 
+        "mmalabayabas/MKM Short Opportunity Fund", 
+        "ssturner/Sturn's Bear Fund", 
+        "steinepstein/Steiny Short Fund", 
+        "larrylivingstone/Larry Livingstone's Short Fund", 
+        "jdrouillet/Vesre", 
+        "nlgravity/Horizon", 
+        "kgrpaxton/kgrpaxton's Mutual Fund", 
+        "djplan/djplan's Mutual Fund", 
+        "stockdocx99/Mike's short test", 
+        "valuist/valuist's Short fund", 
+        "dmnieren/dmnieren's Short Fund", 
+        "gunslingerloco/Short Fin, Air, Auto", 
+        "schaubey/schaubey's Short Mutual Fund", 
+        "luckyddawg/luckyddawg's obedience Mutual Fund", 
+        "luckyddawg/luckyddawg's Unlucky Baddawg Fund", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "mtom/MTom's BEAR Short Fund", 
+        "mtom/MTom's Short Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "markyen/markyen's Mutual Fund", 
+        "mtom/MTom 2008 Short Fund", 
+        "wchen2003/wchen2003's Mutual Fund", 
+        "jhamer/Short-Only Fund", 
+        "zygnoda/zygnoda's Mutual Fund", 
+        "stanglx718/How Much?! Short Fund", 
+        "mrcowie/Catch a Falling Knife", 
+        "wbauder/Quarterly return - Long", 
+        "jfrancois/jfrancois's Short Fund", 
+        "mshemel/Housing Recovery Fund", 
+        "dlancaster/dlancaster's Mutual Fund", 
+        "nlgravity/Opportunistic Value", 
+        "hatteress/hatteress's Mutual Fund", 
+        "thovland420/Fortune Top 9 2010", 
+        "gunslingerloco/gunslingerloco's Short Fund", 
+        "gunslingerloco/Recovery Bubble", 
+        "gunslingerloco/Comm Real Estate Bust", 
+        "gnik4luap/Mutual Fund", 
+        "gilgamesh/Bye Bye Banks", 
+        "vsagdeo/vsagdeo's Mutual Fund", 
+        "wforeman/Wesley's Mutual Fund", 
+        "sand_down/T-Rex Fund", 
+        "hovah5/E-Value", 
+        "hovah5/RIGHT", 
+        "cmarley/cmarley's Mutual Fund", 
+        "mbarbon/mbarbon's 500", 
+        "ahoffard/INTERNET", 
+        "tobyhovland/2010 pick", 
+        "gomezab/gomezab's Mutual Fund", 
+        "slaughlin/slaughlin's Mutual Fund", 
+        "scotts99/Fortune 2010", 
+        "keisoccer/IT Mutual Fund", 
+        "jcantlon/American Pig Fund", 
+        "bullo7/bullo7's Mutual Fund", 
+        "ccolvin/Discretionary Short Fund", 
+        "nate1006/Real Estate Investments", 
+        "smada808/SMADA", 
+        "theuncle/Quantum X Fund", 
+        "pbradford/Enhanced Dow Jones Composite", 
+        "nwatrading/Short Tops", 
+        "advisorcfa/AdvisorCFA's Global Financial Fund", 
+        "theuncle/Cheap stock fund", 
+        "clenchedcow/clenchedcow's Mutual Fund", 
+        "cisforcookie/New Fund", 
+        "priscillaytan/PT fund", 
+        "qrheaume/Financial Value Fund", 
+        "rbrown7/Amex/Alternext Fund", 
+        "aharon10/High quality cos", 
+        "drakenish/REIT INVESTMENT", 
+        "phronesis/Phronesis Fund", 
+        "l.russo12/l.russo12.2", 
+        "laurab/Tartan-Div", 
+        "sagitarius_d/Sagitarius REIT Fund", 
+        "arrored/ArroRed's ZEBRA Fund", 
+        "drass/D500", 
+        "mbarbon/Value Fund", 
+        "segv/Long Short", 
+        "harbinger007/harbinger007's Mutual Fund", 
+        "howards85/Capital Sectors Short Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150115; 
+    RATIO = 0.5; 
+    "RECORD_DATE" = 20150107; 
+    "SPINOFF_SYMBOL" = UE; 
+    SYMBOL = VNO; 
+    TYPE = SPIN; 
+}
+D: (12-14 22:26:11.273) SUCCESS
+D: (12-14 22:26:11.274) cahelper finished 2015-12-14 22:26:11 -0500
+
+check the result
+
+select distinct stockkey from mstockalias where symbol='UE';
+> Row 1:
+>   STOCKKEY = X'ec975cea566f86ffc0a86fab'
+select * from mstockalias where stockkey=X'ec975cea566f86ffc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Urban Edge Properties
+>     PRIMARYKEY = X'ec985cea566f86ffc0a86fab'
+>       STOCKKEY = X'ec975cea566f86ffc0a86fab'
+>         SYMBOL = UE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+get and update the CUSIP  check xignite
+CUSIP:	91704F104  is good 
+
+update mstockalias set cusip='91704F104' where primarykey=X'ec985cea566f86ffc0a86fab';
+select * from mstockalias where stockkey=X'ec975cea566f86ffc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 91704F104
+>           DATE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Urban Edge Properties
+>     PRIMARYKEY = X'ec985cea566f86ffc0a86fab'
+>       STOCKKEY = X'ec975cea566f86ffc0a86fab'
+>         SYMBOL = UE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+get the company ID
+select * from mstock where primarykey=X'ec975cea566f86ffc0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'ec985cea566f86ffc0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'ec975cea566f86ffc0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 29339  <-------------
+>   WINDOWIDENTITYKEY = NULL
+
+
+this listed on 2015-01-16
+need to add prices
+
+yahoo finance 
+save to CA issues UE prices to be loaded.txt
+
+did the insrts  chceck the result
+select min(daynumber), max(daynumber) from stockprices where companyid= 29339;
+> Row 1:
+>   _C001 = 5128
+>   _C002 = 5460
+
+get the fundkeys 29339
+select distinct sourcekey from mticket where stockkey=X'ec975cea566f86ffc0a86fab';
+> Row 1:
+>   SOURCEKEY = X'ec915cea566f86ffc0a86fab'
+select count(*) from mticket where sourcekey = X'ec915cea566f86ffc0a86fab';
+> Row 1:
+>   _C001 = 470.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ec915cea566f86ffc0a86fab'));
+there are 370 fundkeys, save to CA issues UE fundkeys.txt
+
+
+do we need to invalidate prices 
+cat /Marketocracy/Logs/StockPriceBuilder.2015-12-13
+D: (14:55:24.184) Invalidate all prices >= 2011-11-04 (3959)
+
+check on 12/15/15  see that UE is lsited and pricing along with graph.  See that the spin off appears
+on the CA page for VNO
+
+check UE
+check VNO
+they are there, invalidate and reprice 
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='VNO' and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'b7181029390b49a1c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Urban Edge Properties|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.500000|CP_PAY_DT|20150115|CP_RECORD_DT|20150107|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|UE US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:102031
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VNO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'ec915cea566f86ffc0a86fab'
+>               VERSION = NULL
+
+1 for 2
+
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_SPINOFF_NAME|Urban Edge Properties|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 2|CP_RATIO|0.500000|CP_PAY_DT|20150115|CP_RECORD_DT|20150107|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|UE US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.' where PRIMARYKEY = X'ec915cea566f86ffc0a86fab';
+check
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='VNO' and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'b7181029390b49a1c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Urban Edge Properties|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|1 for 2|CP_RATIO|0.500000|CP_PAY_DT|20150115|CP_RECORD_DT|20150107|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|UE US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:102031
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-16 00:00:00.000000'
+>         BB_IDENTIFIER = VNO     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VNO
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'ec915cea566f86ffc0a86fab'
+>               VERSION = NULL
+
+
+invalidate done'reprice and close this out 

@@ -1,0 +1,254 @@
+
+date:  
+ticker:   GNOM
+
+yahoo:
+
+quantum:
+
+Complete Genomics, Inc.
+Ticker Symbol: GNOM*     CUSIP: 20454K104     Exchange: NGM
+* NOTE: This security is no longer trading as of 3/18/13
+
+Company's Online Profile
+BUSINESS:  Complete Genomics Inc. is a life sciences company that has developed and commercialized an innovative DNA sequencing platform that they believe will become the preferred solution for complete human genome sequencing and analysis. Their Complete Genomics Analysis Platform, or CGA Platform, combines Complete Genomics' proprietary human genome sequencing technology with their advanced informatics and data management software. They offer this solution as an innovative, end-to-end, outsourced service and provide customers with data that is immediately ready to be used for genome-based research.
+Notes:  March 18, 2013 BGI-Shenzhen (BGI), a leading international genomics organization based in Shenzhen, China, today announced that through its wholly-owned subsidiary, Beta Acquisition Corporation, it has successfully completed the acquisition of Complete Genomics, Inc. (formerly NASDAQ: GNOM) (Complete), an innovative leader in accurate whole human genomic sequencing. BGI accomplished the acquisition through a cash tender offer to purchase all of Complete’s outstanding shares of common stock for $3.15 per share, followed by a short-form merger effective March 18, 2013. BGI will operate Complete as a separate wholly-owned subsidiary and offer a broad array of genomic research technology across a variety of platforms. Dr. Clifford Reid will remain as CEO of Complete. The company has retired its ticker symbol, GNOM.
+ 
+oursite:
+Symbol: GNOM	Name: Complete Genomics Inc	Price: $3.14
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Complete Genomics Inc  Symbol:GNOM
+Date: 09/01/2015
+
+12 users found
+
+1	35achampagne	akaraski24689	balgacs	bb2692	bgruber	chrisbyrne23	kadir	ktanaka	maldito	pbradford
+2	r_widiyanti	wrightinvestments
+
+database
+select distinct stockkey from mstockalias where symbol= 'GNOM';  
+> Row 1:
+>   STOCKKEY = X'7c2b043c39e7e9abc0a801dc'
+> Row 2:
+>   STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+
+there are two
+> Row 1:
+>   STOCKKEY = X'7c2b043c39e7e9abc0a801dc'
+select * from mstockalias where stockkey=X'7c2b043c39e7e9abc0a801dc'     order by "date";
+different company and delisted 
+
+> Row 2:
+>   STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+select * from mstockalias where stockkey=X'a616588e4cdb2c2ec0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Complete Genomics Inc
+>     PRIMARYKEY = X'a617588e4cdb2c2ec0a80146'
+>       STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+>         SYMBOL = GNOM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='GNOM'  order by BB_EFFECTIVE;
+> Row 36:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|BGISXZ CH|CP_NAME|BGI/China|CP_ID_BB_COMP|20813078|CP_UNIT|Complete Genomics Inc|CP_TOT_AMT|86.373848|CP_ACQUIS_TYP|1|CP_CASH|3.150000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|12.439764|CP_CUR_PREMIUM|2.605869|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|3.150000|CP_ARBITRAGE_PROF|0.080000|CP_CUR_TOT_VAL|86.373848|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Latham & Watkins;13;100.000000;1;Target Financial Adviser;1;Jefferies;13;100.000000;1;Acquirer Legal Adviser;1;O'Melveny & Myer;13;100.000000;1;Acquirer Financial Adviser;1;Citi;13;100.000000;1;Legal Adv to Target Financial;1;White & Case LLP;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 68869558
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 16533836
+>        BB_COMPANYNAME = Complete Genomics Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = GNOM    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = GNOM
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-09-20 00:00:00.000000'
+>            PRIMARYKEY = X'89301016505b9affc0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock GNOM
+stock: GNOM
+  PK       : [A616588E4CDB2C2EC0A80146]
+  companyID: [19523]
+  symbol   : [GNOM]
+  name     : [Complete Genomics Inc]
+  date     : [2010-11-10 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-02 02:23:33 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 19523
+2013-03-08 (Fri) [4449]: O:3.1300 H:3.1400 L:3.1200 C:3.1200 V:60685 TSO:0 A:3.1200 R:1.0000 CA:0.0000
+2013-03-09 (Sat) [4450]: <WEEKEND>
+2013-03-10 (Sun) [4451]: <WEEKEND>
+2013-03-11 (Mon) [4452]: O:3.1300 H:3.1300 L:3.1200 C:3.1200 V:41154 TSO:0 A:3.1200 R:1.0000 CA:0.0000
+2013-03-12 (Tue) [4453]: O:3.1400 H:3.1500 L:3.1400 C:3.1400 V:100665 TSO:0 A:3.1400 R:1.0000 CA:0.0000
+2013-03-13 (Wed) [4454]: O:3.1500 H:3.1600 L:3.1400 C:3.1500 V:232435 TSO:0 A:3.1500 R:1.0000 CA:0.0000
+2013-03-14 (Thu) [4455]: O:3.1400 H:3.1500 L:3.1400 C:3.1400 V:122037 TSO:0 A:3.1400 R:1.0000 CA:0.0000
+2013-03-15 (Fri) [4456]: O:3.1500 H:3.1600 L:3.1400 C:3.1500 V:479623 TSO:0 A:3.1500 R:1.0000 CA:0.0000
+2013-03-16 (Sat) [4457]: <WEEKEND>
+2013-03-17 (Sun) [4458]: <WEEKEND>
+2013-03-18 (Mon) [4459]: O:3.1500 H:3.1600 L:3.1400 C:3.1400 V:56135 TSO:0 A:3.1400 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'a616588e4cdb2c2ec0a80146' and shares > 0 order by closed; 
+> Row 177:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-01-31 15:40:00.000000'
+>        COMMENT = 
+>     COMMISSION = 175.000000
+>   CURRENTORDER = X'4031671b510aaf70c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'030831623a14a071c0a80119'
+>       MODIFIED = NULL
+>            NET = 10709.879500
+>         OPENED = TIMESTAMP '2013-01-31 12:52:48.000000'
+>          PRICE = 3.059966
+>     PRIMARYKEY = X'402f671b510aaf70c0a80132'
+>         SECFEE = 0.250000
+>         SHARES = 3500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'a616588e4cdb2c2ec0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a616588e4cdb2c2ec0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'a616588e4cdb2c2ec0a80146'  and totalshares < 0)));
+
+apply the acquis
+there are 12 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 3/18/13   $3.15 per share
+last ticket: 2013-01-31  PRICE = 3.059966
+last price:  2013-03-18 (Mon) [4459]: O:3.1500 H:3.1600 L:3.1400 C:3.1400 V:56135 TSO:0 A:3.1400 R:1.0000 CA:0.0000
+
+
+going with 20130318   3.14
+
+/Marketocracy/bin/cahelper -symbol  GNOM  -effective 20130318 -type ACQUIS -exchange UN -acqType 1 -acqCash 3.14 -acqShare 0 -purchaser GNOM   >& /Users/build/caout/GNOM.20150902-DELIST.out 
+GNOM.20150902-DELIST.out
+stocks:~/caout build$ tail -f GNOM.20150902-DELIST.out
+D: (09-02 09:02:29.330) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-02 09:03:26.142) cahelper started on 2015-09-02 09:03:26 -0400
+
+D: (09-02 09:03:26.452) There are [0] open tickets for GNOM on 20130318
+D: (09-02 09:03:26.847) StockFileLoad Version:4.0
+D: (09-02 09:03:26.847) Loading Stock Data
+D: (09-02 09:05:07.131) Building Lookup Index
+D: (09-02 09:05:19.025) Finished Building Index
+D: (09-02 09:05:28.463) Finished Loading Stock Data
+D: (09-02 09:05:28.511) Connection to 192.168.111.172:6666 succeeded
+D: (09-02 09:05:30.186) {
+    "ACQUIRED_STOCK" = GNOM; 
+    "ACQUIRING_STOCK" = "GNOM_FIX"; 
+    AMOUNT = 3.14; 
+    APPLIED = 1; 
+    DATE = 20130318; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "GNOM_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-02 09:05:32.435) SUCCESS
+D: (09-02 09:05:32.436) cahelper finished 2015-09-02 09:05:32 -0400
+Check the results 
+select * from mstockalias where stockkey= X'a616588e4cdb2c2ec0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2010-11-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Complete Genomics Inc
+>     PRIMARYKEY = X'a617588e4cdb2c2ec0a80146'
+>       STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+>         SYMBOL = GNOM
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-03-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Complete Genomics Inc
+>     PRIMARYKEY = X'2f9f747055e6f39ec0a86f92'
+>       STOCKKEY = X'a616588e4cdb2c2ec0a80146'
+>         SYMBOL = GNOM
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'2f9f747055e6f39ec0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'2f9f747055e6f39ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|GNOM  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|3.140000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150902:090326
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-03-18 00:00:00.000000'
+>         BB_IDENTIFIER = GNOM_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-03-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = GNOM_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-03-18 00:00:00.000000'
+>            PRIMARYKEY = X'2f99747055e6f39ec0a86f92'
+>               VERSION = NULL
+
+
+
+select count(*) from mticket where sourcekey = X'2f99747055e6f39ec0a86f92';
+> Row 1:
+>   _C001 = 21.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'2f99747055e6f39ec0a86f92'));
+there are 21 fundkeys, save to CA issues GNOM fundkeys.txt
+
+For Beta case
+GNOM no longer trades but is still active on our site - was acquired, need to apply
+
+check on 9/3/15   invalidate funds
+check MAdmin  dlear 
+  
+GNOM has been acquired	right curve
+ 	 	
+Complete Genomics Inc acquired by a private company on 2013-03-18 00:00:00.
+
+invalidate, reprice, close 
+ 	 	 
+

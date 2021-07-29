@@ -1,0 +1,453 @@
+
+date:    8/10/15
+ticker:   EFRFD
+
+yahoo:
+
+quantum:
+Energy Fuels, Inc.
+Ticker Symbol: UUUU     CUSIP: Unknown*      Exchange: AMEX
+* If you know the CUSIP number for this security, please let us know.
+
+Company's Online Profile
+BUSINESS:  Energy Fuels, Inc. is America’s premier uranium producer. The company’s operations, employees, and properties are located in Colorado, Utah, Arizona, Wyoming, and New Mexico, and our operations are managed out of our Lakewood, Colorado office (near Denver). Energy Fuels owns and controls the only operating conventional uranium processing facility in the United States, the White Mesa Mill located near Blanding, Utah. White Mesa has an operating capacity of 2,000 tons per day and the potential to process up to 8 million lbs. of uranium per year. White Mesa also has a circuit designed to process vanadium that comes from some of the Company’s Colorado Plateau mines.
+
+Previous Ticker Symbol: EFRFD    Changed: 12/03/13
+Small Cap Stock -   Market Value $ 110 Million 
+
+has a change to UUUU on 20131203
+
+oursite:
+Symbol: EFRFD 	Name: Energy Fuels Inc 	Price: $5.59
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $5.71 	High:
+200 Day Ave: $2.21 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for EFRFD 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+05 Nov 13 	EFRFF 	EFRFD 	Change in the ticker (trading) symbol from EFRFF to EFRFD
+  	  	 
+left curve 	  CUSIP changes for EFRFD 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+05 Nov 13 	292671104 	292671708 	Change in any of identification numbers (CUSIP) of a security from 292671104 to 292671708
+  	  	 
+left curve 	  EFRFD had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+05 Nov 13 	1 for 50 	Split terms:1 for 50
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:Energy Fuels Inc  Symbol:EFRFD
+Date: 08/10/2015
+
+80 users found
+
+1	asalvador	bankaininja	billybourbon	bobelle21	bucheron	chris_nairn	collinsofsachse	czacharia	debrob	dhinkle88
+2	drass	duncans1950	dvanek	dylanvanek	farhan90	fortuner88	fostma	fxapprentice	gloverhm	hatteress
+3	hugemagic	hvanlooveren	jambonie	jig3378	jinsan	jmak	jmikula	joevaldrini	joeyeff	joeyeff@yahoo.com
+4	jpinvestments	justin_collett83	jwallingf	kama	kolokolu	kurzmack	littleamy	ltremb	marketcat	mennem
+5	mike33	mikemoney	miyo1	molo22	moneymark	mrripley	mrutsey	mtaguchi	mweirich	mweirich2
+6	mwire2	myeh	nabootrader	newinvestor123	obplato2	ogarvasuc	omo	ottofeige	patmox	peteriehl
+7	piazzi	pilt22	placasse	pml88	qfweiwei	rdrii61	robs9998	sharding	smilingbear	srlorince25
+8	ssms2k	stack888	stavinohal	stevengalasso	tfischer	timmee	toxxmaster	trixi	wdwmkr	xcentrix	 	 	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'EFRFD';  
+> Row 1:
+>   STOCKKEY = X'b26f57c850b9419dc0a80146'
+
+select * from mstockalias where stockkey=X'b26f57c850b9419dc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-06-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'b27057c850b9419dc0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2013-11-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'7481664752798493c0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 292671708
+>           DATE = TIMESTAMP '2013-11-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'd7dd67a552798514c0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='EFRFD'  order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP| |CP_NEW_CUSIP| |CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN| |CP_NEW_ISIN| |CP_OLD_SEDOL|N.S.|CP_NEW_SEDOL|N.S.|CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON|025997115|CP_NEW_COMMON|099262346|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 83454868
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 110781
+>        BB_COMPANYNAME = Energy Fuels Inc/Canada
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-11-05 00:00:00.000000'
+>         BB_IDENTIFIER = EFRFD   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-11-05 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = EFRFD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2013-11-05 00:00:00.000000'
+>            PRIMARYKEY = X'fcd771bb527ad4fac0a80146'
+>               VERSION = NULL
+
+
+change ID
+we missed the ticker changes
+
+select distinct stockkey from mstockalias where symbol='UUUU'; 
+nothing
+select * from mcorporateaction where aliaskey is null and BB_SECID='UUUU'  order by BB_EFFECTIVE;
+there are records but no ticker change
+
+yahoo finance has UUUU
+Energy Fuels Inc. (UUUU) -NYSE MKT
+Watchlist
+3.99 Up 0.24(6.40%) 11:32AM EDT - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	3.75
+Open:	3.75
+Bid:	3.94 x 1000
+Ask:	3.97 x 200
+1y Target Est:	6.29
+Beta:	0.73
+Next Earnings Date:	N/A
+Day's Range:	3.76 - 3.99
+52wk Range:	3.63 - 8.00
+Volume:	69,113
+Avg Vol (3m):	169,117
+Market Cap:	176.10M
+P/E (ttm):	N/A
+EPS (ttm):	-2.02
+Div & Yield:	N/A (N/A)
+
+company website:  http://www.energyfuels.com/
+
+
+noticed that UUUU acquired  URZ
+http://www.energyfuels.com/investors/press_releases/index.php?&content_id=323
+  URZ has been acquired 	right curve
+  	  	
+Uranerz Energy Corporation acquired by a private company on 2015-06-19 00:00:00. 
+
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock EFRFD
+>>>> dbtool started at 2015-08-10 11:18:37 -0400
+stock: EFRFD
+  PK       : [B26F57C850B9419DC0A80146]
+  companyID: [23345]
+  symbol   : [EFRFD]
+  name     : [Energy Fuels Inc]
+  date     : [2013-11-05 00:00:00]
+  status   : [Active]
+stock: EFRFD
+  PK       : [B26F57C850B9419DC0A80146]
+  companyID: [23345]
+  symbol   : [EFRFD]
+  name     : [Energy Fuels Inc]
+  date     : [2013-11-05 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-10 11:18:38 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 23345
+2013-11-22 (Fri) [4708]: O:4.8700 H:5.3800 L:4.8300 C:5.3100 V:19821 TSO:0 A:5.3100 R:1.0000 CA:0.0000
+2013-11-23 (Sat) [4709]: <WEEKEND>
+2013-11-24 (Sun) [4710]: <WEEKEND>
+2013-11-25 (Mon) [4711]: O:5.4300 H:6.1300 L:5.4300 C:5.8800 V:55987 TSO:0 A:5.8800 R:1.0000 CA:0.0000
+2013-11-26 (Tue) [4712]: O:5.8500 H:5.8800 L:5.6400 C:5.6400 V:24092 TSO:0 A:5.6400 R:1.0000 CA:0.0000
+2013-11-27 (Wed) [4713]: O:5.6800 H:5.7800 L:5.4300 C:5.5300 V:7709 TSO:0 A:5.5300 R:1.0000 CA:0.0000
+2013-11-28 (Thu) [4714]: <HOLIDAY>
+2013-11-29 (Fri) [4715]: O:5.6000 H:5.6000 L:5.4700 C:5.6000 V:6012 TSO:0 A:5.6000 R:1.0000 CA:0.0000
+2013-11-30 (Sat) [4716]: <WEEKEND>
+2013-12-01 (Sun) [4717]: <WEEKEND>
+2013-12-02 (Mon) [4718]: O:5.6500 H:5.6500 L:5.4400 C:5.5900 V:26778 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2013-12-03 (Tue) [4719]: O:5.6500 H:5.6500 L:5.4400 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2013-12-04 (Wed) [4720]: O:5.6500 H:5.6500 L:5.4400 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2013-12-05 (Thu) [4721]: O:5.6500 H:5.6500 L:5.4400 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+
+then
+2015-02-09 (Mon) [5152]: O:5.6500 H:5.7100 L:5.3800 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2015-02-10 (Tue) [5153]: O:5.6500 H:5.7100 L:5.3800 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2015-02-11 (Wed) [5154]: O:5.6500 H:5.7100 L:5.3800 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2015-02-12 (Thu) [5155]: O:5.6500 H:5.7100 L:5.3800 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+2015-02-13 (Fri) [5156]: O:5.6500 H:5.7100 L:5.3800 C:5.5900 V:0 TSO:0 A:5.5900 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b26f57c850b9419dc0a80146' and shares > 0 order by closed; 
+> Row 16:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-11-18 09:50:00.000000'
+>        COMMENT = 
+>     COMMISSION = 300.000000
+>   CURRENTORDER = X'91f408d6528128cdc0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4db76c833e6d1a90c0a80133'
+>       MODIFIED = NULL
+>            NET = 35444.190000
+>         OPENED = TIMESTAMP '2013-11-11 13:58:21.000000'
+>          PRICE = 5.907365
+>     PRIMARYKEY = X'91f208d6528128cdc0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 6000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+ok, the symbol did change to UUUU
+article:
+http://www.energyfuels.com/investors/press_releases/index.php?&content_id=278
+
+Energy Fuels Inc. (TSX:EFR) (OTCQX:EFRFD) (NYSE MKT:UUUU) (“Energy Fuels” or the “Company”) is pleased to announce that its common stock has been approved for listing on the NYSE MKT stock exchange. Trading is expected to commence on the NYSE MKT at the opening of the market on Wednesday, December 4, 2013, under the ticker symbol "UUUU".  Energy Fuels’ common shares will continue to trade on the OTCQX until the close of the market on Tuesday, December 3, 2013.
+
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b26f57c850b9419dc0a80146'  and totalshares < 0;
+no shorts
+
+apply the acquis
+there are 80 members who hold this stock
+quantum:  change to UUUU
+last ticket: 2013-11-18  PRICE = 5.907365
+last price:
+
+
+/Marketocracy/bin/cahelper -symbol  UUUU  -effective 20131204 -type CHG_TKR -exchange UN -oldSymbol EFRFD   >& /Users/build/caout/EFRFD.20150810-CHG_TKR-UUUU.out
+EFRFD.20150810-CHG_TKR-UUUU.out
+stocks:~/caout build$ cat EFRFD.20150810-CHG_TKR-UUUU.out
+D: (08-10 11:50:00.809) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-10 11:50:47.284) cahelper started on 2015-08-10 11:50:47 -0400
+
+D: (08-10 11:50:47.637) {
+    APPLIED = 1; 
+    DATE = 20131204; 
+    "NEW_TICKER" = "UUUU US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "EFRFD US"; 
+    SYMBOL = UUUU; 
+    TYPE = "CHG_TKR"; 
+}
+D: (08-10 11:50:48.011) SUCCESS
+D: (08-10 11:50:48.011) cahelper finished 2015-08-10 11:50:48 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey= X'b26f57c850b9419dc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2006-06-28 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'b27057c850b9419dc0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 
+>           DATE = TIMESTAMP '2013-11-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'7481664752798493c0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 292671708
+>           DATE = TIMESTAMP '2013-11-05 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'd7dd67a552798514c0a80146'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = EFRFD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 292671708
+>           DATE = TIMESTAMP '2013-12-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Energy Fuels Inc
+>     PRIMARYKEY = X'90a70aa755c8c857c0a86f92'
+>       STOCKKEY = X'b26f57c850b9419dc0a80146'
+>         SYMBOL = UUUU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey =X'90a70aa755c8c857c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'90a70aa755c8c857c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|EFRFD US|CP_NEW_TKR|UUUU US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150810:115047
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-04 00:00:00.000000'
+>         BB_IDENTIFIER = UUUU     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = UUUU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-12-04 00:00:00.000000'
+>            PRIMARYKEY = X'90a10aa755c8c857c0a86f92'
+>               VERSION = NULL
+
+check xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=UUUU
+is active comes back with this cusip: 292671708   is good
+
+I sent an email to quantumonline giving them this CUSIP
+
+get prices
+
+from 2013-12-04 to now  - hopefully yahoo finance has contiguous pricing through the ticker change
+
+we need the company ID
+
+select * from mstock where primarykey=X'b26f57c850b9419dc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'90a70aa755c8c857c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'b26f57c850b9419dc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 23345
+>   WINDOWIDENTITYKEY = NULL
+
+
+go to
+
+connect to marketdata@stocks user eouser;
+insert the prices from CA issues UUUU prices to be loaded.csv
+
+got some exceptions:
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5156,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5155,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5154,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5153,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5152,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5149,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5148,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5147,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5146,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5145,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5142,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5141,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5140,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5139,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5138,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5135,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5134,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5133,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5132,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+> Exception 358. Integrity constraint violation (PRIMARY KEY, STOCKPRICES._C0000000013(DAYNUMBER=5128,COMPANYID=23345)).
+> Exception 363. Transaction rollback.
+
+
+check the max date should be 8/7/2015
+
+select max(daynumber) from stockprices where companyid= 23345;
+> Row 1:
+>   _C001 = 5331
+
+
+invalidate prices from 2013-12-04
+/Marketocracy/bin/StockPriceBuilder invalidate 2013-12-04
+
+then check
+cat /Marketocracy/Logs/StockPriceBuilder.2015-08-10
+D: (12:22:11.144) Invalidate all prices >= 2013-12-04 (4720)
+
+
+check on 8/11/15
+see that the ticker change is there   and check the chart - see that the stock is pricing..
+
+let's get the funds that held this stockkey on 12/3/13
+
+/Marketocracy/Scripts/build/bin/findFundsForStock.py b26f57c850b9419dc0a80146 2013-12-03
+
+save this to CA issues EFRFD to UUUU fundkeys.txt
+
+reprice after viewing the ticker change 2013-12-03
+
+8/11/15 - ticker change is there 
+
+closing this out - sent the reprice request to Jeff and Brandon

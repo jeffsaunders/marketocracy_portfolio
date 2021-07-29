@@ -1,0 +1,346 @@
+date:  3/13/15
+From: 	Don Knepp <trbear@mc.net>
+	Subject: 	RE: DB Power Shares UUPT ETF
+	Date: 	March 13, 2015 8:05:25 AM PDT
+	To: 	help@marketocracy.com Moser <help@marketocracy.com>
+
+I became aware on Friday that the UUPT ETF trading was suspended on February 24.
+ 
+How do I close out the open positions and free up the cash in three of my funds:
+ 
+Eureka 2017 Fund                 “E17”     3505 shares of UUPT
+Eureka Alpha Hedge          “ EAH”     9680 share of UUPT
+Eureka Global Hedge G2   “EGH”     1580 shares of UUPT
+ 
+Don Knepp
+Dknepp1 log in
+
+UUPT
+
+our site:
+
+Name: PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes 	Price: $29.72
+Volume: 4,915 	Sector: Unclassified 	Change: $0.00
+Short Volume: 88,240 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 88,240 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $29.34 	Year High: $40.26 	High: $29.78
+200 Day Ave: $23.84 	Year Low: $18.26 	Low: $29.66
+
+yahoo
+PowerShares DB 3x Long US Dllr Futs ETN (UUPT)
+-NYSEArca
+29.72 0.00(0.00%) Feb 24
+Add to Portfolio
+Prev Close:	29.72
+Open:	29.72
+Bid:	N/A
+Ask:	N/A
+NAV:	N/A
+Net Assets:	N/A
+YTD Return (Mkt):	N/A
+Day's Range:	N/A - N/A
+52wk Range:	18.26 - 40.26
+Volume:	0
+Avg Vol (3m):	76,275
+P/E (ttm):	N/A
+Yield (ttm):	N/A
+
+quantum
+PowerShares DB 3x Long US Dollar Index Futures ETN due 10/31/2020
+Ticker Symbol: UUPT*     CUSIP: 25154P873     Exchange: NYSEA
+* NOTE: This security is no longer trading as of 2/25/15
+
+
+Notes:  Feb. 13, 2015 -- Deutsche Bank announced today that it has elected to redeem 6 of the following 
+PowerShares DB exchange traded notes (ETNs): 
+
+PowerShares DB 3x Italian Treasury Bond Futures ETN (ticker: ITLT)   on our site 
+PowerShares DB Italian Treasury Bond Futures ETN (ticker: ITLY)   on our site 
+PowerShares DB US Inflation ETN (ticker: INFL)    not on our site 
+PowerShares DB US Deflation ETN (ticker: DEFL)   on our site
+PowerShares DB 3x Long US Dollar Index Futures ETN (ticker: UUPT)   done already
+PowerShares DB 3x Short US Dollar Index Futures ETN (ticker: UDNT)  on our site 
+
+As described in the related pricing supplement for each ETN, Deutsche Bank, as Issuer of the ETNs, may redeem the 
+ETNs at its sole discretion on any trading day on or after the inception date until maturity. Deutsche Bank expects 
+to provide notice of redemption via The Depository Trust Company on February 18, 2015. The repurchase value of the 
+ETNs will be determined as of the date notice is given. Payment of the repurchase value of the ETNs will be made 
+on the fifth business day following the date of notice, which is expected to be February 25, 2015. Accordingly, 
+the last trading day for each ETN is expected to be February 24, 2015. Daily creations of each of the ETNs will be 
+suspended immediately. Daily repurchases at the option of investors will be accepted in the normal manner up to and 
+including February 18, 2015.
+xignite
+
+let's look at pricing
+
+UUPT
+
+/Marketocracy/bin/dbtool lookup stock UUPT
+>>>> dbtool started at 2015-03-13 16:12:18 -0400
+stock: UUPT
+  PK       : [516129834DDC3304C0A80146]
+  companyID: [20645]
+  symbol   : [UUPT]
+  name     : [PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes]
+  date     : [2011-05-24 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-03-13 16:12:19 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 20645
+2015-02-19 (Thu) [5162]: O:29.6100 H:29.9000 L:29.6100 C:29.7700 V:52772 TSO:0 A:29.7700 R:1.0000 CA:0.0000
+2015-02-20 (Fri) [5163]: O:29.8400 H:30.3200 L:29.5100 C:29.5100 V:189439 TSO:0 A:29.5100 R:1.0000 CA:0.0000
+2015-02-21 (Sat) [5164]: <WEEKEND>
+2015-02-22 (Sun) [5165]: <WEEKEND>
+2015-02-23 (Mon) [5166]: O:29.6200 H:30.0000 L:29.5000 C:29.7800 V:60341 TSO:0 A:29.7800 R:1.0000 CA:0.0000
+2015-02-24 (Tue) [5167]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-02-25 (Wed) [5168]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-02-26 (Thu) [5169]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-02-27 (Fri) [5170]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-02-28 (Sat) [5171]: <WEEKEND>
+2015-03-01 (Sun) [5172]: <WEEKEND>
+2015-03-02 (Mon) [5173]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-03 (Tue) [5174]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-04 (Wed) [5175]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-05 (Thu) [5176]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-06 (Fri) [5177]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-07 (Sat) [5178]: <WEEKEND>
+2015-03-08 (Sun) [5179]: <WEEKEND>
+2015-03-09 (Mon) [5180]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-10 (Tue) [5181]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-11 (Wed) [5182]: O:29.7800 H:29.7900 L:29.5500 C:29.7200 V:35500 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+2015-03-12 (Thu) [5183]: O:29.7800 H:29.7800 L:29.6600 C:29.7200 V:4915 TSO:0 A:29.7200 R:1.0000 CA:0.0000
+
+let's see who holds this
+
+MAdmin 03/13/2015
+Stock:PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes  Symbol:UUPT
+Date: 03/13/2015
+
+11 users found
+
+1	2004_porsche_911	dknepp1	hagitshol111	losebig22	pshebib09	raitpngman	stoke	swayla	winalways1	winerll2
+2	xxnileshxx	 	 	 	 	 	 	 	 	 
+
+select distinct stockkey from mstockalias where symbol='UUPT';
+> Row 1:
+>   STOCKKEY = X'516129834ddc3304c0a80146'
+select * from mstockalias where STOCKKEY = X'516129834ddc3304c0a80146';
+> Row 1:
+>   STOCKKEY = X'516129834ddc3304c0a80146'
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25154P873
+>           DATE = TIMESTAMP '2011-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes
+>     PRIMARYKEY = X'516229834ddc3304c0a80146'
+>       STOCKKEY = X'516129834ddc3304c0a80146'
+>         SYMBOL = UUPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mticket where STOCKKEY = X'516129834ddc3304c0a80146' order by opened;
+/Marketocracy/bin/cahelper -symbol UUPT -effective 20150312 -type ACQUIS -exchange UN -acqType 1 -acqCash 29.72 -acqShare 0 -purchaser UUPT >& /Users/build/caout/UUPT.20150313.ACQUIS.out
+stocks:~/caout build$ cat UUPT.20150313.ACQUIS.out
+D: (03-13 18:23:42.507) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-13 18:24:08.906) cahelper started on 2015-03-13 18:24:08 -0400
+
+D: (03-13 18:24:09.181) There are [0] open tickets for UUPT on 20150312
+D: (03-13 18:24:37.383) StockFileLoad Version:3.0
+D: (03-13 18:24:37.383) Loading Stock Data
+D: (03-13 18:25:19.153) Building Lookup Index
+D: (03-13 18:25:23.137) Finished Building Index
+D: (03-13 18:25:24.102) Finished Loading Stock Data
+D: (03-13 18:25:24.215) Connection to 192.168.111.172:6666 succeeded
+D: (03-13 18:25:25.336) {
+    "ACQUIRED_STOCK" = UUPT; 
+    "ACQUIRING_STOCK" = "UUPT_FIX"; 
+    AMOUNT = 29.719999; 
+    APPLIED = 1; 
+    DATE = 20150312; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "UUPT_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-13 18:25:26.389) SUCCESS
+D: (03-13 18:25:26.389) cahelper finished 2015-03-13 18:25:26 -0400
+
+select * from mstockalias where STOCKKEY = X'516129834ddc3304c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25154P873
+>           DATE = TIMESTAMP '2011-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes
+>     PRIMARYKEY = X'516229834ddc3304c0a80146'
+>       STOCKKEY = X'516129834ddc3304c0a80146'
+>         SYMBOL = UUPT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25154P873
+>           DATE = TIMESTAMP '2015-03-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PowerShares DB 3x Long US Dollar Index Futures Exchange Traded Notes
+>     PRIMARYKEY = X'0de93e8155036389c0a86f92'
+>       STOCKKEY = X'516129834ddc3304c0a80146'
+>         SYMBOL = UUPT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'0de93e8155036389c0a86f92';
+> Row 1:
+>              ALIASKEY = X'0de93e8155036389c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|UUPT  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|29.719999|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150313:062408
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-12 00:00:00.000000'
+>         BB_IDENTIFIER = UUPT_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-12 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = UUPT_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-03-12 00:00:00.000000'
+>            PRIMARYKEY = X'0de33e8155036388c0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'0de33e8155036388c0a86f92';
+> Row 1:
+>   _C001 = 20.000000
+let's get the fundkeys to invalidate:
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'0de33e8155036388c0a86f92'));
+> Row 1:
+>   FUNDKEY = X'1e115ab741201268c0a80134'
+> Row 2:
+>   FUNDKEY = X'1d08250e4179d7fdc0a80133'
+> Row 3:
+>   FUNDKEY = X'fdbf39b4546c1fbfc0a86f98'
+> Row 4:
+>   FUNDKEY = X'926f433c546975b6c0a86f98'
+> Row 5:
+>   FUNDKEY = X'e7a506e84f00caf2c0a80132'
+> Row 6:
+>   FUNDKEY = X'd0ff647454807d53c0a86f98'
+> Row 7:
+>   FUNDKEY = X'2a864df05441508cc0a86f98'
+> Row 8:
+>   FUNDKEY = X'd3751e7149763003c0a80132'
+> Row 9:
+>   FUNDKEY = X'ab110c354921c434c0a80134'
+> Row 10:
+>   FUNDKEY = X'0b7b524949ac29fac0a80132'
+> Row 11:
+>   FUNDKEY = X'0f831fc840db5e40c0a80133'
+> Row 12:
+>   FUNDKEY = X'46b248d245b0d9b5c0a80132'
+> Row 13:
+>   FUNDKEY = X'a251263454b3e914c0a86f98'
+> Row 14:
+>   FUNDKEY = X'a3815ed1447c5493c0a80134'
+> Row 15:
+>   FUNDKEY = X'bc89010b52f967d8c0a86f99'
+> Row 16:
+>   FUNDKEY = X'4f0634f754b8a753c0a86f98'
+> Row 17:
+>   FUNDKEY = X'3da9188b54bd9201c0a86f98'
+> Row 18:
+>   FUNDKEY = X'72c65ed24efb823bc0a80134'
+> Row 19:
+>   FUNDKEY = X'19755937510b3726c0a80132'
+> Row 20:
+>   FUNDKEY = X'e9402a3544834193c0a80132'
+
+put these in a file and edit them 
+
+applied date 20150312  29.72 cash
+member:  Dknepp1
+
+
+your holdings of UUPT 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+EHF-1 	0 	N/A 	N/A
+ESF 	0 	N/A 	N/A
+EVF 	0 	N/A 	N/A
+EHF-S 	0 	N/A 	N/A
+EGH 	0 	$.00 	0.00%  <--
+ESP 	0 	N/A 	N/A
+ECB 	0 	N/A 	N/A
+E17 	0 	$.00 	0.00%  <-- 
+EAH 	0 	$.00 	0.00%  <-- 
+
+EGH LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 13, 2015 		1580 	1580 	Buy
+Mar 12, 2015 	1580 	-1580 		Corporate Action
+Total: 0
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 13, 2015 	1,580 	$79.00 	$44,870.18 	$28.40
+  	  	 
+SELLS
+You have no sells for this position
+
+E17  LEDGER
+Date 	Start 	Change 	End 	Type
+Dec 05, 2014 		1575 	1575 	Buy
+Dec 08, 2014 	1575 	1930 	3505 	Buy
+Mar 12, 2015 	3505 	-3505 		Corporate Action
+Total: 0
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Dec 5, 2014 	1,575 	$78.75 	$39,729.21 	$25.22
+Dec 8, 2014 	1,930 	$96.50 	$50,186.23 	$26.00
+
+EAH  LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 12, 2015 		1430 	1430 	Buy
+Jan 13, 2015 	1430 	2850 	4280 	Buy
+Feb 24, 2015 	4280 	5400 	9680 	Buy
+Mar 12, 2015 	9680 	-9680 		Corporate Action
+Total: 0
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 12, 2015 	1,430 	$71.50 	$40,310.11 	$28.19
+Jan 13, 2015 	2,850 	$142.50 	$80,926.63 	$28.40
+Feb 24, 2015 	2,700 	$135.00 	$80,349.88 	$29.76
+Feb 24, 2015 	2,700 	$135.00 	$80,349.88 	$29.76
+  	  	 
+SELLS
+
+You have no sells for this position
+
+Fund shares cash/share  total
+EGH  1580  * 29.72 = 46957.60
+E17  3505  * 29.72 = 104168.60
+EAH  9680  * 29.72 = 287689.60
+
+3/14/15  is acquired
+ALERT
+
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock. 
+need to invalidate the funds
+
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+EGH: 03/12/2015 	$2,574.21 	$0.00 	$0.07 	$46,957.60 	$52.75 	$0.00 	$49,479.12 	$897,122.79 	$946,601.91 	100,000 	$9.47 	Yes 	Details 
+E17: 03/12/2015 	$10,972.14 	$0.00 	$0.30 	$104,168.59 	$57.76 	$0.00 	$115,083.28 	$921,975.02 	$1,037,058.30 	100,000 	$10.37 	Yes 	Details  
+EAH: 03/12/2015 	$114,193.88 	$0.00 	$3.13 	$287,689.59 	$54.81 	$0.00 	$401,831.79 	$590,606.46 	$992,438.25 	100,000 	$9.92 	No 	Details 
+
+notify member and close the case out .

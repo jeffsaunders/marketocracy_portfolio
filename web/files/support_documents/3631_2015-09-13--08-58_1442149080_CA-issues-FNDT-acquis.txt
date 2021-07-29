@@ -1,0 +1,271 @@
+FNDT
+date:    9/3/15
+ticker:   FNDT
+
+yahoo:
+
+quantum:
+Fundtech Ltd
+Ticker Symbol: FNDT*     CUSIP: M47095100     Exchange: NGS
+* NOTE: This security is no longer trading as of 11/30/11
+
+Company's Online Profile
+BUSINESS:  Fundtech Ltd is a leading provider of software solutions and services that facilitate payments, settlement and cash management by enabling businesses and their banks to electronically manage cash, process payments and transfer funds. The Company's products are designed to increase efficiency while enabling banks to better serve their corporate clients. Fundtech operates the world's largest SWIFTNet service bureau through its Swiss subsidiary bbp; and the company is the leading developer of CLS systems having been selected by 20 of the CLS Settlement Members Banks.
+Notes:  November 30, 2011— Fundtech Ltd. (Nasdaq:FNDT) announced today that the merger of Fundtech with F.T. Israeli Mergerco Ltd., an indirect, wholly-owned subsidiary of US FT Parent, Inc., both of which were formed by GTCR Fund X/A LP or its affiliates, has been completed following satisfaction of the conditions to closing, including approval of the Company’s shareholders at a special meeting of the Company’s shareholders, held on October 25, 2011. The purchase price of $23.33 in cash, subject to applicable tax withholdings, for each ordinary share of Fundtech represents a transaction value of approximately $390 million.
+Previous Ticker Symbol: FNDTF    Changed: 7/28/99
+oursite:
+Symbol: FNDT	Name: FUNDTECH LTD	Price: $23.23
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+ cash dividends paid by FNDT	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+20 Jun 11	22 Jun 11	30 Jun 11	75	$0.10	Dividend amount:0.1 per share.
+ 	 	 
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=FNDT
+
+check MAdmin
+Stock:FUNDTECH LTD  Symbol:FNDT
+Date: 09/03/2015
+
+42 users found
+
+1	aimanagellc	amarsden	bchatraw	bingong	brandall	brilliantfool	daveroggen	db1	dpruitt	dsurucu
+2	efournier	euler168	foaun	garysmith85	hiroki	hkazemi26	hoosthu1	icevodka	ivandobrev	jehfes
+3	jibjob	joeelefant	jsambors	jyt	jyt459	mverlinde	natural	nchaviano	nomad	pbradford
+4	pjz0001	polin	presnell	rashtar	richfield	rockfish2121	rraney	sali	utterme	vadka
+5	vladzaff	wohlf	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'FNDT';  
+> Row 1:
+>   STOCKKEY = X'e24a0e21390a8be7c0a80116'
+select * from mstockalias where stockkey=X'e24a0e21390a8be7c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M47095100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FUNDTECH LTD
+>     PRIMARYKEY = X'e24b0e21390a8be7c0a80116'
+>       STOCKKEY = X'e24a0e21390a8be7c0a80116'
+>         SYMBOL = FNDT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FNDT'  order by BB_EFFECTIVE;
+> Row 10:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|26026Z US|CP_NAME|GTCR Golder Rauner LLC|CP_ID_BB_COMP|1176961|CP_UNIT|Fundtech Ltd|CP_TOT_AMT|276.003296|CP_ACQUIS_TYP|1|CP_CASH|23.330000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|41.689999|CP_CUR_PREMIUM|1.842257|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|23.330000|CP_ARBITRAGE_PROF|0.422024|CP_CUR_TOT_VAL|276.003296|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Kirkland & Ellis, Kramer Levin, Meitar Liquornik;13;100.000000;1;Target Financial Adviser;1;Citi;13;100.000000;1;Acquirer Legal Adviser;1;Skadden Arps;13;100.000000;1;Acquirer Financial Adviser;1;BMO Capital Mkts, Moelis & Co, Newstone Capital, RBC Capital Mkts;13;100.000000;1;Legal Adv to Target Financial;1;Dewey & LeBoeuf;13;100.000000;|CP_NOTES|FUND: GTCR FUND X/A LP.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 57714626
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 313510
+>        BB_COMPANYNAME = Fundtech Ltd
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2011-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = FNDT    US Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-15 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = FNDT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-10-06 00:00:00.000000'
+>            PRIMARYKEY = X'508f4bad4e8e2dadc0a80146'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock FNDT
+>>>> dbtool started at 2015-09-03 10:22:45 -0400
+stock: FNDT
+  PK       : [E24A0E21390A8BE7C0A80116]
+  companyID: [1827]
+  symbol   : [FNDT]
+  name     : [FUNDTECH LTD]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-03 10:22:45 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 1827
+2011-11-14 (Mon) [3969]: O:22.9899 H:23.1300 L:22.9899 C:23.1000 V:73550 TSO:15342 A:23.1000 R:1.0000 CA:0.1000
+2011-11-15 (Tue) [3970]: O:23.0900 H:23.1400 L:23.0900 C:23.1100 V:10315 TSO:15342 A:23.1100 R:1.0000 CA:0.1000
+2011-11-16 (Wed) [3971]: O:23.1000 H:23.1200 L:23.1000 C:23.1100 V:11633 TSO:15342 A:23.1100 R:1.0000 CA:0.1000
+2011-11-17 (Thu) [3972]: O:23.1100 H:23.1100 L:23.1000 C:23.1000 V:9400 TSO:15342 A:23.1000 R:1.0000 CA:0.1000
+2011-11-18 (Fri) [3973]: O:23.1000 H:23.1300 L:23.1000 C:23.1000 V:19829 TSO:15342 A:23.1000 R:1.0000 CA:0.1000
+2011-11-19 (Sat) [3974]: <WEEKEND>
+2011-11-20 (Sun) [3975]: <WEEKEND>
+2011-11-21 (Mon) [3976]: O:23.0000 H:23.1200 L:23.0000 C:23.1000 V:25067 TSO:15342 A:23.1000 R:1.0000 CA:0.1000
+2011-11-22 (Tue) [3977]: O:23.0799 H:23.1400 L:23.0799 C:23.1100 V:18655 TSO:15342 A:23.1100 R:1.0000 CA:0.1000
+2011-11-23 (Wed) [3978]: O:23.0700 H:23.1200 L:23.0700 C:23.1100 V:26645 TSO:15342 A:23.1100 R:1.0000 CA:0.1000
+2011-11-24 (Thu) [3979]: <HOLIDAY>
+2011-11-25 (Fri) [3980]: O:23.1000 H:23.1100 L:23.0600 C:23.1000 V:7603 TSO:15342 A:23.1000 R:1.0000 CA:0.1000
+2011-11-26 (Sat) [3981]: <WEEKEND>
+2011-11-27 (Sun) [3982]: <WEEKEND>
+2011-11-28 (Mon) [3983]: O:23.1000 H:23.1500 L:23.0700 C:23.1100 V:25094 TSO:15342 A:23.1100 R:1.0000 CA:0.1000
+2011-11-29 (Tue) [3984]: O:23.1400 H:23.1600 L:23.1000 C:23.1500 V:17192 TSO:15342 A:23.1500 R:1.0000 CA:0.1000
+2011-11-30 (Wed) [3985]: O:23.2200 H:23.2900 L:23.2200 C:23.2300 V:112223 TSO:15342 A:23.2300 R:1.0000 CA:0.1000  <---
+2011-12-01 (Thu) [3986]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-02 (Fri) [3987]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-03 (Sat) [3988]: <WEEKEND>
+2011-12-04 (Sun) [3989]: <WEEKEND>
+2011-12-05 (Mon) [3990]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-06 (Tue) [3991]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-07 (Wed) [3992]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-08 (Thu) [3993]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-09 (Fri) [3994]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+2011-12-10 (Sat) [3995]: <WEEKEND>
+2011-12-11 (Sun) [3996]: <WEEKEND>
+2011-12-12 (Mon) [3997]: O:23.2300 H:23.2300 L:23.2300 C:23.2300 V:0 TSO:15342 A:23.2300 R:1.0000 CA:0.1000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'e24a0e21390a8be7c0a80116' and shares > 0 order by closed; 
+> Row 619:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-10-31 12:31:44.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'9cab46cc4eab707fc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7d9771bc4e72e269c0a80134'
+>       MODIFIED = NULL
+>            NET = 22944.010000
+>         OPENED = TIMESTAMP '2011-10-28 23:18:23.000000'
+>          PRICE = 22.944010
+>     PRIMARYKEY = X'9ca946cc4eab707fc0a80133'
+>         SECFEE = 0.450000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'e24a0e21390a8be7c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'e24a0e21390a8be7c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e24a0e21390a8be7c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'e24a0e21390a8be7c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 42 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 11/30/11    $23.33 in cash
+last ticket:  2011-10-31  PRICE = 22.944010
+last price:  2011-11-30 (Wed) [3985]: O:23.2200 H:23.2900 L:23.2200 C:23.2300 V:112223 TSO:15342 A:23.2300 R:1.0000 CA:0.1000  <---
+
+going with 20111130 23.33
+
+/Marketocracy/bin/cahelper -symbol  FNDT  -effective 20111130 -type ACQUIS -exchange UN -acqType 1 -acqCash 23.33 -acqShare 0 -purchaser FNDT   >& /Users/build/caout/FNDT.20150903-ACQUIS.out 
+FNDT.20150903-ACQUIS.out
+stocks:~/caout build$ tail -f FNDT.20150903-ACQUIS.out
+D: (09-03 10:25:30.761) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-03 10:26:28.633) cahelper started on 2015-09-03 10:26:28 -0400
+
+D: (09-03 10:26:28.902) There are [0] open tickets for FNDT on 20111130
+D: (09-03 10:26:29.539) StockFileLoad Version:4.0
+D: (09-03 10:26:29.539) Loading Stock Data
+D: (09-03 10:28:09.929) Building Lookup Index
+D: (09-03 10:28:22.155) Finished Building Index
+D: (09-03 10:28:31.958) Finished Loading Stock Data
+D: (09-03 10:28:32.016) Connection to 192.168.111.172:6666 succeeded
+D: (09-03 10:28:35.380) {
+    "ACQUIRED_STOCK" = FNDT; 
+    "ACQUIRING_STOCK" = "FNDT_FIX"; 
+    AMOUNT = 23.33; 
+    APPLIED = 1; 
+    DATE = 20111130; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "FNDT_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-03 10:28:40.494) SUCCESS
+D: (09-03 10:28:40.495) cahelper finished 2015-09-03 10:28:40 -0400
+Check the results 
+select * from mstockalias where stockkey= X'e24a0e21390a8be7c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M47095100
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FUNDTECH LTD
+>     PRIMARYKEY = X'e24b0e21390a8be7c0a80116'
+>       STOCKKEY = X'e24a0e21390a8be7c0a80116'
+>         SYMBOL = FNDT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M47095100
+>           DATE = TIMESTAMP '2011-11-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = FUNDTECH LTD
+>     PRIMARYKEY = X'aaaa6b3855e85894c0a86f92'
+>       STOCKKEY = X'e24a0e21390a8be7c0a80116'
+>         SYMBOL = FNDT
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'aaaa6b3855e85894c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'aaaa6b3855e85894c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|FNDT  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|23.330000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150903:102628
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-11-30 00:00:00.000000'
+>         BB_IDENTIFIER = FNDT_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FNDT_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-11-30 00:00:00.000000'
+>            PRIMARYKEY = X'aaa46b3855e85894c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'aaa46b3855e85894c0a86f92';
+> Row 1:
+>   _C001 = 66.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'aaa46b3855e85894c0a86f92'));
+there are XXX fundkeys, save to CA issues FNDT fundkeys.txt
+
+For Beta case
+FNDT no longer trades but is still active on our site - need to delist  
+
+check on 9/4/15   invalidate funds
+check MAdmin  clear 
+
+
+9/6/15 
+
+NDT has been acquired	right curve
+ 	 	
+FUNDTECH LTD acquired by a private company on 2011-11-30 00:00:00.
+
+invalidate, reprice and close 

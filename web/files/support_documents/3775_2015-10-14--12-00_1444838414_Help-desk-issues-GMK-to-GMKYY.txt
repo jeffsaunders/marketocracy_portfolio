@@ -1,0 +1,148 @@
+date:  10/8/15
+case  3775
+Corporate Action | Ticker Symbol Change
+
+Ticket
+
+3775
+
+Priority
+
+Medium
+
+Status
+
+Open
+
+Member Name
+
+Geoff Pike
+
+Username
+
+gp
+
+Fund Symbols
+
+GPVF
+
+Stock Tickers
+
+GMK
+
+Description / Resources: Thu 10/08/2015 at 04:22 PM
+GMK is now GMKYY.
+
+Additional Information:
+
+Stock Ticker: GMK
+GMK changed to GMKYY
+
+quantum
+Gruma S.A.B. de C.V. ADR
+Ticker Symbol: GMKYY     CUSIP: 400131306     Exchange: OTOTC
+
+Company's Online Profile
+BUSINESS:  GRUMA, S.A.B. de C.V., is one of the world's leading tortilla and corn flour producers. GRUMA was founded in 1949 and is engaged primarily in the production of corn flour and tortillas. With leading brands in most of their markets, GRUMA has operations in the United States, Mexico, Central America, Europe, Asia, and Oceania. GRUMA is headquartered in San Pedro Garza García, Mexico, and has approximately 18,000 employees and 79 plants.
+Notes:  San Pedro Garza García, N.L., Mexico; June 26, 2015 -- GRUMA, S.A.B. de C.V. (NYSE: GMK, BMV: GRUMAB) announced today its intention to terminate its Deposit Agreement with Citibank, N.A. (the "Depositary") regarding its American Depositary Receipts (ADRs), to delist its ADRs from the New York Stock Exchange and to terminate its reporting obligations under the Securities Exchange Act of 1934. The Company decided to delist and deregister the ADRs because it wishes to concentrate the trading of its shares on the Mexican Stock Exchange. The delisting is expected to be effective 10 days after the filing of Form 25. On or about September 8, 2015.
+Previous Ticker Symbol: GMK    Changed: 9/15/15
+
+oour site:
+symbol changes for GMKYY	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+15 Sep 15	GMK	GMKYY	Change in the ticker (trading) symbol from GMK to GMKYY
+ 	 	 
+left curve	  name changes for GMKYY	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+29 Dec 06	Gruma SA de CV	Gruma SAB de CV	Change in the name of issuer from Gruma SA de CV to Gruma SAB de CV
+05 Mar 07	Gruma SA de CV	Gruma SAB de CV	Change in the name of issuer from Gruma SA de CV to Gruma SAB de CV
+ 	 	 
+left curve	  listing changes for GMKYY	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Sep 15, 2015	NYSE	UN	OTCBB-OTHER	UV	Change in the exchange that GMKYY trades on from NYSE to OTCBB-OTHER
+ 	 	 
+left curve	  cash dividends paid by GMKYY	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+09 May 03	13 May 03	 	N/A	$0.25	Dividend amount:0.254418 per share.
+07 May 04	11 May 04	17 May 04	75	$0.24	Dividend amount:0.24474 per share.
+16 May 05	18 May 05	26 May 05	75	$0.29	Dividend amount:0.29188 per share.
+15 May 06	17 May 06	25 May 06	75	$0.31	Dividend amount:0.307259 per share.
+15 May 07	17 May 07	25 May 07	75	$0.31	Dividend amount:0.311156 per share.
+12 Nov 14	14 Nov 14	25 Nov 14	75	$0.45	Dividend amount:0.447767 per share.
+02 Jul 15	07 Jul 15		75	$0.42	Dividend amount:0.422852 per share.
+
+legacy site has it
+
+not on new site?
+do ticker change
+
+2015-09-09 
+
+check gp GPVF
+
+legacy
+your holdings of GMKYY	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+GPMF	0	N/A	N/A
+GPEF	0	N/A	N/A
+GPVF	3,300	$189,750.00	17.96%  <-- expand 
+GPIF	0	N/A	N/A
+GPBF	0	N/A	N/A
+GPHE	0	N/A	N/A
+CWF	0	$.00	0.00%
+GTF	0	N/A	N/A
+DF	0	N/A	N/A
+HR	0	N/A	N/A
+HCF	0	N/A	N/A
+ 	 	[ Trade this stock ]
+
+
+LEDGER
+Date	Start	Change	End	Type
+Jun 13, 2006		1930	1930	Buy
+Jun 15, 2006	1930	570	2500	Buy
+Jul 30, 2008	2500	1000	3500	Buy
+Mar 20, 2015	3500	-200	3300	Sell
+Total: 3,300
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Jun 13, 2006	1,930	$96.50	$19,608.00	$10.16
+Jun 15, 2006	570	$28.50	$5,556.43	$9.75
+Jul 30, 2008	1,000	$50.00	$11,443.83	$11.44
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Mar 20, 2015	200	$10.00	$0.19	$10,803.58	$54.02   
+
+it's finally there in his fund - had to do ticker changed, reprice
+and it is there closing this out 
+
+let's see who held this stock
+
+select distinct stockkey from mstockalias where symbol='GMK';
+> Row 1:
+>   STOCKKEY = X'b76c10ac390c6e0ac0a8015c'
+select fundkey from mposition where STOCKKEY = X'b76c10ac390c6e0ac0a8015c';
+there are 303 fundkeys save to CA issues GMK fundkeys.txt
+
+invalidate then reprice
+update case  done closing
+
+
+
+
+ 	 	 
+
+
+
+
+
+

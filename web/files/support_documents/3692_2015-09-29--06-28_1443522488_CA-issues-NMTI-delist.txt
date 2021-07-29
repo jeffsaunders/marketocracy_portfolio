@@ -1,0 +1,294 @@
+
+date:    9/22/15     
+ticker:   NMTI
+
+yahoo:
+
+quantum:
+
+oursite:
+Symbol: NMTI	Name: NMT MEDICAL INC	Price: $0.01
+Volume:	Sector: Health Care	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+listing changes for NMTI	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Aug 12, 2009	NASDAQ	UQ	NASDAQ-SMALLCAP	UR	Change in the exchange that NMTI trades on from NASDAQ to NASDAQ-SMALLCAP
+Feb 07, 2011	NASDAQ-SMALLCAP	UR	OTCBB-OTHER	UV	Change in the exchange that NMTI trades on from NASDAQ-SMALLCAP to OTCBB-OTHER
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=NMTI
+
+check MAdmin
+Stock:NMT MEDICAL INC  Symbol:NMTI
+Date: 09/22/2015
+
+72 users found
+
+1	3456	acwgrace	akhil	apayne	aratnikas	bengt	benoitlajeunesse	benpapale	bganti	bkogan1
+2	bltboy1	bmoore	bob00048	bradywahl	brahmsian	brein	bsauls1	bseguin	bsimpson1	bwm
+3	carly	ckmiddltn	cmoss	codibus11	dan1322	dean.martin	dginty	dlundgren	efurman	elan123
+4	flajuie	futurembacfa	golfazoid	guud	iice74	iproi	jaybirddog	jfrancois	jmaurice	jmo1911
+5	john97	kay1234	kenz52	knightsmoke	legenddunn21	mikecsam	mjetpax	mkantor	mkhari	momentumman
+6	moneyattractor	mopoji1234	mrjellybean	northcutt0	opetrovic	owengilbo	pgr45za	ptiming	rangerdon	richardmarcus
+7	rshuhart	scjohneider	sruiz	steele99	sumitm	tabjer	tkeen	trentfx	vlumpt	vooch5
+8	xiphoid	yaseranwar
+
+database
+select distinct stockkey from mstockalias where symbol= 'NMTI';  
+> Row 1:
+>   STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+select * from mstockalias where stockkey=X'f1a60e21390ab0b8c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'f1a70e21390ab0b8c0a80116'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2009-08-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'8b1e11304a832e2cc0a80146'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2011-02-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'e55963054d5081efc0a80146'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NMTI'  order by BB_EFFECTIVE;
+> Row 11:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|NMTI|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90658846
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 196056
+>        BB_COMPANYNAME = NMT Medical Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = NMTI    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NMTI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'856d397a5362d144c0a86f92'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NMTI
+>>>> dbtool started at 2015-09-22 12:52:31 -0400
+stock: NMTI
+  PK       : [F1A60E21390AB0B8C0A80116]
+  companyID: [2810]
+  symbol   : [NMTI]
+  name     : [NMT MEDICAL INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: NMTI
+  PK       : [F1A60E21390AB0B8C0A80116]
+  companyID: [2810]
+  symbol   : [NMTI]
+  name     : [NMT MEDICAL INC]
+  date     : [2009-08-12 00:00:00]
+  status   : [Active]
+stock: NMTI
+  PK       : [F1A60E21390AB0B8C0A80116]
+  companyID: [2810]
+  symbol   : [NMTI]
+  name     : [NMT MEDICAL INC]
+  date     : [2011-02-07 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-09-22 12:52:32 -0400
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2810
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f1a60e21390ab0b8c0a80116' and shares > 0 order by closed; 
+> Row 1022:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2013-09-09 14:09:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.279500
+>   CURRENTORDER = X'15020da8522dfce5c0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'74550df9425d6c53c0a80132'
+>       MODIFIED = NULL
+>            NET = 5.310500
+>         OPENED = TIMESTAMP '2013-09-09 12:52:53.000000'
+>          PRICE = 0.005310
+>     PRIMARYKEY = X'15000da8522dfce5c0a80134'
+>         SECFEE = 0.010000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f1a60e21390ab0b8c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f1a60e21390ab0b8c0a80116'  and totalshares < 0);
+nothign
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f1a60e21390ab0b8c0a80116'  and totalshares < 0)));
+
+apply the acquis
+delist:  2014-05-01
+there are 72 members who hold this stock
+quantum:  still thinks it is active 
+last ticket:  2013-09-09  PRICE = 0.005310
+last price:  2014-04-01 (Tue) [4838]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:600 TSO:13228 A:0.0100 R:1.0000 CA:0.0000
+
+going with the delist date:   20140501  0.01 
+
+/Marketocracy/bin/cahelper -symbol  NMTI  -effective 20140501 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.01 -acqShare 0 -purchaser NMTI   >& /Users/build/caout/NMTI.20150922-DELIST.out
+NMTI.20150922-DELIST.out
+stocks2:~/caout build$ tail -f NMTI.20150922-DELIST.out
+D: (09-22 13:05:56.517) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-22 13:06:21.287) cahelper started on 2015-09-22 13:06:21 -0400
+
+D: (09-22 13:06:21.559) There are [0] open tickets for NMTI on 20140501
+D: (09-22 13:06:22.145) StockFileLoad Version:4.0
+D: (09-22 13:06:22.145) Loading Stock Data
+D: (09-22 13:07:01.151) Building Lookup Index
+D: (09-22 13:07:06.203) Finished Building Index
+D: (09-22 13:07:09.976) Finished Loading Stock Data
+D: (09-22 13:07:10.095) Connection to 192.168.111.157:6666 succeeded
+D: (09-22 13:07:13.600) SavingChanges for position sell out 101 of 338
+D: (09-22 13:07:23.364) {
+    "ACQUIRED_STOCK" = NMTI; 
+    "ACQUIRING_STOCK" = "NMTI_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20140501; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NMTI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-22 13:07:29.295) SUCCESS
+D: (09-22 13:07:29.295) cahelper finished 2015-09-22 13:07:29 -0400
+Check the results 
+select * from mstockalias where stockkey= X'f1a60e21390ab0b8c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'f1a70e21390ab0b8c0a80116'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2009-08-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'8b1e11304a832e2cc0a80146'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2011-02-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'e55963054d5081efc0a80146'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 629294109
+>           DATE = TIMESTAMP '2014-05-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NMT MEDICAL INC
+>     PRIMARYKEY = X'79da5e0f56018a8dc0a86fab'
+>       STOCKKEY = X'f1a60e21390ab0b8c0a80116'
+>         SYMBOL = NMTI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35101010
+>       STYLEKEY = XG
+
+select * from mcorporateaction where aliaskey =X'79da5e0f56018a8dc0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'79da5e0f56018a8dc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NMTI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150922:010621
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-01 00:00:00.000000'
+>         BB_IDENTIFIER = NMTI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NMTI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-05-01 00:00:00.000000'
+>            PRIMARYKEY = X'79d45e0f56018a8dc0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'79d45e0f56018a8dc0a86fab';
+> Row 1:
+>   _C001 = 125.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'79d45e0f56018a8dc0a86fab'));
+there are 125 fundkeys, save to CA issues NMTI fundkeys.txt
+
+For Beta case
+NMTI no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+

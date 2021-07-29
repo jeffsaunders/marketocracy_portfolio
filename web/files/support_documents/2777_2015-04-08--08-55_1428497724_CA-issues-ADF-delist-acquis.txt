@@ -1,0 +1,212 @@
+date:  4/5/15
+ticker : ADF
+
+quantum:
+ACM Managed Dollar Income Fund
+Ticker Symbol: ADF*     CUSIP: 000949107     Exchange: NYSE
+Security Type:   Closed-End ETF  ---  ETF SubType:   High Yield Income Fund
+* NOTE: This security is no longer trading as of 9/25/09
+
+Company's Online Profile
+FUND DESCRIPTION:  ACM Managed Dollar Income Fund, Inc. is an exchange-traded closed-end fund or a closed-end ETF that is officially described as a non-diversified, closed-end management investment company. INVESTMENT OBJECTIVE: The Fund's investment objective is to seek high current income and capital appreciation over a period of years. FUND STRATEGY: The Fund seeks to meet its objective through investments in U.S. and non-U.S. fixed income securities denominated in U.S. dollars that are expected to benefit from improving economic and credit fundamentals. The Fund normally invests at least 35% of its assets in U.S. corporate fixed-income securities. The balance of the Fund’s investment portfolio will be invested in (1) fixed-income securities issued or guaranteed by foreign governments and (2) non-U.S. corporate fixed-income securities. Substantially all of the Fund’s assets will be invested in high-yield, high-risk securities rated below investment-grade and considered to be predominantly speculative. FUND MANAGEMENT: The Fund's Advisor is AllianceBernstein L.P. and the Fund is managed by AllianceBernstein Investor Services Inc., a subsidiary of AllianceBernstein Holding L.P. (NYSE: AB).
+
+Notes:  September 25, 2009 -- ACM Managed Dollar Income Fund, Inc. announced today that the acquisition of the assets and the assumption of the liabilities of ACM Managed Dollar by AllianceBernstein Global High Income Fund, Inc. took place as of the close of business on September 25, 2009. As a result of the Acquisition, each holder of ACM Managed Dollar common stock received shares of Global High Income common stock having an aggregate net asset value (“NAV”) equal to the aggregate NAV of the stockholder’s shares in ACM Managed Dollar. As of the close of business on September 25, 2009, the NAV of ACM Managed Dollar was $7.79 per share and the NAV of Global High Income was $13.37 per share. Each share of common stock of ACM Managed Dollar was converted into .5826 of a share of Global High Income common stock. Common stockholders participating in ACM Managed Dollar’s dividend reinvestment plan received full and fractional Global High Income shares. Other common stockholders received cash in lieu of fractional shares.
+old stock doesn't apply here 
+
+oursite:
+
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol= 'ADF';  
+> Row 1:
+>   STOCKKEY = X'058b0e21390addafc0a80116'
+select * from mstockalias where stockkey= X'058b0e21390addafc0a80116';
+delisted   this is the one in quantum
+> Row 2:
+>   STOCKKEY = X'c8d24a5b4bed6883c0a80146'
+select * from mstockalias where stockkey= X'c8d24a5b4bed6883c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 06052H395
+>           DATE = TIMESTAMP '2010-03-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Strategic Accelerated Redemption Securities Linked to the S&P 500 Index
+>     PRIMARYKEY = X'c8d34a5b4bed6883c0a80146'
+>       STOCKKEY = X'c8d24a5b4bed6883c0a80146'
+>         SYMBOL = ADF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+ssue
+CUSIP 06052H395
+3/28/2011 ADF Bank of America
+Corporation
+Strategic Accelerated Redemption
+Securities Linked to the S&P 500
+Index, due March 30, 2012 
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ADF'  order by BB_EFFECTIVE;
+nothing
+check MAdmin
+
+XXXX  MM/DD/YYYY
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ADF
+stock: ADF
+  PK       : [C8D24A5B4BED6883C0A80146]
+  companyID: [18961]
+  symbol   : [ADF]
+  name     : [Strategic Accelerated Redemption Securities Linked to the S&P 500 Index]
+  date     : [2010-03-17 00:00:00]
+  status   : [Active]
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18961
+2011-03-06 (Sun) [3716]: <WEEKEND>
+2011-03-07 (Mon) [3717]: O:10.6700 H:10.6700 L:10.6699 C:10.6699 V:2000 TSO:0 A:10.6699 R:1.0000 CA:0.0000
+2011-03-08 (Tue) [3718]: O:10.6700 H:10.6700 L:10.6699 C:10.6699 V:2000 TSO:0 A:10.6699 R:1.0000 CA:0.0000
+2011-03-09 (Wed) [3719]: O:10.6300 H:10.6300 L:10.6300 C:10.6300 V:3700 TSO:0 A:10.6300 R:1.0000 CA:0.0000
+2011-03-10 (Thu) [3720]: O:10.6300 H:10.6300 L:10.6300 C:10.6300 V:3700 TSO:0 A:10.6300 R:1.0000 CA:0.0000
+2011-03-11 (Fri) [3721]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-12 (Sat) [3722]: <WEEKEND>
+2011-03-13 (Sun) [3723]: <WEEKEND>
+2011-03-14 (Mon) [3724]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-15 (Tue) [3725]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-16 (Wed) [3726]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-17 (Thu) [3727]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-18 (Fri) [3728]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-19 (Sat) [3729]: <WEEKEND>
+2011-03-20 (Sun) [3730]: <WEEKEND>
+2011-03-21 (Mon) [3731]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-22 (Tue) [3732]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-23 (Wed) [3733]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-24 (Thu) [3734]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-25 (Fri) [3735]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-26 (Sat) [3736]: <WEEKEND>
+2011-03-27 (Sun) [3737]: <WEEKEND>
+2011-03-28 (Mon) [3738]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000 <---
+2011-03-29 (Tue) [3739]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-30 (Wed) [3740]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-03-31 (Thu) [3741]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-01 (Fri) [3742]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-02 (Sat) [3743]: <WEEKEND>
+2011-04-03 (Sun) [3744]: <WEEKEND>
+2011-04-04 (Mon) [3745]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-05 (Tue) [3746]: O:10.6600 H:10.6600 L:10.6599 C:10.6599 V:6000 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-06 (Wed) [3747]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-07 (Thu) [3748]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-08 (Fri) [3749]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-09 (Sat) [3750]: <WEEKEND>
+2011-04-10 (Sun) [3751]: <WEEKEND>
+2011-04-11 (Mon) [3752]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+2011-04-12 (Tue) [3753]: O:10.6599 H:10.6599 L:10.6599 C:10.6599 V:0 TSO:0 A:10.6599 R:1.0000 CA:0.0000
+
+
+apply the acquis
+2011-03-28 10.6599  ADF  20110328
+
+/Marketocracy/bin/cahelper -symbol  ADF  -effective 20110328 -type ACQUIS -exchange UN -acqType 1 -acqCash 10.6599 -acqShare 0 -purchaser ADF   >& /Users/build/caout/ADF.20150406.out
+ADF.20150406.out
+stocks:~/caout build$ tail -f ADF.20150406.out
+D: (04-06 07:30:57.339) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-06 07:31:23.227) cahelper started on 2015-04-06 07:31:23 -0400
+
+D: (04-06 07:31:23.612) There are [0] open tickets for ADF on 20110328
+D: (04-06 07:31:23.775) StockFileLoad Version:3.0
+D: (04-06 07:31:23.776) Loading Stock Data
+D: (04-06 07:32:08.860) Building Lookup Index
+D: (04-06 07:32:13.223) Finished Building Index
+D: (04-06 07:32:14.228) Finished Loading Stock Data
+D: (04-06 07:32:14.348) Connection to 192.168.111.172:6666 succeeded
+D: (04-06 07:32:14.367) {
+    "ACQUIRED_STOCK" = ADF; 
+    "ACQUIRING_STOCK" = "ADF_FIX"; 
+    AMOUNT = 10.6599; 
+    APPLIED = 1; 
+    DATE = 20110328; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ADF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-06 07:32:14.939) SUCCESS
+D: (04-06 07:32:14.939) cahelper finished 2015-04-06 07:32:14 -0400
+
+
+select * from mstockalias where stockkey= X'058b0e21390addafc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 000949107
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACM MANAGED DOLLAR INCOME
+>     PRIMARYKEY = X'058c0e21390addafc0a80116'
+>       STOCKKEY = X'058b0e21390addafc0a80116'
+>         SYMBOL = ADF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 000949107
+>           DATE = TIMESTAMP '2009-09-25 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ACM MANAGED DOLLAR INCOME
+>     PRIMARYKEY = X'25d24df74be8b1d8c0a8013c'
+>       STOCKKEY = X'058b0e21390addafc0a80116'
+>         SYMBOL = ADF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XG
+
+
+
+select * from mcorporateaction where aliaskey = X'25d24df74be8b1d8c0a8013c';
+> Row 1:
+>              ALIASKEY = X'25d24df74be8b1d8c0a8013c'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ADF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|236.000000|CP_CASH_FLAG|N.A.|CP_SH|0.582600|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20100510:092313
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-09-25 00:00:00.000000'
+>         BB_IDENTIFIER = AWF     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-25 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AWF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-09-25 00:00:00.000000'
+>            PRIMARYKEY = X'cc714df74be8b181c0a8013c'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'cc714df74be8b181c0a8013c';
+> Row 1:
+>   _C001 = 104.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'cc714df74be8b181c0a8013c'));
+there are 104
+save to CA issues ADF fundkeys.txt
+
+4/8/15
+ ADF has been acquired 	right curve
+  	  	
+Strategic Accelerated Redemption Securities Linked to the S&P 500 Index acquired by a private company on 2011-03-28 00:00:00. 
+date: 20100510  cash:  10.6599
+
+closing this out 

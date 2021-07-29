@@ -1,0 +1,238 @@
+
+date:   8/11/15   case 3536
+ticker:   TTIL
+
+yahoo:
+
+quantum:
+TTI Telecom Intl Ltd
+Ticker Symbol: TTIL*     CUSIP: M88258104     Exchange: NNM
+* NOTE: This security is no longer trading as of 8/23/10
+
+oursite:
+
+Symbol: TTIL	Name: TTI TEAM TELECOM INTL	Price: $2.90
+Volume:	Sector: Information Technology	Change:
+Short Volume: 0	Style: Micro Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low
+CAs 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+tock:TTI TEAM TELECOM INTL  Symbol:TTIL
+Date: 08/11/2015
+
+81 users found
+
+1	adamnicholson	adk4c	anson27	bkotler	bleifer	bm1	boyplunger	cdewees	cfifield	chillman
+2	coach_harv	cptsvi	crasch	daveroggen	dbarkan	dchan6935	delvico	dhall2	drhoda	drzeke
+3	dschweitzer	dshamis	edwardudell	eschmitzva	ferran	fredricktoo	gtsai	halpern	hili	icevodka
+4	is_med1	jameslittiebrant	jarrettmd	jjames1	jmcgraw	joshhill1978	jspiro1	jthiele	jwiggam	kleinphi
+5	kmlandy44	kschneyer	laurabojkui	limorco	llacomis	maciam	maknad	matthoover1	michael.keane	mkremer
+6	mohave	mookmas	msparkes	mvrh1	mzorea	natural	ndogg	nealtc	nelpuig	nvestr1
+7	orkunsahmali	pedrolc	pmorgan	revblc	rfabian	richdec	rnice	rosexu	ross646	rpatterson4
+8	sames	samid95	samsontg	tnealon	tobiascarlisle	tterraccino	unstockpicker	vooch5	warcraft82	warmoogam
+9	yvas	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'TTIL';  
+> Row 1:
+>   STOCKKEY = X'00ee0e21390ad314c0a80116'
+
+select * from mstockalias where stockkey=X'00ee0e21390ad314c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M88258104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TTI TEAM TELECOM INTL
+>     PRIMARYKEY = X'00ef0e21390ad314c0a80116'
+>       STOCKKEY = X'00ee0e21390ad314c0a80116'
+>         SYMBOL = TTIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='TTIL'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock TTIL
+>>>> dbtool started at 2015-08-11 22:36:42 -0400
+stock: TTIL
+  PK       : [00EE0E21390AD314C0A80116]
+  companyID: [3788]
+  symbol   : [TTIL]
+  name     : [TTI TEAM TELECOM INTL]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-11 22:36:42 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3788
+2010-08-12 (Thu) [3510]: O:2.9100 H:2.9500 L:2.9000 C:2.9000 V:238658 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+2010-08-13 (Fri) [3511]: O:2.9100 H:2.9100 L:2.8800 C:2.8800 V:9584 TSO:16003 A:2.8800 R:1.0000 CA:0.0000
+2010-08-14 (Sat) [3512]: <WEEKEND>
+2010-08-15 (Sun) [3513]: <WEEKEND>
+2010-08-16 (Mon) [3514]: O:2.8800 H:2.9200 L:2.8800 C:2.9200 V:209638 TSO:16003 A:2.9200 R:1.0000 CA:0.0000
+2010-08-17 (Tue) [3515]: O:2.9100 H:2.9200 L:2.9100 C:2.9100 V:39712 TSO:16003 A:2.9100 R:1.0000 CA:0.0000
+2010-08-18 (Wed) [3516]: O:2.9200 H:2.9200 L:2.9100 C:2.9100 V:134271 TSO:16003 A:2.9100 R:1.0000 CA:0.0000
+2010-08-19 (Thu) [3517]: O:2.9200 H:2.9200 L:2.9100 C:2.9100 V:7106 TSO:16003 A:2.9100 R:1.0000 CA:0.0000
+2010-08-20 (Fri) [3518]: O:2.9100 H:2.9200 L:2.9100 C:2.9200 V:10078 TSO:16003 A:2.9200 R:1.0000 CA:0.0000
+2010-08-21 (Sat) [3519]: <WEEKEND>
+2010-08-22 (Sun) [3520]: <WEEKEND>
+2010-08-23 (Mon) [3521]: O:2.9700 H:2.9200 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+2010-08-24 (Tue) [3522]: O:2.9700 H:2.9100 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+2010-08-25 (Wed) [3523]: O:2.9700 H:2.9100 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+2010-08-26 (Thu) [3524]: O:2.9700 H:2.9100 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+2010-08-27 (Fri) [3525]: O:2.9700 H:2.9100 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'00ee0e21390ad314c0a80116' and shares > 0 order by closed; 
+> Row 1164:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-08-11 11:55:00.000000'
+>        COMMENT = 
+>     COMMISSION = 74.500000
+>   CURRENTORDER = X'f4f91ad14c62336dc0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'98671e253cd2f094c0a801e0'
+>       MODIFIED = NULL
+>            NET = 4247.409360
+>         OPENED = TIMESTAMP '2010-08-11 01:21:49.000000'
+>          PRICE = 2.850610
+>     PRIMARYKEY = X'f4f71ad14c62336dc0a80133'
+>         SECFEE = 0.080000
+>         SHARES = 1490.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'00ee0e21390ad314c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'00ee0e21390ad314c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'00ee0e21390ad314c0a80116'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'00ee0e21390ad314c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 81 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 8/23/10
+last ticket: 2010-08-11  PRICE = 2.850610
+last price:  2010-08-23 (Mon) [3521]: O:2.9700 H:2.9200 L:2.9100 C:2.9000 V:100 TSO:16003 A:2.9000 R:1.0000 CA:0.0000
+
+going with 20100823 2.90 
+
+/Marketocracy/bin/cahelper -symbol  TTIL  -effective 20100823 -type ACQUIS -exchange UN -acqType 1 -acqCash 2.90  -acqShare 0 -purchaser TTIL   >& /Users/build/caout/TTIL.20150811-DELIST.out 
+TTIL.20150811-DELIST.out
+stocks:~/caout build$ tail -f TTIL.20150811-DELIST.out
+D: (08-11 22:39:14.455) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-11 22:39:37.408) cahelper started on 2015-08-11 22:39:37 -0400
+
+D: (08-11 22:39:41.503) There are [0] open tickets for TTIL on 20100823
+D: (08-11 22:39:41.777) StockFileLoad Version:4.0
+D: (08-11 22:39:41.777) Loading Stock Data
+D: (08-11 22:40:19.278) Building Lookup Index
+D: (08-11 22:40:24.050) Finished Building Index
+D: (08-11 22:40:27.711) Finished Loading Stock Data
+D: (08-11 22:40:27.828) Connection to 192.168.111.172:6666 succeeded
+D: (08-11 22:40:30.695) SavingChanges for position sell out 101 of 367
+D: (08-11 22:40:47.884) {
+    "ACQUIRED_STOCK" = TTIL; 
+    "ACQUIRING_STOCK" = "TTIL_FIX"; 
+    AMOUNT = 2.9; 
+    APPLIED = 1; 
+    DATE = 20100823; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TTIL_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-11 22:40:59.086) SUCCESS
+D: (08-11 22:40:59.086) cahelper finished 2015-08-11 22:40:59 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'00ee0e21390ad314c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M88258104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TTI TEAM TELECOM INTL
+>     PRIMARYKEY = X'00ef0e21390ad314c0a80116'
+>       STOCKKEY = X'00ee0e21390ad314c0a80116'
+>         SYMBOL = TTIL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = M88258104
+>           DATE = TIMESTAMP '2010-08-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = TTI TEAM TELECOM INTL
+>     PRIMARYKEY = X'3d44539855cab1edc0a86f92'
+>       STOCKKEY = X'00ee0e21390ad314c0a80116'
+>         SYMBOL = TTIL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'3d44539855cab1edc0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'3d44539855cab1edc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TTIL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.900000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150811:103937
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-08-23 00:00:00.000000'
+>         BB_IDENTIFIER = TTIL_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-08-23 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TTIL_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-08-23 00:00:00.000000'
+>            PRIMARYKEY = X'3d3e539855cab1e9c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'3d3e539855cab1e9c0a86f92';
+ Row 1:
+>   _C001 = 137.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'3d3e539855cab1e9c0a86f92'));
+there are XXX fundkeys, save to CA issues TTIL fundkeys.txt
+
+For Beta case
+TTIL no longer trades but is still active on our site - need to delist 
+
+check on 8/12/15   invalidate funds
+check MAdmin  clear 
+
+
+TTIL has been acquired	
+ 	 	
+TTI TEAM TELECOM INTL acquired by a private company on 2010-08-23 00:00:00.
+
+TTIL delist 2010-08-23
+
+invalidate reprice and close 

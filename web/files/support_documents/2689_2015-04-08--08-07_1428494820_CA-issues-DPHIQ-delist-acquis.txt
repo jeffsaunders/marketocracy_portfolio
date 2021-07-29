@@ -1,0 +1,270 @@
+date:  4/5/15
+ticker DPHIQ  appears to be acquired 
+
+quantum:
+Delphi Corp.
+Ticker Symbol: DPHIQ    CUSIP: 247126105     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 10/07/09
+
+oursite:
+
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol= 'DPHIQ';  
+> Row 1:
+>   STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+
+select * from mstockalias where STOCKKEY = X'b3a510ac390c6e01c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DELPHI AUTOMOTIVE SYSTEMS
+>     PRIMARYKEY = X'b3a610ac390c6e01c0a8015c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2002-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'eeca0ed83c92b95ac0a801dc'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2005-10-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'61d733b3443f27cec0a8013c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2005-10-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'e5693543443f2884c0a8013c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPHIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='DPHIQ'  order by BB_EFFECTIVE;
+
+check MAdmin
+
+XXXX  MM/DD/YYYY
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock DPHIQ
+>>>> dbtool started at 2015-04-06 00:33:02 -0400
+stock: DPHIQ
+  PK       : [B3A510AC390C6E01C0A8015C]
+  companyID: [9147]
+  symbol   : [DPHIQ]
+  name     : [Delphi Corp]
+  date     : [2005-10-11 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-06 00:33:02 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9147
+2009-09-24 (Thu) [3188]: O:0.0625 H:0.0650 L:0.0613 C:0.0635 V:1608348 TSO:0 A:0.0635 R:1.0000 CA:0.0000
+2009-09-25 (Fri) [3189]: O:0.0650 H:0.0650 L:0.0610 C:0.0615 V:2184776 TSO:0 A:0.0615 R:1.0000 CA:0.0000
+2009-09-26 (Sat) [3190]: <WEEKEND>
+2009-09-27 (Sun) [3191]: <WEEKEND>
+2009-09-28 (Mon) [3192]: O:0.0635 H:0.0690 L:0.0615 C:0.0650 V:1967598 TSO:0 A:0.0650 R:1.0000 CA:0.0000
+2009-09-29 (Tue) [3193]: O:0.0646 H:0.0690 L:0.0630 C:0.0643 V:1305552 TSO:0 A:0.0643 R:1.0000 CA:0.0000
+2009-09-30 (Wed) [3194]: O:0.0630 H:0.0680 L:0.0605 C:0.0640 V:1372357 TSO:0 A:0.0640 R:1.0000 CA:0.0000
+2009-10-01 (Thu) [3195]: O:0.0630 H:0.0644 L:0.0550 C:0.0580 V:2613289 TSO:0 A:0.0580 R:1.0000 CA:0.0000
+2009-10-02 (Fri) [3196]: O:0.0580 H:0.0610 L:0.0550 C:0.0556 V:2114171 TSO:0 A:0.0556 R:1.0000 CA:0.0000
+2009-10-03 (Sat) [3197]: <WEEKEND>
+2009-10-04 (Sun) [3198]: <WEEKEND>
+2009-10-05 (Mon) [3199]: O:0.0620 H:0.0640 L:0.0550 C:0.0600 V:5375877 TSO:0 A:0.0600 R:1.0000 CA:0.0000
+2009-10-06 (Tue) [3200]: O:0.0410 H:0.0520 L:0.0381 C:0.0400 V:45028816 TSO:0 A:0.0400 R:1.0000 CA:0.0000  <---
+2009-10-07 (Wed) [3201]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000 
+2009-10-08 (Thu) [3202]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-09 (Fri) [3203]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-10 (Sat) [3204]: <WEEKEND>
+2009-10-11 (Sun) [3205]: <WEEKEND>
+2009-10-12 (Mon) [3206]: O:0.0211 H:0.0211 L:0.0211 C:0.0211 V:0 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-13 (Tue) [3207]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-14 (Wed) [3208]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-15 (Thu) [3209]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+2009-10-16 (Fri) [3210]: O:0.0137 H:0.0230 L:0.0137 C:0.0211 V:30155989 TSO:0 A:0.0211 R:1.0000 CA:0.0000
+
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  DPHIQ  -effective 20071007 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0211 -acqShare 0 -purchaser DPHIQ   >& /Users/build/caout/DPHIQ.20150405-ACQUIS.out
+DPHIQ.20150405-ACQUIS.out
+stocks:~/caout build$ tail -f DPHIQ.20150405-ACQUIS.out
+D: (04-06 00:38:52.777) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-06 00:39:18.700) cahelper started on 2015-04-06 00:39:18 -0400
+
+D: (04-06 00:39:29.118) There are [0] open tickets for DPHIQ on 20071007
+D: (04-06 00:39:29.647) StockFileLoad Version:3.0
+D: (04-06 00:39:29.647) Loading Stock Data
+D: (04-06 00:40:13.630) Building Lookup Index
+D: (04-06 00:40:17.963) Finished Building Index
+D: (04-06 00:40:18.992) Finished Loading Stock Data
+D: (04-06 00:40:19.112) Connection to 192.168.111.172:6666 succeeded
+D: (04-06 00:40:21.426) SavingChanges for position sell out 101 of 841
+D: (04-06 00:40:33.205) SavingChanges for position sell out 201 of 841
+D: (04-06 00:40:55.845) SavingChanges for position sell out 301 of 841
+D: (04-06 00:41:05.291) {
+    "ACQUIRED_STOCK" = DPHIQ; 
+    "ACQUIRING_STOCK" = "DPHIQ_FIX"; 
+    AMOUNT = 0.0211; 
+    APPLIED = 1; 
+    DATE = 20071007; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "DPHIQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-06 00:41:19.436) SUCCESS
+D: (04-06 00:41:19.436) cahelper finished 2015-04-06 00:41:19 -0400
+
+
+select distinct stockkey from mstockalias where symbol= 'DPHIQ';  
+select * from mstockalias where stockkey=X'b3a510ac390c6e01c0a8015c';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DELPHI AUTOMOTIVE SYSTEMS
+>     PRIMARYKEY = X'b3a610ac390c6e01c0a8015c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2002-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'eeca0ed83c92b95ac0a801dc'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2005-10-11 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'61d733b3443f27cec0a8013c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2005-10-11 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'e5693543443f2884c0a8013c'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPHIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 247126105
+>           DATE = TIMESTAMP '2007-10-07 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Delphi Corp
+>     PRIMARYKEY = X'a85c4d8755220e01c0a86f92'
+>       STOCKKEY = X'b3a510ac390c6e01c0a8015c'
+>         SYMBOL = DPHIQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey = X'a85c4d8755220e01c0a86f92';
+
+> Row 1:
+>              ALIASKEY = X'a85c4d8755220e01c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|DPHIQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.021100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150406:123918
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-10-07 00:00:00.000000'
+>         BB_IDENTIFIER = DPHIQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2007-10-07 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = DPHIQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-10-07 00:00:00.000000'
+>            PRIMARYKEY = X'a8564d8755220df6c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey =X'a8564d8755220df6c0a86f92' ;
+> Row 1:
+>   _C001 = 372.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'a8564d8755220df6c0a86f92'));
+372 funds  save to CA issues DPHIQ fundkeys.txt
+
+the stock is delisted, check on 4/6/15 
+
+4/8/15
+DPHIQ has been acquired 	right curve
+  	  	
+Delphi Corp acquired by a private company on 2007-10-07 00:00:00.
+
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey =X'a8564d8755220df6c0a86f92') order by loginname;
+mbarbon  is one of the members
+
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey =X'a8564d8755220df6c0a86f92' and managerkey in select primarykey from mmanager where loginname='mbarbon');
+> Row 1:
+>   POSITIONKEY = X'ba926278411cc3c3c0a8011e'
+select symbol from mfund where primarykey in (select fundkey from mposition where primarykey=X'ba926278411cc3c3c0a8011e');
+short
+
+closing this out 
+
+20071007

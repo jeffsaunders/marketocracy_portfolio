@@ -1,0 +1,103 @@
+/***
+Tickers Widget
+***/
+
+.tickers-widget .ticker-content:after {
+	clear: both;
+}
+
+.tickers-widget .ticker-footer  { 
+	margin-top: 5px;
+}
+
+.tickers-widget .ticker-footer:after,
+.tickers-widget .ticker-footer:before {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+
+.tickers-widget .ticker-footer:after {
+	clear: both;
+}
+
+.tickers-widget  .ticker-list {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+.tickers-widget .ticker-list > li {
+  position:relative;
+  padding:10px 5px;
+  border-bottom:1px solid #eaeaea;
+}
+
+.tickers-widget .ticker-list  li.last-line {
+  border-bottom:none;
+}
+
+.tickers-widget .ticker-list  li > .ticker-bell  {
+  margin-left:10px;
+}
+
+.tickers-widget .ticker-list  li > .ticker-checkbox {
+	float:left;
+	width:30px;
+}
+
+.tickers-widget .ticker-list  li > .ticker-title  {
+  margin-right:10px;
+}
+
+.tickers-widget .ticker-list  li > .ticker-config {
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+.tickers-widget .ticker-list  li .ticker-title .ticker-title-sp  {
+  margin-right:5px;
+}
+
+.tickers-widget .ticker-list  li.ticker-done .ticker-title-sp  {
+  text-decoration:line-through;
+}
+
+.tickers-widget .ticker-list  li.ticker-done  {
+  background:#f6f6f6;
+}
+
+.tickers-widget .ticker-list  li.ticker-done:hover {
+  background:#f4f4f4;
+}
+
+.tickers-widget .ticker-list  li:hover  {
+  background:#f9f9f9;
+}
+
+.tickers-widget .ticker-list  li .ticker-config {
+  display:none;
+}
+
+.tickers-widget .ticker-list  li:hover > .ticker-config {
+  display:block;
+  margin-bottom:0 !important;
+}
+
+.tickers-widget .ticker-config-btn {
+  margin-top: -1px;
+}
+
+@media only screen and (max-width: 480px) {
+
+	.tickers-widget .ticker-config-btn {
+		float:inherit;
+		display:block;
+	}
+	
+	.tickers-widget .ticker-list-projects li > .label {
+		margin-bottom:5px;
+	}
+
+}

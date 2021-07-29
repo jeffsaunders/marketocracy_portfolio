@@ -1,0 +1,178 @@
+date: 11/13/15
+ticker RAI - member mroach 
+
+stock appeared in my account as corporate action
+Type
+Corporate Action | Stock Unclassified
+Ticket
+3981
+Priority
+Medium
+Status
+Open
+Member Name
+Michael Roach
+Username
+mroach
+Fund Symbols
+MRMFV
+Stock Tickers
+RAI
+Description / Resources:
+Thu 11/12/2015 at 08:11 PM
+
+no performance since its been in my fund
+
+Additional Information:
+
+Stock Ticker: RAI
+
+
+holdings on legacy
+your holdings of RAI	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+MRMFV	404	$18,345.64	0.91%  <---- 
+MRMFG	0	N/A	N/A
+MMFMC	0	N/A	N/A
+MRMFL	0	N/A	N/A
+MMFWW	0	N/A	N/A
+MMFBS	0	N/A	N/A
+MRMFS	0	$.00	0.00%
+MMFrp	0	N/A	N/A
+MMFFF	0	N/A	N/A
+mrmfc	0	N/A	N/A
+MMFCF	0	N/A	N/A
+MRMFH	0	N/A	N/A
+MMFGA	0	N/A	N/A
+MRSLF1	0	N/A	N/A
+MMFAV	0	N/A	N/A
+
+expand  MRMFV
+LEDGER
+Date	Start	Change	End	Type
+Jun 12, 2015		202	202	Corporate Action
+Sep 01, 2015	202	202	404	Corporate Action
+Total: 404
+ 	 	 
+BUYS
+You have no Buys for this position
+ 	 
+SELLS
+You have no sells for this position
+
+look at MRMFV strat
+
+RAI	click me	$45.41	404	$18,345.64	0.91%	$18,897.10	0.00%	0.00%	0.00%	Details
+
+sure enough it is 0
+
+is there a price in there for 20150612
+
+select distinct stockkey from mstockalias where symbol='RAI';
+> Row 1:
+>   STOCKKEY = X'c2eb10ac390c6e25c0a8015c'
+
+select * from mstockalias where  STOCKKEY = X'c2eb10ac390c6e25c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76182K105
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RJ REYNOLDS TOBACCO HLDGS 
+>     PRIMARYKEY = X'c2ec10ac390c6e25c0a8015c'
+>       STOCKKEY = X'c2eb10ac390c6e25c0a8015c'
+>         SYMBOL = RJR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = LB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76182K105
+>           DATE = TIMESTAMP '2004-08-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RJ REYNOLDS TOBACCO HLDGS 
+>     PRIMARYKEY = X'5a25569a410ef28ac0a80146'
+>       STOCKKEY = X'c2eb10ac390c6e25c0a8015c'
+>         SYMBOL = RAI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = LB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76182K105
+>           DATE = TIMESTAMP '2004-08-02 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Reynolds American Inc
+>     PRIMARYKEY = X'cadd56a3410ef2b8c0a80146'
+>       STOCKKEY = X'c2eb10ac390c6e25c0a8015c'
+>         SYMBOL = RAI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = LB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 761713106
+>           DATE = TIMESTAMP '2004-08-02 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Reynolds American Inc
+>     PRIMARYKEY = X'f58856a6410ef2c8c0a80146'
+>       STOCKKEY = X'c2eb10ac390c6e25c0a8015c'
+>         SYMBOL = RAI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30203010
+>       STYLEKEY = LB
+
+he got his shares on Jun 12, 2015 
+20150612  let's look at the ledger get the hexkey
+trades on June 12, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	LO	696	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	RAI	202	$0.00	$0.00	$0.00	$0.00
+
+RAI	Reynolds American Inc	$72.00	0.7%	202	$0.00	$14,544.00	Details 
+MCD	MCDONALD'S CORP	$95.06	0.7%	149	$0.00	$14,163.94	Details 
+ 	 	 
+left curve	 trades on June 12, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	LO	696	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	RAI	202	$0.00	$0.00	$0.00	$0.00
+
+Hexkey: 04341998557B660AC0A86F92
+
+where did this stock come from?   
+select * from mcorporateaction where primarykey in (select sourcekey from mticket where primarykey=X'04341998557B660AC0A86F92');
+> Row 1:
+>              ALIASKEY = X'49f11998557b6684c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|LO US|CP_NAME|Lorillard Inc|CP_ID_BB_COMP|181872|CP_UNIT|Lorillard Inc|CP_TOT_AMT|26477.060547|CP_ACQUIS_TYP|3|CP_CASH|50.500000|CP_CASH_FLAG|1|CP_SH|0.290900|CP_SH_FLAG|1|CP_DEBT|1729.000000|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|8.405025|CP_CUR_PREMIUM|0.123857|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|27622.490234|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;6;3;1;Target Legal Adviser(s);1;Simpson Thacher;13;100.000000;1;Target Financial Adviser(s);1;Barclays, Centerview;13;100.000000;1;Acquirer Legal Adviser(s);1;Cravath Swaine, Herbert Smith Fr, Jones Day;13;100.000000;1;Acquirer Financial Adviser(s);1;Citi, JP Morgan, Lazard Ltd;13;100.000000;1;Legal Adv to Target Financial;1;Sullivan Cromwel;13;100.000000;1;Legal Adv to Acquirer Financia;1;Kirkland & Ellis;13;100.000000;|CP_ACQ_TKR|RAI US|CP_ACQ_ID_BB_GLOBAL|BBG000BBB3K1|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001G14W39|CP_ACQ_ID_BB_SEC_NUM_DES|RAI|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|LO US|CP_TARGET_ID_BB_GLOBAL|BBG000BCGY17|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FH9XC8|CP_TARGET_ID_BB_SEC_NUM_DES|LO|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 88158464
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 823598
+>        BB_COMPANYNAME = Reynolds American Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-12 00:00:00.000000'
+>         BB_IDENTIFIER = RAI     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-15 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = RAI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'031a12f2557b62fbc0a86f92'
+>               VERSION = NULL
+
+LO was acquired by RAI and holders got shares of RAI.
+
+put this into the case:
+This is an old problem, where returns are not shown for stocks which are not bought by the member.  In this case LO was acquired by RAI and shares of RAI were given.
+I am going to forward this to the design team.

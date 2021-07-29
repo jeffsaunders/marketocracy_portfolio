@@ -1,0 +1,406 @@
+CA issues HZN-W to HZN possible spin off.txt
+CA issues TRS spun off HZN.txt
+> Row 23:
+>              ALIASKEY = X'cba961c555947265c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|HZN-W US|CP_NEW_TKR|HZN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108204620
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 45477690
+>        BB_COMPANYNAME = Horizon Global Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = HZN-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = HZN-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-12 00:00:00.000000'
+>            PRIMARYKEY = X'071e12f2557b63e4c0a86f92'
+>               VERSION = NULL
+
+select distinct stockkey from mstockalias where primarykey=X'cba961c555947265c0a86f92';
+> Row 1:
+>   STOCKKEY = X'74ad18e25589e614c0a86f92'
+select * from mstockalias where stockkey=X'74ad18e25589e614c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-06-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Horizon Global Corp
+>     PRIMARYKEY = X'74ae18e25589e614c0a86f92'
+>       STOCKKEY = X'74ad18e25589e614c0a86f92'
+>         SYMBOL = HZN-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Horizon Global Corp
+>     PRIMARYKEY = X'cba961c555947265c0a86f92'
+>       STOCKKEY = X'74ad18e25589e614c0a86f92'
+>         SYMBOL = HZN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mstock where primarykey=X'74ad18e25589e614c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'cba961c555947265c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'74ad18e25589e614c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28531
+>   WINDOWIDENTITYKEY = NULL
+
+COMPANYID = 28531
+
+how many tickets
+select count(*) from mticket where stockkey=X'74ad18e25589e614c0a86f92';
+none?    No one holds it 
+
+
+1. check for a spin off lurking  - 
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|HZN US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Horizon Global Corp|CP_ID_BB_COMP|45477690|CP_ID_BB_SEC|1000|CP_TERMS|2 per 5|CP_RATIO|0.400000|CP_PAY_DT|20150630|CP_RECORD_DT|20150625|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.796622|CP_ADJ_DT|20150701|CP_TKR|HZN US|CP_DUE_BILL_RED_DT|20150706|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG008MPMC56|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG008MPMC29|CP_SPINOFF_ID_BB_SEC_NUM_DES|HZN|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108158641
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 12441054
+>        BB_COMPANYNAME = TriMas Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = TRS     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-08 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = TRS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'611133f755bcca20c0a86f92'
+>               VERSION = NULL
+
+See here is one
+
+TRS spun off HZN
+effective: 2015-07-01
+CP_RATIO|0.400000|
+CP_PAY_DT|20150630|
+CP_RECORD_DT|20150625
+
+let's check the web for the spin off
+TRS is the parent company
+
+news article to support this
+http://finance.yahoo.com/news/trimas-completes-tax-free-spin-213000122.html
+Jun 30, 2015
+TriMas announced in December 2014 that it planned to spin-off its Cequent businesses in a tax-free spin-off to TriMas shareholders. At the close of business today, TriMas shareholders received two common shares of Horizon Global for every five common shares of TriMas held at the close of business on the record date of June 25, 2015.
+
+
+look at the trades for HZN-W  there are none, we can delete it altogether 
+> Row 1:
+>   STOCKKEY = X'74ad18e25589e614c0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'74ad18e25589e614c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'74ad18e25589e614c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'74ad18e25589e614c0a86f92');
+
+delete from mstockalias where stockkey=X'74ad18e25589e614c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'74ad18e25589e614c0a86f92');   
+
+delete from mposition where stockkey=X'74ad18e25589e614c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'74ad18e25589e614c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'74ad18e25589e614c0a86f92');
+
+delete from mticket where stockkey=X'74ad18e25589e614c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'74ad18e25589e614c0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'74ad18e25589e614c0a86f92';  
+
+commit;
+
+set commit true;
+
+select distinct stockkey from mstockalias where symbol='HZN';
+nothing
+
+ok, apply the spin off
+
+TRS spun off HZN
+effective: 20150701
+CP_RATIO|0.400000|
+CP_PAY_DT|20150630|
+CP_RECORD_DT|20150625
+
+
+/Marketocracy/bin/cahelper -symbol TRS -effective 20150701 -type SPIN -exchange UQ -spinOffSymbol HZN -payDate 20150630 -recordDate 20150625 -name 'Horizon Global Corp' -ratio 0.400 >& /Users/build/caout/TRS.20151214-SPIN-HZN.out 
+TRS.20151214-SPIN-HZN.out
+stocks1:~/caout build$ tail -f TRS.20151214-SPIN-HZN.out
+D: (12-14 13:49:19.532) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 13:50:18.778) cahelper started on 2015-12-14 13:50:18 -0500
+
+D: (12-14 13:50:38.104) StockFileLoad Version:4.0
+D: (12-14 13:50:38.104) Loading Stock Data
+D: (12-14 13:52:21.120) Building Lookup Index
+D: (12-14 13:52:33.510) Finished Building Index
+D: (12-14 13:52:42.959) Finished Loading Stock Data
+D: (12-14 13:52:43.002) Connection to 192.168.111.172:6666 succeeded
+D: (12-14 13:53:15.035) {
+    APPLIED = 1; 
+    DATE = 20150701; 
+    FUNDS = (
+        "reveille/Reveille's Mutual Fund2", 
+        "kmtam888/Tam Aggressive", 
+        "joeelefant/Joeelefant's Aggressive Growth Fund", 
+        "DELETED_jakerosser1_2010022609390001/Family Fund", 
+        "pfaust/The Passe Fund", 
+        "rbitrage/The World's Greatest Technology", 
+        "codehappy/Codehappy Simply Short Fund", 
+        "willblur/willblur's Brink of Disaster Fund", 
+        "chase2008/Curtis Woodworth", 
+        "shoshievass/shig jr.", 
+        "jfrancois/jfrancois's Short Fund", 
+        "gator101/FM Short B", 
+        "stil370/top 10 5 star rotate once per mo", 
+        "chushogi/Chushogi's Short My Own Funds Fund", 
+        "screenofscreens/Ten Gentle Screamers", 
+        "tradezzzz/tradezzzz's Mutual Fund", 
+        "davhalle/Hallett Opportunity Fund", 
+        "depdawg8/Older&Wiser", 
+        "invest2010/eltrado", 
+        "stavon/build", 
+        "kyotoshogi/Kyotoshogi's O'Shaughnessy - Small Cap Growth and Value  Fund", 
+        "mooncrusher/Micro", 
+        "maxoom/INDUSTRIAL MAX FUND", 
+        "mooncrusher/May", 
+        "kyotoshogi/Kyotoshogi's O'Shaughnessy - Growth Fund", 
+        "cvantoor/cvantoor's Fundamental Short Fund", 
+        "stoctoni/SCM Small Cap", 
+        "boyplunger/boyplunger's relative strength Fund", 
+        "bm1/TM", 
+        "aimanagellc/Strategic 400 Equity", 
+        "unknowinglyforgotten/Biggie", 
+        "balgacs/Best Performers", 
+        "mike5568/mikes new opportunity fund", 
+        "kimweir4/KimW Mutual Fund", 
+        "s-abacus/s-abacus's Mutual Fund", 
+        "chensqrd/chensqrd's Mutual Fund", 
+        "cvantoor/cvantoor's Short Fund", 
+        "kylepeterson/kylepeterson's Mutual Fund", 
+        "afusetti/Fund Schiena", 
+        "jackdyu/Micro Cap Fund", 
+        "rbagby/Bagby Mutual Fund of World Domination and Deviousness", 
+        "kperkins/Quick Movers", 
+        "bkquantpm/bkquantpm SMCS", 
+        "jeffjwb7/jeffjwb7's Mutual Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150630; 
+    RATIO = 0.4; 
+    "RECORD_DATE" = 20150625; 
+    "SPINOFF_SYMBOL" = HZN; 
+    SYMBOL = TRS; 
+    TYPE = SPIN; 
+}
+D: (12-14 13:53:18.481) SUCCESS
+D: (12-14 13:53:18.482) cahelper finished 2015-12-14 13:53:18 -0500
+
+check for the new stock
+select distinct stockkey from mstockalias where symbol='HZN';
+> Row 1:
+>   STOCKKEY = X'e6e44e5c566f0f6bc0a86fab'
+select * from mstockalias where STOCKKEY = X'e6e44e5c566f0f6bc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Horizon Global Corp
+>     PRIMARYKEY = X'e6e54e5c566f0f6bc0a86fab'
+>       STOCKKEY = X'e6e44e5c566f0f6bc0a86fab'
+>         SYMBOL = HZN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+update the cusip
+check xignite
+http://192.168.111.213/feed/stockLookup.php?symbol=HZN
+CUSIP:	44052W104
+cross check on fidelity is good
+
+update mstockalias set cusip='44052W104' where PRIMARYKEY = X'e6e54e5c566f0f6bc0a86fab';
+select * from mstockalias where STOCKKEY = X'e6e44e5c566f0f6bc0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 44052W104
+>           DATE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Horizon Global Corp
+>     PRIMARYKEY = X'e6e54e5c566f0f6bc0a86fab'
+>       STOCKKEY = X'e6e44e5c566f0f6bc0a86fab'
+>         SYMBOL = HZN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+we're going to need to add prices 
+select * from mstock where primarykey=X'e6e44e5c566f0f6bc0a86fab';
+> Row 1:
+>         IDENTITYKEY = X'e6e54e5c566f0f6bc0a86fab'
+>                NAME = NULL
+>          PRIMARYKEY = X'e6e44e5c566f0f6bc0a86fab'
+>              SYMBOL = NULL
+>           COMPANYID = 29333
+>   WINDOWIDENTITYKEY = NULL
+
+new companyID = 29333
+
+let's get them from yahoo finance.   this listed on 2015-07-01
+save them to CA issues HZN prices to be loaded.txt
+done
+
+select min(daynumber), max(daynumber) from stockprices where companyid= 29333;
+> Row 1:
+>   _C001 = 5294  7/1/15	5294	Wed
+>   _C002 = 5457  12/11/15	5457	Fri
+
+good
+
+we already have an invalidate prices out there 
+
+check on 12/15/15  see that
+HZN is listed and has prices and a chart
+TRS shows the spin off
+
+
+
+
+for the case
+TRS spun off HZN but we missed this 
+effective: 20150701
+CP_RATIO|0.400000|
+CP_PAY_DT|20150630|
+CP_RECORD_DT|20150625
+there were 24 members who held TRS on the record date 
+
+members who held TRS on 2015-06-25
+Stock:TriMas Corporation  Symbol:TRS
+Date: 06/25/2015
+
+24 users found
+
+1	aimanagellc	balgacs	bm1	boyplunger	chensqrd	davhalle	depdawg8	gator101	jackdyu	joeelefant
+2	kimweir4	kmtam888	kperkins	kylepeterson	maxoom	mike5568	rbagby	reveille	s-abacus	screenofscreens
+3	shoshievass	stavon	tradezzzz	unknowinglyforgotten
+
+
+
+let's check the number of mtickets and we need to get the fundkeys to invalidate 
+
+HZN stockkey
+STOCKKEY = X'e6e44e5c566f0f6bc0a86fab'
+
+select distinct sourcekey from mticket where STOCKKEY = X'e6e44e5c566f0f6bc0a86fab';
+> Row 1:
+>   SOURCEKEY = X'e6de4e5c566f0f6ac0a86fab'
+
+select count(*) from mticket where sourcekey = X'e6de4e5c566f0f6ac0a86fab';
+> Row 1:
+>   _C001 = 44.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'e6de4e5c566f0f6ac0a86fab'));
+there are 44 fundkeys, save to CA issues HZN fundkeys.txt
+
+
+check on 12/15/15  see that
+HZN is listed and has prices and a chart
+TRS shows the spin off
+invalidate and reprice
+
+12/15/15
+HZN is there and is pricing
+TRS  
+
+ spinoffs by TRS	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Terms	Symbol	Description
+01 Jul 15	25 Jun 15	30 Jun 15		HZN	HZN US spun off from TRS with terms:
+ 	 	 
+
+terms field is blank..  can I fill this in 
+
+select * from mcorporateaction where BB_SECID='TRS' and aliaskey is not null and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'd7a43afa4d225daec0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Horizon Global Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS| |CP_RATIO|0.400000|CP_PAY_DT|20150630|CP_RECORD_DT|20150625|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|HZN US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:015018
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = TRS     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'e6de4e5c566f0f6ac0a86fab'
+>               VERSION = NULL
+
+terms 2 for 5  (0.4)
+
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_SPINOFF_NAME|Horizon Global Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|2 for 5|CP_RATIO|0.400000|CP_PAY_DT|20150630|CP_RECORD_DT|20150625|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|HZN US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.' where PRIMARYKEY = X'e6de4e5c566f0f6ac0a86fab';
+select * from mcorporateaction where BB_SECID='TRS' and aliaskey is not null and BB_ACTIONMNEMONIC='SPIN';
+> Row 1:
+>              ALIASKEY = X'd7a43afa4d225daec0a80146'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Horizon Global Corp|CP_ID_BB_COMP| |CP_ID_BB_SEC| |CP_TERMS|2 for 5|CP_RATIO|0.400000|CP_PAY_DT|20150630|CP_RECORD_DT|20150625|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ| |CP_ADJ_DT| |CP_TKR|HZN US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151214:015018
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = TRS     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'e6de4e5c566f0f6ac0a86fab'
+>               VERSION = NULL
+
+check on 12/17/15 see if my terms are there for the spin off
+
+
+
+
+

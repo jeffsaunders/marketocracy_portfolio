@@ -1,0 +1,286 @@
+date:   6/8/15
+ticker: MGS
+
+found this in advisorcfa's ENRGY fund
+
+yahoo:  nothing 
+
+quantum:
+MetroGas S.A. ADR
+Ticker Symbol: MGS     CUSIP: 591673207     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  MetroGAS is one of the most important private utilities in Argentina and leader in the natural gas distribution sector. The Company also achieved very satisfactory results in terms of efficiency, security and customer service, which resulted in the high score obtained: MetroGas is the company with the best public image among utilities operating in Argentina, with over 75% positive image among its customers and opinion-makers.
+
+Notes:  NEW YORK, June 17, 2010 NYSE Regulation, Inc. announced today that it determined that the American Depositary Shares of MetroGAS - ticker symbol MGS - should be suspended immediately. This decision was reached in view of the fact that the Company’s announcement today that it has decided to file for reorganization proceedings under Argentine Law (similar to US Chapter 11). NYSE Regulation noted the uncertainty as to the timing and outcome of the reorganization process in Argentina. The Company has a right to a review of this determination by a Committee of the Board of Directors of NYSE Regulation. Application to the Securities and Exchange Commission to delist the issue is pending the completion of applicable procedures, including any appeal by the Company of the NYSE’s staff decision. The NYSE noted that it may, at any time, suspend a security if it believes that continued dealings in the security on the NYSE are not advisable.
+ADR with an ADR ratio of 1:10
+Small Cap Stock -   Market Value $ Million 
+
+oursite:  
+Symbol: MGS 	Name: METROGAS S.A. CL'B'ADS 	Price: $1.50
+Volume: 	Sector: Utilities 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+cash dividends paid by MGS 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+31 May 00 	31 May 00 	31 May 00 	N/A 	$0.20 	Dividend amount:0.2 per share.
+30 Nov 00 	30 Nov 00 	30 Nov 00 	N/A 	$0.60 	Dividend amount:0.6 per share.
+01 Jun 01 	05 Jun 01 	13 Jun 01 	2 	$0.20 	Dividend amount:0.2 per share.
+20 Nov 01 	23 Nov 01 	03 Dec 01 	2 	$0.60 	Dividend amount:0.6 per share.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+MGS  MM/DD/YYYY
+Stock:METROGAS S.A. CL'B'ADS  Symbol:MGS
+Date: 06/09/2015
+
+70 users found
+
+1	abowker416	abusigin	acdaman	adshah1	advisorcfa	aguitta	anieves089	antdiggie	aolsen	ashley52
+2	ayala2228	barnzg	beauschwab	bquortrup1	bsauls1	ccraigg	cgable1	cherenkekito	denzeljh	dferris1
+3	doctor_ice	dodgers6	doppelaar	drchickon	dtalbot	fmoslehi	fort_knox	fsmith	ftblguy	gfontana
+4	grahamnewman	hdfund	htrevathan	hugedrive	i_hate_this_class	ijbsega	jhudanish21	jpb	katzenbach	kikola
+5	klebeouf	krod	leandro84	leftylb	lsoon_fong	maksfeof	manny732	marketocracy	mhoneth	mickkilla911
+6	mr_smith	nodax	palvarez	pneumaddict	prestonwright	pshao649	pursuitist	rad1	ralward	richardwhite00
+7	rosc074	scubascuba	seilers	teamfunds	the_lone_ranger	tlukralle	tonydanza	tpow1	v_ragha	wutangfinancial	 	 	 	 	 	 	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'MGS';  
+> Row 1:
+>   STOCKKEY = X'1bbb0e21390b1cedc0a80116'
+
+select * from mstockalias where stockkey=X'1bbb0e21390b1cedc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591673207
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METROGAS S.A. CL'B'ADS
+>     PRIMARYKEY = X'1bbc0e21390b1cedc0a80116'
+>       STOCKKEY = X'1bbb0e21390b1cedc0a80116'
+>         SYMBOL = MGS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55102010
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MGS'  order by BB_EFFECTIVE;
+nothing useful, it looks like another company came and went which used this ticker
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock MGS
+>>>> dbtool started at 2015-06-09 12:01:06 -0400
+stock: MGS
+  PK       : [1BBB0E21390B1CEDC0A80116]
+  companyID: [5503]
+  symbol   : [MGS]
+  name     : [METROGAS S.A. CL'B'ADS]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-09 12:01:06 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 5503
+2010-06-22 (Tue) [3459]: O:1.5400 H:1.5400 L:1.3600 C:1.5000 V:8000 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-23 (Wed) [3460]: O:1.5400 H:1.5400 L:1.3600 C:1.5000 V:8000 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-24 (Thu) [3461]: O:1.5400 H:1.5400 L:1.3600 C:1.5000 V:8000 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-25 (Fri) [3462]: O:1.5400 H:1.5400 L:1.3600 C:1.5000 V:8000 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-26 (Sat) [3463]: <WEEKEND>
+2010-06-27 (Sun) [3464]: <WEEKEND>
+2010-06-28 (Mon) [3465]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-29 (Tue) [3466]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+2010-06-30 (Wed) [3467]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'1bbb0e21390b1cedc0a80116' and shares > 0 order by closed; 
+> Row 773:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-04-26 13:17:00.000000'
+>        COMMENT = 
+>     COMMISSION = 21.000000
+>   CURRENTORDER = X'73f571874bd5bc67c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'76253e434bc2002ec0a80132'
+>       MODIFIED = NULL
+>            NET = 919.987900
+>         OPENED = TIMESTAMP '2010-04-26 12:16:39.000000'
+>          PRICE = 2.190447
+>     PRIMARYKEY = X'73f371874bd5bc67c0a80132'
+>         SECFEE = 0.020000
+>         SHARES = 420.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1bbb0e21390b1cedc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+last ticket 2010-04-26
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'1bbb0e21390b1cedc0a80116' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1bbb0e21390b1cedc0a80116' and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1bbb0e21390b1cedc0a80116' and totalshares < 0)));
+
+apply the acquis
+70 members hold MGS
+last ticket 2010-04-26
+last price:  2010-06-30 (Wed) [3467]: O:1.5000 H:1.5000 L:1.5000 C:1.5000 V:0 TSO:56917 A:1.5000 R:1.0000 CA:0.0000
+
+going with 20100630  1.50 
+
+/Marketocracy/bin/cahelper -symbol  MGS  -effective 20100630 -type ACQUIS -exchange UN -acqType 1 -acqCash 1.50 -acqShare 0 -purchaser MGS   >& /Users/build/caout/MGS.20150609-ACQUIS.out
+MGS.20150609-ACQUIS.out
+stocks:~/caout build$ tail -f MGS.20150609-ACQUIS.out
+D: (06-09 12:04:42.895) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-09 12:05:08.691) cahelper started on 2015-06-09 12:05:08 -0400
+
+D: (06-09 12:05:08.914) There are [0] open tickets for MGS on 20100630
+D: (06-09 12:05:09.357) StockFileLoad Version:4.0
+D: (06-09 12:05:09.357) Loading Stock Data
+D: (06-09 12:05:49.455) Building Lookup Index
+D: (06-09 12:05:54.390) Finished Building Index
+D: (06-09 12:05:58.224) Finished Loading Stock Data
+D: (06-09 12:05:58.345) Connection to 192.168.111.172:6666 succeeded
+D: (06-09 12:06:04.242) SavingChanges for position sell out 101 of 195
+D: (06-09 12:06:12.202) {
+    "ACQUIRED_STOCK" = MGS; 
+    "ACQUIRING_STOCK" = "MGS_FIX"; 
+    AMOUNT = 1.5; 
+    APPLIED = 1; 
+    DATE = 20100630; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "MGS_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-09 12:06:21.733) SUCCESS
+D: (06-09 12:06:21.733) cahelper finished 2015-06-09 12:06:21 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey=X'1bbb0e21390b1cedc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591673207
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METROGAS S.A. CL'B'ADS
+>     PRIMARYKEY = X'1bbc0e21390b1cedc0a80116'
+>       STOCKKEY = X'1bbb0e21390b1cedc0a80116'
+>         SYMBOL = MGS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55102010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 591673207
+>           DATE = TIMESTAMP '2010-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = METROGAS S.A. CL'B'ADS
+>     PRIMARYKEY = X'd534545c55770eb4c0a86f92'
+>       STOCKKEY = X'1bbb0e21390b1cedc0a80116'
+>         SYMBOL = MGS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 55102010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'd534545c55770eb4c0a86f92';
+> Row 1:
+>              ALIASKEY = X'd534545c55770eb4c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MGS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|1.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150609:120508
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-06-30 00:00:00.000000'
+>         BB_IDENTIFIER = MGS_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MGS_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-06-30 00:00:00.000000'
+>            PRIMARYKEY = X'd52e545c55770eb4c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'd52e545c55770eb4c0a86f92';
+> Row 1:
+>   _C001 = 108.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd52e545c55770eb4c0a86f92'));
+108 fundkeys  save to CA issues MGS fundkeys.txt
+
+check on 6/10/15   invalidate funds
+ MGS has been acquired 	right curve
+  	  	
+METROGAS S.A. CL'B'ADS acquired by a private company on 2010-06-30 00:00:00.
+20100630
+ENRGY fund
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+06/30/2010 	$22,632.52 	$0.00 	$0.62 	$3,097.50 	$160.01 	$15,280.65 	$10,289.98 	$2,903,401.99 	$2,913,691.98 	100,000 	$29.14 	Yes 	Details 
+1680 shares * 1.50 = 2520  got cash	 
+
+doing the reprice now 
+check MAdmin
+1	teamfunds still holds this
+SWAN
+ledger
+Aug 11, 2009 	6938 	-1134 	5804 	Sell
+Aug 13, 2009 	5804 	-132 	5672 	Sell
+Sep 02, 2009 	5672 	-1543 	4129 	Sell
+Sep 03, 2009 	4129 	-6074 	-1945 	Sell  <--- only had 4129  change that and this balance becomes zero
+Sep 04, 2009 	-1945 	-2861 	-4806 	Sell
+Jun 30, 2010 	-4806 	-125 	-4931 	Corporate Action
+sells
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jan 22, 2007 	6,495 	$324.75 	$0.92 	$29,495.14 	$4.54
+Jul 17, 2009 	2,025 	$101.24 	$0.10 	$3,205.06 	$1.58
+Jul 20, 2009 	405 	$20.25 	$0.02 	$651.39 	$1.61
+Jul 21, 2009 	202 	$10.12 	$0.02 	$336.08 	$1.66
+Jul 22, 2009 	81 	$4.05 	$0.02 	$133.61 	$1.65
+Jul 30, 2009 	324 	$16.20 	$0.02 	$605.21 	$1.87
+Jul 30, 2009 	202 	$10.12 	$0.02 	$380.46 	$1.88
+Jul 31, 2009 	405 	$20.25 	$0.02 	$735.72 	$1.82
+Jul 31, 2009 	405 	$20.25 	$0.02 	$735.72 	$1.82
+Jul 31, 2009 	405 	$20.25 	$0.02 	$735.72 	$1.82
+Aug 11, 2009 	1,134 	$56.69 	$0.06 	$2,036.88 	$1.80
+Aug 13, 2009 	132 	$6.58 	$0.02 	$241.02 	$1.83
+Sep 2, 2009 	1,543 	$77.14 	$0.08 	$2,743.25 	$1.78
+Sep 3, 2009 	6,074 	$303.71 	$0.30 	$10,849.53 	$1.79  <--- only had 4129
+Sep 4, 2009 	2,861 	$143.05 	$0.14 	$5,242.58 	$1.83
+  	  	 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py teamfunds SWAN 20090903 MGS -4129 1.79
+Trading -4129.0 shares of METROGAS S.A. CL'B'ADS on Sep 03, 2009 at 1.79
+manager: teamfunds Marketocracy Team Funds
+fund: SWAN
+building trade (has to load stock prices first)
+price = 1.79
+selling -4129.0 shares of MGS at 1.79 on 20090903
+invaldating fund prices from Sep 03, 2009
+Done
+cleared this out
+
+we're good closing

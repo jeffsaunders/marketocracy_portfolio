@@ -1,0 +1,382 @@
+
+causes PortfolioAdmin to crash
+date:    7/31/15
+ticker:   UCBHQ
+
+yahoo:
+
+quantum:
+UCBH Holdings, Inc.
+Ticker Symbol: UCBHQ*     CUSIP: 90262T308     Exchange: OTOTC
+Security Type:   Bank Holding Company
+* NOTE: This security is no longer trading as of 11/17/11
+
+oursite:
+Symbol: UCBHQ 	Name: UCBH HOLDINGS 	Price: $0.01
+Volume: 	Sector: Financials 	Change:
+Short Volume: 0 	Style: Small Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:UCBH HOLDINGS  Symbol:UCBHQ
+Date: 07/31/2015
+
+96 users found
+
+1	414682	abowen	agrinya	ajahp@purdue.edu	asianbi	avillani	beattsm	bkara	bullwinkle	calbanese
+2	camqtr	chase671	crawfro	cw0104	ddeighton	delerious	dswomley	dwbagwell	edwardtrafford	efvenable
+3	etf	flajuie	fmowery	gedwards	ghouser	glenetis	greggorysmith	gritzert	hriel	icevodka
+4	inverjach	investingiseasy	investomatics	j_f_crater	jessem	jjakobovits	jlin244	jmarquart	jmcfarlane	johnhgraham
+5	jrandlett	juanvaldez	jyu	kahuna	kchaddad	knogales	kshum	kunkman20	lford	lliao
+6	longtrader	lswatts	lvillanueva3	lvolk	matdavidallen	mmmmm	mstephenson	mtrsystems	mvrh	mvrh1
+7	mwharry	myeh	newhavenraven	newlife1	nurcanyersel	patchu	pchwang	rallen0759	rangerdon	realvalue
+8	remo300	runonward	rwolf	sborst	scottbunn	sixfooteightdan	smilburn	snowytheman	sophie1	stemar
+9	strongra	swang	swingouton5	t_money	tharrington	threerabbits	tjrjunkbond	tleaf	topgun99	utterme
+10	vooch3	vpatel1	wbonner	werty	wgilcher	whitey09	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'UCBHQ';  
+> Row 1:
+>   STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+
+select * from mstockalias where stockkey=X'9ddd10ac390c6d99c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'9dde10ac390c6d99c0a8015c'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'4461150944a9cd89c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2009-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'bb0d28e54b046f91c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2011-03-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'32021c6a4d7025f3c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2011-03-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'321e1c6a4d7025f3c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='UCBHQ'  order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|UCBHQ|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 59325060
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 348481
+>        BB_COMPANYNAME = UCBH Holdings Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-11-17 00:00:00.000000'
+>         BB_IDENTIFIER = UCBHQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = UCBHQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>            PRIMARYKEY = X'afa543624ec599bdc0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock UCBHQ
+>>>> dbtool started at 2015-08-01 03:35:04 -0400
+
+stock: UCBHQ
+  PK       : [9DDD10AC390C6D99C0A8015C]
+  companyID: [7505]
+  symbol   : [UCBHQ]
+  name     : [UCBH HOLDINGS]
+  date     : [2011-03-03 00:00:00]
+  status   : [Active]
+stock: UCBHQ
+  PK       : [9DDD10AC390C6D99C0A8015C]
+  companyID: [7505]
+  symbol   : [UCBHQ]
+  name     : [UCBH HOLDINGS]
+  date     : [2011-03-03 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-08-01 03:35:06 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 7505
+2011-11-08 (Tue) [3963]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:5786 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-09 (Wed) [3964]: O:0.0050 H:0.0089 L:0.0050 C:0.0050 V:15134 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-10 (Thu) [3965]: O:0.0050 H:0.0089 L:0.0050 C:0.0050 V:47940 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-11 (Fri) [3966]: O:0.0050 H:0.0089 L:0.0050 C:0.0089 V:45600 TSO:120436 A:0.0089 R:1.0000 CA:0.5100
+2011-11-12 (Sat) [3967]: <WEEKEND>
+2011-11-13 (Sun) [3968]: <WEEKEND>
+2011-11-14 (Mon) [3969]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:13700 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-15 (Tue) [3970]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:16718 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-16 (Wed) [3971]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100  <---
+2011-11-17 (Thu) [3972]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-18 (Fri) [3973]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-19 (Sat) [3974]: <WEEKEND>
+2011-11-20 (Sun) [3975]: <WEEKEND>
+2011-11-21 (Mon) [3976]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:0 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-22 (Tue) [3977]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-23 (Wed) [3978]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-24 (Thu) [3979]: <HOLIDAY>
+2011-11-25 (Fri) [3980]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+2011-11-26 (Sat) [3981]: <WEEKEND>
+2011-11-27 (Sun) [3982]: <WEEKEND>
+2011-11-28 (Mon) [3983]: O:0.0050 H:0.0050 L:0.0050 C:0.0050 V:0 TSO:120436 A:0.0050 R:1.0000 CA:0.5100
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'9ddd10ac390c6d99c0a8015c' and shares > 0 order by closed; 
+> Row 1639:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-06-07 13:38:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.119500
+>   CURRENTORDER = X'2a2a1d534deda17ec0a80135'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'c6d609d9424bb3dfc0a80133'
+>       MODIFIED = NULL
+>            NET = 2.270500
+>         OPENED = TIMESTAMP '2011-06-06 23:56:46.000000'
+>          PRICE = 0.005676
+>     PRIMARYKEY = X'2a281d534deda17ec0a80135'
+>         SECFEE = 0.010000
+>         SHARES = 400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'9ddd10ac390c6d99c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9ddd10ac390c6d99c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'9ddd10ac390c6d99c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+delist 2011-11-17 
+there are 96 members who hold this stock
+quantum: NOTE: This security is no longer trading as of 11/17/11
+last ticket: 2011-06-07 PRICE = 0.005676
+last price:  2011-11-16 (Wed) [3971]: O:0.0050 H:0.0070 L:0.0050 C:0.0050 V:54630 TSO:120436 A:0.0050 R:1.0000 CA:0.5100  <---
+
+going with 20111117  0.0050 
+
+
+/Marketocracy/bin/cahelper -symbol  UCBHQ  -effective 20111117 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0050  -acqShare 0 -purchaser UCBHQ   >& /Users/build/caout/UCBHQ.20150801-DELIST.out
+UCBHQ.20150801-DELIST.out
+stocks:~/caout build$ tail -f UCBHQ.20150801-DELIST.out
+grep: invalid option -- t
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try `grep D: (08-01 03:39:27.731) cahelper started on 2015-08-01 03:39:27 -0400
+
+D: (08-01 03:39:28.325) There are [0] open tickets for UCBHQ on 20111117
+D: (08-01 03:39:29.251) StockFileLoad Version:4.0
+D: (08-01 03:39:29.251) Loading Stock Data
+D: (08-01 03:41:17.797) Building Lookup Index
+D: (08-01 03:41:29.900) Finished Building Index
+D: (08-01 03:41:39.441) Finished Loading Stock Data
+D: (08-01 03:41:39.689) Connection to 192.168.111.172:6666 succeeded
+D: (08-01 03:41:46.132) SavingChanges for position sell out 101 of 493
+D: (08-01 03:42:00.454) {
+    "ACQUIRED_STOCK" = UCBHQ; 
+    "ACQUIRING_STOCK" = "UCBHQ_FIX"; 
+    AMOUNT = 0.005; 
+    APPLIED = 1; 
+    DATE = 20111117; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "UCBHQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (08-01 03:42:07.104) SUCCESS
+D: (08-01 03:42:07.105) cahelper finished 2015-08-01 03:42:07 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'9ddd10ac390c6d99c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'9dde10ac390c6d99c0a8015c'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2006-07-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'4461150944a9cd89c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2009-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'bb0d28e54b046f91c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2011-03-03 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'32021c6a4d7025f3c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2011-03-03 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'321e1c6a4d7025f3c0a80146'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 90262T308
+>           DATE = TIMESTAMP '2011-11-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = UCBH HOLDINGS
+>     PRIMARYKEY = X'8c28285255bc77b0c0a86f92'
+>       STOCKKEY = X'9ddd10ac390c6d99c0a8015c'
+>         SYMBOL = UCBHQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 40101015
+>       STYLEKEY = SG
+
+
+select * from mcorporateaction where aliaskey =X'8c28285255bc77b0c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'8c28285255bc77b0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|UCBHQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.005000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150801:033927
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-11-17 00:00:00.000000'
+>         BB_IDENTIFIER = UCBHQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = UCBHQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-11-17 00:00:00.000000'
+>            PRIMARYKEY = X'8c22285255bc77afc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'8c22285255bc77afc0a86f92';
+> Row 1:
+>   _C001 = 173.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8c22285255bc77afc0a86f92'));
+there are 173 fundkeys, save to CA issues UCBHQ fundkeys.txt
+
+For Beta case
+UCBHQ no longer trades but is still active on our site - need to delist 
+
+check on 8/1/15   invalidate funds
+
+check MAdmin  clear
+
+8/4/15
+ UCBHQ has been acquired 	right curve
+  	  	
+UCBH HOLDINGS acquired by a private company on 2011-11-17 00:00:00. 
+
+invalidate 
+reprice and close 

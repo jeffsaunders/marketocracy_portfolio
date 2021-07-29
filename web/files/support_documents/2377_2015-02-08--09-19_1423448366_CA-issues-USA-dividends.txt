@@ -1,0 +1,152 @@
+date: 2/8/15
+USA missing dividends
+
+our site:
+01 May 13	03 May 13	17 Jun 13	4	$0.08	Dividend amount:0.08 per share.
+31 Jul 13	02 Aug 13	16 Sep 13	4	$0.09	Dividend amount:0.09 per share.
+30 Oct 13	01 Nov 13	02 Jan 14	4	$0.10	Dividend amount:0.1 per share.
+22 Jan 14	24 Jan 14	10 Mar 14	4	$0.10	Dividend amount:0.1 per share.
+30 Apr 14	02 May 14	16 Jun 14	4	$0.10	Dividend amount:0.1 per share. <--- last one paid
+
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+01/21/2015	Cash	0.1	01/12/2015	01/23/2015	03/09/2015
+10/29/2014	Cash	0.09	10/20/2014	10/31/2014	01/02/2015
+07/30/2014	Cash	0.1	07/21/2014	08/01/2014	09/15/2014
+04/30/2014	Cash	0.1	04/21/2014	05/02/2014	06/16/2014  <--- last one paid
+
+USA.20150208-2014-09.out
+USA.20150208-2015-01.out
+USA.20150208-2015-03.out
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='USA' and BB_ACTIONMNEMONIC='DVD_CASH' order by BB_EFFECTIVE;
+
+> Row 59:
+>              ALIASKEY = X'1a980e21390b19b2c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140801|CP_PAY_DT|20140915|CP_FREQ|4|CP_NET_AMT|0.100000|CP_TAX_AMT| |CP_GROSS_AMT|0.100000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150208:081848
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-07-30 00:00:00.000000'
+>         BB_IDENTIFIER = USA     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = USA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-07-30 00:00:00.000000'
+>            PRIMARYKEY = X'f27627ca54d76238c0a86f92'
+>               VERSION = NULL
+> Row 60:
+>              ALIASKEY = X'1a980e21390b19b2c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141031|CP_PAY_DT|20150102|CP_FREQ|4|CP_NET_AMT|0.090000|CP_TAX_AMT| |CP_GROSS_AMT|0.090000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150208:081808
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-10-29 00:00:00.000000'
+>         BB_IDENTIFIER = USA     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-10-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = USA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-10-29 00:00:00.000000'
+>            PRIMARYKEY = X'fd3e279a54d76210c0a86f92'
+>               VERSION = NULL
+> Row 61:
+>              ALIASKEY = X'1a980e21390b19b2c0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150123|CP_PAY_DT|20150309|CP_FREQ|4|CP_NET_AMT|0.100000|CP_TAX_AMT| |CP_GROSS_AMT|0.100000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150208:081716
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = USA     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = USA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'ef4d279054d761dcc0a86f92'
+>               VERSION = NULL
+
+check on 2/9/15
+dividends are there closing
+cash dividends paid by USA	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+30 Aug 00	30 Aug 00	30 Aug 00	N/A	$0.37	Dividend amount:0.37 per share.
+15 Nov 00	15 Nov 00	15 Nov 00	N/A	$0.36	Dividend amount:0.36 per share.
+28 Feb 01	02 Mar 01	19 Mar 01	4	$0.33	Dividend amount:0.33 per share.
+16 May 01	18 May 01	02 Jul 01	4	$0.31	Dividend amount:0.31 per share.
+15 Aug 01	17 Aug 01	09 Oct 01	4	$0.31	Dividend amount:0.31 per share.
+14 Nov 01	16 Nov 01	02 Jan 02	4	$0.25	Dividend amount:0.25 per share.
+27 Feb 02	01 Mar 02	18 Mar 02	4	$0.25	Dividend amount:0.25 per share.
+15 May 02	17 May 02	01 Jul 02	4	$0.24	Dividend amount:0.24 per share.
+28 Aug 02	30 Aug 02	16 Sep 02	4	$0.20	Dividend amount:0.2 per share.
+13 Nov 02	15 Nov 02	02 Jan 03	4	$0.19	Dividend amount:0.19 per share.
+26 Feb 03	28 Feb 03	17 Mar 03	4	$0.17	Dividend amount:0.17 per share.
+14 May 03	16 May 03	30 Jun 03	4	$0.19	Dividend amount:0.19 per share.
+13 Aug 03	15 Aug 03	06 Oct 03	4	$0.20	Dividend amount:0.2 per share.
+12 Nov 03	14 Nov 03	02 Jan 04	4	$0.22	Dividend amount:0.22 per share.
+25 Feb 04	27 Feb 04	22 Mar 04	4	$0.24	Dividend amount:0.24 per share.
+12 May 04	14 May 04	28 Jun 04	4	$0.22	Dividend amount:0.22 per share.
+11 Aug 04	13 Aug 04	04 Oct 04	4	$0.21	Dividend amount:0.21 per share.
+09 Nov 04	12 Nov 04	03 Jan 05	4	$0.22	Dividend amount:0.22 per share.
+02 Feb 05	04 Feb 05	21 Mar 05	4	$0.22	Dividend amount:0.22 per share.
+11 May 05	13 May 05	27 Jun 05	4	$0.21	Dividend amount:0.21 per share.
+03 Aug 05	05 Aug 05	26 Sep 05	4	$0.23	Dividend amount:0.23 per share.
+08 Nov 05	10 Nov 05	03 Jan 06	4	$0.21	Dividend amount:0.21 per share.
+01 Mar 06	03 Mar 06	20 Mar 06	4	$0.23	Dividend amount:0.23 per share.
+31 May 06	02 Jun 06	19 Jun 06	4	$0.22	Dividend amount:0.22 per share.
+30 Aug 06	01 Sep 06	18 Sep 06	4	$0.21	Dividend amount:0.21 per share.
+08 Nov 06	10 Nov 06	02 Jan 07	4	$0.22	Dividend amount:0.22 per share.
+28 Feb 07	02 Mar 07	19 Mar 07	4	$0.23	Dividend amount:0.23 per share.
+09 May 07	11 May 07	25 Jun 07	4	$0.23	Dividend amount:0.23 per share.
+08 Aug 07	10 Aug 07	24 Sep 07	4	$0.22	Dividend amount:0.22 per share.
+07 Nov 07	09 Nov 07	02 Jan 08	4	$0.22	Dividend amount:0.22 per share.
+27 Feb 08	29 Feb 08	17 Mar 08	4	$0.19	Dividend amount:0.19 per share.
+28 May 08	30 May 08	16 Jun 08	4	$0.19	Dividend amount:0.19 per share.
+27 Aug 08	29 Aug 08	15 Sep 08	4	$0.17	Dividend amount:0.17 per share.
+10 Dec 08	12 Dec 08	02 Jan 09	4	$0.10	Dividend amount:0.1 per share.
+28 Jan 09	30 Jan 09	16 Mar 09	4	$0.10	Dividend amount:0.1 per share.
+06 May 09	08 May 09	22 Jun 09	4	$0.06	Dividend amount:0.06 per share.
+26 Aug 09	28 Aug 09	14 Sep 09	4	$0.07	Dividend amount:0.07 per share.
+16 Dec 09	18 Dec 09	04 Jan 10	4	$0.08	Dividend amount:0.08 per share.
+24 Feb 10	26 Feb 10	15 Mar 10	4	$0.08	Dividend amount:0.08 per share.
+26 May 10	28 May 10	14 Jun 10	4	$0.08	Dividend amount:0.08 per share.
+25 Aug 10	27 Aug 10	13 Sep 10	4	$0.07	Dividend amount:0.07 per share.
+15 Dec 10	17 Dec 10	03 Jan 11	4	$0.08	Dividend amount:0.08 per share.
+23 Feb 11	25 Feb 11	14 Mar 11	4	$0.09	Dividend amount:0.09 per share.
+25 May 11	27 May 11	13 Jun 11	4	$0.09	Dividend amount:0.09 per share.
+24 Aug 11	26 Aug 11	12 Sep 11	4	$0.08	Dividend amount:0.08 per share.
+14 Dec 11	16 Dec 11	03 Jan 12	4	$0.08	Dividend amount:0.08 per share.
+14 Dec 11	16 Dec 11	03 Jan 12	4	$0.08	Dividend amount:0.08 per share.
+22 Feb 12	24 Feb 12	12 Mar 12	4	$0.08	Dividend amount:0.08 per share.
+22 Feb 12	24 Feb 12	12 Mar 12	4	$0.08	Dividend amount:0.08 per share.
+23 May 12	25 May 12	11 Jun 12	4	$0.08	Dividend amount:0.08 per share.
+01 Aug 12	03 Aug 12	17 Sep 12	4	$0.08	Dividend amount:0.08 per share.
+31 Oct 12	02 Nov 12	02 Jan 13	4	$0.08	Dividend amount:0.08 per share.
+23 Jan 13	25 Jan 13	11 Mar 13	4	$0.08	Dividend amount:0.08 per share.
+01 May 13	03 May 13	17 Jun 13	4	$0.08	Dividend amount:0.08 per share.
+31 Jul 13	02 Aug 13	16 Sep 13	4	$0.09	Dividend amount:0.09 per share.
+30 Oct 13	01 Nov 13	02 Jan 14	4	$0.10	Dividend amount:0.1 per share.
+22 Jan 14	24 Jan 14	10 Mar 14	4	$0.10	Dividend amount:0.1 per share.
+30 Apr 14	02 May 14	16 Jun 14	4	$0.10	Dividend amount:0.1 per share.
+30 Jul 14	01 Aug 14	15 Sep 14	4	$0.10	Dividend amount:0.1 per share.
+29 Oct 14	31 Oct 14	02 Jan 15	4	$0.09	Dividend amount:0.09 per share.
+21 Jan 15	23 Jan 15	09 Mar 15	4	$0.10	Dividend amount:0.1 per share.
+
+closing

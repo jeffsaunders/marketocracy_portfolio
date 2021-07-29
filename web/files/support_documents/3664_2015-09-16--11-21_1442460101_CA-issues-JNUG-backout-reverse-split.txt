@@ -1,0 +1,177 @@
+date:  9/14/15
+NUGT GASL JNUG JDST FAZ TZA  all had reverse splits done on 9/10/15  
+need to back these out
+
+ticker JNUG  back out the reverse CA
+
+select distinct stockkey from mstockalias where symbol='JNUG';
+> Row 1:
+>   STOCKKEY = X'f3a94b80524df4ebc0a80146'
+select * from mstockalias where STOCKKEY = X'f3a94b80524df4ebc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-10-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>     PRIMARYKEY = X'f3aa4b80524df4ebc0a80146'
+>       STOCKKEY = X'f3a94b80524df4ebc0a80146'
+>         SYMBOL = JNUG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y157
+>           DATE = TIMESTAMP '2014-12-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>     PRIMARYKEY = X'470653bf549a03f8c0a86f92'  <-- make this the identitykey
+>       STOCKKEY = X'f3a94b80524df4ebc0a80146'
+>         SYMBOL = JNUG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25490K554
+>           DATE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>     PRIMARYKEY = X'61a4293d55f20f84c0a86f92'  <--- delete 
+>       STOCKKEY = X'f3a94b80524df4ebc0a80146'
+>         SYMBOL = JNUG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'61a4293d55f20f84c0a86f92';
+> Row 1:
+>              ALIASKEY = X'61a4293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150910|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946514
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 37249667
+>        BB_COMPANYNAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = JNUG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = JNUG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd60c0e4955c92d76c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'61a4293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|25459Y157|CP_NEW_CUSIP|25490K554|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US25459Y1579|CP_NEW_ISIN|US25490K5544|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946916
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 37249667
+>        BB_COMPANYNAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = JNUG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = JNUG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd60e0e4955c92d76c0a86f92'
+>               VERSION = NULL
+	delete from mcorporateaction where PRIMARYKEY = X'd60e0e4955c92d76c0a86f92';  done
+
+select count(*) from mticket where sourcekey=X'd60c0e4955c92d76c0a86f92';
+> Row 1:
+>   _C001 = 170.000000
+select primarykey from mticket where sourcekey=X'd60c0e4955c92d76c0a86f92';
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd60c0e4955c92d76c0a86f92');
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd60c0e4955c92d76c0a86f92'));
+there are 85 fundkeys save to CA issues JNUG fundkeys back out reverse split.txt
+
+update mcorporateaction set BB_ACTIONID = '110946916:MARTY' where PRIMARYKEY = X'd60c0e4955c92d76c0a86f92';
+check
+select * from mcorporateaction where aliaskey=X'61a4293d55f20f84c0a86f92';
+> Row 1:
+>              ALIASKEY = X'61a4293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150910|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946916:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 37249667
+>        BB_COMPANYNAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = JNUG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = JNUG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd60c0e4955c92d76c0a86f92'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 110946916:MARTY
+
+done
+
+select * from mstock where primarykey=X'f3a94b80524df4ebc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'61a4293d55f20f84c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f3a94b80524df4ebc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 24974
+>   WINDOWIDENTITYKEY = NULL
+
+update mstock set IDENTITYKEY=X'470653bf549a03f8c0a86f92' where primarykey=X'f3a94b80524df4ebc0a80146';
+delete from mstockalias where PRIMARYKEY = X'61a4293d55f20f84c0a86f92' ;
+
+check
+select * from mstockalias where STOCKKEY = X'f3a94b80524df4ebc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-10-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>     PRIMARYKEY = X'f3aa4b80524df4ebc0a80146'
+>       STOCKKEY = X'f3a94b80524df4ebc0a80146'
+>         SYMBOL = JNUG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459Y157
+>           DATE = TIMESTAMP '2014-12-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Junior Gold Miners Index Bull 3x Shares
+>     PRIMARYKEY = X'470653bf549a03f8c0a86f92'
+>       STOCKKEY = X'f3a94b80524df4ebc0a80146'
+>         SYMBOL = JNUG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+invalidate
+done
+
+JNUG erroneously applied reverse split done on 9/10/15
+
+this is backed out, closing 
+
+reprice

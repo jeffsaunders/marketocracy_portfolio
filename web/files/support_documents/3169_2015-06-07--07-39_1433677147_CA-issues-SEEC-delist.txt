@@ -1,0 +1,299 @@
+date:
+ticker: SEEC
+
+yahoo:  nothing
+
+quantum:
+SEEC, Inc.
+Ticker Symbol: SEEC*     CUSIP: 784110108     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 4/23/09
+
+Company's Online Profile
+BUSINESS:  SEEC, Inc. provides software solutions that help insurance, financial services and other companies apply their knowledge and best practices in new ways, evolving their business processes to drive growth and profitability. SEEC's solutions and industry components extend and automate business processes by connecting corporate systems and infrastructure to customers and business partners using XML and Web services technologies, reducing the costs, risks, and time for introducing Web-based business capabilities.
+
+Notes:  Acquired by Polaris Software Lab Pte Ltd per the Other OTC on 4/23/2009.
+
+
+oursite: 
+Symbol: SEEC 	Name: SEEC INC 	Price: $0.51
+Volume: 	Sector: Information Technology 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low
+CAs
+SEEC has been delisted 	right curve
+  	  	
+SEEC is being removed from listing on NASDAQ for the following reason Failure to Meet Listing Requirements.
+  	  	 
+left curve 	  listing changes for SEEC 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Nov 14, 2003 	NASDAQ 	UQ 	OTCBB-OTHER 	UV 	Change in the exchange that SEEC trades on from NASDAQ to OTCBB-OTHER
+  	  	 
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+SEEC  MM/DD/YYYY
+Stock:SEEC INC  Symbol:SEEC
+Date: 06/03/2015
+
+9 users found
+
+1	bwelke	chaoswk	colinkayla	djvc	dreid	gminternational	panan777	rsesha	vincent_ong
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'SEEC';  
+> Row 1:
+>   STOCKKEY = X'faea0e21390ac530c0a80116'
+
+select * from mstockalias where stockkey=X'faea0e21390ac530c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'faeb0e21390ac530c0a80116'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2003-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'eb4c340b3fb596efc0a80146'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2003-11-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'8d0d35373fb59725c0a80146'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SEEC'  order by BB_EFFECTIVE;
+nothing useful
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SEEC
+>>>> dbtool started at 2015-06-04 01:08:22 -0400
+stock: SEEC
+  PK       : [FAEA0E21390AC530C0A80116]
+  companyID: [3403]
+  symbol   : [SEEC]
+  name     : [SEEC INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: SEEC
+  PK       : [FAEA0E21390AC530C0A80116]
+  companyID: [3403]
+  symbol   : [SEEC]
+  name     : [SEEC INC]
+  date     : [2003-11-14 00:00:00]
+  status   : [Delist]
+stock: SEEC
+  PK       : [FAEA0E21390AC530C0A80116]
+  companyID: [3403]
+  symbol   : [SEEC]
+  name     : [SEEC INC]
+  date     : [2003-11-14 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-04 01:08:22 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3403
+2009-10-28 (Wed) [3222]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+2009-10-29 (Thu) [3223]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+2009-10-30 (Fri) [3224]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+2009-10-31 (Sat) [3225]: <WEEKEND>
+2009-11-01 (Sun) [3226]: <WEEKEND>
+2009-11-02 (Mon) [3227]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+2009-11-03 (Tue) [3228]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+2009-11-04 (Wed) [3229]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'faea0e21390ac530c0a80116' and shares > 0 order by closed; 
+> Row 36:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2006-01-13 14:55:00.000000'
+>        COMMENT = 
+>     COMMISSION = 109.760000
+>   CURRENTORDER = X'9b4a141643c3f9a1c0a80134'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'8bd0106d3989d12cc0a80118'
+>       MODIFIED = NULL
+>            NET = 2304.960000
+>         OPENED = TIMESTAMP '2006-01-10 13:14:57.000000'
+>          PRICE = 0.460992
+>     PRIMARYKEY = X'9b48141643c3f9a1c0a80134'
+>         SECFEE = 0.000000
+>         SHARES = 5000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'faea0e21390ac530c0a80116' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'faea0e21390ac530c0a80116' and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'faea0e21390ac530c0a80116' and totalshares < 0)));
+
+apply the acquis
+last trade: 2006-01-13
+last price:  
+2009-11-04 (Wed) [3229]: O:0.5100 H:0.5100 L:0.5100 C:0.5100 V:0 TSO:0 A:0.5100 R:1.0000 CA:0.0000
+quantum says: * NOTE: This security is no longer trading as of 4/23/09
+
+
+going with 20091104 0.51 
+
+/Marketocracy/bin/cahelper -symbol  SEEC  -effective 20091104 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.51 -acqShare 0 -purchaser SEEC   >& /Users/build/caout/SEEC.20150604-ACQUIS.out
+SEEC.20150604-ACQUIS.out
+stocks:~/caout build$ cat SEEC.20150604-ACQUIS.out
+D: (06-04 07:32:24.912) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-04 07:32:49.773) cahelper started on 2015-06-04 07:32:49 -0400
+
+D: (06-04 07:32:50.124) There are [0] open tickets for SEEC on 20091104
+D: (06-04 07:32:50.750) StockFileLoad Version:4.0
+D: (06-04 07:32:50.750) Loading Stock Data
+D: (06-04 07:33:29.440) Building Lookup Index
+D: (06-04 07:33:34.538) Finished Building Index
+D: (06-04 07:33:38.330) Finished Loading Stock Data
+D: (06-04 07:33:38.452) Connection to 192.168.111.172:6666 succeeded
+D: (06-04 07:33:38.658) {
+    "ACQUIRED_STOCK" = SEEC; 
+    "ACQUIRING_STOCK" = "SEEC_FIX"; 
+    AMOUNT = 0.51; 
+    APPLIED = 1; 
+    DATE = 20091104; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SEEC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-04 07:33:40.219) SUCCESS
+D: (06-04 07:33:40.219) cahelper finished 2015-06-04 07:33:40 -0400
+
+
+Check the results 
+select * from mstockalias where stockkey=X'faea0e21390ac530c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'faeb0e21390ac530c0a80116'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2003-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'eb4c340b3fb596efc0a80146'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2003-11-14 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'8d0d35373fb59725c0a80146'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 784110108
+>           DATE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SEEC INC
+>     PRIMARYKEY = X'89b4284155703762c0a86f92'
+>       STOCKKEY = X'faea0e21390ac530c0a80116'
+>         SYMBOL = SEEC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45103010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'89b4284155703762c0a86f92';
+> Row 1:
+>              ALIASKEY = X'89b4284155703762c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SEEC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.510000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150604:073249
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = SEEC_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SEEC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'89ae284155703761c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'89ae284155703761c0a86f92';
+> Row 1:
+>   _C001 = 10.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'89ae284155703761c0a86f92'));
+10 fundkeys save to CA issues SEEC fundkeys.txt
+
+CA is there 
+ SEEC has been acquired 	right curve
+  	  	
+SEEC INC acquired by a private company on 2009-11-04 00:00:00.
+  	  	 
+invalidate - done
+reprice - 

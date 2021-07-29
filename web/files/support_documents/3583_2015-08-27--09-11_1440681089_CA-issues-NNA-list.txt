@@ -1,0 +1,111 @@
+date:  8/26/15
+listing a new stock
+
+yahoo finance
+Navios Maritime Acquisition Corporation (NNA) -NYSE
+3.32 Down 0.05(1.48%) 1:53PM EDT - Nasdaq Real Time Price
+
+Add to Portfolio
+Prev Close:	3.37
+Open:	3.46
+Bid:	3.32 x 200
+Ask:	3.33 x 400
+1y Target Est:	5.16
+Beta:	1.39
+Earnings Date:	Nov 18 - Nov 23 (Est.)
+Day's Range:	3.26 - 3.45
+52wk Range:	2.36 - 4.50
+Volume:	245,342
+Avg Vol (3m):	497,745
+Market Cap:	504.99M
+P/E (ttm):	7.41
+EPS (ttm):	0.45
+Div & Yield:	0.20 (5.70%
+
+
+select distinct stockkey from mstockalias where symbol='NNA';
+nothing
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NNA';
+
+did we just miss this one?
+
+historical quotes Jul 7, 2008
+
+quantum:
+Navios Maritime Acquisition Corp.
+Ticker Symbol: NNA     CUSIP: Y62159101     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Navios Holdings Inc. is one of the leading global brands in seaborne shipping, specializing in the worldwide carriage, trading, storage and related logistics of international bulk cargoes. For over 50 years, raw materials producers, agricultural traders and exporters, industrial end users, ship owners, charterers, ship and derivative brokers, agents, and financial business partners have relied on Navios' expertise and innovation.
+Small Cap Stock -   Market Value $ 485 Million
+
+check the cusip:  Y62159101   this is correct 
+
+check xignite:  it is there let's list it
+
+NNA|N|Y62159101|Navios Maritime Acquisition Corporation|20150826
+
+put this in symadd.txt
+
+then run the tool
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='NNA';
+
+> Row 1:
+>   STOCKKEY = X'6c4842e555ddffcec0a86f92'
+
+select * from mstockalias where STOCKKEY = X'6c4842e555ddffcec0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y62159101
+>           DATE = TIMESTAMP '2015-08-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Navios Maritime Acquisition Corporation
+>     PRIMARYKEY = X'6c4942e555ddffcec0a86f92'
+>       STOCKKEY = X'6c4842e555ddffcec0a86f92'
+>         SYMBOL = NNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+Market Cap:	504.99M
+Details	 
+Index Membership:	N/A
+Sector:	Services
+Industry:	Shipping
+Full Time Employees:	N/A
+
+
+Small cap - Have a market cap between $300 million to $2 billion. 
+
+update mstockalias set STYLEKEY='SV' where PRIMARYKEY = X'6c4942e555ddffcec0a86f92';
+
+20303010	Marine
+	Companies providing goods or passenger maritime transportation. Excludes cruise-ships classified in the Hotels, Resorts & Cruise Lines Sub-Industry.
+
+update mstockalias set GICSKEY='20303010' where PRIMARYKEY = X'6c4942e555ddffcec0a86f92';
+checking:
+
+select * from mstockalias where STOCKKEY = X'6c4842e555ddffcec0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Y62159101
+>           DATE = TIMESTAMP '2015-08-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Navios Maritime Acquisition Corporation
+>     PRIMARYKEY = X'6c4942e555ddffcec0a86f92'
+>       STOCKKEY = X'6c4842e555ddffcec0a86f92'
+>         SYMBOL = NNA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20303010
+>       STYLEKEY = SV
+
+
+This stock is there on the new site now.
+Closing this out
+ 
+

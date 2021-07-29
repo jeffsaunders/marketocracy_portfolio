@@ -1,0 +1,684 @@
+date:  7/15/15
+FISH changed to  ASUR  
+
+
+Ticket Number:	3411
+Portfolio Username:	ahoffard
+Ticker Symbol:	FISH
+Corporate Action Type:
+Ticker Symbol Change
+Subject:
+changed to ASUR
+Description:
+changed symbol
+Affected Funds:	1118-2
+Thank you.
+
+quantum
+Azure Midstream Partners, LP
+Ticker Symbol: AZUR     CUSIP: 05501X100     Exchange: NYSE
+Security Type:   Master Limited Partnership
+
+Company's Online Profile
+BUSINESS:  Azure Midstream Partners, LP is a fee-based, growth oriented Delaware limited partnership formed to develop, own, operate and acquire midstream energy assets. Azure currently provides natural gas gathering, transportation, treating and processing services, NGL transportation services and crude oil transloading services. Headquartered in Dallas, Texas, Azure's assets include 723 miles of gathering lines in the horizontal Cotton Valley plays located in east Texas and north Louisiana, two natural gas processing facilities located in Panola County, Texas, a natural gas processing facility located in Tyler County, Texas, two NGL transportation pipelines that connect its Panola County and Tyler County processing facilities to third party NGL pipelines and three crude oil transloading facilities containing six crude oil transloaders.
+
+Notes:  May 20, 2015 - Also effective immediately, the general partner of Azure changed its name to Azure Midstream Partners GP, LLC. Azure submitted written notice to NASDAQ Global Market to voluntarily delist its common units, and applied to list its common units on the NYSE effective May 29, 2015 under ticker AZUR. _______________ February 27, 2015, 100% of Azure Midstream Partners, LP’s, formerly Marlin Midstream Partners LP, general partner interest was acquired by Azure Midstream Energy, LLC. Additionally, Azure Midstream’s Legacy gathering system was contributed to Marlin, creating a diverse platform of midstream service offerings and establishing one of the largest gathering and processing systems in the Haynesville and horizontal Cotton Valley plays. The Partnership now operates approximately 700 miles of high- and low- pressure gathering lines, 260 MMcf/d of processing capacity, 20,000 Bbls/d of NGL takeaway capacity, and three crude oil transloading facilities.
+IPO - 7/26/2013 - 6.88 Million Units @ $20.00/unit.    Link to IPO Prospectus
+Previous Ticker Symbol: FISH    Changed: 5/29/15
+Previous Name: Marlin Midstream Partners, LP    Changed: 5/20/15
+Small Cap Stock -   Market Value $ 161 Million
+Click for current AZUR price quote from the NYSE
+
+
+name change and ticker change
+
+select distinct stockkey from mstockalias where symbol='FISH';
+> Row 1:
+>   STOCKKEY = X'0bc70e21390aef16c0a80116'
+> Row 2:
+>   STOCKKEY = X'973c22b451f302dec0a80146'
+
+there are two
+******************************************************************************
+> FISH 1:
+>   STOCKKEY = X'0bc70e21390aef16c0a80116'
+******************************************************************************
+select * from mstockalias where STOCKKEY = X'0bc70e21390aef16c0a80116' order by "date";
+this is a different compamy and is delisted 
+******************************************************************************
+> FISH 2:
+>   STOCKKEY = X'973c22b451f302dec0a80146'
+this is our stock
+******************************************************************************
+select * from mstockalias where STOCKKEY = X'973c22b451f302dec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Marlin Midstream Partners LP
+>     PRIMARYKEY = X'973d22b451f302dec0a80146'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'43af1932555d13b2c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU	
+	select * from mcorporateaction where aliaskey=X'43af1932555d13b2c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'43af1932555d13b2c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Marlin Midstream Partners LP|CP_NEW_NAME|Azure Midstream Partners LP|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107092200
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 36159751
+>        BB_COMPANYNAME = Marlin Midstream Partners LP
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>         BB_IDENTIFIER = FISH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>            PRIMARYKEY = X'bb394c09555bc1dcc0a86f92'
+>               VERSION = NULL
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'e7c21960555d13eac0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'e7c21960555d13eac0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'e7c21960555d13eac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|57118V100|CP_NEW_CUSIP|05501X100|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US57118V1008|CP_NEW_ISIN|US05501X1000|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107092230
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 36159751
+>        BB_COMPANYNAME = Marlin Midstream Partners LP
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>         BB_IDENTIFIER = FISH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-19 00:00:00.000000'
+>            PRIMARYKEY = X'bb354c09555bc1d8c0a86f92'
+>               VERSION = NULL
+
+
+let's look for unapplied CAs in the database (null aliaskey_
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='FISH' order by BB_EFFECTIVE;
+> Row 24:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 107473985
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 36159751
+>        BB_COMPANYNAME = Azure Midstream Partners LP
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = FISH    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-05-28 00:00:00.000000'
+>            PRIMARYKEY = X'ab03695855679c69c0a86f92'
+>               VERSION = NULL
+
+no ticker change came through
+
+note for the case 
+Hi Anton,  thank you for letting us know.  This is strange, our site processed the name change and CUSIP change.  But we missed the ticker change and exchange change.  (Nasdaq to NYSE)  .  I will add these now.  And since the ticker changed a while back I can guess that prices are not getting updated.  I will check that aspect and correct, too if necessary.  If all goes well, this should be on our site in the morning (7/16/15).  I'll get the changes in the database today, however, our site will need a nightly load process to be visible on the website
+
+change the ticker  manually
+  KIM - here is where I tried to run cahelper to change the ticker from FISH to AZUR  
+
+/Marketocracy/bin/cahelper -symbol AZUR -effective 20150529 -type CHG_TKR -exchange UQ -oldSymbol FISH >& /Users/build/caout/FISH.20150715-CHG-TKR_AZUR.out
+stocks:~/caout build$ tail -f FISH.20150715-CHG-TKR_AZUR.out
+D: (07-15 15:50:04.421) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-15 15:50:28.394) cahelper started on 2015-07-15 15:50:28 -0400
+
+D: (07-15 15:50:28.607) {
+    APPLIED = 0; 
+    DATE = 20150529; 
+    NOTES = "N.A."; 
+    SYMBOL = AZUR; 
+    TYPE = "CHG_TKR"; 
+}
+D: (07-15 15:50:28.608) SUCCESS
+D: (07-15 15:50:28.608) cahelper finished 2015-07-15 15:50:28 -0400
+
+select * from mstockalias where STOCKKEY = X'973c22b451f302dec0a80146' order by "date";
+not there - did not apply
+
+why not?
+
+select distinct stockkey from mstockalias where symbol='AZUR';
+> Row 1:
+>   STOCKKEY = X'd4360e21390a6cf4c0a80116'
+
+select * from mstockalias where STOCKKEY = X'd4360e21390a6cf4c0a80116' order by "date";
+there was another compamy that previously used AZUR but the ticker is free now  
+
+let's look at pricing
+> FISH 2:
+>   STOCKKEY = X'973c22b451f302dec0a80146'
+select * from mstock where primarykey=X'973c22b451f302dec0a80146';
+> Row 1:
+>         IDENTITYKEY = X'e7c21960555d13eac0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'973c22b451f302dec0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 24609
+>   WINDOWIDENTITYKEY = NULL
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 24609
+2015-05-18 (Mon) [5250]: O:16.7500 H:17.4500 L:16.7500 C:17.0200 V:101505 TSO:0 A:17.0200 R:1.0000 CA:0.0000
+2015-05-19 (Tue) [5251]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-05-20 (Wed) [5252]: O:16.9200 H:17.1900 L:16.1100 C:16.6800 V:59019 TSO:0 A:16.6800 R:1.0000 CA:0.0000
+2015-05-21 (Thu) [5253]: O:16.8900 H:17.4800 L:16.5600 C:17.4800 V:122059 TSO:0 A:17.4800 R:1.0000 CA:0.0000
+2015-05-22 (Fri) [5254]: O:17.5700 H:17.5700 L:16.7500 C:16.9100 V:85060 TSO:0 A:16.9100 R:1.0000 CA:0.0000
+2015-05-23 (Sat) [5255]: <WEEKEND>
+2015-05-24 (Sun) [5256]: <WEEKEND>
+2015-05-25 (Mon) [5257]: <HOLIDAY>
+2015-05-26 (Tue) [5258]: O:16.7000 H:17.1800 L:16.5700 C:17.1300 V:76519 TSO:0 A:17.1300 R:1.0000 CA:0.0000
+2015-05-27 (Wed) [5259]: O:17.1500 H:17.2900 L:16.7000 C:16.7700 V:30086 TSO:0 A:16.7700 R:1.0000 CA:0.0000
+2015-05-28 (Thu) [5260]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-05-29 (Fri) [5261]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-05-30 (Sat) [5262]: <WEEKEND>
+2015-05-31 (Sun) [5263]: <WEEKEND>
+2015-06-01 (Mon) [5264]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-02 (Tue) [5265]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-03 (Wed) [5266]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-04 (Thu) [5267]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-05 (Fri) [5268]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-06 (Sat) [5269]: <WEEKEND>
+2015-06-07 (Sun) [5270]: <WEEKEND>
+2015-06-08 (Mon) [5271]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-09 (Tue) [5272]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-10 (Wed) [5273]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-11 (Thu) [5274]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-12 (Fri) [5275]: O:17.2800 H:17.4400 L:16.5200 C:16.6000 V:62562 TSO:0 A:16.6000 R:1.0000 CA:0.0000
+2015-06-13 (Sat) [5276]: <WEEKEND>
+2015-06-14 (Sun) [5277]: <WEEKEND>
+2015-06-15 (Mon) [5278]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-16 (Tue) [5279]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-17 (Wed) [5280]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-18 (Thu) [5281]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-19 (Fri) [5282]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-20 (Sat) [5283]: <WEEKEND>
+2015-06-21 (Sun) [5284]: <WEEKEND>
+2015-06-22 (Mon) [5285]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-23 (Tue) [5286]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-24 (Wed) [5287]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-25 (Thu) [5288]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-26 (Fri) [5289]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-27 (Sat) [5290]: <WEEKEND>
+2015-06-28 (Sun) [5291]: <WEEKEND>
+2015-06-29 (Mon) [5292]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-06-30 (Tue) [5293]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-01 (Wed) [5294]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-02 (Thu) [5295]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-03 (Fri) [5296]: <HOLIDAY>
+2015-07-04 (Sat) [5297]: <WEEKEND>
+2015-07-05 (Sun) [5298]: <WEEKEND>
+2015-07-06 (Mon) [5299]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-07 (Tue) [5300]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-08 (Wed) [5301]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-09 (Thu) [5302]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-10 (Fri) [5303]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-11 (Sat) [5304]: <WEEKEND>
+2015-07-12 (Sun) [5305]: <WEEKEND>
+2015-07-13 (Mon) [5306]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+2015-07-14 (Tue) [5307]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+
+
+so that is not working
+
+let's try the change lsit
+
+/Marketocracy/bin/cahelper -symbol FISH -effective 20150529 -type CHG_LIST -exchange UQ -newExchange UN >& /Users/build/caout/FISH.20150715-CHG_LIST-to-UN.out 
+
+FISH.20150715-CHG_LIST-to-UN.out
+stocks:~/caout build$ cat FISH.20150715-CHG_LIST-to-UN.out
+D: (07-15 16:52:16.789) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-15 16:52:40.504) cahelper started on 2015-07-15 16:52:40 -0400
+
+D: (07-15 16:52:40.702) {
+    APPLIED = 1; 
+    DATE = 20150529; 
+    "NEW_EXCHANGE" = UN; 
+    NOTES = "N.A."; 
+    "OLD_EXCHANGE" = UQ; 
+    SYMBOL = FISH; 
+    TYPE = "CHG_LIST"; 
+}
+D: (07-15 16:52:41.034) SUCCESS
+D: (07-15 16:52:41.035) cahelper finished 2015-07-15 16:52:41 -0400
+
+
+that seems to have worked 
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Marlin Midstream Partners LP
+>     PRIMARYKEY = X'973d22b451f302dec0a80146'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'43af1932555d13b2c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'e7c21960555d13eac0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'1414523755a6c818c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'1414523755a6c818c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1414523755a6c818c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UQ|CP_NEW_EXCH|UN|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150715:045240
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = FISH     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = FISH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'140e523755a6c818c0a86f92'
+>               VERSION = NULL
+
+
+select * from mexchange where primarykey=X'9d5b2f1d390a440bc0a8015c';
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 20
+>         NAME = NYSE
+>   PRIMARYKEY = X'9d5b2f1d390a440bc0a8015c'
+
+try the change ticker script again
+/Marketocracy/bin/cahelper -symbol AZUR -effective 20150529 -type CHG_TKR -exchange UQ -oldSymbol FISH >& /Users/build/caout/FISH.20150715-CHG-TKR_AZUR.out
+D: (07-15 17:24:15.745) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-15 17:24:39.424) cahelper started on 2015-07-15 17:24:39 -0400
+
+D: (07-15 17:24:39.687) {
+    APPLIED = 0; 
+    DATE = 20150529; 
+    NOTES = "N.A."; 
+    SYMBOL = AZUR; 
+    TYPE = "CHG_TKR"; 
+}
+D: (07-15 17:24:39.688) SUCCESS
+D: (07-15 17:24:39.688) cahelper finished 2015-07-15 17:24:39 -0400
+
+
+
+
+here is my test going to use MARTY as the new symbol
+/Marketocracy/bin/cahelper -symbol MARTY -effective 20150529 -type CHG_TKR -exchange UQ -oldSymbol FISH >& /Users/build/caout/FISH.20150715-CHG-TKR_MARTY.out
+D: (07-15 17:25:28.462) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-15 17:25:52.163) cahelper started on 2015-07-15 17:25:52 -0400
+
+D: (07-15 17:25:52.350) {
+    APPLIED = 1; 
+    DATE = 20150529; 
+    "NEW_TICKER" = "MARTY US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "FISH US"; 
+    SYMBOL = MARTY; 
+    TYPE = "CHG_TKR"; 
+}
+D: (07-15 17:25:52.717) SUCCESS
+D: (07-15 17:25:52.718) cahelper finished 2015-07-15 17:25:52 -0400
+
+
+check the database
+
+select * from mstockalias where STOCKKEY = X'973c22b451f302dec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Marlin Midstream Partners LP
+>     PRIMARYKEY = X'973d22b451f302dec0a80146'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'43af1932555d13b2c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'e7c21960555d13eac0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'1414523755a6c818c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'474f5c5e55a6cfe0c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = MARTY   <------------------------ here it is 
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'474f5c5e55a6cfe0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'474f5c5e55a6cfe0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|FISH US|CP_NEW_TKR|MARTY US|CP_NOTES|N.A.  <------- here it is 
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150715:052552
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = MARTY     UQ Equity  <------------------- here it is 
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MARTY   <------------------- here it is 
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92'
+>               VERSION = NULL
+
+update mcorporateaction set BB_SECID = 'AZUR'  where PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92';
+update mcorporateaction set BB_IDENTIFIER = 'AZUR     UQ Equity'  where PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92';
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_TKR|FISH US|CP_NEW_TKR|AZUR US|CP_NOTES|N.A.'  where PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92';
+
+check the mcorporateaction record
+	select * from mcorporateaction where aliaskey=X'474f5c5e55a6cfe0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'474f5c5e55a6cfe0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|FISH US|CP_NEW_TKR|AZUR US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150715:052552
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = AZUR     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AZUR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92'
+>               VERSION = NULL
+
+now do the mstockalias record 
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'474f5c5e55a6cfe0c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = MARTY   <------------------------ here it is 
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+
+update mstockalias set SYMBOL = 'AZUR' where PRIMARYKEY = X'474f5c5e55a6cfe0c0a86f92';
+check the entire set again:
+
+select * from mstockalias where STOCKKEY = X'973c22b451f302dec0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2013-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Marlin Midstream Partners LP
+>     PRIMARYKEY = X'973d22b451f302dec0a80146'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 57118V100
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'43af1932555d13b2c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'e7c21960555d13eac0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'1414523755a6c818c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = FISH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 05501X100
+>           DATE = TIMESTAMP '2015-05-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Azure Midstream Partners LP
+>     PRIMARYKEY = X'474f5c5e55a6cfe0c0a86f92'
+>       STOCKKEY = X'973c22b451f302dec0a80146'
+>         SYMBOL = AZUR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102040
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'474f5c5e55a6cfe0c0a86f92';
+> Row 1:
+>              ALIASKEY = X'474f5c5e55a6cfe0c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|FISH US|CP_NEW_TKR|AZUR US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150715:052552
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = AZUR     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AZUR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'47495c5e55a6cfe0c0a86f92'
+>               VERSION = NULL
+
+
+it's done  check on 7/16/15 
+
+
+
+need to get prices
+looks like yahoo finance has the prices in the 5-6 dollar range, our site has 16 dollar range
+
+check xignite
+
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+this is the date when prices go stale   company ID  24609
+2015-05-29 (Fri) [5261]: O:16.6000 H:16.9300 L:16.5000 C:16.5300 V:49636 TSO:0 A:16.5300 R:1.0000 CA:0.0000
+
+
+get rid of stock prices for company ID  24609 where day number > = 5261
+
+select * from stockprices where companyid=24609 and daynumber >= 5261;
+delete from stockprices where companyid=24609 and daynumber >= 5261;
+
+ok let's do the insert now 
+
+check again 
+select * from stockprices where companyid=24609 and daynumber >= 5261;
+
+ok need to invalidate prices from 5/29/2015
+
+/Marketocracy/bin/StockPriceBuilder invalidate  2015-05-29
+
+check
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-07-15
+
+D: (18:39:58.332) Invalidate all prices >= 2015-05-29 (5261)
+
+
+it's there
+
+
+check in the morning 7/16/15
+
+See that the ticker changed from FISH to AZUR and the exchange changed from nasdaq to NYSE.
+And see that the pricing chart is continuous.
+
+No tickets were generated by these changes   Brandon has a change ticker script to run on his end.

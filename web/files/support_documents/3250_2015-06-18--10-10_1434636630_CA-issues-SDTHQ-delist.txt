@@ -1,0 +1,355 @@
+ticker: 6/15/2015
+date:  SDTHQ 
+
+yahoo: nothing
+
+quantum: nothing
+
+oursite:
+Symbol: SDTHQ 	Name: SUNDOG TECH INC 	Price: $0.04
+Volume: 	Sector: Materials 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+symbol changes for SDTHQ 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+23 Aug 11 	SDTH 	SDTHQ 	Change in the ticker (trading) symbol from SDTH to SDTHQ
+  	  	 
+left curve 	  listing changes for SDTHQ 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+May 24, 2007 	OTCBB 	UU 	NASDAQ-SMALLCAP 	UR 	Change in the exchange that SDTH trades on from OTCBB to NASDAQ-SMALLCAP
+Jun 10, 2011 	NASDAQ 	UW 	OTCBB-OTHER 	UV 	Change in the exchange that SDTH trades on from NASDAQ to OTCBB-OTHER
+
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:SUNDOG TECH INC  Symbol:SDTHQ
+Date: 06/15/2015
+
+76 users found
+
+1	7145140686	Cr8nmake	MULCAHY	acarteau	advisorcfa	ahmet89	andreacanto	asia	babdul	bawredsox
+2	billydny	blue	boscomt	carnegie	cbush	chaosama	cvu1	dennis2461	dilauren	dphillips
+3	eckiecki2002	edopto	eigh8or	fanairchina	granquist	greatware	grider	gsimco	hezakiah	idxfgroup
+4	investpro	jarvis_hills	jdj	jelloyeti	joe_torrez	joelre81	jordanb69	jpotter	justforfun	justin_collett83
+5	justingee	jvolentine	kingfisheruk	law	lazycritic	lotus	lukiewerle	lwroblewski	mahadi	manderson1
+6	maxmar1975	mdimich	microcapspeculator	mikeross87	mitch_stitch	mlhall	mrardies	myeh	nealiam	nolefunds
+7	quantboy	ratutony	reallyk	richandhappy	rjbest333@yahoo.com	robert81alem	rubwol	schalfin	socman	srlorince25
+8	steele99	stockdoctor	studentc	teamfunds	thegreatone	wisdomfolly	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'SDTHQ';  
+> Row 1:
+>   STOCKKEY = X'17bb65e43a483a24c0a80117'
+
+select * from mstockalias where stockkey= X'17bb65e43a483a24c0a80117'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-12-18 12:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'17bc65e43a483a24c0a80117'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2007-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'2fc46010465643e9c0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2011-06-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'a21b4be74df29c5ec0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2011-08-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'717755b84e542bb5c0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='SDTHQ'  order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|SDTHQ|CP_DELIST_REASON|3|CP_NOTES|Bankruptcy Plan effective- Equity Interest cancelled. Deletion time 9:05:13
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 69931300
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 1755490
+>        BB_COMPANYNAME = ShengdaTech Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = SDTHQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-18 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = SDTHQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-10-18 00:00:00.000000'
+>            PRIMARYKEY = X'075a5a7a5080854fc0a80146'
+>               VERSION = NULL
+
+delist on 2012-10-18 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock SDTHQ>>>> dbtool started at 2015-06-15 20:33:18 -0400
+stock: SDTHQ
+  PK       : [17BB65E43A483A24C0A80117]
+  companyID: [12634]
+  symbol   : [SDTHQ]
+  name     : [SUNDOG TECH INC]
+  date     : [2011-08-23 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-15 20:33:18 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 12634
+2012-10-06 (Sat) [4296]: <WEEKEND>
+2012-10-07 (Sun) [4297]: <WEEKEND>
+2012-10-08 (Mon) [4298]: O:0.0300 H:0.0400 L:0.0300 C:0.0400 V:94315 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+2012-10-09 (Tue) [4299]: O:0.0300 H:0.0400 L:0.0300 C:0.0400 V:28085 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+2012-10-10 (Wed) [4300]: O:0.0400 H:0.0400 L:0.0200 C:0.0400 V:101520 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+2012-10-11 (Thu) [4301]: O:0.0400 H:0.0400 L:0.0400 C:0.0400 V:101520 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+2012-10-12 (Fri) [4302]: O:0.0300 H:0.0400 L:0.0300 C:0.0300 V:54842 TSO:54202 A:0.0300 R:1.0000 CA:0.0000
+2012-10-13 (Sat) [4303]: <WEEKEND>
+2012-10-14 (Sun) [4304]: <WEEKEND>
+2012-10-15 (Mon) [4305]: O:0.0200 H:0.0400 L:0.0200 C:0.0200 V:106725 TSO:54202 A:0.0200 R:1.0000 CA:0.0000
+2012-10-16 (Tue) [4306]: O:0.0200 H:0.0400 L:0.0200 C:0.0400 V:13772 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+2012-10-17 (Wed) [4307]: O:0.0400 H:0.0400 L:0.0200 C:0.0400 V:3600 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'17bb65e43a483a24c0a80117' and shares > 0 order by closed; 
+> Row 1113:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-04-09 15:31:00.000000'
+>        COMMENT = 
+>     COMMISSION = 13.094691
+>   CURRENTORDER = X'8a1521b64f7ef4aac0a80134'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0d08519948ef9459c0a80133'
+>       MODIFIED = NULL
+>            NET = 248.799138
+>         OPENED = TIMESTAMP '2012-04-06 09:50:34.000000'
+>          PRICE = 0.095729
+>     PRIMARYKEY = X'8a1321b64f7ef4aac0a80134'
+>         SECFEE = 0.010000
+>         SHARES = 2599.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = jtorrez_66@mac.com
+
+last ticket 2012-04-09  price 0.095729
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'17bb65e43a483a24c0a80117' and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'17bb65e43a483a24c0a80117' and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'17bb65e43a483a24c0a80117' and totalshares < 0)));
+
+apply the acquis
+76 members hold this stock 
+last ticket 2012-04-09  price 0.095729
+delist on 2012-10-18 
+quantum: nothing
+last ticket:
+last price:  2012-10-17 (Wed) [4307]: O:0.0400 H:0.0400 L:0.0200 C:0.0400 V:3600 TSO:54202 A:0.0400 R:1.0000 CA:0.0000
+
+going with 20121017 0.04
+
+
+/Marketocracy/bin/cahelper -symbol  SDTHQ  -effective 20121017 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.04 -acqShare 0 -purchaser SDTHQ   >& /Users/build/caout/SDTHQ.20150615-DELIST.out
+SDTHQ.20150615-DELIST.out
+stocks:~/caout build$ tail -f SDTHQ.20150615-DELIST.out
+D: (06-15 20:41:37.254) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (06-15 20:42:01.443) cahelper started on 2015-06-15 20:42:01 -0400
+
+D: (06-15 20:42:01.850) There are [0] open tickets for SDTHQ on 20121017
+D: (06-15 20:42:02.162) StockFileLoad Version:4.0
+D: (06-15 20:42:02.162) Loading Stock Data
+D: (06-15 20:42:39.526) Building Lookup Index
+D: (06-15 20:42:44.378) Finished Building Index
+D: (06-15 20:42:47.950) Finished Loading Stock Data
+D: (06-15 20:42:48.067) Connection to 192.168.111.172:6666 succeeded
+D: (06-15 20:42:50.477) SavingChanges for position sell out 101 of 312
+D: (06-15 20:42:58.063) {
+    "ACQUIRED_STOCK" = SDTHQ; 
+    "ACQUIRING_STOCK" = "SDTHQ_FIX"; 
+    AMOUNT = 0.04; 
+    APPLIED = 1; 
+    DATE = 20121017; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "SDTHQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (06-15 20:43:01.630) SUCCESS
+D: (06-15 20:43:01.631) cahelper finished 2015-06-15 20:43:01 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'17bb65e43a483a24c0a80117'    order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-12-18 12:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'17bc65e43a483a24c0a80117'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2007-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'2fc46010465643e9c0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2011-06-10 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'a21b4be74df29c5ec0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2011-08-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'717755b84e542bb5c0a80146'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTHQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 823213103
+>           DATE = TIMESTAMP '2012-10-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = SUNDOG TECH INC
+>     PRIMARYKEY = X'07c715c9557f70d9c0a86f92'
+>       STOCKKEY = X'17bb65e43a483a24c0a80117'
+>         SYMBOL = SDTHQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15101020
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey = X'07c715c9557f70d9c0a86f92';
+> Row 1:
+>              ALIASKEY = X'07c715c9557f70d9c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|SDTHQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.040000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150615:084201
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-10-17 00:00:00.000000'
+>         BB_IDENTIFIER = SDTHQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = SDTHQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-10-17 00:00:00.000000'
+>            PRIMARYKEY = X'07c115c9557f70d9c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'07c115c9557f70d9c0a86f92';
+> Row 1:
+>   _C001 = 136.000000
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'07c115c9557f70d9c0a86f92'));
+136 fundkeys save to CA issues SDTHQ fundkeys.txt
+
+check on 6/16/15   invalidate funds
+advisorcfa TKSLF  20121017
+check MAdmin
+
+let's invalidate this advisorcfa fund since inception
+07/29/2007 	 22412FF7721C6A6678CD169A
+/Marketocracy/bin/dbtool lookup fund advisorcfa
+
+
+6/18/15  SDTHQ
+SDTHQ has been acquired 	right curve
+  	  	
+SUNDOG TECH INC acquired by a private company on 2012-10-17 00:00:00. 
+
+ok, let's invalidate   then we have to reprice on the new site
+
+check MAdmin 
+2012-10-17  
+no one holds
+
+reprice  done
+Done!
+23 Funds Processed
+1518 Queries Processed
+
+closing this out 

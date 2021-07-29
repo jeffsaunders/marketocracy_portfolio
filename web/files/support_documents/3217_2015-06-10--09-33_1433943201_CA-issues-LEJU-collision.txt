@@ -1,0 +1,461 @@
+date: 6/9/10
+ticker: LEJU
+
+not pricing in advisorcfa  GFINL fund 
+
+LEJU 	Leju Holdings Ltd 		0.0% 	100 	$0.00 	$0.00 	Details
+
+clicking on the details - there's no chart - collision?
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 04, 2014 		100 	100 	Buy
+Total: 100
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 4, 2014 	100 	$5.00 	$1,101.79 	$11.02
+  	  	
+SELLS
+You have no sells for this position
+
+select distinct stockkey from mstockalias where symbol='LEJU';
+> Row 1:
+>   STOCKKEY = X'548a66aa53505bd8c0a86f92'
+> Row 2:
+>   STOCKKEY = X'3d4d145d547d0171c0a86f92'
+
+there are two
+**********************************************
+> LEJU 1:
+>   STOCKKEY = X'548a66aa53505bd8c0a86f92'
+this one has 38 mtickets
+**********************************************
+select * from mstockalias where STOCKKEY = X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187J108
+>           DATE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Leju Holdings Ltd
+>     PRIMARYKEY = X'548b66aa53505bd8c0a86f92'   <--- set the aliaskey here 
+>       STOCKKEY = X'548a66aa53505bd8c0a86f92'
+>         SYMBOL = LEJU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select count(*) from mticket where stockkey=X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   _C001 = 38.000000
+select distinct sourcekey from mticket where stockkey=X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   SOURCEKEY = NULL
+so only member generated tickets
+
+	select * from mcorporateaction where aliaskey=X'548b66aa53505bd8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'548b66aa53505bd8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|LEJU|CP_SEC_TYP|29|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90007578
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>            PRIMARYKEY = X'45883073534db7bbc0a86f92'
+>               VERSION = NULL
+**********************************************
+> LEJU 2:
+>   STOCKKEY = X'3d4d145d547d0171c0a86f92'
+this one has 4 mtickets and the DVD_CASH
+**********************************************
+select * from mstockalias where STOCKKEY = X'3d4d145d547d0171c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187J108
+>           DATE = TIMESTAMP '2014-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Leju Holdings Ltd
+>     PRIMARYKEY = X'3d4e145d547d0171c0a86f92'
+>       STOCKKEY = X'3d4d145d547d0171c0a86f92'
+>         SYMBOL = LEJU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select count(*) from mticket where stockkey=X'3d4d145d547d0171c0a86f92';
+> Row 1:
+>   _C001 = 4.000000
+select distinct sourcekey from mticket where stockkey=X'3d4d145d547d0171c0a86f92';
+> Row 1:
+>   SOURCEKEY = NULL
+only member generated tickets this is not a spin off 
+
+	select * from mcorporateaction where aliaskey=X'3d4e145d547d0171c0a86f92';
+> Row 1:
+>              ALIASKEY = X'3d4e145d547d0171c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150410|CP_PAY_DT|20150515|CP_FREQ|4|CP_NET_AMT|.18|CP_TAX_AMT|0.000000|CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|0.000000|CP_ADJ|0.975758|CP_ADJ_DT|20150408|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 104620940
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-08 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-26 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2015-04-08 00:00:00.000000'
+>            PRIMARYKEY = X'c56920a65525b26dc0a86f92'
+>               VERSION = NULL
+
+
+Assessment
+LEJU-1 has the most trades, let's leave this alone
+LEJU-2 has only 4 trades, let's move these to LEJU-1
+need to move the DVD_CASH to LEJU-1 also.
+
+1.  move the DVD_CASH
+update mcorporateaction set ALIASKEY =X'548b66aa53505bd8c0a86f92'  where  PRIMARYKEY = X'c56920a65525b26dc0a86f92';
+
+2.  let's get the mfunds associated with the trades for LEJU-2
+select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92';
+there are 4 ticketkeys save these to CA issues LEJU ticketkeys.txt
+
+3.  get the fundkeys to invalidate
+select distinct fundkey from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92');
+> Row 1:
+>   FUNDKEY = X'25f132df3e5d01d6c0a80132'
+> Row 2:
+>   FUNDKEY = X'2e1c037b3b47a21bc0a80119'
+> Row 3:
+>   FUNDKEY = X'debb0c06554a649dc0a86f98'
+save these to CA issues LEJU fundkeys.txt
+
+4.  get and delete the mtrades assocated with LEJU-2 trades
+select * from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92');
+> Row 1:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'428f69735506f06cc0a86f9c'
+>                 PRIMARYKEY = X'428e69735506f06cc0a86f9c'
+>                     SHARES = 3360.000000
+>                  TICKETKEY = X'06b03b465506e65bc0a86f98'
+>                     CLOSED = TIMESTAMP '2015-03-16 10:25:00.000000'
+>                      PRICE = 7.410600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'9b873a25550ad351c0a86f9c'
+>                 PRIMARYKEY = X'9b863a25550ad351c0a86f9c'
+>                     SHARES = 4000.000000
+>                  TICKETKEY = X'ae80083f550aab99c0a86f98'
+>                     CLOSED = TIMESTAMP '2015-03-19 09:30:05.000000'
+>                      PRICE = 6.820000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'428f69735506f06cc0a86f9c'
+>                 PRIMARYKEY = X'2c0a104655256886c0a86f9c'
+>                     SHARES = 3360.000000
+>                  TICKETKEY = X'ff9f48d6552562afc0a86fa6'
+>                     CLOSED = TIMESTAMP '2015-04-08 13:25:50.000000'
+>                      PRICE = 8.845600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'52112f58554a745ac0a86f9c'
+>                 PRIMARYKEY = X'52102f58554a745ac0a86f9c'
+>                     SHARES = 2590.000000
+>                  TICKETKEY = X'f7af0c06554a6e76c0a86f98'
+>                     CLOSED = TIMESTAMP '2015-05-06 15:50:22.000000'
+>                      PRICE = 9.615200
+>   CREATEDBYCORPORATEACTION = 0
+now delete them
+delete from mtrade where ticketkey in (select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92');
+
+5.  now move the LEJU-2 tickets to LEJU-1
+
+> LEJU 1:
+>   STOCKKEY = X'548a66aa53505bd8c0a86f92'
+> LEJU 2:
+>   STOCKKEY = X'3d4d145d547d0171c0a86f92'
+
+update mticket set STOCKKEY = X'548a66aa53505bd8c0a86f92'  where STOCKKEY = X'3d4d145d547d0171c0a86f92';
+
+ok they are moved over
+
+6.  let's tickle the tickets
+put these into ticketstotickle on stocks
+and run the tickle script by file
+
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-06-09 14:46:55 -0400
+<<<< dbtool finished at 2015-06-09 14:48:02 -0400
+
+7.  ok invalidate the funds
+
+8.  let's check LEJU-1 and see how many mtickets are there now 
+before:  
+**********************************************
+> LEJU 1:
+>   STOCKKEY = X'548a66aa53505bd8c0a86f92'
+this one has 38 mtickets
+**********************************************
+select count(*) from mticket where stockkey=X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   _C001 = 42.000000
+
+good we picked up the 4 from LEJU-2
+
+select * from mstockalias where STOCKKEY = X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187J108
+>           DATE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Leju Holdings Ltd
+>     PRIMARYKEY = X'548b66aa53505bd8c0a86f92'
+>       STOCKKEY = X'548a66aa53505bd8c0a86f92'
+>         SYMBOL = LEJU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey= X'548b66aa53505bd8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'548b66aa53505bd8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|LEJU|CP_SEC_TYP|29|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90007578
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>            PRIMARYKEY = X'45883073534db7bbc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'548b66aa53505bd8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150410|CP_PAY_DT|20150515|CP_FREQ|4|CP_NET_AMT|.18|CP_TAX_AMT|0.000000|CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|0.000000|CP_ADJ|0.975758|CP_ADJ_DT|20150408|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 104620940
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-08 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-26 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2015-04-08 00:00:00.000000'
+>            PRIMARYKEY = X'c56920a65525b26dc0a86f92'
+>               VERSION = NULL
+
+good we have all the trades and the DVD_CASH   let's see if there are ore out there?
+can't fina any
+
+let's get ride of LEJU-2 completely
+
+**********************************************
+> LEJU 2:
+>   STOCKKEY = X'3d4d145d547d0171c0a86f92'
+**********************************************
+set commit false;
+
+delete from mstock where primarykey=  X'3d4d145d547d0171c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'3d4d145d547d0171c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'3d4d145d547d0171c0a86f92');
+
+delete from mstockalias where stockkey=X'3d4d145d547d0171c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'3d4d145d547d0171c0a86f92');   
+
+delete from mposition where stockkey=X'3d4d145d547d0171c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'3d4d145d547d0171c0a86f92');
+
+delete from mticket where stockkey=X'3d4d145d547d0171c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'3d4d145d547d0171c0a86f92';  
+
+commit;
+
+set commit true;
+*****************************************  now there should only be one ***********************
+select distinct stockkey from mstockalias where symbol='LEJU';
+> Row 1:
+>   STOCKKEY = X'548a66aa53505bd8c0a86f92'
+select * from mstockalias where STOCKKEY = X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50187J108
+>           DATE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Leju Holdings Ltd
+>     PRIMARYKEY = X'548b66aa53505bd8c0a86f92'
+>       STOCKKEY = X'548a66aa53505bd8c0a86f92'
+>         SYMBOL = LEJU
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'548b66aa53505bd8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'548b66aa53505bd8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|LEJU|CP_SEC_TYP|29|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90007578
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-04-15 00:00:00.000000'
+>            PRIMARYKEY = X'45883073534db7bbc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'548b66aa53505bd8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150410|CP_PAY_DT|20150515|CP_FREQ|4|CP_NET_AMT|.18|CP_TAX_AMT|0.000000|CP_GROSS_AMT|.20|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|0.000000|CP_ADJ|0.975758|CP_ADJ_DT|20150408|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 104620940
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 39555406
+>        BB_COMPANYNAME = Leju Holdings Ltd
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-04-08 00:00:00.000000'
+>         BB_IDENTIFIER = LEJU    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-26 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = LEJU
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2015-04-08 00:00:00.000000'
+>            PRIMARYKEY = X'c56920a65525b26dc0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where stockkey=X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>   _C001 = 42.000000
+select * from mstock where primarykey= X'548a66aa53505bd8c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'548b66aa53505bd8c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'548a66aa53505bd8c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 26072
+>   WINDOWIDENTITYKEY = NULL
+
+what about pricing...
+
+/Marketocracy/bin/dbtool lookup stock LEJU
+>>>> dbtool started at 2015-06-09 14:56:27 -0400
+stock: LEJU
+  PK       : [548A66AA53505BD8C0A86F92]
+  companyID: [26072]
+  symbol   : [LEJU]
+  name     : [Leju Holdings Ltd]
+  date     : [2014-04-17 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-06-09 14:56:27 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 26072
+firstDayNumber: 4854
+entryCount    : 0
+
+
+need to do the prices and then invalidate prices from the start
+let's see what yahoo finance has 
+they start at April 17, 2014 
+our list date is:  2014-04-17
+let's download the data from yahoo finance and then add it
+
+let's see what's there first 
+connect to marketdata@stocks
+
+select * from stockprices where companyid = 26072;
+first one
+> Row 1:
+>   DAYNUMBER = 4854  <--- 4/17/14	4854	Thu
+>   COMPANYID = 26072
+>      OPENED = 108000
+>        HIGH = 120000
+>         LOW = 95100
+>      CLOSED = 118600
+>      VOLUME = 8977780
+
+
+last one:
+> Row 157:
+>   DAYNUMBER = 5079  <---11/28/14	5079	Fri
+>   COMPANYID = 26072
+>      OPENED = 132000
+>        HIGH = 133600
+>         LOW = 128300
+>      CLOSED = 130800
+>      VOLUME = 244180
+
+need prices for daynumber > 5079
+ok done - see CA issues LEJU prices to be loaded for the scripts
+
+let's invalidate stock prices from the list date of LEJU  2014-04-17
+/Marketocracy/bin/StockPriceBuilder invalidate 2014-04-17
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-09
+D: (15:14:52.862) Invalidate all prices >= 2014-04-17 (4854)
+
+
+	** note do this on a "fresh" day, otherwise there will be lots of junk to sort through in the output
+		here there is only one line, the one we want   when you run it, it will be at the bottom of the file
+
+
+check on 6/10/15  advisorcfa  GFINL fund  for LEJU should be pricing
+reprice on the new site as well 
+
+6/10/15
+LEJU is pricing!     let's reprice on the new site 
+closing this out!
+

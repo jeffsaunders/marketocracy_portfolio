@@ -1,0 +1,590 @@
+date:  3/23/15
+
+came across this one while look at the member's shorts
+what was odd is that the member had 4051 which was taken by a CA
+then he sold on his own the 4051 shares.   And after the aqquis was applied, more regular CAs came in
+so I checked Quantum and saw that the stock was actually acquired delisted years later.  It was a false acqiuos/
+
+I backed this out.  member shorts went away.  and then I reapplied the acquis on the correct date/ 
+
+CKCRQ 	$0.00 	-4,051 	-$0.41 	$2,276.35 	0.00% 	15.04% 	Details  	MIDDLE
+LEDGER
+Date 	Start 	Change 	End 	Type
+Nov 17, 2000 		1112 	1112 	Buy
+Nov 27, 2000 	1112 	1334 	2446 	Buy
+Nov 29, 2000 	2446 	1605 	4051 	Buy
+Feb 26, 2001 	4051 	-4051 		Corporate Action
+Jun 29, 2001 		-700 	-700 	Sell
+Jul 03, 2001 	-700 	-351 	-1051 	Sell
+Jul 20, 2001 	-1051 	-500 	-1551 	Sell
+Jul 26, 2001 	-1551 	-500 	-2051 	Sell
+Oct 09, 2001 	-2051 	-1000 	-3051 	Sell
+Nov 15, 2001 	-3051 	-112 	-3163 	Sell
+Jan 17, 2002 	-3163 	-388 	-3551 	Sell
+Feb 20, 2002 	-3551 	-499 	-4050 	Sell
+May 29, 2002 	-4050 	-1 	-4051 	Corporate Action
+Total: -4,051
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Nov 17, 2000 	1,112 	$55.60 	$5,014.35 	$4.51
+Nov 27, 2000 	1,334 	$66.70 	$5,027.45 	$3.77
+Nov 29, 2000 	1,605 	$80.25 	$5,095.88 	$3.18
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 29, 2001 	700 	$35.00 	$0.11 	$3,009.89 	$4.30
+Jul 3, 2001 	351 	$17.55 	$0.06 	$1,509.24 	$4.30
+Jul 20, 2001 	500 	$25.00 	$0.08 	$2,149.92 	$4.30
+Jul 26, 2001 	500 	$25.00 	$0.08 	$2,149.92 	$4.30
+Oct 9, 2001 	1,000 	$50.00 	$0.15 	$4,299.85 	$4.30
+Nov 15, 2001 	112 	$5.60 	$0.02 	$481.58 	$4.30
+Jan 17, 2002 	388 	$19.40 	$0.03 	$1,668.37 	$4.30
+Feb 20, 2002 	499 	$24.95 	$0.04 	$2,145.66 	$4.30
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+May 29, 2002 	Split terms:2 for 5
+Feb 26, 2001 	COLLINS & AIKMAN acquired by a private company on 2001-02-26 00:00:00.
+
+there are trades after the CA - who did the CA?
+
+select distinct stockkey from mstockalias where symbol='CKCRQ';
+> Row 1:
+>   STOCKKEY = X'0daf0e21390af46ac0a80116'
+select * from mstockalias where STOCKKEY = X'0daf0e21390af46ac0a80116' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'0db00e21390af46ac0a80116'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2001-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'8c2a44263d1e4b68c0a801dc'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- acquis here I don'tthink it really got acquired here in real life
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'8c2a44263d1e4b68c0a801dc';
+> Row 1:
+>              ALIASKEY = X'8c2a44263d1e4b68c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|2|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|Heartland Industrial Partner|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|60.000000|CP_TYP|1|CP_ADVISORS|;2;2;3;1;Target Financial Advisor;1;J.P. MORGAN;13;N.A.;1;Target Financial Advisor;1;SALOMON SB;13;N.A.;|CP_TKR|20763Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|2|CP_TOT_AMT|260.000000|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|871257
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6199211
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = CKC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = CKC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'891b1d913a9b1873c0a801dc'
+>               VERSION = NULL
+	did anyone get stock?
+select count(*) from mticket where sourcekey=X'891b1d913a9b1873c0a801dc';
+> Row 1:
+>   _C001 = 3.000000
+
+check this on 20010226
+trades on February 26, 2001 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Buy 	ACY 	2,084 	$4.75 	$9,895.80 	$104.20 	$0.00
+Sell 	UNP 	114 	$55.50 	$6,326.78 	$5.70 	$0.22
+Sell 	CKCRQ 	4,051 	$0.00 	$0.00 	$0.00 	$0.00
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2002-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'33ce05923cf59010c0a801dc'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+select * from mcorporateaction where aliaskey=X'33ce05923cf59010c0a801dc';
+> Row 1:
+>              ALIASKEY = X'33ce05923cf59010c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|194830105|CP_NEW_FONDS| |CP_NEW_CUSIP|194830204|CP_NOTES|N.A.|CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_OLD_ISIN|US1948301056|CP_OLD_BELGIAN| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_SEDOL| |CP_OLD_FONDS| |CP_NEW_WPK| |CP_NEW_ISIN|US1948302047|CP_NEW_BELGIAN| |CP_NEW_SEDOL| 
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 8150146
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = CKC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = 17
+>              BB_RCODE = 0
+>              BB_SECID = CKC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'a913748d3cf58934c0a801dc'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'33ce05923cf59010c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_ADJ_DT|20020529|CP_NOTES|N.A.|CP_RECORD_DT|20020529|CP_TERMS|2 for 5|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.400000|CP_RATIO|0.400000|CP_PAY_DT|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 8150226
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2002-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = CKC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2002-05-21 00:00:00.000000'
+>          BB_NUMFIELDS = 8
+>              BB_RCODE = 0
+>              BB_SECID = CKC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2002-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'a915748d3cf58935c0a801dc'
+>               VERSION = NULL
+	any mtickets?
+select count(*) from mticket where sourcekey=X'a915748d3cf58935c0a801dc';
+> Row 1:
+>   _C001 = 36.000000
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'4a36705242855bf4c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey= X'4a36705242855bf4c0a80146';
+> Row 1:
+>              ALIASKEY = X'4a36705242855bf4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CKC US|CP_NEW_TKR|CKCR US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 18062975
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-05-13 00:00:00.000000'
+>         BB_IDENTIFIER = CKCR    UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-05-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CKCR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c8f3704342855bbcc0a80146'
+>               VERSION = NULL
+
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-13 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'8640705842855c10c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey= X'8640705842855c10c0a80146';
+> Row 1:
+>              ALIASKEY = X'8640705842855c10c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UN|CP_NEW_EXCH|UV|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 18062979
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-05-13 00:00:00.000000'
+>         BB_IDENTIFIER = CKCR    UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-05-12 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CKCR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c8f5704342855bbcc0a80146'
+>               VERSION = NULL
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'3d353888428aa1f8c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey= X'3d353888428aa1f8c0a80146';
+> Row 1:
+>              ALIASKEY = X'3d353888428aa1f8c0a80146'
+>   BB_ACTIONDICTIONARY = CP_BANCR_TYP|9|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 18093802
+>     BB_ACTIONMNEMONIC = BANCR
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2005-05-17 00:00:00.000000'
+>         BB_IDENTIFIER = CKCR    UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-05-17 00:00:00.000000'
+>          BB_NUMFIELDS = 2
+>              BB_RCODE = 0
+>              BB_SECID = CKCR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c1723765428aa1c6c0a80146'
+>               VERSION = NULL
+
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'ae011ed44297d114c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey= X'ae011ed44297d114c0a80146';
+> Row 1:
+>              ALIASKEY = X'ae011ed44297d114c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CKCR US|CP_NEW_TKR|CKCRQ US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 18206590
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-05-27 00:00:00.000000'
+>         BB_IDENTIFIER = CKCRQ   UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-05-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CKCRQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'91ae1ebc4297d0cfc0a80146'
+>               VERSION = NULL
+
+
+let's see if quantum has anything
+Collins & Aikman Corp.
+Ticker Symbol: CKCRQ*     CUSIP: Unknown*      Exchange: OTOTC
+* If you know the CUSIP number for this security, please let us know.
+* NOTE: This security is no longer trading as of 10/15/07  20071015
+
+Company's Online Profile
+BUSINESS:  Collins & Aikman Corporation is a global leader in cockpit modules and automotive floor and acoustic systems and a leading supplier of instrument panels, automotive fabric, plastic-based trim, and convertible top systems. The Company's current operations span the globe through 15 countries, more than 120 facilities and over 25,000 employees who are committed to achieving total excellence. Collins & Aikman's high-quality products combine superior design, styling and manufacturing capabilities with NVH "quiet" technologies that are among the most effective in the industry.
+
+Notes:  Bankruptcy reorganization per the Other OTC on 10/15/2007.
+Previous Ticker Symbol: CKC    Changed: 5/13/05 
+
+it does!  
+
+let's check historical pricing
+/Marketocracy/bin/dbtool lookup stock CKCRQ
+>>>> dbtool started at 2015-03-23 16:46:08 -0400
+stock: CKCRQ
+  PK       : [0DAF0E21390AF46AC0A80116]
+  companyID: [4604]
+  symbol   : [CKCRQ]
+  name     : [COLLINS & AIKMAN]
+  date     : [2005-05-27 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-03-23 16:46:08 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4604
+2007-10-08 (Mon) [2471]: O:0.0260 H:0.0300 L:0.0210 C:0.0280 V:537000 TSO:0 A:0.0280 R:1.0000 CA:0.0000
+2007-10-09 (Tue) [2472]: O:0.0200 H:0.0260 L:0.0150 C:0.0150 V:363600 TSO:0 A:0.0150 R:1.0000 CA:0.0000
+2007-10-10 (Wed) [2473]: O:0.0180 H:0.0200 L:0.0160 C:0.0160 V:187200 TSO:0 A:0.0160 R:1.0000 CA:0.0000
+2007-10-11 (Thu) [2474]: O:0.0150 H:0.0220 L:0.0150 C:0.0160 V:450100 TSO:0 A:0.0160 R:1.0000 CA:0.0000
+2007-10-12 (Fri) [2475]: O:0.0150 H:0.0180 L:0.0100 C:0.0100 V:1145800 TSO:0 A:0.0100 R:1.0000 CA:0.0000
+2007-10-13 (Sat) [2476]: <WEEKEND>
+2007-10-14 (Sun) [2477]: <WEEKEND>
+2007-10-15 (Mon) [2478]: O:0.0090 H:0.0200 L:0.0050 C:0.0050 V:1574300 TSO:0 A:0.0050 R:1.0000 CA:0.0000  <--- this price
+2007-10-16 (Tue) [2479]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:6800 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2007-10-17 (Wed) [2480]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2007-10-18 (Thu) [2481]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+2007-10-19 (Fri) [2482]: O:0.0001 H:0.0001 L:0.0001 C:0.0001 V:0 TSO:0 A:0.0001 R:1.0000 CA:0.0000
+
+
+Assessment - let's back out that old bogus acquis then we need to remove the mstockalias record
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2001-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'8c2a44263d1e4b68c0a801dc'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'8c2a44263d1e4b68c0a801dc';
+> Row 1:
+>              ALIASKEY = X'8c2a44263d1e4b68c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|2|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|Heartland Industrial Partner|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|60.000000|CP_TYP|1|CP_ADVISORS|;2;2;3;1;Target Financial Advisor;1;J.P. MORGAN;13;N.A.;1;Target Financial Advisor;1;SALOMON SB;13;N.A.;|CP_TKR|20763Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|2|CP_TOT_AMT|260.000000|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|871257
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6199211
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = CKC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = CKC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'891b1d913a9b1873c0a801dc'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '6199211:MARTY' where PRIMARYKEY = X'891b1d913a9b1873c0a801dc';
+> Row 1:
+>              ALIASKEY = X'8c2a44263d1e4b68c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|N.A.|CP_CUR_TOT_VAL|0.000000|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|N.A.|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|2|CP_DEBT_FLAG|N.A.|CP_CASH|N.A.|CP_NAME|Heartland Industrial Partner|CP_DEBT|N.A.|CP_CASH_VAL|0.000000|CP_PCT_SOUGHT|60.000000|CP_TYP|1|CP_ADVISORS|;2;2;3;1;Target Financial Advisor;1;J.P. MORGAN;13;N.A.;1;Target Financial Advisor;1;SALOMON SB;13;N.A.;|CP_TKR|20763Z  US|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|N.A.|CP_ADVISORS_NUM|2|CP_TOT_AMT|260.000000|CP_STAT|3|CP_CRNCY|USD|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|0|CP_ID_BB_COMP|871257
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6199211:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 143156
+>        BB_COMPANYNAME = Collins & Aikman Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = CKC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = CKC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'891b1d913a9b1873c0a801dc'
+>               VERSION = NULL
+
+back it out
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 6199211:MARTY
+untrading action with ID: 6199211:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CKCRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CKCRQ]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:CKCRQ]
+
+delete this mstockalias 
+delete from mstockalias where PRIMARYKEY = X'8c2a44263d1e4b68c0a801dc';
+
+the member sold out on his own.
+let's apply the acquis
+
+/Marketocracy/bin/cahelper -symbol CKCRQ -effective 20071015 -type ACQUIS -exchange UU -acqType 1 -acqCash 0.0100 -acqShare 0 -purchaser CKCRQ >& /Users/build/caout/CKCRQ.20150323-ACQUIS.out
+stocks:~/caout build$ tail -f CKCRQ.20150323-ACQUIS.out
+D: (03-23 17:03:37.503) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-23 17:04:27.163) cahelper started on 2015-03-23 17:04:27 -0400
+
+D: (03-23 17:04:29.280) There are [0] open tickets for CKCRQ on 20071015
+D: (03-23 17:04:58.678) Waiting for lock: MDistributedLock(0xd0cd510) locked: NO  path: '/tmp/MMarketDataHandler.lock' ownerPid: 19213
+D: (03-23 17:05:01.696) StockFileLoad Version:3.0
+D: (03-23 17:05:01.696) Loading Stock Data
+D: (03-23 17:06:11.644) Building Lookup Index
+D: (03-23 17:06:17.856) Finished Building Index
+D: (03-23 17:06:19.415) Finished Loading Stock Data
+D: (03-23 17:06:19.630) Connection to 192.168.111.172:6666 succeeded
+D: (03-23 17:06:22.586) {
+    "ACQUIRED_STOCK" = CKCRQ; 
+    "ACQUIRING_STOCK" = "CKCRQ_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20071015; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CKCRQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-23 17:06:27.297) SUCCESS
+D: (03-23 17:06:27.298) cahelper finished 2015-03-23 17:06:27 -0400
+
+check the database
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='CKCRQ') order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'0db00e21390af46ac0a80116'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2002-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'33ce05923cf59010c0a801dc'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-13 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'4a36705242855bf4c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-13 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'8640705842855c10c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'3d353888428aa1f8c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2005-05-27 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'ae011ed44297d114c0a80146'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCRQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 194830204
+>           DATE = TIMESTAMP '2007-10-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = COLLINS & AIKMAN
+>     PRIMARYKEY = X'153c4c6455107fddc0a86f92'
+>       STOCKKEY = X'0daf0e21390af46ac0a80116'
+>         SYMBOL = CKCRQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25101010
+>       STYLEKEY = XB
+	select * from mcorporateaction where aliaskey=X'153c4c6455107fddc0a86f92';
+> Row 1:
+>              ALIASKEY = X'153c4c6455107fddc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CKCRQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150323:050427
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2007-10-15 00:00:00.000000'
+>         BB_IDENTIFIER = CKCRQ_FIX     UU Equity
+>             BB_ISSUED = TIMESTAMP '2007-10-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CKCRQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2007-10-15 00:00:00.000000'
+>            PRIMARYKEY = X'15364c6455107fdbc0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'15364c6455107fdbc0a86f92';
+> Row 1:
+>   _C001 = 67.000000
+I think this is good. 
+
+3/24/15 - is there closing this out
+
+let's invalidate the funds
+select  fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'15364c6455107fdbc0a86f92'));
+put them in a file
+CA issues CKCRQ fundkeys to invalidate.txt
+
+all invalidated - donw, close this out 

@@ -1,0 +1,187 @@
+date:  7/1/15
+ticker CHEHF 
+
+Stock missing
+Type
+General Help | Other
+Ticket
+3327
+Priority
+High
+Status
+Open
+Member Name
+Michael Glavacevic
+Username
+glavacem
+Fund Symbols
+BHF
+Stock Tickers
+N/A
+Description / Resources:
+Wed 07/01/2015 at 12:04 AM
+
+CHEHF $0.00 3120 $0.00 412.98% 0.00% Buy Sell Hello, CHEHF has disappeared from my portfolio. It looks like this will now be trading on the Nasdaq. can someone update the symbol and put my track record for this stock back in place? TORONTO, June 25, 2015 /CNW/ - Concordia Healthcare Corp. ("Concordia" or the "Company") (TSX: CXR) (OTCQX: CHEHF), a diverse healthcare company focused on legacy pharmaceutical products and orphan drugs, today announced that its common shares will begin trading on the NASDAQ Global Select Market® ("NASDAQ") on June 29, 2015 under the symbol CXRX. Thank you. Mike
+
+
+glavacem  BHF
+
+
+quantum:
+Concordia Healthcare Corp.
+Ticker Symbol: CXRX     CUSIP: 206519100     Exchange: NGS
+
+Company's Online Profile
+BUSINESS:  Concordia Healthcare Corp. is a diverse healthcare company focused on legacy pharmaceutical products and orphan drugs. Concordia’s legacy pharmaceutical division, Concordia Pharmaceuticals Inc., consists of a portfolio of branded products and authorized generic contracts. Concordia operates out of facilities in Oakville, Ontario; Bridgetown, Barbados; Roanoke, Virginia and has a specialty healthcare distribution (SHD) division that operates out of Kansas City, Missouri.
+
+Previous Ticker Symbol: CHEHF    Changed: 6/29/15 
+
+our site:
+Symbol: CXRX 	Name: Concordia Healthcare Corp 	Price: $72.14
+Volume: 4,510 	Sector: Unclassified 	Change: $0.00
+Short Volume: 3,663 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 3,663 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $71.45 	Year High: $82.30 	High: $73.23
+200 Day Ave: $52.26 	Year Low: $29.53 	Low: $72.00
+Corporate Actions for Concordia Healthcare Corp 	  July 01, 2015
+left curve 	  symbol changes for CXRX 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+29 Jun 15 	CHEHF 	CXRX 	Change in the ticker (trading) symbol from CHEHF to CXRX
+  	  	 
+left curve 	  listing changes for CXRX 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Jun 29, 2015 	OTCBB-OTHER 	UV 	NASDAQ 	UW 	Change in the exchange that CHEHF trades on from OTCBB-OTHER to NASDAQ
+  	  	 
+left curve 	  cash dividends paid by CXRX 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+11 Apr 14 	15 Apr 14 	30 Apr 14 	4 	$0.08 	Dividend amount:0.075 per share.
+11 Jul 14 	15 Jul 14 	31 Jul 14 	4 	$0.08 	Dividend amount:0.075 per share.
+10 Oct 14 	15 Oct 14 	31 Oct 14 	4 	$0.08 	Dividend amount:0.075 per share.
+13 Jan 15 	15 Jan 15 	31 Jan 15 	4 	$0.08 	Dividend amount:0.075 per share.
+13 Apr 15 	15 Apr 15 	30 Apr 15 	4 	$0.08 	Dividend amount:0.075 per share.
+
+select distinct stockkey from mstockalias where symbol='CHEHF';
+> Row 1:
+>   STOCKKEY = X'ea851b1e52e0cc77c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'ea851b1e52e0cc77c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 206519100
+>           DATE = TIMESTAMP '2013-12-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Concordia Healthcare Corp
+>     PRIMARYKEY = X'ea861b1e52e0cc77c0a86f92'
+>       STOCKKEY = X'ea851b1e52e0cc77c0a86f92'
+>         SYMBOL = CHEHF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 206519100
+>           DATE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Concordia Healthcare Corp
+>     PRIMARYKEY = X'66d15a8f5591cea1c0a86f92'
+>       STOCKKEY = X'ea851b1e52e0cc77c0a86f92'
+>         SYMBOL = CXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'66d15a8f5591cea1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'66d15a8f5591cea1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CHEHF US|CP_NEW_TKR|CXRX US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108810302
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 17957264
+>        BB_COMPANYNAME = Concordia Healthcare Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = CHEHF   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CHEHF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'c43f070f558dd97bc0a86f92'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 206519100
+>           DATE = TIMESTAMP '2015-06-29 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Concordia Healthcare Corp
+>     PRIMARYKEY = X'f3dd5ad45591cf1ec0a86f92'
+>       STOCKKEY = X'ea851b1e52e0cc77c0a86f92'
+>         SYMBOL = CXRX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey= X'f3dd5ad45591cf1ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'f3dd5ad45591cf1ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_EXCH|UV|CP_NEW_EXCH|UW|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 108810278
+>     BB_ACTIONMNEMONIC = CHG_LIST
+>          BB_COMPANYID = 17957264
+>        BB_COMPANYNAME = Concordia Healthcare Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-29 00:00:00.000000'
+>         BB_IDENTIFIER = CHEHF   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CHEHF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-06-26 00:00:00.000000'
+>            PRIMARYKEY = X'c43d070f558dd97ac0a86f92'
+>               VERSION = NULL
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Apr 07, 2014 		3120 	3120 	Buy
+Total: 3,120
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Apr 7, 2014 	3,120 	$156.00 	$46,263.96 	$14.83
+  	  	 
+  	  	
+SELLS
+You have no sells for this position
+
+
+He's got 3120 shares of CXRX on the legacy site  glavacem  BHF
+ticker change CHEHF to CXRX  member has 3120 shares in the legacy fund there are none, either symbol
+
+lets try repricing
+
+select fundkey from mposition where stockkey=  X'ea851b1e52e0cc77c0a86f92';
+
+let's look at the ledger on 
+> Row 1:
+>   FUNDKEY = X'9e4013dd5317a53bc0a86f99'
+> Row 2:
+>   FUNDKEY = X'e36c60b1429e4873c0a80132'
+
+X'9e4013dd5317a53bc0a86f99',X'e36c60b1429e4873c0a80132'
+
+strange nothing shows up in the display, either ticker not even a quote
+ 
+is it in the xignite feed?  yes
+
+it is purely an problem on the new site

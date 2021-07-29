@@ -1,0 +1,158 @@
+date:  4/16/15
+checking something for Jeff/Ken
+
+member trying to trade Volkswagon
+
+Marty, can you see if you see anything regarding this.  He says he's been trying since January 22 but the new site didn't even come online until 10 days ago, so I suspect it might be something stemming from before then.
+
+Let me know what you find.  Thanks.
+
+From: David Canaan <d.canaan@laurelgrp.com>
+Subject: Buy order
+Date: April 15, 2015 at 6:33:09 PM PDT
+To: Ken Kam <ken.kam@marketocracy.com>
+
+
+Ken:
+
+I’ve been trying to buy Volkswagen thru the order wizard since January 22. Nothing happened so I cancelled on 
+March 29 and reattempted to purchase on March 31. That order is still listed as “pending”. I put in another order 
+today and it hasn’t even made it to pending. I’m sure it’s a typical technical bug, but it would be good to resolve 
+so my fund reflects what I want to invest in.
+
+Thanks!
+
+David
+
+
+Laurel Group | Brand Development Advisors | + 415.209.9395 | d.canaan@laurelgrp.com
+
+select * from mmanager where email='d.canaan@laurelgrp.com';
+> Row 1:
+>                EMAIL = d.canaan@laurelgrp.com
+>            FIRSTNAME = David
+>             FULLNAME = David Canaan
+>       HOMEADDRESSKEY = X'd3421be43bbc76a1c0a801e1'
+>             LASTNAME = Canaan
+>            LOGINNAME = dcanaan
+>        LOGINPASSWORD = 32348j
+>         PORTFOLIOKEY = X'd3441be43bbc76a1c0a801e1'
+>           PRIMARYKEY = X'd3411be43bbc76a1c0a801e1'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'd3431be43bbc76a1c0a801e1'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2015-01-22 12:16:23.000000'
+>            LASTLOGIN = TIMESTAMP '2015-01-26 11:46:57.000000'
+>           LOGINCOUNT = 18
+>         LOGINSPACING = 395696216.552611
+>   JOINEDMARKETOCRACY = TIMESTAMP '2001-10-04 10:48:59.000000'
+>    ENCRYPTEDPASSWORD = 14BFA73CF40123AD
+>         MEMBERSTATUS = -1
+
+
+login:  dcanaan
+
+recent closed tickets 	right curve
+  	  	[download spreadsheet]
+  	  	
+Close Date 	Type 	Symbol 	Shares 	Net Avg. Price 	Net 	 
+Apr 9, 2015 	Split Buy 	SBUX 	0 	$0 	$0.00 	Details 
+Apr 9, 2015 	Split Sell 	SBUX 	0 	$0 	$0.00 	Details  
+
+I see no open orders
+
+on legacy site
+
+check new site
+get password
+>>>> dbtool started at 2015-04-16 16:58:34 -0400
+Password = 32348j
+<<<< dbtool finished at 2015-04-16 16:58:35 -0400
+dcanaan  32348j
+
+what is the ticker for volkswagon?
+
+select * from mstockalias where upper(name) like '%VOLKSW%';
+
+select distinct stockkey from mstockalias where symbol='VLKAY';
+
+Recent Trades.
+
+Please note it may take a few minutes for your recently submitted trades to load. Please refresh the page.
+All Open Orders Columns 
+10
+ records
+Search: 
+Fund	Type	Symbol	Open Date	Limit	Current	Shares	Fills	Order Type	Status	Actions
+DMF	Buy	VLKAY	Apr 16, 2015 5:25 PM	$0.00	$50.32	100	0	Next Day Order	Pending	Cancel
+DMF	Buy	VLKAY	Mar 31, 2015 2:04 PM	$0.00	$51.34	15000	0	Day Order	Pending	Cancel
+DMF	Buy	VLKAY	Jan 22, 2015 12:22 PM	$0.00	$0.00	2000	0	Day Order	Cancel Request Sent: 
+Mar 29, 2015 12:03	
+
+new site can't tell if we have the stock or now 
+
+need to list VLKAY
+VLKAY
+name:  Volkswagen AG
+CUSIP:    928662303
+
+VLKAY|Q|928662303|Volkswagen AG|20150416
+
+put this in the symadd.txt
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+select distinct stockkey from mstockalias where symbol='VLKAY';
+> Row 1:
+>   STOCKKEY = X'8fea680355305658c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'8fea680355305658c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 928662303
+>           DATE = TIMESTAMP '2015-04-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Volkswagen AG
+>     PRIMARYKEY = X'8feb680355305658c0a86f92'
+>       STOCKKEY = X'8fea680355305658c0a86f92'
+>         SYMBOL = VLKAY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+look up gics
+25102010	Automobile Manufacturers
+	Companies that produce mainly passenger automobiles and light trucks. Excludes companies producing mainly motorcycles and three-wheelers classified in the Motorcycle Manufacturers Sub-Industry and heavy duty trucks classified in the Construction Machinery & Heavy Trucks Sub-Industry.
+update mstockalias set GICSKEY='25102010' where PRIMARYKEY = X'8feb680355305658c0a86f92';
+
+4/17/15 - VLKAY is there
+need to update the exchange
+
+select * from mexchange;
+> Row 1:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 20
+>         NAME = AMEX
+>   PRIMARYKEY = X'9d592f1d390a440bc0a8015c'
+> Row 2:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 20
+>         NAME = NYSE
+>   PRIMARYKEY = X'9d5b2f1d390a440bc0a8015c'
+> Row 3:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = NASDAQ
+>   PRIMARYKEY = X'9d5d2f1d390a440bc0a8015c'
+> Row 4:
+>   ADDRESSKEY = NULL
+>    FEEDDELAY = 15
+>         NAME = OTCBB
+>   PRIMARYKEY = X'6325039339e7e926c0a801dc'  <--- set to this
+
+update mstockalias set EXCHANGEKEY=X'6325039339e7e926c0a801dc'  where PRIMARYKEY = X'8feb680355305658c0a86f92';
+
+put in a buy order of 10 shares in my account  this filled
+
+we can close this out.

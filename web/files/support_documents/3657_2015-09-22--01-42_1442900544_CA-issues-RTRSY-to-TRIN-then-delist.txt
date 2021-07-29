@@ -1,0 +1,1054 @@
+RTRSY
+date:    9/13/15
+ticker:   RTRSY
+
+yahoo:
+
+quantum:
+Thomson Reuters plc ADR
+Ticker Symbol: TRINY*     CUSIP: 76132M102     Exchange: NNM
+* Symbol changed!! New symbol: TRI 
+
+BUSINESS:  Reuters Group plc is the world's largest news & financial information services company.
+Previous Ticker Symbol: RTRSY    Changed: 4/16/08
+Previous Name: Reuters Group plc ADR    Changed: 4/16/08
+ADR with an ADR ratio of 1:6
+Large Cap Stock -   Market Value $ 14.2 Billion
+
+oursite:
+Symbol: RTRSY	Name: REUTERS GROUP ADS	Price: $74.40
+Volume:	Sector: Consumer Discretionary	Change:
+Short Volume: 0	Style: Mid Cap : Value	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=RTRSY  request error
+
+I did to TRI and it came back with Thomas Reuters
+884903105  cusip on xitnite 
+
+check MAdmin
+Stock:REUTERS GROUP ADS  Symbol:RTRSY
+Date: 09/14/2015
+
+75 users found
+
+1	aberkowitz	awesome1nyc	berkeleyan	billdacat	blaunder	capital_strategies_group	carton	chagbo	cnilsson	dblazer
+2	deadsox	dereko7	dharvey1	dishwasher	ematte	enhanced	euro	flajuie	frojas	fsmith
+3	gdell	georgepomeroy	gsamos	hkazemi26	hobiecatlobmi	incognito	jbw707	jfalkowski	jfg	jjakobovits
+4	jlongwell	jlucas	joeblow	jolly	jon_patrick	jtmuncey	judasp1	kiddragon	klandweh	lpettid
+5	marvin_cr	mgreen49	muwakwe	mvrh1	nmcginn	northcutt0	nrappaccini	numero78	oduvall	pedercs
+6	phoward	raffaelelovero	rbrayton	relentless_gain	richdoug36	rkota2	rlampkin	romeoh	rziegler	samalbrecht
+7	sbrody	sburnazi	schouten01	stock	tdoerich	teamfunds	tgibby	thl	tlao	tv_weber
+8	ustnote	warrentlong	wbarton1	y_thakare	zacharkevics	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'RTRSY';  
+> Row 1:
+>   STOCKKEY = X'f9c20e21390ac294c0a80116'
+
+select * from mstockalias where stockkey=X'f9c20e21390ac294c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'f9c30e21390ac294c0a80116'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = RTRSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RTRSY'  order by BB_EFFECTIVE;
+nothing
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RTRSY
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2676
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f9c20e21390ac294c0a80116' and shares > 0 order by closed; 
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 75 members who hold this stock
+quantum:
+last ticket:
+last price:
+
+
+/Marketocracy/bin/cahelper -symbol  RTRSY  -effective YYYYMMDD -type ACQUIS -exchange UN -acqType 1 -acqCash XXX -acqShare 0 -purchaser XXX   >& /Users/build/caout/
+
+Check the results 
+select * from mstockalias where stockkey= X'f9c20e21390ac294c0a80116'  order by "date";
+
+
+select * from mcorporateaction where aliaskey =X'ALIASKEY' ;
+
+
+select count(*) from mticket where sourcekey = X'SOURCEKEY';
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'SOURCEKEY'));
+there are XXX fundkeys, save to CA issues RTRSY fundkeys.txt
+
+For Beta case
+RTRSY no longer trades but is still active on our site - need to delist 
+
+check on XXX   invalidate funds
+check MAdmin
+
+******  the above says the ticker changed from RTRSY to TRI
+
+On our site, TRI already exists
+
+TRI
+ymbol: TRI	Name: Thomson Reuters Corp	Price: $39.88
+Volume: 893,138	Sector: Consumer Discretionary	Change: $0.00
+Short Volume: 931,728	Style: Large Cap : Value	Market Cap: $65,983,493,880
+Avg Volume: 931,728	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $39.16	Year High: $42.64	High: $39.88
+200 Day Ave: $39.74	Year Low: $34.88	Low: $39.45
+
+research  stock info  TRI   
+ [NEW QUOTE]       
+Corporate Actions for Thomson Reuters Corp	  September 14, 2015
+left curve	  symbol changes for TRI	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+17 Apr 08	TOC	TRI	Change in the ticker (trading) symbol from TOC to TRI
+ 	 	 
+select distinct stockkey from mstockalias where symbol='TRI';
+> Row 1:
+>   STOCKKEY = X'9d0310ac390c6d97c0a8015c'
+> Row 2:
+>   STOCKKEY = X'1d054c623dfe840cc0a80146'
+
+there are two:
+> TRI 1:
+>   STOCKKEY = X'9d0310ac390c6d97c0a8015c'
+select * from mstockalias where stockkey=X'9d0310ac390c6d97c0a8015c' order by "date";
+new ticker, different stock  and symbol  stil active:
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 04035Y106
+>           DATE = TIMESTAMP '2010-03-31 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Aria International Holdings In
+>     PRIMARYKEY = X'b5952bb44bb3b950c0a80146'
+>       STOCKKEY = X'9d0310ac390c6d97c0a8015c'
+>         SYMBOL = ARAH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102020
+>       STYLEKEY = MG
+note:  yahoo has this as no longer trading
+
+> TRI 2:
+>   STOCKKEY = X'1d054c623dfe840cc0a80146'
+select * from mstockalias where stockkey=X'1d054c623dfe840cc0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 884903105
+>           DATE = TIMESTAMP '2002-06-12 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Thompson
+>     PRIMARYKEY = X'1d064c623dfe840cc0a80146'
+>       STOCKKEY = X'1d054c623dfe840cc0a80146'
+>         SYMBOL = TOC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = LV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 884903105
+>           DATE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Thompson
+>     PRIMARYKEY = X'eef121f848080120c0a80146'
+>       STOCKKEY = X'1d054c623dfe840cc0a80146'
+>         SYMBOL = TRI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = LV
+	select * from mcorporateaction where aliaskey=X'eef121f848080120c0a80146';
+> Row 1:
+>              ALIASKEY = X'eef121f848080120c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|TOC US|CP_NEW_TKR|TRI US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 31087886
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 110724
+>        BB_COMPANYNAME = Thomson Reuters Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = TRI     UN Equity
+>             BB_ISSUED = TIMESTAMP '2008-04-08 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TRI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'8cd11ee4480800bcc0a80146'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 884903105
+>           DATE = TIMESTAMP '2008-04-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Thomson Reuters Corp
+>     PRIMARYKEY = X'533a230e4808016bc0a80146'
+>       STOCKKEY = X'1d054c623dfe840cc0a80146'
+>         SYMBOL = TRI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = LV
+
+
+Checked with Steve  he found on Bloomberg that RTRSY changed to TRIN
+
+happened on 4/17/08
+
+do we have a TRIN?
+
+select distinct stockkey from mstockalias where symbol='TRIN';
+> Row 1:
+>   STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+
+select * from mstockalias where STOCKKEY = X'a1d710ac390c6da2c0a8015c' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'a1d810ac390c6da2c0a8015c'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2002-05-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'9f731adf3cf82daec0a801dc'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2002-05-31 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'360e1d733cf830dec0a801dc'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2002-06-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'9e8a4c0f3cfc2527c0a801dc'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2002-09-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'49dc131e3d7ea781c0a801dc'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2004-11-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'1c192fcc41903301c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTELC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792107
+>           DATE = TIMESTAMP '2004-12-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'1e97739641afd6fec0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTLDC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792206
+>           DATE = TIMESTAMP '2004-12-02 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'07c073a241afd731c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTLDC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792206
+>           DATE = TIMESTAMP '2004-12-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'cf1062c741c8e392c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = ZTEL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792206
+>           DATE = TIMESTAMP '2005-01-04 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Z-TEL TECHNOLOGIES(IPO)
+>     PRIMARYKEY = X'eca0372d41db5872c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'eca0372d41db5872c0a80146';
+> Row 1:
+>              ALIASKEY = X'eca0372d41db5872c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ZTEL US|CP_NEW_TKR|TRIN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 16748325
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 898386
+>        BB_COMPANYNAME = Trinsic Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-01-04 00:00:00.000000'   changed to TRIN on 2005-01-04
+>         BB_IDENTIFIER = TRIN    UQ Equity
+>             BB_ISSUED = TIMESTAMP '2005-01-03 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TRIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'c74a371e41db5835c0a80146'
+>               VERSION = NULL
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 988792206
+>           DATE = TIMESTAMP '2005-01-04 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'8d66385841db5899c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P100
+>           DATE = TIMESTAMP '2005-01-04 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'1c7d385b41db58a7c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P100
+>           DATE = TIMESTAMP '2005-07-28 00:00:00.000000'    changed out of TRIN
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'6d9525f142e98dffc0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'6d9525f142e98dffc0a80146';
+> Row 1:
+>              ALIASKEY = X'6d9525f142e98dffc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|TRIN US|CP_NEW_TKR|TRINC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 18809960
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 898386
+>        BB_COMPANYNAME = Trinsic Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-07-28 00:00:00.000000'
+>         BB_IDENTIFIER = TRINC   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2005-07-27 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TRINC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'7c3025e242e98daec0a80146'
+>               VERSION = NULL
+
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P100
+>           DATE = TIMESTAMP '2005-09-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'8bfa05734338a845c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRNCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2005-09-26 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'827305874338a896c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRNCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2005-10-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'e4251989435d920bc0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2005-11-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = N.A.
+>     PRIMARYKEY = X'7c89606043828a45c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'7c89606043828a45c0a80146';
+> Row 1:
+>              ALIASKEY = X'7c89606043828a45c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|TRINC US|CP_NEW_TKR|TRIN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 19916944
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 898386
+>        BB_COMPANYNAME = Trinsic Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2005-11-21 00:00:00.000000'
+>         BB_IDENTIFIER = TRIN    UV Equity
+>             BB_ISSUED = TIMESTAMP '2005-11-18 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = TRIN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'061a6048438289f2c0a80146'
+>               VERSION = NULL
+
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2005-11-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'07d7606643828a6bc0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 19:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2005-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'1711209143a22e58c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 20:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2006-11-24 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'92631dd54567b26cc0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+	select * from mcorporateaction where aliaskey=X'92631dd54567b26cc0a80146';
+> Row 21:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2006-12-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'501f0ef04591e21ec0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 22:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2007-02-12 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'1bde5bb245d12a18c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 23:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2007-04-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'8a3d45c4462970edc0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRIQE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 24:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2007-05-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'4fbd47544653a0f4c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 25:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2007-05-22 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'5f6a475c4653a122c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TRINQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+> Row 26:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 89668P209
+>           DATE = TIMESTAMP '2008-01-31 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = N.A.
+>     PRIMARYKEY = X'81d8542f47a28ba9c0a80146'
+>       STOCKKEY = X'a1d710ac390c6da2c0a8015c'
+>         SYMBOL = TNSIQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 50101020
+>       STYLEKEY = XG
+
+
+Assessment -
+
+We don't have a collision with making a ticker change to TRIN
+
+there is another TRIN and it came and went a few times in and out of TRIN but that completed on 2007-02-12.
+
+
+let's do the change RTRSY to TRIN on 20080417
+
+/Marketocracy/bin/cahelper -symbol TRIN -effective 20080417 -type CHG_TKR -exchange UQ -oldSymbol RTRSY >& /Users/build/caout/RTRSY.20150913-CHG-TKR_TRIN.out
+RTRSY.20150913-CHG-TKR_TRIN.out
+stocks2:~/caout build$ tail -f RTRSY.20150913-CHG-TKR_TRIN.out
+D: (09-14 12:24:47.515) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-14 12:25:11.539) cahelper started on 2015-09-14 12:25:11 -0400
+
+D: (09-14 12:25:12.039) {
+    APPLIED = 0; 
+    DATE = 20080417; 
+    NOTES = "N.A."; 
+    SYMBOL = TRIN; 
+    TYPE = "CHG_TKR"; 
+}
+D: (09-14 12:25:12.039) SUCCESS
+D: (09-14 12:25:12.039) cahelper finished 2015-09-14 12:25:12 -0400
+
+select distinct stockkey from mstockalias where symbol='RTRSY';
+> Row 1:
+>   STOCKKEY = X'f9c20e21390ac294c0a80116'
+
+select * from mstockalias where stockkey=X'f9c20e21390ac294c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'f9c30e21390ac294c0a80116'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = RTRSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+
+did not take
+
+let's use MARTY as an intermediate step
+
+/Marketocracy/bin/cahelper -symbol MARTY -effective 20080417 -type CHG_TKR -exchange UQ -oldSymbol RTRSY >& /Users/build/caout/RTRSY.20150913-CHG-TKR_MARTY.out
+stocks2:~/caout build$ cat RTRSY.20150913-CHG-TKR_MARTY.out
+D: (09-14 12:32:28.668) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-14 12:32:52.708) cahelper started on 2015-09-14 12:32:52 -0400
+
+D: (09-14 12:32:52.966) {
+    APPLIED = 1; 
+    DATE = 20080417; 
+    "NEW_TICKER" = "MARTY US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "RTRSY US"; 
+    SYMBOL = MARTY; 
+    TYPE = "CHG_TKR"; 
+}
+D: (09-14 12:32:53.289) SUCCESS
+D: (09-14 12:32:53.289) cahelper finished 2015-09-14 12:32:53 -0400
+
+select * from mstockalias where stockkey=X'f9c20e21390ac294c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'f9c30e21390ac294c0a80116'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = RTRSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'e56b31c155f6f6b4c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = MARTY     <----------- change  
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'e56b31c155f6f6b4c0a86fab';
+> Row 1:
+>              ALIASKEY = X'e56b31c155f6f6b4c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|RTRSY US|CP_NEW_TKR|MARTY US|CP_NOTES|N.A.   <----------- change  
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150914:123252
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>         BB_IDENTIFIER = MARTY     UQ Equity   <----------- change  
+>             BB_ISSUED = TIMESTAMP '2008-04-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MARTY   <----------- change  
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2008-04-17 00:00:00.000000'
+>            PRIMARYKEY = X'e56531c155f6f6b4c0a86fab'
+>               VERSION = NULL
+
+update mcorporateaction set BB_SECID = 'TRIN' where PRIMARYKEY = X'e56531c155f6f6b4c0a86fab';
+update mcorporateaction set BB_IDENTIFIER = 'TRIN     UQ Equity' where PRIMARYKEY = X'e56531c155f6f6b4c0a86fab';
+update   mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_TKR|RTRSY US|CP_NEW_TKR|TRIN US|CP_NOTES|N.A.' where PRIMARYKEY = X'e56531c155f6f6b4c0a86fab';
+update mstockalias set SYMBOL = 'TRIN'  where PRIMARYKEY = X'e56b31c155f6f6b4c0a86fab';
+
+let's do a name change to Thomas Reuters UK Ltd.
+
+let's use RTRSY as the symbol of reference to make it 
+
+/Marketocracy/bin/cahelper -symbol TRIN -effective 20080417 -type CHG_NAME -exchange UQ -newName 'Thomas Reuters UK Ltd.' >& /Users/build/caout/RTRSY.20150913-CHG_NAME 
+D: (09-14 12:58:05.802) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-14 12:58:29.298) cahelper started on 2015-09-14 12:58:29 -0400
+
+D: (09-14 12:58:29.568) {
+    APPLIED = 1; 
+    DATE = 20080417; 
+    "NEW_NAME" = "Thomas Reuters UK Ltd."; 
+    NOTES = "N.A."; 
+    "OLD_NAME" = " "; 
+    SYMBOL = TRIN; 
+    TYPE = "CHG_NAME"; 
+}
+D: (09-14 12:58:29.808) SUCCESS
+D: (09-14 12:58:29.808) cahelper finished 2015-09-14 12:58:29 -0400
+
+
+select * from mstockalias where stockkey=X'f9c20e21390ac294c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'f9c30e21390ac294c0a80116'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = RTRSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'e56b31c155f6f6b4c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2008-04-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Thomas Reuters UK Ltd.
+>     PRIMARYKEY = X'b0c6335f55f6fcb5c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+
+can we get prices?
+
+are there prices from TRIN
+
+2/26/10	199.5
+
+looks like this is the last price from xignite 
+
+let's start the delist for TRIN
+STOCKKEY = X'f9c20e21390ac294c0a80116'
+select * from mstock where primarykey=X'f9c20e21390ac294c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'b0c6335f55f6fcb5c0a86fab'
+>                NAME = REUTERS GROUP ADS
+>          PRIMARYKEY = X'f9c20e21390ac294c0a80116'
+>              SYMBOL = RTRSY
+>           COMPANYID = 3329
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6c87
+
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock XXX
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3329
+2008-04-12 (Sat) [2658]: <WEEKEND>
+2008-04-13 (Sun) [2659]: <WEEKEND>
+2008-04-14 (Mon) [2660]: O:71.4900 H:72.1500 L:70.9000 C:71.1700 V:525792 TSO:206500 A:71.1700 R:1.0000 CA:0.0000
+2008-04-15 (Tue) [2661]: O:71.5600 H:72.1400 L:71.1500 C:71.7400 V:315583 TSO:206500 A:71.7400 R:1.0000 CA:0.0000
+2008-04-16 (Wed) [2662]: O:72.3300 H:74.7400 L:72.3300 C:74.4000 V:369667 TSO:206500 A:74.4000 R:1.0000 CA:0.0000
+2008-04-17 (Thu) [2663]: O:72.3300 H:74.7400 L:72.3300 C:74.4000 V:369667 TSO:206500 A:74.4000 R:1.0000 CA:0.0000  <-- ticker change happened here
+2008-04-18 (Fri) [2664]: O:74.4000 H:74.4000 L:74.4000 C:74.4000 V:0 TSO:206500 A:74.4000 R:1.0000 CA:0.0000
+2008-04-19 (Sat) [2665]: <WEEKEND>
+
+let's check TRIN prices 4/17/2015
+
+TRIN started trading on 4/17/15 - xignite has no older prices
+
+
+let's look at RTRSY
+4/16/08	74.4	72.33	74.74	72.33	369600	71.74   last day
+then first day of TRIN
+4/17/08	187.79	192.75	192.75	185	26900
+
+found this, so there was a merger, let's just let this go and delist on 
+https://schwabpt.com/downloads/docs/resources/actions/library/RTRSY_TRIN_8May08.pdf
+
+
+STOCKKEY = X'f9c20e21390ac294c0a80116'
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f9c20e21390ac294c0a80116' and shares > 0 order by closed; 
+> Row 1019:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-04-01 15:01:00.000000'
+>        COMMENT = 
+>     COMMISSION = 50.000000
+>   CURRENTORDER = X'6bbe675c47f27979c0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'4bd873573b1bca07c0a801e0'
+>       MODIFIED = NULL
+>            NET = 70806.472000
+>         OPENED = TIMESTAMP '2008-04-01 14:05:45.000000'
+>          PRICE = 70.806472
+>     PRIMARYKEY = X'6bbc675c47f27979c0a80135'
+>         SECFEE = 2.180000
+>         SHARES = 1000.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0);
+no shorts 
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f9c20e21390ac294c0a80116'  and totalshares < 0)));
+
+apply the acquis
+there are 75 members who hold this stock
+quantum:  nothing useful
+last ticket:  2008-04-01   PRICE = 70.806472
+last price:      2/26/10	199.5
+
+
+/Marketocracy/bin/cahelper -symbol  TRIN  -effective 20100226 -type ACQUIS -exchange UN -acqType 1 -acqCash 199.50 -acqShare 0 -purchaser TRIN   >& /Users/build/caout/TRIN.20150914-DELIST.out 
+stocks2:~/caout build$ tail -f TRIN.20150914-DELIST.out
+D: (09-14 13:50:16.773) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (09-14 13:50:40.792) cahelper started on 2015-09-14 13:50:40 -0400
+
+D: (09-14 13:50:41.073) There are [0] open tickets for TRIN on 20100226
+D: (09-14 13:50:41.713) StockFileLoad Version:4.0
+D: (09-14 13:50:41.713) Loading Stock Data
+D: (09-14 13:51:21.148) Building Lookup Index
+D: (09-14 13:51:26.192) Finished Building Index
+D: (09-14 13:51:29.901) Finished Loading Stock Data
+D: (09-14 13:51:30.020) Connection to 192.168.111.157:6666 succeeded
+D: (09-14 13:51:33.917) SavingChanges for position sell out 101 of 281
+D: (09-14 13:51:45.491) {
+    "ACQUIRED_STOCK" = TRIN; 
+    "ACQUIRING_STOCK" = "TRIN_FIX"; 
+    AMOUNT = 199.5; 
+    APPLIED = 1; 
+    DATE = 20100226; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "TRIN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (09-14 13:51:54.288) SUCCESS
+D: (09-14 13:51:54.288) cahelper finished 2015-09-14 13:51:54 -0400
+Check the results 
+select * from mstockalias where stockkey= X'f9c20e21390ac294c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'f9c30e21390ac294c0a80116'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = RTRSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2008-04-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = REUTERS GROUP ADS
+>     PRIMARYKEY = X'e56b31c155f6f6b4c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2008-04-17 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Thomas Reuters UK Ltd.
+>     PRIMARYKEY = X'b0c6335f55f6fcb5c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76132M102
+>           DATE = TIMESTAMP '2010-02-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Thomas Reuters UK Ltd.
+>     PRIMARYKEY = X'ada4360255f708f1c0a86fab'
+>       STOCKKEY = X'f9c20e21390ac294c0a80116'
+>         SYMBOL = TRIN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401040
+>       STYLEKEY = MV
+
+select * from mcorporateaction where aliaskey =X'ada4360255f708f1c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'ada4360255f708f1c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|TRIN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|199.500000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150914:015040
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = TRIN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-02-26 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = TRIN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-02-26 00:00:00.000000'
+>            PRIMARYKEY = X'ad9e360255f708f0c0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ad9e360255f708f0c0a86fab';
+> Row 1:
+>   _C001 = 125.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'ad9e360255f708f0c0a86fab'));
+there are 125 fundkeys, save to CA issues TRIN fundkeys.txt
+
+For Beta case
+RTRSY no longer trades but is still active on our site - need to delist 
+
+check on 9/15/15   invalidate funds
+check MAdmin
+
+9/16/15
+RTRSY
+TRIN has been acquired	right curve
+ 	 	
+Thomas Reuters UK Ltd. acquired by a private company on 2010-02-26 00:00:00.
+ 	 	 
+ok, invalidate - done
+reprice 
+
+
+
+
+
+
+
+
+
+
+
+
+

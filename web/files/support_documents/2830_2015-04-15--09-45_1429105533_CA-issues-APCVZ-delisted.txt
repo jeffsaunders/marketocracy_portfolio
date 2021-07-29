@@ -1,0 +1,299 @@
+date:  4/14/15
+ticker:   APCVZ
+
+no price in member pejmanh fund
+
+yahoo
+
+quantum
+
+our site
+Symbol: APCVZ 	Name: Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights 	Price: $0.02
+Volume: 	Sector: Unclassified 	Change:
+Short Volume: 0 	Style: Unclassified Market Cap : Unclassified Style 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+no CAs
+
+MAdmin APCVZ  04/14/2015
+Stock:Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights  Symbol:APCVZ
+Date: 04/13/2015
+
+219 users found
+
+1	10yrplan	ablack	adi_venkitaraman	aerarii_reditus	aevang	aghazvinian	analyzit	anthonyagbaje	aperdana	aportugal
+2	artssylvie	aspatz1	babdul	bbatov	benway	blowke	blustar	brien	bsettles	carlo_cg
+3	cdemastus	cfif	cnmcgraw	cody	colinfund	coolplace	crsungods	cubs1225	cvuplay	davegod2
+4	ddoetsch	dgroulx	dhorn	diddy175.com	diplomat	dmclaug2	dmlayton	donquixote	dozu	drew00099
+5	drewbarr	durgin	easyesteemer	ebaker1	egoralski	ehpark	elt9l	enkeeton	ereed8	ernierussi
+6	esens	faosto	feelingscarfy	fivenine	flajuie	flynnk	fmyburgh	gax8420	gescala	gilg
+7	grhombe	growthquestor	gsilcott	gwright64	h_van_houwelingen	hass	hbreslin4	hersheycook6489	hewitt	hili
+8	hipernova	hmatar	hurleyse	isiah	jakenawrocki	jakobssen	jaredwoodard	jaymillions	jchiappardi	jdamian_jr
+9	jdjuly5	jeffrats	jeffspa	jfh_69	jgoldstein	jhreingold	jknighton1	joeman	jonathan89	jordanb69
+10	jr10030	jrandlett	jrpmacro	jsledge	jtmuncey	jzawatson	kama	karllutjen	kaspakhine	kcavero321
+11	keith	kenfool	kiwijaydee	kommando	kuyeno	lady_bug	largebird	ldp_investor	leoblackheart	leran
+12	lineh99	lmkwin	longtri	lostwages	lseibert	lswatts	luckygal	lunanick	lzhao1	maxman71
+13	mbienenstock	mbledug	mcpennington	mdacorta	megaboy	mehmet_gokcedag	mgough	mgrinyer	mikevaughn	mimon
+14	mkading	mmendoza1	mmmaier	money21	monypke	mseibel	msemones1	mssharma	msumme	mvincit
+15	natekane2001	netrun	newlife1	nickl	nispasca	nocdar	nsubayer	pablo4414	patat	pburke
+16	pejmanh	pt9	quatto	qucksilver	rangerdon	reveille	rhaney	richfield	rj1000	rmscott_75077
+17	rmuzingo	roverlane50	rstack	rtsewell	rubbish	runonward	ryanwu	sackingswin	sadana	sallymcbeaver
+18	samma	sareen	sblake	sboysen2	scars	sdimov	silhouette	skyyhi	snibbley	spdr3350
+19	speculant	srlorince25	sroselius	steele99	stone_cold	sunshine0707	svanness	swilliams1	swvccio	tacall
+20	tas	teenerball	tglover	the_man_down_under	thomas.werder	tjrjunkbond	tomzachystal	top_cat	trasch	treyharris
+21	tsurani	userdoc	valuestocks	varooge	vbpatel21	vespasian	volodya	vsagdeo	walteis	waukfund
+22	webtne	werty	whitey09	wulfpup	zachery	zackheim	zero320	zobeaup	zscheidt	 
+
+lots of people held it
+database
+select distinct stockkey from mstockalias where symbol= 'APCVZ';  
+> Row 1:
+>   STOCKKEY = X'df7253d5494ac412c0a80146'
+
+select * from mstockalias where stockkey= X'df7253d5494ac412c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 35802M115
+>           DATE = TIMESTAMP '2008-09-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights 
+>     PRIMARYKEY = X'df7353d5494ac412c0a80146'
+>       STOCKKEY = X'df7253d5494ac412c0a80146'
+>         SYMBOL = APCVZ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='APCVZ'  order by BB_EFFECTIVE;
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock APCVZ
+>>>> dbtool started at 2015-04-14 15:13:45 -0400
+stock: APCVZ
+  PK       : [DF7253D5494AC412C0A80146]
+  companyID: [18378]
+  symbol   : [APCVZ]
+  name     : [Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights ]
+  date     : [2008-09-11 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-14 15:13:46 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 18378
+2011-03-03 (Thu) [3713]: O:0.0190 H:0.0202 L:0.0180 C:0.0180 V:7814740 TSO:0 A:0.0180 R:1.0000 CA:0.0000
+2011-03-04 (Fri) [3714]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13598911 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-05 (Sat) [3715]: <WEEKEND>
+2011-03-06 (Sun) [3716]: <WEEKEND>
+2011-03-07 (Mon) [3717]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-08 (Tue) [3718]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13600911 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-09 (Wed) [3719]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13600911 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-10 (Thu) [3720]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13600911 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-11 (Fri) [3721]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13600911 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-12 (Sat) [3722]: <WEEKEND>
+2011-03-13 (Sun) [3723]: <WEEKEND>
+2011-03-14 (Mon) [3724]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-15 (Tue) [3725]: O:0.0189 H:0.0235 L:0.0181 C:0.0200 V:13600911 TSO:0 A:0.0200 R:1.0000 CA:0.0000  <-- last day with volume
+2011-03-16 (Wed) [3726]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-17 (Thu) [3727]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-18 (Fri) [3728]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-03-19 (Sat) [3729]: <WEEKEND>
+2011-03-20 (Sun) [3730]: <WEEKEND>
+2011-03-21 (Mon) [3731]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+
+
+
+2011-12-13 (Tue) [3998]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-12-14 (Wed) [3999]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-12-15 (Thu) [4000]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-12-16 (Fri) [4001]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-12-17 (Sat) [4002]: <WEEKEND>
+2011-12-18 (Sun) [4003]: <WEEKEND>
+2011-12-19 (Mon) [4004]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+2011-12-20 (Tue) [4005]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:0 A:0.0200 R:1.0000 CA:0.0000
+
+last date 20111220
+
+let's look at trades see when the last complete trade is with shares
+select * from mticket where stockkey=X'df7253d5494ac412c0a80146'  and shares > 0 order by closed;
+here is the last one
+> Row 50:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2011-03-04 15:59:00.000000'
+>        COMMENT = 
+>     COMMISSION = 961.509598
+>   CURRENTORDER = X'bc881ad34d712f6ec0a80135'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6b843e7d39eddca9c0a80118'
+>       MODIFIED = NULL
+>            NET = 20191.701549
+>         OPENED = TIMESTAMP '2011-03-04 13:29:02.000000'
+>          PRICE = 0.022956
+>     PRIMARYKEY = X'bc861ad34d712f6ec0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 879577.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'df7253d5494ac412c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+apply the acquis  let's use the last price in the database?
+last price / volume
+2011-03-15 (Tue) [3725]: O:0.0189 H:0.0235 L:0.0181 C:0.0200
+
+20110315 0.02 price 
+/Marketocracy/bin/cahelper -symbol  APCVZ  -effective 20110315 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.02  -acqShare 0 -purchaser APCVZ   >& /Users/build/caout/APCVZ.20150414-ACQUIS.out
+stocks:~/caout build$ tail -f APCVZ.20150414-ACQUIS.out
+D: (04-14 15:35:48.099) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-14 15:36:16.133) cahelper started on 2015-04-14 15:36:16 -0400
+
+D: (04-14 15:36:16.344) There are [0] open tickets for APCVZ on 20110315
+D: (04-14 15:36:16.653) StockFileLoad Version:3.0
+D: (04-14 15:36:16.653) Loading Stock Data
+D: (04-14 15:37:00.519) Building Lookup Index
+D: (04-14 15:37:04.810) Finished Building Index
+D: (04-14 15:37:05.813) Finished Loading Stock Data
+D: (04-14 15:37:05.971) Connection to 192.168.111.172:6666 succeeded
+D: (04-14 15:37:07.827) SavingChanges for position sell out 101 of 364
+D: (04-14 15:37:13.867) >>> load new StockPrices file
+D: (04-14 15:37:13.891) <<< load new StockPrices file
+D: (04-14 15:37:13.891) >>> swap StockPrices
+D: (04-14 15:37:13.891) Obtained Stockprices swap mutex
+D: (04-14 15:37:13.891) <<< swap StockPrices
+D: (04-14 15:37:13.892) Stock prices available from 2000-05-01 to 2015-04-13
+D: (04-14 15:37:15.897) SavingChanges for position sell out 201 of 364
+D: (04-14 15:37:29.707) SavingChanges for position sell out 301 of 364
+D: (04-14 15:37:39.558) {
+    "ACQUIRED_STOCK" = APCVZ; 
+    "ACQUIRING_STOCK" = "APCVZ_FIX"; 
+    AMOUNT = 0.02; 
+    APPLIED = 1; 
+    DATE = 20110315; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "APCVZ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-14 15:37:42.402) SUCCESS
+D: (04-14 15:37:42.402) cahelper finished 2015-04-14 15:37:42 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'df7253d5494ac412c0a80146'
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 35802M115
+>           DATE = TIMESTAMP '2008-09-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights 
+>     PRIMARYKEY = X'df7353d5494ac412c0a80146'
+>       STOCKKEY = X'df7253d5494ac412c0a80146'
+>         SYMBOL = APCVZ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 35802M115
+>           DATE = TIMESTAMP '2011-03-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights 
+>     PRIMARYKEY = X'909e0212552d6c30c0a86f92'
+>       STOCKKEY = X'df7253d5494ac412c0a80146'
+>         SYMBOL = APCVZ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+select * from mcorporateaction where aliaskey = X'909e0212552d6c30c0a86f92';
+> Row 1:
+>              ALIASKEY = X'909e0212552d6c30c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|APCVZ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.020000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150414:033616
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-15 00:00:00.000000'
+>         BB_IDENTIFIER = APCVZ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-03-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = APCVZ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-03-15 00:00:00.000000'
+>            PRIMARYKEY = X'90980212552d6c30c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'90980212552d6c30c0a86f92';
+> Row 1:
+>   _C001 = 350.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'90980212552d6c30c0a86f92'));
+there are 350 funds
+save these to CA issues APCVZ delist.txt
+
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 18, 2011 		921000 	921000 	Buy
+Mar 15, 2011 	921000 	-921000 		Corporate Action
+Total: 0
+  	  	 
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 18, 2011 	921,000 	$5,068.59 	$106,440.29 	$0.12
+  	  	 
+SELLS
+
+You have no sells for this position
+
+checked MAdmin again it's good
+Stock:Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights  Symbol:APCVZ
+Date: 04/14/2015
+
+0 users found
+
+921000 * 0.02  = 18420  cash on 3/15/2011   PHQAF
+
+
+4/15/15
+APCVZ
+
+member pejmanh
+
+ APCVZ has been acquired 	right curve
+  	  	
+Fresenius Kabi Pharmaceuticals Holding, Inc. Contingent Value Rights acquired by a private company on 2011-03-15 00:00:00. 
+
+ok invalidate done
+
+921000 * 0.02  = 18420  cash on 3/15/2011   PHQAF
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+03/15/2011 	$350,594.22 	$0.00 	$9.61 	$19,428.00 	$80.44 	$0.00 	$369,951.38 	$1,078,122.58 	$1,448,073.96 	100,000 	$14.48 	No 	Details  
+
+let's expand 
+trades on March 15, 2011 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	APCVZ 	921,000 	$0.00 	$0.00 	$0.00 	$0.00
+  	  	 
+ths cash is there, let's double check MAdmin
+MAdmin   0 members now
+
+Closing this out  4/15/15

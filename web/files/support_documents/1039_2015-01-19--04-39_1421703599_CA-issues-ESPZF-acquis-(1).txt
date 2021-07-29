@@ -1,0 +1,443 @@
+date: 1/1/15
+Ticket Number:	1508
+Portfolio Username:	zhdy01
+Ticker Symbol:	ESPZF
+Corporate Action Type:
+Acquisition
+Subject:
+July 12, 2013: Alamos Gold Inc. (TSX:AGI) (NYSE: AGI) acquire[s] Esperanza Resources Corp. (TSX.V:EPZ) (OTCQX:ESPZF)
+Description:
+http://www.alamosgold.com/files/doc_news/2013/Alamos%20Announces%20Friendly%20Acquisition%20of%20Esperanza%20Resources%20FINAL(1).PDF 
+TORONTO, ON – July 12, 2013. Alamos Gold Inc. (“Alamos”) (TSX:AGI) (NYSE: AGI) and Esperanza Resources Corp.
+ (“Esperanza”) (TSX.V:EPZ)(OTCQX:ESPZF) are pleased to announce that they have entered into a definitive agreement 
+(the “Agreement”) pursuant to which Alamos has agreed to acquire all of the issued and outstanding common shares of 
+Esperanza by way of a court-approved plan of arrangement (the “Arrangement”). ... Pursuant to the terms of the Agreement, 
+Esperanza shareholders will receive C$0.85 in cash for each common share of Esperanza held, representing a premium of 
+approximately 38% to Esperanza’s 30-day volume-weighted average price (“VWAP”) for the period ending July 11, 2013.
+Thank you.
+
+yahoo:  Esperanza Resources Corp (ESPZF) -Other OTC
+0.96 0.00(0.00%) Aug 30, 2:50PM EDT  <--- last price
+Add to Portfolio
+Prev Close:	0.96
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	N/A
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	N/A - N/A
+52wk Range:	0.46 - 1.73
+Volume:	0
+Avg Vol (3m):	69,316
+Market Cap:	N/A
+P/E (ttm):	N/A
+EPS (ttm):	-0.18
+Div & Yield:	N/A (N/A)
+
+quantum:  nothing
+xignite: 
+oursite:  Symbol: ESPZF	Name: Esperanza Resources Corp	Price: $0.96
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+CAs
+CUSIP changes for ESPZF	
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 Jan 02		29664T102	Change in any of identification numbers (CUSIP) of a security from to 29664T102
+19 Jul 10	29664T102	29664V107	Change in any of identification numbers (CUSIP) of a security from 29664T102 to 29664V107
+ 	 	 
+	  name changes for ESPZF	
+ 	 	
+Effective Date	Old Name	New Name	Description
+01 Jan 02		Esperanza Silver Corp.	Change in the name of issuer from to Esperanza Silver Corp.
+19 Jul 10	Esperanza Silver Corp	Esperanza Resources Corp	Change in the name of issuer from Esperanza Silver Corp to Esperanza Resources Corp
+
+let's check OTC
+
+
+select distinct stockkey from mstockalias where symbol='ESPZF' ;
+> Row 1:
+>   STOCKKEY = X'7b3e4f2d46993817c0a80146'
+
+
+select * from mstockalias where stockkey= X'7b3e4f2d46993817c0a80146' order by mstockalias.date;
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Esperanza Silver Corp.
+>           DATE = TIMESTAMP '2002-01-01 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 29664T102
+>     PRIMARYKEY = X'7b3f4f2d46993817c0a80146'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = Esperanza Silver Corp.
+>           DATE = TIMESTAMP '2002-01-01 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Esperanza Silver Corp.
+>     PRIMARYKEY = X'1f191bc8469c7cf5c0a8013c'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29664T102
+>           DATE = TIMESTAMP '2002-01-01 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Esperanza Silver Corp.
+>     PRIMARYKEY = X'b9b1408e469c9523c0a8013c'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29664T102
+>           DATE = TIMESTAMP '2010-07-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Esperanza Resources Corp
+>     PRIMARYKEY = X'53446b134c44bf25c0a80146'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29664V107
+>           DATE = TIMESTAMP '2010-07-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Esperanza Resources Corp
+>     PRIMARYKEY = X'250e6b2b4c44bf5cc0a80146'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'250e6b2b4c44bf5cc0a80146';
+> Row 1:
+>              ALIASKEY = X'250e6b2b4c44bf5cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|29664T102|CP_NEW_CUSIP|29664V107|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|CA29664T1021|CP_NEW_ISIN|CA29664V1076|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 46815517
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 109586
+>        BB_COMPANYNAME = Esperanza Resources Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-07-19 00:00:00.000000'
+>         BB_IDENTIFIER = ESPZF   UV Equity
+>             BB_ISSUED = TIMESTAMP '2010-07-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = ESPZF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3002
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'784467d74c44bdbec0a80146'
+>               VERSION = NULL
+
+
+let's see if there is a delist / acquis out there
+select * from mcorporateaction where aliaskey is null and BB_SECID='ESPZF';
+> Row 17:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|ESPZF|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 80988835
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 109586
+>        BB_COMPANYNAME = Esperanza Resources Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-09-03 00:00:00.000000'
+>         BB_IDENTIFIER = ESPZF   US Equity
+>             BB_ISSUED = TIMESTAMP '2013-08-30 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = ESPZF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 3002
+>            BB_UPDATED = TIMESTAMP '2013-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'4b9819935221228ec0a80146'
+>               VERSION = NULL
+
+
+let's look at historucal pricing
+
+/Marketocracy/bin/dbtool lookup stock ESPZF
+>>>> dbtool started at 2015-01-01 03:34:31 -0500
+stock: ESPZF
+  PK       : [7B3E4F2D46993817C0A80146]
+  companyID: [17421]
+  symbol   : [ESPZF]
+  name     : [29664T102]
+  date     : [2002-01-01 00:00:00]
+  status   : [Active]
+stock: ESPZF
+  PK       : [7B3E4F2D46993817C0A80146]
+  companyID: [17421]
+  symbol   : [ESPZF]
+  name     : [Esperanza Silver Corp.]
+  date     : [2002-01-01 00:00:01]
+  status   : [Active]
+stock: ESPZF
+  PK       : [7B3E4F2D46993817C0A80146]
+  companyID: [17421]
+  symbol   : [ESPZF]
+  name     : [Esperanza Silver Corp.]
+  date     : [2002-01-01 00:00:02]
+  status   : [Active]
+stock: ESPZF
+  PK       : [7B3E4F2D46993817C0A80146]
+  companyID: [17421]
+  symbol   : [ESPZF]
+  name     : [Esperanza Resources Corp]
+  date     : [2010-07-19 00:00:00]
+  status   : [Active]
+stock: ESPZF
+  PK       : [7B3E4F2D46993817C0A80146]
+  companyID: [17421]
+  symbol   : [ESPZF]
+  name     : [Esperanza Resources Corp]
+  date     : [2010-07-19 00:00:01]
+  status   : [Active]
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17421
+2013-08-11 (Sun) [4605]: <WEEKEND>
+2013-08-12 (Mon) [4606]: O:0.8700 H:0.8800 L:0.8700 C:0.8700 V:121037 TSO:0 A:0.8700 R:1.0000 CA:0.0000
+2013-08-13 (Tue) [4607]: O:0.8700 H:0.8700 L:0.8700 C:0.8700 V:15525 TSO:0 A:0.8700 R:1.0000 CA:0.0000
+2013-08-14 (Wed) [4608]: O:0.8700 H:0.9100 L:0.8700 C:0.8900 V:92883 TSO:0 A:0.8900 R:1.0000 CA:0.0000
+2013-08-15 (Thu) [4609]: O:0.8700 H:0.8800 L:0.8700 C:0.8800 V:41000 TSO:0 A:0.8800 R:1.0000 CA:0.0000
+2013-08-16 (Fri) [4610]: O:0.8800 H:0.8900 L:0.8800 C:0.8800 V:12650 TSO:0 A:0.8800 R:1.0000 CA:0.0000
+2013-08-17 (Sat) [4611]: <WEEKEND>
+2013-08-18 (Sun) [4612]: <WEEKEND>
+2013-08-19 (Mon) [4613]: O:0.8900 H:0.8900 L:0.8800 C:0.8800 V:4950 TSO:0 A:0.8800 R:1.0000 CA:0.0000
+2013-08-20 (Tue) [4614]: O:0.8700 H:0.8900 L:0.8700 C:0.8900 V:5200 TSO:0 A:0.8900 R:1.0000 CA:0.0000
+2013-08-21 (Wed) [4615]: O:0.8800 H:0.8800 L:0.8700 C:0.8700 V:5100 TSO:0 A:0.8700 R:1.0000 CA:0.0000
+2013-08-22 (Thu) [4616]: O:0.8200 H:0.8200 L:0.6500 C:0.6700 V:42160 TSO:0 A:0.6700 R:1.0000 CA:0.0000
+2013-08-23 (Fri) [4617]: O:0.6800 H:0.6800 L:0.6400 C:0.6400 V:7400 TSO:0 A:0.6400 R:1.0000 CA:0.0000
+2013-08-24 (Sat) [4618]: <WEEKEND>
+2013-08-25 (Sun) [4619]: <WEEKEND>
+2013-08-26 (Mon) [4620]: O:0.8500 H:0.9300 L:0.8500 C:0.9200 V:980720 TSO:0 A:0.9200 R:1.0000 CA:0.0000
+2013-08-27 (Tue) [4621]: O:0.9200 H:0.9600 L:0.9200 C:0.9500 V:173000 TSO:0 A:0.9500 R:1.0000 CA:0.0000
+2013-08-28 (Wed) [4622]: O:0.9500 H:0.9800 L:0.9500 C:0.9600 V:300700 TSO:0 A:0.9600 R:1.0000 CA:0.0000
+2013-08-29 (Thu) [4623]: O:0.9600 H:0.9600 L:0.9400 C:0.9400 V:3000 TSO:0 A:0.9400 R:1.0000 CA:0.0000
+2013-08-30 (Fri) [4624]: O:0.9600 H:0.9700 L:0.9500 C:0.9600 V:16800 TSO:0 A:0.9600 R:1.0000 CA:0.0000
+
+
+
+stops abruptly on 8/30/2013
+
+85 cents canadian   we have a close of 96 cents american
+US Dollar	0.860597	1.161984
+
+.85*1.161984 = 0.98
+
+let's see who holds this on 8/30/14
+MAdmin
+Stock:Esperanza Resources Corp  Symbol:ESPZF
+Date: 08/30/2014
+
+2 users found
+
+1	landisman	zhdy01	 	 	    <--- MEMBERS holding 	ESPZF 	 	 	 	 
+
+ahha - let's log in as zhdy01 and see how many shares he has 
+your holdings of ESPZF	
+ 	 	
+Fund	Shares	Value	Portion of fund
+ZGBF	 0	 N/A	 N/A
+ZPMX	90,000	 $86,400.00	 12.33%  <----- expand
+SBF	 0	 N/A	 N/A
+HMF	 0	 N/A	 N/A
+ZCGF	 0	 N/A	 N/A
+ZRDF	 0	 N/A	 N/A
+ZISF	 0	 N/A	 N/A
+ZIRF	 0	 N/A	 N/A
+ZMEF	 0	 N/A	 N/A
+
+LEDGER
+Date	Start	Change	End	Type
+Oct 06, 2010		6000	6000	Buy
+Oct 08, 2010	6000	6000	12000	Buy
+Oct 19, 2010	12000	3000	15000	Buy
+Nov 02, 2010	15000	6000	21000	Buy
+Nov 03, 2010	21000	6000	27000	Buy
+Nov 04, 2010	27000	9000	36000	Buy
+Dec 06, 2010	36000	6000	42000	Buy
+Dec 09, 2010	42000	6000	48000	Buy
+Feb 01, 2011	48000	9000	57000	Buy
+Feb 03, 2011	57000	15000	72000	Buy
+Mar 01, 2011	72000	3000	75000	Buy
+May 12, 2011	75000	9000	84000	Buy
+Aug 02, 2011	84000	300	84300	Buy
+Aug 05, 2011	84300	5700	90000	Buy
+Total: 90,000
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 6, 2010	6,000	$300.00	$11,137.04	$1.86
+Oct 8, 2010	6,000	$300.00	$10,972.04	$1.83
+Oct 19, 2010	3,000	$150.00	$5,747.18	$1.92
+Nov 2, 2010	6,000	$300.00	$13,182.39	$2.20
+Nov 3, 2010	6,000	$300.00	$13,174.55	$2.20
+Nov 4, 2010	9,000	$450.00	$21,166.31	$2.35
+Dec 6, 2010	6,000	$300.00	$14,749.32	$2.46
+Dec 9, 2010	6,000	$300.00	$12,653.00	$2.11
+Feb 1, 2011	9,000	$450.00	$17,354.09	$1.93
+Feb 3, 2011	15,000	$750.00	$27,705.00	$1.85
+Mar 1, 2011	3,000	$150.00	$5,532.78	$1.84
+May 12, 2011	9,000	$450.00	$15,670.71	$1.74
+Aug 2, 2011	300	$15.00	$490.80	$1.64
+Aug 5, 2011	5,700	$285.00	$9,254.21	$1.62
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+ 	 	
+member has 90,000 shares
+
+/Marketocracy/bin/cahelper -symbol ESPZF -effective 20140830 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.98 -acqShare 0 -purchaser ESPZF >& /Users/build/caout/ESPZF.20150101-ACQUIS.out
+D: (01-01 08:25:18.536) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (01-01 08:26:02.005) cahelper started on 2015-01-01 08:26:02 -0500
+
+D: (01-01 08:26:02.802) There are [0] open tickets for ESPZF on 20140830
+D: (01-01 08:26:03.024) StockFileLoad Version:3.0
+D: (01-01 08:26:03.024) Loading Stock Data
+D: (01-01 08:27:01.475) Building Lookup Index
+D: (01-01 08:27:07.444) Finished Building Index
+D: (01-01 08:27:08.821) Finished Loading Stock Data
+D: (01-01 08:27:08.858) Connection to 192.168.111.157:6666 succeeded
+D: (01-01 08:27:08.901) {
+    "ACQUIRED_STOCK" = ESPZF; 
+    "ACQUIRING_STOCK" = "ESPZF_FIX"; 
+    AMOUNT = 0.98; 
+    APPLIED = 1; 
+    DATE = 20140830; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ESPZF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (01-01 08:27:09.734) SUCCESS
+D: (01-01 08:27:09.734) cahelper finished 2015-01-01 08:27:09 -0500
+
+it looks like it ran successfully
+
+check the database
+select * from mstockalias where stockkey= X'7b3e4f2d46993817c0a80146' order by mstockalias.date;
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 29664V107
+>           DATE = TIMESTAMP '2014-08-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Esperanza Resources Corp
+>     PRIMARYKEY = X'1db9527354a54aeac0a86f92'
+>       STOCKKEY = X'7b3e4f2d46993817c0a80146'
+>         SYMBOL = ESPZF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <--- status key is inactive
+>      CSISYMBOL = NULL  
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'1db9527354a54aeac0a86f92';
+> Row 1:
+>              ALIASKEY = X'1db9527354a54aeac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ESPZF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.980000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150101:082602
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-30 00:00:00.000000'
+>         BB_IDENTIFIER = ESPZF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ESPZF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-08-30 00:00:00.000000'
+>            PRIMARYKEY = X'1db3527354a54aeac0a86f92'
+>               VERSION = NULL
+
+check the member 
+
+your holdings of ESPZF	
+ 	 	
+Fund	Shares	Value	Portion of fund
+ZGBF	 0	 N/A	 N/A
+ZPMX	0	 $.00	 0.00%   <--- 0 shares 
+SBF	 0	 N/A	 N/A
+HMF	 0	 N/A	 N/A
+ZCGF	 0	 N/A	 N/A
+ZRDF	 0	 N/A	 N/A
+ZISF	 0	 N/A	 N/A
+ZIRF	 0	 N/A	 N/A
+ZMEF	 0	 N/A	 N/A
+
+ledger for ZPMX on 8/30/14    
+LEDGER
+Date	Start	Change	End	Type
+Oct 06, 2010		6000	6000	Buy
+Oct 08, 2010	6000	6000	12000	Buy
+Oct 19, 2010	12000	3000	15000	Buy
+Nov 02, 2010	15000	6000	21000	Buy
+Nov 03, 2010	21000	6000	27000	Buy
+Nov 04, 2010	27000	9000	36000	Buy
+Dec 06, 2010	36000	6000	42000	Buy
+Dec 09, 2010	42000	6000	48000	Buy
+Feb 01, 2011	48000	9000	57000	Buy
+Feb 03, 2011	57000	15000	72000	Buy
+Mar 01, 2011	72000	3000	75000	Buy
+May 12, 2011	75000	9000	84000	Buy
+Aug 02, 2011	84000	300	84300	Buy
+Aug 05, 2011	84300	5700	90000	Buy
+Aug 30, 2014	90000	-90000		Corporate Action  <---- it's here
+
+check this on 1/2/14 (or 1/3/14 if there is no nightly run tonigh)
+member zhdy01  in his ZPMX  he should get  90000 * 0.98 = 88200
+case: 1508
+
+1/13/15 -   zhdy01   ZPMX   on 8/30/2014  I don't see any cash
+trades on August 30, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	ESPZF	90,000	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+let's invalidate 
+
+/Marketocracy/bin/dbtool lookup fund zhdy01
+fund: zhdy01
+  PK: [03045AE8407C1DF7FFFFFFFF]
+  symbol: [ZPMX]
+  managerKey: [8ED027734055458AC0A80133]
+  loginName: [zhdy01]
+
+/Marketocracy/bin/fptool invalidateFund 03045AE8407C1DF7FFFFFFFF
+
+member zhdy01  in his ZPMX  he should get  90000 * 0.98 = 88200
+
+Date	Start Cash	In/Out Flow	Interest	Dividends	Management Fees	Trade Balance	End Cash	Stock Value	Total Value	Shares	Price	Compliance	 
+08/30/2014	$69,239.54	$0.00	$1.90	$88,200.00	$50.70	$0.00	$157,390.74	$855,985.00	$1,013,375.74	100,000	$10.13	Yes	Details 
+
+closing this out

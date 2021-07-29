@@ -1,0 +1,299 @@
+QBRWF
+date:  
+ticker:   QBRWF
+
+yahoo:
+
+quantum:
+Quebecor World, Inc.
+Ticker Symbol: QBRWF*     CUSIP: 748203106     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 7/22/09
+
+Company's Online Profile
+BUSINESS:  Quebecor World, Inc. is a diversified global printing company, the largest commercial printer in Canada and Europe and one the the largest in the U.S. and South America.
+Notes:  Bank of bankruptcy effective 7/21/2009 per the Other OTC on 7/22/2009.
+Previous Ticker Symbol: IQW
+Previous Name: Quebecor Printing, Inc.    Changed: 4/25/00
+Large Cap Stock -   Market Value $ 2.9 Billion
+
+oursite:
+Symbol: QBRWF	Name: QUEBECOR WORLD INC	Price: $0.01
+Volume:	Sector: Industrials	Change:
+Short Volume: 0	Style: Mid Cap : Growth	Market Cap:
+Avg Volume: 0	 Exchange: OTCBB	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:QUEBECOR WORLD INC  Symbol:QBRWF
+Date: 10/04/2015
+
+62 users found
+
+1	actuz	amandalc	automation15	bogumil	brun	cassandre	cborgh	claudio_wong	croy1	cubicase
+2	danchiha	dartmonkey	dbanas	devistated	dmcgirr	dramen007	drlaz	eituarte	flexoffset	fmartin978
+3	gestionsp1	gmccall	gmcil	goyd	heath101	hlbeckpe	hpatel298	jclorenz	jflavoie	jfmatos
+4	jkmb	jubals	kerzha	kg	kpersaud	ldoheny1	lovis	lyncher169	mchristy	meleke
+5	mernie77	mnoetzel	noelwatson	overlords	rachelle	rasmalresearch	rcortes033	ronaldhino8	rseshan	sissi2001
+6	south_kensington_boy	stocks33	sullivan47	sylvie	tharpur	tonybest	towertrader	trash333	vainio	voland
+7	xordox	zacharij	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'QBRWF';  
+> Row 1:
+>   STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+select * from mstockalias where stockkey=X'b9f210ac390c6e10c0a8015c'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'b9f310ac390c6e10c0a8015c'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = IQW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2008-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'b03e2fed4797ff98c0a80146'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = QBRWF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2008-01-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'963230014797ffccc0a80146'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = QBRWF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='QBRWF'  order by BB_EFFECTIVE;
+nothing useful
+
+last known price
+/Marketocracy/bin/dbtool lookup stock QBRWF
+>>>> dbtool started at 2015-10-04 21:40:30 -0400
+stock: QBRWF
+  PK       : [B9F210AC390C6E10C0A8015C]
+  companyID: [9875]
+  symbol   : [QBRWF]
+  name     : [QUEBECOR WORLD INC]
+  date     : [2008-01-23 00:00:00]
+  status   : [Active]
+stock: QBRWF
+  PK       : [B9F210AC390C6E10C0A8015C]
+  companyID: [9875]
+  symbol   : [QBRWF]
+  name     : [QUEBECOR WORLD INC]
+  date     : [2008-01-23 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-10-04 21:40:31 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 9875
+2009-07-12 (Sun) [3114]: <WEEKEND>
+2009-07-13 (Mon) [3115]: O:0.0295 H:0.0300 L:0.0270 C:0.0270 V:185089 TSO:132066 A:0.0270 R:1.0000 CA:0.0000
+2009-07-14 (Tue) [3116]: O:0.0270 H:0.0350 L:0.0262 C:0.0340 V:929247 TSO:132066 A:0.0340 R:1.0000 CA:0.0000
+2009-07-15 (Wed) [3117]: O:0.0262 H:0.0300 L:0.0262 C:0.0270 V:451200 TSO:132066 A:0.0270 R:1.0000 CA:0.0000
+2009-07-16 (Thu) [3118]: O:0.0270 H:0.0280 L:0.0260 C:0.0260 V:625671 TSO:132066 A:0.0260 R:1.0000 CA:0.0000
+2009-07-17 (Fri) [3119]: O:0.0295 H:0.0300 L:0.0260 C:0.0260 V:1521510 TSO:132066 A:0.0260 R:1.0000 CA:0.0000
+2009-07-18 (Sat) [3120]: <WEEKEND>
+2009-07-19 (Sun) [3121]: <WEEKEND>
+2009-07-20 (Mon) [3122]: O:0.0290 H:0.0300 L:0.0290 C:0.0295 V:118297 TSO:132066 A:0.0295 R:1.0000 CA:0.0000
+2009-07-21 (Tue) [3123]: O:0.0290 H:0.0290 L:0.0210 C:0.0210 V:1725393 TSO:132066 A:0.0210 R:1.0000 CA:0.0000
+2009-07-22 (Wed) [3124]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+2009-07-23 (Thu) [3125]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+2009-07-24 (Fri) [3126]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+2009-07-25 (Sat) [3127]: <WEEKEND>
+2009-07-26 (Sun) [3128]: <WEEKEND>
+2009-07-27 (Mon) [3129]: O:0.0090 H:0.0090 L:0.0090 C:0.0090 V:0 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+2009-07-28 (Tue) [3130]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+2009-07-29 (Wed) [3131]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'b9f210ac390c6e10c0a8015c' and shares > 0 order by closed; 
+> Row 627:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-07-17 13:11:00.000000'
+>        COMMENT = 
+>     COMMISSION = 309.059687
+>   CURRENTORDER = X'b51349d34a5e1d89c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'b89f7109437b1887c0a80133'
+>       MODIFIED = NULL
+>            NET = 5872.134061
+>         OPENED = TIMESTAMP '2009-07-15 14:18:49.000000'
+>          PRICE = 0.026710
+>     PRIMARYKEY = X'b51149d34a5e1d89c0a80133'
+>         SECFEE = 0.160000
+>         SHARES = 219844.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = ogarvasuc@gmail.com
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'b9f210ac390c6e10c0a8015c'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b9f210ac390c6e10c0a8015c'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b9f210ac390c6e10c0a8015c'  and totalshares < 0)));
+
+apply the acquis
+there are 62 members who hold this stock
+quantum:  NOTE: This security is no longer trading as of 7/22/09
+last ticket: 2009-07-17  PRICE = 0.026710
+last price:  2009-07-22 (Wed) [3124]: O:0.0240 H:0.0240 L:0.0060 C:0.0090 V:4813369 TSO:132066 A:0.0090 R:1.0000 CA:0.0000
+
+going with 20090722 0.009
+
+/Marketocracy/bin/cahelper -symbol  QBRWF  -effective 20090722 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.009 -acqShare 0 -purchaser QBRWF   >& /Users/build/caout/QBRWF.20150722-DELIST.out 
+QBRWF.20150722-DELIST.out
+stocks1:~/caout build$ tail -f QBRWF.20150722-DELIST.out
+D: (10-04 21:43:25.532) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-04 21:43:49.108) cahelper started on 2015-10-04 21:43:49 -0400
+
+D: (10-04 21:43:49.293) There are [0] open tickets for QBRWF on 20090722
+D: (10-04 21:43:49.681) StockFileLoad Version:4.0
+D: (10-04 21:43:49.681) Loading Stock Data
+D: (10-04 21:44:27.001) Building Lookup Index
+D: (10-04 21:44:33.017) Finished Building Index
+D: (10-04 21:44:36.938) Finished Loading Stock Data
+D: (10-04 21:44:37.062) Connection to 192.168.111.172:6666 succeeded
+D: (10-04 21:44:40.452) SavingChanges for position sell out 101 of 214
+D: (10-04 21:44:44.262) {
+    "ACQUIRED_STOCK" = QBRWF; 
+    "ACQUIRING_STOCK" = "QBRWF_FIX"; 
+    AMOUNT = 0.009; 
+    APPLIED = 1; 
+    DATE = 20090722; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "QBRWF_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-04 21:44:47.973) SUCCESS
+D: (10-04 21:44:47.973) cahelper finished 2015-10-04 21:44:47 -0400
+Check the results 
+select * from mstockalias where stockkey= X'b9f210ac390c6e10c0a8015c'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2000-04-30 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'b9f310ac390c6e10c0a8015c'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = IQW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2008-01-23 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'b03e2fed4797ff98c0a80146'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = QBRWF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2008-01-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'963230014797ffccc0a80146'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = QBRWF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 748203106
+>           DATE = TIMESTAMP '2009-07-22 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = QUEBECOR WORLD INC
+>     PRIMARYKEY = X'a41117165611d5d5c0a86fab'
+>       STOCKKEY = X'b9f210ac390c6e10c0a8015c'
+>         SYMBOL = QBRWF
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20201010
+>       STYLEKEY = MG
+
+
+select * from mcorporateaction where aliaskey =X'a41117165611d5d5c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'a41117165611d5d5c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|QBRWF  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.009000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151004:094349
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-07-22 00:00:00.000000'
+>         BB_IDENTIFIER = QBRWF_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-07-22 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = QBRWF_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'a40b17165611d5d5c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'a40b17165611d5d5c0a86fab';
+ Row 1:
+>   _C001 = 103.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'a40b17165611d5d5c0a86fab'));
+there are 103 fundkeys, save to CA issues QBRWF fundkeys.txt
+
+For Beta case
+QBRWF no longer trades but is still active on our site - need to delist 
+
+check on 10/5/15   invalidate funds
+check MAdmin  clear 
+
+10/6/15
+ QBRWF has been acquired	right curve
+ 	 	
+QUEBECOR WORLD INC acquired by a private company on 2009-07-22 00:00:00.
+invalidate, reprice and close 
+
+done
+closing this out 
+

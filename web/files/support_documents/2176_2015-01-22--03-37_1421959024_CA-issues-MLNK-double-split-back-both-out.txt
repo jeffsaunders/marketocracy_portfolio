@@ -1,0 +1,333 @@
+date: 1/21/15
+MLNK split problem
+
+From: 	Horst Lütjen <horsthl@web.de>
+	Subject: 	hmf and nf fund
+	Date: 	January 21, 2015 10:32:24 AM PST
+	To: 	help@marketocracy.com Help <help@marketocracy.com>
+
+HI THERE 
+just seen that there is a problem occured by stocksplit from MLNK
+in my two trading portfolios - -system did show that i am no longer fitting the compliance rules
+re split 1-100  from mlnk
+pse check and correct
+Horst Lütjen
+- e mail - horsthl@yahoo.com or horsthl@web.de
+
+select * from mmanager where email='horsthl@yahoo.com';
+> Row 1:
+>                EMAIL = horsthl@yahoo.com
+>            FIRSTNAME = Horst
+>             FULLNAME = Horst Luetjen
+>       HOMEADDRESSKEY = X'9e4a0a653b19e583c0a80118'
+>             LASTNAME = Luetjen
+>            LOGINNAME = hluetjen
+>        LOGINPASSWORD = hilde
+>         PORTFOLIOKEY = X'9e4c0a653b19e583c0a80118'
+>           PRIMARYKEY = X'9e490a653b19e583c0a80118'
+>         USERLEVELKEY = NULL
+>       WORKADDRESSKEY = X'9e4b0a653b19e583c0a80118'
+>    EMAILTROUBLEINDEX = 0
+>        PREVIOUSLOGIN = TIMESTAMP '2015-01-21 13:28:17.000000'
+>            LASTLOGIN = TIMESTAMP '2015-01-21 13:33:10.000000'
+>           LOGINCOUNT = 2041
+>         LOGINSPACING = 394888005.550722
+>   JOINEDMARKETOCRACY = TIMESTAMP '2001-06-03 03:22:17.000000'
+>    ENCRYPTEDPASSWORD = 052FDF6839768C77
+>         MEMBERSTATUS = -1
+
+login:  hluetjen
+
+your holdings of MLNK	
+ 	 	
+Fund	Shares	Value	Portion of fund
+HMF	4,859,806	 $17,689,694.35	 90.29%
+NF AG	4,389,410	 $15,977,452.86	 91.39%
+
+
+ah - there was one of these double splits in one day.
+
+select distinct stockkey from mstockalias where symbol='MLNK';
+> Row 1:
+>   STOCKKEY = X'8ee310ac390c6d75c0a8015c'
+select * from mstockalias where STOCKKEY = X'8ee310ac390c6d75c0a8015c';
+delisted 
+> Row 2:
+>   STOCKKEY = X'd8b60e21390a76b8c0a80116'
+select * from mstockalias where STOCKKEY = X'd8b60e21390a76b8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750109
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'd8b70e21390a76b8c0a80116'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750109
+>           DATE = TIMESTAMP '2002-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'3de15f123dc34481c0a80146'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750109
+>           DATE = TIMESTAMP '2003-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'efdc5d3b3efba6f7c0a80146'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750307
+>           DATE = TIMESTAMP '2008-09-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ModusLink Global Solutions, Inc
+>     PRIMARYKEY = X'7db2217949063ae1c0a8013c'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 60786L107
+>           DATE = TIMESTAMP '2008-09-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ModusLink Global Solutions, Inc
+>     PRIMARYKEY = X'295521ac49063b1fc0a8013c'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = MLNK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750109
+>           DATE = TIMESTAMP '2007-11-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'f3485961472a8516c0a80146'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGID
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750307
+>           DATE = TIMESTAMP '2007-11-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'748d59a3472a8574c0a80146'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGID
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 125750307
+>           DATE = TIMESTAMP '2007-11-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = CMGI INC
+>     PRIMARYKEY = X'4d6011694744f110c0a80146'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = CMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 60786L206
+>           DATE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = ModusLink Global Solutions, Inc
+>     PRIMARYKEY = X'953a3db254beeda8c0a86f92'
+>       STOCKKEY = X'd8b60e21390a76b8c0a80116'
+>         SYMBOL = MLNK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45102020
+>       STYLEKEY = XV
+select * from mcorporateaction where aliaskey=X'953a3db254beeda8c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|60786L107|CP_NEW_CUSIP|60786L206|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US60786L1070|CP_NEW_ISIN|US60786L2060|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 101521832
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bdc4dd154b9a545c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 100|CP_RATIO|0.010000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.010000|CP_ADJ_DT|20150120|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|1-100 R/S immediately followed by 100-1 F/S
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101306635
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bd84dd154b9a545c0a86f92'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONID = '101306635:MARTY' where PRIMARYKEY = X'5bd84dd154b9a545c0a86f92';
+
+> Row 3:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|100 for 1|CP_RATIO|100.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3001|CP_ADJ|100.000000|CP_ADJ_DT|20150120|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|1-100 R/S immediately followed by 100-1 F/S
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101306671
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bda4dd154b9a545c0a86f92'
+>               VERSION = NULL
+update mcorporateaction set BB_ACTIONID = '101306671:MARTY' where PRIMARYKEY = X'5bda4dd154b9a545c0a86f92';
+
+do it again:
+select * from mcorporateaction where aliaskey=X'953a3db254beeda8c0a86f92' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|60786L107|CP_NEW_CUSIP|60786L206|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US60786L1070|CP_NEW_ISIN|US60786L2060|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 101521832
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bdc4dd154b9a545c0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 100|CP_RATIO|0.010000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.010000|CP_ADJ_DT|20150120|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|1-100 R/S immediately followed by 100-1 F/S
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101306635:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bd84dd154b9a545c0a86f92'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'953a3db254beeda8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|100 for 1|CP_RATIO|100.000000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3001|CP_ADJ|100.000000|CP_ADJ_DT|20150120|CP_SH_FRACTIONAL|N.A.|CP_INDICATOR|N|CP_NOTES|1-100 R/S immediately followed by 100-1 F/S
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 101306671:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 129793
+>        BB_COMPANYNAME = ModusLink Global Solutions Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-20 00:00:00.000000'
+>         BB_IDENTIFIER = MLNK    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-12 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = MLNK
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-01-16 00:00:00.000000'
+>            PRIMARYKEY = X'5bda4dd154b9a545c0a86f92'
+>               VERSION = NULL
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 101306671:MARTY
+this worked
+the other one - are there mtickets?  
+
+select count(*) from mticket where sourcekey=X'5bd84dd154b9a545c0a86f92';
+there were tickets
+let's back this out, too
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 101306635:MARTY
+ran ok
+
+let's log back in as hluetjen  and check for MLNK shares
+your holdings of MLNK	
+ 	 	
+Fund	Shares	Value	Portion of fund
+HMF	49,084	 $178,665.77	 8.58%    Passes all compliance 
+NF AG	44,333	 $161,372.12	 9.68%   Passes all compliance 
+
+email to the member, let's create a case.
+case: 2176  
+
+I am closing this out.  
+
+member response:
+rom: 	Horst Lütjen <horsthl@web.de>
+	Subject: 	Re: Re: hmf and nf funds:  MLNK share quantities corrected
+	Date: 	January 21, 2015 1:57:41 PM PST
+	To: 	Marty Fukui <marty.fukui@marketocracy.com>
+
+Thks vm all löschen good thks vm fast response and actions regards Horst Lütjen 
+
+
+closing this case 2176 out.

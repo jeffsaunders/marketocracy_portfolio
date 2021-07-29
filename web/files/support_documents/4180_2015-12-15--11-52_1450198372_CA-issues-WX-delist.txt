@@ -1,0 +1,430 @@
+DATE:2015-12-11 00:00:00
+NOTES:N.A.
+REASON:Acquired/Merged
+APPLIED:1
+SYMBOL:WX
+TYPE:DELIST
+
+CA issues WX delist.txt
+date:  12/12/15
+ticker:   WX
+
+yahoo:  nothing
+
+quantum: still active
+
+oursite:
+Symbol: WX	Name: WuXi PharmaTech Cayman Inc	Price: $45.90
+Volume: 3,461,876	Sector: Health Care	Change: $0.00
+Short Volume: 746,263	Style: Small Cap : Value	Market Cap: $3,122,072,100
+Avg Volume: 746,263	 Exchange: NYSE	Today: 0.00%
+50 Day Ave: $44.90	Year High: $46.14	High: $45.92
+200 Day Ave: $42.37	Year Low: $32.50	Low: $45.75
+
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+
+
+
+research  stock info  WX   
+ [NEW QUOTE]       
+Corporate Actions for WuXi PharmaTech Cayman Inc	  December 12, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+THERE ARE NO CORPORATE ACTIONS FOR THIS STOCK.
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=WX
+last day for pricing: Date:	12/10/2015
+
+check MAdmin
+Stock:WuXi PharmaTech Cayman Inc  Symbol:WX
+Date: 12/12/2015
+
+86 users found
+
+1	Rational_Investor	abadazz	aberkowitz	advisorcfa	alexchouz	andypavlovic	aneedham	aratnikas	asalvador	aviator
+2	ayce	bananaslug	bhanen	bpl918	captainhook88	chaoye	chinatoddm	contra	crimejust	dasiegle
+3	dbautz	djacoby	dleid	dphillips	edgomez1985	ekantchev	energiel	francois60	gary.runevitch1@gmail.com	gbenedict
+4	geesus23	hedgething	idxfgroup	jamosber	jelloyeti	jhelms55	joe@analyticcapital.com	joeelefant	joeeleonard	jpmgator
+5	jstox	jsuriel220	kenmarx2	kikola	lmharold	lou.liu	lt2f	majolie	mbienenstock	mike84k
+6	ming.leo	mmendoza1	mr_ong	mrcowie	mshemel	mzb2xeo	nabootrader	nphershm	petkobi	pfig
+7	pshao649	r3dneck	rallyrs	rswanger	sartorius	shaunyu	sndege	spoorts	steele99	syoung8
+8	teakins2002	temptemo	thelostsoul	thiscoloradokid	tomcat	toomadd	trialuser	truewarrior	trunkfish	twaterman
+9	veckla	venturer	vonsavoye	weightlifter	welikala	zjingxin	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'WX';  
+> Row 1:
+>   STOCKKEY = X'6634224e46bbc74fc0a80146'
+select * from mstockalias where stockkey=X'6634224e46bbc74fc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929352102
+>           DATE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WuXi PharmaTech Cayman Inc
+>     PRIMARYKEY = X'6635224e46bbc74fc0a80146'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>         SYMBOL = WX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929352102
+>           DATE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WuXi PharmaTech Cayman Inc
+>     PRIMARYKEY = X'dfce6eba566b6abcc0a86fab'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>         SYMBOL = WX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = SV
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='WX'  order by BB_EFFECTIVE;
+> Row 46:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435059|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865471|CP_CUR_PREMIUM|0.436683|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|0.200001|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Skadden Arps, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-07 00:00:00.000000'
+>            PRIMARYKEY = X'2b8c308b56661dc4c0a86fab'
+>               VERSION = NULL
+> Row 47:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435303|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865465|CP_CUR_PREMIUM|0.744635|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|0.340000|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Skadden Arps, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-25 00:00:00.000000'
+>            PRIMARYKEY = X'b77c44d956564b97c0a86fab'
+>               VERSION = NULL
+> Row 48:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435303|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865465|CP_CUR_PREMIUM|0.217862|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Skadden Arps, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-10 00:00:00.000000'
+>            PRIMARYKEY = X'e02d6daa566b666ec0a86fab'
+>               VERSION = NULL
+> Row 49:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435059|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865471|CP_CUR_PREMIUM|0.217862|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|0.099998|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Skadden Arps, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-10 00:00:00.000000'
+>            PRIMARYKEY = X'f0473ee4566a131fc0a86fab'
+>               VERSION = NULL
+> Row 50:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435059|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865471|CP_CUR_PREMIUM|8.695653|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|3.680000|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-03 00:00:00.000000'
+>            PRIMARYKEY = X'87c2181a55e8d23dc0a86f92'
+>               VERSION = NULL
+> Row 51:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435059|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865471|CP_CUR_PREMIUM|0.700525|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|0.320000|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;O'melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Skadden Arps, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;1;Legal Adv to Target Financial;1;Alston & Bird;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-11-24 00:00:00.000000'
+>            PRIMARYKEY = X'194d1c115654f855c0a86fab'
+>               VERSION = NULL
+> Row 52:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|N.A.|CP_NAME|Multiple acquirers|CP_ID_BB_COMP|10802461|CP_UNIT|WuXi PharmaTech Cayman Inc|CP_TOT_AMT|2967.435303|CP_ACQUIS_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG| |CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|1|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|16.865465|CP_CUR_PREMIUM|4.879159|CP_PCT_OWNED|4.500000|CP_PCT_SOUGHT|95.500000|CP_UNSOLICITED|3|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|46.000000|CP_ARBITRAGE_PROF|2.139999|CP_CUR_TOT_VAL|2967.435303|CP_ADVISORS_NUM|4|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;4;3;1;Target Legal Adviser(s);1;O'Melveny & Myer, Walkers Global H, Willkie Farr, Zhong Lun Law;13;100.000000;1;Target Financial Adviser(s);1;Credit Suisse;13;100.000000;1;Acquirer Legal Adviser(s);1;Conyers Dill, Fangda Partners, Sullivan Cromwel, Weil Gotshal, Wilson Sonsini;13;100.000000;1;Acquirer Financial Adviser(s);1;BofA ML;13;100.000000;|CP_ACQ_TKR|N.A.|CP_ACQ_ID_BB_GLOBAL|N.A.|CP_ACQ_ID_BB_GLOBAL_COMPANY|N.A.|CP_ACQ_ID_BB_SEC_NUM_DES|N.A.|CP_ACQ_FEED_SOURCE|N.A.|CP_TARGET_TKR|WX US|CP_TARGET_ID_BB_GLOBAL|BBG000RRY7B5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001G2D2W1|CP_TARGET_ID_BB_SEC_NUM_DES|WX|CP_TARGET_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 106231939
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 12378995
+>        BB_COMPANYNAME = WuXi PharmaTech Cayman Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = WX      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-30 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = WX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-08-14 00:00:00.000000'
+>            PRIMARYKEY = X'cff731e555ce72cbc0a86f92'
+>               VERSION = NULL
+
+last known price
+/Marketocracy/bin/dbtool lookup stock WX
+>>>> dbtool started at 2015-12-12 10:05:14 -0500
+stock: WX
+  PK       : [6634224E46BBC74FC0A80146]
+  companyID: [17645]
+  symbol   : [WX]
+  name     : [WuXi PharmaTech Cayman Inc]
+  date     : [2007-08-09 00:00:00]
+  status   : [Active]
+stock: WX
+  PK       : [6634224E46BBC74FC0A80146]
+  companyID: [17645]
+  symbol   : [WX]
+  name     : [WuXi PharmaTech Cayman Inc]
+  date     : [2015-12-11 00:00:00]
+  status   : [Delist]
+<<<< dbtool finished at 2015-12-12 10:05:14 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 17645
+2015-11-27 (Fri) [5443]: O:45.6600 H:45.8700 L:45.6000 C:45.7200 V:345576 TSO:68019 A:45.7200 R:1.0000 CA:0.0000
+2015-11-28 (Sat) [5444]: <WEEKEND>
+2015-11-29 (Sun) [5445]: <WEEKEND>
+2015-11-30 (Mon) [5446]: O:45.7500 H:45.7500 L:45.6100 C:45.7000 V:779175 TSO:68019 A:45.7000 R:1.0000 CA:0.0000
+2015-12-01 (Tue) [5447]: O:45.7600 H:45.8400 L:45.6900 C:45.7600 V:551664 TSO:68019 A:45.7600 R:1.0000 CA:0.0000
+2015-12-02 (Wed) [5448]: O:45.7600 H:45.8000 L:45.7400 C:45.8000 V:1008395 TSO:68019 A:45.8000 R:1.0000 CA:0.0000
+2015-12-03 (Thu) [5449]: O:45.8000 H:45.8000 L:45.7200 C:45.7400 V:1111683 TSO:68019 A:45.7400 R:1.0000 CA:0.0000
+2015-12-04 (Fri) [5450]: O:45.7300 H:45.7900 L:45.7100 C:45.7600 V:316228 TSO:68019 A:45.7600 R:1.0000 CA:0.0000
+2015-12-05 (Sat) [5451]: <WEEKEND>
+2015-12-06 (Sun) [5452]: <WEEKEND>
+2015-12-07 (Mon) [5453]: O:45.7200 H:45.8200 L:45.7200 C:45.8000 V:1041299 TSO:68019 A:45.8000 R:1.0000 CA:0.0000
+2015-12-08 (Tue) [5454]: O:45.7600 H:45.8000 L:45.7300 C:45.7500 V:743959 TSO:68019 A:45.7500 R:1.0000 CA:0.0000
+2015-12-09 (Wed) [5455]: O:45.7500 H:45.7800 L:45.7300 C:45.7400 V:1237763 TSO:68019 A:45.7400 R:1.0000 CA:0.0000
+2015-12-10 (Thu) [5456]: O:45.7600 H:45.9200 L:45.7500 C:45.9000 V:3459876 TSO:68019 A:45.9000 R:1.0000 CA:0.0000
+2015-12-11 (Fri) [5457]: O:45.7600 H:45.9200 L:45.7500 C:45.9000 V:3461876 TSO:68019 A:45.9000 R:1.0000 CA:0.0000
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'6634224e46bbc74fc0a80146' and shares > 0 order by closed; 
+> Row 1689:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-11-20 09:34:37.000000'
+>        COMMENT = NULL
+>     COMMISSION = 45.000000
+>   CURRENTORDER = X'140700e9564e44acc0a86fa6'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'3dc721e53bd7b99bc0a80119'
+>       MODIFIED = NULL
+>            NET = 40767.319800
+>         OPENED = TIMESTAMP '2015-11-19 16:52:40.000000'
+>          PRICE = 45.297022
+>     PRIMARYKEY = X'140500e9564e44acc0a86fa6'
+>         SECFEE = 0.720000
+>         SHARES = 900.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'6634224e46bbc74fc0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'6634224e46bbc74fc0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'6634224e46bbc74fc0a80146'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 86 members who hold this stock
+quantum: still thinks it is active 
+last ticket: 2015-11-20  PRICE = 45.297022
+last price:  2015-12-11 (Fri) [5457]: O:45.7600 H:45.9200 L:45.7500 C:45.9000 V:3461876 TSO:68019 A:45.9000 R:1.0000 CA:0.0000
+
+
+looks like it was acquired for CP_CASH|46.000000
+going with 20151211 46.00
+/Marketocracy/bin/cahelper -symbol  WX  -effective 20151211 -type ACQUIS -exchange UN -acqType 1 -acqCash 46.00 -acqShare 0 -purchaser WX   >& /Users/build/caout/WX.20151212-ACQUIS.out 
+D: (12-12 10:20:02.913) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-12 10:21:11.643) cahelper started on 2015-12-12 10:21:11 -0500
+
+D: (12-12 10:21:11.879) There are [0] open tickets for WX on 20151211
+D: (12-12 10:21:12.438) StockFileLoad Version:4.0
+D: (12-12 10:21:12.438) Loading Stock Data
+D: (12-12 10:22:55.790) Building Lookup Index
+D: (12-12 10:23:10.124) Finished Building Index
+D: (12-12 10:23:21.002) Finished Loading Stock Data
+D: (12-12 10:23:21.036) Connection to 192.168.111.172:6666 succeeded
+D: (12-12 10:23:25.208) SavingChanges for position sell out 101 of 348
+D: (12-12 10:23:34.688) {
+    "ACQUIRED_STOCK" = WX; 
+    "ACQUIRING_STOCK" = "WX_FIX"; 
+    AMOUNT = 46; 
+    APPLIED = 1; 
+    DATE = 20151211; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "WX_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (12-12 10:23:45.239) SUCCESS
+D: (12-12 10:23:45.240) cahelper finished 2015-12-12 10:23:45 -0500
+Check the results 
+select * from mstockalias where stockkey= X'6634224e46bbc74fc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929352102
+>           DATE = TIMESTAMP '2007-08-09 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WuXi PharmaTech Cayman Inc
+>     PRIMARYKEY = X'6635224e46bbc74fc0a80146'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>         SYMBOL = WX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = SV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929352102
+>           DATE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WuXi PharmaTech Cayman Inc
+>     PRIMARYKEY = X'dfce6eba566b6abcc0a86fab'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>         SYMBOL = WX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = SV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 929352102
+>           DATE = TIMESTAMP '2015-12-11 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WuXi PharmaTech Cayman Inc
+>     PRIMARYKEY = X'8c6573a1566c3b67c0a86fab'
+>       STOCKKEY = X'6634224e46bbc74fc0a80146'
+>         SYMBOL = WX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = SV
+
+select * from mcorporateaction where aliaskey =X'8c6573a1566c3b67c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'8c6573a1566c3b67c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WX  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|46.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151212:102111
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = WX_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-12-11 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = WX_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-12-11 00:00:00.000000'
+>            PRIMARYKEY = X'8c5f73a1566c3b67c0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'8c5f73a1566c3b67c0a86fab';
+> Row 1:
+>   _C001 = 139.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8c5f73a1566c3b67c0a86fab'));
+there are 139 fundkeys, save to CA issues WX fundkeys.txt
+
+For Beta case
+WX no longer trades but is still active on our site - need to delist 
+
+check on 12/15/15   invalidate funds
+check MAdmin  clear
+WX has been acquired	right curve
+ 	 	
+WuXi PharmaTech Cayman Inc acquired by a private company on 2015-12-11 00:00:00.
+
+
+invalidate reprice and close 
+
+
+
+

@@ -1,0 +1,608 @@
+date:  12/14/15
+we missed the spin off off.   VTR spun off CCP
+we did the CCP-W list to CCP ticker change and that blocked the spin off
+I removed the CCP-W path and then did the spin off
+CA issues VTR spin off CCP.txt
+***************
+> Row 25:
+>              ALIASKEY = X'c4a6274955d3ba5bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|CCP-W US|CP_NEW_TKR|CCP US|CP_NOTES|End of When Issued trading
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 110488103
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 45115952
+>        BB_COMPANYNAME = Care Capital Properties Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-18 00:00:00.000000'
+>         BB_IDENTIFIER = CCP-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = CCP-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'281e12f655bbfe8bc0a86f92'
+>               VERSION = NULL
+select distinct stockkey from mstockalias where primarykey=X'c4a6274955d3ba5bc0a86f92';
+> Row 1:
+>   STOCKKEY = X'f667380355c3eb50c0a86f92'
+select * from mstockalias where STOCKKEY = X'f667380355c3eb50c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-08-06 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care Capital Properties Inc
+>     PRIMARYKEY = X'f668380355c3eb50c0a86f92'
+>       STOCKKEY = X'f667380355c3eb50c0a86f92'
+>         SYMBOL = CCP-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-08-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care Capital Properties Inc
+>     PRIMARYKEY = X'c4a6274955d3ba5bc0a86f92'
+>       STOCKKEY = X'f667380355c3eb50c0a86f92'
+>         SYMBOL = CCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+check for other CCP
+select distinct stockkey from mstockalias where symbol='CCP';
+just the one
+
+> Row 1:
+>   STOCKKEY = X'f667380355c3eb50c0a86f92'
+
+looks for a SPIN with CCP as the spun off stock
+select * from mcorporateaction where BB_ACTIONMNEMONIC='SPIN' and BB_ACTIONDICTIONARY like '%CP_TKR|CCP US%';
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Care Capital Properties Inc|CP_ID_BB_COMP|45115952|CP_ID_BB_SEC|1000|CP_TERMS|1 per 4|CP_RATIO|0.250000|CP_PAY_DT|20150817|CP_RECORD_DT|20150810|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.875657|CP_ADJ_DT|20150818|CP_TKR|CCP US|CP_DUE_BILL_RED_DT|20150820|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG008G5SGL4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG008G5SGF1|CP_SPINOFF_ID_BB_SEC_NUM_DES|CCP|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 105099638
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 101595
+>        BB_COMPANYNAME = Ventas Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-18 00:00:00.000000'
+>         BB_IDENTIFIER = VTR     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-04-06 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = VTR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'9347213155d3b8aec0a86f92'
+>               VERSION = NULL
+
+We missed this spin off
+VTR spun off CCP
+effective 2015-08-18
+record date  20150810
+pay date 20150817
+ratio   0.250
+name: Care Capital Properties Inc
+
+
+Let's see who holds the CCP (from CCP-W)
+> Row 1:
+>   STOCKKEY = X'f667380355c3eb50c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'f667380355c3eb50c0a86f92';
+yes this is it 
+select count(*) from mticket where STOCKKEY = X'f667380355c3eb50c0a86f92';
+none
+
+select * from mstock where primarykey=X'f667380355c3eb50c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'c4a6274955d3ba5bc0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'f667380355c3eb50c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28632
+>   WINDOWIDENTITYKEY = NULL
+
+COMPANYID = 28632
+select min(daynumber), max(daynumber) from stockprices where COMPANYID = 28632;
+> Row 1:
+>   _C001 = 5343  8/19/15	5343	Wed
+>   _C002 = 5457  12/11/15	5457	Fri  
+
+good we'll keep these
+
+since there are no mumbers holding CCP (from CCP-W) we can delete it
+set commit false;
+
+delete from mstock where primarykey=  X'f667380355c3eb50c0a86f92'; 
+
+delete from mwindowstock where stockkey=X'f667380355c3eb50c0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'f667380355c3eb50c0a86f92');
+
+delete from mstockalias where stockkey=X'f667380355c3eb50c0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'f667380355c3eb50c0a86f92');   
+
+delete from mposition where stockkey=X'f667380355c3eb50c0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'f667380355c3eb50c0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'f667380355c3eb50c0a86f92');
+
+delete from mticket where stockkey=X'f667380355c3eb50c0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'f667380355c3eb50c0a86f92';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'f667380355c3eb50c0a86f92';  
+
+commit;
+
+set commit true;
+
+good check:
+select distinct stockkey from mstockalias where symbol='CCP';
+nothing - good
+
+let's do the spin off 
+
+VTR spun off CCP
+effective 20150818
+record date  20150810
+pay date 20150817
+ratio   0.250
+name: Care Capital Properties Inc
+
+/Marketocracy/bin/cahelper -symbol VTR -effective 20150818 -type SPIN -exchange UQ -spinOffSymbol CCP -payDate 20150817 -recordDate 20150810 -name 'Care Capital Properties Inc'  -ratio 0.250 >& /Users/build/caout/VTR.20151214-SPIN-CCP.out 
+
+D: (12-14 07:59:40.272) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (12-14 08:00:39.620) cahelper started on 2015-12-14 08:00:39 -0500
+
+D: (12-14 08:00:53.326) StockFileLoad Version:4.0
+D: (12-14 08:00:53.326) Loading Stock Data
+D: (12-14 08:02:34.254) Building Lookup Index
+D: (12-14 08:02:46.551) Finished Building Index
+D: (12-14 08:02:55.651) Finished Loading Stock Data
+D: (12-14 08:02:55.703) Connection to 192.168.111.172:6666 succeeded
+D: (12-14 08:04:18.962) SavingChanges for Stock Dividend out 101 of 665
+D: (12-14 08:05:46.790) SavingChanges for Stock Dividend out 201 of 665
+D: (12-14 08:06:46.370) SavingChanges for Stock Dividend out 301 of 665
+D: (12-14 08:07:25.018) {
+    APPLIED = 1; 
+    DATE = 20150818; 
+    FUNDS = (
+        "mgrinyer/Mark Grinyer's Mutual Fund", 
+        "cthiessen/CT Equity Fund", 
+        "mpowers/Internat Technology Fund", 
+        "krogal/krogal's Mutual Fund", 
+        "vchabot/vchabot's Mutual Fund", 
+        "danbo/Highest ROE Danbo's Mutual Fund", 
+        "spam_zombie/Spam Zombie Bunny Fund", 
+        "jubals/Real Estate Only", 
+        "mgrinyer/Christmas", 
+        "vchabot1/vchabot1's Mutual Fund", 
+        "aberkowitz/21st Century American 500 Fund", 
+        "longorshort/James Allcap", 
+        "vchabot/vchabot's Mutual Fund", 
+        "guentert/Synergy Agressive Fund", 
+        "rdean/McMillen Small Cap Fund", 
+        "pdelgado/PAD Mutual Diversified Fund", 
+        "eziedrich/ValueVestor", 
+        "sullivan47/sullivan47's Mutual Fund", 
+        "rafle/rafle's Mutual Fund II", 
+        "matrix/Tone Fund", 
+        "dmulholand/Deborah's Health Care Mutual Fund", 
+        "harts/Richard Hart's Random Fund", 
+        "achampagne/Champagne's Real Estate Fund", 
+        "jrbill94/jrbill94's Conservative Fund", 
+        "driccio/driccio's High Yield REITs", 
+        "pmcgowan/pmcgowan's Mutual Fund", 
+        "jspencelee/Spence's RE,B,I fund", 
+        "slander/slander's Mutual Fund", 
+        "bmoore/Solid Earth Trust", 
+        "marshi/marshi's high dividend fund", 
+        "DELETE_demastus_40619031/INDEGOREIT", 
+        "leoblackheart/DIVIDEND AND GROWTH", 
+        "mgrinyer/Drugs, Medicine and Personal Care", 
+        "jdamian_jr/jdamian_jr's Cash Cow", 
+        "wallenhorst/wallenhorst's Dividend Stock Fund", 
+        "mvoloshen/Dividend Income Fund II", 
+        "gfontana/Market", 
+        "lmorenciu/MACD", 
+        "ken7764/Ken's Equity Income", 
+        "glang/George Lang - \"The Other REITs\"", 
+        "ropr0001/Energy, Utilities, Industrials Fund", 
+        "nurcanyersel/nurcanyersel's Mutual Fund", 
+        "machrob/machrob's REIT Mutual Fund", 
+        "jaschans/jaschans's Mutual Fund", 
+        "jsbee/jsbee's Mutual Fund", 
+        "willblur/willblur's 50 Fund", 
+        "doconnor/doconnor's 3day higher", 
+        "wormburner40/wormburner40's Mutual Fund", 
+        "pbritton/pbritton's Mutual Fund", 
+        "bullwinkle/bullwinkle's REIT Fund", 
+        "patfan/patfan's Mutual Fund", 
+        "ocsupertones/Dividend Paying Stocks", 
+        "hippymonkey/hippymonkey's Mutual Fund", 
+        "mikki33_2000/m-REIT 50 Index Fund", 
+        "krobinson1/Dividend Income Fund", 
+        "awesome1/awesome1 PICKS", 
+        "awesome1/awesome1 CMBCD", 
+        "awesome1/awesome1 BLNCD", 
+        "booatha/Corgi Fund", 
+        "hippymonkey/hippymonkey's Mutual Fund", 
+        "kcumur/K14", 
+        "brettc22/REIT Fund", 
+        "vooch/Vooch Hedge Fund", 
+        "sphillips/REIT Fund", 
+        "vooch2/I Fund", 
+        "tschenk/Chart Indicators", 
+        "nnentchev/technical analysis fund", 
+        "dizsh/SIC", 
+        "g00f0ff/G00f0ff Cash Div ", 
+        "ahmet89/Actively Managed Fast Moving 40 Stocks - Series H", 
+        "ypunj/Mata Capital - Short", 
+        "faboo28/faboo28's Mutual Fund", 
+        "guru/Guru's Short 2", 
+        "ishare/Capital Group", 
+        "acainvest/acainvest's Momentum Sector Fund", 
+        "AlexWilhelm/Kaiser Large Cap Fund", 
+        "AlexWilhelm/Kaiser Dividend Fund", 
+        "msoto926/msoto926's Mutual Fund", 
+        "sorengi/Select Picks Fund", 
+        "deedoc/deedoc's Mutual Fund", 
+        "eschmitzva/DSS Enterprises New Dawn Fund", 
+        "drichmond/drichmond's Money Flow Mutual Fund", 
+        "vagadragon/Vagabond's DRIP", 
+        "steveoregon25/Growth and Income Real Estate Fund", 
+        "aerarii_reditus/Polaron Value Fund", 
+        "rjvanden/RVB Bear Market Fund", 
+        "rodj3969/Edge ", 
+        "short_2iq/short portfolio - Equity market neutral strategy", 
+        "nch/Chikhachev Hedge Fund", 
+        "rholt/Holt Financial Focus Fund", 
+        "nch/NC Hedge fund", 
+        "jhm5/J.H.Michael Mutual", 
+        "darrenseibert/Seibert Core Value Growth Plus", 
+        "ryessup/Short Fund", 
+        "coaster/IMPACT GROWTH", 
+        "coaster/COASTER'S BIOTECH", 
+        "bedromeyez/Dollars Like Oprah", 
+        "qrheaume/Short Balanced Fund ", 
+        "lwilliams3/Short Investment Fund ", 
+        "bigmoneybastard/Dividend Growth - Narrow List", 
+        "bigmoneybastard/Dividend Growth - Broad List", 
+        "jjones16/JCJ Financial Services Fund", 
+        "spydrjoat/SpydrJOAT's Short Fund", 
+        "elovell15/elovell15's Mutual Fund", 
+        "dgp/Dividend Play", 
+        "keith_waldbauer/moolah fund", 
+        "jmagann/jmagann's Mutual Fund", 
+        "gtg092y/gtg092y's Mutual Fund", 
+        "staka/Staka's Short Fund", 
+        "felixlo/Short Fund", 
+        "felixlo/Dud Fund", 
+        "simpleinvestor/Simply Unbiased Fund", 
+        "ketch22/ketch22's Mutual Fund", 
+        "midragon/Michael Donahue's Mutual Fund", 
+        "pe322/Pablos Mutual Fund", 
+        "tacall/Anthem Healthcare Enterprise Fund", 
+        "dakuehl/dakuehl's Mutual Fund shorts", 
+        "gchar19845/gchar19845's Mutual Fund", 
+        "awaynow/awaynow's Mutual Fund", 
+        "kaboom/Kaboom Short Fund", 
+        "billyboy123/HIGH GROWTH  VALUE Mutual Fund", 
+        "glang/George Lang's Mutual Fund", 
+        "takara/TAKARA`s CEO Bad Stars Mutual Fund", 
+        "ssk123/Sreeshi", 
+        "rwuethrich/Wuethrich Total Return", 
+        "rwuethrich/Wuethrich Small Cap", 
+        "pdelbuck/Short Implosion Fund", 
+        "nbillou/nbillou's Short Fund", 
+        "jmcdowell/Jeff's Incredible Value Fund", 
+        "mitflyboy84/mitflyboy84's Mutual Fund", 
+        "jimyy/Medical Investor", 
+        "awesome1nyc/AWESOME1NYC SHORT", 
+        "lolly/Lolly's Mutual Fund", 
+        "rikhiggins/wagner ", 
+        "uinetwork/Dividend Fund", 
+        "ecuddy1986/Variable Long-Tern Fund", 
+        "glang/glang's REIT Blue Fund", 
+        "jasonl36/jasonl36's REIT II", 
+        "pdavis68/Pedrito Auto Fund", 
+        "ewhebert/Eric Short Only", 
+        "rwsalisbury/abcdef", 
+        "liamv/Good In The Bad Years Weighted", 
+        "greg_davidian/Mid Cap Mutual Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "biged/Biged's SHORTEX Fund", 
+        "dontgoshane/small cap fund", 
+        "cooperfund/Cooperfund's Income Fund", 
+        "onallup49/jp Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "steele99/steele99's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "aencarnacion/aencarnacion's Mutual Fund", 
+        "scraig/scraig's short fund", 
+        "hovah5/E-Value", 
+        "hovah5/RIGHT", 
+        "cmarley/cmarley's Mutual Fund", 
+        "austing143/The way it's Done", 
+        "aloxide/Luc & Benito", 
+        "achampagne35/Mr. Champagne's Mutual Fund", 
+        "kirsty/kirsty's Mutual Fund", 
+        "akapil/DWA Equity Roster", 
+        "glang/FEE Special Fund", 
+        "eicher077/Silver Orbit I", 
+        "mmmaize/mmts2", 
+        "invest2010/Invest October 2", 
+        "hollis7/Mertens REIT fund", 
+        "mfortjr/Generation Y Opportunity Fund", 
+        "kilbee/KFund High  Dividend Stock", 
+        "rpleis/ROGER DALE PLEIS's Mutual Fund", 
+        "bigjoe07/MaxCapApp Mutual Fund", 
+        "clark/ITF", 
+        "hiromimini/Zero appreciation potential-financial", 
+        "wmorales/wmorales's Mutual Fund", 
+        "slick2502/Gifford REIT Fund", 
+        "kashmir/Property Management", 
+        "coaster/Renaissance Fund", 
+        "ccraigg/ccraigg's Mutual Fund", 
+        "mark21ky/Performance Money System", 
+        "slick2502/Gifford Income Fund", 
+        "jeffyy99/Sluggys Equity Income fund", 
+        "jporcaro/james porcaro's Mutual Fund", 
+        "awesome1/awesome1 DVDND", 
+        "fauria/fauria's AMS1", 
+        "abadazz/abadazz's Exceptional Mutual Fund", 
+        "jeffyy99/jeffyy99's Mutual Fund", 
+        "DELETED_2006339/Weak Traderz Anonymous", 
+        "spenser4hire/The Yield Fund", 
+        "reignman/Astro Real Estate Investment Fund", 
+        "wmtfoley/wmtfoley's Mutual Fund", 
+        "rlemming/rlemming's Mutual Fund", 
+        "dbanas/Dividend Yield Fund", 
+        "zappy3333/Boomer Fund", 
+        "p.zasdad/Zasdad Zen Attitude Fund", 
+        "jimsag/jimsag's High Yield Fund", 
+        "luzkannon/Fast Lane Express", 
+        "eternfly/Copycat1", 
+        "irvine/GS Hedge Long", 
+        "jsturgeon/Sturgeon High Yield Fund", 
+        "mfac/Hunchhh-Back of N_ D_", 
+        "parhat/Lobster's Agressive Mutual Fund", 
+        "jweiser/Innovative Investments", 
+        "tcrell/tcrell's Mutual Fund", 
+        "silhouette/Long Term Wealth Fund", 
+        "moneywinds/The TA-Buy-Sell Adventure Fund", 
+        "cchamblee/beach", 
+        "tbarlage/Inside Track Fund", 
+        "mbarnes/Michael Barnes's Healthcare Fund", 
+        "DELETED_2002121101/INACTIVE", 
+        "mtalisman/Global Relative Value", 
+        "luzkannon/Five & Dime Store", 
+        "zpryor/Zacks High Dividend Fund", 
+        "gnaquin/gnaquin's Mutual Fund", 
+        "mtalisman/Global Biotechnology & Healthcare", 
+        "irvine/GS Long Fund 2", 
+        "lcasson/New Millienium", 
+        "lwasvick/All Cap Fund", 
+        "DELETED_1-big-spender_2006050312350001/Ronald DeLegge's Mutual Fund", 
+        "fvarrati/52 Week High Fund", 
+        "DELETED_1-big-spender_2006050312350001/Ronald DeLegge's Mutual Fund", 
+        "hale7990/dividend growth", 
+        "rbrower/rbrower's Healthcare and Biotech Fund", 
+        "slick2502/Gifford Total Return Fund", 
+        "dan_matuszak/Old Deal mutual fund", 
+        "jschwieder1/Schwieder Extra Return", 
+        "bandrews1/Brett' Quantum Equity Income Fund", 
+        "vikingdan/Daniel D. Clark's Mutual Fund", 
+        "chazzzzz/chazzzzz's Mutual Fund", 
+        "mvoloshen/mv Dividend Income Growth", 
+        "irvine/GS Long Fund", 
+        "vikingdan/Daniel D. Clark's Mutual Fund", 
+        "bwisda/Wisda REIT Fund", 
+        "bananaslug/Short", 
+        "veld0015/veld0015's Mutual Fund", 
+        "coaster/INDEX-Z", 
+        "jrheaume/Mama Bear Fund ", 
+        "mastershaggy/Barger High Dividend Fund", 
+        "dphillips/D'Focus Fund", 
+        "licheng_apl/Licheng Mid Cap Dividend Fund", 
+        "abadazz/abadazz's Balanced Mutual Fund", 
+        "luzkannon/LuzKannon WorldWide", 
+        "mini_05/mini_05's Mutual Fund", 
+        "enycehotness87/enycehotness87's Mutual Fund", 
+        "naturedoc/naturedoc's Mutual Fund", 
+        "mhelfrich/Concentrated Equity", 
+        "yoni/Yoni's stocks quarter", 
+        "warcraft82/Dividend Income Fund A", 
+        "koiluv/INVESTNBEST Finance", 
+        "pdavis68/Pedrito Fad Fund", 
+        "evdawg999/evdawg999's Mutual Fund", 
+        "jeffk/JKS", 
+        "mgulla/Mutual Fund \"A\"", 
+        "karakaya/karakaya's Short Mutual Fund", 
+        "lpickup/too fast", 
+        "atapparo/The Topsfield Value Stock Fund", 
+        "kylee/kylee's Mutual Fund", 
+        "shorty4407/Clearfork Funds-Shorts", 
+        "jimsag/spring fund", 
+        "cjgradtd/cjgradtd's Mutual Fund", 
+        "mikki33/mikki33's DRIP Fund", 
+        "longshort/LongShort's Merger Arbitrage Mutual Fund", 
+        "pwallick/Capital Source", 
+        "darbak/PairShort", 
+        "adkinsg/adkinsg's Mutual Fund", 
+        "jeffyy99/Jack Johnston", 
+        "timmyd/timmyd's Mutual Fund", 
+        "utterme/Buy 1", 
+        "rmorse/rmorse's Mutual Fund", 
+        "mareklitwin/The Dead Fund", 
+        "benjaminjurecic/Hot April Stocks", 
+        "duster0626/duster0626's Mutual Fund", 
+        "maae10/Super High Dividend", 
+        "thetlp/thetlp's Mutual Fund", 
+        "maquisard/Dividend Fund", 
+        "kaylamk/kaylamk's Mutual Fund", 
+        "jet8491/jet8491's Mutual Fund", 
+        "rtareilo/The Short Fund", 
+        "drlaz/PIM's Best M/C mID-Momentum", 
+        "tacall/Anthem Dividend Fund", 
+        "adamruby/adamruby's Mutual Fund", 
+        "abizios/Corin Global Equity Fund", 
+        "malcus/malcus's Mutual Fund", 
+        "psparke/Cash 2", 
+        "barnzg/Duck-E's Mutual Fund", 
+        "djplan/djplan's Mutual Fund", 
+        "haleultimate/haleultimate's Income Fund", 
+        "sonja_t/Sonja's Mutual Fund", 
+        "aclassi/aclassi's Roto Fund", 
+        "missionitalia/missionitalia's Income Fund", 
+        "tidelands/Tidelands Growth & Income Fund", 
+        "malmo/malmo's Mutual Fund", 
+        "quantmaster/QMS20", 
+        "taylor17/taylor17's Mutual Fund", 
+        "rockfish/Relipoint Income Reinvestment Fund", 
+        "jbrosowski/jbrosowski's Mutual Fund", 
+        "rutledba/Brian's Mutual Fund", 
+        "psparke/vCash", 
+        "pbritton/Income Fund", 
+        "kbookman/Short 1 week top ETF > 500K and close friday", 
+        "rancid514/rancid514's Mutual Fund", 
+        "msutterus/Mitch Aggressive Timing", 
+        "acdaman/Daman Global Value Fund", 
+        "kperkins/Balanced Fund", 
+        "willblur/willblur's Breakdown Fund", 
+        "eseward/ESeward's Mutual Fund", 
+        "ksorgel/KRS - Dividend Income", 
+        "fletcherwm/Income Real Estate", 
+        "sarahmkt/Dividend Fund", 
+        "cisforcookie/New Fund", 
+        "jeffyy99/jeffyy99's Mutual Fund", 
+        "minishogi/Minishogi's Options Volatility Fund", 
+        "test199/Logica-2", 
+        "test199/Logica-18", 
+        "test199/Logica-20", 
+        "test199/Logica-22", 
+        "test199/Logica-23", 
+        "test199/Logica-24", 
+        "test199/Logica-25", 
+        "test199/Logica-26", 
+        "test199/Logica-27", 
+        "test199/Logica-30", 
+        "test199/Logica-35", 
+        "test199/Logica-36", 
+        "test199/Logica-37", 
+        "test199/Logica-38", 
+        "test199/Logica-42", 
+        "test199/Logica-43", 
+        "test199/Logica-44", 
+        "whimelsein/Logica-3", 
+        "test199/Logica-48", 
+        "mirkotoscano/mirkotoscano's Mutual Fund", 
+        "qrheaume/Stock Growth Fund", 
+        "mikki33/mikki33's REITs Fund", 
+        "joeeleonard/Growing REIT's", 
+        "mattfordcoys/mattfordcoys's Mutual Fund", 
+        "agrizzle/GRIZZ Yield Fund", 
+        "stanglx718/Large Cap", 
+        "maxoom/MAX SUPER FUND", 
+        "maxgk/maxgk's long", 
+        "leeway00/Caesar Orion Dividend & Growth Fund", 
+        "finkelbr/finkelbr's Mutual Fund", 
+        "pdelgado/PAD Fund 4 - Select Financial & Insurance", 
+        "pdelgado/PDelgado's Distressed Mutual Fund", 
+        "wbauder/Yield", 
+        "c.p/Capital Protection Retirement Fund", 
+        "drass/D500", 
+        "midragon/midragon's Mutual Fund", 
+        "natharrington2/Nat's High Income Dividend Factor", 
+        "glang/GCL-IRA", 
+        "toros7/Toros7's Mutual Fund #2", 
+        "jlaw/jlaw's Growth fund", 
+        "jlaw/jlaw's Real Estate Fund", 
+        "codypedro/Sofus Capital Short Fund", 
+        "sagitarius_d/Sagitarius REIT Fund", 
+        "lanceaugust/lanceaugust's Mutual Fund", 
+        "jrwfin001/JRW Income Focused Strategy"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150817; 
+    RATIO = 0.25; 
+    "RECORD_DATE" = 20150810; 
+    "SPINOFF_SYMBOL" = CCP; 
+    SYMBOL = VTR; 
+    TYPE = SPIN; 
+}
+D: (12-14 08:07:30.252) SUCCESS
+D: (12-14 08:07:30.252) cahelper finished 2015-12-14 08:07:30 -0500
+
+
+Check the results
+select distinct stockkey from mstockalias where symbol='CCP';
+> Row 1:
+>   STOCKKEY = X'1c0e4459566ebd78c0a86fab'
+
+select * from mstockalias where stockkey=X'1c0e4459566ebd78c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-08-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care Capital Properties Inc
+>     PRIMARYKEY = X'1c0f4459566ebd78c0a86fab'
+>       STOCKKEY = X'1c0e4459566ebd78c0a86fab'
+>         SYMBOL = CCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+need to get the cusip from xignite
+CUSIP:	141624106  <-- it is good 
+ISIN:	 
+Name:	Care Capital Properties Inc
+Market:	NYSE
+
+update mstockalias set CUSIP = '141624106' where PRIMARYKEY = X'1c0f4459566ebd78c0a86fab';
+select * from mstockalias where stockkey=X'1c0e4459566ebd78c0a86fab';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 141624106
+>           DATE = TIMESTAMP '2015-08-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Care Capital Properties Inc
+>     PRIMARYKEY = X'1c0f4459566ebd78c0a86fab'
+>       STOCKKEY = X'1c0e4459566ebd78c0a86fab'
+>         SYMBOL = CCP
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select distinct sourcekey from mticket where stockkey=X'1c0e4459566ebd78c0a86fab';
+> Row 1:
+>   SOURCEKEY = X'1c084459566ebd77c0a86fab'
+
+select count(*) from mticket where sourcekey = X'1c084459566ebd77c0a86fab';
+> Row 1:
+>   _C001 = 355.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'1c084459566ebd77c0a86fab'));
+there are 355 fundkeys, save to CA issues CCP fundkeys.txt
+
+check on 12/15/15  see that CCP is listed.  Also look at VTR and see the SPIN in the CA list 
+is good closing this out 
+
+
+

@@ -1,0 +1,790 @@
+date:  6/22/15
+ticker:  MJN
+
+Here are the ones not pricing:
+MJN 090E59C949BD1BE7C0A80133 DJN djn123
+MJN 0A66423E494B046BC0A80135 SF dodgers6
+MJN 98F8034F48F64A91C0A80132 HMF1 hotcakesaandbacon
+MJN 69AC21184148973BC0A8013C BETA jfrancois
+MJN 5C7E701044A0C26FC0A80132 TJCG tamril
+MJN 50686E6046DE1084C0A80134 gstap gustrot
+MJN E6015D914B18E98AC0A80132 ASSFF arminius
+MJN F461259C4B2DC62AC0A80135 NGIF atjohns
+
+
+
+yahoo:  as Mead Johnson Nutrition Co
+
+quantum:  as Mead Johnson Nutrition Co
+
+oursite:
+Symbol: MJN 	Name: Mead Johnson Nutrition Co 	Price: $91.20
+Volume: 2,650,336 	Sector: Consumer Staples 	Change: $0.00
+Short Volume: 999,999 	Style: Large Cap : Growth 	Market Cap:
+Avg Volume: 1,550,812 	 Exchange: NYSE 	Today: 0.00%
+50 Day Ave: $96.49 	Year High: $105.45 	High: $91.98
+200 Day Ave: $99.07 	Year Low: $89.26 	Low: $91.15
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=MJN
+is there as Mead Johnson Nutrition Co
+
+check MAdmin
+MJN  MM/DD/YYYY
+
+database
+select distinct stockkey from mstockalias where symbol= 'MJN';  
+> Row 1:
+>   STOCKKEY = X'453f289949939174c0a80146'
+> Row 2:
+>   STOCKKEY = X'9bb3541c4b2c0e3cc0a80146'
+
+there are two
+**********************************************************
+> MJN 1:
+>   STOCKKEY = X'453f289949939174c0a80146'
+two DVD_CASH  (20090720 and 20091001)
+companyID 18422
+79 member generated tickets
+DELETE this one 
+**********************************************************
+select * from mstock where primarykey=X'453f289949939174c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'4540289949939174c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'453f289949939174c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 18422
+>   WINDOWIDENTITYKEY = NULL
+select count(*) from mticket where STOCKKEY = X'453f289949939174c0a80146';
+> Row 1:
+>   _C001 = 79.000000
+select distinct sourcekey from mticket where STOCKKEY = X'453f289949939174c0a80146';
+> Row 1:
+>   SOURCEKEY = NULL
+
+good - only member generated tickets, 79 of them
+
+select * from mstockalias where stockkey= X'453f289949939174c0a80146'    order by "date";
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582839106
+>           DATE = TIMESTAMP '2009-02-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Mead Johnson Nutrition Co
+>     PRIMARYKEY = X'4540289949939174c0a80146'
+>       STOCKKEY = X'453f289949939174c0a80146'
+>         SYMBOL = MJN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30302010
+>       STYLEKEY = MG
+select * from mcorporateaction where aliaskey = X'4540289949939174c0a80146';
+> Row 1:
+>              ALIASKEY = X'4540289949939174c0a80146'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|MJN|CP_SEC_TYP|2|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 35732017
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-02-11 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-02-09 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1e8e2759499390d0c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'4540289949939174c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20090706|CP_PAY_DT|20090720|CP_FREQ|4|CP_NET_AMT|0.300000|CP_TAX_AMT| |CP_GROSS_AMT|0.300000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.990557|CP_ADJ_DT|20090701|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 38170196
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-07-01 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-06-23 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2009-07-01 00:00:00.000000'
+>            PRIMARYKEY = X'840c1d094a4c14c9c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'4540289949939174c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20090917|CP_PAY_DT|20091001|CP_FREQ|4|CP_NET_AMT|0.200000|CP_TAX_AMT| |CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.994878|CP_ADJ_DT|20090915|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 39568648
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-09-15 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-09-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2009-09-15 00:00:00.000000'
+>            PRIMARYKEY = X'1806739a4ab0008fc0a80146'
+>               VERSION = NULL
+
+**********************************************************
+> MJN 2:
+>   STOCKKEY = X'9bb3541c4b2c0e3cc0a80146'
+22 DVD Cash starting with 20100115 through today
+COMPANYID = 18774
+377 member generated tickets
+KEEP this one
+**********************************************************
+select * from mstock where primarykey=X'9bb3541c4b2c0e3cc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'9bb4541c4b2c0e3cc0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'9bb3541c4b2c0e3cc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 18774
+>   WINDOWIDENTITYKEY = NULL
+select count(*) from mticket where stockkey=   X'9bb3541c4b2c0e3cc0a80146' ;
+> Row 1:
+>   _C001 = 377.000000
+select distinct sourcekey from mticket where stockkey=   X'9bb3541c4b2c0e3cc0a80146' ;
+> Row 1:
+>   SOURCEKEY = NULL
+good, only member generated tickets 377 of them, we'll keep this one 
+
+select * from mstockalias where stockkey=   X'9bb3541c4b2c0e3cc0a80146'   order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 582839106
+>           DATE = TIMESTAMP '2009-12-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Mead Johnson Nutrition Co
+>     PRIMARYKEY = X'9bb4541c4b2c0e3cc0a80146'   <---- for the DVD_CASH aliaskeys for MJN-1
+>       STOCKKEY = X'9bb3541c4b2c0e3cc0a80146'
+>         SYMBOL = MJN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 30202030
+>       STYLEKEY = LG
+select * from mcorporateaction where aliaskey = X'9bb4541c4b2c0e3cc0a80146';
+> Row 1:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20091231|CP_PAY_DT|20100115|CP_FREQ|4|CP_NET_AMT|0.200000|CP_TAX_AMT| |CP_GROSS_AMT|0.200000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995499|CP_ADJ_DT|20091229|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 41859996
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-12-29 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-12-18 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2009-12-29 00:00:00.000000'
+>            PRIMARYKEY = X'b6e22beb4b3a7c2cc0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100324|CP_PAY_DT|20100401|CP_FREQ|4|CP_NET_AMT|0.225000|CP_TAX_AMT| |CP_GROSS_AMT|0.225000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995622|CP_ADJ_DT|20100322|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 43861319
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-03-22 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-03-17 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-03-22 00:00:00.000000'
+>            PRIMARYKEY = X'f7d31ad84ba7dab4c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100625|CP_PAY_DT|20100701|CP_FREQ|4|CP_NET_AMT|0.225000|CP_TAX_AMT| |CP_GROSS_AMT|0.225000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995751|CP_ADJ_DT|20100623|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 46078497
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-06-23 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-06-16 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-06-23 00:00:00.000000'
+>            PRIMARYKEY = X'2b50748b4c227672c0a80146'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20100924|CP_PAY_DT|20101001|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|0.225000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995978|CP_ADJ_DT|20100922|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 48248748
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-09-22 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2010-09-16 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2010-09-22 00:00:00.000000'
+>            PRIMARYKEY = X'a8af13194c9a83f3c0a80146'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20101217|CP_PAY_DT|20110103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.225000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20101215|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50114755
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'916053814cf6db1fc0a80146'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20110318|CP_PAY_DT|20110401|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|0.260000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995385|CP_ADJ_DT|20110316|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 52515795
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-03-16 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-03-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-03-16 00:00:00.000000'
+>            PRIMARYKEY = X'd8d2024d4d813b48c0a80146'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20110923|CP_PAY_DT|20111003|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|0.260000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996553|CP_ADJ_DT|20110921|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 57662376
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-09-21 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-09-13 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-09-21 00:00:00.000000'
+>            PRIMARYKEY = X'fb2253b84e7a6788c0a80146'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20111219|CP_PAY_DT|20120103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.26|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996418|CP_ADJ_DT|20111215|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 59811912
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2011-12-07 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-12-15 00:00:00.000000'
+>            PRIMARYKEY = X'14a606004eea84f6c0a80146'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120316|CP_PAY_DT|20120403|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.30|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996267|CP_ADJ_DT|20120314|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 62210936
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-03-14 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-03-02 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-03-14 00:00:00.000000'
+>            PRIMARYKEY = X'ce4139384f611df0c0a80146'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120625|CP_PAY_DT|20120706|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.30|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996498|CP_ADJ_DT|20120621|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 65406569
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-06-21 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-06-21 00:00:00.000000'
+>            PRIMARYKEY = X'0b5c40704fe3a21bc0a80146'
+>               VERSION = NULL
+> Row 11:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20120917|CP_PAY_DT|20121001|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.30|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995976|CP_ADJ_DT|20120913|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 68473944
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-09-13 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-09-06 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-09-13 00:00:00.000000'
+>            PRIMARYKEY = X'b07d265250525f1ec0a80146'
+>               VERSION = NULL
+> Row 12:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20121217|CP_PAY_DT|20130103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.30|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995457|CP_ADJ_DT|20121213|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 71636037
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-13 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-06 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-12-13 00:00:00.000000'
+>            PRIMARYKEY = X'239356f150ca66c4c0a80146'
+>               VERSION = NULL
+> Row 13:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130624|CP_PAY_DT|20130705|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.34|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995794|CP_ADJ_DT|20130620|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 78351740
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-06-20 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-06-13 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-06-20 00:00:00.000000'
+>            PRIMARYKEY = X'3a45382f51c3882fc0a80146'
+>               VERSION = NULL
+> Row 14:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130916|CP_PAY_DT|20131001|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.34|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995461|CP_ADJ_DT|20130912|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81155039
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-09-12 00:00:00.000000'
+>            PRIMARYKEY = X'f7353f13523244c4c0a80146'
+>               VERSION = NULL
+> Row 15:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130916|CP_PAY_DT|20131001|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.34|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995461|CP_ADJ_DT|20130912|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 81155039
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-09-12 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-09-12 00:00:00.000000'
+>            PRIMARYKEY = X'105046645232b538c0a80146'
+>               VERSION = NULL
+> Row 16:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131216|CP_PAY_DT|20140103|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.34|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996000|CP_ADJ_DT|20131212|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 84608479
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-12-12 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-05 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-12-12 00:00:00.000000'
+>            PRIMARYKEY = X'45ee499f52e098ebc0a86f92'
+>               VERSION = NULL
+> Row 17:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140317|CP_PAY_DT|20140401|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.375|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995511|CP_ADJ_DT|20140313|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 88018736
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-13 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-03-13 00:00:00.000000'
+>            PRIMARYKEY = X'c0000ff153223657c0a86f92'
+>               VERSION = NULL
+> Row 18:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140623|CP_PAY_DT|20140703|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.375|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995919|CP_ADJ_DT|20140619|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 92378406
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-06-19 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-06-11 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-06-19 00:00:00.000000'
+>            PRIMARYKEY = X'a7842ade53a36ac5c0a86f92'
+>               VERSION = NULL
+> Row 19:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140915|CP_PAY_DT|20141001|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.375|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996112|CP_ADJ_DT|20140911|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 95790072
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-09-11 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-09-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-09-11 00:00:00.000000'
+>            PRIMARYKEY = X'f0393dc6541228c1c0a86f92'
+>               VERSION = NULL
+> Row 20:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141215|CP_PAY_DT|20150102|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.375|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.996280|CP_ADJ_DT|20141211|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 99568071
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-11 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-04 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-11 00:00:00.000000'
+>            PRIMARYKEY = X'24ee1618548a3011c0a86f92'
+>               VERSION = NULL
+> Row 21:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150316|CP_PAY_DT|20150401|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.4125|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|N|CP_REINVEST_RATIO| |CP_PX| |CP_TAX_RT| |CP_ADJ|0.995810|CP_ADJ_DT|20150312|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 103244853
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-12 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-02-26 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-03-12 00:00:00.000000'
+>            PRIMARYKEY = X'5bad022c5502188dc0a86f92'
+>               VERSION = NULL
+> Row 22:
+>              ALIASKEY = X'9bb4541c4b2c0e3cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150622|CP_PAY_DT|20150702|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.4125|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.995504|CP_ADJ_DT|20150618|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108156673
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 11533822
+>        BB_COMPANYNAME = Mead Johnson Nutrition Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-06-18 00:00:00.000000'
+>         BB_IDENTIFIER = MJN     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-11 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = MJN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'a4676b3055834adbc0a86f92'
+>               VERSION = NULL
+
+Assessment:
+MJN got listed twice on our site, this company is still active.   We need to consolidate the stockkeys into one.
+> MJN 1:
+>   STOCKKEY = X'453f289949939174c0a80146'
+> MJN 2:
+>   STOCKKEY = X'9bb3541c4b2c0e3cc0a80146'
+We will keep MJN-2 it has the most mtickets and DVD_CASH.  
+
+We will eventually delete MJN-1.  We need to move over the DVD_CASH
+mstockalias primarykey for MJN-2   set aliaskeys to this 
+PRIMARYKEY = X'9bb4541c4b2c0e3cc0a80146' 
+
+update mcorporateaction set aliaskey=X'9bb4541c4b2c0e3cc0a80146' where  primarykey= X'840c1d094a4c14c9c0a80146' ;
+update mcorporateaction set aliaskey=X'9bb4541c4b2c0e3cc0a80146' where  primarykey= X'1806739a4ab0008fc0a80146' ;
+
+Now MJN-1 only has the LIST CA.  
+1.  Let's get the mtickets primarykeys (ticketkeys)
+2.  get the fundkeys
+3.  get and delete the mtrades
+5.  move the mtickets over
+6.  tickle
+7.  invalidate
+8.  delete all trace of MJN-1 
+9.  reprice on the new site
+
+1.  Let's get the mtickets primarykeys (ticketkeys)
+select primarykey from mticket where STOCKKEY = X'453f289949939174c0a80146';
+there are 79 ticketkeys save to CA issues MJN ticketkeys.txt
+2.  get the fundkeys
+select distinct fundkey from mticketallocation where ticketkey in (select primarykey from mticket where STOCKKEY = X'453f289949939174c0a80146');
+there are 32 fundkeys save to CA issues MJN fundkeys.txt
+3.  get and delete the mtrades
+select count(*) from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'453f289949939174c0a80146');
+> Row 1:
+>   _C001 = 88.000000
+delete from mtrade where ticketkey in (select primarykey from mticket where STOCKKEY = X'453f289949939174c0a80146');
+5.  move the mtickets over
+update mticket set stockkey=X'9bb3541c4b2c0e3cc0a80146'  where STOCKKEY = X'453f289949939174c0a80146';
+let's check the two stockkeys for mtickets now
+select count(*) from mticket where stockkey= X'453f289949939174c0a80146';
+none
+select count(*) from mticket where stockkey= X'9bb3541c4b2c0e3cc0a80146';
+> Row 1:
+>   _C001 = 456.000000
+6.  tickle
+set the ticketkeys into ticketstotickle then tickle them
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+>>>> dbtool started at 2015-06-22 08:37:45 -0400
+<<<< dbtool finished at 2015-06-22 08:39:22 -0400
+
+7.  invalidate
+done
+
+8.  delete all traces of MJN-1 
+> MJN 1:
+>   STOCKKEY = X'453f289949939174c0a80146'
+set commit false;
+
+delete from mstock where primarykey=  X'453f289949939174c0a80146'; 
+
+delete from mwindowstock where stockkey=X'453f289949939174c0a80146';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'453f289949939174c0a80146');
+
+delete from mstockalias where stockkey=X'453f289949939174c0a80146';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'453f289949939174c0a80146');   
+
+delete from mposition where stockkey=X'453f289949939174c0a80146'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'453f289949939174c0a80146');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'453f289949939174c0a80146');
+
+delete from mticket where stockkey=X'453f289949939174c0a80146';    
+
+delete from GFSPOSITION where stockkey=X'453f289949939174c0a80146';  
+
+commit;
+
+set commit true;
+
+9.  reprice on the new site
+2009-02-11  is the list date, using the fundkeys csv 
+
+
+
+let's check
+MJN 69AC21184148973BC0A8013C BETA jfrancois
+the trades show now, this is a shorts fund.
+
+I think that we can close this out, the stock is pricing - wait let's check the full price spectrum from start to finish
+see if we're missing any prices
+> MJN 2:
+>   STOCKKEY = X'9bb3541c4b2c0e3cc0a80146'
+22 DVD Cash starting with 20100115 through today
+COMPANYID = 18774
+377 member generated tickets
+KEEP this one
+
+select * from stockprices where companyid=18774 order by daynumber;
+first one
+> Row 1:
+>   DAYNUMBER = 3273  <---  12/18/09	3273	Fri
+>   COMPANYID = 18774
+>      OPENED = 414200
+>        HIGH = 423600
+>         LOW = 412000
+>      CLOSED = 415000
+>      VOLUME = 36881619
+
+
+last one
+> Row 1409:
+>   DAYNUMBER = 5282  <--- 6/19/15	5282	Fri
+>   COMPANYID = 18774
+>      OPENED = 915600
+>        HIGH = 919800
+>         LOW = 911500
+>      CLOSED = 912000
+>      VOLUME = 2585658
+
+this listed on 2009-02-11
+check yahoo finance see if we can get earlier prices 
+
+we do have prices starting from 2/11/2009, let's add these 
+CA issues MJN stock prices to be loaded.csv
+
+prices have been loaded into the database, now check again
+select * from stockprices where companyid=18774 order by daynumber;
+first one:
+> Row 1:
+>   DAYNUMBER = 2963  <--2/11/09	2963	Wed
+>   COMPANYID = 18774
+>      OPENED = 260000
+>        HIGH = 270700
+>         LOW = 259000
+>      CLOSED = 236967
+>      VOLUME = 21745900
+
+last one:
+> Row 1625:
+>   DAYNUMBER = 5282  <--- same last day, but the row number is much larter 
+>   COMPANYID = 18774
+>      OPENED = 915600
+>        HIGH = 919800
+>         LOW = 911500
+>      CLOSED = 912000
+>      VOLUME = 2585658
+
+Now set the date to invalidate 2009-02-11
+
+1.  Go to stocks   ssh build@stocks
+
+2. Invalidate prices from 7/1/2010    set the date up in the format yyyy-mm-dd
+/Marketocracy/bin/StockPriceBuilder invalidate 2009-02-11
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-06-22
+D: (09:23:01.123) Invalidate all prices >= 2009-02-11 (2963)
+
+
+
+All is good, I think that we can close this out   6/22/15

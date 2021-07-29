@@ -1,0 +1,550 @@
+date: 2/10/15
+
+AGD missing dividends
+
+select distinct stockkey from mstockalias where symbol='AGD';
+> Row 1:
+>   STOCKKEY = X'd2520e21390a68e5c0a80116'
+select * from mstockalias where STOCKKEY = X'd2520e21390a68e5c0a80116';
+delisted 
+> Row 2:
+>   STOCKKEY = X'afb303f54c44ca27c0a80146'
+select * from mstockalias where STOCKKEY = X'afb303f54c44ca27c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02082E106
+>           DATE = TIMESTAMP '2006-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alpine Global Dynamic Dividend Fund
+>     PRIMARYKEY = X'afb403f54c44ca27c0a80146'
+>       STOCKKEY = X'afb303f54c44ca27c0a80146'
+>         SYMBOL = AGD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'afb403f54c44ca27c0a80146' ;
+> Row 1:
+>              ALIASKEY = X'afb403f54c44ca27c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20101228|CP_PAY_DT|20101231|CP_FREQ|12|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|0.138000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1036|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20101223|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 50612312
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 10855224
+>        BB_COMPANYNAME = Alpine Global Dynamic Dividend Fund
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-12-23 00:00:00.000000'
+>         BB_IDENTIFIER = AGD     US Equity
+>             BB_ISSUED = TIMESTAMP '2010-12-20 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = AGD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'fb6f72884d11393ac0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'afb403f54c44ca27c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20121231|CP_PAY_DT|20130108|CP_FREQ|N.A.|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.03077992|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1001|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.994069|CP_ADJ_DT|20121227|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID|N.A.|CP_EUSD_TID_SW|N.A.|CP_DIST_AMT_STATUS|F|CP_NOTES|Full amount: 0.03077992
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 72145886
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 10855224
+>        BB_COMPANYNAME = Alpine Global Dynamic Dividend Fund
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-12-27 00:00:00.000000'
+>         BB_IDENTIFIER = AGD     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-12-19 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = AGD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2012-12-27 00:00:00.000000'
+>            PRIMARYKEY = X'd16030f850dcdb4ac0a80146'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 02082E205
+>           DATE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Alpine Global Dynamic Dividend Fund
+>     PRIMARYKEY = X'2e481eac52e0ce4ec0a86f92'
+>       STOCKKEY = X'afb303f54c44ca27c0a80146'
+>         SYMBOL = AGD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'2e481eac52e0ce4ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'2e481eac52e0ce4ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|02082E106|CP_NEW_CUSIP|02082E205|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|N.S.|CP_NEW_ISIN|N.S.|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 85482091
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 10855224
+>        BB_COMPANYNAME = Alpine Global Dynamic Dividend Fund
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = AGD     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-12-26 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = AGD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-12-26 00:00:00.000000'
+>            PRIMARYKEY = X'd0b85ff552e0a854c0a86f92'
+>               VERSION = NULL
+
+
+our site
+cash dividends paid by AGD	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+23 Dec 10	28 Dec 10	31 Dec 10	12	$0.14	Dividend amount:0.138 per share.
+27 Dec 12	31 Dec 12	08 Jan 13	N/A	$0.03	Dividend amount:0.03077992 per share.
+
+nasdaq
+Ex/Eff Date	Type	Cash Amount	Declaration Date	Record Date	Payment Date
+2/18/2015	Cash	0.064	1/20/2015	2/20/2015	2/27/2015
+1/21/2015	Cash	0.064	12/19/2014	1/23/2015	1/30/2015
+12/24/2014	Cash	0.064	12/19/2014	12/29/2014	12/31/2014
+11/18/2014	Cash	0.064	10/20/2014	11/20/2014	11/28/2014
+10/22/2014	Cash	0.064	9/18/2014	10/24/2014	10/31/2014
+9/19/2014	Cash	0.064	8/28/2014	9/23/2014	9/30/2014
+8/20/2014	Cash	0.064	7/18/2014	8/22/2014	8/29/2014
+7/22/2014	Cash	0.064	6/18/2014	7/24/2014	7/31/2014
+6/19/2014	Cash	0.064	5/20/2014	6/23/2014	6/30/2014
+5/20/2014	Cash	0.064	4/21/2014	5/22/2014	5/30/2014
+4/21/2014	Cash	0.064	3/18/2014	4/23/2014	4/30/2014
+3/20/2014	Cash	0.064	2/18/2014	3/24/2014	3/31/2014
+2/19/2014	Cash	0.064	1/21/2014	2/21/2014	2/28/2014
+1/22/2014	Cash	0.064	12/19/2013	1/24/2014	1/31/2014
+12/19/2013	Cash	0.03	11/18/2013	12/23/2013	12/31/2013
+11/19/2013	Cash	0.03	10/18/2013	11/21/2013	11/29/2013
+10/22/2013	Cash	0.03	9/18/2013	10/24/2013	10/31/2013
+9/19/2013	Cash	0.03	8/19/2013	9/23/2013	9/30/2013
+8/21/2013	Cash	0.03	7/18/2013	8/23/2013	8/30/2013
+7/22/2013	Cash	0.03	6/21/2013	7/24/2013	7/31/2013
+6/19/2013	Cash	0.03	5/20/2013	6/21/2013	6/28/2013
+5/21/2013	Cash	0.03	4/18/2013	5/23/2013	5/31/2013
+4/19/2013	Cash	0.03	3/18/2013	4/23/2013	4/30/2013
+3/19/2013	Cash	0.03	2/19/2013	3/21/2013	3/28/2013
+2/19/2013	Cash	0.03	1/18/2013	2/21/2013	2/28/2013
+1/22/2013	Cash	0.06	12/19/2012	1/24/2013	1/31/2013
+12/27/2012	Cash	0.0307799	12/19/2012	12/31/2012	1/8/2013  <-- we paid this one
+12/19/2012	Cash	0.06	9/19/2012	12/21/2012	12/31/2012
+11/20/2012	Cash	0.06	9/19/2012	11/23/2012	11/30/2012
+10/22/2012	Cash	0.06	9/19/2012	10/24/2012	10/31/2012
+9/19/2012	Cash	0.06	6/20/2012	9/21/2012	9/28/2012
+8/22/2012	Cash	0.06	6/20/2012	8/24/2012	8/31/2012
+7/20/2012	Cash	0.06	6/20/2012	7/24/2012	7/31/2012
+6/20/2012	Cash	0.06	3/21/2012	6/22/2012	6/29/2012
+5/21/2012	Cash	0.06	3/21/2012	5/23/2012	5/31/2012
+4/19/2012	Cash	0.06	3/21/2012	4/23/2012	4/30/2012
+3/21/2012	Cash	0.06	12/21/2011	3/23/2012	3/30/2012
+2/17/2012	Cash	0.06	12/21/2011	2/22/2012	2/29/2012
+1/20/2012	Cash	0.06	12/21/2011	1/24/2012	1/31/2012
+12/21/2011	Cash	0.06	9/20/2011	12/23/2011	12/30/2011
+11/21/2011	Cash	0.06	9/20/2011	11/23/2011	11/30/2011
+10/21/2011	Cash	0.06	9/21/2011	10/25/2011	10/31/2011
+9/20/2011	Cash	0.06	6/23/2011	9/22/2011	9/30/2011
+8/19/2011	Cash	0.06	6/23/2011	8/23/2011	8/31/2011
+7/20/2011	Cash	0.06	6/23/2011	7/22/2011	7/29/2011
+6/22/2011	Cash	0.06	3/23/2011	6/24/2011	6/30/2011
+5/20/2011	Cash	0.06	3/23/2011	5/24/2011	5/31/2011
+4/20/2011	Cash	0.06	3/23/2011	4/25/2011	4/29/2011
+3/23/2011	Cash	0.06	12/21/2010	3/25/2011	3/31/2011
+2/17/2011	Cash	0.06	12/21/2010	2/22/2011	2/28/2011
+1/21/2011	Cash	0.06	12/21/2010	1/25/2011	1/31/2011
+12/23/2010	Cash	0.138	12/20/2010	12/28/2010	12/31/2010  <-- we paid this one 
+12/22/2010	Cash	0.06	9/21/2010	12/27/2010	12/31/2010
+11/19/2010	Cash	0.06	9/21/2010	11/23/2010	11/30/2010
+10/21/2010	Cash	0.06	9/21/2010	10/25/2010	10/29/2010
+9/22/2010	Cash	0.06	6/24/2010	9/24/2010	9/30/2010
+8/23/2010	Cash	0.06	6/24/2010	8/25/2010	8/31/2010
+7/22/2010	Cash	0.06	6/24/2010	7/26/2010	7/30/2010
+7/21/2010	Cash	0.06	6/24/2010	7/24/2010	7/30/2010
+6/22/2010	Cash	0.11	5/21/2010	6/24/2010	6/30/2010
+5/20/2010	Cash	0.11	2/19/2010	5/24/2010	5/28/2010
+4/22/2010	Cash	0.11	2/19/2010	4/26/2010	4/30/2010
+3/23/2010	Cash	0.11	2/19/2010	3/25/2010	3/31/2010
+2/18/2010	Cash	0.11	11/18/2009	2/22/2010	2/26/2010
+1/21/2010	Cash	0.11	11/18/2009	1/25/2010	1/29/2010
+12/28/2009	Cash	0.0632	12/23/2009	12/30/2009	12/31/2009
+12/22/2009	Cash	0.11	11/18/2009	12/24/2009	12/31/2009
+11/19/2009	Cash	0.11	8/25/2009	11/23/2009	11/30/2009
+10/22/2009	Cash	0.11	8/25/2009	10/26/2009	10/30/2009
+9/22/2009	Cash	0.11	8/25/2009	9/24/2009	9/30/2009
+8/21/2009	Cash	0.11	5/20/2009	8/25/2009	8/31/2009
+7/23/2009	Cash	0.11	5/20/2009	7/27/2009	7/31/2009
+6/22/2009	Cash	0.11	5/20/2009	6/24/2009	6/30/2009
+5/20/2009	Cash	0.11	2/19/2009	5/22/2009	5/29/2009
+4/22/2009	Cash	0.11	2/19/2009	4/24/2009	4/30/2009
+3/23/2009	Cash	0.11	2/19/2009	3/25/2009	3/31/2009
+12/22/2008	Cash	0.17	9/2/2008	12/24/2008	12/30/2008
+11/19/2008	Cash	0.17	9/2/2008	11/21/2008	11/28/2008
+10/23/2008	Cash	0.17	9/2/2008	10/27/2008	10/31/2008
+9/22/2008	Cash	0.17	7/3/2008	9/24/2008	9/30/2008
+8/25/2008	Cash	0.17	7/3/2008	8/27/2008	8/29/2008
+7/23/2008	Cash	0.17	7/3/2008	7/25/2008	7/31/2008
+6/20/2008	Cash	0.17	3/19/2008	6/24/2008	6/30/2008
+5/21/2008	Cash	0.17	3/19/2008	5/23/2008	5/30/2008
+4/22/2008	Cash	0.17	3/19/2008	4/24/2008	4/30/2008
+3/19/2008	Cash	0.17	1/3/2008	3/24/2008	3/28/2008
+2/13/2008	Cash	0.17	1/3/2008	2/15/2008	2/22/2008
+1/16/2008	Cash	0.17	1/3/2008	1/18/2008	1/25/2008
+12/20/2007	Cash	0.17	9/24/2007	12/24/2007	12/28/2007
+11/15/2007	Cash	0.17	9/24/2007	11/19/2007	11/23/2007
+10/18/2007	Cash	0.17	9/24/2007	10/22/2007	10/26/2007
+9/20/2007	Cash	0.17	6/4/2007	9/24/2007	9/28/2007
+8/16/2007	Cash	0.17	6/4/2007	8/20/2007	8/24/2007
+7/19/2007	Cash	0.17	6/4/2007	7/23/2007	7/27/2007
+6/14/2007	Cash	0.16	3/16/2007	6/18/2007	6/22/2007
+5/17/2007	Cash	0.16	3/16/2007	5/21/2007	5/25/2007
+4/19/2007	Cash	0.16	3/16/2007	4/23/2007	4/27/2007
+3/15/2007	Cash	0.16	11/16/2006	3/19/2007	3/23/2007
+2/15/2007	Cash	0.16	11/16/2006	2/20/2007	2/23/2007
+1/18/2007	Cash	0.16	11/16/2006	1/22/2007	1/26/2007
+12/14/2006	Cash	0.16	11/16/2006	12/18/2006	12/22/2006
+11/16/2006	Cash	0.15	8/21/2006	11/20/2006	11/24/2006
+10/19/2006	Cash	0.15	8/21/2006	10/23/2006	10/27/2006
+9/14/2006	Cash	0.15	8/21/2006	9/18/2006	9/22/2006
+
+/Marketocracy/bin/cahelper -symbol AGD -effective 20150121 -type DVD_CASH -exchange UN -payDate 20150130 -recordDate 20150123 -amount 0.064 >& /Users/build/caout/AGD.20150210-2015-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20141224 -type DVD_CASH -exchange UN -payDate 20141231 -recordDate 20141229 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20141118 -type DVD_CASH -exchange UN -payDate 20141128 -recordDate 20141120 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20141022 -type DVD_CASH -exchange UN -payDate 20141031 -recordDate 20141024 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140919 -type DVD_CASH -exchange UN -payDate 20140930 -recordDate 20140923 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140820 -type DVD_CASH -exchange UN -payDate 20140829 -recordDate 20140822 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140722 -type DVD_CASH -exchange UN -payDate 20140731 -recordDate 20140724 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140619 -type DVD_CASH -exchange UN -payDate 20140630 -recordDate 20140623 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140520 -type DVD_CASH -exchange UN -payDate 20140530 -recordDate 20140522 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140421 -type DVD_CASH -exchange UN -payDate 20140430 -recordDate 20140423 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140320 -type DVD_CASH -exchange UN -payDate 20140331 -recordDate 20140324 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140219 -type DVD_CASH -exchange UN -payDate 20140228 -recordDate 20140221 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20140122 -type DVD_CASH -exchange UN -payDate 20140131 -recordDate 20140124 -amount 0.064 >& /Users/build/caout/AGD.20150210-2014-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20131219 -type DVD_CASH -exchange UN -payDate 20131231 -recordDate 20131223 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20131119 -type DVD_CASH -exchange UN -payDate 20131129 -recordDate 20131121 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20131022 -type DVD_CASH -exchange UN -payDate 20131031 -recordDate 20131024 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130919 -type DVD_CASH -exchange UN -payDate 20130930 -recordDate 20130923 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130821 -type DVD_CASH -exchange UN -payDate 20130830 -recordDate 20130823 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130722 -type DVD_CASH -exchange UN -payDate 20130731 -recordDate 20130724 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130619 -type DVD_CASH -exchange UN -payDate 20130628 -recordDate 20130621 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130521 -type DVD_CASH -exchange UN -payDate 20130531 -recordDate 20130523 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130419 -type DVD_CASH -exchange UN -payDate 20130430 -recordDate 20130423 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130319 -type DVD_CASH -exchange UN -payDate 20130328 -recordDate 20130321 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130219 -type DVD_CASH -exchange UN -payDate 20130228 -recordDate 20130221 -amount 0.03 >& /Users/build/caout/AGD.20150210-2013-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20130122 -type DVD_CASH -exchange UN -payDate 20130131 -recordDate 20130124 -amount 0.06 >& /Users/build/caout/AGD.20150210-2013-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20121219 -type DVD_CASH -exchange UN -payDate 20121231 -recordDate 20121221 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20121120 -type DVD_CASH -exchange UN -payDate 20121130 -recordDate 20121123 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20121022 -type DVD_CASH -exchange UN -payDate 20121031 -recordDate 20121024 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120919 -type DVD_CASH -exchange UN -payDate 20120928 -recordDate 20120921 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120822 -type DVD_CASH -exchange UN -payDate 20120831 -recordDate 20120824 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120720 -type DVD_CASH -exchange UN -payDate 20120731 -recordDate 20120724 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120620 -type DVD_CASH -exchange UN -payDate 20120629 -recordDate 20120622 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120521 -type DVD_CASH -exchange UN -payDate 20120531 -recordDate 20120523 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120419 -type DVD_CASH -exchange UN -payDate 20120430 -recordDate 20120423 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120321 -type DVD_CASH -exchange UN -payDate 20120330 -recordDate 20120323 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120217 -type DVD_CASH -exchange UN -payDate 20120229 -recordDate 20120222 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20120120 -type DVD_CASH -exchange UN -payDate 20120131 -recordDate 20120124 -amount 0.06 >& /Users/build/caout/AGD.20150210-2012-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20111221 -type DVD_CASH -exchange UN -payDate 20111230 -recordDate 20111223 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20111121 -type DVD_CASH -exchange UN -payDate 20111130 -recordDate 20111123 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20111021 -type DVD_CASH -exchange UN -payDate 20111031 -recordDate 20111025 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110920 -type DVD_CASH -exchange UN -payDate 20110930 -recordDate 20110922 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110819 -type DVD_CASH -exchange UN -payDate 20110831 -recordDate 20110823 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110720 -type DVD_CASH -exchange UN -payDate 20110729 -recordDate 20110722 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110622 -type DVD_CASH -exchange UN -payDate 20110630 -recordDate 20110624 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110520 -type DVD_CASH -exchange UN -payDate 20110531 -recordDate 20110524 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110420 -type DVD_CASH -exchange UN -payDate 20110429 -recordDate 20110425 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110323 -type DVD_CASH -exchange UN -payDate 20110331 -recordDate 20110325 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110217 -type DVD_CASH -exchange UN -payDate 20110228 -recordDate 20110222 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20110121 -type DVD_CASH -exchange UN -payDate 20110131 -recordDate 20110125 -amount 0.06 >& /Users/build/caout/AGD.20150210-2011-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20101222 -type DVD_CASH -exchange UN -payDate 20101231 -recordDate 20101227 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20101119 -type DVD_CASH -exchange UN -payDate 20101130 -recordDate 20101123 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20101021 -type DVD_CASH -exchange UN -payDate 20101029 -recordDate 20101025 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100922 -type DVD_CASH -exchange UN -payDate 20100930 -recordDate 20100924 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100823 -type DVD_CASH -exchange UN -payDate 20100831 -recordDate 20100825 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100722 -type DVD_CASH -exchange UN -payDate 20100730 -recordDate 20100726 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100721 -type DVD_CASH -exchange UN -payDate 20100730 -recordDate 20100724 -amount 0.06 >& /Users/build/caout/AGD.20150210-2010-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100622 -type DVD_CASH -exchange UN -payDate 20100630 -recordDate 20100624 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100520 -type DVD_CASH -exchange UN -payDate 20100528 -recordDate 20100524 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100422 -type DVD_CASH -exchange UN -payDate 20100430 -recordDate 20100426 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100323 -type DVD_CASH -exchange UN -payDate 20100331 -recordDate 20100325 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100218 -type DVD_CASH -exchange UN -payDate 20100226 -recordDate 20100222 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20100121 -type DVD_CASH -exchange UN -payDate 20100129 -recordDate 20100125 -amount 0.11 >& /Users/build/caout/AGD.20150210-2010-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20091228 -type DVD_CASH -exchange UN -payDate 20091231 -recordDate 20091230 -amount 0.0632 >& /Users/build/caout/AGD.20150210-2009-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20091222 -type DVD_CASH -exchange UN -payDate 20091231 -recordDate 20091224 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20091119 -type DVD_CASH -exchange UN -payDate 20091130 -recordDate 20091123 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20091022 -type DVD_CASH -exchange UN -payDate 20091030 -recordDate 20091026 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090922 -type DVD_CASH -exchange UN -payDate 20090930 -recordDate 20090924 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090821 -type DVD_CASH -exchange UN -payDate 20090831 -recordDate 20090825 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090723 -type DVD_CASH -exchange UN -payDate 20090731 -recordDate 20090727 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090622 -type DVD_CASH -exchange UN -payDate 20090630 -recordDate 20090624 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090520 -type DVD_CASH -exchange UN -payDate 20090529 -recordDate 20090522 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090422 -type DVD_CASH -exchange UN -payDate 20090430 -recordDate 20090424 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20090323 -type DVD_CASH -exchange UN -payDate 20090331 -recordDate 20090325 -amount 0.11 >& /Users/build/caout/AGD.20150210-2009-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20081222 -type DVD_CASH -exchange UN -payDate 20081230 -recordDate 20081224 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20081119 -type DVD_CASH -exchange UN -payDate 20081128 -recordDate 20081121 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20081023 -type DVD_CASH -exchange UN -payDate 20081031 -recordDate 20081027 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080922 -type DVD_CASH -exchange UN -payDate 20080930 -recordDate 20080924 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080825 -type DVD_CASH -exchange UN -payDate 20080829 -recordDate 20080827 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080723 -type DVD_CASH -exchange UN -payDate 20080731 -recordDate 20080725 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080620 -type DVD_CASH -exchange UN -payDate 20080630 -recordDate 20080624 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080521 -type DVD_CASH -exchange UN -payDate 20080530 -recordDate 20080523 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080422 -type DVD_CASH -exchange UN -payDate 20080430 -recordDate 20080424 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080319 -type DVD_CASH -exchange UN -payDate 20080328 -recordDate 20080324 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080213 -type DVD_CASH -exchange UN -payDate 20080222 -recordDate 20080215 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20080116 -type DVD_CASH -exchange UN -payDate 20080125 -recordDate 20080118 -amount 0.17 >& /Users/build/caout/AGD.20150210-2008-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20071220 -type DVD_CASH -exchange UN -payDate 20071228 -recordDate 20071224 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20071115 -type DVD_CASH -exchange UN -payDate 20071123 -recordDate 20071119 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20071018 -type DVD_CASH -exchange UN -payDate 20071026 -recordDate 20071022 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070920 -type DVD_CASH -exchange UN -payDate 20070928 -recordDate 20070924 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-09.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070816 -type DVD_CASH -exchange UN -payDate 20070824 -recordDate 20070820 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-08.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070719 -type DVD_CASH -exchange UN -payDate 20070727 -recordDate 20070723 -amount 0.17 >& /Users/build/caout/AGD.20150210-2007-07.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070614 -type DVD_CASH -exchange UN -payDate 20070622 -recordDate 20070618 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-06.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070517 -type DVD_CASH -exchange UN -payDate 20070525 -recordDate 20070521 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-05.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070419 -type DVD_CASH -exchange UN -payDate 20070427 -recordDate 20070423 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-04.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070315 -type DVD_CASH -exchange UN -payDate 20070323 -recordDate 20070319 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-03.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070215 -type DVD_CASH -exchange UN -payDate 20070223 -recordDate 20070220 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-02.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20070118 -type DVD_CASH -exchange UN -payDate 20070126 -recordDate 20070122 -amount 0.16 >& /Users/build/caout/AGD.20150210-2007-01.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20061214 -type DVD_CASH -exchange UN -payDate 20061222 -recordDate 20061218 -amount 0.16 >& /Users/build/caout/AGD.20150210-2006-12.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20061116 -type DVD_CASH -exchange UN -payDate 20061124 -recordDate 20061120 -amount 0.15 >& /Users/build/caout/AGD.20150210-2006-11.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20061019 -type DVD_CASH -exchange UN -payDate 20061027 -recordDate 20061023 -amount 0.15 >& /Users/build/caout/AGD.20150210-2006-10.out;
+/Marketocracy/bin/cahelper -symbol AGD -effective 20060914 -type DVD_CASH -exchange UN -payDate 20060922 -recordDate 20060918 -amount 0.15 >& /Users/build/caout/AGD.20150210-2006-09.out;
+
+AGD.20150210-2006-09.out
+AGD.20150210-2006-10.out
+AGD.20150210-2006-11.out
+AGD.20150210-2006-12.out
+AGD.20150210-2007-01.out
+AGD.20150210-2007-02.out
+AGD.20150210-2007-03.out
+AGD.20150210-2007-04.out
+AGD.20150210-2007-05.out
+AGD.20150210-2007-06.out
+AGD.20150210-2007-07.out
+AGD.20150210-2007-08.out
+AGD.20150210-2007-09.out
+AGD.20150210-2007-10.out
+AGD.20150210-2007-11.out
+AGD.20150210-2007-12.out
+AGD.20150210-2008-01.out
+AGD.20150210-2008-02.out
+AGD.20150210-2008-03.out
+AGD.20150210-2008-04.out
+AGD.20150210-2008-05.out
+AGD.20150210-2008-06.out
+AGD.20150210-2008-07.out
+AGD.20150210-2008-08.out
+AGD.20150210-2008-09.out
+AGD.20150210-2008-10.out
+AGD.20150210-2008-11.out
+AGD.20150210-2008-12.out
+AGD.20150210-2009-03.out
+AGD.20150210-2009-04.out
+AGD.20150210-2009-05.out
+AGD.20150210-2009-06.out
+AGD.20150210-2009-07.out
+AGD.20150210-2009-08.out
+AGD.20150210-2009-09.out
+AGD.20150210-2009-10.out
+AGD.20150210-2009-11.out
+AGD.20150210-2009-12.out
+AGD.20150210-2010-01.out
+AGD.20150210-2010-02.out
+AGD.20150210-2010-03.out
+AGD.20150210-2010-04.out
+AGD.20150210-2010-05.out
+AGD.20150210-2010-06.out
+AGD.20150210-2010-07.out
+AGD.20150210-2010-08.out
+AGD.20150210-2010-09.out
+AGD.20150210-2010-10.out
+AGD.20150210-2010-11.out
+AGD.20150210-2010-12.out
+AGD.20150210-2011-01.out
+AGD.20150210-2011-02.out
+AGD.20150210-2011-03.out
+AGD.20150210-2011-04.out
+AGD.20150210-2011-05.out
+AGD.20150210-2011-06.out
+AGD.20150210-2011-07.out
+AGD.20150210-2011-08.out
+AGD.20150210-2011-09.out
+AGD.20150210-2011-10.out
+AGD.20150210-2011-11.out
+AGD.20150210-2011-12.out
+AGD.20150210-2012-01.out
+AGD.20150210-2012-02.out
+AGD.20150210-2012-03.out
+AGD.20150210-2012-04.out
+AGD.20150210-2012-05.out
+AGD.20150210-2012-06.out
+AGD.20150210-2012-07.out
+AGD.20150210-2012-08.out
+AGD.20150210-2012-09.out
+AGD.20150210-2012-10.out
+AGD.20150210-2012-11.out
+AGD.20150210-2012-12.out
+AGD.20150210-2013-01.out
+AGD.20150210-2013-02.out
+AGD.20150210-2013-03.out
+AGD.20150210-2013-04.out
+AGD.20150210-2013-05.out
+AGD.20150210-2013-06.out
+AGD.20150210-2013-07.out
+AGD.20150210-2013-08.out
+AGD.20150210-2013-09.out
+AGD.20150210-2013-10.out
+AGD.20150210-2013-11.out
+AGD.20150210-2013-12.out
+AGD.20150210-2014-01.out
+AGD.20150210-2014-02.out
+AGD.20150210-2014-03.out
+AGD.20150210-2014-04.out
+AGD.20150210-2014-05.out
+AGD.20150210-2014-06.out
+AGD.20150210-2014-07.out
+AGD.20150210-2014-08.out
+AGD.20150210-2014-09.out
+AGD.20150210-2014-10.out
+AGD.20150210-2014-11.out
+AGD.20150210-2014-12.out
+AGD.20150210-2015-01.out
+
+select * from mcorporateaction where aliaskey is not null and BB_SECID='AGD' and BB_ACTIONMNEMONIC='DVD_CASH' order by BB_EFFECTIVE;
+> Row 153:
+>              ALIASKEY = X'2e481eac52e0ce4ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150123|CP_PAY_DT|20150130|CP_FREQ|4|CP_NET_AMT|0.064000|CP_TAX_AMT| |CP_GROSS_AMT|0.064000|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_BONUS_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|D|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT| |CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150210:041303
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = AGD     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AGD
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'd8be03da54da745fc0a86f92'
+>               VERSION = NULL
+
+they are there check on 2/11/15
+cash dividends paid by AGD	
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+14 Sep 06	18 Sep 06	22 Sep 06	4	$0.15	Dividend amount:0.15 per share.
+19 Oct 06	23 Oct 06	27 Oct 06	4	$0.15	Dividend amount:0.15 per share.
+16 Nov 06	20 Nov 06	24 Nov 06	4	$0.15	Dividend amount:0.15 per share.
+14 Dec 06	18 Dec 06	22 Dec 06	4	$0.16	Dividend amount:0.16 per share.
+18 Jan 07	22 Jan 07	26 Jan 07	4	$0.16	Dividend amount:0.16 per share.
+15 Feb 07	20 Feb 07	23 Feb 07	4	$0.16	Dividend amount:0.16 per share.
+15 Mar 07	19 Mar 07	23 Mar 07	4	$0.16	Dividend amount:0.16 per share.
+19 Apr 07	23 Apr 07	27 Apr 07	4	$0.16	Dividend amount:0.16 per share.
+17 May 07	21 May 07	25 May 07	4	$0.16	Dividend amount:0.16 per share.
+14 Jun 07	18 Jun 07	22 Jun 07	4	$0.16	Dividend amount:0.16 per share.
+19 Jul 07	23 Jul 07	27 Jul 07	4	$0.17	Dividend amount:0.17 per share.
+16 Aug 07	20 Aug 07	24 Aug 07	4	$0.17	Dividend amount:0.17 per share.
+20 Sep 07	24 Sep 07	28 Sep 07	4	$0.17	Dividend amount:0.17 per share.
+18 Oct 07	22 Oct 07	26 Oct 07	4	$0.17	Dividend amount:0.17 per share.
+15 Nov 07	19 Nov 07	23 Nov 07	4	$0.17	Dividend amount:0.17 per share.
+20 Dec 07	24 Dec 07	28 Dec 07	4	$0.17	Dividend amount:0.17 per share.
+16 Jan 08	18 Jan 08	25 Jan 08	4	$0.17	Dividend amount:0.17 per share.
+13 Feb 08	15 Feb 08	22 Feb 08	4	$0.17	Dividend amount:0.17 per share.
+19 Mar 08	24 Mar 08	28 Mar 08	4	$0.17	Dividend amount:0.17 per share.
+22 Apr 08	24 Apr 08	30 Apr 08	4	$0.17	Dividend amount:0.17 per share.
+21 May 08	23 May 08	30 May 08	4	$0.17	Dividend amount:0.17 per share.
+20 Jun 08	24 Jun 08	30 Jun 08	4	$0.17	Dividend amount:0.17 per share.
+23 Jul 08	25 Jul 08	31 Jul 08	4	$0.17	Dividend amount:0.17 per share.
+25 Aug 08	27 Aug 08	29 Aug 08	4	$0.17	Dividend amount:0.17 per share.
+22 Sep 08	24 Sep 08	30 Sep 08	4	$0.17	Dividend amount:0.17 per share.
+23 Oct 08	27 Oct 08	31 Oct 08	4	$0.17	Dividend amount:0.17 per share.
+19 Nov 08	21 Nov 08	28 Nov 08	4	$0.17	Dividend amount:0.17 per share.
+22 Dec 08	24 Dec 08	30 Dec 08	4	$0.17	Dividend amount:0.17 per share.
+23 Mar 09	25 Mar 09	31 Mar 09	4	$0.11	Dividend amount:0.11 per share.
+22 Apr 09	24 Apr 09	30 Apr 09	4	$0.11	Dividend amount:0.11 per share.
+20 May 09	22 May 09	29 May 09	4	$0.11	Dividend amount:0.11 per share.
+22 Jun 09	24 Jun 09	30 Jun 09	4	$0.11	Dividend amount:0.11 per share.
+23 Jul 09	27 Jul 09	31 Jul 09	4	$0.11	Dividend amount:0.11 per share.
+21 Aug 09	25 Aug 09	31 Aug 09	4	$0.11	Dividend amount:0.11 per share.
+22 Sep 09	24 Sep 09	30 Sep 09	4	$0.11	Dividend amount:0.11 per share.
+22 Oct 09	26 Oct 09	30 Oct 09	4	$0.11	Dividend amount:0.11 per share.
+19 Nov 09	23 Nov 09	30 Nov 09	4	$0.11	Dividend amount:0.11 per share.
+22 Dec 09	24 Dec 09	31 Dec 09	4	$0.11	Dividend amount:0.11 per share.
+28 Dec 09	30 Dec 09	31 Dec 09	4	$0.06	Dividend amount:0.0632 per share.
+21 Jan 10	25 Jan 10	29 Jan 10	4	$0.11	Dividend amount:0.11 per share.
+18 Feb 10	22 Feb 10	26 Feb 10	4	$0.11	Dividend amount:0.11 per share.
+23 Mar 10	25 Mar 10	31 Mar 10	4	$0.11	Dividend amount:0.11 per share.
+22 Apr 10	26 Apr 10	30 Apr 10	4	$0.11	Dividend amount:0.11 per share.
+20 May 10	24 May 10	28 May 10	4	$0.11	Dividend amount:0.11 per share.
+22 Jun 10	24 Jun 10	30 Jun 10	4	$0.11	Dividend amount:0.11 per share.
+21 Jul 10	24 Jul 10	30 Jul 10	4	$0.06	Dividend amount:0.06 per share.
+22 Jul 10	26 Jul 10	30 Jul 10	4	$0.06	Dividend amount:0.06 per share.
+23 Aug 10	25 Aug 10	31 Aug 10	4	$0.06	Dividend amount:0.06 per share.
+22 Sep 10	24 Sep 10	30 Sep 10	4	$0.06	Dividend amount:0.06 per share.
+21 Oct 10	25 Oct 10	29 Oct 10	4	$0.06	Dividend amount:0.06 per share.
+19 Nov 10	23 Nov 10	30 Nov 10	4	$0.06	Dividend amount:0.06 per share.
+22 Dec 10	27 Dec 10	31 Dec 10	4	$0.06	Dividend amount:0.06 per share.
+23 Dec 10	28 Dec 10	31 Dec 10	12	$0.14	Dividend amount:0.138 per share.
+21 Jan 11	25 Jan 11	31 Jan 11	4	$0.06	Dividend amount:0.06 per share.
+17 Feb 11	22 Feb 11	28 Feb 11	4	$0.06	Dividend amount:0.06 per share.
+23 Mar 11	25 Mar 11	31 Mar 11	4	$0.06	Dividend amount:0.06 per share.
+20 Apr 11	25 Apr 11	29 Apr 11	4	$0.06	Dividend amount:0.06 per share.
+20 May 11	24 May 11	31 May 11	4	$0.06	Dividend amount:0.06 per share.
+22 Jun 11	24 Jun 11	30 Jun 11	4	$0.06	Dividend amount:0.06 per share.
+20 Jul 11	22 Jul 11	29 Jul 11	4	$0.06	Dividend amount:0.06 per share.
+19 Aug 11	23 Aug 11	31 Aug 11	4	$0.06	Dividend amount:0.06 per share.
+20 Sep 11	22 Sep 11	30 Sep 11	4	$0.06	Dividend amount:0.06 per share.
+21 Oct 11	25 Oct 11	31 Oct 11	4	$0.06	Dividend amount:0.06 per share.
+21 Nov 11	23 Nov 11	30 Nov 11	4	$0.06	Dividend amount:0.06 per share.
+21 Dec 11	23 Dec 11	30 Dec 11	4	$0.06	Dividend amount:0.06 per share.
+20 Jan 12	24 Jan 12	31 Jan 12	4	$0.06	Dividend amount:0.06 per share.
+17 Feb 12	22 Feb 12	29 Feb 12	4	$0.06	Dividend amount:0.06 per share.
+21 Mar 12	23 Mar 12	30 Mar 12	4	$0.06	Dividend amount:0.06 per share.
+19 Apr 12	23 Apr 12	30 Apr 12	4	$0.06	Dividend amount:0.06 per share.
+21 May 12	23 May 12	31 May 12	4	$0.06	Dividend amount:0.06 per share.
+20 Jun 12	22 Jun 12	29 Jun 12	4	$0.06	Dividend amount:0.06 per share.
+20 Jul 12	24 Jul 12	31 Jul 12	4	$0.06	Dividend amount:0.06 per share.
+22 Aug 12	24 Aug 12	31 Aug 12	4	$0.06	Dividend amount:0.06 per share.
+19 Sep 12	21 Sep 12	28 Sep 12	4	$0.06	Dividend amount:0.06 per share.
+22 Oct 12	24 Oct 12	31 Oct 12	4	$0.06	Dividend amount:0.06 per share.
+20 Nov 12	23 Nov 12	30 Nov 12	4	$0.06	Dividend amount:0.06 per share.
+19 Dec 12	21 Dec 12	31 Dec 12	4	$0.06	Dividend amount:0.06 per share.
+27 Dec 12	31 Dec 12	08 Jan 13	N/A	$0.03	Dividend amount:0.03077992 per share.
+22 Jan 13	24 Jan 13	31 Jan 13	4	$0.06	Dividend amount:0.06 per share.
+19 Feb 13	21 Feb 13	28 Feb 13	4	$0.03	Dividend amount:0.03 per share.
+19 Mar 13	21 Mar 13	28 Mar 13	4	$0.03	Dividend amount:0.03 per share.
+19 Apr 13	23 Apr 13	30 Apr 13	4	$0.03	Dividend amount:0.03 per share.
+21 May 13	23 May 13	31 May 13	4	$0.03	Dividend amount:0.03 per share.
+19 Jun 13	21 Jun 13	28 Jun 13	4	$0.03	Dividend amount:0.03 per share.
+22 Jul 13	24 Jul 13	31 Jul 13	4	$0.03	Dividend amount:0.03 per share.
+21 Aug 13	23 Aug 13	30 Aug 13	4	$0.03	Dividend amount:0.03 per share.
+19 Sep 13	23 Sep 13	30 Sep 13	4	$0.03	Dividend amount:0.03 per share.
+22 Oct 13	24 Oct 13	31 Oct 13	4	$0.03	Dividend amount:0.03 per share.
+19 Nov 13	21 Nov 13	29 Nov 13	4	$0.03	Dividend amount:0.03 per share.
+19 Dec 13	23 Dec 13	31 Dec 13	4	$0.03	Dividend amount:0.03 per share.
+22 Jan 14	24 Jan 14	31 Jan 14	4	$0.06	Dividend amount:0.064 per share.
+19 Feb 14	21 Feb 14	28 Feb 14	4	$0.06	Dividend amount:0.064 per share.
+20 Mar 14	24 Mar 14	31 Mar 14	4	$0.06	Dividend amount:0.064 per share.
+21 Apr 14	23 Apr 14	30 Apr 14	4	$0.06	Dividend amount:0.064 per share.
+20 May 14	22 May 14	30 May 14	4	$0.06	Dividend amount:0.064 per share.
+19 Jun 14	23 Jun 14	30 Jun 14	4	$0.06	Dividend amount:0.064 per share.
+22 Jul 14	24 Jul 14	31 Jul 14	4	$0.06	Dividend amount:0.064 per share.
+20 Aug 14	22 Aug 14	29 Aug 14	4	$0.06	Dividend amount:0.064 per share.
+19 Sep 14	23 Sep 14	30 Sep 14	4	$0.06	Dividend amount:0.064 per share.
+22 Oct 14	24 Oct 14	31 Oct 14	4	$0.06	Dividend amount:0.064 per share.
+18 Nov 14	20 Nov 14	28 Nov 14	4	$0.06	Dividend amount:0.064 per share.
+24 Dec 14	29 Dec 14	31 Dec 14	4	$0.06	Dividend amount:0.064 per share.
+21 Jan 15	23 Jan 15	30 Jan 15	4	$0.06	Dividend amount:0.064 per share.
+
+dividends are all there, closing this out 

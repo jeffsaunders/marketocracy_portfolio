@@ -1,0 +1,461 @@
+date: 4/28/15
+ticker: RSMI
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+
+MAdmin
+
+database
+select distinct stockkey from mstockalias where symbol= 'RSMI';  
+> Row 1:
+>   STOCKKEY = X'abb1043c39e7e9cbc0a801dc'
+> Row 2:
+>   STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+
+there are two:
+> RSMI 1:
+>   STOCKKEY = X'abb1043c39e7e9cbc0a801dc'
+select * from mstockalias where stockkey= X'abb1043c39e7e9cbc0a801dc';
+different company and ticker 
+
+> RSMI 2:
+>   STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+select * from mstockalias where stockkey= X'a515043c39e7e9c8c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2000-06-23 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEW VISUAL ENTERTAINMENT INC
+>     PRIMARYKEY = X'a516043c39e7e9c8c0a801dc'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = NVEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2001-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = New Visual Corp
+>     PRIMARYKEY = X'131234843b58e786c0a801dc'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = NVEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2005-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = New Visual Corp
+>     PRIMARYKEY = X'd6454bfc432f6d9cc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2005-09-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'78404d1b432f6dd0c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2005-09-19 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'e2414d1e432f6de1c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'fdf22b0548d4599fc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'b73074f448fe89bdc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-10-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'e899750548fe89f2c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'370832ea48644a23c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'f9cf58234869902bc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='RSMI'  order by BB_EFFECTIVE;
+> Row 5:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|RSMI|CP_DELIST_REASON|17|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 86432142
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 179863
+>        BB_COMPANYNAME = Rim Semiconductor Co
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-21 00:00:00.000000'
+>         BB_IDENTIFIER = RSMI    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RSMI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-01-21 00:00:00.000000'
+>            PRIMARYKEY = X'9002081452e0bf6bc0a86f92'
+>               VERSION = NULL
+delist on 2014-01-21
+
+check MAdmin
+
+RSMI  04/28/2015
+Stock:Rim Semiconductor Co  Symbol:RSMI
+Date: 04/28/2015
+
+10 users found
+
+1	edwardsn	elumpkin	frankpoor	gmcrnet	ironecho	joeray60	sgmhussaini	shanna	thekid	vooch3
+
+last known price
+/Marketocracy/bin/dbtool lookup stock RSMI
+stock: RSMI
+  PK       : [A515043C39E7E9C8C0A801DC]
+  companyID: [13288]
+  symbol   : [RSMI]
+  name     : [Rim Semiconductor Co]
+  date     : [2008-10-21 00:00:01]
+  status   : [Active]
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 13288
+2014-01-08 (Wed) [4755]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-09 (Thu) [4756]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-10 (Fri) [4757]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-11 (Sat) [4758]: <WEEKEND>
+2014-01-12 (Sun) [4759]: <WEEKEND>
+2014-01-13 (Mon) [4760]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-14 (Tue) [4761]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-15 (Wed) [4762]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-16 (Thu) [4763]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+2014-01-17 (Fri) [4764]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey =X'a515043c39e7e9c8c0a801dc' and shares > 0 order by closed; 
+> Row 101:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-05-07 16:03:20.000000'
+>        COMMENT = 
+>     COMMISSION = 1.536000
+>   CURRENTORDER = X'10eb087a4bbcce40c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'41342e813f0b643dc0a80134'
+>       MODIFIED = NULL
+>            NET = 32.256000
+>         OPENED = TIMESTAMP '2010-04-07 14:26:08.000000'
+>          PRICE = 0.000105
+>     PRIMARYKEY = X'10e9087a4bbcce40c0a80135'
+>         SECFEE = 0.000000
+>         SHARES = 307200.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = doc_comm@yahoo.com
+
+
+apply the acquis
+delist on 2014-01-21
+2014-01-17 (Fri) [4764]: O:0.0002 H:0.0002 L:0.0001 C:0.0001 V:292137 TSO:463234 A:0.0001 R:1.0000 CA:0.0000
+
+20140117 C:0.0001
+/Marketocracy/bin/cahelper -symbol  RSMI  -effective 20140117 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0001 -acqShare 0 -purchaser RSMI   >& /Users/build/caout/RSMI.20150428-ACQUIS.out
+RSMI.20150428-ACQUIS.out
+stocks:~/caout build$ tail -f RSMI.20150428-ACQUIS.out
+D: (04-28 13:33:52.057) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-28 13:34:41.204) cahelper started on 2015-04-28 13:34:41 -0400
+
+D: (04-28 13:34:41.482) There are [0] open tickets for RSMI on 20140117
+D: (04-28 13:34:42.092) StockFileLoad Version:3.0
+D: (04-28 13:34:42.092) Loading Stock Data
+D: (04-28 13:36:10.941) Building Lookup Index
+D: (04-28 13:36:19.559) Finished Building Index
+D: (04-28 13:36:21.590) Finished Loading Stock Data
+D: (04-28 13:36:21.629) Connection to 192.168.111.172:6666 succeeded
+D: (04-28 13:36:22.021) {
+    "ACQUIRED_STOCK" = RSMI; 
+    "ACQUIRING_STOCK" = "RSMI_FIX"; 
+    AMOUNT = 0.0001; 
+    APPLIED = 1; 
+    DATE = 20140117; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "RSMI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-28 13:36:23.447) SUCCESS
+D: (04-28 13:36:23.447) cahelper finished 2015-04-28 13:36:23 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'a515043c39e7e9c8c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2000-06-23 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NEW VISUAL ENTERTAINMENT INC
+>     PRIMARYKEY = X'a516043c39e7e9c8c0a801dc'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = NVEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2001-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = New Visual Corp
+>     PRIMARYKEY = X'131234843b58e786c0a801dc'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = NVEI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2005-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = New Visual Corp
+>     PRIMARYKEY = X'd6454bfc432f6d9cc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 649099207
+>           DATE = TIMESTAMP '2005-09-19 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'78404d1b432f6dd0c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2005-09-19 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'e2414d1e432f6de1c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-09-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'fdf22b0548d4599fc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-10-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'b73074f448fe89bdc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-10-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'e899750548fe89f2c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-06-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'370832ea48644a23c0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMIE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2008-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'f9cf58234869902bc0a80146'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 766714109
+>           DATE = TIMESTAMP '2014-01-17 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Rim Semiconductor Co
+>     PRIMARYKEY = X'ff0d25e2553fc4b1c0a86f92'
+>       STOCKKEY = X'a515043c39e7e9c8c0a801dc'
+>         SYMBOL = RSMI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <-- inactive 
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = XG
+
+
+
+select * from mcorporateaction where aliaskey = X'ff0d25e2553fc4b1c0a86f92';
+> Row 1:
+>              ALIASKEY = X'ff0d25e2553fc4b1c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RSMI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.000100|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150428:013441
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-17 00:00:00.000000'
+>         BB_IDENTIFIER = RSMI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = RSMI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-17 00:00:00.000000'
+>            PRIMARYKEY = X'ff0725e2553fc4b1c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'ff0725e2553fc4b1c0a86f92';
+> Row 1:
+>   _C001 = 14.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'ff0725e2553fc4b1c0a86f92'));
+14 keys
+save to CA issues RSMI fundkeys.txt
+
+check on 4/29/15
+elimpkin SPAM
+RSMI 
+
+20140117   0.0001
+
+4/29/15
+acquis is there I have invalidated the funds - closing this out 

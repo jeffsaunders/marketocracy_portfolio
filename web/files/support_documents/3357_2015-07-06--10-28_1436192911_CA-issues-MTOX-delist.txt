@@ -1,0 +1,420 @@
+MTOX
+date:  
+ticker:   MTOX
+
+this started as a mis applied ticker change due to a canadian CA that slipped through.  The the original ticker came
+back and I found that this no longer trades, so I am treating this as a delist .
+On 12/7/2010 MTOX had its ticker changed by a Canadian CA  it became TOX/H CN   (TOX.H)
+yahoo:
+
+quantum:  MEDTOX Scientific, Inc.
+Ticker Symbol: MTOX*     CUSIP: 584977201     Exchange: AMEX
+* NOTE: This security is no longer trading as of 7/31/12
+
+Company's Online Profile
+BUSINESS:  MEDTOX Scientific, Inc., headquartered in St. Paul, Minn., is a provider of high quality specialized laboratory and on-site/point-of-collection (POC) devices. The company also supports customers with complete logistics, data and program management services. MEDTOX develops and manufactures diagnostic devices for quick and economical on-site/point-of-collection analysis for drugs of abuse, therapeutic drugs and biological and agricultural toxins and provides employment drug screening and occupational health testing. MEDTOX is a leader in providing esoteric laboratory testing services to hospitals and laboratories nationwide. This includes both central laboratory and bio-analytical testing for pharmaceutical clinical trials.
+
+Notes:  August. 1, 2012 -- Laboratory Corporation of America Holdings (NYSE: LH) today announced the completion of its acquisition of MEDTOX Scientific, Inc. (NASDAQ: MTOX), effective July 31, 2012.
+
+I found an article about this, it's an acquis.  LH acquired MOTOX on 7/31/2012 for $27
+http://www.businesswire.com/news/home/20120604005744/en/LabCorp-Announces-Agreement-Acquire-MEDTOX-Scientific#.VZlLvEXdKRA
+
+oursite:
+Symbol: TOX.H 	Name: MEDTOX SCIENTIFIC 	Price: $11.70
+Volume: 	Sector: Health Care 	Change:
+Short Volume: 0 	Style: Micro Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+ symbol changes for TOX.H 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+16 Feb 06 	TOX 	MTOX 	Change in the ticker (trading) symbol from TOX to MTOX
+07 Dec 10 	TOX 	TOX.H 	Change in the ticker (trading) symbol from TOX to TOX.H
+  	  	 
+left curve 	  listing changes for TOX.H 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Feb 16, 2006 	AMEX 	UA 	NASDAQ 	UQ 	Change in the exchange that MTOX trades on from AMEX to NASDAQ
+  	  	 
+left curve 	  cash dividends paid by TOX.H 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+18 Nov 10 	22 Nov 10 	01 Dec 10 	N/A 	$1.25 	Dividend amount:1.25 per share.
+  	  	 
+left curve 	  stock dividends paid by TOX.H 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Percent 	Symbol 	Description
+24 Oct 01 	26 Oct 01 	09 Nov 01 	10 	TOX.H 	TOX declared a dividend of 10 percent in stock TOX.
+20 May 02 	22 May 02 	05 Jul 02 	10 	TOX.H 	TOX declared a dividend of 10 percent in stock TOX.
+  	  	 
+left curve 	  TOX.H had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+23 Aug 04 	3 for 2 	Split terms:3 for 2
+
+so the ticker change is done
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:MEDTOX SCIENTIFIC  Symbol:TOX.H
+Date: 07/05/2015
+
+66 users found
+
+1	aburns	aratnikas	azamkhan114	barbecue	bkalaf	botchmanov	bsauls1	carderock	cfalcon	cfilstead
+2	cgisor	coke	confusedtrader	cryptonaut	deepvalue	djski123	dmaestas40	duonght_is	dustalien	eo_connor
+3	flboy	gaga	gcoopersf	hedgpethr	houghster	investmentspeculator	jdamian_jr	jeffunderwood	jehovahjireh12	jfitisoff
+4	jfrancois	jgrisham	jnederveld	jpinnero	jr10030	jsenior007	jstepek	justryn19	kama	lingram
+5	luvnpeas	markspector	mdaughtery	meleke	mlamey33	mpisula	msbcollege	nsultan	opey123	rantan912002
+6	redstock	ren	richmace	rscherer	rshuhart	rsrayve	rstack	rwest817	sherinab	smcafee
+7	snichols1026	stevie65	theplaya	troyea	vladzaff	wshamp	 	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'MTOX';  
+> Row 1:
+>   STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+
+select * from mstockalias where stockkey=X'ccbd0e21390a5d29c0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'ccbe0e21390a5d29c0a80116'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = TOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2006-02-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'6854475e43f53ca1c0a80146'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = MTOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2006-02-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'5cac476b43f53cc2c0a80146'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = MTOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+
+the split is gone now that part needs a nightly load 
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='MTOX'  order by BB_EFFECTIVE;
+> Row 11:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|MTOX|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 66972546
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 103557
+>        BB_COMPANYNAME = Medtox Scientific Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-08-01 00:00:00.000000'
+>         BB_IDENTIFIER = MTOX    US Equity
+>             BB_ISSUED = TIMESTAMP '2012-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = MTOX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'82fb4ce250185dd5c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock MTOX
+>>>> dbtool started at 2015-07-05 10:23:34 -0400
+stock: MTOX
+  PK       : [CCBD0E21390A5D29C0A80116]
+  companyID: [448]
+  symbol   : [MTOX]
+  name     : [MEDTOX SCIENTIFIC]
+  date     : [2006-02-16 00:00:00]
+  status   : [Active]
+stock: MTOX
+  PK       : [CCBD0E21390A5D29C0A80116]
+  companyID: [448]
+  symbol   : [MTOX]
+  name     : [MEDTOX SCIENTIFIC]
+  date     : [2006-02-16 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-05 10:23:34 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 448
+2010-12-03 (Fri) [3623]: O:11.3400 H:11.7100 L:11.0000 C:11.6600 V:48577 TSO:8556 A:11.6600 R:1.0000 CA:1.8750
+2010-12-04 (Sat) [3624]: <WEEKEND>
+2010-12-05 (Sun) [3625]: <WEEKEND>
+2010-12-06 (Mon) [3626]: O:11.6100 H:11.7000 L:11.5600 C:11.7000 V:31267 TSO:8556 A:11.7000 R:1.0000 CA:1.8750
+
+the change ticker happened on 2010-12-07 so we have no more recent prices unfortunately.
+let's check Xignite?
+2010-12-07 through 2015-07-03 
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+got results saved them to CA issues MTOX prices xignite.csx
+584977201 is the cusip 
+select * from mstock where primarykey=X'ccbd0e21390a5d29c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'5cac476b43f53cc2c0a80146'
+>                NAME = MEDTOX SCIENTIFIC
+>          PRIMARYKEY = X'ccbd0e21390a5d29c0a80116'
+>              SYMBOL = TOX
+>           COMPANYID = 448
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-714d
+Let's add historical prices
+select * from stockprices where companyid = 448 order by daynumber;
+the last one we currently have:
+> Row 2675:
+>   DAYNUMBER = 3626 12/6/10	3626	Mon
+>   COMPANYID = 448
+>      OPENED = 116100
+>        HIGH = 117000
+>         LOW = 115600
+>      CLOSED = 117000
+>      VOLUME = 31267
+let's do the mass insert  check the results
+last one now
+> Row 3104:
+>   DAYNUMBER = 4242  <--- 8/13/12	4242	Mon   good! 
+>   COMPANYID = 448
+>      OPENED = 270000
+>        HIGH = 270000
+>         LOW = 270000
+>      CLOSED = 270000
+>      VOLUME = 0
+
+
+
+need to invalidate prices from 2012-12-07
+1.  Go to stocks   ssh build@stocks
+
+2. Invalidate prices from 2012-12-07    set the date up in the format yyyy-mm-dd
+/Marketocracy/bin/StockPriceBuilder invalidate 2012-12-07
+	** note nothing is returned, it take a few seconds to run
+
+3. To check to see if the command worked, do a cat on the log  with today's date  2015-06-05
+
+cat /Marketocracy/Logs/StockPriceBuilder.2015-07-05
+D: (11:20:42.722) Invalidate all prices >= 2012-12-07 (4358)
+
+	** note do this on a "fresh" day, otherwise there will be lots of junk to sort through in the output
+		here there is only one line, the one we want 
+we should be good on prices after the nightly load 
+
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'ccbd0e21390a5d29c0a80116' and shares > 0 order by closed; 
+> Row 1070:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2010-06-22 14:34:00.000000'
+>        COMMENT = 
+>     COMMISSION = 207.600000
+>   CURRENTORDER = X'7f3856ac4c1ff71ac0a80133'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'7a776af94aec6c44c0a80133'
+>       MODIFIED = NULL
+>            NET = 48893.757256
+>         OPENED = TIMESTAMP '2010-06-21 19:34:50.000000'
+>          PRICE = 11.775953
+>     PRIMARYKEY = X'7f3656ac4c1ff71ac0a80133'
+>         SECFEE = 0.830000
+>         SHARES = 4152.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'ccbd0e21390a5d29c0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ccbd0e21390a5d29c0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'ccbd0e21390a5d29c0a80116'  and totalshares < 0)));
+
+apply the acquis
+delist 2012-08-01
+there are 66 members who hold this stock
+quantum:  August. 1, 2012 -- Laboratory Corporation of America Holdings (NYSE: LH) today announced the completion of its acquisition of MEDTOX Scientific, Inc. (NASDAQ: MTOX), effective July 31, 2012.
+last ticket:   2010-06-22
+last price:  PRICE = 11.775953
+
+going with 7/31/2012  27.00   20120731
+
+/Marketocracy/bin/cahelper -symbol  MTOX  -effective 20120731 -type ACQUIS -exchange UN -acqType 1 -acqCash 27.00 -acqShare 0 -purchaser LH   >& /Users/build/caout/MTOX.20150705-ACQUIS.out
+MTOX.20150705-ACQUIS.out
+stocks:~/caout build$ tail -f MTOX.20150705-ACQUIS.out
+D: (07-05 11:28:58.385) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-05 11:29:45.771) cahelper started on 2015-07-05 11:29:45 -0400
+
+D: (07-05 11:29:46.113) There are [0] open tickets for MTOX on 20120731
+D: (07-05 11:29:46.669) StockFileLoad Version:4.0
+D: (07-05 11:29:46.669) Loading Stock Data
+D: (07-05 11:31:04.365) Building Lookup Index
+D: (07-05 11:31:13.386) Finished Building Index
+D: (07-05 11:31:20.749) Finished Loading Stock Data
+D: (07-05 11:31:20.922) Connection to 192.168.111.172:6666 succeeded
+D: (07-05 11:31:21.659) Cannot Find DVD_STOCK :TOX onDate:2001-11-09 12:00:00 -0500 for Original STOCK :MEDTOX SCIENTIFIC
+D: (07-05 11:31:21.659) Cannot Find DVD_STOCK :TOX onDate:2002-07-05 12:00:00 -0400 for Original STOCK :MEDTOX SCIENTIFIC
+D: (07-05 11:31:24.889) SavingChanges for position sell out 101 of 338
+D: (07-05 11:31:37.625) {
+    "ACQUIRED_STOCK" = MTOX; 
+    "ACQUIRING_STOCK" = LH; 
+    AMOUNT = 27; 
+    APPLIED = 1; 
+    DATE = 20120731; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = LH; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-05 11:31:45.326) SUCCESS
+D: (07-05 11:31:45.327) cahelper finished 2015-07-05 11:31:45 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'ccbd0e21390a5d29c0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'ccbe0e21390a5d29c0a80116'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = TOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2006-02-16 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'6854475e43f53ca1c0a80146'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = MTOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2006-02-16 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'5cac476b43f53cc2c0a80146'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = MTOX
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 584977201
+>           DATE = TIMESTAMP '2012-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = MEDTOX SCIENTIFIC
+>     PRIMARYKEY = X'8f0057ec55994d6ac0a86f92'
+>       STOCKKEY = X'ccbd0e21390a5d29c0a80116'
+>         SYMBOL = MTOX
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'8f0057ec55994d6ac0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'8f0057ec55994d6ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|MTOX  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|27.000000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150705:112945
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-07-31 00:00:00.000000'
+>         BB_IDENTIFIER = LH     UN Equity
+>             BB_ISSUED = TIMESTAMP '2012-07-31 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = LH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-07-31 00:00:00.000000'
+>            PRIMARYKEY = X'8ef857ec55994d69c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'8ef857ec55994d69c0a86f92';
+> Row 1:
+>   _C001 = 106.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'8ef857ec55994d69c0a86f92'));
+there are 106 fundkeys, 
+
+We have the ticker change for this which was bogus and which happened before this acquis.  let's get all fundkeys for
+anyone who ever held MTOX and invalidate from the date of the ticker change
+select fundkey from mposition where stockkey=X'ccbd0e21390a5d29c0a80116';
+there are 338   reprice from 12/7/2010
+
+save these to CA issues MTOX fundkeys.txt
+
+For Beta case  create one   3357
+MTOX no longer trades but is  still active on our site - need to delist 
+
+
+let's check LH the company that acquired MTOX
+select distinct stockkey from mstockalias where symbol='LH';
+> Row 1:
+>   STOCKKEY = X'19ef0e21390b17bbc0a80116'
+select * from mstockalias where STOCKKEY = X'19ef0e21390b17bbc0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 50540R409
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = LABORATORY CORP AMER HLDG(NEW)
+>     PRIMARYKEY = X'19f00e21390b17bbc0a80116'
+>       STOCKKEY = X'19ef0e21390b17bbc0a80116'
+>         SYMBOL = LH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35102015
+>       STYLEKEY = MB
+
+check on 7/6/15   invalidate funds
+check MAdmin

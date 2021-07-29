@@ -1,0 +1,431 @@
+date:   7/6/15
+ticker:   NGEN
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:NANOGEN INC  Symbol:NGEN
+Date: 07/06/2015
+
+231 users found
+
+1	ace_chiu	acumbens	afeil	agglutinator	aharrell	ajmorris	alexcasta	alexngyen	andglori	annemarie
+2	apreuss	aprossner	aratnikas	athibodeau	awhawk	babdul	barbaricus	bartgot	bbonkin	bds71
+3	bg88888	bio_man	bioscale	bjamesfund	bjasmin	bobzilla	bronxbadboy	byip	carlo	ccheuk
+4	ccunningham1	cdemaria	cedwards	chasten	chitturravics	coach_harv	connaman	craigmackinder	crfinvestor	cwhittington
+5	czerw1mj	danny	dblade	dcmurl	dcolton	ddoetsch	delliott	dinoand	dkerr	dlang1
+6	dlundgren	donquixote	dplo86	dreamsunlimited	drumbandit	dshamis	dshirley	dudlie	dxu05	edammer
+7	eggless	egoralski	erschmal	ertai	eschna	eschultz	ffasbender	fholle	free_rtq	frost_investments
+8	gatman08	gator101	gcombs	genomist	gerard	gillojello	giric	goldeagle	greenamo	henkel
+9	hipernova	hishcream	hugal75	hurleyse	iamrich	ibid	ihssan	ijm	indo	inikitin
+10	isakesse	itshuang	iwin	jacver	janel	jbona	jdrake	jeastman	jerryg	jhudock
+11	jnadalet	john97	jonho	joshuamschwartz	jshepherd	jthiele	julioqwerty	jzawatson	jzhang2	keith
+12	kevante	kkober	kobayashi	koellner	kphong	kurtvj	kyletothill	kyrkarena	legume	lhayden
+13	linming	lmace	lwroblewski	m_houck	marksy	markvanderark	matt_higgins	mbarnes73	mchiment	mdacorta
+14	melj	mfarooq	mhorowitz	missmac	mjp1234	mkotliar	moliver1	montecristo	moptions	moreno770
+15	mpapadopoulos	mpatterson3	msport22	msteinberg	msteinberg1	mtaguchi	mtalisman	mverline	mwilkins	myorgensen
+16	mystocks1	nano.techno	natekane2001	neekw	newmoney	newsilver	newyorker01	nexus	nilana	niners530
+17	ohnoitsjamie	orioles1001	paylward	pigpin	pmulve	polkovnik	psi617	q10	rafy	rallen0759
+18	rayannjm	rbair	rcparker	reddemon	redeyed_jeti	revblc	rhoefle	richyang	rxfund	rxfund2
+19	rxgasman	samang	samaritaine	samyjg2000	schalejr	scooter202	seal17	semperfi	shanna	shawnshelto
+20	shrewst	silhouette	simonemarlia	sjc123	skashin2	sleddogg	sodakjack	solberj	soundview	spanky
+21	spaschang	ssk123	sstewart1	stamper174	stellar	stenz	stoneman01	svetlin	syoung8	talon007
+22	tcraig	teamfunds	techplusmanager	tenniscards1	tglover	the_cursed_investor	tiernster	timot78	tjohnson4	tnealon
+23	torcida	trdr	tschwiebert	twilcox85	vooch3	wavetiming	weightlifter	westsideshay	wink	xoclub
+24	yummaaa	 	 	 
+
+database
+select distinct stockkey from mstockalias where symbol= 'NGEN';  
+> Row 1:
+>   STOCKKEY = X'f15e0e21390aafffc0a80116'
+
+select * from mstockalias where stockkey=X'f15e0e21390aafffc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'f15f0e21390aafffc0a80116'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2008-05-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'ff0c1b55483cbd44c0a80146'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2009-03-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'bb021e0b49c83f44c0a80146'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NGEN'  order by BB_EFFECTIVE;
+> Row 17:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|NGEN|CP_DELIST_REASON|17|CP_NOTES|12(j) Registration Revoked by SEC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 90925326
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 221932
+>        BB_COMPANYNAME = Nanogen Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-07 00:00:00.000000'
+>         BB_IDENTIFIER = NGEN    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-07 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NGEN
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-05-07 00:00:00.000000'
+>            PRIMARYKEY = X'690d4a2e536ab992c0a86f92'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock NGEN
+>>>> dbtool started at 2015-07-06 23:24:27 -0400
+stock: NGEN
+  PK       : [F15E0E21390AAFFFC0A80116]
+  companyID: [2792]
+  symbol   : [NGEN]
+  name     : [NANOGEN INC]
+  date     : [2000-04-29 15:00:00]
+  status   : [Active]
+stock: NGEN
+  PK       : [F15E0E21390AAFFFC0A80116]
+  companyID: [2792]
+  symbol   : [NGEN]
+  name     : [NANOGEN INC]
+  date     : [2008-05-27 00:00:00]
+  status   : [Active]
+stock: NGEN
+  PK       : [F15E0E21390AAFFFC0A80116]
+  companyID: [2792]
+  symbol   : [NGEN]
+  name     : [NANOGEN INC]
+  date     : [2009-03-23 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-06 23:24:28 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 2792
+2014-04-27 (Sun) [4864]: <WEEKEND>
+2014-04-28 (Mon) [4865]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:327 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-04-29 (Tue) [4866]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:327 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-04-30 (Wed) [4867]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:327 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-05-01 (Thu) [4868]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:11665 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-05-02 (Fri) [4869]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:11665 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-05-03 (Sat) [4870]: <WEEKEND>
+2014-05-04 (Sun) [4871]: <WEEKEND>
+2014-05-05 (Mon) [4872]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:700 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+2014-05-06 (Tue) [4873]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:326350 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'f15e0e21390aafffc0a80116' and shares > 0 order by closed; 
+> Row 2790:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-03-20 10:06:00.000000'
+>        COMMENT = 
+>     COMMISSION = 0.664880
+>   CURRENTORDER = X'87453c2653208881c0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'bae731df39dbf9a7c0a80118'
+>       MODIFIED = NULL
+>            NET = 12.632720
+>         OPENED = TIMESTAMP '2014-03-12 12:17:05.000000'
+>          PRICE = 0.001662
+>     PRIMARYKEY = X'87433c2653208881c0a86f99'
+>         SECFEE = 0.010000
+>         SHARES = 7600.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'f15e0e21390aafffc0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f15e0e21390aafffc0a80116'  and totalshares < 0);
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'f15e0e21390aafffc0a80116'  and totalshares < 0)));
+
+apply the acquis
+delist 2014-05-07
+there are 231 members who hold this stock
+quantum:  nothing
+last ticket: 2014-03-20 PRICE = 0.001662
+last price: 2014-05-06 (Tue) [4873]: O:0.0100 H:0.0100 L:0.0100 C:0.0100 V:326350 TSO:82296 A:0.0100 R:1.0000 CA:0.0000
+
+gping with 20140506 0.0100
+
+
+/Marketocracy/bin/cahelper -symbol  NGEN  -effective 20140506 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0100 -acqShare 0 -purchaser NGEN   >& /Users/build/caout/NGEN.20150706-DELIST.out
+NGEN.20150706-DELIST.out
+stocks:~/caout build$ tail -f NGEN.20150706-DELIST.out
+D: (07-07 01:51:48.259) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-07 01:53:02.015) cahelper started on 2015-07-07 01:53:02 -0400
+
+D: (07-07 01:53:02.577) There are [0] open tickets for NGEN on 20140506
+D: (07-07 01:53:03.963) StockFileLoad Version:4.0
+D: (07-07 01:53:03.963) Loading Stock Data
+D: (07-07 01:55:04.554) Building Lookup Index
+D: (07-07 01:55:18.932) Finished Building Index
+D: (07-07 01:55:30.508) Finished Loading Stock Data
+D: (07-07 01:55:30.565) Connection to 192.168.111.172:6666 succeeded
+D: (07-07 01:55:35.528) SavingChanges for position sell out 101 of 896
+D: (07-07 01:56:07.492) SavingChanges for position sell out 201 of 896
+D: (07-07 01:56:25.035) SavingChanges for position sell out 301 of 896
+D: (07-07 01:56:40.110) {
+    "ACQUIRED_STOCK" = NGEN; 
+    "ACQUIRING_STOCK" = "NGEN_FIX"; 
+    AMOUNT = 0.01; 
+    APPLIED = 1; 
+    DATE = 20140506; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NGEN_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-07 01:56:46.212) SUCCESS
+D: (07-07 01:56:46.212) cahelper finished 2015-07-07 01:56:46 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'f15e0e21390aafffc0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'f15f0e21390aafffc0a80116'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2008-05-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'ff0c1b55483cbd44c0a80146'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2009-03-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'bb021e0b49c83f44c0a80146'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 630075109
+>           DATE = TIMESTAMP '2014-05-06 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = NANOGEN INC
+>     PRIMARYKEY = X'32f92034559b693ec0a86f92'
+>       STOCKKEY = X'f15e0e21390aafffc0a80116'
+>         SYMBOL = NGEN
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 35203010
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey =X'32f92034559b693ec0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'32f92034559b693ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NGEN  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.010000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150707:015302
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-06 00:00:00.000000'
+>         BB_IDENTIFIER = NGEN_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-05-06 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NGEN_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-05-06 00:00:00.000000'
+>            PRIMARYKEY = X'32f32034559b693ec0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'32f32034559b693ec0a86f92';
+> Row 1:
+>   _C001 = 360.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'32f32034559b693ec0a86f92'));
+there are 360 fundkeys, save to CA issues NGEN fundkeys.txt
+
+For Beta case
+NGEN no longer trades but is still active on our site - need to delist 
+
+check on 7/8/15   invalidate funds
+check MAdmin
+
+7/7/15
+NGEN has been acquired 	right curve
+  	  	
+NANOGEN INC acquired by a private company on 2014-05-06 00:00:00. 
+
+check MAdmin
+Stock:NANOGEN INC  Symbol:NGEN
+Date: 07/07/2015
+
+2 users found
+
+1	teamfunds	techplusmanager	 	 	 	 	 	 	 	 
+
+the usual culprits
+teamfunds
+
+JoeToms2 has short position
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 09, 2009 		818 	818 	Buy
+May 08, 2009 	818 	-818 		Sell
+May 06, 2014 		-818 	-818 	Corporate Action  20140506
+Total: -818
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2009 	818 	$10.84 	$227.61 	$0.28
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 8, 2009 	818 	$3.92 	$0.00 	$74.49 	$0.09
+  	  	 
+left curve 	 corporate actions 	right curve
+
+
+techplusmanager 
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 09, 2009 		3273 	3273 	Buy
+May 08, 2009 	3273 	-3274 	-1 	Sell   <--- should be 3273
+Total: -1
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2009 	3,273 	$43.37 	$910.71 	$0.28
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 8, 2009 	3,274 	$15.68 	$0.01 	$297.98 	$0.09
+  	  	 
+left curve 	 trade timing 	right curve
+
+Hexkey: 995B6FEC518BC16BC0A80146
+get the hex key
+
+select * from mticket where primarykey= X'995B6FEC518BC16BC0A80146';
+select * from morder where ticketkey =X'995B6FEC518BC16BC0A80146';
+select * from mtrade where ticketkey =X'995B6FEC518BC16BC0A80146';
+select * from mticket where primarykey= X'995B6FEC518BC16BC0A80146';
+
+
+update the shares field
+
+set commit false;
+update mticket set shares=3273 where primarykey= X'995B6FEC518BC16BC0A80146';
+update mtrade set shares=3273 where ticketkey =X'995B6FEC518BC16BC0A80146';
+update morder set shares=3273 where ticketkey =X'995B6FEC518BC16BC0A80146';
+update mticketallocation set shares=3273 where ticketkey =X'995B6FEC518BC16BC0A80146';
+commit;
+set commit true;
+
+tickle the ticket
+/Marketocracy/bin/dbtool ticklebyticket -ticketKey 995B6FEC518BC16BC0A80146
+
+or
+/Marketocracy/bin/dbtool ticklebyticket -ticketList ticketstotickle
+
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jan 09, 2009 		3273 	3273 	Buy
+May 08, 2009 	3273 	-3275 	-2 	Sell
+Total: -2
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jan 9, 2009 	3,273 	$43.37 	$910.71 	$0.28
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+May 8, 2009 	3,275 	$15.69 	$0.01 	$298.07 	$0.09
+  	  	 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py techplusmanager huyehara_hmf1 20090109 NGEN 1 0.28
+
+invalidate the fund
+select positionkey from mtrade where ticketkey=X'995B6FEC518BC16BC0A80146';
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey=X'995B6FEC518BC16BC0A80146');
+> Row 1:
+>   FUNDKEY = X'f4bc6bbe518bbe21c0a80146'
+
+/Marketocracy/bin/fptool invalidateFund   f4bc6bbe518bbe21c0a80146
+
+logout and back in 
+/Marketocracy/Scripts/build/bin/backdatedtrade.py techplusmanager huyehara_hmf1 20090109 NGEN 1 0.28
+ok should be done
+invalidate  reprice closing it out.

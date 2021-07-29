@@ -1,0 +1,145 @@
+date: 5/29/15
+ticker:  DLAKY   need to list it
+Ticket Number:	3142
+Portfolio Username:	steve1968nj
+Problem Type:
+Trading Issue
+Subject:
+DLAKY
+Description:
+I entered an order for Lufthansa on the 27th, but there has been no buying action. Is this security, which trades in Europe, out of scope or is its trading volume so low it has delayed this purchase? Recent volume has been ~ 25,000 to 30,000 shares per day.
+
+
+yahoo
+Deutsche Lufthansa Aktiengesellschaft (DLAKY) -Other OTC
+Watchlist
+14.18 Down 0.31(2.14%) 1:12PM EDT
+Add to Portfolio
+Prev Close:	14.49
+Open:	14.18
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	19.20
+Beta:	N/A
+Next Earnings Date:	N/A
+Day's Range:	14.09 - 14.19
+52wk Range:	13.11 - 27.12
+Volume:	23,681
+Avg Vol (3m):	31,542
+Market Cap:	N/A
+P/E (ttm):	7.96
+EPS (ttm):	1.77
+Div & Yield:	N/A (N/A)
+
+quantum  nothing
+
+xignite  - it is there, getting a feed  251561304  is good
+
+select distinct stockkey from mstockalias where symbol='DLAKY';
+nothing
+select * from mcorporateaction where aliaskey is null and BB_SECID='DLAKY';
+no list 
+
+let's list it  as of today
+DLAKY|U|251561304|Deutsche Lufthansa Aktiengesellschaft|20150529
+
+put this in the symadd.txt
+then run this
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+Debugger() was called!
+Debugger() was called!
+/Marketocracy/bin/cahelper -symbol DLAKY -effective 20150529 -type EQY_LIST -exchange UU >& /Users/build/caout/DLAKY.20150529-EQY_LIST.out
+DLAKY.20150529-EQY_LIST.out
+stocks:~/caout build$ tail -f DLAKY.20150529-EQY_LIST.out
+D: (05-29 14:06:08.037) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (05-29 14:06:32.509) cahelper started on 2015-05-29 14:06:32 -0400
+
+D: (05-29 14:06:35.912) {
+    APPLIED = 1; 
+    DATE = 20150529; 
+    "NEW_EXCHANGE" = OTCBB; 
+    "NEW_LIST" = DLAKY; 
+    NOTES = "N.A."; 
+    SYMBOL = DLAKY; 
+    TYPE = "EQY_LIST"; 
+}
+D: (05-29 14:06:36.024) SUCCESS
+D: (05-29 14:06:36.024) cahelper finished 2015-05-29 14:06:36 -0400
+
+select distinct stockkey from mstockalias where symbol='DLAKY';
+> Row 1:
+>   STOCKKEY = X'1a1554145568aaa8c0a86f92'
+select * from mstockalias where STOCKKEY = X'1a1554145568aaa8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = 0
+>     PRIMARYKEY = X'1a1654145568aaa8c0a86f92'
+>       STOCKKEY = X'1a1554145568aaa8c0a86f92'
+>         SYMBOL = DLAKY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+update mstockalias set cusip='251561304' where PRIMARYKEY = X'1a1654145568aaa8c0a86f92';
+update mstockalias set name='Deutsche Lufthansa Aktiengesellschaft' where PRIMARYKEY = X'1a1654145568aaa8c0a86f92';
+
+select distinct gicskey from mstockalias where symbol='AAL';
+not set
+how abotu detla
+select distinct gicskey from mstockalias where symbol='DAL';
+> Row 1:
+>   GICSKEY = 20302010
+update mstockalias set GICSKEY='20302010'  where SYMBOL = 'DLAKY';
+update mstockalias set STYLEKEY='LG'  where SYMBOL = 'DLAKY';
+select * from mstockalias where STOCKKEY = X'1a1554145568aaa8c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 251561304
+>           DATE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Deutsche Lufthansa Aktiengesellschaft
+>     PRIMARYKEY = X'1a1654145568aaa8c0a86f92'
+>       STOCKKEY = X'1a1554145568aaa8c0a86f92'
+>         SYMBOL = DLAKY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20302010
+>       STYLEKEY = LG
+select * from mcorporateaction where aliaskey=X'1a1654145568aaa8c0a86f92';
+> Row 1:
+>              ALIASKEY = X'1a1654145568aaa8c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UU|CP_TKR|DLAKY|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150529:020632
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-05-29 00:00:00.000000'
+>         BB_IDENTIFIER = DLAKY     UU Equity
+>             BB_ISSUED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = DLAKY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-05-29 00:00:00.000000'
+>            PRIMARYKEY = X'1a0b54145568aaa8c0a86f92'
+>               VERSION = NULL
+
+
+done check on 5/30/15 after the nightly load - do a sample buy
+nake sure it prices
+
+6/1/15
+it is there, entered a test buy on legacy
+check on new site and do a buy also
+
+6/2/15
+both buys went through from the old and new sites - closing this out 

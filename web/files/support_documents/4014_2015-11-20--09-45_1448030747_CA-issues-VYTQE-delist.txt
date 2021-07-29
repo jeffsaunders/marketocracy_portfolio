@@ -1,0 +1,320 @@
+VYTQE
+date:   11/19/15
+ticker:   VYTQE
+
+yahoo: nothing
+
+quantum: nothing
+
+oursite:
+Symbol: VYTQE	Name: VIATEL INC	Price: $0.26
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+	attention please:	
+ 	
+This stock has a very low trading volume. Any trades you make with this stock will take a long time to complete.
+
+research  stock info  VYTQE   
+ [NEW QUOTE]       
+Corporate Actions for VIATEL INC	  November 19, 2015
+username: password:  forgot? | sign up
+ 	
+LOG IN PLEASE
+ 	 	 
+left curve	  symbol changes for VYTQE	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+07 May 01	VYTL	VYTLQ	Change in the ticker (trading) symbol from VYTL to VYTLQ
+30 May 01	VYTLQ	VYTQE	Change in the ticker (trading) symbol from VYTLQ to VYTQE
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+Stock:VIATEL INC  Symbol:VYTQE
+Date: 11/19/2015
+
+39 users found
+
+1	andylee	as	bkalaf	bmacdonald	bshiell	budfox	csarra	danren95	dlivingston1	dwaserstein
+2	haag	handress	jcariglio	jgarcia	jjackson1	klloyd5	kmrwilson	kurtislonepine	leorlewis	mandersen
+3	mcbrideta	mchow	mkilmain	orhan	pbutcher	pcrawford	pstathakis	richpicks	rrosenfeld	sbrody
+4	shayes	skissel	sonnybatra11	sstec	thanna	trand	tweety777	uyepes	vshafrazian
+
+database
+select distinct stockkey from mstockalias where symbol= 'VYTQE';  
+> Row 1:
+>   STOCKKEY = X'037e0e21390ad87dc0a80116'
+select * from mstockalias where stockkey=X'037e0e21390ad87dc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'037f0e21390ad87dc0a80116'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2001-05-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'22956dc63af7adf7c0a80117'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTLQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2001-05-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'59b35ae23b15a7dfc0a80117'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTQE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'59b35ae23b15a7dfc0a80117';
+> Row 1:
+>              ALIASKEY = X'59b35ae23b15a7dfc0a80117'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|VYTLQ US|CP_NEW_TKR|VYTQE US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 6675240
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 171384
+>        BB_COMPANYNAME = Viatel Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-05-30 00:00:00.000000'
+>         BB_IDENTIFIER = VYTQE   UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-05-29 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = VYTQE
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'b5ca31be3b15a611c0a801dc'
+>               VERSION = NULL
+
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='VYTQE'  order by BB_EFFECTIVE;
+nothing 
+
+last known price
+/Marketocracy/bin/dbtool lookup stock VYTQE
+>>>> dbtool started at 2015-11-19 15:14:37 -0500
+stock: VYTQE
+  PK       : [037E0E21390AD87DC0A80116]
+  companyID: [3952]
+  symbol   : [VYTQE]
+  name     : [VIATEL INC]
+  date     : [2001-05-30 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-11-19 15:14:37 -0500
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 3952
+2001-05-23 (Wed) [142]: O:0.2600 H:0.2600 L:0.2600 C:0.2600 V:0 TSO:0 A:0.2600 R:1.0000 CA:0.0000
+2001-05-24 (Thu) [143]: O:0.2600 H:0.2600 L:0.2600 C:0.2600 V:0 TSO:0 A:0.2600 R:1.0000 CA:0.0000
+2001-05-25 (Fri) [144]: O:0.2600 H:0.2600 L:0.2600 C:0.2600 V:0 TSO:0 A:0.2600 R:1.0000 CA:0.0000
+2001-05-26 (Sat) [145]: <WEEKEND>
+2001-05-27 (Sun) [146]: <WEEKEND>
+2001-05-28 (Mon) [147]: <HOLIDAY>
+2001-05-29 (Tue) [148]: O:0.2600 H:0.2600 L:0.2600 C:0.2600 V:0 TSO:0 A:0.2600 R:1.0000 CA:0.0000
+
+
+
+
+alternate, can look up prices on xignite:
+https://www.xignite.com/product/XigniteGlobalHistorical/api/GetGlobalHistoricalQuotesRange/
+
+login credentials
+jeff.saunders@marketocracy.com	KfabyZcbE3
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'037e0e21390ad87dc0a80116' and shares > 0 order by closed; 
+> Row 122:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2001-04-19 09:59:26.000000'
+>        COMMENT = Bad News
+>     COMMISSION = 275.000000
+>   CURRENTORDER = X'3cad17db3ade0985c0a80119'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'481c6ae139e349b8c0a80118'
+>       MODIFIED = NULL
+>            NET = 1587.937900
+>         OPENED = TIMESTAMP '2001-04-18 17:39:17.000000'
+>          PRICE = 0.288716
+>     PRIMARYKEY = X'3c1617db3ade0985c0a80119'
+>         SECFEE = 0.062100
+>         SHARES = 5500.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'037e0e21390ad87dc0a80116'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'037e0e21390ad87dc0a80116'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'037e0e21390ad87dc0a80116'  and totalshares < 0)));
+
+apply the acquis
+DELIST: 
+there are 39 members who hold this stock
+quantum:  nothing 
+last ticket: 2001-04-19   PRICE = 0.288716
+last price: 2001-05-01 (Tue) [120]: O:0.2100 H:0.2800 L:0.2000 C:0.2600 V:1224500 TSO:0 A:0.2600 R:1.0000 CA:0.0000  <----
+
+going with 20010530 0.26
+
+/Marketocracy/bin/cahelper -symbol  VYTQE  -effective 20010530 -type ACQUIS -exchange UQ -acqType 1 -acqCash 0.26 -acqShare 0 -purchaser VYTQE   >& /Users/build/caout/VYTQE.20151119-DELIST.out 
+D: (11-19 15:40:05.926) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (11-19 15:40:29.855) cahelper started on 2015-11-19 15:40:29 -0500
+
+D: (11-19 15:40:30.053) There are [0] open tickets for VYTQE on 20010530
+D: (11-19 15:40:30.654) StockFileLoad Version:4.0
+D: (11-19 15:40:30.654) Loading Stock Data
+D: (11-19 15:41:07.481) Building Lookup Index
+D: (11-19 15:41:13.058) Finished Building Index
+D: (11-19 15:41:16.975) Finished Loading Stock Data
+D: (11-19 15:41:17.094) Connection to 192.168.111.172:6666 succeeded
+D: (11-19 15:41:18.260) {
+    "ACQUIRED_STOCK" = VYTQE; 
+    "ACQUIRING_STOCK" = "VYTQE_FIX"; 
+    AMOUNT = 0.26; 
+    APPLIED = 1; 
+    DATE = 20010530; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "VYTQE_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (11-19 15:41:22.659) SUCCESS
+D: (11-19 15:41:22.660) cahelper finished 2015-11-19 15:41:22 -0500
+
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'037e0e21390ad87dc0a80116'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'037f0e21390ad87dc0a80116'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2001-05-07 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'22956dc63af7adf7c0a80117'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTLQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2001-05-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'59b35ae23b15a7dfc0a80117'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTQE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 925529208
+>           DATE = TIMESTAMP '2001-05-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = VIATEL INC
+>     PRIMARYKEY = X'd5974d5e564e33bec0a86fab'
+>       STOCKKEY = X'037e0e21390ad87dc0a80116'
+>         SYMBOL = VYTQE
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey =X'd5974d5e564e33bec0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'd5974d5e564e33bec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|VYTQE  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.260000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151119:034029
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-05-30 00:00:00.000000'
+>         BB_IDENTIFIER = VYTQE_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2001-05-30 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = VYTQE_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-05-30 00:00:00.000000'
+>            PRIMARYKEY = X'd5914d5e564e33bdc0a86fab'
+>               VERSION = NULL
+
+
+
+select count(*) from mticket where sourcekey = X'd5914d5e564e33bdc0a86fab';
+> Row 1:
+>   _C001 = 55.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'd5914d5e564e33bdc0a86fab'));
+there are 55 fundkeys, save to CA issues VYTQE fundkeys.txt
+
+For Beta case
+VYTQE no longer trades but is still active on our site - need to delist 
+
+check on 11/20/15   invalidate funds
+check MAdmin  clear 
+
+ VYTQE has been acquired	right curve
+ 	 	
+VIATEL INC acquired by a private company on 2001-05-30 00:00:00.
+ 	 	 
+invalidate reprice and close 
+
+
+

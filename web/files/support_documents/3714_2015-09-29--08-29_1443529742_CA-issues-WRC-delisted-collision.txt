@@ -1,0 +1,699 @@
+WRC
+date:  
+ticker:  
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=EYES
+
+check MAdmin
+XXXX  MM/DD/YYYY
+
+database
+select distinct stockkey from mstockalias where symbol= 'WRC';  
+> Row 1:
+>   STOCKKEY = X'2baa632439f66778c0a80119'
+select 
+> Row 2:
+>   STOCKKEY = X'09df0e21390ae9efc0a80116'
+> Row 3:
+>   STOCKKEY = X'1f2305593f0233afc0a80146'
+
+there are three
+************************************************************************************************
+> WRC 1:
+>   STOCKKEY = X'2baa632439f66778c0a80119'
+companyID 11540  
+no one holds or has traded this stockkey - we can delete it
+************************************************************************************************
+get the companyID
+select * from mstock where primarykey=X'2baa632439f66778c0a80119';
+> Row 1:
+>         IDENTITYKEY = X'2bab632439f66778c0a80119'
+>                NAME = WESTPORT RESOURCES CP
+>          PRIMARYKEY = X'2baa632439f66778c0a80119'
+>              SYMBOL = WRC
+>           COMPANYID = 11540
+>   WINDOWIDENTITYKEY = NULL
+
+select * from mstockalias where stockkey=X'2baa632439f66778c0a80119'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2000-10-24 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = WESTPORT RESOURCES
+>     PRIMARYKEY = X'2bab632439f66778c0a80119'
+>       STOCKKEY = X'2baa632439f66778c0a80119'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'2bab632439f66778c0a80119';
+> Row 1:
+>              ALIASKEY = X'2bab632439f66778c0a80119'
+>   BB_ACTIONDICTIONARY = CP_EXCH|OTCBB|CP_NOTES||CP_REASON||CP_TKR|WRC
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = NULL
+>     BB_ACTIONMNEMONIC = EQY_LIST
+>          BB_COMPANYID = NULL
+>        BB_COMPANYNAME = WESTPORT RESOURCES CP
+>           BB_CURRENCY = NULL
+>          BB_EFFECTIVE = TIMESTAMP '2000-10-24 12:00:00.000000'
+>         BB_IDENTIFIER = NULL
+>             BB_ISSUED = NULL
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = NULL
+>              BB_SECID = WRC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = NULL
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'2da6632339f66739c0a80119'
+>               VERSION = 1
+select count(*) from mticket where stockkey=X'2bab632439f66778c0a80119';
+> Row 1:
+>   _C001 = 0.000000
+
+there is no one who holds this or ever traded it - we can delete this 
+
+
+> WRC 1:   let's delete this 
+>   STOCKKEY = X'2baa632439f66778c0a80119'
+set commit false;
+
+delete from mstock where primarykey=  X'2baa632439f66778c0a80119'; 
+
+delete from mwindowstock where stockkey=X'2baa632439f66778c0a80119';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mstockalias where stockkey=X'2baa632439f66778c0a80119';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'2baa632439f66778c0a80119');   
+
+delete from mposition where stockkey=X'2baa632439f66778c0a80119'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mticket where stockkey=X'2baa632439f66778c0a80119';    
+
+delete from GFSPOSITION where stockkey=X'2baa632439f66778c0a80119';  
+
+commit;
+
+set commit true;
+
+got error
+> Exception 361. Integrity constraint violation (FOREIGN KEY, MFUNDINDEXPOSITION.FK_MFUNDINDEXPOSITION_MSTOCK(STOCKKEY)).
+> Exception 363. Transaction rollback.
+show table MFUNDINDEXPOSITION;
+> --
+> -- TABLE: MARKETOCRACY.EOUSER.MFUNDINDEXPOSITION
+> --
+> CREATE TABLE MFUNDINDEXPOSITION (
+>       BUYDOLLARS       DOUBLE PRECISION           ,
+>       BUYSHARES        INT                       ,
+>       FUNDSBUYINGDATA  VARCHAR (32000)           ,
+>       FUNDSHOLDINGDATA VARCHAR (32000)           ,
+>       FUNDSSELLINGDATA VARCHAR (32000)           ,
+>       PRIMARYKEY       BIT (96)                  ,
+>       RETURNFORPERIOD  DOUBLE PRECISION           ,
+>       RETURNFORQUARTER DOUBLE PRECISION           ,
+>       SELLDOLLARS      DOUBLE PRECISION           ,
+>       SELLSHARES       INT                       ,
+>       STOCKKEY         BIT (96)                  ,
+>       SUMMARYKEY       BIT (96)                  ,
+>       TOTALSHARES      INT                       ,
+>       TOTALVALUE       DOUBLE PRECISION           ,
+>       PRIMARY KEY (PRIMARYKEY) ,
+>       CONSTRAINT FK_MFUNDINDEXPOSITION_MSTOCK FOREIGN KEY (STOCKKEY) REFERENCES MSTOCK (PRIMARYKEY) ,
+>       FOREIGN KEY (SUMMARYKEY) REFERENCES MFUNDINDEXSUMMARY (PRIMARYKEY)
+> );
+
+
+this is a new one for me - stockkey reference 
+
+set commit false;
+
+delete from mstock where primarykey=  X'2baa632439f66778c0a80119'; 
+
+delete from mwindowstock where stockkey=X'2baa632439f66778c0a80119';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mstockalias where stockkey=X'2baa632439f66778c0a80119';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'2baa632439f66778c0a80119');   
+
+delete from mposition where stockkey=X'2baa632439f66778c0a80119'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'2baa632439f66778c0a80119');
+
+delete from mticket where stockkey=X'2baa632439f66778c0a80119';    
+
+delete from GFSPOSITION where stockkey=X'2baa632439f66778c0a80119';  
+
+delete from MFUNDINDEXPOSITION where stockkey=X'2baa632439f66778c0a80119';  
+commit;
+
+set commit true;
+
+
+ok check:  
+select distinct stockkey from mstockalias where symbol='WRC';
+> Row 1:
+>   STOCKKEY = X'09df0e21390ae9efc0a80116'
+> Row 2:
+>   STOCKKEY = X'1f2305593f0233afc0a80146'
+
+now only have two of the stockkeys 
+
+
+
+
+
+************************************************************************************************
+************************************************************************************************
+> Row 2:
+>   STOCKKEY = X'09df0e21390ae9efc0a80116'
+COMPANYID = 4360
+************************************************************************************************
+select * from mstockalias where stockkey=X'09df0e21390ae9efc0a80116'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 077410108
+>           DATE = TIMESTAMP '2000-04-29 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BELCO OIL & GAS
+>     PRIMARYKEY = X'09e00e21390ae9efc0a80116'
+>       STOCKKEY = X'09df0e21390ae9efc0a80116'
+>         SYMBOL = BOG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 077410108
+>           DATE = TIMESTAMP '2001-08-21 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BELCO OIL & GAS
+>     PRIMARYKEY = X'1a790bd53b846535c0a801dc'
+>       STOCKKEY = X'09df0e21390ae9efc0a80116'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'1a790bd53b846535c0a801dc';
+> Row 1:
+>              ALIASKEY = X'1a790bd53b846535c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|BOG US|CP_NEW_TKR|WRC US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7043540
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 171525
+>        BB_COMPANYNAME = Westport Resources Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-21 21:00:00.000000'
+>         BB_IDENTIFIER = WRC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-08-21 21:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = WRC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'2e880af43b846435c0a801dc'
+>               VERSION = NULL
+	legit ticker change to WRC
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 077410108
+>           DATE = TIMESTAMP '2001-08-21 21:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Westport Resources Corp
+>     PRIMARYKEY = X'656b11383b8466b3c0a801dc'
+>       STOCKKEY = X'09df0e21390ae9efc0a80116'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'656b11383b8466b3c0a801dc';
+> Row 1:
+>              ALIASKEY = X'656b11383b8466b3c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|BELCO OIL & GAS CORP|CP_NOTES|N.A.|CP_NEW_NAME|Westport Resources Corp
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 7040255
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 171525
+>        BB_COMPANYNAME = Westport Resources Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-21 21:00:00.000000'
+>         BB_IDENTIFIER = WRC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-08-20 21:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = WRC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'2e8a0af43b846436c0a801dc'
+>               VERSION = NULL
+	legit name change 
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 961418100
+>           DATE = TIMESTAMP '2001-08-21 21:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Westport Resources Corp
+>     PRIMARYKEY = X'84db14fb3b846724c0a801dc'
+>       STOCKKEY = X'09df0e21390ae9efc0a80116'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 961418100
+>           DATE = TIMESTAMP '2004-06-27 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Westport Resources Corp
+>     PRIMARYKEY = X'c81a151140e0cf26c0a80146'   <--- identitykey should go here 
+>       STOCKKEY = X'09df0e21390ae9efc0a80116'
+>         SYMBOL = WRC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'c81a151140e0cf26c0a80146';
+> Row 1:
+>              ALIASKEY = X'c81a151140e0cf26c0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WRC     US|CP_NAME|Westport Resources Corp|CP_ID_BB_COMP|171525|CP_UNIT|Westport Resources Corp|CP_TOT_AMT|3371.577881|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|0.710000|CP_SH_FLAG|1|CP_DEBT|907.226990|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|9.604264|CP_CUR_PREMIUM|0.382506|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_ACCOUNTING_METHOD| |CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|0.000000|CP_CUR_TOT_VAL|3560.105225|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;5;3;1;Target Legal Adviser;1;Akin Gump Straus;13;100.000000;1;Target Financial Adviser;1;CSFB, Petrie Parkman;13;100.000000;1;Acquirer Legal Adviser;1;Covington Burlng;13;100.000000;1;Acquirer Financial Adviser;1;Lehman Brothers;13;100.000000;1;Legal Adv to Target Financial;1;Dewey Ballantine;13;100.000000;|CP_NOTES|ADDL TERMS: $25.65 PER 6.5% CONV PFRD SHR. BREAK FEE: $90MLN.                                                         04/07/04 
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 14266148
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 100849
+>        BB_COMPANYNAME = Kerr-McGee Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2004-06-27 21:00:00.000000'
+>         BB_IDENTIFIER = KMG     UN Equity
+>             BB_ISSUED = TIMESTAMP '2004-04-06 21:00:00.000000'
+>          BB_NUMFIELDS = 30
+>              BB_RCODE = 0
+>              BB_SECID = KMG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2004-06-27 21:00:00.000000'
+>            PRIMARYKEY = X'8e8113b840e0cd3fc0a80146'
+>               VERSION = NULL
+	this should be the end of Warner Resources
+	select count(*) from mticket where sourcekey=X'8e8113b840e0cd3fc0a80146';
+	> Row 1:
+	>   _C001 = 130.000000
+	select distinct stockkey from mticket where sourcekey=X'8e8113b840e0cd3fc0a80146';
+> Row 1:
+>   STOCKKEY = X'19270e21390b154cc0a80116'   
+> Row 2:
+>   STOCKKEY = X'09df0e21390ae9efc0a80116'
+  stockkeys for WRC and KMG
+
+so this occured on 20040627
+let's see if all shares of   STOCKKEY = X'09df0e21390ae9efc0a80116'  have been taken
+
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 09df0e21390ae9efc0a80116 2004-06-27  <-- this should have been the date of the acquis but it is not, it's the next day
+9DFF222439BF45D0C0A80151, DPMO, daniel_pfund, 700  look at the ledger on 20040627
+	WRC	Westport Resources Corp	$38.30	2.2%	700	$0.00	$26,810.00	Details 
+/Marketocracy/Scripts/build/bin/findFundsForStock.py 09df0e21390ae9efc0a80116 2004-06-28  <-- this is the date of the acquis 
+	trades on June 28, 2004	right curve
+ 	 	[download spreadsheet]
+ 	 	
+	Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+	Sell	WRC	700	$0.00	$0.00	$0.00	$0.00
+	Stock Dividend Buy	KMG	497	$0.00	$0.00	$0.00	$0.00
+
+so the acquis happened on 20070628  
+ 	 	 
+select * from mticket where stockkey=X'09df0e21390ae9efc0a80116' and closed > TIMESTAMP '2007-06-28 00:00:00.000000' and shares > 0;
+nothing
+
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 961418100
+>           DATE = TIMESTAMP '2013-02-13 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Westport Resources Corp
+>     PRIMARYKEY = X'102e4839511d7adcc0a80146'   <----------------- delete this
+>       STOCKKEY = X'09df0e21390ae9efc0a80116' 
+>         SYMBOL = WRC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 10102020
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'102e4839511d7adcc0a80146';
+> Row 1:
+>              ALIASKEY = X'102e4839511d7adcc0a80146'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WRC US|CP_NAME|Warnaco Group Inc/The|CP_ID_BB_COMP|8016031|CP_UNIT|Warnaco Group Inc/The|CP_TOT_AMT|2823.820312|CP_ACQUIS_TYP|3|CP_CASH|51.750000|CP_CASH_FLAG|1|CP_SH|0.182200|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG| |CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|33.555279|CP_CUR_PREMIUM|0.249294|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|3022.002197|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;6;3;1;Target Legal Adviser;1;Skadden Arps;13;100.000000;1;Target Financial Adviser;1;JP Morgan;13;100.000000;1;Acquirer Legal Adviser;1;Wachtell Lipton;13;100.000000;1;Acquirer Financial Adviser;1;BofA ML, Barclays, Citi, Peter J Solomon;13;100.000000;1;Legal Adv to Target Financial;1;Weil Gotshal;13;100.000000;1;Legal Adv to Acquirer Financia;1;Kirkland & Ellis;13;100.000000;|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 70289685
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101175
+>        BB_COMPANYNAME = PVH Corp
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-13 21:00:00.000000'
+>         BB_IDENTIFIER = PVH     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-30 21:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = PVH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-13 21:00:00.000000'
+>            PRIMARYKEY = X'd9023dd1511d741fc0a80146'  <----------------- delete this
+>               VERSION = NULL
+	let's see if there were tickets
+	select count(*) from mticket where sourcekey=X'd9023dd1511d741fc0a80146';
+none
+
+what are the terms of the acquis
+date:  20130213  acqType 3  
+cash: 51.750000
+shares  PVH  0.182200
+
+ok, let's do this
+1.  set the identitykey
+Row 2:
+>   STOCKKEY = X'09df0e21390ae9efc0a80116'
+select * from mstock where primarykey=X'09df0e21390ae9efc0a80116';
+> Row 1:
+>         IDENTITYKEY = X'102e4839511d7adcc0a80146'
+>                NAME = BELCO OIL & GAS
+>          PRIMARYKEY = X'09df0e21390ae9efc0a80116'
+>              SYMBOL = BOG
+>           COMPANYID = 4360
+>   WINDOWIDENTITYKEY = NULL
+>     PRIMARYKEY = X'c81a151140e0cf26c0a80146'   <--- identitykey should go here 
+update mstock set IDENTITYKEY=X'c81a151140e0cf26c0a80146'  where PRIMARYKEY = X'09df0e21390ae9efc0a80116';
+delete the bogus acquis mcorporateaction
+delete from mcorporateaction where primarykey=X'd9023dd1511d741fc0a80146';  done
+delete from mstockalias where primarykey=X'102e4839511d7adcc0a80146'; 
+
+************************************************************************************************
+> Row 3:
+>   STOCKKEY = X'1f2305593f0233afc0a80146'
+companyID 15061
+************************************************************************************************
+select * from mstock where primarykey=X'1f2305593f0233afc0a80146';
+> Row 1:
+>         IDENTITYKEY = X'1f640aff482ceb65c0a80146'
+>                NAME = NULL
+>          PRIMARYKEY = X'1f2305593f0233afc0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 15061
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-67c1
+
+
+select * from mstockalias where stockkey=X'1f2305593f0233afc0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2003-02-04 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'1f2405593f0233afc0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2006-07-02 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'4ec8150944a9ce94c0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2008-05-14 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'6f3f09aa482ceb2ac0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2008-05-14 21:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'1f640aff482ceb65c0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+
+let's see the last ticket 
+select * from mticket where stockkey=X'1f2305593f0233afc0a80146' and shares > 0 order by closed; 
+> Row 940:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2012-11-28 11:35:00.000000'
+>        COMMENT = 
+>     COMMISSION = 20.000000
+>   CURRENTORDER = X'b61d444f50b66700c0a80135'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'6bcf3b9046b397cbc0a80135'
+>       MODIFIED = NULL
+>            NET = 28897.250000
+>         OPENED = TIMESTAMP '2012-11-28 11:33:20.000000'
+>          PRICE = 72.243125
+>     PRIMARYKEY = X'b61b444f50b66700c0a80135'
+>         SECFEE = 0.650000
+>         SHARES = 400.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'STOCK_KEY'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1f2305593f0233afc0a80146'  and totalshares < 0);
+no shorts
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'1f2305593f0233afc0a80146'  and totalshares < 0)));
+
+apply the acquis
+what are the terms of the acquis
+date:  20130213  acqType 3  
+cash: 51.750000
+shares  PVH  0.182200
+
+did we have a PVH back then?   ***********  PVH check ***********
+select distinct stockkey from mstockalias where symbol='PVH';
+> Row 1:
+>   STOCKKEY = X'ae6e1029390b3114c0a80116'
+select * from mstockalias where  STOCKKEY = X'ae6e1029390b3114c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 718592108
+>           DATE = TIMESTAMP '2000-04-29 12:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PHILLIPS-VAN HEUSEN
+>     PRIMARYKEY = X'ae6f1029390b3114c0a80116'
+>       STOCKKEY = X'ae6e1029390b3114c0a80116'
+>         SYMBOL = PVH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = LB
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 718592108
+>           DATE = TIMESTAMP '2011-07-13 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PVH Corp
+>     PRIMARYKEY = X'c4d82f704e1f6f4dc0a80146'
+>       STOCKKEY = X'ae6e1029390b3114c0a80116'
+>         SYMBOL = PVH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = LB
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 693656100
+>           DATE = TIMESTAMP '2011-07-13 21:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = PVH Corp
+>     PRIMARYKEY = X'336e30474e1f6f65c0a80146'
+>       STOCKKEY = X'ae6e1029390b3114c0a80116'
+>         SYMBOL = PVH
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = LB
+
+ ***********  PVH check ***********
+
+we're ready to reapply the acquis - hopefully it will go onto the right stock
+apply the acquis
+what are the terms of the acquis
+date:  20130213  acqType 3  
+cash: 51.750000
+shares  PVH  0.182200
+
+
+
+/Marketocracy/bin/cahelper -symbol  WRC  -effective 20130213 -type ACQUIS -exchange UN -acqType 3 -acqCash 51.750000 -acqShare 0.182200 -purchaser PVH   >& /Users/build/caout/WRC.20150925-ACQUIS-PVH.out 
+
+Check the results 
+select * from mstockalias where stockkey= X'1f2305593f0233afc0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2003-02-04 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'1f2405593f0233afc0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2006-07-02 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'4ec8150944a9ce94c0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRNC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2008-05-14 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'6f3f09aa482ceb2ac0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2008-05-14 21:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'1f640aff482ceb65c0a80146'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 934390402
+>           DATE = TIMESTAMP '2013-02-12 21:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Warnaco Group Inc (The)
+>     PRIMARYKEY = X'b8611b865605a4b9c0a86f92'
+>       STOCKKEY = X'1f2305593f0233afc0a80146'
+>         SYMBOL = WRC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25203010
+>       STYLEKEY = SG
+
+select * from mcorporateaction where aliaskey =X'b8611b865605a4b9c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'b8611b865605a4b9c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|WRC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|3|CP_CASH|51.750000|CP_CASH_FLAG|1|CP_SH|0.182200|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150925:034517
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-12 21:00:00.000000'
+>         BB_IDENTIFIER = PVH     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-12 21:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = PVH
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-02-12 21:00:00.000000'
+>            PRIMARYKEY = X'05a71b865605a44dc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'05a71b865605a44dc0a86f92';
+> Row 1:
+>   _C001 = 218.000000
+there should be two stockkeys
+select distinct stockkey from mticket where sourcekey = X'05a71b865605a44dc0a86f92';
+> Row 1:
+>   STOCKKEY = X'ae6e1029390b3114c0a80116'
+> Row 2:
+>   STOCKKEY = X'1f2305593f0233afc0a80146'
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'05a71b865605a44dc0a86f92'));
+there are XXX fundkeys, save to CA issues WRC fundkeys.txt
+
+For Beta case
+WRC no longer trades but is still active on our site - need to delist acquired by PVH
+
+check on 9/26/15   invalidate funds
+check MAdmin  clear 
+
+9/29/15 
+WRC has been acquired	right curve
+ 	 	
+Warnaco Group Inc (The) [WRC] acquired by PVH Corp [PVH] on 2013-02-13 00:00:00.
+
+invalidate, reprice and close 
+

@@ -1,0 +1,234 @@
+date:    9/14/15
+
+NUGT GASL JNUG JDST FAZ TZA  all had reverse splits done on 9/10/15  
+need to back these out
+
+
+ticker: GASL
+
+backing out
+
+select distinct stockkey from mstockalias where symbol='GASL';
+> Row 1:
+>   STOCKKEY = X'269544494c3e26b6c0a80146'
+select * from mstockalias where stockkey=X'269544494c3e26b6c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2010-07-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Related Bull 2X Shares
+>     PRIMARYKEY = X'269644494c3e26b6c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = FCGL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2011-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Related Bull 2X Shares
+>     PRIMARYKEY = X'1cf8292d4ddc32d3c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2011-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Rel
+>     PRIMARYKEY = X'ca9661254ed81178c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25490K828
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Rel
+>     PRIMARYKEY = X'e82a1960555d13f0c0a86f92'  <-- make this the identitykey
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25490K562
+>           DATE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Rel
+>     PRIMARYKEY = X'61a9293d55f20f84c0a86f92'   <--- delete this 
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'61a9293d55f20f84c0a86f92';
+> Row 1:
+>              ALIASKEY = X'61a9293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150910|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946484
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 20157929
+>        BB_COMPANYNAME = Direxion Daily Natural Gas Related Bull 3X Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = GASL    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = GASL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd5880e4955c92d3bc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'61a9293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|25490K828|CP_NEW_CUSIP|25490K562|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US25490K8282|CP_NEW_ISIN|US25490K5627|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946760
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 20157929
+>        BB_COMPANYNAME = Direxion Daily Natural Gas Related Bull 3X Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = GASL    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = GASL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd58a0e4955c92d3bc0a86f92'   <--- delete this 
+>               VERSION = NULL
+
+delete from mcorporateaction where PRIMARYKEY = X'd58a0e4955c92d3bc0a86f92' ;
+update mcorporateaction set BB_ACTIONID = '110946484:MARTY'   where PRIMARYKEY = X'd5880e4955c92d3bc0a86f92';
+
+> Row 1:
+>              ALIASKEY = X'61a9293d55f20f84c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20150910|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 110946484:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 20157929
+>        BB_COMPANYNAME = Direxion Daily Natural Gas Related Bull 3X Shares
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-09-10 00:00:00.000000'
+>         BB_IDENTIFIER = GASL    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-07 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = GASL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2015-08-10 00:00:00.000000'
+>            PRIMARYKEY = X'd5880e4955c92d3bc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey=X'd5880e4955c92d3bc0a86f92';
+> Row 1:
+>   _C001 = 26.000000
+select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd5880e4955c92d3bc0a86f92');
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'd5880e4955c92d3bc0a86f92'));
+there are 13 fundkeys
+
+save to CA issues GASL fundkeys backout reverse split.txt
+
+back this out
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 110946484:MARTY
+it ran
+
+select * from mstock where primarykey=X'269544494c3e26b6c0a80146';
+> Row 1:
+>         IDENTITYKEY = X'61a9293d55f20f84c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'269544494c3e26b6c0a80146'
+>              SYMBOL = NULL
+>           COMPANYID = 19072
+>   WINDOWIDENTITYKEY = NULL
+update mstock set IDENTITYKEY = X'e82a1960555d13f0c0a86f92' where PRIMARYKEY = X'269544494c3e26b6c0a80146';
+delete from mstockalias where primarykey=X'61a9293d55f20f84c0a86f92';
+
+check
+select * from mstockalias where stockkey=X'269544494c3e26b6c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2010-07-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Related Bull 2X Shares
+>     PRIMARYKEY = X'269644494c3e26b6c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = FCGL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2011-05-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Related Bull 2X Shares
+>     PRIMARYKEY = X'1cf8292d4ddc32d3c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25459W227
+>           DATE = TIMESTAMP '2011-12-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Rel
+>     PRIMARYKEY = X'ca9661254ed81178c0a80146'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25490K828
+>           DATE = TIMESTAMP '2015-05-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Direxion Daily Natural Gas Rel
+>     PRIMARYKEY = X'e82a1960555d13f0c0a86f92'
+>       STOCKKEY = X'269544494c3e26b6c0a80146'
+>         SYMBOL = GASL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+invalidate done
+reprice 
+
+GASL erroneously applied reverse split done on 9/10/15
+
+
+

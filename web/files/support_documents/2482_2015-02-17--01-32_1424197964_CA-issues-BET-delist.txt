@@ -1,0 +1,148 @@
+date:  2/16/15
+ticker  BET
+
+quantum:  nothing
+
+oursite: 
+Symbol: BET	Name: BETHLEHEM CORP	Price: $0.29
+Volume:	Sector: Unclassified	Change:
+Short Volume: 0	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 0	 Exchange: AMEX	Today: 0.00%
+50 Day Ave: $0.00	Year High: $0.00	High:
+200 Day Ave: $0.00	Year Low: $0.00	Low:
+
+MAdmin BET
+Stock:BETHLEHEM CORP  Symbol:BET
+Date: 02/16/2015
+
+0 users found
+
+database
+select distinct stockkey from mstockalias where symbol= 'BET';  
+> Row 1:
+>   STOCKKEY = X'c68d0e21390a4fd8c0a80116'
+
+select * from mstockalias where stockkey= X'c68d0e21390a4fd8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 087257101
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = BETHLEHEM CORP
+>     PRIMARYKEY = X'c68e0e21390a4fd8c0a80116'
+>       STOCKKEY = X'c68d0e21390a4fd8c0a80116'
+>         SYMBOL = BET
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock BET
+>>>> dbtool started at 2015-02-16 21:23:14 -0500
+stock: BET
+  PK       : [C68D0E21390A4FD8C0A80116]
+  companyID: [52]
+  symbol   : [BET]
+  name     : [BETHLEHEM CORP]
+  date     : [2000-04-28 15:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-16 21:23:15 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 52
+2001-04-12 (Thu) [101]: O:0.2400 H:0.2400 L:0.2400 C:0.2400 V:0 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2001-04-13 (Fri) [102]: <HOLIDAY>
+2001-04-14 (Sat) [103]: <WEEKEND>
+2001-04-15 (Sun) [104]: <WEEKEND>
+2001-04-16 (Mon) [105]: O:0.2400 H:0.2400 L:0.2400 C:0.2400 V:0 TSO:0 A:0.2400 R:1.0000 CA:0.0000
+2001-04-17 (Tue) [106]: O:0.2200 H:0.2200 L:0.2200 C:0.2200 V:1000 TSO:0 A:0.2200 R:1.0000 CA:0.0000
+2001-04-18 (Wed) [107]: O:0.2500 H:0.2900 L:0.2000 C:0.2900 V:7000 TSO:0 A:0.2900 R:1.0000 CA:0.0000  <--- last price
+
+2001-04-18   C:0.2900
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  BET  -effective 20010418 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.290 -acqShare 0 -purchaser BET   >& /Users/build/caout/BET.20150216-ACQUIS.out
+BET.20150216-ACQUIS.out
+stocks:~/caout build$ tail -f BET.20150216-ACQUIS.out
+D: (02-16 21:24:42.782) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-16 21:25:05.535) cahelper started on 2015-02-16 21:25:05 -0500
+
+D: (02-16 21:25:06.062) There are [0] open tickets for BET on 20010418
+D: (02-16 21:25:06.087) {
+    "ACQUIRED_STOCK" = BET; 
+    "ACQUIRING_STOCK" = "BET_FIX"; 
+    AMOUNT = 0.29; 
+    APPLIED = 1; 
+    DATE = 20010418; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "BET_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-16 21:25:06.182) SUCCESS
+D: (02-16 21:25:06.183) cahelper finished 2015-02-16 21:25:06 -0500
+
+select * from mstockalias where stockkey= X'c68d0e21390a4fd8c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 087257101
+>           DATE = TIMESTAMP '2000-04-28 15:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = BETHLEHEM CORP
+>     PRIMARYKEY = X'c68e0e21390a4fd8c0a80116'
+>       STOCKKEY = X'c68d0e21390a4fd8c0a80116'
+>         SYMBOL = BET
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 087257101
+>           DATE = TIMESTAMP '2001-04-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d592f1d390a440bc0a8015c'
+>           NAME = BETHLEHEM CORP
+>     PRIMARYKEY = X'5cc2104254e2a682c0a86f92'
+>       STOCKKEY = X'c68d0e21390a4fd8c0a80116'
+>         SYMBOL = BET
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'5cc2104254e2a682c0a86f92';
+
+> Row 1:
+>              ALIASKEY = X'5cc2104254e2a682c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BET  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.290000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150216:092505
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2001-04-18 00:00:00.000000'
+>         BB_IDENTIFIER = BET_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-04-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = BET_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-04-18 00:00:00.000000'
+>            PRIMARYKEY = X'5cbc104254e2a681c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey = X'5cbc104254e2a681c0a86f92';
+no one held this
+
+check on 2/17/15 -    on 20010418 holders got 0.29 our last price
+
+2/17/15
+BET has been acquired	
+ 	 	
+BETHLEHEM CORP acquired by a private company on 2001-04-18 00:00:00.
+
+closing this out, it's delisted 

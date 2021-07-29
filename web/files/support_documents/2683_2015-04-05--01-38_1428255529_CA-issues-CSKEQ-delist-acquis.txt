@@ -1,0 +1,279 @@
+date:  4/4/15
+ticker CSKEQ
+no longer trades  found this while looking at shorts 
+member:  hbp1396in
+fud:  HMF
+
+quantum
+Chesapeake Corp.
+Ticker Symbol: CSKEQ*     CUSIP: 165159104     Exchange: OTOTC
+* NOTE: This security is no longer trading as of 5/04/11
+
+BUSINESS:  Chesapeake Corp. is a tissue, specialty packaging and forest resources company.
+
+Notes:  Bankruptcy per the Other OTC on 1/2/2009. Plan of bankruptcy effective per the other OTC on 5/4/2011, all shares have been cancelled.
+
+our site:  
+
+database
+select distinct stockkey from mstockalias where symbol= 'CSKEQ';  
+> Row 1:
+>   STOCKKEY = X'0c830e21390af14dc0a80116'
+
+select * from mstockalias where stockkey= X'0c830e21390af14dc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'0c840e21390af14dc0a80116'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2008-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'ecad265148ed668dc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2008-10-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'e0a7267848ed66fcc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2009-01-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'fecb00ca4962c9abc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+
+any unapplied CAs of use?
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='CSKEQ' order by BB_EFFECTIVE;
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UV|CP_TKR|CSKEQ|CP_DELIST_REASON|3|CP_NOTES|Plan of Bankruptcy Effective; All shares have been cancelled. Deletion Time 13:22:02
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 54228965
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 100314
+>        BB_COMPANYNAME = Chesapeake Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-05-04 00:00:00.000000'  <-- that's the correct date 
+>         BB_IDENTIFIER = CSKEQ   US Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = CSKEQ
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2011-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'd5042ca54dc1d467c0a80146'
+>               VERSION = NULL
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock CSKEQ
+>>>> dbtool started at 2015-04-04 14:33:37 -0400
+stock: CSKEQ
+  PK       : [0C830E21390AF14DC0A80116]
+  companyID: [4529]
+  symbol   : [CSKEQ]
+  name     : [CHESAPEAKE CORP]
+  date     : [2009-01-05 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-04 14:33:37 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 4529
+2011-04-28 (Thu) [3769]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:3100 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-04-29 (Fri) [3770]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:2178 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-04-30 (Sat) [3771]: <WEEKEND>
+2011-05-01 (Sun) [3772]: <WEEKEND>
+2011-05-02 (Mon) [3773]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-03 (Tue) [3774]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-04 (Wed) [3775]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000 <--- 
+2011-05-05 (Thu) [3776]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-06 (Fri) [3777]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-07 (Sat) [3778]: <WEEKEND>
+2011-05-08 (Sun) [3779]: <WEEKEND>
+2011-05-09 (Mon) [3780]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-10 (Tue) [3781]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-11 (Wed) [3782]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-12 (Thu) [3783]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-13 (Fri) [3784]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:700 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-14 (Sat) [3785]: <WEEKEND>
+2011-05-15 (Sun) [3786]: <WEEKEND>
+2011-05-16 (Mon) [3787]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-17 (Tue) [3788]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-18 (Wed) [3789]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-19 (Thu) [3790]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-20 (Fri) [3791]: O:0.0015 H:0.0015 L:0.0015 C:0.0015 V:0 TSO:19859 A:0.0015 R:1.0000 CA:0.0000
+2011-05-21 (Sat) [3792]: <WEEKEND>
+2011-05-22 (Sun) [3793]: <WEEKEND>
+
+use this:  
+2011-05-04  0.0015  
+20110504
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  CSKEQ  -effective 20110504 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.0015 -acqShare 0 -purchaser CSKEQ   >& /Users/build/caout/CSKEQ.20150404-ACQUIS.out
+CSKEQ.20150404-ACQUIS.out
+stocks:~/caout build$ tail -f CSKEQ.20150404-ACQUIS.out
+D: (04-04 14:49:07.576) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-04 14:49:33.057) cahelper started on 2015-04-04 14:49:33 -0400
+
+D: (04-04 14:49:34.489) There are [0] open tickets for CSKEQ on 20110504
+D: (04-04 14:49:34.834) StockFileLoad Version:3.0
+D: (04-04 14:49:34.834) Loading Stock Data
+D: (04-04 14:50:17.855) Building Lookup Index
+D: (04-04 14:50:22.315) Finished Building Index
+D: (04-04 14:50:23.308) Finished Loading Stock Data
+D: (04-04 14:50:23.430) Connection to 192.168.111.172:6666 succeeded
+D: (04-04 14:50:25.760) {
+    "ACQUIRED_STOCK" = CSKEQ; 
+    "ACQUIRING_STOCK" = "CSKEQ_FIX"; 
+    AMOUNT = 0.0015; 
+    APPLIED = 1; 
+    DATE = 20110504; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "CSKEQ_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-04 14:50:30.617) SUCCESS
+D: (04-04 14:50:30.617) cahelper finished 2015-04-04 14:50:30 -0400
+
+
+
+select * from mstockalias where stockkey= X'0c830e21390af14dc0a80116';
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'0c840e21390af14dc0a80116'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSK
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2008-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'ecad265148ed668dc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2008-10-08 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'e0a7267848ed66fcc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2009-01-05 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'fecb00ca4962c9abc0a80146'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKEQ
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 165159104
+>           DATE = TIMESTAMP '2011-05-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = CHESAPEAKE CORP
+>     PRIMARYKEY = X'1ecb68245520323ec0a86f92'
+>       STOCKKEY = X'0c830e21390af14dc0a80116'
+>         SYMBOL = CSKEQ
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 15103020
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey = X'1ecb68245520323ec0a86f92';
+> Row 1:
+>              ALIASKEY = X'1ecb68245520323ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|CSKEQ  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.001500|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150404:024933
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2011-05-04 00:00:00.000000'
+>         BB_IDENTIFIER = CSKEQ_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2011-05-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CSKEQ_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2011-05-04 00:00:00.000000'
+>            PRIMARYKEY = X'1ec568245520323dc0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'1ec568245520323dc0a86f92';
+> Row 1:
+>   _C001 = 88.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'1ec568245520323dc0a86f92'));
+save to CA issues CSKEQ fundkeys.txt
+
+check on 4/5/15 for the acquis
+
+4/5/15  acquis is there
+do the invalidation
+ok - close this out 

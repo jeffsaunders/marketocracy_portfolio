@@ -1,0 +1,644 @@
+BlackRock High Income Shares (HIS) $2.2662 0.17536312 
+date: 2/24/25
+ticker: HIS 
+
+quantum:BlackRock High Income Shares (HIS) $2.2662 0.17536312 
+
+
+oursite: something funny here, says that it was acquired back in 2001
+
+
+MAdmin
+Stock:BlackRock High Income Shares  Symbol:HIS
+Date: 02/24/2015
+
+2 users found
+
+1	kimhudanish	mreda	 	 	 	 	 	 	 	 
+
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'HIS';  
+> Row 1:
+>   STOCKKEY = X'0cef0e21390af27cc0a80116'
+
+select * from mstockalias where stockkey= X'0cef0e21390af27cc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'0cf00e21390af27cc0a80116'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'0cf00e21390af27cc0a80116';
+	14 DVD cash
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'1e946ba03b7b2ed8c0a801dc'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <---- change this 
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'1e946ba03b7b2ed8c0a801dc';
+> Row 1:
+>              ALIASKEY = X'1e946ba03b7b2ed8c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|85.000000|CP_CUR_TOT_VAL|6.188250|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|44.757339|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|9.250000|CP_NAME|HIS Sportswear|CP_DEBT|N.A.|CP_CASH_VAL|9.250000|CP_PCT_SOUGHT|15.000000|CP_TYP|1|CP_ADVISORS|;2;1;3;1;Acquirer Financial Advisor;1;BLACKSTONE GROUP;13;N.A.;|CP_TKR|HIS     GR|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|1|CP_ADVISORS_NUM|1|CP_TOT_AMT|6.188250|CP_STAT|3|CP_CRNCY|EUR|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|221232
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6717028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101598
+>        BB_COMPANYNAME = VF Corporation
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>         BB_IDENTIFIER = VFC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-06-06 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = VFC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>            PRIMARYKEY = X'9eab478c3b7b29b1c0a801dc'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'9eab478c3b7b29b1c0a801dc';
+> Row 1:
+>   _C001 = 5.000000
+select * from mticket where sourcekey=X'9eab478c3b7b29b1c0a801dc';
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = NULL
+>         CLOSED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'21846ba03b7b2ee4c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9e3d09c539cc3cd9c0a801e0'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'215c6ba03b7b2ee4c0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>      SOURCEKEY = X'9eab478c3b7b29b1c0a801dc'
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = NULL
+>         CLOSED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'1f256ba03b7b2ee0c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'1e0c21c03a1c6256c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'1ee46ba03b7b2edbc0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>      SOURCEKEY = X'9eab478c3b7b29b1c0a801dc'
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = NULL
+>         CLOSED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'24716ba03b7b2ee6c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eb8444823a2ff692c0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'24706ba03b7b2ee6c0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>      SOURCEKEY = X'9eab478c3b7b29b1c0a801dc'
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = NULL
+>         CLOSED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'21546ba03b7b2ee3c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'69d754d73a1c0359c0a801e1'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'1f2d6ba03b7b2ee0c0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>      SOURCEKEY = X'9eab478c3b7b29b1c0a801dc'
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = NULL
+>         CLOSED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'246a6ba03b7b2ee6c0a801dc'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'eb8444823a2ff692c0a80118'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'218c6ba03b7b2ee4c0a801dc'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'   
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>      SOURCEKEY = X'9eab478c3b7b29b1c0a801dc'
+>    NOTIFYEMAIL = NULL
+
+plus DVD cash
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2005-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'c04c0159424b6837c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'   <---- change this 
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey= X'c04c0159424b6837c0a80146';
+> Row 1:
+>              ALIASKEY = X'c04c0159424b6837c0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|CIGNA High Income Shares|CP_NEW_NAME|BlackRock High Income Shares|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 17569412
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 108046
+>        BB_COMPANYNAME = BlackRock High Income Shares
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2005-03-30 00:00:00.000000'
+>         BB_IDENTIFIER = HIS     UN Equity
+>             BB_ISSUED = TIMESTAMP '2005-03-28 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = HIS
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = NULL
+>            PRIMARYKEY = X'1ce574d5424b67bdc0a80146'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09250E107
+>           DATE = TIMESTAMP '2005-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'781a015c424b6844c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'     <---- change this 
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+	select * from mcorporateaction where aliaskey=X'781a015c424b6844c0a80146';
+CHD_ID and DVD_CASH
+
+let's undo this acquis 
+> Row 1:
+>              ALIASKEY = X'1e946ba03b7b2ed8c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|85.000000|CP_CUR_TOT_VAL|6.188250|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|44.757339|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|9.250000|CP_NAME|HIS Sportswear|CP_DEBT|N.A.|CP_CASH_VAL|9.250000|CP_PCT_SOUGHT|15.000000|CP_TYP|1|CP_ADVISORS|;2;1;3;1;Acquirer Financial Advisor;1;BLACKSTONE GROUP;13;N.A.;|CP_TKR|HIS     GR|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|1|CP_ADVISORS_NUM|1|CP_TOT_AMT|6.188250|CP_STAT|3|CP_CRNCY|EUR|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|221232
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6717028
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101598
+>        BB_COMPANYNAME = VF Corporation
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>         BB_IDENTIFIER = VFC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-06-06 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = VFC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>            PRIMARYKEY = X'9eab478c3b7b29b1c0a801dc'
+>               VERSION = NULL
+
+
+update mcorporateaction set BB_ACTIONID = '6717028:MARTY' where PRIMARYKEY = X'9eab478c3b7b29b1c0a801dc';
+select * from mcorporateaction where PRIMARYKEY = X'9eab478c3b7b29b1c0a801dc';
+> Row 1:
+>              ALIASKEY = X'1e946ba03b7b2ed8c0a801dc'
+>   BB_ACTIONDICTIONARY = CP_PCT_OWNED|85.000000|CP_CUR_TOT_VAL|6.188250|CP_NOTES|N.A.|CP_UNIT|N.A.|CP_INIT_OFFER_PREMIUM|44.757339|CP_UNSOLICITED|0|CP_DT_FLAG|0|CP_SH_FLAG|N.A.|CP_SH|N.A.|CP_FLAG|1|CP_DEBT_FLAG|N.A.|CP_CASH|9.250000|CP_NAME|HIS Sportswear|CP_DEBT|N.A.|CP_CASH_VAL|9.250000|CP_PCT_SOUGHT|15.000000|CP_TYP|1|CP_ADVISORS|;2;1;3;1;Acquirer Financial Advisor;1;BLACKSTONE GROUP;13;N.A.;|CP_TKR|HIS     GR|CP_ARBITRAGE_PROF|N.A.|CP_DETAIL_FLAG|0|CP_CASH_FLAG|1|CP_ADVISORS_NUM|1|CP_TOT_AMT|6.188250|CP_STAT|3|CP_CRNCY|EUR|CP_CUR_PREM|N.A.|CP_ACCT_METHOD|N.A.|CP_ID_BB_COMP|221232
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 6717028:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101598
+>        BB_COMPANYNAME = VF Corporation
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>         BB_IDENTIFIER = VFC     UN Equity
+>             BB_ISSUED = TIMESTAMP '2001-06-06 00:00:00.000000'
+>          BB_NUMFIELDS = 29
+>              BB_RCODE = 0
+>              BB_SECID = VFC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2001-08-15 00:00:00.000000'
+>            PRIMARYKEY = X'9eab478c3b7b29b1c0a801dc'
+>               VERSION = NULL
+
+let's undo it
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 6717028:MARTY
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:HIS]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:HIS]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:HIS]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:HIS]
+[<Ticket Lifetime:Day>:<Ticket Action:Sell>:HIS]
+
+change the status keys
+
+update mstockalias set STATUSKEY = X'634a039339e7e928c0a801dc'  where STOCKKEY = X'0cef0e21390af27cc0a80116';
+check again:
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'0cf00e21390af27cc0a80116'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'1e946ba03b7b2ed8c0a801dc'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2005-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'c04c0159424b6837c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09250E107
+>           DATE = TIMESTAMP '2005-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'781a015c424b6844c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+now let's look at dividends
+our site
+11 Mar 10	15 Mar 10	31 Mar 10	12	$0.01	Dividend amount:0.0142 per share.
+13 Apr 10	15 Apr 10	30 Apr 10	12	$0.01	Dividend amount:0.0142 per share.
+12 May 10	14 May 10	28 May 10	12	$0.01	Dividend amount:0.0142 per share.
+11 Jun 10	15 Jun 10	30 Jun 10	12	$0.01	Dividend amount:0.0142 per share.
+13 Jul 10	15 Jul 10	30 Jul 10	12	$0.01	Dividend amount:0.0142 per share.  <--- last one we paid
+ 	 	 
+
+dividend.com
+HIS Dividend History
+Payout Amount	Declared Date	Ex-Dividend Date	Record Date	Pay Date ▼	Qualified Dividend?	Payout Type	Frequency
+$0.0400	2013-10-18	2013-10-25	2013-10-29	2013-11-01	Unknown	Special	N/A
+$0.0142	2013-10-01	2013-10-11	2013-10-16	2013-10-31	Unknown	Regular	Month
+$0.0142	2013-09-03	2013-09-12	2013-09-16	2013-09-30	Unknown	Regular	Month
+$0.0142	2013-08-01	2013-08-13	2013-08-15	2013-08-30	Unknown	Regular	Month
+$0.0142	2013-07-01	2013-07-11	2013-07-15	2013-07-31	Unknown	Regular	Month
+$0.0152	2013-06-03	2013-06-12	2013-06-14	2013-06-28	Unknown	Regular	Month
+$0.0152	2013-05-01	2013-05-13	2013-05-15	2013-05-31	Unknown	Regular	Month
+$0.0152	2013-04-01	2013-04-11	2013-04-15	2013-04-30	Unknown	Regular	Month
+$0.0152	2013-03-01	2013-03-13	2013-03-15	2013-03-28	Unknown	Regular	Month
+$0.0152	2013-02-01	2013-02-13	2013-02-15	2013-02-28	Unknown	Regular	Month
+$0.0130	2012-12-20	2012-12-27	2012-12-31	2013-01-09	Unknown	Special	N/A
+$0.0152	2012-12-20	2012-12-27	2012-12-31	2013-01-09	Unknown	Regular	Month
+$0.0152	2012-12-04	2012-12-12	2012-12-14	2012-12-18	Unknown	Regular	Month
+$0.0152	2012-11-01	2012-11-13	2012-11-15	2012-11-30	Unknown	Regular	Month
+$0.0152	2012-10-01	2012-10-11	2012-10-15	2012-10-31	Unknown	Regular	Month
+$0.0152	2012-09-04	2012-09-12	2012-09-14	2012-09-28	Unknown	Regular	Month
+$0.0152	2012-08-01	2012-08-13	2012-08-15	2012-08-31	Unknown	Regular	Month
+$0.0152	2012-07-02	2012-07-12	2012-07-16	2012-07-31	Unknown	Regular	Month
+$0.0152	2012-06-01	2012-06-13	2012-06-15	2012-06-29	Unknown	Regular	Month
+$0.0142	2012-05-01	2012-05-11	2012-05-15	2012-05-31	Unknown	Regular	Month
+$0.0142	2012-04-02	2012-04-12	2012-04-16	2012-04-30	Unknown	Regular	Month
+$0.0142	2012-03-01	2012-03-13	2012-03-15	2012-03-30	Unknown	Regular	Month
+$0.0142	2012-02-01	2012-02-13	2012-02-15	2012-02-29	Unknown	Regular	Month
+$0.0142	2011-12-20	2011-12-28	2011-12-30	2012-01-09	Unknown	Regular	Month
+$0.0310	2011-12-20	2011-12-28	2011-12-30	2012-01-09	Unknown	Special	N/A
+$0.0142	2011-12-05	2011-12-12	2011-12-14	2011-12-19	Unknown	Regular	Month
+$0.0142	2011-11-01	2011-11-10	2011-11-15	2011-11-30	Unknown	Regular	Month
+$0.0142	2011-10-03	2011-10-12	2011-10-14	2011-10-31	Unknown	Regular	Month
+$0.0142	2011-09-01	2011-09-13	2011-09-15	2011-09-30	Unknown	Regular	Month
+$0.0142	2011-08-01	2011-08-11	2011-08-15	2011-08-31	Unknown	Regular	Month
+$0.0142	2011-07-01	2011-07-13	2011-07-15	2011-07-29	Unknown	Regular	Month
+$0.0142	2011-06-01	2011-06-13	2011-06-15	2011-06-30	Unknown	Regular	Month
+$0.0142	2011-05-02	2011-05-12	2011-05-16	2011-05-31	Unknown	Regular	Month
+$0.0142	2011-04-01	2011-04-13	2011-04-15	2011-04-29	Unknown	Regular	Month
+$0.0142	2011-03-01	2011-03-11	2011-03-15	2011-03-31	Unknown	Regular	Month
+$0.0142	2011-02-01	2011-02-11	2011-02-15	2011-02-28	Unknown	Regular	Month
+$0.0142	2010-12-21	2010-12-29	2010-12-31	2011-01-10	Unknown	Regular	Month
+$0.0384	2010-12-21	2010-12-29	2010-12-31	2011-01-10	Unknown	Special	N/A
+$0.0142	2010-12-06	2010-12-13	2010-12-15	2010-12-20	Unknown	Regular	Month
+$0.0142	2010-11-01	2010-11-10	2010-11-15	2010-11-30	Unknown	Regular	Month
+$0.0142	2010-10-01	2010-10-13	2010-10-15	2010-10-29	Unknown	Regular	Month
+$0.0142	2010-09-01	2010-09-13	2010-09-15	2010-09-30	Unknown	Regular	Month
+$0.0142	2010-08-02	2010-08-12	2010-08-16	2010-08-31	Unknown	Regular	Month
+
+let's apply the dividends:
+/Marketocracy/bin/cahelper -symbol HIS -effective 20131025 -type DVD_CASH -exchange UN -payDate 20131101 -recordDate 4011 -amount 0.04 >& /Users/build/caout/HIS.20150224-2013-11.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20131011 -type DVD_CASH -exchange UN -payDate 20131031 -recordDate 4010 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2013-10.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130912 -type DVD_CASH -exchange UN -payDate 20130930 -recordDate 4007 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2013-09.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130813 -type DVD_CASH -exchange UN -payDate 20130830 -recordDate 4003 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2013-08.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130711 -type DVD_CASH -exchange UN -payDate 20130731 -recordDate 4000 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2013-07.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130612 -type DVD_CASH -exchange UN -payDate 20130628 -recordDate 3997 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-06.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130513 -type DVD_CASH -exchange UN -payDate 20130531 -recordDate 3994 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-05.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130411 -type DVD_CASH -exchange UN -payDate 20130430 -recordDate 3991 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-04.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130313 -type DVD_CASH -exchange UN -payDate 20130328 -recordDate 3988 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-03.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20130213 -type DVD_CASH -exchange UN -payDate 20130228 -recordDate 3985 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-02.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20121227 -type DVD_CASH -exchange UN -payDate 20130109 -recordDate 3981 -amount 0.013 >& /Users/build/caout/HIS.20150224-2013-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20121227 -type DVD_CASH -exchange UN -payDate 20130109 -recordDate 3981 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2013-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20121212 -type DVD_CASH -exchange UN -payDate 20121218 -recordDate 3979 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-12.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20121113 -type DVD_CASH -exchange UN -payDate 20121130 -recordDate 3976 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-11.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20121011 -type DVD_CASH -exchange UN -payDate 20121031 -recordDate 3973 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-10.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120912 -type DVD_CASH -exchange UN -payDate 20120928 -recordDate 3970 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-09.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120813 -type DVD_CASH -exchange UN -payDate 20120831 -recordDate 3967 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-08.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120712 -type DVD_CASH -exchange UN -payDate 20120731 -recordDate 3964 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-07.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120613 -type DVD_CASH -exchange UN -payDate 20120629 -recordDate 3961 -amount 0.0152 >& /Users/build/caout/HIS.20150224-2012-06.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120511 -type DVD_CASH -exchange UN -payDate 20120531 -recordDate 3958 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2012-05.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120412 -type DVD_CASH -exchange UN -payDate 20120430 -recordDate 3955 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2012-04.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120313 -type DVD_CASH -exchange UN -payDate 20120330 -recordDate 3952 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2012-03.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20120213 -type DVD_CASH -exchange UN -payDate 20120229 -recordDate 3949 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2012-02.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20111228 -type DVD_CASH -exchange UN -payDate 20120109 -recordDate 3944 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2012-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20111228 -type DVD_CASH -exchange UN -payDate 20120109 -recordDate 3944 -amount 0.031 >& /Users/build/caout/HIS.20150224-2012-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20111212 -type DVD_CASH -exchange UN -payDate 20111219 -recordDate 3942 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-12.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20111110 -type DVD_CASH -exchange UN -payDate 20111130 -recordDate 3940 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-11.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20111012 -type DVD_CASH -exchange UN -payDate 20111031 -recordDate 3936 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-10.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110913 -type DVD_CASH -exchange UN -payDate 20110930 -recordDate 3933 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-09.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110811 -type DVD_CASH -exchange UN -payDate 20110831 -recordDate 3930 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-08.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110713 -type DVD_CASH -exchange UN -payDate 20110729 -recordDate 3927 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-07.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110613 -type DVD_CASH -exchange UN -payDate 20110630 -recordDate 3924 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-06.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110512 -type DVD_CASH -exchange UN -payDate 20110531 -recordDate 3921 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-05.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110413 -type DVD_CASH -exchange UN -payDate 20110429 -recordDate 3918 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-04.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110311 -type DVD_CASH -exchange UN -payDate 20110331 -recordDate 3915 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-03.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20110211 -type DVD_CASH -exchange UN -payDate 20110228 -recordDate 3912 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-02.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20101229 -type DVD_CASH -exchange UN -payDate 20110110 -recordDate 3908 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2011-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20101229 -type DVD_CASH -exchange UN -payDate 20110110 -recordDate 3908 -amount 0.0384 >& /Users/build/caout/HIS.20150224-2011-01.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20101213 -type DVD_CASH -exchange UN -payDate 20101220 -recordDate 3906 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2010-12.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20101110 -type DVD_CASH -exchange UN -payDate 20101130 -recordDate 3903 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2010-11.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20101013 -type DVD_CASH -exchange UN -payDate 20101029 -recordDate 3900 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2010-10.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20100913 -type DVD_CASH -exchange UN -payDate 20100930 -recordDate 3897 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2010-09.out;
+/Marketocracy/bin/cahelper -symbol HIS -effective 20100812 -type DVD_CASH -exchange UN -payDate 20100831 -recordDate 3894 -amount 0.0142 >& /Users/build/caout/HIS.20150224-2010-08.out;
+HIS.20150224-2010-08.out
+HIS.20150224-2010-09.out
+HIS.20150224-2010-10.out
+HIS.20150224-2010-11.out
+HIS.20150224-2010-12.out
+HIS.20150224-2011-01.out
+HIS.20150224-2011-02.out
+HIS.20150224-2011-03.out
+HIS.20150224-2011-04.out
+HIS.20150224-2011-05.out
+HIS.20150224-2011-06.out
+HIS.20150224-2011-07.out
+HIS.20150224-2011-08.out
+HIS.20150224-2011-09.out
+HIS.20150224-2011-10.out
+HIS.20150224-2011-11.out
+HIS.20150224-2011-12.out
+HIS.20150224-2012-01.out
+HIS.20150224-2012-02.out
+HIS.20150224-2012-03.out
+HIS.20150224-2012-04.out
+HIS.20150224-2012-05.out
+HIS.20150224-2012-06.out
+HIS.20150224-2012-07.out
+HIS.20150224-2012-08.out
+HIS.20150224-2012-09.out
+HIS.20150224-2012-10.out
+HIS.20150224-2012-11.out
+HIS.20150224-2012-12.out
+HIS.20150224-2013-01.out
+HIS.20150224-2013-02.out
+HIS.20150224-2013-03.out
+HIS.20150224-2013-04.out
+HIS.20150224-2013-05.out
+HIS.20150224-2013-06.out
+HIS.20150224-2013-07.out
+HIS.20150224-2013-08.out
+HIS.20150224-2013-09.out
+HIS.20150224-2013-10.out
+HIS.20150224-2013-11.out
+
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  HIS  -effective 20131118 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 0.17536312 -purchaser HYT   >& /Users/build/caout/HIS.20150224-ACQUIS.put 
+HIS.20150224-ACQUIS.put
+stocks:~/caout build$ tail -f HIS.20150224-ACQUIS.put
+D: (02-24 13:25:11.599) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-24 13:25:35.251) cahelper started on 2015-02-24 13:25:35 -0500
+
+D: (02-24 13:25:35.454) There are [0] open tickets for HIS on 20131118
+D: (02-24 13:25:35.839) StockFileLoad Version:3.0
+D: (02-24 13:25:35.839) Loading Stock Data
+D: (02-24 13:26:17.042) Building Lookup Index
+D: (02-24 13:26:21.194) Finished Building Index
+D: (02-24 13:26:22.137) Finished Loading Stock Data
+D: (02-24 13:26:22.260) Connection to 192.168.111.157:6666 succeeded
+D: (02-24 13:26:22.575) {
+    "ACQUIRED_STOCK" = HIS; 
+    "ACQUIRING_STOCK" = HYT; 
+    AMOUNT = 0.175363; 
+    APPLIED = 1; 
+    DATE = 20131118; 
+    FUNDS = (
+        "ptaur/Pat F Taourozzi's Mutual Fund", 
+        "jwhollis/Income and Capital Appreciation", 
+        "hgraff/hank graff's Mutual Fund", 
+        "mspaniola/MDS Capital Growth", 
+        "mspaniola/MDS Sector Index Fund", 
+        "kimhudanish/kimhudanish's Mutual Fund", 
+        "mreda/mreda's Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = HYT; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-24 13:26:23.202) SUCCESS
+D: (02-24 13:26:23.202) cahelper finished 2015-02-24 13:26:23 -0500
+
+
+select distinct stockkey from mstockalias where symbol= 'HIS';
+> Row 1:
+>   STOCKKEY = X'0cef0e21390af27cc0a80116'
+
+select * from mstockalias where stockkey=  X'0cef0e21390af27cc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'0cf00e21390af27cc0a80116'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2001-08-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CIGNA HIGH INCOME SHS
+>     PRIMARYKEY = X'1e946ba03b7b2ed8c0a801dc'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 12551D109
+>           DATE = TIMESTAMP '2005-03-30 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'c04c0159424b6837c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09250E107
+>           DATE = TIMESTAMP '2005-03-30 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'781a015c424b6844c0a80146'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 09250E107
+>           DATE = TIMESTAMP '2013-11-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = BlackRock High Income Shares
+>     PRIMARYKEY = X'36fa68aa54ecc24ec0a86f92'
+>       STOCKKEY = X'0cef0e21390af27cc0a80116'
+>         SYMBOL = HIS
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = XV
+
+select * from mcorporateaction where aliaskey =X'36fa68aa54ecc24ec0a86f92' ;
+
+> Row 1:
+>              ALIASKEY = X'36fa68aa54ecc24ec0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|HIS  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.175363|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150224:012535
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-11-18 00:00:00.000000'
+>         BB_IDENTIFIER = HYT     UN Equity
+>             BB_ISSUED = TIMESTAMP '2013-11-18 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = HYT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2013-11-18 00:00:00.000000'
+>            PRIMARYKEY = X'335c68aa54ecc21fc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey =  X'335c68aa54ecc21fc0a86f92';
+> Row 1:
+>   _C001 = 14.000000
+
+
+check on 2/25/15 for the dividends and for the acquis 
+
+2/25/15
+ HIS has been acquired	
+ 	 	
+BlackRock High Income Shares [HIS] acquired by BlackRock Corporate High Yield [HYT] on 2013-11-18 00:00:00.
+acquis is there
+11 Jul 13		31 Jul 13	4	$0.01	Dividend amount:0.0142 per share.
+13 Aug 13		30 Aug 13	4	$0.01	Dividend amount:0.0142 per share.
+12 Sep 13		30 Sep 13	4	$0.01	Dividend amount:0.0142 per share.
+11 Oct 13		31 Oct 13	4	$0.01	Dividend amount:0.0142 per share.
+25 Oct 13		01 Nov 13	4	$0.04	Dividend amount:0.04 per share. 
+
+dividends are there also, closing this out

@@ -1,0 +1,429 @@
+date:  7/17/15
+case:   3422
+Still as a position in the portfolio, but only in stratification by sector
+Type
+Corporate Action | Acquisition
+Ticket
+3422
+Priority
+Medium
+Status
+Open
+Member Name
+Pit Nidi
+Username
+pnidi
+Fund Symbols
+TGHF
+Stock Tickers
+ORCD
+Description / Resources:
+Fri 07/17/2015 at 03:14 PM
+
+Under the terms of the merger agreement, The Orchard's stockholders are entitled to receive $2.05 in cash, without interest and less any applicable withholding taxes, for each share of common stock they owned immediately prior to the effective time of the merger. The Orchard's common stock will cease trading on the Nasdaq Stock Market at the opening of trading on July 30, 2010 and will be delisted from the Nasdaq Stock Market.
+
+Additional Information:
+
+Stock Ticker: ORCD
+
+
+ticker:    ORCD
+
+yahoo:
+
+quantum:
+
+oursite:
+
+Xignite:
+http://192.168.111.213/feed/stockLookup.php?symbol=ORCD
+
+check MAdmin
+Stock:Orchard Enterprises Inc  Symbol:ORCD
+Date: 07/17/2015
+
+11 users found
+
+1	aca	cassandi	castaways2006	edolexa	elineke89	jzawatson	pmok	pnidi	rbitrage	rlb252
+2	rpavlicek	 	 	 	 	 	 	 	 	 
+
+
+database
+select distinct stockkey from mstockalias where symbol= 'ORCD';  
+> Row 1:
+>   STOCKKEY = X'68e9049343e2c7a7c0a80146'
+
+select * from mstockalias where stockkey=X'68e9049343e2c7a7c0a80146'     order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X106
+>           DATE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'68ea049343e2c7a7c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = DMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X106
+>           DATE = TIMESTAMP '2007-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'e314148a473bb699c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X205
+>           DATE = TIMESTAMP '2007-11-14 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'fbc714d1473bb6f3c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X205
+>           DATE = TIMESTAMP '2008-02-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Orchard Enterprises Inc
+>     PRIMARYKEY = X'0f1d08c647b10c51c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68562L100
+>           DATE = TIMESTAMP '2008-02-11 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Orchard Enterprises Inc
+>     PRIMARYKEY = X'c04c08cc47b10c63c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='ORCD'  order by BB_EFFECTIVE;
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock ORCD
+>>>> dbtool started at 2015-07-17 18:06:11 -0400
+stock: ORCD
+  PK       : [68E9049343E2C7A7C0A80146]
+  companyID: [16087]
+  symbol   : [ORCD]
+  name     : [Digital Music Group Inc]
+  date     : [2007-11-14 00:00:00]
+  status   : [Active]
+stock: ORCD
+  PK       : [68E9049343E2C7A7C0A80146]
+  companyID: [16087]
+  symbol   : [ORCD]
+  name     : [Digital Music Group Inc]
+  date     : [2007-11-14 00:00:01]
+  status   : [Active]
+stock: ORCD
+  PK       : [68E9049343E2C7A7C0A80146]
+  companyID: [16087]
+  symbol   : [ORCD]
+  name     : [Orchard Enterprises Inc]
+  date     : [2008-02-11 00:00:00]
+  status   : [Active]
+stock: ORCD
+  PK       : [68E9049343E2C7A7C0A80146]
+  companyID: [16087]
+  symbol   : [ORCD]
+  name     : [Orchard Enterprises Inc]
+  date     : [2008-02-11 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-07-17 18:06:11 -0400
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16087
+2010-07-23 (Fri) [3490]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:1795 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-07-24 (Sat) [3491]: <WEEKEND>
+2010-07-25 (Sun) [3492]: <WEEKEND>
+2010-07-26 (Mon) [3493]: O:2.0400 H:2.0600 L:2.0400 C:2.0500 V:9400 TSO:6394 A:2.0500 R:1.0000 CA:0.0000
+2010-07-27 (Tue) [3494]: O:2.0400 H:2.0600 L:2.0400 C:2.0500 V:9400 TSO:6394 A:2.0500 R:1.0000 CA:0.0000
+2010-07-28 (Wed) [3495]: O:2.0500 H:2.0500 L:2.0400 C:2.0500 V:2689 TSO:6394 A:2.0500 R:1.0000 CA:0.0000
+2010-07-29 (Thu) [3496]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-07-30 (Fri) [3497]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-07-31 (Sat) [3498]: <WEEKEND>
+2010-08-01 (Sun) [3499]: <WEEKEND>
+2010-08-02 (Mon) [3500]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:0 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-03 (Tue) [3501]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-04 (Wed) [3502]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-05 (Thu) [3503]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-06 (Fri) [3504]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:105 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-07 (Sat) [3505]: <WEEKEND>
+2010-08-08 (Sun) [3506]: <WEEKEND>
+2010-08-09 (Mon) [3507]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:0 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-10 (Tue) [3508]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:0 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-11 (Wed) [3509]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:0 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+2010-08-12 (Thu) [3510]: O:2.0400 H:2.0400 L:2.0400 C:2.0400 V:0 TSO:6394 A:2.0400 R:1.0000 CA:0.0000
+
+check the mtickets, look for the last filled one (with shares)
+select * from mticket where stockkey=X'68e9049343e2c7a7c0a80146' and shares > 0 order by closed; 
+> Row 75:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2009-02-26 15:23:00.000000'
+>        COMMENT = 
+>     COMMISSION = 2.000000
+>   CURRENTORDER = X'2e511a6249a6d589c0a80132'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'86ce63063a24db56c0a801e0'
+>       MODIFIED = NULL
+>            NET = 64.590000
+>         OPENED = TIMESTAMP '2009-02-26 12:46:49.000000'
+>          PRICE = 1.614750
+>     PRIMARYKEY = X'2e4f1a6249a6d589c0a80132'
+>         SECFEE = 0.010000
+>         SHARES = 40.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+look for shorts in member's active, long funds
+select fundkey from mposition where stockkey=X'68e9049343e2c7a7c0a80146'  and totalshares < 0;
+if there are some, then do this
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'68e9049343e2c7a7c0a80146'  and totalshares < 0);
+no shorts 
+
+now get the login names based on stockkey - fill in the stockkey
+select loginname from mmanager where primarykey in (select managerkey from mportfolio where primarykey in (select portfoliokey from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'68e9049343e2c7a7c0a80146'  and totalshares < 0)));
+
+apply the acquis
+member's note:  Jul 30, 2010 
+there are 11 members who hold this stock
+quantum:
+last ticket:  2009-02-26 PRICE = 1.614750 
+last price:
+
+going with 20100710 2.05
+
+
+
+
+/Marketocracy/bin/cahelper -symbol  ORCD  -effective 20100710 -type ACQUIS -exchange UN -acqType 1 -acqCash 2.05 -acqShare 0 -purchaser ORCD   >& /Users/build/caout/ORCD.20150717-DELIST.out 
+ORCD.20150717-DELIST.out
+stocks:~/caout build$ cat ORCD.20150717-DELIST.out
+D: (07-17 18:13:47.283) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (07-17 18:14:11.389) cahelper started on 2015-07-17 18:14:11 -0400
+
+D: (07-17 18:14:11.744) There are [0] open tickets for ORCD on 20100710
+D: (07-17 18:14:12.026) StockFileLoad Version:4.0
+D: (07-17 18:14:12.026) Loading Stock Data
+D: (07-17 18:14:49.059) Building Lookup Index
+D: (07-17 18:14:53.815) Finished Building Index
+D: (07-17 18:14:57.497) Finished Loading Stock Data
+D: (07-17 18:14:57.639) Connection to 192.168.111.172:6666 succeeded
+D: (07-17 18:14:57.951) {
+    "ACQUIRED_STOCK" = ORCD; 
+    "ACQUIRING_STOCK" = "ORCD_FIX"; 
+    AMOUNT = 2.05; 
+    APPLIED = 1; 
+    DATE = 20100710; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "ORCD_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (07-17 18:14:59.411) SUCCESS
+D: (07-17 18:14:59.411) cahelper finished 2015-07-17 18:14:59 -0400
+
+
+
+Check the results 
+select * from mstockalias where stockkey= X'68e9049343e2c7a7c0a80146'  order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X106
+>           DATE = TIMESTAMP '2006-02-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'68ea049343e2c7a7c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = DMGI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X106
+>           DATE = TIMESTAMP '2007-11-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'e314148a473bb699c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X205
+>           DATE = TIMESTAMP '2007-11-14 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Digital Music Group Inc
+>     PRIMARYKEY = X'fbc714d1473bb6f3c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 25388X205
+>           DATE = TIMESTAMP '2008-02-11 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Orchard Enterprises Inc
+>     PRIMARYKEY = X'0f1d08c647b10c51c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68562L100
+>           DATE = TIMESTAMP '2008-02-11 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Orchard Enterprises Inc
+>     PRIMARYKEY = X'c04c08cc47b10c63c0a80146'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 68562L100
+>           DATE = TIMESTAMP '2010-07-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Orchard Enterprises Inc
+>     PRIMARYKEY = X'f9fe166255a97e33c0a86f92'
+>       STOCKKEY = X'68e9049343e2c7a7c0a80146'
+>         SYMBOL = ORCD
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401030
+>       STYLEKEY = XG
+
+
+select * from mcorporateaction where aliaskey =X'f9fe166255a97e33c0a86f92' ;
+> Row 1:
+>              ALIASKEY = X'f9fe166255a97e33c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|ORCD  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|2.050000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150717:061411
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2010-07-10 00:00:00.000000'
+>         BB_IDENTIFIER = ORCD_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2010-07-10 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = ORCD_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2010-07-10 00:00:00.000000'
+>            PRIMARYKEY = X'f9f8166255a97e33c0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'f9f8166255a97e33c0a86f92';
+> Row 1:
+>   _C001 = 15.000000
+
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'f9f8166255a97e33c0a86f92'));
+there are 15 fundkeys, save to CA issues ORCD fundkeys.txt
+
+For Beta case
+ORCD no longer trades but is still active on our site - need to delist 
+
+check on 7/18/15    invalidate funds
+
+pnidi 
+TGHF
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Feb 15, 2007 		6000 	6000 	Buy
+Mar 09, 2007 	6000 	7500 	13500 	Buy
+Nov 14, 2007 	13500 	-9001 	4499 	Corporate Action
+Feb 26, 2009 	4499 	-40 	4459 	Sell
+Jul 10, 2010 	4459 	-4459 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Feb 15, 2007 	6,000 	$300.00 	$29,250.70 	$4.88
+Mar 9, 2007 	7,500 	$375.00 	$31,364.19 	$4.18
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Feb 26, 2009 	40 	$2.00 	$0.01 	$64.59 	$1.61
+  	  	 
+
+on 20100710 TGHF  ORCD 4459 * 2.05 = 9140.95 
+
+7/18/15
+ORCD has been acquired 	right curve
+  	  	
+Orchard Enterprises Inc acquired by a private company on 2010-07-10 00:00:00.
+  	  	 
+ok invalidte 
+trades on July 10, 2010 	right curve
+  	  	[download spreadsheet]
+  	  	
+Type 	Symbol 	Quantity 	Price 	Net 	Commission 	SEC Fee
+Sell 	ORCD 	4,459 	$0.00 	$0.00 	$0.00 	$0.00
+
+no cash though
+
+let's check his fund
+/Marketocracy/bin/dbtool lookup fund pnidi
+fund: pnidi
+  PK: [FE3C0A663F0007BBC0A80132]
+  symbol: [TGHF]
+  managerKey: [86CE63063A24DB56C0A801E0]
+  loginName: [pnidi]
+
+/Marketocracy/bin/fptool invalidateFund FE3C0A663F0007BBC0A80132
+
+
+on 20100710 TGHF  ORCD 4459 * 2.05 = 9140.95 
+Date 	Start Cash 	In/Out Flow 	Interest 	Dividends 	Management Fees 	Trade Balance 	End Cash 	Stock Value 	Total Value 	Shares 	Price 	Compliance 	 
+07/10/2010 	-$306.83 	$0.00 	-$0.04 	$9,140.95 	$66.81 	$0.00 	$8,767.27 	$1,210,523.59 	$1,219,290.86 	100,000 	$12.19 	Yes 	Details  

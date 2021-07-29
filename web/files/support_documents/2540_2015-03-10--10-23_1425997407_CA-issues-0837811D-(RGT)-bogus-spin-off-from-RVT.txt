@@ -1,0 +1,480 @@
+date: 3/7/15
+from paintgod
+
+Ticket Number:	2540
+Portfolio Username:	paintgod111
+Ticker Symbol:	083711D  -  0837811D 
+Corporate Action Type:
+Ticker Symbol Change
+Subject:
+incorrect stock symbol
+Description:
+Incorrect symbol showing in two portfolios.
+Thank you.
+
+BHFSF|BHFEF|BHFVF
+
+Symbol: 0837811D	Name: Royce Global Value Trust Inc	Price: $0.00
+Volume:	Sector: Unclassified	Change:
+Short Volume:	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume:	 Exchange: NYSE	Today: 0.00%
+50 Day Ave:	Year High:	High:
+200 Day Ave:	Year Low:	Low:
+
+your holdings of 0837811D	
+ 	 	
+Fund	Shares	Value	Portion of fund
+BHDCF	 0	 N/A	 N/A
+BHFSF	592	 $.00	 0.00%
+BHCPF	 0	 N/A	 N/A
+BHFEF	214	 $.00	 0.00%
+BHFVF	 0	 N/A	 N/A
+BHETF	 0	 N/A	 N/A
+
+select distinct stockkey from mstockalias where symbol='0837811D';
+> Row 1:
+>   STOCKKEY = X'213e512354a4907ec0a86f92'
+
+select * from mstockalias where STOCKKEY = X'213e512354a4907ec0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Royce Global Value Trust Inc
+>     PRIMARYKEY = X'213f512354a4907ec0a86f92'
+>       STOCKKEY = X'213e512354a4907ec0a86f92'
+>         SYMBOL = 0837811D
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select count(*) from mticket where STOCKKEY= X'213e512354a4907ec0a86f92';
+> Row 1:
+>   _C001 = 77.000000
+
+select distinct sourcekey from mticket where STOCKKEY= X'213e512354a4907ec0a86f92';
+> Row 1:
+>   SOURCEKEY = X'74464d4b524367bcc0a80146'
+
+this is the primarykey from the mcorporateaction 
+select * from mcorporateaction where primarykey=X'74464d4b524367bcc0a80146';
+> Row 1:
+>              ALIASKEY = X'afe31029390b3520c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Royce Global Value Trust Inc|CP_ID_BB_COMP|36180241|CP_ID_BB_SEC|60000|CP_TERMS|1 per 7|CP_RATIO|0.142857|CP_PAY_DT|20131017|CP_RECORD_DT|20131010|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20141231|CP_TKR|0837811D US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004SJPGH8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004SJPFR9|CP_SPINOFF_ID_BB_SEC_NUM_DES|0837811D|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79112011
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 108181
+>        BB_COMPANYNAME = Royce Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = RVT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = RVT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>            PRIMARYKEY = X'74464d4b524367bcc0a80146'
+>               VERSION = NULL
+
+2014-12-31
+RYT spun off this on 2014-12-31
+
+let's see when he actually got these shares
+BHSFS
+LEDGER
+Date	Start	Change	End	Type
+Oct 17, 2013		592	592	Corporate Action
+Total: 592
+  	
+BUYS
+You have no Buys for this position
+ 	
+SELLS
+You have no sells for this position
+
+ 	 	 
+	 corporate actions	
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Dec 31, 2014	0837811D US spun off from RVT with terms:1 per 7
+
+
+
+found it by searchng on RVT trust
+
+https://www.roycefunds.com/news/2013/09/rvt-announces-terms-spin-off-royce-global-value-trust
+
+The spin-off of Royce Global Value Trust, Inc. (“Global Trust”), a newly organized, diversified, closed-end management investment company, was approved by the stockholders of Royce Value Trust, Inc. (NYSE:RVT) (“Value Trust”) on September 5, 2013.
+Value Trust announced today that the distribution of Global Trust common stock to Value Trust stockholders is expected to be at a ratio of one (1) share of Global Trust common stock for every seven (7) shares of Value Trust common stock owned. Only whole shares of Global Trust common stock will be issued in connection with the spin-off; Value Trust stockholders will receive cash in lieu of fractional shares of Global Trust common stock. The fractional shares of Global Trust common stock that otherwise would have been issued in the spin-off will be aggregated and sold in the open market and Value Trust stockholders will receive a cash payment equal to their pro rata share of such total sales proceeds. The initial net asset value for each share of Global Trust common stock (“NAV”) is expected to be $9.79 per share. Such NAV is preliminary and subject to change. 
+The distribution will be made on October 17, 2013 to Value Trust stockholders of record as of the official close of business on October 10, 2013. 
+Shares of Global Trust common stock are expected to trade on the New York Stock Exchange on a “when issued” basis from October 8, 2013 through October 17, 2013 under the symbol “RGT wi” and on a “regular way” basis beginning October 18, 2013 under the symbol “RGT.”
+select distinct stockkey from mstockalias where symbol like 'RGT';
+> Row 1:
+>   STOCKKEY = X'de1f2d1f52548e16c0a80146'
+
+select * from mstockalias where STOCKKEY = X'de1f2d1f52548e16c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2013-10-08 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Royce Global Value Trust Inc
+>     PRIMARYKEY = X'de202d1f52548e16c0a80146'
+>       STOCKKEY = X'de1f2d1f52548e16c0a80146'
+>         SYMBOL = RGTw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'de202d1f52548e16c0a80146';
+nothing  
+select count(*) from mticket where STOCKKEY = X'de1f2d1f52548e16c0a80146';
+> Row 1:
+>   _C001 = 101.000000
+select distinct sourcekey from mticket where STOCKKEY = X'de1f2d1f52548e16c0a80146';
+> Row 1:
+>   SOURCEKEY = X'a7fb57da5261ba39c0a80146'
+> Row 2:
+>   SOURCEKEY = NULL
+select * from mcorporateaction where primarykey=X'a7fb57da5261ba39c0a80146';
+> Row 1:
+>              ALIASKEY = X'afe31029390b3520c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Royce Global Value Trust Inc|CP_ID_BB_COMP|36180241|CP_ID_BB_SEC|60000|CP_TERMS|1 per 7|CP_RATIO|0.142857|CP_PAY_DT|20131017|CP_RECORD_DT|20131010|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.921904|CP_ADJ_DT|20131018|CP_TKR|RGT US|CP_DUE_BILL_RED_DT|20131022|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004SJPGH8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004SJPFR9|CP_SPINOFF_ID_BB_SEC_NUM_DES|RGT|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79112011
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 108181
+>        BB_COMPANYNAME = Royce Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = RVT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = RVT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-10-18 00:00:00.000000'
+>            PRIMARYKEY = X'a7fb57da5261ba39c0a80146'
+>               VERSION = NULL
+paydate for the spin off:  CP_PAY_DT|20131017
+second mstockalias
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 78081T104
+>           DATE = TIMESTAMP '2013-10-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Royce Global Value Trust Inc
+>     PRIMARYKEY = X'30a659855261bb6ac0a80146'
+>       STOCKKEY = X'de1f2d1f52548e16c0a80146'
+>         SYMBOL = RGT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'30a659855261bb6ac0a80146';
+> Row 1:
+>              ALIASKEY = X'30a659855261bb6ac0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|RGTw US|CP_NEW_TKR|RGT US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 81933793
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 36180241
+>        BB_COMPANYNAME = Royce Global Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = RGTw    US Equity
+>             BB_ISSUED = TIMESTAMP '2013-09-27 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = RGTw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-09-27 00:00:00.000000'
+>            PRIMARYKEY = X'cd6716e952460b61c0a80146'
+>               VERSION = NULL
+
+let's see if also got RGT
+
+your holdings of RGT	
+ 	 	
+Fund	Shares	Value	Portion of fund
+BHDCF	 0	 N/A	 N/A
+BHFSF	6,788	 $54,507.64	 4.90%  <--- expand
+BHCPF	 0	 N/A	 N/A
+BHFEF	214	 $1,718.42	 0.11%
+BHFVF	6,270	 $50,348.10	 3.83%
+BHETF	 0	 N/A	 N/A
+ 	 	[ Trade this stock ]
+	 most recent corporate actions for RGT	
+ 	 	
+Effective Date	Description
+Oct 18, 2013	Change in the ticker (trading) symbol from RGTw to RGT
+ 	 	[ See All Actions ]
+
+LEDGER
+Date	Start	Change	End	Type
+Oct 17, 2013		592	592	Corporate Action
+Oct 29, 2013	592	6500	7092	Buy
+Feb 27, 2014	7092	70	7162	Buy
+Oct 20, 2014	7162	716	7878	Buy
+Dec 02, 2014	7878	-1090	6788	Sell
+Total: 6,788
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Oct 29, 2013	6,500	$325.00	$57,299.32	$8.82
+Feb 27, 2014	70	$3.50	$614.38	$8.78
+Oct 20, 2014	716	$35.80	$5,892.43	$8.23
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Dec 2, 2014	1,090	$54.50	$0.16	$9,050.00	$8.30
+ 	 	 
+	 corporate actions	
+ 	 	
+The following is a list of the corporate actions that affected this position.
+
+ 	 	
+Effective Date	Description
+Oct 17, 2013	RGT US spun off from RVT with terms:1 per 7
+ 	 	 
+
+on 10/17/13 - look at the ledger - see that he got both the RGT and also the alphanumeric
+BHFSF
+
+positions on October 17, 2013	
+ 	 	
+ 	 	
+Symbol	Name	Price	Portion Of Fund	Shares Held	Dividends Paid	Value	 
+SPLV	PowerShares S&P 500 Low Volatility Portfolio	$32.12	10.8%	3,852	$0.00	$123,726.24	Details 
+QAI	IQ Hedge Multi-Strategy Tracker ETF	$28.84	8.4%	3,338	$0.00	$96,267.92	Details 
+FCG	First Trust ISE-Revere Natural Gas Index Fund	$20.11	7.2%	4,068	$0.00	$81,807.48	Details 
+RVT	ROYCE VALUE TRUST	$16.39	5.9%	4,150	$0.00	$68,018.50	Details 
+SOR	SOURCE CAPITAL	$63.49	5.7%	1,020	$0.00	$64,759.80	Details 
+CVY	Guggenheim Multi-Asset Income	$24.52	5.2%	2,417	$0.00	$59,264.84	Details 
+PRFZ	PowerShares ETF Trust US 1500 Small-Mid Portfolio	$91.85	5.1%	633	$0.00	$58,141.05	Details 
+PRF	PowerShares Exchange Traded Funds FTSE RAFI US 1000 Portfolio	$78.18	5.0%	730	$0.00	$57,071.40	Details 
+IAU	iShares Gold Trust	$12.81	4.9%	4,347	$0.00	$55,685.07	Details 
+MOO	Market Vectors Agribusiness ETF	$52.61	4.4%	950	$0.00	$49,979.50	Details 
+RGT	Royce Global Value Trust Inc	$8.00	0.4%	592	$0.00	$4,736.00	Details 
+Details 
+ BHFSF	 	 
+	 trades on October 17, 2013	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	RGT	592	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	0837811D	592	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+and that it prices the following day
+
+let's try delisting this 0837811D
+
+/Marketocracy/bin/cahelper -symbol 0837811D -effective 20131019 -type EQY_DELIST -exchange UN >& /Users/build/caout/0837811D.20150308-DELIST.out
+stocks:~/caout build$ tail -f 0837811D.20150308-DELIST.out
+D: (03-08 08:54:49.133) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-08 08:55:12.404) cahelper started on 2015-03-08 08:55:12 -0400
+
+D: (03-08 08:55:12.625) {
+    APPLIED = 0;   <--- did not apply
+    DATE = 20131019; 
+    NOTES = "N.A."; 
+    SYMBOL = 0837811D; 
+    TYPE = "EQY_DELIST"; 
+}
+D: (03-08 08:55:12.626) SUCCESS
+D: (03-08 08:55:12.626) cahelper finished 2015-03-08 08:55:12 -0400
+
+let's try an acquis
+/Marketocracy/bin/cahelper -symbol 0837811D -effective 20131019 -type ACQUIS -exchange UN -acqType 1 -acqCash 0 -acqShare 0 -purchaser 0837811D >& /Users/build/caout/0837811D.20150308-ACQUID.out
+D: (03-08 08:59:10.759) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-08 08:59:33.969) cahelper started on 2015-03-08 08:59:33 -0400
+
+D: (03-08 08:59:34.141) {
+    "ACQUIRED_STOCK" = 0837811D; 
+    "ACQUIRING_STOCK" = "0837811D_FIX"; 
+    DATE = 20131019; 
+    NOTES = " "; 
+    SYMBOL = "0837811D_FIX"; 
+    "TRANSACTION_TYPE" = "PRIVATE ACQUISITION"; 
+    TYPE = ACQUIS; 
+}
+D: (03-08 08:59:34.141) SUCCESS
+D: (03-08 08:59:34.141) cahelper finished 2015-03-08 08:59:34 -0400
+
+
+select distinct stockkey from mstockalias where symbol='0837811D';
+> Row 1:
+>   STOCKKEY = X'213e512354a4907ec0a86f92'
+select * from mstockalias where STOCKKEY = X'213e512354a4907ec0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Royce Global Value Trust Inc
+>     PRIMARYKEY = X'213f512354a4907ec0a86f92'
+>       STOCKKEY = X'213e512354a4907ec0a86f92'
+>         SYMBOL = 0837811D
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'213f512354a4907ec0a86f92';
+
+that did not work either.
+lets just get rid of this altogether
+
+select distinct stockkey from mstockalias where symbol='0837811D';
+> Row 1:
+>   STOCKKEY = X'213e512354a4907ec0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'213e512354a4907ec0a86f92'; 
+
+delete from mwindowstock where stockkey=X'213e512354a4907ec0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'213e512354a4907ec0a86f92');
+
+delete from mstockalias where stockkey=X'213e512354a4907ec0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'213e512354a4907ec0a86f92');   
+
+delete from mposition where stockkey=X'213e512354a4907ec0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'213e512354a4907ec0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'213e512354a4907ec0a86f92');
+
+delete from mticket where stockkey=X'213e512354a4907ec0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'213e512354a4907ec0a86f92';  
+
+commit;
+
+set commit true;
+
+
+Let's check 
+select distinct stockkey from mstockalias where symbol='0837811D';
+nothing  - good
+
+check RVT the company that did the spin off
+select distinct stockkey from mstockalias where symbol='RVT';
+> Row 1:
+>   STOCKKEY = X'afe21029390b3520c0a80116'
+select * from mstockalias where STOCKKEY = X'afe21029390b3520c0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 780910105
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = ROYCE VALUE TRUST
+>     PRIMARYKEY = X'afe31029390b3520c0a80116'
+>       STOCKKEY = X'afe21029390b3520c0a80116'
+>         SYMBOL = RVT
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = SG
+
+select * from mcorporateaction where aliaskey=X'afe31029390b3520c0a80116';
+here are the two spin offs
+> Row 40:
+>              ALIASKEY = X'afe31029390b3520c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Royce Global Value Trust Inc|CP_ID_BB_COMP|36180241|CP_ID_BB_SEC|60000|CP_TERMS|1 per 7|CP_RATIO|0.142857|CP_PAY_DT|20131017|CP_RECORD_DT|20131010|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20141231|CP_TKR|0837811D US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004SJPGH8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004SJPFR9|CP_SPINOFF_ID_BB_SEC_NUM_DES|0837811D|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79112011
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 108181
+>        BB_COMPANYNAME = Royce Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = RVT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = RVT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>            PRIMARYKEY = X'74464d4b524367bcc0a80146'  <------------ delete this one
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'74464d4b524367bcc0a80146';
+> Row 1:
+>   _C001 = 0.000000
+
+
+
+> Row 41:
+>              ALIASKEY = X'afe31029390b3520c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Royce Global Value Trust Inc|CP_ID_BB_COMP|36180241|CP_ID_BB_SEC|60000|CP_TERMS|1 per 7|CP_RATIO|0.142857|CP_PAY_DT|20131017|CP_RECORD_DT|20131010|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.921904|CP_ADJ_DT|20131018|CP_TKR|RGT US|CP_DUE_BILL_RED_DT|20131022|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004SJPGH8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004SJPFR9|CP_SPINOFF_ID_BB_SEC_NUM_DES|RGT|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79112011
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 108181
+>        BB_COMPANYNAME = Royce Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-10-18 00:00:00.000000'
+>         BB_IDENTIFIER = RVT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = RVT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-10-18 00:00:00.000000'
+>            PRIMARYKEY = X'a7fb57da5261ba39c0a80146'
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'a7fb57da5261ba39c0a80146';
+> Row 1:
+>   _C001 = 76.000000
+
+delete the one that created the alpha-numeric ticker
+
+to be deleted
+
+> Row 40:
+>              ALIASKEY = X'afe31029390b3520c0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Royce Global Value Trust Inc|CP_ID_BB_COMP|36180241|CP_ID_BB_SEC|60000|CP_TERMS|1 per 7|CP_RATIO|0.142857|CP_PAY_DT|20131017|CP_RECORD_DT|20131010|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20141231|CP_TKR|0837811D US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004SJPGH8|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004SJPFR9|CP_SPINOFF_ID_BB_SEC_NUM_DES|0837811D|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 79112011
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 108181
+>        BB_COMPANYNAME = Royce Value Trust Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-31 00:00:00.000000'
+>         BB_IDENTIFIER = RVT     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-01 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = RVT
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 60000
+>            BB_UPDATED = TIMESTAMP '2013-09-25 00:00:00.000000'
+>            PRIMARYKEY = X'74464d4b524367bcc0a80146'  <------------ delete this one
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'74464d4b524367bcc0a80146';
+> Row 1:
+>   _C001 = 0.000000
+
+delete from mcorporateaction where PRIMARYKEY = X'74464d4b524367bcc0a80146' ;
+
+ok, done.
+
+check on 3/9/15  look for this ticker to be gone from our site.
+check the member's stratification and see that it is no longer there
+
+this is done, closing it out

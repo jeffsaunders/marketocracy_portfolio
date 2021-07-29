@@ -1,0 +1,2106 @@
+date: 10/2/15
+Something in your accounting of this change is wrong
+Type
+
+Corporate Action | Ticker Symbol Change
+
+Ticket
+
+3727
+
+Priority
+
+Medium
+
+Status
+
+Open
+
+Member Name
+
+Timothy Siegel
+
+Username
+
+timbo56  SSOF1
+
+Fund Symbols
+
+SSOF1
+
+Stock Tickers
+
+RYL; CAA
+
+Description / Resources: Fri 10/02/2015 at 01:10 PM
+I'm not sure what happened, but I did not own that much Ryland that it could have turned into more than $400,000 worth of CAA. I'd love to believe that I had done that well, but I'm sure I did not.
+
+Additional Information:
+
+Stock Ticker: RYL; CAA
+
+RYL
+select distinct stockkey from mstockalias where symbol='RYL';
+> Row 1:
+>   STOCKKEY = X'aff21029390b3542c0a80116'
+select * from mstockalias where stockkey=X'aff21029390b3542c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'aff31029390b3542c0a80116'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'f2797377560db951c0a86fab'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'f2797377560db951c0a86fab';
+> Row 1:
+>              ALIASKEY = X'f2797377560db951c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|RYL|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112664636
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 101293
+>        BB_COMPANYNAME = Ryland Group Inc/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = RYL     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RYL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'18c52293560b15cac0a86fab'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'fbd373bc560dbc0fc0a86fab'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'fbd373bc560dbc0fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'fbd373bc560dbc0fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RYL US|CP_NAME|Ryland Group Inc/The|CP_ID_BB_COMP|101293|CP_UNIT|Ryland Group Inc/The|CP_TOT_AMT|3000.995850|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|5.095700|CP_SH_FLAG|1|CP_DEBT|1026.589966|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|-0.351878|CP_CUR_PREMIUM|-0.157732|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2933.998047|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser(s);1;Lazard Ltd;13;100.000000;1;Acquirer Legal Adviser(s);1;Ropes & Gray;13;100.000000;1;Legal Adv to Acquirer Financia;1;Simpson Thacher;13;100.000000;1;Acquirer Financial & Fairness;1;JP Morgan;13;100.000000;|CP_ACQ_TKR|CAA US|CP_ACQ_ID_BB_GLOBAL|BBG000BTFDR9|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZG62|CP_ACQ_ID_BB_SEC_NUM_DES|CAA|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|RYL US|CP_TARGET_ID_BB_GLOBAL|BBG000BSGQN5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FDZC16|CP_TARGET_ID_BB_SEC_NUM_DES|RYL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS AFTER 1 FOR 5 REVERSE STOCK SPLIT OF ACQ'R: 1.0191 SHRS PER TGT SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108237461
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = CalAtlantic Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = CAA     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CAA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'adeb7353560db7afc0a86fab'
+>               VERSION = NULL
+
+ratio:  5.095700
+
+select count(*) from mticket where sourcekey=X'adeb7353560db7afc0a86fab';
+>   _C001 = 1720.000000
+select distinct stockkey from mticket where sourcekey=X'adeb7353560db7afc0a86fab';
+> Row 1:
+>   STOCKKEY = X'b2161029390b3b11c0a80116'
+> Row 2:
+>   STOCKKEY = X'aff21029390b3542c0a80116'
+
+member and fund:  timbo56  SSOF1   20151001
+
+trades on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	RYL	2,120	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	CAA	10,802	$0.00	$0.00	$0.00	$0.00
+
+there should be a reverse split first
+
+ 	 	 
+
+
+
+here are the CAs:
+RYL has been acquired	right curve
+ 	 	
+RYLAND GROUP [RYL] acquired by STANDARD PACIFIC [CAA] on 2015-10-01 00:00:00.
+ 	 	[ Go to CAA ]
+ 	 	 
+left curve	  cash dividends paid by RYL	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+12 Jul 00	12 Jul 00	12 Jul 00	N/A	$0.04	Dividend amount:0.04 per share.
+11 Oct 00	11 Oct 00	11 Oct 00	N/A	$0.04	Dividend amount:0.04 per share.
+10 Jan 01	10 Jan 01	10 Jan 01	N/A	$0.04	Dividend amount:0.04 per share.
+10 Apr 01	15 Apr 01	30 Apr 01	4	$0.04	Dividend amount:0.04 per share.
+11 Jul 01	15 Jul 01	30 Jul 01	4	$0.04	Dividend amount:0.04 per share.
+11 Oct 01	15 Oct 01	30 Oct 01	4	$0.04	Dividend amount:0.04 per share.
+11 Jan 02	15 Jan 02	30 Jan 02	4	$0.04	Dividend amount:0.04 per share.
+11 Apr 02	15 Apr 02	30 Apr 02	4	$0.04	Dividend amount:0.04 per share.
+11 Jul 02	15 Jul 02	30 Jul 02	4	$0.02	Dividend amount:0.02 per share.
+10 Oct 02	15 Oct 02	30 Oct 02	4	$0.02	Dividend amount:0.02 per share.
+13 Jan 03	15 Jan 03	30 Jan 03	4	$0.02	Dividend amount:0.02 per share.
+11 Apr 03	15 Apr 03	30 Apr 03	4	$0.02	Dividend amount:0.02 per share.
+11 Jul 03	15 Jul 03	30 Jul 03	4	$0.02	Dividend amount:0.02 per share.
+10 Oct 03	15 Oct 03	30 Oct 03	4	$0.02	Dividend amount:0.02 per share.
+13 Jan 04	15 Jan 04	30 Jan 04	4	$0.10	Dividend amount:0.1 per share.
+13 Apr 04	15 Apr 04	30 Apr 04	4	$0.10	Dividend amount:0.1 per share.
+13 Jul 04	15 Jul 04	30 Jul 04	4	$0.10	Dividend amount:0.1 per share.
+13 Oct 04	15 Oct 04	30 Oct 04	4	$0.10	Dividend amount:0.1 per share.
+12 Jan 05	15 Jan 05	30 Jan 05	4	$0.06	Dividend amount:0.06 per share.
+13 Apr 05	15 Apr 05	30 Apr 05	4	$0.06	Dividend amount:0.06 per share.
+13 Jul 05	15 Jul 05	30 Jul 05	4	$0.06	Dividend amount:0.06 per share.
+12 Oct 05	15 Oct 05	30 Oct 05	4	$0.06	Dividend amount:0.06 per share.
+11 Jan 06	15 Jan 06	30 Jan 06	4	$0.12	Dividend amount:0.12 per share.
+11 Apr 06	15 Apr 06	30 Apr 06	4	$0.12	Dividend amount:0.12 per share.
+12 Jul 06	15 Jul 06	31 Jul 06	4	$0.12	Dividend amount:0.12 per share.
+11 Oct 06	15 Oct 06	30 Oct 06	4	$0.12	Dividend amount:0.12 per share.
+10 Jan 07	15 Jan 07	30 Jan 07	4	$0.12	Dividend amount:0.12 per share.
+11 Apr 07	15 Apr 07	30 Apr 07	4	$0.12	Dividend amount:0.12 per share.
+11 Jul 07	15 Jul 07	30 Jul 07	4	$0.12	Dividend amount:0.12 per share.
+11 Oct 07	15 Oct 07	30 Oct 07	4	$0.12	Dividend amount:0.12 per share.
+11 Jan 08	15 Jan 08	30 Jan 08	4	$0.12	Dividend amount:0.12 per share.
+11 Apr 08	15 Apr 08	30 Apr 08	4	$0.12	Dividend amount:0.12 per share.
+11 Jul 08	15 Jul 08	30 Jul 08	4	$0.12	Dividend amount:0.12 per share.
+10 Oct 08	15 Oct 08	30 Oct 08	4	$0.12	Dividend amount:0.12 per share.
+13 Jan 09	15 Jan 09	30 Jan 09	4	$0.03	Dividend amount:0.03 per share.
+13 Apr 09	15 Apr 09	30 Apr 09	4	$0.03	Dividend amount:0.03 per share.
+13 Jul 09	15 Jul 09	30 Jul 09	4	$0.03	Dividend amount:0.03 per share.
+13 Oct 09	15 Oct 09	30 Oct 09	4	$0.03	Dividend amount:0.03 per share.
+13 Jan 10	15 Jan 10	29 Jan 10	4	$0.03	Dividend amount:0.03 per share.
+13 Apr 10	15 Apr 10	30 Apr 10	4	$0.03	Dividend amount:0.03 per share.
+13 Jul 10	15 Jul 10	30 Jul 10	4	$0.03	Dividend amount:0.03 per share.
+13 Oct 10	15 Oct 10	29 Oct 10	4	$0.03	Dividend amount:0.03 per share.
+12 Jan 11	15 Jan 11	31 Jan 11	4	$0.03	Dividend amount:0.03 per share.
+13 Jul 11	15 Jul 11	29 Jul 11	4	$0.03	Dividend amount:0.03 per share.
+12 Oct 11	15 Oct 11	31 Oct 11	4	$0.03	Dividend amount:0.03 per share.
+11 Jan 12	15 Jan 12	30 Jan 12	4	$0.03	Dividend amount:0.03 per share.
+11 Apr 12	15 Apr 12	30 Apr 12	4	$0.03	Dividend amount:0.03 per share.
+12 Apr 12	16 Apr 12	30 Apr 12	4	$0.03	Dividend amount:0.03 per share.
+12 Jul 12	16 Jul 12	30 Jul 12	4	$0.03	Dividend amount:0.03 per share.
+11 Oct 12	15 Oct 12	30 Oct 12	4	$0.03	Dividend amount:0.03 per share.
+11 Jan 13	15 Jan 13	30 Jan 13	4	$0.03	Dividend amount:0.03 per share.
+11 Jul 13	15 Jul 13	30 Jul 13	4	$0.03	Dividend amount:0.03 per share.
+10 Oct 13	15 Oct 13	30 Oct 13	4	$0.03	Dividend amount:0.03 per share.
+11 Oct 13	15 Oct 13	30 Oct 13	4	$0.03	Dividend amount:0.03 per share.
+13 Jan 14	15 Jan 14	30 Jan 14	4	$0.03	Dividend amount:0.03 per share.
+11 Apr 14	15 Apr 14	30 Apr 14	4	$0.03	Dividend amount:0.03 per share.
+11 Jul 14	15 Jul 14	30 Jul 14	4	$0.03	Dividend amount:0.03 per share.
+10 Oct 14	15 Oct 14	30 Oct 14	4	$0.03	Dividend amount:0.03 per share.
+13 Oct 14	15 Oct 14	30 Oct 14	4	$0.03	Dividend amount:0.03 per share.
+13 Jan 15	15 Jan 15	30 Jan 15	4	$0.03	Dividend amount:0.03 per share.
+13 Apr 15	15 Apr 15	30 Apr 15	4	$0.03	Dividend amount:0.03 per share.
+13 Jul 15	15 Jul 15	30 Jul 15	4	$0.03	Dividend amount:0.03 per share.
+ 	 	 
+left curve	  RYL had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+31 May 02	2 for 1	Split terms:2 for 1
+01 Dec 04	2 for 1	Split terms:2 for 1
+
+check out the acquis which gave CAA
+select * from mcorporateaction where PRIMARYKEY = X'fbd373bc560dbc0fc0a86fab';
+
+CAA
+select distinct stockkey from mstockalias where symbol='CAA';
+> Row 1:
+>   STOCKKEY = X'c7050e21390a50f0c0a80116'
+> Row 2:
+>   STOCKKEY = X'b2161029390b3b11c0a80116'
+
+there are two
+> CAA 1:
+>   STOCKKEY = X'c7050e21390a50f0c0a80116'
+select * from mstockalias where STOCKKEY = X'c7050e21390a50f0c0a80116' order by "date";
+active but the ticker is now ELC   not an issue
+> CAA 2:
+>   STOCKKEY = X'b2161029390b3b11c0a80116'
+select * from mstockalias where STOCKKEY = X'b2161029390b3b11c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'b2171029390b3b11c0a80116'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = SPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'6c557381560db987c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+
+ symbol changes for CAA	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+01 Oct 15	SPF	CAA	Change in the ticker (trading) symbol from SPF to CAA
+ 	 	 
+left curve	  CUSIP changes for CAA	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+01 Oct 15	85375C101	128195104	Change in any of identification numbers (CUSIP) of a security from 85375C101 to 128195104
+ 	 	 
+left curve	  cash dividends paid by CAA	right curve
+ 	 	
+Effective Date	Record Date	Pay Date	Frequency	Gross	Description
+10 May 00	10 May 00	10 May 00	N/A	$0.08	Dividend amount:0.08 per share.
+10 Aug 00	10 Aug 00	10 Aug 00	N/A	$0.08	Dividend amount:0.08 per share.
+07 Nov 00	07 Nov 00	07 Nov 00	N/A	$0.08	Dividend amount:0.08 per share.
+08 Feb 01	12 Feb 01	26 Feb 01	4	$0.08	Dividend amount:0.08 per share.
+09 May 01	11 May 01	25 May 01	4	$0.08	Dividend amount:0.08 per share.
+10 Aug 01	14 Aug 01	28 Aug 01	4	$0.08	Dividend amount:0.08 per share.
+13 Nov 01	15 Nov 01	29 Nov 01	4	$0.08	Dividend amount:0.08 per share.
+08 Feb 02	12 Feb 02	26 Feb 02	4	$0.08	Dividend amount:0.08 per share.
+10 May 02	14 May 02	28 May 02	4	$0.08	Dividend amount:0.08 per share.
+09 Aug 02	13 Aug 02	27 Aug 02	4	$0.08	Dividend amount:0.08 per share.
+08 Nov 02	13 Nov 02	27 Nov 02	4	$0.08	Dividend amount:0.08 per share.
+07 Feb 03	11 Feb 03	25 Feb 03	4	$0.08	Dividend amount:0.08 per share.
+12 May 03	14 May 03	28 May 03	4	$0.08	Dividend amount:0.08 per share.
+12 Aug 03	14 Aug 03	28 Aug 03	4	$0.08	Dividend amount:0.08 per share.
+07 Nov 03	12 Nov 03	26 Nov 03	4	$0.08	Dividend amount:0.08 per share.
+10 Feb 04	12 Feb 04	26 Feb 04	4	$0.08	Dividend amount:0.08 per share.
+11 May 04	13 May 04	27 May 04	4	$0.08	Dividend amount:0.08 per share.
+17 Aug 04	19 Aug 04	26 Aug 04	4	$0.08	Dividend amount:0.08 per share.
+09 Nov 04	12 Nov 04	26 Nov 04	4	$0.08	Dividend amount:0.08 per share.
+08 Feb 05	10 Feb 05	24 Feb 05	4	$0.08	Dividend amount:0.08 per share.
+10 May 05	12 May 05	26 May 05	4	$0.08	Dividend amount:0.08 per share.
+04 Aug 05	08 Aug 05	29 Aug 05	4	$0.08	Dividend amount:0.08 per share.
+07 Nov 05	09 Nov 05	23 Nov 05	4	$0.04	Dividend amount:0.04 per share.
+07 Feb 06	09 Feb 06	23 Feb 06	4	$0.04	Dividend amount:0.04 per share.
+09 May 06	11 May 06	25 May 06	4	$0.04	Dividend amount:0.04 per share.
+08 Aug 06	10 Aug 06	24 Aug 06	4	$0.04	Dividend amount:0.04 per share.
+06 Nov 06	08 Nov 06	22 Nov 06	4	$0.04	Dividend amount:0.04 per share.
+06 Feb 07	08 Feb 07	22 Feb 07	4	$0.04	Dividend amount:0.04 per share.
+08 May 07	10 May 07	24 May 07	4	$0.04	Dividend amount:0.04 per share.
+07 Aug 07	09 Aug 07	23 Aug 07	4	$0.04	Dividend amount:0.04 per share.
+ 	 	 
+left curve	  CAA had some stock splits	right curve
+ 	 	
+Effective Date	Terms	Description
+30 Aug 05	2 for 1	Split terms:2 for 1
+01 Oct 15	1 for 5	Split terms:1 for 5  <-- ah there was a 1 for 5 split 
+
+
+Here's what happened:
+
+At the time of the merger, Standard Pacific will implement a 1 for 5 reverse stock split, so that each 5 shares of 
+Standard Pacific common stock will be combined into 1 share of Standard Pacific common stock.  
+
+After giving effect to the reverse stock split, Ryland shareholders will receive 1.0191 shares of 
+Standard Pacific common stock for each share of Ryland common stock 
+(which would be 5.0957 shares prior to giving effect to the reverse stock split).  
+Fractional shares will be paid out in cash.  Upon closing of the transaction, Standard Pacific stockholders 
+will own approximately 59% and Ryland shareholders will own approximately 41% of the combined company.
+
+
+ok, let's back out the acquis of RYL by CAA
+
+select distinct stockkey from mstockalias where symbol='RYL';
+> Row 1:
+>   STOCKKEY = X'aff21029390b3542c0a80116'
+select * from mstockalias where STOCKKEY = X'aff21029390b3542c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'aff31029390b3542c0a80116'   <------ set the identitykey here 
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'f2797377560db951c0a86fab' <---- delete this 
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+select * from mcorporateaction where aliaskey=X'f2797377560db951c0a86fab';
+> Row 1:
+>              ALIASKEY = X'f2797377560db951c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|RYL|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112664636
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 101293
+>        BB_COMPANYNAME = Ryland Group Inc/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = RYL     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RYL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'18c52293560b15cac0a86fab'  <---- delete 
+>               VERSION = NULL
+
+
+
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'fbd373bc560dbc0fc0a86fab'   <--- delete this 
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'fbd373bc560dbc0fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'fbd373bc560dbc0fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RYL US|CP_NAME|Ryland Group Inc/The|CP_ID_BB_COMP|101293|CP_UNIT|Ryland Group Inc/The|CP_TOT_AMT|3000.995850|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|5.095700|CP_SH_FLAG|1|CP_DEBT|1026.589966|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|-0.351878|CP_CUR_PREMIUM|-0.157732|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2933.998047|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser(s);1;Lazard Ltd;13;100.000000;1;Acquirer Legal Adviser(s);1;Ropes & Gray;13;100.000000;1;Legal Adv to Acquirer Financia;1;Simpson Thacher;13;100.000000;1;Acquirer Financial & Fairness;1;JP Morgan;13;100.000000;|CP_ACQ_TKR|CAA US|CP_ACQ_ID_BB_GLOBAL|BBG000BTFDR9|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZG62|CP_ACQ_ID_BB_SEC_NUM_DES|CAA|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|RYL US|CP_TARGET_ID_BB_GLOBAL|BBG000BSGQN5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FDZC16|CP_TARGET_ID_BB_SEC_NUM_DES|RYL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS AFTER 1 FOR 5 REVERSE STOCK SPLIT OF ACQ'R: 1.0191 SHRS PER TGT SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108237461   <---- update this to make it more unique
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = CalAtlantic Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = CAA     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CAA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'adeb7353560db7afc0a86fab'   <---- this will be delete with the reverseCA
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'ea3740ad560f0b3ec0a86fab'  <---- delete this 
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'ea3740ad560f0b3ec0a86fab';
+
+> Row 1:
+>              ALIASKEY = X'ea3740ad560f0b3ec0a86fab'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|RYL|CP_DELIST_REASON|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 112664636
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 101293
+>        BB_COMPANYNAME = Ryland Group Inc/The
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = RYL     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = RYL
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'44c922dc55fb43f9c0a86fab'   <----- delete 
+>               VERSION = NULL
+	select count(*) from mticket where sourcekey=X'44c922dc55fb43f9c0a86fab';
+
+Get the mstock and update the identitykey
+select * from mstock where primarykey=X'aff21029390b3542c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'ea3740ad560f0b3ec0a86fab'
+>                NAME = RYLAND GROUP
+>          PRIMARYKEY = X'aff21029390b3542c0a80116'
+>              SYMBOL = RYL
+>           COMPANYID = 6043
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6c67
+
+>     PRIMARYKEY = X'aff31029390b3542c0a80116'   <------ set the identitykey here 
+update mstock set IDENTITYKEY=X'aff31029390b3542c0a80116'  where PRIMARYKEY = X'aff21029390b3542c0a80116';
+done
+
+delete the two delists
+delete from mcorporateaction where PRIMARYKEY = X'44c922dc55fb43f9c0a86fab' ;
+delete from mcorporateaction where PRIMARYKEY = X'18c52293560b15cac0a86fab' ;
+done
+
+delete the two mstockalias records that were associated with the above delists
+delete from mstockalias where primarykey=X'ea3740ad560f0b3ec0a86fab';  
+done
+delete from mstockalias where primarykey=X'f2797377560db951c0a86fab';  
+done
+
+ok, let's analyze the acquis of RYL, we need to back this out - also need to see if anyone traded CAA on their on on 10/2/15
+
+
+here is the mstockalias / mcorporateaction pair
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'fbd373bc560dbc0fc0a86fab' <--- delete this 
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+	select * from mcorporateaction where aliaskey=X'fbd373bc560dbc0fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'fbd373bc560dbc0fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RYL US|CP_NAME|Ryland Group Inc/The|CP_ID_BB_COMP|101293|CP_UNIT|Ryland Group Inc/The|CP_TOT_AMT|3000.995850|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|5.095700|CP_SH_FLAG|1|CP_DEBT|1026.589966|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|-0.351878|CP_CUR_PREMIUM|-0.157732|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2933.998047|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser(s);1;Lazard Ltd;13;100.000000;1;Acquirer Legal Adviser(s);1;Ropes & Gray;13;100.000000;1;Legal Adv to Acquirer Financia;1;Simpson Thacher;13;100.000000;1;Acquirer Financial & Fairness;1;JP Morgan;13;100.000000;|CP_ACQ_TKR|CAA US|CP_ACQ_ID_BB_GLOBAL|BBG000BTFDR9|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZG62|CP_ACQ_ID_BB_SEC_NUM_DES|CAA|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|RYL US|CP_TARGET_ID_BB_GLOBAL|BBG000BSGQN5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FDZC16|CP_TARGET_ID_BB_SEC_NUM_DES|RYL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS AFTER 1 FOR 5 REVERSE STOCK SPLIT OF ACQ'R: 1.0191 SHRS PER TGT SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108237461
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = CalAtlantic Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = CAA     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CAA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'adeb7353560db7afc0a86fab'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'adeb7353560db7afc0a86fab';
+> Row 1:
+>   _C001 = 1720.000000
+select distinct stockkey from mticket where sourcekey=X'adeb7353560db7afc0a86fab';;
+> Row 1:
+>   STOCKKEY = X'b2161029390b3b11c0a80116'
+	select distinct symbol from mstockalias where stockkey=X'b2161029390b3b11c0a80116';
+> Row 1:
+>   SYMBOL = SPF
+> Row 2:
+>   SYMBOL = CAA
+> Row 2:
+>   STOCKKEY = X'aff21029390b3542c0a80116'
+	select distinct symbol from mstockalias where stockkey=X'aff21029390b3542c0a80116';
+> Row 1:
+>   SYMBOL = RYL
+
+any manager who got shares of SPF/CAA as a result of the acquis trade this on 10/2/15?
+select distinct managerkey from mticket where sourcekey=X'adeb7353560db7afc0a86fab' and closed > TIMESTAMP'2015-10-02 00:00:00.000000' and shares >0;
+looks like no one traded this 
+
+let's back this one out. 
+update the BB_ACTIONID to make it unique 
+
+update mcorporateaction set BB_ACTIONID = '108237461:MARTY' where PRIMARYKEY = X'adeb7353560db7afc0a86fab';
+check it
+	select * from mcorporateaction where aliaskey=X'fbd373bc560dbc0fc0a86fab';
+> Row 1:
+>              ALIASKEY = X'fbd373bc560dbc0fc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RYL US|CP_NAME|Ryland Group Inc/The|CP_ID_BB_COMP|101293|CP_UNIT|Ryland Group Inc/The|CP_TOT_AMT|3000.995850|CP_ACQUIS_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG| |CP_SH|5.095700|CP_SH_FLAG|1|CP_DEBT|1026.589966|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|-0.351878|CP_CUR_PREMIUM|-0.157732|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|2933.998047|CP_ADVISORS_NUM|5|CP_SH_FRACTIONAL|1|CP_ADVISORS|;2;5;3;1;Target Legal Adviser(s);1;Gibson Dunn Crut;13;100.000000;1;Target Financial Adviser(s);1;Lazard Ltd;13;100.000000;1;Acquirer Legal Adviser(s);1;Ropes & Gray;13;100.000000;1;Legal Adv to Acquirer Financia;1;Simpson Thacher;13;100.000000;1;Acquirer Financial & Fairness;1;JP Morgan;13;100.000000;|CP_ACQ_TKR|CAA US|CP_ACQ_ID_BB_GLOBAL|BBG000BTFDR9|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG001FDZG62|CP_ACQ_ID_BB_SEC_NUM_DES|CAA|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|RYL US|CP_TARGET_ID_BB_GLOBAL|BBG000BSGQN5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FDZC16|CP_TARGET_ID_BB_SEC_NUM_DES|RYL|CP_TARGET_FEED_SOURCE|US|CP_NOTES|TERMS AFTER 1 FOR 5 REVERSE STOCK SPLIT OF ACQ'R: 1.0191 SHRS PER TGT SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108237461:MARTY
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = CalAtlantic Group Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = CAA     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = CAA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-09-30 00:00:00.000000'
+>            PRIMARYKEY = X'adeb7353560db7afc0a86fab'
+>               VERSION = NULL
+
+let's back this out
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 108237461:MARTY
+ok looks like this worked 
+
+now delete the mstockalias record associated with the acquisition
+delete from mstockalias where  PRIMARYKEY = X'fbd373bc560dbc0fc0a86fab' ;
+
+select * from mstockalias where stockkey=X'aff21029390b3542c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'aff31029390b3542c0a80116'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+
+
+ok RYL is back to pre acquis
+
+check timbo56  SSOF1    has 
+RYL	click me	$40.83	2,120	$86,559.60	2.53%	$47,528.52	0.00%	31.30%	31.30%	Details
+
+---- let's go look at SPF now
+
+select distinct stockkey from mstockalias where symbol='SPF';
+> Row 1:
+>   STOCKKEY = X'b2161029390b3b11c0a80116'
+select * from mstockalias where STOCKKEY = X'b2161029390b3b11c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'b2171029390b3b11c0a80116'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = SPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'6c557381560db987c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'6c557381560db987c0a86fab' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'6c557381560db987c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SPF US|CP_NEW_TKR|CAA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112664852
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251c4a8d560c67edc0a86fab'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'  <--- make this the identitykey
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'3d44739d560dba25c0a86fab' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'3d44739d560dba25c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|85375C101|CP_NEW_CUSIP|128195104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US85375C1018|CP_NEW_ISIN|US1281951046|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112665002
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251e4a8d560c67edc0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'3d44739d560dba25c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20151001|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108252743
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251a4a8d560c67edc0a86fab'
+>               VERSION = NULL
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'd1ed40f5560f0c0dc0a86fab'  <---- delete this 
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'd1ed40f5560f0c0dc0a86fab' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = X'd1ed40f5560f0c0dc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|85375C101|CP_NEW_CUSIP|128195104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US85375C1018|CP_NEW_ISIN|US1281951046|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 112665002
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'44d522dc55fb43fbc0a86fab'   <--- delete this 
+>               VERSION = NULL 
+> Row 2:
+>              ALIASKEY = X'd1ed40f5560f0c0dc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20151002|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108252743
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'44d122dc55fb43fac0a86fab'   <---- this will be removed iwth the reverseCA
+>               VERSION = NULL
+wait there are two stocksplits?   this second one needs to be backed out 
+select count(*) from mticket where sourcekey=X'44d122dc55fb43fac0a86fab';
+> Row 1:
+>   _C001 = 2654.000000
+update mcorporateaction set BB_ACTIONID = '108252743:MARTY' where PRIMARYKEY = X'44d122dc55fb43fac0a86fab';
+checl
+select * from mcorporateaction where PRIMARYKEY = X'44d122dc55fb43fac0a86fab';
+> Row 1:
+>              ALIASKEY = X'd1ed40f5560f0c0dc0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20151002|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108252743:MARTY
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>            PRIMARYKEY = X'44d122dc55fb43fac0a86fab'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 108252743:MARTY
+
+delete the mcorporateaction for the duplicate CHG_ID
+delete from mcorporateaction where PRIMARYKEY = X'44d522dc55fb43fbc0a86fab';
+done
+let's get the mstock and update the identitykey
+select * from mstock where primarykey=X'b2161029390b3b11c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'd1ed40f5560f0c0dc0a86fab'
+>                NAME = STANDARD PACIFIC
+>          PRIMARYKEY = X'b2161029390b3b11c0a80116'
+>              SYMBOL = SPF
+>           COMPANYID = 6177
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6b3d
+
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'  <--- make this the identitykey
+
+update mstock set IDENTITYKEY=X'3d44739d560dba25c0a86fab' where PRIMARYKEY = X'b2161029390b3b11c0a80116'
+
+
+delete the mstockalias record for the duplciate change ID and split
+delete from mstockalias where PRIMARYKEY = X'd1ed40f5560f0c0dc0a86fab';
+
+
+let's see what we have
+
+select * from mstockalias where stockkey=X'b2161029390b3b11c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'b2171029390b3b11c0a80116'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = SPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'6c557381560db987c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'  <-- make this the identitykey
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'3d44739d560dba25c0a86fab';
+change ID and stock split 
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'd1ed40f5560f0c0dc0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'd1ed40f5560f0c0dc0a86fab';
+	nothing
+	delete from mstockalias where  PRIMARYKEY = X'd1ed40f5560f0c0dc0a86fab'; won't work
+
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'  <-- make this the identitykey
+
+select * from mstock where primarykey=X'b2161029390b3b11c0a80116';
+> Row 1:
+>         IDENTITYKEY = X'd1ed40f5560f0c0dc0a86fab'
+>                NAME = STANDARD PACIFIC
+>          PRIMARYKEY = X'b2161029390b3b11c0a80116'
+>              SYMBOL = SPF
+>           COMPANYID = 6177
+>   WINDOWIDENTITYKEY = -1062731435:-249d7868:119cfa667e7:-6b3d
+update mstock set IDENTITYKEY=X'3d44739d560dba25c0a86fab' where PRIMARYKEY = X'b2161029390b3b11c0a80116';
+ddelete thsi again 
+	delete from mstockalias where  PRIMARYKEY = X'd1ed40f5560f0c0dc0a86fab'; 
+
+good 
+
+select * from mstockalias where stockkey=X'b2161029390b3b11c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'b2171029390b3b11c0a80116'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = SPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'6c557381560db987c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+	select * from mcorporateaction where aliaskey=X'6c557381560db987c0a86fab';
+> Row 1:
+>              ALIASKEY = X'6c557381560db987c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|SPF US|CP_NEW_TKR|CAA US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112664852
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251c4a8d560c67edc0a86fab'
+>               VERSION = NULL
+
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+change ID and reverse split 
+select * from mcorporateaction where aliaskey=X'3d44739d560dba25c0a86fab';
+> Row 1:
+>              ALIASKEY = X'3d44739d560dba25c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_OLD_CUSIP|85375C101|CP_NEW_CUSIP|128195104|CP_OLD_BELGIAN| |CP_NEW_BELGIAN| |CP_OLD_FONDS| |CP_NEW_FONDS| |CP_OLD_ISIN|US85375C1018|CP_NEW_ISIN|US1281951046|CP_OLD_SEDOL| |CP_NEW_SEDOL| |CP_OLD_SICOVAM| |CP_NEW_SICOVAM| |CP_OLD_VALOR| |CP_NEW_VALOR| |CP_OLD_WPK| |CP_NEW_WPK| |CP_OLD_COMMON| |CP_NEW_COMMON| |CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 112665002
+>     BB_ACTIONMNEMONIC = CHG_ID
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-09-17 00:00:00.000000'
+>          BB_NUMFIELDS = 19
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251e4a8d560c67edc0a86fab'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'3d44739d560dba25c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_TERMS|1 for 5|CP_RATIO|0.200000|CP_RECORD_DT|N.A.|CP_PAY_DT|N.A.|CP_STOCK_SPLT_TYP|3000|CP_ADJ|0.200000|CP_ADJ_DT|20151001|CP_SH_FRACTIONAL|1|CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 108252743
+>     BB_ACTIONMNEMONIC = STOCK_SPLT
+>          BB_COMPANYID = 101394
+>        BB_COMPANYNAME = Standard Pacific Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = SPF     US Equity
+>             BB_ISSUED = TIMESTAMP '2015-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 10
+>              BB_RCODE = 0
+>              BB_SECID = SPF
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2015-09-29 00:00:00.000000'
+>            PRIMARYKEY = X'251a4a8d560c67edc0a86fab'
+>               VERSION = NULL
+
+let's do a name change
+
+/Marketocracy/bin/cahelper -symbol CAA -effective 20151001 -type CHG_NAME -exchange UN -newName 'CalAtlantic Group, Inc.' >& /Users/build/caout/SPF.20151002=CHG_NAME.out
+D: (10-02 21:59:32.044) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-02 21:59:56.119) cahelper started on 2015-10-02 21:59:56 -0400
+
+D: (10-02 21:59:56.383) {
+    APPLIED = 1; 
+    DATE = 20151001; 
+    "NEW_NAME" = "CalAtlantic Group, Inc."; 
+    NOTES = "N.A."; 
+    "OLD_NAME" = " "; 
+    SYMBOL = CAA; 
+    TYPE = "CHG_NAME"; 
+}
+D: (10-02 21:59:56.615) SUCCESS
+D: (10-02 21:59:56.615) cahelper finished 2015-10-02 21:59:56 -0400
+
+
+select * from mstockalias where stockkey=X'b2161029390b3b11c0a80116' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'b2171029390b3b11c0a80116'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = SPF
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 85375C101
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'6c557381560db987c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = STANDARD PACIFIC
+>     PRIMARYKEY = X'3d44739d560dba25c0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 128195104
+>           DATE = TIMESTAMP '2015-10-01 00:00:02.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = CalAtlantic Group, Inc.
+>     PRIMARYKEY = X'98f44b91560f369cc0a86fab'
+>       STOCKKEY = X'b2161029390b3b11c0a80116'
+>         SYMBOL = CAA
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = MG
+
+ok, let's do the acqios over on RYL   1.0191 ratio
+do a shorts checl
+select active, kindkey, primarykey, symbol from mfund where active=1 and kindkey= X'70443ca1391e026fc0a8015c' and primarykey in (select fundkey from mposition where stockkey=X'b2161029390b3b11c0a80116'  and totalshares < 0);
+no shorts 
+
+/Marketocracy/bin/cahelper -symbol  RYL  -effective 20151001 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 1.0191 -purchaser CAA   >& /Users/build/caout/RYL.20151002-ACQUIS-CAA.out
+RYL.20151002-ACQUIS-CAA.out
+stocks1:~/caout build$ tail -f RYL.20151002-ACQUIS-CAA.out
+D: (10-02 22:04:39.898) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (10-02 22:05:03.188) cahelper started on 2015-10-02 22:05:03 -0400
+
+D: (10-02 22:05:21.214) There are [0] open tickets for RYL on 20151001
+D: (10-02 22:05:23.459) StockFileLoad Version:4.0
+D: (10-02 22:05:23.459) Loading Stock Data
+D: (10-02 22:06:01.285) Building Lookup Index
+D: (10-02 22:06:06.004) Finished Building Index
+D: (10-02 22:06:09.492) Finished Loading Stock Data
+D: (10-02 22:06:09.989) Connection to 192.168.111.172:6666 succeeded
+D: (10-02 22:06:28.745) SavingChanges for Stock Dividend out 101 of 1846
+D: (10-02 22:06:56.612) SavingChanges for Stock Dividend out 201 of 1846
+D: (10-02 22:07:48.558) SavingChanges for Stock Dividend out 301 of 1846
+D: (10-02 22:08:25.474) SavingChanges for Stock Dividend out 401 of 1846
+D: (10-02 22:09:04.602) SavingChanges for Stock Dividend out 501 of 1846
+D: (10-02 22:09:37.214) SavingChanges for Stock Dividend out 601 of 1846
+D: (10-02 22:10:09.161) SavingChanges for Stock Dividend out 701 of 1846
+D: (10-02 22:10:37.628) SavingChanges for Stock Dividend out 801 of 1846
+D: (10-02 22:11:02.544) SavingChanges for position sell out 101 of 1846
+D: (10-02 22:11:17.024) SavingChanges for position sell out 201 of 1846
+D: (10-02 22:11:27.059) SavingChanges for position sell out 301 of 1846
+D: (10-02 22:11:35.880) SavingChanges for position sell out 401 of 1846
+D: (10-02 22:11:43.865) SavingChanges for position sell out 501 of 1846
+D: (10-02 22:11:52.027) SavingChanges for position sell out 601 of 1846
+D: (10-02 22:11:59.878) SavingChanges for position sell out 701 of 1846
+D: (10-02 22:12:07.293) SavingChanges for position sell out 801 of 1846
+D: (10-02 22:12:13.361) {
+    "ACQUIRED_STOCK" = RYL; 
+    "ACQUIRING_STOCK" = CAA; 
+    AMOUNT = 1.0191; 
+    APPLIED = 1; 
+    DATE = 20151001; 
+    FUNDS = (
+        "vestor22/Vestors Select SP 600 Index", 
+        "jtaylor3/Taylor Cornerstone Growth Value", 
+        "jtaylor3/Taylor Modified Cornerstone Growth", 
+        "save10/HS's Best of the Best Mutual Fund", 
+        "DELETE_bobino_40619017/Foster Fund", 
+        "t011363/CARLOS MARTIN (ZURICH) TOP STOCKS", 
+        "astuk/Armin Stuk's First VALUE Fund", 
+        "virtuefund/Virtue's Fund # 1", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "dlinse/Select Value", 
+        "jdoepke/Unlimited Golf Fund", 
+        "powerbear1/Weinhandl Strategic Asset Mutual Fund", 
+        "jdoepke/James's 2nd Mutual Fund", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "nguilford/Nathan Guilford's Mutual Fund", 
+        "gogoaugie/August J. Byllott's Mutual Fund", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "topstock/TopStocksAll503", 
+        "topstock/AllTopStocks503", 
+        "rthompson1/RON THOMPSON's Mutual Fund", 
+        "evan_deusen/Financial Fund", 
+        "bcarpenter/The Puritan Conservative Fund", 
+        "lynx10/Lawrence Sweet's Mutual Fund", 
+        "trhodes1/Rhodes Relative Strength VL Fund", 
+        "bhenderson/Henderson Value Fund", 
+        "rednax/Rednax Global Growth", 
+        "savarius/Autonomous Intelligent Trading", 
+        "dlinse/Value Focus", 
+        "vladzaff/Quality and Value", 
+        "dphuros/Demetrious Phuros's VL 1-1 Fund", 
+        "tromin/Timothy P. Romin's Mutual Fund", 
+        "tromin/Timothy P. Romin's Mutual Fund", 
+        "mlaterza/Laterza Aggressive Growth and Income", 
+        "wordjam/Quantitative 100", 
+        "dnewton/Derek's Int-Fund", 
+        "rfabian/Absolute Total Return Fund", 
+        "ocarras/C&G Consruction Fund", 
+        "mcgerome20/Matthew Cerrone's Mutual Fund", 
+        "phannah/Small Cap Value Fund", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "dlinse/Douglas H. Linse's Mutual Fund", 
+        "lthorell/Value Building Defense", 
+        "smokeysass3/jeff sass's Next Mutual Fund", 
+        "pchwang/George Hwang's Mutual Fund III", 
+        "emintz/Mechanical Growth Fund", 
+        "delskl/SOY FUND", 
+        "stellar/New Value", 
+        "jhoffman1/Real Estate Mutual Fund", 
+        "fl73ws1/Real estae investment fund", 
+        "kdepew/F7 Model Fund", 
+        "hotmamma/hotmamma mutual fund", 
+        "DELETED_2002121201/brandon waldron's Mutual Fund", 
+        "ehamilton/Ernie Hamilton's Mutual Fund", 
+        "hwright/Disciplined Growth 60", 
+        "sasha_mol/Fund One", 
+        "whitey09/whitey09's Mutual Fund", 
+        "rvj/rvj's USD ", 
+        "save10/Steady Grow Mutual Fund", 
+        "ewallhauser/Eugene R. Wallhauser's Mutual Fund", 
+        "kensouther/Kenneth L. Souther's Mutual Fund", 
+        "kensouther/Kenneth L. Souther's Mutual Fund", 
+        "creynes/CDR Formula Growth Mutual Fund", 
+        "creynes/CDR Redwood Growth Mutual Fund", 
+        "thudanish/thudanish's Mutual Fund", 
+        "pcastagnet/POC Fund", 
+        "ghouser/ghouser's Mutual Fund", 
+        "hriel/TSR Fund", 
+        "avarela1/green fund", 
+        "zkrstevski/Low Risk Broad Industry Fund", 
+        "leoblackheart/LeoBlackHeart's Technical Timing Mutual Fund", 
+        "hotmamma/Brandon Waldron Mutual Fund", 
+        "avillani/avillani's Mutual Fund", 
+        "skorfhage/VGI", 
+        "sbrawler/Zack SS Timely Buys", 
+        "fmowery/OX Mutual Fund", 
+        "brouke/AXE VLT Analysis Fund", 
+        "ryk11/Ryk's What's working now", 
+        "jnat/jnat's Mutual Fund", 
+        "tterraccino/fund uno", 
+        "jlchin/JLChin, filter 1", 
+        "jlchin/JLChin, filter 2", 
+        "dickpierce/Dickmeister Industrial Fund", 
+        "sbrawler/MSN 8+ Fund", 
+        "jtwcpa/jtwcpa's Mutual Fund", 
+        "achristie/FundTech Small Cap Mutual Fund", 
+        "scap/SCAP Mutual Fund", 
+        "DELETED_2006222/Quantcatch Mutual Fund", 
+        "jplat/JJ'S MUTUAL FUND", 
+        "ortha/ZT Mutual Fund", 
+        "fmowery/Timely Buys", 
+        "fmowery/Focus List", 
+        "weeeg/weeeg's Mutual Fund", 
+        "jmcintire/jmcintire's Mutual Fund", 
+        "gshearer/Gord's Agressive Growth Fund", 
+        "jwalker2/John C. Walker's Mutual Fund", 
+        "mhiggins1/mhiggins1's Big Mo", 
+        "cfalcon/CHARLES FALCON's Mutual Fund", 
+        "mhiggins1/mhiggins1 Diversified Momentum", 
+        "csmith2/Future Growth Fund", 
+        "puck99man/puck99man's Mutual Fund", 
+        "dburton/Burton Analytics Fund", 
+        "spugliese/Take Three", 
+        "jimyy/Nelson Enterprise", 
+        "jimyy/James Nelson's Mutual Fund", 
+        "jimyy/jimyy's Growth", 
+        "ewilson1/dev fund", 
+        "achampagne/Champagne's Real Estate Fund", 
+        "dclark1/Growth and Earnings Fund", 
+        "sroselius/Big Red Investments Focused Growth Fund", 
+        "gjackson3/The Jackson Fund", 
+        "fredricktoo/Terrace 2001", 
+        "masters100manager/Masters100", 
+        "fredricktoo/Terrace Select Portfolio", 
+        "bdevore/Growth & Value Model", 
+        "amarshall/Marshall Mutual Fund", 
+        "pmacarthur/pmacarthur's Mutual Fund", 
+        "mgaribay/point up mutual fund", 
+        "mgaribay/Mike Garibay's Mutual Fund", 
+        "mgaribay/Elite Super Fund", 
+        "mgaribay/All Around Fund", 
+        "qarel/Qarel's Mutual Fund", 
+        "nicholaf/Mid Cap Value Quant Fund", 
+        "kathynz/Portfolio F", 
+        "hrick/Harrison Manly Fund II", 
+        "abraham_abe/abraham_abe's Mutual Fund", 
+        "acanete/Al's ValueLine GARP", 
+        "mookmas/Viking Fund", 
+        "ttindall/New Highs", 
+        "jmckeachie/valuefund1", 
+        "bmoose/Mucho Dinero Fund", 
+        "hriel/Optimal Growth Fund", 
+        "sboysen2/sboysen2's Mutual Fund", 
+        "conuslbyrne/Olympus Focus Fifteen", 
+        "wallstgolfer/S&P Fair Value", 
+        "szhebu/eastern growth", 
+        "DELETE_astavrou_40619022/Stavrou IndustrialDefenceTransportation Fund", 
+        "jlorber/White Picket Fence", 
+        "grajan/grajan's Mutual Fund", 
+        "jmckeachie/homeland mid cap", 
+        "richyan/richyan's Performance  Mutual Fund", 
+        "turner/Silvermoon Hybrid Growth Fund", 
+        "dctag/RS/EPS/IBD", 
+        "jamesdz/JDs general Fund", 
+        "jbpowers/POWER PROFITS MUTUAL FUND", 
+        "kmaring/kmaring's Mutual Fund", 
+        "patchu/PChu Consumer Fund", 
+        "patchu/Sector Rotation MidCap", 
+        "ascofield/ascofield's Mutual Fund", 
+        "bettskw/Balance Momentum Fund", 
+        "save10/Henry Sancken's Value Fund", 
+        "bwoyat/TREPPE", 
+        "bwoyat/Blend", 
+        "cpaugh/Quant Growth Fund", 
+        "cthiessen/CTQSF", 
+        "khaledd/khaledd's Mutual Fund1", 
+        "jchauvette/ymalah's Mutual Fund", 
+        "jstaho/jstaho's Mutual Fund", 
+        "emintz/MI Small/Mid-cap Fund", 
+        "bmoore/GNC-Plus", 
+        "msrob7/Marky's Mutual Fund", 
+        "dipak1971/Liberty Value Fund", 
+        "mbieber/mbieber's Mutual Fund", 
+        "mercequity/Screening Test Fund", 
+        "msanderford/Sanderford Value Fund", 
+        "blove/O'Shaughnessy Fund", 
+        "dstout1/Low Volitility high growth", 
+        "galan627/Galan I", 
+        "hotmamma/Brandon Waldron Hoe Mutual Fund", 
+        "weil00/gpt 2002 nyse picks", 
+        "mvrh1/IBD New America Fund", 
+        "bananaslug/BananaSlug Cattle Fund", 
+        "sherinski/Mutual Fund", 
+        "krikke/krikke's Mutual Fund", 
+        "zio11/dr. Z incredible seven", 
+        "harish63/harish63's Mutual Fund", 
+        "blrobby/The Sufficiently Diversified Value-Growth Fund", 
+        "tjzacks/tjzacks's Mutual Fund", 
+        "atejani/Asief Tejani and Paul Rabbit Fund", 
+        "mvrh1/Lycos Most Down Daily", 
+        "cfifield/charis growth fund", 
+        "cfifield/charis equity & income fund", 
+        "msanderford1/Murray's Value Fund", 
+        "dwilkins/dwilkins's Mutual Fund", 
+        "jchauvette/jchauvette's Mutual Fund", 
+        "DELETE_bjones10_40416001/bjones10's Mutual Fund", 
+        "save10/Henry Sancken's Value Fund", 
+        "bmoore/SEG Consolidated", 
+        "the_barnacle/Barnacle Graham Value Fund", 
+        "ospreyag/Growth Fund - RS", 
+        "fundamental/FundAmental's Mutual Fund", 
+        "mcase1/mcase housing fund", 
+        "ach/ach's Mutual Fund", 
+        "cstieb/CTR(A) Mutual Fund", 
+        "harish63/harish63's Mutual Fund", 
+        "adaher/Adam superfund", 
+        "bwilson5/bwilson5's Mutual Fund", 
+        "vagadragon/Vagabond's Ultimate Risk Reward Fund", 
+        "taipan/JC's Growth Fund", 
+        "mcase1/mcase bought low fund", 
+        "fivestarr/Starr's Diversified Fund", 
+        "rduncan000/rduncan000's Mutual Fund", 
+        "rogerbrookuk/Quantitative Value Fund I", 
+        "rogerbrookuk/Quantitative Small Cap Value Fund", 
+        "gdm/Norlight West", 
+        "abarzaghi/Zweimio Mutual Fund", 
+        "view123/MG Mutual Fund", 
+        "wordjam/quantitative value & growth", 
+        "bmoore/SEG E-Type", 
+        "mercequity/Merc Research Value Fund", 
+        "jpsmith/Shooting for the moon", 
+        "ortha/Ortha Mutual Fund", 
+        "stellar/stellar growth", 
+        "mercequity/Research Value Fund", 
+        "dmtest/Cumulative 11/09/02 test", 
+        "dcraze/VLO", 
+        "androege/VA World Chance Fund", 
+        "jslettvoll/SLERRE-ROBOTIC", 
+        "jibjob/The Original Fund", 
+        "jtobler1/Rock Growth Fund", 
+        "mbuchanan1/mbuchanan1's growth", 
+        "mbuchanan1/mbuchanan1's screen1", 
+        "jbatzer/J. K. Batzer's Trading Fund", 
+        "hass/Hass's Mutual Fund", 
+        "glasp/glasp game", 
+        "lazyfrog/LF's Relative Value Mutual Fund", 
+        "lopezfm1/lopezfm1's Mutual Fund", 
+        "mt_suit/Trader VIC's Mutual Fund", 
+        "phillips7521/phillips7521 Growth + Value Fund", 
+        "phillips7521/PHILLIPS7521's Growth At a Reasonable Price Milti-Cap Fund", 
+        "phillips7521/phillips7521's UPTREND STOCKS Fund", 
+        "mhodges/Momentum Mutual Fund", 
+        "skorbelak/Group31 Mutual Fund", 
+        "dlinse/stock", 
+        "dlinse/LIN-C ", 
+        "sleonard/i.e. Manassas ", 
+        "mjmayer/Marty Mayer's Large-Cap Value Fund", 
+        "jbrown/JB's Neural Fair Value Fund", 
+        "biged/El Fondo Que Crece ", 
+        "mvrh1/IBD Daily 100", 
+        "abarzaghi/abarzaghi's ZWG2", 
+        "mmnich/MRM Diversified Value Fund", 
+        "gbilder/Incubator Fund", 
+        "t011363/CARLOS MARTIN (ZURICH) TOP 1/4 STOCKS", 
+        "gcarpenter/gcarpenter's Mutual Fund", 
+        "gcarpenter/gcarpenter's Mutual Fund", 
+        "e/Parabolic Technical Fund", 
+        "sylvie/Maisons, acier,  equipements de construction et information sante", 
+        "vespasian/Vespasian's Mutual Fund", 
+        "cdreynes/Reynes Focused Mutual Fund", 
+        "greed/GFR Consumer Durables", 
+        "hnguyen/Growth and Value", 
+        "karnie/Homebuilders Fund", 
+        "jdamian_jr/jdamian consumer discretionary fund", 
+        "morgenselmer/morgenselmer's Mutual Fund", 
+        "abie199/abie199's EUR Mutual Fund", 
+        "loustorm/loustorm's Mutual Fund", 
+        "tglover/Realestate Bubble Fund", 
+        "aoverkamp/aoverkamp's Mutual Fund", 
+        "fkhan1/fkhan1's Mutual Fund", 
+        "jsenior007/Senior Aggressive Growth Fund", 
+        "doconnor/doconnor's IBD Fund", 
+        "alexmatovsky/Value Fund of Matovsky", 
+        "carycay/Cary's T100 Mutual Fund", 
+        "greggorysmith/Friendly Skies Fund", 
+        "gnelson/Smoke and Mirrors Fund", 
+        "jhs/JHS Small cap", 
+        "pdelbuck/Excalibur Appreciation Fund", 
+        "jehfes/Jeff's Consumer Discretionary Up Fund", 
+        "twqs/TWQS", 
+        "lswatts/Investments  Balanced Diversified Mutual Fund", 
+        "scifos/Scifos 2nd Mutual Fund", 
+        "bsettles/Four Gurus", 
+        "bowl2sting/CEO Personality Fund", 
+        "luca_eng/Equity Lucky Luke", 
+        "b9clark/Are We Having Fund Yet? Fund", 
+        "anota/anota's Mutual Fund", 
+        "ccritters1999/ccritters1999's Mutual Fund", 
+        "thuotari/thuotari's Mutual Fund", 
+        "dalew/Oriole Value Fund", 
+        "thuotari/Aggresive Moron Trust Fund", 
+        "emmanuel1/emmanuel1's Mutual Fund", 
+        "emmanuel1/emmanuel1's Mutual Fund", 
+        "rellimhj/Construction", 
+        "tigerlily005/tigerlily005's Mutual Fund", 
+        "jaustin/jaustin's Mutual Fund", 
+        "pjhoehne/pjhoehne's Mutual Fund", 
+        "pjhoehne/40|86 Total Return 2004", 
+        "pjhoehne/40|86 Total Return 2004", 
+        "hoeh/ARKANSAS GOLDMINE", 
+        "pwarren2/Homebuilders Portfolio", 
+        "virtueway/Virtueway's Mutual Fund", 
+        "hotmamma/brandon waldron mutual fund2", 
+        "robert_little/robert_little's Mutual Fund", 
+        "tharpur/Insiders Watch Fund", 
+        "mrm661014@cs.com/Mid Cap Value", 
+        "jheller/jdf fund", 
+        "hwornath/hwornath's Mutual Fund", 
+        "bmoore/bmoore's Mutual Fund", 
+        "naeher/Tonniele's  Mutual Fund", 
+        "quickwit/quickwit's Mutual Fund", 
+        "enkeeton/enkeeton's Mutual Fund", 
+        "jontait/jontait's Mutual Fund", 
+        "htraub/htraub's Mutual Fund", 
+        "crherbert/POE", 
+        "crherbert/ROE", 
+        "crherbert/PRO", 
+        "redhills/redhills's Short Fund", 
+        "cgnx/cgnx's Short Fund", 
+        "kuffe38612/Virginie Fund", 
+        "kuffe38612/kuffe38612's Mutual Fund", 
+        "dhohner/Quant Value Fund", 
+        "ljoneill/LJO Mid Cap Fund", 
+        "pnutgllry/pnutgllry's Short Fund", 
+        "wizmo312/Kenilworth Value Fund", 
+        "jdberia/JDB Select Real Estate", 
+        "aogilvie/ACO PARTNERS", 
+        "enycehotness87/enycehotness87's Mutual Fund", 
+        "money21/split", 
+        "msoto926/msoto926's Mutual Fund", 
+        "elt9l/Value FUND", 
+        "jlaw/jlaw's short sectors fund", 
+        "optionman/optionman's Short Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "silva13/silva13's Mutual Fund", 
+        "ksharpless/ksharpless's Mutual Fund", 
+        "jpilkington/Pilkington Mutual Fund", 
+        "dcraze/Housing Short Fund", 
+        "vooch/Vooch New Ideas", 
+        "mgulla/Gulla Short Fund", 
+        "jpilkington/Short Stuff", 
+        "cgnx/Shorty Pants", 
+        "dpaid/dpaid's Mutual Fund", 
+        "moreno770/MonteNEW3", 
+        "dogonyaro/Summit Real Estate Fund", 
+        "dmmd/DMD ", 
+        "topstock/TopStock 1204", 
+        "rwmill9716/rwmill9716's Mutual Fund", 
+        "tglover/Sold Fund", 
+        "michaelmidas/Lets short this Pig", 
+        "jyu/brown", 
+        "seilers/Valued Shorts", 
+        "money21/Mcom 320", 
+        "kazshak/Formula Value Fund", 
+        "davevincent/davevincent's Mutual Fund", 
+        "chaseboy/Short Fund", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "gmehta/Gautam", 
+        "debonair/debonair's Mutual Fund", 
+        "roboinvestor/Shorts R Us", 
+        "ryandetrick/I Love 2 Short", 
+        "wildmap/EM-Reb Short", 
+        "kevinpmc/kevinpmc's Mutual Fund", 
+        "larou/larou's short Mutual Fund", 
+        "raider75/Silver & Black Short Fund", 
+        "larou/Hansens Diversified", 
+        "lrabier/lrabier's short only fund", 
+        "rostberg/rostberg's Over valued Fund", 
+        "kg/KG 3-Factor-Model of Growth", 
+        "bhershey/bhershey's Long Mutual Fund 2", 
+        "kevineanes/Eanes Fund H", 
+        "natekane2001/CNBC top 50 rated (Feb 2)", 
+        "wisdomfolly/WisdomFolly's Short Fund", 
+        "goodreau/goodreau's Mutual Fund", 
+        "goodreau/goodreau's Mutual Fund", 
+        "goodreau/goodreau's Mutual Fund", 
+        "ehovey/Housing Shorts", 
+        "vooch2/L Fund", 
+        "vooch3/O Fund", 
+        "dgoodreau/dgoodreau's Mutual Fund", 
+        "dgoodreau/dgoodreau's Mutual Fund", 
+        "dgoodreau/dgoodreau's Mutual Fund", 
+        "sand_down/Short Fund", 
+        "sef_1968/F...'d Co. Fund", 
+        "mestre/Fundo Portugal", 
+        "kevineanes/Eanes Financials Fund", 
+        "kevineanes/Eanes Industrials Fund", 
+        "kevineanes/Eanes Information Technology Fund", 
+        "balletto/balletto RSValue Fund-monthly", 
+        "jlaforet/jlaforet's Mutual Fund", 
+        "guru/Guru's Short  1", 
+        "kg/Value with Growth in the Consumer Discretionary Sector", 
+        "kashunut/Kashunut's Growth Fund", 
+        "pkat/pkat's Real Estate Fund", 
+        "mrktoracle/Oracle Growth Fund", 
+        "rpschea/Paladin Momentum Fund", 
+        "fundamental/GPShort Sell NAVigator", 
+        "mt_suit/Fire of Orodruin", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "rellimhj/Consumer Disc Fund", 
+        "mr.pinche/xtreme growth", 
+        "marzdust/Marzdust Short Fund", 
+        "ithar/IAN Mutual Fund", 
+        "nthnsez/nthnsez's Mutual Fund", 
+        "905/905's Mutual Fund", 
+        "bclopton/IBD", 
+        "ytrader/ytrader's SHORT Fund 1", 
+        "hayward101/Short Fund", 
+        "gaszap/Gaszap's Propane Fuel Fund", 
+        "lmysch/lmysch's Mutual Fund Short", 
+        "wkusakabe/Income & Equity Fund", 
+        "rellimhj/Short Fund", 
+        "jgfeller/Housing Stocks Short", 
+        "kmoyer/kmoyer's Mutual Fund", 
+        "bwilson6/bwilson6's Mutual Fund", 
+        "greekbroker/Ticking Time Bomb Short Fund", 
+        "godot/The GodotWeb Short Fund", 
+        "rparker2/rparker2's Short Fund", 
+        "jmann2/jmann2's Mutual Fund", 
+        "roy_chew/roy Mutual Fund", 
+        "dman19762001/The Unidentified Dog Fund", 
+        "mitrii/mitrii's Short Focus Fund", 
+        "ruslankz/ruslankz's Mutual Fund", 
+        "jmaret/jmaret's Mutual Fund", 
+        "jmaret/jmaret's Mutual Fund", 
+        "jsnots/Short Funds", 
+        "pindikov/Pindikov Capital Partners", 
+        "jettdg/Jett Energy/Real Estate", 
+        "lordgodking/LGK Capital Appreciation IV", 
+        "natekane2001/Best Value fund", 
+        "adlarag/adlarag's Mutual Fund", 
+        "mmnich/MRM Black Bar Fund", 
+        "franklingroup/franklingroup's Mutual Fund", 
+        "sema_1970/Whack-A-Mole!", 
+        "vooch4/Q", 
+        "sstclair/sstclair's Mutual Fund", 
+        "rsteer/BKS Equal", 
+        "vooch4/T", 
+        "jnoiles/jnoiles's Mutual Fund", 
+        "kikola/GONE FISHIN' PORTFOLIO", 
+        "kikola/Value I", 
+        "dsh21jsh/Short Fund", 
+        "biedzen/PsychoSocial Bear Fund", 
+        "cmrogers1/CAR Growth Fund", 
+        "mcook2/Live Deliberately Short ", 
+        "msoto926/msoto926's Mutual Fund", 
+        "mrktoracle/IBD 100", 
+        "ryessup/Short Bear Fund", 
+        "lgiacalone/LPG's Mutual Fund", 
+        "vooch3/5B Fund", 
+        "280sl/280sl's Mutual Fund", 
+        "rsteer/RS Model 1", 
+        "goldeagle/goldeagle's Mutual Fund", 
+        "chaseboy/chaseboy's shorty", 
+        "tdsbu/tdsbu's Short Fund", 
+        "oysterrocks/KIP-MARtoJUN", 
+        "ch222/ch222's Short Fund", 
+        "ryessup/Short Fund", 
+        "280sl/280sl's Mutual Fund", 
+        "newbie/newbie's Mutual Fund", 
+        "280sl/280sl's Mutual Fund", 
+        "dardenmba83/Virginia Venture Fund", 
+        "nilegomez/Cuban CashFlow", 
+        "brahmsian/Brahmsian's Extreme  Value Fund", 
+        "brahmsian/Brahmsian's Excelsior Fund", 
+        "madabuu/OMS Bear Fund", 
+        "angelus/Faith", 
+        "daoudim/daoudim's Mutual Fund", 
+        "rsteer/Bundle 3", 
+        "mer1030/mer1030's Mutual Fund", 
+        "traderx44/Misty's Hedge Fund", 
+        "gh528i/gh528i's Mutual Fund", 
+        "280sl/280sl's Mutual Fund", 
+        "mfergus/mfergus's Mutual Fund", 
+        "taipan1/Watch", 
+        "balciunas4/balciunas4's Mutual Fund", 
+        "balciunas4/balciunas4's Mutual Fund", 
+        "alder/Alder AFG", 
+        "alder/Alder Weighted Passive", 
+        "jeickholt/Good Trade Mutual Fund", 
+        "alder/Alder Equal Passive", 
+        "asonlee/Trenders Mutual Fund", 
+        "DELETED_gheyland_20071211130001/The Heyland HCM Long Fund", 
+        "balciunas4/Al Balciunas 4 Home Mutual Fund", 
+        "wbonner/3rd quarter fund", 
+        "ryansw/ryansw's Mutual Fund 2A", 
+        "jdjuly5/Ching's Cyclicals Buys", 
+        "kainer/Valueline #1s", 
+        "drew00099/Sawa Index", 
+        "natekane2001/Real Estate/Mortgage companies", 
+        "norfnil/norfnil's Mutual Fund", 
+        "seilers/shorty2", 
+        "pinball/Short Real Estate related", 
+        "mrm661014@cs.com/mrm661014@cs.com's Mutual Fund", 
+        "dpietruszka/dpietruszka's Mutual Fund", 
+        "candemof/candemof's Mutual Fund", 
+        "gustafv/Drop it Like it's Hot Fund!", 
+        "wildmap/EW5short", 
+        "catzemis/catzemis's Mutual Fund", 
+        "taiman/taiman's Short Fund", 
+        "balciunas4/Balciunas4 Builders Mutual Fund", 
+        "mjo717/Contrian Value Investor", 
+        "rmorse/rmorse's Mutual Fund", 
+        "echines/Hines Sector Growth Fund", 
+        "sensor75/sensor75's Mutual Fund", 
+        "tal/Tal's Short Fund", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "casamhilton/sam's short  Mutual Fund", 
+        "carshena/Memucan's Mutual Fund", 
+        "joeman/Short fund", 
+        "enervate/housing bubble burst", 
+        "buds00/Homebuilder", 
+        "walott/Wild Bill's VL Test1", 
+        "jrheaume/Short Bear Fund ", 
+        "tcarboneau/52 wk low fund", 
+        "jnavin/jnavin's Short Fund", 
+        "nickbaes/nickbaes's Mutual Fund", 
+        "rkern/rkern's Mutual Fund", 
+        "alexromanl/Alex's Short Fund", 
+        "jrheaume/Grizzly Bear Fund ", 
+        "jjohnson7/jjohnson7's Mutual Fund", 
+        "jrheaume/Teddy Bear Fund ", 
+        "gsagnes/GSA RESIDENTIAL CONSTRUCTION", 
+        "mjo717/Contrian Value Investor 2", 
+        "edwardtrafford/Small Cap Value", 
+        "edwardtrafford/MidCap Core", 
+        "edwardtrafford/MidCap Growth", 
+        "edwardtrafford/MidCap Value", 
+        "nrablicki/Mid Cap Select", 
+        "bigburrito/merrill lynch", 
+        "vvorrath1/St. Moritz Bubble", 
+        "mlagarde/MATHIEU LAGARDE - SHORT Mutual Fund", 
+        "qrheaume/Short Growth Fund ", 
+        "farhangp/MOTHER OF ALL BEAR MARKETS", 
+        "jrheaume/Papa Bear Fund ", 
+        "mdr7u/mdr7u's Mutual Fund", 
+        "wcu/Buy Porfolio", 
+        "samuelwilson/Valuengine 5 Star ", 
+        "stratma/stratma's short Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "vooch5/T10", 
+        "suitedpair/SuitedShort Fund", 
+        "milano/DottoFund", 
+        "majorkong/Majorkong's Homebuilder Fund", 
+        "cdundes/C's Melting Pot Mutual Fund", 
+        "mechtech/mechtech's Mutual Fund Short", 
+        "auminer/short part duh", 
+        "jbebak/Home Builder's Mutual Fund", 
+        "primus/Ingenium US", 
+        "proberee/complex", 
+        "derave/David Charette's Blue Short Fund", 
+        "rsparks/The Sparks Short Fund", 
+        "bmcclard/BionicTurkey Fund", 
+        "tybraun/IBD's Stable Fund", 
+        "bmcclard/Quantitative Ranking", 
+        "msnow/msnow's Mutual Fund", 
+        "advisorcfa/AdvisorCFA's Short Fund", 
+        "jmurphy2/jmurphy2's Mutual Fund", 
+        "cuprsnel/short on housing", 
+        "smurfburglar/smurfburglar's Mutual Fund", 
+        "woidka/JunkYard Dog", 
+        "jimfink/jimfink's Mutual Fund3", 
+        "jimfink/jimfink's Mutual Fund4", 
+        "ngalabow/ngalabow's Mutual Fund", 
+        "xohox/xohox's Mutual Fund", 
+        "selkirkrich/selkirkrich's short fund", 
+        "rwbil/rwbil's Deep Value /w Momentum", 
+        "rmorse/rmorse's Mutual Fund", 
+        "qrheaume/Short Advantage Fund", 
+        "dragonsmanor/dragonsmanor's Select Fund", 
+        "gdog477/S3", 
+        "gdog477/S1 ", 
+        "gdog477/S2", 
+        "ljoneill/Small Cap Relative Value Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "finanaliticasector_b/consumer1", 
+        "finanaliticasector_b/consumer5", 
+        "finanaliticasector_b/consumer2", 
+        "ferran/CV (Maig 12/06)", 
+        "raytoei/MyMFI", 
+        "x01479/Absolute Strategy Fund", 
+        "jggard/Gipper Mid Cap C", 
+        "jggard/Gipper Balanced 25", 
+        "artnoc/artnoc's Kewl Shorts", 
+        "john567/john567's Mutual Fund", 
+        "fort420/YMK100", 
+        "dmangan1/Simple Way Mutual Fund", 
+        "naeron/Toe Tic Tac", 
+        "wegobomber31/Wegobomber Short Mkt Neutral  Fund", 
+        "x01479/Absolute Value Strategy Fund", 
+        "psionman/psion Institution Picks", 
+        "kuyeno/Shorty", 
+        "scraig/scraig's short fund", 
+        "marymary/How much is that doggy?", 
+        "beatsj/VL Bargain Basement", 
+        "woil/Woil's Follow the Leader Fund", 
+        "samma/contrarian", 
+        "dgp/dgp's Mutual Fund", 
+        "branka/branka's Mutual Fund", 
+        "branka_r/branka_r's Mutual Fund", 
+        "branka_r/branka_r's Mutual Fund", 
+        "branka_r/branka_r's Mutual Fund", 
+        "branka/brMutual Fund", 
+        "branka/brMutual Fund", 
+        "brankar/contrarian ", 
+        "gator101/FM Short B", 
+        "freewater/Freewater Trail of Dead Fund", 
+        "stevenlberry/Upgrade-60", 
+        "wbnj1104/Ken's Short Fund", 
+        "rustus/rustus's Mutual Fund", 
+        "stretchmark/The Gravity Fund 2", 
+        "rborthwick/RB Value & Income", 
+        "ssheffield/ssheffield's short fund", 
+        "finanaliticaam/4", 
+        "pepito/pepito's Mutual Fund Short1", 
+        "dhamlin/Future Fund", 
+        "augur/Joludi und Kobanchegg", 
+        "kennethto/kennethto's Mutual Fund", 
+        "kennethto/kennethto's Mutual Fund", 
+        "guyvega/S.A.Miklosko Spread", 
+        "blue/blue's Mutual Fund", 
+        "jrheaume/Mama Bear Fund ", 
+        "foolsmith/Bull Wave", 
+        "kpsheeha/5 Star", 
+        "takara/takara's Mutual Fund", 
+        "dojistar/Goldfish", 
+        "ytrader/ytrader's SHORT 05", 
+        "rceballo704/rceballo704's Mutual Fund", 
+        "jambartel/JB's Real Estate Related Fund", 
+        "fedcep/Contrarian", 
+        "mecstriker/Stock market go bye-bye", 
+        "jsnots/Going For Broke", 
+        "jrheaume/Black Bear Fund ", 
+        "ytrader/ytrader's SHORT 06", 
+        "ndub/ndub's Mutual Fund", 
+        "tsalamone/TSalamone's Timing Fund", 
+        "apreuss/Fund Nr 2", 
+        "apreuss/apreuss's Mutual Fund", 
+        "cfalcon/CFalcon's Short Fund", 
+        "cfalcon/CFalcon's ", 
+        "econley/econley's Short Fund", 
+        "srombolli/Mkt Short Fund", 
+        "tsalamone/TSBTM", 
+        "zirotti/Zirotti Mid Blend", 
+        "conqstspd/Bang Em Short", 
+        "lingram/Strategy Lab Fund", 
+        "novorich/novorich's Mutual Fund", 
+        "dwaters/Waters Testing Fund", 
+        "joconde/bo-filtre-roe25", 
+        "joconde/phaseII", 
+        "cat288/cat288's Mutual Fund", 
+        "bmcclard/EV&EP&IC", 
+        "hippytom58/hippytom58's Mutual Fund", 
+        "gonzalez/Sectors 2 (Feb/07)", 
+        "smenk_99/smenk_99's Trader Fund", 
+        "hiromimini/Disappearing Stars- C. Discretionary short", 
+        "cherylsjohnson/Midcap Madness", 
+        "drac/Real Estate will go up forever", 
+        "mkmassetmanagement/MKM Short Fund", 
+        "gholds/GHold's breathlessly overhyped short fund", 
+        "DELETED_jakerosser1_2010022609390001/Valley View Two", 
+        "hmanrulz/Hman Shortz Mutual Fund", 
+        "pguyot/PMG Short Fund II", 
+        "fdutton/fdshort", 
+        "sndege/Bokinami Growth", 
+        "mcnichols/mcnichols's Mutual Fund", 
+        "anupam/shoot em al", 
+        "snowytheman/snowytheman's Mutual Fund", 
+        "ibrahimz/ibrahimz's short fund", 
+        "ccl7/ccl7's Mutual Fund", 
+        "hurleyse/Housing and Related Short Fund", 
+        "berk/berk's Mutual Fund", 
+        "momentumvalue/going down?", 
+        "samss007/Another Fund", 
+        "lwilliams3/Short OpportunityFund ", 
+        "lingram/Levi's Desert Fund", 
+        "stockring/StockRing Short Stock Portfolio", 
+        "richfield/richfield's Able Short Fund", 
+        "trader051/Pig Get Slaughtered", 
+        "offshorebabe/ultra short fund", 
+        "rfrunzi/bihi", 
+        "gshearer/Marie's and Gord's Funds", 
+        "momentumvalue/overbought mar29 $690076", 
+        "ideggplant/Vectorvest short fund", 
+        "x01479/Unified Value Epiphany Fund", 
+        "aviator/Aviator's Short Mutual Fund", 
+        "gedwards/gedwards's SMART Fund", 
+        "lwilliams3/Short Investment Fund ", 
+        "lwilliams3/ Short Bear Fund ", 
+        "lwilliams3/Short Strategy Fund ", 
+        "pgr45za/Tavros Short", 
+        "lwilliams3/Short Preferred Fund ", 
+        "lwilliams3/Short Quality Fund ", 
+        "cellydan/cellydan's Mongolian Midget Fund", 
+        "lwilliams3/Short Stock Fund ", 
+        "hotmamma/brandon waldron Strat Lab Open Fund", 
+        "mysticaura/Brocious Blackrat", 
+        "rmartin2/The TULIPMANIA /Martin Short Fund", 
+        "yshayevich/yshayevich's Mutual Fund", 
+        "r1rooster/Rooster Homebuilders", 
+        "mrdrby/Willow Short Fund", 
+        "minuet/Shorts 4: Mission from Marketocracy", 
+        "dmontana82/Downhill Fund", 
+        "minuet/Speculator's Shorts", 
+        "bananaslug/Shorts V4", 
+        "joboggi/Top Stocks Aug 07", 
+        "arogolsky/Peggy Pincher", 
+        "richfield/richfield's Charles Short Fund", 
+        "x01479/Total Strategy Fund", 
+        "mareklitwin/The Dead Fund", 
+        "rtareilo/The Short Fund", 
+        "tgarrettwi/Travis Home Builders", 
+        "anaxagoras/anaxagoras short term fund", 
+        "jim.falbe/Falbe Beta Index", 
+        "jpsmith/Homebuilders", 
+        "beachbumed/Beachbumed's Short Fund", 
+        "fernandograu/Complyiance Fund", 
+        "foolflea/FoolFlea Major Ursa", 
+        "x01479/Fundamental Future Value ", 
+        "wyu87/ShortStar", 
+        "scottsobo/S ShortFund", 
+        "minuet/The Bankrupcy File", 
+        "curtp/curtp's Real Property Mutual Fund", 
+        "drac/Bears or bust", 
+        "albab/dive! dive!", 
+        "sarahb/2DDDStreetnoDivBelow20ema", 
+        "albab/less than 2dd", 
+        "rraney/rraney's Short Fund", 
+        "jeffk/JK Value & Income", 
+        "hrick/Harrison's Basket of Whims", 
+        "gs751/Schubert Short Fund", 
+        "msayres/MSA Dividend Growth Fund", 
+        "mwolf12/Wolf's Short Hedge", 
+        "gdoering/gdoering's Mutual Fund", 
+        "msmocha07/msmocha07's Mutual Fund", 
+        "greatware/Lowest Price Change 2007 year", 
+        "spudsrockstocks/spudsrockstocks's Mutual Fund", 
+        "jrpesq/jrpesq's Mutual Fund", 
+        "jjones16/Balanced Fund", 
+        "arts/arts's Short Mutual Fund", 
+        "richfield/JR's Special Mutual Fund", 
+        "pogden/Tecshort", 
+        "pogden/The Shorter the Better", 
+        "huyehara/huyehara's Mutual Fund", 
+        "syoung8/syoung8's Mutual Fund", 
+        "stocktrader/stocktrader's Mutual Fund", 
+        "jpsmith/energy stocks", 
+        "justinrfisher/justinrfisher's Mutual Fund", 
+        "eugene_07/Eugene Short Fund", 
+        "germs/germs' short fund", 
+        "sarahb/Sarah short fund", 
+        "panache/Armagedon", 
+        "ashowers1/ashowers1's Mutual Fund", 
+        "albab/Short fund", 
+        "joboggi/Home Construction", 
+        "kchamblee/bottom of the barrel", 
+        "mdista/MD Short And Sweet ", 
+        "ahoffard/INTERNET", 
+        "ahoffard/shorts", 
+        "ahoffard/INTEREST RATES", 
+        "traderkr/High Options IV Fund", 
+        "longshort/LongShort's Short Mutual Fund", 
+        "benpenner/US Value", 
+        "bm1/NSI", 
+        "benpenner/Crash", 
+        "pejmanh/Short Alpha", 
+        "vladv/VlaD", 
+        "nyhex/The World is Mine - aggressive short", 
+        "blackaction/blackaction's Short Fund 2", 
+        "striker08/striker08's Mutual Fund", 
+        "tfischer/Financial Fear Fund", 
+        "willblur/willblur's Un-Fundamental Fund", 
+        "ccolvin/Predatory Short Fund", 
+        "bollmann/Bollmann New Low Fund", 
+        "vanmeerten/Van Meerten - Short Value Line  Small Cap", 
+        "benpenner/Bottoms Up", 
+        "jeffk/PF", 
+        "kames/Hook N Sinker", 
+        "jeffk/JKS", 
+        "chushogi/Chushogi's Yavzinsky Short Fund", 
+        "bm1/xx", 
+        "jaudio/Jonathan Coyle Strat Lab Open Fund", 
+        "jeffk/JK Growth", 
+        "abomb135/abomb135's Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "mmalabayabas/MKM Short Opportunity Fund", 
+        "swissedge/swissedge's SHORT Mutual Fund", 
+        "momentumvalue/not in use", 
+        "bm1/KSI", 
+        "samko/Closed Short Experiment", 
+        "matthew.sanchez@marquette.edu/The Short Fund", 
+        "zygnoda/zygnoda's Mutual Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "charlesb/charlesb's Mutual Fund", 
+        "lycos/Lycos Shorts", 
+        "jarvis_hills/dead horses", 
+        "chubb/RETIRE", 
+        "gallo6/Monster Fund", 
+        "ricardowong/Geminilaki SF", 
+        "mshemel/Housing Recovery Fund", 
+        "kvogelsang/Boo Bear Fund", 
+        "dmulholand/NYMF Mutual Fund", 
+        "gilgameshdux/CRE & Housing Bust", 
+        "gilgameshloco/Heavy Construction -", 
+        "jhamer/Short-Only Fund", 
+        "gilgameshdux/Housing Glut", 
+        "guru/Sector Early", 
+        "gilgameshloco/Happy 2010", 
+        "ccolvin/SB-Long", 
+        "nigazwopr/WoprNigaz", 
+        "skuosma/SK Aggressive Growth", 
+        "vikram14000/House Fund", 
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "cvantoor/cvantoor's Fundamental Short Fund", 
+        "anda259/anda259's Short", 
+        "emeraldtryst/Deep Discount Value", 
+        "alaieus/Short Hedged Fund", 
+        "longandshortofit/Shortermatic Fund", 
+        "timbo56/Siegel Sector Opportunity Fund 1", 
+        "cvantoor/cvantoor's Short Fund", 
+        "buffalo67/buffalo67's Mutual Fund", 
+        "joycerefron/ShtZks-20", 
+        "whaleshogi/Whaleshogi's NFCF Fund", 
+        "dalplt/dalplt's Mutual Fund", 
+        "gsilcott/gsilcott's Mutual Fund", 
+        "stoke/ShortingStar", 
+        "emancer/VP Foreign Alternatives", 
+        "hiromimini/Drop your shorts", 
+        "invest2010/Breakout Targets 2", 
+        "garyheyland/Convergence Fund", 
+        "westharbor/Hedge Fund", 
+        "cleverd83/Raise the Bar/Lower the Boom Fund", 
+        "rycon1317/rycon1317's Mutual Fund", 
+        "qrheaume/Value Fund", 
+        "pnutgllry/pnutgllry's Mutual Fund", 
+        "dkneupper/dkGrowth", 
+        "cisforcookie/New Fund", 
+        "garden301/garden301's Mutual Fund", 
+        "antonluch/Capital Appreciation ", 
+        "jm50273/jm50273's Mutual Fund", 
+        "karlynm/karlynm's Mutual Fund", 
+        "jlaw/jlaw's Over Priced Stock Fund", 
+        "natalieb/asstd", 
+        "dcinokla/Going Going Going fun", 
+        "fauria/fauria's Mutual Fund", 
+        "2004_porsche_911/Smokin' Short Rat 18", 
+        "titicamara/Dividend Portfolio", 
+        "jk82/jk82's short Fund", 
+        "tylerhug927/Tyler Hughes's Mutual Fund", 
+        "simpli/Cyclical Analysis Model", 
+        "razmig/ACM ", 
+        "enkiktd/Enki's Mutual Fund", 
+        "pginvestments/pginvestments's Mutual Fund", 
+        "jlaw/jlaw's Real Estate Fund", 
+        "ryno2390/Timely (Long)", 
+        "ryno2390/Timely (Long)", 
+        "dcblue/BLACK KNIGHTS", 
+        "jlaw/jlaw's Eclectic Consumer Fund", 
+        "antonluch/Value", 
+        "joeeleonard/Mad Money", 
+        "benpease/Small Cap ", 
+        "allemange/Global star", 
+        "bushishogi/Bushishogi's Short NegFCF Timing Fund", 
+        "jeffjwb7/jeffjwb7's Mutual Fund", 
+        "steveb41/steveb41's Mutual Fund", 
+        "2004_porsche_911/Buffett Style", 
+        "ktanaka/Litigation", 
+        "yutanaka/Low P/E Fund S&P 1500", 
+        "tjij363/Special Short Trend Fund", 
+        "jlaw/jlaw Great Value Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = CAA; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (10-02 22:12:16.475) SUCCESS
+D: (10-02 22:12:16.475) cahelper finished 2015-10-02 22:12:16 -0400
+
+Check the results 
+select distinct stockkey from mstockalias where symbol='RYL';
+> Row 1:
+>   STOCKKEY = X'aff21029390b3542c0a80116'
+select * from mstockalias where stockkey= X'aff21029390b3542c0a80116'  order by "date";
+
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'aff31029390b3542c0a80116'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 783764103
+>           DATE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = RYLAND GROUP
+>     PRIMARYKEY = X'92234be4560f3932c0a86fab'
+>       STOCKKEY = X'aff21029390b3542c0a80116'
+>         SYMBOL = RYL
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25201030
+>       STYLEKEY = SG
+select * from mcorporateaction where aliaskey =X'92234be4560f3932c0a86fab' ;
+> Row 1:
+>              ALIASKEY = X'92234be4560f3932c0a86fab'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|RYL  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|1.019100|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20151002:100503
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-10-01 00:00:00.000000'
+>         BB_IDENTIFIER = CAA     UN Equity
+>             BB_ISSUED = TIMESTAMP '2015-10-01 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = CAA
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-10-01 00:00:00.000000'
+>            PRIMARYKEY = X'97454be4560f37cfc0a86fab'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'97454be4560f37cfc0a86fab';
+> Row 1:
+>   _C001 = 1720.000000
+select distinct fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey = X'97454be4560f37cfc0a86fab'));
+there are 1720 fundkeys, save to CA issues RYL fundkeys.txt
+
+For Beta case
+RYL was acquired by CAA - apply it with the correct terms 
+
+check on 10/3/15    invalidate funds
+
+we can chec timbo56 SSOF1 fund on 10/1/15
+trades on October 01, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	RYL	2,120	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	CAA	2,160	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+good! 
+
+
+check MAdmin  clear
+
+
+
+10/3/15
+RYL has been acquired	right curve
+ 	 	
+RYLAND GROUP [RYL] acquired by CalAtlantic Group, Inc. [CAA] on 2015-10-01 00:00:00.
+
+invalidate reprice - checking the member
+
+looks good
+closing this out 
+
+
+
+
+
+
+
+
+
+
+
+
+

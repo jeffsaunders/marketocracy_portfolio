@@ -1,0 +1,1200 @@
+date:  8/17/15
+Ticket Number:	3551
+Portfolio Username:	joe_anderson
+Ticker Symbol:	Z
+Corporate Action Type:
+Stock Split
+Subject:
+Zillow
+Description:
+It appears a recent split by Zillow may not have been accounted for yet. If this is just in progress, please disregard this message....
+Affected Funds:	2584-1
+
+Username
+
+joe_anderson
+
+Fund Symbols
+
+JMF
+
+
+let's see what the legacy site has 
+Symbol: Z	Name: Zillow Group Inc	Price: $24.80
+Volume: 2,089,721	Sector: Information Technology	Change: -$0.39
+Short Volume: 999,999	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 1,767,205	 Exchange: NASDAQ	Today: -1.55%
+50 Day Ave: $83.00	Year High: $148.54	High: $26.72
+200 Day Ave: $99.04	Year Low: $68.58	Low: $24.35
+CAs
+CUSIP changes for Z	right curve
+ 	 	
+Effective Date	Old CUSIP	New CUSIP	Description
+18 Feb 15	98954A107	98954M101	Change in any of identification numbers (CUSIP) of a security from 98954A107 to 98954M101
+ 	 	 
+left curve	  name changes for Z	right curve
+ 	 	
+Effective Date	Old Name	New Name	Description
+18 Feb 15	Zillow Inc	Zillow Group Inc	Change in the name of issuer from Zillow Inc to Zillow Group Inc
+ 	 	 
+left curve	  listing changes for Z	right curve
+ 	 	
+Effective Date	Old Exchange	Old Cod	New Exchange	New Code	Description
+Jan 03, 2012	NASDAQ	UQ	NASDAQ	UW	Change in the exchange that Z trades on from NASDAQ to NASDAQ
+ 	 	 
+
+It does not look like we have a split on the legacy site.
+
+select distinct stockkey from mstockalias where symbol='Z';
+> Row 1:
+>   STOCKKEY = X'b8ba1029390b4ea0c0a80116'
+> Row 2:
+>   STOCKKEY = X'58cd2fc54e275824c0a80146'
+
+there are two
+> Row 1:
+>   STOCKKEY = X'b8ba1029390b4ea0c0a80116'
+select * from mstockalias where stockkey=X'b8ba1029390b4ea0c0a80116' order by "date";
+was footlocker - is active with a different ticker 
+> Row 2:
+>   STOCKKEY = X'58cd2fc54e275824c0a80146'
+select * from mstockalias where stockkey=X'58cd2fc54e275824c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'58ce2fc54e275824c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'2e6e048f4f0391d9c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2015-02-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'b1c428aa54e52976c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-02-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'adcd28b054e52999c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'9f8539d355d26888c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = ZG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey = X'9f8539d355d26888c0a86f92';
+> Row 1:
+>              ALIASKEY = X'9f8539d355d26888c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|Z US|CP_NEW_TKR|ZG US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 109972026
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 19571362
+>        BB_COMPANYNAME = Zillow Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = Z       US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'470d2c4455be79cbc0a86f92'
+>               VERSION = NULL
+
+
+ticker change  ?
+8/14/15   holders of Z  of record on 7/31/15 received 2 shares of Z class C
+
+Z  ---- * ------>  ZG   class A  
+        |
+        |
+        * ------>  Z    class C
+
+
+are there any unapplied CAs for Z or ZG
+
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey is null and BB_SECID='Z' order by BB_EFFECTIVE;
+> Row 1:
+>   BB_ACTIONMNEMONIC = SH_HOLDER_MEET
+> Row 2:
+>   BB_ACTIONMNEMONIC = DIVEST
+> Row 3:
+>   BB_ACTIONMNEMONIC = STOCK_BUY
+> Row 4:
+>   BB_ACTIONMNEMONIC = ACQUIS
+> Row 5:
+>   BB_ACTIONMNEMONIC = EQY_OFFER
+> Row 6:
+>   BB_ACTIONMNEMONIC = STOCK_SPLT
+> Row 7:
+>   BB_ACTIONMNEMONIC = RECLASS
+> Row 8:
+>   BB_ACTIONMNEMONIC = CHG_ID
+> Row 9:
+>   BB_ACTIONMNEMONIC = SPIN   <-- spin 
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='Z' and BB_ACTIONMNEMONIC = 'SPIN' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Zillow Group Inc|CP_ID_BB_COMP|19571362|CP_ID_BB_SEC|4000|CP_TERMS|2 per 1|CP_RATIO|2.000000|CP_PAY_DT|20150814|CP_RECORD_DT|20150731|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|1.000000|CP_ADJ_DT|20150817|CP_TKR|1304951D US|CP_DUE_BILL_RED_DT|N.A.|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG009NRSWJ4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG001GQJ8N9|CP_SPINOFF_ID_BB_SEC_NUM_DES|1304951D|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924022
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 19571362
+>        BB_COMPANYNAME = Zillow Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = Z       US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = TIMESTAMP '2015-07-22 00:00:00.000000'
+>            PRIMARYKEY = X'470b2c4455be79cbc0a86f92'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Zillow Group Inc|CP_ID_BB_COMP|19571362|CP_ID_BB_SEC|4000|CP_TERMS|2 per 1|CP_RATIO|2.000000|CP_PAY_DT|20150814|CP_RECORD_DT|20150731|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.311842|CP_ADJ_DT|20150817|CP_TKR|ZCVVV US|CP_DUE_BILL_RED_DT|20150819|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG009NRSWJ4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG001GQJ8N9|CP_SPINOFF_ID_BB_SEC_NUM_DES|ZCVVV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924022
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 19571362
+>        BB_COMPANYNAME = Zillow Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = Z       US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = TIMESTAMP '2015-08-14 00:00:00.000000'
+>            PRIMARYKEY = X'd00b31e555ce72cdc0a86f92'
+>               VERSION = NULL
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey is null and BB_SECID='ZG' order by BB_EFFECTIVE;
+> Row 1:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Zillow Group Inc|CP_ID_BB_COMP|19571362|CP_ID_BB_SEC|4000|CP_TERMS|2 per 1|CP_RATIO|2.000000|CP_PAY_DT|20150814|CP_RECORD_DT|20150731|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.311842|CP_ADJ_DT|20150817|CP_TKR|Z US|CP_DUE_BILL_RED_DT|20150819|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG009NRSWJ4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG001GQJ8N9|CP_SPINOFF_ID_BB_SEC_NUM_DES|Z|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924022
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 19571362
+>        BB_COMPANYNAME = Zillow Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = ZG      US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = ZG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'd7e633fe55d26768c0a86f92'
+>               VERSION = NULL
+
+
+let's mark the original Z and subsequent ZG as class A
+> Row 2:
+>   STOCKKEY = X'58cd2fc54e275824c0a80146'
+select * from mstockalias where stockkey=X'58cd2fc54e275824c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'58ce2fc54e275824c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'2e6e048f4f0391d9c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2015-02-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'b1c428aa54e52976c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+update mstockalias set name='Zillow Group Inc  (class A)'  where primarykey=X'b1c428aa54e52976c0a86f92';
+
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-02-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'adcd28b054e52999c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+update mstockalias set name='Zillow Group Inc  (class A)'  where primarykey=X'adcd28b054e52999c0a86f92';
+
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc
+>     PRIMARYKEY = X'9f8539d355d26888c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = ZG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+update mstockalias set name='Zillow Group Inc  (class A)'  where primarykey=X'9f8539d355d26888c0a86f92';
+
+
+let's look at the spin off of Z to ZCVVV
+
+> Row 2:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Zillow Group Inc|CP_ID_BB_COMP|19571362|CP_ID_BB_SEC|4000|CP_TERMS|2 per 1|CP_RATIO|2.000000|CP_PAY_DT|20150814|CP_RECORD_DT|20150731|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.311842|CP_ADJ_DT|20150817|CP_TKR|ZCVVV US|CP_DUE_BILL_RED_DT|20150819|CP_SH_FRACTIONAL|N.A.|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG009NRSWJ4|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG001GQJ8N9|CP_SPINOFF_ID_BB_SEC_NUM_DES|ZCVVV|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 109924022
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 19571362
+>        BB_COMPANYNAME = Zillow Group Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = Z       US Equity
+>             BB_ISSUED = TIMESTAMP '2015-07-21 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 2000
+>            BB_UPDATED = TIMESTAMP '2015-08-14 00:00:00.000000'
+>            PRIMARYKEY = X'd00b31e555ce72cdc0a86f92'
+>               VERSION = NULL
+
+effective  2015-08-17
+CP_PAY_DT  2015-08-14
+CP_RECORD_DT 2015-07-31
+
+8/18/15 - the ticker change from Z to ZG is there for the class A shares
+
+need to apply the spin off
+
+let's check Xignite
+Z
+http://192.168.111.213/feed/stockLookup.php?symbol=Z
+98954M101  xignite has the wrong cusip  this is the old Z's 
+98954M101 
+
+ZG
+http://192.168.111.213/feed/stockLookup.php?symbol=ZG
+no CUSIP
+but should be 98954M101
+
+let's take a look at the database for Z
+select distinct stockkey from mstockalias where symbol='Z';
+> Row 1:
+>   STOCKKEY = X'b8ba1029390b4ea0c0a80116'
+	select * from mstockalias where stockkey=X'b8ba1029390b4ea0c0a80116' order by "date";
+	foot locker - different ticker now
+> Row 2:
+>   STOCKKEY = X'58cd2fc54e275824c0a80146'
+	select * from mstockalias where stockkey=X'58cd2fc54e275824c0a80146' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'58ce2fc54e275824c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'2e6e048f4f0391d9c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2015-02-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'b1c428aa54e52976c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-02-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'adcd28b054e52999c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'9f8539d355d26888c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = ZG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+
+http://files.shareholder.com/downloads/ABEA-6AA1JU/587080486x0x840200/756E577A-C105-4645-8737-35A6E5F5C64C/ZillowGroup.Cshares.FAQforIRwebsite.072115.pdf
+
+
+let's see if the ZCVVV exists
+on yahoo finance, the historical prices exist this is good.
+
+select distinct stockkey from mstockalias where symbol='ZCVVV';
+nothing
+
+let's list this on 7/31/15 per the company website 
+
+select distinct stockkey from mstockalias where symbol='ZCVVV';
+n othing
+
+from DTCC   ZCVVV  98954M200  
+check fidelity   is corect shows as Z
+
+let's list it as ZCVVV then we'll do a ticker change and a stock dividend rather than a spin off
+
+ZCVVV|Q|98954M200|Zillow Group, Inc. (class C)|20150731
+
+put this in symadd.txt
+
+now run the nstool
+
+/Marketocracy/bin/nstool -fileName symadd.txt
+
+check this again
+select distinct stockkey from mstockalias where symbol='ZCVVV';
+> Row 1:
+>   STOCKKEY = X'ae96551455d33245c0a86f92'
+
+select * from mstockalias where stockkey=X'ae96551455d33245c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'ae97551455d33245c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = ZCVVV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+update mstockalias set GICSKEY = '45101010' where STOCKKEY = X'ae96551455d33245c0a86f92';
+
+
+ok so I have listed this 
+
+let's do the stock dividend with this symbol so there is no ambiguity
+record date:  20150731
+paydate:  20150814
+ex date:  20150817
+/Marketocracy/bin/cahelper -symbol Z -effective 20150817 -type DVD_STOCK -exchange UQ -dividendSymbol ZCVVV -payDate 20150814 -recordDate 20150731 -percent 200 >& /Users/build/caout/Z.20150818-DVD_STOCK-ZCVVV.out
+Z.20150818-DVD_STOCK-ZCVVV.out
+stocks:~/caout build$ tail -f Z.20150818-DVD_STOCK-ZCVVV.out
+D: (08-18 09:41:16.175) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-18 09:41:51.295) cahelper started on 2015-08-18 09:41:51 -0400
+
+D: (08-18 09:41:54.051) StockFileLoad Version:4.0
+D: (08-18 09:41:54.051) Loading Stock Data
+D: (08-18 09:42:58.659) Building Lookup Index
+D: (08-18 09:43:07.249) Finished Building Index
+D: (08-18 09:43:13.122) Finished Loading Stock Data
+D: (08-18 09:43:13.161) Connection to 192.168.111.172:6666 succeeded
+D: (08-18 09:43:37.121) SavingChanges for Stock Dividend out 101 of 387
+D: (08-18 09:44:08.623) SavingChanges for Stock Dividend out 201 of 387
+D: (08-18 09:44:29.987) {
+    APPLIED = 1; 
+    DATE = 20150817; 
+    FUNDS = (
+        "wpullen/Big Westy's Mutual Fund", 
+        "ucdballer411/HT Technology", 
+        "jdogshouse123/First Practice (Stocks Only)", 
+        "ojf0310/ojf0310's Long Fund", 
+        "rhelm/Helm Capital", 
+        "rhelm/HELM NYSE", 
+        "magicformulapro/Aruba Mutual Fund", 
+        "dpurho/dpurho's US Fund", 
+        "mytechnicalfriend/Extreme  Short", 
+        "oxford-davis/oxford-davis's T-bill paper", 
+        "glang/glang's A_to_Z Fund", 
+        "prefered_fund/Downside Mutual Fund", 
+        "jdp8888/Get Shorty", 
+        "worldcup/Growth Fund", 
+        "bb2692/Port City", 
+        "biz-num/biz-num's Mutual Fund", 
+        "mytechnicalfriend/Short II", 
+        "hypedaj/Ajay Fund AEX", 
+        "wilkinson/wilkinson's Mutual Fund", 
+        "evanpe/Evan Einstein's Fund", 
+        "jnkrasne/jnkrasne's Mutual Fund", 
+        "bb2692/Port City", 
+        "joliend/joliend's Mutual Fund", 
+        "michael.aucoin/Apollo", 
+        "governor/Governor's Short Only Fund", 
+        "gholds/GHold's breathlessly overhyped short fund", 
+        "topflite/Sandhill Partners-Short", 
+        "jack87/Jacks Web 2.0", 
+        "scratchy/scratchy's Mutual Fund", 
+        "nhaefelin/nhaefelin's Short Fund", 
+        "addisonsmith11/addisonsmith11's Mutual Fund", 
+        "kschroedz/Kevos Picks", 
+        "nhaefelin/Try it Different", 
+        "sexi/sexi's Mutual Fund", 
+        "sexi/sexi's Mutual Fund", 
+        "sexi/sss", 
+        "sexi/Bear vs Bulls", 
+        "sexi/TA", 
+        "sexi/big Stocks", 
+        "sexi/sexi's Mutual Fund", 
+        "sexi/tech", 
+        "sexi/med", 
+        "sexi/xxx", 
+        "sexi/usa", 
+        "abba/abba's Mutual Fund", 
+        "jball/Growth Fund", 
+        "worldcup/Worldcup's Mutual Fund", 
+        "hiromimini/Drop your shorts", 
+        "pnutgllry/pnutgllry's Mutual Fund", 
+        "kconzelman/2012-04-10", 
+        "mhartman59/Ideas Fund", 
+        "jlaw/jlaw's Mutual Fund", 
+        "jlaw/jlaw's Over Priced Stock Fund", 
+        "jlaw/jlaw's short sectors fund", 
+        "jlaw/jlaw's short technical and trading fund", 
+        "varsovia/Varsovia Growth Fund", 
+        "thomasbethke/Thomas Bethke", 
+        "cheil36/Discovery", 
+        "laurab/laurab's Mutual Fund", 
+        "jrlartful/jrlartful's Mutual Fund", 
+        "leonard6/Leonard Short Fund", 
+        "aharon10/ADL short fund", 
+        "lwilson1/s fund", 
+        "ewilson1/s", 
+        "pbradford/SB Research", 
+        "mapsyntax/Map Syntax: Short", 
+        "sptj/sptj's Mutual Fund 1", 
+        "sptj/sptj's all-in", 
+        "sptj/sptj's Mutual Fund", 
+        "justinsbaker13/justinsbaker13's Mutual Fund", 
+        "matberry/Matt Berry's Short Seller Fund", 
+        "gxm321/SHORT V V", 
+        "kjabusch/kjabusch Short Shorts", 
+        "stoke/ShortingStar", 
+        "noirrony/Royal Street Focus Fund", 
+        "mikki33/Single Double Etc", 
+        "cvantoor/cvantoor's Short Fund", 
+        "jlaw/jlaw's Tech fund", 
+        "morningstar/EveningStar Capital", 
+        "johnbash1/Active Fund", 
+        "hiromimini/Selling into Computational Kaos", 
+        "steele99/steele99's Mutual Fund", 
+        "rknatty/BP 50", 
+        "enkiktd/Enki's Mutual Fund", 
+        "timingizeverything/timingizeverything's Mutual Fund", 
+        "krishawkins/High Price to Sales", 
+        "avicere/AV SHORT", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "iceman028/iceman028's Mutual Fund", 
+        "kwilson1/s", 
+        "thebullway/10600 Capital", 
+        "eekarf/Value Growth Fund", 
+        "verhayden/DAPHNEY VALUE FUND", 
+        "razmig/ACM ", 
+        "2wizard8/M's Growth Fund", 
+        "ahknaten/Kai Petainen's Short Fund", 
+        "ahknaten/Kai Petainen's Shorts2", 
+        "design_investment/Non Compliance Fund", 
+        "design_investment/BIA Fund", 
+        "design_investment/Dividend Mutual Fund", 
+        "design_investment/Aggressive Fund", 
+        "jwilson1/s", 
+        "antonluch/Factor", 
+        "cschier/Schier Select Short Fund", 
+        "guido/WATERTOWN", 
+        "guido/WALTHAM", 
+        "guido/Finance and Banking", 
+        "staka/Staka's Short Fund", 
+        "chartsmaster/chartsmaster's Short  Fund", 
+        "francois60/francois60's Mutual Fund", 
+        "dwilson1/s fund", 
+        "balbean/Albean's Fundamental Short Fund", 
+        "njorgensen/Maiden Voyage", 
+        "jwebb2/Webb Nasdaq Internet Index", 
+        "zkrstevski/ 09 Techno", 
+        "chun/chun's Mutual Fund", 
+        "ross.gilliam@gmail.com/ross.gilliam@gmail.com's Mutual Fund", 
+        "trooney/TPR Growth-Value Hybrid Fund", 
+        "pablo4414/pablo4414's Mutual Fund", 
+        "lmharold/Harold Mid Cap", 
+        "advisorcfa/AdvisorCFA's Short Fund", 
+        "joew/JRW Growth Fund", 
+        "timingizeverything/timingizeverything's Mutual Fund", 
+        "troyea/1 Watch List 1-1-2014 To 5-2-2014 Stocks", 
+        "scraig/scraig's short fund", 
+        "troyea/2 Watch List 1-1-2014 To 5-9-2014 Stocks", 
+        "rjeddings/Takin' it in the Shorts", 
+        "troyea/3 Watch List 1-1-2014 To 5-16-2014 Stocks ", 
+        "troyea/4 Watch List 1-1-2014 To 5-23-2014 Stocks", 
+        "troyea/4 Watch List 1-1-2014 To 5-30-2014 Stocks", 
+        "willblur/Where My Money Goes Fund", 
+        "the_barnacle/Barnacle ABC Fund", 
+        "gabcaron32/GabCaron32", 
+        "mmelendez78240/mmelendez78240's Short Mutual Fund", 
+        "lturner/shorty", 
+        "mcherol1/mcherol1's Mutual Fund", 
+        "jstupay/Stoop Corp", 
+        "jrivlin/Rivlin Capital", 
+        "joe_anderson/joe_anderson's Mutual Fund", 
+        "dylmdel/Dylan's Hedge Fund", 
+        "hsienhaochiu/hsienhaochiu's Mutual Fund", 
+        "cschier/Large Cap Growth Fund", 
+        "boyplungerab/SQ", 
+        "lmharold/Harold Technology Fund", 
+        "collins_20/collins_20's Mutual Fund", 
+        "jlaw/jlaw's Growth fund", 
+        "sb2015/sb2015's Mutual Fund", 
+        "captlvntr/captlvntr's Mutual Fund", 
+        "handshogi/Handshogi's SIPro Index Fund", 
+        "daedalus/Daedalus's Growth Fund", 
+        "value529/VSF", 
+        "belmon/belmon's Mutual Fund Short", 
+        "junglstory/junglstory's Mutual Fund", 
+        "cipollino/cipollino's Mutual Fund", 
+        "glogsdon/Graham Harrison Mutual Fund", 
+        "redcampbell/Penny Stock Trading Fund", 
+        "cfalcon/CFalcon's Short Fund", 
+        "rodcovlin/XRod's XX Xfund", 
+        "csilk/Micro Cap Value Fund", 
+        "ksharpless/ksharpless's Mutual Fund", 
+        "dmk112/Magic Formula", 
+        "ronancohen/PRAGMATIC II", 
+        "rooster/mixed", 
+        "glogsdon/Graham's Risky Business", 
+        "knox/knox's Mutual Fund", 
+        "oardmb/Brutus", 
+        "voland/voland's", 
+        "rmorse/rmorse's Mutual Fund", 
+        "bizzbagg/bizzbagg's Mutual Fund", 
+        "dskucla/ALPHA RELATIVE VALUE (TA)", 
+        "finmas/FINMAS REG I", 
+        "zuhars/zuhars's Mutual Fund", 
+        "teenvestor/Mike's 100-stock Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "hiromimini/Zero appreciation potential-financial", 
+        "evan.berger/EJB's short fund", 
+        "katan11/katan11's Mutual Fund", 
+        "atejani/IPO", 
+        "hedgehog/HH Mutual Fund", 
+        "jfrancois/jfrancois's Short Fund", 
+        "cstelmachowski/Quant Short", 
+        "rodcovlin/tracking fund", 
+        "yorken/YRH Mixed", 
+        "amandalc/Amanda's Mutual Fund", 
+        "dskucla/ALPHA RELATIVE VALUE (TN)", 
+        "bradhoop/MFI 50 Small Cap P>6 w/coverage", 
+        "drogala2/drogala2's Mutual Fund", 
+        "xdt001/xdt001's Mutual Fund", 
+        "mwarner/MWarner's Short Fund", 
+        "msaal/michael saal's Mutual Fund", 
+        "rjames1/Dick's Doozie Mutual Fund", 
+        "mtulett/MT's Short Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "strozerj/Strozer Fund", 
+        "bradhoop/MFI Top 25 3/7/06", 
+        "hoyas332/hoyas332's Mutual Fund", 
+        "xristine/xristine's Mutual Fund", 
+        "vvorrath1/St. Moritz Bubble", 
+        "valuefocused/ValueFocused MagForm Monthly", 
+        "westcoastmba/Short side of maket Neutral fund ", 
+        "pnormanb/shorties", 
+        "rmorse/bfranklin's Mutual Fund", 
+        "bradhoop/50 Small Cap 6 or More", 
+        "rkern/rkern's Mutual Fund", 
+        "nilegomez/Cuban CashFlow", 
+        "bachf334/bachf334's Mutual Fund 2", 
+        "hemfed/hemfed's Mutual Fund", 
+        "bwrig09/bwrig09's Mutual Fund", 
+        "bradhoop/MFI By The Book", 
+        "wgilcher/Software and Services", 
+        "samma/contrarian", 
+        "smd._islam/smd._islam's Mutual Fund", 
+        "csilk/Fallen Angel Value Fund - I", 
+        "sabeth/Future All Star Fund", 
+        "confusedtrader/Ben's small cap fund", 
+        "foxforcefive/foxforcefive's Mutual Fund", 
+        "hedgstrat/hedgstrat's Mutual Fund", 
+        "bradhoop/MFI Top 25 Minus A Few", 
+        "almond_tree/Charism 20 Short Fund- FUND is *DEFUNCT*", 
+        "richfield/richfield's Dog Short Fund", 
+        "bsandford/bsandford's Mutual Fund", 
+        "rmorse/rmorse's Mutual Fund", 
+        "alexlyn/alexlyn's Midmarket Value Fund", 
+        "bourseinvest/bourseinvest.com  Fund", 
+        "kg/ZDRB", 
+        "woil/Woil's Follow the Leader Fund", 
+        "ps_vee/The Villa Real Fund", 
+        "2004_porsche_911/Negative Beta Short", 
+        "mgulla/Mutual Fund \"A\"", 
+        "vdicarmine/Falling Knives Fund", 
+        "shane_dorian/shane_dorian's Mutual Fund", 
+        "cleaverc/Cleaver Contrarian Fund", 
+        "w1ll1jsom/w1ll1jsom's Mutual Fund", 
+        "dabbler/PMF", 
+        "bradhoop/MFI Top 25 3/7/06", 
+        "bradhoop/MFI 50 Small Cap P=6 or More", 
+        "srlindemann/srlindemann's Mutual Fund", 
+        "jrpesq/jrpesq's Mutual Fund", 
+        "annanshogi/Annanshogi's SIPro Index 48 Stock Version Fund", 
+        "rraney/rraney's Short Fund", 
+        "gurucandidate/gurucandidate's Short Only Fund", 
+        "stevetroy/reuters select relative value rebalance on the 21st", 
+        "jeffjwb7/jeffjwb7's Mutual Fund", 
+        "jczerw/5 Stock Fund", 
+        "beachbumed/BeachBumEd's Short Fund", 
+        "2wizard8/2wizard8's Mutual Fund XXXGrowtj", 
+        "rodcovlin/Rod's Mutual Fund", 
+        "bradhoop/MFI Top 25 Minus 3/7/2006", 
+        "peepaw2/facts fund", 
+        "matberry/25 short shrift", 
+        "nomoresaladdays/NMSD Opportunistic Short Fund", 
+        "andrewyeh/YEH Magic Investing", 
+        "pparadisis/HiddenGems", 
+        "drac/Drac's Short Squeeze", 
+        "mewesley/Mewesley's Top Rated", 
+        "zingerc/zingerc's Mutual Fund", 
+        "791branko/Technology Watchlist2 {vrsn it}", 
+        "daanimal/My Citadel", 
+        "mtom/MTom's ContraFund II", 
+        "kolata/Raed Kolta's Solidity Growth Fund", 
+        "kolata/Raed Kolta's Solidity Services Fund", 
+        "kolata/Raed Kolta's Solidity Materials Fund", 
+        "kolata/Raed Kolta's Solidity Technology Fund", 
+        "kolata/Raed Kolta's Solidity Healthcare Fund", 
+        "kolata/Kolta Large Cap Fund", 
+        "jlaw/Eclectic Growth and Value", 
+        "jlaw/jlaw High Growth Fund", 
+        "jlaw/Trader Fund", 
+        "jlaw/JLaw High Growth Fund", 
+        "jlaw/jlaw Growth Fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20150814; 
+    RATIO = 2; 
+    "RECORD_DATE" = 20150731; 
+    SYMBOL = Z; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (08-18 09:44:41.866) SUCCESS
+D: (08-18 09:44:41.867) cahelper finished 2015-08-18 09:44:41 -0400
+
+
+select * from mstockalias where stockkey=X'58cd2fc54e275824c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2011-07-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'58ce2fc54e275824c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2012-01-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Inc
+>     PRIMARYKEY = X'2e6e048f4f0391d9c0a80146'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954A107
+>           DATE = TIMESTAMP '2015-02-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'b1c428aa54e52976c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-02-18 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'adcd28b054e52999c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M101
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group Inc  (class A)
+>     PRIMARYKEY = X'9f8539d355d26888c0a86f92'
+>       STOCKKEY = X'58cd2fc54e275824c0a80146'
+>         SYMBOL = ZG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+select * from mcorporateaction where BB_ACTIONMNEMONIC='DVD_STOCK' and aliaskey in (select primarykey from mstockalias where stockkey=X'58cd2fc54e275824c0a80146');
+> Row 1:
+>              ALIASKEY = X'9f8539d355d26888c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20150731|CP_PAY_DT|20150814|CP_AMT|200.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|ZCVVV    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150818:094151
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = Z     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'3dc45c5055d3361fc0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'3dc45c5055d3361fc0a86f92';
+> Row 1:
+>   _C001 = 270.000000
+select distinct stockkey from mticket where sourcekey=X'3dc45c5055d3361fc0a86f92';
+> Row 1:
+>   STOCKKEY = X'ae96551455d33245c0a86f92'
+select symbol from mstockalias where STOCKKEY = X'ae96551455d33245c0a86f92';
+> Row 1:
+>   SYMBOL = ZCVVV
+
+check our member:  joe_anderson  fund JMF
+
+looks like he has 350 shares placeholder  no symbol in the stratification
+
+looking at Z
+your holdings of ZG	right curve
+ 	 	
+Fund	Shares	Value	Portion of fund
+JMF	175	 $4,467.75	 0.40%   <--- expand
+JMFb	 0	 N/A	 N/A
+
+LEDGER
+Date	Start	Change	End	Type
+Sep 30, 2014		175	175	Buy
+Total: 175
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Sep 30, 2014	175	$8.75	$20,375.43	$116.43
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+so he bought and held 175 shares of Zillow
+check his ledger for JMF on 8/14/15
+
+ trades on August 14, 2015	right curve
+ 	 	[download spreadsheet]
+ 	 	
+Type	No label for:stock.symbol in MPosition	Quantity	Price	Net	Commission	SEC Fee
+Stock Dividend Buy	 	350	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+Ok, let's do the ticker change on 8/17/15
+from ZCVVV to Z
+
+/Marketocracy/bin/cahelper -symbol Z -effective 20150817 -type CHG_TKR -exchange UQ -oldSymbol ZCVVV >& /Users/build/caout/ZCVVV.20150818-CHG_TKR-Z.out
+
+ZCVVV.20150818-CHG_TKR-Z.out
+stocks:~/caout build$ tail -f ZCVVV.20150818-CHG_TKR-Z.out
+D: (08-18 10:12:10.338) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-18 10:12:45.110) cahelper started on 2015-08-18 10:12:45 -0400
+
+D: (08-18 10:12:45.447) {APPLIED = 0; DATE = 20150817; NOTES = "N.A."; SYMBOL = Z; TYPE = "CHG_TKR"; }
+D: (08-18 10:12:45.448) SUCCESS
+D: (08-18 10:12:45.448) cahelper finished 2015-08-18 10:12:45 -0400
+
+
+didn't take 
+change to Marty 
+
+/Marketocracy/bin/cahelper -symbol MARTY -effective 20150817 -type CHG_TKR -exchange UQ -oldSymbol ZCVVV >& /Users/build/caout/ZCVVV.20150818-CHG_TKR-MARTY.out
+D: (08-18 10:17:08.058) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (08-18 10:17:55.157) cahelper started on 2015-08-18 10:17:55 -0400
+
+D: (08-18 10:17:55.349) {
+    APPLIED = 1; 
+    DATE = 20150817; 
+    "NEW_TICKER" = "MARTY US"; 
+    NOTES = "N.A."; 
+    "OLD_TICKER" = "ZCVVV US"; 
+    SYMBOL = MARTY; 
+    TYPE = "CHG_TKR"; 
+}
+D: (08-18 10:17:55.556) SUCCESS
+D: (08-18 10:17:55.557) cahelper finished 2015-08-18 10:17:55 -0400
+
+select * from mstockalias where stockkey in (select distinct stockkey from mstockalias where symbol='ZCVVV') order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'ae97551455d33245c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = ZCVVV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'16d26c5655d33e93c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = MARTY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+update mstockalias set symbol='Z' where PRIMARYKEY = X'16d26c5655d33e93c0a86f92';
+done
+
+let's check this again
+select * from mstockalias where STOCKKEY = X'ae96551455d33245c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'ae97551455d33245c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = ZCVVV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'16d26c5655d33e93c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+
+ok, here is what I did
+
+1.  listed ZCVVV on 7/31/15
+2.  did the stock dividend from Z giving ZCVVV on 8/14/15
+3.  did the ticker change for ZCVVV to Z on 8/17/15
+
+need to add backdated prices 
+select * from mstock where primarykey=X'ae96551455d33245c0a86f92';
+> Row 1:
+>         IDENTITYKEY = X'16d26c5655d33e93c0a86f92'
+>                NAME = NULL
+>          PRIMARYKEY = X'ae96551455d33245c0a86f92'
+>              SYMBOL = NULL
+>           COMPANYID = 28661  <---
+>   WINDOWIDENTITYKEY = NULL
+
+let's insert the prices that we've created and then invalidate from 2015-07-31
+
+ok  
+
+select * from stockprices where companyID = 28661 order by daynumber;
+first
+> Row 1:
+>   DAYNUMBER = 5327
+>   COMPANYID = 28661
+>      OPENED = 276500
+>        HIGH = 288200
+>         LOW = 257199
+>      CLOSED = 277400
+>      VOLUME = 144700
+last
+> Row 10:
+>   DAYNUMBER = 5338
+>   COMPANYID = 28661
+>      OPENED = 261299
+>        HIGH = 262099
+>         LOW = 246600
+>      CLOSED = 251900
+>      VOLUME = 103300
+
+ok, check on 8/19/15
+look for Z and see that it changed from ZCVVV
+look at the charts
+check our member stratification
+joe_anderson  JMF    he has 175 ZG and 250 Z
+
+8/19/15  
+ZCVVV to Z   this new stock is there
+ymbol: Z	Name: Zillow Group, Inc. (class C)	Price: $26.06
+Volume: 3,141,062	Sector: Information Technology	Change: $0.00
+Short Volume: 62,803	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 62,803	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $0.52	Year High: $26.96	High: $26.95
+200 Day Ave: $0.13	Year Low: $0.00	Low: $24.50
+CAs
+ symbol changes for Z	right curve
+ 	 	
+Effective Date	Old Symbol	New Symbol	Description
+17 Aug 15	ZCVVV	MARTY	Change in the ticker (trading) symbol from ZCVVV to MARTY
+ 
+joe_anderson  JMF   clcik on Z	 	 
+LEDGER
+Date	Start	Change	End	Type
+Aug 14, 2015		350	350	Corporate Action
+Total: 350
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+You have no sells for this position
+
+
+Z	click me	$26.06	350	$9,121.00	0.81%	$9,121.00	0.00%	0.00%	0.00%	Details 
+ZG	click me	$27.01	175	$4,726.75	0.42%	-$15,648.67	0.00%	-76.80%	-76.80%	Details 
+
+what to invalidate?
+select distinct stockkey from mstockalias where symbol='ZCVVV';
+> Row 1:
+>   STOCKKEY = X'ae96551455d33245c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'ae96551455d33245c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-07-31 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'ae97551455d33245c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = ZCVVV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98954M200
+>           DATE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Zillow Group, Inc. (class C)
+>     PRIMARYKEY = X'16d26c5655d33e93c0a86f92'
+>       STOCKKEY = X'ae96551455d33245c0a86f92'
+>         SYMBOL = Z
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45101010
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'16d26c5655d33e93c0a86f92';
+> Row 1:
+>              ALIASKEY = X'16d26c5655d33e93c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ZCVVV US|CP_NEW_TKR|MARTY US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150818:101755
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = MARTY     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = MARTY
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'16cc6c5655d33e93c0a86f92'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONDICTIONARY = 'CP_OLD_TKR|ZCVVV US|CP_NEW_TKR|Z US|CP_NOTES|N.A.' where PRIMARYKEY = X'16cc6c5655d33e93c0a86f92';
+update mcorporateaction set BB_SECID = 'Z' where PRIMARYKEY = X'16cc6c5655d33e93c0a86f92';
+select * from mcorporateaction where aliaskey=X'16d26c5655d33e93c0a86f92';
+> Row 1:
+>              ALIASKEY = X'16d26c5655d33e93c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|ZCVVV US|CP_NEW_TKR|Z US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150818:101755
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-08-17 00:00:00.000000'
+>         BB_IDENTIFIER = MARTY     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = Z
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2015-08-17 00:00:00.000000'
+>            PRIMARYKEY = X'16cc6c5655d33e93c0a86f92'
+>               VERSION = NULL
+
+repricing
+Done!
+
+75 Funds Processed
+525 Queries Processed
+1 Inactive Funds
+1439870400|20150818 
+select primarykey from mposition where STOCKKEY = X'ae96551455d33245c0a86f92';
+select fundkey from mposition where primarykey in (select primarykey from mposition where STOCKKEY = X'ae96551455d33245c0a86f92');
+there are XXX fundkeys save to CA issues Z fundkeys.txt
+
+invalidating
+reprice as of 2015-07-31
+done
+
+
+joe_anderson has  in his JMF
+
+Z click me	$25.65	350	$8,977.50	0.81%	$8,977.50	-1.57%	0.00%	0.00%	Details 
+ZG	click me	$25.94	175	$4,539.50	0.41%	-$15,835.92	-3.96%	-77.72%	-77.72%	Details 

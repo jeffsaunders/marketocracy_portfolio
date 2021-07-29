@@ -1,0 +1,4 @@
+<?php
+//System Link Tracking
+
+?>

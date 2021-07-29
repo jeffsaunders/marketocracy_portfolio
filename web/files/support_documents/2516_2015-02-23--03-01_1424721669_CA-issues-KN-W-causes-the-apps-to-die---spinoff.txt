@@ -1,0 +1,2322 @@
+date:
+ticker KN-W causing the site to crash
+
+select distinct stockkey from mstockalias where symbol='KN-W';
+> Row 1:
+>   STOCKKEY = X'b93a4415531517fcc0a86f92'
+
+select * from mstockalias where STOCKKEY = X'b93a4415531517fcc0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Knowles Corp
+>     PRIMARYKEY = X'b93b4415531517fcc0a86f92'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>         SYMBOL = KN-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+select * from mcorporateaction where aliaskey=X'b93b4415531517fcc0a86f92';
+nothing
+select count(*) from mticket where STOCKKEY = X'b93a4415531517fcc0a86f92';
+> Row 1:
+>   _C001 = 342.000000
+
+select distinct sourcekey from mticket where STOCKKEY = X'b93a4415531517fcc0a86f92';
+> Row 1:
+>   SOURCEKEY = X'837b586e53111fcbc0a86f92'
+> Row 2:
+>   SOURCEKEY = NULL
+
+let's get the mticket counts
+> Row 1:
+>   SOURCEKEY = X'837b586e53111fcbc0a86f92'
+select count(*) from mticket where SOURCEKEY = X'837b586e53111fcbc0a86f92';
+> Row 1:
+>   _C001 = 315.000000  (CA generated)
+
+> Row 2:
+>   SOURCEKEY = NULL  (member generated)
+select count(*) from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92';
+> Row 1:
+>   _C001 = 27.000000
+
+
+select * from mcorporateaction where primarykey=X'837b586e53111fcbc0a86f92';
+> Row 1:
+>              ALIASKEY = X'0ffc0e21390afabfc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Knowles Corp|CP_ID_BB_COMP|35563505|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20140228|CP_RECORD_DT|20140219|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.829533|CP_ADJ_DT|20140303|CP_TKR|KN-W US|CP_DUE_BILL_RED_DT|20140305|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004M8M6J1|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004M8M6F5|CP_SPINOFF_ID_BB_SEC_NUM_DES|KN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 77363360
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100470
+>        BB_COMPANYNAME = Dover Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = DOV     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-23 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = DOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>            PRIMARYKEY = X'837b586e53111fcbc0a86f92'
+>               VERSION = NULL
+
+CP_PAY_DT       2014-02-28
+CP_RECORD_DT    2014-02-19
+Effective date: 2014-03-03
+
+spun off from DOV   1 for 2
+
+check bananaslug   get the managerkey
+select primarykey from mmanager where loginname='bananaslug';
+> Row 1:
+>   PRIMARYKEY = X'7d4207f33bd25467c0a80119'
+
+Let's see if bananaslug traded KN-W
+select * from mticket where STOCKKEY = X'b93a4415531517fcc0a86f92' and managerkey=X'7d4207f33bd25467c0a80119';
+> Row 1:
+>      ACTIONKEY = X'6339039339e7e927c0a801dc'
+>      BROKERKEY = X'4b16149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-02-28 12:00:00.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'48704415531518ebc0a86f92'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7d4207f33bd25467c0a80119'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-02-28 12:00:00.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'486e4415531518ebc0a86f92'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = X'837b586e53111fcbc0a86f92'
+>    NOTIFYEMAIL = NULL
+
+select * from mtrade where ticketkey=X'486e4415531518ebc0a86f92';
+> Row 1:
+>                    KINDKEY = X'6339039339e7e927c0a801dc'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'48734415531518ebc0a86f92'
+>                 PRIMARYKEY = X'48714415531518ebc0a86f92'
+>                     SHARES = 190.000000
+>                  TICKETKEY = X'486e4415531518ebc0a86f92'
+>                     CLOSED = TIMESTAMP '2014-02-28 12:00:00.000000'
+>                      PRICE = 0.000000
+>   CREATEDBYCORPORATEACTION = 1
+
+he got 190 shares on 2/28/14
+let's see what fund:
+select fundkey from mposition where primarykey=X'48734415531518ebc0a86f92';
+> Row 1:
+>   FUNDKEY = X'4f8251e63bd79ab8c0a801e0'
+
+get the fund symbol
+select symbol from mfund where primarykey=X'4f8251e63bd79ab8c0a801e0';
+> Row 1:
+>   SYMBOL = BSDIV
+
+
+That's it!  good call, Kim!!  
+
+
+do we have prices for KN-W?  
+/Marketocracy/bin/dbtool lookup stock KN-W
+>>>> dbtool started at 2015-02-23 09:38:47 -0500
+stock: KN-W
+  PK       : [B93A4415531517FCC0A86F92]
+  companyID: [25780]
+  symbol   : [KN-W]
+  name     : [Knowles Corp]
+  date     : [2014-03-03 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-23 09:38:47 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 25780
+no not getting prices
+
+check yahoo finance and xignite
+
+yahoo :    ticker is KN   
+Knowles Corporation (KN) -NYSE   Watchlist
+19.14  0.41(2.10%) 9:40AM EST - NYSE Real Time Price
+
+Add to Portfolio
+Prev Close:	19.55
+Open:	N/A
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	24.25
+Beta:	N/A
+Earnings Date:	Apr 27 - May 1 (Est.)
+Day's Range:	19.11 - 19.52
+52wk Range:	17.09 - 33.82
+Volume:	6,184
+Avg Vol (3m):	1,682,600
+Market Cap:	1.63B
+P/E (ttm):	N/A
+EPS (ttm):	-1.02
+Div & Yield:	N/A (N/A)
+
+quantum:
+Knowles Corp.
+Ticker Symbol: KN     CUSIP: 49926D109     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Knowles Corp. is a market leader and global supplier of advanced micro-acoustic solutions and specialty components serving the mobile communications, consumer electronics, medical technology, military, aerospace and industrial markets. Knowles has a leading position in micro-electro-mechanical systems microphones, speakers and receivers which are used in smartphones, tablets and mobile handsets. Knowles is also a leading manufacturer of transducers used in hearing aids and other medical devices and has a strong position in oscillators (timing devices) and capacitor components which enable various types of communication. Knowles' focus on the customer, combined with unique technology, rigorous testing and global scale, helps to deliver innovative solutions and consistently dependable and precise products. Headquartered in Itasca, Illinois, Knowles has more than 10,000 employees in 37 locations around the world.
+Notes:  February 6, 2014 - Dover Corporation (NYSE: DOV) announced today that its board of directors formally approved the separation of Knowles Corporation from Dover through a distribution of all of the common stock of Knowles held by Dover to Dover shareholders and, in connection with the approval, the board has also set the distribution ratio, record date and distribution date for the spin-off. As a result, the following will occur: The distribution is expected to be made after the close of trading on the New York Stock Exchange on February 28, 2014 to Dover stockholders of record as of the close of business on February 19, 2014, the record date for the distribution. On the distribution date, Dover stockholders will receive one share of Knowles common stock for every two shares of Dover common stock held as of the record date. Following the distribution, Knowles will be an independent, publicly traded company, and Dover will retain no ownership interest in Knowles. Knowles expects to begin regular-way trading on the NYSE on March 3, 2014
+
+
+
+xignite:
+KN-W ?
+is not there
+
+KN ?
+is there 
+
+
+
+do we have a regular KN on our site?
+select distinct stockkey from mstockalias where symbol='KN';
+> Row 1:
+>   STOCKKEY = X'669819c552feabddc0a86f91'
+
+select * from mstockalias where STOCKKEY = X'669819c552feabddc0a86f91';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-02-14 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Knowles Corp
+>     PRIMARYKEY = X'669919c552feabddc0a86f91'
+>       STOCKKEY = X'669819c552feabddc0a86f91'
+>         SYMBOL = KNw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'669919c552feabddc0a86f91';
+> Row 1:
+>              ALIASKEY = X'669919c552feabddc0a86f91'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|KNw|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 87191633
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 35563505
+>        BB_COMPANYNAME = Knowles Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-14 00:00:00.000000'
+>         BB_IDENTIFIER = KNw     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-07 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = KNw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-07 00:00:00.000000'
+>            PRIMARYKEY = X'e80c0b4352f5715ac0a86f92'
+>               VERSION = NULL
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49926D109
+>           DATE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Knowles Corp
+>     PRIMARYKEY = X'524919a8531514dcc0a86f91'
+>       STOCKKEY = X'669819c552feabddc0a86f91'
+>         SYMBOL = KN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = MV
+	select * from mcorporateaction where aliaskey=X'524919a8531514dcc0a86f91';
+> Row 1:
+>              ALIASKEY = X'524919a8531514dcc0a86f91'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|KNw US|CP_NEW_TKR|KN US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 87191639
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 35563505
+>        BB_COMPANYNAME = Knowles Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = KNw     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-07 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = KNw
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-07 00:00:00.000000'
+>            PRIMARYKEY = X'e80e0b4352f5715bc0a86f92'
+>               VERSION = NULL
+
+Let's see if members have traded this - are there mtickets?
+select count(*) from mticket where stockkey=X'669819c552feabddc0a86f91';
+> Row 1:
+>   _C001 = 29.000000
+let's check the sourcekeys for these 29
+select distinct sourcekey from mticket where stockkey=X'669819c552feabddc0a86f91';
+> Row 1:
+>   SOURCEKEY = NULL
+all member generated
+
+We have two paths for Knowles but no collision - we do reneed to do this though and consolidate the paths
+
+
+how did members trade KN-W when there were no prices?    That could be the cause of the problem with the app
+dying
+
+there are 27 member generated tickets for KN-W
+select count(*) from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92';
+
+select * from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92' order by closed;
+
+> Row 1:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-03-04 16:02:14.000000'
+>        COMMENT = NULL
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'fd8a5fdf53163783c0a86f99'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'503249723bf41488c0a801e1'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-04 15:28:51.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'fd885fdf53163783c0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 2:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-03-08 20:47:36.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'9f6c13d35317a8fbc0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-05 17:45:15.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9f6a13d35317a8fbc0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 3:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-07 16:01:42.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'37014edd5342f619c0a86f99'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'9c631d3d3e32c9d6c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-04-07 15:01:45.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'36ff4edd5342f619c0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 4:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-08 16:01:35.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'ea721335531bcf5fc0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-08 21:18:07.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'ea701335531bcf5fc0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 5:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-08 16:01:36.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'9cca1335531bc86fc0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-08 20:48:31.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9cc81335531bc86fc0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 6:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-08 16:01:37.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'9cd11335531bc89cc0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-08 20:49:16.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'9ccf1335531bc89cc0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 7:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-08 16:01:40.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'e94c1335531bcf2fc0a86f99'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-03-08 21:17:19.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'e94a1335531bcf2fc0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 8:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-04-22 16:02:27.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'8b610ff953564568c0a86f99'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7a776af94aec6c44c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-04-22 06:33:12.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'8b5f0ff953564568c0a86f99'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 9:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-07-08 16:01:03.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'bd05142553bbcecfc0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'7a776af94aec6c44c0a80133'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-07-08 06:58:23.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'bd03142553bbcecfc0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 10:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-08-04 16:01:15.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'a01912c553dfb756c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0d6e3bfa4d48843ac0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-08-04 12:39:50.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'a01712c553dfb756c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 11:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-03 16:01:11.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'464c44795406c946c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd1ff512a4d6415b8c0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-09-03 03:54:46.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'464a44795406c946c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 12:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-05 16:01:20.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'90c212805409bb52c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'd1ff512a4d6415b8c0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-09-05 09:32:02.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'90c012805409bb52c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 13:
+>      ACTIONKEY = X'059e3ba840d73045c0a8020c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-09-11 16:01:07.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'f83952cd53e92870c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'afba4ebd3e9afa8bc0a80132'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-08-11 16:32:48.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'f83752cd53e92870c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 14:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-10-27 16:01:48.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'2a8e6e72544d08a4c0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'd1ff512a4d6415b8c0a80135'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-10-26 10:43:48.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'2a8c6e72544d08a4c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 15:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 09:29:59.000000'
+>        COMMENT = 
+>     COMMISSION = 0.000000
+>   CURRENTORDER = X'4aaa2cdd5460e5e8c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'5ebf01263da76e44c0a80134'
+>       MODIFIED = NULL
+>            NET = 0.000000
+>         OPENED = TIMESTAMP '2014-11-10 11:20:56.000000'
+>          PRICE = 0.000000
+>     PRIMARYKEY = X'4aa82cdd5460e5e8c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 0.000000  <--- no shares 
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 16:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 5.000000
+>   CURRENTORDER = X'9371576c545ba233c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1921.960000
+>         OPENED = TIMESTAMP '2014-11-06 11:30:43.000000'
+>          PRICE = 19.219600
+>     PRIMARYKEY = X'936f576c545ba233c0a86f98'
+>         SECFEE = 0.040000
+>         SHARES = 100.000000  <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 17:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.850000
+>   CURRENTORDER = X'a267576c545ba331c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1479.910000
+>         OPENED = TIMESTAMP '2014-11-06 11:34:57.000000'
+>          PRICE = 19.219610
+>     PRIMARYKEY = X'a265576c545ba331c0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 77.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 18:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.500000
+>   CURRENTORDER = X'a248576c545ba30bc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1345.370000
+>         OPENED = TIMESTAMP '2014-11-06 11:34:19.000000'
+>          PRICE = 19.219571
+>     PRIMARYKEY = X'a246576c545ba30bc0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 70.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 19:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 2.500000
+>   CURRENTORDER = X'99a0576c545ba2bcc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 960.980000
+>         OPENED = TIMESTAMP '2014-11-06 11:33:00.000000'
+>          PRICE = 19.219600
+>     PRIMARYKEY = X'999e576c545ba2bcc0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 50.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 20:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.000000
+>   CURRENTORDER = X'99ac576c545ba2d3c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1153.170000
+>         OPENED = TIMESTAMP '2014-11-06 11:33:23.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'99aa576c545ba2d3c0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 60.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 21:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 1.500000
+>   CURRENTORDER = X'995c576c545ba28cc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 576.580000
+>         OPENED = TIMESTAMP '2014-11-06 11:32:12.000000'
+>          PRICE = 19.219333
+>     PRIMARYKEY = X'995a576c545ba28cc0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 30.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 22:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 1.000000
+>   CURRENTORDER = X'9953576c545ba272c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 384.390000
+>         OPENED = TIMESTAMP '2014-11-06 11:31:46.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'9951576c545ba272c0a86f98'
+>         SECFEE = 0.010000
+>         SHARES = 20.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 23:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 0.500000
+>   CURRENTORDER = X'9838576c545ba257c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 192.190000
+>         OPENED = TIMESTAMP '2014-11-06 11:31:19.000000'
+>          PRICE = 19.219000
+>     PRIMARYKEY = X'9836576c545ba257c0a86f98'
+>         SECFEE = 0.010000
+>         SHARES = 10.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 24:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 2.000000
+>   CURRENTORDER = X'997a576c545ba2a5c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 768.780000
+>         OPENED = TIMESTAMP '2014-11-06 11:32:37.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'9978576c545ba2a5c0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 40.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 25:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-18 09:33:20.000000'
+>        COMMENT = 
+>     COMMISSION = 5.750000
+>   CURRENTORDER = X'0ba24169546a689ec0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'5ebf01263da76e44c0a80134'
+>       MODIFIED = NULL
+>            NET = 2230.960000
+>         OPENED = TIMESTAMP '2014-11-17 16:29:02.000000'
+>          PRICE = 19.399652
+>     PRIMARYKEY = X'0ba04169546a689ec0a86f98'
+>         SECFEE = 0.040000
+>         SHARES = 115.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 26:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-12-12 10:03:24.000000'
+>        COMMENT = 
+>     COMMISSION = 12.750000
+>   CURRENTORDER = X'a1904d10548b0267c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0d6e3bfa4d48843ac0a80135'
+>       MODIFIED = NULL
+>            NET = 4916.310000
+>         OPENED = TIMESTAMP '2014-12-12 09:57:43.000000'
+>          PRICE = 19.279647
+>     PRIMARYKEY = X'a18e4d10548b0267c0a86f98'
+>         SECFEE = 0.090000
+>         SHARES = 255.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+> Row 27:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-01-26 09:34:53.000000'
+>        COMMENT = Asset Allocation|
+>     COMMISSION = 4.000000
+>   CURRENTORDER = X'69500af654c2f627c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ee5e574d3a40259ec0a801e0'
+>       MODIFIED = NULL
+>            NET = 1704.000000
+>         OPENED = TIMESTAMP '2015-01-23 20:32:23.000000'
+>          PRICE = 21.300000
+>     PRIMARYKEY = X'694e0af654c2f627c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 80.000000   <------------------- shares this a buy the only one
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+select distinct managerkey from mticket where stockkey=X'b93a4415531517fcc0a86f92' and sourcekey is null;
+> Row 1:
+>   MANAGERKEY = X'503249723bf41488c0a801e1'
+> Row 2:
+>   MANAGERKEY = X'279b21323e876d30c0a80133'
+> Row 3:
+>   MANAGERKEY = X'9c631d3d3e32c9d6c0a80133'
+> Row 4:
+>   MANAGERKEY = X'7a776af94aec6c44c0a80133'
+> Row 5:
+>   MANAGERKEY = X'0d6e3bfa4d48843ac0a80135'
+> Row 6:
+>   MANAGERKEY = X'afba4ebd3e9afa8bc0a80132'
+> Row 7:
+>   MANAGERKEY = X'd1ff512a4d6415b8c0a80135'
+> Row 8:
+>   MANAGERKEY = X'5ebf01263da76e44c0a80134'
+> Row 9:
+>   MANAGERKEY = X'ee5e574d3a40259ec0a801e0'
+
+only 9 managers traded 27 mtickets
+
+select loginname from mmanager where primarykey in (select distinct managerkey from mticket where stockkey=X'b93a4415531517fcc0a86f92' and sourcekey is null);
+> Row 1:
+>   LOGINNAME = cfalcon
+> Row 2:
+>   LOGINNAME = zachnyc
+> Row 3:
+>   LOGINNAME = sagitarius_d
+> Row 4:
+>   LOGINNAME = dhancock
+> Row 5:
+>   LOGINNAME = wnious
+> Row 6:
+>   LOGINNAME = kvogelsang
+> Row 7:
+>   LOGINNAME = maxoom
+> Row 8:
+>   LOGINNAME = mikeumd
+> Row 9:
+>   LOGINNAME = dcblue
+
+select * from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92');
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70a8623054622f9fc0a86f9c'
+>                     SHARES = 10.000000
+>                  TICKETKEY = X'9836576c545ba257c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70a9623054622f9fc0a86f9c'
+>                     SHARES = 60.000000
+>                  TICKETKEY = X'99aa576c545ba2d3c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70b2623054622fa0c0a86f9c'
+>                     SHARES = 100.000000
+>                  TICKETKEY = X'936f576c545ba233c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70b3623054622fa0c0a86f9c'
+>                     SHARES = 40.000000
+>                  TICKETKEY = X'9978576c545ba2a5c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70ba623054622fc1c0a86f9c'
+>                     SHARES = 70.000000
+>                  TICKETKEY = X'a246576c545ba30bc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70bd623054622fc2c0a86f9c'
+>                     SHARES = 20.000000
+>                  TICKETKEY = X'9951576c545ba272c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 7:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70c5623054622fc3c0a86f9c'
+>                     SHARES = 30.000000
+>                  TICKETKEY = X'995a576c545ba28cc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219300
+>   CREATEDBYCORPORATEACTION = 0
+> Row 8:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70c6623054622fc3c0a86f9c'
+>                     SHARES = 50.000000
+>                  TICKETKEY = X'999e576c545ba2bcc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 9:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70ca623054622fc4c0a86f9c'
+>                     SHARES = 77.000000
+>                  TICKETKEY = X'a265576c545ba331c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 10:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'cf384415531518cbc0a86f92'
+>                 PRIMARYKEY = X'8a0b0fce546b5d90c0a86f9c'
+>                     SHARES = 115.000000
+>                  TICKETKEY = X'0ba04169546a689ec0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-18 09:33:20.000000'
+>                      PRICE = 19.399700
+>   CREATEDBYCORPORATEACTION = 0
+> Row 11:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54a64415531518fdc0a86f92'
+>                 PRIMARYKEY = X'abe43549548b0963c0a86f9c'
+>                     SHARES = 255.000000
+>                  TICKETKEY = X'a18e4d10548b0267c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-12-12 10:03:24.000000'
+>                      PRICE = 19.279600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 12:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'06584415531518dbc0a86f92'
+>                 PRIMARYKEY = X'bf3104d354c65478c0a86f9c'
+>                     SHARES = 80.000000
+>                  TICKETKEY = X'694e0af654c2f627c0a86f98'
+>                     CLOSED = TIMESTAMP '2015-01-26 09:34:53.000000'
+>                      PRICE = 21.300000
+>   CREATEDBYCORPORATEACTION = 0
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92'));
+> Row 1:
+>   FUNDKEY = X'8f6c371d418a9bfac0a8013c'
+> Row 2:
+>   FUNDKEY = X'dff465634069e086ffffffff'
+> Row 3:
+>   FUNDKEY = X'ea5832b051eaf8cac0a80132'
+> Row 4:
+>   FUNDKEY = X'0d823bfa4d4884a8c0a80135'
+
+
+bananaslug is not one of the members who traded KN-W - he only got it as a CA / spin off
+
+let's look at the first member
+cfalcon
+
+select * from mticket where stockkey=X'b93a4415531517fcc0a86f92' and sourcekey is null and managerkey in (select primarykey from mmanager where loginname='cfalcon');
+> Row 1:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-01-26 09:34:53.000000'
+>        COMMENT = Asset Allocation|
+>     COMMISSION = 4.000000
+>   CURRENTORDER = X'69500af654c2f627c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ee5e574d3a40259ec0a801e0'
+>       MODIFIED = NULL
+>            NET = 1704.000000
+>         OPENED = TIMESTAMP '2015-01-23 20:32:23.000000'
+>          PRICE = 21.300000
+>     PRIMARYKEY = X'694e0af654c2f627c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 80.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+
+Date			Open	High	Low		Close	Volume		Adj Close*
+Jan 26, 2015	21.12	21.65	20.46	21.49	1,661,100	21.49
+
+select symbol from mstockalias where STOCKKEY = X'b93a4415531517fcc0a86f92';
+> Row 1:
+>   SYMBOL = KN-W
+
+it's KN-W alright
+select * from mticketallocation where ticketkey= X'694e0af654c2f627c0a86f98';
+> Row 1:
+>      FUNDKEY = X'8f6c371d418a9bfac0a8013c'
+>   PRIMARYKEY = X'69510af654c2f627c0a86f98'
+>       SHARES = 80.000000
+>    TICKETKEY = X'694e0af654c2f627c0a86f98'
+
+80 shares in what fund?
+select symbol from mfund where primarykey=X'8f6c371d418a9bfac0a8013c';
+> Row 1:
+>   SYMBOL = CFIT
+
+
+let's log in as member cfalcon and look at CFIT fund
+
+
+
+ah - this one causes you to die, too
+
+
+
+Assessment:
+Knowles Corp spun off from Dover Corporation with the following terms:
+
+CP_PAY_DT       2014-02-28
+CP_RECORD_DT    2014-02-19
+Effective date: 2014-03-03
+
+spun off from DOV   1 for 2
+
+As is typical with spin offs, we have problems, but this is not the usual problem.  Normally we get collisions
+where two separate paths are created (via Bloomberg) and we end up with two distinct, active stockkeys for the same ticker
+
+In the case of Knowles we do have two distinct paths for this company.
+
+1.  we have the spin off of KN-W from DOV.      There are 342 total mtickets for this stockkey.  315 are
+generated by this spin off CA.    27 are member generated.
+
+2.  The second path to create another Knowles corp started as a list of KNw and the this was follow up with a ticker change
+to KN.   
+
+3.  KN is the "real" ticker in the market.
+
+4.  KN is in the xignite feed,  KN-W is not in this feed.
+
+5.  There are NO historical prices for KN-W (using the script).    I have no idea how members could have generated
+filled trades for KN-W but we have them. 
+
+6.  oh - bananaslug (the member I flagged whose fund BSDIV causes PortfolioAdmin or Portfolio to crash) does have KN-W
+in his BSDIV fund.  I found this with db queries.
+
+7.  I looked at one of the member-generated mtickets for KN-W.   member is cfalcon and his fund is CFIT.  
+looking at the mticket, he bought 80 shares of KN-W.    He did not get shares from the spin off.  
+If I go to this account and try to look at the CFIT fund, the application dies.
+
+
+8.  We need to consolidate the two paths and make one Knowles Corp.   And use the KN symbol.
+
+KN trades in the real world.  
+
+8.1  probably back out the spin off of KN-W
+8.2  capture all of the member generated mtickets for KN-W 
+8.3  re-do the spin off as a DVD_STOCK, have to check the record, effective and pay dates to make sure
+that we have KN on our site on the appropriate dates
+8.4  move the member generated tickets for 8.2 over to the KN, tickle the tickets and invalidate the funds
+8.5  delete all traces of KN-W on our site.
+
+
+***********************  ok backing out the spin off of KN-W from DOV
+> Row 1:
+>              ALIASKEY = X'0ffc0e21390afabfc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Knowles Corp|CP_ID_BB_COMP|35563505|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20140228|CP_RECORD_DT|20140219|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.829533|CP_ADJ_DT|20140303|CP_TKR|KN-W US|CP_DUE_BILL_RED_DT|20140305|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004M8M6J1|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004M8M6F5|CP_SPINOFF_ID_BB_SEC_NUM_DES|KN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 77363360
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100470
+>        BB_COMPANYNAME = Dover Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = DOV     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-23 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = DOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>            PRIMARYKEY = X'837b586e53111fcbc0a86f92'
+>               VERSION = NULL
+
+update mcorporateaction set BB_ACTIONID = '77363360:MARTY' where PRIMARYKEY = X'837b586e53111fcbc0a86f92';
+select * from mcorporateaction where PRIMARYKEY = X'837b586e53111fcbc0a86f92';
+> Row 1:
+>              ALIASKEY = X'0ffc0e21390afabfc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Knowles Corp|CP_ID_BB_COMP|35563505|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20140228|CP_RECORD_DT|20140219|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.829533|CP_ADJ_DT|20140303|CP_TKR|KN-W US|CP_DUE_BILL_RED_DT|20140305|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004M8M6J1|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004M8M6F5|CP_SPINOFF_ID_BB_SEC_NUM_DES|KN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 77363360:MARTY
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100470
+>        BB_COMPANYNAME = Dover Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = DOV     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-23 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = DOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>            PRIMARYKEY = X'837b586e53111fcbc0a86f92'
+>               VERSION = NULL
+
+/Marketocracy/Scripts/build/bin/reverseCA.py --actionID 77363360:MARTY
+
+ok, let me delete all traces of  STOCKKEY = X'b93a4415531517fcc0a86f92'
+
+set commit false;
+
+delete from mstock where primarykey=  X'b93a4415531517fcc0a86f92'; 
+
+delete from mwindowstock where stockkey=X'b93a4415531517fcc0a86f92';  
+
+delete from mcorporateaction where aliaskey in (select primarykey from mstockalias where stockkey=X'b93a4415531517fcc0a86f92');
+
+delete from mstockalias where stockkey=X'b93a4415531517fcc0a86f92';  
+
+delete from mtrade where positionkey in (select primarykey from mposition where stockkey=X'b93a4415531517fcc0a86f92');   
+
+delete from mposition where stockkey=X'b93a4415531517fcc0a86f92'; 
+
+delete from morder where ticketkey in (select primarykey from mticket where stockkey=X'b93a4415531517fcc0a86f92');
+
+delete from mticketallocation where ticketkey in (select primarykey from mticket where stockkey=X'b93a4415531517fcc0a86f92');
+
+delete from mticket where stockkey=X'b93a4415531517fcc0a86f92';    
+
+delete from GFSPOSITION where stockkey=X'b93a4415531517fcc0a86f92';  
+
+commit;
+
+set commit true;
+
+ok all done
+select distinct stockkey from mstockalias where symbol='KN-W';
+nothing
+
+select distinct stockkey from mstockalias where symbol='DOV';
+> Row 1:
+>   STOCKKEY = X'0ffb0e21390afabfc0a80116'
+select * from mstockalias where STOCKKEY = X'0ffb0e21390afabfc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 260003108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DOVER CORP
+>     PRIMARYKEY = X'0ffc0e21390afabfc0a80116'
+>       STOCKKEY = X'0ffb0e21390afabfc0a80116'
+>         SYMBOL = DOV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = LB
+select distinct BB_ACTIONMNEMONIC from mcorporateaction where aliaskey=X'0ffc0e21390afabfc0a80116';
+> Row 1:
+>   BB_ACTIONMNEMONIC = DVD_CASH
+> Row 2:
+>   BB_ACTIONMNEMONIC = ACQUIS
+
+********************  starting fresh with No   KN-W    we just have the other path
+
+select distinct stockkey from mstockalias where symbol='KN';
+> Row 1:
+>   STOCKKEY = X'669819c552feabddc0a86f91'
+
+select * from mstockalias where STOCKKEY = X'669819c552feabddc0a86f91';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-02-14 00:00:00.000000'    <----  KNw came into being on 2/14/14
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Knowles Corp
+>     PRIMARYKEY = X'669919c552feabddc0a86f91'
+>       STOCKKEY = X'669819c552feabddc0a86f91'
+>         SYMBOL = KNw
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 49926D109
+>           DATE = TIMESTAMP '2014-03-03 00:00:00.000000'    <---- KN came into being on 3/3/14 
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Knowles Corp
+>     PRIMARYKEY = X'524919a8531514dcc0a86f91'
+>       STOCKKEY = X'669819c552feabddc0a86f91'
+>         SYMBOL = KN
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45203015
+>       STYLEKEY = MV
+
+3/3/14 is when KN came into existence
+when did the spin off happen?
+
+
+here is the historic record for the spin off 
+> Row 1:
+>              ALIASKEY = X'0ffc0e21390afabfc0a80116'
+>   BB_ACTIONDICTIONARY = CP_SPINOFF_NAME|Knowles Corp|CP_ID_BB_COMP|35563505|CP_ID_BB_SEC|1000|CP_TERMS|1 per 2|CP_RATIO|0.500000|CP_PAY_DT|20140228|CP_RECORD_DT|20140219|CP_COST|N.A.|CP_CRNCY|USD|CP_ADJ|0.829533|CP_ADJ_DT|20140303|CP_TKR|KN-W US|CP_DUE_BILL_RED_DT|20140305|CP_SH_FRACTIONAL|1|CP_TERMS_FLAG|1|CP_INDICATOR|N|CP_SPINOFF_ID_BB_GLOBAL|BBG004M8M6J1|CP_SPINOFF_ID_BB_GLOBAL_COMPANY|BBG004M8M6F5|CP_SPINOFF_ID_BB_SEC_NUM_DES|KN-W|CP_SPINOFF_FEED_SOURCE|US|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 77363360
+>     BB_ACTIONMNEMONIC = SPIN
+>          BB_COMPANYID = 100470
+>        BB_COMPANYNAME = Dover Corp
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = DOV     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-05-23 00:00:00.000000'
+>          BB_NUMFIELDS = 21
+>              BB_RCODE = 0
+>              BB_SECID = DOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-28 00:00:00.000000'
+>            PRIMARYKEY = X'837b586e53111fcbc0a86f92'
+>               VERSION = NULL
+
+the critical dates from this CA: 
+CP_PAY_DT       2014-02-28
+CP_RECORD_DT    2014-02-19
+Effective date: 2014-03-03
+
+spun off from DOV   1 for 2
+
+The other path: 
+2014-02-14  is when KNw listed
+2014-03-03  is when the tcker change  KNw to KN occurred
+
+I want to do a DVD_STOCK will this work given this history and dates in place?  
+
+
+/Marketocracy/bin/cahelper -symbol DOV -effective 20140303 -type DVD_STOCK -exchange UQ -dividendSymbol KN -payDate 20140303 -recordDate 20140219 -percent 50 >& /Users/build/caout/KN.20150223-DVD_STOCK-DOV.out
+
+KN.20150223-DVD_STOCK-DOV.out
+stocks:~/caout build$ tail -f KN.20150223-DVD_STOCK-DOV.out
+D: (02-23 13:43:06.110) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-23 13:43:30.787) cahelper started on 2015-02-23 13:43:30 -0500
+
+D: (02-23 13:43:33.409) StockFileLoad Version:3.0
+D: (02-23 13:43:33.409) Loading Stock Data
+D: (02-23 13:44:17.427) Building Lookup Index
+D: (02-23 13:44:21.519) Finished Building Index
+D: (02-23 13:44:22.491) Finished Loading Stock Data
+D: (02-23 13:44:22.613) Connection to 192.168.111.157:6666 succeeded
+D: (02-23 13:44:35.636) SavingChanges for Stock Dividend out 101 of 637
+D: (02-23 13:45:09.708) SavingChanges for Stock Dividend out 201 of 637
+D: (02-23 13:45:37.788) SavingChanges for Stock Dividend out 301 of 637
+D: (02-23 13:45:44.247) {
+    APPLIED = 1; 
+    DATE = 20140303; 
+    FUNDS = (
+        "tvalks/smart", 
+        "dcassas/Cave Baby Value Fund", 
+        "jbarringer/JAB Technology", 
+        "jbarringer/JAB Cheap Growth", 
+        "nstandli/Capital Appreciation Fund", 
+        "skseifried/Harbour Select Fund", 
+        "georgepomeroy/smcom", 
+        "dlundy/Darryl Lundy's Mutual Fund", 
+        "orange/Lowrey Fund: Gray", 
+        "jeff82/Jeffrey Richard Elver's Mutual Fund", 
+        "rtoler/robert toler's Mutual Fund", 
+        "jhayes/Hayes Fund I", 
+        "hooverne/Mr. McStarr's Blue Chip Mutual Fund", 
+        "dank/Daniel Kligerman's New Age Conglomerates", 
+        "npavon/Noemi Raquel Pavon's Mutual Fund", 
+        "jrobinson2/Jonathan C.Robinson's Mutual Fund", 
+        "jrobinson2/Jonathan B. Robinson's Mutual Fund", 
+        "jwyman/John Wyman's Mutual Fund", 
+        "ggreene/Endurance Value Fund", 
+        "obhiwadh/Karan Renjen's Mutual Fund", 
+        "pzielinski/Patrick Keith Zielinski's Mutual Fund", 
+        "mbarnes/Michael Barnes's Large Value Fund", 
+        "johnulu/john l cheney's Mutual Fund", 
+        "jswaim/J S Techknowpop Growth Mutual Fund", 
+        "mobrien/Aries Fund", 
+        "jarena/The Ultimate Conglomerate Fund", 
+        "rockfish2121/Relipoint Large-Cap Growth Fund", 
+        "DELETED_2006686/Dena Roethler's Mutual Fund 100", 
+        "feely1s/Large-Cap Opportunity", 
+        "jwhollis/Income and Capital Appreciation", 
+        "jwhollis/ITC Value Fund", 
+        "pboucher/Paul Boucher's Consumer Fund", 
+        "tayers1/CORE Aggr", 
+        "pmonteleone/Philip P. Monteleone, CPA, CMA, CFM's Diversified Mutual Fund", 
+        "pmonteleone/A List", 
+        "ktimony/KT Super Powers Portfolio", 
+        "mthompson4/Martha Thompson's Mutual Fund", 
+        "wcali1999/Dictator Mutual Fund", 
+        "mtompkins/mtompkins's Mutual Fund", 
+        "treichart/Toby Clinton Reichart's Mutual Fund", 
+        "lmlynarek/ legent,s Investments", 
+        "dinman/Inman Growth Fund", 
+        "lfielding/Fielding's Analytic Fund", 
+        "fgarcia/fgarcia's Mutual Fund", 
+        "rigney/rigney's Mutual Fund", 
+        "jwcoleman3/Sportsman Fund LLC.", 
+        "rdobler/rdobler's Mutual Fund", 
+        "poonuggetduke/Big Tang's Mutual Fund", 
+        "candeloro75/Candeloro Focus Blend", 
+        "jstark/Kandinsky Contrafund", 
+        "mhiggins1/mhiggins1's Mutual Fund", 
+        "mcancel/Mark C.'s Well Diversified Fund", 
+        "amuirhead/The Muirhead Fund", 
+        "jvalue/jvalue's Mutual Fund", 
+        "jvalue/Jvalue's Diversified Portfolio", 
+        "disgruntledmoose42/disgruntledmoose42's Mutual Fund", 
+        "efournier/efournier's Mutual Fund", 
+        "munder12/Mechanical Value III", 
+        "dpruitt/Focus Mutual Fund", 
+        "dmorgn/DMO SHORT FUND", 
+        "dtran1/Safety First", 
+        "amuirhead/Kingston Fund", 
+        "hotmamma/Brandon Waldron Hoe Fund", 
+        "feely1s/LargeCap Undervalued Growth", 
+        "disgruntledmoose42/The Moose Fund", 
+        "lotusfinancialinvest/l4h25", 
+        "lotusfinancialinvest/l4h20", 
+        "lotusfinancialinvest/Steven Hsiao July 2002 Portfolio", 
+        "lotusfinancialinvest/Steven Hsiao July 2002 Portfolio", 
+        "lotusfinancialinvest/l4h30", 
+        "jrobinson2/Jonathan F. Robinson", 
+        "aceman61/otter-dividend fund", 
+        "fgarcia/fgarcia's Mutual Fund", 
+        "nsultan/Hassan Mutual Fund", 
+        "jrobinson2/Jonathan I. Robinson's Mutual Fund", 
+        "astuk/Armin Stuk's First INDUSTRIALS Fund", 
+        "ant/Low Matinance Conglomerates", 
+        "lotusfinance/l4h30", 
+        "lotusfinance/l4h25", 
+        "rteigen/Prosperity Fund", 
+        "sfronzaglia/sfronzaglia's Mutual Fund", 
+        "wordjam/Alpha II", 
+        "bcorbitt/Large Cap Yield Mutual Fund", 
+        "rshuhart/Experiment 2", 
+        "wkusakabe/Income & Equity Fund", 
+        "hoodoos119/The Scott Mutual Fund", 
+        "chinakid/chinakid's Mutual Fund", 
+        "amoore2/All Kinds of Everything Fund ", 
+        "DELETE_philmie_40619003/Philmie's Wabuf Fund", 
+        "DELETE_philmie_40619003/Philmie's Wabuf Fund", 
+        "wnewkirk/newkirk focus fund", 
+        "szledz/szledz's Mutual Fund", 
+        "sommcorp091243/K.M. Sommerhauser:  Mutual Fund #1: Lisa Fund:", 
+        "pmuehlman/Juvenile Uniparental Neurogenic Keogh", 
+        "jordanb69/S&P Leaders Fund", 
+        "sledford_98/sledford_98's Mutual Fund", 
+        "dgr/dgr's Mutual Fund", 
+        "w1woody/w1woody's Mutual Fund", 
+        "cn/Tracker", 
+        "derodnight/Equity Value Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "licheng_apl/Licheng Random Fund", 
+        "wmccarthy/wmccarthy's Mutual Fund", 
+        "valuevester/QualVal Industrial Fund", 
+        "augustine/Heavy Industry Fund", 
+        "iansparks/IJS Biotechnology Fund", 
+        "sylvie/Les Fleches", 
+        "ljsumner/ljsumner's Mutual Fund", 
+        "jandrus/S&P 500 stocks", 
+        "acanete/ARC Dividend Value", 
+        "pnutgllry/pnutgllry's Short Fund", 
+        "germs/new short term", 
+        "merki/merki's value", 
+        "vooch2/Dividend Aristocrats", 
+        "enkeeton/enkeeton's Mutual Fund Power Searches ", 
+        "icesare/icesare's all cap fund", 
+        "larryjthompson/Larry Thompson's Sell All Mutual Fund", 
+        "benhernandezjr/Moneymaker Fund", 
+        "evanstephens/Evan's Mutual Fund", 
+        "evanstephens/Evan's Big Money Mutual Fund", 
+        "bclopton/BVI Mutual Fund", 
+        "jelloyeti/Value Moves", 
+        "binkster666/Low PEs", 
+        "gweatherbee/RK-Downers", 
+        "nick85016/nick85016'sdaytrading Mutual Fund", 
+        "crsturges/Chris Creek Fund", 
+        "coppola82/Mass$$$", 
+        "quantinetics/5H", 
+        "penggijb/penggijb's Mutual Fund", 
+        "glogsdon/Gray's Infinity Mutual Fund", 
+        "dscott/dscott's Mutual Fund", 
+        "joeyself/Cramer's Picks", 
+        "fzorrilla/fzorrilla's Mutual Fund", 
+        "mredli2/mredli2's Mutual Fund", 
+        "fernandograu/Fortune Picks July2005", 
+        "ballbreaker/Deutsche Industrials Coverage Fund", 
+        "mgulla/Gulla Short Earnings Fund", 
+        "nslaughter/The Agothos Fund", 
+        "baruba/Baruba Large Cap Value Fund", 
+        "dpietruszka/Mad Money", 
+        "ptrumm/ptrumm's Mutual Fund", 
+        "DELETED_jakerosser1_2010022609390001/Flatiron Capital", 
+        "jdrouillet/Middle Caps", 
+        "john97/John A. Anderfuren's Mutual Fund", 
+        "mariopapas/Zacks select", 
+        "skyyhi/skyyhi's OIL&CO. Reports", 
+        "tsurani/Murray's Contrarian Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "dscott/dscott's Mutual Fund", 
+        "flajuie/Kiss My S&P", 
+        "coaster/IMPACT GROWTH", 
+        "vududoctor/vududoctor's Mutual Fund", 
+        "gmguard/MID CAP MODEL", 
+        "bigburrito/growth stocks", 
+        "pagani/pagani's Mutual Fund", 
+        "vududoctor/SAPI DIVYIELD Mutual Fund", 
+        "surleswj/Long Value", 
+        "anderflash/Anderson Large Cap Value", 
+        "lucky103171/Northern Model Fund", 
+        "rose4/rose4's Mutual Fund", 
+        "anthropoidea/ParriStock-Growth Fund", 
+        "index_2/Conglomerates", 
+        "lmoctezu/Luis's Mutual Fund", 
+        "dskucla/ALPHA RELATIVE VALUE (TA)", 
+        "dskucla/ALPHA RELATIVE VALUE (TN)", 
+        "dskucla/ALPHA RELATIVE GROWTH (TA)", 
+        "dskucla/ALPHA RELATIVE GROWTH (TN)", 
+        "mel_dk/mel_dk's Mutual Fund", 
+        "ramstone/Ramstone Fund", 
+        "riskfile/SPX Enhanced Fund", 
+        "rmchan/Rusty's Mutual Fund", 
+        "kenseth17fan/kenseth17fan's Mutual Fund", 
+        "aantonelli/standard, poor & antonelli", 
+        "tlboyer/Check Dat Chedda'", 
+        "stone_mountain_partners/Stone Mountain Partners I - Balanced", 
+        "stone_mountain_partners/Stone Mountain Partners II - Equity", 
+        "finanaliticasector_a/INDUSTRIALS1", 
+        "tas/Tas D List", 
+        "surleswj12/Dividend Fund", 
+        "stevetroy/SCH A RANKED - S&P500 ONLY", 
+        "funketim/funketim's Mutual Fund", 
+        "sudinpoddar/sudinpoddar's CDLC", 
+        "mkhari/Top100 S&P500", 
+        "ksholten/KateSholten's Mutual Fund", 
+        "adam_foust/PINNACLE LAGE CAP FOCUS 30", 
+        "rayseakan/The PEG Fund", 
+        "gentex/gentex's Mutual Fund", 
+        "mliram/My Focus List", 
+        "primemvr/Somar1", 
+        "jlnap/jlnap's Mutual Fund", 
+        "willblur/willblur's S&P500 Short Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "cviox/HVIA S&P Reversal Mutual Fund", 
+        "yielder/ART(Universe)", 
+        "yielder/25 Year Club", 
+        "pbradford/LC  International Midcap Growth Fund", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "gskur/Hunter-Gatherer Mutual Fund", 
+        "msmith3/Magic Fund", 
+        "mariodi/IaM's Mutual Fund", 
+        "jeannie/IndustrialGrowthFund", 
+        "mebear/nasdaq 3", 
+        "earlmiranda/Miranda Enterprise Fund", 
+        "bradlevi/Low PEG 50 ", 
+        "bradlevi/6 Star Fund", 
+        "meklarian/meklarian capital growth fund", 
+        "grtruck/Indu Fund", 
+        "snichols1026/snichols1026's DRIP", 
+        "fabio_carradori/fabio_carradori's Mutual Fund", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "avisigal/avisigal's Mutual Fund", 
+        "mchristy/Industrial Fund Short", 
+        "greg_davidian/Mid Cap Mutual Fund", 
+        "larryjthompson/Larry Thompson's Top 20 Mutual Fund", 
+        "mbaccar/mbaccar's Technical Fund - MBMFZ", 
+        "andrewkcook/ss919", 
+        "hortonpt/HPTLong", 
+        "kazsyrps/American Foundation Fund", 
+        "cholita_peruana/cholita_peruana's Mutual Fund", 
+        "sagitarius_d/Sagitarius Momentum Fund", 
+        "quantmaster/QMS20", 
+        "kurtkahne/kurtkahne's TRENDSHORT fund", 
+        "justingee/Rays Growth ", 
+        "justingee/Busted", 
+        "easylivin/Stockscouter 10's 011508", 
+        "albab/alexandra's Mutual Fund", 
+        "albab/streetsbestAbove 20good technicals", 
+        "takara/TAKARA's Bad Stars Fund", 
+        "sarahb/10aaWithDiv", 
+        "cburgess/S&P 500 Index", 
+        "joerollo/Rollo Short Fund", 
+        "cnelson1/Nelson Total Return Growth Fund", 
+        "huftyl/Hufty Fund #8", 
+        "bk1/LCV", 
+        "leggj2000/LeggWork S&P 500 Beater", 
+        "jgunna11/Russell 1K Tax Efficient Strategy", 
+        "treatj25/treatj25's Mutual Fund 1", 
+        "bullishb/Bill Staton's America's Finest Cos. Fund", 
+        "jbrosowski/jbrosowski's Mutual Fund", 
+        "joe@analyticcapital.com/Analytic Capital Long", 
+        "blustar/blustar's Mutual Fund", 
+        "blustar/blustar's Mutual Fund", 
+        "mr.sunflower/Sunflower Value Fund", 
+        "hpatel298/FCF Fund", 
+        "blustar/blustar's Mutual Fund", 
+        "chase2008/Steve Tusa", 
+        "neurotrader/THE BARCLAYS BULL", 
+        "realreed/realreed's yield fund", 
+        "dmulholand/NYSE Mutual Fund", 
+        "blustar/blustar's Mutual Fund", 
+        "henrsrch/henrsrch MS", 
+        "dividendgrowthinvestor/dividendgrowthinvestor's Mutual Fund", 
+        "jimdy94/jimdy94's Mutual Fund", 
+        "cfalcon/CFalcon's Index&Trust", 
+        "abb100/EIM Mutual Fund", 
+        "jmcgowan/The Eldinril Anduril Fund", 
+        "darbak/PairShort", 
+        "steele99/steele99's Mutual Fund", 
+        "richandhappy/MyFirst Mutual Fund", 
+        "d.m._ryan/Statistical Low P/E Fund", 
+        "stealthy/Long-term Dividend Appreciation", 
+        "active_andy/Active_Andy Economic Downturn Fund", 
+        "don_daily/don_daily's Mutual Fund", 
+        "rajp/relative", 
+        "fundamental/FundAmental's Mutual Fund", 
+        "fundamental/GPS's SPecial Fund", 
+        "jt3ramos2k8/jt3ramos2k8's Mutual Fund", 
+        "opensource/opensource's Mutual Fund", 
+        "rmudd/Phoenix Fund", 
+        "pthp/2-3%", 
+        "qpr/SmartConsesnsus", 
+        "brilliantfool/Wasilla Agressive Growth Exponentials", 
+        "vijaygarimella/Vijay's Mutual Fund", 
+        "jfrog/King Salmon", 
+        "jfrog/Red Salmon Fund", 
+        "jfrog/Pink Salmon Fund", 
+        "balgacs/All-time highs", 
+        "brian87/brian87's Mutual Fund", 
+        "skemp/Dow Performance", 
+        "rmudd/Energy Sector Fund", 
+        "ljoneill/Concentrated CANSLIM Fund", 
+        "todd_hagopian/Hagopian Institute Buyout Targets Fund", 
+        "ellenola/ellenola's Mutual Fund", 
+        "guindojr/All Value", 
+        "pickstk1/pickstk1's Mutual Fund", 
+        "stevhoff/S&P with Ford + dividends", 
+        "stevhoff/S&P Ford with Navalier", 
+        "qpr/QPR Fund", 
+        "atracey3/Tracey Mutual Fund", 
+        "jdelandr/Delandro Core Fund", 
+        "guindojr/Foxshire Long Term", 
+        "kvogelsang/Boo Bear Fund", 
+        "miolerinho/Long El ", 
+        "ziggstardust/ziggstardust's Mutual Fund DJ", 
+        "cgraydon/Kudzu Growth Fund", 
+        "keyser21/keyser21's Mutual Fund", 
+        "zarathustrategies/Zarathu Industrial Fund", 
+        "zachnyc/zachnyc's Mutual Fund", 
+        "giabarba/Masters Strategic Select", 
+        "ecarlson1/EC Value Fund", 
+        "bananaslug/Dividend Growth", 
+        "2win/Zavid Mutual Fund", 
+        "mariopapas/US Div Aristocrats Fewer", 
+        "jm50273/jm50273's Mutual Fund", 
+        "jameslast/MFI ARIST", 
+        "rancid514/Vision Diversified Fund", 
+        "ncms2001/ncms2001's Mutual Fund", 
+        "hiromimini/Selling into Computational Kaos", 
+        "pspark/Z-Score Fund Top 50", 
+        "maxoom/INDUSTRIAL MAX FUND", 
+        "dcblue/Red Raiders", 
+        "dhancock/Focused Fund", 
+        "mikeumd/Sector fund", 
+        "rainmkr07/Ryan New Dividend Long Hold Fund", 
+        "wnious/wnious's value fund"
+    ); 
+    NOTES = "N.A."; 
+    "PAY_DATE" = 20140303; 
+    RATIO = 0.5; 
+    "RECORD_DATE" = 20140219; 
+    SYMBOL = DOV; 
+    TYPE = "DVD_STOCK"; 
+}
+D: (02-23 13:45:49.338) SUCCESS
+D: (02-23 13:45:49.339) cahelper finished 2015-02-23 13:45:49 -0500
+
+
+it ran - bananaslug is there 
+
+look at the database
+select * from mstockalias where STOCKKEY = X'0ffb0e21390afabfc0a80116';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 260003108
+>           DATE = TIMESTAMP '2000-04-29 15:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = DOVER CORP
+>     PRIMARYKEY = X'0ffc0e21390afabfc0a80116'
+>       STOCKKEY = X'0ffb0e21390afabfc0a80116'
+>         SYMBOL = DOV
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = LB
+
+select * from mcorporateaction where aliaskey=X'0ffc0e21390afabfc0a80116';
+> Row 63:
+>              ALIASKEY = X'0ffc0e21390afabfc0a80116'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140219|CP_PAY_DT|20140303|CP_AMT|50.000000|CP_DVD_STOCK_TYP|2001|CP_TKR|KN    US|CP_ADJ| |CP_ADJ_DT| |CP_INDICATOR|N|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150223:014330
+>     BB_ACTIONMNEMONIC = DVD_STOCK
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-03-03 00:00:00.000000'
+>         BB_IDENTIFIER = DOV     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-03-03 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = DOV
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-03-03 00:00:00.000000'
+>            PRIMARYKEY = X'9cba344754eb74d2c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'9cba344754eb74d2c0a86f92';
+> Row 1:
+>   _C001 = 315.000000
+
+Now enter the mtickets manually
+> Row 16:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 5.000000
+>   CURRENTORDER = X'9371576c545ba233c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1921.960000
+>         OPENED = TIMESTAMP '2014-11-06 11:30:43.000000'
+>          PRICE = 19.219600
+>     PRIMARYKEY = X'936f576c545ba233c0a86f98'
+>         SECFEE = 0.040000
+>         SHARES = 100.000000  <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+WVF	457
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -100 19.27
+Trading -100.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -100.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+DONE  he has 357 shares now in the fund
+*****************************************************
+> Row 17:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.850000
+>   CURRENTORDER = X'a267576c545ba331c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1479.910000
+>         OPENED = TIMESTAMP '2014-11-06 11:34:57.000000'
+>          PRICE = 19.219610
+>     PRIMARYKEY = X'a265576c545ba331c0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 77.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -77 19.27
+Trading -77.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -77.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+******************
+> Row 18:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.500000
+>   CURRENTORDER = X'a248576c545ba30bc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1345.370000
+>         OPENED = TIMESTAMP '2014-11-06 11:34:19.000000'
+>          PRICE = 19.219571
+>     PRIMARYKEY = X'a246576c545ba30bc0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 70.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -70 19.27
+Trading -70.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -70.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+
+
+****************
+> Row 19:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 2.500000
+>   CURRENTORDER = X'99a0576c545ba2bcc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 960.980000
+>         OPENED = TIMESTAMP '2014-11-06 11:33:00.000000'
+>          PRICE = 19.219600
+>     PRIMARYKEY = X'999e576c545ba2bcc0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 50.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -50 19.27
+Trading -50.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -50.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+
+************
+> Row 20:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 3.000000
+>   CURRENTORDER = X'99ac576c545ba2d3c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 1153.170000
+>         OPENED = TIMESTAMP '2014-11-06 11:33:23.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'99aa576c545ba2d3c0a86f98'
+>         SECFEE = 0.030000
+>         SHARES = 60.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -60 19.27
+Trading -60.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -60.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+
+> Row 21:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 1.500000
+>   CURRENTORDER = X'995c576c545ba28cc0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 576.580000
+>         OPENED = TIMESTAMP '2014-11-06 11:32:12.000000'
+>          PRICE = 19.219333
+>     PRIMARYKEY = X'995a576c545ba28cc0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 30.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -30 19.27
+Trading -30.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -30.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+> Row 22:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 1.000000
+>   CURRENTORDER = X'9953576c545ba272c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 384.390000
+>         OPENED = TIMESTAMP '2014-11-06 11:31:46.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'9951576c545ba272c0a86f98'
+>         SECFEE = 0.010000
+>         SHARES = 20.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -20 19.27
+Trading -20.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -20.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+
+> Row 23:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 0.500000
+>   CURRENTORDER = X'9838576c545ba257c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 192.190000
+>         OPENED = TIMESTAMP '2014-11-06 11:31:19.000000'
+>          PRICE = 19.219000
+>     PRIMARYKEY = X'9836576c545ba257c0a86f98'
+>         SECFEE = 0.010000
+>         SHARES = 10.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -10 19.27
+Trading -10.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -10.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+
+> Row 24:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>        COMMENT = 
+>     COMMISSION = 2.000000
+>   CURRENTORDER = X'997a576c545ba2a5c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'279b21323e876d30c0a80133'
+>       MODIFIED = NULL
+>            NET = 768.780000
+>         OPENED = TIMESTAMP '2014-11-06 11:32:37.000000'
+>          PRICE = 19.219500
+>     PRIMARYKEY = X'9978576c545ba2a5c0a86f98'
+>         SECFEE = 0.020000
+>         SHARES = 40.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'279b21323e876d30c0a80133';
+> Row 1:
+>   LOGINNAME = wnious
+/Marketocracy/Scripts/build/bin/backdatedtrade.py wnious WVF 20141111 KN -40 19.27
+Trading -40.0 shares of Knowles Corp on Nov 11, 2014 at 19.27
+manager: wnious wayman nious
+fund: WVF wnious's value fund
+building trade (has to load stock prices first)
+price = 19.27
+selling -40.0 shares of KN at 19.27 on 20141111
+invaldating fund prices from Nov 11, 2014
+Done
+
+he is sold out:
+LEDGER
+Date	Start	Change	End	Type
+Mar 03, 2014		457	457	Corporate Action
+Nov 11, 2014	457	-457		Sell
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+You have no Buys for this position
+
+ 	 	 
+ 	 	
+SELLS
+Close Date	Quantity	Commission	SEC Fee	Net	Price
+Nov 11, 2014	100	$5.00	$0.04	$1,921.96	$19.22
+Nov 11, 2014	60	$3.00	$0.03	$1,153.17	$19.22
+Nov 11, 2014	70	$3.50	$0.03	$1,345.37	$19.22
+Nov 11, 2014	20	$1.00	$0.01	$384.39	$19.22
+Nov 11, 2014	77	$3.85	$0.03	$1,479.91	$19.22
+Nov 11, 2014	30	$1.50	$0.02	$576.58	$19.22
+Nov 11, 2014	50	$2.50	$0.02	$960.98	$19.22
+Nov 11, 2014	10	$0.50	$0.01	$192.19	$19.22
+Nov 11, 2014	40	$2.00	$0.02	$768.78	$19.22
+ 	 	 
+
+
+
+> Row 25:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-11-18 09:33:20.000000'
+>        COMMENT = 
+>     COMMISSION = 5.750000
+>   CURRENTORDER = X'0ba24169546a689ec0a86f98'
+>        LIFEKEY = X'38280a7c3922fa63c0a801dc'
+>           LOCK = 0
+>     MANAGERKEY = X'5ebf01263da76e44c0a80134'
+>       MODIFIED = NULL
+>            NET = 2230.960000
+>         OPENED = TIMESTAMP '2014-11-17 16:29:02.000000'
+>          PRICE = 19.399652
+>     PRIMARYKEY = X'0ba04169546a689ec0a86f98'
+>         SECFEE = 0.040000
+>         SHARES = 115.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'5ebf01263da76e44c0a80134';
+> Row 1:
+>   LOGINNAME = sagitarius_d
+SMOFX fund 115 shares
+/Marketocracy/Scripts/build/bin/backdatedtrade.py sagitarius_d SMOFX 20141118 KN -115 19.45
+Trading -115.0 shares of Knowles Corp on Nov 18, 2014 at 19.45
+manager: sagitarius_d dobromir stoyanov
+fund: SMOFX Sagitarius Momentum Fund
+building trade (has to load stock prices first)
+price = 19.45
+selling -115.0 shares of KN at 19.45 on 20141118
+invaldating fund prices from Nov 18, 2014
+Done
+
+he is sold out
+
+> Row 26:
+>      ACTIONKEY = X'70593ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2014-12-12 10:03:24.000000'
+>        COMMENT = 
+>     COMMISSION = 12.750000
+>   CURRENTORDER = X'a1904d10548b0267c0a86f98'
+>        LIFEKEY = X'70923ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'0d6e3bfa4d48843ac0a80135'
+>       MODIFIED = NULL
+>            NET = 4916.310000
+>         OPENED = TIMESTAMP '2014-12-12 09:57:43.000000'
+>          PRICE = 19.279647
+>     PRIMARYKEY = X'a18e4d10548b0267c0a86f98'
+>         SECFEE = 0.090000
+>         SHARES = 255.000000 <------------------- shares this was a sell
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'0d6e3bfa4d48843ac0a80135';
+> Row 1:
+>   LOGINNAME = mikeumd
+3Sect  255 in this fund
+/Marketocracy/Scripts/build/bin/backdatedtrade.py mikeumd 3Sect 20141212 KN -255 19.35
+Trading -255.0 shares of Knowles Corp on Dec 12, 2014 at 19.35
+manager: mikeumd Michael Edward
+fund: 3Sect Sector fund
+building trade (has to load stock prices first)
+price = 19.35
+selling -255.0 shares of KN at 19.35 on 20141212
+invaldating fund prices from Dec 12, 2014
+Done
+he is sold out
+
+> Row 27:
+>      ACTIONKEY = X'70563ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2015-01-26 09:34:53.000000'
+>        COMMENT = Asset Allocation|
+>     COMMISSION = 4.000000
+>   CURRENTORDER = X'69500af654c2f627c0a86f98'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ee5e574d3a40259ec0a801e0'
+>       MODIFIED = NULL
+>            NET = 1704.000000
+>         OPENED = TIMESTAMP '2015-01-23 20:32:23.000000'
+>          PRICE = 21.300000
+>     PRIMARYKEY = X'694e0af654c2f627c0a86f98'
+>         SECFEE = 0.000000
+>         SHARES = 80.000000   <------------------- shares this a buy the only one
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'b93a4415531517fcc0a86f92'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+	select loginname from mmanager where primarykey=X'ee5e574d3a40259ec0a801e0';
+> Row 1:
+>   LOGINNAME = cfalcon
+/Marketocracy/Scripts/build/bin/backdatedtrade.py cfalcon CFIT 20150126 KN 80 21.21
+Trading 80.0 shares of Knowles Corp on Jan 26, 2015 at 21.21
+manager: cfalcon CHARLES FALCON
+fund: CFIT CFalcon's Index&Trust
+building trade (has to load stock prices first)
+price = 21.21
+buying 80.0 shares of KN at 21.21 on 20150126
+invaldating fund prices from Jan 26, 2015
+Done
+
+log back in 
+
+
+select distinct managerkey from mticket where stockkey=X'b93a4415531517fcc0a86f92' and sourcekey is null;
+> Row 1:
+>   MANAGERKEY = X'503249723bf41488c0a801e1'
+> Row 2:
+>   MANAGERKEY = X'279b21323e876d30c0a80133'
+> Row 3:
+>   MANAGERKEY = X'9c631d3d3e32c9d6c0a80133'
+> Row 4:
+>   MANAGERKEY = X'7a776af94aec6c44c0a80133'
+> Row 5:
+>   MANAGERKEY = X'0d6e3bfa4d48843ac0a80135'
+> Row 6:
+>   MANAGERKEY = X'afba4ebd3e9afa8bc0a80132'
+> Row 7:
+>   MANAGERKEY = X'd1ff512a4d6415b8c0a80135'
+> Row 8:
+>   MANAGERKEY = X'5ebf01263da76e44c0a80134'
+> Row 9:
+>   MANAGERKEY = X'ee5e574d3a40259ec0a801e0'
+
+only 9 managers traded 27 mtickets
+
+select loginname from mmanager where primarykey in (select distinct managerkey from mticket where stockkey=X'b93a4415531517fcc0a86f92' and sourcekey is null);
+> Row 1:
+>   LOGINNAME = cfalcon
+> Row 2:
+>   LOGINNAME = zachnyc
+> Row 3:
+>   LOGINNAME = sagitarius_d
+> Row 4:
+>   LOGINNAME = dhancock
+> Row 5:
+>   LOGINNAME = wnious
+> Row 6:
+>   LOGINNAME = kvogelsang
+> Row 7:
+>   LOGINNAME = maxoom
+> Row 8:
+>   LOGINNAME = mikeumd
+> Row 9:
+>   LOGINNAME = dcblue
+
+select * from mtrade where ticketkey in (select primarykey from mticket where SOURCEKEY is null and STOCKKEY = X'b93a4415531517fcc0a86f92');
+> Row 1:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70a8623054622f9fc0a86f9c'
+>                     SHARES = 10.000000
+>                  TICKETKEY = X'9836576c545ba257c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219000
+>   CREATEDBYCORPORATEACTION = 0
+> Row 2:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70a9623054622f9fc0a86f9c'
+>                     SHARES = 60.000000
+>                  TICKETKEY = X'99aa576c545ba2d3c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 3:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70b2623054622fa0c0a86f9c'
+>                     SHARES = 100.000000
+>                  TICKETKEY = X'936f576c545ba233c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 4:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70b3623054622fa0c0a86f9c'
+>                     SHARES = 40.000000
+>                  TICKETKEY = X'9978576c545ba2a5c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 5:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70ba623054622fc1c0a86f9c'
+>                     SHARES = 70.000000
+>                  TICKETKEY = X'a246576c545ba30bc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 6:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70bd623054622fc2c0a86f9c'
+>                     SHARES = 20.000000
+>                  TICKETKEY = X'9951576c545ba272c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219500
+>   CREATEDBYCORPORATEACTION = 0
+> Row 7:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70c5623054622fc3c0a86f9c'
+>                     SHARES = 30.000000
+>                  TICKETKEY = X'995a576c545ba28cc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219300
+>   CREATEDBYCORPORATEACTION = 0
+> Row 8:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70c6623054622fc3c0a86f9c'
+>                     SHARES = 50.000000
+>                  TICKETKEY = X'999e576c545ba2bcc0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 9:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54ba4415531518fdc0a86f92'
+>                 PRIMARYKEY = X'70ca623054622fc4c0a86f9c'
+>                     SHARES = 77.000000
+>                  TICKETKEY = X'a265576c545ba331c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-11 10:30:02.000000'
+>                      PRICE = 19.219600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 10:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'cf384415531518cbc0a86f92'
+>                 PRIMARYKEY = X'8a0b0fce546b5d90c0a86f9c'
+>                     SHARES = 115.000000
+>                  TICKETKEY = X'0ba04169546a689ec0a86f98'
+>                     CLOSED = TIMESTAMP '2014-11-18 09:33:20.000000'
+>                      PRICE = 19.399700
+>   CREATEDBYCORPORATEACTION = 0
+> Row 11:
+>                    KINDKEY = X'70593ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'54a64415531518fdc0a86f92'
+>                 PRIMARYKEY = X'abe43549548b0963c0a86f9c'
+>                     SHARES = 255.000000
+>                  TICKETKEY = X'a18e4d10548b0267c0a86f98'
+>                     CLOSED = TIMESTAMP '2014-12-12 10:03:24.000000'
+>                      PRICE = 19.279600
+>   CREATEDBYCORPORATEACTION = 0
+> Row 12:
+>                    KINDKEY = X'70563ca1391e0270c0a8015c'
+>                   MATCHKEY = NULL
+>                POSITIONKEY = X'06584415531518dbc0a86f92'
+>                 PRIMARYKEY = X'bf3104d354c65478c0a86f9c'
+>                     SHARES = 80.000000
+>                  TICKETKEY = X'694e0af654c2f627c0a86f98'
+>                     CLOSED = TIMESTAMP '2015-01-26 09:34:53.000000'
+>                      PRICE = 21.300000
+>   CREATEDBYCORPORATEACTION = 0
+
+
+I have applied all of the member tickets and the DVD_STOCK this is good 
+check on 2/24/15 for the stock info page for DOV to see that the DVD_STOCK is there 

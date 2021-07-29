@@ -1,0 +1,246 @@
+date:  3/12/15
+Hi Marty. Jerry Pettit (username jerrypettit) holds NETC in his PEF fund. Can you look into it, he seems to want to get rid of it, but it won't go away. He thinks it has some value and wants to use that value someplace else.
+
+jerrypettit
+
+NETC
+
+yahoo
+Net Servi (NETC)
+-NasdaqGS
+Watchlist
+8.26 Down 0.60(6.77%) Jan 29 - Nasdaq Real Time Price
+Add to Portfolio
+Prev Close:	8.18
+Open:	8.26
+Bid:	N/A
+Ask:	N/A
+1y Target Est:	12.00
+Beta:	1.73
+Next Earnings Date:	N/A
+Day's Range:	8.26 - 8.90
+52wk Range:	8.26 - 8.90
+Volume:	6,884
+Avg Vol (3m):	N/A
+Market Cap:	N/A
+P/E (ttm):	53.64
+EPS (ttm):	0.15
+Div & Yield:	N/A (N/A)
+
+quantum - nothing
+
+our site
+Symbol: NETC 	Name: Net Communications Services, Incorporated ADR 	Price: $8.30
+Volume: 	Sector: Consumer Discretionary 	Change:
+Short Volume: 0 	Style: Small Cap : Growth 	Market Cap:
+Avg Volume: 0 	 Exchange: NASDAQ 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+
+ cash dividends paid by NETC 	right curve
+  	  	
+Effective Date 	Record Date 	Pay Date 	Frequency 	Gross 	Description
+18 Mar 09 	20 Mar 09 	27 Mar 09 	N/A 	$0.01 	Dividend amount:0.005003 per share.
+  	  	 
+
+let's check the historical pricing
+/Marketocracy/bin/dbtool lookup stock NETC
+>>>> dbtool started at 2015-03-12 16:04:40 -0400
+stock: NETC
+  PK       : [A3AD043C39E7E9C8C0A801DC]
+  companyID: [12313]
+  symbol   : [NETC]
+  name     : [netcruise.com Inc]
+  date     : [2000-10-13 15:00:00]
+  status   : [Active]
+stock: NETC
+  PK       : [8577553645E5DBC4C0A80146]
+  companyID: [16508]  <--- thsi one
+  symbol   : [NETC]
+  name     : [Net Communications Services, Incorporated ADR]
+  date     : [2007-02-27 00:00:00]
+  status   : [Active]
+<<<< dbtool finished at 2015-03-12 16:04:40 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 16508
+2014-01-18 (Sat) [4765]: <WEEKEND>
+2014-01-19 (Sun) [4766]: <WEEKEND>
+2014-01-20 (Mon) [4767]: <HOLIDAY>
+2014-01-21 (Tue) [4768]: O:8.2900 H:8.9300 L:8.2900 C:8.9300 V:490 TSO:342850 A:8.9300 R:1.0000 CA:0.0000
+2014-01-22 (Wed) [4769]: O:8.0000 H:8.3200 L:8.0000 C:8.1100 V:1339 TSO:342850 A:8.1100 R:1.0000 CA:0.0000
+2014-01-23 (Thu) [4770]: O:8.0500 H:8.1200 L:8.0500 C:8.1200 V:2040 TSO:342850 A:8.1200 R:1.0000 CA:0.0000
+2014-01-24 (Fri) [4771]: O:8.1200 H:8.1200 L:8.1200 C:8.1200 V:2040 TSO:342850 A:8.1200 R:1.0000 CA:0.0000
+2014-01-25 (Sat) [4772]: <WEEKEND>
+2014-01-26 (Sun) [4773]: <WEEKEND>
+2014-01-27 (Mon) [4774]: O:8.1800 H:8.1800 L:8.1800 C:8.1800 V:105 TSO:342850 A:8.1800 R:1.0000 CA:0.0000
+2014-01-28 (Tue) [4775]: O:8.9900 H:9.0100 L:8.2500 C:8.8600 V:14998 TSO:342850 A:8.8600 R:1.0000 CA:0.0000
+2014-01-29 (Wed) [4776]: O:8.8600 H:8.9000 L:8.2600 C:8.3000 V:7153 TSO:342850 A:8.3000 R:1.0000 CA:0.0000
+
+prices abruptly stopp on 20140129   8.30
+
+let's check MAdmin  
+Stock:Net Communications Services, Incorporated ADR  Symbol:NETC
+Date: 03/12/2015
+
+36 users found
+
+1	32fordbooger69	Stipping	actionbooger69	andykawai	bplain	colbyhouse	cupid_shuffle	cvu1	dakotahfury	fedge
+2	flyfish	gbravo	gedanken	gnaquin	jerrypettit	jlevine2	jlnelson	joeeleonard	joeyjoebobjoebob	jomax
+3	jpmgator	klebeouf	kleinphi	lydialee	michael_laskin	mnichols1	penncove	phorwitz	rmorse	sdimov
+4	sidbaveja	silke17	test108	txlaw	yannicks	yuqiongzhu	 
+
+select distinct stockkey from mstockalias where symbol='NETC';
+> Row 1:
+>   STOCKKEY = X'a3ad043c39e7e9c8c0a801dc'
+select * from mstockalias where STOCKKEY = X'a3ad043c39e7e9c8c0a801dc';
+net cruise, delisted 
+> Row 2:
+>   STOCKKEY = X'8577553645e5dbc4c0a80146'
+select * from mstockalias where STOCKKEY = X'8577553645e5dbc4c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64109T201
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Net Communications Services, Incorporated ADR
+>     PRIMARYKEY = X'8578553645e5dbc4c0a80146'
+>       STOCKKEY = X'8577553645e5dbc4c0a80146'
+>         SYMBOL = NETC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401025
+>       STYLEKEY = SG
+
+select * from mcorporateaction where aliaskey=X'8578553645e5dbc4c0a80146';
+> Row 1:
+>              ALIASKEY = X'8578553645e5dbc4c0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20090320|CP_PAY_DT|20090327|CP_FREQ|N.A.|CP_NET_AMT|0.004002|CP_TAX_AMT|0.000000|CP_GROSS_AMT|0.005003|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1028|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|0.000000|CP_ADJ|0.999441|CP_ADJ_DT|20090318|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 35826625
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 158947
+>        BB_COMPANYNAME = NET Servicos de Comunicacao SA
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-03-18 00:00:00.000000'
+>         BB_IDENTIFIER = NETC    UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-02-12 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = NETC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2009-03-18 00:00:00.000000'
+>            PRIMARYKEY = X'dc34082a49c1a741c0a80146'
+>               VERSION = NULL
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='NETC' order by BB_EFFECTIVE;
+> Row 21:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|NETC|CP_DELIST_REASON|17|CP_NOTES|ADR program termination
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 86748612
+>     BB_ACTIONMNEMONIC = DELIST
+>          BB_COMPANYID = 158947
+>        BB_COMPANYNAME = NET Servicos de Comunicacao SA
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-30 00:00:00.000000'
+>         BB_IDENTIFIER = NETC    US Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-29 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = NETC
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 9000
+>            BB_UPDATED = TIMESTAMP '2014-01-29 00:00:00.000000'
+>            PRIMARYKEY = X'fc95219852e9936bc0a86f92'
+>               VERSION = NULL
+
+on that is useful.  
+
+2014-01-29 (Wed) [4776]: O:8.8600 H:8.9000 L:8.2600 C:8.3000 V:7153 TSO:342850 A:8.3000 R:1.0000 CA:0.0000
+
+/Marketocracy/bin/cahelper -symbol NETC -effective 20140129 -type ACQUIS -exchange UQ -acqType 1 -acqCash 8.30 -acqShare 0 -purchaser NETC >& /Users/build/caout/NETC.20150312-ACQUIS.out
+
+D: (03-12 16:34:42.674) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (03-12 16:35:07.809) cahelper started on 2015-03-12 16:35:07 -0400
+
+D: (03-12 16:35:07.990) There are [0] open tickets for NETC on 20140129
+D: (03-12 16:35:08.436) StockFileLoad Version:3.0
+D: (03-12 16:35:08.437) Loading Stock Data
+D: (03-12 16:35:53.440) Building Lookup Index
+D: (03-12 16:35:57.807) Finished Building Index
+D: (03-12 16:35:58.799) Finished Loading Stock Data
+D: (03-12 16:35:58.950) Connection to 192.168.111.172:6666 succeeded
+D: (03-12 16:36:00.555) {
+    "ACQUIRED_STOCK" = NETC; 
+    "ACQUIRING_STOCK" = "NETC_FIX"; 
+    AMOUNT = 8.3; 
+    APPLIED = 1; 
+    DATE = 20140129; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "NETC_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (03-12 16:36:05.240) SUCCESS
+D: (03-12 16:36:05.240) cahelper finished 2015-03-12 16:36:05 -0400
+
+select * from mstockalias where STOCKKEY = X'8577553645e5dbc4c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64109T201
+>           DATE = TIMESTAMP '2007-02-27 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Net Communications Services, Incorporated ADR
+>     PRIMARYKEY = X'8578553645e5dbc4c0a80146'
+>       STOCKKEY = X'8577553645e5dbc4c0a80146'
+>         SYMBOL = NETC
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401025
+>       STYLEKEY = SG
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 64109T201
+>           DATE = TIMESTAMP '2014-01-29 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = Net Communications Services, Incorporated ADR
+>     PRIMARYKEY = X'dc394f335501f87bc0a86f92'
+>       STOCKKEY = X'8577553645e5dbc4c0a80146'
+>         SYMBOL = NETC
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25401025
+>       STYLEKEY = SG
+
+select * from mcorporateaction where aliaskey=X'dc394f335501f87bc0a86f92';
+> Row 1:
+>              ALIASKEY = X'dc394f335501f87bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|NETC  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|8.300000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150312:043507
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-01-29 00:00:00.000000'
+>         BB_IDENTIFIER = NETC_FIX     UQ Equity
+>             BB_ISSUED = TIMESTAMP '2014-01-29 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = NETC_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-01-29 00:00:00.000000'
+>            PRIMARYKEY = X'dc334f335501f87bc0a86f92'
+>               VERSION = NULL
+select count(*) from mticket where sourcekey=X'dc334f335501f87bc0a86f92';
+> Row 1:
+>   _C001 = 77.000000
+save to file CA issues NETC fundkeys.txt
+
+we need to get the fundkeys to invalidate
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'dc334f335501f87bc0a86f92'));
+there are 77 save them to a file 

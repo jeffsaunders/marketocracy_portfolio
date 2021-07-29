@@ -1,0 +1,1626 @@
+date: 1/6/15
+BKW was acquired or delisted, taken over by QSR Restaurant Brands International, however, I can't find the terms
+
+select distinct stockkey from mstockalias where symbol='BKW';
+> Row 1:
+>   STOCKKEY = X'071d66754fe25328c0a80146'
+
+
+select * from mstockalias where STOCKKEY = X'071d66754fe25328c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Justice Delaware Holdco Inc
+>     PRIMARYKEY = X'071e66754fe25328c0a80146'
+>       STOCKKEY = X'071d66754fe25328c0a80146'
+>         SYMBOL = BKW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = UU
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 121220107
+>           DATE = TIMESTAMP '2012-06-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Burger King Worldwide Inc
+>     PRIMARYKEY = X'6b2c66954fe2536cc0a80146'
+>       STOCKKEY = X'071d66754fe25328c0a80146'
+>         SYMBOL = BKW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'6b2c66954fe2536cc0a80146';
+> Row 1:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_OLD_NAME|Justice Delaware Holdco Inc|CP_NEW_NAME|Burger King Worldwide Inc|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 65457329
+>     BB_ACTIONMNEMONIC = CHG_NAME
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Justice Delaware Holdco Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2012-06-20 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-06-14 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2012-06-18 00:00:00.000000'
+>            PRIMARYKEY = X'475a3a614fdfae41c0a80146'
+>               VERSION = NULL
+> Row 2:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20121109|CP_PAY_DT|20121129|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.04|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT|N.A.|CP_PAR_PCT|N.A.|CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|0.997447|CP_ADJ_DT|20121107|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 70252050
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2012-11-07 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2012-10-29 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2012-11-07 00:00:00.000000'
+>            PRIMARYKEY = X'9a156b49509af0d6c0a80146'
+>               VERSION = NULL
+> Row 3:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130228|CP_PAY_DT|20130315|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.05|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20130226|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 74102006
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-02-26 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-02-14 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-02-15 00:00:00.000000'
+>            PRIMARYKEY = X'6d872abb511ec7eac0a80146'
+>               VERSION = NULL
+> Row 4:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130501|CP_PAY_DT|20130515|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.06|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO| |CP_PX|N.A.|CP_TAX_RT|N.A.|CP_ADJ|1.000000|CP_ADJ_DT|20130429|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 75971800
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-04-29 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-04-11 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-04-11 00:00:00.000000'
+>            PRIMARYKEY = X'bf6220e2516e0817c0a80146'
+>               VERSION = NULL
+> Row 5:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20130815|CP_PAY_DT|20130830|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.06|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996943|CP_ADJ_DT|20130813|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 80011874
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-08-13 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-07-30 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-08-13 00:00:00.000000'
+>            PRIMARYKEY = X'600b2dfd520ab8c6c0a80146'
+>               VERSION = NULL
+> Row 6:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20131112|CP_PAY_DT|20131126|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.07|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996686|CP_ADJ_DT|20131107|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 83047141
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2013-11-07 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2013-10-27 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2013-11-07 00:00:00.000000'
+>            PRIMARYKEY = X'36ff208c527c2775c0a80146'
+>               VERSION = NULL
+> Row 7:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140226|CP_PAY_DT|20140312|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.07|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20140224|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 87397909
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-24 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-12 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-13 00:00:00.000000'
+>            PRIMARYKEY = X'68d7270052fd5ac1c0a86f92'
+>               VERSION = NULL
+> Row 8:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140226|CP_PAY_DT|20140312|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.07|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997324|CP_ADJ_DT|20140224|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 87397909
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-02-24 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-02-12 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-02-24 00:00:00.000000'
+>            PRIMARYKEY = X'4b252d57530bdadac0a86f92'
+>               VERSION = NULL
+> Row 9:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140512|CP_PAY_DT|20140527|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.07|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997283|CP_ADJ_DT|20140508|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 90394340
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-05-08 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-04-24 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-05-08 00:00:00.000000'
+>            PRIMARYKEY = X'd888202a536c0aeac0a86f92'
+>               VERSION = NULL
+> Row 10:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20140812|CP_PAY_DT|20140826|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.08|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.996938|CP_ADJ_DT|20140808|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 94426583
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-08-08 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-01 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-08-08 00:00:00.000000'
+>            PRIMARYKEY = X'a52f291053e5580bc0a86f92'
+>               VERSION = NULL
+> Row 11:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141111|CP_PAY_DT|20141125|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT|N.A.|CP_GROSS_AMT|.08|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|1.000000|CP_ADJ_DT|20141106|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 98310177
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-11-06 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'692614e054596a9ac0a86f92'
+>               VERSION = NULL
+> Row 12:
+>              ALIASKEY = X'6b2c66954fe2536cc0a80146'
+>   BB_ACTIONDICTIONARY = CP_RECORD_DT|20141114|CP_PAY_DT|20141125|CP_FREQ|4|CP_NET_AMT|N.A.|CP_TAX_AMT| |CP_GROSS_AMT|.08|CP_FRANKED_AMT| |CP_DVD_CRNCY|USD|CP_DVD_TYP|1000|CP_SPPL_AMT| |CP_FOREIGN_AMT| |CP_PAR_PCT| |CP_STOCK_OPT|U|CP_REINVEST_RATIO|N.A.|CP_PX|N.A.|CP_TAX_RT| |CP_ADJ|0.997529|CP_ADJ_DT|20141112|CP_INDICATOR|N|CP_DVD_DRP_DISCOUNT|N.A.|CP_EUSD_TID| |CP_EUSD_TID_SW| |CP_DIST_AMT_STATUS|F|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 98310177
+>     BB_ACTIONMNEMONIC = DVD_CASH
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-11-12 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-11-03 00:00:00.000000'
+>          BB_NUMFIELDS = 24
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-11-12 00:00:00.000000'
+>            PRIMARYKEY = X'0c9207f75463f3ecc0a86f92'
+>               VERSION = NULL
+
+no luck finding info
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='BKW';
+> Row 24:
+>              ALIASKEY = NULL
+>   BB_ACTIONDICTIONARY = CP_OLD_CLASS|1|CP_NEW_CLASS|4|CP_RECLASS_TYP|1|CP_TERMS|0.010000 for 1.000000|CP_RATIO|0.010000|CP_OPTIONAL|0|CP_NOTES|Upon completion of the Tim Hortons Inc merger, common shares of Burger King Worldwide will be converted into 0.99 newly issued shares of Restaurant Brands International Inc and 0.01 newly issued New Canada Red Ltd Partnership exchangeable units.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 99758517
+>     BB_ACTIONMNEMONIC = RECLASS
+>          BB_COMPANYID = 31743979
+>        BB_COMPANYNAME = Burger King Worldwide Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = BKW     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-08 00:00:00.000000'
+>          BB_NUMFIELDS = 7
+>              BB_RCODE = 0
+>              BB_SECID = BKW
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-09 00:00:00.000000'
+>            PRIMARYKEY = X'25285e3c54878cadc0a86f92'
+>               VERSION = NULL
+
+maybe holders of BKW got .99 shares of QSR  according to this RECLASS?
+
+
+
+let's check historical pricing on our site
+
+/Marketocracy/bin/dbtool lookup stock BKW
+>>>> dbtool started at 2015-01-06 16:30:03 -0500
+stock: BKW
+  PK       : [071D66754FE25328C0A80146]
+  companyID: [22643]
+  symbol   : [BKW]
+  name     : [Justice Delaware Holdco Inc]
+  date     : [2012-06-20 00:00:00]
+  status   : [Active]
+stock: BKW
+  PK       : [071D66754FE25328C0A80146]
+  companyID: [22643]
+  symbol   : [BKW]
+  name     : [Burger King Worldwide Inc]
+  date     : [2012-06-20 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-01-06 16:30:03 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 22643
+2014-12-01 (Mon) [5082]: O:35.2900 H:36.3500 L:33.8900 C:34.0700 V:2565973 TSO:0 A:34.0700 R:1.0000 CA:0.0800
+2014-12-02 (Tue) [5083]: O:34.1200 H:34.4800 L:33.1600 C:33.6300 V:2790951 TSO:0 A:33.6300 R:1.0000 CA:0.0800
+2014-12-03 (Wed) [5084]: O:33.6600 H:34.6200 L:33.5200 C:34.1500 V:3584252 TSO:0 A:34.1500 R:1.0000 CA:0.0800
+2014-12-04 (Thu) [5085]: O:34.1500 H:34.9400 L:34.0000 C:34.6900 V:2280195 TSO:0 A:34.6900 R:1.0000 CA:0.0800
+2014-12-05 (Fri) [5086]: O:35.2800 H:36.1000 L:34.7300 C:34.8100 V:6424972 TSO:0 A:34.8100 R:1.0000 CA:0.0800
+2014-12-06 (Sat) [5087]: <WEEKEND>
+2014-12-07 (Sun) [5088]: <WEEKEND>
+2014-12-08 (Mon) [5089]: O:35.0300 H:35.0500 L:32.8500 C:33.8200 V:6365772 TSO:0 A:33.8200 R:1.0000 CA:0.0800
+2014-12-09 (Tue) [5090]: O:33.4800 H:34.1600 L:32.4200 C:32.4900 V:5980293 TSO:0 A:32.4900 R:1.0000 CA:0.0800
+2014-12-10 (Wed) [5091]: O:32.9600 H:34.6700 L:31.9800 C:34.6200 V:5359465 TSO:0 A:34.6200 R:1.0000 CA:0.0800
+2014-12-11 (Thu) [5092]: O:34.8000 H:37.2800 L:34.7600 C:36.6600 V:6684920 TSO:0 A:36.6600 R:1.0000 CA:0.0800
+2014-12-12 (Fri) [5093]: O:36.7700 H:37.4100 L:35.5000 C:35.5000 V:15801217 TSO:0 A:35.5000 R:1.0000 CA:0.0800
+
+stock ends on 12/12/2014
+
+
+
+Restaurant Brands International, Inc.
+Ticker Symbol: QSR     CUSIP: 76131D103     Exchange: NYSE
+
+Company's Online Profile
+BUSINESS:  Restaurant Brands International, Inc. is one of the world's largest quick service restaurant companies with 
+approximately $23 billion in system sales and over 18,000 restaurants in 100 countries. Restaurant Brands International 
+owns two of the world's most prominent and iconic quick service restaurant brands Tim Hortons and Burger King. These
+ independently operated brands have been serving their respective guests, franchisees and communities for over 50 years.
+Notes:  December 15, 2014 -- Restaurant Brands International Inc. has completed a transaction with Tim Hortons Inc.
+and Burger King Worldwide Inc. that creates Restaurant Brands International, a new global quick-service restaurant 
+(QSR) company operating two iconic, independent brands. Effective Dec. 12, 2014, Tim Hortons common shares and Burger 
+King Worldwide common stock ceased trading on the Toronto Stock Exchange and New York Stock Exchange. Restaurant 
+Brands International common shares began trading on the TSE and NYSE under the trading symbol QSR on December 15. 
+Oakville, Ontario-based Restaurant Brands International is one of the world's largest QSR companies with approximately
+ $23 billion in system sales and more than 18,000 restaurants in 100 countries. The new leadership team is made up of 
+senior executives from the Tim Hortons and Burger King brands.
+
+
+when did QSR start trading?
+
+select distinct stockkey from mstockalias where symbol='QSR';
+> Row 1:
+>   STOCKKEY = X'47ad40105488e008c0a86f92'
+
+select * from mstockalias where STOCKKEY = X'47ad40105488e008c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Restaurant Brands International Inc
+>     PRIMARYKEY = X'47ae40105488e008c0a86f92'
+>       STOCKKEY = X'47ad40105488e008c0a86f92'
+>         SYMBOL = QSR-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'47ae40105488e008c0a86f92';
+> Row 1:
+>              ALIASKEY = X'47ae40105488e008c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UN|CP_TKR|QSR-W|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 99684371
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 42299569
+>        BB_COMPANYNAME = Restaurant Brands International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-10 00:00:00.000000'
+>         BB_IDENTIFIER = QSR-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-08 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = QSR-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-09 00:00:00.000000'
+>            PRIMARYKEY = X'25bf5e3c54878cd9c0a86f92'
+>               VERSION = NULL
+
+
+
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Restaurant Brands International Inc
+>     PRIMARYKEY = X'ba100b10548f776bc0a86f92'
+>       STOCKKEY = X'47ad40105488e008c0a86f92'
+>         SYMBOL = QSR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'ba100b10548f776bc0a86f92';
+> Row 1:
+>              ALIASKEY = X'ba100b10548f776bc0a86f92'
+>   BB_ACTIONDICTIONARY = CP_OLD_TKR|QSR-W US|CP_NEW_TKR|QSR US|CP_NOTES|End of when issued trading.
+>         BB_ACTIONFLAG = N
+>           BB_ACTIONID = 99812663
+>     BB_ACTIONMNEMONIC = CHG_TKR
+>          BB_COMPANYID = 42299569
+>        BB_COMPANYNAME = Restaurant Brands International Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = QSR-W   US Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-10 00:00:00.000000'
+>          BB_NUMFIELDS = 3
+>              BB_RCODE = 0
+>              BB_SECID = QSR-W
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1000
+>            BB_UPDATED = TIMESTAMP '2014-12-10 00:00:00.000000'
+>            PRIMARYKEY = X'd0323a325488debec0a86f92'
+>               VERSION = NULL
+
+
+
+*******************  2/21/15 ************
+let's restart this 
+select distinct stockkey 
+
+when did prices for BKW go away
+
+/Marketocracy/bin/dbtool lookup stock BKW
+>>>> dbtool started at 2015-02-23 17:20:49 -0500
+stock: BKW
+  PK       : [071D66754FE25328C0A80146]
+  companyID: [22643]
+  symbol   : [BKW]
+  name     : [Justice Delaware Holdco Inc]
+  date     : [2012-06-20 00:00:00]
+  status   : [Active]
+stock: BKW
+  PK       : [071D66754FE25328C0A80146]
+  companyID: [22643]
+  symbol   : [BKW]
+  name     : [Burger King Worldwide Inc]
+  date     : [2012-06-20 00:00:01]
+  status   : [Active]
+<<<< dbtool finished at 2015-02-23 17:20:50 -0500
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 22643
+2015-01-13 (Tue) [5125]: O:23.5700 H:24.1700 L:23.3900 C:23.9800 V:1178011 TSO:0 A:23.5300 R:1.0000 CA:0.4500
+2015-01-14 (Wed) [5126]: O:23.9000 H:24.5700 L:23.8000 C:24.3400 V:1459356 TSO:0 A:23.8900 R:1.0000 CA:0.4500
+2015-01-15 (Thu) [5127]: <NO DATA>
+2015-01-16 (Fri) [5128]: O:36.7700 H:37.4100 L:35.5000 C:35.5000 V:15802770 TSO:0 A:35.5000 R:1.0000 CA:0.0000
+2015-01-17 (Sat) [5129]: <WEEKEND>
+2015-01-18 (Sun) [5130]: <WEEKEND>
+2015-01-19 (Mon) [5131]: <HOLIDAY>
+2015-01-20 (Tue) [5132]: O:36.7700 H:37.4100 L:35.5000 C:35.5000 V:15802770 TSO:0 A:35.5000 R:1.0000 CA:0.0000  <--
+2015-01-21 (Wed) [5133]: O:0.0000 H:0.0000 L:0.0000 C:0.0000 V:0 TSO:0 A:0.0000 R:1.0000 CA:0.0000
+2015-01-22 (Thu) [5134]: O:0.0000 H:0.0000 L:0.0000 C:0.0000 V:0 TSO:0 A:0.0000 R:1.0000 CA:0.0000
+2015-01-23 (Fri) [5135]: O:0.0000 H:0.0000 L:0.0000 C:0.0000 V:0 TSO:0 A:0.0000 R:1.0000 CA:0.0000
+2015-01-24 (Sat) [5136]: <WEEKEND>
+2015-01-25 (Sun) [5137]: <WEEKEND>
+2015-01-26 (Mon) [5138]: O:0.0000 H:0.0000 L:0.0000 C:0.0000 V:0 TSO:0 A:0.0000 R:1.0000 CA:0.0000
+2015-01-27 (Tue) [5139]: O:0.0000 H:0.0000 L:0.0000 C:0.0000 V:0 TSO:0 A:0.0000 R:1.0000 CA:0.0000
+
+Notes:  December 15, 2014 -- Restaurant Brands International Inc. has completed a transaction with Tim Hortons Inc. 
+and Burger King Worldwide Inc. that creates Restaurant Brands International, a new global quick-service restaurant 
+(QSR) company operating two iconic, independent brands. Effective Dec. 12, 2014, Tim Hortons common shares and
+ Burger King Worldwide common stock ceased trading on the Toronto Stock Exchange and New York Stock Exchange. 
+Restaurant Brands International common shares began trading on the TSE and NYSE under the trading symbol QSR on D
+ecember 15. Oakville, Ontario-based Restaurant Brands International is one of the world's largest QSR companies 
+with approximately $23 billion in system sales and more than 18,000 restaurants in 100 countries. The new 
+leadership team is made up of senior executives from the Tim Hortons and Burger King brands.
+
+select distinct stockkey from mstockalias where symbol='QSR';
+> Row 1:
+>   STOCKKEY = X'47ad40105488e008c0a86f92'
+select * from mstockalias where STOCKKEY = X'47ad40105488e008c0a86f92';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2014-12-10 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Restaurant Brands International Inc
+>     PRIMARYKEY = X'47ae40105488e008c0a86f92'
+>       STOCKKEY = X'47ad40105488e008c0a86f92'
+>         SYMBOL = QSR-W
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 76131D103
+>           DATE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Restaurant Brands International Inc
+>     PRIMARYKEY = X'ba100b10548f776bc0a86f92'
+>       STOCKKEY = X'47ad40105488e008c0a86f92'
+>         SYMBOL = QSR
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+
+let's acquire BKW stock aquis on 12/15/2014
+
+/Marketocracy/bin/cahelper -symbol BKW -effective 20141215 -type ACQUIS -exchange UN -acqType 2 -acqCash 0 -acqShare 0.99 -purchaser QSR >& /Users/build/caout/BKW.20150223-ACQUIS-QSR.out
+
+D: (02-23 17:28:10.423) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (02-23 17:28:34.782) cahelper started on 2015-02-23 17:28:34 -0500
+
+D: (02-23 17:28:35.677) There are [2] open tickets for BKW on 20141215
+D: (02-23 17:28:35.693) StockFileLoad Version:3.0
+D: (02-23 17:28:35.693) Loading Stock Data
+D: (02-23 17:29:16.899) Building Lookup Index
+D: (02-23 17:29:20.955) Finished Building Index
+D: (02-23 17:29:21.916) Finished Loading Stock Data
+D: (02-23 17:29:22.193) Connection to 192.168.111.157:6666 succeeded
+D: (02-23 17:29:31.260) SavingChanges for Stock Dividend out 101 of 857
+D: (02-23 17:29:40.214) SavingChanges for Stock Dividend out 201 of 857
+D: (02-23 17:29:50.731) SavingChanges for Stock Dividend out 301 of 857
+D: (02-23 17:29:59.115) SavingChanges for Stock Dividend out 401 of 857
+D: (02-23 17:30:17.468) SavingChanges for Stock Dividend out 501 of 857
+D: (02-23 17:30:30.886) SavingChanges for Stock Dividend out 601 of 857
+D: (02-23 17:30:48.800) SavingChanges for Stock Dividend out 701 of 857
+D: (02-23 17:31:06.406) SavingChanges for Stock Dividend out 801 of 857
+D: (02-23 17:31:13.175) >>> load new StockPrices file
+D: (02-23 17:31:13.208) <<< load new StockPrices file
+D: (02-23 17:31:13.209) >>> swap StockPrices
+D: (02-23 17:31:13.209) Obtained Stockprices swap mutex
+D: (02-23 17:31:13.209) <<< swap StockPrices
+D: (02-23 17:31:13.209) Stock prices available from 2000-05-01 to 2015-02-20
+D: (02-23 17:31:14.895) SavingChanges for position sell out 101 of 857
+D: (02-23 17:31:29.345) SavingChanges for position sell out 201 of 857
+D: (02-23 17:31:43.741) SavingChanges for position sell out 301 of 857
+D: (02-23 17:31:55.131) SavingChanges for position sell out 401 of 857
+D: (02-23 17:32:09.041) SavingChanges for position sell out 501 of 857
+D: (02-23 17:32:21.729) SavingChanges for position sell out 601 of 857
+D: (02-23 17:32:33.195) SavingChanges for position sell out 701 of 857
+D: (02-23 17:32:42.910) SavingChanges for position sell out 801 of 857
+D: (02-23 17:32:54.016) {
+    "ACQUIRED_STOCK" = BKW; 
+    "ACQUIRING_STOCK" = QSR; 
+    AMOUNT = 0.99; 
+    APPLIED = 1; 
+    DATE = 20141215; 
+    FUNDS = (
+        "sln/Overvalued equities (SHORT ONLY)", 
+        "cds_jr/Hospitality 1", 
+        "cds_jr/CDS Hospitality 2", 
+        "cds_jr/CDS Diversified 3", 
+        "cds_jr/CDS Diversified 4", 
+        "cds_jr/CDS Diversified", 
+        "hiromimini/Selling into Computational Kaos", 
+        "cd_stones/CD Stones's Mutual Fund", 
+        "moneyrj/moneyrj's Mutual Fund", 
+        "cds_jr/CDSDIV", 
+        "cd_stones/cd_stones's Mutual Fund", 
+        "cd_stones/cd_stones's Mutual Fund", 
+        "cds_jr/CDS INTL.", 
+        "cds_jr/CDS IN2", 
+        "cd_stones/cd_stones's Mutual Fund", 
+        "melissaw/Fourth Period's Fund", 
+        "ninasmets/ninasmets's Mutual Fund", 
+        "michaeldemeester/michaeldemeester's Mutual Fund", 
+        "andresvanhooydonck/andresvanhooydonck's Mutual Fund", 
+        "yaohong93/yaohong93's Mutual Fund", 
+        "rajasper/Mantis All-cap Blend", 
+        "spinstock7/The Slik Growth Fund", 
+        "cds_jr/CDS Diversified1", 
+        "theuncle/theuncle's food and drink ", 
+        "sherndon2/Second Mutual Fund", 
+        "bulldog_funds/Bulldogs Block 4 Fund", 
+        "smoothwayne123/smoothwayne123's Mutual Fund", 
+        "jameslorimac/jameslorimac's Mutual Fund", 
+        "helenavl/helenavl's Mutual Fund", 
+        "tshields/Ted's Services Value Fund", 
+        "cg2017/cg2017's Mutual Fund", 
+        "av2017/av2017's Mutual Fund", 
+        "jeremiah2017/jeremiah2017's Mutual Fund", 
+        "dancer555/dancer555's Mutual Fund", 
+        "dghyatt/dghyatt's Mutual Fund", 
+        "cmcfadden/Mac Mutual Fund", 
+        "earningsyield/Seventeen Short Fund", 
+        "lturner/shorty", 
+        "irand2/GWB Foreign Policy Fund", 
+        "avicere/AV SHORT", 
+        "andrew_hutsell/Sensei Capital Defensive & Contrarian Fund", 
+        "smith_matthewalan@hotmail.com/smith_matthewalan@hotmail.com's Mutual Fund", 
+        "natalieb/natalieb's Berk", 
+        "stormb/stormb's Mutual Fund", 
+        "brekke/brekke's Mutual Fund", 
+        "michdw/MDW Fund", 
+        "thofmans/thofmans's Mutual Fund", 
+        "wliao15/Wilim\U00b4s No Risk Fund.", 
+        "dparrish/Pershing Square Mirror", 
+        "pelsonm/pelsonm's Mutual Fund", 
+        "braden2222/Braden2222's Mutual Fund", 
+        "sherndon2/Mixed Bag Mutual Fund", 
+        "dmontana82/The Paul Fund", 
+        "ronk/ronk's Mutual Fund", 
+        "gxm321/gxm321's Mutual Fund", 
+        "tw_fogarty/Anti-EMF", 
+        "lonnis/Lonnis's General Fund", 
+        "decoytracker/r0m0r's Mutual Fund6", 
+        "zuke74/Zuchowski Global Retail Strategy Growth Fund", 
+        "lawc/TW-S Fund", 
+        "rgsumner/ronnie gene sumner's Mutual Fund", 
+        "avster/avster's Mutual Fund", 
+        "adampana7/adampana7's Mutual Fund", 
+        "DELETED_2003228/denise recion fighter fund", 
+        "scooter10/wade  wallace's Mutual Fund", 
+        "jhtoad2001/SITBACK", 
+        "tgadoury/Terry Gadoury's Mutual Fund", 
+        "xvuong/HXV Growth Fund", 
+        "dt/DiversifiedMutual Fund", 
+        "thefletch/The Fletcher Defensive Front Fund", 
+        "rwolf/lion's den retail and consumer related value fund", 
+        "nrbanerjea/value explosion fund", 
+        "cborgh/Claudio Borghesan's Mutual Fund", 
+        "scoobysnacks/scoobysnacks's Mutual Fund", 
+        "mgulla/Mutual Fund \"A\"", 
+        "jiggypoo/jiggypoo's Mutual Fund", 
+        "hrick/Harrison Restaurant Fund", 
+        "gbennethum/swift fund", 
+        "geeproud/The Foot Fund", 
+        "jrowe/Jeffrey Rowe's Mutual Fund", 
+        "aferrari/aferrari's Mutual Fund", 
+        "pbritton/ATMA fund", 
+        "adale/A.Dale's Mutual Fund", 
+        "chayes/Things I Like", 
+        "febodf/CR Medium Fund", 
+        "awahid/POCHI", 
+        "gregss/David C. Sudduth jr.'s Mutual Fund", 
+        "lou19/lou19's Mutual Fund", 
+        "hewitt/Agnosco Fund", 
+        "kcblues/Royals Mutual Fund", 
+        "titansfan2162/titansfan2162's Mutual Fund", 
+        "DELETED_2003229/denise gold rush fund", 
+        "njasny/njasny's Mutual Fund", 
+        "47outs/47outs's Mutual Fund", 
+        "rfarrell/Robb Farrell's Mixed Stock Mutual Fund", 
+        "tziegert/Timothy C. Ziegert's One-Hundred Fund", 
+        "tammyvos/Tammy Vos's Winner Mutual Fund", 
+        "gsilcott/George Silcott's Mutual Fund", 
+        "jfstorm/Brainstorms Unlimited Value & Growth", 
+        "brucela/Bruce Layne Adams's Mutual Fund", 
+        "rwinkler/ROBERT WILLIAM WINKLER's Mutual Fund", 
+        "reyesn/Mainly Food Fund", 
+        "jbundy/JSB Value Fund", 
+        "jhtoad2001/JEFFREY HUGH TODD's Mutual Fund", 
+        "jficker/jim ficker's Mutual Fund", 
+        "chunghan/chunghan's Mutual Fund", 
+        "DELETED_2003229/denises broadcast fund", 
+        "ntreu/Entheo Emerging Value Fund", 
+        "jficker/jim ficker's Mutual Fund", 
+        "joeyself/joeyself's Mutual Fund", 
+        "gsabin/Sweet Thangs", 
+        "rlubberman/Stephenie's Sassy Stock Fund", 
+        "cjbeal/Beal Diversified Large Cap Fund", 
+        "mclennanlisa/Sitarra Fund 1 MMF", 
+        "bradthe_man/Another Fund", 
+        "lordblack/lordblack's Mutual Fund", 
+        "ptaur/Pat F Taourozzi's Mutual Fund", 
+        "rgerber/RonInds Fund", 
+        "gzoub2x/US Value ", 
+        "cfilstead/cfilstead's Mutual Fund", 
+        "ckolsti/CTK  Value Growth Fund", 
+        "gtg092y/gtg092y's Mutual Fund", 
+        "rickjames21/I'm rick james", 
+        "jdberia/JDB Select Services", 
+        "esmeralda/Jacqueline Schlichting's Mutual Fund", 
+        "rcropley/Robert Cropley's Mutual Fund", 
+        "rickmccoy/rickmccoy's Mutual Fund", 
+        "rbrayton/Contrarian Timer", 
+        "mreasner/Matt Reasner's Mutual Fund", 
+        "kaptain_kev/Shorty", 
+        "rwwaldon/Rodney  Waldon's Mutual Fund", 
+        "cwesterbeek/Westerbeek Select Value", 
+        "barbancourt/O Canada", 
+        "snoopdog/D'Anconia Fund", 
+        "dt/TopPick", 
+        "arosenberg/Retail & Consumers", 
+        "esmeralda/Jacqueline Schlichting's Mutual Fund", 
+        "dnolten/Nolten Experimental Fund", 
+        "aussie/aussie's Mutual Fund", 
+        "culish/culish's Mutual Fund", 
+        "tjmorra/Morra's True Value Fund", 
+        "dt/Dimitri's  Mutual Fund", 
+        "kevante/Canadian Equity Fund", 
+        "jbs278/jbs278's Mutual Fund", 
+        "cdikes/CWD Investment Opportunity Mutual Fund", 
+        "f2tornado/F2 Energy Fund", 
+        "wdelong/Virtual Horizon", 
+        "wheslop/wilbur value fund", 
+        "jlnoyce/jlnoyce's Mutual Fund", 
+        "ghimes/Gerald Himes's Consumer Supplier", 
+        "pcrawford/Possibility Mutual Fund", 
+        "nathan7/chris mccomb's Mutual Fund", 
+        "jtmarlin82/JTMarlin Retail Fund", 
+        "briangravenhorst/Brian Arthur Gravenhorst's Mutual Fund", 
+        "rsrayve/Raving Growth Fund", 
+        "toby2210/Tobian 2210 Fund", 
+        "lbemont/JLB Discovery Fund", 
+        "kyths/Yoni's Fund", 
+        "tkolasch/tkolasch's Mutual Fund", 
+        "jdfalk/Consumer Stocks", 
+        "stan93/stan93's Growth fund", 
+        "jockster0/Rebound Fund", 
+        "ccottrell/Chris's Mutual Fund", 
+        "smyers7/smyers7's Mutual Fund", 
+        "rbambarger/rbambarger's Mutual Fund", 
+        "jdockstader2/TOTAL JASON DOCKSTADER INDEX", 
+        "mliberati/mliberati's Mutual Fund", 
+        "mlyzan/Asset Protection Fund", 
+        "abraham_abe/abraham_abe's Mutual Fund 2", 
+        "renova/renova's Mutual Fund  3", 
+        "prophet_watcher/Prophet_Watcher's Mutual Fund", 
+        "mcancel/Mark C.'s Well Diversified Fund", 
+        "dclark1/Growth and Earnings Fund", 
+        "dnolten/Nolten Growth Fund", 
+        "mwerres/Solar Mutual Fund", 
+        "macmanc/Netology SmartFI", 
+        "jdfalk/Consumer Growth Fund", 
+        "cassdog/TB ValGro", 
+        "econsux/econsux's Mutual Fund", 
+        "iq642/Addictive & Bad For You", 
+        "mrs._tac/mrs. tac's Mutual Fund", 
+        "mgoldner/mgoldner' general Mutual Fund", 
+        "cfisk/Stock Challenge", 
+        "fvarrati/52 Week High Fund", 
+        "cbedevian/S&P500", 
+        "sparker1/The New School", 
+        "gstemerman/The Fund", 
+        "stan93/Stockshakers Agr. Value Mutual Fund", 
+        "ccurtis/mo fund", 
+        "jwise/Wise Aggressive Retail Fund", 
+        "jstory/jstory's tax advantaged fund", 
+        "jdfalk/06/17/2002", 
+        "ewilson1/99-99 fund", 
+        "renova/renova's Mutual Fund", 
+        "kcharpentier/Work'em Silly", 
+        "deadsox/Sin Fund", 
+        "DELETE_mrleach_40619054/Team #5 Interest Idiots", 
+        "acommodity/Headline News Mutual Fund", 
+        "rsavoie/rsavoie's Mutual Fund", 
+        "qrheaume/Q-T  Food Fund", 
+        "zpryor/american vices  MUTUAL FUND", 
+        "mvrh1/Briefings", 
+        "jolson88/Blended Securities", 
+        "mparris/Michael Parris's Mutual Fund", 
+        "jbsloan/jbsloan's Mutual Fund", 
+        "ewilson1/wvf", 
+        "ttindall/New Highs", 
+        "cgraydon/Kudzu Aggressive Growth", 
+        "amish26/Golf Fund", 
+        "helliviknow/Helliviknow All-sector Fund", 
+        "rnice/rnice's S & P Momentum Fund", 
+        "mvrh1/The IBD New High Fund", 
+        "matthewbender/matthewbender's Mutual Fund", 
+        "dns2/david scott's Mutual Fund", 
+        "lobran/Cody's Value Fund", 
+        "hector/dover value fund", 
+        "cadillacman/cadillacman's Mutual Fund", 
+        "wova4/Unpopular fund", 
+        "spongebob/spongebob's Mutual Fund", 
+        "madubil/Red Hot Retailing Fund", 
+        "grumpypole_delist/S & P (based) Mixed Fund", 
+        "rcarlson2/Rob Carlson's Mutual Fund", 
+        "kyths/New Fund", 
+        "bwatkins/Small times,big money", 
+        "ewilson1/franchise fund", 
+        "ccaron/ccaron's Mutual Fund", 
+        "tbauman/tbauman's Mutual Fund", 
+        "peopleteam/peopleteam's Mutual Fund", 
+        "stan93/Stans Stockshakers Diversified Mutual Fund ", 
+        "jereln/Jerel Novick's Mutual Fund", 
+        "dnolten/Nolten Strategic Fund ", 
+        "lepori/lepori's Mutual Fund", 
+        "mkulcsar/Food Fund", 
+        "ratman44/Ratman Growth and Income Fund", 
+        "panther/S&P500 Outperformance fund", 
+        "sbf30/SBF30 Value Mutual Fund", 
+        "regent/Regent Mutual Fund", 
+        "jsitte/Sitte Consumer Staples", 
+        "mvrh1/IBD New High Fund 2", 
+        "kyths/Yonis fund", 
+        "grumpypole_delist/S & P Mixture of Sectors", 
+        "glim888/Lim Growth Fund", 
+        "jcurry1/jcurry1's Mutual Fund", 
+        "kyths/Penny fund", 
+        "sduffy/The Foodservice Fund", 
+        "carne68/carne68's Mutual Fund", 
+        "thefletch/The Fletcher Eat Out Fund", 
+        "juser/Money Maker Value Fund", 
+        "acanete/Bow Wow Plus", 
+        "sparker1/Susan Parker's Mutual Fund", 
+        "tkingsler/tkingsler's Mutual Fund", 
+        "pgodwin/pgodwin's Mutual Fund", 
+        "acanete/FlexCap Growth Fund", 
+        "rklesko/Klesko's Value Fund", 
+        "khenzel/khenzel's Mutual Fund", 
+        "boutros/boutros's Mutual Fund", 
+        "kmiller/Miller Mutual Fund", 
+        "stkgameaag/Gill Fund", 
+        "hrick/Harrison Food Fund", 
+        "jmorrnh/jmorrnh's Mutual Fund", 
+        "leftylemas/PE 30 Mutual Fund", 
+        "hmc2003/hmc2003's Mutual Fund", 
+        "rwendys/rwendys's Mutual Fund", 
+        "ngreen/ngreen's Mutual Fund", 
+        "greatajax/Great Ajax Achaean Fund", 
+        "shealey/Fund-a-mentals of The Griz", 
+        "dchun/Westside Opportunity Fund", 
+        "berenonehanded/B1H's Thtfl", 
+        "kgrossman/kgrossman's Mutual Fund 1", 
+        "cstafford/Cstafford's Restaurant Fund", 
+        "kperkins/Growth fund", 
+        "gwalk316/GW's Fun Fund", 
+        "alanlast/Hot Pick Fund", 
+        "runjt/Other Side of the Bubble", 
+        "ar2710/ar2710's Mutual Fund", 
+        "bwatkins/BW Food Fund", 
+        "cpaugh/Equity Growth", 
+        "nsultan/Hassan Mutual Fund", 
+        "dschoo/dschoo's Mutual Fund", 
+        "kpduty/kpduty's Mutual Fund", 
+        "fmoslehi/Technical Fund", 
+        "mcfadden2002/Sultans of Stock", 
+        "orlot/orlot's Mutual Fund", 
+        "wbks25/wbks25's Mutual Fund", 
+        "gemfire/Halofire Techno Fund", 
+        "ewilson1/spp fund", 
+        "g00f0ff/D Jr.", 
+        "fmagazino/fmagazino's all weather fund", 
+        "jheller/LTBF", 
+        "aavila/Maverick Fund", 
+        "msfood/msfood's Mutual Fund", 
+        "americandream/AD50V", 
+        "nmink/FROSTLIST/AFGSCREEN", 
+        "dncin16/dncin16's Mutual Fund", 
+        "DELETE_mrleach_40619054/Team #6 Wall Street Wizards", 
+        "ki1park/Ki Priority Fund 2", 
+        "jheller/The Heller Fund", 
+        "jrollo/Great Service Fund", 
+        "jbauman/Loser Fund", 
+        "kkoutny/kkoutny's Mutual Fund", 
+        "rtoic/rtoic's young investors fund", 
+        "zpryor/All About Eating", 
+        "jtmarlin82/jtmarlin82's High Risk Fund", 
+        "berenonehanded/berenonehandedMFund", 
+        "craimondi/The Raimondi Fund", 
+        "mfrederick/Rocky Mountain Value Fund", 
+        "sexton/Rich Growth Fund", 
+        "finnstones/FRIENDS OF SEC", 
+        "jbatzer/Jbatzer Kids Fund", 
+        "scruffstock/scruffstock's Mutual Fund", 
+        "agupta19/The Male Fund of America", 
+        "jmacaula/jmacaula's Mutual Fund", 
+        "enoyes/enoyes's Mutual Fund", 
+        "fmagazino/fmagazino's dividend fund", 
+        "4goldeagles/Gucci's Mutual Fund", 
+        "jcesare/jcesare' value fund", 
+        "jsteinhoff/jsteinhoff's Mutual Fund", 
+        "tglover/tglover's Mutual Fund2", 
+        "hutchedj/Hutcheson Stock Investments", 
+        "nc020872/Slowly but Surely", 
+        "brjones/The Renaissance Man's Fund", 
+        "drahkola/Phoenix fund", 
+        "ribarra/R m f Turtle Fund", 
+        "slegar/Christmas Mutual Fund", 
+        "cchamblee/plantation", 
+        "batman42/batman42's Mutual Fund", 
+        "plennon/Div Fund", 
+        "cpaugh/Turnaround Fund", 
+        "aavila/Moderate Investor ", 
+        "mboisseau/Innovative Sphere", 
+        "jkarastamatis/Old People Fund", 
+        "qarel/Qarel's Earnings Growth Fund", 
+        "augeross/Orion ", 
+        "mw9033/The DEL Growth Fund", 
+        "jmorrnh/jmorrnh's Mutual Fund", 
+        "invest2003/Troy Lauterbach", 
+        "fmagazino/fmagazino's core equity", 
+        "cbarrett2/cbarrett2's Mutual Fund", 
+        "dsk235/dsk235's Mutual Fund", 
+        "cmcdonald1/cmcdonald1's Mutual Fund", 
+        "acantrell/acantrell's Mutual Fund", 
+        "stellar/stellar's Mutual Fund", 
+        "ibutler/IB Value Fund", 
+        "rwilberg/rwilberg's Mutual Fund", 
+        "spike021/spike021's Wages of Sin", 
+        "gsaab/The Saab Fund", 
+        "jheller/The Consumer Fund", 
+        "2_plus_2/Dash Riprock Entertainment", 
+        "gfontana/Market", 
+        "emproulx/North American Leaders Portfolio", 
+        "swvccio/3", 
+        "kperry2/kperry2's Mutual Fund", 
+        "inverjach/inverjach's Mutual Fund", 
+        "nslaughter/The Diversified Ideas Fund", 
+        "jesusm007/jesusm007's Mutual Fund", 
+        "clifschutz/Low Pain", 
+        "rubberducky13/rubberducky13's Mutual Fund", 
+        "pewi160/pewi160's Mutual Fund", 
+        "swterp/swterp's Mutual Fund", 
+        "sportgirl/sportgirl's Mutual Fund", 
+        "kayahv/kayahv's Mutual Fund", 
+        "jgervais1/Mad Cow Growth Fund", 
+        "greko/Greko's Mutual Fund", 
+        "mdenotter/mdenotter's Mutual Fund", 
+        "glover/glover's Mutual Fund", 
+        "koop21/koop21's Mutual Fund", 
+        "dlundgren/Stephanopolous Fund", 
+        "weather1_99/Brian Michael Smith's Mutual Fund", 
+        "tkayahv/tkayahv's Mutual Fund", 
+        "DELETED_veleza_-1675826548/veleza's Mutual Fund", 
+        "10007729/Best in the Biz Mutual Fund", 
+        "lmayhew/lmayhew Restaraunt Stock", 
+        "DELETED_taeyrake_-1675826557/Taeyrake's Mutual Fund", 
+        "jalisha/jalisha's Mutual Fund", 
+        "salemphreak/The Human Fund", 
+        "celestial_dreamer/celestial_dreamer's Mutual Fund", 
+        "slegar/Slegar's Mutual Fund", 
+        "larryjthompson/LT's Better S&P 500 ", 
+        "DELETED_patraym_-1675826551/patraym's Mutual Fund", 
+        "vernontkay/vernontkay's Mutual Fund", 
+        "averyked/averyked's Mutual Fund", 
+        "DELETED_meat_-1675826554/meat's Mutual Fund", 
+        "averyked/averyked's Mutual Fund", 
+        "eric_l/eric_l's Mutual Fund", 
+        "DELETED_frozen_soda_-1675826546/frozen_soda's Mutual Fund", 
+        "dlundgren/Steph's Fund", 
+        "jhouse1/jhouse1's Sin Fund", 
+        "tvernon/tvernon's Mutual Fund", 
+        "vitaminc6779/Shopping Hurts", 
+        "gnelson/Smoke and Mirrors Fund", 
+        "averyked/averyked's Mutual Fund", 
+        "owens100/owens100's Mutual Fund", 
+        "msgbrian/msgbrian's Mutual Fund", 
+        "lildora/lildora's Sexy mom", 
+        "vandyfoxyfemmes/vandyfoxyfemmes's Mutual Fund", 
+        "jen42/Jen's Mutual Fund", 
+        "iniaslahsiv/iniaslahsiv's Mutual Fund", 
+        "joshpaul/Big Nerd", 
+        "jingram3/jingram3's Mutual Fund", 
+        "b_ballinnate/b_ballinnate's Mutual Fund", 
+        "jhayspe/JHays BCV", 
+        "jumpoff/jumpoff's Mutual Fund", 
+        "hquiroz/NEW AGE FUND", 
+        "vernonkay/vernonkay's Mutual Fund", 
+        "alejandro/alejandro's Mutual Fund", 
+        "cuz/cuz's Mutual Fund", 
+        "kdale/kdale's Mutual Fund", 
+        "whitaker/Pepsico.inc.", 
+        "ktown/ktown's Mutual Fund", 
+        "prophecy182/prophecy182's Mutual Fund", 
+        "wfi/wfi's Mutual Fund", 
+        "javy/Aeropostale, inc", 
+        "jay-z/jay-z's Mutual Fund", 
+        "soif147147/8974annie", 
+        "vincechan/The Value Contrarian Fund", 
+        "kargenzio/Value Mutual Fund", 
+        "mpeterso/mpeterso's Mutual Fund", 
+        "hiro2pso/hiro2pso's Mutual Fund", 
+        "blaze/blaze's Mutual Fund", 
+        "10007729/M.L. Slepian Mutual Fund", 
+        "smutchler/smutchler's Mutual Fund", 
+        "jonboy/jonboy's Mutual Fund", 
+        "alejandro/alejandro's Mutual Fund", 
+        "katsguy/katsguy's Mutual Fund", 
+        "schvonne/schvonne's Mutual Fund", 
+        "captaintoast/Funds of the Loon", 
+        "jordan/jordan's Mutual Fund", 
+        "javy/Kenneth Cole Productions Corp.", 
+        "jdrehmer/Joshua Drehmer's Mutual Fund", 
+        "dchabino/S&P High Yield Fund", 
+        "michael101/michael101's Mutual Fund", 
+        "larryjthompson/Larry Thompson's Sell All Mutual Fund", 
+        "quadtay/QuadTay Blue-Chip Index", 
+        "theuncle/Star Performance Fund", 
+        "rfaill/rfaill's Mutual Fund -- sort by rank", 
+        "juleesa/juleesa's Mutual Fund", 
+        "pso2hiro/pso2hiro's Mutual Fund", 
+        "qrheaume/Short Equity Fund ", 
+        "ma/ma's Mutual Fund", 
+        "bayleys1/bayleys1's Mutual Fund", 
+        "bmdevore/Michael's Mutual Fund", 
+        "stenz/Four by Four", 
+        "mhs/Band Mutual Fund", 
+        "fredeye/freds profits only", 
+        "buddy/The Buddy Fund", 
+        "DELETED_adidas_-1675826558/adidas's Mutual Fund", 
+        "mfredrickson/Solid State Mutual Fund", 
+        "jehfes/Jeff's Consumer Discretionary Up Fund", 
+        "hairejr/Haire Capital Management", 
+        "b_ballinnate/b_ballinnate's Mutual Fund", 
+        "tigger/tigger's Mutual Fund", 
+        "kcgreg/kcgreg's Mutual Fund", 
+        "isscheidt21/isscheidt21's Mutual Fund", 
+        "oldberry/Oldberry Value Fund", 
+        "trey/trey's Mutual Fund", 
+        "stanley15/Jimmy Fifty", 
+        "jrheaume/Short Bear Fund ", 
+        "gpenny437/shorty", 
+        "jennirocksthestock/jennirocksthestock's Mutual Fund", 
+        "biged/Biged's SHORTEX Fund", 
+        "xellenx/xellenx's fund", 
+        "aschaefer/Earnings Quality 4-30-2005", 
+        "ugotipws/ugotipws's Mutual Fund", 
+        "bigkennyjohnrich/bigkennyjohnrich's Mutual Fund", 
+        "rmuzingo/rmuzingo's Mutual Fund", 
+        "gdog477/NoF Mutual Fund", 
+        "2nd2none/CDS HIGH OGTANE FUND", 
+        "mmosley/Southlands Short Fund", 
+        "myswissbroker.com/MARCUARD  GROUP (ZURICH) SHORTER", 
+        "gdog477/S2", 
+        "gsourek/INDEED-SHORT", 
+        "abbyelizabeth/abbyelizabeth's Mutual Fund", 
+        "imirza/Imrans Good Food Fund", 
+        "mpollak/mpollak's Mutual Fund", 
+        "georgesdyer/georgesdyer's Mutual Fund", 
+        "lwilliams3/Short OpportunityFund ", 
+        "gwensills/gwensills's Mutual Fund", 
+        "marij/marij's Mutual Fund", 
+        "amyers/Trend Following Short Fund", 
+        "joshman1204/joshman1204's Mutual Fund", 
+        "nestor/nestor's Mutual Fund", 
+        "rcalhou/The Good Guys Fund", 
+        "icprofit2000/Profit VI  Mutual Fund", 
+        "trey/trey's Mutual Fund", 
+        "jsbaker/JSB Detritus Fund", 
+        "donquixote/short selling Mutual Fund", 
+        "dkatie/dkatie's Mutual Fund", 
+        "pnutgllry/pnutgllry's Short Fund", 
+        "brittanyiscool/brittanyiscool's Mutual Fund", 
+        "nan271/nan271's Mutual Fund", 
+        "cowdude/Cowdude's Short Fund B", 
+        "jay-z/jay-z's Mutual Fund", 
+        "jterrill07/jterrill07's Mutual Fund", 
+        "bsteele/bsteele's Mutual Fund", 
+        "extesy/extesy's Mutual Fund", 
+        "jds02/Short Fund", 
+        "timingizeverything/Redy 2 Short  Mutual Fund", 
+        "matman/matman's Mutual Fund", 
+        "ferrellpig/Ferrellpig's Mutual Fund", 
+        "bgitarts/100% Fundamental", 
+        "zgohusa55/zgohusa55's Mutual Fund", 
+        "taxidiotis/Taxidiotis ", 
+        "canuckgoalie/Canuck Blue Chip", 
+        "sabeth/Get Shorty", 
+        "gdog477/S1 ", 
+        "stockguru/Finirvana Ganges Fund", 
+        "wahoobird/Wahoo Get Shorty ", 
+        "matscott/MSS Capital Management ", 
+        "gearcheck/gearcheck's Mutual Fund", 
+        "icprofit2000/icprofit2000 VIX Mutual Fund", 
+        "bedromeyez/Dollars Like Oprah", 
+        "gdog477/S3", 
+        "mookeyser/Mookeyser's Skyscraper Nosebleed Fund", 
+        "dishwasher/n/a", 
+        "johnnybravo287/johnnybravo287's Mutual Fund", 
+        "mouse/mouse's Mutual Fund", 
+        "jersey_boi/jersey_boi's Mutual Fund", 
+        "mcfadden4/Team3", 
+        "zgarabedian/zgarabedian's Mutual Fund", 
+        "mac1990/mac1990's Mutual Fund", 
+        "hanusje/hanusje's Mutual Fund", 
+        "cbreckles/Breck Long Term Growth", 
+        "sokolandrey/CAPITAL GAIN", 
+        "DELETED_rackers_-321422222/rackers's Mutual Fund", 
+        "mattwho60/mattwho60's Mutual Fund", 
+        "ddougherty2/ddougherty2's Mutual Fund", 
+        "jjmillington@aol.com/jjmillington@aol.com's Mutual Fund", 
+        "tomdelude23/tomdelude23's Mutual Fund", 
+        "mrefranklin/Batura Mutual Fund", 
+        "cbhogal/cbhogal's Mutual Fund-F", 
+        "ronhulting/ronhulting's Mutual Fund8", 
+        "lisa_villeneuve/lisa_villeneuve's Mutual Fund", 
+        "roscoejohnson/The Buck Stops Here", 
+        "kmbgroceries/kmbgroceries's Mutual Fund", 
+        "executivex/Uma Mutual Fund", 
+        "littlefelloweighth/littlefelloweighth's Mutual Fund", 
+        "2nd2none/CDS HOSPITALITY SERVICES GROWTH FUND", 
+        "gillojello/gillojello's Mutual Fund S", 
+        "mac1990/mac1990's Mutual Fund", 
+        "mcfadden1/11 Incredible Investors", 
+        "sokolandrey/NYS GS", 
+        "goofy/Goofy's Number 1 Mutual Fund ", 
+        "dimas/Dima's Long Mutual Fund", 
+        "fdutton/fdshort", 
+        "johnnylaw/johnnylaw's Mutual Fund", 
+        "tricky_sue/Cheapskate fund", 
+        "maschenbrener1/maschenbrener1's Mutual Fund", 
+        "milkrate/Energy Fund II", 
+        "scrooge17/scrooge17's Mutual Fund", 
+        "texhh11/Tex Long Only Fund", 
+        "eugeneg/eugeneg's Short Fund", 
+        "mpatterson2/Katie", 
+        "byrnes_for_president/byrnes_for_president's Mutual Fund", 
+        "ilanrach/Passing Time", 
+        "johnyke/johnyke's Mutual Fund", 
+        "jdjuly5/Alpha Mid", 
+        "gmantica/Montigo Fund", 
+        "bluedevil/Let's Go Short!", 
+        "DELETED_jakerosser1_2010022609390001/Partners Fund", 
+        "phreaxer/phreaxer's Mutual Fund", 
+        "nicholda/Nicholas Golden Bear Fund", 
+        "xxlilrican314xx/xxlilrican314xx's Mutual Fund", 
+        "nstar/nstar's Mutual Fund", 
+        "cowdude/Cowdude's Short Fund A", 
+        "adamp2/adamp2's Mutual Fund", 
+        "nan271/nan271's Mutual Fund", 
+        "nrablicki/Barra Growth Select", 
+        "jbetz/Platinum Dartboard Fund", 
+        "gmantica/Penn Fund", 
+        "doncarrmac/Don Mac's SHORT Mutual Fund", 
+        "dzeno/dzeno's Mutual Fund", 
+        "frrank/frrank's Mutual Fund", 
+        "twc-online/twc-online's Short Mutual Fund", 
+        "gallazinma/gallazinma's Mutual Fund", 
+        "silke/silke's Mutual Fund", 
+        "bradywahl/consumer", 
+        "hkankit/Short that shit", 
+        "peter.lu/Growth", 
+        "taxidiotis/Voyager 2010", 
+        "yelimati/yelimati's Short Fund", 
+        "jonesm06/jonesm06's Mutual Fund", 
+        "headachelcd/Watch List", 
+        "sony88/sony88's Mutual Fund", 
+        "singh99/short singh99's Mutual Fund", 
+        "gobig/gobig's Mutual Fund", 
+        "xxlilrican314xx/xxlilrican314xx's Mutual Fund", 
+        "kolokolu/kolokolu's random Fund", 
+        "gmess/Quantitative Winners Relative Strength", 
+        "joebell42/joebell42's Mutual Fund", 
+        "ritaverdi/ritaverdi's Mutual Fund", 
+        "tstollen/tstollen's Mutual Fund", 
+        "kirro8/kirro8's Mutual Fund", 
+        "nan271/nan271's Mutual Fund", 
+        "ggarciaph/ggarciaph's Mutual Fund", 
+        "kimyoungsub/kimyoungsub's Mutual Fund", 
+        "champagnem/Kronos", 
+        "bgallthat/bgallthat's Mutual Fund", 
+        "vagadragon/Power S&P500 Hedged", 
+        "bright_ideas/bright_ideas's Mutual Fund", 
+        "us_desk/US 2006 1H", 
+        "caseydixon/Casey's Health Fund", 
+        "finance_ul/finance_ul's Mutual Fund", 
+        "bzionts/bzionts's short fund", 
+        "warrenkerkorian/Badgerfantastic", 
+        "ablechartist/AbleChartist Larger-Cap", 
+        "dannsfw/Bee Thousand Fund", 
+        "globex/LPH02", 
+        "2nd2none/CDS GLOBAL FUND 1", 
+        "jhageman/Louisville Short Opportunities", 
+        "dtoth/ETF TRACER FUND", 
+        "markd001/markd001's Mutual Fund", 
+        "elineke89/elineke89's Mutual Fund", 
+        "kleuban/kleuban's Mutual Fund", 
+        "fabio/Fabio Serra's Mutual Fund", 
+        "dannsfw/Saint-Pierre Value Mutual Fund", 
+        "vel007/vel007's Mutual Fund", 
+        "spartan91fws/spartan91fws's Mutual Fund", 
+        "jmzuidema/Black Stallion Fund", 
+        "msnow/msnow's Mutual Fund", 
+        "ellen1/ellen1's Mutual Fund", 
+        "dzeno/dzeno's Mutual Fund", 
+        "texhh11/Long Mutual Fund II", 
+        "patricia/patricia's Mutual Fund", 
+        "rgonzalez846/rgonzalez846's Mutual Fund", 
+        "alder/Alder Weighted Passive", 
+        "rdm/rdm's Mutual Fund", 
+        "gvan_arkel/Skewed Left", 
+        "bladerunner5/bladerunner5's Mutual Fund", 
+        "waukfund/Waukfund Value Trust", 
+        "2nd2none/CDS INDUSTRIAL FUND", 
+        "engjim/Hardy River Asset Management 2", 
+        "2nd2none/2nd2none's Mutual Fund", 
+        "kanishk/kanishk's Mutual Fund", 
+        "qrheaume/Short ETF Fund ", 
+        "kcavero321/kcavero321's Mutual Fund", 
+        "lotus/lotus's Short Fund", 
+        "overlords/Overlords's Short Fund", 
+        "ninouch/ninouch's Mutual Fund", 
+        "jonsbeck/JSB Multi-Strategy", 
+        "rsparks/The Sparks Fund", 
+        "kgreen/Kevin Green's Mutual Fund", 
+        "archstanton/archstanton's Mutual Fund", 
+        "2nd2none/CDS GROWTH FUND 2", 
+        "bright_ideas/bright_ideas's Mutual Fund", 
+        "darryl_buchanan/Darryl's Short Fund", 
+        "chazears/Sin Holdings Fund", 
+        "tvodden/tvodden's Mutual Fund", 
+        "marketsaint/marketsaint's Magic Mystery Fund", 
+        "mtheory/Red List", 
+        "bvan_hauer/The Shoooortttst Fund", 
+        "oduvall/Onnie's Utah based companies", 
+        "alder/Alder Equal Passive", 
+        "zyyk/ZyyK's Mutual Fund", 
+        "cds_hott_property/cds_hott_property's Mutual Fund", 
+        "castelli1961/Aventine Mutual Fund", 
+        "nljam23/First Fund", 
+        "oumarou/oumarou's Mutual Fund", 
+        "alvisc2002/Venture Co.", 
+        "mjetpax/mjetpax's Mutual Fund", 
+        "mdieroff/mdieroff's Mutual Fund", 
+        "manny732/manny732's Mutual Fund", 
+        "borischai/borischai's Mutual Fund", 
+        "kaptain_kev/KISS", 
+        "dmailloux/dmailloux's Mutual Fund", 
+        "jaml311/Jamals Practice Investmens", 
+        "contrariantek/Contrarian Technical Index Fund", 
+        "beckyjorch/beckyjorch's Mutual Fund", 
+        "patricia/patricia's Mutual Fund", 
+        "sarahb/Canadian msn street globe roc macd ema 20 adx", 
+        "zikanov/Zikanov's Mutual Fund", 
+        "george900800/george900800's Mutual Fund", 
+        "katelyn17/katelyn17's Mutual Fund", 
+        "lionelbee/lionelbee's Mutual Fund", 
+        "pycroft/pycroft's new hope", 
+        "ledio/ledio's Mutual Fund", 
+        "rceballo704/rceballo704's Mutual Fund", 
+        "nadajamal/nadajamal's Mutual Fund", 
+        "pkhoury2/pkhoury2's Mutual Fund", 
+        "awandererscry/Shi's Mutual Fund", 
+        "chaos72/chaos72's Mutual Fund", 
+        "fridays/fridays's rother stocks", 
+        "gdemers/Gilles Demers' Fund", 
+        "george900800/george900800's Mutual Fund", 
+        "gchau/gchau's Fund #1", 
+        "rbniziak/rbniziak's Mutual Fund", 
+        "marty6543/martys Mutual Fund", 
+        "atolylica/atolylica's Mutual Fund", 
+        "honeycomb/Arizona Mutual Fund", 
+        "kis_ent/kis_ent's Mutual Fund", 
+        "obarrt/obarrt's Mutual Fund", 
+        "jespinal195/jespinal195's Mutual Fund", 
+        "jimmyhoofa/Americans-are-fat-asses-fund", 
+        "jeffgao/11/05upper 123 tr growth", 
+        "castaways2006/5 year castaways", 
+        "cplfunds/cplfunds's Mutual Fund", 
+        "haslepat/Haze Short Fund", 
+        "ledio/slow cooker  mutual", 
+        "delvecc/delvecc's Mutual Fund", 
+        "josephkeenan/Keenan Activists Fund", 
+        "orionmethod/orionmethod's Mutual Fund", 
+        "dprice1/Short", 
+        "cturner/Turner Multinational Growth Fund", 
+        "ebasalyga/The Hot Potato Fund", 
+        "johnnys_jar/johnnys_jar's Mutual Fund", 
+        "casteffens/3264-1", 
+        "nobbs/nobbs's Mutual Fund", 
+        "qcheng790/qcheng790's Mutual Fund", 
+        "timjmaxwell/Maxwell Alpha I", 
+        "cowboy_dickrdoo/Cowboy Dickrdoo's Rice & Beans Fund", 
+        "marshi/Marshi's Mutual Fund", 
+        "delraydella/Canada Index", 
+        "virtualstocks/Personnal Fund", 
+        "gregoryp/gregoryp's Mutual Fund", 
+        "long_investor/long_investor's Mutual Fund", 
+        "kgreen/Kevin Green's Mutual Fund", 
+        "zpryor/Zacks IPO Fund", 
+        "kcicero/Aurelius", 
+        "mciganda/mciganda's Mutual Fund", 
+        "castaways2006/2007 B-Sides", 
+        "cfalcon/CFalcon's Redi2Roc ", 
+        "nch/Chikhachev Hedge Fund", 
+        "chevro/CANADIAN FIRST", 
+        "nch/NC Hedge fund", 
+        "rgeraci2/RAG Mutual Fund", 
+        "rexluv/rexluv's Mutual Fund", 
+        "joshhill1978/joshhill1978's Mutual Fund", 
+        "money_bags/money_bags's Mutual Fund", 
+        "alan_goh/6688", 
+        "fabio/QuantFundFS", 
+        "hedger/Amsterdam Partners", 
+        "commtrader7/commtrader7's Mutual Fund", 
+        "vagadragon/Power S&P500 Fund", 
+        "hbeceiro/hbeceiro's Mutual Fund", 
+        "johnny5xxx/Bernardi Fund", 
+        "sriramve/Bearish barchart", 
+        "zms_reyes/zms_reyes's Mutual Fund", 
+        "rye419/rye419's First Mutual Fund", 
+        "easyriders/Sabrina", 
+        "seperry/seperry's Mutual Fund", 
+        "dlee11/Davidly Short Fund", 
+        "yrik/Short", 
+        "george900800/george900800's Mutual Fund", 
+        "snickerson/SN Retail and Consumer", 
+        "ssleduong/ssleduong's Mutual Fund", 
+        "mkhari/Top100 S&P500", 
+        "skydaemon/SKYL1", 
+        "mec57/mec57's Mutual Fund", 
+        "efx/EFX's Tactical Fund", 
+        "fmoslehi/fmoslehi's Mutual Fund", 
+        "norando/Norando's Consumer Discretionary Fund", 
+        "wesjohnson/wesjohnson's Mutual Fund", 
+        "shuter_71/shuter_71's Value Fund", 
+        "gazelessstar/gazelessstar's Mutual Fund", 
+        "kpries/Kendra's Mutual Fund", 
+        "gagnom1/Michelle's MF", 
+        "englshjms/englshjms's Mutual Fund", 
+        "oumarou/oumarou's Mutual Fund", 
+        "balgacs/New All Time Highs", 
+        "takara/TAKARA`s CEO Bad Stars Mutual Fund", 
+        "lmroberts/lmroberts's Mutual Fund", 
+        "dylan007/Dylan's Mutual Fund", 
+        "renetrudel/Corallium Large Cap Value", 
+        "jarvis_hills/stavon", 
+        "volodya/volodya's short fund 5", 
+        "yofromcanada/Canadian", 
+        "tonytest/Mechanical Screen", 
+        "pycroft/Pycroftomaniac", 
+        "reveille/Reveille's Mutual Fund2", 
+        "kbookman/Short 1 week top ETF > 500K and close friday", 
+        "thrillhouse/Thrillhouse's Mutual Fund", 
+        "austinruby/AJR Fund", 
+        "jarvis_hills/FINNCIAL", 
+        "balgacs/All-Time Highs", 
+        "bogie/Value Screen Fund 1", 
+        "khangarot/Growth Investor-1", 
+        "ja491114/ja491114's Mutual Fund", 
+        "varian/HARMONY", 
+        "kathvdg/kathvdg's Mutual Fund", 
+        "brisebo/brisebo's Mutual Fund", 
+        "apreuss/axel preuss's Mutual Fund", 
+        "stavon/feed", 
+        "destinyfaith/freedom", 
+        "stavon/DAYTRADER", 
+        "gustrot/gustrot's consumer", 
+        "rocketeer/rocketeer's Mutual Fund", 
+        "jameslast/WB DIV FUND", 
+        "elmoon/Elmoon's Mutual Fund", 
+        "ironmask/ironmask's Mutual Fund", 
+        "abuckfifty/ABF's Staples Fund", 
+        "bogie/Value Screen Fund 3", 
+        "orange/Lowrey Fund: Beige", 
+        "hodgepodge/Hodgepodge's Fund", 
+        "kyotoshogi/Kyotoshogi's P/E Relative Fund", 
+        "pnayyar/pnayyar's Mutual Fund 2009", 
+        "gazelessstar/gazelessstar's Mutual Fund", 
+        "cgraydon/Kudzu Short Fund", 
+        "theking/theking's Mutual Fund", 
+        "cchin/Piglet's Vision", 
+        "raitpngman/RPM Leaders Fund", 
+        "nealiam/Gilles", 
+        "aceman61/otter whisper fund", 
+        "ljoneill/Mid Cap Growth and Momentum", 
+        "jacobmeyer/ADR Low Vol", 
+        "jarvis_hills/TEST", 
+        "rthomson/Canada, Eh!", 
+        "christhejack/First Test fund", 
+        "lessloss/lessloss's Mutual Fund", 
+        "tlcholdings/tlcholdings's Mutual Fund", 
+        "alastairc/alastair's Badass Fund", 
+        "pianomanwest/PianomanWest's Mutual Fund", 
+        "animule85/aic Mutual Fund", 
+        "stlcathy/CEL Conservative Income", 
+        "rraven69/Raven Small-to-Mid Cap", 
+        "agjvt/agjvt's Mutual Fund", 
+        "longshort/LongShort's Synthetic Market Neutral Fund", 
+        "tlomonaco/TLomonaco's Awesome Fund", 
+        "yofromcanada/yofromcanada's Mutual Fund", 
+        "gbader/gbader's Mutual Fund", 
+        "mdista/Michael Diversified Growth Mutual Fund", 
+        "mcumberbatch/mcumberbatch's Mutual Fund", 
+        "polarautumn/polarautumn's Mutual Fund", 
+        "alfiechwa/alfiechwa's Mutual Fund", 
+        "adrillis/adrillis's Mutual Fund", 
+        "ajner/Mid Cap Growth", 
+        "jpmgator/Global Select Fund", 
+        "stavon/energy", 
+        "wchen2003/wchen2006", 
+        "stockdocx99/Mike's short test", 
+        "mhutch/MH's SFFS Stock Market Challenge Fund", 
+        "ljoneill/Large Cap Growth Momentum", 
+        "stockring/StockRing Services Fund", 
+        "cjaver/Corey's Mutual Fund"
+    ); 
+    NOTES = " "; 
+    PAYOUT = SHARES; 
+    SYMBOL = QSR; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (02-23 17:33:04.990) SUCCESS
+D: (02-23 17:33:04.990) cahelper finished 2015-02-23 17:33:04 -0500
+
+
+check the database
+
+select distinct stockkey from mstockalias where symbol='BKW';
+> Row 1:
+>   STOCKKEY = X'071d66754fe25328c0a80146'
+select * from mstockalias where STOCKKEY = X'071d66754fe25328c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2012-06-20 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Justice Delaware Holdco Inc
+>     PRIMARYKEY = X'071e66754fe25328c0a80146'
+>       STOCKKEY = X'071d66754fe25328c0a80146'
+>         SYMBOL = BKW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = UU
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 121220107
+>           DATE = TIMESTAMP '2012-06-20 00:00:01.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Burger King Worldwide Inc
+>     PRIMARYKEY = X'6b2c66954fe2536cc0a80146'
+>       STOCKKEY = X'071d66754fe25328c0a80146'
+>         SYMBOL = BKW
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = UU
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 121220107
+>           DATE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Burger King Worldwide Inc
+>     PRIMARYKEY = X'c83a733e54ebaa30c0a86f92'
+>       STOCKKEY = X'071d66754fe25328c0a80146'
+>         SYMBOL = BKW
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = UU
+select * from mcorporateaction where aliaskey=X'c83a733e54ebaa30c0a86f92';
+> Row 1:
+>              ALIASKEY = X'c83a733e54ebaa30c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|BKW  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|2|CP_CASH|0.000000|CP_CASH_FLAG|N.A.|CP_SH|0.990000|CP_SH_FLAG|1|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150223:052834
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = QSR     UN Equity
+>             BB_ISSUED = TIMESTAMP '2014-12-15 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = QSR
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-12-15 00:00:00.000000'
+>            PRIMARYKEY = X'6e5b733e54eba992c0a86f92'
+>               VERSION = NULL
+
+select count(*) from mticket where sourcekey=X'6e5b733e54eba992c0a86f92';
+> Row 1:
+>   _C001 = 1664.000000
+
+
+how about THI
+
+select distinct stockkey from mstockalias where symbol='THI';
+> Row 1:
+>   STOCKKEY = X'cdbd0e21390a5ed9c0a80116'
+> Row 2:
+>   STOCKKEY = X'0f0b00fc44653554c0a80146'
+
+there are two
+> Row 1:
+>   STOCKKEY = X'cdbd0e21390a5ed9c0a80116'
+select * from mstockalias where STOCKKEY = X'cdbd0e21390a5ed9c0a80116';
+delisted 
+> Row 2:
+>   STOCKKEY = X'0f0b00fc44653554c0a80146'
+select * from mstockalias where STOCKKEY = X'0f0b00fc44653554c0a80146';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88706M103
+>           DATE = TIMESTAMP '2006-03-24 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Tim Hortons Incorporated
+>     PRIMARYKEY = X'0f0c00fc44653554c0a80146'
+>       STOCKKEY = X'0f0b00fc44653554c0a80146'
+>         SYMBOL = THI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = MV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88706M103
+>           DATE = TIMESTAMP '2013-06-18 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Tim Hortons Incorporated
+>     PRIMARYKEY = X'a8df51f651c0e7c2c0a80146'
+>       STOCKKEY = X'0f0b00fc44653554c0a80146'
+>         SYMBOL = THI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = MV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 88706M103
+>           DATE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5b2f1d390a440bc0a8015c'
+>           NAME = Tim Hortons Incorporated
+>     PRIMARYKEY = X'b7200cc1548f79b9c0a86f92'
+>       STOCKKEY = X'0f0b00fc44653554c0a80146'
+>         SYMBOL = THI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 25301040
+>       STYLEKEY = MV
+select * from mcorporateaction where aliaskey=X'b7200cc1548f79b9c0a86f92';
+> Row 1:
+>              ALIASKEY = X'b7200cc1548f79b9c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|2|CP_TKR|BKW US|CP_NAME|Burger King Worldwide Inc|CP_ID_BB_COMP|31743979|CP_UNIT|Tim Hortons Inc|CP_TOT_AMT|13264.139648|CP_ACQUIS_TYP|3|CP_CASH|65.500000|CP_CASH_FLAG|1|CP_SH|0.802500|CP_SH_FLAG|1|CP_DEBT|1426.332031|CP_DEBT_FLAG|2|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|34.915390|CP_CUR_PREMIUM|0.421482|CP_PCT_OWNED|0.000000|CP_PCT_SOUGHT|100.000000|CP_UNSOLICITED|0|CP_DETAIL_FLAG|0|CP_CRNCY|CAD|CP_CASH_VAL|N.A.|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|14497.349609|CP_ADVISORS_NUM|6|CP_SH_FRACTIONAL|0|CP_ADVISORS|;2;6;3;1;Target Legal Adviser;1;Osler Hoskin Har, Wachtell Lipton;13;100.000000;1;Target Financial Adviser;1;Citi, RBC Capital Mkts;13;100.000000;1;Acquirer Legal Adviser;1;Davies Ward, Kirkland & Ellis, Paul Weiss;13;100.000000;1;Acquirer Financial Adviser;1;JP Morgan, Lazard Ltd, Wells Fargo;13;100.000000;1;Legal Adv to Target Financial;1;Skadden Arps, White & Case LLP;13;100.000000;1;Legal Adv to Acquirer Financia;1;Cravath Swaine;13;100.000000;|CP_ACQ_TKR|BKW US|CP_ACQ_ID_BB_GLOBAL|BBG003444577|CP_ACQ_ID_BB_GLOBAL_COMPANY|BBG00343Y601|CP_ACQ_ID_BB_SEC_NUM_DES|BKW|CP_ACQ_FEED_SOURCE|US|CP_TARGET_TKR|THI CN|CP_TARGET_ID_BB_GLOBAL|BBG000B9WJW5|CP_TARGET_ID_BB_GLOBAL_COMPANY|BBG001FL37D1|CP_TARGET_ID_BB_SEC_NUM_DES|THI|CP_TARGET_FEED_SOURCE|CN|CP_NOTES|FORMATION OF NEW HOLDCO UPON COMPLETION. ACQ'R SHRHLDRS TO REC .99 QSR US & .01 QSP-U CN SHRS/ACQ'R SHR.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 95325916
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 267242
+>        BB_COMPANYNAME = Tim Hortons Inc
+>           BB_CURRENCY = N.A.
+>          BB_EFFECTIVE = TIMESTAMP '2014-12-15 00:00:00.000000'
+>         BB_IDENTIFIER = THI     US Equity
+>             BB_ISSUED = TIMESTAMP '2014-08-26 00:00:00.000000'
+>          BB_NUMFIELDS = 39
+>              BB_RCODE = 0
+>              BB_SECID = THI
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2014-12-15 00:00:00.000000'
+>            PRIMARYKEY = X'386f0541548f76e7c0a86f92'
+>               VERSION = NULL
+cash and shares of BKW?
+65 cash and some shares of BKW
+
+select count(*) from mticket where sourcekey=X'386f0541548f76e7c0a86f92';
+> Row 1:
+>   _C001 = 1572.000000
+
+select distinct loginname from mmanager where primarykey in (select managerkey from mticket where sourcekey=X'386f0541548f76e7c0a86f92' ) order  by loginname;
+
+zyyk
+
+login as  this person
+your holdings of THI	
+ 	 	
+Fund	Shares	Value	Portion of fund
+ZMF	 0	 N/A	
+expand
+
+
+your holdings of BKW	
+ 	 	
+Fund	Shares	Value	Portion of fund
+SCDC	0	 $.00	 0.00%
+ 	 	[ Trade this stock ]
+
+LEDGER
+Date	Start	Change	End	Type
+Aug 28, 2014		500	500	Buy
+Dec 15, 2014	500	-500		Corporate Action   <---- 12/15/2014
+Total: 0
+ 	 	 
+ 	 	
+BUYS
+Close Date	Quantity	Commission	Net	Price
+Aug 28, 2014	500	$25.00	$14,994.60	$29.99
+
+check the SCDC ledger on 20141215   
+
+
+trades on December 15, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	BKW	500	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	QSR	495	$0.00	$0.00	$0.00	$0.00
+ 	 	 
+
+
+2/24/15 
+checking our site
+ALERT
+This stock has been delisted and is no longer available for trading on the Marketocracy web site. For more information, look at the corporate actions for this stock.
+BKW has been acquired	
+ 	 	
+Burger King Worldwide Inc [BKW] acquired by Restaurant Brands International Inc [QSR] on 2014-12-15 00:00:00.
+
+
+12/15/2014 - look at the ledger
+trades on December 15, 2014	
+ 	 	
+ 	 	
+Type	Symbol	Quantity	Price	Net	Commission	SEC Fee
+Sell	BKW	500	$0.00	$0.00	$0.00	$0.00
+Stock Dividend Buy	QSR	495	$0.00	$0.00	$0.00	$0.00
+
+member got 495/500= 0.99 shares 
+closing this out
+ 	 	

@@ -1,0 +1,780 @@
+date: 4/28/15 
+ticker: AWTI
+
+yahoo:  nothing
+quantum: nothing
+
+oursite:
+Symbol: AWTI 	Name: Air Water International Corp 	Price: $0.02
+Volume: 	Sector: Industrials 	Change:
+Short Volume: 0 	Style: Micro Cap : Value 	Market Cap:
+Avg Volume: 0 	 Exchange: OTCBB 	Today: 0.00%
+50 Day Ave: $0.00 	Year High: $0.00 	High:
+200 Day Ave: $0.00 	Year Low: $0.00 	Low:
+CAs
+Corporate Actions for Air Water International Corp 	  April 28, 2015
+left curve 	  symbol changes for AWTI 	right curve
+  	  	
+Effective Date 	Old Symbol 	New Symbol 	Description
+12 Jul 00 	WLGSE 	WLGS 	Change in the ticker (trading) symbol from WLGSE to WLGS
+04 Apr 02 	WLGS 	UCSI 	Change in the ticker (trading) symbol from WLGS to UCSI
+23 Aug 02 	UCSI 	UCSY 	Change in the ticker (trading) symbol from UCSI to UCSY
+21 Jan 03 	UCSY 	UCSYE 	Change in the ticker (trading) symbol from UCSY to UCSYE
+19 Feb 03 	UCSYE 	UCSY 	Change in the ticker (trading) symbol from UCSYE to UCSY
+02 Jun 04 	UCSY 	UCSYE 	Change in the ticker (trading) symbol from UCSY to UCSYE
+30 Jun 04 	UCSYE 	UCSY 	Change in the ticker (trading) symbol from UCSYE to UCSY
+19 Jan 07 	UCSY 	UCSYE 	Change in the ticker (trading) symbol from UCSY to UCSYE
+21 Feb 07 	UCSYE 	UCSY 	Change in the ticker (trading) symbol from UCSYE to UCSY
+02 Oct 07 	UCSY 	AWTI 	Change in the ticker (trading) symbol from UCSY to AWTI
+  	  	 
+left curve 	  CUSIP changes for AWTI 	right curve
+  	  	
+Effective Date 	Old CUSIP 	New CUSIP 	Description
+04 Apr 02 	98155Q109 	913427100 	Change in any of identification numbers (CUSIP) of a security from 98155Q109 to 913427100
+23 Aug 02 	913427100 	913427209 	Change in any of identification numbers (CUSIP) of a security from 913427100 to 913427209
+02 Oct 07 	913427209 	009229105 	Change in any of identification numbers (CUSIP) of a security from 913427209 to 009229105
+  	  	 
+left curve 	  name changes for AWTI 	right curve
+  	  	
+Effective Date 	Old Name 	New Name 	Description
+04 Apr 02 	World Wide Wireless Communic 	Universal Communication System 	Change in the name of issuer from World Wide Wireless Communic to Universal Communication System
+02 Oct 07 	Universal Communication System 	Air Water International Corp 	Change in the name of issuer from Universal Communication System to Air Water International Corp
+  	  	 
+left curve 	  listing changes for AWTI 	right curve
+  	  	
+Effective Date 	Old Exchange 	Old Cod 	New Exchange 	New Code 	Description
+Jun 30, 2004 	OTCBB 	UU 	OTCBB-OTHER 	UV 	Change in the exchange that UCSY trades on from OTCBB to OTCBB-OTHER
+Jul 26, 2004 	OTCBB-OTHER 	UV 	OTCBB 	UU 	Change in the exchange that UCSY trades on from OTCBB-OTHER to OTCBB
+Feb 21, 2007 	OTCBB 	UU 	OTCBB-OTHER 	UV 	Change in the exchange that UCSY trades on from OTCBB to OTCBB-OTHER
+  	  	 
+left curve 	  AWTI had some stock splits 	right curve
+  	  	
+Effective Date 	Terms 	Description
+23 Aug 02 	0.001000 : 1 	Split terms:0.001000 : 1
+02 Oct 07 	.004 : 1 	Split terms:.004 : 1
+
+
+Xignite: request error 
+MAdmin:  AWTI  04/28/2015
+
+database 
+select distinct stockkey from mstockalias where symbol= 'AWTI';  
+> Row 1:
+>   STOCKKEY = X'101006a739e8f833c0a801dc'
+
+select * from mstockalias where stockkey= X'101006a739e8f833c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WORLDWIDE WIRELESS COMMUNIC
+>     PRIMARYKEY = X'3d7d06a739e902b2c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = WLGS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-05-03 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = World Wide Wireless Comm Inc
+>     PRIMARYKEY = X'101106a739e8f833c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = WLGSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WORLDWIDE WIRELESS COMMUNIC
+>     PRIMARYKEY = X'c98138163cad168bc0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2002-04-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'f8a5049e3cad18b5c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427100
+>           DATE = TIMESTAMP '2002-04-04 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'25ec1f043cad192fc0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427100
+>           DATE = TIMESTAMP '2002-08-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'5f551bcb3d66eb69c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2002-08-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'04931d9e3d66edc3c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2003-01-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'5dbf742d3e2e0a29c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2003-02-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'98f321573e544580c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'eab14d8440be8693c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'3791691540e370a0c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'c9c6691b40e370c1c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'1a164ed84105b78cc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-01-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'49d065bb45b18627c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-02-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'9a4f24c545dd07a3c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-02-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'04b0279e45dd07ccc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'16343b134702f810c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Air Water International Corp
+>     PRIMARYKEY = X'0db33b2a4702f85fc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 19:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 009229105
+>           DATE = TIMESTAMP '2007-10-02 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Air Water International Corp
+>     PRIMARYKEY = X'd2523b354702f873c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+
+check for unapplied CAs in the database
+
+select * from mcorporateaction where aliaskey is null and BB_SECID='AWTI'  order by BB_EFFECTIVE;
+nothing
+
+check MAdmin
+Stock:Air Water International Corp  Symbol:AWTI
+Date: 04/28/2015
+
+8 users found
+
+1	bounty	edemuysere	edfrank	elumpkin	hkraatz	mmazzucato	moreno770	mypick	 	 
+
+
+
+last known price
+/Marketocracy/bin/dbtool lookup stock AWTI
+>>>> dbtool started at 2015-04-28 09:33:49 -0400
+stock: AWTI
+  PK       : [101006A739E8F833C0A801DC]
+  companyID: [14748]
+  symbol   : [AWTI]
+  name     : [Universal Communication System]
+  date     : [2007-10-02 00:00:00]
+  status   : [Active]
+stock: AWTI
+  PK       : [101006A739E8F833C0A801DC]
+  companyID: [14748]
+  symbol   : [AWTI]
+  name     : [Air Water International Corp]
+  date     : [2007-10-02 00:00:01]
+  status   : [Active]
+stock: AWTI
+  PK       : [101006A739E8F833C0A801DC]
+  companyID: [14748]
+  symbol   : [AWTI]
+  name     : [Air Water International Corp]
+  date     : [2007-10-02 00:00:02]
+  status   : [Active]
+<<<< dbtool finished at 2015-04-28 09:33:49 -0400
+
+
+/Marketocracy/bin/StockPriceFileChecker priceRunForCompanyID 14748
+2009-10-25 (Sun) [3219]: <WEEKEND>
+2009-10-26 (Mon) [3220]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-10-27 (Tue) [3221]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-10-28 (Wed) [3222]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-10-29 (Thu) [3223]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-10-30 (Fri) [3224]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-10-31 (Sat) [3225]: <WEEKEND>
+2009-11-01 (Sun) [3226]: <WEEKEND>
+2009-11-02 (Mon) [3227]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-11-03 (Tue) [3228]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+2009-11-04 (Wed) [3229]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+
+let's check for closed tickets with shares and see when the last one was
+select * from mticket where stockkey=X'101006a739e8f833c0a801dc' and shares > 0 order by closed; 
+> Row 264:
+>      ACTIONKEY = X'705c3ca1391e0270c0a8015c'
+>      BROKERKEY = X'2916149b39cd02dbc0a80117'
+>         CLOSED = TIMESTAMP '2008-09-25 11:46:00.000000'
+>        COMMENT = 
+>     COMMISSION = 34.642939
+>   CURRENTORDER = X'220e599d48b421d6c0a80133'
+>        LIFEKEY = X'70953ca1391e0272c0a8015c'
+>           LOCK = 0
+>     MANAGERKEY = X'ba6931df39dbcd38c0a80118'
+>       MODIFIED = NULL
+>            NET = 727.501711
+>         OPENED = TIMESTAMP '2008-08-26 11:31:34.000000'
+>          PRICE = 0.004971
+>     PRIMARYKEY = X'220c599d48b421d6c0a80133'
+>         SECFEE = 0.000000
+>         SHARES = 146358.000000
+>      STATUSKEY = X'708f3ca1391e0272c0a8015c'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>      SOURCEKEY = NULL
+>    NOTIFYEMAIL = NULL
+select loginname from mmanager where primarykey=X'ba6931df39dbcd38c0a80118'; 
+> Row 1:
+>   LOGINNAME = moreno770
+he's in our list from MAdmin
+last trade closed on 2008-09-25 
+
+final price in the database:
+2009-11-04 (Wed) [3229]: O:0.0200 H:0.0200 L:0.0200 C:0.0200 V:0 TSO:375131 A:0.0200 R:1.0000 CA:0.0000
+20091104  0.02 
+apply the acquis
+
+/Marketocracy/bin/cahelper -symbol  AWTI  -effective 20091104 -type ACQUIS -exchange UN -acqType 1 -acqCash 0.02 -acqShare 0 -purchaser AWTI   >& /Users/build/caout/AWTI.20150428.out
+AWTI.20150428.out
+stocks:~/caout build$ tail -f AWTI.20150428.out
+D: (04-28 09:37:27.649) Install Tiger valueForKey: hack for NSArray and NSSet
+D: (04-28 09:38:18.195) cahelper started on 2015-04-28 09:38:18 -0400
+
+D: (04-28 09:38:18.501) There are [0] open tickets for AWTI on 20091104
+D: (04-28 09:38:19.747) StockFileLoad Version:3.0
+D: (04-28 09:38:19.748) Loading Stock Data
+D: (04-28 09:39:49.236) Building Lookup Index
+D: (04-28 09:39:58.061) Finished Building Index
+D: (04-28 09:40:00.077) Finished Loading Stock Data
+D: (04-28 09:40:00.266) Connection to 192.168.111.172:6666 succeeded
+D: (04-28 09:40:01.810) {
+    "ACQUIRED_STOCK" = AWTI; 
+    "ACQUIRING_STOCK" = "AWTI_FIX"; 
+    AMOUNT = 0.02; 
+    APPLIED = 1; 
+    DATE = 20091104; 
+    NOTES = " "; 
+    PAYOUT = "CASH PER SHARE"; 
+    SYMBOL = "AWTI_FIX"; 
+    "TRANSACTION_TYPE" = REGULAR; 
+    TYPE = ACQUIS; 
+}
+D: (04-28 09:40:03.909) SUCCESS
+D: (04-28 09:40:03.910) cahelper finished 2015-04-28 09:40:03 -0400
+
+Check the results 
+select * from mstockalias where stockkey= X'101006a739e8f833c0a801dc';
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2000-07-12 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WORLDWIDE WIRELESS COMMUNIC
+>     PRIMARYKEY = X'3d7d06a739e902b2c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = WLGS
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 2:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2000-05-03 15:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = World Wide Wireless Comm Inc
+>     PRIMARYKEY = X'101106a739e8f833c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = WLGSE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 3:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2002-04-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = WORLDWIDE WIRELESS COMMUNIC
+>     PRIMARYKEY = X'c98138163cad168bc0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 4:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 98155Q109
+>           DATE = TIMESTAMP '2002-04-04 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'f8a5049e3cad18b5c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 5:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427100
+>           DATE = TIMESTAMP '2002-04-04 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'25ec1f043cad192fc0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 6:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427100
+>           DATE = TIMESTAMP '2002-08-23 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'5f551bcb3d66eb69c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 7:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2002-08-23 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'04931d9e3d66edc3c0a801dc'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 8:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2003-01-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'5dbf742d3e2e0a29c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 9:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2003-02-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'98f321573e544580c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 10:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'eab14d8440be8693c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 11:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-30 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'3791691540e370a0c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 12:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-06-30 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'c9c6691b40e370c1c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 13:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2004-07-26 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'1a164ed84105b78cc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 14:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-01-19 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'49d065bb45b18627c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSYE
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 15:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-02-21 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'9a4f24c545dd07a3c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 16:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-02-21 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'04b0279e45dd07ccc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = UCSY
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 17:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-10-02 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Universal Communication System
+>     PRIMARYKEY = X'16343b134702f810c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 18:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 913427209
+>           DATE = TIMESTAMP '2007-10-02 00:00:01.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Air Water International Corp
+>     PRIMARYKEY = X'0db33b2a4702f85fc0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 19:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 009229105
+>           DATE = TIMESTAMP '2007-10-02 00:00:02.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Air Water International Corp
+>     PRIMARYKEY = X'd2523b354702f873c0a80146'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+> Row 20:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 009229105
+>           DATE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>    EXCHANGEKEY = X'6325039339e7e926c0a801dc'
+>           NAME = Air Water International Corp
+>     PRIMARYKEY = X'078555c9553f8d4ac0a86f92'
+>       STOCKKEY = X'101006a739e8f833c0a801dc'
+>         SYMBOL = AWTI
+>      STATUSKEY = X'6347039339e7e927c0a801dc'  <--- good inactive status
+>      CSISYMBOL = NULL
+>        GICSKEY = 20106020
+>       STYLEKEY = XV
+
+
+select * from mcorporateaction where aliaskey = X'078555c9553f8d4ac0a86f92';
+> Row 1:
+>              ALIASKEY = X'078555c9553f8d4ac0a86f92'
+>   BB_ACTIONDICTIONARY = CP_FLAG|1|CP_TKR|AWTI  US|CP_NAME| |CP_ID_BB_COMP|7228015|CP_UNIT|N.A.|CP_TOT_AMT|N.A.|CP_TYP|1|CP_CASH|0.020000|CP_CASH_FLAG|1|CP_SH|0.000000|CP_SH_FLAG|N.A.|CP_DEBT|N.A.|CP_DEBT_FLAG|N.A.|CP_STAT|3|CP_DT_FLAG|0|CP_INIT_OFFER_PREMIUM|N.A.|CP_CUR_PREM|0.000000|CP_PCT_OWNED|N.A.|CP_PCT_SOUGHT|100.000000|CP_ACCT_METHOD|0|CP_UNSOLICITED|9|CP_DETAIL_FLAG|0|CP_CRNCY|USD|CP_CASH_VAL|0.000000|CP_ARBITRAGE_PROF|N.A.|CP_CUR_TOT_VAL|0.000000|CP_ADVISORS_NUM|0|CP_ADVISORS|N.A.|CP_NOTES| |
+>         BB_ACTIONFLAG = 0
+>           BB_ACTIONID = 20150428:093818
+>     BB_ACTIONMNEMONIC = ACQUIS
+>          BB_COMPANYID = 0
+>        BB_COMPANYNAME = 0
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2009-11-04 00:00:00.000000'
+>         BB_IDENTIFIER = AWTI_FIX     UN Equity
+>             BB_ISSUED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>          BB_NUMFIELDS = NULL
+>              BB_RCODE = 0
+>              BB_SECID = AWTI_FIX
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 0
+>            BB_UPDATED = TIMESTAMP '2009-11-04 00:00:00.000000'
+>            PRIMARYKEY = X'077f55c9553f8d4ac0a86f92'
+>               VERSION = NULL
+
+
+select count(*) from mticket where sourcekey = X'077f55c9553f8d4ac0a86f92';
+> Row 1:
+>   _C001 = 17.000000
+
+select fundkey from mposition where primarykey in (select positionkey from mtrade where ticketkey in (select primarykey from mticket where sourcekey=X'077f55c9553f8d4ac0a86f92'));
+17 fundkeys
+save to CA issues AWTI fundkeys.txt
+
+check MAdmin
+AWTI  04/28/2015  still see them
+
+check the member elumpkin
+your holdings of AWTI 	right curve
+  	  	
+Fund 	Shares 	Value 	Portion of fund
+PLG 	0 	N/A 	N/A
+SPAM 	0 	$.00 	0.00%   <--- check this
+
+LEDGER
+Date 	Start 	Change 	End 	Type
+Jun 17, 2003 		20000 	20000 	Buy
+Jun 23, 2003 	20000 	-20000 		Sell
+Jul 07, 2003 		20000 	20000 	Buy
+Oct 02, 2007 	20000 	-19920 	80 	Corporate Action
+Nov 04, 2009 	80 	-80 		Corporate Action
+Total: 0
+  	  	 
+  	  	
+BUYS
+Close Date 	Quantity 	Commission 	Net 	Price
+Jun 17, 2003 	20,000 	$73.66 	$1,546.76 	$0.08
+Jul 7, 2003 	20,000 	$199.40 	$4,187.40 	$0.21
+  	  	 
+  	  	
+SELLS
+Close Date 	Quantity 	Commission 	SEC Fee 	Net 	Price
+Jun 23, 2003 	20,000 	$171.62 	$0.17 	$3,260.71 	$0.16
+  	  	 
+left curve 	 corporate actions 	right curve
+  	  	
+
+The following is a list of the corporate actions that affected this position.
+  	  	
+Effective Date 	Description
+Oct 02, 2007 	Split terms:.004 : 1
+
+20091104 SPAM  80 shares *  0.02 = 1.60
+
+check on 4/29/15
+
+4/29/15 
+AWTI
+ AWTI has been acquired 	right curve
+let's do the invalidation
+  	  	
+Air Water International Corp acquired by a private company on 2009-11-04 00:00:00. 
+check MAdmin
+Stock:Air Water International Corp  Symbol:AWTI
+Date: 04/29/2015
+
+0 users found
+
+good close this out 

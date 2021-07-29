@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+# Script using the EXPECT shell to call on the legacyDataDaemon on the Process server.
+
+set arg1 [lindex $argv 0]
+#set arg2 [lindex $argv 1]
+#send_user $arg1\n
+#send_user $arg2\n
+set timeout 5
+spawn lynx "$arg1"
+expect "Import Another"
+send "q\n"
+expect "Are you sure you want to quit?"
+send "y\n"

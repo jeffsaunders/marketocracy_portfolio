@@ -1,0 +1,206 @@
+date:  9/16/15
+SEDG  need to set the style 
+
+Member Name
+Carmen Palange
+Username
+TicTacToe
+Fund Symbols
+CPGFX
+Stock Tickers
+SEDG
+
+
+case: 
+3671
+
+
+Symbol: SEDG	Name: SolarEdge Technologies Inc	Price: $27.87
+Volume: 402,422	Sector: Unclassified	Change: -$0.55
+Short Volume: 742,730	Style: Unclassified Market Cap : Unclassified Style	Market Cap:
+Avg Volume: 742,730	 Exchange: NASDAQ	Today: -1.94%
+50 Day Ave: $28.21	Year High: $43.00	High: $29.26
+200 Day Ave: $18.31	Year Low: $0.00	Low: $27.83
+
+select distinct stockkey from mstockalias where symbol='SEDG';
+> Row 1:
+>   STOCKKEY = X'12af3ffd55149002c0a86f92'
+select * from mstockalias where  STOCKKEY = X'12af3ffd55149002c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = NULL
+>           DATE = TIMESTAMP '2015-03-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SolarEdge Technologies Inc
+>     PRIMARYKEY = X'12b03ffd55149002c0a86f92'
+>       STOCKKEY = X'12af3ffd55149002c0a86f92'
+>         SYMBOL = SEDG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 00000000
+>       STYLEKEY = UU
+	select * from mcorporateaction where aliaskey=X'12b03ffd55149002c0a86f92';
+> Row 1:
+>              ALIASKEY = X'12b03ffd55149002c0a86f92'
+>   BB_ACTIONDICTIONARY = CP_EXCH|UW|CP_TKR|SEDG|CP_SEC_TYP|1|CP_NOTES|N.A.
+>         BB_ACTIONFLAG = U
+>           BB_ACTIONID = 104479549
+>     BB_ACTIONMNEMONIC = LIST
+>          BB_COMPANYID = 20726639
+>        BB_COMPANYNAME = SolarEdge Technologies Inc
+>           BB_CURRENCY = USD
+>          BB_EFFECTIVE = TIMESTAMP '2015-03-26 00:00:00.000000'
+>         BB_IDENTIFIER = SEDG    US Equity
+>             BB_ISSUED = TIMESTAMP '2015-03-24 00:00:00.000000'
+>          BB_NUMFIELDS = 4
+>              BB_RCODE = 0
+>              BB_SECID = SEDG
+>          BB_SECIDTYPE = TKR
+>         BB_SECURITYID = 1001
+>            BB_UPDATED = TIMESTAMP '2015-03-24 00:00:00.000000'
+>            PRIMARYKEY = X'53c432af5511ec14c0a86f92'
+>               VERSION = NULL
+
+yahoo finance
+SolarEdge Technologies, Inc. (SEDG) -NasdaqGS   Watchlist
+27.87 Down 0.55(1.94%) Sep 16, 4:00PM EDT
+
+Add to Portfolio
+Prev Close:	28.42
+Open:	28.38
+Bid:	27.55 x 100
+Ask:	27.98 x 100
+1y Target Est:	37.83
+Beta:	N/A
+Earnings Date:	Nov 2 - Nov 6 (Est.)
+Day's Range:	27.83 - 29.26
+52wk Range:	15.60 - 43.00
+Volume:	402,622
+Avg Vol (3m):	751,883
+Market Cap:	1.10B
+P/E (ttm):	102.46
+EPS (ttm):	0.27
+Div & Yield:	N/A (N/A
+  
+xignite:  83417M104   good 
+
+update mstockalias set cusip='83417M104' where PRIMARYKEY = X'12b03ffd55149002c0a86f92';
+
+
+SolarEdge Technologies, Inc. (SEDG) -NasdaqGS   Watchlist
+27.87 Down 0.55(1.94%) Sep 16, 4:00PM EDT
+
+Add to Portfolio
+Prev Close:	28.42
+Open:	28.38
+Bid:	27.55 x 100
+Ask:	27.98 x 100
+1y Target Est:	37.83
+Beta:	N/A
+Earnings Date:	Nov 2 - Nov 6 (Est.)
+Day's Range:	27.83 - 29.26
+52wk Range:	15.60 - 43.00
+Volume:	402,622
+Avg Vol (3m):	751,883
+Market Cap:	1.10B
+P/E (ttm):	102.46
+EPS (ttm):	0.27
+Div & Yield:	N/A (N/A
+
+market cap is 1.10 billion
+
+Small cap - Have a market cap between $300 million to $2 billion. 
+
+update mstockalias set STYLEKEY='SG' where PRIMARYKEY = X'12b03ffd55149002c0a86f92';
+
+style
+Details	 
+Index Membership:	N/A
+Sector:	Technology
+Industry:	Semiconductor - Specialized
+Full Time Employees:	440
+
+45301020	Semiconductors
+	Manufacturers of semiconductors and related products, including manufacturers of solar modules and cells.
+
+update mstockalias set gicskey='45301020' where PRIMARYKEY = X'12b03ffd55149002c0a86f92';
+
+select * from mstockalias where STOCKKEY = X'12af3ffd55149002c0a86f92' order by "date";
+> Row 1:
+>   CAPSECTORKEY = NULL
+>          CUSIP = 83417M104
+>           DATE = TIMESTAMP '2015-03-26 00:00:00.000000'
+>    EXCHANGEKEY = X'9d5d2f1d390a440bc0a8015c'
+>           NAME = SolarEdge Technologies Inc
+>     PRIMARYKEY = X'12b03ffd55149002c0a86f92'
+>       STOCKKEY = X'12af3ffd55149002c0a86f92'
+>         SYMBOL = SEDG
+>      STATUSKEY = X'634a039339e7e928c0a801dc'
+>      CSISYMBOL = NULL
+>        GICSKEY = 45301020
+>       STYLEKEY = SG
+
+check on 9/17 or 9/18/15
+
+9/18/15 
+SEDG
+
+Symbol: SEDG	Name: SolarEdge Technologies Inc	Price: $27.09
+Volume: 650,240	Sector: Information Technology	Change: $0.00
+Short Volume: 734,062	Style: Small Cap : Growth	Market Cap:
+Avg Volume: 734,062	 Exchange: NASDAQ	Today: 0.00%
+50 Day Ave: $28.20	Year High: $43.00	High: $28.24
+200 Day Ave: $18.44	Year Low: $0.00	Low: $26.65
+
+
+for some reason the market cap number is not there, check xignite
+doesn't seem to be in the list.
+
+check on the new site 
+not there.  checking with Brandon
+
+brandon says get the funds
+
+then reprice for the one day
+
+
+select fundkey from mposition where STOCKKEY = X'12af3ffd55149002c0a86f92';
+there are 22 fundkeys  save 
+
+closing this out 
+
+need to find the member and the fund and then log in and expand the stock
+
+
+Member Name
+Carmen Palange
+Username
+TicTacToe
+Fund Symbols
+CPGFX
+Stock Tickers
+SEDG
+
+
+case: 
+3671
+
+
+STOCK INFORMATION
+Symbol: SEDG 	Name: SolarEdge Technologies Inc 	Price: $25.90
+Volume: 1,026,965 	Sector: Information Technology 	Change: $-1.70
+Short Volume: 0 	Style: Small Cap : Growth 	Market Cap: $0.00
+Avg Volume: 1,026,965 	Exchange: NASDAQ 	Today: 0.00%
+50 Day Avg: $0.00 	Year High: 43 	High: $27.65
+200 Day Avg: $0.00 	Year Low: 15.6 	Low: $24.8101
+
+it is there, close this case out 
+
+
+
+
+
+
+
+
+
