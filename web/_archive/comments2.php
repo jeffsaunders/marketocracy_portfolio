@@ -103,11 +103,11 @@
       return $html;
     }
 
-    $host = '10.0.0.20';
-    $user = 'marketocracy';
-    $password = 'KfabyZcbE3';
+    $host = '<hostname> or <ip>';
+    $user = '<databaseUser>';
+    $password = '<databasePassword>';
 
-    $database = 'nova';
+    $database = '<databaseName>';
 
     $link = mysql_connect($host, $user, $password)
             or die ('Could not connect: ' . mysql_error());
