@@ -10,7 +10,7 @@
 <?php
 if ($_REQUEST['string']){
 	// Create encrypt function for password comparison
-	function encrypt($value, $key='SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ=='){
+	function encrypt($value, $key='<key>'){
 		if(!$value || !$key){
 			return false;
 		}
