@@ -43,10 +43,10 @@ set_time_limit(43200); //12 HOURS
 $startingTime = time();
 
 // Connect to MySQL
-$dbHost = "10.0.0.20";
-$dbUser = "marketocracy";
-$dbPass = "KfabyZcbE3";
-$dbName = "marketocracy";
+$dbHost = "<hostname> or <ip>";
+$dbUser = "<databaseUser>";
+$dbPass = "<databasePassword>";
+$dbName = "<databaseName>";
 $linkID = mysql_connect($dbHost, $dbUser, $dbPass) or die("Could not connect to MySQL");
 mysql_select_db($dbName, $linkID) or die("Could not select ".$dbName." DB in MySQL");
 /*
