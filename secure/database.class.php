@@ -1,9 +1,9 @@
 <?php
 class dbFeed{
-    private $host      = '192.168.111.211';
-    private $user      = 'marketocracy';
-    private $pass      = 'KfabyZcbE3';
-    private $dbname    = 'feed2';
+    private $host      = '<hostname> or <ip>';
+    private $user      = '<databaseUser>';
+    private $pass      = '<databasePassword>';
+    private $dbname    = '<databaseName>';
 	
 	
  	private $stmt;
