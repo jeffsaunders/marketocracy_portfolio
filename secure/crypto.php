@@ -1,10 +1,10 @@
 <?php
 
-//$dataKey = 'SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ==';
+//$dataKey = '<key>';
 
 
 
-function encrypt($value, $key='SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ=='){
+function encrypt($value, $key='<key>'){
 	if(!$value || !$key){
 		return false;
 	}
@@ -17,7 +17,7 @@ function encrypt($value, $key='SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ=='){
 	return base64_encode( $encryptedValue );
 }
 
-function decrypt($value, $key='SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ=='){
+function decrypt($value, $key='<key>'){
 	if(!$value || !$key){
 		return false;
 	}
@@ -31,9 +31,9 @@ function decrypt($value, $key='SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ=='){
 }
 
 
-//$double_dataKey = 'SGFwcHkgQmlydGhkYXkgUmFjaGVsIQ==';
+//$double_dataKey = '<doubleKey>';
 
-function double_encrypt($value, $key='fhPXaYlnraw4aN6mOVOfOXPdEtVQGZml'){
+function double_encrypt($value, $key='<doubleKey>'){
 	if(!$value || !$key){
 		return false;
 	}
@@ -46,7 +46,7 @@ function double_encrypt($value, $key='fhPXaYlnraw4aN6mOVOfOXPdEtVQGZml'){
 	return base64_encode( $encryptedValue );
 }
 
-function double_decrypt($value, $key='fhPXaYlnraw4aN6mOVOfOXPdEtVQGZml'){
+function double_decrypt($value, $key='<doubleKey>'){
 	if(!$value || !$key){
 		return false;
 	}
