@@ -22,10 +22,10 @@ This library requires the inclusion of the CIM class library 'authorizenet.cim.c
 */
 
 /*
-Live API Login:			6e9h5DC8DD4
-Live Transaction Key:	5hD292gYJ5329aLT
-Sandbox API Login:		2cw2pN6NAe
-Sandbox Transaction Key:4w4w7xB3MvL35VCC
+Live API Login:		<liveLogin>
+Live Transaction Key:	<liveKey>
+Sandbox API Login:	<testLogin>
+Sandbox Transaction Key:<testKey>
 */
 
 // include the class file (need to do this in the calling code to insure proper pathing)
