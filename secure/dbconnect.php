@@ -1,9 +1,9 @@
 <?php
 //Set Database Variables
-$dbHost = "192.168.111.211";
-$dbName = "portfolio";
-$dbUser = "marketocracy";
-$dbPass = "KfabyZcbE3";
+$dbHost = "<hostname> or <ip>";
+$dbName = "<dabaseName";
+$dbUser = "<databaseUser>";
+$dbPass = "<databasePassword>";
 
 //Connect to portfolio DB / MySQL with PDO_MYSQL
 try{
